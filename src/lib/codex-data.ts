@@ -10,6 +10,7 @@ import {
   Wrench,
   Orbit,
   Atom,
+  Zap,
 } from 'lucide-react';
 
 export interface Document {
@@ -38,6 +39,12 @@ export const sections: Section[] = [
     id: 'module-zero',
     title: 'Módulo Zero',
     icon: Atom,
+    documents: [],
+  },
+  {
+    id: 'connection',
+    title: 'Conexão Ω-M0',
+    icon: Zap,
     documents: [],
   },
   {
