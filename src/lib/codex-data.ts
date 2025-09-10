@@ -36,6 +36,12 @@ export const sections: Section[] = [
     documents: [],
   },
   {
+    id: 'module-one',
+    title: 'Módulo 1: Segurança',
+    icon: Shield,
+    documents: [],
+  },
+  {
     id: 'module-zero',
     title: 'Módulo Zero',
     icon: Atom,

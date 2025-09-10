@@ -9,6 +9,7 @@ import MainHeader from '@/components/main-header';
 import KeyGenerator from '@/components/key-generator';
 import Nexus from '@/components/nexus';
 import ModuleZero from '@/components/module-zero';
+import ModuleOne from '@/components/module-one';
 import ConnectionPage from './connection/page';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 
@@ -33,6 +34,8 @@ export default function Home() {
         return <Nexus />;
       case 'module-zero':
         return <ModuleZero />;
+      case 'module-one':
+        return <ModuleOne />;
       case 'tools':
         return <KeyGenerator />;
       case 'connection':
