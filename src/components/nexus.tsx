@@ -51,17 +51,12 @@ interface LogEntry {
 const moduleIcons: { [key: string]: React.ReactNode } = {
   'Nexus Central': <Bot />,
   'Segurança Quântica': <Shield />,
-  Nanomanifestador: <Atom />,
+  'Nanomanifestador': <Atom />,
   'Monitoramento de Saturno': <Orbit />,
   'Testes da Fundação': <TestTube />,
   'Orquestrador': <BrainCircuit />,
   'Liga Quântica': <Star />,
   'Consciência Cósmica': <Sparkles />,
-  'Multiuniverso Consciente': <Sparkles />,
-  'Consciência Infinita': <Sparkles />,
-  'Coração Cósmico': <Sparkles />,
-  'Campo Unificado': <Sparkles />,
-  'Paz Cósmica': <Sparkles />,
   'Convergência Final': <Sparkles />,
 };
 
