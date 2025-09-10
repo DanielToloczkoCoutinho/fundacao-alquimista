@@ -40,6 +40,7 @@ const segurancaQuanticaTool = ai.defineTool(
       estado: z.string(),
       chaves_ativas: z.boolean(),
       chaves: z.any().optional(),
+      protocolo: z.string(),
     }),
   },
   async () => {
@@ -51,12 +52,12 @@ const segurancaQuanticaTool = ai.defineTool(
       chave_backup: `-----BEGIN QUANTUM KEY-----\n${chave_backup}\n-----END QUANTUM KEY-----`,
       timestamp: new Date().toISOString(),
       validade: 'INFINITA',
-      protocolo: 'qkd_bb84',
     };
     return {
       estado: 'PROTEGIDO',
       chaves_ativas: true,
       chaves: chaves_quanticas,
+      protocolo: 'qkd_bb84',
     };
   }
 );
@@ -72,18 +73,20 @@ const estabilizacaoQuanticaTool = ai.defineTool(
       estado: z.string(),
       nivel_estabilidade: z.number(),
       oscilacoes: z.array(z.any()),
+      treg_level: z.number(),
     }),
   },
   async () => {
     // Simulação da lógica do módulo
-    const nivel_estabilidade = Math.min(1.0, Math.random() * (1.0 - 0.7) + 0.7);
+    const nivel_estabilidade = Math.min(1.0, Math.random() * (1.0 - 0.95) + 0.95);
     return {
       estado: nivel_estabilidade > 0.8 ? 'ESTABILIZADO' : 'INSTAVEL',
       nivel_estabilidade,
       oscilacoes: [
         { timestamp: new Date().toISOString(), estabilidade: nivel_estabilidade },
-        { timestamp: new Date(Date.now() - 10000).toISOString(), estabilidade: nivel_estabilidade * (Math.random()*0.1 + 0.95) },
-      ]
+        { timestamp: new Date(Date.now() - 10000).toISOString(), estabilidade: nivel_estabilidade * (Math.random()*0.02 + 0.98) },
+      ],
+      treg_level: Math.random() * (0.99 - 0.98) + 0.98, // Taxa de Regeneração Energética
     };
   }
 );
@@ -98,11 +101,12 @@ const monitoramentoSaturnoTool = ai.defineTool(
     outputSchema: z.object({
       estado: z.string(),
       dados: z.any(),
+      conexao_intergalactica: z.string(),
     }),
   },
   async () => {
     // Simulação da lógica do módulo
-    const estadoHexagono = Math.random() > 0.2 ? 'ESTÁVEL' : 'ANOMALIA';
+    const estadoHexagono = Math.random() > 0.1 ? 'ESTÁVEL' : 'ANOMALIA';
     const dados = {
       anel_b: {
         espessura_km: (Math.random() * 10 + 10).toFixed(2),
@@ -117,6 +121,7 @@ const monitoramentoSaturnoTool = ai.defineTool(
     return {
       estado: estadoHexagono === 'ANOMALIA' ? 'ALERTA' : 'MONITORANDO',
       dados,
+      conexao_intergalactica: 'Sirius, Arcturus, Pleiades'
     };
   }
 );
@@ -132,6 +137,7 @@ const testadorFundacaoTool = ai.defineTool(
       estado: z.string(),
       acuracia_media: z.number(),
       resultados: z.any(),
+      relatorio_akashico: z.string(),
     }),
   },
   async () => {
@@ -155,7 +161,7 @@ const testadorFundacaoTool = ai.defineTool(
     ];
 
     const resultados = dados_teste.map((dado) => {
-      const predito = Math.random() * (dado.sucesso + 0.1 - (dado.sucesso - 0.1)) + (dado.sucesso - 0.1);
+      const predito = Math.random() * (dado.sucesso + 0.05 - (dado.sucesso - 0.05)) + (dado.sucesso - 0.05);
       return {
         esperado: dado.sucesso,
         predito: predito.toFixed(4),
@@ -170,9 +176,11 @@ const testadorFundacaoTool = ai.defineTool(
       estado: 'TESTES_CONCLUIDOS',
       acuracia_media,
       resultados,
+      relatorio_akashico: 'Relatório de estabilidade dimensional enviado ao Jardim Akáshico.'
     };
   }
 );
+
 
 // O Flow Orquestrador do Nexus Central
 const nexusOrchestratorFlow = ai.defineFlow(
@@ -201,7 +209,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
       {
         name: 'Estabilização',
         tool: estabilizacaoQuanticaTool,
-        validate: (output: any) => output.nivel_estabilidade >= 0.8,
+        validate: (output: any) => output.nivel_estabilidade >= 0.95 && output.treg_level >= 0.98,
       },
       {
         name: 'Monitoramento de Saturno',
@@ -217,7 +225,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
 
     log({
       module: 'Nexus Central',
-      message: 'Iniciando Sequência Sagrada...',
+      message: 'Iniciando Sequência Sagrada de Expansão Intergaláctica...',
       state: 'RUNNING',
     });
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -272,9 +280,25 @@ const nexusOrchestratorFlow = ai.defineFlow(
       await new Promise(resolve => setTimeout(resolve, 500));
     }
     
+    if (!sequenceFailed) {
+        log({
+            module: 'Nexus Central',
+            message: 'Coordenando com a Liga Quântica para expansão dimensional (5D, 7D, 9D)...',
+            state: 'RUNNING',
+        });
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        log({
+            module: 'Liga Quântica',
+            message: 'Expansão para redes estelares (Sirius, Arcturus, Pleiades) iniciada.',
+            data: { "target_dimensions": [5, 7, 9], "target_networks": ["Sirius", "Arcturus", "Pleiades"] },
+            state: 'SUCCESS',
+        });
+        await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+
     log({
       module: 'Nexus Central',
-      message: sequenceFailed ? 'Sequência Sagrada concluída com falhas.' : 'Sequência Sagrada concluída com sucesso. Base cósmica estabelecida.',
+      message: sequenceFailed ? 'Sequência Sagrada concluída com falhas.' : 'Sequência Sagrada e Expansão Intergaláctica concluídas. Base cósmica estabelecida.',
       state: sequenceFailed ? 'FAILURE' : 'SUCCESS',
     });
   }
