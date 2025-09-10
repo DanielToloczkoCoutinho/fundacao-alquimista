@@ -57,6 +57,7 @@ const ModuleTwo = () => {
     const coerenciaCanvasRef = useRef<HTMLCanvasElement>(null);
     const audioContextRef = useRef<AudioContext | null>(null);
     const consoleLogRef = useRef<HTMLDivElement>(null);
+    const initialized = useRef(false);
 
     const addLog = useCallback((message: string, className: string = 'text-green-400') => {
         if (consoleLogRef.current) {
@@ -90,6 +91,9 @@ const ModuleTwo = () => {
     }, []);
 
     useEffect(() => {
+        if (initialized.current) return;
+        initialized.current = true;
+
         if (typeof window !== 'undefined' && !audioContextRef.current) {
           audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
         }
