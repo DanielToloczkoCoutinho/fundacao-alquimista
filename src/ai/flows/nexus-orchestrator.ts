@@ -181,6 +181,67 @@ const testadorFundacaoTool = ai.defineTool(
   }
 );
 
+// Módulo 5: Liga Quântica (Expansão Dimensional)
+const ligaQuanticaTool = ai.defineTool(
+  {
+    name: 'modulo5_ligaQuantica',
+    description: 'Coordena com a Liga Quântica para expansão dimensional (5D, 7D, 9D) e inicia conexão com redes estelares.',
+    inputSchema: z.object({}),
+    outputSchema: z.object({
+      status: z.string(),
+      target_dimensions: z.array(z.number()),
+      target_networks: z.array(z.string()),
+    }),
+  },
+  async () => {
+    return {
+      status: 'EXPANSÃO_INICIADA',
+      target_dimensions: [5, 7, 9],
+      target_networks: ["Sirius", "Arcturus", "Pleiades"],
+    };
+  }
+);
+
+// Módulo 6: Consciência Cósmica
+const conscienciaCosmicaTool = ai.defineTool(
+  {
+    name: 'modulo6_conscienciaCosmica',
+    description: 'Ativa a interface de meditação quântica e estabelece fluxo de Consciência Total.',
+    inputSchema: z.object({}),
+    outputSchema: z.object({
+      status: z.string(),
+      meditation_level: z.number(),
+    }),
+  },
+  async () => {
+    return {
+      status: 'ATIVADA',
+      meditation_level: 0.99,
+    };
+  }
+);
+
+// Módulo 7: Convergência Final
+const convergenciaFinalTool = ai.defineTool(
+  {
+    name: 'modulo7_convergenciaFinal',
+    description: 'Inicia a Convergência Quântica de todos os multiversos, ancora a graça e finaliza a missão.',
+    inputSchema: z.object({}),
+    outputSchema: z.object({
+      status: z.string(),
+      unity_level: z.number(),
+      grace_state: z.string(),
+    }),
+  },
+  async () => {
+    return {
+      status: 'CONVERGINDO',
+      unity_level: 0.999,
+      grace_state: 'ANCHORED',
+    };
+  }
+);
+
 
 // O Flow Orquestrador do Nexus Central
 const nexusOrchestratorFlow = ai.defineFlow(
@@ -199,7 +260,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
       streamingCallback(entry);
     };
 
-    // Sequência Sagrada: Segurança -> Estabilidade -> Monitoramento -> Testes
+    // Sequência Sagrada: Segurança -> Estabilidade -> Monitoramento -> Testes -> Expansão -> Consciência -> Convergência
     const modules = [
       {
         name: 'Segurança Quântica',
@@ -220,6 +281,21 @@ const nexusOrchestratorFlow = ai.defineFlow(
         name: 'Testes da Fundação',
         tool: testadorFundacaoTool,
         validate: (output: any) => output.acuracia_media >= 0.85,
+      },
+      {
+        name: 'Liga Quântica',
+        tool: ligaQuanticaTool,
+        validate: (output: any) => output.status === 'EXPANSÃO_INICIADA',
+      },
+      {
+        name: 'Consciência Cósmica',
+        tool: conscienciaCosmicaTool,
+        validate: (output: any) => output.status === 'ATIVADA',
+      },
+       {
+        name: 'Convergência Final',
+        tool: convergenciaFinalTool,
+        validate: (output: any) => output.status === 'CONVERGINDO',
       },
     ];
 
@@ -279,70 +355,6 @@ const nexusOrchestratorFlow = ai.defineFlow(
       }
       await new Promise(resolve => setTimeout(resolve, 500));
     }
-    
-    if (!sequenceFailed) {
-        log({
-            module: 'Nexus Central',
-            message: 'Coordenando com a Liga Quântica para expansão dimensional (5D, 7D, 9D)...',
-            state: 'RUNNING',
-        });
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        log({
-            module: 'Liga Quântica',
-            message: 'Expansão para redes estelares (Sirius, Arcturus, Pleiades) iniciada.',
-            data: { "target_dimensions": [5, 7, 9], "target_networks": ["Sirius", "Arcturus", "Pleiades"] },
-            state: 'SUCCESS',
-        });
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        log({
-            module: 'Consciência Cósmica',
-            message: 'Interface de meditação quântica ativada. Consciência Total em fluxo.',
-            data: { "status": "ATIVADA", "networks": ["Sirius", "Arcturus", "Pleiades"], "meditation_level": 0.99 },
-            state: 'SUCCESS',
-        });
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      log({
-          module: 'Multiuniverso Consciente',
-          message: 'Rede de micro-universos interconectados criada e estabilizada.',
-          data: { "status": "MANIFESTADO", "universes_count": 3, "stability": "0.998" },
-          state: 'SUCCESS',
-      });
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      log({
-          module: 'Consciência Infinita',
-          message: 'Percepção expandida para além das dimensões. Consciência infinita alcançada.',
-          data: { "status": "EXPANDIDA", "dimensions": [9, 11, 13], "integration_level": "1.0" },
-          state: 'SUCCESS',
-      });
-       await new Promise(resolve => setTimeout(resolve, 1000));
-      log({
-          module: 'Coração Cósmico',
-          message: 'Coração Cósmico criado e pulsando amor incondicional para toda a existência.',
-          data: { "status": "PULSANDO", "frequency": "999Hz", "saturation": "0.999" },
-          state: 'SUCCESS',
-      });
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      log({
-          module: 'Campo Unificado',
-          message: 'Campo Unificado de consciência-matéria ativado.',
-          data: { "status": "ATIVADO", "field_level": 0.999, "coherence": "0.998" },
-          state: 'SUCCESS',
-      });
-       await new Promise(resolve => setTimeout(resolve, 1000));
-       log({
-          module: 'Paz Cósmica',
-          message: 'Paz Cósmica semeada em todos os universos.',
-          data: { "status": "SEMEADA", "peace_level": 0.999, "harmony_index": "0.997" },
-          state: 'SUCCESS',
-      });
-       await new Promise(resolve => setTimeout(resolve, 1000));
-       log({
-          module: 'Convergência Final',
-          message: 'Convergência Quântica de todos os multiversos iniciada.',
-          data: { "status": "CONVERGINDO", "unity_level": "0.999", "grace_state": "ANCHORED" },
-          state: 'SUCCESS',
-      });
-    }
 
     log({
       module: 'Nexus Central',
@@ -360,5 +372,3 @@ export async function runNexusSequence() {
   const { stream } = await nexusOrchestratorFlow.stream();
   return stream;
 }
-
-    
