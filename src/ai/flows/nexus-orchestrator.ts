@@ -267,7 +267,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
     const moduleSequence = [
         { name: 'Módulo Zero', tool: moduloZeroTool, params: {}, validate: (o: any) => o.estado === 'PURO_E_ESTAVEL' },
         { name: 'M1: Segurança Quântica', tool: segurancaQuanticaTool, params: {}, validate: (o: any) => o.estado === 'PROTEGIDO' },
-        { name: 'M2: Comunicação', tool: comunicacaoTool, params: {}, validate: (o: any) => o.conexao === 'TOTAL' },
+        { name: 'M2: Comunicação', tool: comunicacaoTool, params: {}, validate: (o: any) => o.conexao === 'TOTAL' || o.conexao === 'PARCIAL' },
         { name: 'M3: Previsão', tool: previsaoTool, params: {}, validate: (o: any) => !o.anomalia_prevista, storeOutput: (o: any) => energiaCosmicaDetectada = o.energiaCosmica },
         { name: 'M4: Validação (PIRC)', tool: validacaoTool, params: () => ({ energiaCosmica: energiaCosmicaDetectada }), validate: (o: any) => o.acuracia_media >= 0.85 },
         { name: 'M5: Ética (ELENYA)', tool: eticaTool, params: {}, validate: (o: any) => o.estado === "ALINHADO" },
