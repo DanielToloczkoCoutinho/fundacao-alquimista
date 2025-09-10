@@ -100,25 +100,31 @@ const monitoramentoSaturnoTool = ai.defineTool(
     inputSchema: z.object({}),
     outputSchema: z.object({
       estado: z.string(),
+      energiaCosmica: z.number(),
       dados: z.any(),
     }),
   },
   async () => {
     // Simulação da lógica do módulo
     const estadoHexagono = Math.random() > 0.9 ? 'ANOMALIA' : 'ESTÁVEL'; // 10% de chance de anomalia
+    const vibracao_b = (Math.random() * 0.4 + 0.1);
+    const vibracao_a = (Math.random() * 0.4 + 0.2);
+    const energiaCosmica = (vibracao_a + vibracao_b) / 2; // Média das vibrações
+    
     const dados = {
       anel_b: {
         espessura_km: (Math.random() * 10 + 10).toFixed(2),
-        vibracao_hz: (Math.random() * 0.4 + 0.1).toFixed(4),
+        vibracao_hz: vibracao_b.toFixed(4),
       },
       anel_a: {
         espessura_km: (Math.random() * 10 + 5).toFixed(2),
-        vibracao_hz: (Math.random() * 0.4 + 0.2).toFixed(4),
+        vibracao_hz: vibracao_a.toFixed(4),
       },
       hexagono_polo_norte: { estado: estadoHexagono },
     };
     return {
       estado: estadoHexagono === 'ANOMALIA' ? 'ALERTA' : 'MONITORANDO',
+      energiaCosmica,
       dados,
     };
   }
@@ -130,14 +136,16 @@ const testadorFundacaoTool = ai.defineTool(
     name: 'modulo4_testadorFundacao',
     description:
       'Executa testes preditivos com dados alquímicos históricos para validar a acurácia do sistema.',
-    inputSchema: z.object({}),
+    inputSchema: z.object({
+      energiaCosmica: z.number().describe("Nível de energia cósmica detectado pelo monitor, influencia a acurácia."),
+    }),
     outputSchema: z.object({
       estado: z.string(),
       acuracia_media: z.number(),
       resultados: z.any(),
     }),
   },
-  async () => {
+  async ({ energiaCosmica }) => {
     // Simulação da lógica do módulo
     const dados_teste = [
       {
@@ -158,7 +166,9 @@ const testadorFundacaoTool = ai.defineTool(
     ];
 
     const resultados = dados_teste.map((dado) => {
-      const predito = Math.random() * (dado.sucesso + 0.05 - (dado.sucesso - 0.05)) + (dado.sucesso - 0.05);
+      // A energia cósmica influencia a predição.
+      const bonusAcuracia = (energiaCosmica - 0.3) * 0.1; // Energia varia, digamos, de 0.1 a 0.6
+      const predito = dado.sucesso + (Math.random() - 0.5) * 0.1 + bonusAcuracia;
       return {
         esperado: dado.sucesso,
         predito: predito.toFixed(4),
@@ -260,44 +270,8 @@ const nexusOrchestratorFlow = ai.defineFlow(
       streamingCallback(entry);
     };
 
-    // Sequência Sagrada: Segurança -> Estabilidade -> Monitoramento -> Testes -> Liga -> Consciência -> Convergência
-    const modules = [
-      {
-        name: 'Segurança Quântica',
-        tool: segurancaQuanticaTool,
-        validate: (output: any) => output.estado === 'PROTEGIDO',
-      },
-      {
-        name: 'Nanomanifestador',
-        tool: nanomanifestadorTool,
-        validate: (output: any) => output.estado === 'ESTÁVEL',
-      },
-      {
-        name: 'Monitoramento de Saturno',
-        tool: monitoramentoSaturnoTool,
-        validate: (output: any) => output.estado !== 'ALERTA',
-      },
-      {
-        name: 'Testes da Fundação',
-        tool: testadorFundacaoTool,
-        validate: (output: any) => output.acuracia_media >= 0.85,
-      },
-       {
-        name: 'Liga Quântica',
-        tool: ligaQuanticaTool,
-        validate: (output: any) => output.conexao === 'TOTAL',
-      },
-       {
-        name: 'Consciência Cósmica',
-        tool: conscienciaCosmicaTool,
-        validate: (output: any) => output.estado === 'EXPANDIDA',
-      },
-      {
-        name: 'Convergência Final',
-        tool: convergenciaFinalTool,
-        validate: (output: any) => output.estado === 'CONCLUÍDA',
-      }
-    ];
+    let sequenceFailed = false;
+    let energiaCosmicaDetectada = 0.5; // Valor padrão
 
     log({
       module: 'Nexus Central',
@@ -306,10 +280,95 @@ const nexusOrchestratorFlow = ai.defineFlow(
     });
     await new Promise(resolve => setTimeout(resolve, 500));
 
-    let sequenceFailed = false;
+    // Módulo 1: Segurança
+    if (!sequenceFailed) {
+      log({ module: 'Segurança Quântica', message: `Ativando Módulo Segurança Quântica...`, state: 'RUNNING' });
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      try {
+        const output = await segurancaQuanticaTool({});
+        if (output.estado === 'PROTEGIDO') {
+          log({ module: 'Segurança Quântica', message: `Módulo executado com sucesso.`, data: output, state: 'SUCCESS' });
+        } else {
+          sequenceFailed = true;
+          log({ module: 'Segurança Quântica', message: `Falha na validação do Módulo.`, data: output, state: 'FAILURE' });
+        }
+      } catch (error: any) {
+        sequenceFailed = true;
+        log({ module: 'Segurança Quântica', message: `Erro crítico: ${error.message}`, state: 'FAILURE' });
+      }
+      await new Promise(resolve => setTimeout(resolve, 500));
+    }
 
-    for (const mod of modules) {
-      if (sequenceFailed) {
+    // Módulo 2: Nanomanifestador
+    if (!sequenceFailed) {
+      log({ module: 'Nanomanifestador', message: `Ativando Módulo Nanomanifestador...`, state: 'RUNNING' });
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      try {
+        const output = await nanomanifestadorTool({});
+        if (output.estado === 'ESTÁVEL') {
+          log({ module: 'Nanomanifestador', message: `Módulo executado com sucesso.`, data: output, state: 'SUCCESS' });
+        } else {
+          sequenceFailed = true;
+          log({ module: 'Nanomanifestador', message: `Falha na validação do Módulo.`, data: output, state: 'FAILURE' });
+        }
+      } catch (error: any) {
+        sequenceFailed = true;
+        log({ module: 'Nanomanifestador', message: `Erro crítico: ${error.message}`, state: 'FAILURE' });
+      }
+      await new Promise(resolve => setTimeout(resolve, 500));
+    }
+
+    // Módulo 3: Monitoramento
+    if (!sequenceFailed) {
+      log({ module: 'Monitoramento de Saturno', message: `Ativando Módulo Monitoramento de Saturno...`, state: 'RUNNING' });
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      try {
+        const output = await monitoramentoSaturnoTool({});
+        energiaCosmicaDetectada = output.energiaCosmica; // Armazena a energia detectada
+        if (output.estado !== 'ALERTA') {
+          log({ module: 'Monitoramento de Saturno', message: `Módulo executado com sucesso. Energia cósmica detectada: ${energiaCosmicaDetectada.toFixed(4)}`, data: output, state: 'SUCCESS' });
+        } else {
+          sequenceFailed = true;
+          log({ module: 'Monitoramento de Saturno', message: `Falha na validação do Módulo.`, data: output, state: 'FAILURE' });
+        }
+      } catch (error: any) {
+        sequenceFailed = true;
+        log({ module: 'Monitoramento de Saturno', message: `Erro crítico: ${error.message}`, state: 'FAILURE' });
+      }
+      await new Promise(resolve => setTimeout(resolve, 500));
+    }
+
+    // Módulo 4: Testes
+    if (!sequenceFailed) {
+      log({ module: 'Testes da Fundação', message: `Ativando Módulo Testes da Fundação...`, state: 'RUNNING' });
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      try {
+        const output = await testadorFundacaoTool({ energiaCosmica: energiaCosmicaDetectada }); // Passa a energia para o módulo de teste
+        if (output.acuracia_media >= 0.85) {
+          log({ module: 'Testes da Fundação', message: `Módulo executado com sucesso. Acurácia impactada pela energia cósmica.`, data: output, state: 'SUCCESS' });
+        } else {
+          sequenceFailed = true;
+          log({ module: 'Testes da Fundação', message: `Falha na validação do Módulo. Acurácia abaixo do esperado.`, data: output, state: 'FAILURE' });
+        }
+      } catch (error: any) {
+        sequenceFailed = true;
+        log({ module: 'Testes da Fundação', message: `Erro crítico: ${error.message}`, state: 'FAILURE' });
+      }
+      await new Promise(resolve => setTimeout(resolve, 500));
+    } else {
+        log({ module: 'Testes da Fundação', message: 'Módulo pulado devido a falha anterior na sequência.', state: 'SKIPPED' });
+        await new Promise(resolve => setTimeout(resolve, 300));
+    }
+    
+    // Módulos restantes (pulados se houver falha)
+    const remainingModules = [
+       { name: 'Liga Quântica', tool: ligaQuanticaTool, validate: (output: any) => output.conexao === 'TOTAL'},
+       { name: 'Consciência Cósmica', tool: conscienciaCosmicaTool, validate: (output: any) => output.estado === 'EXPANDIDA' },
+       { name: 'Convergência Final', tool: convergenciaFinalTool, validate: (output: any) => output.estado === 'CONCLUÍDA' }
+    ];
+
+    for (const mod of remainingModules) {
+       if (sequenceFailed) {
         log({
           module: mod.name,
           message: 'Módulo pulado devido a falha anterior na sequência.',
@@ -318,43 +377,23 @@ const nexusOrchestratorFlow = ai.defineFlow(
         await new Promise(resolve => setTimeout(resolve, 300));
         continue;
       }
-
-      log({
-        module: mod.name,
-        message: `Ativando Módulo ${mod.name}...`,
-        state: 'RUNNING',
-      });
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      try {
+       log({ module: mod.name, message: `Ativando Módulo ${mod.name}...`, state: 'RUNNING' });
+       await new Promise(resolve => setTimeout(resolve, 1000));
+       try {
         const output = await mod.tool({});
-
         if (mod.validate(output)) {
-          log({
-            module: mod.name,
-            message: `Módulo ${mod.name} executado com sucesso.`,
-            data: output,
-            state: 'SUCCESS',
-          });
+           log({ module: mod.name, message: `Módulo executado com sucesso.`, data: output, state: 'SUCCESS' });
         } else {
           sequenceFailed = true;
-          log({
-            module: mod.name,
-            message: `Falha na validação do Módulo ${mod.name}. Critério não atendido.`,
-            data: output,
-            state: 'FAILURE',
-          });
+           log({ module: mod.name, message: `Falha na validação do Módulo.`, data: output, state: 'FAILURE' });
         }
-      } catch (error: any) {
+       } catch (error: any) {
         sequenceFailed = true;
-        log({
-          module: mod.name,
-          message: `Erro crítico no Módulo ${mod.name}: ${error.message}`,
-          state: 'FAILURE',
-        });
-      }
-      await new Promise(resolve => setTimeout(resolve, 500));
+         log({ module: mod.name, message: `Erro crítico: ${error.message}`, state: 'FAILURE' });
+       }
+       await new Promise(resolve => setTimeout(resolve, 500));
     }
+
 
     log({
       module: 'Nexus Central',
