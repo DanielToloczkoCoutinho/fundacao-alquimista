@@ -316,6 +316,6 @@ const nexusOrchestratorFlow = ai.defineFlow(
  * Retorna um stream de eventos.
  */
 export async function runNexusSequence() {
-  const { stream } = nexusOrchestratorFlow.stream();
+  const { stream } = await nexusOrchestratorFlow.stream();
   return stream;
 }

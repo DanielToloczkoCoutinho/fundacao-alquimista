@@ -14,5 +14,7 @@ export async function getLinkSummary(url: string) {
 }
 
 export async function startNexusSequence() {
-  return runNexusSequence();
+  // This must be awaited, otherwise the stream will close prematurely
+  const stream = await runNexusSequence();
+  return stream;
 }
