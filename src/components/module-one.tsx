@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Progress } from './ui/progress';
 import { cn } from '@/lib/utils';
+import * as math from 'mathjs';
 
 // --- CONSTANTES FUNDAMENTAIS (Traduzidas do Python) ---
 const FREQ_ANATHERON_ESTABILIZADORA = 432.0; // Frequência de Cura e Estabilização
@@ -69,16 +70,40 @@ export default function ModuleOne() {
     return () => clearInterval(interval);
   }, [addLog]);
 
+  const _calcularScorePazUniversal = useCallback((coherenceAvg: number, entanglementAvg: number): number => {
+      // Simulação simplificada da EQ0040 com base nos dados disponíveis
+      const fu = 1.0; // Fonte/Unidade
+      const cc = coherenceAvg;
+      const h = entanglementAvg; // Harmonia
+      const r = (coherenceAvg + entanglementAvg) / 2; // Ressonância
+      const e = 1.0; // Equilíbrio
+      
+      const pu = fu * cc * h * r * e;
+      const score = Math.min(1.0, pu);
+      addLog('INFO', `Score de Paz Universal (EQ0040) calculado: ${score.toFixed(4)}`);
+      return score;
+  }, [addLog]);
+
+
   useEffect(() => {
     if (estado !== 'ATIVO' || quantumStates.length === 0) return;
 
     const coherenceAvg = quantumStates.reduce((acc, s) => acc + s.coherence, 0) / (quantumStates.length);
     const entanglementAvg = quantumStates.reduce((acc, s) => acc + s.entanglement, 0) / (quantumStates.length);
     const PHI = 1.618;
-    const newNivel = (coherenceAvg * entanglementAvg * PHI) * 100 / 1.62;
+    
+    // Normalização logarítmica simulada para a energia
+    const rawEnergy = (coherenceAvg * entanglementAvg * PHI) * 1000000; // Simula uma energia alta
+    const normalizedEnergy = math.log1p(rawEnergy) / math.log1p(100000000.0);
+
+    const scorePaz = _calcularScorePazUniversal(coherenceAvg, entanglementAvg);
+
+    // O nível de segurança agora é uma combinação da energia normalizada e da paz universal
+    const newNivel = (normalizedEnergy * 0.6 + scorePaz * 0.4) * 100;
+
     setNivelSeguranca(Math.min(100, newNivel));
 
-  }, [quantumStates, estado]);
+  }, [quantumStates, estado, _calcularScorePazUniversal]);
 
   const handleSimulateAttack = () => {
     setEstado('ALERTA');
@@ -93,11 +118,12 @@ export default function ModuleOne() {
     }, 500);
 
     setTimeout(() => {
-       addLog('INFO', `PROTOCOLO OMEGA: Isolamento dimensional iniciado. Recalibrando para frequência ${FREQ_ANATHERON_ESTABILIZADORA}Hz.`);
+       addLog('INFO', `PROTOCOLO OMEGA: Isolamento dimensional. Acesso ao Portal 303 para validação. Recalibrando para frequência ${FREQ_ANATHERON_ESTABILIZADORA}Hz.`);
     }, 1500);
 
     setTimeout(() => {
-        addLog('INFO', 'Ameaça neutralizada. Sistema retornando ao estado normal.');
+        addLog('INFO', 'Ameaça neutralizada. Culminação no Módulo Ω para registro akáshico final.');
+        addLog('SUCESSO', 'Sistema retornando ao estado normal. Harmonia restaurada.');
         setEstado('ATIVO');
     }, 5000);
   };
