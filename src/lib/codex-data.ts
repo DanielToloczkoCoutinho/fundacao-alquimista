@@ -12,6 +12,7 @@ import {
   Atom,
   Zap,
   Swords,
+  Box,
 } from 'lucide-react';
 
 export interface Document {
@@ -32,14 +33,20 @@ export interface Section {
 export const sections: Section[] = [
   {
     id: 'nexus',
-    title: 'Nexus Central',
+    title: 'Nexus Central (M9)',
     icon: Orbit,
     documents: [],
   },
-    {
+  {
     id: 'module-303',
     title: 'Portal Trino',
     icon: Swords,
+    documents: [],
+  },
+  {
+    id: 'module-zero',
+    title: 'Módulo Zero',
+    icon: Atom,
     documents: [],
   },
   {
@@ -49,9 +56,45 @@ export const sections: Section[] = [
     documents: [],
   },
   {
-    id: 'module-zero',
-    title: 'Módulo Zero',
-    icon: Atom,
+    id: 'm2',
+    title: 'Módulo 2: Comunicação',
+    icon: Network,
+    documents: [],
+  },
+  {
+    id: 'm3',
+    title: 'Módulo 3: Previsão',
+    icon: BrainCircuit,
+    documents: [],
+  },
+  {
+    id: 'm4',
+    title: 'Módulo 4: Validação',
+    icon: Component,
+    documents: [],
+  },
+  {
+    id: 'm5',
+    title: 'Módulo 5: Ética (ELENYA)',
+    icon: Library,
+    documents: [],
+  },
+  {
+    id: 'm6',
+    title: 'Módulo 6: Frequências',
+    icon: Zap,
+    documents: [],
+  },
+  {
+    id: 'm7',
+    title: 'Módulo 7: SOFA',
+    icon: Box,
+    documents: [],
+  },
+  {
+    id: 'm8',
+    title: 'Módulo 8: PIRC',
+    icon: FlaskConical,
     documents: [],
   },
   {
