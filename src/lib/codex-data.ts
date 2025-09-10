@@ -11,6 +11,7 @@ import {
   Orbit,
   Atom,
   Zap,
+  Swords,
 } from 'lucide-react';
 
 export interface Document {
@@ -33,6 +34,12 @@ export const sections: Section[] = [
     id: 'nexus',
     title: 'Nexus Central',
     icon: Orbit,
+    documents: [],
+  },
+    {
+    id: 'module-303',
+    title: 'Portal Trino',
+    icon: Swords,
     documents: [],
   },
   {
