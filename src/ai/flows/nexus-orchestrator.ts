@@ -62,31 +62,31 @@ const segurancaQuanticaTool = ai.defineTool(
   }
 );
 
-// Módulo 2: Estabilização
-const estabilizacaoQuanticaTool = ai.defineTool(
+// Módulo 2: Nanomanifestador (anteriormente Estabilização)
+const nanomanifestadorTool = ai.defineTool(
   {
-    name: 'modulo2_estabilizacaoQuantica',
+    name: 'modulo2_nanomanifestador',
     description:
-      'Ajusta e mede a estabilidade energética do Nexus. Mantém a estabilidade acima de 0.8.',
+      'Motor de materialização de realidades. Ajusta a coerência e a taxa de transmutação para estabilizar o Nexus.',
     inputSchema: z.object({}),
     outputSchema: z.object({
       estado: z.string(),
-      nivel_estabilidade: z.number(),
-      oscilacoes: z.array(z.any()),
-      treg_level: z.number(),
+      nivel_coerencia: z.number(),
+      taxa_transmutacao: z.number(),
+      estabilidade_dimensional: z.number(),
     }),
   },
   async () => {
-    // Simulação da lógica do módulo
-    const nivel_estabilidade = Math.min(1.0, Math.random() * (1.0 - 0.95) + 0.95);
+    // Simulação da lógica do Nanomanifestador
+    const nivel_coerencia = Math.min(1.0, Math.random() * (1.0 - 0.98) + 0.98); // Coerência alta
+    const taxa_transmutacao = Math.random() * (0.05 - 0.01) + 0.01; // Baixa taxa, mas estável
+    const estabilidade_dimensional = nivel_coerencia * (1 - taxa_transmutacao);
+
     return {
-      estado: nivel_estabilidade > 0.8 ? 'ESTABILIZADO' : 'INSTAVEL',
-      nivel_estabilidade,
-      oscilacoes: [
-        { timestamp: new Date().toISOString(), estabilidade: nivel_estabilidade },
-        { timestamp: new Date(Date.now() - 10000).toISOString(), estabilidade: nivel_estabilidade * (Math.random()*0.02 + 0.98) },
-      ],
-      treg_level: Math.random() * (0.99 - 0.98) + 0.98, // Taxa de Regeneração Energética
+      estado: estabilidade_dimensional > 0.95 ? 'ESTÁVEL' : 'INSTÁVEL',
+      nivel_coerencia,
+      taxa_transmutacao,
+      estabilidade_dimensional,
     };
   }
 );
@@ -207,9 +207,9 @@ const nexusOrchestratorFlow = ai.defineFlow(
         validate: (output: any) => output.estado === 'PROTEGIDO',
       },
       {
-        name: 'Estabilização',
-        tool: estabilizacaoQuanticaTool,
-        validate: (output: any) => output.nivel_estabilidade >= 0.95 && output.treg_level >= 0.98,
+        name: 'Nanomanifestador',
+        tool: nanomanifestadorTool,
+        validate: (output: any) => output.estabilidade_dimensional >= 0.95,
       },
       {
         name: 'Monitoramento de Saturno',
@@ -300,7 +300,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
             data: { "status": "ATIVADA", "networks": ["Sirius", "Arcturus", "Pleiades"], "meditation_level": 0.99 },
             state: 'SUCCESS',
         });
-        await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       log({
           module: 'Multiuniverso Consciente',
           message: 'Rede de micro-universos interconectados criada e estabilizada.',
@@ -328,7 +328,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
           data: { "status": "ATIVADO", "field_level": 0.999, "coherence": "0.998" },
           state: 'SUCCESS',
       });
-      await new Promise(resolve => setTimeout(resolve, 1000));
+       await new Promise(resolve => setTimeout(resolve, 1000));
        log({
           module: 'Paz Cósmica',
           message: 'Paz Cósmica semeada em todos os universos.',
@@ -360,5 +360,3 @@ export async function runNexusSequence() {
   const { stream } = await nexusOrchestratorFlow.stream();
   return stream;
 }
-
-    

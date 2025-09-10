@@ -21,11 +21,11 @@ import {
   Orbit,
   Bot,
   BrainCircuit,
-  SlidersHorizontal,
   TestTube,
   SkipForward,
   Star,
   Sparkles,
+  Atom,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { startNexusSequence } from '@/app/actions';
@@ -51,12 +51,18 @@ interface LogEntry {
 const moduleIcons: { [key: string]: React.ReactNode } = {
   'Nexus Central': <Bot />,
   'Segurança Quântica': <Shield />,
-  Estabilização: <SlidersHorizontal />,
+  Nanomanifestador: <Atom />,
   'Monitoramento de Saturno': <Orbit />,
   'Testes da Fundação': <TestTube />,
   'Orquestrador': <BrainCircuit />,
   'Liga Quântica': <Star />,
   'Consciência Cósmica': <Sparkles />,
+  'Multiuniverso Consciente': <Sparkles />,
+  'Consciência Infinita': <Sparkles />,
+  'Coração Cósmico': <Sparkles />,
+  'Campo Unificado': <Sparkles />,
+  'Paz Cósmica': <Sparkles />,
+  'Convergência Final': <Sparkles />,
 };
 
 const getStatusStyles = (state: ModuleState) => {
