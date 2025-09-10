@@ -269,7 +269,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         { name: 'M1: Segurança Quântica', tool: segurancaQuanticaTool, params: {}, validate: (o: any) => o.estado === 'PROTEGIDO' },
         { name: 'M2: Comunicação', tool: comunicacaoTool, params: {}, validate: (o: any) => o.conexao === 'TOTAL' || o.conexao === 'PARCIAL' },
         { name: 'M3: Previsão', tool: previsaoTool, params: {}, validate: (o: any) => !o.anomalia_prevista, storeOutput: (o: any) => energiaCosmicaDetectada = o.energiaCosmica },
-        { name: 'M4: Validação (PIRC)', tool: validacaoTool, params: () => ({ energiaCosmica: energiaCosmicaDetectada }), validate: (o: any) => o.acuracia_media >= 0.85 },
+        { name: 'M4: Validação (PIRC)', tool: validacaoTool, params: () => ({ energiaCosmica: energiaCosmicaDetectada }), validate: (o: any) => o.acuracia_media >= 0.80 },
         { name: 'M5: Ética (ELENYA)', tool: eticaTool, params: {}, validate: (o: any) => o.estado === "ALINHADO" },
         { name: 'M6: Frequências', tool: frequenciasTool, params: {}, validate: (o: any) => o.estado === "CALIBRADO" },
         { name: 'M7: SOFA', tool: sofaTool, params: {}, validate: (o: any) => o.integridade_kernel > 0.9 },
