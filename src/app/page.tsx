@@ -39,8 +39,6 @@ export default function Home() {
   );
 
   const renderContent = () => {
-    const section = sections.find((s) => s.id === selectedSectionId);
-
     switch (selectedSectionId) {
       case 'nexus':
         return <Nexus />;
@@ -55,7 +53,6 @@ export default function Home() {
       case 'module-zero':
         return <ModuleZero />;
       case 'connection':
-        // A página de conexão tem seu próprio layout de tela cheia
         return null;
       case 'tools':
         return <KeyGenerator />;
@@ -74,6 +71,7 @@ export default function Home() {
       case 'm8':
         return <GenericModulePlaceholder title="Módulo 8: PIRC" />;
       default:
+        const section = sections.find((s) => s.id === selectedSectionId);
         if (section && section.documents.length > 0) {
            return (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
