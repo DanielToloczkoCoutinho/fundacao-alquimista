@@ -16,6 +16,7 @@ import ConnectionPage from '@/app/connection/page';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import ModuleTwo from '@/components/module-two';
+import CodexExplorer from '@/components/codex-explorer';
 
 // Placeholder para os novos módulos que ainda não possuem componente dedicado
 const GenericModulePlaceholder = ({ title }: { title: string }) => (
@@ -42,6 +43,8 @@ export default function Home() {
     switch (selectedSectionId) {
       case 'nexus':
         return <Nexus />;
+      case 'codex-explorer':
+        return <CodexExplorer />;
       case 'module-303':
         return <Module303 />;
       case 'module-one':

@@ -13,6 +13,7 @@ import {
   Zap,
   Swords,
   Box,
+  BookOpenCheck,
 } from 'lucide-react';
 
 export interface Document {
@@ -35,6 +36,12 @@ export const sections: Section[] = [
     id: 'nexus',
     title: 'Nexus Central (M9)',
     icon: Orbit,
+    documents: [],
+  },
+  {
+    id: 'codex-explorer',
+    title: 'Explorador do Códex',
+    icon: BookOpenCheck,
     documents: [],
   },
   {
