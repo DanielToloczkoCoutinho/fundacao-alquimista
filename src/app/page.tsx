@@ -8,6 +8,7 @@ import DocumentCard from '@/components/document-card';
 import MainHeader from '@/components/main-header';
 import KeyGenerator from '@/components/key-generator';
 import Nexus from '@/components/nexus';
+import ModuleZero from '@/components/module-zero';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 
 export default function Home() {
@@ -30,8 +31,20 @@ export default function Home() {
       return <Nexus />;
     }
 
+    if (section.id === 'module-zero') {
+      return <ModuleZero />;
+    }
+
     if (section.id === 'tools') {
       return <KeyGenerator />;
+    }
+
+    if (section.documents.length === 0) {
+      return (
+        <div className="flex h-full items-center justify-center">
+          <p className="text-muted-foreground">No documents in this section.</p>
+        </div>
+      );
     }
 
     return (
@@ -51,7 +64,7 @@ export default function Home() {
       />
       <SidebarInset className="flex flex-col">
         <MainHeader />
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="flex-1 overflow-y-auto p-6 bg-gray-900 text-gray-100">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedSectionId}
@@ -60,9 +73,11 @@ export default function Home() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <h1 className="mb-6 text-3xl font-bold font-headline text-primary">
-                {selectedSection?.title}
-              </h1>
+              {selectedSectionId !== 'module-zero' && (
+                 <h1 className="mb-6 text-3xl font-bold font-headline text-primary">
+                  {selectedSection?.title}
+                 </h1>
+              )}
               {renderContent(selectedSection)}
             </motion.div>
           </AnimatePresence>

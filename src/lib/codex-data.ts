@@ -9,6 +9,7 @@ import {
   Shield,
   Wrench,
   Orbit,
+  Atom,
 } from 'lucide-react';
 
 export interface Document {
@@ -31,6 +32,12 @@ export const sections: Section[] = [
     id: 'nexus',
     title: 'Nexus Central',
     icon: Orbit,
+    documents: [],
+  },
+  {
+    id: 'module-zero',
+    title: 'Módulo Zero',
+    icon: Atom,
     documents: [],
   },
   {
