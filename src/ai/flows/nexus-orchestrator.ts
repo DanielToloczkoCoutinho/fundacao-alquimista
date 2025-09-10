@@ -79,7 +79,7 @@ const nanomanifestadorTool = ai.defineTool(
   async () => {
     // Simulação da lógica do Nanomanifestador
     const nivel_coerencia = Math.min(1.0, Math.random() * (1.0 - 0.98) + 0.98); // Coerência alta
-    const taxa_transmutacao = Math.random() * (0.05 - 0.01) + 0.01; // Baixa taxa, mas estável
+    const taxa_transmutacao = Math.random() * (0.04 - 0.01) + 0.01; // Reduzido para garantir estabilidade
     const estabilidade_dimensional = nivel_coerencia * (1 - taxa_transmutacao);
 
     return {
