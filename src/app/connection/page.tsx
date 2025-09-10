@@ -1,125 +1,158 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 const ConnectionPage = () => {
-  const canvasRef = useRef<HTMLDivElement>(null);
+  const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    function createStars() {
-      const container = document.querySelector('.cosmic-bg');
-      if (!container) return;
-      // Clear existing stars
-      container.querySelectorAll('.star').forEach(s => s.remove());
-      for (let i = 0; i < 100; i++) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.style.width = Math.random() * 3 + 'px';
-        star.style.height = star.style.width;
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-        star.style.animationDelay = Math.random() * 5 + 's';
-        container.appendChild(star);
-      }
-    }
+    if (!mountRef.current) return;
 
-    function createHologramLines() {
-        const containers = document.querySelectorAll('.gold-border, .purple-border');
-        containers.forEach(container => {
-            // Clear existing lines
-            container.querySelectorAll('.hologram-line').forEach(l => l.remove());
-            for (let i = 0; i < 3; i++) {
-                const line = document.createElement('div');
-                line.classList.add('hologram-line');
-                line.style.left = Math.random() * 100 + '%';
-                line.style.animationDelay = Math.random() * 4 + 's';
-                container.appendChild(line);
-            }
+    // Based on the user's provided HTML, but adapted for React and Next.js
+    let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
+    let moduleMesh: THREE.Mesh, omegaMesh: THREE.Mesh, particles: THREE.Points;
+    let mouseX = 0, mouseY = 0;
+
+    function initThreeJS() {
+        if (!mountRef.current) return;
+
+        // Configurar cena
+        scene = new THREE.Scene();
+        
+        // Configurar câmera
+        camera = new THREE.PerspectiveCamera(75, mountRef.current.offsetWidth / 500, 0.1, 1000);
+        camera.position.z = 5;
+        
+        // Configurar renderizador
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(mountRef.current.offsetWidth, 500);
+        mountRef.current.appendChild(renderer.domElement);
+        
+        // Adicionar luzes
+        const ambientLight = new THREE.AmbientLight(0x404040, 2);
+        scene.add(ambientLight);
+        
+        const directionalLight1 = new THREE.DirectionalLight(0xFFD700, 1.5);
+        directionalLight1.position.set(5, 5, 5);
+        scene.add(directionalLight1);
+        
+        const directionalLight2 = new THREE.DirectionalLight(0x9b59b6, 1.5);
+        directionalLight2.position.set(-5, -5, -5);
+        scene.add(directionalLight2);
+        
+        // Criar esferas para M0 e Ω
+        const moduleGeometry = new THREE.SphereGeometry(1, 32, 32);
+        const moduleMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0x9b59b6, 
+            emissive: 0x6c3483,
+            specular: 0xffffff,
+            shininess: 100,
+            transparent: true,
+            opacity: 0.9
         });
+        
+        const omegaMaterial = new THREE.MeshPhongMaterial({ 
+            color: 0xFFD700,
+            emissive: 0xD4AC0D,
+            specular: 0xffffff,
+            shininess: 100,
+            transparent: true,
+            opacity: 0.9
+        });
+        
+        moduleMesh = new THREE.Mesh(moduleGeometry, moduleMaterial);
+        omegaMesh = new THREE.Mesh(moduleGeometry, omegaMaterial);
+        moduleMesh.position.set(-3, 0, 0);
+        omegaMesh.position.set(3, 0, 0);
+        scene.add(moduleMesh);
+        scene.add(omegaMesh);
+        
+        // Criar estrutura de conexão entre os módulos
+        const torusGeometry = new THREE.TorusGeometry(3, 0.05, 16, 100);
+        const torusMaterial = new THREE.MeshPhongMaterial({
+            color: 0xFFD700,
+            emissive: 0xD4AC0D,
+            transparent: true,
+            opacity: 0.7
+        });
+        
+        const connectionTorus = new THREE.Mesh(torusGeometry, torusMaterial);
+        connectionTorus.rotation.x = Math.PI / 2;
+        scene.add(connectionTorus);
+        
+        // Adicionar partículas para fluxo de energia
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 500;
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for (let i = 0; i < particlesCount; i++) {
+            const radius = 3;
+            const angle = Math.random() * Math.PI * 2;
+            
+            posArray[i*3] = radius * Math.cos(angle);
+            posArray[i*3 + 1] = (Math.random() - 0.5) * 0.5;
+            posArray[i*3 + 2] = radius * Math.sin(angle);
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        const particlesMaterial = new THREE.PointsMaterial({
+            color: 0xFFD700,
+            size: 0.05,
+            transparent: true
+        });
+        
+        particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+        
+        // Configurar interação do mouse
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.screenSpacePanning = false;
+        controls.enableZoom = false;
+        controls.enablePan = false;
+        
+        // Iniciar animação
+        animate();
+        
+        // Ajustar ao redimensionar a janela
+        window.addEventListener('resize', onWindowResize);
     }
     
-    // Simular atualizações de status
-    const statusInterval = setInterval(() => {
-        const statusElements = document.querySelectorAll('.pulse');
-        statusElements.forEach(el => {
-           (el as HTMLElement).style.color = `hsl(${Math.random() * 60 + 100}, 100%, 65%)`;
-        });
-    }, 2000);
-
-    createStars();
-    createHologramLines();
-
-
-    // Three.js Scene
-    if (!canvasRef.current || canvasRef.current.children.length > 0) return;
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, canvasRef.current.clientWidth / 500, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(canvasRef.current.clientWidth, 500);
-    canvasRef.current.appendChild(renderer.domElement);
-
-    const moduleGeometry = new THREE.SphereGeometry(1, 32, 32);
-    const moduleMaterial = new THREE.MeshBasicMaterial({ color: 0x9b59b6, transparent: true, opacity: 0.8 });
-    const omegaMaterial = new THREE.MeshBasicMaterial({ color: 0xFFD700, transparent: true, opacity: 0.8 });
-    const moduleMesh = new THREE.Mesh(moduleGeometry, moduleMaterial);
-    const omegaMesh = new THREE.Mesh(moduleGeometry, omegaMaterial);
-    moduleMesh.position.set(-3, 0, 0);
-    omegaMesh.position.set(3, 0, 0);
-    scene.add(moduleMesh);
-    scene.add(omegaMesh);
-
-    const lineGeometry = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-3, 0, 0), new THREE.Vector3(3, 0, 0)]);
-    const lineMaterial = new THREE.LineBasicMaterial({ color: 0xFFD700, transparent: true, opacity: 0.6 });
-    const line = new THREE.Line(lineGeometry, lineMaterial);
-    scene.add(line);
-
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 100;
-    const positions = new Float32Array(particlesCount * 3);
-    for (let i = 0; i < particlesCount * 3; i++) {
-        positions[i] = (Math.random() - 0.5) * 6;
+    function onWindowResize() {
+        if (!mountRef.current) return;
+        camera.aspect = mountRef.current.offsetWidth / 500;
+        camera.updateProjectionMatrix();
+        renderer.setSize(mountRef.current.offsetWidth, 500);
     }
-    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const particlesMaterial = new THREE.PointsMaterial({ color: 0xFFD700, size: 0.05, transparent: true });
-    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particles);
-
-    camera.position.z = 5;
-
-    let animationFrameId: number;
+    
+    let frameId: number;
     function animate() {
-        animationFrameId = requestAnimationFrame(animate);
-        moduleMesh.rotation.y += 0.01;
-        omegaMesh.rotation.y += 0.01;
-
-        const posArray = particlesGeometry.attributes.position.array as Float32Array;
-        for (let i = 0; i < particlesCount; i++) {
-            posArray[i * 3 + 2] += 0.02;
-            if (posArray[i * 3 + 2] > 3) posArray[i * 3 + 2] = -3;
+        frameId = requestAnimationFrame(animate);
+        
+        // Rotação dos módulos
+        if (moduleMesh) moduleMesh.rotation.y += 0.005;
+        if (omegaMesh) omegaMesh.rotation.y -= 0.005;
+        
+        // Animar partículas
+        if (particles) {
+            particles.rotation.y += 0.002;
         }
-        particlesGeometry.attributes.position.needsUpdate = true;
-
-        renderer.render(scene, camera);
+        
+        if (renderer && scene && camera) {
+            renderer.render(scene, camera);
+        }
     }
-    animate();
-
-    const handleResize = () => {
-        if(canvasRef.current) {
-            const width = canvasRef.current.clientWidth;
-            renderer.setSize(width, 500);
-            camera.aspect = width / 500;
-            camera.updateProjectionMatrix();
-        }
-    };
-    window.addEventListener('resize', handleResize);
+    
+    initThreeJS();
 
     return () => {
-        clearInterval(statusInterval);
-        window.removeEventListener('resize', handleResize);
-        cancelAnimationFrame(animationFrameId);
-        if (canvasRef.current) {
-            canvasRef.current.innerHTML = '';
+        cancelAnimationFrame(frameId);
+        window.removeEventListener('resize', onWindowResize);
+        if (mountRef.current) {
+            mountRef.current.innerHTML = '';
         }
     };
   }, []);
@@ -127,7 +160,7 @@ const ConnectionPage = () => {
   return (
     <div className="cosmic-bg text-gray-200">
         <div className="container mx-auto px-4 py-8">
-            {/* Cabeçalho está no layout principal, então não repetimos h1 aqui */}
+            {/* Cabeçalho está no layout principal */}
             
             {/* Status da Conexão */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -148,11 +181,14 @@ const ConnectionPage = () => {
                 </div>
             </div>
 
-            {/* Visualização da Arquitetura */}
-            <div className="relative mb-16" style={{ height: '500px' }}>
-                <div ref={canvasRef} className="w-full h-full rounded-xl bg-black bg-opacity-40 gold-border"></div>
-                <div className="absolute top-4 left-4 text-yellow-200 text-sm">
+            {/* Visualização 3D */}
+            <div className="relative mb-16">
+                <div id="architecture-canvas" ref={mountRef} className="gold-border h-[500px] w-full rounded-xl bg-black bg-opacity-40"></div>
+                <div className="absolute top-4 left-4 text-yellow-200 text-sm bg-black bg-opacity-50 px-2 py-1 rounded">
                     Visualização 3D da Arquitetura Ω-M0
+                </div>
+                <div className="absolute bottom-4 left-4 text-purple-200 text-sm bg-black bg-opacity-50 px-2 py-1 rounded">
+                    🔍 Use o mouse para rotacionar e explorar
                 </div>
             </div>
 
@@ -321,3 +357,5 @@ const ConnectionPage = () => {
 };
 
 export default ConnectionPage;
+
+    

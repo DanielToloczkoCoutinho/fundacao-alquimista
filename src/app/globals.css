@@ -88,7 +88,8 @@
     -webkit-text-fill-color: transparent;
   }
   .gold-border {
-    border-color: #ffd700;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
   }
   .gold-text {
     color: #ffd700;
@@ -193,3 +194,5 @@
       100% { top: 100%; }
   }
 }
+
+    
