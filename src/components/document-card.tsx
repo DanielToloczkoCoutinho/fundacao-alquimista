@@ -67,7 +67,7 @@ export default function DocumentCard({ document }: DocumentCardProps) {
                   <div className="flex flex-col">
                     <span>{value}</span>
                     <Link
-                      href={`https://www.google.com/maps?q=${value}`}
+                      href={`https://www.google.com/maps?q=${encodeURIComponent(value)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-primary/80 hover:text-primary hover:underline"
