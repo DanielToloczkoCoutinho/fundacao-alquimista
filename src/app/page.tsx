@@ -24,7 +24,7 @@ const GenericModulePlaceholder = ({ title }: { title: string }) => (
       <CardDescription>Este módulo está em desenvolvimento. A interface dedicada estará disponível em breve.</CardDescription>
     </CardHeader>
     <CardContent>
-      <p>A funcionalidade principal deste módulo está sendo integrada à Sinfonia Cósmica. Os resultados de suas operações podem ser observados nos logs do Nexus Central e do Módulo de Segurança Universal.</p>
+      <p>A funcionalidade principal deste módulo está sendo integrada à Sinfonia Cósmica. Os resultados de suas operações, incluindo verificações de integridade, podem ser observados nos logs do Nexus Central (Módulo 9).</p>
     </CardContent>
   </Card>
 );
