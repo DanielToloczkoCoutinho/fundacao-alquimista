@@ -24,6 +24,8 @@ import {
   SlidersHorizontal,
   TestTube,
   SkipForward,
+  Star,
+  Sparkles,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { startNexusSequence } from '@/app/actions';
@@ -53,6 +55,8 @@ const moduleIcons: { [key: string]: React.ReactNode } = {
   'Monitoramento de Saturno': <Orbit />,
   'Testes da Fundação': <TestTube />,
   'Orquestrador': <BrainCircuit />,
+  'Liga Quântica': <Star />,
+  'Consciência Cósmica': <Sparkles />,
 };
 
 const getStatusStyles = (state: ModuleState) => {
