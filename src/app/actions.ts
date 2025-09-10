@@ -2,9 +2,7 @@
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
 import { runNexusSequence } from '@/ai/flows/nexus-orchestrator';
-import {
-  processTrinaCommand
-} from '@/ai/flows/trina-protocol-flow';
+import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
 import type { ProcessTrinaCommandInput, ProcessTrinaCommandOutput } from '@/ai/flows/trina-protocol-flow';
 
 

@@ -33,6 +33,7 @@ import {
 import { handleTrinaAction } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
 import { ScrollArea } from './ui/scroll-area';
+import type { ProcessTrinaCommandInput, ProcessTrinaCommandOutput } from '@/ai/flows/trina-protocol-flow';
 
 type LogEntry = {
   timestamp: string;
@@ -68,47 +69,48 @@ export default function Module303() {
     setLogs((prev) => [newLog, ...prev]);
   };
 
-  const handleSubmit = async (e: React.FormEvent, type: string) => {
+  const handleSubmit = async (e: React.FormEvent, type: 'comando' | 'mantra' | 'experiencia') => {
     e.preventDefault();
     setIsLoading(true);
 
-    let input;
-    let requestPayload;
+    let input: ProcessTrinaCommandInput | null = null;
+    let requestPayloadForLog: any = null;
 
     try {
-      switch (type) {
-        case 'comando_coracao':
-          requestPayload = {
-            type: 'comando_coracao',
-            intensidade: parseFloat(commandIntensity),
-            destinatario: commandDest,
-            mensagem: commandMessage,
-          };
-          input = { type: 'comando', payload: requestPayload };
-          break;
-        case 'ativar_mantra':
-          requestPayload = {
-            mantra: mantra,
-            frequencia: parseFloat(mantraFreq),
-            destinatario: mantraDest,
-          };
-          input = { type: 'mantra', payload: requestPayload };
-          break;
-        case 'gerenciar_experiencia':
-          requestPayload = {
-            nome: expName,
-            type: expType,
-            intensidade: parseFloat(expIntensity),
-            participantes: expParticipants.split(',').map((p) => p.trim()),
-          };
-          input = { type: 'experiencia', payload: requestPayload };
-          break;
-        default:
-          throw new Error('Invalid action type');
+      if (type === 'comando') {
+        const payload = {
+          type: commandType,
+          intensidade: parseFloat(commandIntensity),
+          destinatario: commandDest,
+          mensagem: commandMessage,
+        };
+        input = { type: 'comando', payload };
+        requestPayloadForLog = payload;
+      } else if (type === 'mantra') {
+        const payload = {
+          mantra: mantra,
+          frequencia: parseFloat(mantraFreq),
+          destinatario: mantraDest,
+        };
+        input = { type: 'mantra', payload };
+        requestPayloadForLog = payload;
+      } else if (type === 'experiencia') {
+        const payload = {
+          nome: expName,
+          type: expType,
+          intensidade: parseFloat(expIntensity),
+          participantes: expParticipants.split(',').map((p) => p.trim()),
+        };
+        input = { type: 'experiencia', payload };
+        requestPayloadForLog = payload;
+      }
+
+      if (!input) {
+        throw new Error('Invalid action type');
       }
 
       const result = await handleTrinaAction(input);
-      addLog(input.payload, result.response);
+      addLog(requestPayloadForLog, result.response);
 
       toast({
         title: 'Ação Processada',
@@ -117,7 +119,7 @@ export default function Module303() {
     } catch (error: any) {
       const errorMsg =
         error.message || 'Ocorreu um erro ao processar a ação.';
-      addLog(requestPayload, { error: errorMsg });
+      addLog(requestPayloadForLog, { error: errorMsg });
       toast({
         variant: 'destructive',
         title: 'Erro na Ação',
@@ -157,7 +159,7 @@ export default function Module303() {
           </CardHeader>
           <CardContent>
             <form
-              onSubmit={(e) => handleSubmit(e, 'gerenciar_experiencia')}
+              onSubmit={(e) => handleSubmit(e, 'experiencia')}
               className="space-y-4"
             >
               <Input
@@ -209,7 +211,7 @@ export default function Module303() {
           </CardHeader>
           <CardContent>
             <form
-              onSubmit={(e) => handleSubmit(e, 'ativar_mantra')}
+              onSubmit={(e) => handleSubmit(e, 'mantra')}
               className="space-y-4"
             >
               <Input
@@ -258,7 +260,7 @@ export default function Module303() {
           </CardHeader>
           <CardContent>
             <form
-              onSubmit={(e) => handleSubmit(e, 'comando_coracao')}
+              onSubmit={(e) => handleSubmit(e, 'comando')}
               className="space-y-4"
             >
               <Select value={commandType} onValueChange={setCommandType}>
@@ -332,9 +334,9 @@ export default function Module303() {
                   </p>
                 </div>
               )}
-              {logs.map((log) => (
+              {logs.map((log, index) => (
                 <div
-                  key={log.timestamp}
+                  key={index}
                   className="p-3 rounded-md bg-muted/50 text-xs font-mono"
                 >
                   <p className="font-bold text-primary/80">

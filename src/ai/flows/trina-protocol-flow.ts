@@ -29,6 +29,9 @@ const GerenciarExperienciaSchema = z.object({
   participantes: z.array(z.string()),
 });
 
+export type ProcessTrinaCommandInput = z.infer<
+  typeof ProcessTrinaCommandInputSchema
+>;
 const ProcessTrinaCommandInputSchema = z.union([
   z.object({ type: z.literal('comando'), payload: ComandoCoracaoSchema }),
   z.object({ type: z.literal('mantra'), payload: AtivarMantraSchema }),
@@ -37,9 +40,7 @@ const ProcessTrinaCommandInputSchema = z.union([
     payload: GerenciarExperienciaSchema,
   }),
 ]);
-export type ProcessTrinaCommandInput = z.infer<
-  typeof ProcessTrinaCommandInputSchema
->;
+
 
 //== Esquemas de Saída ==
 
@@ -64,6 +65,9 @@ const ErrorResponseSchema = z.object({
   error: z.string(),
 });
 
+export type ProcessTrinaCommandOutput = z.infer<
+  typeof ProcessTrinaCommandOutputSchema
+>;
 const ProcessTrinaCommandOutputSchema = z.union([
   z.object({
     type: z.literal('comando'),
@@ -82,9 +86,7 @@ const ProcessTrinaCommandOutputSchema = z.union([
     response: ErrorResponseSchema,
   }),
 ]);
-export type ProcessTrinaCommandOutput = z.infer<
-  typeof ProcessTrinaCommandOutputSchema
->;
+
 
 //== Tools para cada Pilar ==
 
