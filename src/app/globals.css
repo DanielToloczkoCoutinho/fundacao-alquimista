@@ -10,19 +10,19 @@
     --card-foreground: 262 80% 90%;
     --popover: 264 82% 5%;
     --popover-foreground: 262 80% 90%;
-    --primary: 259 34% 36%; /* Deep violet from original request, toned for primary */
+    --primary: 259 55% 34%; /* Deep violet from original request */
     --primary-foreground: 45 100% 95%;
     --secondary: 262 40% 25%;
     --secondary-foreground: 262 80% 90%;
     --muted: 262 30% 20%;
     --muted-foreground: 262 40% 60%;
-    --accent: 45 100% 59%; /* Golden yellow */
+    --accent: 45 100% 58%; /* Golden yellow */
     --accent-foreground: 264 65% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 262 40% 25%;
     --input: 262 40% 25%;
-    --ring: 45 100% 59%;
+    --ring: 45 100% 58%;
     --radius: 0.5rem;
 
     /* Custom theme colors based on proposal */

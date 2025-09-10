@@ -60,11 +60,13 @@ const ModuleOne = () => {
   }, [addLog]);
 
   useEffect(() => {
-    if (estado !== 'ATIVO') return;
+    if (estado !== 'ATIVO' || quantumStates.length === 0) return;
 
-    const coherenceAvg = quantumStates.reduce((acc, s) => acc + s.coherence, 0) / (quantumStates.length || 1);
-    const entanglementAvg = quantumStates.reduce((acc, s) => acc + s.entanglement, 0) / (quantumStates.length || 1);
+    const coherenceAvg = quantumStates.reduce((acc, s) => acc + s.coherence, 0) / (quantumStates.length);
+    const entanglementAvg = quantumStates.reduce((acc, s) => acc + s.entanglement, 0) / (quantumStates.length);
     const phi = 1.618;
+    // A fórmula usa PHI e a média dos estados para normalizar o nível de segurança em uma escala de 0-100.
+    // O valor 1.62 é um fator de normalização aproximado para manter o resultado dentro da escala.
     const newNivel = (coherenceAvg * entanglementAvg * phi) * 100 / 1.62;
     setNivelSeguranca(Math.min(100, newNivel));
 
@@ -92,27 +94,27 @@ const ModuleOne = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto space-y-8 text-white p-4">
+    <div className="max-w-7xl mx-auto space-y-8 p-4">
       <div className="text-center">
         <h1 className="text-5xl font-bold gradient-text">Módulo 1: Segurança Universal</h1>
-        <p className="text-gray-400 text-lg mt-2">O Grimório Operativo da Proteção Quântica</p>
+        <p className="text-muted-foreground text-lg mt-2">O Grimório Operativo da Proteção Quântica</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <Card className="lg:col-span-1 bg-gray-800/50 border-purple-500/50">
+        <Card className="lg:col-span-1 bg-card/50 border-primary/30">
           <CardHeader>
-            <CardTitle className="flex items-center gap-3 text-purple-300">
+            <CardTitle className="flex items-center gap-3 text-primary">
               <Shield size={24} /> Status do Sistema
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
             <div>
-              <p className="text-sm text-gray-400">Estado Atual</p>
+              <p className="text-sm text-muted-foreground">Estado Atual</p>
               <p className={`text-2xl font-bold ${getStatusColor()}`}>{estado}</p>
             </div>
             <div>
-              <p className="text-sm text-gray-400">Nível de Segurança Universal</p>
-              <Progress value={nivelSeguranca} className="mt-2 h-4 [&>div]:bg-gradient-to-r [&>div]:from-purple-500 [&>div]:to-cyan-400" />
+              <p className="text-sm text-muted-foreground">Nível de Segurança Universal</p>
+              <Progress value={nivelSeguranca} className="mt-2 h-4 [&>div]:bg-gradient-to-r [&>div]:from-primary [&>div]:to-cyan-400" />
               <p className="text-right font-mono text-lg mt-1 text-cyan-300">{nivelSeguranca.toFixed(2)}%</p>
             </div>
             <Button onClick={handleSimulateAttack} variant="destructive" className="w-full">
@@ -121,12 +123,12 @@ const ModuleOne = () => {
           </CardContent>
         </Card>
 
-        <Card className="lg:col-span-2 bg-gray-800/50 border-purple-500/50">
+        <Card className="lg:col-span-2 bg-card/50 border-primary/30">
           <CardHeader>
-            <CardTitle className="flex items-center gap-3 text-purple-300">
+            <CardTitle className="flex items-center gap-3 text-primary">
               <Cpu size={24} /> Camadas de Proteção Quântica
             </CardTitle>
-            <CardDescription className="text-gray-400">7 camadas de estados quânticos emaranhados para proteção multidimensional.</CardDescription>
+            <CardDescription className="text-muted-foreground">7 camadas de estados quânticos emaranhados para proteção multidimensional.</CardDescription>
           </CardHeader>
           <CardContent className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {quantumStates.map(state => (
@@ -137,12 +139,12 @@ const ModuleOne = () => {
       </div>
 
        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="bg-gray-800/50 border-purple-500/50">
+          <Card className="bg-card/50 border-primary/30">
             <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-purple-300">
+                <CardTitle className="flex items-center gap-3 text-primary">
                     <RadioTower size={24} /> Frequências de Ressonância
                 </CardTitle>
-                <CardDescription className="text-gray-400">Frequências operacionais para harmonia e transmutação.</CardDescription>
+                <CardDescription className="text-muted-foreground">Frequências operacionais para harmonia e transmutação.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-2 text-sm">
                 <p><span className="font-bold text-cyan-400">432 Hz:</span> Sintonização com a Matriz Universal da Harmonia</p>
@@ -152,12 +154,12 @@ const ModuleOne = () => {
                 <p><span className="font-bold text-cyan-400">999 Hz:</span> Conclusão e Liberação do Ciclo Anterior</p>
             </CardContent>
           </Card>
-           <Card className="bg-gray-800/50 border-purple-500/50">
+           <Card className="bg-card/50 border-primary/30">
             <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-purple-300">
+                <CardTitle className="flex items-center gap-3 text-primary">
                     <History size={24} /> Log de Auditoria Akáshica
                 </CardTitle>
-                <CardDescription className="text-gray-400">Registros do Códex da Eternidade.</CardDescription>
+                <CardDescription className="text-muted-foreground">Registros do Códex da Eternidade.</CardDescription>
             </CardHeader>
             <CardContent>
                 <div className="h-48 overflow-y-auto bg-black/30 rounded-md p-2 space-y-1 text-xs font-mono">

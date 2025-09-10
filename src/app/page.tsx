@@ -23,17 +23,17 @@ export default function Home() {
     switch (selectedSectionId) {
       case 'nexus':
         return <Nexus />;
-      case 'module-zero':
-        return <ModuleZero />;
-      case 'module-one':
-        return <ModuleOne />;
       case 'module-303':
         return <Module303 />;
-      case 'tools':
-        return <KeyGenerator />;
+      case 'module-one':
+        return <ModuleOne />;
+      case 'module-zero':
+        return <ModuleZero />;
       case 'connection':
         // A página de conexão tem seu próprio layout de tela cheia
-        return null; 
+        return null;
+      case 'tools':
+        return <KeyGenerator />;
       default:
         const section = sections.find((s) => s.id === selectedSectionId);
         if (section && section.documents.length > 0) {
@@ -66,7 +66,7 @@ export default function Home() {
         selectedSectionId={selectedSectionId}
         setSelectedSectionId={setSelectedSectionId}
       />
-      <SidebarInset className="flex flex-col bg-background">
+      <SidebarInset className="flex flex-col bg-background cosmic-bg">
         <MainHeader />
         <main className="flex-1 overflow-y-auto p-6">
           <AnimatePresence mode="wait">
