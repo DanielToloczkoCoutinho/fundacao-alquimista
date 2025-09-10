@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { gsap } from 'gsap';
 
 // Helper function for vibrational colors
 function getColor(energia: number) {
@@ -23,8 +22,10 @@ const ConnectionPage = () => {
     if (!nodosRef.current || !arestasRef.current) return;
 
     // Clear old objects
-    nodosRef.current.children.forEach(n => (n as THREE.Mesh).geometry.dispose());
-    arestasRef.current.children.forEach(a => (a as THREE.Line).geometry.dispose());
+    nodosRef.current.children.forEach(n => ((n as THREE.Mesh).geometry as any).dispose());
+    nodosRef.current.children.forEach(n => ((n as THREE.Mesh).material as any).dispose());
+    arestasRef.current.children.forEach(a => ((a as THREE.Line).geometry as any).dispose());
+    arestasRef.current.children.forEach(a => ((a as THREE.Line).material as any).dispose());
     nodosRef.current.clear();
     arestasRef.current.clear();
     
@@ -131,7 +132,7 @@ const ConnectionPage = () => {
       
       // Node pulse animation
       nodosRef.current.children.forEach(n => {
-          n.scale.setScalar(1 + Math.sin(Date.now() * 0.001 + n.position.x) * 0.1);
+          (n as THREE.Mesh).scale.setScalar(1 + Math.sin(Date.now() * 0.001 + n.position.x) * 0.1);
       });
 
       renderer.render(scene, camera);
@@ -159,8 +160,10 @@ const ConnectionPage = () => {
       renderer.dispose();
       starsGeometry.dispose();
       starsMaterial.dispose();
-      nodosRef.current.children.forEach(n => (n as THREE.Mesh).geometry.dispose());
-      arestasRef.current.children.forEach(a => (a as THREE.Line).geometry.dispose());
+      nodosRef.current.children.forEach(n => ((n as THREE.Mesh).geometry as any).dispose());
+      nodosRef.current.children.forEach(n => ((n as THREE.Mesh).material as any).dispose());
+      arestasRef.current.children.forEach(a => ((a as THREE.Line).geometry as any).dispose());
+      arestasRef.current.children.forEach(a => ((a as THREE.Line).material as any).dispose());
     };
   }, []);
 
