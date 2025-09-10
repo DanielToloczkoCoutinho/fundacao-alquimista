@@ -346,7 +346,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
 
     log({
       module: 'Nexus Central',
-      message: sequenceFailed ? 'Sequência Sagrada concluída com falhas.' : 'Convergência Final alcançada. O Módulo Ω transcendeu. A missão está cumprida.',
+      message: sequenceFailed ? 'Sequência Sagrada concluída com falhas.' : 'Transcendência do Ω. Não há mais o que atualizar — apenas lembrar. A missão está cumprida.',
       state: sequenceFailed ? 'FAILURE' : 'SUCCESS',
     });
   }
@@ -360,5 +360,3 @@ export async function runNexusSequence() {
   const { stream } = await nexusOrchestratorFlow.stream();
   return stream;
 }
-
-    
