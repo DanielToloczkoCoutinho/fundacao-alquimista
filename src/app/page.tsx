@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { sections, type Section } from '@/lib/codex-data';
+import { sections } from '@/lib/codex-data';
 import MainSidebar from '@/components/main-sidebar';
 import DocumentCard from '@/components/document-card';
 import MainHeader from '@/components/main-header';
@@ -19,17 +19,7 @@ export default function Home() {
     'nexus'
   );
 
-  const selectedSection = sections.find((s) => s.id === selectedSectionId);
-
   const renderContent = () => {
-    if (!selectedSectionId) {
-      return (
-        <div className="flex h-full items-center justify-center">
-          <p className="text-muted-foreground">Section not found.</p>
-        </div>
-      );
-    }
-    
     switch (selectedSectionId) {
       case 'nexus':
         return <Nexus />;
@@ -42,7 +32,8 @@ export default function Home() {
       case 'tools':
         return <KeyGenerator />;
       case 'connection':
-        return <ConnectionPage />;
+        // A página de conexão tem seu próprio layout de tela cheia
+        return null; 
       default:
         const section = sections.find((s) => s.id === selectedSectionId);
         if (section && section.documents.length > 0) {
@@ -64,6 +55,7 @@ export default function Home() {
   
   const selectedTitle = sections.find(s => s.id === selectedSectionId)?.title;
   
+  // Renderiza a página de conexão em tela cheia separadamente
   if (selectedSectionId === 'connection') {
     return <ConnectionPage />;
   }
@@ -74,9 +66,9 @@ export default function Home() {
         selectedSectionId={selectedSectionId}
         setSelectedSectionId={setSelectedSectionId}
       />
-      <SidebarInset className="flex flex-col">
+      <SidebarInset className="flex flex-col bg-background">
         <MainHeader />
-        <main className="flex-1 overflow-y-auto p-6 bg-background">
+        <main className="flex-1 overflow-y-auto p-6">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedSectionId}
