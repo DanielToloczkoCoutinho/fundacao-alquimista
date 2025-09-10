@@ -57,6 +57,10 @@ export default function Home() {
   };
   
   const selectedTitle = sections.find(s => s.id === selectedSectionId)?.title;
+  
+  if (selectedSectionId === 'connection') {
+    return <ConnectionPage />;
+  }
 
   return (
     <SidebarProvider>
