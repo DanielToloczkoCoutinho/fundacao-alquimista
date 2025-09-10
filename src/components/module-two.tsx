@@ -286,11 +286,32 @@ const ModuleTwo = () => {
             }
         }, 3000);
     };
+
+    const handleOtimizar = () => {
+        setManifestacaoStatus({ visible: true, message: `<i class="fas fa-cogs mr-2 text-purple-400"></i> Otimizando parâmetros de manifestação...` });
+        setTimeout(() => {
+            setIntensidade(0.9);
+            setManifestacaoStatus({ visible: true, message: `<i class="fas fa-check-circle mr-2 text-green-400"></i> Parâmetros otimizados para máxima eficiência!` });
+            tocarFrequencia(700, 0.2);
+            setTimeout(() => tocarFrequencia(900, 0.3), 200);
+        }, 1500);
+    };
+
+    const handleSalvar = () => {
+        addLog('Padrão de manifestação salvo no Log Akáshico.', 'text-blue-400');
+    };
     
     return (
         <>
             <style jsx global>{`
                 :root { --cosmic-purple: #4a1c96; --quantum-blue: #2b6cb0; --energy-green: #10b981; --warning-orange: #f59e0b; --critical-red: #ef4444; --golden-light: #fbbf24; }
+                body {
+                  background: linear-gradient(135deg, #0a0f23 0%, #1a1035 50%, #0f172a 100%);
+                  color: #e0e7ff;
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  min-height: 100vh;
+                  overflow-x: hidden;
+                }
                 .cosmic-border { border: 1px solid rgba(79, 70, 229, 0.3); background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(10px); box-shadow: 0 0 20px rgba(76, 92, 196, 0.2), 0 0 40px rgba(76, 92, 196, 0.1), inset 0 0 15px rgba(163, 191, 250, 0.1); }
                 .quantum-glow { box-shadow: 0 0 15px var(--quantum-blue), 0 0 30px rgba(59, 130, 246, 0.3); }
                 .energy-pulse { animation: pulse 2s infinite; }
@@ -457,6 +478,12 @@ const ModuleTwo = () => {
                     <div className="flex space-x-4">
                         <button onClick={handleManifestar} className="flex-1 bg-gradient-to-r from-green-600 to-teal-600 hover:from-green-700 hover:to-teal-700 p-3 rounded-lg text-white font-medium flex items-center justify-center">
                             <i className="fas fa-seedling mr-2"></i> Manifestar
+                        </button>
+                        <button onClick={handleOtimizar} className="flex-1 cosmic-border hover:quantum-glow p-3 rounded-lg font-medium flex items-center justify-center">
+                           <i className="fas fa-magic mr-2 text-purple-400"></i> Otimizar Parâmetros
+                        </button>
+                         <button onClick={handleSalvar} className="flex-1 cosmic-border hover:quantum-glow p-3 rounded-lg font-medium flex items-center justify-center">
+                           <i className="fas fa-save mr-2 text-blue-400"></i> Salvar Padrão
                         </button>
                     </div>
                     {manifestacaoStatus.visible && (
