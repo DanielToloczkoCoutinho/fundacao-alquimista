@@ -5,28 +5,23 @@ import { gsap } from 'gsap';
 
 const ConnectionPage = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
 
   useEffect(() => {
-    if (!mountRef.current || rendererRef.current) return;
+    if (!mountRef.current) return;
 
     // --- Scene Setup ---
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x070710);
-    cameraRef.current = new THREE.PerspectiveCamera(
+    const camera = new THREE.PerspectiveCamera(
       75,
       mountRef.current.clientWidth / mountRef.current.clientHeight,
       0.1,
       1000
     );
-    const camera = cameraRef.current;
-    
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     mountRef.current.appendChild(renderer.domElement);
-    rendererRef.current = renderer;
 
     // --- Lighting ---
     const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
@@ -34,7 +29,7 @@ const ConnectionPage = () => {
     const directionalLight1 = new THREE.DirectionalLight(0x9b59b6, 1);
     directionalLight1.position.set(5, 5, 5);
     scene.add(directionalLight1);
-    const directionalLight2 = new THREE.DirectionalLight(0xFFD700, 1);
+    const directionalLight2 = new THREE.DirectionalLight(0xffd700, 1);
     directionalLight2.position.set(-5, 5, -5);
     scene.add(directionalLight2);
     const pointLight = new THREE.PointLight(0x3498db, 2, 100);
@@ -132,7 +127,8 @@ const ConnectionPage = () => {
 
     // --- Camera and Animation ---
     camera.position.set(0, 0, 20);
-    camera.lookAt(0, 0, -15);
+    const cameraTarget = new THREE.Vector3(0,0,-15);
+    camera.lookAt(cameraTarget);
     
     let frameId: number;
     function animate() {
@@ -166,6 +162,7 @@ const ConnectionPage = () => {
         }
       particlesGeometry.attributes.position.needsUpdate = true;
 
+      camera.position.lerp(cameraTarget, 0.05);
       camera.lookAt(0, 0, -15);
       renderer.render(scene, camera);
     }
@@ -187,34 +184,39 @@ const ConnectionPage = () => {
         y: targetPosition.y,
         z: targetPosition.z,
         duration: 2,
-        ease: 'power3.inOut'
+        ease: 'power3.inOut',
+        onUpdate: () => camera.lookAt(0,0,-15),
       })
     }
 
-    document.getElementById('view-portal')?.addEventListener('click', () => handleViewChange({x:0, y:0, z:20}));
-    document.getElementById('view-connection')?.addEventListener('click', () => handleViewChange({x:4, y:3, z:15}));
-    document.getElementById('view-modules')?.addEventListener('click', () => handleViewChange({x:0, y:5, z:25}));
-    document.getElementById('reset-view')?.addEventListener('click', () => handleViewChange({x:0, y:0, z:20}));
+    const viewPortalBtn = document.getElementById('view-portal');
+    const viewConnectionBtn = document.getElementById('view-connection');
+    const viewModulesBtn = document.getElementById('view-modules');
+    const resetViewBtn = document.getElementById('reset-view');
+
+    viewPortalBtn?.addEventListener('click', () => handleViewChange({x:0, y:0, z:20}));
+    viewConnectionBtn?.addEventListener('click', () => handleViewChange({x:4, y:3, z:15}));
+    viewModulesBtn?.addEventListener('click', () => handleViewChange({x:0, y:5, z:25}));
+    resetViewBtn?.addEventListener('click', () => handleViewChange({x:0, y:0, z:20}));
 
 
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', handleResize);
-      if (mountRef.current) {
-        mountRef.current.innerHTML = '';
+      if (mountRef.current && mountRef.current.contains(renderer.domElement)) {
+        mountRef.current.removeChild(renderer.domElement);
       }
       renderer.dispose();
-      rendererRef.current = null;
     };
   }, []);
 
   return (
-    <div className="w-screen h-screen relative">
+    <div className="w-screen h-screen relative bg-gray-900">
       <div ref={mountRef} id="canvas-container" className="absolute top-0 left-0 w-full h-full" />
       <div className="overlay pointer-events-none">
-        <div className="status-panel absolute top-5 left-5 bg-black/70 border border-yellow-500/50 rounded-xl p-4 backdrop-blur-md max-w-xs">
+        <div className="status-panel absolute top-5 left-5 bg-black/70 border border-yellow-500/50 rounded-xl p-4 backdrop-blur-md max-w-xs text-sm">
            <h2 className="text-yellow-400 text-lg font-bold mb-3 text-shadow">PORTAL 303 - STATUS DO SISTEMA</h2>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2">
                 <div className="flex justify-between"><span className="text-purple-300">Módulo 303:</span><span className="text-green-400 font-semibold">ATIVO</span></div>
                 <div className="flex justify-between"><span className="text-purple-300">Módulo Zero:</span><span className="text-green-400 font-semibold">COERENTE</span></div>
                 <div className="flex justify-between"><span className="text-purple-300">Módulo Ω:</span><span className="text-green-400 font-semibold">TRANSCENDIDO</span></div>

@@ -19,8 +19,8 @@ export default function Home() {
 
   const selectedSection = sections.find((s) => s.id === selectedSectionId);
 
-  const renderContent = (sectionId: string | undefined) => {
-    if (!sectionId) {
+  const renderContent = () => {
+    if (!selectedSectionId) {
       return (
         <div className="flex h-full items-center justify-center">
           <p className="text-muted-foreground">Section not found.</p>
@@ -28,7 +28,7 @@ export default function Home() {
       );
     }
     
-    switch (sectionId) {
+    switch (selectedSectionId) {
       case 'nexus':
         return <Nexus />;
       case 'module-zero':
@@ -38,7 +38,7 @@ export default function Home() {
       case 'connection':
         return <ConnectionPage />;
       default:
-        const section = sections.find((s) => s.id === sectionId);
+        const section = sections.find((s) => s.id === selectedSectionId);
         if (section && section.documents.length > 0) {
            return (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -70,7 +70,7 @@ export default function Home() {
       />
       <SidebarInset className="flex flex-col">
         <MainHeader />
-        <main className="flex-1 overflow-y-auto p-6 bg-gray-900 text-gray-100">
+        <main className="flex-1 overflow-y-auto p-6 bg-background">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedSectionId}
@@ -84,7 +84,7 @@ export default function Home() {
                   {selectedTitle}
                  </h1>
               )}
-              {renderContent(selectedSectionId)}
+              {renderContent()}
             </motion.div>
           </AnimatePresence>
         </main>
