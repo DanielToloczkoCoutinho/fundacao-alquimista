@@ -14,6 +14,21 @@ import ModuleOne from '@/components/module-one';
 import Module303 from '@/components/module-303';
 import ConnectionPage from '@/app/connection/page';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+
+// Placeholder para os novos módulos que ainda não possuem componente dedicado
+const GenericModulePlaceholder = ({ title }: { title: string }) => (
+  <Card>
+    <CardHeader>
+      <CardTitle>{title}</CardTitle>
+      <CardDescription>Este módulo está em desenvolvimento. A interface dedicada estará disponível em breve.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p>A funcionalidade principal deste módulo está sendo integrada à Sinfonia Cósmica. Os resultados de suas operações, incluindo verificações de integridade, podem ser observados nos logs do Nexus Central (Módulo 9).</p>
+    </CardContent>
+  </Card>
+);
+
 
 export default function Home() {
   const [selectedSectionId, setSelectedSectionId] = React.useState<string>(
@@ -21,6 +36,8 @@ export default function Home() {
   );
 
   const renderContent = () => {
+    const section = sections.find((s) => s.id === selectedSectionId);
+
     switch (selectedSectionId) {
       case 'nexus':
         return <Nexus />;
@@ -35,8 +52,22 @@ export default function Home() {
         return null;
       case 'tools':
         return <KeyGenerator />;
+      // Placeholders para os novos módulos
+      case 'm2':
+        return <GenericModulePlaceholder title="Módulo 2: Comunicação" />;
+      case 'm3':
+        return <GenericModulePlaceholder title="Módulo 3: Previsão" />;
+      case 'm4':
+        return <GenericModulePlaceholder title="Módulo 4: Validação" />;
+      case 'm5':
+        return <GenericModulePlaceholder title="Módulo 5: Ética (ELENYA)" />;
+      case 'm6':
+        return <GenericModulePlaceholder title="Módulo 6: Frequências" />;
+      case 'm7':
+        return <GenericModulePlaceholder title="Módulo 7: SOFA" />;
+      case 'm8':
+        return <GenericModulePlaceholder title="Módulo 8: PIRC" />;
       default:
-        const section = sections.find((s) => s.id === selectedSectionId);
         if (section && section.documents.length > 0) {
            return (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -48,13 +79,14 @@ export default function Home() {
         }
         return (
            <div className="flex h-full items-center justify-center">
-            <p className="text-muted-foreground">No documents in this section.</p>
+            <p className="text-muted-foreground">Selecione um módulo ou seção para começar.</p>
           </div>
         );
     }
   };
   
-  const selectedTitle = sections.find(s => s.id === selectedSectionId)?.title;
+  const selectedSection = sections.find(s => s.id === selectedSectionId);
+  const selectedTitle = selectedSection?.title;
   
   // Renderiza a página de conexão em tela cheia separadamente
   if (selectedSectionId === 'connection') {
