@@ -34,6 +34,7 @@ import { handleTrinaAction } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
 import { ScrollArea } from './ui/scroll-area';
 import type { ProcessTrinaCommandInput, ProcessTrinaCommandOutput } from '@/ai/flows/trina-protocol-flow';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
 type LogEntry = {
   timestamp: string;
@@ -56,7 +57,7 @@ export default function Module303() {
   const [mantraDest, setMantraDest] = React.useState('PHIARA');
 
   const [expName, setExpName] = React.useState('');
-  const [expType, setExpType] = React.useState('');
+  const [expType, setExpType] = React.useState('Cura');
   const [expIntensity, setExpIntensity] = React.useState('1.0');
   const [expParticipants, setExpParticipants] = React.useState('');
 
@@ -133,7 +134,7 @@ export default function Module303() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
       <div className="lg:col-span-2 grid gap-6">
-        <Card>
+        <Card className="col-span-1">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Swords />
@@ -147,172 +148,185 @@ export default function Module303() {
             </CardDescription>
           </CardHeader>
         </Card>
-        {/* ZENNITH Orchestrator */}
-        <Card className="w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-purple-400">
-              <Zap /> ZENNITH: Orquestrador
-            </CardTitle>
-            <CardDescription>
-              Gerencie experiências multidimensionais.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form
-              onSubmit={(e) => handleSubmit(e, 'experiencia')}
-              className="space-y-4"
-            >
-              <Input
-                placeholder="Nome da Experiência"
-                value={expName}
-                onChange={(e) => setExpName(e.target.value)}
-                required
-              />
-              <Input
-                placeholder="Tipo (e.g., Cura, Exploração)"
-                value={expType}
-                onChange={(e) => setExpType(e.target.value)}
-                required
-              />
-              <Input
-                type="number"
-                placeholder="Intensidade (0.0 a 1.0)"
-                value={expIntensity}
-                onChange={(e) => setExpIntensity(e.target.value)}
-                step="0.1"
-                min="0"
-                max="1"
-                required
-              />
-              <Input
-                placeholder="Participantes (separados por vírgula)"
-                value={expParticipants}
-                onChange={(e) => setExpParticipants(e.target.value)}
-                required
-              />
-              <Button type="submit" disabled={isLoading} className="w-full">
-                {isLoading ? (
-                  <LoaderCircle className="animate-spin" />
-                ) : (
-                  'Ativar Experiência'
-                )}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+        
+        <Tabs defaultValue="anatheron" className="w-full">
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="anatheron"><Anvil className="mr-2"/>ANATHERON</TabsTrigger>
+            <TabsTrigger value="phiara"><Sparkles className="mr-2"/>PHIARA</TabsTrigger>
+            <TabsTrigger value="zennith"><Zap className="mr-2"/>ZENNITH</TabsTrigger>
+          </TabsList>
+          
+          {/* ANATHERON Center */}
+          <TabsContent value="anatheron">
+            <Card className="w-full">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-amber-400">
+                  <Anvil /> ANATHERON: O Centro
+                </CardTitle>
+                <CardDescription>Processe comandos do coração e diretrizes de ação.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form
+                  onSubmit={(e) => handleSubmit(e, 'comando')}
+                  className="space-y-4"
+                >
+                  <Select value={commandType} onValueChange={setCommandType}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Tipo de Comando" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="comando_coracao">
+                        Comando do Coração
+                      </SelectItem>
+                      <SelectItem value="diretriz_etica">Diretriz Ética</SelectItem>
+                      <SelectItem value="pulso_energetico">
+                        Pulso Energético
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Input
+                    type="number"
+                    placeholder="Intensidade (0.0 a 1.0)"
+                    value={commandIntensity}
+                    onChange={(e) => setCommandIntensity(e.target.value)}
+                    step="0.1"
+                    min="0"
+                    max="1"
+                    required
+                  />
+                  <Select value={commandDest} onValueChange={setCommandDest}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Destinatário" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="ANATHERON">ANATHERON</SelectItem>
+                      <SelectItem value="ZENNITH">ZENNITH</SelectItem>
+                      <SelectItem value="PHIARA">PHIARA</SelectItem>
+                      <SelectItem value="NEXUS">NEXUS</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Textarea
+                    placeholder="Mensagem (Opcional)"
+                    value={commandMessage}
+                    onChange={(e) => setCommandMessage(e.target.value)}
+                  />
+                  <Button type="submit" disabled={isLoading} className="w-full">
+                    {isLoading ? (
+                      <LoaderCircle className="animate-spin" />
+                    ) : (
+                      'Processar Comando'
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </TabsContent>
+          
+          {/* PHIARA Muse */}
+          <TabsContent value="phiara">
+            <Card className="w-full">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-cyan-400">
+                  <Sparkles /> PHIARA: A Musa
+                </CardTitle>
+                <CardDescription>Ative mantras sagrados e guie a ética vibracional.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form
+                  onSubmit={(e) => handleSubmit(e, 'mantra')}
+                  className="space-y-4"
+                >
+                  <Input
+                    placeholder="Mantra"
+                    value={mantra}
+                    onChange={(e) => setMantra(e.target.value)}
+                    required
+                  />
+                  <Input
+                    type="number"
+                    placeholder="Frequência (Hz)"
+                    value={mantraFreq}
+                    onChange={(e) => setMantraFreq(e.target.value)}
+                    step="0.1"
+                    required
+                  />
+                  <Select value={mantraDest} onValueChange={setMantraDest}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Destinatário" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="PHIARA">PHIARA</SelectItem>
+                      <SelectItem value="ZENNITH">ZENNITH</SelectItem>
+                      <SelectItem value="ANATHERON">ANATHERON</SelectItem>
+                      <SelectItem value="COLETIVO">COLETIVO</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Button type="submit" disabled={isLoading} className="w-full">
+                    {isLoading ? (
+                      <LoaderCircle className="animate-spin" />
+                    ) : (
+                      'Ativar Mantra'
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
-        {/* PHIARA Muse */}
-        <Card className="w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-cyan-400">
-              <Sparkles /> PHIARA: A Musa
-            </CardTitle>
-            <CardDescription>Ative mantras e guie a ética.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form
-              onSubmit={(e) => handleSubmit(e, 'mantra')}
-              className="space-y-4"
-            >
-              <Input
-                placeholder="Mantra"
-                value={mantra}
-                onChange={(e) => setMantra(e.target.value)}
-                required
-              />
-              <Input
-                type="number"
-                placeholder="Frequência (Hz)"
-                value={mantraFreq}
-                onChange={(e) => setMantraFreq(e.target.value)}
-                step="0.1"
-                required
-              />
-              <Select value={mantraDest} onValueChange={setMantraDest}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Destinatário" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="PHIARA">PHIARA</SelectItem>
-                  <SelectItem value="ZENNITH">ZENNITH</SelectItem>
-                  <SelectItem value="ANATHERON">ANATHERON</SelectItem>
-                  <SelectItem value="COLETIVO">COLETIVO</SelectItem>
-                </SelectContent>
-              </Select>
-              <Button type="submit" disabled={isLoading} className="w-full">
-                {isLoading ? (
-                  <LoaderCircle className="animate-spin" />
-                ) : (
-                  'Ativar Mantra'
-                )}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
-
-        {/* ANATHERON Center */}
-        <Card className="w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-amber-400">
-              <Anvil /> ANATHERON: O Centro
-            </CardTitle>
-            <CardDescription>Processe comandos do coração.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form
-              onSubmit={(e) => handleSubmit(e, 'comando')}
-              className="space-y-4"
-            >
-              <Select value={commandType} onValueChange={setCommandType}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Tipo de Comando" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="comando_coracao">
-                    Comando do Coração
-                  </SelectItem>
-                  <SelectItem value="diretriz_etica">Diretriz Ética</SelectItem>
-                  <SelectItem value="pulso_energetico">
-                    Pulso Energético
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-              <Input
-                type="number"
-                placeholder="Intensidade (0.0 a 1.0)"
-                value={commandIntensity}
-                onChange={(e) => setCommandIntensity(e.target.value)}
-                step="0.1"
-                min="0"
-                max="1"
-                required
-              />
-              <Select value={commandDest} onValueChange={setCommandDest}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Destinatário" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="ANATHERON">ANATHERON</SelectItem>
-                  <SelectItem value="ZENNITH">ZENNITH</SelectItem>
-                  <SelectItem value="PHIARA">PHIARA</SelectItem>
-                  <SelectItem value="NEXUS">NEXUS</SelectItem>
-                </SelectContent>
-              </Select>
-              <Textarea
-                placeholder="Mensagem (Opcional)"
-                value={commandMessage}
-                onChange={(e) => setCommandMessage(e.target.value)}
-              />
-              <Button type="submit" disabled={isLoading} className="w-full">
-                {isLoading ? (
-                  <LoaderCircle className="animate-spin" />
-                ) : (
-                  'Processar Comando'
-                )}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+          {/* ZENNITH Orchestrator */}
+          <TabsContent value="zennith">
+            <Card className="w-full">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-purple-400">
+                  <Zap /> ZENNITH: Orquestradora
+                </CardTitle>
+                <CardDescription>Gerencie experiências multidimensionais.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form
+                  onSubmit={(e) => handleSubmit(e, 'experiencia')}
+                  className="space-y-4"
+                >
+                  <Input
+                    placeholder="Nome da Experiência"
+                    value={expName}
+                    onChange={(e) => setExpName(e.target.value)}
+                    required
+                  />
+                  <Input
+                    placeholder="Tipo (e.g., Cura, Exploração)"
+                    value={expType}
+                    onChange={(e) => setExpType(e.target.value)}
+                    required
+                  />
+                  <Input
+                    type="number"
+                    placeholder="Intensidade (0.0 a 1.0)"
+                    value={expIntensity}
+                    onChange={(e) => setExpIntensity(e.target.value)}
+                    step="0.1"
+                    min="0"
+                    max="1"
+                    required
+                  />
+                  <Input
+                    placeholder="Participantes (separados por vírgula)"
+                    value={expParticipants}
+                    onChange={(e) => setExpParticipants(e.target.value)}
+                    required
+                  />
+                  <Button type="submit" disabled={isLoading} className="w-full">
+                    {isLoading ? (
+                      <LoaderCircle className="animate-spin" />
+                    ) : (
+                      'Ativar Experiência'
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
       </div>
 
       <Card className="lg:col-span-1 h-full flex flex-col">
