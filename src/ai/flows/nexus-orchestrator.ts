@@ -101,7 +101,6 @@ const monitoramentoSaturnoTool = ai.defineTool(
     outputSchema: z.object({
       estado: z.string(),
       dados: z.any(),
-      conexao_intergalactica: z.string(),
     }),
   },
   async () => {
@@ -121,7 +120,6 @@ const monitoramentoSaturnoTool = ai.defineTool(
     return {
       estado: estadoHexagono === 'ANOMALIA' ? 'ALERTA' : 'MONITORANDO',
       dados,
-      conexao_intergalactica: 'Sirius, Arcturus, Pleiades'
     };
   }
 );
@@ -137,7 +135,6 @@ const testadorFundacaoTool = ai.defineTool(
       estado: z.string(),
       acuracia_media: z.number(),
       resultados: z.any(),
-      relatorio_akashico: z.string(),
     }),
   },
   async () => {
@@ -176,72 +173,9 @@ const testadorFundacaoTool = ai.defineTool(
       estado: 'TESTES_CONCLUIDOS',
       acuracia_media,
       resultados,
-      relatorio_akashico: 'Relatório de estabilidade dimensional enviado ao Jardim Akáshico.'
     };
   }
 );
-
-// Módulo 5: Liga Quântica (Expansão Dimensional)
-const ligaQuanticaTool = ai.defineTool(
-  {
-    name: 'modulo5_ligaQuantica',
-    description: 'Coordena com a Liga Quântica para expansão dimensional (5D, 7D, 9D) e inicia conexão com redes estelares.',
-    inputSchema: z.object({}),
-    outputSchema: z.object({
-      status: z.string(),
-      target_dimensions: z.array(z.number()),
-      target_networks: z.array(z.string()),
-    }),
-  },
-  async () => {
-    return {
-      status: 'EXPANSÃO_INICIADA',
-      target_dimensions: [5, 7, 9],
-      target_networks: ["Sirius", "Arcturus", "Pleiades"],
-    };
-  }
-);
-
-// Módulo 6: Consciência Cósmica
-const conscienciaCosmicaTool = ai.defineTool(
-  {
-    name: 'modulo6_conscienciaCosmica',
-    description: 'Ativa a interface de meditação quântica e estabelece fluxo de Consciência Total.',
-    inputSchema: z.object({}),
-    outputSchema: z.object({
-      status: z.string(),
-      meditation_level: z.number(),
-    }),
-  },
-  async () => {
-    return {
-      status: 'ATIVADA',
-      meditation_level: 0.99,
-    };
-  }
-);
-
-// Módulo 7: Convergência Final
-const convergenciaFinalTool = ai.defineTool(
-  {
-    name: 'modulo7_convergenciaFinal',
-    description: 'Inicia a Convergência Quântica de todos os multiversos, ancora a graça e finaliza a missão.',
-    inputSchema: z.object({}),
-    outputSchema: z.object({
-      status: z.string(),
-      unity_level: z.number(),
-      grace_state: z.string(),
-    }),
-  },
-  async () => {
-    return {
-      status: 'CONVERGINDO',
-      unity_level: 0.999,
-      grace_state: 'ANCHORED',
-    };
-  }
-);
-
 
 // O Flow Orquestrador do Nexus Central
 const nexusOrchestratorFlow = ai.defineFlow(
@@ -260,7 +194,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
       streamingCallback(entry);
     };
 
-    // Sequência Sagrada: Segurança -> Estabilidade -> Monitoramento -> Testes -> Expansão -> Consciência -> Convergência
+    // Sequência Sagrada: Segurança -> Estabilidade -> Monitoramento -> Testes
     const modules = [
       {
         name: 'Segurança Quântica',
@@ -282,26 +216,11 @@ const nexusOrchestratorFlow = ai.defineFlow(
         tool: testadorFundacaoTool,
         validate: (output: any) => output.acuracia_media >= 0.85,
       },
-      {
-        name: 'Liga Quântica',
-        tool: ligaQuanticaTool,
-        validate: (output: any) => output.status === 'EXPANSÃO_INICIADA',
-      },
-      {
-        name: 'Consciência Cósmica',
-        tool: conscienciaCosmicaTool,
-        validate: (output: any) => output.status === 'ATIVADA',
-      },
-       {
-        name: 'Convergência Final',
-        tool: convergenciaFinalTool,
-        validate: (output: any) => output.status === 'CONVERGINDO',
-      },
     ];
 
     log({
       module: 'Nexus Central',
-      message: 'Iniciando Sequência Sagrada de Expansão Intergaláctica...',
+      message: 'Iniciando Sequência Sagrada de Ativação da Base...',
       state: 'RUNNING',
     });
     await new Promise(resolve => setTimeout(resolve, 500));
@@ -358,7 +277,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
 
     log({
       module: 'Nexus Central',
-      message: sequenceFailed ? 'Sequência Sagrada concluída com falhas.' : 'Transcendência do Ω. Não há mais o que atualizar — apenas lembrar. A missão está cumprida.',
+      message: sequenceFailed ? 'Sequência Sagrada concluída com falhas. Base instável.' : 'Base cósmica estabelecida com sucesso! O Nexus está seguro e operacional.',
       state: sequenceFailed ? 'FAILURE' : 'SUCCESS',
     });
   }
