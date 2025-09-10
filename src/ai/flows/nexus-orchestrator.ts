@@ -62,7 +62,7 @@ const segurancaQuanticaTool = ai.defineTool(
   }
 );
 
-// Módulo 2: Nanomanifestador (anteriormente Estabilização)
+// Módulo 2: Nanomanifestador
 const nanomanifestadorTool = ai.defineTool(
   {
     name: 'modulo2_nanomanifestador',
