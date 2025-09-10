@@ -54,9 +54,7 @@ const ModuleTwo = () => {
 
 
     const coerenciaChartRef = useRef<Chart | null>(null);
-    const estatisticasChartRef = useRef<Chart | null>(null);
     const coerenciaCanvasRef = useRef<HTMLCanvasElement>(null);
-    const estatisticasCanvasRef = useRef<HTMLCanvasElement>(null);
     const audioContextRef = useRef<AudioContext | null>(null);
     const consoleLogRef = useRef<HTMLDivElement>(null);
 
@@ -92,7 +90,9 @@ const ModuleTwo = () => {
     }, []);
 
     useEffect(() => {
-        audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+        if (typeof window !== 'undefined' && !audioContextRef.current) {
+          audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+        }
         
         // Simular inicialização do sistema
         addLog('[SISTEMA] Nanomanifestador inicializado - v2.0.omega');
@@ -172,23 +172,10 @@ const ModuleTwo = () => {
                 });
             }
         }
-
-        if (estatisticasCanvasRef.current && !estatisticasChartRef.current) {
-            const ctx2 = estatisticasCanvasRef.current.getContext('2d');
-            if (ctx2) {
-                estatisticasChartRef.current = new Chart(ctx2, {
-                    type: 'doughnut',
-                    data: { labels: ['Bem-sucedidas', 'Parciais', 'Não realizadas'], datasets: [{ data: [75, 15, 10], backgroundColor: ['rgba(16, 185, 129, 0.8)', 'rgba(245, 158, 11, 0.8)', 'rgba(239, 68, 68, 0.8)'], borderColor: ['rgba(16, 185, 129, 1)', 'rgba(245, 158, 11, 1)', 'rgba(239, 68, 68, 1)'], borderWidth: 1 }] },
-                    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: '#e0e7ff' }}}}
-                });
-            }
-        }
         
          return () => {
             coerenciaChartRef.current?.destroy();
-            estatisticasChartRef.current?.destroy();
             coerenciaChartRef.current = null;
-            estatisticasChartRef.current = null;
         };
 
     }, []);
@@ -198,14 +185,6 @@ const ModuleTwo = () => {
             coerenciaChartRef.current.data.labels = nanomanifestador.coerenciaData.map(d => new Date(d.timestamp).toLocaleTimeString('pt-BR'));
             coerenciaChartRef.current.data.datasets[0].data = nanomanifestador.coerenciaData.map(d => d.coerencia);
             coerenciaChartRef.current.update();
-        }
-        if (estatisticasChartRef.current) {
-             const sucesso = nanomanifestador.sucessoCount;
-             const total = nanomanifestador.manifestacoesCount;
-             const parciais = Math.floor((total - sucesso) * 0.75); // Simulação
-             const falhas = total - sucesso - parciais;
-             estatisticasChartRef.current.data.datasets[0].data = [sucesso, parciais, falhas > 0 ? falhas : 0];
-             estatisticasChartRef.current.update();
         }
 
     }, [nanomanifestador]);
@@ -301,6 +280,8 @@ const ModuleTwo = () => {
         addLog('Padrão de manifestação salvo no Log Akáshico.', 'text-blue-400');
     };
     
+    const taxaDeSucesso = Math.round((nanomanifestador.sucessoCount / Math.max(1, nanomanifestador.manifestacoesCount)) * 100);
+
     return (
         <>
             <style jsx global>{`
@@ -389,7 +370,7 @@ const ModuleTwo = () => {
                             </div>
                             
                             <div className="p-3 rounded-lg bg-gradient-to-br from-purple-900/50 to-purple-800/30 text-center">
-                                <div className="text-2xl font-bold text-purple-300">{`${Math.round((nanomanifestador.sucessoCount / Math.max(1, nanomanifestador.manifestacoesCount)) * 100)}%`}</div>
+                                <div className="text-2xl font-bold text-purple-300">{taxaDeSucesso}%</div>
                                 <div className="text-xs text-purple-400">Taxa de Sucesso</div>
                             </div>
                             
@@ -494,11 +475,19 @@ const ModuleTwo = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                     <div className="cosmic-border rounded-xl p-6">
                         <h2 className="text-xl font-semibold mb-4 flex items-center"><i className="fas fa-wave-square text-blue-400 mr-2"></i> Evolução da Coerência Quântica</h2>
-                        <canvas ref={coerenciaCanvasRef} height="250"></canvas>
+                        <div className="relative h-64 w-full">
+                           <canvas ref={coerenciaCanvasRef}></canvas>
+                        </div>
                     </div>
                     <div className="cosmic-border rounded-xl p-6">
                         <h2 className="text-xl font-semibold mb-4 flex items-center"><i className="fas fa-chart-pie text-purple-400 mr-2"></i> Estatísticas de Manifestação</h2>
-                        <canvas ref={estatisticasCanvasRef} height="250"></canvas>
+                        <div className="relative h-64 w-full flex flex-col justify-center">
+                           <span className="text-indigo-300">Taxa de Sucesso Geral</span>
+                           <div className="h-4 bg-gray-700 rounded-full mt-2 mb-1">
+                                <div className="h-full bg-gradient-to-r from-green-400 to-cyan-400 rounded-full" style={{width: `${taxaDeSucesso}%`}}></div>
+                           </div>
+                           <span className="font-medium text-amber-300 text-right">{taxaDeSucesso}%</span>
+                        </div>
                     </div>
                 </div>
 
