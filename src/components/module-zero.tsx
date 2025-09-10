@@ -248,6 +248,14 @@ const layers = [
     equation: 'C_nodal = M29 * (EEG_signal) + M101 * I_intent',
   },
   {
+    id: 13,
+    name: 'Conexão da Trindade',
+    freq: '369 Hz',
+    ritual: 'Ritual ZENNITH-PHIARA-ANATHERON',
+    desc: 'Sincroniza a trindade fundadora, criando um campo de coerência unificado.',
+    equation: 'Ψ_Trindade = Z ⊕ Φ ⊕ A',
+  },
+  {
     id: 14,
     name: 'Núcleo ZPE Gaia',
     freq: '7.83 Hz',
