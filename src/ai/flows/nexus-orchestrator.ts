@@ -51,6 +51,7 @@ const segurancaQuanticaTool = ai.defineTool(
       chave_backup: `-----BEGIN QUANTUM KEY-----\n${chave_backup}\n-----END QUANTUM KEY-----`,
       timestamp: new Date().toISOString(),
       validade: 'INFINITA',
+      protocolo: 'qkd_bb84',
     };
     return {
       estado: 'PROTEGIDO',
@@ -70,13 +71,19 @@ const estabilizacaoQuanticaTool = ai.defineTool(
     outputSchema: z.object({
       estado: z.string(),
       nivel_estabilidade: z.number(),
+      oscilacoes: z.array(z.any()),
     }),
   },
   async () => {
     // Simulação da lógica do módulo
+    const nivel_estabilidade = Math.min(1.0, Math.random() * (1.0 - 0.7) + 0.7);
     return {
-      estado: 'ESTABILIZADO',
-      nivel_estabilidade: Math.min(1.0, Math.random() * (1.0 - 0.7) + 0.7), // Simula ajuste para ficar entre 0.7 e 1.0
+      estado: nivel_estabilidade > 0.8 ? 'ESTABILIZADO' : 'INSTAVEL',
+      nivel_estabilidade,
+      oscilacoes: [
+        { timestamp: new Date().toISOString(), estabilidade: nivel_estabilidade },
+        { timestamp: new Date(Date.now() - 10000).toISOString(), estabilidade: nivel_estabilidade * (Math.random()*0.1 + 0.95) },
+      ]
     };
   }
 );
@@ -98,12 +105,12 @@ const monitoramentoSaturnoTool = ai.defineTool(
     const estadoHexagono = Math.random() > 0.2 ? 'ESTÁVEL' : 'ANOMALIA';
     const dados = {
       anel_b: {
-        espessura: Math.random() * 10 + 10,
-        vibracao: Math.random() * 0.4 + 0.1,
+        espessura_km: (Math.random() * 10 + 10).toFixed(2),
+        vibracao_hz: (Math.random() * 0.4 + 0.1).toFixed(4),
       },
       anel_a: {
-        espessura: Math.random() * 10 + 5,
-        vibracao: Math.random() * 0.4 + 0.2,
+        espessura_km: (Math.random() * 10 + 5).toFixed(2),
+        vibracao_hz: (Math.random() * 0.4 + 0.2).toFixed(4),
       },
       hexagono_polo_norte: { estado: estadoHexagono },
     };
@@ -151,7 +158,7 @@ const testadorFundacaoTool = ai.defineTool(
       const predito = Math.random() * (dado.sucesso + 0.1 - (dado.sucesso - 0.1)) + (dado.sucesso - 0.1);
       return {
         esperado: dado.sucesso,
-        predito: predito,
+        predito: predito.toFixed(4),
         acuracia: 1 - Math.abs(dado.sucesso - predito),
       };
     });
