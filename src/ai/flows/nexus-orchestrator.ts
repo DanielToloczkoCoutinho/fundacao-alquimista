@@ -327,7 +327,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
       await new Promise(resolve => setTimeout(resolve, 1000));
 
       try {
-        const output = await mod.tool();
+        const output = await mod.tool({});
 
         if (mod.validate(output)) {
           log({
