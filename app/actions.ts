@@ -1,3 +1,4 @@
+// This file is now located at app/actions.ts
 'use server';
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
