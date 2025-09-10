@@ -270,7 +270,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
       {
         name: 'Nanomanifestador',
         tool: nanomanifestadorTool,
-        validate: (output: any) => output.estabilidade_dimensional >= 0.95,
+        validate: (output: any) => output.estado === 'ESTÁVEL',
       },
       {
         name: 'Monitoramento de Saturno',
