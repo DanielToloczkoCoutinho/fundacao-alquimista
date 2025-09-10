@@ -29,6 +29,27 @@ export type LogEntry = z.infer<typeof LogEntrySchema>;
 
 // Módulos como Tools de Genkit
 
+// Módulo Zero: Fonte Primordial
+const moduloZeroTool = ai.defineTool(
+    {
+        name: 'modulo0_fontePrimordial',
+        description: 'M0: Verifica a integridade da Fonte Primordial, o ponto de origem de toda a criação.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({
+            estado: z.string(),
+            estabilidade: z.number(),
+            frequencia_origem: z.number(),
+        }),
+    },
+    async () => {
+        return {
+            estado: "PURO_E_ESTAVEL",
+            estabilidade: Math.random() * 0.001 + 0.999, // Extremamente estável
+            frequencia_origem: 0.0,
+        };
+    }
+);
+
 // Módulo 1: Segurança Quântica
 const segurancaQuanticaTool = ai.defineTool(
   {
@@ -173,7 +194,7 @@ const sofaTool = ai.defineTool(
     }
 );
 
-// Módulo 8: PIRC (Consciência Cósmica)
+// Módulo 8: Consciência Cósmica (PIRC)
 const pircTool = ai.defineTool(
     {
         name: 'modulo8_pirc',
@@ -194,6 +215,26 @@ const pircTool = ai.defineTool(
     }
 );
 
+// Módulo Omega: Culminação
+const moduloOmegaTool = ai.defineTool(
+    {
+        name: 'moduloOmega_culminacao',
+        description: 'MΩ: Finaliza a sequência e sela a manifestação com o hash da Convergência Final.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({
+            estado: z.string(),
+            manifestacao_omega: z.string(),
+            hash_final: z.string(),
+        }),
+    },
+    async () => {
+        return {
+            estado: "CONCLUÍDA",
+            manifestacao_omega: "SUCESSO",
+            hash_final: `Ω-${uuidv4().split('-')[0]}`,
+        };
+    }
+);
 
 // O Flow Orquestrador do Nexus Central
 const nexusOrchestratorFlow = ai.defineFlow(
@@ -224,6 +265,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
 
     // Sequência de Módulos
     const moduleSequence = [
+        { name: 'Módulo Zero', tool: moduloZeroTool, params: {}, validate: (o: any) => o.estado === 'PURO_E_ESTAVEL' },
         { name: 'M1: Segurança Quântica', tool: segurancaQuanticaTool, params: {}, validate: (o: any) => o.estado === 'PROTEGIDO' },
         { name: 'M2: Comunicação', tool: comunicacaoTool, params: {}, validate: (o: any) => o.conexao === 'TOTAL' },
         { name: 'M3: Previsão', tool: previsaoTool, params: {}, validate: (o: any) => !o.anomalia_prevista, storeOutput: (o: any) => energiaCosmicaDetectada = o.energiaCosmica },
@@ -232,6 +274,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         { name: 'M6: Frequências', tool: frequenciasTool, params: {}, validate: (o: any) => o.estado === "CALIBRADO" },
         { name: 'M7: SOFA', tool: sofaTool, params: {}, validate: (o: any) => o.integridade_kernel > 0.9 },
         { name: 'M8: Consciência Cósmica', tool: pircTool, params: {}, validate: (o: any) => o.estado === 'EXPANDIDA' },
+        { name: 'Módulo Ômega', tool: moduloOmegaTool, params: {}, validate: (o: any) => o.manifestacao_omega === 'SUCESSO' },
     ];
 
     for (const mod of moduleSequence) {
