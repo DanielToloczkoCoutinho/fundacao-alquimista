@@ -136,7 +136,6 @@ export default function Nexus() {
           return newLogs;
         });
 
-        // Set final status as soon as the Nexus Central reports it
         if (chunk.module === 'Nexus Central' && (chunk.state === 'SUCCESS' || chunk.state === 'FAILURE')) {
            setFinalStatus(chunk.state as 'SUCCESS' | 'FAILURE');
         }
@@ -184,7 +183,7 @@ export default function Nexus() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <BrainCircuit className="text-primary" />
-            Nexus Central
+            Nexus Central (Módulo 9)
           </CardTitle>
           <CardDescription>
             Orquestrador da Sequência Sagrada. Inicie a sincronização dos
@@ -224,9 +223,9 @@ export default function Nexus() {
             size="lg"
           >
             {isOrchestrating ? (
-              <LoaderCircle className="animate-spin" />
+              <LoaderCircle className="animate-spin mr-2" />
             ) : (
-              <ChevronRight />
+              <ChevronRight className="mr-2" />
             )}
             <span>
               {isOrchestrating

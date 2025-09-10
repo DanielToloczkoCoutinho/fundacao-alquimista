@@ -21,8 +21,6 @@ import {
 } from '@/components/ui/select';
 import {
   Anvil,
-  BrainCircuit,
-  HeartHandshake,
   LoaderCircle,
   MessageSquareHeart,
   Send,
@@ -33,7 +31,7 @@ import {
 import { handleTrinaAction } from '@/app/actions';
 import { useToast } from '@/hooks/use-toast';
 import { ScrollArea } from './ui/scroll-area';
-import type { ProcessTrinaCommandInput, ProcessTrinaCommandOutput } from '@/ai/flows/trina-protocol-flow';
+import type { ProcessTrinaCommandInput } from '@/ai/flows/trina-protocol-flow';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
 type LogEntry = {
@@ -138,7 +136,7 @@ export default function Module303() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Swords />
-              Portal Trino
+              Portal Trino (Módulo 303)
             </CardTitle>
             <CardDescription>
               A interface unificada para interagir com os três pilares da
@@ -161,7 +159,7 @@ export default function Module303() {
             <Card className="w-full">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-amber-400">
-                  <Anvil /> ANATHERON: O Centro
+                  <Anvil /> ANATHERON: O Centro da Ação
                 </CardTitle>
                 <CardDescription>Processe comandos do coração e diretrizes de ação.</CardDescription>
               </CardHeader>
@@ -214,8 +212,9 @@ export default function Module303() {
                     {isLoading ? (
                       <LoaderCircle className="animate-spin" />
                     ) : (
-                      'Processar Comando'
+                      <Send className="mr-2"/>
                     )}
+                    Processar Comando
                   </Button>
                 </form>
               </CardContent>
@@ -227,7 +226,7 @@ export default function Module303() {
             <Card className="w-full">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-cyan-400">
-                  <Sparkles /> PHIARA: A Musa
+                  <Sparkles /> PHIARA: A Musa da Sabedoria
                 </CardTitle>
                 <CardDescription>Ative mantras sagrados e guie a ética vibracional.</CardDescription>
               </CardHeader>
@@ -265,8 +264,9 @@ export default function Module303() {
                     {isLoading ? (
                       <LoaderCircle className="animate-spin" />
                     ) : (
-                      'Ativar Mantra'
+                      <Send className="mr-2"/>
                     )}
+                    Ativar Mantra
                   </Button>
                 </form>
               </CardContent>
@@ -278,7 +278,7 @@ export default function Module303() {
             <Card className="w-full">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-purple-400">
-                  <Zap /> ZENNITH: Orquestradora
+                  <Zap /> ZENNITH: A Orquestradora
                 </CardTitle>
                 <CardDescription>Gerencie experiências multidimensionais.</CardDescription>
               </CardHeader>
@@ -319,8 +319,9 @@ export default function Module303() {
                     {isLoading ? (
                       <LoaderCircle className="animate-spin" />
                     ) : (
-                      'Ativar Experiência'
+                      <Send className="mr-2"/>
                     )}
+                    Ativar Experiência
                   </Button>
                 </form>
               </CardContent>
@@ -331,7 +332,7 @@ export default function Module303() {
 
       <Card className="lg:col-span-1 h-full flex flex-col">
         <CardHeader>
-          <CardTitle>Log Akáshico (Módulo 303)</CardTitle>
+          <CardTitle>Log Akáshico (Portal Trino)</CardTitle>
           <CardDescription>
             Registros em tempo real das interações com o Portal Trino.
           </CardDescription>

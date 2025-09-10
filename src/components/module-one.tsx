@@ -7,9 +7,11 @@ import { Progress } from './ui/progress';
 import { cn } from '@/lib/utils';
 
 // --- CONSTANTES FUNDAMENTAIS (Traduzidas do Python) ---
-const FREQ_ANATHERON_ESTABILIZADORA = 432.0;
-const FREQ_ZENNITH_REAJUSTADA = 528.0;
-const FREQ_ALINHAMENTO_DIVINO = 963.0;
+const FREQ_ANATHERON_ESTABILIZADORA = 432.0; // Frequência de Cura e Estabilização
+const FREQ_ZENNITH_REAJUSTADA = 528.0; // Frequência de Transformação e Reparo
+const FREQ_ALINHAMENTO_DIVINO = 963.0; // Frequência de Conexão com Consciência Superior
+const FREQ_PORTAL_HARMONICO = 777.0; // Frequência de Ativação do Campo de Possibilidades Puras
+const FREQ_ESTABILIDADE_DIMENSIONAL = 888.0; // Frequência para Estabilidade Dimensional
 
 type SistemaEstado = 'INICIANDO' | 'ATIVO' | 'ALERTA' | 'EMERGENCIA' | 'RECALIBRACAO';
 
@@ -45,7 +47,7 @@ export default function ModuleOne() {
   }, []);
 
   useEffect(() => {
-    addLog('INFO', 'Módulo 1 - Segurança Universal inicializado.');
+    addLog('INFO', 'Módulo de Segurança Universal inicializado.');
     
     const initialStates = Array.from({ length: 7 }, (_, i) => ({
       name: `Camada Quântica ${i}`,
@@ -169,8 +171,8 @@ export default function ModuleOne() {
                 <p><span className="font-bold text-cyan-400">{FREQ_ANATHERON_ESTABILIZADORA} Hz:</span> Frequência de Cura e Estabilização</p>
                 <p><span className="font-bold text-cyan-400">{FREQ_ZENNITH_REAJUSTADA} Hz:</span> Frequência de Transformação e Reparo</p>
                 <p><span className="font-bold text-cyan-400">{FREQ_ALINHAMENTO_DIVINO} Hz:</span> Frequência de Conexão com Consciência Superior</p>
-                <p><span className="font-bold text-cyan-400">777 Hz:</span> Ativação do Campo de Possibilidades Puras</p>
-                <p><span className="font-bold text-cyan-400">888 Hz:</span> Estabilidade Dimensional</p>
+                <p><span className="font-bold text-cyan-400">{FREQ_PORTAL_HARMONICO} Hz:</span> Ativação do Campo de Possibilidades Puras</p>
+                <p><span className="font-bold text-cyan-400">{FREQ_ESTABILIDADE_DIMENSIONAL} Hz:</span> Estabilidade Dimensional</p>
             </CardContent>
           </Card>
            <Card className="bg-card/50 border-primary/30">
