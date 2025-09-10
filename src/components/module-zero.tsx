@@ -75,7 +75,7 @@ const VibrationalEquationRenderer = (formula: string) => {
 
 // Biblioteca Chave Mestra - Módulo 307
 class BibliotecaChaveMestra307 {
-  PHI = 1.6180339887; // Proporção Áurea
+  PHI = 1.61803398875; // Proporção Áurea
   FREQ_GAIA = 7.83; // Ressonância Schumann
   VACUUM_DENSITY = 1e-9; // Densidade do vácuo (simulada)
   C = 299792458; // Velocidade da luz
@@ -861,3 +861,4 @@ export default function ModuleZero() {
     </div>
   );
 }
+```
