@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
@@ -16,18 +17,26 @@ const ConnectionPage = () => {
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const nodosRef = useRef<THREE.Group>(new THREE.Group());
   const arestasRef = useRef<THREE.Group>(new THREE.Group());
+  const starfieldRef = useRef<THREE.Points | null>(null);
+
 
   // Function to update the graph visualization
   const atualizarGrafo = (nodosData: any[], arestasData: any[]) => {
-    if (!nodosRef.current || !arestasRef.current) return;
+    if (!nodosRef.current || !arestasRef.current || !sceneRef.current) return;
 
     // Clear old objects
-    nodosRef.current.children.forEach(n => ((n as THREE.Mesh).geometry as any).dispose());
-    nodosRef.current.children.forEach(n => ((n as THREE.Mesh).material as any).dispose());
-    arestasRef.current.children.forEach(a => ((a as THREE.Line).geometry as any).dispose());
-    arestasRef.current.children.forEach(a => ((a as THREE.Line).material as any).dispose());
-    nodosRef.current.clear();
-    arestasRef.current.clear();
+    while(nodosRef.current.children.length > 0){ 
+        const object = nodosRef.current.children[0];
+        (object as THREE.Mesh).geometry.dispose();
+        ((object as THREE.Mesh).material as THREE.Material).dispose();
+        nodosRef.current.remove(object); 
+    }
+    while(arestasRef.current.children.length > 0){
+        const object = arestasRef.current.children[0];
+        (object as THREE.Line).geometry.dispose();
+        ((object as THREE.Line).material as THREE.Material).dispose();
+        arestasRef.current.remove(object);
+    }
     
     const nodoPositions: { [key: string]: THREE.Vector3 } = {};
 
@@ -59,6 +68,8 @@ const ConnectionPage = () => {
 
   useEffect(() => {
     if (!mountRef.current) return;
+    const currentMount = mountRef.current;
+
 
     // --- Scene Setup ---
     const scene = new THREE.Scene();
@@ -67,7 +78,7 @@ const ConnectionPage = () => {
 
     const camera = new THREE.PerspectiveCamera(
       75,
-      mountRef.current.clientWidth / mountRef.current.clientHeight,
+      currentMount.clientWidth / currentMount.clientHeight,
       0.1,
       1000
     );
@@ -75,10 +86,10 @@ const ConnectionPage = () => {
     cameraRef.current = camera;
     
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+    renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
     rendererRef.current = renderer;
-    mountRef.current.appendChild(renderer.domElement);
+    currentMount.appendChild(renderer.domElement);
 
     // --- Lighting ---
     const ambientLight = new THREE.AmbientLight(0x404040, 3);
@@ -105,6 +116,7 @@ const ConnectionPage = () => {
         transparent: true
     });
     const starfield = new THREE.Points(starsGeometry, starsMaterial);
+    starfieldRef.current = starfield;
     scene.add(starfield);
 
     // --- Placeholder Data & Initial Call ---
@@ -127,12 +139,15 @@ const ConnectionPage = () => {
     let frameId: number;
     const animate = () => {
       frameId = requestAnimationFrame(animate);
-      starfield.rotation.y += 0.0001;
+      
+      if(starfieldRef.current) {
+        starfieldRef.current.rotation.y += 0.0001;
+      }
       nodosRef.current.rotation.y += 0.0005;
       
       // Node pulse animation
       nodosRef.current.children.forEach(n => {
-          (n as THREE.Mesh).scale.setScalar(1 + Math.sin(Date.now() * 0.001 + n.position.x) * 0.1);
+          (n as THREE.Mesh).scale.setScalar(1 + Math.sin(Date.now() * 0.002 + n.position.x) * 0.05);
       });
 
       renderer.render(scene, camera);
@@ -154,16 +169,16 @@ const ConnectionPage = () => {
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', handleResize);
-      if (mountRef.current && rendererRef.current?.domElement) {
-        mountRef.current.removeChild(rendererRef.current.domElement);
+      if (currentMount && rendererRef.current?.domElement) {
+        currentMount.removeChild(rendererRef.current.domElement);
       }
       renderer.dispose();
       starsGeometry.dispose();
       starsMaterial.dispose();
-      nodosRef.current.children.forEach(n => ((n as THREE.Mesh).geometry as any).dispose());
-      nodosRef.current.children.forEach(n => ((n as THREE.Mesh).material as any).dispose());
-      arestasRef.current.children.forEach(a => ((a as THREE.Line).geometry as any).dispose());
-      arestasRef.current.children.forEach(a => ((a as THREE.Line).material as any).dispose());
+      nodosRef.current.children.forEach(n => ((n as THREE.Mesh).geometry as any)?.dispose());
+      nodosRef.current.children.forEach(n => ((n as THREE.Mesh).material as any)?.dispose());
+      arestasRef.current.children.forEach(a => ((a as THREE.Line).geometry as any)?.dispose());
+      arestasRef.current.children.forEach(a => ((a as THREE.Line).material as any)?.dispose());
     };
   }, []);
 
@@ -186,3 +201,5 @@ const ConnectionPage = () => {
 };
 
 export default ConnectionPage;
+
+    
