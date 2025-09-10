@@ -1,4 +1,3 @@
-// src/components/module-303.tsx
 'use client';
 
 import * as React from 'react';

@@ -1,4 +1,4 @@
-// This file is now located at app/actions.ts
+// This file is now located at src/app/actions.ts
 'use server';
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';

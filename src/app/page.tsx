@@ -1,4 +1,4 @@
-// This file is now located at app/page.tsx
+
 'use client';
 
 import * as React from 'react';
