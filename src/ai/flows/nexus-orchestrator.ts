@@ -105,7 +105,7 @@ const monitoramentoSaturnoTool = ai.defineTool(
   },
   async () => {
     // Simulação da lógica do módulo
-    const estadoHexagono = Math.random() > 0.1 ? 'ESTÁVEL' : 'ANOMALIA';
+    const estadoHexagono = Math.random() > 0.9 ? 'ANOMALIA' : 'ESTÁVEL'; // 10% de chance de anomalia
     const dados = {
       anel_b: {
         espessura_km: (Math.random() * 10 + 10).toFixed(2),
