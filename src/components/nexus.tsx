@@ -23,6 +23,7 @@ import {
   BrainCircuit,
   SlidersHorizontal,
   TestTube,
+  SkipForward,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { startNexusSequence } from '@/app/actions';
@@ -77,6 +78,13 @@ const getStatusStyles = (state: ModuleState) => {
         textColor: 'text-red-300',
         borderColor: 'border-red-500/20',
       };
+    case 'SKIPPED':
+      return {
+        icon: <SkipForward className="text-yellow-500" />,
+        bgColor: 'bg-yellow-500/10',
+        textColor: 'text-yellow-400',
+        borderColor: 'border-yellow-500/20',
+      };
     case 'PENDING':
     default:
       return {
@@ -102,32 +110,47 @@ export default function Nexus() {
     setLogs([]);
     setFinalStatus(null);
 
-    const stream = await startNexusSequence();
-
-    for await (const chunk of stream) {
-      setLogs((prevLogs) => {
-        const existingLogIndex = prevLogs.findIndex(
-          (log) => log.module === chunk.module
-        );
-        if (existingLogIndex > -1) {
+    try {
+      const stream = await startNexusSequence();
+      let lastChunk: LogEntry | null = null;
+      
+      for await (const chunk of stream) {
+        setLogs((prevLogs) => {
           const newLogs = [...prevLogs];
-          newLogs[existingLogIndex] = chunk;
+          const existingLogIndex = newLogs.findIndex((log) => log.module === chunk.module);
+          
+          if (existingLogIndex > -1) {
+            newLogs[existingLogIndex] = chunk;
+          } else {
+             // Se não existe, e não é o primeiro log do Nexus, insere antes do último.
+             // Isso mantém o log final do Nexus sempre no final.
+            const nexusCentralFinalLogIndex = newLogs.findIndex(l => l.module === 'Nexus Central' && (l.state === 'SUCCESS' || l.state === 'FAILURE'));
+            if(nexusCentralFinalLogIndex > -1) {
+              newLogs.splice(nexusCentralFinalLogIndex, 0, chunk);
+            } else {
+              newLogs.push(chunk);
+            }
+          }
           return newLogs;
-        }
-        return [...prevLogs, chunk];
-      });
-
-      if (chunk.state === 'FAILURE') {
-        toast({
-          variant: 'destructive',
-          title: `Falha no Módulo: ${chunk.module}`,
-          description: chunk.message,
         });
+        lastChunk = chunk;
       }
+
+      if (lastChunk && lastChunk.module === 'Nexus Central') {
+         setFinalStatus(lastChunk.state as 'SUCCESS' | 'FAILURE');
+      }
+
+    } catch (error: any) {
+      console.error("Erro na sequência do Nexus:", error);
+      toast({
+        variant: 'destructive',
+        title: 'Erro Crítico no Orquestrador',
+        description: error.message || 'Ocorreu um erro desconhecido ao iniciar a sequência.',
+      });
+      setFinalStatus('FAILURE');
+    } finally {
+      setIsOrchestrating(false);
     }
-    
-    setIsOrchestrating(false);
-    setFinalStatus('SUCCESS'); // Simplified for now
   };
   
     React.useEffect(() => {
@@ -142,7 +165,7 @@ export default function Nexus() {
   const getOverallStatus = () => {
     if (isOrchestrating) return 'Em Progresso...';
     if (finalStatus === 'SUCCESS') return 'Sequência Concluída com Sucesso';
-    if (finalStatus === 'FAILURE') return 'Sequência Falhou';
+    if (finalStatus === 'FAILURE') return 'Sequência Concluída com Falhas';
     return 'Aguardando Iniciação';
   };
 
@@ -198,33 +221,37 @@ export default function Nexus() {
                 {logs.map((log, index) => {
                   const { icon, bgColor, textColor, borderColor } =
                     getStatusStyles(log.state);
+                  const IconComponent = moduleIcons[log.module] || <Bot />;
                   return (
                     <motion.div
-                      key={index}
+                      key={log.module + log.timestamp}
+                      layout
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
+                      exit={{ opacity: 0, y: -20}}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
                       className={cn(
                         'flex items-start gap-4 rounded-lg p-3 text-sm border transition-colors',
                         bgColor,
                         borderColor
                       )}
                     >
-                      <div className="mt-1">{icon}</div>
+                      <div className="mt-1 h-5 w-5 flex items-center justify-center shrink-0">{icon}</div>
                       <div className="flex-1">
                         <div className="flex justify-between items-center">
-                          <p className={cn('font-semibold', textColor)}>
+                          <p className={cn('font-semibold flex items-center gap-2', textColor)}>
+                            {IconComponent}
                             {log.module}
                           </p>
                           <p className="text-xs text-muted-foreground">
                             {new Date(log.timestamp).toLocaleTimeString()}
                           </p>
                         </div>
-                        <p className="text-muted-foreground mt-1">
+                        <p className="text-muted-foreground/80 mt-1 text-xs">
                           {log.message}
                         </p>
                         {log.data && (
-                           <pre className="mt-2 text-xs bg-black/20 p-2 rounded-md overflow-x-auto text-gray-400">
+                           <pre className="mt-2 text-xs bg-black/20 p-2 rounded-md overflow-x-auto text-gray-400 font-mono">
                              {JSON.stringify(log.data, null, 2)}
                            </pre>
                         )}

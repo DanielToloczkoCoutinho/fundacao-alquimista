@@ -76,7 +76,7 @@ const estabilizacaoQuanticaTool = ai.defineTool(
     // Simulação da lógica do módulo
     return {
       estado: 'ESTABILIZADO',
-      nivel_estabilidade: Math.min(1.0, Math.random() + 0.2), // Simula ajuste
+      nivel_estabilidade: Math.min(1.0, Math.random() * (1.0 - 0.7) + 0.7), // Simula ajuste para ficar entre 0.7 e 1.0
     };
   }
 );
@@ -184,6 +184,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
       streamingCallback(entry);
     };
 
+    // Sequência Sagrada: Segurança -> Estabilidade -> Monitoramento -> Testes
     const modules = [
       {
         name: 'Segurança Quântica',
@@ -193,7 +194,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
       {
         name: 'Estabilização',
         tool: estabilizacaoQuanticaTool,
-        validate: (output: any) => output.nivel_estabilidade >= 0.7,
+        validate: (output: any) => output.nivel_estabilidade >= 0.8,
       },
       {
         name: 'Monitoramento de Saturno',
@@ -248,7 +249,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
           sequenceFailed = true;
           log({
             module: mod.name,
-            message: `Falha na validação do Módulo ${mod.name}.`,
+            message: `Falha na validação do Módulo ${mod.name}. Critério não atendido.`,
             data: output,
             state: 'FAILURE',
           });
@@ -266,7 +267,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
     
     log({
       module: 'Nexus Central',
-      message: sequenceFailed ? 'Sequência Sagrada concluída com falhas.' : 'Sequência Sagrada concluída com sucesso.',
+      message: sequenceFailed ? 'Sequência Sagrada concluída com falhas.' : 'Sequência Sagrada concluída com sucesso. Base cósmica estabelecida.',
       state: sequenceFailed ? 'FAILURE' : 'SUCCESS',
     });
   }
