@@ -15,6 +15,7 @@ import Module303 from '@/components/module-303';
 import ConnectionPage from '@/app/connection/page';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import ModuleTwo from '@/components/module-two';
 
 // Placeholder para os novos módulos que ainda não possuem componente dedicado
 const GenericModulePlaceholder = ({ title }: { title: string }) => (
@@ -52,9 +53,8 @@ export default function Home() {
         return null;
       case 'tools':
         return <KeyGenerator />;
-      // Placeholders para os novos módulos
       case 'm2':
-        return <GenericModulePlaceholder title="Módulo 2: Comunicação" />;
+        return <ModuleTwo />;
       case 'm3':
         return <GenericModulePlaceholder title="Módulo 3: Previsão" />;
       case 'm4':
