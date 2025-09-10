@@ -3,8 +3,58 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { gsap } from 'gsap';
 
+// Helper function for vibrational colors
+function getColor(energia: number) {
+    const r = Math.min(1, energia * 2); // Red for high energy
+    const g = Math.min(1, (1 - energia) * 2); // Green for low energy
+    return new THREE.Color(r, g, 0); // Gradient mixture
+}
+
 const ConnectionPage = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const sceneRef = useRef<THREE.Scene | null>(null);
+  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const nodosRef = useRef<THREE.Group>(new THREE.Group());
+  const arestasRef = useRef<THREE.Group>(new THREE.Group());
+
+  // Function to update the graph visualization
+  const atualizarGrafo = (nodosData: any[], arestasData: any[]) => {
+    if (!nodosRef.current || !arestasRef.current) return;
+
+    // Clear old objects
+    nodosRef.current.children.forEach(n => (n as THREE.Mesh).geometry.dispose());
+    arestasRef.current.children.forEach(a => (a as THREE.Line).geometry.dispose());
+    nodosRef.current.clear();
+    arestasRef.current.clear();
+    
+    const nodoPositions: { [key: string]: THREE.Vector3 } = {};
+
+    // Add new nodes
+    nodosData.forEach(nodo => {
+        const geometry = new THREE.SphereGeometry(0.2, 32, 32);
+        const material = new THREE.MeshBasicMaterial({ color: getColor(nodo.energia) });
+        const sphere = new THREE.Mesh(geometry, material);
+        const position = new THREE.Vector3(Math.random() * 8 - 4, Math.random() * 8 - 4, Math.random() * 8 - 4);
+        sphere.position.copy(position);
+        sphere.userData = { id: nodo.id };
+        nodosRef.current.add(sphere);
+        nodoPositions[nodo.id] = position;
+    });
+
+    // Add new edges
+    arestasData.forEach(aresta => {
+        const startPos = nodoPositions[aresta.from];
+        const endPos = nodoPositions[aresta.to];
+        if (startPos && endPos) {
+            const geometry = new THREE.BufferGeometry().setFromPoints([startPos, endPos]);
+            const material = new THREE.LineBasicMaterial({ color: 0x00ff00, opacity: aresta.peso, transparent: true });
+            const line = new THREE.Line(geometry, material);
+            arestasRef.current.add(line);
+        }
+    });
+  };
+
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -12,24 +62,34 @@ const ConnectionPage = () => {
     // --- Scene Setup ---
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x070710);
+    sceneRef.current = scene;
+
     const camera = new THREE.PerspectiveCamera(
       75,
       mountRef.current.clientWidth / mountRef.current.clientHeight,
       0.1,
       1000
     );
+    camera.position.z = 10;
+    cameraRef.current = camera;
+    
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
+    rendererRef.current = renderer;
     mountRef.current.appendChild(renderer.domElement);
 
     // --- Lighting ---
-    const ambientLight = new THREE.AmbientLight(0x404040, 2); // Increased intensity
+    const ambientLight = new THREE.AmbientLight(0x404040, 3);
     scene.add(ambientLight);
-    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-    pointLight.position.set(0, 0, 0);
-    scene.add(pointLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(5, 5, 5);
+    scene.add(directionalLight);
 
+    // --- Graph Groups ---
+    scene.add(nodosRef.current);
+    scene.add(arestasRef.current);
+    
     // --- Starfield ---
     const starsGeometry = new THREE.BufferGeometry();
     const starsCount = 5000;
@@ -46,52 +106,46 @@ const ConnectionPage = () => {
     const starfield = new THREE.Points(starsGeometry, starsMaterial);
     scene.add(starfield);
 
-    // --- Placeholder for Graph ---
-    // This is where the dynamic graph nodes and edges will be added
-    const graphGroup = new THREE.Group();
-    scene.add(graphGroup);
+    // --- Placeholder Data & Initial Call ---
+     const placeholderNodos = [
+        { id: 'M0', energia: 0.9 },
+        { id: 'M1', energia: 0.5 },
+        { id: 'M9', energia: 0.7 },
+        { id: 'M303', energia: 0.8 },
+        { id: 'MΩ', energia: 1.0 },
+    ];
+    const placeholderArestas = [
+        { from: 'M0', to: 'MΩ', peso: 0.8 },
+        { from: 'M1', to: 'M9', peso: 0.7 },
+        { from: 'M9', to: 'M303', peso: 0.9 },
+        { from: 'M303', to: 'MΩ', peso: 0.6 },
+    ];
+    atualizarGrafo(placeholderNodos, placeholderArestas);
 
-    // Example placeholder nodes
-    const nodeGeometry = new THREE.SphereGeometry(0.2, 16, 16);
-    const nodeMaterial1 = new THREE.MeshPhongMaterial({ color: 0x9b59b6, emissive: 0x6c3483 });
-    const nodeMaterial2 = new THREE.MeshPhongMaterial({ color: 0x3498db, emissive: 0x2980b9 });
-
-    const node1 = new THREE.Mesh(nodeGeometry, nodeMaterial1);
-    node1.position.set(-3, 1, -5);
-    graphGroup.add(node1);
-
-    const node2 = new THREE.Mesh(nodeGeometry, nodeMaterial2);
-    node2.position.set(3, -1, -5);
-    graphGroup.add(node2);
-    
-    // Example placeholder edge
-    const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffd700, transparent: true, opacity: 0.7 });
-    const points = [node1.position, node2.position];
-    const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
-    const line = new THREE.Line(lineGeometry, lineMaterial);
-    graphGroup.add(line);
-
-
-    // --- Camera and Animation ---
-    camera.position.z = 10;
-    
+    // --- Animation Loop ---
     let frameId: number;
-    function animate() {
+    const animate = () => {
       frameId = requestAnimationFrame(animate);
-      
       starfield.rotation.y += 0.0001;
-      graphGroup.rotation.y += 0.0005;
+      nodosRef.current.rotation.y += 0.0005;
+      
+      // Node pulse animation
+      nodosRef.current.children.forEach(n => {
+          n.scale.setScalar(1 + Math.sin(Date.now() * 0.001 + n.position.x) * 0.1);
+      });
 
       renderer.render(scene, camera);
-    }
+    };
     animate();
 
-    // --- Event Listeners ---
+    // --- Event Listeners & Cleanup ---
     const handleResize = () => {
-      if (mountRef.current && renderer) {
-        camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
+      if (mountRef.current && rendererRef.current && cameraRef.current) {
+        const width = mountRef.current.clientWidth;
+        const height = mountRef.current.clientHeight;
+        cameraRef.current.aspect = width / height;
+        cameraRef.current.updateProjectionMatrix();
+        rendererRef.current.setSize(width, height);
       }
     };
     window.addEventListener('resize', handleResize);
@@ -99,17 +153,14 @@ const ConnectionPage = () => {
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', handleResize);
-      if (mountRef.current && mountRef.current.contains(renderer.domElement)) {
-        mountRef.current.removeChild(renderer.domElement);
+      if (mountRef.current && rendererRef.current?.domElement) {
+        mountRef.current.removeChild(rendererRef.current.domElement);
       }
       renderer.dispose();
-      nodeGeometry.dispose();
-      nodeMaterial1.dispose();
-      nodeMaterial2.dispose();
-      lineGeometry.dispose();
-      lineMaterial.dispose();
       starsGeometry.dispose();
       starsMaterial.dispose();
+      nodosRef.current.children.forEach(n => (n as THREE.Mesh).geometry.dispose());
+      arestasRef.current.children.forEach(a => (a as THREE.Line).geometry.dispose());
     };
   }, []);
 
@@ -117,13 +168,10 @@ const ConnectionPage = () => {
     <div className="w-screen h-screen relative bg-gray-900">
       <div ref={mountRef} id="canvas-container" className="absolute top-0 left-0 w-full h-full" />
       <div className="overlay pointer-events-none">
-        <div className="status-panel absolute top-5 left-5 bg-black/70 border border-yellow-500/50 rounded-xl p-4 backdrop-blur-md max-w-xs text-sm">
-           <h2 className="text-yellow-400 text-lg font-bold mb-3 text-shadow">LUXNET AETHERNUM</h2>
-            <div className="space-y-2">
-                <div className="flex justify-between"><span className="text-purple-300">Vibração:</span><span id="vibracao-status" className="text-green-400 font-semibold">Repouso Profundo</span></div>
-                <div className="flex justify-between"><span className="text-purple-300">Energia Total:</span><span id="energia-status" className="text-white font-semibold">0.00</span></div>
-                <div className="flex justify-between"><span className="text-purple-300">Sincronia:</span><span id="sincronia-status" className="text-white font-semibold">0.00</span></div>
-            </div>
+        <div id="info" className="status-panel absolute top-5 left-5 bg-black/70 border border-yellow-500/50 rounded-xl p-4 backdrop-blur-md max-w-xs text-sm text-white font-mono whitespace-pre-wrap">
+          Vibração: RESTING<br/>
+          Energia: 0.00<br/>
+          Sincronia: 0.00
         </div>
         <div className="info-text absolute top-5 right-5 text-right text-yellow-400 text-sm">
           VISUALIZAÇÃO DA REDE NEURAL QUÂNTICA<br/>
