@@ -243,28 +243,30 @@ export default function Nexus() {
           <CardDescription>Acompanhe em tempo real a ativação de cada módulo da Fundação.</CardDescription>
         </CardHeader>
         <CardContent>
-          <ScrollArea className="h-[500px] w-full pr-4" ref={scrollAreaRef}>
-            <div className="space-y-4">
+          <ScrollArea className="h-[70vh] w-full pr-4" ref={scrollAreaRef}>
+            <div className="space-y-3">
               <AnimatePresence>
-                {logs.map((log, index) => {
+                {logs.map((log) => {
                   const { icon, bgColor, textColor, borderColor } =
                     getStatusStyles(log.state);
                   const IconComponent = moduleIcons[log.module] || <Bot />;
                   return (
                     <motion.div
-                      key={log.module + log.timestamp}
+                      key={log.module}
                       layout
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20}}
-                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      transition={{ duration: 0.5, type: 'spring', stiffness: 50 }}
                       className={cn(
-                        'flex items-start gap-4 rounded-lg p-3 text-sm border transition-colors',
+                        'flex items-start gap-4 rounded-xl p-4 text-sm border transition-all duration-300',
                         bgColor,
                         borderColor
                       )}
                     >
-                      <div className="mt-1 h-5 w-5 flex items-center justify-center shrink-0">{icon}</div>
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-background/50 border shrink-0 mt-1">
+                        {icon}
+                      </div>
                       <div className="flex-1">
                         <div className="flex justify-between items-center">
                           <p className={cn('font-semibold flex items-center gap-2', textColor)}>
@@ -275,11 +277,11 @@ export default function Nexus() {
                             {new Date(log.timestamp).toLocaleTimeString()}
                           </p>
                         </div>
-                        <p className="text-muted-foreground/80 mt-1 text-xs">
+                        <p className="text-muted-foreground/80 mt-1 text-xs leading-relaxed">
                           {log.message}
                         </p>
                         {log.data && (
-                           <pre className="mt-2 text-xs bg-black/20 p-2 rounded-md overflow-x-auto text-gray-400 font-mono">
+                           <pre className="mt-2 text-xs bg-black/30 p-3 rounded-lg overflow-x-auto text-gray-400 font-mono text-[10px] leading-snug">
                              {JSON.stringify(log.data, null, 2)}
                            </pre>
                         )}
