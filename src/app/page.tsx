@@ -7,11 +7,12 @@ import MainSidebar from '@/components/main-sidebar';
 import DocumentCard from '@/components/document-card';
 import MainHeader from '@/components/main-header';
 import KeyGenerator from '@/components/key-generator';
+import Nexus from '@/components/nexus';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 
 export default function Home() {
   const [selectedSectionId, setSelectedSectionId] = React.useState<string>(
-    'equations'
+    'nexus'
   );
 
   const selectedSection = sections.find((s) => s.id === selectedSectionId);
@@ -23,6 +24,10 @@ export default function Home() {
           <p className="text-muted-foreground">Section not found.</p>
         </div>
       );
+    }
+    
+    if (section.id === 'nexus') {
+      return <Nexus />;
     }
 
     if (section.id === 'tools') {

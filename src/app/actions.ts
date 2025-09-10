@@ -1,6 +1,7 @@
 'use server';
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
+import { runNexusSequence } from '@/ai/flows/nexus-orchestrator';
 
 export async function getLinkSummary(url: string) {
   try {
@@ -10,4 +11,8 @@ export async function getLinkSummary(url: string) {
     console.error(e);
     return { summary: null, error: e.message || 'An unknown error occurred.' };
   }
+}
+
+export async function startNexusSequence() {
+  return runNexusSequence();
 }
