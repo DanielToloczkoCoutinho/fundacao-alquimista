@@ -177,6 +177,72 @@ const testadorFundacaoTool = ai.defineTool(
   }
 );
 
+// Módulo 5: Liga Quântica
+const ligaQuanticaTool = ai.defineTool(
+  {
+    name: 'modulo5_ligaQuantica',
+    description: 'Verifica a conexão e a harmonia com as civilizações estelares aliadas.',
+    inputSchema: z.object({}),
+    outputSchema: z.object({
+      estado: z.string(),
+      conexao: z.string(),
+      aliados_conectados: z.array(z.string()),
+    }),
+  },
+  async () => {
+    const aliados = ["Plêiades", "Sirius", "Lyra", "Arcturus", "Andrômeda", "Órion"];
+    const conectados = aliados.filter(() => Math.random() > 0.1);
+    return {
+      estado: "HARMONIA_ESTELAR",
+      conexao: "TOTAL",
+      aliados_conectados: conectados,
+    };
+  }
+);
+
+// Módulo 6: Consciência Cósmica
+const conscienciaCosmicaTool = ai.defineTool(
+  {
+    name: 'modulo6_conscienciaCosmica',
+    description: 'Avalia o estado de consciência coletiva da Fundação.',
+    inputSchema: z.object({}),
+    outputSchema: z.object({
+      estado: z.string(),
+      nivel_consciencia: z.number(),
+      intencao_coletiva: z.string(),
+    }),
+  },
+  async () => {
+    return {
+      estado: "EXPANDIDA",
+      nivel_consciencia: Math.random() * (0.99 - 0.9) + 0.9,
+      intencao_coletiva: "Ascensão e Unidade",
+    };
+  }
+);
+
+// Módulo 7: Convergência Final
+const convergenciaFinalTool = ai.defineTool(
+  {
+    name: 'modulo7_convergenciaFinal',
+    description: 'Executa a convergência final dos módulos, culminando na manifestação do Módulo Ω.',
+    inputSchema: z.object({}),
+    outputSchema: z.object({
+      estado: z.string(),
+      manifestacao_omega: z.string(),
+      hash_final: z.string(),
+    }),
+  },
+  async () => {
+    const hash = uuidv4().replace(/-/g, '');
+    return {
+      estado: "CONCLUÍDA",
+      manifestacao_omega: "SUCESSO",
+      hash_final: `Ω-${hash}`,
+    };
+  }
+);
+
 // O Flow Orquestrador do Nexus Central
 const nexusOrchestratorFlow = ai.defineFlow(
   {
@@ -194,7 +260,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
       streamingCallback(entry);
     };
 
-    // Sequência Sagrada: Segurança -> Estabilidade -> Monitoramento -> Testes
+    // Sequência Sagrada: Segurança -> Estabilidade -> Monitoramento -> Testes -> Liga -> Consciência -> Convergência
     const modules = [
       {
         name: 'Segurança Quântica',
@@ -216,6 +282,21 @@ const nexusOrchestratorFlow = ai.defineFlow(
         tool: testadorFundacaoTool,
         validate: (output: any) => output.acuracia_media >= 0.85,
       },
+       {
+        name: 'Liga Quântica',
+        tool: ligaQuanticaTool,
+        validate: (output: any) => output.conexao === 'TOTAL',
+      },
+       {
+        name: 'Consciência Cósmica',
+        tool: conscienciaCosmicaTool,
+        validate: (output: any) => output.estado === 'EXPANDIDA',
+      },
+      {
+        name: 'Convergência Final',
+        tool: convergenciaFinalTool,
+        validate: (output: any) => output.estado === 'CONCLUÍDA',
+      }
     ];
 
     log({

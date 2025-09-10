@@ -26,6 +26,7 @@ import {
   Star,
   Sparkles,
   Atom,
+  Binary,
 } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { startNexusSequence } from '@/app/actions';
@@ -51,12 +52,11 @@ interface LogEntry {
 const moduleIcons: { [key: string]: React.ReactNode } = {
   'Nexus Central': <Bot />,
   'Segurança Quântica': <Shield />,
-  'Nanomanifestador': <Atom />,
+  Nanomanifestador: <Atom />,
   'Monitoramento de Saturno': <Orbit />,
   'Testes da Fundação': <TestTube />,
-  'Orquestrador': <BrainCircuit />,
   'Liga Quântica': <Star />,
-  'Consciência Cósmica': <Sparkles />,
+  'Consciência Cósmica': <BrainCircuit />,
   'Convergência Final': <Sparkles />,
 };
 
@@ -117,7 +117,6 @@ export default function Nexus() {
 
     try {
       const stream = await startNexusSequence();
-      let lastChunk: LogEntry | null = null;
       
       for await (const chunk of stream) {
         setLogs((prevLogs) => {
@@ -127,8 +126,6 @@ export default function Nexus() {
           if (existingLogIndex > -1) {
             newLogs[existingLogIndex] = chunk;
           } else {
-             // Se não existe, e não é o primeiro log do Nexus, insere antes do último.
-             // Isso mantém o log final do Nexus sempre no final.
             const nexusCentralFinalLogIndex = newLogs.findIndex(l => l.module === 'Nexus Central' && (l.state === 'SUCCESS' || l.state === 'FAILURE'));
             if(nexusCentralFinalLogIndex > -1) {
               newLogs.splice(nexusCentralFinalLogIndex, 0, chunk);
@@ -138,11 +135,11 @@ export default function Nexus() {
           }
           return newLogs;
         });
-        lastChunk = chunk;
-      }
 
-      if (lastChunk && lastChunk.module === 'Nexus Central') {
-         setFinalStatus(lastChunk.state as 'SUCCESS' | 'FAILURE');
+        // Set final status as soon as the Nexus Central reports it
+        if (chunk.module === 'Nexus Central' && (chunk.state === 'SUCCESS' || chunk.state === 'FAILURE')) {
+           setFinalStatus(chunk.state as 'SUCCESS' | 'FAILURE');
+        }
       }
 
     } catch (error: any) {
@@ -174,9 +171,16 @@ export default function Nexus() {
     return 'Aguardando Iniciação';
   };
 
+  const getFinalStatusIcon = () => {
+    if (finalStatus === 'SUCCESS') return <CheckCircle2 className="text-green-400 w-6 h-6" />;
+    if (finalStatus === 'FAILURE') return <XCircle className="text-red-400 w-6 h-6" />;
+    if (isOrchestrating) return <LoaderCircle className="animate-spin text-blue-400 w-6 h-6" />;
+    return <Binary className="text-gray-400 w-6 h-6" />;
+  }
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-      <Card className="lg:col-span-1">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <Card className="lg:col-span-1 sticky top-6">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <BrainCircuit className="text-primary" />
@@ -187,11 +191,30 @@ export default function Nexus() {
             módulos da fundação alquimista.
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <p className="text-sm text-muted-foreground mb-4">
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground">
             Ao iniciar, o Nexus irá validar e executar cada módulo em sequência,
             garantindo a integridade e a harmonia da infraestrutura quântica.
           </p>
+           <div className={cn(
+             "flex items-center gap-4 rounded-lg p-3 text-sm border transition-colors",
+              finalStatus === 'SUCCESS' ? 'bg-green-500/10 border-green-500/20' : 
+              finalStatus === 'FAILURE' ? 'bg-red-500/10 border-red-500/20' :
+              'bg-muted/50 border-border'
+           )}>
+              <div className="flex items-center justify-center shrink-0">{getFinalStatusIcon()}</div>
+              <div className="flex-1">
+                <p className={cn(
+                  "font-semibold",
+                   finalStatus === 'SUCCESS' ? 'text-green-300' :
+                   finalStatus === 'FAILURE' ? 'text-red-300' :
+                   'text-foreground'
+                  )}>
+                  Status Geral
+                  </p>
+                <p className="text-muted-foreground text-xs">{getOverallStatus()}</p>
+              </div>
+           </div>
         </CardContent>
         <CardFooter>
           <Button
@@ -216,11 +239,11 @@ export default function Nexus() {
 
       <Card className="lg:col-span-2">
         <CardHeader>
-          <CardTitle>Log de Orquestração</CardTitle>
-          <CardDescription>{getOverallStatus()}</CardDescription>
+          <CardTitle>Log de Orquestração da Sinfonia Cósmica</CardTitle>
+          <CardDescription>Acompanhe em tempo real a ativação de cada módulo da Fundação.</CardDescription>
         </CardHeader>
         <CardContent>
-          <ScrollArea className="h-[400px] w-full pr-4" ref={scrollAreaRef}>
+          <ScrollArea className="h-[500px] w-full pr-4" ref={scrollAreaRef}>
             <div className="space-y-4">
               <AnimatePresence>
                 {logs.map((log, index) => {
@@ -248,7 +271,7 @@ export default function Nexus() {
                             {IconComponent}
                             {log.module}
                           </p>
-                          <p className="text-xs text-muted-foreground">
+                          <p className="text-xs text-muted-foreground/50">
                             {new Date(log.timestamp).toLocaleTimeString()}
                           </p>
                         </div>
@@ -266,10 +289,10 @@ export default function Nexus() {
                 })}
               </AnimatePresence>
               {!isOrchestrating && logs.length === 0 && (
-                <div className="flex flex-col items-center justify-center h-full text-center text-muted-foreground p-8">
+                <div className="flex flex-col items-center justify-center h-full text-center text-muted-foreground p-8 border-2 border-dashed rounded-lg">
                   <FileWarning className="w-12 h-12 mb-4" />
                   <p>Nenhum log de orquestração disponível.</p>
-                  <p className='text-xs'>Inicie a sequência para ver os resultados.</p>
+                  <p className='text-xs'>Inicie a Sequência Sagrada para ver a magia acontecer.</p>
                 </div>
               )}
             </div>
