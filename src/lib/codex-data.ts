@@ -14,6 +14,7 @@ import {
   Swords,
   Box,
   BookOpenCheck,
+  KeySquare,
 } from 'lucide-react';
 
 export interface Document {
@@ -42,6 +43,12 @@ export const sections: Section[] = [
     id: 'codex-explorer',
     title: 'Explorador do Códex',
     icon: BookOpenCheck,
+    documents: [],
+  },
+  {
+    id: 'master-keys',
+    title: 'Chaves Mestras',
+    icon: KeySquare,
     documents: [],
   },
   {
