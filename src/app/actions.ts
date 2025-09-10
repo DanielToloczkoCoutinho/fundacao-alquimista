@@ -38,3 +38,7 @@ export async function handleTrinaAction(
     };
   }
 }
+
+// Constantes Sagradas
+const FREQ_ANATHERON_ESTABILIZADORA = 528.0; // Frequência do Amor Universal
+const FREQ_ZENNITH_REAJUSTADA = 741.0; // Frequência de Reajuste Espiritual
