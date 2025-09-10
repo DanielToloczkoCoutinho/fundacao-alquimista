@@ -21,7 +21,7 @@ const QuantumStateDisplay = ({ name, coherence, entanglement }: { name: string, 
   </div>
 );
 
-const ModuleOne = () => {
+export default function ModuleOne() {
   const [estado, setEstado] = useState<'INICIANDO' | 'ATIVO' | 'ALERTA'>('INICIANDO');
   const [nivelSeguranca, setNivelSeguranca] = useState(0);
   const [logs, setLogs] = useState<LogEntry[]>([]);
@@ -174,6 +174,4 @@ const ModuleOne = () => {
        </div>
     </div>
   );
-};
-
-export default ModuleOne;
+}
