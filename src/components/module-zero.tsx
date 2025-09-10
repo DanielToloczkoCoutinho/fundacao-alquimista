@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import CryptoJS from 'crypto-js';
+import { Button } from './ui/button';
 
 // Mapeia comandos LaTeX para Unicode
 const SYMBOL_MAP: Record<string, string> = {
