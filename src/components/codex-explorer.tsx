@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -86,6 +87,7 @@ const CodexExplorer: React.FC = () => {
     const mouse = new THREE.Vector2();
 
     const onCanvasClick = (event: MouseEvent) => {
+        if (!renderer.domElement.parentElement) return;
         const rect = renderer.domElement.getBoundingClientRect();
         mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
         mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
@@ -118,6 +120,7 @@ const CodexExplorer: React.FC = () => {
     animate();
 
     const handleResize = () => {
+        if (!container) return;
         camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
@@ -126,7 +129,9 @@ const CodexExplorer: React.FC = () => {
 
     return () => {
         window.removeEventListener('resize', handleResize);
-        container.removeEventListener('click', onCanvasClick);
+        if(container){
+            container.removeEventListener('click', onCanvasClick);
+        }
         if (renderer.domElement.parentNode === container) {
             container.removeChild(renderer.domElement);
         }
