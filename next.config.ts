@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    allowedDevOrigins: [
+        "https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev"
+    ]
+  },
   async headers() {
     return [
       {
@@ -59,24 +64,6 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Don't resolve server-only modules on the client
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        cluster: false,
-        fs: false,
-        v8: false,
-        net: false,
-        tls: false,
-        process: false,
-        path: false,
-        zlib: false,
-        async: false,
-      };
-    }
-    return config;
   },
 };
 

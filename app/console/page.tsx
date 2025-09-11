@@ -1,3 +1,4 @@
+
 // @ts-nocheck
 'use client';
 
@@ -30,7 +31,15 @@ import { quantumResilience } from '@/lib/quantum-resilience';
 
 // Constantes e configurações globais, mantendo a compatibilidade
 const appId = process.env.NEXT_PUBLIC_APP_ID || 'default-app-id';
-const firebaseConfig = JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG || '{}');
+
+let firebaseConfig = {};
+try {
+  firebaseConfig = JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG || '{}');
+} catch (e) {
+  console.error("Falha ao analisar a configuração do Firebase:", e);
+  firebaseConfig = {};
+}
+
 const initialAuthToken = process.env.NEXT_PUBLIC_INITIAL_AUTH_TOKEN || null;
 
 // Hook customizado para inicializar Firebase e autenticar
