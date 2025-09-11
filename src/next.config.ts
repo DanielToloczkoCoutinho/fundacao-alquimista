@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   experimental: {
     allowedDevOrigins: [
       'https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev',
-      'http://localhost:9002',
+      'http://localhost:6000',
     ],
   },
   typescript: {
@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Permissions-Policy',
-            value: 'xr-spatial-tracking=*, camera=*, microphone=*, interest-cohort=()',
+            value: 'xr-spatial-tracking=(self), camera=(self), microphone=(self), xr=(self), interest-cohort=()',
           },
            {
             key: 'Cross-Origin-Opener-Policy',
@@ -30,6 +30,10 @@ const nextConfig: NextConfig = {
           {
             key: 'Cross-Origin-Embedder-Policy',
             value: 'require-corp',
+          },
+           {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'self' https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev;",
           },
         ],
       },
@@ -68,6 +72,14 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/external',
+        destination: 'https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/',
+      },
+    ];
   },
 };
 
