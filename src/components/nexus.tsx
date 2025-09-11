@@ -5,7 +5,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from './ui/card';
@@ -28,22 +27,11 @@ import {
   Atom,
   Binary,
 } from 'lucide-react';
-import { AnimatePresence, motion } from 'framer-motion';
 import { startNexusSequence } from '@/app/actions';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 import { ScrollArea } from './ui/scroll-area';
-import ModuleOmega0 from './module-omega-0';
-import ModuleOmega1 from './module-omega-1';
-import ModuleOmega2 from './module-omega-2';
-import ModuleOmega3 from './module-omega-3';
-import ModuleOmega4 from './module-omega-4';
-import ModuleOmega5 from './module-omega-5';
-import ModuleOmega6 from './module-omega-6';
-import ModuleOmega7 from './module-omega-7';
-import ModuleOmega8 from './module-omega-8';
-import ModuleOmega9 from './module-omega-9';
-import ModuleOmega303 from './module-omega-303';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type ModuleState =
   | 'PENDING'
@@ -248,29 +236,74 @@ export default function Nexus() {
       </Card>
 
       <div className="lg:col-span-2 space-y-6">
-         <Card>
+        <Card>
             <CardHeader>
-              <CardTitle>Manifestação Eterna dos Módulos</CardTitle>
-              <CardDescription>Contemple a coexistência simultânea de todos os Módulos Omega, vibrando em harmonia perpétua.</CardDescription>
+            <CardTitle>Log de Orquestração Akáshica</CardTitle>
+            <CardDescription>
+                Acompanhe o status de cada módulo durante a Sequência Sagrada.
+            </CardDescription>
             </CardHeader>
             <CardContent>
-              <ScrollArea className="h-[120vh] w-full pr-4" ref={scrollAreaRef}>
-                <div className="space-y-6">
-                    <ModuleOmega0 />
-                    <ModuleOmega1 />
-                    <ModuleOmega2 />
-                    <ModuleOmega3 />
-                    <ModuleOmega4 />
-                    <ModuleOmega5 />
-                    <ModuleOmega6 />
-                    <ModuleOmega7 />
-                    <ModuleOmega8 />
-                    <ModuleOmega9 />
-                    <ModuleOmega303 />
+            <ScrollArea className="h-[75vh] w-full pr-4" ref={scrollAreaRef}>
+                <AnimatePresence>
+                <div className="space-y-4">
+                    {logs.map((log) => {
+                    const status = getStatusStyles(log.state);
+                    const icon =
+                        Object.keys(moduleIcons).find((key) =>
+                        log.module.includes(key)
+                        ) || 'Nexus Central';
+
+                    return (
+                        <motion.div
+                        key={log.module}
+                        layout
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className={cn(
+                            'flex items-start gap-4 rounded-lg p-3 text-sm border transition-colors',
+                            status.borderColor,
+                            status.bgColor
+                        )}
+                        >
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-background shrink-0 mt-1">
+                            {status.icon}
+                        </div>
+                        <div className="flex-1">
+                            <p className={cn('font-semibold', status.textColor)}>
+                            {log.module}
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                            {log.message}
+                            </p>
+                            {log.data && (
+                            <details className="mt-2 text-xs">
+                                <summary className="cursor-pointer text-muted-foreground hover:text-foreground">
+                                Detalhes
+                                </summary>
+                                <pre className="mt-1 whitespace-pre-wrap break-all rounded-md bg-background/50 p-2 font-mono text-foreground/80">
+                                {JSON.stringify(log.data, null, 2)}
+                                </pre>
+                            </details>
+                            )}
+                        </div>
+                        </motion.div>
+                    );
+                    })}
+                    {logs.length === 0 && !isOrchestrating && (
+                        <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-12 text-center text-muted-foreground">
+                            <Binary className="mb-4 h-12 w-12" />
+                            <p className="font-semibold">Nenhuma sequência em andamento.</p>
+                            <p className="text-sm">Inicie a Sequência Sagrada para começar.</p>
+                        </div>
+                    )}
                 </div>
-              </ScrollArea>
+                </AnimatePresence>
+            </ScrollArea>
             </CardContent>
-          </Card>
+        </Card>
       </div>
     </div>
   );

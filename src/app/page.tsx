@@ -147,6 +147,7 @@ const App = () => {
         case 'living-library':
         case 'equations':
         case 'quantum-infrastructure':
+        case 'defense-protocols':
             if (selectedSection && selectedSection.documents.length > 0) {
                 return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
             }
@@ -187,5 +188,3 @@ const App = () => {
 };
 
 export default App;
-
-    
