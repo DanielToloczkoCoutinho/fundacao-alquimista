@@ -1,131 +1,185 @@
-// This file is now located at app/page.tsx
+// @ts-nocheck
 'use client';
+import { useState } from "react";
 
-import * as React from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { sections } from '@/lib/codex-data';
-import MainSidebar from '@/components/main-sidebar';
-import DocumentCard from '@/components/document-card';
-import MainHeader from '@/components/main-header';
-import KeyGenerator from '@/components/key-generator';
-import Nexus from '@/components/nexus';
-import ModuleZero from '@/components/module-zero';
-import ModuleOne from '@/components/module-one';
-import Module303 from '@/components/module-303';
-import ConnectionPage from '@/app/connection/page';
-import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import ModuleTwo from '@/components/module-two';
-import CodexExplorer from '@/components/codex-explorer';
-import KeyViewer from '@/components/key-viewer';
+// Interfaces e Dados
+interface EquacaoViva {
+  id: string;
+  nome: string;
+  formula_latex: string;
+  formula_python: string;
+  descricao: string;
+  classificacao: string;
+  variaveis: string[];
+  origem: string;
+}
 
-// Placeholder para os novos módulos que ainda não possuem componente dedicado
-const GenericModulePlaceholder = ({ title }: { title: string }) => (
-  <Card>
-    <CardHeader>
-      <CardTitle>{title}</CardTitle>
-      <CardDescription>Este módulo está em desenvolvimento. A interface dedicada estará disponível em breve.</CardDescription>
-    </CardHeader>
-    <CardContent>
-      <p>A funcionalidade principal deste módulo está sendo integrada à Sinfonia Cósmica. Os resultados de suas operações, incluindo verificações de integridade, podem ser observados nos logs do Nexus Central (Módulo 9).</p>
-    </CardContent>
-  </Card>
+interface ChaveMestra {
+  id: string;
+  nome: string;
+  descricao: string;
+  equacoes: EquacaoViva[];
+}
+
+interface CodexItem {
+  title: string;
+  description: string;
+  icon: string;
+  content: string;
+}
+
+const equacoes: EquacaoViva[] = [
+  {
+    id: "307.1.1",
+    nome: "Extração de Energia do Vácuo",
+    formula_latex: "P_{\\text{ZPE}} = \\kappa \\cdot \\rho_{\\text{vac}} \\cdot V_{\\text{eff}} \\cdot \\omega_{\\text{ZPE}} \\cdot Q",
+    formula_python: "def p_zpe(kappa, rho_vac, V_eff, omega_zpe, Q):\n    return kappa * rho_vac * V_eff * omega_zpe * Q",
+    descricao: "Potência extraída do vácuo quântico pelo núcleo Gaia",
+    classificacao: "Energia do Vácuo",
+    variaveis: ["kappa (fator de acoplamento)", "rho_vac (densidade do vácuo)", "V_eff (volume efetivo)", "omega_zpe (frequência ZPE)", "Q (fator de qualidade)"],
+    origem: "Submódulo 307.1"
+  },
+];
+
+const chaveMestra307: ChaveMestra = {
+  id: "307",
+  nome: "Chave Mestra 307",
+  descricao: "Equações vivas do módulo 307",
+  equacoes: equacoes,
+};
+
+const chaveLuxNet: ChaveMestra = {
+  id: "luxnet",
+  nome: "Chave LuxNet",
+  descricao: "Equações da rede LuxNet",
+  equacoes: [],
+};
+
+const chavesMestras: ChaveMestra[] = [chaveMestra307, chaveLuxNet];
+
+const codexData: CodexItem[] = [
+  { title: "Home", description: "Página inicial", icon: "🏠", content: "Home" },
+  { title: "Console da Fundação", description: "Painel de controle principal da Fundação", icon: "💻", content: "Console" },
+  { title: "Chaves Mestras", description: "Visualizador das Chaves Mestras da Fundação", icon: "🔑", content: "ChavesMestras" },
+];
+
+// Componentes
+const Sidebar = ({ onNavigate }: { onNavigate: (content: string) => void }) => (
+  <nav className="w-64 p-4 bg-gray-800 h-screen text-white">
+    {codexData.map((item) => (
+      <button
+        key={item.title}
+        onClick={() => onNavigate(item.content)}
+        className="w-full text-left p-2 mb-2 rounded hover:bg-gray-700 flex items-center"
+      >
+        <span className="mr-2">{item.icon}</span> {item.title}
+      </button>
+    ))}
+  </nav>
 );
 
-
-export default function Home() {
-  const [selectedSectionId, setSelectedSectionId] = React.useState<string>(
-    'nexus'
-  );
-
-  const renderContent = () => {
-    const section = sections.find((s) => s.id === selectedSectionId);
-
-    switch (selectedSectionId) {
-      case 'nexus':
-        return <Nexus />;
-      case 'codex-explorer':
-        return <CodexExplorer />;
-      case 'master-keys':
-        return <KeyViewer />;
-      case 'module-303':
-        return <Module303 />;
-      case 'module-one':
-        return <ModuleOne />;
-      case 'module-zero':
-        return <ModuleZero />;
-      case 'connection':
-        // A página de conexão tem seu próprio layout de tela cheia
-        return null;
-      case 'tools':
-        return <KeyGenerator />;
-      case 'm2':
-        return <ModuleTwo />;
-      case 'm3':
-        return <GenericModulePlaceholder title="Módulo 3: Previsão" />;
-      case 'm4':
-        return <GenericModulePlaceholder title="Módulo 4: Validação" />;
-      case 'm5':
-        return <GenericModulePlaceholder title="Módulo 5: Ética (ELENYA)" />;
-      case 'm6':
-        return <GenericModulePlaceholder title="Módulo 6: Frequências" />;
-      case 'm7':
-        return <GenericModulePlaceholder title="Módulo 7: SOFA" />;
-      case 'm8':
-        return <GenericModulePlaceholder title="Módulo 8: PIRC" />;
-      default:
-        if (section && section.documents.length > 0) {
-           return (
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {section.documents.map((doc, index) => (
-                <DocumentCard key={`${section.id}-${index}`} document={doc} />
-              ))}
-            </div>
-          );
-        }
-        return (
-           <div className="flex h-full items-center justify-center">
-            <p className="text-muted-foreground">Selecione um módulo ou seção para começar.</p>
-          </div>
-        );
-    }
-  };
-  
-  const selectedSection = sections.find(s => s.id === selectedSectionId);
-  const selectedTitle = selectedSection?.title;
-  
-  // Renderiza a página de conexão em tela cheia separadamente
-  if (selectedSectionId === 'connection') {
-    return <ConnectionPage />;
-  }
+const Console = () => {
+  const [activeTab, setActiveTab] = useState("overview");
 
   return (
-    <SidebarProvider>
-      <MainSidebar
-        selectedSectionId={selectedSectionId}
-        setSelectedSectionId={setSelectedSectionId}
-      />
-      <SidebarInset className="flex flex-col bg-background cosmic-bg">
-        <MainHeader />
-        <main className="flex-1 overflow-y-auto p-6">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedSectionId}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              {selectedTitle && (
-                 <h1 className="mb-6 text-3xl font-bold font-headline text-primary">
-                  {selectedTitle}
-                 </h1>
-              )}
-              {renderContent()}
-            </motion.div>
-          </AnimatePresence>
-        </main>
-      </SidebarInset>
-    </SidebarProvider>
+    <div className="space-y-4 p-4 text-white">
+      <h1 className="text-3xl font-bold">Console da Fundação</h1>
+      <div className="border-b border-gray-700">
+        <button
+          onClick={() => setActiveTab("overview")}
+          className={`px-4 py-2 ${activeTab === "overview" ? "border-b-2 border-blue-500" : ""}`}
+        >
+          Visão Geral
+        </button>
+        <button
+          onClick={() => setActiveTab("logs")}
+          className={`px-4 py-2 ${activeTab === "logs" ? "border-b-2 border-blue-500" : ""}`}
+        >
+          Logs
+        </button>
+        <button
+          onClick={() => setActiveTab("settings")}
+          className={`px-4 py-2 ${activeTab === "settings" ? "border-b-2 border-blue-500" : ""}`}
+        >
+          Configurações
+        </button>
+        <button
+          onClick={() => setActiveTab("chave307")}
+          className={`px-4 py-2 ${activeTab === "chave307" ? "border-b-2 border-blue-500" : ""}`}
+        >
+          Chave Mestra 307
+        </button>
+      </div>
+      {activeTab === "overview" && (
+        <div className="p-4 bg-gray-900 rounded">Status: Ativo</div>
+      )}
+      {activeTab === "logs" && (
+        <div className="p-4 bg-gray-900 rounded"><pre>Logs aqui...</pre></div>
+      )}
+      {activeTab === "settings" && (
+        <div className="p-4 bg-gray-900 rounded"><input placeholder="Parâmetro" className="p-2 rounded bg-gray-800" /></div>
+      )}
+      {activeTab === "chave307" && (
+        <div className="p-4 bg-gray-900 rounded space-y-4">
+          {equacoes.map((equacao) => (
+            <div key={equacao.id} className="p-2 border rounded border-gray-700">
+              <h3 className="font-bold">{equacao.nome}</h3>
+              <p className="text-sm">{equacao.formula_latex}</p>
+              <p className="text-sm">{equacao.descricao}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
-}
+};
+
+const KeyViewer = () => {
+    const [activeKey, setActiveKey] = useState(chavesMestras[0].id);
+
+    return (
+        <div className="space-y-4 p-4 text-white">
+            <h1 className="text-3xl font-bold">Chaves Mestras</h1>
+            <div className="border-b border-gray-700">
+                {chavesMestras.map((chave) => (
+                    <button
+                        key={chave.id}
+                        onClick={() => setActiveKey(chave.id)}
+                        className={`px-4 py-2 ${activeKey === chave.id ? "border-b-2 border-blue-500" : ""}`}
+                    >
+                        {chave.nome}
+                    </button>
+                ))}
+            </div>
+            {chavesMestras.filter(chave => chave.id === activeKey).map((chave) => (
+                <div key={chave.id} className="p-4 bg-gray-900 rounded">
+                    <h2 className="font-bold text-xl mb-2">{chave.nome}</h2>
+                    <p className="text-sm mb-4">{chave.descricao}</p>
+                    {chave.equacoes.map((equacao) => (
+                        <div key={equacao.id} className="p-2 border rounded mt-2 border-gray-700">
+                            <h3 className="font-bold">{equacao.nome}</h3>
+                            <p className="text-sm">{equacao.formula_latex}</p>
+                        </div>
+                    ))}
+                    {chave.equacoes.length === 0 && <p className="text-sm text-gray-400">Nenhuma equação disponível para esta chave.</p>}
+                </div>
+            ))}
+        </div>
+    );
+};
+
+// Componente Principal
+export default function App() {
+  const [currentContent, setCurrentContent] = useState<string>("Home");
+
+  return (
+    <div className="flex h-screen bg-gray-900 text-white">
+      <Sidebar onNavigate={setCurrentContent} />
+      <main className="flex-1 p-8 overflow-auto">
+        {currentContent === "Console" && <Console />}
+        {currentContent === "ChavesMestras" && <KeyViewer />}
+        {currentContent === "Home" && <p>Bem-vindo à Fundação Alquimista - 21:39, 10/09/2025</p>}
+      </main>
+    </div>
+  );
+};
