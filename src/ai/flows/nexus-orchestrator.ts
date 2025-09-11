@@ -150,7 +150,7 @@ const eticaTool = ai.defineTool(
     async () => {
         const conformidade = Math.random() * 0.1 + 0.9; // Alta conformidade
         return {
-            estado: conformidade > 0.92 ? "ALINHADO" : "REQUER_AJUSTE",
+            estado: conformidade > 0.9 ? "ALINHADO" : "REQUER_AJUSTE",
             nivel_conformidade: conformidade,
         };
     }
