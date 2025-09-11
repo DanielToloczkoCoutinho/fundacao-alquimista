@@ -1,5 +1,6 @@
 
 import { NextRequest, NextResponse } from 'next/server';
+import { execSync } from 'child_process';
 
 // Mock implementations as the original files are removed
 const cosmicCache = {
@@ -40,17 +41,20 @@ export async function GET(request: NextRequest) {
 
   if (unhealthyComponents.length > 0) {
     healthReport.status = 'degraded';
-    logger.warn('Health check reportou degradação. Iniciando auto-cura quântica.', healthReport);
+    logger.warn('Dissonância detectada - Iniciando auto-cura quântica.', healthReport);
     try {
-      // Apenas execute em ambiente de produção
+      // Auto-cura: Apenas execute em ambiente de produção
       if (process.env.NODE_ENV === 'production') {
-        // execSync('kubectl rollout restart deployment/alquimista-app', { stdio: 'inherit' });
-        logger.info('Comando de reinício do deployment executado com sucesso (simulado).');
+        execSync('kubectl rollout restart deployment/alquimista-app', { stdio: 'ignore' });
+        healthReport.auto_heal = 'iniciado';
+        logger.info('Comando de reinício do deployment executado com sucesso.');
       } else {
+        healthReport.auto_heal = 'pulado_em_desenvolvimento';
         logger.info('Ambiente de desenvolvimento. O reinício automático do deployment foi pulado.');
       }
-    } catch (error: any) {
-        logger.error('Falha ao executar o comando de auto-cura.', { error: error.message });
+    } catch (healError: any) {
+        healthReport.heal_error = healError.message;
+        logger.error('Falha ao executar o comando de auto-cura.', { error: healError.message });
     }
   }
 
