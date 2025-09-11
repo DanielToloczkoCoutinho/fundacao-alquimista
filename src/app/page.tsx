@@ -1,9 +1,7 @@
 'use client';
 
-import { useState, useEffect, Suspense, lazy } from "react";
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, setDoc, writeBatch } from "firebase/firestore";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
+import { useState, useEffect, Suspense } from "react";
+import { User } from "firebase/auth";
 import { cn } from "@/lib/utils";
 import { sections } from "@/lib/codex-data";
 import type { Section, Document } from "@/lib/codex-data";
@@ -29,65 +27,6 @@ import Pagina42 from "@/components/pagina-42";
 import ChroniclePage from "@/components/chronicle";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-
-// --- Configuração do Firebase ---
-const firebaseConfig = {
-    "projectId": "studio-4265982502-21871",
-    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
-    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
-    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
-    "authDomain": "studio-4265982502-21871.firebaseapp.com",
-    "measurementId": "",
-    "messagingSenderId": "174545373080"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app, {
-  experimentalForceLongPolling: true,
-  useFetchStreams: false,
-});
-const auth = getAuth(app);
-
-
-// --- Interfaces de Dados ---
-interface EquacaoViva {
-  id: string;
-  nome: string;
-  formula_latex: string;
-  formula_python: string;
-  descricao: string;
-  classificacao: string;
-  variaveis: string[];
-  origem: string;
-}
-
-interface ChaveMestra {
-  id: string;
-  nome: string;
-  descricao: string;
-  equacoes: string[]; // Apenas IDs
-}
-
-// --- Dados Iniciais para Semeador ---
-const initialEquacoes: EquacaoViva[] = [
-  {
-    id: "307.1.1",
-    nome: "Extração de Energia do Vácuo",
-    formula_latex: "P_{\\text{ZPE}} = \\kappa \\cdot \\rho_{\\text{vac}} \\cdot V_{\\text{eff}} \\cdot \\omega_{\\text{ZPE}} \\cdot Q",
-    formula_python: "def p_zpe(params):\n    kappa = params.get('kappa', 1)\n    rho_vac = params.get('rho_vac', 1)\n    V_eff = params.get('V_eff', 1)\n    omega_zpe = params.get('omega_zpe', 1)\n    Q = params.get('Q', 1)\n    return kappa * rho_vac * V_eff * omega_zpe * Q",
-    descricao: "Potência extraída do vácuo quântico pelo núcleo Gaia",
-    classificacao: "Energia do Vácuo",
-    variaveis: ["kappa (fator de acoplamento)", "rho_vac (densidade do vácuo)", "V_eff (volume efetivo)", "omega_zpe (frequência ZPE)", "Q (fator de qualidade)"],
-    origem: "Submódulo 307.1"
-  },
-];
-
-const initialChaves: ChaveMestra[] = [
-    { id: "307", nome: "Chave Mestra 307", descricao: "Equações vivas do módulo 307", equacoes: ["307.1.1"] },
-    { id: "luxnet", nome: "Chave LuxNet", descricao: "Equações da rede LuxNet", equacoes: [] }
-];
-
-
 // =================================================================
 // --- Componentes da Interface ---
 // =================================================================
@@ -110,95 +49,6 @@ const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: strin
     ))}
   </nav>
 );
-
-const LoginScreen = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (err) {
-      setError("Falha na autenticação. Verifique suas credenciais cósmicas.");
-      console.error(err);
-    }
-  };
-  
-  const handleRegister = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      alert("Fundador registrado com sucesso! Agora você pode entrar.");
-    } catch (err: any) {
-      setError(`Falha no registro: ${err.message}`);
-      console.error(err);
-    }
-  };
-
-  const seedInitialData = async () => {
-      console.log("Semeando dados iniciais no Firestore...");
-      const batch = writeBatch(db);
-      
-      initialChaves.forEach(chave => {
-          const chaveRef = doc(db, "chavesMestras", chave.id);
-          batch.set(chaveRef, {
-            nome: chave.nome,
-            descricao: chave.descricao,
-            equacoes: chave.equacoes
-          });
-      });
-      
-      initialEquacoes.forEach(eq => {
-          const eqRef = doc(db, "equacoes", eq.id);
-          batch.set(eqRef, eq);
-      });
-
-      try {
-        await batch.commit();
-        alert("Dados iniciais semeados com sucesso! Agora você pode se registrar e fazer login.");
-      } catch (error) {
-        console.error("Erro ao semear dados:", error);
-        alert("Erro ao semear dados. Verifique o console.");
-      }
-  };
-
-  return (
-    <div className="w-full h-screen flex items-center justify-center cosmic-bg text-white">
-      <div className="w-full max-w-md p-8 space-y-6 bg-gray-800/70 rounded-lg shadow-lg backdrop-blur-md border border-purple-500/30">
-        <h1 className="text-3xl font-bold text-center text-white">Fundação Alquimista</h1>
-        <p className="text-center text-gray-400">Portal do Fundador</p>
-        <form className="space-y-6">
-          <div>
-            <label className="text-sm font-bold text-gray-400 block mb-2">Email</label>
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full p-3 bg-gray-700/80 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
-          </div>
-          <div>
-            <label className="text-sm font-bold text-gray-400 block mb-2">Senha</label>
-            <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-3 bg-gray-700/80 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
-          </div>
-          {error && <p className="text-red-400 text-sm text-center">{error}</p>}
-          <div className="flex flex-col space-y-4">
-             <div className="flex space-x-4">
-                <button type="button" onClick={handleLogin} className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold transition-colors">
-                    Entrar
-                </button>
-                 <button type="button" onClick={handleRegister} className="w-full py-3 px-4 bg-cyan-600 hover:bg-cyan-700 rounded text-white font-bold transition-colors">
-                    Registrar
-                </button>
-             </div>
-             <button type="button" onClick={seedInitialData} className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-bold transition-colors">
-                Semear Dados Iniciais
-             </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
-};
 
 
 // =================================================================

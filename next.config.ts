@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Permissions-Policy',
-            value: 'xr-spatial-tracking=(), camera=(), microphone=()',
+            value: 'xr-spatial-tracking=*, camera=*, microphone=*',
           },
         ],
       },
