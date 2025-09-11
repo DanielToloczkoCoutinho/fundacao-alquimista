@@ -1,13 +1,10 @@
 import { NextResponse } from 'next/server';
-import client from 'prom-client';
-
-const collectDefaultMetrics = client.collectDefaultMetrics;
-collectDefaultMetrics({ prefix: 'alquimista_' });
+import { register } from '@/lib/metrics';
 
 export async function GET() {
-  const metrics = await client.register.metrics();
+  const metrics = await register.metrics();
   return new NextResponse(metrics, {
     status: 200,
-    headers: { 'Content-Type': client.register.contentType },
+    headers: { 'Content-Type': register.contentType },
   });
 }
