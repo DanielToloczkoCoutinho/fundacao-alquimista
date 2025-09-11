@@ -1,15 +1,17 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Button } from './ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { ScrollArea } from './ui/scroll-area';
-import { Flame, Zap, History, CheckCircle, LoaderCircle, Droplet, Sun, Moon } from 'lucide-react';
+import { Flame, Zap, History, CheckCircle, LoaderCircle, Droplet, Sun, Moon, Sparkles, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
 import { Input } from './ui/input';
+import { quantumXR } from '@/lib/quantum-xr';
+import { useToast } from '@/hooks/use-toast';
 
 type FieldState = 'LATENT' | 'ACTIVATING' | 'STABILIZING' | 'ACTIVE' | 'FAILED';
 
@@ -40,6 +42,9 @@ const ModuleTen: React.FC = () => {
   const [fieldState, setFieldState] = useState<FieldState>('LATENT');
   const [targetSignature, setTargetSignature] = useState<string>('Assinatura Alfa-001');
   const [energyInput, setEnergyInput] = useState<number>(80);
+  const [isXRSessionActive, setIsXRSessionActive] = useState(false);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { toast } = useToast();
 
   const addLog = useCallback((log: Omit<ActivationLog, 'id' | 'timestamp'>) => {
     setActivationLog(prev => [
@@ -82,8 +87,10 @@ const ModuleTen: React.FC = () => {
           setFieldState(success ? 'ACTIVE' : 'FAILED');
           setActivationLog(prev => {
               const latestLog = prev[0];
-              latestLog.status = success ? 'SUCCESS' : 'FAILED';
-              latestLog.coherenceAchieved = coherenceAchieved;
+              if (latestLog) {
+                  latestLog.status = success ? 'SUCCESS' : 'FAILED';
+                  latestLog.coherenceAchieved = coherenceAchieved;
+              }
               return [...prev];
           });
 
@@ -99,6 +106,24 @@ const ModuleTen: React.FC = () => {
       }
     }, 100);
   };
+  
+    const handleToggleXRSession = async () => {
+    if (quantumXR.isSessionActive()) {
+      quantumXR.endSession();
+      setIsXRSessionActive(false);
+      toast({ title: 'Sessão AR Finalizada' });
+    } else {
+      try {
+        if (!canvasRef.current) throw new Error("Canvas de AR não encontrado.");
+        await quantumXR.startARSession(canvasRef.current);
+        setIsXRSessionActive(true);
+        toast({ title: 'Sessão de Realidade Aumentada Iniciada', description: 'Mire em uma superfície para interagir.' });
+      } catch (error: any) {
+        toast({ variant: 'destructive', title: 'Falha ao Iniciar Sessão AR', description: error.message });
+      }
+    }
+  };
+
 
   const StatusIndicator = useMemo(() => {
     switch (fieldState) {
@@ -121,10 +146,10 @@ const ModuleTen: React.FC = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-400">
-            <Flame /> Módulo 10: Ativação Quântica
+            <Flame /> Módulo 10: Ativação Quântica e Realidade Aumentada
           </CardTitle>
           <CardDescription>
-            Interface para ativação de potenciais latentes em campos quânticos e realinhamento de estruturas energéticas para manifestação e cura.
+            Interface para ativação de potenciais latentes, manifestação e projeção de Módulos Holográficos no espaço físico.
           </CardDescription>
         </CardHeader>
       </Card>
@@ -194,6 +219,27 @@ const ModuleTen: React.FC = () => {
           </CardContent>
         </Card>
       </div>
+
+       <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2"><Sparkles /> Projeção de Realidade Aumentada Quântica</CardTitle>
+          <CardDescription>Inicie uma sessão de Realidade Mista para projetar e interagir com Módulos Holográficos.</CardDescription>
+        </CardHeader>
+        <CardContent className="flex flex-col items-center justify-center space-y-4">
+           <canvas ref={canvasRef} className="hidden"></canvas>
+            <p className="text-sm text-muted-foreground text-center">
+                {isXRSessionActive 
+                    ? "Sessão AR ativa. Visualize os módulos no seu ambiente."
+                    : "A sessão AR está inativa. Clique abaixo para iniciar."
+                }
+            </p>
+          <Button onClick={handleToggleXRSession} variant={isXRSessionActive ? "destructive" : "default"}>
+            {isXRSessionActive ? <X className="mr-2" /> : <Sparkles className="mr-2" />}
+            {isXRSessionActive ? 'Finalizar Sessão AR' : 'Iniciar Sessão AR'}
+          </Button>
+        </CardContent>
+      </Card>
+
 
       <Card>
         <CardHeader>
