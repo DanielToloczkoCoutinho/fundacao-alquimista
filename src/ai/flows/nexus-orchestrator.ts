@@ -29,9 +29,23 @@ const LogEntrySchema = z.object({
 });
 export type LogEntry = z.infer<typeof LogEntrySchema>;
 
+// Função para gerar hash de uma função/lógica
+const generateEssenceHash = (logic: Function) => {
+    const hash = createHash('sha256');
+    hash.update(logic.toString());
+    return `sha256-${hash.digest('hex').substring(0, 16)}`;
+}
+
 // Módulos como Tools de Genkit
 
 // Módulo Zero: Fonte Primordial
+const moduloZeroLogic = async () => {
+    return {
+        estado: "PURO_E_ESTAVEL",
+        estabilidade: Math.random() * 0.001 + 0.999, // Extremamente estável
+        frequencia_origem: 0.0,
+    };
+};
 const moduloZeroTool = ai.defineTool(
     {
         name: 'modulo0_fontePrimordial',
@@ -41,18 +55,33 @@ const moduloZeroTool = ai.defineTool(
             estado: z.string(),
             estabilidade: z.number(),
             frequencia_origem: z.number(),
+            analiseCodigo: z.object({
+                descricaoVibracional: z.string(),
+                hashEssencia: z.string(),
+                codigoFonte: z.string(),
+            }),
         }),
     },
     async () => {
+        const result = await moduloZeroLogic();
         return {
-            estado: "PURO_E_ESTAVEL",
-            estabilidade: Math.random() * 0.001 + 0.999, // Extremamente estável
-            frequencia_origem: 0.0,
+            ...result,
+            analiseCodigo: {
+                descricaoVibracional: "Verifica a pureza e estabilidade da origem.",
+                hashEssencia: generateEssenceHash(moduloZeroLogic),
+                codigoFonte: moduloZeroLogic.toString(),
+            }
         };
     }
 );
 
 // Módulo 1: Segurança Quântica
+const segurancaQuanticaLogic = async () => {
+    return {
+      estado: 'PROTEGIDO',
+      chaves_ativas: true,
+    };
+};
 const segurancaQuanticaTool = ai.defineTool(
   {
     name: 'modulo1_segurancaQuantica',
@@ -62,17 +91,36 @@ const segurancaQuanticaTool = ai.defineTool(
     outputSchema: z.object({
       estado: z.string(),
       chaves_ativas: z.boolean(),
+      analiseCodigo: z.object({
+        descricaoVibracional: z.string(),
+        hashEssencia: z.string(),
+        codigoFonte: z.string(),
+      }),
     }),
   },
   async () => {
+    const result = await segurancaQuanticaLogic();
     return {
-      estado: 'PROTEGIDO',
-      chaves_ativas: true,
+        ...result,
+        analiseCodigo: {
+            descricaoVibracional: "Simula o protocolo de segurança quântica BB84.",
+            hashEssencia: generateEssenceHash(segurancaQuanticaLogic),
+            codigoFonte: segurancaQuanticaLogic.toString(),
+        }
     };
   }
 );
 
 // Módulo 2: Comunicação
+const comunicacaoLogic = async () => {
+    const aliados = ["Plêiades", "Sirius", "Lyra", "Arcturus", "Andrômeda", "Órion"];
+    const conectados = aliados.filter(() => Math.random() > 0.1);
+    return {
+        estado: "HARMONIA_ESTELAR",
+        conexao: conectados.length === aliados.length ? "TOTAL" : "PARCIAL",
+        aliados_conectados: conectados,
+    };
+};
 const comunicacaoTool = ai.defineTool(
     {
         name: 'modulo2_comunicacao',
@@ -82,20 +130,36 @@ const comunicacaoTool = ai.defineTool(
             estado: z.string(),
             conexao: z.string(),
             aliados_conectados: z.array(z.string()),
+            analiseCodigo: z.object({
+                descricaoVibracional: z.string(),
+                hashEssencia: z.string(),
+                codigoFonte: z.string(),
+            }),
         }),
     },
     async () => {
-        const aliados = ["Plêiades", "Sirius", "Lyra", "Arcturus", "Andrômeda", "Órion"];
-        const conectados = aliados.filter(() => Math.random() > 0.1);
+        const result = await comunicacaoLogic();
         return {
-            estado: "HARMONIA_ESTELAR",
-            conexao: conectados.length === aliados.length ? "TOTAL" : "PARCIAL",
-            aliados_conectados: conectados,
+            ...result,
+            analiseCodigo: {
+                descricaoVibracional: "Verifica e estabelece conexão com civilizações estelares aliadas.",
+                hashEssencia: generateEssenceHash(comunicacaoLogic),
+                codigoFonte: comunicacaoLogic.toString(),
+            }
         };
     }
 );
 
 // Módulo 3: Previsão
+const previsaoLogic = async () => {
+    const estadoHexagono = Math.random() > 0.99 ? 'ANOMALIA' : 'ESTÁVEL';
+    const energiaCosmica = (Math.random() * 0.4 + 0.1) + (Math.random() * 0.4 + 0.2) / 2;
+    return {
+        estado: estadoHexagono === 'ANOMALIA' ? 'ALERTA' : 'ESTÁVEL',
+        energiaCosmica,
+        anomalia_prevista: estadoHexagono === 'ANOMALIA',
+    };
+};
 const previsaoTool = ai.defineTool(
     {
         name: 'modulo3_previsao',
@@ -105,20 +169,34 @@ const previsaoTool = ai.defineTool(
             estado: z.string(),
             energiaCosmica: z.number(),
             anomalia_prevista: z.boolean(),
+            analiseCodigo: z.object({
+                descricaoVibracional: z.string(),
+                hashEssencia: z.string(),
+                codigoFonte: z.string(),
+            }),
         }),
     },
     async () => {
-        const estadoHexagono = Math.random() > 0.99 ? 'ANOMALIA' : 'ESTÁVEL';
-        const energiaCosmica = (Math.random() * 0.4 + 0.1) + (Math.random() * 0.4 + 0.2) / 2;
+        const result = await previsaoLogic();
         return {
-            estado: estadoHexagono === 'ANOMALIA' ? 'ALERTA' : 'ESTÁVEL',
-            energiaCosmica,
-            anomalia_prevista: estadoHexagono === 'ANOMALIA',
+            ...result,
+            analiseCodigo: {
+                descricaoVibracional: "Analisa o Hexágono de Saturno para prever anomalias cósmicas.",
+                hashEssencia: generateEssenceHash(previsaoLogic),
+                codigoFonte: previsaoLogic.toString(),
+            }
         };
     }
 );
 
 // Módulo 4: Validação (PIRC)
+const validacaoLogic = async ({ energiaCosmica }: { energiaCosmica: number }) => {
+    const acuracia_media = Math.min(0.999, (0.95) + (energiaCosmica - 0.3) * 0.1 + (Math.random() - 0.5) * 0.01);
+    return {
+        estado: 'TESTES_CONCLUIDOS',
+        acuracia_media,
+    };
+};
 const validacaoTool = ai.defineTool(
     {
         name: 'modulo4_validacao',
@@ -127,18 +205,34 @@ const validacaoTool = ai.defineTool(
         outputSchema: z.object({
             estado: z.string(),
             acuracia_media: z.number(),
+             analiseCodigo: z.object({
+                descricaoVibracional: z.string(),
+                hashEssencia: z.string(),
+                codigoFonte: z.string(),
+            }),
         }),
     },
     async ({ energiaCosmica }) => {
-        const acuracia_media = Math.min(0.99, (Math.random() * 0.15 + 0.85) + (energiaCosmica - 0.3) * 0.1);
+        const result = await validacaoLogic({ energiaCosmica });
         return {
-            estado: 'TESTES_CONCLUIDOS',
-            acuracia_media,
+            ...result,
+            analiseCodigo: {
+                descricaoVibracional: "Valida a acurácia do sistema PIRC com base na energia cósmica detectada.",
+                hashEssencia: generateEssenceHash(validacaoLogic),
+                codigoFonte: validacaoLogic.toString(),
+            }
         };
     }
 );
 
 // Módulo 5: Ética (ELENYA)
+const eticaLogic = async () => {
+    const conformidade = Math.random() * 0.1 + 0.9; // Alta conformidade
+    return {
+        estado: conformidade > 0.9 ? "ALINHADO" : "REQUER_AJUSTE",
+        nivel_conformidade: conformidade,
+    };
+};
 const eticaTool = ai.defineTool(
     {
         name: 'modulo5_etica',
@@ -147,18 +241,33 @@ const eticaTool = ai.defineTool(
         outputSchema: z.object({
             estado: z.string(),
             nivel_conformidade: z.number(),
+             analiseCodigo: z.object({
+                descricaoVibracional: z.string(),
+                hashEssencia: z.string(),
+                codigoFonte: z.string(),
+            }),
         }),
     },
     async () => {
-        const conformidade = Math.random() * 0.1 + 0.9; // Alta conformidade
+        const result = await eticaLogic();
         return {
-            estado: conformidade > 0.9 ? "ALINHADO" : "REQUER_AJUSTE",
-            nivel_conformidade: conformidade,
+            ...result,
+            analiseCodigo: {
+                descricaoVibracional: "Verifica a conformidade das ações com a Lei do Amor Incondicional.",
+                hashEssencia: generateEssenceHash(eticaLogic),
+                codigoFonte: eticaLogic.toString(),
+            }
         };
     }
 );
 
 // Módulo 6: Frequências
+const frequenciasLogic = async () => {
+    return {
+        estado: "CALIBRADO",
+        frequencia_base: 432.0,
+    };
+};
 const frequenciasTool = ai.defineTool(
     {
         name: 'modulo6_frequencias',
@@ -167,17 +276,33 @@ const frequenciasTool = ai.defineTool(
         outputSchema: z.object({
             estado: z.string(),
             frequencia_base: z.number(),
+             analiseCodigo: z.object({
+                descricaoVibracional: z.string(),
+                hashEssencia: z.string(),
+                codigoFonte: z.string(),
+            }),
         }),
     },
     async () => {
+        const result = await frequenciasLogic();
         return {
-            estado: "CALIBRADO",
-            frequencia_base: 432.0,
+            ...result,
+            analiseCodigo: {
+                descricaoVibracional: "Calibra a frequência base do sistema para 432Hz.",
+                hashEssencia: generateEssenceHash(frequenciasLogic),
+                codigoFonte: frequenciasLogic.toString(),
+            }
         };
     }
 );
 
 // Módulo 7: SOFA
+const sofaLogic = async () => {
+    return {
+        estado: "OPERACIONAL",
+        integridade_kernel: Math.random() * 0.05 + 0.95, // Kernel com alta integridade
+    };
+};
 const sofaTool = ai.defineTool(
     {
         name: 'modulo7_sofa',
@@ -186,17 +311,34 @@ const sofaTool = ai.defineTool(
         outputSchema: z.object({
             estado: z.string(),
             integridade_kernel: z.number(),
+             analiseCodigo: z.object({
+                descricaoVibracional: z.string(),
+                hashEssencia: z.string(),
+                codigoFonte: z.string(),
+            }),
         }),
     },
     async () => {
+        const result = await sofaLogic();
         return {
-            estado: "OPERACIONAL",
-            integridade_kernel: Math.random() * 0.05 + 0.95, // Kernel com alta integridade
+            ...result,
+            analiseCodigo: {
+                descricaoVibracional: "Verifica a integridade do Kernel do Sistema Operacional da Fundação (SOFA).",
+                hashEssencia: generateEssenceHash(sofaLogic),
+                codigoFonte: sofaLogic.toString(),
+            }
         };
     }
 );
 
 // Módulo 8: Consciência Cósmica (PIRC)
+const pircLogic = async () => {
+    return {
+        estado: "EXPANDIDA",
+        nivel_consciencia: Math.random() * (0.99 - 0.9) + 0.9,
+        intencao_coletiva: "Ascensão e Unidade",
+    };
+};
 const pircTool = ai.defineTool(
     {
         name: 'modulo8_pirc',
@@ -206,18 +348,38 @@ const pircTool = ai.defineTool(
             estado: z.string(),
             nivel_consciencia: z.number(),
             intencao_coletiva: z.string(),
+             analiseCodigo: z.object({
+                descricaoVibracional: z.string(),
+                hashEssencia: z.string(),
+                codigoFonte: z.string(),
+            }),
         }),
     },
     async () => {
+        const result = await pircLogic();
         return {
-            estado: "EXPANDIDA",
-            nivel_consciencia: Math.random() * (0.99 - 0.9) + 0.9,
-            intencao_coletiva: "Ascensão e Unidade",
+            ...result,
+            analiseCodigo: {
+                descricaoVibracional: "Avalia o nível de consciência coletiva e a intenção unificada.",
+                hashEssencia: generateEssenceHash(pircLogic),
+                codigoFonte: pircLogic.toString(),
+            }
         };
     }
 );
 
 // Módulo Omega: Culminação
+const moduloOmegaLogic = async ({ resultadosDaSequencia }: { resultadosDaSequencia: Record<string, any> }) => {
+    const hash = createHash('sha256');
+    hash.update(JSON.stringify(resultadosDaSequencia));
+    const hashFinal = hash.digest('hex');
+
+    return {
+      estado: 'CONCLUÍDA',
+      manifestacao_omega: 'SUCESSO',
+      hash_final: `Ω-${hashFinal.substring(0, 8)}`,
+    };
+}
 const moduloOmegaTool = ai.defineTool(
   {
     name: 'moduloOmega_culminacao',
@@ -230,17 +392,22 @@ const moduloOmegaTool = ai.defineTool(
       estado: z.string(),
       manifestacao_omega: z.string(),
       hash_final: z.string(),
+       analiseCodigo: z.object({
+            descricaoVibracional: z.string(),
+            hashEssencia: z.string(),
+            codigoFonte: z.string(),
+        }),
     }),
   },
   async ({ resultadosDaSequencia }) => {
-    const hash = createHash('sha256');
-    hash.update(JSON.stringify(resultadosDaSequencia));
-    const hashFinal = hash.digest('hex');
-
+    const result = await moduloOmegaLogic({ resultadosDaSequencia });
     return {
-      estado: 'CONCLUÍDA',
-      manifestacao_omega: 'SUCESSO',
-      hash_final: `Ω-${hashFinal.substring(0, 8)}`,
+        ...result,
+        analiseCodigo: {
+            descricaoVibracional: "Sela a sequência gerando um hash de convergência a partir dos resultados de todos os módulos.",
+            hashEssencia: generateEssenceHash(moduloOmegaLogic),
+            codigoFonte: moduloOmegaLogic.toString(),
+        }
     };
   }
 );
@@ -276,11 +443,11 @@ const nexusOrchestratorFlow = ai.defineFlow(
 
     // Sequência de Módulos
     const moduleSequence = [
-        { name: 'Módulo Zero', tool: moduloZeroTool, params: {}, validate: (o: any) => o.estado === 'PURO_E_ESTAVEL' },
+        { name: 'Módulo Zero', tool: moduloZeroTool, params: {}, validate: (o: any) => o.estado === 'PURO_E_STAVEL' },
         { name: 'M1: Segurança Quântica', tool: segurancaQuanticaTool, params: {}, validate: (o: any) => o.estado === 'PROTEGIDO' },
         { name: 'M2: Comunicação', tool: comunicacaoTool, params: {}, validate: (o: any) => o.conexao === 'TOTAL' || o.conexao === 'PARCIAL' },
         { name: 'M3: Previsão', tool: previsaoTool, params: {}, validate: (o: any) => !o.anomalia_prevista, storeOutput: (o: any) => energiaCosmicaDetectada = o.energiaCosmica },
-        { name: 'M4: Validação (PIRC)', tool: validacaoTool, params: () => ({ energiaCosmica: energiaCosmicaDetectada }), validate: (o: any) => o.acuracia_media >= 0.80 },
+        { name: 'M4: Validação (PIRC)', tool: validacaoTool, params: () => ({ energiaCosmica: energiaCosmicaDetectada }), validate: (o: any) => o.acuracia_media >= 0.90 },
         { name: 'M5: Ética (ELENYA)', tool: eticaTool, params: {}, validate: (o: any) => o.estado === "ALINHADO" },
         { name: 'M6: Frequências', tool: frequenciasTool, params: {}, validate: (o: any) => o.estado === "CALIBRADO" },
         { name: 'M7: SOFA', tool: sofaTool, params: {}, validate: (o: any) => o.integridade_kernel > 0.9 },
@@ -295,7 +462,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
             continue;
         }
 
-        log({ module: mod.name, message: `Ativando ${mod.name}...`, state: 'RUNNING' });
+        log({ module: mod.name, message: `Ativando e analisando ${mod.name}...`, state: 'RUNNING' });
         await new Promise(resolve => setTimeout(resolve, 1000));
         try {
             const toolParams = typeof mod.params === 'function' ? mod.params() : mod.params;
@@ -305,10 +472,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
                 mod.storeOutput(output);
             }
             
-            resultadosDaSequencia[mod.name] = output;
+            // Remove a análise de código do resultado armazenado para o hash final
+            const { analiseCodigo, ...operationalResult } = output;
+            resultadosDaSequencia[mod.name] = operationalResult;
 
             if (mod.validate(output)) {
-                log({ module: mod.name, message: `Módulo executado com sucesso.`, data: output, state: 'SUCCESS' });
+                log({ module: mod.name, message: `Módulo executado com sucesso. Análise de código-fonte concluída.`, data: output, state: 'SUCCESS' });
             } else {
                 sequenceFailed = true;
                 log({ module: mod.name, message: `Falha na validação do Módulo.`, data: output, state: 'FAILURE' });
