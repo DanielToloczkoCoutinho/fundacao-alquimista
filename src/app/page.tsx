@@ -1,8 +1,9 @@
 
 'use client';
 
-import { Suspense, useState } from 'react';
-import { User } from 'firebase/auth';
+import { Suspense, useEffect, useState } from 'react';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 import { cn } from "@/lib/utils";
 import { sections } from "@/lib/codex-data";
 import type { Section, Document } from "@/lib/codex-data";
@@ -28,9 +29,27 @@ import Pagina42 from "@/components/pagina-42";
 import ChroniclePage from "@/components/chronicle";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// =================================================================
-// --- Componentes da Interface ---
-// =================================================================
+
+// --- Configuração do Firebase ---
+const firebaseConfig = {
+    "projectId": "studio-4265982502-21871",
+    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+    "authDomain": "studio-4265982502-21871.firebaseapp.com",
+    "measurementId": "",
+    "messagingSenderId": "174545373080"
+};
+
+try {
+    const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+    const db = getFirestore(app);
+    // @ts-ignore
+    db.settings({ experimentalForceLongPolling: true, useFetchStreams: false });
+} catch (e) {
+    console.error("Firebase initialization error", e)
+}
+
 
 const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: string) => void; currentSectionId: string }) => (
   <nav className="w-72 p-4 bg-gray-800/50 backdrop-blur-sm h-screen text-white border-r border-purple-500/20 overflow-y-auto">
@@ -50,11 +69,6 @@ const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: strin
     ))}
   </nav>
 );
-
-
-// =================================================================
-// --- Componente Principal da Aplicação ---
-// =================================================================
 
 const App = () => {
   const [currentSectionId, setCurrentSectionId] = useState<string>("chronicle");
@@ -95,13 +109,12 @@ const App = () => {
                 <div className="p-8">
                     <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
                     <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
-                    <p className="text-amber-400 mt-4 text-sm">Selecione um módulo para iniciar a exploração.</p>
                     <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
                 </div>
             );
     }
   };
-
+  
   return (
     <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")}>
       <Sidebar onNavigate={setCurrentSectionId} currentSectionId={currentSectionId} />

@@ -22,35 +22,29 @@ declare const XRHitTestSource: any;
 
 export class QuantumXRSystem {
   private xrSession: any | null = null;
-  private isSupported: boolean = false;
+  private isSupported: boolean | null = null;
 
   constructor() {
-    if (typeof window !== 'undefined') {
-      this.initializeXR();
+    this.initializeXR();
+  }
+  
+  async initializeXR() {
+    if (typeof navigator !== 'undefined' && 'xr' in navigator) {
+      try {
+        this.isSupported = await navigator.xr.isSessionSupported('immersive-ar');
+        logger.info('Suporte XR verificado', { supported: this.isSupported });
+      } catch (e: any) {
+        this.isSupported = false;
+        logger.error('Erro ao verificar suporte a XR', { error: e.message, stack: e.stack });
+      }
+    } else {
+      this.isSupported = false;
+      logger.warn('API XR não disponível no ambiente atual');
     }
   }
 
   isSessionActive(): boolean {
     return this.xrSession !== null;
-  }
-
-  async initializeXR() {
-    return quantumResilience.executeWithResilience(
-      'xr_initialization',
-      async () => {
-        if (navigator.xr) {
-          try {
-            this.isSupported = await navigator.xr.isSessionSupported('immersive-ar');
-            logger.info('Suporte XR verificado', { supported: this.isSupported });
-          } catch(e) {
-            logger.error('Erro ao verificar suporte a XR', e);
-            this.isSupported = false;
-          }
-        }
-        return this.isSupported;
-      },
-      async () => false
-    );
   }
 
   async startARSession(canvas: HTMLCanvasElement) {
