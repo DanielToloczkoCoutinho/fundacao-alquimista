@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitoramento Temporal - Fundação Alquimista</title>
+    <title>Observatório Temporal - Fundação Alquimista</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,17 +14,19 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a, #111827);
+            background: linear-gradient(135deg, #0a0e1a, #0f1422);
             color: #e5e7eb;
             min-height: 100vh;
             padding: 20px;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
+        /* Header Styles */
         .header {
             display: flex;
             justify-content: space-between;
@@ -32,6 +34,7 @@
             padding: 20px 0;
             margin-bottom: 30px;
             border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+            position: relative;
         }
 
         .logo {
@@ -41,16 +44,18 @@
         }
 
         .logo-icon {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #8b5cf6;
+            animation: pulse 3s infinite;
         }
 
         .logo-text {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             background: linear-gradient(90deg, #8b5cf6, #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
         }
 
         .nav-links {
@@ -62,19 +67,24 @@
             color: #d1d5db;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            padding: 10px 15px;
+            border-radius: 8px;
         }
 
         .nav-links a:hover {
             color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.1);
         }
 
+        /* Main Dashboard */
         .dashboard {
             display: grid;
-            grid-template-columns: 1fr 3fr;
+            grid-template-columns: 300px 1fr;
             gap: 25px;
         }
 
+        /* Sidebar */
         .sidebar {
             background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(31, 41, 55, 0.95));
             border: 2px solid rgba(139, 92, 246, 0.4);
@@ -82,15 +92,18 @@
             padding: 24px;
             backdrop-filter: blur(20px);
             height: fit-content;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         .sidebar-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 20px;
             color: #8b5cf6;
             display: flex;
             align-items: center;
             gap: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
         }
 
         .timeline-list {
@@ -98,13 +111,15 @@
         }
 
         .timeline-item {
-            padding: 12px 15px;
-            margin-bottom: 10px;
+            padding: 15px;
+            margin-bottom: 12px;
             background: rgba(17, 24, 39, 0.6);
             border-radius: 12px;
             border-left: 3px solid #8b5cf6;
             cursor: pointer;
             transition: all 0.3s;
+            display: flex;
+            align-items: center;
         }
 
         .timeline-item:hover {
@@ -122,7 +137,7 @@
             color: #ec4899;
         }
 
-        /* Estilos do monitor temporal - CSS fornecido e expandido */
+        /* Temporal Monitor - Expanded from original CSS */
         .temporal-monitor {
             background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(31, 41, 55, 0.95));
             border: 2px solid rgba(139, 92, 246, 0.4);
@@ -130,6 +145,7 @@
             padding: 24px;
             margin-bottom: 25px;
             backdrop-filter: blur(20px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         .monitor-header {
@@ -146,6 +162,9 @@
             color: #e5e7eb;
             font-size: 1.5em;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .controls {
@@ -154,7 +173,7 @@
         }
 
         .btn {
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 12px;
             border: none;
             background: linear-gradient(135deg, #8b5cf6, #ec4899);
@@ -169,7 +188,7 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.5);
         }
 
         .btn-secondary {
@@ -177,21 +196,23 @@
             border: 1px solid rgba(139, 92, 246, 0.4);
         }
 
-        .monitor-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
+        /* Timeline Visualization */
         .timeline-visualization {
             grid-column: 1 / -1;
-            height: 200px;
+            height: 250px;
             background: rgba(17, 24, 39, 0.6);
-            border-radius: 12px;
-            margin-bottom: 20px;
+            border-radius: 16px;
+            margin-bottom: 25px;
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 20px;
+        }
+
+        .timeline-canvas {
+            width: 100%;
+            height: 100%;
+            position: relative;
         }
 
         .timeline-line {
@@ -208,20 +229,44 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             background: #ec4899;
             border: 3px solid #8b5cf6;
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 0 0 15px #ec4899;
+            box-shadow: 0 0 20px #ec4899;
+            animation: pulse 2s infinite;
+        }
+
+        .timeline-point {
+            position: absolute;
+            top: 50%;
+            width: 12px;
+            height: 12px;
+            background: #8b5cf6;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Monitor Content */
+        .monitor-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         .data-panel {
             background: rgba(17, 24, 39, 0.6);
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 20px;
             border: 1px solid rgba(139, 92, 246, 0.3);
+            transition: all 0.3s;
+        }
+
+        .data-panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
         }
 
         .data-panel h4 {
@@ -230,10 +275,14 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 1.2rem;
         }
 
         .data-item {
             margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(17, 24, 39, 0.3);
         }
 
         .data-item:last-child {
@@ -244,55 +293,64 @@
             font-size: 0.9rem;
             color: #d1d5db;
             margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .data-value {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #e5e7eb;
+            margin-left: 25px;
         }
 
         .progress-bar {
-            height: 8px;
+            height: 10px;
             background: rgba(31, 41, 55, 0.8);
-            border-radius: 4px;
+            border-radius: 5px;
             overflow: hidden;
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, #8b5cf6, #ec4899);
-            border-radius: 4px;
+            border-radius: 5px;
             width: 65%;
+            transition: width 1s ease-in-out;
         }
 
+        /* Anomaly Alert */
         .anomaly-alert {
             background: rgba(239, 68, 68, 0.2);
             border: 1px solid rgba(239, 68, 68, 0.4);
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 20px;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 25px;
             display: flex;
             align-items: center;
             gap: 15px;
+            animation: alert-pulse 3s infinite;
         }
 
         .anomaly-alert i {
             color: #ef4444;
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
 
         .alert-content h4 {
             color: #ef4444;
             margin-bottom: 5px;
+            font-size: 1.3rem;
         }
 
         .alert-content p {
             color: #e5e7eb;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
+        /* Metrics Grid */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -302,26 +360,38 @@
 
         .metric-card {
             background: rgba(17, 24, 39, 0.6);
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 16px;
+            padding: 25px;
             text-align: center;
             border: 1px solid rgba(139, 92, 246, 0.3);
             transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
         .metric-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #8b5cf6, #ec4899);
         }
 
         .metric-icon {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 15px;
             color: #8b5cf6;
         }
 
         .metric-value {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 5px;
             background: linear-gradient(90deg, #8b5cf6, #ec4899);
@@ -331,9 +401,10 @@
 
         .metric-label {
             color: #d1d5db;
-            font-size: 0.9rem;
+            font-size: 1rem;
         }
 
+        /* Footer */
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -343,12 +414,22 @@
             font-size: 0.9rem;
         }
 
-        @media (max-width: 900px) {
+        /* Animations */
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        @keyframes alert-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
             .dashboard {
-                grid-template-columns: 1fr;
-            }
-            
-            .monitor-content {
                 grid-template-columns: 1fr;
             }
             
@@ -357,11 +438,7 @@
             }
         }
 
-        @media (max-width: 600px) {
-            .metrics-grid {
-                grid-template-columns: 1fr;
-            }
-            
+        @media (max-width: 768px) {
             .header {
                 flex-direction: column;
                 gap: 20px;
@@ -371,6 +448,18 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+            
+            .monitor-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -378,14 +467,15 @@
     <div class="container">
         <header class="header">
             <div class="logo">
-                <i class="logo-icon fas fa-flask"></i>
-                <div class="logo-text">Fundação Alquimista</div>
+                <i class="logo-icon fas fa-hourglass-half"></i>
+                <div class="logo-text">Observatório Temporal</div>
             </div>
             <nav class="nav-links">
                 <a href="#"><i class="fas fa-home"></i> Início</a>
-                <a href="#"><i class="fas fa-history"></i> Timeline</a>
+                <a href="#"><i class="fas fa-history"></i> Timelines</a>
                 <a href="#"><i class="fas fa-database"></i> Dados</a>
                 <a href="#"><i class="fas fa-user-shield"></i> Segurança</a>
+                <a href="#"><i class="fas fa-cog"></i> Configurações</a>
             </nav>
         </header>
 
@@ -398,6 +488,15 @@
                     <li class="timeline-item"><i class="fas fa-circle"></i> Timeline Gama</li>
                     <li class="timeline-item"><i class="fas fa-circle"></i> Timeline Delta</li>
                     <li class="timeline-item"><i class="fas fa-circle"></i> Timeline Épsilon</li>
+                    <li class="timeline-item"><i class="fas fa-circle"></i> Timeline Zeta</li>
+                    <li class="timeline-item"><i class="fas fa-circle"></i> Timeline Ômega</li>
+                </ul>
+                
+                <h3 class="sidebar-title" style="margin-top: 30px;"><i class="fas fa-radiation"></i> Anomalias</h3>
+                <ul class="timeline-list">
+                    <li class="timeline-item"><i class="fas fa-exclamation-triangle"></i> Setor 7-G</li>
+                    <li class="timeline-item"><i class="fas fa-exclamation-triangle"></i> Nexus 42</li>
+                    <li class="timeline-item"><i class="fas fa-exclamation-triangle"></i> Vórtice K-9</li>
                 </ul>
             </aside>
 
@@ -408,33 +507,38 @@
                         <div class="controls">
                             <button class="btn"><i class="fas fa-sync"></i> Sincronizar</button>
                             <button class="btn btn-secondary"><i class="fas fa-cog"></i> Configurações</button>
+                            <button class="btn btn-secondary"><i class="fas fa-download"></i> Exportar</button>
                         </div>
                     </div>
 
                     <div class="timeline-visualization">
                         <div class="timeline-line"></div>
                         <div class="timeline-marker"></div>
+                        <div class="timeline-point" style="left: 20%"></div>
+                        <div class="timeline-point" style="left: 40%"></div>
+                        <div class="timeline-point" style="left: 60%"></div>
+                        <div class="timeline-point" style="left: 80%"></div>
                     </div>
 
                     <div class="monitor-content">
                         <div class="data-panel">
                             <h4><i class="fas fa-info-circle"></i> Status da Timeline</h4>
                             <div class="data-item">
-                                <div class="data-label">Integridade Temporal</div>
+                                <div class="data-label"><i class="fas fa-shield-alt"></i> Integridade Temporal</div>
                                 <div class="data-value">92.4%</div>
                                 <div class="progress-bar">
-                                    <div class="progress-fill"></div>
+                                    <div class="progress-fill" style="width: 92.4%"></div>
                                 </div>
                             </div>
                             <div class="data-item">
-                                <div class="data-label">Estabilidade</div>
+                                <div class="data-label"><i class="fas fa-balance-scale"></i> Estabilidade</div>
                                 <div class="data-value">87.1%</div>
                                 <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 87%"></div>
+                                    <div class="progress-fill" style="width: 87.1%"></div>
                                 </div>
                             </div>
                             <div class="data-item">
-                                <div class="data-label">Fluxo Temporal</div>
+                                <div class="data-label"><i class="fas fa-bolt"></i> Fluxo Temporal</div>
                                 <div class="data-value">1.21 Gigawatts</div>
                             </div>
                         </div>
@@ -442,15 +546,15 @@
                         <div class="data-panel">
                             <h4><i class="fas fa-exclamation-triangle"></i> Alertas</h4>
                             <div class="data-item">
-                                <div class="data-label">Anomalias Detectadas</div>
+                                <div class="data-label"><i class="fas fa-radiation"></i> Anomalias Detectadas</div>
                                 <div class="data-value">3</div>
                             </div>
                             <div class="data-item">
-                                <div class="data-label">Variações Temporais</div>
+                                <div class="data-label"><i class="fas fa-random"></i> Variações Temporais</div>
                                 <div class="data-value">0.04%</div>
                             </div>
                             <div class="data-item">
-                                <div class="data-label">Próxima Verificação</div>
+                                <div class="data-label"><i class="fas fa-history"></i> Próxima Verificação</div>
                                 <div class="data-value">12:34:27</div>
                             </div>
                         </div>
@@ -459,8 +563,8 @@
                     <div class="anomaly-alert">
                         <i class="fas fa-radiation"></i>
                         <div class="alert-content">
-                            <h4>Anomalia Detectada</h4>
-                            <p>Variação temporal detectada no setor 7-G. Recomendamos verificação imediata.</p>
+                            <h4>Anomalia Detectada no Setor 7-G</h4>
+                            <p>Variação temporal de 0.04% detectada. Recomendamos verificação imediata. Estabilidade comprometida em 2.3%.</p>
                         </div>
                     </div>
 
@@ -468,7 +572,7 @@
                         <div class="metric-card">
                             <i class="metric-icon fas fa-bolt"></i>
                             <div class="metric-value">42.5</div>
-                            <div class="metric-label">Energia Temporal</div>
+                            <div class="metric-label">Energia Temporal (TW)</div>
                         </div>
                         <div class="metric-card">
                             <i class="metric-icon fas fa-link"></i>
@@ -479,6 +583,21 @@
                             <i class="metric-icon fas fa-shield-alt"></i>
                             <div class="metric-value">99.9%</div>
                             <div class="metric-label">Proteção Ativa</div>
+                        </div>
+                        <div class="metric-card">
+                            <i class="metric-icon fas fa-tachometer-alt"></i>
+                            <div class="metric-value">5.62</div>
+                            <div class="metric-label">Velocidade Temporal</div>
+                        </div>
+                        <div class="metric-card">
+                            <i class="metric-icon fas fa-compress-arrows-alt"></i>
+                            <div class="metric-value">23.7</div>
+                            <div class="metric-label">Pressão Dimensional</div>
+                        </div>
+                        <div class="metric-card">
+                            <i class="metric-icon fas fa-wave-square"></i>
+                            <div class="metric-value">0.04%</div>
+                            <div class="metric-label">Flutuação Quântica</div>
                         </div>
                     </div>
                 </div>
@@ -502,16 +621,92 @@
                 } else if (card.textContent.includes('.')) {
                     const currentValue = parseFloat(card.textContent);
                     const newValue = Math.max(35, Math.min(45, currentValue + (Math.random() * 0.4 - 0.2)));
-                    card.textContent = newValue.toFixed(1);
+                    card.textContent = newValue.toFixed(2);
                 }
             });
             
-            // Atualizar a cada 5 segundos
-            setTimeout(updateMetrics, 5000);
+            // Atualizar progress bars
+            document.querySelectorAll('.progress-fill').forEach(bar => {
+                const currentWidth = parseFloat(bar.style.width);
+                const newWidth = Math.min(100, Math.max(80, currentWidth + (Math.random() * 2 - 1)));
+                bar.style.width = newWidth + '%';
+            });
+            
+            // Atualizar a cada 3 segundos
+            setTimeout(updateMetrics, 3000);
         }
         
         // Iniciar a atualização de métricas
         updateMetrics();
+        
+        // Adicionar interatividade aos itens da timeline
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.timeline-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Simular mudança de timeline
+                const timelineName = this.textContent.trim();
+                document.querySelector('.monitor-header h3').innerHTML = 
+                    `<i class="fas fa-clock"></i> Monitoramento Temporal - ${timelineName}`;
+            });
+        });
     </script>
 </body>
 </html>
+Recursos Implementados
+Design Avançado: Expandi significativamente o CSS original com elementos visuais sofisticados:
+
+Efeitos de vidro fosco (glassmorphism) aprimorados
+
+Gradientes e sombras mais complexas
+
+Animações sutis em elementos interativos
+
+Visualização Temporal: Criei uma representação visual da timeline com:
+
+Linha temporal com gradiente
+
+Marcador central pulsante
+
+Pontos de referência ao longo da linha
+
+Painéis de Dados: Expandi os painéis de informação com:
+
+Ícones temáticos para cada métrica
+
+Barras de progresso animadas
+
+Efeitos hover em todos os elementos interativos
+
+Sistema de Alertas: Implementei alertas de anomalias com:
+
+Destaque visual com animação pulsante
+
+Informações detalhadas sobre eventos temporais
+
+Grid de Métricas: Criei um sistema abrangente de métricas com:
+
+6 cards diferentes com dados temporais
+
+Design consistente com efeitos de elevação
+
+Atualização em tempo real simulada
+
+Navegação e Sidebar: Desenvolvi um sistema de navegação completo com:
+
+Lista de timelines para seleção
+
+Seção de anomalias detectadas
+
+Design responsivo para diferentes tamanhos de tela
+
+Interatividade: Adicionei JavaScript para:
+
+Simular atualizações de dados em tempo real
+
+Permitir a seleção de diferentes timelines
+
+Animar elementos de interface
+
+Este observatório temporal representa uma evolução significativa do CSS original, transformando-o em uma interface completa e funcional para monitoramento de realidades temporais.
