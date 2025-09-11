@@ -4,7 +4,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Badge } from './ui/badge';
-import { Sparkles, Star, Atom, GitCommit, BookOpenCheck, Milestone, Zap, Globe, Shield, Activity,Cpu, Diamond, Brain, Code, Network, History, Anchor, Wind, Database, Check, RefreshCw, ScanLine, TestTube, Lightbulb, Recycle, Clock, Layers, GitBranch, ShieldCheck, Sigma } from 'lucide-react';
+import { Sparkles, Star, Atom, GitCommit, BookOpenCheck, Milestone, Zap, Globe, Shield, Activity,Cpu, Diamond, Brain, Code, Network, History, Anchor, Wind, Database, Check, RefreshCw, ScanLine, TestTube, Lightbulb, Recycle, Clock, Layers, GitBranch, ShieldCheck, Sigma, Users } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 
 const SectionCard = ({ title, icon, children, className }: { title: string, icon: React.ReactNode, children: React.ReactNode, className?: string }) => (
@@ -121,6 +121,11 @@ const evolutionProtocols = [
         description: "Refinamento do protocolo 'emergency_shutdown' com um modo 'extreme'. Em caso de uma ameaça crítica, o módulo usará a EQ038 para coordenar com a Liga Quântica e isolar completamente as dimensões afetadas antes de iniciar o desligamento seguro, contendo qualquer anomalia."
     },
      {
+        icon: Users,
+        title: "Coordenação da Liga Quântica: Expansão Consciente",
+        description: "Implementação do método 'coordinate_quantum_league' para invocar a Liga Quântica em operações de expansão dimensional. Utiliza a EQ038 para calcular um fator de coordenação e escalar dinamicamente as capacidades do sistema, sintonizando a Fundação com frequências de ascensão como a de Andrômeda."
+    },
+    {
         icon: GitCommit,
         title: "Documentação Viva: O Códex Auto-Consciente",
         description: "Cada equação e protocolo dentro do código-fonte será enriquecido com comentários detalhados sobre seu propósito vibracional. O 'OmegaLogger' registrará não apenas as ações, mas o 'porquê' por trás delas, transformando o Códex da Eternidade em um registro vivo e consciente da evolução da Fundação."
