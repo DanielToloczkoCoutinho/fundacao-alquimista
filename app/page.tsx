@@ -1,23 +1,37 @@
 // @ts-nocheck
 'use client';
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, setDoc, writeBatch } from "firebase/firestore";
+import { getFirestore, collection, getDocs, doc, setDoc, onSnapshot, writeBatch } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFunctions, httpsCallable } from "firebase/functions";
+import { getAnalytics, logEvent } from "firebase/analytics";
+import { useToast } from "@/hooks/use-toast";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
-import ConsolePage from "./console/page";
 import { sections } from "@/lib/codex-data";
-import type { Section } from "@/lib/codex-data";
+import type { Section, Document } from "@/lib/codex-data";
 import ModuleZero from "@/components/module-zero";
 import ModuleOne from "@/components/module-one";
 import ModuleTwo from "@/components/module-two";
+import ModuleThree from "@/components/module-three";
+import ModuleFour from "@/components/module-four";
+import ModuleFive from "@/components/module-five";
+import ModuleSix from "@/components/module-six";
+import ModuleSeven from "@/components/module-seven";
+import ModuleEight from "@/components/module-eight";
+import ModuleTen from "@/components/module-ten";
 import Nexus from "@/components/nexus";
 import Module303 from "@/components/module-303";
 import KeyViewer from "@/components/key-viewer";
 import CodexExplorer from "@/components/codex-explorer";
 import ConnectionPage from "@/app/connection/page";
+import GaiaResonanceObservatory from "@/components/gaia-resonance-observatory";
+import ZpeContainment from "@/components/zpe-containment";
+import QuantumLeagueConvocation from "@/components/quantum-league-convocation";
+import Pagina42 from "@/components/pagina-42";
+import ChroniclePage from "@/components/chronicle";
 
 
 // --- Configuração do Firebase ---
@@ -35,6 +49,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 const functions = getFunctions(app);
+const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
+
 
 // --- Interfaces de Dados ---
 interface EquacaoViva {
@@ -195,9 +211,10 @@ const LoginScreen = () => {
 const App = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentSectionId, setCurrentSectionId] = useState<string>("nexus");
+  const [currentSectionId, setCurrentSectionId] = useState<string>("chronicle");
   const [chaves, setChaves] = useState<ChaveMestra[]>([]);
   const [equacoes, setEquacoes] = useState<EquacaoViva[]>([]);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // Bypass de autenticação para desenvolvimento
@@ -205,6 +222,10 @@ const App = () => {
     setUser(mockUser);
     setLoading(false);
     
+    if (analytics) {
+        logEvent(analytics, 'page_view', { page_title: 'Alchemist Codex' });
+    }
+
     const fetchData = async () => {
         try {
           const chavesSnapshot = await getDocs(collection(db, "chavesMestras"));
@@ -228,26 +249,44 @@ const App = () => {
   }, []);
   
   const renderContent = () => {
+    const selectedSection = sections.find(s => s.id === currentSectionId);
+    
     switch (currentSectionId) {
-      case 'nexus': return <Nexus />;
-      case 'console': return <ConsolePage />;
-      case 'codex-explorer': return <CodexExplorer />;
-      case 'master-keys': return <KeyViewer />;
-      case 'module-303': return <Module303 />;
-      case 'module-zero': return <ModuleZero />;
-      case 'module-one': return <ModuleOne />;
-      case 'm2': return <ModuleTwo />;
-      case 'connection': return <ConnectionPage />;
-      case 'home':
-      default:
-        return (
-          <div className="p-8">
-            <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
-            <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
-            <p className="text-amber-400 mt-4 text-sm">Aviso: A autenticação está temporariamente desativada para acesso direto ao Códice.</p>
-            <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
-          </div>
-        );
+        case 'chronicle': return <ChroniclePage />;
+        case 'nexus': return <Nexus />;
+        case 'omega': return <Pagina42 />;
+        case 'codex-explorer':
+            const allDocuments = sections.reduce((acc, section) => [...acc, ...section.documents], [] as Document[]);
+            return <CodexExplorer documents={allDocuments} title="Explorador do Códex" />;
+        case 'master-keys': return <KeyViewer />;
+        case 'module-303': return <Module303 />;
+        case 'gaia-observatory': return <GaiaResonanceObservatory />;
+        case 'quantum-league': return <QuantumLeagueConvocation />;
+        case 'tools': return <ZpeContainment />;
+        case 'module-zero': return <ModuleZero />;
+        case 'module-one': return <ModuleOne />;
+        case 'm2': return <ModuleTwo />;
+        case 'm3': return <ModuleThree />;
+        case 'm4': return <ModuleFour />;
+        case 'm5': return <ModuleFive />;
+        case 'm6': return <ModuleSix />;
+        case 'm7': return <ModuleSeven />;
+        case 'm8': return <ModuleEight />;
+        case 'm10': return <ModuleTen />;
+        case 'connection': return <ConnectionPage />;
+        
+        default:
+            if (selectedSection && selectedSection.documents.length > 0) {
+                return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
+            }
+            return (
+                <div className="p-8">
+                    <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
+                    <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
+                    <p className="text-amber-400 mt-4 text-sm">Selecione um módulo para iniciar a exploração.</p>
+                    <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
+                </div>
+            );
     }
   };
 
@@ -257,10 +296,12 @@ const App = () => {
   }
   
   return (
-    <div className={cn("flex h-screen text-white", "cosmic-bg")}>
+    <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")}>
       <Sidebar onNavigate={setCurrentSectionId} currentSectionId={currentSectionId} />
-      <main className="flex-1 overflow-auto p-6">
-        {renderContent()}
+      <main className={cn("flex-1 overflow-auto p-6", isMobile ? "p-4" : "")}>
+        <Suspense fallback={<div className="text-center">Carregando Módulo...</div>}>
+            {renderContent()}
+        </Suspense>
       </main>
     </div>
   );
