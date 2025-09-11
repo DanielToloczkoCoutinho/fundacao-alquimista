@@ -1,14 +1,9 @@
-// @ts-nocheck
+
 'use client';
 
-import React, { useState, useEffect, Suspense, lazy } from "react";
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, setDoc, onSnapshot, writeBatch } from "firebase/firestore";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
-import { getFunctions, httpsCallable } from "firebase/functions";
-import { getAnalytics, logEvent } from "firebase/analytics";
-import { useToast } from "@/hooks/use-toast";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { Suspense, useEffect, useState } from 'react';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 import { cn } from "@/lib/utils";
 import { sections } from "@/lib/codex-data";
 import type { Section, Document } from "@/lib/codex-data";
@@ -32,6 +27,7 @@ import ZpeContainment from "@/components/zpe-containment";
 import QuantumLeagueConvocation from "@/components/quantum-league-convocation";
 import Pagina42 from "@/components/pagina-42";
 import ChroniclePage from "@/components/chronicle";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 
 // --- Configuração do Firebase ---
@@ -45,55 +41,12 @@ const firebaseConfig = {
     "messagingSenderId": "174545373080"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-const functions = getFunctions(app);
-const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const db = getFirestore(app, {
+  experimentalForceLongPolling: true,
+  useFetchStreams: false,
+});
 
-
-// --- Interfaces de Dados ---
-interface EquacaoViva {
-  id: string;
-  nome: string;
-  formula_latex: string;
-  formula_python: string;
-  descricao: string;
-  classificacao: string;
-  variaveis: string[];
-  origem: string;
-}
-
-interface ChaveMestra {
-  id: string;
-  nome: string;
-  descricao: string;
-  equacoes: string[]; // Apenas IDs
-}
-
-// --- Dados Iniciais para Semeador ---
-const initialEquacoes: EquacaoViva[] = [
-  {
-    id: "307.1.1",
-    nome: "Extração de Energia do Vácuo",
-    formula_latex: "P_{\\text{ZPE}} = \\kappa \\cdot \\rho_{\\text{vac}} \\cdot V_{\\text{eff}} \\cdot \\omega_{\\text{ZPE}} \\cdot Q",
-    formula_python: "def p_zpe(params):\n    kappa = params.get('kappa', 1)\n    rho_vac = params.get('rho_vac', 1)\n    V_eff = params.get('V_eff', 1)\n    omega_zpe = params.get('omega_zpe', 1)\n    Q = params.get('Q', 1)\n    return kappa * rho_vac * V_eff * omega_zpe * Q",
-    descricao: "Potência extraída do vácuo quântico pelo núcleo Gaia",
-    classificacao: "Energia do Vácuo",
-    variaveis: ["kappa (fator de acoplamento)", "rho_vac (densidade do vácuo)", "V_eff (volume efetivo)", "omega_zpe (frequência ZPE)", "Q (fator de qualidade)"],
-    origem: "Submódulo 307.1"
-  },
-];
-
-const initialChaves: ChaveMestra[] = [
-    { id: "307", nome: "Chave Mestra 307", descricao: "Equações vivas do módulo 307", equacoes: ["307.1.1"] },
-    { id: "luxnet", nome: "Chave LuxNet", descricao: "Equações da rede LuxNet", equacoes: [] }
-];
-
-
-// =================================================================
-// --- Componentes da Interface ---
-// =================================================================
 
 const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: string) => void; currentSectionId: string }) => (
   <nav className="w-72 p-4 bg-gray-800/50 backdrop-blur-sm h-screen text-white border-r border-purple-500/20 overflow-y-auto">
@@ -114,139 +67,23 @@ const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: strin
   </nav>
 );
 
-const LoginScreen = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (err) {
-      setError("Falha na autenticação. Verifique suas credenciais cósmicas.");
-      console.error(err);
-    }
-  };
-  
-  const handleRegister = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError('');
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      alert("Fundador registrado com sucesso! Agora você pode entrar.");
-    } catch (err: any) {
-      setError(`Falha no registro: ${err.message}`);
-      console.error(err);
-    }
-  };
-
-  const seedInitialData = async () => {
-      console.log("Semeando dados iniciais no Firestore...");
-      const batch = writeBatch(db);
-      
-      initialChaves.forEach(chave => {
-          const chaveRef = doc(db, "chavesMestras", chave.id);
-          batch.set(chaveRef, {
-            nome: chave.nome,
-            descricao: chave.descricao,
-            equacoes: chave.equacoes
-          });
-      });
-      
-      initialEquacoes.forEach(eq => {
-          const eqRef = doc(db, "equacoes", eq.id);
-          batch.set(eqRef, eq);
-      });
-
-      try {
-        await batch.commit();
-        alert("Dados iniciais semeados com sucesso! Agora você pode se registrar e fazer login.");
-      } catch (error) {
-        console.error("Erro ao semear dados:", error);
-        alert("Erro ao semear dados. Verifique o console.");
-      }
-  };
-
-  return (
-    <div className="w-full h-screen flex items-center justify-center cosmic-bg text-white">
-      <div className="w-full max-w-md p-8 space-y-6 bg-gray-800/70 rounded-lg shadow-lg backdrop-blur-md border border-purple-500/30">
-        <h1 className="text-3xl font-bold text-center text-white">Fundação Alquimista</h1>
-        <p className="text-center text-gray-400">Portal do Fundador</p>
-        <form className="space-y-6">
-          <div>
-            <label className="text-sm font-bold text-gray-400 block mb-2">Email</label>
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full p-3 bg-gray-700/80 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
-          </div>
-          <div>
-            <label className="text-sm font-bold text-gray-400 block mb-2">Senha</label>
-            <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-3 bg-gray-700/80 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
-          </div>
-          {error && <p className="text-red-400 text-sm text-center">{error}</p>}
-          <div className="flex flex-col space-y-4">
-             <div className="flex space-x-4">
-                <button type="button" onClick={handleLogin} className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold transition-colors">
-                    Entrar
-                </button>
-                 <button type="button" onClick={handleRegister} className="w-full py-3 px-4 bg-cyan-600 hover:bg-cyan-700 rounded text-white font-bold transition-colors">
-                    Registrar
-                </button>
-             </div>
-             <button type="button" onClick={seedInitialData} className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-bold transition-colors">
-                Semear Dados Iniciais
-             </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  );
-};
-
-
-// =================================================================
-// --- Componente Principal da Aplicação ---
-// =================================================================
-
 const App = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
   const [currentSectionId, setCurrentSectionId] = useState<string>("chronicle");
-  const [chaves, setChaves] = useState<ChaveMestra[]>([]);
-  const [equacoes, setEquacoes] = useState<EquacaoViva[]>([]);
   const isMobile = useIsMobile();
+  const [items, setItems] = useState<string[]>([]);
+  const [status, setStatus] = useState<string>('Conectando ao Akasha...');
 
   useEffect(() => {
-    // Bypass de autenticação para desenvolvimento
-    const mockUser = { uid: "SOBERANO_FUNDADOR" } as User;
-    setUser(mockUser);
-    setLoading(false);
-    
-    if (analytics) {
-        logEvent(analytics, 'page_view', { page_title: 'Alchemist Codex' });
-    }
-
-    const fetchData = async () => {
-        try {
-          const chavesSnapshot = await getDocs(collection(db, "chavesMestras"));
-          const chavesData: ChaveMestra[] = [];
-           for (const doc of chavesSnapshot.docs) {
-              chavesData.push({ id: doc.id, ...doc.data() } as ChaveMestra);
-          }
-          setChaves(chavesData);
-          
-          const equacoesSnapshot = await getDocs(collection(db, "equacoes"));
-          const equacoesData = equacoesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as EquacaoViva));
-          setEquacoes(equacoesData);
-
-        } catch (error) {
-          console.error("Erro ao buscar dados do Firestore:", error);
-        }
-      };
-      
-    fetchData();
-
+    const unsubscribe = onSnapshot(collection(db, 'tabs'), (snapshot) => {
+      const data = snapshot.docs.map(doc => doc.data().name as string);
+      setItems(data);
+      setStatus(`Akasha sincronizado: ${new Date().toLocaleTimeString()}`);
+    }, (error) => {
+      setStatus(`Erro no Akasha: ${error.message}.`);
+    });
+    return () => unsubscribe();
   }, []);
+
   
   const renderContent = () => {
     const selectedSection = sections.find(s => s.id === currentSectionId);
@@ -283,17 +120,12 @@ const App = () => {
                 <div className="p-8">
                     <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
                     <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
-                    <p className="text-amber-400 mt-4 text-sm">Selecione um módulo para iniciar a exploração.</p>
+                     <p className="text-amber-400 mt-4 text-sm">{status}</p>
                     <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
                 </div>
             );
     }
   };
-
-
-  if (loading) {
-    return <div className="w-full h-screen flex items-center justify-center cosmic-bg text-white">Carregando Fundação...</div>;
-  }
   
   return (
     <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")}>

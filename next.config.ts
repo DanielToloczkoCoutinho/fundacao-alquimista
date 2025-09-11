@@ -21,7 +21,15 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Permissions-Policy',
-            value: 'xr-spatial-tracking=*, camera=*, microphone=*',
+            value: 'xr-spatial-tracking=*, camera=*, microphone=*, interest-cohort=()',
+          },
+           {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin-allow-popups',
+          },
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'require-corp',
           },
         ],
       },
