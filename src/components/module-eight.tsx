@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
@@ -6,10 +7,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/
 import { Button } from './ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { ScrollArea } from './ui/scroll-area';
-import { FlaskConical, TestTube, Play, BarChart, History, CheckCircle, XCircle, LoaderCircle, Zap } from 'lucide-react';
+import { FlaskConical, TestTube, Play, BarChart, History, CheckCircle, XCircle, LoaderCircle, Zap, Beaker, SlidersHorizontal } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
 import { Slider } from './ui/slider';
+import { multiversalSimulator, type SimulationResult } from '@/lib/multiversal-simulator';
+import { useToast } from '@/hooks/use-toast';
 
 type ExperimentDataPoint = {
   time: number;
@@ -28,7 +31,7 @@ type ExperimentResult = {
   status: 'COHERENT' | 'DISSONANT';
 };
 
-type PircState = 'IDLE' | 'EXPERIMENTING' | 'ANALYZING';
+type PircState = 'IDLE' | 'EXPERIMENTING' | 'ANALYZING' | 'SIMULATING';
 
 const generateInitialData = (): ExperimentDataPoint[] => {
   return Array.from({ length: 20 }, (_, i) => ({
@@ -46,6 +49,11 @@ const ModuleEight: React.FC = () => {
 
   const [frequency, setFrequency] = useState(432);
   const [intensity, setIntensity] = useState(0.8);
+
+  // State for Multiversal Simulator
+  const [quantumFlux, setQuantumFlux] = useState(50);
+  const [simulationHistory, setSimulationHistory] = useState<SimulationResult[]>([]);
+  const { toast } = useToast();
 
   const addHistory = useCallback((result: Omit<ExperimentResult, 'id' | 'timestamp'>) => {
     setExperimentHistory(prev => [
@@ -87,12 +95,33 @@ const ModuleEight: React.FC = () => {
     }, 100);
   };
   
+  const handleRunSimulation = async () => {
+      setPircState('SIMULATING');
+      toast({ title: 'Simulação Multiversal Iniciada', description: 'Otimizando parâmetros e executando simulação...' });
+      try {
+          const result = await multiversalSimulator.createSimulation({
+              type: 'PIRC_STABILITY_TEST',
+              quantumFlux: quantumFlux,
+              temporalResolution: frequency,
+              energyThreshold: intensity * 100
+          });
+          setSimulationHistory(prev => [result, ...prev].slice(0,50));
+          toast({ title: 'Simulação Concluída', description: `Estabilidade da Realidade: ${(result.realityStability * 100).toFixed(2)}%` });
+      } catch (error: any) {
+          toast({ variant: 'destructive', title: 'Falha na Simulação', description: error.message });
+      } finally {
+          setPircState('IDLE');
+      }
+  };
+
   const StatusIndicator = useMemo(() => {
     switch(pircState) {
         case 'EXPERIMENTING':
             return <div className="flex items-center gap-2 text-blue-400"><LoaderCircle className="animate-spin" /><span>Executando Experimento...</span></div>;
         case 'ANALYZING':
             return <div className="flex items-center gap-2 text-purple-400"><LoaderCircle className="animate-spin" /><span>Analisando Ressonância...</span></div>;
+        case 'SIMULATING':
+            return <div className="flex items-center gap-2 text-amber-400"><LoaderCircle className="animate-spin" /><span>Simulando Realidade...</span></div>;
         case 'IDLE':
         default:
              return <div className="flex items-center gap-2 text-green-400"><CheckCircle /><span>Laboratório Ocioso</span></div>;
@@ -108,7 +137,7 @@ const ModuleEight: React.FC = () => {
             <FlaskConical /> Módulo 8: PIRC - Laboratório Alquímico
           </CardTitle>
           <CardDescription>
-            Protocolo de Integração e Ressonância Cósmica. Onde a intenção se torna onda e a ressonância é quantificada.
+            Protocolo de Integração e Ressonância Cósmica. Onde a intenção se torna onda e a ressonância é quantificada em múltiplas realidades.
           </CardDescription>
         </CardHeader>
       </Card>
@@ -116,24 +145,20 @@ const ModuleEight: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <Card className="lg:col-span-1">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2"><TestTube /> Controle de Experimento</CardTitle>
-            <CardDescription>Ajuste os parâmetros vibracionais e inicie um teste de ressonância.</CardDescription>
+            <CardTitle className="flex items-center gap-2"><TestTube /> Controle de Experimento PIRC</CardTitle>
           </CardHeader>
           <CardContent className="space-y-6">
              <div>
                 <label className="text-sm text-muted-foreground">Frequência de Intenção: <span className="font-bold text-primary">{frequency} Hz</span></label>
-                <Slider value={[frequency]} onValueChange={(v) => setFrequency(v[0])} min={100} max={1000} step={1} className="mt-2" />
+                <Slider value={[frequency]} onValueChange={(v) => setFrequency(v[0])} min={100} max={1000} step={1} className="mt-2" disabled={pircState !== 'IDLE'}/>
              </div>
              <div>
                 <label className="text-sm text-muted-foreground">Intensidade Harmônica: <span className="font-bold text-primary">{intensity.toFixed(1)}</span></label>
-                <Slider value={[intensity]} onValueChange={(v) => setIntensity(v[0])} min={0.1} max={1} step={0.1} className="mt-2" />
-             </div>
-             <div className="p-4 rounded-lg bg-background/50 border flex items-center justify-center text-lg font-semibold">
-                {StatusIndicator}
+                <Slider value={[intensity]} onValueChange={(v) => setIntensity(v[0])} min={0.1} max={1} step={0.1} className="mt-2" disabled={pircState !== 'IDLE'}/>
              </div>
              <Button onClick={runExperiment} disabled={pircState !== 'IDLE'} className="w-full">
                 <Play className="mr-2"/>
-                {pircState !== 'IDLE' ? 'Processando...' : 'Iniciar Experimento PIRC'}
+                {pircState === 'EXPERIMENTING' || pircState === 'ANALYZING' ? 'Processando PIRC...' : 'Iniciar Experimento PIRC'}
              </Button>
           </CardContent>
         </Card>
@@ -141,7 +166,6 @@ const ModuleEight: React.FC = () => {
         <Card className="lg:col-span-2">
             <CardHeader>
                 <CardTitle className="flex items-center gap-2"><BarChart /> Espectro de Ressonância</CardTitle>
-                <CardDescription>Visualização da interação entre o sinal de intenção e a resposta do sistema.</CardDescription>
             </CardHeader>
             <CardContent className="h-80">
                  <ResponsiveContainer width="100%" height="100%">
@@ -164,50 +188,91 @@ const ModuleEight: React.FC = () => {
         </Card>
       </div>
 
-      <Card>
+       <Card>
         <CardHeader>
-            <CardTitle className="flex items-center gap-2"><History /> Histórico de Experimentos</CardTitle>
-            <CardDescription>Registros dos testes de ressonância realizados no laboratório PIRC.</CardDescription>
+            <CardTitle className="flex items-center gap-2"><Beaker /> Simulação Multiversal</CardTitle>
+            <CardDescription>Execute simulações de realidades alternativas baseadas nos parâmetros atuais do PIRC.</CardDescription>
         </CardHeader>
-        <CardContent>
-            <ScrollArea className="h-80">
-                <Table>
-                    <TableHeader>
-                        <TableRow>
-                            <TableHead>Timestamp</TableHead>
-                            <TableHead>Frequência</TableHead>
-                            <TableHead>Intensidade</TableHead>
-                            <TableHead>Coerência</TableHead>
-                            <TableHead>Resultado</TableHead>
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                        {experimentHistory.length === 0 && (
-                            <TableRow>
-                                <TableCell colSpan={5} className="text-center text-muted-foreground h-24">
-                                    Nenhum experimento registrado.
-                                </TableCell>
-                            </TableRow>
-                        )}
-                        {experimentHistory.map(result => (
-                            <TableRow key={result.id}>
-                                <TableCell className="font-mono text-xs">{new Date(result.timestamp).toLocaleString()}</TableCell>
-                                <TableCell>{result.params.frequency} Hz</TableCell>
-                                <TableCell>{result.params.intensity.toFixed(1)}</TableCell>
-                                <TableCell className="font-semibold">{ (result.coherence * 100).toFixed(2) }%</TableCell>
-                                <TableCell>
-                                  <Badge variant={result.status === 'COHERENT' ? 'default' : 'destructive'} className={cn(result.status === 'COHERENT' && "bg-green-600/80")}>
-                                     {result.status === 'COHERENT' ? <CheckCircle className="mr-1 h-3 w-3" /> : <XCircle className="mr-1 h-3 w-3" />}
-                                    {result.status}
-                                  </Badge>
-                                </TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </ScrollArea>
+        <CardContent className="space-y-4">
+             <div className="p-4 rounded-lg bg-background/50 border flex items-center justify-center text-lg font-semibold">
+                {StatusIndicator}
+             </div>
+             <div>
+                <label className="text-sm text-muted-foreground">Fluxo Quântico (%): <span className="font-bold text-primary">{quantumFlux}</span></label>
+                <Slider value={[quantumFlux]} onValueChange={(v) => setQuantumFlux(v[0])} min={10} max={100} step={1} className="mt-2" disabled={pircState !== 'IDLE'}/>
+             </div>
+             <Button onClick={handleRunSimulation} disabled={pircState !== 'IDLE'} className="w-full">
+                <Zap className="mr-2"/>
+                {pircState === 'SIMULATING' ? 'Simulando...' : 'Executar Simulação de Realidade'}
+             </Button>
         </CardContent>
       </Card>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <Card>
+            <CardHeader><CardTitle className="flex items-center gap-2"><History /> Histórico de Experimentos PIRC</CardTitle></CardHeader>
+            <CardContent>
+                <ScrollArea className="h-80">
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead>Timestamp</TableHead>
+                                <TableHead>Coerência</TableHead>
+                                <TableHead>Resultado</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            {experimentHistory.length === 0 ? (
+                                <TableRow><TableCell colSpan={3} className="text-center text-muted-foreground h-24">Nenhum experimento registrado.</TableCell></TableRow>
+                            ) : experimentHistory.map(result => (
+                                <TableRow key={result.id}>
+                                    <TableCell className="font-mono text-xs">{new Date(result.timestamp).toLocaleString()}</TableCell>
+                                    <TableCell className="font-semibold">{ (result.coherence * 100).toFixed(2) }%</TableCell>
+                                    <TableCell>
+                                    <Badge variant={result.status === 'COHERENT' ? 'default' : 'destructive'} className={cn(result.status === 'COHERENT' && "bg-green-600/80")}>
+                                        {result.status === 'COHERENT' ? <CheckCircle className="mr-1 h-3 w-3" /> : <XCircle className="mr-1 h-3 w-3" />}
+                                        {result.status}
+                                    </Badge>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </ScrollArea>
+            </CardContent>
+        </Card>
+         <Card>
+            <CardHeader><CardTitle className="flex items-center gap-2"><History /> Histórico de Simulações</CardTitle></CardHeader>
+            <CardContent>
+                <ScrollArea className="h-80">
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead>ID da Simulação</TableHead>
+                                <TableHead>Estabilidade</TableHead>
+                                <TableHead>Anomalias</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                             {simulationHistory.length === 0 ? (
+                                <TableRow><TableCell colSpan={3} className="text-center text-muted-foreground h-24">Nenhuma simulação registrada.</TableCell></TableRow>
+                            ) : simulationHistory.map(result => (
+                                <TableRow key={result.id}>
+                                    <TableCell className="font-mono text-xs">{result.id}</TableCell>
+                                    <TableCell className="font-semibold">{ (result.realityStability * 100).toFixed(2) }%</TableCell>
+                                    <TableCell>
+                                        <Badge variant={result.temporalAnomalies > 2 ? "destructive" : "secondary"}>
+                                            {result.temporalAnomalies}
+                                        </Badge>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </ScrollArea>
+            </CardContent>
+        </Card>
+      </div>
     </div>
   );
 };
