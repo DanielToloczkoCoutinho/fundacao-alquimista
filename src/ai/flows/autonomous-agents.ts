@@ -58,5 +58,4 @@ export async function researchAgent(query: string): Promise<{synthesis: string, 
     results: searchResults.matches,
   };
 }
-
     

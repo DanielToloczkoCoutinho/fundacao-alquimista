@@ -12,6 +12,11 @@ async function generateEmbedding(text: string): Promise<number[]> {
 }
 
 async function populate() {
+  if(!process.env.PINECONE_API_KEY || !process.env.PINECONE_ENVIRONMENT) {
+    console.warn("Variáveis de ambiente do Pinecone não configuradas. Pulando a povoação do Vector Store.");
+    return;
+  }
+
   console.log('Iniciando a povoação do Vector Store...');
   const pineconeIndex = await getPineconeIndex();
 

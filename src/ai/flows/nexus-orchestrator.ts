@@ -9,6 +9,7 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import {createHash} from 'crypto';
 import { getPineconeIndex } from '../vector-store';
+import { researchAgent } from './autonomous-agents';
 
 const logger = {
   info: (message: string, data?: any) => console.log(`[INFO] ${message}`, data),
@@ -523,15 +524,11 @@ export async function adaptiveOrchestrator(query: string, previousResults: any[]
   });
 
   // Otimizar resultado baseado em padrões aprendidos
-  const optimized = optimizeWithPatterns(previousResults, similarPatterns);
-  logger.info('Orquestração adaptativa concluída', { query, optimization: optimized });
+  const { synthesis } = await researchAgent(`Otimize os seguintes resultados de orquestração: ${JSON.stringify(previousResults)} com base nos seguintes padrões de sucesso: ${JSON.stringify(similarPatterns)}`);
+  
+  logger.info('Orquestração adaptativa concluída', { query, optimization: synthesis });
 
-  return optimized;
-}
-
-function optimizeWithPatterns(results: any[], patterns: any[]) {
-  // Lógica de otimização simples (ex.: média ponderada)
-  return results.map(r => ({ ...r, score: r.score * 1.1 })); // Placeholder
+  return synthesis;
 }
 
 async function generateEmbedding(text: string): Promise<number[]> {
