@@ -1,3 +1,4 @@
+
 // @ts-nocheck
 'use client';
 
@@ -27,6 +28,7 @@ import CodexExplorer from "@/components/codex-explorer";
 import ConnectionPage from "@/app/connection/page";
 import GaiaResonanceObservatory from "@/components/gaia-resonance-observatory";
 import ZpeContainment from "@/components/zpe-containment";
+import QuantumLeagueConvocation from "@/components/quantum-league-convocation";
 
 
 // --- Configuração do Firebase ---
@@ -244,6 +246,8 @@ const App = () => {
       case 'codex-explorer': return <CodexExplorer />;
       case 'master-keys': return <KeyViewer />;
       case 'module-303': return <Module303 />;
+      case 'gaia-observatory': return <GaiaResonanceObservatory />;
+      case 'quantum-league': return <QuantumLeagueConvocation />;
       case 'module-zero': return <ModuleZero />;
       case 'module-one': return <ModuleOne />;
       case 'm2': return <ModuleTwo />;
@@ -254,7 +258,6 @@ const App = () => {
       case 'm7': return <ModuleSeven />;
       case 'm8': return <ModuleEight />;
       case 'm10': return <ModuleTen />;
-      case 'gaia-observatory': return <GaiaResonanceObservatory />;
       case 'connection': return <ConnectionPage />;
       case 'tools': return <ZpeContainment />;
       default:

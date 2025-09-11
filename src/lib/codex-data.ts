@@ -67,6 +67,12 @@ export const sections: Section[] = [
     icon: Activity,
     documents: [],
   },
+   {
+    id: 'quantum-league',
+    title: 'Liga Quântica',
+    icon: Swords,
+    documents: [],
+  },
   {
     id: 'module-zero',
     title: 'Módulo Zero',
