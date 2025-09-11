@@ -8,7 +8,7 @@ import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUs
 import { getFunctions, httpsCallable } from "firebase/functions";
 import { cn } from "@/lib/utils";
 import { sections } from "@/lib/codex-data";
-import type { Section } from "@/lib/codex-data";
+import type { Section, Document } from "@/lib/codex-data";
 import ModuleZero from "@/components/module-zero";
 import ModuleOne from "@/components/module-one";
 import ModuleTwo from "@/components/module-two";
@@ -239,11 +239,12 @@ const App = () => {
   
   const renderContent = () => {
     const selectedSection = sections.find(s => s.id === currentSectionId);
+    const allDocuments = sections.reduce((acc, section) => [...acc, ...section.documents], [] as Document[]);
 
     switch (currentSectionId) {
       case 'nexus': return <Nexus />;
       case 'omega': return <Pagina42 />;
-      case 'codex-explorer': return <CodexExplorer documents={[]} title="Explorador do Códex"/>;
+      case 'codex-explorer': return <CodexExplorer documents={allDocuments} title="Explorador do Códex"/>;
       case 'master-keys': return <KeyViewer />;
       case 'module-303': return <Module303 />;
       case 'gaia-observatory': return <GaiaResonanceObservatory />;
@@ -261,7 +262,7 @@ const App = () => {
       case 'connection': return <ConnectionPage />;
       case 'tools': return <ZpeContainment />;
       default:
-         if (selectedSection && selectedSection.documents.length > 0) {
+         if (selectedSection) {
             return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
         }
         return (
