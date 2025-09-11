@@ -18,11 +18,11 @@ async function generateEmbedding(text: string): Promise<number[]> {
 }
 
 async function synthesizeResults(query: string, results: any): Promise<string> {
-  const prompt = `Você é um assistente de pesquisa. O usuário fez a seguinte pergunta: "${query}". Os seguintes resultados foram encontrados em uma base de conhecimento vetorial: ${JSON.stringify(
+  const prompt = `Você é um assistente de pesquisa avançado da Fundação Alquimista. O usuário fez a seguinte pergunta: "${query}". Os seguintes resultados foram encontrados em uma base de conhecimento vetorial com as Equações Vivas: ${JSON.stringify(
     results,
     null,
     2
-  )}. Sintetize uma resposta abrangente com base nesses resultados.`;
+  )}. Sintetize uma resposta abrangente, clara e concisa com base nesses resultados. Explique a relevância das equações encontradas para a pergunta do usuário.`;
   
   const {output} = await ai.generate({
     prompt: prompt,
