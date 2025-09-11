@@ -8,6 +8,10 @@
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import {createHash} from 'crypto';
+import { pineconeIndex } from '../vector-store';
+import { advancedLogger } from '../../lib/advanced-logger';
+
+const logger = advancedLogger;
 
 
 // Tipos de Estado e Log
@@ -506,5 +510,35 @@ export async function runNexusSequence() {
   const { stream } = await nexusOrchestratorFlow.stream();
   return stream;
 }
+
+export async function adaptiveOrchestrator(query: string, previousResults: any[]) {
+  // Embed query e busca padrões semelhantes
+  const queryEmbedding = await generateEmbedding(query);
+  const similarPatterns = await pineconeIndex.query({
+    vector: queryEmbedding,
+    topK: 3,
+    includeMetadata: true,
+  });
+
+  // Otimizar resultado baseado em padrões aprendidos
+  const optimized = optimizeWithPatterns(previousResults, similarPatterns);
+  logger.info('Orquestração adaptativa concluída', { query, optimization: optimized });
+
+  return optimized;
+}
+
+function optimizeWithPatterns(results: any[], patterns: any[]) {
+  // Lógica de otimização simples (ex.: média ponderada)
+  return results.map(r => ({ ...r, score: r.score * 1.1 })); // Placeholder
+}
+
+async function generateEmbedding(text: string): Promise<number[]> {
+  const { embedding } = await ai.embed({
+    model: 'googleai/text-embedding-004',
+    content: text,
+  });
+  return embedding;
+}
+    
 
     
