@@ -62,3 +62,4 @@ export async function GET(request: NextRequest) {
     status: unhealthyComponents.length > 0 ? 503 : 200, // Service Unavailable se estiver em processo de cura
   });
 }
+
