@@ -1,12 +1,28 @@
+
 'use client';
 
 import React, { useEffect, useState, Suspense } from 'react';
 import { useStore } from '@/hooks/useStore';
-import { cosmicCache } from '@/lib/cosmic-cache';
-import { recordModuleActivation, alchemicalReactionTimer } from '@/lib/advanced-metrics';
-import { createLogContext } from '@/lib/advanced-logger';
 import ErrorBoundary from '@/components/ui/error-boundary';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+
+// Mock implementations as the original files are removed
+const cosmicCache = {
+  get: (key: string) => null,
+  set: (key: string, value: any) => {},
+};
+
+const recordModuleActivation = (id: number, type: string) => {};
+
+const alchemicalReactionTimer = {
+  startTimer: (config: any) => () => {},
+};
+
+const createLogContext = (session?: string, moduleId?: number) => ({
+  info: (message: string, meta?: any) => console.log(message, meta),
+  error: (message: string, meta?: any) => console.error(message, meta),
+});
+
 
 interface ModuleOmegaProps {
   moduleId: number;

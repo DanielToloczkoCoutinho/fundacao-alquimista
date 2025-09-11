@@ -1,5 +1,11 @@
+
 import { NextResponse } from 'next/server';
-import { register } from '@/lib/metrics';
+
+// Mock implementation as the original file is removed
+const register = {
+    metrics: async () => "",
+    contentType: 'text/plain',
+}
 
 export async function GET() {
   const metrics = await register.metrics();

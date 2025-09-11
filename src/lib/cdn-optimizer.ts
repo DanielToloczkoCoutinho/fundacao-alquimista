@@ -1,4 +1,11 @@
-import { logger } from './logger';
+
+// Mock logger to prevent breakage
+const logger = {
+  debug: (...args: any[]) => console.log(...args),
+  info: (...args: any[]) => console.log(...args),
+  warn: (...args: any[]) => console.warn(...args),
+  error: (...args: any[]) => console.error(...args),
+}
 
 export interface CDNOptions {
   enabled: boolean;

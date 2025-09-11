@@ -9,9 +9,10 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import {createHash} from 'crypto';
 import { getPineconeIndex } from '../vector-store';
-import { advancedLogger } from '../../lib/advanced-logger';
 
-const logger = advancedLogger;
+const logger = {
+  info: (message: string, data?: any) => console.log(`[INFO] ${message}`, data),
+};
 
 
 // Tipos de Estado e Log

@@ -1,14 +1,13 @@
+
 // This file is now located at app/layout.tsx
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { cdnOptimizer } from '@/lib/cdn-optimizer';
-import ErrorBoundary from '@/components/ui/error-boundary';
-import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
 import { Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
-import ServerSideInitializers from '@/components/server-side-initializers';
+import ErrorBoundary from '@/components/ui/error-boundary';
+import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
 
 export const metadata: Metadata = {
   title: "Alchemist's Codex",
@@ -23,7 +22,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const preloadLinks = cdnOptimizer.generatePreloadLinks();
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -38,15 +36,10 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" async></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        {preloadLinks.map((link, index) => {
-          const asType = link.includes('font') ? 'font' : link.includes('css') ? 'style' : 'script';
-          return <link key={index} rel="preload" href={cdnOptimizer.optimizeUrl(link)} as={asType} crossOrigin="anonymous" />;
-        })}
       </head>
       <body className="font-body antialiased">
          <ErrorBoundary fallback={<CosmicErrorFallback />}>
           <Suspense fallback={<SuspenseFallback />}>
-            <ServerSideInitializers />
             {children}
             <Toaster />
           </Suspense>
