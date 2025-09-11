@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 import {
   BrainCircuit,
@@ -22,12 +23,25 @@ import {
   BookHeart,
 } from 'lucide-react';
 
+export interface CodexVersion {
+  major: number;
+  minor: number;
+  patch: number;
+}
+
+export const CODEX_VERSION: CodexVersion = {
+  major: 1,
+  minor: 0,
+  patch: 0,
+};
+
 export interface Document {
   title: string;
   link: string;
   description?: string;
   details?: Record<string, string>;
   isProtected?: boolean;
+  version?: CodexVersion; // Adicionado para manter compatibilidade
 }
 
 export interface Section {
