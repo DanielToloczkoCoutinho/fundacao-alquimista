@@ -15,6 +15,7 @@ import {
   Box,
   BookOpenCheck,
   KeySquare,
+  Terminal,
 } from 'lucide-react';
 
 export interface Document {
@@ -37,6 +38,12 @@ export const sections: Section[] = [
     id: 'nexus',
     title: 'Nexus Central (M9)',
     icon: Orbit,
+    documents: [],
+  },
+  {
+    id: 'console',
+    title: 'Console da Fundação',
+    icon: Terminal,
     documents: [],
   },
   {

@@ -13,6 +13,7 @@ import ModuleZero from '@/components/module-zero';
 import ModuleOne from '@/components/module-one';
 import Module303 from '@/components/module-303';
 import ConnectionPage from '@/app/connection/page';
+import ConsolePage from '@/app/console/page';
 import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import ModuleTwo from '@/components/module-two';
@@ -42,6 +43,8 @@ export default function Home() {
     switch (selectedSectionId) {
       case 'nexus':
         return <Nexus />;
+      case 'console':
+        return <ConsolePage />;
       case 'codex-explorer':
         return <CodexExplorer />;
       case 'master-keys':
