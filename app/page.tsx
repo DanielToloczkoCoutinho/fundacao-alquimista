@@ -28,6 +28,7 @@ import QuantumLeagueConvocation from "@/components/quantum-league-convocation";
 import Pagina42 from "@/components/pagina-42";
 import ChroniclePage from "@/components/chronicle";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Badge } from '@/components/ui/badge';
 
 
 // --- Configuração do Firebase ---
@@ -77,14 +78,38 @@ const App = () => {
   const [status, setStatus] = useState<string>('Conectando ao Akasha...');
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, 'tabs'), (snapshot) => {
-      const data = snapshot.docs.map(doc => doc.data().name as string);
-      setItems(data);
-      setStatus(`Akasha sincronizado: ${new Date().toLocaleTimeString()}`);
-    }, (error) => {
-      setStatus(`Erro no Akasha: ${error.message}. Tentando reconectar...`);
-    });
-    return () => unsubscribe();
+    let unsubscribe: () => void;
+    let retryCount = 0;
+    const maxRetries = 5;
+
+    const connect = () => {
+      if (unsubscribe) {
+        unsubscribe();
+      }
+      
+      unsubscribe = onSnapshot(collection(db, 'tabs'), (snapshot) => {
+        const data = snapshot.docs.map(doc => doc.data().name as string);
+        setItems(data);
+        setStatus(`Akasha sincronizado: ${new Date().toLocaleTimeString()}`);
+        retryCount = 0;
+      }, (error) => {
+        retryCount++;
+        setStatus(`Erro no Akasha (tentativa ${retryCount}/${maxRetries}): ${error.message}. Reconectando em 5s...`);
+        if (retryCount < maxRetries) {
+          setTimeout(connect, 5000);
+        } else {
+          setStatus('Falha crítica: Conexão com o Akasha perdida. Verifique a rede e as configurações do Firebase.');
+        }
+      });
+    };
+
+    connect();
+
+    return () => {
+      if (unsubscribe) {
+        unsubscribe();
+      }
+    };
   }, []);
 
   
@@ -121,17 +146,25 @@ const App = () => {
             }
             return (
                 <div className="p-8">
-                    <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
+                    <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador. <Badge>Ativo</Badge></h1>
                     <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
                      <p className="text-amber-400 mt-4 text-sm">{status}</p>
                     <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
+                     <div>
+                        <h2 className="text-xl mt-4">Abas (Debug)</h2>
+                        <ul>
+                        {items.map((item, index) => (
+                            <li key={index} className="ml-4">{item}</li>
+                        ))}
+                        </ul>
+                    </div>
                 </div>
             );
     }
   };
   
   return (
-    <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")}>
+    <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")} suppressHydrationWarning>
       <Sidebar onNavigate={setCurrentSectionId} currentSectionId={currentSectionId} />
       <main className={cn("flex-1 overflow-auto p-6", isMobile ? "p-4" : "")}>
         <Suspense fallback={<div className="text-center">Carregando Módulo...</div>}>
