@@ -14,6 +14,7 @@ import ModuleZero from "@/components/module-zero";
 import ModuleOne from "@/components/module-one";
 import ModuleTwo from "@/components/module-two";
 import ModuleThree from "@/components/module-three";
+import ModuleFour from "@/components/module-four";
 import Nexus from "@/components/nexus";
 import Module303 from "@/components/module-303";
 import KeyViewer from "@/components/key-viewer";
@@ -239,6 +240,7 @@ const App = () => {
       case 'module-one': return <ModuleOne />;
       case 'm2': return <ModuleTwo />;
       case 'm3': return <ModuleThree />;
+      case 'm4': return <ModuleFour />;
       case 'connection': return <ConnectionPage />;
       case 'home':
       default:
