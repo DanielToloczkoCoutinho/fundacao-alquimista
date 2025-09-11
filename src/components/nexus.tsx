@@ -46,6 +46,7 @@ import ModuleOmega7 from './module-omega-7';
 import ModuleOmega8 from './module-omega-8';
 import ModuleOmega9 from './module-omega-9';
 import ModuleOmega303 from './module-omega-303';
+import { QuantumOrchestrator } from './ui/quantum-orchestrator';
 
 
 type ModuleState =
@@ -338,6 +339,8 @@ export default function Nexus() {
             </CardContent>
           </Card>
         
+        <QuantumOrchestrator />
+
         <div className="active-module-renderer">
             <RenderActiveModule />
         </div>
