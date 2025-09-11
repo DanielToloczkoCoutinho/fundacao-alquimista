@@ -17,6 +17,7 @@ import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import ModuleTwo from '@/components/module-two';
 import CodexExplorer from '@/components/codex-explorer';
+import KeyViewer from '@/components/key-viewer';
 
 // Placeholder para os novos módulos que ainda não possuem componente dedicado
 const GenericModulePlaceholder = ({ title }: { title: string }) => (
@@ -38,13 +39,13 @@ export default function Home() {
   );
 
   const renderContent = () => {
-    const section = sections.find((s) => s.id === selectedSectionId);
-
     switch (selectedSectionId) {
       case 'nexus':
         return <Nexus />;
       case 'codex-explorer':
         return <CodexExplorer />;
+      case 'master-keys':
+        return <KeyViewer />;
       case 'module-303':
         return <Module303 />;
       case 'module-one':
@@ -71,6 +72,7 @@ export default function Home() {
       case 'm8':
         return <GenericModulePlaceholder title="Módulo 8: PIRC" />;
       default:
+        const section = sections.find((s) => s.id === selectedSectionId);
         if (section && section.documents.length > 0) {
            return (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
