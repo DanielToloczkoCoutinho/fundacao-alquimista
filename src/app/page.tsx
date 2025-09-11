@@ -3,40 +3,44 @@
 
 import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User } from "firebase/auth";
+import { getFirestore, collection, getDocs, doc, setDoc, writeBatch } from "firebase/firestore";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
+import { getFunctions, httpsCallable } from "firebase/functions";
+
 
 // --- Configuração do Firebase ---
-// As credenciais foram obtidas e inseridas.
 const firebaseConfig = {
-    apiKey: "API_KEY",
-    authDomain: "PROJECT_ID.firebaseapp.com",
-    projectId: "PROJECT_ID",
-    storageBucket: "PROJECT_ID.appspot.com",
-    messagingSenderId: "SENDER_ID",
-    appId: "APP_ID"
+    "projectId": "studio-4265982502-21871",
+    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+    "authDomain": "studio-4265982502-21871.firebaseapp.com",
+    "measurementId": "",
+    "messagingSenderId": "174545373080"
 };
 
-
-// --- Inicialização do Firebase ---
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
-
+const functions = getFunctions(app);
 
 // --- Interfaces de Dados ---
 interface EquacaoViva {
   id: string;
   nome: string;
   formula_latex: string;
+  formula_python: string;
   descricao: string;
+  classificacao: string;
+  variaveis: string[];
+  origem: string;
 }
 
 interface ChaveMestra {
   id: string;
   nome: string;
   descricao: string;
-  equacoes: EquacaoViva[];
+  equacoes: string[]; // Apenas IDs
 }
 
 interface CodexItem {
@@ -46,11 +50,29 @@ interface CodexItem {
   content: string;
 }
 
-// --- Dados Estáticos (Menus, etc) ---
+// --- Dados Estáticos (Menus e Dados Iniciais para Semeador) ---
 const codexData: CodexItem[] = [
   { title: "Home", description: "Página inicial", icon: "🏠", content: "Home" },
   { title: "Console da Fundação", description: "Painel de controle principal", icon: "💻", content: "Console" },
   { title: "Chaves Mestras", description: "Visualizador das Chaves", icon: "🔑", content: "ChavesMestras" },
+];
+
+const initialEquacoes: EquacaoViva[] = [
+  {
+    id: "307.1.1",
+    nome: "Extração de Energia do Vácuo",
+    formula_latex: "P_{\\text{ZPE}} = \\kappa \\cdot \\rho_{\\text{vac}} \\cdot V_{\\text{eff}} \\cdot \\omega_{\\text{ZPE}} \\cdot Q",
+    formula_python: "def p_zpe(params):\n    kappa = params.get('kappa', 1)\n    rho_vac = params.get('rho_vac', 1)\n    V_eff = params.get('V_eff', 1)\n    omega_zpe = params.get('omega_zpe', 1)\n    Q = params.get('Q', 1)\n    return kappa * rho_vac * V_eff * omega_zpe * Q",
+    descricao: "Potência extraída do vácuo quântico pelo núcleo Gaia",
+    classificacao: "Energia do Vácuo",
+    variaveis: ["kappa (fator de acoplamento)", "rho_vac (densidade do vácuo)", "V_eff (volume efetivo)", "omega_zpe (frequência ZPE)", "Q (fator de qualidade)"],
+    origem: "Submódulo 307.1"
+  },
+];
+
+const initialChaves: ChaveMestra[] = [
+    { id: "307", nome: "Chave Mestra 307", descricao: "Equações vivas do módulo 307", equacoes: ["307.1.1"] },
+    { id: "luxnet", nome: "Chave LuxNet", descricao: "Equações da rede LuxNet", equacoes: [] }
 ];
 
 
@@ -75,17 +97,41 @@ const Sidebar = ({ onNavigate }: { onNavigate: (content: string) => void }) => (
 
 const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
   const [activeTab, setActiveTab] = useState("overview");
+  const [executionState, setExecutionState] = useState<{ [key: string]: { result: string; params: { [key: string]: number } } }>({});
+
+  const executeEquation = async (equacao: EquacaoViva) => {
+    const params = executionState[equacao.id]?.params || {};
+    const executeFunc = httpsCallable(functions, "executeEquation");
+    try {
+      setExecutionState(prev => ({ ...prev, [equacao.id]: { ...prev[equacao.id], result: "Executando..." } }));
+      const response = await executeFunc({ id: equacao.id, params });
+      setExecutionState(prev => ({ ...prev, [equacao.id]: { ...prev[equacao.id], result: `Resultado: ${response.data.result}` } }));
+    } catch (error) {
+      console.error("Erro na execução:", error);
+      setExecutionState(prev => ({ ...prev, [equacao.id]: { ...prev[equacao.id], result: "Erro na execução." } }));
+    }
+  };
+
+  const handleParamChange = (equacaoId: string, paramName: string, value: string) => {
+    const cleanParamName = paramName.split(" ")[0];
+    setExecutionState(prev => ({
+      ...prev,
+      [equacaoId]: {
+        ...prev[equacaoId],
+        params: {
+          ...prev[equacaoId]?.params,
+          [cleanParamName]: Number(value)
+        }
+      }
+    }));
+  };
 
   return (
     <div className="space-y-4 p-4 text-white">
       <h1 className="text-3xl font-bold">Console da Fundação</h1>
       <div className="border-b border-gray-700">
         {["overview", "logs", "settings", "chave307"].map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 ${activeTab === tab ? "border-b-2 border-blue-500" : "text-gray-400 hover:text-white"}`}
-          >
+          <button key={tab} onClick={() => setActiveTab(tab)} className={`px-4 py-2 ${activeTab === tab ? "border-b-2 border-blue-500" : "text-gray-400 hover:text-white"}`}>
             {tab === "overview" && "Visão Geral"}
             {tab === "logs" && "Logs"}
             {tab === "settings" && "Configurações"}
@@ -103,6 +149,21 @@ const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
               <h3 className="font-bold text-purple-300">{equacao.nome}</h3>
               <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
               <p className="text-sm text-gray-400">{equacao.descricao}</p>
+              <div className="mt-4 space-y-2">
+                {(equacao.variaveis || []).map(varName => (
+                  <input
+                    key={varName}
+                    type="number"
+                    placeholder={varName}
+                    onChange={(e) => handleParamChange(equacao.id, varName, e.target.value)}
+                    className="p-1 mr-2 rounded bg-gray-700 text-white w-48"
+                  />
+                ))}
+                <button onClick={() => executeEquation(equacao)} className="px-3 py-1 bg-blue-600 rounded hover:bg-blue-700">
+                  Executar
+                </button>
+                {executionState[equacao.id]?.result && <p className="mt-2 text-sm text-amber-300">{executionState[equacao.id].result}</p>}
+              </div>
             </div>
           )) : <p>Nenhuma equação encontrada para a Chave Mestra 307.</p>}
         </div>
@@ -111,7 +172,7 @@ const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
   );
 };
 
-const KeyViewer = ({ chaves }: { chaves: ChaveMestra[] }) => {
+const KeyViewer = ({ chaves, equacoes }: { chaves: ChaveMestra[]; equacoes: EquacaoViva[] }) => {
     const [activeKey, setActiveKey] = useState<string | null>(chaves.length > 0 ? chaves[0].id : null);
 
     return (
@@ -119,35 +180,37 @@ const KeyViewer = ({ chaves }: { chaves: ChaveMestra[] }) => {
             <h1 className="text-3xl font-bold">Chaves Mestras</h1>
             <div className="border-b border-gray-700">
                 {chaves.map((chave) => (
-                    <button
-                        key={chave.id}
-                        onClick={() => setActiveKey(chave.id)}
-                        className={`px-4 py-2 ${activeKey === chave.id ? 'border-b-2 border-blue-500' : 'text-gray-400 hover:text-white'}`}
-                    >
+                    <button key={chave.id} onClick={() => setActiveKey(chave.id)} className={`px-4 py-2 ${activeKey === chave.id ? 'border-b-2 border-blue-500' : 'text-gray-400 hover:text-white'}`}>
                         {chave.nome}
                     </button>
                 ))}
             </div>
-            {chaves.filter(chave => chave.id === activeKey).map((chave) => (
-                <div key={chave.id} className="p-4 bg-gray-900 rounded">
-                    <h2 className="font-bold text-xl mb-2 text-purple-300">{chave.nome}</h2>
-                    <p className="text-sm mb-4 text-gray-400">{chave.descricao}</p>
-                    <div className="space-y-3 h-80 overflow-y-auto">
-                      {chave.equacoes.map((equacao) => (
-                          <div key={equacao.id} className="p-3 border rounded mt-2 border-gray-700 hover:bg-gray-800 transition-colors">
-                              <h3 className="font-bold">{equacao.nome}</h3>
-                              <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
-                          </div>
-                      ))}
-                      {chave.equacoes.length === 0 && <p className="text-sm text-gray-500">Nenhuma equação disponível para esta chave.</p>}
+            {chaves.filter(chave => chave.id === activeKey).map((chave) => {
+                const equacoesDetalhadas = (chave.equacoes || []).map((eqId: string) => 
+                    equacoes.find(eq => eq.id === eqId)
+                ).filter((eq: EquacaoViva | undefined): eq is EquacaoViva => eq !== undefined);
+
+                return (
+                    <div key={chave.id} className="p-4 bg-gray-900 rounded">
+                        <h2 className="font-bold text-xl mb-2 text-purple-300">{chave.nome}</h2>
+                        <p className="text-sm mb-4 text-gray-400">{chave.descricao}</p>
+                        <div className="space-y-3 h-80 overflow-y-auto">
+                          {equacoesDetalhadas.map((equacao) => (
+                              <div key={equacao.id} className="p-3 border rounded mt-2 border-gray-700 hover:bg-gray-800 transition-colors">
+                                  <h3 className="font-bold">{equacao.nome}</h3>
+                                  <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
+                              </div>
+                          ))}
+                          {equacoesDetalhadas.length === 0 && <p className="text-sm text-gray-500">Nenhuma equação disponível para esta chave.</p>}
+                        </div>
                     </div>
-                </div>
-            ))}
+                )
+            })}
         </div>
     );
 };
 
-const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
+const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -157,43 +220,79 @@ const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
     setError('');
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      onLoginSuccess();
     } catch (err) {
-      setError("Falha na autenticação. Verifique suas credenciais.");
+      setError("Falha na autenticação. Verifique suas credenciais cósmicas.");
       console.error(err);
     }
+  };
+  
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert("Fundador registrado com sucesso! Agora você pode entrar.");
+    } catch (err: any) {
+      setError(`Falha no registro: ${err.message}`);
+      console.error(err);
+    }
+  };
+
+  const seedInitialData = async () => {
+      console.log("Semeando dados iniciais no Firestore...");
+      const batch = writeBatch(db);
+      
+      initialChaves.forEach(chave => {
+          const chaveRef = doc(db, "chavesMestras", chave.id);
+          batch.set(chaveRef, {
+            nome: chave.nome,
+            descricao: chave.descricao,
+            equacoes: chave.equacoes
+          });
+      });
+      
+      initialEquacoes.forEach(eq => {
+          const eqRef = doc(db, "equacoes", eq.id);
+          batch.set(eqRef, eq);
+      });
+
+      try {
+        await batch.commit();
+        alert("Dados iniciais semeados com sucesso! Agora você pode se registrar e fazer login.");
+      } catch (error) {
+        console.error("Erro ao semear dados:", error);
+        alert("Erro ao semear dados. Verifique o console.");
+      }
   };
 
   return (
     <div className="w-full h-screen flex items-center justify-center bg-gray-900">
       <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center text-white">Fundação Alquimista</h1>
-        <p className="text-center text-gray-400">Acesso ao Códex</p>
-        <form onSubmit={handleLogin} className="space-y-6">
+        <p className="text-center text-gray-400">Portal do Fundador</p>
+        <form className="space-y-6">
           <div>
             <label className="text-sm font-bold text-gray-400 block mb-2">Email</label>
-            <input 
-              type="email" 
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              className="w-full p-3 bg-gray-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-              required 
-            />
+            <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full p-3 bg-gray-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
           </div>
           <div>
             <label className="text-sm font-bold text-gray-400 block mb-2">Senha</label>
-            <input 
-              type="password" 
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-              className="w-full p-3 bg-gray-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-              required 
-            />
+            <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-3 bg-gray-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
-          <button type="submit" className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold transition-colors">
-            Autenticar
-          </button>
+          <div className="flex flex-col space-y-4">
+             <div className="flex space-x-4">
+                <button type="button" onClick={handleLogin} className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold transition-colors">
+                    Entrar
+                </button>
+                 <button type="button" onClick={handleRegister} className="w-full py-3 px-4 bg-cyan-600 hover:bg-cyan-700 rounded text-white font-bold transition-colors">
+                    Registrar
+                </button>
+             </div>
+             <button type="button" onClick={seedInitialData} className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-bold transition-colors">
+                Semear Dados Iniciais
+             </button>
+          </div>
         </form>
       </div>
     </div>
@@ -212,70 +311,55 @@ const App = () => {
   const [chaves, setChaves] = useState<ChaveMestra[]>([]);
   const [equacoes, setEquacoes] = useState<EquacaoViva[]>([]);
 
-  // Monitora o estado de autenticação
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
+      if (currentUser) {
+        fetchData();
+      }
     });
-    return () => unsubscribe();
-  }, []);
-
-  // Busca os dados do Firestore após a autenticação
-  useEffect(() => {
-    if (user) { // Apenas busca os dados se o usuário estiver logado
-      const fetchData = async () => {
+    
+    const fetchData = async () => {
         try {
-          console.log("Buscando dados do Firestore...");
           const chavesSnapshot = await getDocs(collection(db, "chavesMestras"));
-          const chavesData = chavesSnapshot.docs.map(doc => ({
-            id: doc.id,
-            ...doc.data(),
-            equacoes: doc.data().equacoes || []
-          } as ChaveMestra));
+          const chavesData: ChaveMestra[] = [];
+           for (const doc of chavesSnapshot.docs) {
+              chavesData.push({ id: doc.id, ...doc.data() } as ChaveMestra);
+          }
           setChaves(chavesData);
-          console.log("Chaves Mestras carregadas:", chavesData);
-
+          
           const equacoesSnapshot = await getDocs(collection(db, "equacoes"));
-          const equacoesData = equacoesSnapshot.docs.map(doc => doc.data() as EquacaoViva);
+          const equacoesData = equacoesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as EquacaoViva));
           setEquacoes(equacoesData);
-          console.log("Equações Vivas carregadas:", equacoesData);
 
         } catch (error) {
           console.error("Erro ao buscar dados do Firestore:", error);
-          // Adicione um feedback visual para o usuário aqui, se desejar
         }
       };
-      
-      // Verifica se o projeto foi configurado antes de buscar
-      if (firebaseConfig.projectId !== "your-project-id") {
-        fetchData();
-      } else {
-        console.warn("Configuração do Firebase não foi preenchida. Dados não serão carregados.");
-      }
-    }
-  }, [user]); // Re-executa quando o estado do usuário muda
 
-  const handleLoginSuccess = () => {
-      // O onAuthStateChanged já cuidará da atualização do estado do usuário
-      console.log("Login bem-sucedido, aguardando redirecionamento...");
-  }
+    return () => unsubscribe();
+  }, []);
 
   if (loading) {
-      return <div className="w-full h-screen flex items-center justify-center bg-gray-900 text-white">Carregando Fundação...</div>;
+    return <div className="w-full h-screen flex items-center justify-center bg-gray-900 text-white">Carregando Fundação...</div>;
   }
   
   if (!user) {
-    return <LoginScreen onLoginSuccess={handleLoginSuccess} />;
+    return <LoginScreen />;
   }
 
   return (
     <div className="flex h-screen bg-gray-900 text-white">
       <Sidebar onNavigate={setCurrentContent} />
       <main className="flex-1 p-8 overflow-auto">
-        {currentContent === "Home" && <p>Bem-vindo à Fundação Alquimista, Fundador. - {new Date().toLocaleString()}</p>}
+        {currentContent === "Home" && (
+            <div>
+                 <p>Bem-vindo à Fundação Alquimista, Fundador. - {new Date().toLocaleString()}</p>
+            </div>
+        )}
         {currentContent === "Console" && <Console equacoes={equacoes} />}
-        {currentContent === "ChavesMestras" && <KeyViewer chaves={chaves} />}
+        {currentContent === "ChavesMestras" && <KeyViewer chaves={chaves} equacoes={equacoes}/>}
       </main>
     </div>
   );
