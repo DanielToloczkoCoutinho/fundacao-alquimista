@@ -282,11 +282,11 @@ const ChroniclePage = () => {
                          <Table>
                             <TableHeader>
                                 <TableRow>
-                                    {Object.keys(JSON.parse(`[{${page.content.split('| :---')[1].split('}')[0]}}]`)[0] || {}).map(key => <TableHead key={key}>{key}</TableHead>)}
+                                    {Object.keys(JSON.parse(`[{${(page.content.split('| :---')[1] || '').split('}')[0]}}]`)[0] || {}).map(key => <TableHead key={key}>{key}</TableHead>)}
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                 {page.content.trim().split('\\n').filter(line => line.startsWith('| :---') === false && line.trim().length > 1 && line.trim() !== '|---|---|---|---|').map((line, index) => {
+                                 {page.content.trim().split('\n').filter(line => line.startsWith('| :---') === false && line.trim().length > 1 && line.trim() !== '|---|---|---|---|').map((line, index) => {
                                     const cells = line.split('|').slice(1, -1).map(cell => cell.trim());
                                     // Skip header separator line in markdown table
                                     if (cells.every(c => c.startsWith(':---'))) return null;
@@ -311,5 +311,3 @@ const ChroniclePage = () => {
 };
 
 export default ChroniclePage;
-
-    
