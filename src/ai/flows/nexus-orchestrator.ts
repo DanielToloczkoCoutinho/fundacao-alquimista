@@ -443,7 +443,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
 
     // Sequência de Módulos
     const moduleSequence = [
-        { name: 'Módulo Zero', tool: moduloZeroTool, params: {}, validate: (o: any) => o.estado === 'PURO_E_STAVEL' },
+        { name: 'Módulo Zero', tool: moduloZeroTool, params: {}, validate: (o: any) => o.estado === 'PURO_E_ESTAVEL' },
         { name: 'M1: Segurança Quântica', tool: segurancaQuanticaTool, params: {}, validate: (o: any) => o.estado === 'PROTEGIDO' },
         { name: 'M2: Comunicação', tool: comunicacaoTool, params: {}, validate: (o: any) => o.conexao === 'TOTAL' || o.conexao === 'PARCIAL' },
         { name: 'M3: Previsão', tool: previsaoTool, params: {}, validate: (o: any) => !o.anomalia_prevista, storeOutput: (o: any) => energiaCosmicaDetectada = o.energiaCosmica },
