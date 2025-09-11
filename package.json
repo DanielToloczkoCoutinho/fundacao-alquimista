@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "test": "vitest"
+    "test": "vitest",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
@@ -73,6 +74,7 @@
     "zustand": "^4.4.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.44.1",
     "@types/katex": "^0.16.7",
     "@types/lru-cache": "^7.10.0",
     "@types/node": "^20",
