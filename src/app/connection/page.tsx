@@ -12,97 +12,37 @@ function getColor(energia: number) {
 
 const ConnectionPage = () => {
   const mountRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<THREE.Scene | null>(null);
-  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const nodosRef = useRef<THREE.Group>(new THREE.Group());
-  const arestasRef = useRef<THREE.Group>(new THREE.Group());
-  const starfieldRef = useRef<THREE.Points | null>(null);
-
-
-  // Function to update the graph visualization
-  const atualizarGrafo = (nodosData: any[], arestasData: any[]) => {
-    if (!nodosRef.current || !arestasRef.current || !sceneRef.current) return;
-
-    // Clear old objects
-    while(nodosRef.current.children.length > 0){ 
-        const object = nodosRef.current.children[0];
-        (object as THREE.Mesh).geometry.dispose();
-        ((object as THREE.Mesh).material as THREE.Material).dispose();
-        nodosRef.current.remove(object); 
-    }
-    while(arestasRef.current.children.length > 0){
-        const object = arestasRef.current.children[0];
-        (object as THREE.Line).geometry.dispose();
-        ((object as THREE.Line).material as THREE.Material).dispose();
-        arestasRef.current.remove(object);
-    }
-    
-    const nodoPositions: { [key: string]: THREE.Vector3 } = {};
-
-    // Add new nodes
-    nodosData.forEach(nodo => {
-        const geometry = new THREE.SphereGeometry(0.2, 32, 32);
-        const material = new THREE.MeshBasicMaterial({ color: getColor(nodo.energia) });
-        const sphere = new THREE.Mesh(geometry, material);
-        const position = new THREE.Vector3(Math.random() * 8 - 4, Math.random() * 8 - 4, Math.random() * 8 - 4);
-        sphere.position.copy(position);
-        sphere.userData = { id: nodo.id };
-        nodosRef.current.add(sphere);
-        nodoPositions[nodo.id] = position;
-    });
-
-    // Add new edges
-    arestasData.forEach(aresta => {
-        const startPos = nodoPositions[aresta.from];
-        const endPos = nodoPositions[aresta.to];
-        if (startPos && endPos) {
-            const geometry = new THREE.BufferGeometry().setFromPoints([startPos, endPos]);
-            const material = new THREE.LineBasicMaterial({ color: 0x00ff00, opacity: aresta.peso, transparent: true });
-            const line = new THREE.Line(geometry, material);
-            arestasRef.current.add(line);
-        }
-    });
-  };
-
 
   useEffect(() => {
-    if (!mountRef.current) return;
-    const currentMount = mountRef.current;
+    if (!mountRef.current || typeof window === 'undefined') return;
 
-
-    // --- Scene Setup ---
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x070710);
-    sceneRef.current = scene;
-
+    
     const camera = new THREE.PerspectiveCamera(
       75,
-      currentMount.clientWidth / currentMount.clientHeight,
+      mountRef.current.clientWidth / mountRef.current.clientHeight,
       0.1,
       1000
     );
     camera.position.z = 10;
-    cameraRef.current = camera;
     
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+    renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
-    rendererRef.current = renderer;
-    currentMount.appendChild(renderer.domElement);
-
-    // --- Lighting ---
+    mountRef.current.appendChild(renderer.domElement);
+    
     const ambientLight = new THREE.AmbientLight(0x404040, 3);
     scene.add(ambientLight);
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight);
 
-    // --- Graph Groups ---
-    scene.add(nodosRef.current);
-    scene.add(arestasRef.current);
-    
-    // --- Starfield ---
+    const nodosGroup = new THREE.Group();
+    const arestasGroup = new THREE.Group();
+    scene.add(nodosGroup);
+    scene.add(arestasGroup);
+
     const starsGeometry = new THREE.BufferGeometry();
     const starsCount = 5000;
     const posArray = new Float32Array(starsCount * 3);
@@ -116,11 +56,48 @@ const ConnectionPage = () => {
         transparent: true
     });
     const starfield = new THREE.Points(starsGeometry, starsMaterial);
-    starfieldRef.current = starfield;
     scene.add(starfield);
 
-    // --- Placeholder Data & Initial Call ---
-     const placeholderNodos = [
+    const atualizarGrafo = (nodosData: any[], arestasData: any[]) => {
+        while(nodosGroup.children.length > 0){ 
+            const object = nodosGroup.children[0];
+            (object as THREE.Mesh).geometry.dispose();
+            ((object as THREE.Mesh).material as THREE.Material).dispose();
+            nodosGroup.remove(object); 
+        }
+        while(arestasGroup.children.length > 0){
+            const object = arestasGroup.children[0];
+            (object as THREE.Line).geometry.dispose();
+            ((object as THREE.Line).material as THREE.Material).dispose();
+            arestasGroup.remove(object);
+        }
+        
+        const nodoPositions: { [key: string]: THREE.Vector3 } = {};
+
+        nodosData.forEach(nodo => {
+            const geometry = new THREE.SphereGeometry(0.2, 32, 32);
+            const material = new THREE.MeshBasicMaterial({ color: getColor(nodo.energia) });
+            const sphere = new THREE.Mesh(geometry, material);
+            const position = new THREE.Vector3(Math.random() * 8 - 4, Math.random() * 8 - 4, Math.random() * 8 - 4);
+            sphere.position.copy(position);
+            sphere.userData = { id: nodo.id };
+            nodosGroup.add(sphere);
+            nodoPositions[nodo.id] = position;
+        });
+
+        arestasData.forEach(aresta => {
+            const startPos = nodoPositions[aresta.from];
+            const endPos = nodoPositions[aresta.to];
+            if (startPos && endPos) {
+                const geometry = new THREE.BufferGeometry().setFromPoints([startPos, endPos]);
+                const material = new THREE.LineBasicMaterial({ color: 0x00ff00, opacity: aresta.peso, transparent: true });
+                const line = new THREE.Line(geometry, material);
+                arestasGroup.add(line);
+            }
+        });
+    };
+
+    const placeholderNodos = [
         { id: 'M0', energia: 0.9 },
         { id: 'M1', energia: 0.5 },
         { id: 'M9', energia: 0.7 },
@@ -135,18 +112,13 @@ const ConnectionPage = () => {
     ];
     atualizarGrafo(placeholderNodos, placeholderArestas);
 
-    // --- Animation Loop ---
     let frameId: number;
     const animate = () => {
       frameId = requestAnimationFrame(animate);
+      starfield.rotation.y += 0.0001;
+      nodosGroup.rotation.y += 0.0005;
       
-      if(starfieldRef.current) {
-        starfieldRef.current.rotation.y += 0.0001;
-      }
-      nodosRef.current.rotation.y += 0.0005;
-      
-      // Node pulse animation
-      nodosRef.current.children.forEach(n => {
+      nodosGroup.children.forEach(n => {
           (n as THREE.Mesh).scale.setScalar(1 + Math.sin(Date.now() * 0.002 + n.position.x) * 0.05);
       });
 
@@ -154,31 +126,32 @@ const ConnectionPage = () => {
     };
     animate();
 
-    // --- Event Listeners & Cleanup ---
     const handleResize = () => {
-      if (mountRef.current && rendererRef.current && cameraRef.current) {
+      if (mountRef.current) {
         const width = mountRef.current.clientWidth;
         const height = mountRef.current.clientHeight;
-        cameraRef.current.aspect = width / height;
-        cameraRef.current.updateProjectionMatrix();
-        rendererRef.current.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
       }
     };
     window.addEventListener('resize', handleResize);
+    
+    const currentMount = mountRef.current;
 
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', handleResize);
-      if (currentMount && rendererRef.current?.domElement) {
-        currentMount.removeChild(rendererRef.current.domElement);
+      if (currentMount) {
+        currentMount.removeChild(renderer.domElement);
       }
       renderer.dispose();
       starsGeometry.dispose();
       starsMaterial.dispose();
-      nodosRef.current.children.forEach(n => ((n as THREE.Mesh).geometry as any)?.dispose());
-      nodosRef.current.children.forEach(n => ((n as THREE.Mesh).material as any)?.dispose());
-      arestasRef.current.children.forEach(a => ((a as THREE.Line).geometry as any)?.dispose());
-      arestasRef.current.children.forEach(a => ((a as THREE.Line).material as any)?.dispose());
+      nodosGroup.children.forEach(n => ((n as THREE.Mesh).geometry as any)?.dispose());
+      nodosGroup.children.forEach(n => ((n as THREE.Mesh).material as any)?.dispose());
+      arestasGroup.children.forEach(a => ((a as THREE.Line).geometry as any)?.dispose());
+      arestasGroup.children.forEach(a => ((a as THREE.Line).material as any)?.dispose());
     };
   }, []);
 
@@ -201,5 +174,3 @@ const ConnectionPage = () => {
 };
 
 export default ConnectionPage;
-
-    
