@@ -27,6 +27,7 @@ import GaiaResonanceObservatory from "@/components/gaia-resonance-observatory";
 import ZpeContainment from "@/components/zpe-containment";
 import QuantumLeagueConvocation from "@/components/quantum-league-convocation";
 import Pagina42 from "@/components/pagina-42";
+import ChroniclePage from "@/components/chronicle";
 
 
 // --- Configuração do Firebase ---
@@ -204,7 +205,7 @@ const LoginScreen = () => {
 const App = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentSectionId, setCurrentSectionId] = useState<string>("nexus");
+  const [currentSectionId, setCurrentSectionId] = useState<string>("chronicle");
   const [chaves, setChaves] = useState<ChaveMestra[]>([]);
   const [equacoes, setEquacoes] = useState<EquacaoViva[]>([]);
 
@@ -240,6 +241,7 @@ const App = () => {
     const selectedSection = sections.find(s => s.id === currentSectionId);
     
     switch (currentSectionId) {
+        case 'chronicle': return <ChroniclePage />;
         case 'nexus': return <Nexus />;
         case 'omega': return <Pagina42 />;
         case 'codex-explorer':

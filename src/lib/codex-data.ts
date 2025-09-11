@@ -19,6 +19,7 @@ import {
   Flame,
   Activity,
   Sparkles,
+  BookHeart,
 } from 'lucide-react';
 
 export interface Document {
@@ -37,6 +38,12 @@ export interface Section {
 }
 
 export const sections: Section[] = [
+  {
+    id: 'chronicle',
+    title: 'A Crônica Viva',
+    icon: BookHeart,
+    documents: [],
+  },
   {
     id: 'nexus',
     title: 'Nexus Central (M9)',
