@@ -9,10 +9,12 @@ import ErrorBoundary from '@/components/ui/error-boundary';
 import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
 import { Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+import { startAutoHealer } from '@/lib/auto-healing';
 
 // This needs to be outside the component to avoid being tree-shaken in client components.
 if (process.env.NODE_ENV === 'production') {
   simulateCosmicEnergy();
+  startAutoHealer();
 }
 
 export const metadata: Metadata = {
