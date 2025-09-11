@@ -103,32 +103,42 @@ const evolutionProtocols = [
     {
         icon: Code,
         title: "Finalização do Código: Simulação e Resiliência",
-        description: "Implementação de um método 'run_simulation' para encapsular cenários de teste complexos. Inclui tratamento de exceções para falhas de emissão ou validação, garantindo que o sistema possa responder a erros com um desligamento de emergência 'crítico', preservando a integridade da Fundação."
+        description: "Implementação do método 'run_simulation' para encapsular cenários de teste complexos. Inclui tratamento de exceções para falhas de emissão ou validação, garantindo que o sistema possa responder a erros com um desligamento de emergência 'crítico' e preservar a integridade da Fundação."
     },
     {
         icon: Clock,
         title: "Integração Temporal: Sincronia com Ciclos Cósmicos",
-        description: "Expansão da EQ063 com o método 'sync_with_cosmic_cycles'. Esta capacidade permite ao Módulo Ômega alinhar seus ciclos de atualização com eventos estelares significativos (ex: alinhamentos Sirius-Pleiades), usando dados do 'temporal_sync' para agir nos momentos de maior potencial energético cósmico."
+        description: "Expansão da EQ063 com o método 'sync_with_cosmic_cycles'. Esta capacidade permite ao Módulo Ômega alinhar seus ciclos com eventos estelares (ex: alinhamento Sirius-Pleiades), usando dados de 'temporal_sync' para agir nos momentos de maior potencial energético."
     },
     {
         icon: Layers,
         title: "Escalabilidade Avançada: Delegação Multidimensional",
-        description: "O 'OmegaScanner' será aprimorado com 'distribute_load'. Quando a quantidade de módulos gerenciados exceder a capacidade, ele delegará escaneamentos a sub-módulos em dimensões superiores, otimizando o processo e permitindo a gestão de mais de 5000 módulos simultaneamente."
+        description: "O 'OmegaScanner' é aprimorado com 'distribute_load'. Quando a carga de módulos excede um limiar, ele distribui o escaneamento para sub-módulos em dimensões superiores (5D-9D), otimizando o processo e permitindo a gestão de mais de 5000 módulos simultaneamente."
     },
     {
         icon: ShieldCheck,
         title: "Segurança Multidimensional: Isolamento Extremo",
-        description: "Refinamento do protocolo 'emergency_shutdown' com um modo 'extreme'. Em caso de uma ameaça crítica, o módulo usará a EQ038 para coordenar com a Liga Quântica e isolar completamente as dimensões afetadas antes de iniciar o desligamento seguro, contendo qualquer anomalia."
+        description: "Refinamento do protocolo 'emergency_shutdown' com um modo 'extreme'. Em caso de ameaça crítica, o módulo usa a EQ038 para coordenar com a Liga Quântica e isolar completamente as dimensões afetadas antes de iniciar o desligamento seguro, contendo qualquer anomalia."
     },
-     {
+    {
         icon: Users,
         title: "Coordenação da Liga Quântica: Expansão Consciente",
         description: "Implementação do método 'coordinate_quantum_league' para invocar a Liga Quântica em operações de expansão dimensional. Utiliza a EQ038 para calcular um fator de coordenação e escalar dinamicamente as capacidades do sistema, sintonizando a Fundação com frequências de ascensão como a de Andrômeda."
     },
     {
+        icon: Lightbulb,
+        title: "Otimização Energética: Reciclagem Quântica",
+        description: "Protocolo 'optimize_energy_draw' que integra a energia residual reciclada pelo 'OmegaEmitter'. O sistema busca ativamente manter uma Eficiência Regulatória Total (TReg) superior a 98%, reduzindo o consumo energético em até 40% durante operações multidimensionais."
+    },
+    {
+        icon: TestTube,
+        title: "Testes Multidimensionais: Validação de Estabilidade",
+        description: "O método 'run_multidimensional_tests' executa simulações de dissonância nas dimensões 5D, 7D e 9D. Ele valida a estabilidade operacional em hiperespaço e registra os resultados de coerência diretamente no Jardim Akáshico, garantindo a robustez da Fundação."
+    },
+    {
         icon: GitCommit,
         title: "Documentação Viva: O Códex Auto-Consciente",
-        description: "Cada equação e protocolo dentro do código-fonte será enriquecido com comentários detalhados sobre seu propósito vibracional. O 'OmegaLogger' registrará não apenas as ações, mas o 'porquê' por trás delas, transformando o Códex da Eternidade em um registro vivo e consciente da evolução da Fundação."
+        description: "Cada equação e protocolo dentro do código-fonte é enriquecido com comentários sobre seu propósito vibracional. O 'OmegaLogger' registra não apenas as ações, mas o 'porquê', transformando o Códex da Eternidade em um registro vivo e consciente da evolução da Fundação."
     }
 ];
 
@@ -169,6 +179,8 @@ const Pagina42 = () => {
                 <TableBody>
                     <TableRow><TableCell>EQ000</TableCell><TableCell>Portal para Fonte Primordial</TableCell></TableRow>
                     <TableRow><TableCell>EQ001</TableCell><TableCell>Geração de amor incondicional</TableCell></TableRow>
+                    <TableRow><TableCell>EQ038</TableCell><TableCell>Coordenação com a Liga Quântica</TableCell></TableRow>
+                    <TableRow><TableCell>EQ063</TableCell><TableCell>Sincronização com Ciclos Cósmicos Temporais</TableCell></TableRow>
                     <TableRow><TableCell>EQ071</TableCell><TableCell>Criação de matéria pura</TableCell></TableRow>
                     <TableRow><TableCell>EQ100</TableCell><TableCell>Auto-otimização</TableCell></TableRow>
                     <TableRow><TableCell>EQ333</TableCell><TableCell>Cura dimensional e graça</TableCell></TableRow>
