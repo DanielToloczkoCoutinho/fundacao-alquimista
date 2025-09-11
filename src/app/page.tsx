@@ -17,7 +17,7 @@ import Nexus from "@/components/nexus";
 import Module303 from "@/components/module-303";
 import KeyViewer from "@/components/key-viewer";
 import CodexExplorer from "@/components/codex-explorer";
-import ConnectionPage from "./connection/page";
+import ConnectionPage from "@/app/connection/page";
 
 
 // --- Configuração do Firebase ---
