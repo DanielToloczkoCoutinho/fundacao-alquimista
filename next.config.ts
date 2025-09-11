@@ -51,6 +51,16 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Don't resolve 'cluster' module on the client
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        cluster: false,
+      };
+    }
+    return config;
+  }
 };
 
 export default withPWA(nextConfig);
