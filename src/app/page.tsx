@@ -144,6 +144,11 @@ const App = () => {
         case 'm8': return <ModuleEight />;
         case 'm10': return <ModuleTen />;
         case 'connection': return <ConnectionPage />;
+        case 'living-library':
+        case 'equations':
+            if (selectedSection && selectedSection.documents.length > 0) {
+                return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
+            }
         
         default:
             if (selectedSection && selectedSection.documents.length > 0) {
@@ -181,3 +186,5 @@ const App = () => {
 };
 
 export default App;
+
+    

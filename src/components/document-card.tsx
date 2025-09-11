@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -141,3 +142,5 @@ export default function DocumentCard({ document }: DocumentCardProps) {
     </Card>
   );
 }
+
+    
