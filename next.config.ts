@@ -1,5 +1,10 @@
 import type {NextConfig} from 'next';
 
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+});
+
 const isProduction = process.env.NODE_ENV === 'production';
 const assetPrefix = isProduction ? 'https://your-cdn-domain.com' : '';
 
@@ -48,4 +53,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withPWA(nextConfig);

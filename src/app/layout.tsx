@@ -20,6 +20,7 @@ if (process.env.NODE_ENV === 'production') {
 export const metadata: Metadata = {
   title: "Alchemist's Codex",
   description: 'A living library of mystical knowledge and quantum infrastructure.',
+  manifest: '/manifest.json',
 };
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
