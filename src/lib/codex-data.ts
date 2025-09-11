@@ -362,14 +362,6 @@ export const sections: Section[] = [
           Frequência: '0Hz (silêncio quântico)',
         },
       },
-      {
-        title: 'Reactor Gaia',
-        link: 'https://docs.google.com/document/d/14L5Dq1pQHaE5v3cheyvivRBWz_8ttKRHOCPXGeJsZjg/edit',
-        details: {
-          Função: 'Sustentação energética planetária',
-          Localização: '-25.44993, -49.29922',
-        },
-      },
       { title: 'EQ MOD 0-1', link: 'https://docs.google.com/document/d/1E4-Jpx9xn4PcFQRVN6tcoqvWp4LrN95L7ugh17_xnds/edit' },
       { title: 'EQ MOD 2-4', link: 'https://docs.google.com/document/d/1fWZAnDjDxsznq3OEEvKgaB_fRCZ2IQ0TSb03hiMYuYY/edit' },
       { title: 'EQ MOD 4-9', link: 'https://docs.google.com/document/d/1IYsGXlIapwbX2dUIfL64uCU38YnC40Kt40wDh5nLf90/edit' },
@@ -494,5 +486,3 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
-
-    
