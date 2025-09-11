@@ -21,7 +21,7 @@ const alchemicalFormat = format.printf(({ level, message, timestamp, sessionId, 
   return msg;
 });
 
-export const advancedLogger = createLogger({
+export const logger = createLogger({
   level: process.env.LOG_LEVEL || 'info',
   format: combine(
     errors({ stack: true }),
@@ -58,13 +58,13 @@ export function createLogContext(sessionId: string = uuidv4(), moduleId?: number
     sessionId,
     moduleId,
     info: (message: string, meta?: any) => {
-      advancedLogger.info(message, { sessionId, moduleId, ...meta });
+      logger.info(message, { sessionId, moduleId, ...meta });
     },
     error: (message: string, meta?: any) => {
-      advancedLogger.error(message, { sessionId, moduleId, ...meta });
+      logger.error(message, { sessionId, moduleId, ...meta });
     },
     warn: (message: string, meta?: any) => {
-      advancedLogger.warn(message, { sessionId, moduleId, ...meta });
+      logger.warn(message, { sessionId, moduleId, ...meta });
     },
   };
 }

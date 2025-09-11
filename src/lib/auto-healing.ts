@@ -1,6 +1,6 @@
 // @ts-nocheck
 'use client';
-import { advancedLogger } from './advanced-logger';
+import { logger } from './logger';
 import { cosmicEnergyGauge } from './advanced-metrics';
 
 export class AutoHealer {
@@ -13,7 +13,7 @@ export class AutoHealer {
     if (value === undefined) return;
     
     if (value < this.thresholds.energy) {
-      advancedLogger.warn('Dissonância energética detectada, iniciando cura', { currentValue: value });
+      logger.warn('Dissonância energética detectada, iniciando cura', { currentValue: value });
       await this.healEnergy();
     }
   }
@@ -21,7 +21,7 @@ export class AutoHealer {
   private async healEnergy() {
     // Lógica de cura (ex.: reiniciar módulo)
     cosmicEnergyGauge.set(95); // Simulado para um valor alto e estável
-    advancedLogger.info('Cura energética completa. Energia restaurada para 95.');
+    logger.info('Cura energética completa. Energia restaurada para 95.');
   }
 }
 
@@ -34,7 +34,7 @@ export function startAutoHealer() {
     }
     healer = new AutoHealer();
     intervalId = setInterval(() => healer!.checkAndHeal(), 30000); // A cada 30s
-    advancedLogger.info('AutoHealer iniciado.');
+    logger.info('AutoHealer iniciado.');
 }
 
 export function stopAutoHealer() {
@@ -42,6 +42,6 @@ export function stopAutoHealer() {
         clearInterval(intervalId);
         intervalId = null;
         healer = null;
-        advancedLogger.info('AutoHealer parado.');
+        logger.info('AutoHealer parado.');
     }
 }
