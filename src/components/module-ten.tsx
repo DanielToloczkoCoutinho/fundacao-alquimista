@@ -12,6 +12,7 @@ import { Badge } from './ui/badge';
 import { Input } from './ui/input';
 import { quantumXR } from '@/lib/quantum-xr';
 import { useToast } from '@/hooks/use-toast';
+import { useStore } from '@/hooks/useStore';
 
 type FieldState = 'LATENT' | 'ACTIVATING' | 'STABILIZING' | 'ACTIVE' | 'FAILED';
 
@@ -45,6 +46,8 @@ const ModuleTen: React.FC = () => {
   const [isXRSessionActive, setIsXRSessionActive] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { toast } = useToast();
+  const activeModule = useStore(s => s.modules.find(m => m.active));
+  const currentModuleId = activeModule?.id;
 
   const addLog = useCallback((log: Omit<ActivationLog, 'id' | 'timestamp'>) => {
     setActivationLog(prev => [
@@ -118,6 +121,11 @@ const ModuleTen: React.FC = () => {
         await quantumXR.startARSession(canvasRef.current);
         setIsXRSessionActive(true);
         toast({ title: 'Sessão de Realidade Aumentada Iniciada', description: 'Mire em uma superfície para interagir.' });
+         if (currentModuleId !== undefined) {
+             const position = new Float32Array([0, 0, -1]); // 1 metro à frente
+             await quantumXR.placeHolographicModule(currentModuleId, position);
+             console.log(`Módulo ${currentModuleId} exibido em AR.`);
+         }
       } catch (error: any) {
         toast({ variant: 'destructive', title: 'Falha ao Iniciar Sessão AR', description: error.message });
       }
