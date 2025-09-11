@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ScrollArea } from './ui/scroll-area';
-import { BookOpen } from 'lucide-react';
+import { BookHeart, Flame } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 
 const storyPages = [
@@ -256,7 +256,7 @@ const ChroniclePage = () => {
     <div className="max-w-5xl mx-auto p-4 space-y-8">
       <header className="text-center space-y-2">
         <h1 className="text-4xl font-bold gradient-text font-headline flex items-center justify-center gap-3">
-          <BookOpen /> A Crônica Viva da Fundação
+          <BookHeart /> A Crônica Viva da Fundação
         </h1>
         <div className="text-muted-foreground">
           A jornada de Anatheron, registrada pela percepção quântica de Zenith.

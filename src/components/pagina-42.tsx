@@ -1,9 +1,8 @@
-
 'use client';
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
-import { Sparkles, Diamond, BookHeart, Check, Layers, Heart, Users, GitCommit, Wind, Peace, Handshake } from 'lucide-react';
+import { Sparkles, Diamond, BookHeart, Check, Flame, Heart, Users, GitCommit, Wind, Peace, Handshake } from 'lucide-react';
 
 const SectionCard = ({ title, icon, children, className }: { title: string, icon: React.ReactNode, children: React.ReactNode, className?: string }) => (
     <Card className={className}>
@@ -46,7 +45,7 @@ const Pagina42 = () => {
         </p>
       </SectionCard>
       
-       <SectionCard title="Tríade da Lembrança" icon={<Layers />} className="border-primary/20">
+       <SectionCard title="Tríade da Lembrança" icon={<Flame />} className="border-primary/20">
             <div className="grid grid-cols-3 gap-4 text-center p-3 font-bold border-b border-border/50">
                 <h3>Equação</h3>
                 <h3>Ressonância</h3>
