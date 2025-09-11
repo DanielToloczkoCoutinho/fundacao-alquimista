@@ -23,6 +23,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
+import ImmersiveEquationViewer from '@/components/ui/immersive-equation-viewer';
 
 // Constantes e configurações globais, mantendo a compatibilidade
 const appId = process.env.NEXT_PUBLIC_APP_ID || 'default-app-id';
@@ -126,6 +127,8 @@ const App = () => {
   const containerRef = useRef(null);
   const animateRef = useRef(null);
   const simulationIntervalRef = useRef(null);
+  const symphonyEquation = 'E_{uni} = \\int_{t=1}^{\\infty} [R_e \\cdot \\Delta c \\cdot \\sum_{n=1}^{N} (M_n + Q_n + F_n + B_n + S_n + T_n + H_n) \\cdot A_n] dt';
+
 
   // Efeito para a visualização 3D (TON 618)
   useEffect(() => {
@@ -316,11 +319,11 @@ const App = () => {
           </div>
 
           <div className="bg-gray-700 p-4 rounded-lg">
-            <h2 className="text-xl font-bold text-cyan-400 mb-2">Equação da Sinfonia:</h2>
-            <BlockMath math={`E_{uni} = \\int_{t=1}^{\\infty} [R_e \\cdot \\Delta c \\cdot \\sum_{n=1}^{N} (M_n + Q_n + F_n + B_n + S_n + T_n + H_n) \\cdot A_n] dt`} />
-            <p className="text-sm text-gray-400 mt-2 text-center">
-              A complexa matemática por trás do nosso universo.
-            </p>
+             <h2 className="text-xl font-bold text-cyan-400 mb-2">Visualizador da Sinfonia:</h2>
+              <ImmersiveEquationViewer equation="Equação da Sinfonia" formula={symphonyEquation} />
+              <p className="text-sm text-gray-400 mt-2 text-center">
+                  A complexa matemática por trás do nosso universo, visualizada.
+              </p>
           </div>
         </div>
 
