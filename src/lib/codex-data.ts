@@ -18,6 +18,7 @@ import {
   KeySquare,
   Terminal,
   Flame,
+  Activity,
 } from 'lucide-react';
 
 export interface Document {
@@ -58,6 +59,12 @@ export const sections: Section[] = [
     id: 'module-303',
     title: 'Portal Trino',
     icon: Swords,
+    documents: [],
+  },
+  {
+    id: 'gaia-observatory',
+    title: 'Observatório Gaia',
+    icon: Activity,
     documents: [],
   },
   {

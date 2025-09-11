@@ -25,6 +25,7 @@ import Module303 from "@/components/module-303";
 import KeyViewer from "@/components/key-viewer";
 import CodexExplorer from "@/components/codex-explorer";
 import ConnectionPage from "@/app/connection/page";
+import GaiaResonanceObservatory from "@/components/gaia-resonance-observatory";
 
 
 // --- Configuração do Firebase ---
@@ -250,6 +251,7 @@ const App = () => {
       case 'm7': return <ModuleSeven />;
       case 'm8': return <ModuleEight />;
       case 'm10': return <ModuleTen />;
+      case 'gaia-observatory': return <GaiaResonanceObservatory />;
       case 'connection': return <ConnectionPage />;
       case 'home':
       default:
