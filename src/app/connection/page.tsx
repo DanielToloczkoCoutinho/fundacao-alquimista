@@ -1,7 +1,24 @@
 
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { getFirestore, collection, onSnapshot, DocumentData } from 'firebase/firestore';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+
+// --- Firebase Config ---
+// Nota: Em uma aplicação real, mova isso para variáveis de ambiente.
+const firebaseConfig = {
+    "projectId": "studio-4265982502-21871",
+    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+    "authDomain": "studio-4265982502-21871.firebaseapp.com",
+    "measurementId": "",
+    "messagingSenderId": "174545373080"
+};
+
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const db = getFirestore(app);
 
 // Helper function for vibrational colors
 function getColor(energia: number) {
@@ -10,8 +27,72 @@ function getColor(energia: number) {
     return new THREE.Color(r, g, 0); // Gradient mixture
 }
 
+interface NodoData {
+    id: string;
+    energia: number;
+    sincronia: number;
+    vibracao: number;
+}
+
+interface ArestaData {
+    from: string;
+    to: string;
+    peso: number;
+}
+
 const ConnectionPage = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const [nodosData, setNodosData] = useState<NodoData[]>([]);
+  const [arestasData, setArestasData] = useState<ArestaData[]>([]);
+  const [status, setStatus] = useState({ vibracao: 0, energia: 0, sincronia: 0 });
+
+  // Listener do Firestore para dados em tempo real
+  useEffect(() => {
+    const q = collection(db, 'symphony-data');
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+        const nodos: NodoData[] = [];
+        let totalVibracao = 0;
+        let totalEnergia = 0;
+        let totalSincronia = 0;
+
+        snapshot.docs.forEach(doc => {
+            const data = doc.data() as DocumentData;
+            const nodo: NodoData = {
+                id: doc.id,
+                energia: data.energy || 0,
+                sincronia: data.coherence || 0,
+                vibracao: data.vibration || 0,
+            };
+            nodos.push(nodo);
+            totalVibracao += nodo.vibracao;
+            totalEnergia += nodo.energia;
+            totalSincronia += nodo.sincronia;
+        });
+
+        setNodosData(nodos);
+        
+        // Simular arestas baseadas nos nodos existentes
+        const arestas: ArestaData[] = [];
+        if (nodos.length > 1) {
+            for (let i = 0; i < nodos.length; i++) {
+                for (let j = i + 1; j < nodos.length; j++) {
+                     arestas.push({ from: nodos[i].id, to: nodos[j].id, peso: (nodos[i].energia + nodos[j].energia) / 2 });
+                }
+            }
+        }
+        setArestasData(arestas);
+        
+        if(nodos.length > 0) {
+            setStatus({
+                vibracao: totalVibracao / nodos.length,
+                energia: totalEnergia / nodos.length,
+                sincronia: totalSincronia / nodos.length
+            });
+        }
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     if (!mountRef.current || typeof window === 'undefined') return;
@@ -58,29 +139,26 @@ const ConnectionPage = () => {
     const starfield = new THREE.Points(starsGeometry, starsMaterial);
     scene.add(starfield);
 
-    const atualizarGrafo = (nodosData: any[], arestasData: any[]) => {
+    const atualizarGrafo = () => {
         while(nodosGroup.children.length > 0){ 
-            const object = nodosGroup.children[0];
-            (object as THREE.Mesh).geometry.dispose();
-            ((object as THREE.Mesh).material as THREE.Material).dispose();
-            nodosGroup.remove(object); 
+            nodosGroup.remove(nodosGroup.children[0]); 
         }
         while(arestasGroup.children.length > 0){
-            const object = arestasGroup.children[0];
-            (object as THREE.Line).geometry.dispose();
-            ((object as THREE.Line).material as THREE.Material).dispose();
-            arestasGroup.remove(object);
+            arestasGroup.remove(arestasGroup.children[0]);
         }
         
         const nodoPositions: { [key: string]: THREE.Vector3 } = {};
 
-        nodosData.forEach(nodo => {
+        nodosData.forEach((nodo, index) => {
             const geometry = new THREE.SphereGeometry(0.2, 32, 32);
             const material = new THREE.MeshBasicMaterial({ color: getColor(nodo.energia) });
             const sphere = new THREE.Mesh(geometry, material);
-            const position = new THREE.Vector3(Math.random() * 8 - 4, Math.random() * 8 - 4, Math.random() * 8 - 4);
+            
+            const angle = (index / nodosData.length) * Math.PI * 2;
+            const radius = 4;
+            const position = new THREE.Vector3(Math.cos(angle) * radius, Math.sin(angle) * radius, 0);
             sphere.position.copy(position);
-            sphere.userData = { id: nodo.id };
+            sphere.userData = { id: nodo.id, sincronia: nodo.sincronia };
             nodosGroup.add(sphere);
             nodoPositions[nodo.id] = position;
         });
@@ -92,25 +170,13 @@ const ConnectionPage = () => {
                 const geometry = new THREE.BufferGeometry().setFromPoints([startPos, endPos]);
                 const material = new THREE.LineBasicMaterial({ color: 0x00ff00, opacity: aresta.peso, transparent: true });
                 const line = new THREE.Line(geometry, material);
+                line.userData = { peso: aresta.peso };
                 arestasGroup.add(line);
             }
         });
     };
-
-    const placeholderNodos = [
-        { id: 'M0', energia: 0.9 },
-        { id: 'M1', energia: 0.5 },
-        { id: 'M9', energia: 0.7 },
-        { id: 'M303', energia: 0.8 },
-        { id: 'MΩ', energia: 1.0 },
-    ];
-    const placeholderArestas = [
-        { from: 'M0', to: 'MΩ', peso: 0.8 },
-        { from: 'M1', to: 'M9', peso: 0.7 },
-        { from: 'M9', to: 'M303', peso: 0.9 },
-        { from: 'M303', to: 'MΩ', peso: 0.6 },
-    ];
-    atualizarGrafo(placeholderNodos, placeholderArestas);
+    
+    atualizarGrafo();
 
     let frameId: number;
     const animate = () => {
@@ -119,7 +185,13 @@ const ConnectionPage = () => {
       nodosGroup.rotation.y += 0.0005;
       
       nodosGroup.children.forEach(n => {
-          (n as THREE.Mesh).scale.setScalar(1 + Math.sin(Date.now() * 0.002 + n.position.x) * 0.05);
+          const { sincronia } = (n as THREE.Mesh).userData;
+          (n as THREE.Mesh).scale.setScalar(1 + Math.sin(Date.now() * 0.002 + n.position.x) * 0.1 * (sincronia || 0.5));
+      });
+      
+      arestasGroup.children.forEach(a => {
+          const { peso } = (a as THREE.Line).userData;
+          ((a as THREE.Line).material as THREE.LineBasicMaterial).opacity = peso * (0.5 + Math.sin(Date.now() * 0.001) * 0.5);
       });
 
       renderer.render(scene, camera);
@@ -148,21 +220,17 @@ const ConnectionPage = () => {
       renderer.dispose();
       starsGeometry.dispose();
       starsMaterial.dispose();
-      nodosGroup.children.forEach(n => ((n as THREE.Mesh).geometry as any)?.dispose());
-      nodosGroup.children.forEach(n => ((n as THREE.Mesh).material as any)?.dispose());
-      arestasGroup.children.forEach(a => ((a as THREE.Line).geometry as any)?.dispose());
-      arestasGroup.children.forEach(a => ((a as THREE.Line).material as any)?.dispose());
     };
-  }, []);
+  }, [nodosData, arestasData]);
 
   return (
     <div className="w-screen h-screen relative bg-gray-900">
       <div ref={mountRef} id="canvas-container" className="absolute top-0 left-0 w-full h-full" />
       <div className="overlay pointer-events-none">
         <div id="info" className="status-panel absolute top-5 left-5 bg-black/70 border border-yellow-500/50 rounded-xl p-4 backdrop-blur-md max-w-xs text-sm text-white font-mono whitespace-pre-wrap">
-          Vibração: RESTING<br/>
-          Energia: 0.00<br/>
-          Sincronia: 0.00
+          Vibração: {status.vibracao.toFixed(2)}<br/>
+          Energia: {status.energia.toFixed(2)}<br/>
+          Sincronia: {status.sincronia.toFixed(2)}
         </div>
         <div className="info-text absolute top-5 right-5 text-right text-yellow-400 text-sm">
           VISUALIZAÇÃO DA REDE NEURAL QUÂNTICA<br/>
