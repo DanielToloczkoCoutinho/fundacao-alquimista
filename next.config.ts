@@ -58,6 +58,9 @@ const nextConfig: NextConfig = {
         net: false,
         tls: false,
         process: false,
+        path: false,
+        zlib: false,
+        async: false,
       };
     }
     return config;
