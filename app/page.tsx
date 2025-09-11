@@ -220,6 +220,34 @@ const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
     }
   };
 
+  const seedInitialData = async () => {
+      console.log("Semeando dados iniciais no Firestore...");
+      const batch = writeBatch(db);
+      
+      initialChaves.forEach(chave => {
+          const chaveRef = doc(db, "chavesMestras", chave.id);
+          batch.set(chaveRef, {
+            nome: chave.nome,
+            descricao: chave.descricao,
+            // Apenas armazenar os IDs das equações
+            equacoes: chave.equacoes.map(eq => eq.id)
+          });
+      });
+      
+      initialEquacoes.forEach(eq => {
+          const eqRef = doc(db, "equacoes", eq.id);
+          batch.set(eqRef, eq);
+      });
+
+      try {
+        await batch.commit();
+        alert("Dados iniciais semeados com sucesso! Agora você pode fazer login.");
+      } catch (error) {
+        console.error("Erro ao semear dados:", error);
+        alert("Erro ao semear dados. Verifique o console.");
+      }
+  };
+
   return (
     <div className="w-full h-screen flex items-center justify-center bg-gray-900">
       <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
@@ -235,9 +263,14 @@ const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
             <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-3 bg-gray-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
-          <button type="submit" className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold transition-colors">
-            Autenticar
-          </button>
+          <div className="flex space-x-4">
+             <button type="submit" className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold transition-colors">
+                Autenticar
+             </button>
+             <button type="button" onClick={seedInitialData} className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-bold transition-colors">
+                Semear Dados
+             </button>
+          </div>
         </form>
       </div>
     </div>
@@ -268,11 +301,23 @@ const App = () => {
     const fetchData = async () => {
         try {
           const chavesSnapshot = await getDocs(collection(db, "chavesMestras"));
-          const chavesData = chavesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as ChaveMestra));
-          setChaves(chavesData);
-
           const equacoesSnapshot = await getDocs(collection(db, "equacoes"));
           const equacoesData = equacoesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as EquacaoViva));
+
+          const chavesData = chavesSnapshot.docs.map(doc => {
+            const chave = doc.data();
+            const equacoesDetalhadas = (chave.equacoes || []).map((eqId: string) => 
+                equacoesData.find(eq => eq.id === eqId)
+            ).filter((eq: EquacaoViva | undefined) => eq !== undefined);
+
+            return { 
+                id: doc.id, 
+                ...chave,
+                equacoes: equacoesDetalhadas
+            } as ChaveMestra
+          });
+
+          setChaves(chavesData);
           setEquacoes(equacoesData);
         } catch (error) {
           console.error("Erro ao buscar dados do Firestore:", error);
@@ -281,30 +326,6 @@ const App = () => {
 
     return () => unsubscribe();
   }, []);
-
-  const seedInitialData = async () => {
-      console.log("Semeando dados iniciais no Firestore...");
-      const batch = writeBatch(db);
-      
-      initialChaves.forEach(chave => {
-          const chaveRef = doc(db, "chavesMestras", chave.id);
-          batch.set(chaveRef, chave);
-      });
-      
-      initialEquacoes.forEach(eq => {
-          const eqRef = doc(db, "equacoes", eq.id);
-          batch.set(eqRef, eq);
-      });
-
-      try {
-        await batch.commit();
-        alert("Dados iniciais semeados com sucesso!");
-        window.location.reload(); // Recarregar para buscar os novos dados
-      } catch (error) {
-        console.error("Erro ao semear dados:", error);
-        alert("Erro ao semear dados. Verifique o console.");
-      }
-  };
 
   if (loading) {
     return <div className="w-full h-screen flex items-center justify-center bg-gray-900 text-white">Carregando Fundação...</div>;
@@ -321,7 +342,6 @@ const App = () => {
         {currentContent === "Home" && (
             <div>
                  <p>Bem-vindo à Fundação Alquimista, Fundador. - {new Date().toLocaleString()}</p>
-                 <button onClick={seedInitialData} className="mt-4 px-4 py-2 bg-amber-600 rounded hover:bg-amber-700">Semear Dados Iniciais</button>
             </div>
         )}
         {currentContent === "Console" && <Console equacoes={equacoes} />}
@@ -332,5 +352,7 @@ const App = () => {
 };
 
 export default App;
+
+    
 
     
