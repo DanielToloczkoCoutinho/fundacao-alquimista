@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useStore } from '@/hooks/useStore';
 import { createLogContext } from '@/lib/advanced-logger';
+import { useToast } from '@/hooks/use-toast';
 
 // Criamos um contexto de log específico para este portal
 const logContext = createLogContext(undefined, 2);
@@ -12,6 +13,7 @@ export function Portal() {
   const [peerConnection, setPeerConnection] = useState<RTCPeerConnection | null>(null);
   const { modules } = useStore();
   const currentModule = modules.find(m => m.active);
+  const { toast } = useToast();
 
   useEffect(() => {
     logContext.info('Inicializando Portal Transdimensional (WebRTC)...');
@@ -24,15 +26,25 @@ export function Portal() {
 
     logContext.info('Solicitando acesso à câmera e microfone...');
     // Solicita acesso à câmera e microfone do Guardião
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((stream) => {
-      if (localVideoRef.current) {
-        localVideoRef.current.srcObject = stream;
-      }
-      stream.getTracks().forEach(track => pc.addTrack(track, stream));
-      logContext.info('Fluxo de mídia local anexado ao portal.');
-    }).catch(err => {
-        logContext.error('Erro ao acessar mídia do dispositivo.', { error: err });
-    });
+    const setupMedia = async () => {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            if (localVideoRef.current) {
+                localVideoRef.current.srcObject = stream;
+            }
+            stream.getTracks().forEach(track => pc.addTrack(track, stream));
+            logContext.info('Fluxo de mídia local anexado ao portal.');
+        } catch (err: any) {
+            logContext.error('Erro ao acessar mídia do dispositivo.', { error: err });
+            toast({
+                variant: 'destructive',
+                title: 'Falha na Permissão de Mídia',
+                description: 'Não foi possível acessar a câmera/microfone. Verifique as permissões do navegador.'
+            })
+        }
+    };
+    
+    setupMedia();
 
     // Evento para lidar com candidatos ICE
     pc.onicecandidate = (event) => {
@@ -48,7 +60,7 @@ export function Portal() {
       logContext.info('Fechando Portal Transdimensional.');
       pc.close();
     };
-  }, []);
+  }, [toast]);
 
   const createOffer = async () => {
     if (!peerConnection) {
@@ -75,3 +87,5 @@ export function Portal() {
     </div>
   );
 }
+
+    

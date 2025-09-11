@@ -42,6 +42,7 @@ export async function researchAgent(query: string): Promise<{synthesis: string, 
   )}. Sintetize uma resposta abrangente, clara e concisa com base nesses resultados. Explique a relevância das equações encontradas para a pergunta do usuário.`;
   
   const { output } = await ai.generate({
+    model: 'googleai/gemini-2.5-flash',
     prompt: prompt,
     output: {
       schema: ResearchAgentOutputSchema,
@@ -57,3 +58,5 @@ export async function researchAgent(query: string): Promise<{synthesis: string, 
     results: searchResults.matches,
   };
 }
+
+    
