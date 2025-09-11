@@ -6,6 +6,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, doc, setDoc, writeBatch } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFunctions, httpsCallable } from "firebase/functions";
+import { cn } from "@/lib/utils";
 
 
 // --- Configuração do Firebase ---
@@ -81,13 +82,13 @@ const initialChaves: ChaveMestra[] = [
 // =================================================================
 
 const Sidebar = ({ onNavigate }: { onNavigate: (content: string) => void }) => (
-  <nav className="w-64 p-4 bg-gray-800 h-screen text-white">
+  <nav className="w-64 p-4 bg-gray-800/50 backdrop-blur-sm h-screen text-white border-r border-purple-500/20">
     <h2 className="text-xl font-bold mb-4 text-purple-300">Fundação Alquimista</h2>
     {codexData.map((item) => (
       <button
         key={item.title}
         onClick={() => onNavigate(item.content)}
-        className="w-full text-left p-2 mb-2 rounded hover:bg-gray-700 flex items-center transition-colors"
+        className="w-full text-left p-2 mb-2 rounded hover:bg-gray-700/70 flex items-center transition-colors"
       >
         <span className="mr-3 text-lg">{item.icon}</span> {item.title}
       </button>
@@ -131,7 +132,7 @@ const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
       <h1 className="text-3xl font-bold">Console da Fundação</h1>
       <div className="border-b border-gray-700">
         {["overview", "logs", "settings", "chave307"].map((tab) => (
-          <button key={tab} onClick={() => setActiveTab(tab)} className={`px-4 py-2 ${activeTab === tab ? "border-b-2 border-blue-500" : "text-gray-400 hover:text-white"}`}>
+          <button key={tab} onClick={() => setActiveTab(tab)} className={`px-4 py-2 ${activeTab === tab ? "border-b-2 border-purple-500 text-white" : "text-gray-400 hover:text-white"}`}>
             {tab === "overview" && "Visão Geral"}
             {tab === "logs" && "Logs"}
             {tab === "settings" && "Configurações"}
@@ -139,13 +140,13 @@ const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
           </button>
         ))}
       </div>
-      {activeTab === "overview" && <div className="p-4 bg-gray-900 rounded">Status: Ativo. Todos os sistemas operacionais.</div>}
-      {activeTab === "logs" && <div className="p-4 bg-gray-900 rounded h-64 overflow-y-auto"><pre>...Log de eventos do sistema...</pre></div>}
-      {activeTab === "settings" && <div className="p-4 bg-gray-900 rounded"><input placeholder="Parâmetro" className="p-2 rounded bg-gray-800 text-white w-full" /></div>}
+      {activeTab === "overview" && <div className="p-4 bg-gray-900/50 rounded">Status: Ativo. Todos os sistemas operacionais.</div>}
+      {activeTab === "logs" && <div className="p-4 bg-gray-900/50 rounded h-64 overflow-y-auto"><pre>...Log de eventos do sistema...</pre></div>}
+      {activeTab === "settings" && <div className="p-4 bg-gray-900/50 rounded"><input placeholder="Parâmetro" className="p-2 rounded bg-gray-800 text-white w-full" /></div>}
       {activeTab === "chave307" && (
-        <div className="p-4 bg-gray-900 rounded space-y-4 h-96 overflow-y-auto">
+        <div className="p-4 bg-gray-900/50 rounded space-y-4 h-[70vh] overflow-y-auto">
           {equacoes.length > 0 ? equacoes.map((equacao) => (
-            <div key={equacao.id} className="p-3 border rounded border-gray-700 hover:bg-gray-800 transition-colors">
+            <div key={equacao.id} className="p-3 border rounded border-gray-700 hover:bg-gray-800/50 transition-colors">
               <h3 className="font-bold text-purple-300">{equacao.nome}</h3>
               <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
               <p className="text-sm text-gray-400">{equacao.descricao}</p>
@@ -180,7 +181,7 @@ const KeyViewer = ({ chaves, equacoes }: { chaves: ChaveMestra[]; equacoes: Equa
             <h1 className="text-3xl font-bold">Chaves Mestras</h1>
             <div className="border-b border-gray-700">
                 {chaves.map((chave) => (
-                    <button key={chave.id} onClick={() => setActiveKey(chave.id)} className={`px-4 py-2 ${activeKey === chave.id ? 'border-b-2 border-blue-500' : 'text-gray-400 hover:text-white'}`}>
+                    <button key={chave.id} onClick={() => setActiveKey(chave.id)} className={`px-4 py-2 ${activeKey === chave.id ? 'border-b-2 border-purple-500 text-white' : 'text-gray-400 hover:text-white'}`}>
                         {chave.nome}
                     </button>
                 ))}
@@ -191,12 +192,12 @@ const KeyViewer = ({ chaves, equacoes }: { chaves: ChaveMestra[]; equacoes: Equa
                 ).filter((eq: EquacaoViva | undefined): eq is EquacaoViva => eq !== undefined);
 
                 return (
-                    <div key={chave.id} className="p-4 bg-gray-900 rounded">
+                    <div key={chave.id} className="p-4 bg-gray-900/50 rounded">
                         <h2 className="font-bold text-xl mb-2 text-purple-300">{chave.nome}</h2>
                         <p className="text-sm mb-4 text-gray-400">{chave.descricao}</p>
                         <div className="space-y-3 h-80 overflow-y-auto">
                           {equacoesDetalhadas.map((equacao) => (
-                              <div key={equacao.id} className="p-3 border rounded mt-2 border-gray-700 hover:bg-gray-800 transition-colors">
+                              <div key={equacao.id} className="p-3 border rounded mt-2 border-gray-700 hover:bg-gray-800/50 transition-colors">
                                   <h3 className="font-bold">{equacao.nome}</h3>
                                   <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
                               </div>
@@ -266,20 +267,20 @@ const LoginScreen = () => {
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-gray-900">
-      <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
+    <div className="w-full h-screen flex items-center justify-center cosmic-bg text-white">
+      <div className="w-full max-w-md p-8 space-y-6 bg-gray-800/70 rounded-lg shadow-lg backdrop-blur-md border border-purple-500/30">
         <h1 className="text-3xl font-bold text-center text-white">Fundação Alquimista</h1>
         <p className="text-center text-gray-400">Portal do Fundador</p>
         <form className="space-y-6">
           <div>
             <label className="text-sm font-bold text-gray-400 block mb-2">Email</label>
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full p-3 bg-gray-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
+            <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full p-3 bg-gray-700/80 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
           </div>
           <div>
             <label className="text-sm font-bold text-gray-400 block mb-2">Senha</label>
-            <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-3 bg-gray-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
+            <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-3 bg-gray-700/80 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
           </div>
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {error && <p className="text-red-400 text-sm text-center">{error}</p>}
           <div className="flex flex-col space-y-4">
              <div className="flex space-x-4">
                 <button type="button" onClick={handleLogin} className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold transition-colors">
@@ -352,7 +353,7 @@ const App = () => {
   }, []);
 
   if (loading) {
-    return <div className="w-full h-screen flex items-center justify-center bg-gray-900 text-white">Carregando Fundação...</div>;
+    return <div className="w-full h-screen flex items-center justify-center cosmic-bg text-white">Carregando Fundação...</div>;
   }
   
   // if (!user) {
@@ -360,13 +361,15 @@ const App = () => {
   // }
 
   return (
-    <div className="flex h-screen bg-gray-900 text-white">
+    <div className={cn("flex h-screen text-white", "cosmic-bg")}>
       <Sidebar onNavigate={setCurrentContent} />
       <main className="flex-1 p-8 overflow-auto">
         {currentContent === "Home" && (
             <div>
-                 <p>Bem-vindo à Fundação Alquimista, Fundador. - {new Date().toLocaleString()}</p>
-                 <p className="text-amber-400 mt-4">Aviso: A autenticação está temporariamente desativada para acesso direto.</p>
+                 <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
+                 <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
+                 <p className="text-amber-400 mt-4 text-sm">Aviso: A autenticação está temporariamente desativada para acesso direto ao Códice.</p>
+                 <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
             </div>
         )}
         {currentContent === "Console" && <Console equacoes={equacoes} />}
