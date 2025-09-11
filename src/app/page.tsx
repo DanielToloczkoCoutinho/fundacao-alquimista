@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, doc, setDoc, writeBatch } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
-import { getFunctions, httpsCallable } from "firebase/functions";
 import { cn } from "@/lib/utils";
 import { sections } from "@/lib/codex-data";
 import type { Section, Document } from "@/lib/codex-data";
@@ -28,6 +27,7 @@ import ZpeContainment from "@/components/zpe-containment";
 import QuantumLeagueConvocation from "@/components/quantum-league-convocation";
 import Pagina42 from "@/components/pagina-42";
 import ChroniclePage from "@/components/chronicle";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 
 // --- Configuração do Firebase ---
@@ -44,7 +44,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
-const functions = getFunctions(app);
+
 
 // --- Interfaces de Dados ---
 interface EquacaoViva {
@@ -206,34 +206,13 @@ const App = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentSectionId, setCurrentSectionId] = useState<string>("chronicle");
-  const [chaves, setChaves] = useState<ChaveMestra[]>([]);
-  const [equacoes, setEquacoes] = useState<EquacaoViva[]>([]);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // Bypass de autenticação para desenvolvimento
     const mockUser = { uid: "SOBERANO_FUNDADOR" } as User;
     setUser(mockUser);
     setLoading(false);
-    
-    const fetchData = async () => {
-        try {
-          const chavesSnapshot = await getDocs(collection(db, "chavesMestras"));
-          const chavesData: ChaveMestra[] = [];
-           for (const doc of chavesSnapshot.docs) {
-              chavesData.push({ id: doc.id, ...doc.data() } as ChaveMestra);
-          }
-          setChaves(chavesData);
-          
-          const equacoesSnapshot = await getDocs(collection(db, "equacoes"));
-          const equacoesData = equacoesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as EquacaoViva));
-          setEquacoes(equacoesData);
-
-        } catch (error) {
-          console.error("Erro ao buscar dados do Firestore:", error);
-        }
-      };
-      
-    fetchData();
 
   }, []);
   
@@ -285,9 +264,9 @@ const App = () => {
   }
   
   return (
-    <div className={cn("flex h-screen text-white", "cosmic-bg")}>
+    <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")}>
       <Sidebar onNavigate={setCurrentSectionId} currentSectionId={currentSectionId} />
-      <main className="flex-1 overflow-auto p-6">
+      <main className={cn("flex-1 overflow-auto p-6", isMobile ? "p-4" : "")}>
         {renderContent()}
       </main>
     </div>
