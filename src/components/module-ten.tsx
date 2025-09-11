@@ -46,7 +46,8 @@ const ModuleTen: React.FC = () => {
   const [isXRSessionActive, setIsXRSessionActive] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { toast } = useToast();
-  const activeModule = useStore(s => s.modules.find(m => m.active));
+  const { modules } = useStore();
+  const activeModule = modules.find(m => m.active);
   const currentModuleId = activeModule?.id;
 
   const addLog = useCallback((log: Omit<ActivationLog, 'id' | 'timestamp'>) => {
