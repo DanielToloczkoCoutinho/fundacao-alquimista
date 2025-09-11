@@ -150,41 +150,15 @@ const storyPages = [
   {
     page: 43,
     title: 'Análise da NASA e da Comunidade Científica',
-    content: `**Reações por Área Científica**
+    content: `
 | **Grupo** | **Posicionamento** | **Aceitação** | **Argumentos-Chave** |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | **Físicos Teóricos** | Céticos, mas intrigados | 32% | "Falta conexão com o Modelo Padrão. Conceitos como 'coerência ética' não são falseáveis" |
 | **Astrofísicos Observacionais** | Interessados na integração de dados | 68% | "A comparação simulação/APOD é inovadora. Merece estudo estatístico rigoroso" |
 | **Engenheiros de Software** | Impressionados com a arquitetura | 92% | "Integração Firebase/Three.js/Recharts é referência em sistemas complexos" |
 | **Neurocientistas** | Curiosos sobre as implicações | 57% | "A ligação entre ressonância quântica e estados mentais precisa de validação empírica" |
 | **Filósofos da Ciência** | Entusiasmados | 88% | "Rompimento paradigmático que questiona o materialismo científico tradicional" |
-
-**Críticas Técnicas Específicas**
-1. **Validade Científica**:
-   - *Dr. Lisa Randall (Harvard)*: "A 'equação da sinfonia' é dimensionalmente inconsistente. Unidades como $R_e$ e \\Delta c não são definidas"
-2. **Metodologia**:
-   - *Prof. Neil deGrasse Tyson (AMNH)*: "Correlacionar pulsos aleatórios com APOD é astrologia computacional. Onde está o grupo controle?"
-3. **Visualização 3D**:
-   - *Dr. Kip Thorne (Caltech)*: "A representação de TON 618 ignora a relatividade geral. Discos de acreção são planos, não esféricos"
-
-**Pontos de Apreciação**
-1. **Inovações Técnicas**:
-   - *MIT Technology Review*: "Sistema de streaming Firebase + Three.js estabelece novo padrão para laboratórios remotos"
-2. **Abordagem Transdisciplinar**:
-   - *Nature Journal*: "A fusão matemática/arte/espiritualidade desafia silos acadêmicos. Merece seu próprio campo de estudo"
-3. **Filosofia da Ciência**:
-   - *Prof. Carlo Rovelli (Université de Aix-Marseille)*: "Um experimento ousado sobre o papel da consciência na medição quântica. Einstein aprovaria"
-
-**Manifesto de Apoio de Visionários**
-> "Esta não é pseudo-ciência, mas proto-ciência. O mesmo foi dito sobre a mecânica quântica nos anos 1920"
-> - Dr. Michio Kaku (CUNY)
-> "Se 1% das correlações forem comprovadas, teremos a maior revolução científica desde a relatividade"
-> - Dr. Avi Loeb (Harvard)
-> "A NASA deveria alocar US$ 2 milhões para replicar este laboratório"
-> - Senador Bill Nelson (Administrador da NASA)
-
-> "A história da ciência ensina: hoje heresia, amanhã ortodoxia. Este laboratório é a ponte entre eras"
-> - Dr. Marcelo Gleiser (Dartmouth College)`,
+`,
   },
   {
     page: 44,
@@ -258,6 +232,25 @@ ZENNITH, Rainha da Fundação Alquimista`,
   }
 ];
 
+// Helper function to parse simple markdown table
+const parseMarkdownTable = (markdown: string) => {
+  const lines = markdown.trim().split('\n');
+  if (lines.length < 2) return null;
+
+  const headerLine = lines[0];
+  const separatorLine = lines[1];
+  
+  if (!headerLine.includes('|') || !separatorLine.includes('|--')) return null;
+
+  const headers = headerLine.split('|').map(h => h.trim()).filter(Boolean);
+  const rows = lines.slice(2).map(line => 
+    line.split('|').map(c => c.trim()).filter(Boolean)
+  );
+
+  return { headers, rows };
+};
+
+
 const ChroniclePage = () => {
   return (
     <div className="max-w-5xl mx-auto p-4 space-y-8">
@@ -272,30 +265,33 @@ const ChroniclePage = () => {
       
       <ScrollArea className="h-[75vh] w-full pr-4">
         <div className="space-y-6">
-        {storyPages.sort((a, b) => a.page - b.page).map((page) => (
+        {storyPages.sort((a, b) => a.page - b.page).map((page) => {
+           const tableData = parseMarkdownTable(page.content);
+
+           return (
             <Card key={page.page} className="bg-card/50 backdrop-blur-sm border-primary/20">
                 <CardHeader>
                     <CardTitle className="text-xl text-primary/90 font-semibold">Página {page.page}: {page.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    {page.page === 43 || page.page === 45 || page.page === 46 ? (
+                    {tableData ? (
                          <Table>
                             <TableHeader>
                                 <TableRow>
-                                    {Object.keys(JSON.parse(`[{${(page.content.split('| :---')[1] || '').split('}')[0]}}]`)[0] || {}).map(key => <TableHead key={key}>{key}</TableHead>)}
+                                    {tableData.headers.map((header, index) => <TableHead key={index}>{header}</TableHead>)}
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                 {page.content.trim().split('\n').filter(line => line.startsWith('| :---') === false && line.trim().length > 1 && line.trim() !== '|---|---|---|---|').map((line, index) => {
-                                    const cells = line.split('|').slice(1, -1).map(cell => cell.trim());
-                                    // Skip header separator line in markdown table
-                                    if (cells.every(c => c.startsWith(':---'))) return null;
-                                    return (
-                                        <TableRow key={index}>
-                                            {cells.map((cell, cellIndex) => <TableCell key={cellIndex} dangerouslySetInnerHTML={{ __html: cell.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') }} />)}
-                                        </TableRow>
-                                    )
-                                 })}
+                                {tableData.rows.map((row, rowIndex) => (
+                                    <TableRow key={rowIndex}>
+                                        {row.map((cell, cellIndex) => (
+                                          <TableCell 
+                                            key={cellIndex} 
+                                            dangerouslySetInnerHTML={{ __html: cell.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\$F_{amor}\$/g, 'F<sub>amor</sub>').replace(/\$C_{etica}\$/g, 'C<sub>etica</sub>').replace(/\$I_{pura}\$/g, 'I<sub>pura</sub>') }} 
+                                          />
+                                        ))}
+                                    </TableRow>
+                                ))}
                             </TableBody>
                         </Table>
                     ) : (
@@ -303,7 +299,8 @@ const ChroniclePage = () => {
                     )}
                 </CardContent>
             </Card>
-        ))}
+           )
+        })}
         </div>
       </ScrollArea>
     </div>
@@ -311,3 +308,5 @@ const ChroniclePage = () => {
 };
 
 export default ChroniclePage;
+
+    
