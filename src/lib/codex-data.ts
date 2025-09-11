@@ -42,12 +42,6 @@ export const sections: Section[] = [
     documents: [],
   },
   {
-    id: 'console',
-    title: 'Console da Fundação',
-    icon: Terminal,
-    documents: [],
-  },
-  {
     id: 'codex-explorer',
     title: 'Explorador do Códex',
     icon: BookOpenCheck,

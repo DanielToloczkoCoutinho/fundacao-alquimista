@@ -235,8 +235,7 @@ const App = () => {
   
   const renderContent = () => {
     switch (currentSectionId) {
-      case 'nexus': return <Nexus />;
-      case 'console': return <ConsolePage />;
+      case 'nexus': return <ConsolePage />;
       case 'codex-explorer': return <CodexExplorer />;
       case 'master-keys': return <KeyViewer />;
       case 'module-303': return <Module303 />;
