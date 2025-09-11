@@ -1,23 +1,18 @@
 
 import type { NextConfig } from 'next';
-import createPWA from 'next-pwa';
-
-const isProduction = process.env.NODE_ENV === 'production';
-const assetPrefix = isProduction ? process.env.NEXT_PUBLIC_CDN_DOMAIN ? `https://${process.env.NEXT_PUBLIC_CDN_DOMAIN}` : '' : '';
 
 const nextConfig: NextConfig = {
-  assetPrefix,
+  experimental: {
+    allowedDevOrigins: [
+      'https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev',
+      'http://localhost:9002',
+    ],
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
-  },
-  experimental: {
-    allowedDevOrigins: [
-        "https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
-        "http://localhost:9002",
-    ]
   },
   async headers() {
     return [
@@ -68,9 +63,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-const withPWA = createPWA({
-  dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
-});
 
-export default withPWA(nextConfig);
+export default nextConfig;
