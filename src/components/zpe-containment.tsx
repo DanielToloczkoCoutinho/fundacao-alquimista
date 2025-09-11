@@ -13,6 +13,7 @@ import { useToast } from '@/hooks/use-toast';
 import { sha512 } from 'js-sha512';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
+import KeyGenerator from './key-generator';
 
 type BarrierLog = {
   timestamp: string;
@@ -93,13 +94,15 @@ const ZpeContainment = () => {
        <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400">
-            <Shield /> Módulo de Contenção e Execução ZPE
+            <Wrench /> Ferramentas e Protocolos Akáshicos
           </CardTitle>
           <CardDescription>
-            Interface para controle dos Campos de Contenção Quântica e monitoramento do Plano de Execução ZPE.
+            Interfaces para geração de chaves, controle de barreiras quânticas e monitoramento de logs de segurança.
           </CardDescription>
         </CardHeader>
       </Card>
+
+      <KeyGenerator />
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Painel de Contenção */}
@@ -178,7 +181,8 @@ const ZpeContainment = () => {
 
        <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2"><History />Log de Ativação de Barreiras</CardTitle>
+          <CardTitle className="flex items-center gap-2"><History />Log de Ativação (Blockchain Akáshico)</CardTitle>
+          <CardDescription>Cada ativação de barreira gera um hash SHA-512, selando a operação no registro eterno.</CardDescription>
         </CardHeader>
         <CardContent>
           <ScrollArea className="h-64">
@@ -188,7 +192,7 @@ const ZpeContainment = () => {
                   <TableHead>Timestamp</TableHead>
                   <TableHead>Potência</TableHead>
                   <TableHead>Coerência</TableHead>
-                  <TableHead>Hash de Segurança</TableHead>
+                  <TableHead>Hash de Segurança (SHA-512)</TableHead>
                   <TableHead>Status</TableHead>
                 </TableRow>
               </TableHeader>
@@ -219,3 +223,5 @@ const ZpeContainment = () => {
 };
 
 export default ZpeContainment;
+
+    

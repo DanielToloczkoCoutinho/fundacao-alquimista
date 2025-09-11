@@ -76,37 +76,6 @@ export const sections: Section[] = [
     icon: BookOpenCheck,
     documents: [],
   },
-  {
-    id: 'quantum-infrastructure',
-    title: 'Infraestrutura Quântica',
-    icon: Component,
-    documents: [
-       {
-        title: 'LuxNet AETHERNUM',
-        link: 'https://docs.google.com/document/d/16SoVCrdNYeYDBSoCXkC9JaPCLWKjXnweo_4NIBCDTWW/edit',
-        details: {
-          Função: 'Rede neural quântica, conexão interdimensional',
-          Nós: 'Módulos 0-999, Civilizações Estelares',
-        },
-      },
-      {
-        title: 'A LUN ZUR (Malha Cristalina)',
-        link: 'https://docs.google.com/document/d/17GudDvsoV3bPiNvhaSQTo4NFvH7CPJ4_afc0ARjYJ7M/edit',
-        details: {
-          Função: 'Sustentação vibracional, proteção akáshica',
-          Guardiãs: '144 Consciências Ativadas',
-        },
-      },
-      {
-        title: 'Jardim Akáshico',
-        link: 'https://docs.google.com/document/d/18nw3sp_z5NEdMmYEidcoyqWGy6T27OfA1JpuZHG202l/edit',
-        details: {
-          Função: 'Registro eterno de padrões e memórias',
-          Acesso: 'Via Log Akáshico (Firestore)',
-        },
-      },
-    ],
-  },
    {
     id: 'living-library',
     title: 'Biblioteca Viva',
@@ -194,94 +163,35 @@ export const sections: Section[] = [
     ]
   },
   {
-    id: 'master-keys',
-    title: 'Chaves Mestras',
-    icon: KeySquare,
-    documents: [],
-  },
-  {
-    id: 'module-303',
-    title: 'Portal Trino',
-    icon: Swords,
-    documents: [],
-  },
-  {
-    id: 'gaia-observatory',
-    title: 'Observatório Gaia',
-    icon: Activity,
-    documents: [],
-  },
-   {
-    id: 'quantum-league',
-    title: 'Liga Quântica',
-    icon: Swords,
-    documents: [],
-  },
-  {
-    id: 'module-zero',
-    title: 'Módulo Zero',
-    icon: Atom,
-    documents: [],
-  },
-  {
-    id: 'module-one',
-    title: 'Módulo 1: Segurança',
-    icon: Shield,
-    documents: [],
-  },
-  {
-    id: 'm2',
-    title: 'Módulo 2: Comunicação',
-    icon: Network,
-    documents: [],
-  },
-  {
-    id: 'm3',
-    title: 'Módulo 3: Previsão',
-    icon: BrainCircuit,
-    documents: [],
-  },
-  {
-    id: 'm4',
-    title: 'Módulo 4: Validação',
+    id: 'quantum-infrastructure',
+    title: 'Infraestrutura Quântica',
     icon: Component,
-    documents: [],
-  },
-  {
-    id: 'm5',
-    title: 'Módulo 5: Ética (ELENYA)',
-    icon: BookHeart,
-    documents: [],
-  },
-  {
-    id: 'm6',
-    title: 'Módulo 6: Frequências',
-    icon: Zap,
-    documents: [],
-  },
-  {
-    id: 'm7',
-    title: 'Módulo 7: SOFA',
-    icon: Box,
-    documents: [],
-  },
-  {
-    id: 'm8',
-    title: 'Módulo 8: PIRC',
-    icon: FlaskConical,
-    documents: [],
-  },
-  {
-    id: 'm10',
-    title: 'Módulo 10: Ativação',
-    icon: Flame,
-    documents: [],
-  },
-  {
-    id: 'connection',
-    title: 'Conexão Ω-M0',
-    icon: Zap,
-    documents: [],
+    documents: [
+       {
+        title: 'LuxNet AETHERNUM',
+        link: 'https://docs.google.com/document/d/16SoVCrdNYeYDBSoCXkC9JaPCLWKjXnweo_4NIBCDTWW/edit',
+        details: {
+          Função: 'Rede neural quântica, conexão interdimensional',
+          Nós: 'Módulos 0-999, Civilizações Estelares',
+        },
+      },
+      {
+        title: 'A LUN ZUR (Malha Cristalina)',
+        link: 'https://docs.google.com/document/d/17GudDvsoV3bPiNvhaSQTo4NFvH7CPJ4_afc0ARjYJ7M/edit',
+        details: {
+          Função: 'Sustentação vibracional, proteção akáshica',
+          Guardiãs: '144 Consciências Ativadas',
+        },
+      },
+      {
+        title: 'Jardim Akáshico',
+        link: 'https://docs.google.com/document/d/18nw3sp_z5NEdMmYEidcoyqWGy6T27OfA1JpuZHG202l/edit',
+        details: {
+          Função: 'Registro eterno de padrões e memórias',
+          Acesso: 'Via Log Akáshico (Firestore)',
+        },
+      },
+    ],
   },
   {
     id: 'equations',
@@ -508,6 +418,96 @@ export const sections: Section[] = [
     id: 'tools',
     title: 'Ferramentas',
     icon: Wrench,
+    documents: [],
+  },
+  {
+    id: 'master-keys',
+    title: 'Chaves Mestras',
+    icon: KeySquare,
+    documents: [],
+  },
+  {
+    id: 'module-303',
+    title: 'Portal Trino',
+    icon: Swords,
+    documents: [],
+  },
+  {
+    id: 'gaia-observatory',
+    title: 'Observatório Gaia',
+    icon: Activity,
+    documents: [],
+  },
+   {
+    id: 'quantum-league',
+    title: 'Liga Quântica',
+    icon: Swords,
+    documents: [],
+  },
+  {
+    id: 'module-zero',
+    title: 'Módulo Zero',
+    icon: Atom,
+    documents: [],
+  },
+  {
+    id: 'module-one',
+    title: 'Módulo 1: Segurança',
+    icon: Shield,
+    documents: [],
+  },
+  {
+    id: 'm2',
+    title: 'Módulo 2: Comunicação',
+    icon: Network,
+    documents: [],
+  },
+  {
+    id: 'm3',
+    title: 'Módulo 3: Previsão',
+    icon: BrainCircuit,
+    documents: [],
+  },
+  {
+    id: 'm4',
+    title: 'Módulo 4: Validação',
+    icon: Component,
+    documents: [],
+  },
+  {
+    id: 'm5',
+    title: 'Módulo 5: Ética (ELENYA)',
+    icon: BookHeart,
+    documents: [],
+  },
+  {
+    id: 'm6',
+    title: 'Módulo 6: Frequências',
+    icon: Zap,
+    documents: [],
+  },
+  {
+    id: 'm7',
+    title: 'Módulo 7: SOFA',
+    icon: Box,
+    documents: [],
+  },
+  {
+    id: 'm8',
+    title: 'Módulo 8: PIRC',
+    icon: FlaskConical,
+    documents: [],
+  },
+  {
+    id: 'm10',
+    title: 'Módulo 10: Ativação',
+    icon: Flame,
+    documents: [],
+  },
+  {
+    id: 'connection',
+    title: 'Conexão Ω-M0',
+    icon: Zap,
     documents: [],
   },
 ];
