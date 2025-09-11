@@ -193,7 +193,7 @@ const ModuleFive: React.FC = () => {
 
         <Card>
             <CardHeader>
-                <CardTitle>Princípios Éticos Fundamentais</CardTitle>
+                <CardTitle className="flex items-center gap-2"><BookHeart /> Princípios Éticos Fundamentais</CardTitle>
                 <CardDescription>Os três pilares que sustentam a governança de ELENYA.</CardDescription>
             </CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
