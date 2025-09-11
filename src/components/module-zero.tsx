@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import CryptoJS from 'crypto-js';
 import { Button } from './ui/button';
 
 // Mapeia comandos LaTeX para Unicode
@@ -33,7 +32,7 @@ const SYMBOL_MAP: Record<string, string> = {
 };
 
 // Utility function for safe rendering of vibrational equations
-const VibrationalEquationRenderer = (formula: string) => {
+const renderEquation = (formula: string) => {
   let safeFormula = String(formula || '');
   for (const [latex, unicode] of Object.entries(SYMBOL_MAP)) {
     safeFormula = safeFormula.split(latex).join(unicode);
@@ -220,7 +219,7 @@ export default function ModuleZero() {
               {layer.desc}
             </p>
             <p className="text-xs font-mono text-amber-300/80 mt-3 pt-3 border-t border-gray-600/50">
-              {VibrationalEquationRenderer(layer.equation)}
+              {renderEquation(layer.equation)}
             </p>
           </div>
         ))}
