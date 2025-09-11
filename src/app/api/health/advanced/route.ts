@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { cosmicCache } from '@/lib/cosmic-cache';
 import { logger } from '@/lib/logger';
+import { execSync } from 'child_process';
 
 export async function GET(request: NextRequest) {
   const healthReport: any = {
@@ -30,10 +31,21 @@ export async function GET(request: NextRequest) {
 
   if (unhealthyComponents.length > 0) {
     healthReport.status = 'degraded';
-    logger.warn('Health check reportou degradação', healthReport);
+    logger.warn('Health check reportou degradação. Iniciando auto-cura quântica.', healthReport);
+    try {
+      // Apenas execute em ambiente de produção
+      if (process.env.NODE_ENV === 'production') {
+        execSync('kubectl rollout restart deployment/alquimista-app', { stdio: 'inherit' });
+        logger.info('Comando de reinício do deployment executado com sucesso.');
+      } else {
+        logger.info('Ambiente de desenvolvimento. O reinício automático do deployment foi pulado.');
+      }
+    } catch (error: any) {
+        logger.error('Falha ao executar o comando de auto-cura.', { error: error.message, stdout: error.stdout, stderr: error.stderr });
+    }
   }
 
   return NextResponse.json(healthReport, {
-    status: unhealthyComponents.length > 0 ? 206 : 200,
+    status: unhealthyComponents.length > 0 ? 503 : 200, // Service Unavailable se estiver em processo de cura
   });
 }
