@@ -29,6 +29,7 @@ import ConnectionPage from "@/app/connection/page";
 import GaiaResonanceObservatory from "@/components/gaia-resonance-observatory";
 import ZpeContainment from "@/components/zpe-containment";
 import QuantumLeagueConvocation from "@/components/quantum-league-convocation";
+import Pagina42 from "@/components/pagina-42";
 
 
 // --- Configuração do Firebase ---
@@ -242,8 +243,9 @@ const App = () => {
     const selectedSection = sections.find(s => s.id === currentSectionId);
 
     switch (currentSectionId) {
-      case 'nexus': return <ConsolePage />;
-      case 'codex-explorer': return <CodexExplorer />;
+      case 'nexus': return <Nexus />;
+      case 'omega': return <Pagina42 />;
+      case 'codex-explorer': return <CodexExplorer documents={[]} title="Explorador do Códex"/>;
       case 'master-keys': return <KeyViewer />;
       case 'module-303': return <Module303 />;
       case 'gaia-observatory': return <GaiaResonanceObservatory />;

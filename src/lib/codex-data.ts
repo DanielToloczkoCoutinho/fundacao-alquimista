@@ -19,6 +19,7 @@ import {
   Terminal,
   Flame,
   Activity,
+  Sparkles,
 } from 'lucide-react';
 
 export interface Document {
@@ -41,6 +42,12 @@ export const sections: Section[] = [
     id: 'nexus',
     title: 'Nexus Central (M9)',
     icon: Orbit,
+    documents: [],
+  },
+   {
+    id: 'omega',
+    title: 'Módulo Ω (A Chegada)',
+    icon: Sparkles,
     documents: [],
   },
   {
