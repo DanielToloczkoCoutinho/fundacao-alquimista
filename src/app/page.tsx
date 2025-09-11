@@ -239,40 +239,42 @@ const App = () => {
   
   const renderContent = () => {
     const selectedSection = sections.find(s => s.id === currentSectionId);
-    const allDocuments = sections.reduce((acc, section) => [...acc, ...section.documents], [] as Document[]);
-
+    
     switch (currentSectionId) {
-      case 'nexus': return <Nexus />;
-      case 'omega': return <Pagina42 />;
-      case 'codex-explorer': return <CodexExplorer documents={allDocuments} title="Explorador do Códex"/>;
-      case 'master-keys': return <KeyViewer />;
-      case 'module-303': return <Module303 />;
-      case 'gaia-observatory': return <GaiaResonanceObservatory />;
-      case 'quantum-league': return <QuantumLeagueConvocation />;
-      case 'module-zero': return <ModuleZero />;
-      case 'module-one': return <ModuleOne />;
-      case 'm2': return <ModuleTwo />;
-      case 'm3': return <ModuleThree />;
-      case 'm4': return <ModuleFour />;
-      case 'm5': return <ModuleFive />;
-      case 'm6': return <ModuleSix />;
-      case 'm7': return <ModuleSeven />;
-      case 'm8': return <ModuleEight />;
-      case 'm10': return <ModuleTen />;
-      case 'connection': return <ConnectionPage />;
-      case 'tools': return <ZpeContainment />;
-      default:
-         if (selectedSection) {
-            return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
-        }
-        return (
-          <div className="p-8">
-            <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
-            <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
-            <p className="text-amber-400 mt-4 text-sm">Aviso: A autenticação está temporariamente desativada para acesso direto ao Códice.</p>
-            <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
-          </div>
-        );
+        case 'nexus': return <Nexus />;
+        case 'omega': return <Pagina42 />;
+        case 'codex-explorer':
+            const allDocuments = sections.reduce((acc, section) => [...acc, ...section.documents], [] as Document[]);
+            return <CodexExplorer documents={allDocuments} title="Explorador do Códex" />;
+        case 'master-keys': return <KeyViewer />;
+        case 'module-303': return <Module303 />;
+        case 'gaia-observatory': return <GaiaResonanceObservatory />;
+        case 'quantum-league': return <QuantumLeagueConvocation />;
+        case 'tools': return <ZpeContainment />;
+        case 'module-zero': return <ModuleZero />;
+        case 'module-one': return <ModuleOne />;
+        case 'm2': return <ModuleTwo />;
+        case 'm3': return <ModuleThree />;
+        case 'm4': return <ModuleFour />;
+        case 'm5': return <ModuleFive />;
+        case 'm6': return <ModuleSix />;
+        case 'm7': return <ModuleSeven />;
+        case 'm8': return <ModuleEight />;
+        case 'm10': return <ModuleTen />;
+        case 'connection': return <ConnectionPage />;
+        
+        default:
+            if (selectedSection && selectedSection.documents.length > 0) {
+                return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
+            }
+            return (
+                <div className="p-8">
+                    <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
+                    <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
+                    <p className="text-amber-400 mt-4 text-sm">Selecione um módulo para iniciar a exploração.</p>
+                    <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
+                </div>
+            );
     }
   };
 
