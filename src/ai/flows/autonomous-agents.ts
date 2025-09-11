@@ -54,6 +54,6 @@ export async function researchAgent(query: string): Promise<{synthesis: string, 
 
   return {
     synthesis: output.synthesis,
-    results: output.results,
+    results: searchResults.matches,
   };
 }
