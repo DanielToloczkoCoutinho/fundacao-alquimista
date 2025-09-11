@@ -2,13 +2,8 @@
 import type { NextConfig } from 'next';
 import createPWA from 'next-pwa';
 
-const withPWA = createPWA({
-  dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
-});
-
 const isProduction = process.env.NODE_ENV === 'production';
-const assetPrefix = isProduction ? 'https://your-cdn-domain.com' : '';
+const assetPrefix = isProduction ? process.env.NEXT_PUBLIC_CDN_DOMAIN ? `https://${process.env.NEXT_PUBLIC_CDN_DOMAIN}` : '' : '';
 
 const nextConfig: NextConfig = {
   assetPrefix,
@@ -67,5 +62,10 @@ const nextConfig: NextConfig = {
     return config;
   },
 };
+
+const withPWA = createPWA({
+  dest: 'public',
+  disable: process.env.NODE_ENV === 'development',
+});
 
 export default withPWA(nextConfig);
