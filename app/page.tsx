@@ -40,7 +40,7 @@ interface ChaveMestra {
   id: string;
   nome: string;
   descricao: string;
-  equacoes: EquacaoViva[];
+  equacoes: string[]; // Apenas IDs
 }
 
 interface CodexItem {
@@ -62,16 +62,16 @@ const initialEquacoes: EquacaoViva[] = [
     id: "307.1.1",
     nome: "Extração de Energia do Vácuo",
     formula_latex: "P_{\\text{ZPE}} = \\kappa \\cdot \\rho_{\\text{vac}} \\cdot V_{\\text{eff}} \\cdot \\omega_{\\text{ZPE}} \\cdot Q",
-    formula_python: "def p_zpe(kappa, rho_vac, V_eff, omega_zpe, Q):\n    return kappa * rho_vac * V_eff * omega_zpe * Q",
+    formula_python: "def p_zpe(params):\n    kappa = params.get('kappa', 1)\n    rho_vac = params.get('rho_vac', 1)\n    V_eff = params.get('V_eff', 1)\n    omega_zpe = params.get('omega_zpe', 1)\n    Q = params.get('Q', 1)\n    return kappa * rho_vac * V_eff * omega_zpe * Q",
     descricao: "Potência extraída do vácuo quântico pelo núcleo Gaia",
     classificacao: "Energia do Vácuo",
-    variaveis: ["kappa", "rho_vac", "V_eff", "omega_zpe", "Q"],
+    variaveis: ["kappa (fator de acoplamento)", "rho_vac (densidade do vácuo)", "V_eff (volume efetivo)", "omega_zpe (frequência ZPE)", "Q (fator de qualidade)"],
     origem: "Submódulo 307.1"
   },
 ];
 
 const initialChaves: ChaveMestra[] = [
-    { id: "307", nome: "Chave Mestra 307", descricao: "Equações vivas do módulo 307", equacoes: initialEquacoes },
+    { id: "307", nome: "Chave Mestra 307", descricao: "Equações vivas do módulo 307", equacoes: ["307.1.1"] },
     { id: "luxnet", nome: "Chave LuxNet", descricao: "Equações da rede LuxNet", equacoes: [] }
 ];
 
@@ -113,13 +113,14 @@ const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
   };
 
   const handleParamChange = (equacaoId: string, paramName: string, value: string) => {
+    const cleanParamName = paramName.split(" ")[0];
     setExecutionState(prev => ({
       ...prev,
       [equacaoId]: {
         ...prev[equacaoId],
         params: {
           ...prev[equacaoId]?.params,
-          [paramName]: Number(value)
+          [cleanParamName]: Number(value)
         }
       }
     }));
@@ -149,13 +150,13 @@ const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
               <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
               <p className="text-sm text-gray-400">{equacao.descricao}</p>
               <div className="mt-4 space-y-2">
-                {equacao.variaveis.map(v => (
+                {equacao.variaveis.map(varName => (
                   <input
-                    key={v}
+                    key={varName}
                     type="number"
-                    placeholder={v}
-                    onChange={(e) => handleParamChange(equacao.id, v, e.target.value)}
-                    className="p-1 mr-2 rounded bg-gray-700 text-white w-24"
+                    placeholder={varName}
+                    onChange={(e) => handleParamChange(equacao.id, varName, e.target.value)}
+                    className="p-1 mr-2 rounded bg-gray-700 text-white w-48"
                   />
                 ))}
                 <button onClick={() => executeEquation(equacao)} className="px-3 py-1 bg-blue-600 rounded hover:bg-blue-700">
@@ -171,7 +172,7 @@ const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
   );
 };
 
-const KeyViewer = ({ chaves }: { chaves: ChaveMestra[] }) => {
+const KeyViewer = ({ chaves, equacoes }: { chaves: ChaveMestra[]; equacoes: EquacaoViva[] }) => {
     const [activeKey, setActiveKey] = useState<string | null>(chaves.length > 0 ? chaves[0].id : null);
 
     return (
@@ -184,21 +185,27 @@ const KeyViewer = ({ chaves }: { chaves: ChaveMestra[] }) => {
                     </button>
                 ))}
             </div>
-            {chaves.filter(chave => chave.id === activeKey).map((chave) => (
-                <div key={chave.id} className="p-4 bg-gray-900 rounded">
-                    <h2 className="font-bold text-xl mb-2 text-purple-300">{chave.nome}</h2>
-                    <p className="text-sm mb-4 text-gray-400">{chave.descricao}</p>
-                    <div className="space-y-3 h-80 overflow-y-auto">
-                      {chave.equacoes.map((equacao) => (
-                          <div key={equacao.id} className="p-3 border rounded mt-2 border-gray-700 hover:bg-gray-800 transition-colors">
-                              <h3 className="font-bold">{equacao.nome}</h3>
-                              <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
-                          </div>
-                      ))}
-                      {chave.equacoes.length === 0 && <p className="text-sm text-gray-500">Nenhuma equação disponível para esta chave.</p>}
+            {chaves.filter(chave => chave.id === activeKey).map((chave) => {
+                const equacoesDetalhadas = (chave.equacoes || []).map((eqId: string) => 
+                    equacoes.find(eq => eq.id === eqId)
+                ).filter((eq: EquacaoViva | undefined): eq is EquacaoViva => eq !== undefined);
+
+                return (
+                    <div key={chave.id} className="p-4 bg-gray-900 rounded">
+                        <h2 className="font-bold text-xl mb-2 text-purple-300">{chave.nome}</h2>
+                        <p className="text-sm mb-4 text-gray-400">{chave.descricao}</p>
+                        <div className="space-y-3 h-80 overflow-y-auto">
+                          {equacoesDetalhadas.map((equacao) => (
+                              <div key={equacao.id} className="p-3 border rounded mt-2 border-gray-700 hover:bg-gray-800 transition-colors">
+                                  <h3 className="font-bold">{equacao.nome}</h3>
+                                  <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
+                              </div>
+                          ))}
+                          {equacoesDetalhadas.length === 0 && <p className="text-sm text-gray-500">Nenhuma equação disponível para esta chave.</p>}
+                        </div>
                     </div>
-                </div>
-            ))}
+                )
+            })}
         </div>
     );
 };
@@ -229,8 +236,7 @@ const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
           batch.set(chaveRef, {
             nome: chave.nome,
             descricao: chave.descricao,
-            // Apenas armazenar os IDs das equações
-            equacoes: chave.equacoes.map(eq => eq.id)
+            equacoes: chave.equacoes // Apenas os IDs
           });
       });
       
@@ -301,21 +307,10 @@ const App = () => {
     const fetchData = async () => {
         try {
           const chavesSnapshot = await getDocs(collection(db, "chavesMestras"));
+          const chavesData = chavesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as ChaveMestra));
+          
           const equacoesSnapshot = await getDocs(collection(db, "equacoes"));
           const equacoesData = equacoesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as EquacaoViva));
-
-          const chavesData = chavesSnapshot.docs.map(doc => {
-            const chave = doc.data();
-            const equacoesDetalhadas = (chave.equacoes || []).map((eqId: string) => 
-                equacoesData.find(eq => eq.id === eqId)
-            ).filter((eq: EquacaoViva | undefined) => eq !== undefined);
-
-            return { 
-                id: doc.id, 
-                ...chave,
-                equacoes: equacoesDetalhadas
-            } as ChaveMestra
-          });
 
           setChaves(chavesData);
           setEquacoes(equacoesData);
@@ -345,14 +340,10 @@ const App = () => {
             </div>
         )}
         {currentContent === "Console" && <Console equacoes={equacoes} />}
-        {currentContent === "ChavesMestras" && <KeyViewer chaves={chaves} />}
+        {currentContent === "ChavesMestras" && <KeyViewer chaves={chaves} equacoes={equacoes}/>}
       </main>
     </div>
   );
 };
 
 export default App;
-
-    
-
-    
