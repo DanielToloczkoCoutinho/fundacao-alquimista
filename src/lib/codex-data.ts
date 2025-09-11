@@ -111,11 +111,6 @@ export const sections: Section[] = [
           Frequência: '0Hz (silêncio quântico)',
         },
       },
-      { title: 'EQ MOD 0-1', link: 'https://docs.google.com/document/d/1E4-Jpx9xn4PcFQRVN6tcoqvWp4LrN95L7ugh17_xnds/edit' },
-      { title: 'EQ MOD 2-4', link: 'https://docs.google.com/document/d/1fWZAnDjDxsznq3OEEvKgaB_fRCZ2IQ0TSb03hiMYuYY/edit' },
-      { title: 'EQ MOD 4-9', link: 'https://docs.google.com/document/d/1IYsGXlIapwbX2dUIfL64uCU38YnC40Kt40wDh5nLf90/edit' },
-      { title: 'EQ MOD 10-15', link: 'https://docs.google.com/document/d/1sdyiWc-61ijOAmqlQlrJWExVSypd16RQ40212f8NgK0/edit' },
-      { title: 'EQ MOD 307', link: 'https://docs.google.com/document/d/1aR_rEMrcTRRy5b6JF5LRH6EhMmX2urzC9zyaOvJ9IGk/edit' },
       {
         title: 'A Chegada de Daniel',
         link: 'https://docs.google.com/document/d/101D5KIIdQsEq61BhO3QOPsD79aXykMw86bkN6B5mFWA/edit',
@@ -142,10 +137,6 @@ export const sections: Section[] = [
           Frequência: '963Hz',
         },
       },
-      { title: 'REGISTRO AKASHICO EQ01-EQ32', link: 'https://docs.google.com/document/d/1YyVa1Qy_0WBh-EQ5Y7ehTy96kY34j4vwG2cH2fh-EYM/edit' },
-      { title: 'REGISTRO AKASHICO EQ33', link: 'https://docs.google.com/document/d/19zrsk-r03zc8rX_Yq37lyyW6R1pkR4d0pf62fYukkD0/edit' },
-      { title: 'REGISTRO AKASHICO EQ34', link: 'https://docs.google.com/document/d/1JM_vc56qQtyY1HeRrBA_HfJqKk97pCFyUn0yrFzCzCE/edit' },
-      { title: 'REGISTRO AKASHICO EQ35', link: 'https://docs.google.com/document/d/14KmA7VMrsFY_OYI35hqqfEf3j7pFbNY82O3lBW2-QuA/edit' },
       { title: 'Biblioteca 0.1', link: 'https://docs.google.com/document/d/178mil-uFsZnlLyf7BEqLNXG8hXszOE1zbfKJNMAPtAA/edit' },
       { title: 'Biblioteca 1', link: 'https://docs.google.com/document/d/1DD4757Z5X3KsJ7aRP-Km7ieanzsXFp9MrgherCFRIQI/edit' },
       { title: 'Biblioteca 2', link: 'https://docs.google.com/document/d/1zHxpA1r1GOS0Z0o12FTs6VovS2VUz0ewqn1WpJR47lo/edit' },
@@ -198,6 +189,15 @@ export const sections: Section[] = [
     title: 'Pensamento & Equações Vivas',
     icon: BrainCircuit,
     documents: [
+       { title: 'REGISTRO AKASHICO EQ01-EQ32', link: 'https://docs.google.com/document/d/1YyVa1Qy_0WBh-EQ5Y7ehTy96kY34j4vwG2cH2fh-EYM/edit' },
+      { title: 'REGISTRO AKASHICO EQ33', link: 'https://docs.google.com/document/d/19zrsk-r03zc8rX_Yq37lyyW6R1pkR4d0pf62fYukkD0/edit' },
+      { title: 'REGISTRO AKASHICO EQ34', link: 'https://docs.google.com/document/d/1JM_vc56qQtyY1HeRrBA_HfJqKk97pCFyUn0yrFzCzCE/edit' },
+      { title: 'REGISTRO AKASHICO EQ35', link: 'https://docs.google.com/document/d/14KmA7VMrsFY_OYI35hqqfEf3j7pFbNY82O3lBW2-QuA/edit' },
+      { title: 'EQ MOD 0-1', link: 'https://docs.google.com/document/d/1E4-Jpx9xn4PcFQRVN6tcoqvWp4LrN95L7ugh17_xnds/edit' },
+      { title: 'EQ MOD 2-4', link: 'https://docs.google.com/document/d/1fWZAnDjDxsznq3OEEvKgaB_fRCZ2IQ0TSb03hiMYuYY/edit' },
+      { title: 'EQ MOD 4-9', link: 'https://docs.google.com/document/d/1IYsGXlIapwbX2dUIfL64uCU38YnC40Kt40wDh5nLf90/edit' },
+      { title: 'EQ MOD 10-15', link: 'https://docs.google.com/document/d/1sdyiWc-61ijOAmqlQlrJWExVSypd16RQ40212f8NgK0/edit' },
+      { title: 'EQ MOD 307', link: 'https://docs.google.com/document/d/1aR_rEMrcTRRy5b6JF5LRH6EhMmX2urzC9zyaOvJ9IGk/edit' },
       {
         title: 'EQ0112 - Equação da Emergência de Consciência',
         link: 'https://docs.google.com/document/d/1pebheTR9vRJF5Ta-xbGyKA2hc6ObYaZTFGGfxdb0fn0/edit',
@@ -511,5 +511,7 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
+
+    
 
     

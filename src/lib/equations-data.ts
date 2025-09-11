@@ -168,3 +168,6 @@ export const livingEquations: EquacaoViva[] = [
     { id: "EQ8401", titulo: "Energia de Portal de Luz", descricao: "Calcula a energia necessária para manter um portal de luz ativo.", formula: "E_portal = f_ativação · Coerência · Amor · Φ", classificacao: "Engenharia de Portais", origem: "Módulo 84", disciplinas: ["FIS", "ESP", "QUA"], modulos: ["M84"] },
     { id: "EQ8501", titulo: "Equação da Unidade Viva", descricao: "Representa a convergência final de todas as consciências.", formula: "U_viva = Σ(Ψ_i · Ética_i · Amor_i) / Ruído_total", classificacao: "Consciência Unificada", origem: "Módulo 85", disciplinas: ["ESP", "ETI", "QUA"], modulos: ["M85"] }
 ];
+
+
+    
