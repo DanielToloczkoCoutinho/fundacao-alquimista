@@ -1,17 +1,29 @@
 // @ts-nocheck
 'use client';
-import { useState } from "react";
 
-// Interfaces e Dados
+import { useState, useEffect } from "react";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+
+// Configuração do Firebase (substitua pelos teus valores reais)
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 interface EquacaoViva {
   id: string;
   nome: string;
   formula_latex: string;
-  formula_python: string;
   descricao: string;
-  classificacao: string;
-  variaveis: string[];
-  origem: string;
 }
 
 interface ChaveMestra {
@@ -28,42 +40,12 @@ interface CodexItem {
   content: string;
 }
 
-const equacoes: EquacaoViva[] = [
-  {
-    id: "307.1.1",
-    nome: "Extração de Energia do Vácuo",
-    formula_latex: "P_{\\text{ZPE}} = \\kappa \\cdot \\rho_{\\text{vac}} \\cdot V_{\\text{eff}} \\cdot \\omega_{\\text{ZPE}} \\cdot Q",
-    formula_python: "def p_zpe(kappa, rho_vac, V_eff, omega_zpe, Q):\n    return kappa * rho_vac * V_eff * omega_zpe * Q",
-    descricao: "Potência extraída do vácuo quântico pelo núcleo Gaia",
-    classificacao: "Energia do Vácuo",
-    variaveis: ["kappa (fator de acoplamento)", "rho_vac (densidade do vácuo)", "V_eff (volume efetivo)", "omega_zpe (frequência ZPE)", "Q (fator de qualidade)"],
-    origem: "Submódulo 307.1"
-  },
-];
-
-const chaveMestra307: ChaveMestra = {
-  id: "307",
-  nome: "Chave Mestra 307",
-  descricao: "Equações vivas do módulo 307",
-  equacoes: equacoes,
-};
-
-const chaveLuxNet: ChaveMestra = {
-  id: "luxnet",
-  nome: "Chave LuxNet",
-  descricao: "Equações da rede LuxNet",
-  equacoes: [],
-};
-
-const chavesMestras: ChaveMestra[] = [chaveMestra307, chaveLuxNet];
-
 const codexData: CodexItem[] = [
   { title: "Home", description: "Página inicial", icon: "🏠", content: "Home" },
-  { title: "Console da Fundação", description: "Painel de controle principal da Fundação", icon: "💻", content: "Console" },
-  { title: "Chaves Mestras", description: "Visualizador das Chaves Mestras da Fundação", icon: "🔑", content: "ChavesMestras" },
+  { title: "Console da Fundação", description: "Painel de controle principal", icon: "💻", content: "Console" },
+  { title: "Chaves Mestras", description: "Visualizador das Chaves", icon: "🔑", content: "ChavesMestras" },
 ];
 
-// Componentes
 const Sidebar = ({ onNavigate }: { onNavigate: (content: string) => void }) => (
   <nav className="w-64 p-4 bg-gray-800 h-screen text-white">
     {codexData.map((item) => (
@@ -78,47 +60,29 @@ const Sidebar = ({ onNavigate }: { onNavigate: (content: string) => void }) => (
   </nav>
 );
 
-const Console = () => {
+const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
     <div className="space-y-4 p-4 text-white">
       <h1 className="text-3xl font-bold">Console da Fundação</h1>
       <div className="border-b border-gray-700">
-        <button
-          onClick={() => setActiveTab("overview")}
-          className={`px-4 py-2 ${activeTab === "overview" ? "border-b-2 border-blue-500" : ""}`}
-        >
-          Visão Geral
-        </button>
-        <button
-          onClick={() => setActiveTab("logs")}
-          className={`px-4 py-2 ${activeTab === "logs" ? "border-b-2 border-blue-500" : ""}`}
-        >
-          Logs
-        </button>
-        <button
-          onClick={() => setActiveTab("settings")}
-          className={`px-4 py-2 ${activeTab === "settings" ? "border-b-2 border-blue-500" : ""}`}
-        >
-          Configurações
-        </button>
-        <button
-          onClick={() => setActiveTab("chave307")}
-          className={`px-4 py-2 ${activeTab === "chave307" ? "border-b-2 border-blue-500" : ""}`}
-        >
-          Chave Mestra 307
-        </button>
+        {["overview", "logs", "settings", "chave307"].map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-4 py-2 ${activeTab === tab ? "border-b-2 border-blue-500" : ""}`}
+          >
+            {tab === "overview" && "Visão Geral"}
+            {tab === "logs" && "Logs"}
+            {tab === "settings" && "Configurações"}
+            {tab === "chave307" && "Chave Mestra 307"}
+          </button>
+        ))}
       </div>
-      {activeTab === "overview" && (
-        <div className="p-4 bg-gray-900 rounded">Status: Ativo</div>
-      )}
-      {activeTab === "logs" && (
-        <div className="p-4 bg-gray-900 rounded"><pre>Logs aqui...</pre></div>
-      )}
-      {activeTab === "settings" && (
-        <div className="p-4 bg-gray-900 rounded"><input placeholder="Parâmetro" className="p-2 rounded bg-gray-800" /></div>
-      )}
+      {activeTab === "overview" && <div className="p-4 bg-gray-900 rounded">Status: Ativo</div>}
+      {activeTab === "logs" && <div className="p-4 bg-gray-900 rounded"><pre>Logs aqui...</pre></div>}
+      {activeTab === "settings" && <div className="p-4 bg-gray-900 rounded"><input placeholder="Parâmetro" className="p-2 rounded bg-gray-800 text-black" /></div>}
       {activeTab === "chave307" && (
         <div className="p-4 bg-gray-900 rounded space-y-4">
           {equacoes.map((equacao) => (
@@ -134,24 +98,24 @@ const Console = () => {
   );
 };
 
-const KeyViewer = () => {
-    const [activeKey, setActiveKey] = useState(chavesMestras[0].id);
+const KeyViewer = ({ chaves }: { chaves: ChaveMestra[] }) => {
+    const [activeKey, setActiveKey] = useState<string | null>(chaves.length > 0 ? chaves[0].id : null);
 
     return (
         <div className="space-y-4 p-4 text-white">
             <h1 className="text-3xl font-bold">Chaves Mestras</h1>
             <div className="border-b border-gray-700">
-                {chavesMestras.map((chave) => (
+                {chaves.map((chave) => (
                     <button
                         key={chave.id}
                         onClick={() => setActiveKey(chave.id)}
-                        className={`px-4 py-2 ${activeKey === chave.id ? "border-b-2 border-blue-500" : ""}`}
+                        className={`px-4 py-2 ${activeKey === chave.id ? 'border-b-2 border-blue-500' : ''}`}
                     >
                         {chave.nome}
                     </button>
                 ))}
             </div>
-            {chavesMestras.filter(chave => chave.id === activeKey).map((chave) => (
+            {chaves.filter(chave => chave.id === activeKey).map((chave) => (
                 <div key={chave.id} className="p-4 bg-gray-900 rounded">
                     <h2 className="font-bold text-xl mb-2">{chave.nome}</h2>
                     <p className="text-sm mb-4">{chave.descricao}</p>
@@ -168,18 +132,45 @@ const KeyViewer = () => {
     );
 };
 
-// Componente Principal
-export default function App() {
+const App = () => {
   const [currentContent, setCurrentContent] = useState<string>("Home");
+  const [chaves, setChaves] = useState<ChaveMestra[]>([]);
+  const [equacoes, setEquacoes] = useState<EquacaoViva[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const chavesSnapshot = await getDocs(collection(db, "chavesMestras"));
+        const chavesData = chavesSnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data(),
+          equacoes: doc.data().equacoes || []
+        } as ChaveMestra));
+        setChaves(chavesData);
+
+        const equacoesSnapshot = await getDocs(collection(db, "equacoes"));
+        const equacoesData = equacoesSnapshot.docs.map(doc => doc.data() as EquacaoViva);
+        setEquacoes(equacoesData);
+      } catch (error) {
+        console.error("Erro ao buscar dados do Firestore:", error);
+        // Adicione um feedback visual para o usuário aqui, se desejar
+      }
+    };
+    if (firebaseConfig.projectId !== "your-project-id") {
+      fetchData();
+    }
+  }, []);
 
   return (
     <div className="flex h-screen bg-gray-900 text-white">
       <Sidebar onNavigate={setCurrentContent} />
       <main className="flex-1 p-8 overflow-auto">
-        {currentContent === "Console" && <Console />}
-        {currentContent === "ChavesMestras" && <KeyViewer />}
-        {currentContent === "Home" && <p>Bem-vindo à Fundação Alquimista - 21:39, 10/09/2025</p>}
+        {currentContent === "Console" && <Console equacoes={equacoes} />}
+        {currentContent === "ChavesMestras" && <KeyViewer chaves={chaves} />}
+        {currentContent === "Home" && <p>Bem-vindo à Fundação Alquimista - 21:49, 10/09/2025</p>}
       </main>
     </div>
   );
 };
+
+export default App;
