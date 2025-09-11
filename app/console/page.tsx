@@ -1,3 +1,4 @@
+
 // @ts-nocheck
 'use client';
 
@@ -17,6 +18,7 @@ import {
   setDoc,
   doc,
   Timestamp,
+  enableIndexedDbPersistence,
 } from 'firebase/firestore';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -24,6 +26,8 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContai
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import ImmersiveEquationViewer from '@/components/ui/immersive-equation-viewer';
+import { quantumResilience } from '@/lib/quantum-resilience';
+
 
 // Constantes e configurações globais, mantendo a compatibilidade
 const appId = process.env.NEXT_PUBLIC_APP_ID || 'default-app-id';
@@ -50,6 +54,16 @@ function useFirebaseAuth() {
         const app = initializeApp(firebaseConfig);
         const firebaseAuth = getAuth(app);
         const firestoreDb = getFirestore(app);
+
+        // Habilitar persistência offline com resiliência
+        await quantumResilience.executeWithResilience('enable_persistence', 
+            () => enableIndexedDbPersistence(firestoreDb).then(() => console.log('Persistência Firebase habilitada.')),
+            () => {
+                console.warn('Persistência Firebase não disponível. Operando em modo online.');
+                return Promise.resolve();
+            }
+        );
+
         setAuth(firebaseAuth);
         setDb(firestoreDb);
         authRef.current = firebaseAuth;
@@ -211,27 +225,47 @@ const App = () => {
   useEffect(() => {
     if (!db || !isAuthReady) return;
 
-    // A coleção será 'public/data/coherence' para visibilidade pública
-    const q = query(collection(db, `artifacts/${appId}/public/data/coherence`));
+    const setupListener = () => {
+        const q = query(collection(db, `artifacts/${appId}/public/data/coherence`));
+        
+        return onSnapshot(q, (snapshot) => {
+            const updatedData = [];
+            snapshot.forEach(doc => {
+                const data = doc.data();
+                if (data.coherence && data.timestamp) {
+                updatedData.push({
+                    time: data.timestamp.toDate().toLocaleTimeString(),
+                    coherence: data.coherence,
+                });
+                }
+            });
+            updatedData.sort((a, b) => new Date('1970/01/01 ' + a.time) - new Date('1970/01/01 ' + b.time));
+            setCoherenceData(updatedData.slice(-10));
+        }, (error) => {
+            console.error("Erro no listener do Firestore: ", error);
+        });
+    };
 
-    const unsubscribe = onSnapshot(q, (snapshot) => {
-      const updatedData = [];
-      snapshot.forEach(doc => {
-        const data = doc.data();
-        if (data.coherence && data.timestamp) {
-          updatedData.push({
-            time: data.timestamp.toDate().toLocaleTimeString(),
-            coherence: data.coherence,
-          });
+    let unsubscribe: (() => void) | undefined;
+    
+    quantumResilience.executeWithResilience(
+        'coherence_listener',
+        async () => {
+            unsubscribe = setupListener();
+        },
+        async () => {
+            console.warn('Fallback: Não foi possível estabelecer o listener do Firestore.');
+            // Opcional: tentar reconectar ou usar dados de cache
         }
-      });
-      // Ordena os dados por tempo para o gráfico
-      updatedData.sort((a, b) => new Date('1970/01/01 ' + a.time) - new Date('1970/01/01 ' + b.time));
-      setCoherenceData(updatedData.slice(-10)); // Mantém apenas os 10 últimos pontos para o gráfico
-    });
+    );
 
-    return () => unsubscribe();
-  }, [db, isAuthReady, appId]);
+    return () => {
+        if (unsubscribe) {
+            unsubscribe();
+        }
+    };
+}, [db, isAuthReady, appId]);
+
 
   // Função para simular e salvar um pulso
   const simulateQuantumPulse = useCallback(async () => {
