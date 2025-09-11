@@ -34,7 +34,12 @@ const appId = process.env.NEXT_PUBLIC_APP_ID || 'default-app-id';
 
 let firebaseConfig = {};
 try {
-  firebaseConfig = JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG || '{}');
+  const configString = process.env.NEXT_PUBLIC_FIREBASE_CONFIG;
+  if (configString) {
+    firebaseConfig = JSON.parse(configString);
+  } else {
+    console.warn("Configuração do Firebase não encontrada no ambiente.");
+  }
 } catch (e) {
   console.error("Falha ao analisar a configuração do Firebase:", e);
   firebaseConfig = {};
@@ -62,16 +67,15 @@ function useFirebaseAuth() {
         const app = initializeApp(firebaseConfig);
         const firebaseAuth = getAuth(app);
         const firestoreDb = getFirestore(app, {
-          experimentalForceLongPolling: true,
-          useFetchStreams: false,
+            experimentalForceLongPolling: true,
+            useFetchStreams: false,
         });
 
         // Habilitar persistência offline com resiliência
         await quantumResilience.executeWithResilience('enable_persistence', 
             () => enableIndexedDbPersistence(firestoreDb).then(() => console.log('Persistência Firebase habilitada.')),
-            () => {
+            async () => {
                 console.warn('Persistência Firebase não disponível. Operando em modo online.');
-                return Promise.resolve();
             }
         );
 
@@ -101,7 +105,7 @@ function useFirebaseAuth() {
       }
     }
     if(firebaseConfig?.projectId) initFirebaseAndAuth();
-  }, [initialAuthToken]);
+  }, []);
 
   return { db, auth, userId, isAuthReady };
 }
@@ -275,7 +279,7 @@ const App = () => {
             unsubscribe();
         }
     };
-}, [db, isAuthReady, appId]);
+}, [db, isAuthReady]);
 
 
   // Função para simular e salvar um pulso

@@ -1,8 +1,8 @@
 
 'use client';
 
-import { useState, useEffect, Suspense } from "react";
-import { User } from "firebase/auth";
+import { Suspense, useState } from 'react';
+import { User } from 'firebase/auth';
 import { cn } from "@/lib/utils";
 import { sections } from "@/lib/codex-data";
 import type { Section, Document } from "@/lib/codex-data";
@@ -57,18 +57,8 @@ const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: strin
 // =================================================================
 
 const App = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
   const [currentSectionId, setCurrentSectionId] = useState<string>("chronicle");
   const isMobile = useIsMobile();
-
-  useEffect(() => {
-    // Bypass de autenticação para desenvolvimento
-    const mockUser = { uid: "SOBERANO_FUNDADOR" } as User;
-    setUser(mockUser);
-    setLoading(false);
-
-  }, []);
   
   const renderContent = () => {
     const selectedSection = sections.find(s => s.id === currentSectionId);
@@ -112,11 +102,6 @@ const App = () => {
     }
   };
 
-
-  if (loading) {
-    return <div className="w-full h-screen flex items-center justify-center cosmic-bg text-white">Carregando Fundação...</div>;
-  }
-  
   return (
     <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")}>
       <Sidebar onNavigate={setCurrentSectionId} currentSectionId={currentSectionId} />

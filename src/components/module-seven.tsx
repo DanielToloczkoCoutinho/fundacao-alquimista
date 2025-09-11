@@ -9,6 +9,7 @@ import { ScrollArea } from './ui/scroll-area';
 import { Cpu, Zap, HardDrive, Network, ListTree, Activity, ShieldCheck, Power, Terminal, LoaderCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Progress } from './ui/progress';
+import { Badge } from './ui/badge';
 
 type SystemProcess = {
   pid: string;
