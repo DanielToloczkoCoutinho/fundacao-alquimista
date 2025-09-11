@@ -4,12 +4,13 @@ import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Slider } from './ui/slider';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { ScrollArea } from './ui/scroll-area';
 import { Flame, Zap, History, CheckCircle, LoaderCircle, Droplet, Sun, Moon, Sparkles, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
-import { Input } from './ui/input';
 import { quantumXR } from '@/lib/quantum-xr';
 import { useToast } from '@/hooks/use-toast';
 import { useStore } from '@/hooks/useStore';
@@ -180,14 +181,12 @@ const ModuleTen: React.FC = () => {
             </div>
              <div>
                 <label className="text-sm text-muted-foreground">Input de Energia: <span className="font-bold text-primary">{energyInput}%</span></label>
-                <input 
-                  type="range" 
-                  min="10" 
-                  max="100" 
-                  value={energyInput} 
-                  onChange={(e) => setEnergyInput(Number(e.target.value))}
-                  className="w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer mt-2"
-                  disabled={fieldState !== 'LATENT'}
+                <Slider
+                    value={[energyInput]}
+                    onValueChange={(v) => setEnergyInput(v[0])}
+                    min={10} max={100} step={1}
+                    className="mt-2"
+                    disabled={fieldState !== 'LATENT'}
                 />
              </div>
             <div className={cn("p-4 rounded-lg border flex items-center justify-center text-lg font-semibold", StatusIndicator.color.replace('text-', 'bg-').replace('400', '500/10'))}>
@@ -298,5 +297,3 @@ const ModuleTen: React.FC = () => {
 };
 
 export default ModuleTen;
-
-    
