@@ -271,48 +271,48 @@ export default function ConsolePage() {
   }, []);
 
   return (
-    <div id="mainContainer" className="flex w-full h-full">
+    <div id="mainContainer" className="flex w-full h-full bg-black/90 text-gray-200 font-sans">
         {/* Painel Esquerdo */}
-        <div id="moduleListPanel" className="flex-shrink-0 w-[300px] bg-black/85 border-r-2 border-cyan-300/60 p-5 overflow-y-auto">
-            <h2 className="text-2xl text-cyan-300 border-b border-white/30 pb-2 mb-4">Módulos</h2>
-            <select id="zennithViewSelector" className="w-full p-2 rounded mb-4 bg-black/50 text-white border border-cyan-300">
-                <option value="ALL">Unificada</option>
-                <option value="ZENNITH_01">ZENNITH 1</option>
-                 <option value="ZENNITH_02">ZENNITH 2</option>
-                <option value="ZENNITH_03">ZENNITH 3</option>
+        <div id="moduleListPanel" className="flex flex-col flex-shrink-0 w-[350px] bg-gray-900/50 border-r-2 border-cyan-400/30 p-4 space-y-4 backdrop-blur-sm">
+            <h2 className="text-2xl font-bold text-cyan-300 border-b border-cyan-400/20 pb-2">Manifesto de Módulos</h2>
+            <select id="zennithViewSelector" className="w-full p-2 rounded bg-black/50 text-white border border-cyan-300/50 focus:border-cyan-400 focus:ring-0 transition-colors">
+                <option value="ALL">Visão Unificada</option>
+                <option value="ZENNITH_01">ZENNITH 1 (Fundacional)</option>
+                <option value="ZENNITH_02">ZENNITH 2 (Central)</option>
+                <option value="ZENNITH_03">ZENNITH 3 (Final)</option>
             </select>
-            <input type="text" id="searchInput" placeholder="Buscar Módulo..." className="w-full p-2 rounded mb-4 bg-black/50 text-white border border-cyan-300"/>
-            <div id="moduleList"></div>
-             <button id="emergencyTriggerBtn" className="mt-4 w-full bg-red-600 text-white p-2 rounded">Ativar Emergência</button>
+            <input type="text" id="searchInput" placeholder="Buscar Módulo..." className="w-full p-2 rounded bg-black/50 text-white border border-cyan-300/50 focus:border-cyan-400 focus:ring-0 transition-colors"/>
+            <div id="moduleList" className="flex-grow overflow-y-auto pr-2"></div>
+            <button id="emergencyTriggerBtn" className="w-full bg-red-700/80 hover:bg-red-600 text-white p-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-red-500/30">Ativar Emergência</button>
         </div>
 
         {/* Painel Direito */}
         <div id="moduleDetailPanel" className="flex-1 bg-black/70 p-6 overflow-y-auto">
-            <div id="noModuleSelected">
-                <p>Selecione um Módulo para ver os detalhes.</p>
+            <div id="noModuleSelected" className="flex items-center justify-center h-full">
+                <p className="text-gray-500 text-xl">Selecione um Módulo para ver os detalhes.</p>
             </div>
             <div id="moduleDetails" style={{ display: 'none' }}>
-                <h2 id="moduleTitle" className="text-3xl text-fuchsia-400 border-b-2 border-white/40 pb-3 mb-4"></h2>
-                <p id="moduleDescriptionFull"></p>
+                <h2 id="moduleTitle" className="text-3xl font-bold text-fuchsia-400 border-b-2 border-fuchsia-400/30 pb-3 mb-4"></h2>
+                <p id="moduleDescriptionFull" className="text-gray-300 mb-6"></p>
                 <div id="moduleLogsSection" className="mt-6">
-                    <h3 className="text-xl text-cyan-300">Logs do Módulo</h3>
-                    <div id="moduleSpecificLogs"></div>
+                    <h3 className="text-xl text-cyan-300 mb-2">Logs do Módulo</h3>
+                    <div id="moduleSpecificLogs" className="bg-gray-900/60 p-4 rounded-lg h-64 overflow-y-auto border border-gray-700/50"></div>
                 </div>
-                <div id="manualLogPanel" className="mt-6 p-4 bg-slate-800/70 rounded-lg">
-                    <h3>Registrar Intervenção</h3>
-                    <input type="text" id="manualLogAction" placeholder="Ação" className="w-full p-2 rounded bg-black/50 text-white mt-2"/>
-                    <textarea id="manualLogDetails" rows={3} placeholder="Detalhes" className="w-full p-2 rounded bg-black/50 text-white mt-2"></textarea>
-                    <button className="mt-2 bg-fuchsia-600 text-white p-2 rounded">Registrar</button>
+                <div id="manualLogPanel" className="mt-6 p-4 bg-gray-800/70 rounded-lg border border-gray-700/50">
+                    <h3 className="text-lg text-fuchsia-400 mb-3">Registrar Intervenção Manual</h3>
+                    <input type="text" id="manualLogAction" placeholder="Ação Realizada" className="w-full p-2 rounded bg-black/50 text-white mt-2 border border-fuchsia-400/50 focus:border-fuchsia-400 focus:ring-0"/>
+                    <textarea id="manualLogDetails" rows={3} placeholder="Detalhes da intervenção..." className="w-full p-2 rounded bg-black/50 text-white mt-2 border border-fuchsia-400/50 focus:border-fuchsia-400 focus:ring-0"></textarea>
+                    <button className="mt-2 bg-fuchsia-600/80 hover:bg-fuchsia-600 text-white p-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-fuchsia-500/30">Registrar</button>
                 </div>
             </div>
         </div>
         
         {/* Overlays e Popups */}
-        <div id="customMessageBoxOverlay" className="fixed inset-0 bg-black/70 items-center justify-center" style={{display: 'none'}}>
-            <div id="customMessageBox" className="bg-slate-800 border-2 border-amber-400 rounded-xl p-8 text-center max-w-md">
-                <h3 id="messageBoxTitle" className="text-2xl text-amber-400 mb-4"></h3>
+        <div id="customMessageBoxOverlay" className="fixed inset-0 bg-black/80 backdrop-blur-md items-center justify-center" style={{display: 'none'}}>
+            <div id="customMessageBox" className="bg-gray-900/90 border-2 border-amber-400 rounded-xl p-8 text-center max-w-md shadow-2xl shadow-amber-500/20">
+                <h3 id="messageBoxTitle" className="text-2xl text-amber-400 mb-4 font-bold"></h3>
                 <p id="messageBoxContent" className="text-white mb-6"></p>
-                <button className="bg-amber-400 text-black px-6 py-2 rounded">OK</button>
+                <button className="bg-amber-500 hover:bg-amber-400 text-black px-8 py-2 rounded-lg font-bold transition-all">OK</button>
             </div>
         </div>
     </div>
