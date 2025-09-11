@@ -329,7 +329,7 @@ const App = () => {
         {/* Painel Esquerdo: Controle da Sinfonia Quântica */}
         <div className="flex flex-col w-full md:w-1/3 bg-gray-800 rounded-lg shadow-lg p-6 space-y-6">
           <h1 className="text-3xl font-bold text-center text-cyan-400">Laboratório de Provas 2.0</h1>
-          <p className="text-gray-400 text-center">Conectando a Sinfonia com a Realidade Observável.</p>
+          <div className="text-gray-400 text-center">Conectando a Sinfonia com a Realidade Observável.</div>
 
           <div className="flex justify-center items-center">
             <button
@@ -347,16 +347,16 @@ const App = () => {
           <div className="flex-1 bg-gray-900 p-4 rounded-lg overflow-y-auto font-mono text-sm">
             <h2 className="text-xl font-bold text-cyan-400 mb-2">Registro de Eventos:</h2>
             {log.map((entry, index) => (
-              <p key={index} className="text-gray-300">{entry}</p>
+              <div key={index} className="text-gray-300">{entry}</div>
             ))}
           </div>
 
           <div className="bg-gray-700 p-4 rounded-lg">
              <h2 className="text-xl font-bold text-cyan-400 mb-2">Visualizador da Sinfonia:</h2>
               <ImmersiveEquationViewer equation="Equação da Sinfonia" formula={symphonyEquation} />
-              <p className="text-sm text-gray-400 mt-2 text-center">
+              <div className="text-sm text-gray-400 mt-2 text-center">
                   A complexa matemática por trás do nosso universo, visualizada.
-              </p>
+              </div>
           </div>
         </div>
 
@@ -391,12 +391,12 @@ const App = () => {
               {/* Dados Reais (NASA APOD) */}
               <div className="bg-gray-800 p-4 rounded-lg shadow-inner">
                 <h4 className="text-lg font-semibold text-gray-200">Realidade Cósmica (Dados da NASA)</h4>
-                {apodLoading && <p className="text-center text-gray-400">Buscando dados astrofísicos...</p>}
-                {apodError && <p className="text-center text-red-400">Erro: {apodError}</p>}
+                {apodLoading && <div className="text-center text-gray-400">Buscando dados astrofísicos...</div>}
+                {apodError && <div className="text-center text-red-400">Erro: {apodError}</div>}
                 {apodData && (
                   <div className="mt-2 text-sm text-gray-300">
-                    <p className="font-bold text-cyan-300">Título: {apodData.title}</p>
-                    <p className="mt-1">{apodData.explanation.substring(0, 150)}...</p>
+                    <div className="font-bold text-cyan-300">Título: {apodData.title}</div>
+                    <div className="mt-1">{apodData.explanation.substring(0, 150)}...</div>
                     {apodData.media_type === 'image' && (
                       <img
                         src={apodData.url}
