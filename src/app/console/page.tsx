@@ -30,7 +30,15 @@ import { quantumResilience } from '@/lib/quantum-resilience';
 
 // Constantes e configurações globais, mantendo a compatibilidade
 const appId = process.env.NEXT_PUBLIC_APP_ID || 'default-app-id';
-const firebaseConfig = JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG || '{}');
+
+let firebaseConfig = {};
+try {
+  firebaseConfig = JSON.parse(process.env.NEXT_PUBLIC_FIREBASE_CONFIG || '{}');
+} catch (e) {
+  console.error("Falha ao analisar a configuração do Firebase:", e);
+  firebaseConfig = {};
+}
+
 const initialAuthToken = process.env.NEXT_PUBLIC_INITIAL_AUTH_TOKEN || null;
 
 // Hook customizado para inicializar Firebase e autenticar
@@ -43,8 +51,8 @@ function useFirebaseAuth() {
 
   useEffect(() => {
     async function initFirebaseAndAuth() {
-      if (Object.keys(firebaseConfig).length === 0) {
-        console.error("Configuração do Firebase não encontrada.");
+      if (!firebaseConfig || Object.keys(firebaseConfig).length === 0) {
+        console.error("Configuração do Firebase não encontrada ou inválida.");
         setIsAuthReady(true);
         return;
       }
@@ -52,7 +60,10 @@ function useFirebaseAuth() {
       try {
         const app = initializeApp(firebaseConfig);
         const firebaseAuth = getAuth(app);
-        const firestoreDb = getFirestore(app);
+        const firestoreDb = getFirestore(app, {
+          experimentalForceLongPolling: true,
+          useFetchStreams: false,
+        });
 
         // Habilitar persistência offline com resiliência
         await quantumResilience.executeWithResilience('enable_persistence', 

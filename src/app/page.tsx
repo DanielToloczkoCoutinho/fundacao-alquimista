@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense, lazy } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, doc, setDoc, writeBatch } from "firebase/firestore";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
@@ -42,7 +42,10 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getFirestore(app, {
+  experimentalForceLongPolling: true,
+  useFetchStreams: false,
+});
 const auth = getAuth(app);
 
 
@@ -267,7 +270,9 @@ const App = () => {
     <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")}>
       <Sidebar onNavigate={setCurrentSectionId} currentSectionId={currentSectionId} />
       <main className={cn("flex-1 overflow-auto p-6", isMobile ? "p-4" : "")}>
-        {renderContent()}
+        <Suspense fallback={<div className="text-center">Carregando Módulo...</div>}>
+            {renderContent()}
+        </Suspense>
       </main>
     </div>
   );
