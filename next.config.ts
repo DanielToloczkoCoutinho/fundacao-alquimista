@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   experimental: {
     allowedDevOrigins: [
       'https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev',
-      'http://localhost:9000',
+      'http://localhost:6000',
     ],
   },
   typescript: {
@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
           },
            {
             key: 'Cross-Origin-Opener-Policy',
-            value: 'same-origin',
+            value: 'same-origin-allow-popups',
           },
           {
             key: 'Cross-Origin-Embedder-Policy',
