@@ -42,7 +42,12 @@ const firebaseConfig = {
     "messagingSenderId": "174545373080"
 };
 
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+let app;
+if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+} else {
+    app = getApp();
+}
 const db = getFirestore(app);
 try {
   // @ts-ignore
@@ -164,7 +169,7 @@ const App = () => {
   };
   
   return (
-    <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")}>
+    <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")} suppressHydrationWarning>
       <Sidebar onNavigate={setCurrentSectionId} currentSectionId={currentSectionId} />
       <main className={cn("flex-1 overflow-auto p-6", isMobile ? "p-4" : "")}>
         <Suspense fallback={<div className="text-center">Carregando Módulo...</div>}>
