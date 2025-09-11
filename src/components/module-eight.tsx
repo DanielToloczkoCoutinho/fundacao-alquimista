@@ -82,7 +82,7 @@ const ModuleEight: React.FC = () => {
         
         setTimeout(() => {
              const coherence = 0.85 + Math.random() * 0.14; // Between 85% and 99%
-             const status = coherence > 0.92 ? 'COHERENT' : 'DISSONANT';
+             const status = coherence > 0.90 ? 'COHERENT' : 'DISSONANT';
              setLastCoherence(coherence);
              addHistory({
                 coherence,
