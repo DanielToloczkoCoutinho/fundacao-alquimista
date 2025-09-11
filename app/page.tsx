@@ -7,6 +7,7 @@ import { getFirestore, collection, getDocs, doc, setDoc, writeBatch } from "fire
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFunctions, httpsCallable } from "firebase/functions";
 import { cn } from "@/lib/utils";
+import ConsolePage from "./console/page";
 
 
 // --- Configuração do Firebase ---
@@ -95,83 +96,6 @@ const Sidebar = ({ onNavigate }: { onNavigate: (content: string) => void }) => (
     ))}
   </nav>
 );
-
-const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
-  const [activeTab, setActiveTab] = useState("overview");
-  const [executionState, setExecutionState] = useState<{ [key: string]: { result: string; params: { [key: string]: number } } }>({});
-
-  const executeEquation = async (equacao: EquacaoViva) => {
-    const params = executionState[equacao.id]?.params || {};
-    const executeFunc = httpsCallable(functions, "executeEquation");
-    try {
-      setExecutionState(prev => ({ ...prev, [equacao.id]: { ...prev[equacao.id], result: "Executando..." } }));
-      const response = await executeFunc({ id: equacao.id, params });
-      setExecutionState(prev => ({ ...prev, [equacao.id]: { ...prev[equacao.id], result: `Resultado: ${response.data.result}` } }));
-    } catch (error) {
-      console.error("Erro na execução:", error);
-      setExecutionState(prev => ({ ...prev, [equacao.id]: { ...prev[equacao.id], result: "Erro na execução." } }));
-    }
-  };
-
-  const handleParamChange = (equacaoId: string, paramName: string, value: string) => {
-    const cleanParamName = paramName.split(" ")[0];
-    setExecutionState(prev => ({
-      ...prev,
-      [equacaoId]: {
-        ...prev[equacaoId],
-        params: {
-          ...prev[equacaoId]?.params,
-          [cleanParamName]: Number(value)
-        }
-      }
-    }));
-  };
-
-  return (
-    <div className="space-y-4 p-4 text-white">
-      <h1 className="text-3xl font-bold">Console da Fundação</h1>
-      <div className="border-b border-gray-700">
-        {["overview", "logs", "settings", "chave307"].map((tab) => (
-          <button key={tab} onClick={() => setActiveTab(tab)} className={`px-4 py-2 ${activeTab === tab ? "border-b-2 border-purple-500 text-white" : "text-gray-400 hover:text-white"}`}>
-            {tab === "overview" && "Visão Geral"}
-            {tab === "logs" && "Logs"}
-            {tab === "settings" && "Configurações"}
-            {tab === "chave307" && "Chave Mestra 307"}
-          </button>
-        ))}
-      </div>
-      {activeTab === "overview" && <div className="p-4 bg-gray-900/50 rounded">Status: Ativo. Todos os sistemas operacionais.</div>}
-      {activeTab === "logs" && <div className="p-4 bg-gray-900/50 rounded h-64 overflow-y-auto"><pre>...Log de eventos do sistema...</pre></div>}
-      {activeTab === "settings" && <div className="p-4 bg-gray-900/50 rounded"><input placeholder="Parâmetro" className="p-2 rounded bg-gray-800 text-white w-full" /></div>}
-      {activeTab === "chave307" && (
-        <div className="p-4 bg-gray-900/50 rounded space-y-4 h-[70vh] overflow-y-auto">
-          {equacoes.length > 0 ? equacoes.map((equacao) => (
-            <div key={equacao.id} className="p-3 border rounded border-gray-700 hover:bg-gray-800/50 transition-colors">
-              <h3 className="font-bold text-purple-300">{equacao.nome}</h3>
-              <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
-              <p className="text-sm text-gray-400">{equacao.descricao}</p>
-              <div className="mt-4 space-y-2">
-                {(equacao.variaveis || []).map(varName => (
-                  <input
-                    key={varName}
-                    type="number"
-                    placeholder={varName}
-                    onChange={(e) => handleParamChange(equacao.id, varName, e.target.value)}
-                    className="p-1 mr-2 rounded bg-gray-700 text-white w-48"
-                  />
-                ))}
-                <button onClick={() => executeEquation(equacao)} className="px-3 py-1 bg-blue-600 rounded hover:bg-blue-700">
-                  Executar
-                </button>
-                {executionState[equacao.id]?.result && <p className="mt-2 text-sm text-amber-300">{executionState[equacao.id].result}</p>}
-              </div>
-            </div>
-          )) : <p>Nenhuma equação encontrada para a Chave Mestra 307.</p>}
-        </div>
-      )}
-    </div>
-  );
-};
 
 const KeyViewer = ({ chaves, equacoes }: { chaves: ChaveMestra[]; equacoes: EquacaoViva[] }) => {
     const [activeKey, setActiveKey] = useState<string | null>(chaves.length > 0 ? chaves[0].id : null);
@@ -339,40 +263,26 @@ const App = () => {
       
     fetchData();
 
-    /*
-    // Lógica de autenticação original - temporariamente desativada
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      setLoading(false);
-      if (currentUser) {
-        fetchData();
-      }
-    });
-    return () => unsubscribe();
-    */
   }, []);
 
   if (loading) {
     return <div className="w-full h-screen flex items-center justify-center cosmic-bg text-white">Carregando Fundação...</div>;
   }
   
-  // if (!user) {
-  //   return <LoginScreen />;
-  // }
 
   return (
     <div className={cn("flex h-screen text-white", "cosmic-bg")}>
       <Sidebar onNavigate={setCurrentContent} />
-      <main className="flex-1 p-8 overflow-auto">
+      <main className="flex-1 overflow-auto">
         {currentContent === "Home" && (
-            <div>
+            <div className="p-8">
                  <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
                  <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
                  <p className="text-amber-400 mt-4 text-sm">Aviso: A autenticação está temporariamente desativada para acesso direto ao Códice.</p>
                  <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
             </div>
         )}
-        {currentContent === "Console" && <Console equacoes={equacoes} />}
+        {currentContent === "Console" && <ConsolePage />}
         {currentContent === "ChavesMestras" && <KeyViewer chaves={chaves} equacoes={equacoes}/>}
       </main>
     </div>
