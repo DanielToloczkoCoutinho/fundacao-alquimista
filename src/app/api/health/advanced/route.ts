@@ -1,6 +1,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { execSync } from 'child_process';
+import { quantumResilience } from '@/lib/quantum-resilience';
 
 // Mock implementations as the original files are removed
 const cosmicCache = {
@@ -20,15 +21,20 @@ export async function GET(request: NextRequest) {
     components: {},
   };
 
-  // Verificar conexão com cache cósmico
-  try {
-    cosmicCache.set('health_check', { test: true }, 5000);
-    const testValue = cosmicCache.get('health_check');
-    healthReport.components.cosmic_cache = testValue ? 'healthy' : 'degraded';
-  } catch (error: any) {
-    healthReport.components.cosmic_cache = 'unhealthy';
-    healthReport.cache_error = error.message;
-  }
+  // Verificar conexão com cache cósmico com resiliência
+  await quantumResilience.executeWithResilience(
+    'cosmic_cache_check',
+    async () => {
+        cosmicCache.set('health_check', { test: true }, 5000);
+        const testValue = cosmicCache.get('health_check');
+        healthReport.components.cosmic_cache = testValue ? 'healthy' : 'degraded';
+    },
+    async () => { // Fallback
+        healthReport.components.cosmic_cache = 'unhealthy';
+        healthReport.cache_error = 'Fallback: Cache operation failed.';
+    }
+  );
+
 
   // Verificar outros componentes do sistema
   healthReport.components.database = 'healthy'; // Simulado
@@ -62,4 +68,3 @@ export async function GET(request: NextRequest) {
     status: unhealthyComponents.length > 0 ? 503 : 200, // Service Unavailable se estiver em processo de cura
   });
 }
-
