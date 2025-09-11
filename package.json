@@ -12,7 +12,9 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
-    "test:e2e": "playwright test"
+    "test:unit": "vitest",
+    "test:e2e": "playwright test",
+    "security-scan": "npm audit"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
