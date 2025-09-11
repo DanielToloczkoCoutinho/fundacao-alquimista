@@ -4,18 +4,11 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cdnOptimizer } from '@/lib/cdn-optimizer';
-import { simulateCosmicEnergy } from '@/lib/advanced-metrics';
 import ErrorBoundary from '@/components/ui/error-boundary';
 import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
 import { Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
-import { startAutoHealer } from '@/lib/auto-healing';
-
-// This needs to be outside the component to avoid being tree-shaken in client components.
-if (process.env.NODE_ENV === 'production') {
-  simulateCosmicEnergy();
-  startAutoHealer();
-}
+import ServerSideInitializers from '@/components/server-side-initializers';
 
 export const metadata: Metadata = {
   title: "Alchemist's Codex",
@@ -53,6 +46,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
          <ErrorBoundary fallback={<CosmicErrorFallback />}>
           <Suspense fallback={<SuspenseFallback />}>
+            <ServerSideInitializers />
             {children}
             <Toaster />
           </Suspense>

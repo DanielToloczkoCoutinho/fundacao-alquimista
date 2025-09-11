@@ -1,5 +1,4 @@
 // @ts-nocheck
-'use client';
 import { logger } from './logger';
 import { cosmicEnergyGauge } from './advanced-metrics';
 
@@ -8,8 +7,8 @@ export class AutoHealer {
 
   async checkAndHeal() {
     // This value is a mock and will be between 0 and 100
-    const value = (cosmicEnergyGauge.get() as any).values?.[0]?.value;
-
+    const value = (await cosmicEnergyGauge.get()).values?.[0]?.value;
+    
     if (value === undefined) return;
     
     if (value < this.thresholds.energy) {
