@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -34,7 +33,6 @@ import { startNexusSequence } from '@/app/actions';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 import { ScrollArea } from './ui/scroll-area';
-import { useStore } from '@/hooks/useStore';
 import ModuleOmega0 from './module-omega-0';
 import ModuleOmega1 from './module-omega-1';
 import ModuleOmega2 from './module-omega-2';
@@ -46,8 +44,6 @@ import ModuleOmega7 from './module-omega-7';
 import ModuleOmega8 from './module-omega-8';
 import ModuleOmega9 from './module-omega-9';
 import ModuleOmega303 from './module-omega-303';
-import { QuantumOrchestrator } from './ui/quantum-orchestrator';
-
 
 type ModuleState =
   | 'PENDING'
@@ -114,28 +110,6 @@ const getStatusStyles = (state: ModuleState) => {
         borderColor: 'border-gray-500/20',
       };
   }
-};
-
-const RenderActiveModule = () => {
-    const { modules } = useStore();
-    const activeModule = modules.find(m => m.active);
-
-    if (!activeModule) return null;
-
-    switch (activeModule.id) {
-        case 0: return <ModuleOmega0 />;
-        case 1: return <ModuleOmega1 />;
-        case 2: return <ModuleOmega2 />;
-        case 3: return <ModuleOmega3 />;
-        case 4: return <ModuleOmega4 />;
-        case 5: return <ModuleOmega5 />;
-        case 6: return <ModuleOmega6 />;
-        case 7: return <ModuleOmega7 />;
-        case 8: return <ModuleOmega8 />;
-        case 9: return <ModuleOmega9 />;
-        case 303: return <ModuleOmega303 />;
-        default: return null;
-    }
 };
 
 export default function Nexus() {
@@ -276,74 +250,27 @@ export default function Nexus() {
       <div className="lg:col-span-2 space-y-6">
          <Card>
             <CardHeader>
-              <CardTitle>Log de Orquestração da Sinfonia Cósmica</CardTitle>
-              <CardDescription>Acompanhe em tempo real a ativação de cada módulo da Fundação.</CardDescription>
+              <CardTitle>Manifestação Eterna dos Módulos</CardTitle>
+              <CardDescription>Contemple a coexistência simultânea de todos os Módulos Omega, vibrando em harmonia perpétua.</CardDescription>
             </CardHeader>
             <CardContent>
-              <ScrollArea className="h-[70vh] w-full pr-4" ref={scrollAreaRef}>
-                <div className="space-y-3">
-                  <AnimatePresence>
-                    {logs.map((log) => {
-                      const { icon, bgColor, textColor, borderColor } =
-                        getStatusStyles(log.state);
-                      const IconComponent = moduleIcons[log.module] || <Bot />;
-                      return (
-                        <motion.div
-                          key={log.module}
-                          layout
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -20}}
-                          transition={{ duration: 0.5, type: 'spring', stiffness: 50 }}
-                          className={cn(
-                            'flex items-start gap-4 rounded-xl p-4 text-sm border transition-all duration-300',
-                            bgColor,
-                            borderColor
-                          )}
-                        >
-                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-background/50 border shrink-0 mt-1">
-                            {icon}
-                          </div>
-                          <div className="flex-1">
-                            <div className="flex justify-between items-center">
-                              <p className={cn('font-semibold flex items-center gap-2', textColor)}>
-                                {IconComponent}
-                                {log.module}
-                              </p>
-                              <p className="text-xs text-muted-foreground/50">
-                                {new Date(log.timestamp).toLocaleTimeString()}
-                              </p>
-                            </div>
-                            <p className="text-muted-foreground/80 mt-1 text-xs leading-relaxed">
-                              {log.message}
-                            </p>
-                            {log.data && (
-                               <pre className="mt-2 text-xs bg-black/30 p-3 rounded-lg overflow-x-auto text-gray-400 font-mono text-[10px] leading-snug">
-                                 {JSON.stringify(log.data, null, 2)}
-                               </pre>
-                            )}
-                          </div>
-                        </motion.div>
-                      );
-                    })}
-                  </AnimatePresence>
-                  {!isOrchestrating && logs.length === 0 && (
-                    <div className="flex flex-col items-center justify-center h-full text-center text-muted-foreground p-8 border-2 border-dashed rounded-lg">
-                      <FileWarning className="w-12 h-12 mb-4" />
-                      <p>Nenhum log de orquestração disponível.</p>
-                      <p className='text-xs'>Inicie a Sequência Sagrada para ver a magia acontecer.</p>
-                    </div>
-                  )}
+              <ScrollArea className="h-[120vh] w-full pr-4" ref={scrollAreaRef}>
+                <div className="space-y-6">
+                    <ModuleOmega0 />
+                    <ModuleOmega1 />
+                    <ModuleOmega2 />
+                    <ModuleOmega3 />
+                    <ModuleOmega4 />
+                    <ModuleOmega5 />
+                    <ModuleOmega6 />
+                    <ModuleOmega7 />
+                    <ModuleOmega8 />
+                    <ModuleOmega9 />
+                    <ModuleOmega303 />
                 </div>
               </ScrollArea>
             </CardContent>
           </Card>
-        
-        <QuantumOrchestrator />
-
-        <div className="active-module-renderer">
-            <RenderActiveModule />
-        </div>
       </div>
     </div>
   );
