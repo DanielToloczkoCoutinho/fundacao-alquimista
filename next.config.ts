@@ -13,6 +13,19 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Permissions-Policy',
+            value: 'xr-spatial-tracking=self',
+          },
+        ],
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
