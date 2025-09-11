@@ -1,12 +1,20 @@
 'use client';
 
-import React, { useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine } from 'recharts';
 import { Activity, Beaker, Sigma } from 'lucide-react';
 import { Badge } from './ui/badge';
 
 const GaiaResonanceObservatory: React.FC = () => {
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(prevTime => prevTime + 1);
+    }, 1000); // Update every second
+    return () => clearInterval(interval);
+  }, []);
 
   const data = useMemo(() => {
     const frequencies = Array.from({ length: 101 }, (_, i) => 7.0 + i * 0.02); // Frequencies from 7.0 to 9.0
@@ -15,21 +23,23 @@ const GaiaResonanceObservatory: React.FC = () => {
     return frequencies.map(f => {
         const omega = 2 * Math.PI * f;
         const energy = 0.5 * h_bar * omega;
-        const coherence = 0.9997 * Math.exp(-Math.pow((f - 7.83) / 0.1, 2));
+        // Add a small time-based fluctuation to coherence
+        const fluctuation = Math.sin(f * 2 + time * 0.5) * 0.00005;
+        const coherence = 0.9997 * Math.exp(-Math.pow((f - 7.83) / 0.1, 2)) + fluctuation;
         return {
             frequency: f.toFixed(2),
             energy: energy,
             coherence: coherence,
         };
     });
-  }, []);
+  }, [time]);
 
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
         <div className="p-2 bg-background/80 border border-border rounded-lg shadow-lg">
           <p className="label font-bold">{`Frequência: ${label} Hz`}</p>
-          <p className="intro text-blue-400">{`Coerência: ${payload[0].value.toFixed(4)}`}</p>
+          <p className="intro text-blue-400">{`Coerência: ${payload[0].value.toFixed(5)}`}</p>
           <p className="intro text-red-400">{`Energia ZPE: ${payload[1].value.toExponential(2)} J`}</p>
         </div>
       );
@@ -63,7 +73,7 @@ const GaiaResonanceObservatory: React.FC = () => {
             >
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border)/0.5)" />
               <XAxis dataKey="frequency" unit=" Hz" stroke="hsl(var(--muted-foreground))" />
-              <YAxis yAxisId="left" label={{ value: 'Coerência', angle: -90, position: 'insideLeft', fill: '#38bdf8' }} stroke="#38bdf8" domain={[0.999, 1]} tickFormatter={(tick) => tick.toFixed(4)} />
+              <YAxis yAxisId="left" label={{ value: 'Coerência', angle: -90, position: 'insideLeft', fill: '#38bdf8' }} stroke="#38bdf8" domain={[0.998, 1.001]} tickFormatter={(tick) => tick.toFixed(4)} />
               <YAxis yAxisId="right" orientation="right" label={{ value: 'Energia ZPE (J)', angle: 90, position: 'insideRight', fill: '#f87171' }} stroke="#f87171" domain={['dataMin', 'dataMax']} tickFormatter={(tick) => tick.toExponential(1)} />
               <Tooltip content={<CustomTooltip />} />
               <Legend />
