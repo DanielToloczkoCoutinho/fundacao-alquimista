@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { livingEquations } from '../src/lib/equations-data';
-import { pineconeIndex } from '../src/ai/vector-store';
+import { getPineconeIndex } from '../src/ai/vector-store';
 import { ai } from '../src/ai/genkit';
 
 async function generateEmbedding(text: string): Promise<number[]> {
@@ -13,6 +13,7 @@ async function generateEmbedding(text: string): Promise<number[]> {
 
 async function populate() {
   console.log('Iniciando a povoação do Vector Store...');
+  const pineconeIndex = await getPineconeIndex();
 
   for (const eq of livingEquations) {
     const textToEmbed = `ID: ${eq.id}, Título: ${eq.titulo}, Descrição: ${eq.descricao}, Classificação: ${eq.classificacao}, Disciplinas: ${eq.disciplinas.join(', ')}`;

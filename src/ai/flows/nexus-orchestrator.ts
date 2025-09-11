@@ -8,7 +8,7 @@
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 import {createHash} from 'crypto';
-import { pineconeIndex } from '../vector-store';
+import { getPineconeIndex } from '../vector-store';
 import { advancedLogger } from '../../lib/advanced-logger';
 
 const logger = advancedLogger;
@@ -512,6 +512,7 @@ export async function runNexusSequence() {
 }
 
 export async function adaptiveOrchestrator(query: string, previousResults: any[]) {
+  const pineconeIndex = await getPineconeIndex();
   // Embed query e busca padrões semelhantes
   const queryEmbedding = await generateEmbedding(query);
   const similarPatterns = await pineconeIndex.query({

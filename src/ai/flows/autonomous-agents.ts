@@ -6,7 +6,7 @@
  */
 
 import {ai} from '@/ai/genkit';
-import {pineconeIndex} from '../vector-store';
+import { getPineconeIndex } from '../vector-store';
 import {z} from 'zod';
 
 async function generateEmbedding(text: string): Promise<number[]> {
@@ -33,6 +33,7 @@ async function synthesizeResults(query: string, results: any): Promise<string> {
 export async function researchAgent(query: string) {
   // 1. Embed the query
   const queryEmbedding = await generateEmbedding(query);
+  const pineconeIndex = await getPineconeIndex();
 
   // 2. Search Pinecone
   const results = await pineconeIndex.query({
