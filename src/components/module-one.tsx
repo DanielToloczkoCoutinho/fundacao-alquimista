@@ -5,7 +5,6 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Progress } from './ui/progress';
 import { cn } from '@/lib/utils';
-import * as math from 'mathjs';
 
 // --- CONSTANTES FUNDAMENTAIS (Traduzidas do Python) ---
 const FREQ_ANATHERON_ESTABILIZADORA = 432.0; // Frequência de Cura e Estabilização
@@ -18,7 +17,7 @@ type SistemaEstado = 'INICIANDO' | 'ATIVO' | 'ALERTA' | 'EMERGENCIA' | 'RECALIBR
 
 type LogEntry = {
   timestamp: string;
-  level: 'INFO' | 'AVISO' | 'ALERTA' | 'CRITICO' | 'ERRO';
+  level: 'INFO' | 'AVISO' | 'ALERTA' | 'CRITICO' | 'ERRO' | 'SUCESSO';
   message: string;
 };
 
@@ -71,15 +70,8 @@ export default function ModuleOne() {
   }, [addLog]);
 
   const _calcularScorePazUniversal = useCallback((coherenceAvg: number, entanglementAvg: number): number => {
-      // Simulação simplificada da EQ0040 com base nos dados disponíveis
-      const fu = 1.0; // Fonte/Unidade
-      const cc = coherenceAvg;
-      const h = entanglementAvg; // Harmonia
-      const r = (coherenceAvg + entanglementAvg) / 2; // Ressonância
-      const e = 1.0; // Equilíbrio
-      
-      const pu = fu * cc * h * r * e;
-      const score = Math.min(1.0, pu);
+      // Simulação simplificada da EQ0040
+      const score = Math.min(1.0, (coherenceAvg + entanglementAvg) / 2 * 1.05);
       addLog('INFO', `Score de Paz Universal (EQ0040) calculado: ${score.toFixed(4)}`);
       return score;
   }, [addLog]);
@@ -90,16 +82,11 @@ export default function ModuleOne() {
 
     const coherenceAvg = quantumStates.reduce((acc, s) => acc + s.coherence, 0) / (quantumStates.length);
     const entanglementAvg = quantumStates.reduce((acc, s) => acc + s.entanglement, 0) / (quantumStates.length);
-    const PHI = 1.618;
     
-    // Normalização logarítmica simulada para a energia
-    const rawEnergy = (coherenceAvg * entanglementAvg * PHI) * 1000000; // Simula uma energia alta
-    const normalizedEnergy = math.log1p(rawEnergy) / math.log1p(100000000.0);
-
     const scorePaz = _calcularScorePazUniversal(coherenceAvg, entanglementAvg);
 
-    // O nível de segurança agora é uma combinação da energia normalizada e da paz universal
-    const newNivel = (normalizedEnergy * 0.6 + scorePaz * 0.4) * 100;
+    // O nível de segurança agora é uma combinação da coerência e da paz universal
+    const newNivel = ((coherenceAvg + entanglementAvg) / 2 * 0.6 + scorePaz * 0.4) * 100;
 
     setNivelSeguranca(Math.min(100, newNivel));
 
@@ -122,8 +109,8 @@ export default function ModuleOne() {
     }, 1500);
 
     setTimeout(() => {
-        addLog('INFO', 'Ameaça neutralizada. Culminação no Módulo Ω para registro akáshico final.');
-        addLog('SUCESSO', 'Sistema retornando ao estado normal. Harmonia restaurada.');
+        addLog('SUCESSO', 'Ameaça neutralizada. Culminação no Módulo Ω para registro akáshico final.');
+        addLog('INFO', 'Sistema retornando ao estado normal. Harmonia restaurada.');
         setEstado('ATIVO');
     }, 5000);
   };
@@ -215,7 +202,8 @@ export default function ModuleOne() {
                           log.level === 'CRITICO' ? 'text-red-400' :
                           log.level === 'ALERTA' ? 'text-yellow-400' :
                           log.level === 'AVISO' ? 'text-orange-400' :
-                          log.level === 'ERRO' ? 'text-red-500' : 'text-gray-300'
+                          log.level === 'ERRO' ? 'text-red-500' : 
+                          log.level === 'SUCESSO' ? 'text-green-400' : 'text-gray-300'
                         )}>
                            <span className="text-gray-500">{log.timestamp}</span> [{log.level}] {log.message}
                         </p>
