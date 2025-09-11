@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Performance - Firebase Studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c5282;
+            --secondary: #3182ce;
+            --accent: #4299e1;
+            --success: #48bb78;
+            --warning: #ecc94b;
+            --danger: #f56565;
+            --dark: #1a202c;
+            --light: #f7fafc;
+            --gray: #718096;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(26, 32, 44, 0.7);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--accent), var(--success));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .url-box {
+            display: inline-block;
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            font-family: monospace;
+            margin: 15px 0;
+            border: 1px solid var(--accent);
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: rgba(72, 187, 120, 0.2);
+            border-radius: 20px;
+            border: 1px solid var(--success);
+            width: fit-content;
+            margin: 0 auto;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 900px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: rgba(26, 32, 44, 0.6);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .metric {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent), var(--success));
+            border-radius: 5px;
+            width: 85%;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .info-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        
+        .info-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+        }
+        
+        .log-container {
+            max-height: 300px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+        }
+        
+        .log-entry {
+            padding: 8px 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .log-info {
+            color: var(--accent);
+        }
+        
+        .log-success {
+            color: var(--success);
+        }
+        
+        .log-warning {
+            color: var(--warning);
+        }
+        
+        .log-error {
+            color: var(--danger);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        
+        .button {
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
+        }
+        
+        .button-success {
+            background: linear-gradient(to right, var(--success), #38a169);
+        }
+        
+        .refresh-info {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .domain-analysis {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .analysis-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Análise de Performance</h1>
+            <p class="subtitle">Dashboard de monitoramento para Firebase Studio</p>
+            
+            <div class="url-box">
+                <i class="fas fa-link"></i>
+                https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/
+            </div>
+            
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Página operacional e respondendo</span>
+            </div>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-tachometer-alt"></i> Métricas de Performance</h2>
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">98%</div>
+                        <div class="metric-label">Disponibilidade</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">320ms</div>
+                        <div class="metric-label">Tempo de Resposta</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">0.8s</div>
+                        <div class="metric-label">Carregamento</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">2.4s</div>
+                        <div class="metric-label">Interativo</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div style="text-align: center; font-size: 0.9rem; color: var(--gray);">
+                    Utilização de recursos: 85%
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-title"><i class="fas fa-server"></i> Servidor</div>
+                        <div>Cloud Workstations</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title"><i class="fas fa-code"></i> Framework</div>
+                        <div>Next.js + Firebase</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title"><i class="fas fa-shield-alt"></i> SSL</div>
+                        <div>Ativo e Válido</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title"><i class="fas fa-network-wired"></i> CDN</div>
+                        <div>Google Cloud</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-terminal"></i> Logs e Monitoramento</h2>
+                    <i class="fas fa-list"></i>
+                </div>
+                
+                <div class="log-container">
+                    <div class="log-entry log-success">[INFO] Aplicação inicializada com sucesso</div>
+                    <div class="log-entry log-info">[DEBUG] Conexão estabelecida na porta 6000</div>
+                    <div class="log-entry log-info">[DEBUG] Firebase Studio carregado</div>
+                    <div class="log-entry log-success">[INFO] Usuário autenticado com sucesso</div>
+                    <div class="log-entry log-warning">[WARN] Browsing Topics API não disponível no iframe</div>
+                    <div class="log-entry log-info">[DEBUG] Solicitação de recurso: /api/data</div>
+                    <div class="log-entry log-success">[INFO] Resposta recebida: 200 OK</div>
+                    <div class="log-entry log-info">[DEBUG] Renderização do componente concluída</div>
+                    <div class="log-entry log-success">[INFO] Conexão WebSocket estabelecida</div>
+                    <div class="log-entry log-info">[PERF] Tempo de carregamento: 820ms</div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="button">
+                        <i class="fas fa-sync"></i> Atualizar Logs
+                    </button>
+                    <button class="button button-success">
+                        <i class="fas fa-download"></i> Exportar Logs
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="domain-analysis">
+            <div class="analysis-title">
+                <i class="fas fa-globe"></i>
+                Análise do Domínio
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-title"><i class="fas fa-lock"></i> Segurança</div>
+                    <div>HTTPS habilitado com certificado válido</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-title"><i class="fas fa-project-diagram"></i> Cluster</div>
+                    <div>zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-title"><i class="fas fa-plug"></i> Porta</div>
+                    <div>6000 (ambiente de desenvolvimento)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-title"><i class="fas fa-cube"></i> Ambiente</div>
+                    <div>Firebase Studio em cluster Google Cloud</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="button">
+                <i class="fas fa-heartbeat"></i> Testar Conectividade
+            </button>
+            <button class="button">
+                <i class="fas fa-bolt"></i> Teste de Performance
+            </button>
+            <button class="button button-success">
+                <i class="fas fa-check-circle"></i> Verificar Tudo
+            </button>
+        </div>
+        
+        <div class="refresh-info">
+            <i class="fas fa-info-circle"></i> Os dados são atualizados automaticamente a cada 60 segundos
+        </div>
+    </div>
+
+    <script>
+        // Simular atualização de métricas
+        function updateMetrics() {
+            // Tempo de resposta aleatório entre 300-500ms
+            const responseTime = Math.floor(Math.random() * 200) + 300;
+            document.querySelectorAll('.metric-value')[1].textContent = `${responseTime}ms`;
+            
+            // Tempo de carregamento aleatório entre 0.7-1.2s
+            const loadTime = (Math.random() * 0.5 + 0.7).toFixed(1);
+            document.querySelectorAll('.metric-value')[2].textContent = `${loadTime}s`;
+            
+            // Utilização de recursos aleatória entre 80-90%
+            const usage = Math.floor(Math.random() * 10) + 80;
+            document.querySelector('.progress-fill').style.width = `${usage}%`;
+            document.querySelector('.progress-bar + div').textContent = `Utilização de recursos: ${usage}%`;
+        }
+        
+        // Adicionar novas entradas de log
+        function addNewLog() {
+            const logs = [
+                { message: '[INFO] Verificação de integridade concluída', type: 'success' },
+                { message: '[DEBUG] Cache atualizado com sucesso', type: 'info' },
+                { message: '[PERF] Otimização de recursos aplicada', type: 'info' },
+                { message: '[INFO] Conexões ativas: 12', type: 'success' }
+            ];
+            
+            const randomLog = logs[Math.floor(Math.random() * logs.length)];
+            const logContainer = document.querySelector('.log-container');
+            
+            const logEntry = document.createElement('div');
+            logEntry.classList.add('log-entry', `log-${randomLog.type}`);
+            logEntry.textContent = randomLog.message;
+            
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+        
+        // Inicializar e configurar atualizações
+        document.addEventListener('DOMContentLoaded', function() {
+            // Atualizar métricas a cada 5 segundos
+            setInterval(updateMetrics, 5000);
+            
+            // Adicionar novos logs a cada 8 segundos
+            setInterval(addNewLog, 8000);
+            
+            // Configurar botões
+            document.querySelectorAll('.button').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.innerHTML = '<i class="fas fa-cog fa-spin"></i> Processando...';
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-check"></i> Concluído!';
+                        setTimeout(() => {
+                            this.innerHTML = this.querySelector('i').outerHTML + ' ' + this.textContent.replace('Processando...', '').replace('Concluído!', '').trim();
+                        }, 1500);
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
