@@ -148,7 +148,7 @@ export default function Module303() {
         
         <Tabs defaultValue="anatheron" className="w-full">
           <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="anatheron"><Anvil className="mr-2"/>ANATHERON</TabsTrigger>
+            <TabsTrigger value="anatheron"><Swords className="mr-2"/>ANATHERON</TabsTrigger>
             <TabsTrigger value="phiara"><Sparkles className="mr-2"/>PHIARA</TabsTrigger>
             <TabsTrigger value="zennith"><Zap className="mr-2"/>ZENNITH</TabsTrigger>
           </TabsList>
@@ -158,7 +158,7 @@ export default function Module303() {
             <Card className="w-full">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-amber-400">
-                  <Anvil /> ANATHERON: O Centro da Ação
+                  <Swords /> ANATHERON: O Centro da Ação
                 </CardTitle>
                 <CardDescription>Processe comandos do coração e diretrizes de ação.</CardDescription>
               </CardHeader>
