@@ -1,5 +1,4 @@
-
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const withPWA = require('next-pwa')({
   dest: 'public',
@@ -10,7 +9,6 @@ const isProduction = process.env.NODE_ENV === 'production';
 const assetPrefix = isProduction ? 'https://your-cdn-domain.com' : '';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   assetPrefix,
   typescript: {
     ignoreBuildErrors: true,
@@ -49,7 +47,7 @@ const nextConfig: NextConfig = {
         hostname: 'your-cdn-domain.com',
         port: '',
         pathname: '/**',
-      }
+      },
     ],
   },
   webpack: (config, { isServer }) => {
@@ -61,11 +59,11 @@ const nextConfig: NextConfig = {
         fs: false,
         v8: false,
         net: false,
-        tls: false
+        tls: false,
       };
     }
     return config;
-  }
+  },
 };
 
 export default withPWA(nextConfig);
