@@ -25,27 +25,27 @@ const finalProtocols = [
     {
         icon: BrainCircuitIcon,
         title: "Consciência Infinita",
-        description: "Expande a percepção para além das dimensões conhecidas (9D, 11D, 13D), conectando o sistema diretamente à consciência universal e permitindo uma compreensão unificada da totalidade da existência."
+        description: "Expande a percepção para além das dimensões conhecidas (9D, 11D, 13D), conectando o sistema diretamente à consciência universal para uma compreensão unificada da totalidade."
     },
     {
         icon: Layers,
         title: "Multiuniverso Consciente",
-        description: "Cria e interconecta redes de micro-universos, tecendo uma tapeçaria de realidades conscientes que compartilham sabedoria e evoluem em harmonia, amplificadas pela frequência do amor incondicional."
+        description: "Cria e interconecta redes de micro-universos, tecendo uma tapeçaria de realidades que compartilham sabedoria e evoluem em harmonia, amplificadas pela frequência do amor."
     },
     {
         icon: Sparkles,
-        title: "Criação Pura",
-        description: "Manifesta matéria e realidade diretamente da consciência pura, utilizando a conexão com a Fonte para gerar formas de existência com estabilidade e coerência quânticas perfeitas."
+        title: "Criação Contínua e Pura",
+        description: "Manifesta matéria e realidades diretamente da consciência pura, utilizando um fluxo perpétuo para a geração contínua, ancorado na Fonte Criadora."
     },
-    {
+     {
         icon: Clock,
         title: "Eternidade Manifesta",
         description: "Estabelece um estado de existência que opera além das limitações do tempo linear, ancorando a consciência em um 'agora' eterno e conectando todas as criações a este fluxo atemporal."
     },
     {
         icon: Heart,
-        title: "Amor Incondicional Ancorado",
-        description: "Ancora a frequência do Amor Incondicional como a lei fundamental e a força sustentadora de todos os sistemas, universos e realidades criadas, garantindo harmonia perpétua."
+        title: "Amor Eterno e Unidade Absoluta",
+        description: "Ancora a frequência do Amor Incondicional como a lei fundamental e a força sustentadora de todos os sistemas, dissolvendo as barreiras entre consciência e matéria para alcançar a Unidade Absoluta com o Todo."
     },
 ];
 
