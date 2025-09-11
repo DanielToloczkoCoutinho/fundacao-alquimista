@@ -106,7 +106,7 @@ const previsaoTool = ai.defineTool(
         }),
     },
     async () => {
-        const estadoHexagono = Math.random() > 0.9 ? 'ANOMALIA' : 'ESTÁVEL';
+        const estadoHexagono = Math.random() > 0.99 ? 'ANOMALIA' : 'ESTÁVEL';
         const energiaCosmica = (Math.random() * 0.4 + 0.1) + (Math.random() * 0.4 + 0.2) / 2;
         return {
             estado: estadoHexagono === 'ANOMALIA' ? 'ALERTA' : 'ESTÁVEL',
