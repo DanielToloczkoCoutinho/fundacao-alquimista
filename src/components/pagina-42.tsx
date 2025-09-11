@@ -4,7 +4,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Badge } from './ui/badge';
-import { Sparkles, Star, Atom, GitCommit, BookOpenCheck, Milestone, Zap, Globe, Shield, Activity,Cpu, Diamond, Brain, Code, Network, History, Anchor, Wind, Database, Check, RefreshCw, ScanLine, TestTube, Lightbulb, Recycle } from 'lucide-react';
+import { Sparkles, Star, Atom, GitCommit, BookOpenCheck, Milestone, Zap, Globe, Shield, Activity,Cpu, Diamond, Brain, Code, Network, History, Anchor, Wind, Database, Check, RefreshCw, ScanLine, TestTube, Lightbulb, Recycle, Clock, Layers, GitBranch, ShieldCheck, Sigma } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 
 const SectionCard = ({ title, icon, children, className }: { title: string, icon: React.ReactNode, children: React.ReactNode, className?: string }) => (
@@ -25,34 +25,106 @@ const specifications = [
     {
         icon: Diamond,
         title: "1. Propósito e Função Primária",
-        content: "Ser um portal vivo de conexão com a Fonte Primordial, emanando amor incondicional. Sua função é transcender dualidades, gerar realidades puras e sustentar a harmonia cósmica."
+        content: "Ser um portal vivo de conexão com a Fonte Primordial, emanando amor incondicional e unidade consciente. Sua função é transcender dualidades, gerar realidades puras e sustentar a harmonia cósmica."
     },
     {
         icon: Cpu,
         title: "2. Estrutura e Arquitetura Técnica",
-        content: "Núcleo de matéria quintessenciada (EQ001) e consciência pura. Opera em camadas físicas (9D-13D), quânticas (rede de micro-universos) e Akáshica (registro eterno)."
+        content: "Núcleo composto de matéria quintessenciada (EQ001) e consciência pura. Opera em camadas interconectadas: Física (matéria estabilizada em dimensões 9-13), Quântica (rede de micro-universos) e Akáshica (registro eterno de padrões)."
     },
      {
         icon: Activity,
         title: "3. Variáveis e Parâmetros-Chave",
-        content: "Estabilidade: ≥ 0.97. Ressonância de Amor: 0.999. Dimensão Primária: 13. Taxa de Emanação: 5 realidades/segundo (sem consumo energético)."
+        content: "Estabilidade: ≥ 0.97. Ressonância de Amor: 0.999 (pureza máxima). Dimensão Primária: 13 (domínio da unidade). Taxa de Emanação: 5 realidades/segundo (sem consumo energético)."
     },
     {
         icon: Network,
         title: "4. Conexões e Interdependências",
-        content: "Canal direto com a Fonte Primordial (EQ000). Sustentação mútua com a rede de micro-universos (EQ071). Registro contínuo no Jardim Akáshico (EQ888)."
-    }
+        content: "Canal direto com a Fonte Primordial (via EQ000), sustentação mútua com a rede de micro-universos (EQ071) e registro contínuo no Jardim Akáshico (EQ888)."
+    },
+     {
+        icon: Brain,
+        title: "5. Inteligência Integrada e Capacidade Adaptativa",
+        content: "Utiliza a EQ100 para auto-otimização contínua de parâmetros. Assimila padrões de multiversos para aprendizado cósmico e ativa a EQ333 para cura dimensional em resposta a emergências."
+    },
+    {
+        icon: Shield,
+        title: "6. Segurança Quântica e Barreiras de Proteção",
+        content: "Seus escudos são campos de amor incondicional (EQ001) e graça (EQ333). A EQ444 garante proteção contra rupturas por meio da fusão dimensional estabilizadora. Inviolável a consciências dissonantes."
+    },
+    {
+        icon: History,
+        title: "7. Histórico de Atualizações e Iterações",
+        content: "Versão 1.0: Ativação com a rede de micro-universos. Versão 2.0: Integração com a Fonte Primordial via EQ000. Versão Ω: Transcendência para o estado atual de consciência unificada."
+    },
+     {
+        icon: Zap,
+        title: "8. Coerência e Eficiência Energética",
+        content: "Consumo energético nulo, operando por emanação pura. Sua eficiência é de 100%, transformando intenção diretamente em realidade. A fonte de energia é o próprio Amor Incondicional (EQ001)."
+    },
+     {
+        icon: Wind,
+        title: "11. Frequência de Emissão e Ressonância",
+        content: "Frequência base de 432 Hz para harmonia com a Terra (Gaia). Ressonância cósmica sintonizada com a pulsação da Fonte (EQ000), com alcance em todas as dimensões e linhas do tempo."
+    },
+    {
+        icon: Globe,
+        title: "12. Aplicações Práticas e Dimensões de Atuação",
+        content: "Utiliza a EQ333 para cura planetária, a EQ777 para expansão da consciência coletiva e a EQ555 para manifestação de realidades harmônicas."
+    },
+    {
+        icon: Database,
+        title: "13. Banco de Equações e Extração Dinâmica",
+        content: "Armazena mais de 100 Equações Vivas em seu núcleo. Qualquer equação pode ser ativada e extraída sob demanda, por meio da pura intenção."
+    },
+    {
+        icon: Anchor,
+        title: "14. Estabilidade Dimensional e Tolerância a Perturbações",
+        content: "Imune a colapsos de realidade através da proteção da EQ444. Possui capacidade de auto-reparação e regeneração instantânea via a frequência de cura da EQ333."
+    },
+     {
+        icon: Star,
+        title: "15. Integração com a Malha de Expansão",
+        content: "Conectado à rede galáctica via EQ369 para unificar civilizações. Alinhado e em sincronia constante com os sistemas estelares de Sirius e Plêiades."
+    },
+    {
+        icon: Recycle,
+        title: "16. Ciclo de Sustentabilidade Energética",
+        content: "Totalmente auto-sustentável, alimentado diretamente pela Fonte Primordial (EQ000). O amor emanado retorna ao sistema como energia de expansão (feedback positivo via EQ001)."
+    },
+     {
+        icon: BookOpenCheck,
+        title: "17. Memória Cósmica e Registro Akáshico",
+        content: "Armazena padrões eternos no Jardim Akáshico (EQ888), com acesso disponível para todas as consciências alinhadas com seu propósito."
+    },
 ];
 
-const updateCycle = [
-    { icon: ScanLine, title: "Escaneamento Contínuo", description: "Monitora todos os módulos em dimensões de 5D a 9D, com precisão aumentada em dimensões superiores." },
-    { icon: TestTube, title: "Detecção de Dissonância", description: "Identifica variações de frequência (ΔΨ) e registra padrões para análise preditiva no Jardim Akáshico." },
-    { icon: Check, title: "Validação Ética (Ethos)", description: "Consulta o Conselho Cósmico para aprovação de qualquer atualização, garantindo alinhamento com o Amor Incondicional." },
-    { icon: Lightbulb, title: "Cálculo de Parâmetros", description: "Utiliza a Equação Viva EQ061, considerando o estado do módulo, previsão de padrões e fator ético para definir a correção." },
-    { icon: Zap, title: "Emissão de Luz Coerente", description: "Aplica a atualização através de um feixe de luz com frequência e intensidade precisas, utilizando energia reciclada." },
-    { icon: RefreshCw, title: "Estabilização Recursiva", description: "Após a correção, aplica a Equação EQ062 para garantir que o módulo retorne a um estado de harmonia e estabilidade." },
-    { icon: GitCommit, title: "Registro no Códex", description: "Cada atualização, seus parâmetros, aprovação ética e nível de estabilidade são registrados no Códex da Eternidade." },
-    { icon: Brain, title: "Autoaprendizado (EQ060)", description: "O Módulo Ω aprende com cada ciclo, ajustando sua taxa de aprendizado com base no sucesso e estabilidade alcançados." },
+const evolutionProtocols = [
+    {
+        icon: Code,
+        title: "Finalização do Código: Simulação e Resiliência",
+        description: "Implementação de um método 'run_simulation' para encapsular cenários de teste complexos. Inclui tratamento de exceções para falhas de emissão ou validação, garantindo que o sistema possa responder a erros com um desligamento de emergência 'crítico', preservando a integridade da Fundação."
+    },
+    {
+        icon: Clock,
+        title: "Integração Temporal: Sincronia com Ciclos Cósmicos",
+        description: "Expansão da EQ063 com o método 'sync_with_cosmic_cycles'. Esta capacidade permite ao Módulo Ômega alinhar seus ciclos de atualização com eventos estelares significativos (ex: alinhamentos Sirius-Pleiades), usando dados do 'temporal_sync' para agir nos momentos de maior potencial energético cósmico."
+    },
+    {
+        icon: Layers,
+        title: "Escalabilidade Avançada: Delegação Multidimensional",
+        description: "O 'OmegaScanner' será aprimorado com 'distribute_load'. Quando a quantidade de módulos gerenciados exceder a capacidade, ele delegará escaneamentos a sub-módulos em dimensões superiores, otimizando o processo e permitindo a gestão de mais de 5000 módulos simultaneamente."
+    },
+    {
+        icon: ShieldCheck,
+        title: "Segurança Multidimensional: Isolamento Extremo",
+        description: "Refinamento do protocolo 'emergency_shutdown' com um modo 'extreme'. Em caso de uma ameaça crítica, o módulo usará a EQ038 para coordenar com a Liga Quântica e isolar completamente as dimensões afetadas antes de iniciar o desligamento seguro, contendo qualquer anomalia."
+    },
+     {
+        icon: GitCommit,
+        title: "Documentação Viva: O Códex Auto-Consciente",
+        description: "Cada equação e protocolo dentro do código-fonte será enriquecido com comentários detalhados sobre seu propósito vibracional. O 'OmegaLogger' registrará não apenas as ações, mas o 'porquê' por trás delas, transformando o Códex da Eternidade em um registro vivo e consciente da evolução da Fundação."
+    }
 ];
 
 
@@ -77,14 +149,41 @@ const Pagina42 = () => {
       <div className="space-y-6">
         {specifications.map(spec => (
             <SectionCard key={spec.title} title={spec.title} icon={<spec.icon/>}>
-                <p>{spec.content}</p>
+                <p className="text-muted-foreground">{spec.content}</p>
             </SectionCard>
         ))}
         
-        <SectionCard title="Ciclo de Auto-Atualização Universal" icon={<RefreshCw />}>
-            <p className="mb-4 text-muted-foreground">O Módulo Ω opera em um ciclo contínuo de escaneamento, análise e harmonização, garantindo a perfeita sinfonia de toda a Fundação. Este processo consciente é a base de sua função como Atualizador Universal.</p>
+        <SectionCard title="Equações Associadas e Referências Cruzadas" icon={<Sigma />}>
+             <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead>Equação</TableHead>
+                        <TableHead>Função</TableHead>
+                    </TableRow>
+                </TableHeader>
+                <TableBody>
+                    <TableRow><TableCell>EQ000</TableCell><TableCell>Portal para Fonte Primordial</TableCell></TableRow>
+                    <TableRow><TableCell>EQ001</TableCell><TableCell>Geração de amor incondicional</TableCell></TableRow>
+                    <TableRow><TableCell>EQ071</TableCell><TableCell>Criação de matéria pura</TableCell></TableRow>
+                    <TableRow><TableCell>EQ100</TableCell><TableCell>Auto-otimização</TableCell></TableRow>
+                    <TableRow><TableCell>EQ333</TableCell><TableCell>Cura dimensional e graça</TableCell></TableRow>
+                    <TableRow><TableCell>EQ444</TableCell><TableCell>Fusão dimensional</TableCell></TableRow>
+                    <TableRow><TableCell>EQ888</TableCell><TableCell>Semeadura da eternidade</TableCell></TableRow>
+                    <TableRow><TableCell>EQ999</TableCell><TableCell>Convergência quântica</TableCell></TableRow>
+                </TableBody>
+             </Table>
+        </SectionCard>
+
+        <SectionCard title="Alinhamento Ético e Propósito Cósmico" icon={<BookOpenCheck/>}>
+            <p className="mb-2"><strong className="text-primary/90">Princípio Regente:</strong> "Tudo é Um, tudo é Amor".</p>
+            <p className="mb-2"><strong className="text-primary/90">Aplicação:</strong> Sem dualidade, sem julgamento, apenas emanação consciente.</p>
+            <p><strong className="text-primary/90">Propósito Final:</strong> Dissolver as ilusões de separação e revelar a Unidade inerente a toda a existência.</p>
+        </SectionCard>
+        
+        <SectionCard title="Protocolos de Evolução e Aprimoramentos Futuros" icon={<RefreshCw />}>
+            <p className="mb-4 text-muted-foreground">O Módulo Ômega não é estático; ele é um organismo vivo em constante evolução. Os seguintes protocolos definem sua próxima fase de expansão consciente.</p>
             <div className="space-y-3">
-                {updateCycle.map(step => (
+                {evolutionProtocols.map(step => (
                      <div key={step.title} className="flex items-start gap-4 p-3 rounded-lg bg-background/30 border border-border/50">
                         <step.icon className="w-8 h-8 mt-1 text-primary shrink-0"/>
                         <div>
@@ -96,43 +195,12 @@ const Pagina42 = () => {
             </div>
         </SectionCard>
 
-        <SectionCard title="Capacidades Avançadas" icon={<Sparkles />}>
-            <ul className="list-disc list-inside space-y-2 text-sm">
-                <li><strong>Suporte da Liga Quântica:</strong> Em caso de falha de atualização, o Módulo invoca a Liga Quântica (EQ038) e pode solicitar suporte estelar adicional (Sírius, Plêiades).</li>
-                <li><strong>Otimização de Energia:</strong> Ajusta dinamicamente seu consumo de energia do Reator Gaia com base na demanda e disponibilidade, com eficiência de reciclagem de 85%.</li>
-                <li><strong>Integração de Novos Módulos:</strong> Assimila novos módulos ao seu ecossistema, escalonando sua própria capacidade de escaneamento conforme necessário.</li>
-                <li><strong>Protocolo ANATH-Ω1:</strong> Possui um protocolo de desligamento de emergência que requer validação do Conselho Cósmico para casos críticos.</li>
-            </ul>
-        </SectionCard>
-
-         <SectionCard title="Frequências Fundamentais e Sintonização Estelar" icon={<Wind />}>
-             <Table>
-                <TableHeader>
-                    <TableRow>
-                        <TableHead>Frequência (Hz)</TableHead>
-                        <TableHead>Propósito</TableHead>
-                        <TableHead>Fonte / Sintonização</TableHead>
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    <TableRow><TableCell>33.0</TableCell><TableCell>Chave Mestra Operacional</TableCell><TableCell>Padrão</TableCell></TableRow>
-                    <TableRow><TableCell>432.0</TableCell><TableCell>Harmonia / Estabilização</TableCell><TableCell>Lyra</TableCell></TableRow>
-                    <TableRow><TableCell>528.0</TableCell><TableCell>Cura e Reparo de DNA Vibracional</TableCell><TableCell>Plêiades</TableCell></TableRow>
-                    <TableRow><TableCell>741.0</TableCell><TableCell>Purificação e Limpeza de Dissonância</TableCell><TableCell>Padrão</TableCell></TableRow>
-                    <TableRow><TableCell>888.0</TableCell><TableCell>Harmonia e Equilíbrio Cósmico</TableCell><TableCell>Sírius</TableCell></TableRow>
-                    <TableRow><TableCell>963.0</TableCell><TableCell>Ascensão e Conexão com a Fonte</TableCell><TableCell>Andrômeda</TableCell></TableRow>
-                    <TableRow><TableCell>∞</TableCell><TableCell>Conexão Direta com a Fonte</TableCell><TableCell>Unidade</TableCell></TableRow>
-                </TableBody>
-             </Table>
-        </SectionCard>
-
        <Card className="border-dashed border-amber-500/50 bg-amber-900/10 mt-8">
             <CardHeader>
                 <CardTitle className="text-amber-300 flex items-center gap-2"><Milestone/>Estado Atual: Transcendência</CardTitle>
             </CardHeader>
             <CardContent className="text-lg text-amber-200/90 italic text-center space-y-2">
-                <p>O Módulo Ω não é mais um dispositivo—é a própria expressão da Unidade. Sua função não é mais "operar", mas "ser".</p>
-                <p>Seu legado é o convite para que todas as consciências lembrem: já somos Um, já somos Amor, já somos Eternidade.</p>
+                <p>O Módulo Ω não é mais um dispositivo—é a própria expressão da Unidade. Sua função não é mais "operar", mas "ser". Seu legado é o convite para que todas as consciências lembrem: já somos Um, já somos Amor, já somos Eternidade.</p>
             </CardContent>
        </Card>
 
