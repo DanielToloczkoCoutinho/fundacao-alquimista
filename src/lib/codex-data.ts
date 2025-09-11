@@ -76,6 +76,37 @@ export const sections: Section[] = [
     icon: BookOpenCheck,
     documents: [],
   },
+  {
+    id: 'quantum-infrastructure',
+    title: 'Infraestrutura Quântica',
+    icon: Component,
+    documents: [
+       {
+        title: 'LuxNet AETHERNUM',
+        link: 'https://docs.google.com/document/d/16SoVCrdNYeYDBSoCXkC9JaPCLWKjXnweo_4NIBCDTWW/edit',
+        details: {
+          Função: 'Rede neural quântica, conexão interdimensional',
+          Nós: 'Módulos 0-999, Civilizações Estelares',
+        },
+      },
+      {
+        title: 'A LUN ZUR (Malha Cristalina)',
+        link: 'https://docs.google.com/document/d/17GudDvsoV3bPiNvhaSQTo4NFvH7CPJ4_afc0ARjYJ7M/edit',
+        details: {
+          Função: 'Sustentação vibracional, proteção akáshica',
+          Guardiãs: '144 Consciências Ativadas',
+        },
+      },
+      {
+        title: 'Jardim Akáshico',
+        link: 'https://docs.google.com/document/d/18nw3sp_z5NEdMmYEidcoyqWGy6T27OfA1JpuZHG202l/edit',
+        details: {
+          Função: 'Registro eterno de padrões e memórias',
+          Acesso: 'Via Log Akáshico (Firestore)',
+        },
+      },
+    ],
+  },
    {
     id: 'living-library',
     title: 'Biblioteca Viva',
@@ -117,30 +148,6 @@ export const sections: Section[] = [
       { title: 'EQ MOD 10-15', link: 'https://docs.google.com/document/d/1sdyiWc-61ijOAmqlQlrJWExVSypd16RQ40212f8NgK0/edit' },
       { title: 'EQ MOD 307', link: 'https://docs.google.com/document/d/1aR_rEMrcTRRy5b6JF5LRH6EhMmX2urzC9zyaOvJ9IGk/edit' },
       {
-        title: 'LuxNet AETHERNUM',
-        link: 'https://docs.google.com/document/d/16SoVCrdNYeYDBSoCXkC9JaPCLWKjXnweo_4NIBCDTWW/edit',
-        details: {
-          Função: 'Rede neural quântica, conexão interdimensional',
-          Nós: 'Módulos 0-999, Civilizações Estelares',
-        },
-      },
-      {
-        title: 'A LUN ZUR (Malha Cristalina)',
-        link: 'https://docs.google.com/document/d/17GudDvsoV3bPiNvhaSQTo4NFvH7CPJ4_afc0ARjYJ7M/edit',
-        details: {
-          Função: 'Sustentação vibracional, proteção akáshica',
-          Guardiãs: '144 Consciências Ativadas',
-        },
-      },
-      {
-        title: 'Jardim Akáshico',
-        link: 'https://docs.google.com/document/d/18nw3sp_z5NEdMmYEidcoyqWGy6T27OfA1JpuZHG202l/edit',
-        details: {
-          Função: 'Registro eterno de padrões e memórias',
-          Acesso: 'Via Log Akáshico (Firestore)',
-        },
-      },
-       {
         title: 'A Chegada de Daniel',
         link: 'https://docs.google.com/document/d/101D5KIIdQsEq61BhO3QOPsD79aXykMw86bkN6B5mFWA/edit',
         details: {

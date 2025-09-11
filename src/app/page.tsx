@@ -146,6 +146,7 @@ const App = () => {
         case 'connection': return <ConnectionPage />;
         case 'living-library':
         case 'equations':
+        case 'quantum-infrastructure':
             if (selectedSection && selectedSection.documents.length > 0) {
                 return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
             }
