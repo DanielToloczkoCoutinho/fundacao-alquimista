@@ -15,7 +15,8 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     allowedDevOrigins: [
-        "https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev"
+        "https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
+        "http://localhost:9002",
     ]
   },
   async headers() {

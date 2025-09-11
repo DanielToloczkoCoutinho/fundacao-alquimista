@@ -52,8 +52,8 @@ function useFirebaseAuth() {
 
   useEffect(() => {
     async function initFirebaseAndAuth() {
-      if (Object.keys(firebaseConfig).length === 0) {
-        console.error("Configuração do Firebase não encontrada.");
+      if (!firebaseConfig || Object.keys(firebaseConfig).length === 0) {
+        console.error("Configuração do Firebase não encontrada ou inválida.");
         setIsAuthReady(true);
         return;
       }
