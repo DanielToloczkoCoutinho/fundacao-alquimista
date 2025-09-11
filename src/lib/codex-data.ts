@@ -17,6 +17,7 @@ import {
   BookOpenCheck,
   KeySquare,
   Terminal,
+  Flame,
 } from 'lucide-react';
 
 export interface Document {
@@ -111,6 +112,12 @@ export const sections: Section[] = [
     id: 'm8',
     title: 'Módulo 8: PIRC',
     icon: FlaskConical,
+    documents: [],
+  },
+  {
+    id: 'm10',
+    title: 'Módulo 10: Ativação',
+    icon: Flame,
     documents: [],
   },
   {
