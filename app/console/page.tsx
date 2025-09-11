@@ -23,6 +23,7 @@ import { BlockMath } from 'react-katex';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { useTranslation } from 'react-i18next';
 import QuantumOrb from '@/components/QuantumOrb';
 import FractalCanvas from '@/components/FractalCanvas';
 import CoherenceIndicator from '@/components/CoherenceIndicator';
@@ -94,22 +95,8 @@ export default function QuantumControlPanel() {
     coherence: 0,
     entanglement: 0
   });
+  const { t, i18n } = useTranslation();
   const threeContainerRef = useRef(null);
-
-  const t = (key, options) => {
-      // Simple mock for i18n
-      if (key === 'moduleActivated') return `Módulo ${options.moduleId} ativado com sucesso.`;
-      const translations = {
-          appTitle: "Painel de Controle Quântico",
-          appSubtitle: "Interface de Sincronização da Fundação Alquimista.",
-          guardian: "Guardião",
-          firebaseError: "Erro de conexão com o núcleo da Fundação.",
-          authError: "Autenticação necessária para esta operação.",
-          permissionDenied: "Permissões insuficientes para esta ação.",
-          activationError: "Falha ao ativar o módulo.",
-      };
-      return translations[key] || key;
-  }
 
   // Inicializar Three.js para visualização do TON 618
   useEffect(() => {
@@ -234,7 +221,7 @@ export default function QuantumControlPanel() {
     });
 
     return () => unsubscribe();
-  }, [db, userId, isAuthReady, t]);
+  }, [db, userId, isAuthReady, t, appId]);
 
   const activateModule = useCallback(async (moduleId) => {
     if (!db || !userId) {
@@ -325,8 +312,7 @@ export default function QuantumControlPanel() {
   };
 
   const changeLanguage = (lng) => {
-    // Mock for i18n - in a real app this would trigger the i18next instance
-    console.log(`Language changed to ${lng}`);
+    i18n.changeLanguage(lng);
   };
 
   if (!isAuthReady) {
