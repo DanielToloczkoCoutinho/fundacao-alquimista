@@ -14,7 +14,8 @@
     "test": "vitest",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
-    "security-scan": "npm audit"
+    "security-scan": "npm audit",
+    "deploy:cosmic": "node scripts/cosmic-deploy.js"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
