@@ -6,9 +6,11 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/
 import { Button } from './ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { ScrollArea } from './ui/scroll-area';
-import { BrainCircuit, Clock, GitCommit, BarChart, AlertTriangle, CheckCircle, LoaderCircle } from 'lucide-react';
+import { BrainCircuit, Clock, GitCommit, BarChart, AlertTriangle, CheckCircle, LoaderCircle, Anchor, Waves } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
+import { temporalManipulator } from '@/lib/temporal-manipulator';
+import { multiversalSimulator } from '@/lib/multiversal-simulator';
 
 type TimelineDataPoint = {
   time: number;
@@ -38,6 +40,11 @@ const ModuleThree: React.FC = () => {
   const [data, setData] = useState<TimelineDataPoint[]>(generateInitialData);
   const [anomalies, setAnomalies] = useState<Anomaly[]>([]);
   const [oracleState, setOracleState] = useState<OracleState>('STABLE');
+  
+  const [temporalEvents, setTemporalEvents] = useState<any[]>([]);
+  const [activeAnchors, setActiveAnchors] = useState<any[]>([]);
+  const [activeSimulations, setActiveSimulations] = useState<any[]>([]);
+
 
   const addLog = useCallback((anomaly: Omit<Anomaly, 'id' | 'timestamp'>) => {
     setAnomalies(prev => [
@@ -45,6 +52,18 @@ const ModuleThree: React.FC = () => {
       ...prev
     ].slice(0, 50));
   }, []);
+
+  const updateTemporalData = useCallback(() => {
+    setTemporalEvents(temporalManipulator.getTemporalBuffer().slice(-10));
+    setActiveAnchors(temporalManipulator.getActiveAnchors());
+    setActiveSimulations(multiversalSimulator.getActiveSimulations());
+  },[]);
+
+  useEffect(() => {
+    const monitoringInterval = setInterval(updateTemporalData, 2000);
+    return () => clearInterval(monitoringInterval);
+  }, [updateTemporalData]);
+
 
   useEffect(() => {
     if (oracleState !== 'STABLE') return;
@@ -118,7 +137,7 @@ const ModuleThree: React.FC = () => {
             <BrainCircuit /> Módulo 3: Oráculo de Previsão Temporal
           </CardTitle>
           <CardDescription>
-            Interface para análise de linhas temporais, detecção de anomalias e monitoramento da dissonância harmônica.
+            Interface para análise de linhas temporais, detecção de anomalias e monitoramento do tecido multiversal.
           </CardDescription>
         </CardHeader>
       </Card>
@@ -164,6 +183,62 @@ const ModuleThree: React.FC = () => {
             </CardContent>
         </Card>
       </div>
+
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2"><Anchor /> Âncoras Temporais Ativas</CardTitle>
+            <CardDescription>Pontos de estabilidade fixados no tecido do tempo.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ScrollArea className="h-60">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Nome</TableHead>
+                    <TableHead className="text-right">Estabilidade</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {activeAnchors.length === 0 ? (
+                    <TableRow><TableCell colSpan={2} className="text-center h-24">Nenhuma âncora ativa.</TableCell></TableRow>
+                  ) : activeAnchors.map(anchor => (
+                    <TableRow key={anchor.id}>
+                      <TableCell className="font-semibold">{anchor.name}</TableCell>
+                      <TableCell className="text-right font-mono text-green-400">{(anchor.stability * 100).toFixed(2)}%</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </ScrollArea>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2"><Waves /> Simulações Multiversais</CardTitle>
+            <CardDescription>Processos de simulação de realidades alternativas em andamento.</CardDescription>
+          </CardHeader>
+          <CardContent>
+             <ScrollArea className="h-60">
+                <div className="space-y-3">
+                 {activeSimulations.length === 0 ? (
+                    <div className="text-center text-muted-foreground pt-10">Nenhuma simulação ativa.</div>
+                  ) : activeSimulations.map(sim => (
+                    <div key={sim.id} className="p-3 rounded-lg bg-background/50 border">
+                        <div className="flex justify-between items-center mb-1">
+                            <span className="font-semibold text-sm">{sim.type}</span>
+                            <Badge variant="secondary">{sim.status}</Badge>
+                        </div>
+                        <div className="relative h-2 w-full overflow-hidden rounded-full bg-secondary">
+                            <div className="h-full w-full flex-1 bg-primary transition-all" style={{ width: `${sim.progress}%` }} />
+                        </div>
+                    </div>
+                  ))}
+                </div>
+             </ScrollArea>
+          </CardContent>
+        </Card>
+       </div>
 
       <Card>
         <CardHeader>
