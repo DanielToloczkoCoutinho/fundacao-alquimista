@@ -1,0 +1,193 @@
+/* This file is now located at app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 264 82% 5%; /* Deep violet */
+    --foreground: 262 80% 90%;
+    --card: 264 70% 8%;
+    --card-foreground: 262 80% 90%;
+    --popover: 264 82% 5%;
+    --popover-foreground: 262 80% 90%;
+    --primary: 259 55% 34%; /* Deep violet from original request */
+    --primary-foreground: 45 100% 95%;
+    --secondary: 262 40% 25%;
+    --secondary-foreground: 262 80% 90%;
+    --muted: 262 30% 20%;
+    --muted-foreground: 262 40% 60%;
+    --accent: 45 100% 58%; /* Golden yellow */
+    --accent-foreground: 264 65% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 262 40% 25%;
+    --input: 262 40% 25%;
+    --ring: 45 100% 58%;
+    --radius: 0.5rem;
+
+    /* Custom theme colors based on proposal */
+    --theme-primary: 259 55% 34%; /* #4C2A85 */
+    --theme-background: 255 100% 94%; /* #E6E0FF */
+    --theme-accent: 45 100% 58%; /* #FFC72C */
+
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 264 82% 5%; /* Deep violet */
+    --foreground: 262 80% 90%;
+    --card: 264 70% 8%;
+    --card-foreground: 262 80% 90%;
+    --popover: 264 82% 5%;
+    --popover-foreground: 262 80% 90%;
+    --primary: 259 55% 34%; /* Deep violet from original request */
+    --primary-foreground: 45 100% 95%;
+    --secondary: 262 40% 25%;
+    --secondary-foreground: 262 80% 90%;
+    --muted: 262 30% 20%;
+    --muted-foreground: 262 40% 60%;
+    --accent: 45 100% 58%; /* Golden yellow */
+    --accent-foreground: 264 65% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 262 40% 25%;
+    --input: 262 40% 25%;
+    --ring: 45 100% 58%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-purple-400 to-amber-400;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gold-border {
+    border: 2px solid hsl(var(--theme-accent));
+    box-shadow: 0 0 15px hsla(var(--theme-accent), 0.5);
+  }
+  .gold-text {
+    color: hsl(var(--theme-accent));
+  }
+  .purple-glow {
+    box-shadow: 0 0 15px hsla(var(--theme-primary), 0.7);
+  }
+  .teal-glow {
+    box-shadow: 0 0 15px rgba(45, 212, 191, 0.7);
+  }
+  .layer-active {
+    animation: fadeIn 1s ease-in;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .animate-pulse-slow {
+    animation: pulse 3s infinite;
+  }
+  .dark .gradient-text {
+    @apply from-purple-400 to-amber-400;
+  }
+  .cosmic-bg {
+    background: radial-gradient(circle at center, #20072d 0%, #0f0f23 70%);
+  }
+  .purple-border {
+    border: 2px solid hsl(var(--theme-primary));
+    box-shadow: 0 0 15px hsla(var(--theme-primary), 0.5);
+  }
+  .module-glow {
+    box-shadow: 0 0 20px hsla(var(--theme-primary), 0.7);
+  }
+  .omega-glow {
+    box-shadow: 0 0 25px hsla(var(--theme-accent), 0.8);
+  }
+  .pulse {
+    animation: pulse 3s infinite;
+  }
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+  }
+  .energy-flow {
+      position: relative;
+      overflow: hidden;
+  }
+  .energy-flow::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, rgba(255,215,0,0) 0%, hsla(var(--theme-accent), 0.8) 50%, rgba(255,215,0,0) 100%);
+      transform: rotate(30deg);
+      animation: energyFlow 3s linear infinite;
+  }
+  @keyframes energyFlow {
+      0% { transform: translateY(-100%) rotate(30deg); }
+      100% { transform: translateY(100%) rotate(30deg); }
+  }
+  .star {
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      filter: blur(1px);
+      animation: twinkle 5s infinite;
+  }
+  @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+  }
+  .hologram-line {
+      position: absolute;
+      background: linear-gradient(to bottom, transparent, hsla(var(--theme-primary), 0.7), transparent);
+      width: 2px;
+      height: 100%;
+      animation: hologramScan 4s linear infinite;
+  }
+  @keyframes hologramScan {
+      0% { top: -100%; }
+      100% { top: 100%; }
+  }
+  @keyframes quantum-pulse {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.4); }
+  }
+  .animate-quantum-pulse {
+    animation: quantum-pulse 1.2s infinite ease-in-out;
+  }
+}
