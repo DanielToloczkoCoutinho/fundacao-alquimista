@@ -286,7 +286,7 @@ const ChroniclePage = () => {
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
-                                 {page.content.trim().split('\\n').filter(line => line.startsWith('| :---') === false && line.trim().length > 1).map((line, index) => {
+                                 {page.content.trim().split('\\n').filter(line => line.startsWith('| :---') === false && line.trim().length > 1 && line.trim() !== '|---|---|---|---|').map((line, index) => {
                                     const cells = line.split('|').slice(1, -1).map(cell => cell.trim());
                                     // Skip header separator line in markdown table
                                     if (cells.every(c => c.startsWith(':---'))) return null;
@@ -311,3 +311,5 @@ const ChroniclePage = () => {
 };
 
 export default ChroniclePage;
+
+    
