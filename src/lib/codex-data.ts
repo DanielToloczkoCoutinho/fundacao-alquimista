@@ -206,7 +206,7 @@ export const sections: Section[] = [
         },
       },
       {
-        title: 'EQ0119 - Equação da Ressonância Visual Primordial',
+        title: 'EQ0119 - Equação de Ressonância Visual Primordial',
         link: 'https://docs.google.com/document/d/1fd7bQRS-uFrjE_bsgOmiF-IhOViSVavEYESW_xSRTNI/edit',
         description:
           'Mede a ressonância vibracional de uma imagem/visão, integrando frequência emergente, geometria fractal, ética vibracional e harmonia de design.',

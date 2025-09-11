@@ -26,6 +26,7 @@ import KeyViewer from "@/components/key-viewer";
 import CodexExplorer from "@/components/codex-explorer";
 import ConnectionPage from "@/app/connection/page";
 import GaiaResonanceObservatory from "@/components/gaia-resonance-observatory";
+import ZpeContainment from "@/components/zpe-containment";
 
 
 // --- Configuração do Firebase ---
@@ -236,6 +237,8 @@ const App = () => {
   }, []);
   
   const renderContent = () => {
+    const selectedSection = sections.find(s => s.id === currentSectionId);
+
     switch (currentSectionId) {
       case 'nexus': return <ConsolePage />;
       case 'codex-explorer': return <CodexExplorer />;
@@ -253,8 +256,11 @@ const App = () => {
       case 'm10': return <ModuleTen />;
       case 'gaia-observatory': return <GaiaResonanceObservatory />;
       case 'connection': return <ConnectionPage />;
-      case 'home':
+      case 'tools': return <ZpeContainment />;
       default:
+         if (selectedSection && selectedSection.documents.length > 0) {
+            return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
+        }
         return (
           <div className="p-8">
             <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
