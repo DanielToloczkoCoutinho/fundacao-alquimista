@@ -479,9 +479,9 @@ export default function QuantumControlPanel() {
               <span className="mr-2">{isAudioPlaying ? 'Parar Sinfonia' : 'Iniciar Sinfonia'}</span>
               {isAudioPlaying ? (
                 <div className="flex space-x-1">
-                  <div className="w-1 h-4 bg-white animate-pulse"></div>
-                  <div className="w-1 h-6 bg-white animate-pulse delay-75"></div>
-                  <div className="w-1 h-5 bg-white animate-pulse delay-150"></div>
+                  <div className="w-1 h-4 bg-white animate-quantum-pulse"></div>
+                  <div className="w-1 h-6 bg-white animate-quantum-pulse delay-75"></div>
+                  <div className="w-1 h-5 bg-white animate-quantum-pulse delay-150"></div>
                 </div>
               ) : (
                 <div className="i-lucide-play" />

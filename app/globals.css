@@ -183,4 +183,11 @@
       0% { top: -100%; }
       100% { top: 100%; }
   }
+  @keyframes quantum-pulse {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.4); }
+  }
+  .animate-quantum-pulse {
+    animation: quantum-pulse 1.2s infinite ease-in-out;
+  }
 }
