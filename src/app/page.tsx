@@ -1,4 +1,3 @@
-
 // @ts-nocheck
 'use client';
 
@@ -8,7 +7,6 @@ import { getFirestore, collection, getDocs, doc, setDoc, writeBatch } from "fire
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFunctions, httpsCallable } from "firebase/functions";
 import { cn } from "@/lib/utils";
-import ConsolePage from "./console/page";
 import { sections } from "@/lib/codex-data";
 import type { Section } from "@/lib/codex-data";
 import ModuleZero from "@/components/module-zero";
