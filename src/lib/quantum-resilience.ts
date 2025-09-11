@@ -1,16 +1,43 @@
+'use client';
 
-// Mock logger to prevent breakage
+// This is a simplified logger that is self-contained.
 const logger = {
   info: (message: string, meta?: any) => console.log(`[INFO] ${message}`, meta),
   error: (message: string, meta?: any) => console.error(`[ERROR] ${message}`, meta),
   warn: (message: string, meta?: any) => console.warn(`[WARN] ${message}`, meta),
 };
 
-// Mock cache to prevent breakage
+// This is a simplified cache that is self-contained.
 const cosmicCache = {
-  get: (key: string) => null,
-  set: (key: string, value: any, ttl?: number) => {},
+  get: (key: string): any | null => {
+    if (typeof window !== 'undefined') {
+        const item = window.sessionStorage.getItem(key);
+        return item ? JSON.parse(item) : null;
+    }
+    return null;
+  },
+  set: (key: string, value: any, ttl?: number) => {
+     if (typeof window !== 'undefined') {
+        window.sessionStorage.setItem(key, JSON.stringify(value));
+     }
+  },
 };
+
+export function createLogContext(sessionId: string, moduleId?: number) {
+  return {
+    sessionId,
+    moduleId,
+    info: (message: string, meta?: any) => {
+      logger.info(message, { sessionId, moduleId, ...meta });
+    },
+    error: (message: string, meta?: any) => {
+      logger.error(message, { sessionId, moduleId, ...meta });
+    },
+    warn: (message: string, meta?: any) => {
+      logger.warn(message, { sessionId, moduleId, ...meta });
+    },
+  };
+}
 
 
 export class QuantumResilienceSystem {
@@ -48,7 +75,7 @@ export class QuantumResilienceSystem {
       });
 
       if (currentFailures >= this.maxFailures) {
-          cosmicCache.set(cooldownKey, Date.now() + this.cooldownPeriod);
+          cosmicCache.set(cooldownKey, Date.now() + this.cooldownPeriod, this.cooldownPeriod);
           logger.warn(`Cooldown ativado para ${operation}.`);
       }
 
@@ -98,7 +125,7 @@ export class QuantumResilienceSystem {
     await new Promise(resolve => setTimeout(resolve, 1000));
     logger.info(`Recuperação quântica para ${operation} concluída.`);
     this.resetFailureCount(`failures_${operation}`);
-    cosmicCache.set(`cooldown_${operation}`, 0); // Reset cooldown
+    cosmicCache.set(`cooldown_${operation}`, 0, 1); // Reset cooldown
     return true;
   }
 }
