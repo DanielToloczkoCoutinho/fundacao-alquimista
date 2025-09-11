@@ -1,20 +1,12 @@
 
 'use client';
 
-import { quantumResilience } from '@/lib/quantum-resilience';
-
 // Mock implementations to prevent breakage and align with purification rituals.
 const logger = {
   info: (message: string, meta?: any) => console.log(`[XR-INFO] ${message}`, meta),
   error: (message: string, meta?: any) => console.error(`[XR-ERROR] ${message}`, meta),
   warn: (message: string, meta?: any) => console.warn(`[XR-WARN] ${message}`, meta),
 };
-
-const cosmicCache = {
-  get: (key: string) => null,
-  set: (key: string, value: any, ttl?: number) => {},
-};
-
 
 // WebXR types might not be available in all TS environments.
 declare const XRWebGLLayer: any;
@@ -45,6 +37,10 @@ export class QuantumXRSystem {
 
   isSessionActive(): boolean {
     return this.xrSession !== null;
+  }
+
+  getSupported() {
+    return this.isSupported;
   }
 
   async startARSession(canvas: HTMLCanvasElement) {
@@ -98,29 +94,14 @@ export class QuantumXRSystem {
   }
 
   async placeHolographicModule(moduleId: number, position: Float32Array) {
-    const moduleData = cosmicCache.get(`module_${moduleId}_hologram`);
-    
-    return quantumResilience.executeWithResilience(
-      `place_hologram_${moduleId}`,
-      async () => {
-        // Simular colocação de holograma no espaço AR
-        const hologram = {
-          id: moduleId,
-          position,
-          timestamp: Date.now(),
-          energySignature: this.generateEnergySignature(moduleId)
-        };
-
-        cosmicCache.set(`hologram_${moduleId}`, hologram);
-        logger.info('Holograma colocado no espaço AR', { moduleId, position });
-        
-        return hologram;
-      }
-    );
-  }
-
-  private generateEnergySignature(moduleId: number): string {
-    return `quantum_${moduleId}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    // This is a mock implementation
+    const hologram = {
+      id: moduleId,
+      position,
+      timestamp: Date.now(),
+    };
+    logger.info('Holograma colocado no espaço AR', { moduleId, position });
+    return hologram;
   }
 }
 

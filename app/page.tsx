@@ -42,10 +42,13 @@ const firebaseConfig = {
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app, {
-  experimentalForceLongPolling: true,
-  useFetchStreams: false,
-});
+const db = getFirestore(app);
+try {
+  // @ts-ignore
+  db.settings({ experimentalForceLongPolling: true, useFetchStreams: false });
+} catch (e) {
+  console.warn("Could not set Firestore settings", e);
+}
 
 
 const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: string) => void; currentSectionId: string }) => (
@@ -79,7 +82,7 @@ const App = () => {
       setItems(data);
       setStatus(`Akasha sincronizado: ${new Date().toLocaleTimeString()}`);
     }, (error) => {
-      setStatus(`Erro no Akasha: ${error.message}.`);
+      setStatus(`Erro no Akasha: ${error.message}. Tentando reconectar...`);
     });
     return () => unsubscribe();
   }, []);
