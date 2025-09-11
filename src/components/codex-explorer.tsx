@@ -7,12 +7,12 @@ import type { Document } from '@/lib/codex-data';
 import { BookOpenCheck } from 'lucide-react';
 
 interface CodexExplorerProps {
-  documents: Document[];
+  documents?: Document[];
   title: string;
 }
 
 export default function CodexExplorer({
-  documents,
+  documents = [],
   title,
 }: CodexExplorerProps) {
   return (
