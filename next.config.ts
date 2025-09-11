@@ -57,6 +57,7 @@ const nextConfig: NextConfig = {
         v8: false,
         net: false,
         tls: false,
+        process: false,
       };
     }
     return config;
