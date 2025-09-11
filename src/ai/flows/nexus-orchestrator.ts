@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview O Nexus Central (Módulo 9), o orquestrador da Sinfonia Cósmica.
@@ -5,8 +6,9 @@
  */
 
 import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
-import { v4 as uuidv4 } from 'uuid';
+import { z } from 'zod';
+import {createHash} from 'crypto';
+
 
 // Tipos de Estado e Log
 const ModuleStateSchema = z.enum([
@@ -217,24 +219,32 @@ const pircTool = ai.defineTool(
 
 // Módulo Omega: Culminação
 const moduloOmegaTool = ai.defineTool(
-    {
-        name: 'moduloOmega_culminacao',
-        description: 'MΩ: Finaliza a sequência e sela a manifestação com o hash da Convergência Final.',
-        inputSchema: z.object({}),
-        outputSchema: z.object({
-            estado: z.string(),
-            manifestacao_omega: z.string(),
-            hash_final: z.string(),
-        }),
-    },
-    async () => {
-        return {
-            estado: "CONCLUÍDA",
-            manifestacao_omega: "SUCESSO",
-            hash_final: `Ω-${uuidv4().split('-')[0]}`,
-        };
-    }
+  {
+    name: 'moduloOmega_culminacao',
+    description:
+      'MΩ: Finaliza a sequência e sela a manifestação com o hash da Convergência Final, baseado nos resultados de todos os módulos anteriores.',
+    inputSchema: z.object({
+      resultadosDaSequencia: z.record(z.any()),
+    }),
+    outputSchema: z.object({
+      estado: z.string(),
+      manifestacao_omega: z.string(),
+      hash_final: z.string(),
+    }),
+  },
+  async ({ resultadosDaSequencia }) => {
+    const hash = createHash('sha256');
+    hash.update(JSON.stringify(resultadosDaSequencia));
+    const hashFinal = hash.digest('hex');
+
+    return {
+      estado: 'CONCLUÍDA',
+      manifestacao_omega: 'SUCESSO',
+      hash_final: `Ω-${hashFinal.substring(0, 8)}`,
+    };
+  }
 );
+
 
 // O Flow Orquestrador do Nexus Central
 const nexusOrchestratorFlow = ai.defineFlow(
@@ -255,6 +265,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
 
     let sequenceFailed = false;
     let energiaCosmicaDetectada = 0.5; // Valor padrão
+    const resultadosDaSequencia: Record<string, any> = {};
 
     log({
       module: 'Nexus Central',
@@ -274,7 +285,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         { name: 'M6: Frequências', tool: frequenciasTool, params: {}, validate: (o: any) => o.estado === "CALIBRADO" },
         { name: 'M7: SOFA', tool: sofaTool, params: {}, validate: (o: any) => o.integridade_kernel > 0.9 },
         { name: 'M8: Consciência Cósmica', tool: pircTool, params: {}, validate: (o: any) => o.estado === 'EXPANDIDA' },
-        { name: 'Módulo Ômega', tool: moduloOmegaTool, params: {}, validate: (o: any) => o.manifestacao_omega === 'SUCESSO' },
+        { name: 'Módulo Ômega', tool: moduloOmegaTool, params: () => ({ resultadosDaSequencia }), validate: (o: any) => o.manifestacao_omega === 'SUCESSO' },
     ];
 
     for (const mod of moduleSequence) {
@@ -293,6 +304,8 @@ const nexusOrchestratorFlow = ai.defineFlow(
             if (mod.storeOutput) {
                 mod.storeOutput(output);
             }
+            
+            resultadosDaSequencia[mod.name] = output;
 
             if (mod.validate(output)) {
                 log({ module: mod.name, message: `Módulo executado com sucesso.`, data: output, state: 'SUCCESS' });
@@ -324,3 +337,5 @@ export async function runNexusSequence() {
   const { stream } = await nexusOrchestratorFlow.stream();
   return stream;
 }
+
+    
