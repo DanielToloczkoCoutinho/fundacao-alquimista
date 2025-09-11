@@ -8,6 +8,16 @@ import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUs
 import { getFunctions, httpsCallable } from "firebase/functions";
 import { cn } from "@/lib/utils";
 import ConsolePage from "./console/page";
+import { sections } from "@/lib/codex-data";
+import type { Section } from "@/lib/codex-data";
+import ModuleZero from "@/components/module-zero";
+import ModuleOne from "@/components/module-one";
+import ModuleTwo from "@/components/module-two";
+import Nexus from "@/components/nexus";
+import Module303 from "@/components/module-303";
+import KeyViewer from "@/components/key-viewer";
+import CodexExplorer from "@/components/codex-explorer";
+import ConnectionPage from "@/app/connection/page";
 
 
 // --- Configuração do Firebase ---
@@ -45,20 +55,7 @@ interface ChaveMestra {
   equacoes: string[]; // Apenas IDs
 }
 
-interface CodexItem {
-  title: string;
-  description: string;
-  icon: string;
-  content: string;
-}
-
-// --- Dados Estáticos (Menus e Dados Iniciais para Semeador) ---
-const codexData: CodexItem[] = [
-  { title: "Home", description: "Página inicial", icon: "🏠", content: "Home" },
-  { title: "Console da Fundação", description: "Painel de controle principal", icon: "💻", content: "Console" },
-  { title: "Chaves Mestras", description: "Visualizador das Chaves", icon: "🔑", content: "ChavesMestras" },
-];
-
+// --- Dados Iniciais para Semeador ---
 const initialEquacoes: EquacaoViva[] = [
   {
     id: "307.1.1",
@@ -82,58 +79,24 @@ const initialChaves: ChaveMestra[] = [
 // --- Componentes da Interface ---
 // =================================================================
 
-const Sidebar = ({ onNavigate }: { onNavigate: (content: string) => void }) => (
-  <nav className="w-64 p-4 bg-gray-800/50 backdrop-blur-sm h-screen text-white border-r border-purple-500/20">
+const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: string) => void; currentSectionId: string }) => (
+  <nav className="w-72 p-4 bg-gray-800/50 backdrop-blur-sm h-screen text-white border-r border-purple-500/20 overflow-y-auto">
     <h2 className="text-xl font-bold mb-4 text-purple-300">Fundação Alquimista</h2>
-    {codexData.map((item) => (
+    {sections.map((section) => (
       <button
-        key={item.title}
-        onClick={() => onNavigate(item.content)}
-        className="w-full text-left p-2 mb-2 rounded hover:bg-gray-700/70 flex items-center transition-colors"
+        key={section.id}
+        onClick={() => onNavigate(section.id)}
+        className={cn(
+          "w-full text-left p-2 mb-2 rounded hover:bg-gray-700/70 flex items-center transition-colors",
+          currentSectionId === section.id && "bg-purple-600/50"
+        )}
       >
-        <span className="mr-3 text-lg">{item.icon}</span> {item.title}
+        <section.icon className="mr-3 text-lg h-5 w-5 shrink-0" />
+        <span className="truncate">{section.title}</span>
       </button>
     ))}
   </nav>
 );
-
-const KeyViewer = ({ chaves, equacoes }: { chaves: ChaveMestra[]; equacoes: EquacaoViva[] }) => {
-    const [activeKey, setActiveKey] = useState<string | null>(chaves.length > 0 ? chaves[0].id : null);
-
-    return (
-        <div className="space-y-4 p-4 text-white">
-            <h1 className="text-3xl font-bold">Chaves Mestras</h1>
-            <div className="border-b border-gray-700">
-                {chaves.map((chave) => (
-                    <button key={chave.id} onClick={() => setActiveKey(chave.id)} className={`px-4 py-2 ${activeKey === chave.id ? 'border-b-2 border-purple-500 text-white' : 'text-gray-400 hover:text-white'}`}>
-                        {chave.nome}
-                    </button>
-                ))}
-            </div>
-            {chaves.filter(chave => chave.id === activeKey).map((chave) => {
-                const equacoesDetalhadas = (chave.equacoes || []).map((eqId: string) => 
-                    equacoes.find(eq => eq.id === eqId)
-                ).filter((eq: EquacaoViva | undefined): eq is EquacaoViva => eq !== undefined);
-
-                return (
-                    <div key={chave.id} className="p-4 bg-gray-900/50 rounded">
-                        <h2 className="font-bold text-xl mb-2 text-purple-300">{chave.nome}</h2>
-                        <p className="text-sm mb-4 text-gray-400">{chave.descricao}</p>
-                        <div className="space-y-3 h-80 overflow-y-auto">
-                          {equacoesDetalhadas.map((equacao) => (
-                              <div key={equacao.id} className="p-3 border rounded mt-2 border-gray-700 hover:bg-gray-800/50 transition-colors">
-                                  <h3 className="font-bold">{equacao.nome}</h3>
-                                  <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
-                              </div>
-                          ))}
-                          {equacoesDetalhadas.length === 0 && <p className="text-sm text-gray-500">Nenhuma equação disponível para esta chave.</p>}
-                        </div>
-                    </div>
-                )
-            })}
-        </div>
-    );
-};
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -232,17 +195,16 @@ const LoginScreen = () => {
 const App = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [currentContent, setCurrentContent] = useState<string>("Home");
+  const [currentSectionId, setCurrentSectionId] = useState<string>("nexus");
   const [chaves, setChaves] = useState<ChaveMestra[]>([]);
   const [equacoes, setEquacoes] = useState<EquacaoViva[]>([]);
 
   useEffect(() => {
-    // Simula um usuário autenticado para bypass
+    // Bypass de autenticação para desenvolvimento
     const mockUser = { uid: "SOBERANO_FUNDADOR" } as User;
     setUser(mockUser);
     setLoading(false);
     
-    // Mantém a busca de dados
     const fetchData = async () => {
         try {
           const chavesSnapshot = await getDocs(collection(db, "chavesMestras"));
@@ -264,26 +226,41 @@ const App = () => {
     fetchData();
 
   }, []);
+  
+  const renderContent = () => {
+    switch (currentSectionId) {
+      case 'nexus': return <Nexus />;
+      case 'console': return <ConsolePage />;
+      case 'codex-explorer': return <CodexExplorer />;
+      case 'master-keys': return <KeyViewer />;
+      case 'module-303': return <Module303 />;
+      case 'module-zero': return <ModuleZero />;
+      case 'module-one': return <ModuleOne />;
+      case 'm2': return <ModuleTwo />;
+      case 'connection': return <ConnectionPage />;
+      case 'home':
+      default:
+        return (
+          <div className="p-8">
+            <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
+            <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
+            <p className="text-amber-400 mt-4 text-sm">Aviso: A autenticação está temporariamente desativada para acesso direto ao Códice.</p>
+            <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
+          </div>
+        );
+    }
+  };
+
 
   if (loading) {
     return <div className="w-full h-screen flex items-center justify-center cosmic-bg text-white">Carregando Fundação...</div>;
   }
   
-
   return (
     <div className={cn("flex h-screen text-white", "cosmic-bg")}>
-      <Sidebar onNavigate={setCurrentContent} />
-      <main className="flex-1 overflow-auto">
-        {currentContent === "Home" && (
-            <div className="p-8">
-                 <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador.</h1>
-                 <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
-                 <p className="text-amber-400 mt-4 text-sm">Aviso: A autenticação está temporariamente desativada para acesso direto ao Códice.</p>
-                 <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
-            </div>
-        )}
-        {currentContent === "Console" && <ConsolePage />}
-        {currentContent === "ChavesMestras" && <KeyViewer chaves={chaves} equacoes={equacoes}/>}
+      <Sidebar onNavigate={setCurrentSectionId} currentSectionId={currentSectionId} />
+      <main className="flex-1 overflow-auto p-6">
+        {renderContent()}
       </main>
     </div>
   );
