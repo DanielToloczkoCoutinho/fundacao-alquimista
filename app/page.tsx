@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, doc, setDoc, writeBatch } from "firebase/firestore";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
 import { getFunctions, httpsCallable } from "firebase/functions";
 
 
@@ -150,7 +150,7 @@ const Console = ({ equacoes }: { equacoes: EquacaoViva[] }) => {
               <p className="text-sm font-mono my-2">{equacao.formula_latex}</p>
               <p className="text-sm text-gray-400">{equacao.descricao}</p>
               <div className="mt-4 space-y-2">
-                {equacao.variaveis.map(varName => (
+                {(equacao.variaveis || []).map(varName => (
                   <input
                     key={varName}
                     type="number"
@@ -210,7 +210,7 @@ const KeyViewer = ({ chaves, equacoes }: { chaves: ChaveMestra[]; equacoes: Equa
     );
 };
 
-const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
+const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -220,9 +220,20 @@ const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
     setError('');
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      onLoginSuccess();
     } catch (err) {
       setError("Falha na autenticação. Verifique suas credenciais cósmicas.");
+      console.error(err);
+    }
+  };
+  
+  const handleRegister = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      alert("Fundador registrado com sucesso! Agora você pode entrar.");
+    } catch (err: any) {
+      setError(`Falha no registro: ${err.message}`);
       console.error(err);
     }
   };
@@ -236,7 +247,7 @@ const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
           batch.set(chaveRef, {
             nome: chave.nome,
             descricao: chave.descricao,
-            equacoes: chave.equacoes // Apenas os IDs
+            equacoes: chave.equacoes
           });
       });
       
@@ -247,7 +258,7 @@ const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
 
       try {
         await batch.commit();
-        alert("Dados iniciais semeados com sucesso! Agora você pode fazer login.");
+        alert("Dados iniciais semeados com sucesso! Agora você pode se registrar e fazer login.");
       } catch (error) {
         console.error("Erro ao semear dados:", error);
         alert("Erro ao semear dados. Verifique o console.");
@@ -258,8 +269,8 @@ const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
     <div className="w-full h-screen flex items-center justify-center bg-gray-900">
       <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
         <h1 className="text-3xl font-bold text-center text-white">Fundação Alquimista</h1>
-        <p className="text-center text-gray-400">Acesso ao Códex</p>
-        <form onSubmit={handleLogin} className="space-y-6">
+        <p className="text-center text-gray-400">Portal do Fundador</p>
+        <form className="space-y-6">
           <div>
             <label className="text-sm font-bold text-gray-400 block mb-2">Email</label>
             <input type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full p-3 bg-gray-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
@@ -269,12 +280,17 @@ const LoginScreen = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
             <input type="password" value={password} onChange={e => setPassword(e.target.value)} className="w-full p-3 bg-gray-700 rounded text-white focus:outline-none focus:ring-2 focus:ring-purple-500" required />
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
-          <div className="flex space-x-4">
-             <button type="submit" className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold transition-colors">
-                Autenticar
-             </button>
+          <div className="flex flex-col space-y-4">
+             <div className="flex space-x-4">
+                <button type="button" onClick={handleLogin} className="w-full py-3 px-4 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold transition-colors">
+                    Entrar
+                </button>
+                 <button type="button" onClick={handleRegister} className="w-full py-3 px-4 bg-cyan-600 hover:bg-cyan-700 rounded text-white font-bold transition-colors">
+                    Registrar
+                </button>
+             </div>
              <button type="button" onClick={seedInitialData} className="w-full py-3 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-bold transition-colors">
-                Semear Dados
+                Semear Dados Iniciais
              </button>
           </div>
         </form>
@@ -296,6 +312,34 @@ const App = () => {
   const [equacoes, setEquacoes] = useState<EquacaoViva[]>([]);
 
   useEffect(() => {
+    // Simula um usuário autenticado para bypass
+    const mockUser = { uid: "SOBERANO_FUNDADOR" } as User;
+    setUser(mockUser);
+    setLoading(false);
+    
+    // Mantém a busca de dados
+    const fetchData = async () => {
+        try {
+          const chavesSnapshot = await getDocs(collection(db, "chavesMestras"));
+          const chavesData: ChaveMestra[] = [];
+           for (const doc of chavesSnapshot.docs) {
+              chavesData.push({ id: doc.id, ...doc.data() } as ChaveMestra);
+          }
+          setChaves(chavesData);
+          
+          const equacoesSnapshot = await getDocs(collection(db, "equacoes"));
+          const equacoesData = equacoesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as EquacaoViva));
+          setEquacoes(equacoesData);
+
+        } catch (error) {
+          console.error("Erro ao buscar dados do Firestore:", error);
+        }
+      };
+      
+    fetchData();
+
+    /*
+    // Lógica de autenticação original - temporariamente desativada
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
@@ -303,32 +347,17 @@ const App = () => {
         fetchData();
       }
     });
-    
-    const fetchData = async () => {
-        try {
-          const chavesSnapshot = await getDocs(collection(db, "chavesMestras"));
-          const chavesData = chavesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as ChaveMestra));
-          
-          const equacoesSnapshot = await getDocs(collection(db, "equacoes"));
-          const equacoesData = equacoesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as EquacaoViva));
-
-          setChaves(chavesData);
-          setEquacoes(equacoesData);
-        } catch (error) {
-          console.error("Erro ao buscar dados do Firestore:", error);
-        }
-      };
-
     return () => unsubscribe();
+    */
   }, []);
 
   if (loading) {
     return <div className="w-full h-screen flex items-center justify-center bg-gray-900 text-white">Carregando Fundação...</div>;
   }
   
-  if (!user) {
-    return <LoginScreen onLoginSuccess={() => {}} />;
-  }
+  // if (!user) {
+  //   return <LoginScreen />;
+  // }
 
   return (
     <div className="flex h-screen bg-gray-900 text-white">
@@ -337,6 +366,7 @@ const App = () => {
         {currentContent === "Home" && (
             <div>
                  <p>Bem-vindo à Fundação Alquimista, Fundador. - {new Date().toLocaleString()}</p>
+                 <p className="text-amber-400 mt-4">Aviso: A autenticação está temporariamente desativada para acesso direto.</p>
             </div>
         )}
         {currentContent === "Console" && <Console equacoes={equacoes} />}
