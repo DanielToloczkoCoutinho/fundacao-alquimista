@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 import {
   BrainCircuit,
@@ -68,6 +69,12 @@ export const sections: Section[] = [
     id: 'pagina-27',
     title: 'Página 27: Colapso Ético',
     icon: BookHeart,
+    documents: [],
+  },
+  {
+    id: 'pagina-29',
+    title: 'Página 29: Biblioteca Viva',
+    icon: Library,
     documents: [],
   },
   {
@@ -371,3 +378,5 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
+
+    
