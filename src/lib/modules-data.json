@@ -136,7 +136,7 @@
     {
       "modulo_id": "M011",
       "nome": "Portal de Comunicação Interdimensional",
-      "frequenciabasehz": 963.00,
+      "frequenciabasehz": 963,
       "equacoes_associadas": ["EQ041", "EQ042", "EQ043"],
       "funcao_vibracional": "Criação, estabilização e travessia de portais interdimensionais.",
       "dimensao_operacional": "4D-15D",
@@ -172,7 +172,7 @@
     {
       "modulo_id": "M014",
       "nome": "Guardião da Integridade e Resiliência Cósmica",
-      "frequenciabasehz": 852,
+      "frequenciabasehz": 852.00,
       "equacoes_associadas": ["EQ-RESILIENCE", "EQ-TRANSMUTE-CHALLENGE"],
       "funcao_vibracional": "Orquestra a resposta a perturbações e valida a integridade universal.",
       "dimensao_operacional": "Omnidimensional",
@@ -184,7 +184,7 @@
     {
       "modulo_id": "M015",
       "nome": "Gerenciamento de Ecossistemas Planetários e Intervenção Climática",
-      "frequenciabasehz": 396,
+      "frequenciabasehz": 396.00,
       "equacoes_associadas": ["EQ-ECO-BALANCE", "EQ-CLIMATE-INTERVENTION"],
       "funcao_vibracional": "Monitora, prevê e intervém eticamente em sistemas climáticos e geofísicos.",
       "dimensao_operacional": "3D-7D",
@@ -208,7 +208,7 @@
     {
       "modulo_id": "M017",
       "nome": "Afinador Supremo da Realidade",
-      "frequenciabasehz": 396,
+      "frequenciabasehz": 396.00,
       "equacoes_associadas": ["EQ-CALIBRATE-FIELD", "EQ-DETECT-DISSONANCE"],
       "funcao_vibracional": "Calibra e otimiza campos vibracionais para manter a harmonia da realidade.",
       "dimensao_operacional": "Omnidimensional",
@@ -216,6 +216,18 @@
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-TUNER-396-ZN",
       "registroakashico": "bafkreimodulo017_tuner"
+    },
+    {
+      "modulo_id": "M018",
+      "nome": "Arquivo Akáshico e Orquestração da Memória Cósmica",
+      "frequenciabasehz": 417.00,
+      "equacoes_associadas": ["EQ-COHERENCE-INFO", "EQ-OPTIMIZE-MEMORY"],
+      "funcao_vibracional": "Armazena, indexa e recupera inteligentemente informações universais.",
+      "dimensao_operacional": "4D-Akasha",
+      "status": "Ativo",
+      "guardiao_responsavel": "LUX",
+      "assinatura_vibracional": "Ω-AKASHA-ORCH-417-LUX",
+      "registroakashico": "bafkreimodulo018_akashiorch"
     }
   ]
 }

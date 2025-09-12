@@ -415,6 +415,12 @@ export const sections: Section[] = [
     icon: SlidersHorizontal,
     documents: [],
   },
+  {
+    id: 'm18',
+    title: 'Módulo 18: Arquivo Akáshico',
+    icon: DatabaseZap,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
