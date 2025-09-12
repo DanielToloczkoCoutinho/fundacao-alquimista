@@ -29,6 +29,7 @@ import {
   Globe,
   LayoutDashboard,
   Gavel,
+  Users,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -82,6 +83,12 @@ export const sections: Section[] = [
     id: 'pagina-30',
     title: 'Página 30: Conselho Cósmico',
     icon: Gavel,
+    documents: [],
+  },
+  {
+    id: 'pagina-31',
+    title: 'Página 31: Liga Quântica',
+    icon: Users,
     documents: [],
   },
   {
