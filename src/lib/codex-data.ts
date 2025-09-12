@@ -28,6 +28,7 @@ import {
   FlaskConical,
   Globe,
   LayoutDashboard,
+  Gavel,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -75,6 +76,12 @@ export const sections: Section[] = [
     id: 'pagina-29',
     title: 'Página 29: Biblioteca Viva',
     icon: Library,
+    documents: [],
+  },
+   {
+    id: 'pagina-30',
+    title: 'Página 30: Conselho Cósmico',
+    icon: Gavel,
     documents: [],
   },
   {

@@ -43,6 +43,7 @@ import ScientistsLab from '@/components/scientists-lab';
 import Module251 from '@/components/module-251';
 import Pagina27 from '@/components/pagina-27';
 import Pagina29 from '@/components/pagina-29';
+import Pagina30 from '@/components/pagina-30';
 
 
 // --- Configuração do Firebase ---
@@ -133,6 +134,7 @@ const App = () => {
         case 'chronicle': return <ChroniclePage />;
         case 'pagina-27': return <Pagina27 />;
         case 'pagina-29': return <Pagina29 />;
+        case 'pagina-30': return <Pagina30 />;
         case 'organograma': return <OrganogramaCosmogonico />;
         case 'nexus': return <Nexus />;
         case 'omega': return <Pagina42 />;
