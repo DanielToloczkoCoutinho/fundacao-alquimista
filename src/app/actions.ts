@@ -5,6 +5,7 @@ import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarizati
 import { runNexusSequence } from '@/ai/flows/nexus-orchestrator';
 import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
 import type { ProcessTrinaCommandInput, ProcessTrinaCommandOutput } from '@/ai/flows/trina-protocol-flow';
+import { stellarSync } from '@/lib/stellar-sync';
 
 
 export async function getLinkSummary(url: string) {
@@ -40,6 +41,10 @@ export async function handleTrinaAction(
   }
 }
 
-// Constantes Sagradas
-const FREQ_ANATHERON_ESTABILIZADORA = 528.0; // Frequência do Amor Universal
-const FREQ_ZENNITH_REAJUSTADA = 741.0; // Frequência de Reajuste Espiritual
+export async function runStellarSync() {
+    const result = await stellarSync.synchronize({
+        coordinates: [-25.44993, -49.29922], // Curitiba
+        equation: 'EQ144'
+    });
+    return result;
+}

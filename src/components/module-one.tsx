@@ -6,11 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/
 import { Progress } from './ui/progress';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
+import { FREQ_ALINHAMENTO_DIVINO, FREQ_ANATHERON_ESTABILIZADORA, FREQ_ZENNITH_REAJUSTADA } from '@/lib/constants';
 
 // --- CONSTANTES FUNDAMENTAIS (Traduzidas do Python) ---
-const FREQ_ANATHERON_ESTABILIZADORA = 432.0; // Frequência de Cura e Estabilização
-const FREQ_ZENNITH_REAJUSTADA = 528.0; // Frequência de Transformação e Reparo
-const FREQ_ALINHAMENTO_DIVINO = 963.0; // Frequência de Conexão com Consciência Superior
+
 
 type SistemaEstado = 'INICIANDO' | 'ATIVO' | 'ALERTA' | 'EMERGENCIA' | 'RECALIBRACAO';
 
