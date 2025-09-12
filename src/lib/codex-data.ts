@@ -88,6 +88,18 @@ export const sections: Section[] = [
     icon: FileText,
     documents: [],
   },
+   {
+    id: 'pagina-39',
+    title: 'Página 39: Conselho Guardião',
+    icon: Users,
+    documents: [],
+  },
+  {
+    id: 'pagina-40',
+    title: 'Página 40: Jardim da Memória',
+    icon: BrainCircuit,
+    documents: [],
+  },
   {
     id: 'pagina-27',
     title: 'Página 27: Colapso Ético',
