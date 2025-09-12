@@ -1,4 +1,3 @@
-
 import type { LucideIcon } from 'lucide-react';
 import {
   BrainCircuit,
@@ -867,5 +866,3 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
-
-    
