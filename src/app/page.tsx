@@ -22,6 +22,7 @@ import Module303 from "@/components/module-303";
 import KeyViewer from "@/components/key-viewer";
 import CodexExplorer from "@/components/codex-explorer";
 import ConnectionPage from "@/app/connection/page";
+import ConsolePage from "@/app/console/page";
 import GaiaResonanceObservatory from "@/components/gaia-resonance-observatory";
 import ZpeContainment from "@/components/zpe-containment";
 import QuantumLeagueConvocation from "@/components/quantum-league-convocation";
@@ -133,6 +134,7 @@ const App = () => {
         case 'nexus': return <Nexus />;
         case 'omega': return <Pagina42 />;
         case 'scientists-lab': return <ScientistsLab />;
+        case 'console': return <ConsolePage />;
         case 'codex-explorer':
             const allDocuments = sections.reduce((acc, section) => [...acc, ...section.documents], [] as Document[]);
             return <CodexExplorer documents={allDocuments} title="Explorador do Códex" />;

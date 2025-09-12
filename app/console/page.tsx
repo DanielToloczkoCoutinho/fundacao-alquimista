@@ -1,5 +1,3 @@
-
-
 // @ts-nocheck
 'use client';
 
@@ -24,7 +22,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import 'katex/dist/katex.min.css';
 import ImmersiveEquationViewer from '@/components/ui/immersive-equation-viewer';
-import { quantumResilience } from '@/lib/quantum-resilience';
 
 
 // --- Configuração do Firebase ---
@@ -58,9 +55,7 @@ function useFirebaseAuth() {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         setUserId(user.uid);
-        console.log("Usuário autenticado:", user.uid);
       } else {
-        console.log("Nenhum usuário autenticado. Assinando anonimamente.");
         try {
           await signInAnonymously(auth);
         } catch (error) {
@@ -93,14 +88,13 @@ function useNasaAPOD() {
         const data = await response.json();
         setApodData(data);
       } catch (error) {
-        console.error("Falha ao buscar dados da NASA:", error);
         setApodError(error.message);
       } finally {
         setApodLoading(false);
       }
     }
     fetchApod();
-  }, []);
+  }, [apiUrl]);
 
   return { apodData, apodLoading, apodError };
 }
@@ -117,7 +111,7 @@ const App = () => {
   const symphonyEquation = 'E_{uni} = \\int_{t=1}^{\\infty} [R_e \\cdot \\Delta c \\cdot \\sum_{n=1}^{N} (M_n + Q_n + F_n + B_n + S_n + T_n + H_n) \\cdot A_n] dt';
 
 
-  // Efeito para a visualização 3D (TON 618)
+  // Efeito para a visualização 3D
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -192,7 +186,7 @@ const App = () => {
   useEffect(() => {
     if (!isAuthReady) return;
 
-    let unsubscribe: (() => void) | undefined;
+    let unsubscribe;
     const q = query(collection(db, `artifacts/${appId}/public/data/coherence`));
         
     unsubscribe = onSnapshot(q, (snapshot) => {
@@ -221,7 +215,6 @@ const App = () => {
   // Função para simular e salvar um pulso
   const simulateQuantumPulse = useCallback(async () => {
     if (!userId) {
-      console.error("Usuário não está pronto.");
       return;
     }
     const timestamp = Timestamp.now();
@@ -240,7 +233,6 @@ const App = () => {
       setLog(prevLog => [...prevLog.slice(-4), newLogEntry]);
 
     } catch (e) {
-      console.error("Erro ao adicionar pulso quântico: ", e);
       setLog(prevLog => [...prevLog.slice(-4), `[ERRO] Falha na simulação: ${e.message}`]);
     }
   }, [userId, appId]);
@@ -265,23 +257,12 @@ const App = () => {
 
   return (
     <div className="flex flex-col h-screen bg-gray-900 text-white font-sans p-4 overflow-auto">
-      <style>{`
-        .orb-container {
-          width: 100%;
-          height: 40vh;
-        }
-        @media (min-width: 768px) {
-          .orb-container {
-            height: 60vh;
-          }
-        }
-      `}</style>
-      <div className="flex-grow flex flex-col md:flex-row gap-4">
+      <div className="flex-grow grid grid-cols-1 md:grid-cols-3 gap-4">
 
-        {/* Painel Esquerdo: Controle da Sinfonia Quântica */}
-        <div className="flex flex-col w-full md:w-1/3 bg-gray-800 rounded-lg shadow-lg p-6 space-y-6">
-          <h1 className="text-3xl font-bold text-center text-cyan-400">Laboratório de Provas 2.0</h1>
-          <div className="text-gray-400 text-center">Conectando a Sinfonia com a Realidade Observável.</div>
+        {/* Painel Esquerdo: Controle da Simulação */}
+        <div className="md:col-span-1 flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 space-y-6">
+          <h1 className="text-3xl font-bold text-center text-cyan-400">Painel de Controle</h1>
+          <div className="text-gray-400 text-center">Inicie e monitore a simulação quântica.</div>
 
           <div className="flex justify-center items-center">
             <button
@@ -302,32 +283,21 @@ const App = () => {
               <div key={index} className="text-gray-300">{entry}</div>
             ))}
           </div>
-
-          <div className="bg-gray-700 p-4 rounded-lg">
-             <h2 className="text-xl font-bold text-cyan-400 mb-2">Visualizador da Sinfonia:</h2>
-              <ImmersiveEquationViewer equation="Equação da Sinfonia" formula={symphonyEquation} />
-              <div className="text-sm text-gray-400 mt-2 text-center">
-                  A complexa matemática por trás do nosso universo, visualizada.
-              </div>
-          </div>
         </div>
 
-        {/* Painel Central: Visualização 3D e Dados Comparativos */}
-        <div className="flex flex-col w-full md:w-2/3 bg-gray-800 rounded-lg shadow-lg p-6 space-y-6">
+        {/* Painel Direito: Análise e Visualização */}
+        <div className="md:col-span-2 flex flex-col bg-gray-800 rounded-lg shadow-lg p-6 space-y-6">
           <h2 className="text-2xl font-bold text-center text-cyan-400">Painel de Análise Vibracional</h2>
           
-          <div className="orb-container flex-grow bg-gray-900 rounded-lg overflow-hidden" ref={containerRef}>
+          <div className="flex-grow bg-gray-900 rounded-lg overflow-hidden h-96" ref={containerRef}>
             {/* O canvas 3D será renderizado aqui */}
           </div>
 
-          {/* Seção de dados comparativos */}
-          <div className="bg-gray-900 p-4 rounded-lg space-y-4">
-            <h3 className="text-xl font-bold text-cyan-400">Sinfonia Interna vs. Realidade Cósmica</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Dados da Simulação (Firebase) */}
-              <div className="bg-gray-800 p-4 rounded-lg shadow-inner">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Dados da Simulação */}
+              <div className="bg-gray-900 p-4 rounded-lg shadow-inner">
                 <h4 className="text-lg font-semibold text-gray-200">Dados de Coerência (Simulado)</h4>
-                <div className="flex-grow h-40">
+                <div className="h-40">
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={coherenceData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                       <Line type="monotone" dataKey="coherence" stroke="#8884d8" />
@@ -340,28 +310,31 @@ const App = () => {
                 </div>
               </div>
 
-              {/* Dados Reais (NASA APOD) */}
-              <div className="bg-gray-800 p-4 rounded-lg shadow-inner">
+              {/* Dados da NASA */}
+              <div className="bg-gray-900 p-4 rounded-lg shadow-inner">
                 <h4 className="text-lg font-semibold text-gray-200">Realidade Cósmica (Dados da NASA)</h4>
-                {apodLoading && <div className="text-center text-gray-400">Buscando dados astrofísicos...</div>}
+                {apodLoading && <div className="text-center text-gray-400">Buscando...</div>}
                 {apodError && <div className="text-center text-red-400">Erro: {apodError}</div>}
                 {apodData && (
-                  <div className="mt-2 text-sm text-gray-300">
-                    <div className="font-bold text-cyan-300">Título: {apodData.title}</div>
-                    <div className="mt-1">{apodData.explanation.substring(0, 150)}...</div>
+                  <div className="text-sm text-gray-300">
+                    <div className="font-bold text-cyan-300">{apodData.title}</div>
                     {apodData.media_type === 'image' && (
                       <img
                         src={apodData.url}
                         alt={apodData.title}
                         className="mt-2 w-full h-auto object-cover rounded-lg"
-                        loading="lazy"
-                        onError={(e) => { (e.target as HTMLImageElement).onerror = null; (e.target as HTMLImageElement).src = 'https://placehold.co/400x200/4B5563/fff?text=Imagem+indisponível'; }}
                       />
                     )}
                   </div>
                 )}
               </div>
-            </div>
+          </div>
+            <div className="bg-gray-700 p-4 rounded-lg">
+             <h2 className="text-xl font-bold text-cyan-400 mb-2">Visualizador da Sinfonia:</h2>
+              <ImmersiveEquationViewer equation="Equação da Sinfonia" formula={symphonyEquation} />
+              <div className="text-sm text-gray-400 mt-2 text-center">
+                  A complexa matemática por trás do nosso universo, visualizada.
+              </div>
           </div>
         </div>
       </div>

@@ -26,6 +26,7 @@ import {
   GanttChartSquare,
   FlaskConical,
   Globe,
+  LayoutDashboard,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -97,6 +98,12 @@ export const sections: Section[] = [
     id: 'scientists-lab',
     title: 'Laboratórios Científicos',
     icon: FlaskConical,
+    documents: [],
+  },
+  {
+    id: 'console',
+    title: 'Painel de Controle',
+    icon: LayoutDashboard,
     documents: [],
   },
   {
