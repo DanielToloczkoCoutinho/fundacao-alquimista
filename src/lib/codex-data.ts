@@ -445,6 +445,12 @@ export const sections: Section[] = [
     icon: PocketKnife,
     documents: [],
   },
+  {
+    id: 'm32',
+    title: 'Módulo 32: Acesso Dimensional',
+    icon: Network,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
