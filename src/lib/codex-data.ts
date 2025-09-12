@@ -455,12 +455,6 @@ export const sections: Section[] = [
     icon: History,
     documents: [],
   },
-  {
-    id: 'm24',
-    title: 'Módulo 24: Integridade Cósmica',
-    icon: ShieldCheck,
-    documents: [],
-  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',

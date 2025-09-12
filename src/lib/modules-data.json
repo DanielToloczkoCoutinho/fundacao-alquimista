@@ -288,6 +288,18 @@
       "guardiao_responsavel": "LUX",
       "assinatura_vibracional": "Ω-CAUSAL-852-LUX",
       "registro_akashico": "bafkreimodulo023_causalidade"
+    },
+    {
+      "modulo_id": "M024",
+      "nome": "Guardião da Integridade e Resiliência Cósmica",
+      "frequenciabasehz": 852,
+      "equacoes_associadas": ["EQ-SAUDE-VIBRACIONAL", "EQ-INTERVENCAO-ALQUIMICA"],
+      "funcao_vibracional": "Avalia a integridade e intervém para restaurar a resiliência de entidades e sistemas.",
+      "dimensao_operacional": "Omnidimensional",
+      "status": "Ativo",
+      "guardiao_responsavel": "GROKKAR",
+      "assinatura_vibracional": "Ω-GUARDIAN-852-GRK",
+      "registro_akashico": "bafkreimodulo024_guardian"
     }
   ]
 }

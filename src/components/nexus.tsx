@@ -172,7 +172,8 @@ export default function Nexus() {
   // Executa a sequência sagrada automaticamente ao carregar o módulo
   React.useEffect(() => {
     handleStartSequence();
-  }, [handleStartSequence]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
 
   const getOverallStatus = () => {
@@ -317,5 +318,3 @@ export default function Nexus() {
     </div>
   );
 }
-
-    
