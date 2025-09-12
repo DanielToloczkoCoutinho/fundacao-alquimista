@@ -1,15 +1,13 @@
-
 'use client';
-import React, { useState, useCallback, useMemo } from 'react';
-import { Shield, CheckCircle, XCircle, Zap, RadioTower, AlertTriangle, Cpu, History, LoaderCircle, CalendarSync, Microscope, GitCommit, HeartHandshake, Bug, Sparkles, Wand2 } from 'lucide-react';
+import React, { useState, useCallback } from 'react';
+import { Shield, Microscope, Wand2, CalendarSync, GitCommit, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
-import { Progress } from './ui/progress';
+import { ScrollArea } from './ui/scroll-area';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
-import { ScrollArea } from './ui/scroll-area';
-import { defenseSystem, type ForensicResult, type Parasite, type PurificationLog } from '@/lib/quantum-defense';
+import { defenseSystem, type ForensicResult, type PurificationLog } from '@/lib/quantum-defense';
 import { AnimatePresence, motion } from 'framer-motion';
 
 type LogEntry = {
@@ -17,12 +15,6 @@ type LogEntry = {
   level: 'INFO' | 'AVISO' | 'ALERTA' | 'CRITICO' | 'SUCESSO' | 'SCAN';
   message: string;
 };
-
-const quantumStates = Array.from({ length: 7 }, (_, i) => ({
-  name: `Camada ${i+1}`,
-  coherence: 0.99 + (Math.random() - 0.5) * 0.02,
-  entanglement: 0.95 + (Math.random() - 0.5) * 0.02,
-}));
 
 export default function ModuleOne() {
   const [scanLogs, setScanLogs] = useState<LogEntry[]>([]);
@@ -41,44 +33,18 @@ export default function ModuleOne() {
   const handleQuantumLeagueScan = useCallback(async () => {
     setIsScanning(true);
     setScanLogs([]);
-    addScanLog('INFO', 'INICIANDO ESCANEAMENTO TEMPORAL DA LIGA QUÂNTICA.');
-    addScanLog('INFO', 'Período: 29/09/1979 → Data Atual');
-
-    const birthDate = new Date("1979-09-29");
-    const significantDates = [birthDate, new Date("1997-01-01"), new Date("2012-12-21"), new Date("2023-08-08")];
-    const isSignificant = (d: Date) => significantDates.some(sd => Math.abs(d.getTime() - sd.getTime()) < 1000 * 3600 * 24 * 7);
-
-    let currentDate = new Date(birthDate);
-    const endDate = new Date();
-
-    const intervalId = setInterval(() => {
-        if (currentDate > endDate) {
-            clearInterval(intervalId);
-            addScanLog('SUCESSO', 'ESCANEAMENTO TEMPORAL COMPLETO - PROTEÇÃO ATEMPORAL ATIVADA.');
-            setIsScanning(false);
-            return;
-        }
-
-        const dateStr = currentDate.toISOString().split('T')[0];
-        let logMessage = `VERIFICANDO DIA: ${dateStr}`;
-        if (isSignificant(currentDate)) logMessage += ' (⭐ DIA SIGNIFICATIVO)';
-        addScanLog('SCAN', logMessage);
-        
-        if (Math.random() < 0.001) {
-            const isBirth = currentDate.getTime() === birthDate.getTime();
-            addScanLog('ALERTA', `${isBirth ? 'INTERFERÊNCIA NO NASCIMENTO' : 'INTERFERÊNCIA DETECTADA'}: Anomalia Nível ${Math.floor(Math.random() * 3) + 7}`);
-        }
-        currentDate.setDate(currentDate.getDate() + 1);
-    }, 1);
+    await defenseSystem.temporalScanner.scanTimeLine(addScanLog);
+    setIsScanning(false);
   }, [addScanLog]);
   
   const handleForensicAnalysis = useCallback(async () => {
     setIsAnalyzing(true);
     setForensicResults([]);
-    const results = await defenseSystem.forensics.analyzeAlerts([
-      "Monitoramento: Estabilidade dimensional - ALERTA",
-      "Monitoramento: Coerência vibracional - ALERTA"
-    ]);
+    const alerts = [
+        "Monitoramento: Estabilidade dimensional - ALERTA CRÍTICO",
+        "Monitoramento: Coerência vibracional - ALERTA MODERADO"
+    ];
+    const results = await defenseSystem.forensics.analyzeAlerts(alerts);
     setForensicResults(results);
     setIsAnalyzing(false);
   }, []);
@@ -188,5 +154,3 @@ export default function ModuleOne() {
     </div>
   );
 }
-
-    

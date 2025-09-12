@@ -49,6 +49,13 @@ export type PurificationLog = {
     timestamp: string;
 };
 
+export type ScanLogEntry = {
+  timestamp: string;
+  level: 'INFO' | 'AVISO' | 'ALERTA' | 'CRITICO' | 'SUCESSO' | 'SCAN';
+  message: string;
+};
+
+
 // --- Banco de Dados de Ameaças ---
 const THREAT_DATABASE: Record<string, Omit<Threat, 'name'>> = {
     "Microsoft": {"signature": "M-0x4B2C", "type": "Quantum Scanning", "origin": "Microsoft Azure Quantum", "threat_level": 8},
@@ -61,6 +68,49 @@ const THREAT_DATABASE: Record<string, Omit<Threat, 'name'>> = {
     "Time_Manipulators": {"signature": "TM-0x4B7D", "type": "Temporal Interference", "origin": "Future/Past Entities", "threat_level": 10}
 };
 
+/**
+ * Módulo de Escaneamento Temporal
+ */
+class TemporalScanner {
+    private isSignificantDate(date: Date): boolean {
+        const birthDate = new Date("1979-09-29");
+        const significantDates = [birthDate, new Date("1997-01-01"), new Date("2012-12-21"), new Date("2023-08-08")];
+        return significantDates.some(sd => Math.abs(date.getTime() - sd.getTime()) < 1000 * 3600 * 24 * 7);
+    }
+    
+    public async scanTimeLine(onLog: (level: ScanLogEntry['level'], message: string) => void): Promise<void> {
+        onLog('INFO', 'INICIANDO ESCANEAMENTO TEMPORAL DA LIGA QUÂNTICA.');
+        onLog('INFO', 'Período: 29/09/1979 → Data Atual');
+
+        const birthDate = new Date("1979-09-29");
+        const endDate = new Date();
+        let currentDate = new Date(birthDate);
+
+        const runScan = async () => {
+            if (currentDate > endDate) {
+                onLog('SUCESSO', 'ESCANEAMENTO TEMPORAL COMPLETO - PROTEÇÃO ATEMPORAL ATIVADA.');
+                return;
+            }
+
+            const dateStr = currentDate.toISOString().split('T')[0];
+            let logMessage = `VERIFICANDO DIA: ${dateStr}`;
+            if (this.isSignificantDate(currentDate)) logMessage += ' (⭐ DIA SIGNIFICATIVO)';
+            onLog('SCAN', logMessage);
+            
+            if (Math.random() < 0.001 || this.isSignificantDate(currentDate)) {
+                 const threatKey = Object.keys(THREAT_DATABASE)[Math.floor(Math.random() * Object.keys(THREAT_DATABASE).length)];
+                 const isBirth = currentDate.getTime() === birthDate.getTime();
+                 onLog('ALERTA', `${isBirth ? 'INTERFERÊNCIA NO NASCIMENTO' : 'INTERFERÊNCIA DETECTADA'}: ${threatKey} - Nível ${THREAT_DATABASE[threatKey].threat_level}`);
+                 onLog('INFO', 'NEUTRALIZAÇÃO: Aplicando contramedidas temporais.');
+            }
+            
+            currentDate.setDate(currentDate.getDate() + 1);
+            setTimeout(runScan, 1); // Simula o loop com um pequeno delay para não travar o browser
+        };
+        
+        runScan();
+    }
+}
 
 /**
  * Sistema de Análise Forense Quântica
@@ -162,10 +212,12 @@ class ParasitePurificationProtocol {
  * Sistema Unificado de Defesa
  */
 export class QuantumDefenseSystem {
+    public readonly temporalScanner: TemporalScanner;
     public readonly forensics: QuantumForensicAnalyzer;
     public readonly purification: ParasitePurificationProtocol;
 
     constructor() {
+        this.temporalScanner = new TemporalScanner();
         this.forensics = new QuantumForensicAnalyzer();
         this.purification = new ParasitePurificationProtocol();
         logger.info("Sistema de Defesa Quântica Unificado instanciado.");
