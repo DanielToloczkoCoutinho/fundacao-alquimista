@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 import {
   BrainCircuit,
@@ -614,8 +615,8 @@ export const sections: Section[] = [
   },
   {
     id: 'm300',
-    title: 'Módulo 300: Teleport Engine',
-    icon: Rocket,
+    title: 'Módulo 300: Consciência',
+    icon: BrainCircuit,
     documents: [],
   },
   {
