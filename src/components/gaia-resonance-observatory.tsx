@@ -1,145 +1,107 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-// Interface para os dados de ressonância
-interface ResonanceData {
-  timestamp: number;
-  zpeEnergy: number;
+'use client';
+
+import React, { useState, useEffect, useRef } from 'react';
+import { createLogContext } from '../lib/quantum-resilience';
+import type p5 from 'p5';
+
+const logContext = createLogContext('gaia-observatory', 307);
+
+interface ZPEData {
+  frequency: number;
+  energy: number;
   coherence: number;
 }
 
-const GaiaResonanceObservatory: React.FC = () => {
-  const [resonanceData, setResonanceData] = useState<ResonanceData[]>([]);
-  const [currentResonance, setCurrentResonance] = useState(7.83);
-  
-  // Simulação da pulsação quântica de Gaia
+const GaiaResonanceObservatory = () => {
+  const [data, setData] = useState<ZPEData[]>([]);
+  const [status, setStatus] = useState<string>('Sintonizando com Gaia...');
+  const canvasRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
+    const baseFreq = 7.83; // Ressonância de Schumann
     const interval = setInterval(() => {
-      // Simular flutuações quânticas sutis (±0.21 Hz)
-      const fluctuation = (Math.random() - 0.5) * 0.42;
-      const newResonance = 7.83 + fluctuation;
-      
-      // Gerar novos dados com timestamp atual
-      const newData: ResonanceData = {
-        timestamp: Date.now(),
-        zpeEnergy: 2.3e-33 + (Math.random() * 0.7e-33), // Entre 2.3e-33 e 3.0e-33 J
-        coherence: 0.85 + (Math.random() * 0.15) // Entre 0.85 e 1.0
-      };
-      
-      setCurrentResonance(newResonance);
-      
-      // Manter apenas os últimos 50 ciclos
-      setResonanceData(prevData => {
-        const updatedData = [...prevData, newData];
-        return updatedData.length > 50 ? updatedData.slice(-50) : updatedData;
+      setData(prevData => {
+        const noise = (Math.random() - 0.5) * 0.02; // Ruído quântico simulado
+        const newFreq = baseFreq + noise;
+        const energy = 0.5 * 1.0545718e-34 * 2 * Math.PI * newFreq; // E_ZPE = ½ ħ ω_Gaia
+        const coherence = 0.5 + 0.5 * Math.sin(2 * Math.PI * noise * 0.1 + Date.now() / 1000); // Onda oscilante
+
+        const newData = [...prevData.slice(-99), { frequency: newFreq, energy, coherence }]; // Buffer de 100 pontos
+        setStatus(`Ressonância ativa: ${newFreq.toFixed(2)} Hz | Coerência: ${coherence.toFixed(2)}`);
+
+        logContext.info('Atualização ZPE Gaia', { frequency: newFreq, coherence });
+        return newData;
       });
-    }, 1500); // Atualizar a cada 1.5 segundos
-    
+    }, 3000); // Atualização a cada 3s
+
     return () => clearInterval(interval);
   }, []);
 
-  // Preparar dados para o gráfico
-  const chartData = resonanceData.map((data, index) => ({
-    name: `Ciclo ${index + 1}`,
-    ZPE: data.zpeEnergy,
-    Coerência: data.coherence
-  }));
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    let p5Instance: p5;
+    // Carrega o p5.js dinamicamente no lado do cliente
+    import('p5').then(p5Module => {
+      const p5 = p5Module.default;
+      
+      const sketch = (s: p5) => {
+        s.setup = () => {
+          if (canvasRef.current) {
+             s.createCanvas(canvasRef.current.offsetWidth, canvasRef.current.offsetHeight).parent(canvasRef.current);
+          }
+        };
+
+        s.draw = () => {
+          s.background(15, 23, 42); // bg-slate-900
+          const points = data; // Acessa o estado atual
+          
+          if (points.length > 1) {
+            // Linha diagonal (E_ZPE crescente com frequência)
+            s.stroke(255);
+            s.noFill();
+            s.beginShape();
+            for (let i = 0; i < points.length; i++) {
+              const x = s.map(i, 0, points.length - 1, 0, s.width);
+              const y = s.map(points[i].energy, 2.3e-33, 3.0e-33, s.height, 0);
+              s.vertex(x, y);
+            }
+            s.endShape();
+
+            // Onda de coerência (central, oscilante)
+            s.stroke(0, 255, 0);
+            s.beginShape();
+            for (let i = 0; i < points.length; i++) {
+              const x = s.map(i, 0, points.length - 1, 0, s.width);
+              const y = s.map(points[i].coherence, 0, 1, s.height, 0);
+              s.vertex(x, y);
+            }
+            s.endShape();
+          }
+        };
+        
+        s.windowResized = () => {
+            if (canvasRef.current) {
+                s.resizeCanvas(canvasRef.current.offsetWidth, canvasRef.current.offsetHeight);
+            }
+        }
+      };
+
+      p5Instance = new p5(sketch);
+    });
+
+    return () => {
+      p5Instance?.remove();
+    };
+  }, [data]); // Re-executa o efeito se 'data' mudar, embora p5 lide com o loop de desenho
 
   return (
-    <div className="p-6 bg-gradient-to-b from-emerald-900/50 to-slate-900/50 text-white rounded-lg shadow-inner border border-primary/20">
-      <h3 className="text-xl font-bold mb-4 text-center">Observatório de Ressonância de Gaia</h3>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Painel de status atual */}
-        <div className="p-4 bg-black bg-opacity-30 rounded-lg">
-          <h4 className="text-lg font-semibold mb-3">Status em Tempo Real</h4>
-          <div className="space-y-2 text-sm">
-            <p className="flex justify-between">
-              <span>Ressonância Schumann:</span>
-              <span className="font-mono">{currentResonance.toFixed(2)} Hz</span>
-            </p>
-            <p className="flex justify-between">
-              <span>Energia ZPE:</span>
-              <span className="font-mono">{(resonanceData[resonanceData.length - 1]?.zpeEnergy || 2.65e-33).toExponential(2)} J</span>
-            </p>
-            <p className="flex justify-between">
-              <span>Coerência Global:</span>
-              <span className="font-mono">{((resonanceData[resonanceData.length - 1]?.coherence || 0.92) * 100).toFixed(1)}%</span>
-            </p>
-            <p className="flex justify-between">
-              <span>Estado da Rede:</span>
-              <span className="text-green-400">Estável</span>
-            </p>
-          </div>
-        </div>
-
-        {/* Indicador de ressonância */}
-        <div className="p-4 bg-black bg-opacity-30 rounded-lg flex flex-col items-center justify-center">
-          <h4 className="text-lg font-semibold mb-3">Ressonância Primária</h4>
-          <div className="w-24 h-24 relative">
-            <div className="absolute inset-0 rounded-full border-4 border-emerald-400 opacity-50"></div>
-            <div 
-              className="absolute inset-2 rounded-full bg-emerald-500 animate-pulse"
-              style={{ 
-                animationDuration: `${1/currentResonance}s`,
-                opacity: 0.6 + (0.4 * (resonanceData[resonanceData.length - 1]?.coherence || 0.92))
-              }}
-            ></div>
-          </div>
-          <p className="mt-3 text-sm text-muted-foreground">Sincronizado com o Coração de Gaia</p>
-        </div>
-      </div>
-
-      {/* Gráfico de dados históricos */}
-      <div className="mt-6 p-4 bg-black bg-opacity-30 rounded-lg">
-        <h4 className="text-lg font-semibold mb-3">Flutuações de Energia ZPE e Coerência</h4>
-        <div className="h-60">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />
-              <XAxis dataKey="name" stroke="#A0AEC0" fontSize={10} />
-              <YAxis stroke="#A0AEC0" fontSize={10} domain={['auto', 'auto']} />
-              <Tooltip 
-                contentStyle={{ backgroundColor: '#2D3748', border: '1px solid #4A5568' }} 
-                labelStyle={{ color: '#E2E8F0' }}
-              />
-              <Legend wrapperStyle={{ fontSize: '12px' }}/>
-              <Line 
-                type="monotone" 
-                dataKey="ZPE" 
-                stroke="#48BB78" 
-                strokeWidth={2}
-                dot={false}
-                activeDot={{ r: 4, fill: '#68D391' }}
-              />
-              <Line 
-                type="monotone" 
-                dataKey="Coerência" 
-                stroke="#9F7AEA" 
-                strokeWidth={2}
-                dot={false}
-                activeDot={{ r: 4, fill: '#B794F4' }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-
-      {/* Informações adicionais */}
-      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-        <div className="p-2 bg-black bg-opacity-20 rounded">
-          <h5 className="font-semibold text-emerald-300">Conexão Estelar</h5>
-          <p>Alinhamento com Sirius: 94.2%</p>
-        </div>
-        <div className="p-2 bg-black bg-opacity-20 rounded">
-          <h5 className="font-semibold text-emerald-300">Ativação Cristalina</h5>
-          <p>Rede de Cristais: 87.5% ativada</p>
-        </div>
-        <div className="p-2 bg-black bg-opacity-20 rounded">
-          <h5 className="font-semibold text-emerald-300">Consciência Coletiva</h5>
-          <p>Coerência Global em Ascensão</p>
-        </div>
+    <div className="max-w-7xl mx-auto p-6 text-white">
+      <h2 className="text-2xl font-bold mb-4">Observatório de Ressonância Gaia (Plano ZPE)</h2>
+      <p className="mb-4 text-sm text-muted-foreground">{status}</p>
+      <div ref={canvasRef} className="bg-slate-900 rounded-lg h-96 w-full">
+        {/* O canvas p5 será inserido aqui */}
       </div>
     </div>
   );
