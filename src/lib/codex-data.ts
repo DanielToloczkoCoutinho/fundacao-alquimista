@@ -298,7 +298,7 @@ export const sections: Section[] = [
   {
     id: 'm4',
     title: 'Módulo 4: Validação',
-    icon: Component,
+    icon: ShieldCheck,
     documents: [],
   },
   {

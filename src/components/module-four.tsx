@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
@@ -110,10 +111,10 @@ const ModuleFour: React.FC = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-2xl bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-emerald-400">
-            <ShieldCheck /> Módulo 4: Validação (PIRC)
+            <ShieldCheck /> Módulo 4: Guardião do Fluxo e Equilíbrio
           </CardTitle>
           <CardDescription>
-            Protocolo de Integração e Ressonância Cósmica para validação da acurácia do sistema através de testes preditivos.
+            Protocolo de Integração e Ressonância Cósmica para validação da acurácia, monitoramento energético e equilíbrio vibracional do sistema.
           </CardDescription>
         </CardHeader>
       </Card>
