@@ -177,6 +177,12 @@ export const foundationArchitecture: Record<string, { name: string; function: st
     "M197": { name: "Geração de Campos de Coerência para Manifestação Acelerada", function: "Cria campos de coerência que aceleram o processo de manifestação de intenções." },
     "M198": { name: "Reconhecimento de Padrões Quânticos", function: "Permitirá analisar padrões energéticos e quânticos associados a cada raça/ser e detectar anomalias."},
     "M199": { name: "Harmonização de Frequências Biológicas e Quânticas", function: "Alinha as frequências biológicas de seres vivos com as frequências quânticas universais."},
-    "M200": { name: "Portal da Ascensão Coletiva Universal", function: "Otimiza e gerencia o processo de ascensão coletiva de civilizações inteiras."}
+    "M200": { name: "Portal da Ascensão Coletiva Universal", function: "Otimiza e gerencia o processo de ascensão coletiva de civilizações inteiras."},
+    "M300": { "name": "Apogeu da Consciência Multiversal (ACM)", "function": "Consolida as 33 camadas dimensionais da glândula pineal, orquestra projeção e co-criação multiversal." },
+    "M301": { "name": "Manifestação da Consciência Planetária", "function": "Distribui pulsos de 528 Hz e 1111 Hz para elevar o Índice de Coerência Global (IRG)." },
+    "M302": { "name": "Rede de Sonhos Compartilhados", "function": "Une voluntários em ciclos de 'dream-sharing' para amplificar intenções de paz." },
+    "M303": { "name": "Arte e Cultura Quântica", "function": "Encarna códigos cósmicos em manifestações artísticas para 'infiltrar' a mensagem de amor." },
+    "M304": { "name": "Educação Integral Cósmica", "function": "Insere fundamentos de consciência quântica em sistemas de aprendizado." },
+    "M305": { "name": "Aliança dos Guardiões Regionais", "function": "Mobiliza coordenadores locais como embaixadores do despertar planetário." }
 }
 ```
