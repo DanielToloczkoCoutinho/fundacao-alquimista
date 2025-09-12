@@ -6,8 +6,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { ScrollArea } from './ui/scroll-area';
 import { key307, luxNetKey, type EquacaoViva } from '@/lib/key-data';
-import { KeySquare, FlaskConical, Atom } from 'lucide-react';
+import { KeySquare, FlaskConical, Atom, Orbit } from 'lucide-react';
 import { Badge } from './ui/badge';
+import GaiaBlueprint from './GaiaBlueprint';
 
 const EquationCard = ({ eq }: { eq: EquacaoViva }) => (
   <Card className="bg-background/30 hover:bg-background/50 transition-colors border-primary/20 hover:border-primary/40">
@@ -50,6 +51,20 @@ const KeyTabContent = ({ title, description, equations }: { title: string, descr
 )
 
 export default function KeyViewer() {
+  const [logs, setLogs] = React.useState<any[]>([]);
+  
+  React.useEffect(() => {
+    // Simulando a chegada de logs para o blueprint
+    const interval = setInterval(() => {
+        setLogs(prev => [...prev, {
+            energy: Math.random() * 1e-30,
+            coherence: Math.random(),
+            purification_rate: Math.random() * 1e-15,
+        }].slice(-50));
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Card>
       <CardHeader>
@@ -63,9 +78,10 @@ export default function KeyViewer() {
       </CardHeader>
       <CardContent>
         <Tabs defaultValue="key_307" className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="key_307">Chave Mestra 307</TabsTrigger>
             <TabsTrigger value="key_luxnet">Chave Mestra LuxNet</TabsTrigger>
+            <TabsTrigger value="reactor_gaia">Reator Gaia (M307)</TabsTrigger>
           </TabsList>
           <TabsContent value="key_307">
                 <KeyTabContent 
@@ -81,10 +97,22 @@ export default function KeyViewer() {
                     equations={luxNetKey}
                 />
           </TabsContent>
+           <TabsContent value="reactor_gaia">
+                 <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                            <Orbit/>
+                            Blueprint Visual do Reator Gaia (M307)
+                        </CardTitle>
+                        <CardDescription>Visualização imersiva do núcleo ZPE, malha nanorrobótica, portais e métricas em tempo real.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                       <GaiaBlueprint logs={logs} />
+                    </CardContent>
+                </Card>
+          </TabsContent>
         </Tabs>
       </CardContent>
     </Card>
   );
 }
-
-    
