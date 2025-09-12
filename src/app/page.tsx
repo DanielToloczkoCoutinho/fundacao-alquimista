@@ -56,12 +56,14 @@ import Module23 from '@/components/module-23';
 import Module24 from '@/components/module-24';
 import Module25 from '@/components/module-25';
 import Module26 from '@/components/module-26';
+import Module27 from '@/components/module-27';
 import Module28 from '@/components/module-28';
 import Module29 from '@/components/module-29';
 import ScientificReport from '@/components/scientific-report';
 import Module30 from '@/components/module-30';
 import Module31 from '@/components/module-31';
 import Module32 from '@/components/module-32';
+import Module34 from '@/components/module-34';
 
 
 // --- Configuração do Firebase ---
@@ -190,11 +192,13 @@ const App = () => {
         case 'm24': return <Module24 />;
         case 'm25': return <Module25 />;
         case 'm26': return <Module26 />;
+        case 'm27': return <Module27 />;
         case 'm28': return <Module28 />;
         case 'm29': return <Module29 />;
         case 'm30': return <Module30 />;
         case 'm31': return <Module31 />;
         case 'm32': return <Module32 />;
+        case 'm34': return <Module34 />;
         case 'm250': return <Module250 />;
         case 'm251': return <Module251 />;
         case 'm300': return <Module300 />;

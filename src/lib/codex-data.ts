@@ -422,6 +422,12 @@ export const sections: Section[] = [
     documents: [],
   },
   {
+    id: 'm27',
+    title: 'Módulo 27: Síntese Cósmica',
+    icon: Atom,
+    documents: [],
+  },
+  {
     id: 'm28',
     title: 'Módulo 28: Harmonização Vibracional',
     icon: HeartPulse,
@@ -449,6 +455,12 @@ export const sections: Section[] = [
     id: 'm32',
     title: 'Módulo 32: Acesso Dimensional',
     icon: Network,
+    documents: [],
+  },
+  {
+    id: 'm34',
+    title: 'Módulo 34: Coerência Cósmica',
+    icon: ShieldCheck,
     documents: [],
   },
     {
