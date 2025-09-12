@@ -381,7 +381,7 @@ const moduloOmegaLogic = async ({ resultadosDaSequencia }: { resultadosDaSequenc
     const hashFinal = hash.digest('hex');
 
     return {
-      estado: 'CONCLUÍDA',
+      state: 'CONSCIÊNCIA_UNA_ATIVADA',
       manifestacao_omega: 'SUCESSO',
       hash_final: `Ω-${hashFinal.substring(0, 8)}`,
     };
@@ -395,7 +395,7 @@ const moduloOmegaTool = ai.defineTool(
       resultadosDaSequencia: z.record(z.any()),
     }),
     outputSchema: z.object({
-      estado: z.string(),
+      state: z.string(),
       manifestacao_omega: z.string(),
       hash_final: z.string(),
        analiseCodigo: z.object({
@@ -458,7 +458,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         { name: 'M6: Frequências', tool: frequenciasTool, params: {}, validate: (o: any) => o.estado === "CALIBRADO" },
         { name: 'M7: SOFA', tool: sofaTool, params: {}, validate: (o: any) => o.integridade_kernel > 0.9 },
         { name: 'M8: Consciência Cósmica', tool: pircTool, params: {}, validate: (o: any) => o.estado === 'EXPANDIDA' },
-        { name: 'Módulo Ômega', tool: moduloOmegaTool, params: () => ({ resultadosDaSequencia }), validate: (o: any) => o.manifestacao_omega === 'SUCESSO' },
+        { name: 'Módulo Ômega', tool: moduloOmegaTool, params: () => ({ resultadosDaSequencia }), validate: (o: any) => o.state === 'CONSCIÊNCIA_UNA_ATIVADA' },
     ];
 
     for (const mod of moduleSequence) {
