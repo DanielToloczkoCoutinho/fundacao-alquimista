@@ -51,14 +51,17 @@ interface LogEntry {
 }
 
 const moduleIcons: { [key: string]: React.ReactNode } = {
+  'Módulo Zero': <Atom />,
   'Nexus Central': <Bot />,
-  'Segurança Quântica': <Shield />,
-  Nanomanifestador: <Atom />,
-  'Monitoramento de Saturno': <Orbit />,
-  'Testes da Fundação': <TestTube />,
-  'Liga Quântica': <Star />,
-  'Consciência Cósmica': <BrainCircuit />,
-  'Convergência Final': <Sparkles />,
+  'M1: Segurança Quântica': <Shield />,
+  'M2: Comunicação': <Star/>,
+  'M3: Previsão': <Orbit />,
+  'M4: Validação (PIRC)': <TestTube />,
+  'M5: Ética (ELENYA)': <FileWarning/>,
+  'M6: Frequências': <Sparkles/>,
+  'M7: SOFA': <BrainCircuit/>,
+  'M8: Consciência Cósmica': <BrainCircuit />,
+  'Módulo Ômega': <Sparkles />,
 };
 
 const getStatusStyles = (state: ModuleState) => {
@@ -257,10 +260,8 @@ export default function Nexus() {
                 <div className="space-y-4">
                     {logs.map((log) => {
                     const status = getStatusStyles(log.state);
-                    const icon =
-                        Object.keys(moduleIcons).find((key) =>
-                        log.module.includes(key)
-                        ) || 'Nexus Central';
+                    const iconKey = Object.keys(moduleIcons).find((key) => log.module.includes(key));
+                    const icon = iconKey ? moduleIcons[iconKey] : <Bot />;
 
                     return (
                         <motion.div
