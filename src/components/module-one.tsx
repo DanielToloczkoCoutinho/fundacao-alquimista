@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Shield, CheckCircle, XCircle, Zap, RadioTower, Lock, AlertTriangle, Cpu, History, LoaderCircle, CalendarSync } from 'lucide-react';
@@ -60,7 +61,7 @@ export default function ModuleOne() {
     }));
     setQuantumStates(initialStates);
     setEstado('ATIVO');
-    addLog('INFO', '7 camadas de proteção quântica ativadas e emaranhadas.');
+    addLog('SUCESSO', '7 camadas de proteção quântica ativadas e emaranhadas.');
 
     const interval = setInterval(() => {
       setQuantumStates(states => states.map(s => ({
@@ -108,9 +109,10 @@ export default function ModuleOne() {
     }, 5000);
   };
   
-    const handleQuantumLeagueScan = async () => {
+  const handleQuantumLeagueScan = async () => {
     setEstado('SCANNING');
     addLog('INFO', 'INICIANDO ESCANEAMENTO TEMPORAL DA LIGA QUÂNTICA.');
+    addLog('INFO', 'Período: 29/09/1979 → Data Atual');
 
     const birthDate = new Date("1979-09-29");
     const significantDates = [
@@ -135,7 +137,7 @@ export default function ModuleOne() {
 
     const scanDay = () => {
         if (currentDate > endDate) {
-            addLog('SUCESSO', 'ESCANEAMENTO TEMPORAL COMPLETO - PROTEÇÃO ATIVADA.');
+            addLog('SUCESSO', 'ESCANEAMENTO TEMPORAL COMPLETO - PROTEÇÃO ATEMPORAL ATIVADA.');
             setEstado('ATIVO');
             return;
         }
@@ -149,15 +151,15 @@ export default function ModuleOne() {
         addLog('SCAN', logMessage);
         
         // Simulação de detecção
-        if (Math.random() < 0.01) { // 1% de chance de encontrar algo
+        if (Math.random() < 0.001) { // Chance baixa para não poluir o log
             const isBirth = currentDate.getTime() === birthDate.getTime();
             let interferenceType = isBirth ? 'INTERFERÊNCIA NO NASCIMENTO' : 'INTERFERÊNCIA DETECTADA';
-            addLog('ALERTA', `${interferenceType}: Anomalia Temporal Nível 7`);
-            addLog('INFO', `NEUTRALIZAÇÃO: Aplicando Estabilização Temporal...`);
+            addLog('ALERTA', `${interferenceType}: Anomalia Temporal Nível ${Math.floor(Math.random() * 3) + 7}`);
+            addLog('INFO', `NEUTRALIZAÇÃO: Aplicando Estabilização Temporal Reversa...`);
         }
 
         currentDate.setDate(currentDate.getDate() + 1);
-        setTimeout(scanDay, 10);
+        setTimeout(scanDay, 1); // Acelerado para demonstração
     };
     
     scanDay();
