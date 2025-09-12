@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Suspense, useEffect, useState } from 'react';
@@ -49,6 +48,7 @@ import Pagina34 from '@/components/pagina-34';
 import Pagina37 from '@/components/pagina-37';
 import Pagina38 from '@/components/pagina-38';
 import Pagina39 from '@/components/pagina-39';
+import Pagina40 from '@/components/pagina-40';
 import Pagina43 from '@/components/pagina-43';
 
 
@@ -146,6 +146,7 @@ const App = () => {
         case 'pagina-37': return <Pagina37 />;
         case 'pagina-38': return <Pagina38 />;
         case 'pagina-39': return <Pagina39 />;
+        case 'pagina-40': return <Pagina40 />;
         case 'pagina-42': return <Pagina42 />;
         case 'pagina-43': return <Pagina43 />;
         case 'organograma': return <OrganogramaCosmogonico />;
