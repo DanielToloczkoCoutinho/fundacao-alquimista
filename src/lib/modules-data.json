@@ -156,6 +156,18 @@
       "guardiao_responsavel": "PHIARA",
       "assinatura_vibracional": "Ω-AKASHA-7.83-PHI",
       "registroakashico": "bafkreimodulo012_akasha"
+    },
+    {
+      "modulo_id": "M013",
+      "nome": "Mapeamento de Frequências Energéticas",
+      "frequenciabasehz": 396.00,
+      "equacoes_associadas": ["EQ-RES-SYS", "EQ-HARMONIZE"],
+      "funcao_vibracional": "Mapeia campos energéticos, detecta anomalias e inicia protocolos de harmonização.",
+      "dimensao_operacional": "3D-12D",
+      "status": "Ativo",
+      "guardiao_responsavel": "ZENNITH",
+      "assinatura_vibracional": "Ω-MAP-396-ZN",
+      "registroakashico": "bafkreimodulo013_mapeamento"
     }
   ]
 }

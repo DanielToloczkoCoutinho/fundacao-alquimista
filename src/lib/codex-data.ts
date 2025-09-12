@@ -382,6 +382,12 @@ export const sections: Section[] = [
     icon: DatabaseZap,
     documents: [],
   },
+  {
+    id: 'm13',
+    title: 'Módulo 13: Mapeamento Energético',
+    icon: Activity,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
