@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Suspense, useEffect, useState } from 'react';
@@ -63,6 +64,7 @@ import ModuleTwenty from '@/components/module-twenty';
 import Module21 from '@/components/module-21';
 import Module22 from '@/components/module-22';
 import Module23 from '@/components/module-23';
+import Module24 from '@/components/module-24';
 
 
 // --- Configuração do Firebase ---
@@ -197,6 +199,7 @@ const App = () => {
         case 'm21': return <Module21 />;
         case 'm22': return <Module22 />;
         case 'm23': return <Module23 />;
+        case 'm24': return <Module24 />;
         case 'm250': return <Module250 />;
         case 'm251': return <Module251 />;
         case 'm300': return <Module300 />;
@@ -251,3 +254,5 @@ const App = () => {
 };
 
 export default App;
+
+    
