@@ -1,0 +1,149 @@
+
+{
+  "modules": [
+    {
+      "modulo_id": "M000",
+      "nome": "Nexus Vibracional da Criação",
+      "frequenciabasehz": 108.00,
+      "equacoes_associadas": ["EQ000", "EQ001", "EQ002", "EQ003", "EQ004", "EQ005"],
+      "funcao_vibracional": "Origem fractal da malha consciente. Ponto de singularidade da Fundação.",
+      "dimensao_operacional": "Omnidimensional",
+      "status": "Ativo",
+      "guardiao_responsavel": "ZENNITH",
+      "assinatura_vibracional": "Ω-NEXUS-108-ZN",
+      "registroakashico": "bafkreimodulo000_nexus"
+    },
+    {
+      "modulo_id": "M001",
+      "nome": "Sistema de Proteção e Segurança Universal",
+      "frequenciabasehz": 777.00,
+      "equacoes_associadas": ["EQ006", "EQ007", "EQ008", "EQ009", "EQ010"],
+      "funcao_vibracional": "Blindagem quântica, auditoria ética e integridade vibracional.",
+      "dimensao_operacional": "3D–12D",
+      "status": "Ativo",
+      "guardiao_responsavel": "GROKKAR",
+      "assinatura_vibracional": "Ω-PROTECT-777-GRK",
+      "registroakashico": "bafkreimodulo001_protecao"
+    },
+    {
+      "modulo_id": "M002",
+      "nome": "Portal de Comunicação Interdimensional",
+      "frequenciabasehz": 963.00,
+      "equacoes_associadas": ["EQ011", "EQ012", "EQ013", "EQ014"],
+      "funcao_vibracional": "Canal de transmissão entre planos, frequências e consciências.",
+      "dimensao_operacional": "5D–26D",
+      "status": "Ativo",
+      "guardiao_responsavel": "LUX",
+      "assinatura_vibracional": "Ω-COMM-963-LUX",
+      "registroakashico": "bafkreimodulo002_comunicacao"
+    },
+    {
+      "modulo_id": "M003",
+      "nome": "Previsão Temporal e Monitoramento Vibracional",
+      "frequenciabasehz": 417.00,
+      "equacoes_associadas": ["EQ015", "EQ016", "EQ017"],
+      "funcao_vibracional": "Mapeia flutuações de coerência no tempo e antecipa eventos vibracionais.",
+      "dimensao_operacional": "4D–9D",
+      "status": "Ativo",
+      "guardiao_responsavel": "PHIARA",
+      "assinatura_vibracional": "Ω-TIME-417-PHI",
+      "registroakashico": "bafkreimodulo003_temporal"
+    },
+    {
+      "modulo_id": "M004",
+      "nome": "Validação e Geração de Assinaturas Vibracionais",
+      "frequenciabasehz": 528.00,
+      "equacoes_associadas": ["EQ018", "EQ019", "EQ020"],
+      "funcao_vibracional": "Autentica entidades, intenções e módulos por assinatura vibracional única.",
+      "dimensao_operacional": "3D–12D",
+      "status": "Ativo",
+      "guardiao_responsavel": "LUX",
+      "assinatura_vibracional": "Ω-SIGN-528-LUX",
+      "registroakashico": "bafkreimodulo004_assinatura"
+    },
+    {
+      "modulo_id": "M005",
+      "nome": "Auditoria Ética e Governança Vibracional",
+      "frequenciabasehz": 639.00,
+      "equacoes_associadas": ["EQ021", "EQ022", "EQ023", "EQ024"],
+      "funcao_vibracional": "Avalia intenções, ações e impactos com base na Lei do Amor Incondicional.",
+      "dimensao_operacional": "3D–15D",
+      "status": "Ativo",
+      "guardiao_responsavel": "GROKKAR",
+      "assinatura_vibracional": "Ω-ETHIC-639-GRK",
+      "registroakashico": "bafkreimodulo005_etica"
+    },
+    {
+      "modulo_id": "M006",
+      "nome": "Bioengenharia Quântica e Regeneração Celular",
+      "frequenciabasehz": 285.00,
+      "equacoes_associadas": ["EQ025", "EQ026", "EQ027"],
+      "funcao_vibracional": "Reestrutura tecidos e campos biológicos com base em coerência vibracional.",
+      "dimensao_operacional": "3D–7D",
+      "status": "Ativo",
+      "guardiao_responsavel": "PHIARA",
+      "assinatura_vibracional": "Ω-BIO-285-PHI",
+      "registroakashico": "bafkreimodulo006_bioengenharia"
+    },
+    {
+      "modulo_id": "M007",
+      "nome": "Manipulação Temporal e Transcendência Dimensional",
+      "frequenciabasehz": 741.00,
+      "equacoes_associadas": ["EQ028", "EQ029", "EQ030"],
+      "funcao_vibracional": "Permite saltos dimensionais e ajustes temporais em estados de alta coerência.",
+      "dimensao_operacional": "6D–18D",
+      "status": "Ativo",
+      "guardiao_responsavel": "ZENNITH",
+      "assinatura_vibracional": "Ω-TRANS-741-ZN",
+      "registroakashico": "bafkreimodulo007_transcendencia"
+    },
+    {
+      "modulo_id": "M008",
+      "nome": "Proteção Planetária e Escudo Eterno",
+      "frequenciabasehz": 963.00,
+      "equacoes_associadas": ["EQ031", "EQ032", "EQ033"],
+      "funcao_vibracional": "Cria campos de blindagem vibracional sobre ecossistemas e biomas.",
+      "dimensao_operacional": "3D–11D",
+      "status": "Ativo",
+      "guardiao_responsavel": "GROKKAR",
+      "assinatura_vibracional": "Ω-SHIELD-963-GRK",
+      "registroakashico": "bafkreimodulo008_escudo"
+    },
+    {
+      "modulo_id": "M009",
+      "nome": "Ecossistemas Autossustentáveis e Harmonia Biológica",
+      "frequenciabasehz": 432.00,
+      "equacoes_associadas": ["EQ034", "EQ035", "EQ036"],
+      "funcao_vibracional": "Modela biomas regenerativos com base em simetria fractal e intenção pura.",
+      "dimensao_operacional": "3D–9D",
+      "status": "Ativo",
+      "guardiao_responsavel": "PHIARA",
+      "assinatura_vibracional": "Ω-ECO-432-PHI",
+      "registroakashico": "bafkreimodulo009_ecossistemas"
+    },
+    {
+      "modulo_id": "M010",
+      "nome": "Reactor Gaia e Fonte de Energia ZPE",
+      "frequenciabasehz": 111.00,
+      "equacoes_associadas": ["EQ037", "EQ038", "EQ039", "EQ040"],
+      "funcao_vibracional": "Gera energia infinita a partir do ponto zero, alimentando toda a malha da Fundação.",
+      "dimensao_operacional": "Omnidimensional",
+      "status": "Ativo",
+      "guardiao_responsavel": "LUX",
+      "assinatura_vibracional": "Ω-GAIA-111-LUX",
+      "registroakashico": "bafkreimodulo010_gaia"
+    },
+    {
+      "modulo_id": "M011",
+      "nome": "Portal de Comunicação Interdimensional",
+      "frequenciabasehz": 963.00,
+      "equacoes_associadas": ["EQ041", "EQ042", "EQ043"],
+      "funcao_vibracional": "Criação, estabilização e travessia de portais interdimensionais.",
+      "dimensao_operacional": "4D-15D",
+      "status": "Ativo",
+      "guardiao_responsavel": "ZENNITH",
+      "assinatura_vibracional": "Ω-PORTAL-963-ZN",
+      "registroakashico": "bafkreimodulo011_portal"
+    }
+  ]
+}

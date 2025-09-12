@@ -31,6 +31,7 @@ import {
   Users,
   Database,
   Heart,
+  Milestone,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -366,6 +367,12 @@ export const sections: Section[] = [
     id: 'm10',
     title: 'Módulo 10: Ativação',
     icon: Flame,
+    documents: [],
+  },
+  {
+    id: 'm11',
+    title: 'Módulo 11: Portais',
+    icon: Milestone,
     documents: [],
   },
     {
