@@ -86,6 +86,7 @@ import Module45 from '@/components/module-45';
 import Module46 from '@/components/module-46';
 import Module303_1 from '@/components/module-303-1';
 import ArchitectureReport from '@/components/architecture-report';
+import ModulePlaceholder from '@/components/module-placeholder';
 
 
 // --- Configuração do Firebase ---
@@ -172,6 +173,13 @@ const App = () => {
   const renderContent = () => {
     const selectedSection = sections.find(s => s.id === currentSectionId);
     
+    if (currentSectionId.startsWith('m')) {
+        const sectionIdNumber = parseInt(currentSectionId.replace('m', ''));
+        if (sectionIdNumber >= 47 && sectionIdNumber <= 119 && selectedSection) {
+            return <ModulePlaceholder moduleId={sectionIdNumber} icon={selectedSection.icon} />;
+        }
+    }
+
     switch (currentSectionId) {
         case 'chronicle': return <ChroniclePage />;
         case 'scientific-report': return <ScientificReport />;

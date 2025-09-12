@@ -55,7 +55,7 @@ const ModuleTwenty = () => {
         output = { energiaGerada: `${energiaGerada.toExponential(4)} Joules` };
         details = `Geração de energia concluída. ${output.energiaGerada} liberados.`;
       } else if (transmutationType === 'SINTESE_ELEMENTAL') {
-        const elemento = `Alquimico-${random.randint(100, 999)}`;
+        const elemento = `Alquimico-${Math.floor(Math.random() * 900) + 100}`;
         output = { elementoSintetizado: elemento };
         details = `Síntese elemental bem-sucedida. Criado: ${elemento}.`;
       } else { // PROPULSAO_ESPACIAL
