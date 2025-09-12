@@ -15,7 +15,8 @@
     "test:e2e": "playwright test",
     "security-scan": "npm audit",
     "deploy:cosmic": "node scripts/cosmic-deploy.js",
-    "db:populate-vectors": "tsx scripts/populate-vector-store.ts"
+    "db:populate-vectors": "tsx scripts/populate-vector-store.ts",
+    "galactic-init": "tsx scripts/galactic-init.ts"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
