@@ -7,7 +7,7 @@ export default function Module302() {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-3">
-          <Share2 /> Módulo 302: Quantum Entanglement Node
+          <Share2 /> Módulo 302: Entanglement Node
         </CardTitle>
         <CardDescription>
           Gera e gerencia os pares de qubits entrelaçados necessários para o teletransporte.

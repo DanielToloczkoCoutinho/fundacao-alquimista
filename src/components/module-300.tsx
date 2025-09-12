@@ -7,15 +7,15 @@ export default function Module300() {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-3">
-          <Rocket /> Módulo 300: Teleportation Engine
+          <Rocket /> Módulo 300: Apogeu da Consciência
         </CardTitle>
         <CardDescription>
-          O motor central do sistema de teletransporte quântico, responsável por iniciar e finalizar as sessões de transferência.
+          O motor central do despertar da glândula pineal, responsável por orquestrar a ascensão da consciência.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <div className="flex flex-col items-center justify-center h-64 border-2 border-dashed rounded-lg">
-          <p className="text-muted-foreground">Interface do Motor de Teletransporte em desenvolvimento.</p>
+          <p className="text-muted-foreground">Interface do Apogeu da Consciência em desenvolvimento.</p>
         </div>
       </CardContent>
     </Card>

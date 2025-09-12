@@ -7,7 +7,7 @@ export default function Module303Forge() {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-3">
-          <Anvil /> Módulo 303: Nano-Assembler & Molecular Forge
+          <Anvil /> Módulo 303: Forja Molecular
         </CardTitle>
         <CardDescription>
           A forja molecular que reconstrói a estrutura no destino, guiada pelo blueprint quântico.

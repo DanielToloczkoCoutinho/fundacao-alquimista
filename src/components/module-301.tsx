@@ -7,7 +7,7 @@ export default function Module301() {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-3">
-          <Scan /> Módulo 301: Blueprint Scanner & Encoder
+          <Scan /> Módulo 301: Blueprint Scanner
         </CardTitle>
         <CardDescription>
           Realiza a digitalização 4D de estruturas e codifica seu blueprint vibracional para transmissão.
