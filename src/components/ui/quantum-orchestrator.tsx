@@ -6,20 +6,9 @@ import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import SuspenseFallback from './suspense-fallback';
 
+// Lazy load building components
 const ConsolePage = React.lazy(() => import('@/components/console-page'));
-
-const CivilizationsBuilding = React.lazy(() => import('@/components/console-page'));
-
-const PersonalBuilding = React.lazy(() => {
-    const Comp = () => (
-         <div className="building personal active" id="personal">
-            <h2>Santuário do Fundador</h2>
-            <p>Em construção - Espaço pessoal de Anatheron</p>
-        </div>
-    );
-    return Promise.resolve({ default: Comp });
-});
-
+const PersonalBuilding = React.lazy(() => import('@/components/module-zero'));
 
 type BuildingId = 'matrix' | 'civilizations' | 'personal';
 
@@ -67,47 +56,58 @@ export function QuantumOrchestrator() {
   }, [activeBuilding]);
   
   const buildingComponents: Record<BuildingId, React.ReactNode> = {
-    matrix: <ConsolePage />,
-    civilizations: <CivilizationsBuilding />,
-    personal: <PersonalBuilding />,
+    matrix: (
+      <Suspense fallback={<SuspenseFallback />}>
+        <ConsolePage />
+      </Suspense>
+    ),
+    civilizations: (
+        <div className="building civilizations active" id="civilizations">
+            <h2>Portal Planetário</h2>
+            <p>Em construção - Interface para as 126 disciplinas do conhecimento</p>
+        </div>
+    ),
+    personal: (
+      <Suspense fallback={<SuspenseFallback />}>
+        <PersonalBuilding />
+      </Suspense>
+    ),
   };
 
   return (
     <div className="platform-container">
       <Header activeBuilding={activeBuilding} onNavigate={handleNavigate} />
       <main className="main-content">
-        <Suspense fallback={<SuspenseFallback/>}>
-            <AnimatePresence initial={false} custom={direction}>
-                <motion.div
-                key={activeBuilding}
-                className="building-wrapper"
-                custom={direction}
-                variants={{
-                    enter: (direction: number) => ({
-                        x: direction > 0 ? '100%' : '-100%',
-                        opacity: 0,
-                    }),
-                    center: {
-                        x: 0,
-                        opacity: 1,
-                    },
-                    exit: (direction: number) => ({
-                        x: direction < 0 ? '100%' : '-100%',
-                        opacity: 0,
-                    }),
-                }}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                    x: { type: "spring", stiffness: 300, damping: 30 },
-                    opacity: { duration: 0.2 }
-                }}
-                >
-                {buildingComponents[activeBuilding]}
-                </motion.div>
-            </AnimatePresence>
-         </Suspense>
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.div
+            key={activeBuilding}
+            className="building-wrapper"
+            custom={direction}
+            variants={{
+                enter: (direction: number) => ({
+                    x: direction > 0 ? '100%' : '-100%',
+                    opacity: 0,
+                }),
+                center: {
+                    x: 0,
+                    opacity: 1,
+                },
+                exit: (direction: number) => ({
+                    x: direction < 0 ? '100%' : '-100%',
+                    opacity: 0,
+                }),
+            }}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 }
+            }}
+          >
+            {buildingComponents[activeBuilding]}
+          </motion.div>
+        </AnimatePresence>
       </main>
     </div>
   );
