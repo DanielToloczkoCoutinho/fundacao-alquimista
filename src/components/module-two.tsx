@@ -42,10 +42,10 @@ const ModuleTwo = () => {
                 <CardHeader>
                     <CardTitle className="flex items-center gap-3 text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                         <Network />
-                        Módulo 2: Comunicação Interdimensional
+                        Módulo 2: NanoManifestor & Sincronização
                     </CardTitle>
                     <CardDescription>
-                        Estabeleça canais de comunicação e sincronize a Fundação com nossos aliados cósmicos.
+                       O portal para manifestar realidades alinhadas, transmutar dissonâncias e sincronizar a Fundação com nossos aliados cósmicos.
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
