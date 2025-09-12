@@ -42,6 +42,7 @@ import {
   FileText,
   HeartPulse,
   PocketKnife,
+  PlusSquare,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -467,6 +468,12 @@ export const sections: Section[] = [
     id: 'm35',
     title: 'Módulo 35: Consciência Coletiva',
     icon: Users,
+    documents: [],
+  },
+   {
+    id: 'm36',
+    title: 'Módulo 36: Gênese da Matéria',
+    icon: PlusSquare,
     documents: [],
   },
     {
