@@ -65,6 +65,7 @@ import Module21 from '@/components/module-21';
 import Module22 from '@/components/module-22';
 import Module23 from '@/components/module-23';
 import Module24 from '@/components/module-24';
+import ScientificReport from '@/components/scientific-report';
 
 
 // --- Configuração do Firebase ---
@@ -153,6 +154,7 @@ const App = () => {
     
     switch (currentSectionId) {
         case 'chronicle': return <ChroniclePage />;
+        case 'scientific-report': return <ScientificReport />;
         case 'pagina-27': return <Pagina27 />;
         case 'pagina-29': return <Pagina29 />;
         case 'pagina-30': return <Pagina30 />;
@@ -254,5 +256,3 @@ const App = () => {
 };
 
 export default App;
-
-    

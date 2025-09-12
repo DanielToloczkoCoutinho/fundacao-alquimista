@@ -40,6 +40,7 @@ import {
   Waves,
   Laptop,
   History,
+  FileText,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -75,6 +76,12 @@ export const sections: Section[] = [
     id: 'chronicle',
     title: 'A Crônica Viva',
     icon: BookHeart,
+    documents: [],
+  },
+  {
+    id: 'scientific-report',
+    title: 'Relatório Científico',
+    icon: FileText,
     documents: [],
   },
   {
@@ -516,5 +523,3 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
-
-    
