@@ -7,12 +7,6 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    // Adicionado para permitir a comunicação com o ambiente de desenvolvimento do Firebase Studio
-    allowedDevOrigins: [
-        "https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev"
-    ],
-  },
   async headers() {
     return [
       {

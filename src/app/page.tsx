@@ -49,12 +49,6 @@ if (!getApps().length) {
     app = getApp();
 }
 const db = getFirestore(app);
-try {
-  // @ts-ignore
-  db.settings({ experimentalForceLongPolling: true, useFetchStreams: false });
-} catch (e) {
-  console.warn("Could not set Firestore settings", e);
-}
 
 
 const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: string) => void; currentSectionId: string }) => (

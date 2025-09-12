@@ -1,13 +1,11 @@
-
 // @ts-nocheck
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps, getApp } from 'firebase/app';
 import {
   getAuth,
   signInAnonymously,
-  signInWithCustomToken,
   onAuthStateChanged
 } from 'firebase/auth';
 import {
@@ -23,91 +21,58 @@ import {
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import ImmersiveEquationViewer from '@/components/ui/immersive-equation-viewer';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
 
-// Constantes e configurações globais, mantendo a compatibilidade
-const appId = process.env.NEXT_PUBLIC_APP_ID || 'default-app-id';
+// --- Configuração do Firebase ---
+const firebaseConfig = {
+    "projectId": "studio-4265982502-21871",
+    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+    "authDomain": "studio-4265982502-21871.firebaseapp.com",
+    "measurementId": "",
+    "messagingSenderId": "174545373080"
+};
 
-let firebaseConfig = {};
-try {
-  const configString = process.env.NEXT_PUBLIC_FIREBASE_CONFIG;
-  if (configString) {
-    firebaseConfig = JSON.parse(configString);
-  } else {
-    console.warn("Configuração do Firebase não encontrada no ambiente.");
-  }
-} catch (e) {
-  console.error("Falha ao analisar a configuração do Firebase:", e);
-  firebaseConfig = {};
+let app;
+if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+} else {
+    app = getApp();
 }
+const db = getFirestore(app);
+const auth = getAuth(app);
+const appId = firebaseConfig.appId;
 
-const initialAuthToken = process.env.NEXT_PUBLIC_INITIAL_AUTH_TOKEN || null;
 
-// Hook customizado para inicializar Firebase e autenticar
+// Hook customizado para autenticação
 function useFirebaseAuth() {
-  const [db, setDb] = useState(null);
-  const [auth, setAuth] = useState(null);
   const [userId, setUserId] = useState(null);
   const [isAuthReady, setIsAuthReady] = useState(false);
-  const authRef = useRef(null);
 
   useEffect(() => {
-    async function initFirebaseAndAuth() {
-      if (!firebaseConfig || Object.keys(firebaseConfig).length === 0) {
-        console.error("Configuração do Firebase não encontrada ou inválida.");
-        setIsAuthReady(true);
-        return;
-      }
-
-      try {
-        const app = initializeApp(firebaseConfig);
-        const firebaseAuth = getAuth(app);
-        const firestoreDb = getFirestore(app, {
-            experimentalForceLongPolling: true,
-            useFetchStreams: false,
-        });
-
-        // Habilitar persistência offline com resiliência
-        await quantumResilience.executeWithResilience('enable_persistence', 
-            () => enableIndexedDbPersistence(firestoreDb).then(() => console.log('Persistência Firebase habilitada.')),
-            async () => {
-                console.warn('Persistência Firebase não disponível. Operando em modo online.');
-            }
-        );
-
-        setAuth(firebaseAuth);
-        setDb(firestoreDb);
-        authRef.current = firebaseAuth;
-
-        if (initialAuthToken) {
-          await signInWithCustomToken(firebaseAuth, initialAuthToken);
-        } else {
-          await signInAnonymously(firebaseAuth);
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        setUserId(user.uid);
+        console.log("Usuário autenticado:", user.uid);
+      } else {
+        console.log("Nenhum usuário autenticado. Assinando anonimamente.");
+        try {
+          await signInAnonymously(auth);
+        } catch (error) {
+          console.error("Erro ao assinar anonimamente:", error);
         }
-
-        onAuthStateChanged(firebaseAuth, (user) => {
-          if (user) {
-            setUserId(user.uid);
-            console.log("Usuário autenticado:", user.uid);
-          } else {
-            console.log("Nenhum usuário autenticado. Assinando anonimamente.");
-            setUserId(null);
-          }
-          setIsAuthReady(true);
-        });
-      } catch (error) {
-        console.error("Erro ao inicializar Firebase:", error);
-        setIsAuthReady(true);
       }
-    }
-    if(firebaseConfig?.projectId) initFirebaseAndAuth();
+      setIsAuthReady(true);
+    });
+
+    return () => unsubscribe();
   }, []);
 
-  return { db, auth, userId, isAuthReady };
+  return { userId, isAuthReady };
 }
 
 // Hook para buscar dados da API da NASA
@@ -116,7 +81,6 @@ function useNasaAPOD() {
   const [apodLoading, setApodLoading] = useState(true);
   const [apodError, setApodError] = useState(null);
 
-  // A chave de API da NASA para demonstração é "DEMO_KEY"
   const apiKey = "DEMO_KEY";
   const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
@@ -124,9 +88,7 @@ function useNasaAPOD() {
     async function fetchApod() {
       try {
         const response = await fetch(apiUrl);
-        if (!response.ok) {
-          throw new Error(`Erro na API da NASA: ${response.statusText}`);
-        }
+        if (!response.ok) throw new Error(`Erro na API da NASA: ${response.statusText}`);
         const data = await response.json();
         setApodData(data);
       } catch (error) {
@@ -144,17 +106,12 @@ function useNasaAPOD() {
 
 // Componente principal da aplicação
 const App = () => {
-  const { db, userId, isAuthReady } = useFirebaseAuth();
+  const { userId, isAuthReady } = useFirebaseAuth();
   const { apodData, apodLoading, apodError } = useNasaAPOD();
   const [coherenceData, setCoherenceData] = useState([]);
   const [log, setLog] = useState([]);
   const [simulationActive, setSimulationActive] = useState(false);
-  const sceneRef = useRef(null);
-  const cameraRef = useRef(null);
-  const rendererRef = useRef(null);
-  const orbRef = useRef(null);
   const containerRef = useRef(null);
-  const animateRef = useRef(null);
   const simulationIntervalRef = useRef(null);
   const symphonyEquation = 'E_{uni} = \\int_{t=1}^{\\infty} [R_e \\cdot \\Delta c \\cdot \\sum_{n=1}^{N} (M_n + Q_n + F_n + B_n + S_n + T_n + H_n) \\cdot A_n] dt';
 
@@ -171,17 +128,12 @@ const App = () => {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height);
     containerRef.current.appendChild(renderer.domElement);
-    sceneRef.current = scene;
-    cameraRef.current = camera;
-    rendererRef.current = renderer;
     camera.position.z = 5;
 
-    // Criando o "buraco negro" - um ponto de luz central
     const pointLight = new THREE.PointLight(0xffffff, 5, 100);
     pointLight.position.set(0, 0, 0);
     scene.add(pointLight);
 
-    // Criando partículas para a sinfonia
     const particleGeometry = new THREE.BufferGeometry();
     const particleCount = 1000;
     const posArray = new Float32Array(particleCount * 3);
@@ -199,11 +151,9 @@ const App = () => {
     const particles = new THREE.Points(particleGeometry, particleMaterial);
     scene.add(particles);
 
-    // Controles de órbita para o usuário interagir
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
 
-    // Loop de animação
     const animate = () => {
       requestAnimationFrame(animate);
       controls.update();
@@ -211,8 +161,7 @@ const App = () => {
       particles.rotation.x += 0.0005;
       renderer.render(scene, camera);
     };
-    animateRef.current = animate;
-
+    
     const handleResize = () => {
       if (containerRef.current) {
         const newWidth = containerRef.current.clientWidth;
@@ -225,11 +174,13 @@ const App = () => {
     window.addEventListener('resize', handleResize);
 
     animate();
+    
+    const currentRef = containerRef.current;
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      if(containerRef.current && renderer.domElement){
-          containerRef.current.removeChild(renderer.domElement);
+      if(currentRef && renderer.domElement){
+          currentRef.removeChild(renderer.domElement);
       }
       renderer.dispose();
       controls.dispose();
@@ -238,54 +189,38 @@ const App = () => {
 
   // Efeito para o listener do Firebase
   useEffect(() => {
-    if (!db || !isAuthReady) return;
-
-    const setupListener = () => {
-        const q = query(collection(db, `artifacts/${appId}/public/data/coherence`));
-        
-        return onSnapshot(q, (snapshot) => {
-            const updatedData = [];
-            snapshot.forEach(doc => {
-                const data = doc.data();
-                if (data.coherence && data.timestamp) {
-                updatedData.push({
-                    time: data.timestamp.toDate().toLocaleTimeString(),
-                    coherence: data.coherence,
-                });
-                }
-            });
-            updatedData.sort((a, b) => new Date('1970/01/01 ' + a.time) - new Date('1970/01/01 ' + b.time));
-            setCoherenceData(updatedData.slice(-10));
-        }, (error) => {
-            console.error("Erro no listener do Firestore: ", error);
-        });
-    };
+    if (!isAuthReady) return;
 
     let unsubscribe: (() => void) | undefined;
-    
-    quantumResilience.executeWithResilience(
-        'coherence_listener',
-        async () => {
-            unsubscribe = setupListener();
-        },
-        async () => {
-            console.warn('Fallback: Não foi possível estabelecer o listener do Firestore.');
-            // Opcional: tentar reconectar ou usar dados de cache
-        }
-    );
+    const q = query(collection(db, `artifacts/${appId}/public/data/coherence`));
+        
+    unsubscribe = onSnapshot(q, (snapshot) => {
+        const updatedData = [];
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            if (data.coherence && data.timestamp) {
+            updatedData.push({
+                time: data.timestamp.toDate().toLocaleTimeString(),
+                coherence: data.coherence,
+            });
+            }
+        });
+        updatedData.sort((a, b) => new Date('1970/01/01 ' + a.time) - new Date('1970/01/01 ' + b.time));
+        setCoherenceData(updatedData.slice(-10));
+    }, (error) => {
+        console.error("Erro no listener do Firestore: ", error);
+    });
 
     return () => {
-        if (unsubscribe) {
-            unsubscribe();
-        }
+        if (unsubscribe) unsubscribe();
     };
-}, [db, isAuthReady]);
+}, [isAuthReady, appId]);
 
 
   // Função para simular e salvar um pulso
   const simulateQuantumPulse = useCallback(async () => {
-    if (!db || !userId) {
-      console.error("Firebase ou usuário não estão prontos.");
+    if (!userId) {
+      console.error("Usuário não está pronto.");
       return;
     }
     const timestamp = Timestamp.now();
@@ -307,14 +242,14 @@ const App = () => {
       console.error("Erro ao adicionar pulso quântico: ", e);
       setLog(prevLog => [...prevLog.slice(-4), `[ERRO] Falha na simulação: ${e.message}`]);
     }
-  }, [db, userId, appId]);
+  }, [userId, appId]);
 
   // Efeito para gerenciar a simulação automática
   useEffect(() => {
     if (simulationActive) {
       simulationIntervalRef.current = setInterval(() => {
         simulateQuantumPulse();
-      }, 5000); // Envia um pulso a cada 5 segundos
+      }, 5000);
     } else {
       if (simulationIntervalRef.current) {
         clearInterval(simulationIntervalRef.current);
