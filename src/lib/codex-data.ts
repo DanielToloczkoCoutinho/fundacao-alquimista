@@ -333,9 +333,17 @@ export const sections: Section[] = [
     documents: [],
   },
   {
+    id: 'm404',
+    title: 'M404: NanoManifestor',
+    icon: BrainCircuit,
+    documents: [],
+  },
+  {
     id: 'connection',
     title: 'Conexão Ω-M0',
     icon: Zap,
     documents: [],
   },
 ];
+
+    

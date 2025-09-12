@@ -37,6 +37,7 @@ import Module303Forge from '@/components/module-303-forge';
 import Module304 from '@/components/module-304';
 import Module305 from '@/components/module-305';
 import OrganogramaCosmogonico from '@/components/organograma-cosmogonico';
+import Module404 from '@/components/module-404';
 
 
 // --- Configuração do Firebase ---
@@ -153,6 +154,7 @@ const App = () => {
         case 'm303-forge': return <Module303Forge />;
         case 'm304': return <Module304 />;
         case 'm305': return <Module305 />;
+        case 'm404': return <Module404 />;
         case 'connection': return <ConnectionPage />;
         case 'living-library':
         case 'equations':
@@ -198,3 +200,5 @@ const App = () => {
 };
 
 export default App;
+
+    
