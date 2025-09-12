@@ -46,7 +46,7 @@ import Pagina31 from '@/components/pagina-31';
 import Pagina34 from '@/components/pagina-34';
 import Pagina39 from '@/components/pagina-39';
 import Pagina40 from '@/components/pagina-40';
-import Pagina43 from '@/components/pagina-43';
+import Pagina43 from '@/components/module-43';
 import Module11 from '@/components/module-11';
 import ModuleTwelve from '@/components/module-twelve';
 import ModuleThirteen from '@/components/module-thirteen';
@@ -79,7 +79,7 @@ import Module39_1 from '@/components/module-39-1';
 import Module40 from '@/components/module-40';
 import Module41_1 from '@/components/module-41-1';
 import Module42 from '@/components/module-42';
-import ConsolePage from '@/app/console/page';
+import ConsolePage from '@/components/console-page';
 
 
 // --- Configuração do Firebase ---

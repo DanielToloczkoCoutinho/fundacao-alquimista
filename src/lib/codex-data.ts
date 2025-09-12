@@ -109,8 +109,8 @@ export const sections: Section[] = [
   },
    {
     id: 'pagina-43',
-    title: 'Página 43: A Chama Eterna',
-    icon: Flame,
+    title: 'Módulo 43: Harmonia dos Portais',
+    icon: Zap,
     documents: [],
   },
   {
