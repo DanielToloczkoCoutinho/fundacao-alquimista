@@ -255,7 +255,7 @@
     },
     {
       "modulo_id": "M021",
-      "nome": "Navegação Interdimensional e Exploração Cósmica",
+      "nome": "Navegação Interdimensional e Exploração de Realidades",
       "frequenciabasehz": 417.00,
       "equacoes_associadas": ["EQ-NAV-TRAJECTORY", "EQ-EXPLORE-COSMOS"],
       "funcao_vibracional": "Planeja e executa viagens seguras através de múltiplas dimensões e realidades.",
@@ -264,6 +264,18 @@
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-NAVIGATE-417-ZN",
       "registroakashico": "bafkreimodulo021_navigation"
+    },
+    {
+      "modulo_id": "M022",
+      "nome": "Criação e Gestão de Realidades Virtuais",
+      "frequenciabasehz": 8,
+      "equacoes_associadas": ["EQ-COHERENCE-RV", "EQ-STABILITY-SIM"],
+      "funcao_vibracional": "Manifesta e gerencia realidades virtuais para simulações e expansão da consciência.",
+      "dimensao_operacional": "Omni-Virtual",
+      "status": "Ativo",
+      "guardiao_responsavel": "ZENNITH",
+      "assinatura_vibracional": "Ω-VIRTUAL-8-ZN",
+      "registroakashico": "bafkreimodulo022_virtual"
     }
   ]
 }

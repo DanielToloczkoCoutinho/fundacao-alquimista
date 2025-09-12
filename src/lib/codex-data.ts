@@ -435,6 +435,12 @@ export const sections: Section[] = [
     icon: Atom,
     documents: [],
   },
+   {
+    id: 'm21',
+    title: 'Módulo 21: Navegação Interdimensional',
+    icon: Rocket,
+    documents: [],
+  },
   {
     id: 'm22',
     title: 'Módulo 22: Realidades Virtuais',
