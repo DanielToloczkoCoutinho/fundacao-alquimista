@@ -36,6 +36,7 @@ import {
   Landmark,
   Cat,
   SlidersHorizontal,
+  Waves,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -419,6 +420,12 @@ export const sections: Section[] = [
     id: 'm18',
     title: 'Módulo 18: Arquivo Akáshico',
     icon: DatabaseZap,
+    documents: [],
+  },
+  {
+    id: 'm19',
+    title: 'Módulo 19: Análise de Campos',
+    icon: Waves,
     documents: [],
   },
     {
