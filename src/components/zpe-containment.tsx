@@ -8,7 +8,7 @@ import { Input } from './ui/input';
 import { Slider } from './ui/slider';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { ScrollArea } from './ui/scroll-area';
-import { Shield, Zap, History, CheckCircle, XCircle, LoaderCircle, Network, SlidersHorizontal, Trophy, GanttChartSquare } from 'lucide-react';
+import { Shield, Zap, History, CheckCircle, XCircle, LoaderCircle, Network, SlidersHorizontal, Trophy, GanttChartSquare, Wrench } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { sha512 } from 'js-sha512';
 import { cn } from '@/lib/utils';
@@ -223,5 +223,3 @@ const ZpeContainment = () => {
 };
 
 export default ZpeContainment;
-
-    
