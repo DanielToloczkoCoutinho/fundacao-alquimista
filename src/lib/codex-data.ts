@@ -117,6 +117,18 @@ export const sections: Section[] = [
     icon: Users,
     documents: [],
   },
+   {
+    id: 'pagina-42',
+    title: 'Página 42: A Coroa Cósmica',
+    icon: Sparkles,
+    documents: [],
+  },
+   {
+    id: 'pagina-43',
+    title: 'Página 43: A Chama Eterna',
+    icon: Flame,
+    documents: [],
+  },
   {
     id: 'organograma',
     title: 'Organograma Cosmogônico',
@@ -127,12 +139,6 @@ export const sections: Section[] = [
     id: 'nexus',
     title: 'Nexus Central (M9)',
     icon: Orbit,
-    documents: [],
-  },
-   {
-    id: 'omega',
-    title: 'Página 42: A Coroa Cósmica',
-    icon: Sparkles,
     documents: [],
   },
   {
