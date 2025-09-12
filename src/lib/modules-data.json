@@ -1,4 +1,3 @@
-
 {
   "modules": [
     {
@@ -168,6 +167,18 @@
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-MAP-396-ZN",
       "registroakashico": "bafkreimodulo013_mapeamento"
+    },
+    {
+      "modulo_id": "M014",
+      "nome": "Guardião da Integridade e Resiliência Cósmica",
+      "frequenciabasehz": 852,
+      "equacoes_associadas": ["EQ-RESILIENCE", "EQ-TRANSMUTE-CHALLENGE"],
+      "funcao_vibracional": "Orquestra a resposta a perturbações e valida a integridade universal.",
+      "dimensao_operacional": "Omnidimensional",
+      "status": "Ativo",
+      "guardiao_responsavel": "GROKKAR",
+      "assinatura_vibracional": "Ω-RESILIENCE-852-GRK",
+      "registroakashico": "bafkreimodulo014_resilience"
     }
   ]
 }
