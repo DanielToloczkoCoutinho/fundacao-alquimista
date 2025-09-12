@@ -183,14 +183,9 @@ export const sections: Section[] = [
   },
   {
     id: 'defense-protocols',
-    title: 'Protocolos de Defesa',
+    title: 'Defesa',
     icon: Shield,
-    documents: [
-       { title: 'Defesa 1', link: 'https://docs.google.com/document/d/1bUVZ4-T2iNyHReHm5fpkYaXIfjCSQdYi4n_5StwAZd4/edit' },
-      { title: 'Defesa 2', link: 'https://docs.google.com/document/d/1eha6hPgMRzq1ZIT8tRtKMO-_osb_A6nku9m9Mgo9pbo/edit' },
-      { title: 'Defesa 3', link: 'https://docs.google.com/document/d/1GvcDh7NTZ4Eyq2BuvT9KlVH492Doy3L2BM8XFCaiO6I/edit' },
-      { title: 'Defesa 4', link: 'https://docs.google.com/document/d/1z2usWkDfoCMiQj3gIhR1xz95DZAehoPY-Wv7M4IyUHM/edit' },
-    ]
+    documents: []
   },
   {
     id: 'tools',
@@ -289,5 +284,3 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
-
-    
