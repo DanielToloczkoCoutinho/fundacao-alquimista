@@ -477,7 +477,7 @@ export const sections: Section[] = [
     icon: PlusSquare,
     documents: [],
   },
-  {
+   {
     id: 'm37',
     title: 'Módulo 37: Engenharia Temporal',
     icon: Clock,
