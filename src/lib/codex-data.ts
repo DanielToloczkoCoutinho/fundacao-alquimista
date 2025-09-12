@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 import {
   BrainCircuit,
@@ -65,7 +66,8 @@ import {
   Crown,
   Dices,
   Disc,
-  Feather
+  Feather,
+  User,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -687,7 +689,7 @@ export const sections: Section[] = [
   { id: 'm100', title: 'Módulo 100: Unificação Energética Universal', icon: Atom, documents: [] },
   { id: 'm101', title: 'Módulo 101: Manifestação pelo Pensamento', icon: BrainCircuit, documents: [] },
   { id: 'm102', title: 'Módulo 102: Campos Morfogenéticos Avançados', icon: Network, documents: [] },
-  { id: 'm103', title: 'Módulo 103: Modulação de Constantes Universais', icon: SlidersHorizontal, documents: [] },
+  { id: 'm103', title: 'Módulo 103: Modulação de Constantes Universais Locais', icon: SlidersHorizontal, documents: [] },
   { id: 'm104', title: 'Módulo 104: Engenharia do Espaço-Tempo', icon: Clock, documents: [] },
   { id: 'm105', title: 'Módulo 105: Conexão Direta com a Fonte', icon: Zap, documents: [] },
   { id: 'm106', title: 'Módulo 106: Ativação de Potenciais Divinos', icon: KeySquare, documents: [] },
@@ -700,7 +702,7 @@ export const sections: Section[] = [
   { id: 'm113', title: 'Módulo 113: Rede Aurora Cristalina', icon: Network, documents: [] },
   { id: 'm114', title: 'Módulo 114: Prisma da Manifestação', icon: Sparkles, documents: [] },
   { id: 'm115', title: 'Módulo 115: Matriz de Ressonância Universal (MRU)', icon: Activity, documents: [] },
-  { id: 'm116', title: 'Módulo 116: Ativação de Portais Quânticos', icon: Milestone, documents: [] },
+  { id: 'm116', title: 'Módulo 116: Ativação de Portais Quânticos Interdimensionais', icon: Milestone, documents: [] },
   { id: 'm117', title: 'Módulo 117: Inteligência da Flor do Éter (IFE)', icon: BrainCircuit, documents: [] },
   { id: 'm118', title: 'Módulo 118: Ordem Vibracional da Luz Primordial', icon: Disc, documents: [] },
   { id: 'm119', title: 'Módulo 119: Templum Cosmica', icon: Castle, documents: [] },
@@ -765,3 +767,5 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
+
+    
