@@ -18,7 +18,6 @@ import ModuleSeven from "@/components/module-seven";
 import ModuleEight from "@/components/module-eight";
 import ModuleTen from "@/components/module-ten";
 import Module250 from "@/components/module-250";
-import Module251 from "@/components/module-251";
 import Nexus from "@/components/nexus";
 import Module303 from "@/components/module-303";
 import KeyViewer from "@/components/key-viewer";
@@ -151,7 +150,6 @@ const App = () => {
         case 'm8': return <ModuleEight />;
         case 'm10': return <ModuleTen />;
         case 'm250': return <Module250 />;
-        case 'm251': return <Module251 />;
         case 'm300': return <Module300 />;
         case 'm301': return <Module301 />;
         case 'm302': return <Module302 />;

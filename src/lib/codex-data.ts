@@ -25,7 +25,6 @@ import {
   Workflow,
   ShieldCheck,
   GanttChartSquare,
-  Globe,
   FlaskConical,
 } from 'lucide-react';
 
@@ -302,12 +301,6 @@ export const sections: Section[] = [
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
     icon: Atom,
-    documents: [],
-  },
-   {
-    id: 'm251',
-    title: 'Módulo 251: Terraformer',
-    icon: Globe,
     documents: [],
   },
   {
