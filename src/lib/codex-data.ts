@@ -428,6 +428,12 @@ export const sections: Section[] = [
     icon: Waves,
     documents: [],
   },
+  {
+    id: 'm20',
+    title: 'Módulo 20: Transmutador',
+    icon: Atom,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',

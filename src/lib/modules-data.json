@@ -136,7 +136,7 @@
     {
       "modulo_id": "M011",
       "nome": "Portal de Comunicação Interdimensional",
-      "frequenciabasehz": 963,
+      "frequenciabasehz": 963.00,
       "equacoes_associadas": ["EQ041", "EQ042", "EQ043"],
       "funcao_vibracional": "Criação, estabilização e travessia de portais interdimensionais.",
       "dimensao_operacional": "4D-15D",
@@ -240,6 +240,18 @@
       "guardiao_responsavel": "GROKKAR",
       "assinatura_vibracional": "Ω-FIELD-ANALYSIS-174-GRK",
       "registroakashico": "bafkreimodulo019_fieldanalysis"
+    },
+    {
+      "modulo_id": "M020",
+      "nome": "Transmutador Quântico e Orquestrador Elemental",
+      "frequenciabasehz": 8,
+      "equacoes_associadas": ["EQ-TRANSMUTATION", "EQ-ENERGY-GEN"],
+      "funcao_vibracional": "Realiza transmutação de matéria em energia, síntese elemental e geração de propulsão.",
+      "dimensao_operacional": "Omnidimensional",
+      "status": "Ativo",
+      "guardiao_responsavel": "LUX",
+      "assinatura_vibracional": "Ω-TRANSMUTE-8-LUX",
+      "registroakashico": "bafkreimodulo020_transmutador"
     }
   ]
 }
