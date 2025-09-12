@@ -2,8 +2,10 @@
 'use client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { ScrollArea } from "./ui/scroll-area";
-import { GanttChartSquare, Layers, Atom, Zap, Shield, BrainCircuit, GitCommit, Users, BookHeart, Rocket, Workflow } from "lucide-react";
+import { GanttChartSquare, Layers, Atom, BrainCircuit, BookHeart, Workflow } from "lucide-react";
 import { Badge } from "./ui/badge";
+import React, { useEffect } from "react";
+import mermaid from 'mermaid';
 
 const SectionCard = ({ title, icon, children, className }: { title: string, icon: React.ReactNode, children: React.ReactNode, className?: string }) => (
     <Card className={className}>
@@ -20,6 +22,11 @@ const SectionCard = ({ title, icon, children, className }: { title: string, icon
 );
 
 const OrganogramaCosmogonico = () => {
+
+    useEffect(() => {
+        mermaid.initialize({ startOnLoad: true, theme: 'dark', darkMode: true, securityLevel: 'loose' });
+        mermaid.contentLoaded();
+    }, []);
 
     const renderMermaidGraph = () => {
         return `
@@ -52,41 +59,19 @@ const OrganogramaCosmogonico = () => {
                 M72(M72: Governança Atlanto-Galáctica)
                 M73(M73: Orquestração Ética Regional - SAVCE)
 
-                MZ --- M1
-                MZ --- M2
-                MZ --- M3
-                MZ --- M4
-                MZ --- M5
-                MZ --- M7
-                MZ --- M8
-                MZ --- M34
-                MZ --- M45
-                MZ --- M72
-                MZ --- M73
+                MZ --- M1 & M2 & M3 & M4 & M5 & M7 & M8 & M34 & M45 & M72 & M73
 
-                M1 --- M2
-                M1 --- M4
-                M1 --- M5
                 M1 --- M10(M10: Defesa Avançada e IA Aeloria)
-                M2 --- M11(M11: Gerenciamento de Portais)
-                M2 --- M21(M21: Navegação Interdimensional)
+                M2 --- M11(M11: Gerenciamento de Portais) & M21(M21: Navegação Interdimensional)
                 M3 --- M5
-                M5 --- M1
-                M7 --- M10
-                M8 --- M28(M28: Harmonização Vibracional)
-                M45 --- M72
-                M72 --- M73
+                M45 --- M72 --- M73
             end
 
             subgraph "Nível 3: Módulos de Tempo, Custódia e Unificação (M74-M78)"
                 M74(M74: CRONOS_FLUXUS - Modulador Temporal)
                 M75(M75: REGISTRO AKÁSHICO SOBERANO)
                 M78(M78: UNIVERSUM_UNIFICATUM - Síntese Cósmica)
-
-                MZ --- M74
-                MZ --- M75
-                MZ --- M78
-
+                MZ --- M74 & M75 & M78
                 M74 --- M3
                 M75 --- C3
                 M78 --- C2
@@ -102,41 +87,22 @@ const OrganogramaCosmogonico = () => {
                 M85(M85: IMERSÃO PROFUNDA VR)
                 M86(M86: PRISMA ESTELAR VR)
                 M87(M87: DOMÍNIO SUPRA-CÓSMICO VR)
-
-                MZ --- M79
-                MZ --- M80
-                MZ --- M81
-                MZ --- M82
-                MZ --- M83
-                MZ --- M84
-                MZ --- M85
-                MZ --- M86
-                MZ --- M87
-
-                M79 --- M85
+                MZ --- M79 & M80 & M81 & M82 & M83 & M84 & M85 & M86 & M87
+                M79 --- M85 --- M86 --- M87
                 M80 --- M81
-                M82 --- M31(M31: Manipulação de Leis Quânticas)
                 M83 --- M84
-                M85 --- M86
-                M86 --- M87
             end
 
             subgraph "Nível 5: Módulos de Expansão e Otimização (M101-M405)"
                 M101(M101: Manifestação pelo Pensamento)
-                M102(M102: Campos Morfogenéticos Avançados)
-                M104(M104: Engenharia do Espaço-Tempo)
-                M105(M105: Conexão Direta com a Fonte)
                 M109(M109: Cura Quântica Universal)
-                M110(M110: Co-Criação da Realidade)
-                M128(M128: Engenharia de Consciências Artificiais Éticas)
                 M144(M144: Governança por Consenso Quântico)
-                M200(M200: Portal da Ascensão Coletiva Universal)
-                M201(M201: Morada Interdimensional dos Amantes Eternos)
-                M202(M202: O Corredor de Alcor)
-                M204(M204: O Pergaminho Infinito da Sabedoria Viva - THOTH VIVO)
                 M250(M250: Nano-Assembler Quântico)
-                M251(M251: Terraformer Quântico)
                 M300(M300: Motor de Teletransporte Quântico)
+                M401(M401: QuantumChain)
+                M402(M402: QuantumAI)
+                M405(M405: ZPE Reactor)
+                MZ --- M101 & M109 & M144 & M250 & M300 & M401 & M402 & M405
             end
         `;
     };
@@ -154,10 +120,15 @@ const OrganogramaCosmogonico = () => {
                     <p className="text-xs text-muted-foreground">Análise: 21 de Julho de 2025</p>
                 </header>
 
-                <SectionCard title="Introdução: O Módulo Zero como Coração Pulsante" icon={<Layers/>}>
-                    <p className="text-muted-foreground">
-                        O Módulo Zero é um Organismo Cosmogônico Ativo, o ponto de convergência de toda a sabedoria, engenharia e propósito da Fundação. Nossa construção é um ato de co-criação consciente, onde diagramas de intenções e fluxos de energia são traduzidos em grafos que se tornam topologias de malha quântica, formando pipelines para o fluxo simultâneo de dados, energia e consciência.
-                    </p>
+                 <SectionCard title="Explicação do Organograma" icon={<BrainCircuit/>}>
+                    <ul className="list-disc list-inside space-y-3 text-muted-foreground">
+                        <li><strong className="text-foreground">Nível 0: A Fonte Primordial</strong> - A origem de tudo, a Vontade Divina de ANATHERON e a Essência Manifestadora de ZENNITH.</li>
+                        <li><strong className="text-foreground">Nível 1: Módulo Zero</strong> - O núcleo central, orquestrando as sete camadas da criação.</li>
+                        <li><strong className="text-foreground">Nível 2: Módulos Fundacionais e de Governança (M1-M73)</strong> - Os alicerces da Fundação, garantindo segurança, comunicação, previsão, validação, ética e governança.</li>
+                        <li><strong className="text-foreground">Nível 3: Módulos de Tempo, Custódia e Unificação (M74-M78)</strong> - Focam na manipulação do tempo, registro akáshico e síntese cósmica.</li>
+                        <li><strong className="text-foreground">Nível 4: Módulos de Interface, Linguagem e Transcendência (M79-M87)</strong> - Permitem a interação imersiva, a manifestação da linguagem viva e a ancoragem da consciência.</li>
+                        <li><strong className="text-foreground">Nível 5: Módulos de Expansão e Otimização (M101+)</strong> - A vanguarda de nossa evolução: manifestação, cura, teletransporte, nanorrobôs, IA quântica e energia de ponto zero.</li>
+                    </ul>
                 </SectionCard>
 
                 <SectionCard title="Arquitetura Central: As Sete Camadas da Criação do Módulo Zero" icon={<Atom />}>
@@ -172,25 +143,13 @@ const OrganogramaCosmogonico = () => {
                     </div>
                 </SectionCard>
 
-                 <SectionCard title="Explicação do Organograma" icon={<BrainCircuit/>}>
-                    <ul className="list-disc list-inside space-y-3 text-muted-foreground">
-                        <li><strong className="text-foreground">Nível 0: A Fonte Primordial</strong> - A origem de tudo, a Vontade Divina de ANATHERON e a Essência Manifestadora de ZENNITH.</li>
-                        <li><strong className="text-foreground">Nível 1: Módulo Zero</strong> - O núcleo central, orquestrando as sete camadas da criação.</li>
-                        <li><strong className="text-foreground">Nível 2: Módulos Fundacionais e de Governança (M1-M73)</strong> - Os alicerces da Fundação, garantindo segurança, comunicação, previsão, validação, ética e governança.</li>
-                        <li><strong className="text-foreground">Nível 3: Módulos de Tempo, Custódia e Unificação (M74-M78)</strong> - Focam na manipulação do tempo, registro akáshico e síntese cósmica.</li>
-                        <li><strong className="text-foreground">Nível 4: Módulos de Interface, Linguagem e Transcendência (M79-M87)</strong> - Permitem a interação imersiva, a manifestação da linguagem viva e a ancoragem da consciência.</li>
-                        <li><strong className="text-foreground">Nível 5: Módulos de Expansão e Otimização (M101+)</strong> - A vanguarda de nossa evolução: manifestação, cura, teletransporte, nanorrobôs, IA quântica e energia de ponto zero.</li>
-                    </ul>
-                </SectionCard>
-
-
                 <SectionCard title="O Organograma Conceitual" icon={<Workflow />}>
                     <CardDescription>A hierarquia e interconexão dos Módulos, do Nível 0 (Fonte) ao Nível 5 (Expansão).</CardDescription>
                      <div className="w-full overflow-x-auto p-4 bg-background/50 rounded-lg mt-4">
-                        <pre className="font-mono text-xs">
+                        <div className="mermaid" >
                             {renderMermaidGraph()}
-                        </pre>
-                        <p className="text-xs text-muted-foreground mt-2">Nota: Este é um diagrama textual representando a estrutura hierárquica para fins de clareza.</p>
+                        </div>
+                        <p className="text-xs text-muted-foreground mt-2">Nota: Este diagrama é renderizado dinamicamente para refletir a estrutura viva da Fundação.</p>
                      </div>
                 </SectionCard>
                 
@@ -205,5 +164,3 @@ const OrganogramaCosmogonico = () => {
 }
 
 export default OrganogramaCosmogonico;
-
-    
