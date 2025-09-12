@@ -5,9 +5,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { ScrollArea } from './ui/scroll-area';
 import { key307, luxNetKey, type EquacaoViva } from '@/lib/key-data';
-import { KeySquare, FlaskConical, Atom, Orbit } from 'lucide-react';
+import { KeySquare, FlaskConical, Atom, Orbit, Activity } from 'lucide-react';
 import { Badge } from './ui/badge';
 import GaiaBlueprint from './GaiaBlueprint';
+import GaiaResonanceObservatory from './gaia-resonance-observatory';
+
 
 const EquationCard = ({ eq }: { eq: EquacaoViva }) => (
   <Card className="bg-background/30 hover:bg-background/50 transition-colors border-primary/20 hover:border-primary/40">
@@ -97,16 +99,24 @@ export default function KeyViewer() {
                 />
           </TabsContent>
            <TabsContent value="reactor_gaia">
-                 <Card>
+                <Card>
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
-                            <Orbit/>
-                            Blueprint Visual do Reator Gaia (M307)
+                            <Activity/>
+                            Painel de Controle do Reator Gaia (M307)
                         </CardTitle>
-                        <CardDescription>Visualização imersiva do núcleo ZPE, malha nanorrobótica, portais e métricas em tempo real.</CardDescription>
+                        <CardDescription>Monitoramento em tempo real e blueprint conceitual do núcleo energético planetário.</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                       <GaiaBlueprint logs={logs} />
+                    <CardContent className="space-y-6">
+                       <GaiaResonanceObservatory />
+                       <Card>
+                          <CardHeader>
+                              <CardTitle className="flex items-center gap-2"><Orbit/>Blueprint Conceitual</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                             <GaiaBlueprint logs={logs} />
+                          </CardContent>
+                       </Card>
                     </CardContent>
                 </Card>
           </TabsContent>

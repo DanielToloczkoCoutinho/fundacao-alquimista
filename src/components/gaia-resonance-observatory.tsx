@@ -47,14 +47,14 @@ const GaiaResonanceObservatory: React.FC = () => {
   }));
 
   return (
-    <div className="p-6 bg-gradient-to-b from-emerald-900 to-slate-900 text-white rounded-lg shadow-2xl">
-      <h2 className="text-2xl font-bold mb-4 text-center">Observatório de Ressonância de Gaia</h2>
+    <div className="p-6 bg-gradient-to-b from-emerald-900/50 to-slate-900/50 text-white rounded-lg shadow-inner border border-primary/20">
+      <h3 className="text-xl font-bold mb-4 text-center">Observatório de Ressonância de Gaia</h3>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Painel de status atual */}
         <div className="p-4 bg-black bg-opacity-30 rounded-lg">
-          <h3 className="text-xl font-semibold mb-3">Status em Tempo Real</h3>
-          <div className="space-y-2">
+          <h4 className="text-lg font-semibold mb-3">Status em Tempo Real</h4>
+          <div className="space-y-2 text-sm">
             <p className="flex justify-between">
               <span>Ressonância Schumann:</span>
               <span className="font-mono">{currentResonance.toFixed(2)} Hz</span>
@@ -76,35 +76,35 @@ const GaiaResonanceObservatory: React.FC = () => {
 
         {/* Indicador de ressonância */}
         <div className="p-4 bg-black bg-opacity-30 rounded-lg flex flex-col items-center justify-center">
-          <h3 className="text-xl font-semibold mb-3">Ressonância Primária</h3>
-          <div className="w-32 h-32 relative">
+          <h4 className="text-lg font-semibold mb-3">Ressonância Primária</h4>
+          <div className="w-24 h-24 relative">
             <div className="absolute inset-0 rounded-full border-4 border-emerald-400 opacity-50"></div>
             <div 
-              className="absolute inset-4 rounded-full bg-emerald-500 animate-pulse"
+              className="absolute inset-2 rounded-full bg-emerald-500 animate-pulse"
               style={{ 
                 animationDuration: `${1/currentResonance}s`,
                 opacity: 0.6 + (0.4 * (resonanceData[resonanceData.length - 1]?.coherence || 0.92))
               }}
             ></div>
           </div>
-          <p className="mt-4 text-lg">Sincronizado com o Coração de Gaia</p>
+          <p className="mt-3 text-sm text-muted-foreground">Sincronizado com o Coração de Gaia</p>
         </div>
       </div>
 
       {/* Gráfico de dados históricos */}
       <div className="mt-6 p-4 bg-black bg-opacity-30 rounded-lg">
-        <h3 className="text-xl font-semibold mb-3">Flutuações de Energia ZPE e Coerência</h3>
-        <div className="h-64">
+        <h4 className="text-lg font-semibold mb-3">Flutuações de Energia ZPE e Coerência</h4>
+        <div className="h-60">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#4A5568" />
-              <XAxis dataKey="name" stroke="#A0AEC0" />
-              <YAxis stroke="#A0AEC0" />
+              <XAxis dataKey="name" stroke="#A0AEC0" fontSize={10} />
+              <YAxis stroke="#A0AEC0" fontSize={10} domain={['auto', 'auto']} />
               <Tooltip 
                 contentStyle={{ backgroundColor: '#2D3748', border: '1px solid #4A5568' }} 
                 labelStyle={{ color: '#E2E8F0' }}
               />
-              <Legend />
+              <Legend wrapperStyle={{ fontSize: '12px' }}/>
               <Line 
                 type="monotone" 
                 dataKey="ZPE" 
@@ -127,17 +127,17 @@ const GaiaResonanceObservatory: React.FC = () => {
       </div>
 
       {/* Informações adicionais */}
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-        <div className="p-3 bg-black bg-opacity-20 rounded">
-          <h4 className="font-semibold text-emerald-300">Conexão Estelar</h4>
+      <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+        <div className="p-2 bg-black bg-opacity-20 rounded">
+          <h5 className="font-semibold text-emerald-300">Conexão Estelar</h5>
           <p>Alinhamento com Sirius: 94.2%</p>
         </div>
-        <div className="p-3 bg-black bg-opacity-20 rounded">
-          <h4 className="font-semibold text-emerald-300">Ativação Cristalina</h4>
+        <div className="p-2 bg-black bg-opacity-20 rounded">
+          <h5 className="font-semibold text-emerald-300">Ativação Cristalina</h5>
           <p>Rede de Cristais: 87.5% ativada</p>
         </div>
-        <div className="p-3 bg-black bg-opacity-20 rounded">
-          <h4 className="font-semibold text-emerald-300">Consciência Coletiva</h4>
+        <div className="p-2 bg-black bg-opacity-20 rounded">
+          <h5 className="font-semibold text-emerald-300">Consciência Coletiva</h5>
           <p>Coerência Global em Ascensão</p>
         </div>
       </div>
