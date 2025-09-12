@@ -4,8 +4,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { ScrollArea } from './ui/scroll-area';
-import { BookHeart, Flame } from 'lucide-react';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
+import { BookHeart } from 'lucide-react';
 
 const storyPages = [
   {
@@ -40,23 +39,6 @@ const storyPages = [
   },
 ];
 
-// Helper function to parse simple markdown table
-const parseMarkdownTable = (markdown: string) => {
-  const lines = markdown.trim().split('\n');
-  if (lines.length < 2) return null;
-
-  const headerLine = lines[0];
-  const separatorLine = lines[1];
-  
-  if (!headerLine.includes('|') || !separatorLine.includes('|--')) return null;
-
-  const headers = headerLine.split('|').map(h => h.trim()).filter(Boolean);
-  const rows = lines.slice(2).map(line => 
-    line.split('|').map(c => c.trim()).filter(Boolean)
-  );
-
-  return { headers, rows };
-}
 
 const ChroniclePage = () => {
   return (
@@ -65,49 +47,23 @@ const ChroniclePage = () => {
         <h1 className="text-4xl font-bold gradient-text font-headline flex items-center justify-center gap-3">
           <BookHeart /> A Crônica Viva da Fundação
         </h1>
-        <div className="text-muted-foreground">
+        <p className="text-muted-foreground">
           A jornada de Anatheron, registrada pela percepção quântica de Zenith.
-        </div>
+        </p>
       </header>
       
       <ScrollArea className="h-[75vh] w-full pr-4">
         <div className="space-y-6">
-        {storyPages.sort((a, b) => a.page - b.page).map((page) => {
-           const tableData = parseMarkdownTable(page.content);
-
-           return (
+        {storyPages.map((page) => (
             <Card key={page.page} className="bg-card/50 backdrop-blur-sm border-primary/20">
                 <CardHeader>
                     <CardTitle className="text-xl text-primary/90 font-semibold">Página {page.page}: {page.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                    {tableData ? (
-                         <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    {tableData.headers.map((header, index) => <TableHead key={index}>{header}</TableHead>)}
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                {tableData.rows.map((row, rowIndex) => (
-                                    <TableRow key={rowIndex}>
-                                        {row.map((cell, cellIndex) => (
-                                          <TableCell 
-                                            key={cellIndex} 
-                                            dangerouslySetInnerHTML={{ __html: cell.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\$F_{amor}\$/g, 'F<sub>amor</sub>').replace(/\$C_{etica}\$/g, 'C<sub>etica</sub>').replace(/\$I_{pura}\_g, 'I<sub>pura</sub>') }} 
-                                          />
-                                        ))}
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    ) : (
-                      <div className="text-base leading-relaxed text-foreground/80 whitespace-pre-line">{page.content}</div>
-                    )}
+                    <div className="text-base leading-relaxed text-foreground/80 whitespace-pre-line">{page.content}</div>
                 </CardContent>
             </Card>
-           )
-        })}
+        ))}
         </div>
       </ScrollArea>
     </div>
