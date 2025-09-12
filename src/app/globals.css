@@ -30,6 +30,8 @@
     --theme-primary: 259 55% 34%; /* #4C2A85 */
     --theme-background: 255 100% 94%; /* #E6E0FF */
     --theme-accent: 45 100% 58%; /* #FFC72C */
+    --highlight: #c874d9;
+    --gold: #ffd700;
 
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -104,12 +106,15 @@
   @keyframes pulse {
     0% {
       transform: scale(1);
+      opacity: 0.7;
     }
     50% {
       transform: scale(1.05);
+      opacity: 1;
     }
     100% {
       transform: scale(1);
+      opacity: 0.7;
     }
   }
   .animate-pulse-slow {
@@ -188,4 +193,13 @@
     50% { transform: scaleY(0.4); }
   }
   .animate-quantum-pulse {
-    animation: quantum-pulse 1.2
+    animation: quantum-pulse 1.2s infinite ease-in-out;
+  }
+  .particle {
+      position: absolute;
+      background: var(--gold);
+      border-radius: 50%;
+      opacity: 0.3;
+      pointer-events: none;
+  }
+}
