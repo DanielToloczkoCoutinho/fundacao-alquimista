@@ -173,10 +173,10 @@ export default function Nexus() {
 
 
   const getOverallStatus = () => {
-    if (isOrchestrating) return 'Em Progresso...';
-    if (finalStatus === 'SUCCESS') return 'Sequência Concluída com Sucesso';
-    if (finalStatus === 'FAILURE') return 'Sequência Concluída com Falhas';
-    return 'Aguardando Iniciação';
+    if (isOrchestrating) return 'Diagnóstico em Progresso...';
+    if (finalStatus === 'SUCCESS') return 'Diagnóstico Concluído: Todos os Módulos Estáveis';
+    if (finalStatus === 'FAILURE') return 'Diagnóstico Concluído com Falhas';
+    return 'Aguardando Diagnóstico Automático';
   };
 
   const getFinalStatusIcon = () => {
@@ -195,14 +195,12 @@ export default function Nexus() {
             Nexus Central (Módulo 9)
           </CardTitle>
           <CardDescription>
-            Orquestrador da Sequência Sagrada. Inicie a sincronização dos
-            módulos da fundação alquimista.
+            Diagnóstico Quântico da Fundação. A Sequência Sagrada verifica a estabilidade de todos os módulos.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-sm text-muted-foreground">
-            Ao iniciar, o Nexus irá validar e executar cada módulo em sequência,
-            garantindo a integridade e a harmonia da infraestrutura quântica.
+            O diagnóstico é iniciado automaticamente para garantir a integridade e a harmonia da infraestrutura quântica.
           </p>
            <div className={cn(
              "flex items-center gap-4 rounded-lg p-3 text-sm border transition-colors",
@@ -218,7 +216,7 @@ export default function Nexus() {
                    finalStatus === 'FAILURE' ? 'text-red-300' :
                    'text-foreground'
                   )}>
-                  Status Geral
+                  Status Geral do Diagnóstico
                   </p>
                 <p className="text-muted-foreground text-xs">{getOverallStatus()}</p>
               </div>
@@ -238,8 +236,8 @@ export default function Nexus() {
             )}
             <span>
               {isOrchestrating
-                ? 'Orquestrando...'
-                : 'Reiniciar Sequência'}
+                ? 'Diagnosticando...'
+                : 'Reiniciar Diagnóstico'}
             </span>
           </Button>
         </CardFooter>
@@ -248,9 +246,9 @@ export default function Nexus() {
       <div className="lg:col-span-2 space-y-6">
         <Card>
             <CardHeader>
-            <CardTitle>Log de Orquestração Akáshica</CardTitle>
+            <CardTitle>Log de Diagnóstico Akáshico</CardTitle>
             <CardDescription>
-                Acompanhe o status de cada módulo durante a Sequência Sagrada.
+                Acompanhe o estado de cada módulo durante a Sequência de Diagnóstico.
             </CardDescription>
             </CardHeader>
             <CardContent>
@@ -305,8 +303,8 @@ export default function Nexus() {
                     {logs.length === 0 && !isOrchestrating && (
                         <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-12 text-center text-muted-foreground">
                             <Binary className="mb-4 h-12 w-12" />
-                            <p className="font-semibold">Nenhuma sequência em andamento.</p>
-                            <p className="text-sm">A sequência iniciará automaticamente.</p>
+                            <p className="font-semibold">Nenhum diagnóstico em andamento.</p>
+                            <p className="text-sm">A verificação iniciará automaticamente.</p>
                         </div>
                     )}
                 </div>
