@@ -47,6 +47,7 @@ import Pagina29 from '@/components/pagina-29';
 import Pagina30 from '@/components/pagina-30';
 import Pagina31 from '@/components/pagina-31';
 import Pagina34 from '@/components/pagina-34';
+import Pagina37 from '@/components/pagina-37';
 
 
 // --- Configuração do Firebase ---
@@ -140,6 +141,7 @@ const App = () => {
         case 'pagina-30': return <Pagina30 />;
         case 'pagina-31': return <Pagina31 />;
         case 'pagina-34': return <Pagina34 />;
+        case 'pagina-37': return <Pagina37 />;
         case 'organograma': return <OrganogramaCosmogonico />;
         case 'nexus': return <Nexus />;
         case 'omega': return <Pagina42 />;
