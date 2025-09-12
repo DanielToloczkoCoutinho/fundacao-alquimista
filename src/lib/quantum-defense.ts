@@ -1,3 +1,4 @@
+
 'use client';
 
 import { FREQ_ANATHERON_ESTABILIZADORA, AMOR_THRESHOLD } from './constants';

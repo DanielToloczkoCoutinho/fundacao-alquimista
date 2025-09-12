@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useCallback, useEffect } from 'react';
 import { Shield, Microscope, Wand2, CalendarSync, GitCommit, Sparkles, BrainCircuit } from 'lucide-react';
