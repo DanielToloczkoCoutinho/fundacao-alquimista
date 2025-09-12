@@ -1,14 +1,20 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, useCallback } from 'react';
 import { Building, Globe, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+import { AnimatePresence, motion } from 'framer-motion';
 
-// Lazy load building components
+
 const ConsolePage = React.lazy(() => import('@/components/console-page'));
-const CivilizationsBuilding = React.lazy(() => <div className="p-8 text-white bg-gray-100 text-gray-800 h-full">Edifício das Civilizações (Em Construção)</div>);
-const PersonalBuilding = React.lazy(() => <div className="p-8 text-white bg-black h-full">Edifício Pessoal (Em Construção)</div>);
+
+// Mock Components for other buildings
+const CivilizationsBuilding = React.lazy(() => import('@/components/console-page'));
+const PersonalBuilding = React.lazy(() => {
+    const Comp = () => <div className="p-8 text-white bg-black h-full">Edifício Pessoal (Em Construção)</div>;
+    return Promise.resolve({ default: Comp });
+});
 
 
 type Building = 'matrix' | 'civilizations' | 'personal';
@@ -19,11 +25,6 @@ const navItems: { id: Building; label: string; icon: React.ElementType }[] = [
   { id: 'personal', label: 'Pessoal', icon: User },
 ];
 
-const buildingComponents: Record<Building, React.ComponentType> = {
-  matrix: ConsolePage,
-  civilizations: CivilizationsBuilding,
-  personal: PersonalBuilding,
-};
 
 function Header({ activeBuilding, onNavigate }: { activeBuilding: Building, onNavigate: (id: Building) => void }) {
     return (
@@ -40,13 +41,18 @@ function Header({ activeBuilding, onNavigate }: { activeBuilding: Building, onNa
                   key={id}
                   className={cn(
                     "nav-item flex flex-col items-center cursor-pointer transition-all duration-300 opacity-70 relative",
-                    activeBuilding === id && "active opacity-100 -translate-y-1"
+                    "hover:opacity-100 hover:-translate-y-1",
+                    activeBuilding === id && "active opacity-100 !-translate-y-1"
                   )}
                   onClick={() => onNavigate(id)}
                 >
                   <Icon className="nav-icon text-2xl mb-1" />
                   <div className="nav-text text-sm uppercase tracking-wider">{label}</div>
-                  {activeBuilding === id && <div className="absolute -bottom-2.5 h-1.5 w-1.5 bg-highlight rounded-full" />}
+                  {activeBuilding === id && 
+                    <motion.div 
+                        className="absolute -bottom-2.5 h-1.5 w-1.5 bg-highlight rounded-full" 
+                        layoutId="active-indicator"
+                    />}
                 </div>
               ))}
             </nav>
@@ -58,32 +64,54 @@ export function QuantumOrchestrator() {
   const [activeBuilding, setActiveBuilding] = useState<Building>('matrix');
   const [direction, setDirection] = useState(0);
 
-  const handleNavigate = (buildingId: Building) => {
+  const handleNavigate = useCallback((buildingId: Building) => {
     const currentIndex = navItems.findIndex(item => item.id === activeBuilding);
     const nextIndex = navItems.findIndex(item => item.id === buildingId);
     setDirection(nextIndex > currentIndex ? 1 : -1);
     setActiveBuilding(buildingId);
-  };
+  }, [activeBuilding]);
   
-  const ActiveComponent = buildingComponents[activeBuilding];
+  const buildingComponents: Record<Building, React.ReactNode> = {
+    matrix: <ConsolePage />,
+    civilizations: <CivilizationsBuilding />,
+    personal: <PersonalBuilding />,
+  };
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen bg-matrix-bg text-text-light">
       <Header activeBuilding={activeBuilding} onNavigate={handleNavigate} />
       <main className="flex-1 relative overflow-hidden">
         <Suspense fallback={<SuspenseFallback />}>
-            {Object.entries(buildingComponents).map(([id, Component]) => (
-                <section
-                    key={id}
-                    id={id}
-                    className={cn('building absolute top-0 left-0 w-full h-full p-5 overflow-y-auto', {
-                        'active visible': activeBuilding === id,
-                        'inactive hidden': activeBuilding !== id,
-                    })}
-                >
-                    {activeBuilding === id && <Component />}
-                </section>
-            ))}
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.section
+              key={activeBuilding}
+              className="building absolute top-0 left-0 w-full h-full p-5 overflow-y-auto"
+              custom={direction}
+              variants={{
+                  enter: (direction: number) => ({
+                      x: direction > 0 ? '100%' : '-100%',
+                      opacity: 0,
+                  }),
+                  center: {
+                      x: 0,
+                      opacity: 1,
+                  },
+                  exit: (direction: number) => ({
+                      x: direction < 0 ? '100%' : '-100%',
+                      opacity: 0,
+                  }),
+              }}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 }
+              }}
+            >
+              {buildingComponents[activeBuilding]}
+            </motion.section>
+          </AnimatePresence>
         </Suspense>
       </main>
     </div>

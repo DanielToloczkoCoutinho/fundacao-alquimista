@@ -76,7 +76,6 @@ import {
   BookOpen,
   Map,
   HeartHandshake,
-  Cpu,
   Bot,
   AlertTriangle,
   Fingerprint,
@@ -227,8 +226,8 @@ export const sections: Section[] = [
   },
   {
     id: 'console',
-    title: 'Painel de Controle',
-    icon: LayoutDashboard,
+    title: 'Civilizações',
+    icon: Globe,
     documents: [],
   },
   {
@@ -664,7 +663,7 @@ export const sections: Section[] = [
   { id: 'm57', title: 'Módulo 57: (Não Definido)', icon: Archive, documents: [] },
   { id: 'm58', title: 'Módulo 58: (Não Definido)', icon: Archive, documents: [] },
   { id: 'm59', title: 'Módulo 59: (Não Definido)', icon: Archive, documents: [] },
-  { id: 'm60', title: 'Módulo 60: Mineração de Dados Cósmicos', icon: DatabaseZap, documents: [] },
+  { id: 'm60', title: 'Módulo 60: Mineração de Dados Cósmicos Profundos', icon: DatabaseZap, documents: [] },
   { id: 'm61', title: 'Módulo 61: GAIA RESONANTIA', icon: Globe, documents: [] },
   { id: 'm62', title: 'Módulo 62: (Não Definido)', icon: Archive, documents: [] },
   { id: 'm63', title: 'Módulo 63: (Não Definido)', icon: Archive, documents: [] },
@@ -866,3 +865,4 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
+```

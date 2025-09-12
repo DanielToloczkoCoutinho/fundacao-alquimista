@@ -33,6 +33,17 @@
     --highlight: #c874d9;
     --gold: #ffd700;
 
+    /* Platform Trina Colors */
+    --matrix-bg: #0a0e1a;
+    --civilizations-bg: #f0f0f0;
+    --personal-bg: #000000;
+    --text-light: #e6e6e6;
+    --text-dark: #1a1a1a;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --error: #f44336;
+
+
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -199,7 +210,4 @@
       position: absolute;
       background: var(--gold);
       border-radius: 50%;
-      opacity: 0.3;
-      pointer-events: none;
-  }
-}
+      opacity: 0
