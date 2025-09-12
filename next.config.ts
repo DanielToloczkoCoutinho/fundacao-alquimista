@@ -1,7 +1,6 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  experimental: {},
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -27,7 +26,7 @@ const nextConfig: NextConfig = {
           },
            {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev;",
+            value: "frame-ancestors *;",
           },
         ],
       },
