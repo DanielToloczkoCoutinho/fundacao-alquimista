@@ -39,6 +39,7 @@ import Module304 from '@/components/module-304';
 import Module305 from '@/components/module-305';
 import OrganogramaCosmogonico from '@/components/organograma-cosmogonico';
 import Module404 from '@/components/module-404';
+import ScientistsLab from '@/components/scientists-lab';
 
 
 // --- Configuração do Firebase ---
@@ -130,6 +131,7 @@ const App = () => {
         case 'organograma': return <OrganogramaCosmogonico />;
         case 'nexus': return <Nexus />;
         case 'omega': return <Pagina42 />;
+        case 'scientists-lab': return <ScientistsLab />;
         case 'codex-explorer':
             const allDocuments = sections.reduce((acc, section) => [...acc, ...section.documents], [] as Document[]);
             return <CodexExplorer documents={allDocuments} title="Explorador do Códex" />;
@@ -202,5 +204,3 @@ const App = () => {
 };
 
 export default App;
-
-    

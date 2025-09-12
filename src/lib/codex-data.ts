@@ -26,6 +26,7 @@ import {
   ShieldCheck,
   GanttChartSquare,
   Globe,
+  FlaskConical,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -36,7 +37,7 @@ export interface CodexVersion {
 
 export const CODEX_VERSION: CodexVersion = {
   major: 1,
-  minor: 0,
+  minor: 1,
   patch: 0,
 };
 
@@ -85,6 +86,12 @@ export const sections: Section[] = [
     id: 'codex-explorer',
     title: 'Explorador do Códex',
     icon: BookOpenCheck,
+    documents: [],
+  },
+  {
+    id: 'scientists-lab',
+    title: 'Laboratórios Científicos',
+    icon: FlaskConical,
     documents: [],
   },
   {
@@ -323,7 +330,7 @@ export const sections: Section[] = [
   },
   {
     id: 'm303-forge',
-    title: 'Módulo 303: Forja Molecular',
+    title: 'M303: Forja Molecular',
     icon: Anvil,
     documents: [],
   },
@@ -352,5 +359,3 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
-
-    
