@@ -1,3 +1,4 @@
+
 // This file is now located at app/layout.tsx
 import type { Metadata } from 'next';
 import './globals.css';
