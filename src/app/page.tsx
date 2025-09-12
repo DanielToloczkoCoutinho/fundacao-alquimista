@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Suspense, useEffect, useState } from 'react';
@@ -184,6 +185,7 @@ const App = () => {
         case 'chronicle': return <ChroniclePage />;
         case 'scientific-report': return <ScientificReport />;
         case 'architecture-report': return <ArchitectureReport />;
+        case 'suggestions-panel': return <iframe src="/suggestions.html" className="w-full h-full border-0" />;
         case 'pagina-27': return <Pagina27 />;
         case 'pagina-29': return <Pagina29 />;
         case 'pagina-30': return <Pagina30 />;
@@ -307,3 +309,5 @@ const App = () => {
 };
 
 export default App;
+
+    

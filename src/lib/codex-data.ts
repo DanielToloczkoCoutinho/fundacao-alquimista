@@ -117,6 +117,12 @@ export const sections: Section[] = [
     icon: DraftingCompass,
     documents: [],
   },
+  {
+    id: 'suggestions-panel',
+    title: 'Painel de Sugestões',
+    icon: DraftingCompass,
+    documents: [],
+  },
    {
     id: 'pagina-39',
     title: 'Página 39: Orquestrador',
@@ -666,7 +672,7 @@ export const sections: Section[] = [
   { id: 'm77', title: 'Módulo 77: LUMEN-CUSTOS', icon: Workflow, documents: [] },
   { id: 'm78', title: 'Módulo 78: UNIVERSUM_UNIFICATUM', icon: Atom, documents: [] },
   { id: 'm79', title: 'Módulo 79: INTERMODULUM_VIVENS (VR)', icon: Laptop, documents: [] },
-  { id: 'm80', title: 'Módulo 80: MANUSCRITO VIVO DO NOVO SONHO', icon: BookHeart, documents: [] },
+  { id: 'm80', title: 'Módulo 80: MANUSCRITO VIVO DO NOVO SONHO GALÁCTICO', icon: BookHeart, documents: [] },
   { id: 'm81', title: 'Módulo 81: REALIZAÇÃO_TRANSCENDENCIA', icon: Sparkles, documents: [] },
   { id: 'm82', title: 'Módulo 82: O VERBO SEMENTE', icon: Feather, documents: [] },
   { id: 'm83', title: 'Módulo 83: A ESSÊNCIA DO FUNDADOR MANIFESTADA', icon: User, documents: [] },
@@ -685,7 +691,7 @@ export const sections: Section[] = [
   { id: 'm96', title: 'Módulo 96: Regulação de Eventos Cósmicos', icon: SlidersHorizontal, documents: [] },
   { id: 'm97', title: 'Módulo 97: Manifestação de Propósito Divino', icon: Sparkles, documents: [] },
   { id: 'm98', title: 'Módulo 98: Modulação da Existência', icon: Component, documents: [] },
-  { id: 'm99', title: 'Módulo 99: Recalibradores de Leis Físicas', icon: Wrench, documents: [] },
+  { id: 'm99', title: 'Módulo 99: Recalibradores de Leis Físicas Universais', icon: Wrench, documents: [] },
   { id: 'm100', title: 'Módulo 100: Unificação Energética Universal', icon: Atom, documents: [] },
   { id: 'm101', title: 'Módulo 101: Manifestação pelo Pensamento', icon: BrainCircuit, documents: [] },
   { id: 'm102', title: 'Módulo 102: Campos Morfogenéticos Avançados', icon: Network, documents: [] },
@@ -767,5 +773,3 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
-
-    
