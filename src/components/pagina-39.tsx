@@ -100,5 +100,3 @@ const Pagina39 = () => {
 };
 
 export default Pagina39;
-
-    
