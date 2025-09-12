@@ -106,6 +106,18 @@ export const sections: Section[] = [
     documents: [],
   },
   {
+    id: 'pagina-38',
+    title: 'Página 38: Ciclo da Renovação',
+    icon: Activity,
+    documents: [],
+  },
+  {
+    id: 'pagina-39',
+    title: 'Página 39: Conselho Guardião',
+    icon: Users,
+    documents: [],
+  },
+  {
     id: 'organograma',
     title: 'Organograma Cosmogônico',
     icon: GanttChartSquare,
@@ -406,3 +418,5 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
+
+    
