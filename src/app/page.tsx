@@ -79,6 +79,7 @@ import Module39_1 from '@/components/module-39-1';
 import Module40 from '@/components/module-40';
 import Module41_1 from '@/components/module-41-1';
 import Module42 from '@/components/module-42';
+import ConsolePage from '@/app/console/page';
 
 
 // --- Configuração do Firebase ---

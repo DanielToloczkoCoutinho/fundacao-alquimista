@@ -1,667 +1,172 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificador de Acessibilidade de Abas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #2c5282;
-            --secondary: #3182ce;
-            --accent: #4299e1;
-            --success: #48bb78;
-            --warning: #ecc94b;
-            --danger: #f56565;
-            --dark: #1a202c;
-            --light: #f7fafc;
-            --gray: #718096;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            color: var(--light);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: rgba(26, 32, 44, 0.7);
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--accent);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .title {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, var(--accent), var(--success));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--light);
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-        
-        .url-box {
-            display: inline-block;
-            padding: 12px 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            font-family: monospace;
-            margin: 15px 0;
-            border: 1px solid var(--accent);
-        }
-        
-        .dashboard {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-        
-        @media (max-width: 900px) {
-            .dashboard {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .card {
-            background: rgba(26, 32, 44, 0.6);
-            border-radius: 16px;
-            padding: 25px;
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--accent);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .card-title {
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .tab-container {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .tab {
-            padding: 12px 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 1px solid transparent;
-        }
-        
-        .tab:hover {
-            background: rgba(66, 153, 225, 0.2);
-        }
-        
-        .tab.active {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .status-indicator {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .status-success {
-            background: rgba(72, 187, 120, 0.2);
-            border: 1px solid var(--success);
-        }
-        
-        .status-warning {
-            background: rgba(236, 201, 75, 0.2);
-            border: 1px solid var(--warning);
-        }
-        
-        .status-error {
-            background: rgba(245, 101, 101, 0.2);
-            border: 1px solid var(--danger);
-        }
-        
-        .status-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        
-        .dot-success {
-            background: var(--success);
-            animation: pulse 2s infinite;
-        }
-        
-        .dot-warning {
-            background: var(--warning);
-        }
-        
-        .dot-error {
-            background: var(--danger);
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-        
-        .checklist {
-            margin-top: 20px;
-        }
-        
-        .check-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        
-        .check-icon {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .icon-success {
-            background: var(--success);
-        }
-        
-        .icon-warning {
-            background: var(--warning);
-        }
-        
-        .icon-error {
-            background: var(--danger);
-        }
-        
-        .log-container {
-            max-height: 300px;
-            overflow-y: auto;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            padding: 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-        }
-        
-        .log-entry {
-            padding: 8px 5px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .log-info {
-            color: var(--accent);
-        }
-        
-        .log-success {
-            color: var(--success);
-        }
-        
-        .log-warning {
-            color: var(--warning);
-        }
-        
-        .log-error {
-            color: var(--danger);
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            justify-content: center;
-        }
-        
-        .button {
-            background: linear-gradient(to right, var(--accent), var(--primary));
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
-        }
-        
-        .button-success {
-            background: linear-gradient(to right, var(--success), #38a169);
-        }
-        
-        .simulation-panel {
-            margin-top: 30px;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
-        }
-        
-        .simulation-title {
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--accent);
-        }
-        
-        .simulation-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        
-        @media (max-width: 600px) {
-            .simulation-content {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .simulation-item {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            border-radius: 8px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1 class="title">Verificador de Acessibilidade de Abas</h1>
-            <p class="subtitle">Análise de disponibilidade e problemas comuns</p>
-            
-            <div class="url-box">
-                <i class="fas fa-link"></i>
-                https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/
-            </div>
-        </div>
-        
-        <div class="dashboard">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title"><i class="fas fa-columns"></i> Navegação por Abas</h2>
-                    <i class="fas fa-check-circle" style="color: var(--success);"></i>
-                </div>
-                
-                <div class="tab-container">
-                    <div class="tab active" onclick="switchTab(0)">Dashboard</div>
-                    <div class="tab" onclick="switchTab(1)">Projetos</div>
-                    <div class="tab" onclick="switchTab(2)">Firestore</div>
-                    <div class="tab" onclick="switchTab(3)">Autenticação</div>
-                    <div class="tab" onclick="switchTab(4)">Armazenamento</div>
-                    <div class="tab" onclick="switchTab(5)">Funções</div>
-                    <div class="tab" onclick="switchTab(6)">Configurações</div>
-                </div>
-                
-                <div class="tab-content active">
-                    <div class="status-indicator status-success">
-                        <div class="status-dot dot-success"></div>
-                        <span>Aba Dashboard acessível e carregada com sucesso</span>
-                    </div>
-                    
-                    <div class="checklist">
-                        <div class="check-item">
-                            <div class="check-icon icon-success">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div>
-                                <div>Conteúdo renderizado completamente</div>
-                                <small>Todos os componentes carregados</small>
-                            </div>
-                        </div>
-                        
-                        <div class="check-item">
-                            <div class="check-icon icon-success">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div>
-                                <div>Dados carregados do Firebase</div>
-                                <small>Conexão estabelecida com sucesso</small>
-                            </div>
-                        </div>
-                        
-                        <div class="check-item">
-                            <div class="check-icon icon-warning">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div>
-                                <div>Performance de carregamento</div>
-                                <small>Pode ser melhorada com lazy loading</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tab-content">
-                    <div class="status-indicator status-success">
-                        <div class="status-dot dot-success"></div>
-                        <span>Aba Projetos acessível e carregada com sucesso</span>
-                    </div>
-                    
-                    <div class="checklist">
-                        <div class="check-item">
-                            <div class="check-icon icon-success">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div>
-                                <div>Lista de projetos carregada</div>
-                                <small>12 projetos encontrados</small>
-                            </div>
-                        </div>
-                        
-                        <div class="check-item">
-                            <div class="check-icon icon-success">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div>
-                                <div>Permissões verificadas</div>
-                                <small>Usuário tem acesso completo</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tab-content">
-                    <div class="status-indicator status-warning">
-                        <div class="status-dot dot-warning"></div>
-                        <span>Aba Firestore acessível com avisos de performance</span>
-                    </div>
-                    
-                    <div class="checklist">
-                        <div class="check-item">
-                            <div class="check-icon icon-success">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <div>
-                                <div>Conexão estabelecida</div>
-                                <small>Firestore respondendo</small>
-                            </div>
-                        </div>
-                        
-                        <div class="check-item">
-                            <div class="check-icon icon-warning">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div>
-                                <div>Problemas de latência</div>
-                                <small>Algumas consultas estão lentas</small>
-                            </div>
-                        </div>
-                        
-                        <div class="check-item">
-                            <div class="check-icon icon-error">
-                                <i class="fas fa-times"></i>
-                            </div>
-                            <div>
-                                <div>WebChannel instável</div>
-                                <small>Reconexões frequentes detectadas</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="tab-content">
-                    <div class="status-indicator status-success">
-                        <div class="status-dot dot-success"></div>
-                        <span>Aba Autenticação acessível e carregada com sucesso</span>
-                    </div>
-                </div>
-                
-                <div class="tab-content">
-                    <div class="status-indicator status-success">
-                        <div class="status-dot dot-success"></div>
-                        <span>Aba Armazenamento acessível e carregada com sucesso</span>
-                    </div>
-                </div>
-                
-                <div class="tab-content">
-                    <div class="status-indicator status-success">
-                        <div class="status-dot dot-success"></div>
-                        <span>Aba Funções acessível e carregada com sucesso</span>
-                    </div>
-                </div>
-                
-                <div class="tab-content">
-                    <div class="status-indicator status-error">
-                        <div class="status-dot dot-error"></div>
-                        <span>Aba Configurações com problemas de carregamento</span>
-                    </div>
-                    
-                    <div class="checklist">
-                        <div class="check-item">
-                            <div class="check-icon icon-error">
-                                <i class="fas fa-times"></i>
-                            </div>
-                            <div>
-                                <div>Falha ao carregar preferências</div>
-                                <small>Erro de permissão ou recurso indisponível</small>
-                            </div>
-                        </div>
-                        
-                        <div class="check-item">
-                            <div class="check-icon icon-warning">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <div>
-                                <div>Configurações de tema não carregadas</div>
-                                <small>Valores padrão serão usados</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title"><i class="fas fa-list-alt"></i> Relatório de Acessibilidade</h2>
-                    <i class="fas fa-file-alt"></i>
-                </div>
-                
-                <div class="status-indicator status-success">
-                    <div class="status-dot dot-success"></div>
-                    <span>6 de 7 abas totalmente acessíveis</span>
-                </div>
-                
-                <div class="log-container">
-                    <div class="log-entry log-success">[SUCESSO] Dashboard: completamente acessível</div>
-                    <div class="log-entry log-success">[SUCESSO] Projetos: completamente acessível</div>
-                    <div class="log-entry log-warning">[AVISO] Firestore: problemas de performance detectados</div>
-                    <div class="log-entry log-success">[SUCESSO] Autenticação: completamente acessível</div>
-                    <div class="log-entry log-success">[SUCESSO] Armazenamento: completamente acessível</div>
-                    <div class="log-entry log-success">[SUCESSO] Funções: completamente acessível</div>
-                    <div class="log-entry log-error">[ERRO] Configurações: falha no carregamento</div>
-                    <div class="log-entry log-info">[INFO] Teste de acessibilidade concluído</div>
-                </div>
-                
-                <div class="action-buttons">
-                    <button class="button" onclick="runFullTest()">
-                        <i class="fas fa-play"></i> Executar Teste Completo
-                    </button>
-                    <button class="button button-success">
-                        <i class="fas fa-download"></i> Exportar Relatório
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="simulation-panel">
-            <div class="simulation-title">
-                <i class="fas fa-flask"></i>
-                Simulação de Problemas Comuns
-            </div>
-            
-            <div class="simulation-content">
-                <div class="simulation-item">
-                    <div class="info-title"><i class="fas fa-ban"></i> Problemas de CORS</div>
-                    <div>Recursos bloqueados entre origens diferentes</div>
-                </div>
-                
-                <div class="simulation-item">
-                    <div class="info-title"><i class="fas fa-unlink"></i> Conexão Instável</div>
-                    <div>Problemas de WebChannel e reconexões</div>
-                </div>
-                
-                <div class="simulation-item">
-                    <div class="info-title"><i class="fas fa-shield-alt"></i> Políticas de Permissão</div>
-                    <div>Recursos bloqueados por políticas de segurança</div>
-                </div>
-                
-                <div class="simulation-item">
-                    <div class="info-title"><i class="fas fa-clock"></i> Timeouts</div>
-                    <div>Requisições excedendo tempo limite</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="action-buttons">
-            <button class="button">
-                <i class="fas fa-wrench"></i> Diagnosticar Problemas
-            </button>
-            <button class="button button-success">
-                <i class="fas fa-magic"></i> Aplicar Soluções
-            </button>
-        </div>
-    </div>
+'use client';
 
-    <script>
-        // Alternar entre abas
-        function switchTab(tabIndex) {
-            document.querySelectorAll('.tab').forEach((tab, index) => {
-                if (index === tabIndex) {
-                    tab.classList.add('active');
-                } else {
-                    tab.classList.remove('active');
-                }
-            });
-            
-            document.querySelectorAll('.tab-content').forEach((content, index) => {
-                if (index === tabIndex) {
-                    content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
-                }
-            });
-        }
-        
-        // Executar teste completo
-        function runFullTest() {
-            const button = event.currentTarget;
-            const originalText = button.innerHTML;
-            
-            button.innerHTML = '<i class="fas fa-cog fa-spin"></i> Testando...';
-            
-            // Simular teste progressivo
-            setTimeout(() => {
-                switchTab(0);
-                setTimeout(() => switchTab(1), 600);
-                setTimeout(() => switchTab(2), 1200);
-                setTimeout(() => switchTab(3), 1800);
-                setTimeout(() => switchTab(4), 2400);
-                setTimeout(() => switchTab(5), 3000);
-                setTimeout(() => {
-                    switchTab(6);
-                    button.innerHTML = '<i class="fas fa-check"></i> Teste Concluído!';
-                    
-                    setTimeout(() => {
-                        button.innerHTML = originalText;
-                    }, 2000);
-                }, 3600);
-            }, 500);
-        }
-        
-        // Adicionar logs de teste
-        function addTestLogs() {
-            const logs = [
-                { message: '[TESTE] Verificando acesso à aba Dashboard...', type: 'info' },
-                { message: '[TESTE] Verificando acesso à aba Projetos...', type: 'info' },
-                { message: '[TESTE] Detectando problemas de performance no Firestore...', type: 'warning' },
-                { message: '[TESTE] Verificando permissões de autenticação...', type: 'info' },
-                { message: '[TESTE] Testando acesso ao armazenamento...', type: 'info' },
-                { message: '[TESTE] Verificando configurações de função...', type: 'info' },
-                { message: '[TESTE] Erro ao acessar configurações do usuário...', type: 'error' }
-            ];
-            
-            const logContainer = document.querySelector('.log-container');
-            
-            logs.forEach((log, index) => {
-                setTimeout(() => {
-                    const logEntry = document.createElement('div');
-                    logEntry.classList.add('log-entry', `log-${log.type}`);
-                    logEntry.textContent = log.message;
-                    
-                    logContainer.appendChild(logEntry);
-                    logContainer.scrollTop = logContainer.scrollHeight;
-                }, index * 800);
-            });
-        }
-        
-        // Inicialização
-        document.addEventListener('DOMContentLoaded', function() {
-            addTestLogs();
-        });
-    </script>
-</body>
-</html>
+import React, { useState, useEffect, useCallback } from 'react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { LayoutDashboard, CheckCircle, AlertTriangle, Loader, XCircle, FileWarning, Play, Download, Wrench, Magic } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { Badge } from '@/components/ui/badge';
+
+const ConsolePage = () => {
+    const [testRunning, setTestRunning] = useState(false);
+    const [activeTab, setActiveTab] = useState(0);
+    const [logs, setLogs] = useState<string[]>([]);
+
+    const tabData = [
+        { name: "Dashboard", status: "success", checks: ["Conteúdo renderizado", "Dados carregados"], issues: ["Performance pode ser otimizada"] },
+        { name: "Projetos", status: "success", checks: ["Lista de projetos carregada", "Permissões verificadas"], issues: [] },
+        { name: "Firestore", status: "warning", checks: ["Conexão estabelecida"], issues: ["Latência em algumas consultas", "WebChannel instável"] },
+        { name: "Autenticação", status: "success", checks: ["Provedores carregados", "Estado de usuário sincronizado"], issues: [] },
+        { name: "Armazenamento", status: "success", checks: ["Buckets acessíveis", "Regras de segurança validadas"], issues: [] },
+        { name: "Funções", status: "success", checks: ["Lista de funções carregada", "Logs de execução acessíveis"], issues: [] },
+        { name: "Configurações", status: "error", checks: [], issues: ["Falha ao carregar preferências", "Tema não aplicado"] },
+    ];
+    
+    const addLog = useCallback((message: string) => {
+        setLogs(prev => [`[${new Date().toLocaleTimeString()}] ${message}`, ...prev].slice(0, 100));
+    }, []);
+
+    const runFullTest = () => {
+        setTestRunning(true);
+        addLog("Iniciando varredura completa do sistema...");
+        let current = 0;
+        const interval = setInterval(() => {
+            setActiveTab(current);
+            const currentTab = tabData[current];
+            addLog(`Verificando aba: ${currentTab.name}... Status: ${currentTab.status.toUpperCase()}`);
+
+            current++;
+            if (current >= tabData.length) {
+                clearInterval(interval);
+                setTestRunning(false);
+                addLog("Varredura completa do sistema finalizada.");
+            }
+        }, 800);
+    };
+
+    useEffect(() => {
+        // Run test on initial load
+        runFullTest();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+
+    return (
+        <div className="max-w-7xl mx-auto p-4 space-y-6">
+            <Card>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-3 text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-sky-400">
+                        <LayoutDashboard /> Painel de Controle e Diagnóstico
+                    </CardTitle>
+                    <CardDescription>
+                        Análise de disponibilidade, saúde e problemas comuns da infraestrutura da Fundação.
+                    </CardDescription>
+                </CardHeader>
+            </Card>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div className="lg:col-span-1">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Diagnóstico do Sistema</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                             <Button className="w-full" onClick={runFullTest} disabled={testRunning}>
+                                {testRunning ? <Loader className="mr-2 h-4 w-4 animate-spin"/> : <Play className="mr-2 h-4 w-4" />}
+                                {testRunning ? 'Verificando...' : 'Executar Teste Completo'}
+                            </Button>
+                             <Button className="w-full mt-2" variant="outline">
+                                <Download className="mr-2 h-4 w-4"/>
+                                Exportar Relatório
+                            </Button>
+                        </CardContent>
+                    </Card>
+                     <Card className="mt-6">
+                        <CardHeader>
+                            <CardTitle>Ações Corretivas</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-2">
+                             <Button className="w-full" variant="secondary">
+                                <Wrench className="mr-2 h-4 w-4"/>
+                                Diagnosticar Problemas
+                             </Button>
+                             <Button className="w-full" variant="secondary">
+                                <Magic className="mr-2 h-4 w-4"/>
+                                Aplicar Soluções Automáticas
+                             </Button>
+                        </CardContent>
+                    </Card>
+                </div>
+                <div className="lg:col-span-2">
+                    <Card>
+                         <CardHeader>
+                            <CardTitle>Navegação e Status</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                             <div className="flex gap-2 mb-4 flex-wrap">
+                                {tabData.map((tab, index) => (
+                                     <button key={index} onClick={() => setActiveTab(index)} className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all", activeTab === index ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80')}>
+                                        {tab.name}
+                                     </button>
+                                ))}
+                            </div>
+                            <Card className="bg-background/50 p-4 min-h-[200px]">
+                                <CardTitle className="mb-4 text-lg">{tabData[activeTab].name}</CardTitle>
+                                <div className="space-y-2">
+                                    {tabData[activeTab].checks.map((check, i) => (
+                                        <div key={i} className="flex items-center gap-2 text-green-400">
+                                            <CheckCircle className="w-4 h-4"/>
+                                            <span>{check}</span>
+                                        </div>
+                                    ))}
+                                     {tabData[activeTab].issues.map((issue, i) => (
+                                        <div key={i} className="flex items-center gap-2 text-yellow-400">
+                                            <FileWarning className="w-4 h-4"/>
+                                            <span>{issue}</span>
+                                        </div>
+                                    ))}
+                                    {tabData[activeTab].status === 'error' && (
+                                        <div className="flex items-center gap-2 text-red-500">
+                                            <XCircle className="w-4 h-4"/>
+                                            <span>Falha crítica no carregamento deste módulo.</span>
+                                        </div>
+                                    )}
+                                </div>
+                            </Card>
+                        </CardContent>
+                    </Card>
+                </div>
+            </div>
+
+            <Card>
+                <CardHeader>
+                    <CardTitle>Relatório de Acessibilidade e Logs</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 text-center">
+                        <div className="p-3 bg-green-500/10 border border-green-500/30 rounded-lg">
+                           <p className="text-2xl font-bold">{tabData.filter(t => t.status === 'success').length}</p>
+                           <p className="text-sm text-green-400">Sistemas Operacionais</p>
+                        </div>
+                         <div className="p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
+                           <p className="text-2xl font-bold">{tabData.filter(t => t.status === 'warning').length}</p>
+                           <p className="text-sm text-yellow-400">Avisos de Performance</p>
+                        </div>
+                         <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg">
+                           <p className="text-2xl font-bold">{tabData.filter(t => t.status === 'error').length}</p>
+                           <p className="text-sm text-red-400">Falhas Críticas</p>
+                        </div>
+                    </div>
+                    <ScrollArea className="h-64 bg-background/50 p-2 border rounded-md">
+                        <pre className="text-xs font-mono whitespace-pre-wrap p-2">
+                            {logs.join('\n')}
+                        </pre>
+                    </ScrollArea>
+                </CardContent>
+            </Card>
+        </div>
+    );
+};
+
+export default ConsolePage;

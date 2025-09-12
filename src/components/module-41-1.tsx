@@ -11,6 +11,7 @@ import { Heart, Zap, Dna, FileText, CheckCircle, AlertTriangle, LoaderCircle, Hi
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
+import { sha256 } from '@/lib/crypto';
 
 type OperationState = 'IDLE' | 'ANALYZING' | 'GENERATING';
 
@@ -79,7 +80,7 @@ const Module41_1 = () => {
         }
 
         const newManual: HealingManual = {
-            manual_id: `QHM-${hashlib.sha256(geneSequence.encode()).hexdigest()[:10]}`,
+            manual_id: `QHM-${(await sha256(geneSequence)).substring(0, 10)}`,
             target_entity: "Entidade Alvo Exemplo",
             protocols: Math.floor(Math.random() * 3) + 2,
         };
