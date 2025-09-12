@@ -1,10 +1,9 @@
-
 'use client';
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { ScrollArea } from './ui/scroll-area';
-import { Gavel, Diamond, ShieldCheck, GitBranch, Key, BookHeart, Scales, Award } from 'lucide-react';
+import { Gavel, Diamond, ShieldCheck, GitBranch, Key, BookHeart, Scale, Award } from 'lucide-react';
 import { Badge } from './ui/badge';
 
 const SectionCard = ({ title, icon, children, className }: { title: string, icon: React.ReactNode, children: React.ReactNode, className?: string }) => (
@@ -48,7 +47,7 @@ const Pagina30 = () => {
                 </ul>
             </SectionCard>
 
-            <SectionCard title="2. Protocolo de Validação" icon={<Scales />}>
+            <SectionCard title="2. Protocolo de Validação" icon={<Scale />}>
                  <ul className="list-disc list-inside space-y-3 text-muted-foreground">
                     <li><strong className="text-foreground/90">Submissão:</strong> Operações são submetidas via Módulo 5 (Ética Operacional).</li>
                     <li><strong className="text-foreground/90">Análise:</strong> O Conselho avalia a intenção, o impacto multidimensional e o alinhamento com o Amor Incondicional.</li>
