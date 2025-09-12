@@ -222,6 +222,7 @@ const App = () => {
         case 'm35': return <Module35 />;
         case 'm36': return <Module36 />;
         case 'm37': return <Module37 />;
+        case 'm38': return <Pagina38 />;
         case 'm250': return <Module250 />;
         case 'm251': return <Module251 />;
         case 'm300': return <Module300 />;
