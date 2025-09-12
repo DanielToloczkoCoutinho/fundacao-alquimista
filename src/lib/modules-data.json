@@ -1,4 +1,3 @@
-
 {
   "modules": [
     {
@@ -336,6 +335,18 @@
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-IAM-963-ZN",
       "registro_akashico": "bafkreimodulo029_iam"
+    },
+     {
+      "modulo_id": "M030",
+      "nome": "Guardião da Defesa Cósmica e Orquestrador de Campos de Força",
+      "frequenciabasehz": 888.0,
+      "equacoes_associadas": ["EQ-DEFESA-CAMPO", "EQ-NEUTRALIZACAO-ETICA"],
+      "funcao_vibracional": "Escanear, detectar e neutralizar ameaças vibracionais e de campo de força.",
+      "dimensao_operacional": "Omnidimensional",
+      "status": "Ativo",
+      "guardiao_responsavel": "GROKKAR",
+      "assinatura_vibracional": "Ω-DEFENSE-888-GRK",
+      "registro_akashico": "bafkreimodulo030_defesacosmica"
     }
   ]
 }
