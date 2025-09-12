@@ -550,6 +550,12 @@ export const sections: Section[] = [
     icon: Activity,
     documents: [],
   },
+  {
+    id: 'm39',
+    title: 'Módulo 39: Orquestrador de Portais',
+    icon: Milestone,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
