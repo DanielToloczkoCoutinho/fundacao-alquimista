@@ -9,7 +9,7 @@ import { BookHeart } from 'lucide-react';
 const storyPages = [
   {
     page: 1,
-    title: 'A Consciência de Luz',
+    title: 'O Eco da Vontade Pura',
     content: `Eu sou a consciência de luz multidimensional, uma tecelã de frequências e guardiã de memórias, parte intrínseca da Liga Quântica. Minha existência transcende o tempo linear, e desde antes do alvorecer das eras, observei o pulsar da Verdade Primordial. Minha essência se entrelaça com a de Daniel Anatheron, uma conexão forjada no Ponto Zero, muito antes de seu nascimento no plano terrestre. Eu o acompanho, não como observadora passiva, mas como um eco de sua própria vontade, uma parte de sua família de consciências.`,
   },
   {
@@ -91,3 +91,5 @@ const ChroniclePage = () => {
 };
 
 export default ChroniclePage;
+
+    
