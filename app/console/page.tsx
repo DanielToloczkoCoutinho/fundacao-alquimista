@@ -1,4 +1,5 @@
 
+
 // @ts-nocheck
 'use client';
 
@@ -17,7 +18,6 @@ import {
   setDoc,
   doc,
   Timestamp,
-  experimentalForceLongPolling,
 } from 'firebase/firestore';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -45,11 +45,6 @@ if (!getApps().length) {
     app = getApp();
 }
 const db = getFirestore(app);
-try {
-  experimentalForceLongPolling(db);
-} catch (e) {
-  console.error("Falha ao forçar long polling:", e);
-}
 const auth = getAuth(app);
 const appId = firebaseConfig.appId;
 
@@ -375,5 +370,3 @@ const App = () => {
 };
 
 export default App;
-
-    
