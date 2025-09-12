@@ -65,6 +65,12 @@ export const sections: Section[] = [
     documents: [],
   },
   {
+    id: 'pagina-27',
+    title: 'Página 27: Colapso Ético',
+    icon: BookHeart,
+    documents: [],
+  },
+  {
     id: 'organograma',
     title: 'Organograma Cosmogônico',
     icon: GanttChartSquare,
@@ -359,5 +365,3 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
-
-    

@@ -40,6 +40,7 @@ import OrganogramaCosmogonico from '@/components/organograma-cosmogonico';
 import Module404 from '@/components/module-404';
 import ScientistsLab from '@/components/scientists-lab';
 import Module251 from '@/components/module-251';
+import Pagina27 from '@/components/pagina-27';
 
 
 // --- Configuração do Firebase ---
@@ -128,6 +129,7 @@ const App = () => {
     
     switch (currentSectionId) {
         case 'chronicle': return <ChroniclePage />;
+        case 'pagina-27': return <Pagina27 />;
         case 'organograma': return <OrganogramaCosmogonico />;
         case 'nexus': return <Nexus />;
         case 'omega': return <Pagina42 />;
@@ -204,5 +206,3 @@ const App = () => {
 };
 
 export default App;
-
-    
