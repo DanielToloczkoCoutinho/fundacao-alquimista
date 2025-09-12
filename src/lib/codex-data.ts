@@ -45,6 +45,7 @@ import {
   PlusSquare,
   Clock,
   RefreshCw,
+  GitBranch,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -572,6 +573,12 @@ export const sections: Section[] = [
     id: 'm41-1',
     title: 'Módulo 41.1: Cura Quântica',
     icon: Heart,
+    documents: [],
+  },
+  {
+    id: 'm42',
+    title: 'Módulo 42: Sincronização Temporal',
+    icon: GitBranch,
     documents: [],
   },
     {
