@@ -69,7 +69,7 @@ const Pagina34 = () => {
                     <ul className="list-disc list-inside space-y-3 text-muted-foreground">
                        <li><strong className="text-foreground/90">Biblioteca de Equações:</strong> É a fonte primária de todas as equações.</li>
                        <li><strong className="text-foreground/90">Módulo 3 (Comunicação):</strong> Transmite atualizações para Guardiões.</li>
-                       <li><strong className="text-foreground/90">Liga Quântica:</strong> Fornece dados para missões de resgate e diplomacia.</li>
+                       <li><strong className="text-foreground/90">Liga Quântica:</strong> Fornece dados para missões de resgate ou diplomacia.</li>
                     </ul>
                 </SectionCard>
             </div>
