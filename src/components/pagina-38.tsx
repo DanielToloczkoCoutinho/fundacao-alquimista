@@ -1,4 +1,3 @@
-
 'use client';
 
 import React from 'react';
@@ -107,4 +106,3 @@ const Pagina38 = () => {
 };
 
 export default Pagina38;
-

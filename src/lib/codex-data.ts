@@ -44,6 +44,7 @@ import {
   PocketKnife,
   PlusSquare,
   Clock,
+  RefreshCw,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -91,6 +92,12 @@ export const sections: Section[] = [
     id: 'pagina-27',
     title: 'Página 27: Colapso Ético',
     icon: BookHeart,
+    documents: [],
+  },
+    {
+    id: 'pagina-38',
+    title: 'Página 38: Renovação Cósmica',
+    icon: RefreshCw,
     documents: [],
   },
   {

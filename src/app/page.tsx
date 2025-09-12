@@ -67,6 +67,7 @@ import Module34 from '@/components/module-34';
 import Module35 from '@/components/module-35';
 import Module36 from '@/components/module-36';
 import Module37 from '@/components/module-37';
+import Pagina38 from '@/components/pagina-38';
 
 
 // --- Configuração do Firebase ---
@@ -157,6 +158,7 @@ const App = () => {
         case 'chronicle': return <ChroniclePage />;
         case 'scientific-report': return <ScientificReport />;
         case 'pagina-27': return <Pagina27 />;
+        case 'pagina-38': return <Pagina38 />;
         case 'organograma': return <OrganogramaCosmogonico />;
         case 'nexus': return <Nexus />;
         case 'scientists-lab': return <ScientistsLab />;
