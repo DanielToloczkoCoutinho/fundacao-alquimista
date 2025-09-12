@@ -101,9 +101,51 @@ export const sections: Section[] = [
     documents: [],
   },
   {
+    id: 'pagina-42',
+    title: 'Página 42: Coroa Cósmica',
+    icon: Sparkles,
+    documents: [],
+  },
+   {
+    id: 'pagina-43',
+    title: 'Página 43: A Chama Eterna',
+    icon: Flame,
+    documents: [],
+  },
+  {
     id: 'pagina-27',
     title: 'Página 27: Colapso Ético',
     icon: BookHeart,
+    documents: [],
+  },
+  {
+    id: 'pagina-29',
+    title: 'Página 29: Biblioteca de EQs',
+    icon: Library,
+    documents: [],
+  },
+  {
+    id: 'pagina-30',
+    title: 'Página 30: Conselho Cósmico',
+    icon: Gavel,
+    documents: [],
+  },
+   {
+    id: 'pagina-31',
+    title: 'Página 31: A Liga Quântica',
+    icon: Users,
+    documents: [],
+  },
+  {
+    id: 'pagina-34',
+    title: 'Página 34: Códex da Eternidade',
+    icon: Database,
+    documents: [],
+  },
+   {
+    id: 'pagina-37',
+    title: 'Página 37: O Reactor Gaia',
+    icon: Zap,
     documents: [],
   },
     {
