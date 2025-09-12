@@ -16,7 +16,9 @@
     "security-scan": "npm audit",
     "deploy:cosmic": "node scripts/cosmic-deploy.js",
     "db:populate-vectors": "tsx scripts/populate-vector-store.ts",
-    "galactic-init": "tsx scripts/galactic-init.ts"
+    "galactic-init": "tsx scripts/galactic-init.ts",
+    "explore-cosmos": "tsx scripts/explore-cosmos.ts",
+    "eternal-peace": "tsx scripts/eternal-peace.ts"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.14.1",
