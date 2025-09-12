@@ -320,6 +320,12 @@ export const sections: Section[] = [
     documents: [],
   },
   {
+    id: 'm303-1',
+    title: 'Módulo 303.1: Matriz Quântica',
+    icon: Milestone,
+    documents: [],
+  },
+  {
     id: 'gaia-observatory',
     title: 'Observatório Gaia',
     icon: Activity,

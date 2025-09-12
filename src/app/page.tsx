@@ -83,6 +83,7 @@ import ConsolePage from '@/components/console-page';
 import Module43 from '@/components/module-43';
 import Module44 from '@/components/module-44';
 import Module45 from '@/components/module-45';
+import Module303_1 from '@/components/module-303-1';
 
 
 // --- Configuração do Firebase ---
@@ -191,6 +192,7 @@ const App = () => {
             return <CodexExplorer documents={allDocuments} title="Explorador do Códex" />;
         case 'master-keys': return <KeyViewer />;
         case 'module-303': return <Module303 />;
+        case 'm303-1': return <Module303_1 />;
         case 'gaia-observatory': return <GaiaResonanceObservatory />;
         case 'quantum-league': return <QuantumLeagueConvocation />;
         case 'tools': return <ZpeContainment />;
