@@ -90,7 +90,7 @@ export const sections: Section[] = [
   },
    {
     id: 'pagina-39',
-    title: 'Página 39: Conselho Guardião',
+    title: 'Página 39: Orquestrador',
     icon: Users,
     documents: [],
   },
