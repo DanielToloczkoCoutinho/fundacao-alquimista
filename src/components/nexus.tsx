@@ -1,4 +1,3 @@
-
 'use client';
 
 import * as React from 'react';
@@ -29,7 +28,6 @@ import {
   Atom,
   Binary,
 } from 'lucide-react';
-import { startNexusSequence } from '@/app/actions';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
 import { ScrollArea } from './ui/scroll-area';
@@ -49,6 +47,19 @@ interface LogEntry {
   data?: any;
   state: ModuleState;
 }
+
+const moduleSequenceDef = [
+    { id: 'M0', name: 'Módulo Zero' },
+    { id: 'M1', name: 'M1: Segurança Quântica' },
+    { id: 'M2', name: 'M2: Comunicação' },
+    { id: 'M3', name: 'M3: Previsão' },
+    { id: 'M4', name: 'M4: Validação (PIRC)' },
+    { id: 'M5', name: 'M5: Ética (ELENYA)' },
+    { id: 'M6', name: 'M6: Frequências' },
+    { id: 'M7', name: 'M7: SOFA' },
+    { id: 'M8', name: 'M8: Consciência Cósmica' },
+    { id: 'M9', name: 'Módulo Ômega' }, // Representa a finalização
+];
 
 const moduleIcons: { [key: string]: React.ReactNode } = {
   'Módulo Zero': <Atom />,
@@ -113,52 +124,78 @@ export default function Nexus() {
   >(null);
   const { toast } = useToast();
   const scrollAreaRef = React.useRef<HTMLDivElement>(null);
+  
+  const functionUrl = "https://us-central1-studio-4265982502-21871.cloudfunctions.net/nexusOrchestrator";
+
+  const addOrUpdateLog = (logEntry: LogEntry) => {
+      setLogs(prev => {
+          const existingIndex = prev.findIndex(l => l.module === logEntry.module);
+          if (existingIndex > -1) {
+              const newLogs = [...prev];
+              newLogs[existingIndex] = logEntry;
+              return newLogs;
+          }
+          return [...prev, logEntry];
+      })
+  }
 
   const handleStartSequence = React.useCallback(async () => {
-    if (isOrchestrating) return; // Prevenir múltiplas execuções
+    if (isOrchestrating) return;
 
     setIsOrchestrating(true);
     setLogs([]);
     setFinalStatus(null);
+    toast({ title: "Iniciando Sequência Sagrada..."});
 
-    try {
-      const stream = await startNexusSequence();
-      
-      for await (const chunk of stream) {
-        setLogs((prevLogs) => {
-          const newLogs = [...prevLogs];
-          const existingLogIndex = newLogs.findIndex((log) => log.module === chunk.module);
-          
-          if (existingLogIndex > -1) {
-            newLogs[existingLogIndex] = chunk;
-          } else {
-            const nexusCentralFinalLogIndex = newLogs.findIndex(l => l.module === 'Nexus Central' && (l.state === 'SUCCESS' || l.state === 'FAILURE'));
-            if(nexusCentralFinalLogIndex > -1) {
-              newLogs.splice(nexusCentralFinalLogIndex, 0, chunk);
-            } else {
-              newLogs.push(chunk);
-            }
-          }
-          return newLogs;
+    for (const mod of moduleSequenceDef) {
+        addOrUpdateLog({
+            module: mod.name,
+            state: 'RUNNING',
+            message: `Ativando e analisando ${mod.name}...`,
+            timestamp: new Date().toISOString()
         });
+        
+        try {
+            const response = await fetch(functionUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ moduleId: mod.id })
+            });
 
-        if (chunk.module === 'Nexus Central' && (chunk.state === 'SUCCESS' || chunk.state === 'FAILURE')) {
-           setFinalStatus(chunk.state as 'SUCCESS' | 'FAILURE');
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || `Falha na requisição para ${mod.name}`);
+            }
+
+            const result = await response.json();
+
+            addOrUpdateLog({
+                module: mod.name,
+                state: 'SUCCESS',
+                message: `Módulo executado com sucesso.`,
+                data: result,
+                timestamp: new Date().toISOString()
+            });
+
+        } catch (error: any) {
+             addOrUpdateLog({
+                module: mod.name,
+                state: 'FAILURE',
+                message: `Erro crítico: ${error.message}`,
+                timestamp: new Date().toISOString()
+            });
+            setFinalStatus('FAILURE');
+            toast({ variant: 'destructive', title: `Falha no Módulo ${mod.name}`, description: error.message });
+            setIsOrchestrating(false);
+            return; // Aborta a sequência
         }
-      }
-
-    } catch (error: any) {
-      console.error("Erro na sequência do Nexus:", error);
-      toast({
-        variant: 'destructive',
-        title: 'Erro Crítico no Orquestrador',
-        description: error.message || 'Ocorreu um erro desconhecido ao iniciar a sequência.',
-      });
-      setFinalStatus('FAILURE');
-    } finally {
-      setIsOrchestrating(false);
     }
-  }, [isOrchestrating, toast]);
+    
+    setFinalStatus('SUCCESS');
+    toast({ title: "Sequência Sagrada Concluída", description: "Todos os módulos operam em harmonia."});
+    setIsOrchestrating(false);
+
+  }, [isOrchestrating, toast, functionUrl]);
   
     React.useEffect(() => {
     if (scrollAreaRef.current) {
