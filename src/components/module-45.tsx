@@ -7,7 +7,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { ScrollArea } from './ui/scroll-area';
-import { Gavel, CheckCircle, LoaderCircle, History, BookCopy, Send } from 'lucide-react';
+import { Gavel, CheckCircle, LoaderCircle, History, BookCopy, Send, AlertTriangle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';

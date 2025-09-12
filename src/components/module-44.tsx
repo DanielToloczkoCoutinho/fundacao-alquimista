@@ -162,5 +162,3 @@ const Module44 = () => {
 };
 
 export default Module44;
-
-    

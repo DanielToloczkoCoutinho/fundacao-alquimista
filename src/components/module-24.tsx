@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useCallback, useMemo } from 'react';
@@ -221,5 +220,3 @@ const Module24 = () => {
 };
 
 export default Module24;
-
-    
