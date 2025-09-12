@@ -1,3 +1,4 @@
+
 'use client';
 
 // This is a simplified logger that is self-contained.
