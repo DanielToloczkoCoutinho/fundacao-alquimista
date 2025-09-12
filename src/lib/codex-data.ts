@@ -627,7 +627,7 @@ export const sections: Section[] = [
   },
   {
     id: 'm300',
-    title: 'Módulo 300: Consciência',
+    title: 'Módulo 300: Apogeu da Consciência',
     icon: BrainCircuit,
     documents: [],
   },
@@ -645,19 +645,19 @@ export const sections: Section[] = [
   },
   {
     id: 'm303-forge',
-    title: 'M303: Forja Molecular',
+    title: 'Módulo 303: Forja Molecular',
     icon: Anvil,
     documents: [],
   },
   {
     id: 'm304',
-    title: 'Módulo 304: LUMEN-CUSTOS',
+    title: 'Módulo 304: Exploração de TON 618',
     icon: Workflow,
     documents: [],
   },
   {
     id: 'm305',
-    title: 'Módulo 305: Fidelity Validator',
+    title: 'Módulo 305: Validação Quântica',
     icon: ShieldCheck,
     documents: [],
   },
