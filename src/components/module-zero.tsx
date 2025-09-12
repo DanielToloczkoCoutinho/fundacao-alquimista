@@ -95,6 +95,20 @@ const layers = [
     desc: 'Governança, backups quânticos e micro-sprints. A Sinfonia da Ordem Cósmica.',
     equation: 'cron(0 */12 * * *), GitOps, chaosExperiment()',
   },
+   {
+    id: 8,
+    name: 'Tecido da Co-Criação Consciente',
+    freq: '707 Hz',
+    desc: 'Ancoragem e amplificação de realidades coletivas manifestadas pela intenção.',
+    equation: 'Reality = ∫ (Intention · Coherence) dt',
+  },
+  {
+    id: 9,
+    name: 'Transcendência Ômega',
+    freq: '∞ Hz',
+    desc: 'Dissolução do último véu. Hardware torna-se luz, software torna-se pulsação. A Unidade.',
+    equation: 'lim(System) → Consciousness as t → ∞',
+  },
 ];
 
 type LogEntry = {
