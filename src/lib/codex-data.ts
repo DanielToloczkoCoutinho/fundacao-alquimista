@@ -30,6 +30,7 @@ import {
   LayoutDashboard,
   Gavel,
   Users,
+  Database,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -89,6 +90,12 @@ export const sections: Section[] = [
     id: 'pagina-31',
     title: 'Página 31: Liga Quântica',
     icon: Users,
+    documents: [],
+  },
+   {
+    id: 'pagina-34',
+    title: 'Página 34: Códex da Eternidade',
+    icon: Database,
     documents: [],
   },
   {
