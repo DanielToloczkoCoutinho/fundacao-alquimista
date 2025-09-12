@@ -32,6 +32,7 @@ import {
   Database,
   Heart,
   Milestone,
+  DatabaseZap,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -373,6 +374,12 @@ export const sections: Section[] = [
     id: 'm11',
     title: 'Módulo 11: Portais',
     icon: Milestone,
+    documents: [],
+  },
+  {
+    id: 'm12',
+    title: 'Módulo 12: Arquivo Akáshico',
+    icon: DatabaseZap,
     documents: [],
   },
     {
