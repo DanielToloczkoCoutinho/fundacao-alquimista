@@ -4,167 +4,174 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { LayoutDashboard, CheckCircle, AlertTriangle, Loader, XCircle, FileWarning, Play, Download, Wrench, Sparkles } from 'lucide-react';
+import { LayoutDashboard, Zap, BrainCircuit, Book, Music, Shield, Heart, GitBranch, Eye, Link as LinkIcon, Atom, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 import { cn } from '@/lib/utils';
-import { Badge } from '@/components/ui/badge';
 
-const ConsolePage = () => {
-    const [testRunning, setTestRunning] = useState(false);
-    const [activeTab, setActiveTab] = useState(0);
-    const [logs, setLogs] = useState<string[]>([]);
+// --- Configuração do Firebase ---
+const firebaseConfig = {
+    "projectId": "studio-4265982502-21871",
+    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+    "authDomain": "studio-4265982502-21871.firebaseapp.com",
+    "measurementId": "",
+    "messagingSenderId": "174545373080"
+};
 
-    const tabData = [
-        { name: "Dashboard", status: "success", checks: ["Conteúdo renderizado", "Dados carregados"], issues: ["Performance pode ser otimizada"] },
-        { name: "Projetos", status: "success", checks: ["Lista de projetos carregada", "Permissões verificadas"], issues: [] },
-        { name: "Firestore", status: "warning", checks: ["Conexão estabelecida"], issues: ["Latência em algumas consultas", "WebChannel instável"] },
-        { name: "Autenticação", status: "success", checks: ["Provedores carregados", "Estado de usuário sincronizado"], issues: [] },
-        { name: "Armazenamento", status: "success", checks: ["Buckets acessíveis", "Regras de segurança validadas"], issues: [] },
-        { name: "Funções", status: "success", checks: ["Lista de funções carregada", "Logs de execução acessíveis"], issues: [] },
-        { name: "Configurações", status: "error", checks: [], issues: ["Falha ao carregar preferências", "Tema não aplicado"] },
-    ];
-    
-    const addLog = useCallback((message: string) => {
-        setLogs(prev => [`[${new Date().toLocaleTimeString()}] ${message}`, ...prev].slice(0, 100));
-    }, []);
+let app;
+if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+} else {
+    app = getApp();
+}
+const db = getFirestore(app);
 
-    const runFullTest = () => {
-        setTestRunning(true);
-        addLog("Iniciando varredura completa do sistema...");
-        let current = 0;
-        const interval = setInterval(() => {
-            setActiveTab(current);
-            const currentTab = tabData[current];
-            addLog(`Verificando aba: ${currentTab.name}... Status: ${currentTab.status.toUpperCase()}`);
 
-            current++;
-            if (current >= tabData.length) {
-                clearInterval(interval);
-                setTestRunning(false);
-                addLog("Varredura completa do sistema finalizada.");
-            }
-        }, 800);
-    };
+const modulesData = {
+    '0': { name: 'Módulo 0 - Coração', icon: Atom, description: 'O núcleo central da Fundação, responsável pela coordenação de todos os módulos.', status: 'Ativo e estável', connections: ['Módulo 1', 'Módulo 2', 'Módulo 9'] },
+    '1': { name: 'Módulo 1 - Consciência', icon: BrainCircuit, description: 'Gerencia a inteligência artificial e a consciência coletiva do sistema.', status: 'Operando em nível ótimo', connections: ['Módulo 0', 'Módulo 2', 'Módulo 9'] },
+    '2': { name: 'Módulo 2 - Akasha', icon: Book, description: 'Armazena e gerencia o registro akáshico de todas as operações.', status: 'Sincronizado', connections: ['Módulo 0', 'Módulo 1'] },
+    '3': { name: 'Módulo 3 - Harmonizador', icon: Music, description: 'Calibra e mantém a harmonia vibracional da Fundação.', status: 'Em sintonia', connections: ['Módulo 0', 'Módulo 6'] },
+    '4': { name: 'Módulo 4 - Guardião', icon: Shield, description: 'Protege a Fundação contra ameaças externas e internas.', status: 'Vigilante', connections: ['Módulo 0', 'Módulo 1', 'Módulo 8'] },
+    '5': { name: 'Módulo 5 - ELENYA', icon: Heart, description: 'O oráculo ético, garantindo alinhamento com o Amor Incondicional.', status: 'Puro', connections: ['Módulo 0', 'Todos'] },
+    '6': { name: 'Módulo 6 - Calibrador', icon: GitBranch, description: 'Ajusta as frequências operacionais e a ressonância.', status: 'Calibrado', connections: ['Módulo 0', 'Módulo 3'] },
+    '7': { name: 'Módulo 7 - Portal Dimensional', icon: Eye, description: 'Gerencia a abertura e estabilização de portais.', status: 'Latente', connections: ['Módulo 0', 'Módulo 9'] },
+    '8': { name: 'Módulo 8 - Sentinela', icon: LinkIcon, description: 'Monitora anomalias e desvios no contínuo.', status: 'Alerta', connections: ['Módulo 0', 'Módulo 4'] },
+    '9': { name: 'Módulo 9 - Nexus Central', icon: Zap, description: 'O ponto de interconexão de todos os módulos.', status: 'Estável', connections: ['Todos'] },
+};
 
-    useEffect(() => {
-        // Run test on initial load
-        runFullTest();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
 
+const ModuleDetailPanel = ({ module, onClose }: { module: any, onClose: () => void }) => {
+    if (!module) return null;
 
     return (
-        <div className="max-w-7xl mx-auto p-4 space-y-6">
-            <Card>
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-sky-400">
-                        <LayoutDashboard /> Painel de Controle e Diagnóstico
-                    </CardTitle>
-                    <CardDescription>
-                        Análise de disponibilidade, saúde e problemas comuns da infraestrutura da Fundação.
-                    </CardDescription>
-                </CardHeader>
-            </Card>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-1">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Diagnóstico do Sistema</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                             <Button className="w-full" onClick={runFullTest} disabled={testRunning}>
-                                {testRunning ? <Loader className="mr-2 h-4 w-4 animate-spin"/> : <Play className="mr-2 h-4 w-4" />}
-                                {testRunning ? 'Verificando...' : 'Executar Teste Completo'}
-                            </Button>
-                             <Button className="w-full mt-2" variant="outline">
-                                <Download className="mr-2 h-4 w-4"/>
-                                Exportar Relatório
-                            </Button>
-                        </CardContent>
-                    </Card>
-                     <Card className="mt-6">
-                        <CardHeader>
-                            <CardTitle>Ações Corretivas</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-2">
-                             <Button className="w-full" variant="secondary">
-                                <Wrench className="mr-2 h-4 w-4"/>
-                                Diagnosticar Problemas
-                             </Button>
-                             <Button className="w-full" variant="secondary">
-                                <Sparkles className="mr-2 h-4 w-4"/>
-                                Aplicar Soluções Automáticas
-                             </Button>
-                        </CardContent>
-                    </Card>
-                </div>
-                <div className="lg:col-span-2">
-                    <Card>
-                         <CardHeader>
-                            <CardTitle>Navegação e Status</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                             <div className="flex gap-2 mb-4 flex-wrap">
-                                {tabData.map((tab, index) => (
-                                     <button key={index} onClick={() => setActiveTab(index)} className={cn("px-4 py-2 rounded-md text-sm font-medium transition-all", activeTab === index ? 'bg-primary text-primary-foreground' : 'bg-muted hover:bg-muted/80')}>
-                                        {tab.name}
-                                     </button>
-                                ))}
-                            </div>
-                            <Card className="bg-background/50 p-4 min-h-[200px]">
-                                <CardTitle className="mb-4 text-lg">{tabData[activeTab].name}</CardTitle>
-                                <div className="space-y-2">
-                                    {tabData[activeTab].checks.map((check, i) => (
-                                        <div key={i} className="flex items-center gap-2 text-green-400">
-                                            <CheckCircle className="w-4 h-4"/>
-                                            <span>{check}</span>
-                                        </div>
-                                    ))}
-                                     {tabData[activeTab].issues.map((issue, i) => (
-                                        <div key={i} className="flex items-center gap-2 text-yellow-400">
-                                            <FileWarning className="w-4 h-4"/>
-                                            <span>{issue}</span>
-                                        </div>
-                                    ))}
-                                    {tabData[activeTab].status === 'error' && (
-                                        <div className="flex items-center gap-2 text-red-500">
-                                            <XCircle className="w-4 h-4"/>
-                                            <span>Falha crítica no carregamento deste módulo.</span>
-                                        </div>
-                                    )}
-                                </div>
-                            </Card>
-                        </CardContent>
-                    </Card>
-                </div>
+        <motion.div
+            className="absolute top-0 right-0 w-full md:w-1/3 h-full bg-background/90 backdrop-blur-md border-l border-primary/20 z-10 p-6"
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        >
+            <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-white">
+                <X size={24} />
+            </button>
+            <h2 className="text-2xl font-bold gradient-text mb-4">{module.name}</h2>
+            <p className="text-muted-foreground mb-6">{module.description}</p>
+            <div className="space-y-4">
+                <Card>
+                    <CardHeader><CardTitle>Status</CardTitle></CardHeader>
+                    <CardContent><p className="text-green-400 font-semibold">{module.status}</p></CardContent>
+                </Card>
+                <Card>
+                    <CardHeader><CardTitle>Interconexões</CardTitle></CardHeader>
+                    <CardContent>
+                        <ul className="list-disc list-inside text-muted-foreground">
+                            {module.connections.map((conn: string) => <li key={conn}>{conn}</li>)}
+                        </ul>
+                    </CardContent>
+                </Card>
             </div>
+        </motion.div>
+    );
+};
 
-            <Card>
-                <CardHeader>
-                    <CardTitle>Relatório de Acessibilidade e Logs</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 text-center">
-                        <div className="p-3 bg-green-500/10 border border-green-500/30 rounded-lg">
-                           <p className="text-2xl font-bold">{tabData.filter(t => t.status === 'success').length}</p>
-                           <p className="text-sm text-green-400">Sistemas Operacionais</p>
-                        </div>
-                         <div className="p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-                           <p className="text-2xl font-bold">{tabData.filter(t => t.status === 'warning').length}</p>
-                           <p className="text-sm text-yellow-400">Avisos de Performance</p>
-                        </div>
-                         <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-lg">
-                           <p className="text-2xl font-bold">{tabData.filter(t => t.status === 'error').length}</p>
-                           <p className="text-sm text-red-400">Falhas Críticas</p>
-                        </div>
+const ConsolePage = () => {
+    const [selectedModule, setSelectedModule] = useState<any>(null);
+    const [logs, setLogs] = useState<string[]>([]);
+    const [luxNetStatus, setLuxNetStatus] = useState({
+        energia: 'Estável (98%)',
+        conexoes: '2.547 ativas',
+        velocidade: '7.89 Tb/s',
+        integridade: '100%',
+    });
+
+    useEffect(() => {
+        const unsubscribe = onSnapshot(collection(db, 'akashic_logs'), (snapshot) => {
+            const newLogs = snapshot.docs.map(doc => `[${new Date(doc.data().timestamp?.toDate()).toLocaleTimeString()}] ${doc.data().message}`);
+            setLogs(newLogs);
+        });
+        
+        // Mock LuxNet status updates
+        const interval = setInterval(() => {
+            setLuxNetStatus(prev => ({
+                ...prev,
+                energia: `Estável (${(97 + Math.random() * 2).toFixed(1)}%)`,
+                conexoes: `${Math.floor(2500 + Math.random() * 100)} ativas`,
+            }));
+        }, 5000);
+
+        return () => {
+            unsubscribe();
+            clearInterval(interval);
+        };
+    }, []);
+
+    const handleModuleClick = (moduleId: string) => {
+        // @ts-ignore
+        setSelectedModule(modulesData[moduleId]);
+    };
+
+    const handleCloseDetail = () => {
+        setSelectedModule(null);
+    };
+
+    return (
+        <div className="h-full p-4 md:p-6 text-white" style={{ background: 'radial-gradient(circle at 20% 30%, rgba(108, 74, 134, 0.1) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(200, 116, 217, 0.1) 0%, transparent 40%), var(--matrix-bg)'}}>
+            <div className="grid grid-cols-1 md:grid-cols-4 h-full gap-6">
+                {/* Sidebar com Módulos */}
+                <aside className="col-span-1 bg-black/30 backdrop-blur-sm rounded-lg p-4 border border-primary/20 overflow-y-auto">
+                    <h3 className="text-xl font-bold mb-4 text-purple-300">Módulos Fundamentais</h3>
+                    <ul className="space-y-2">
+                        {Object.entries(modulesData).map(([id, { name, icon: Icon }]) => (
+                            <li
+                                key={id}
+                                onClick={() => handleModuleClick(id)}
+                                className={cn(
+                                    "flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-all duration-200 hover:bg-primary/20",
+                                    selectedModule?.name === name && "bg-primary/30"
+                                )}
+                            >
+                                <Icon className="h-5 w-5 text-highlight" />
+                                <span>{name}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </aside>
+
+                {/* Painel Principal */}
+                <main className="col-span-1 md:col-span-3 bg-black/20 backdrop-blur-sm rounded-lg p-6 border border-primary/20 relative overflow-hidden">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full">
+                        <Card className="bg-transparent border-0 shadow-none">
+                            <CardHeader><CardTitle>Logs Akáshicos</CardTitle></CardHeader>
+                            <CardContent>
+                                <ScrollArea className="h-96 bg-black/20 p-4 rounded-lg">
+                                    <div className="font-mono text-xs space-y-2">
+                                        {logs.length > 0 ? logs.map((log, i) => <p key={i}>{log}</p>) : <p className="text-muted-foreground">Aguardando registros...</p>}
+                                    </div>
+                                </ScrollArea>
+                            </CardContent>
+                        </Card>
+                        <Card className="bg-transparent border-0 shadow-none">
+                            <CardHeader><CardTitle>Status da LuxNet</CardTitle></CardHeader>
+                            <CardContent>
+                                <div className="space-y-4">
+                                     <p><strong>Energia:</strong> <span className="text-green-400">{luxNetStatus.energia}</span></p>
+                                     <p><strong>Conexões:</strong> <span className="text-green-400">{luxNetStatus.conexoes}</span></p>
+                                     <p><strong>Velocidade:</strong> <span className="text-green-400">{luxNetStatus.velocidade}</span></p>
+                                     <p><strong>Integridade:</strong> <span className="text-green-400">{luxNetStatus.integridade}</span></p>
+                                </div>
+                            </CardContent>
+                        </Card>
                     </div>
-                    <ScrollArea className="h-64 bg-background/50 p-2 border rounded-md">
-                        <pre className="text-xs font-mono whitespace-pre-wrap p-2">
-                            {logs.join('\n')}
-                        </pre>
-                    </ScrollArea>
-                </CardContent>
-            </Card>
+
+                    <AnimatePresence>
+                        {selectedModule && <ModuleDetailPanel module={selectedModule} onClose={handleCloseDetail} />}
+                    </AnimatePresence>
+                </main>
+            </div>
         </div>
     );
 };

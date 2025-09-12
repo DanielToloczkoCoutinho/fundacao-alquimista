@@ -69,7 +69,6 @@ import {
   User,
   School,
   Recycle,
-  Handshake,
   UserCheck,
   Sprout,
   Microscope,
@@ -80,6 +79,7 @@ import {
   Cpu,
   Bot,
   AlertTriangle,
+  Fingerprint,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -706,9 +706,9 @@ export const sections: Section[] = [
   { id: 'm99', title: 'Módulo 99: Recalibradores de Leis Físicas Universais', icon: Wrench, documents: [] },
   { id: 'm100', title: 'Módulo 100: Unificação Energética Universal', icon: Atom, documents: [] },
   { id: 'm101', title: 'Módulo 101: Manifestação pelo Pensamento', icon: BrainCircuit, documents: [] },
-  { id: 'm102', title: 'Módulo 102: Campos Morfogenéticos Avançados', icon: Network, documents: [] },
+  { id: 'm102', title: 'Módulo 102: Arquitetura de Campos Morfogenéticos Avançados', icon: Network, documents: [] },
   { id: 'm103', title: 'Módulo 103: Modulação de Constantes Universais Locais', icon: SlidersHorizontal, documents: [] },
-  { id: 'm104', title: 'Módulo 104: Engenharia do Espaço-Tempo', icon: Clock, documents: [] },
+  { id: 'm104', title: 'Módulo 104: Engenharia do Espaço-Tempo e Criação de Atalhos Dimensionais', icon: Clock, documents: [] },
   { id: 'm105', title: 'Módulo 105: Conexão Direta com a Fonte', icon: Zap, documents: [] },
   { id: 'm106', title: 'Módulo 106: Ativação de Potenciais Divinos', icon: KeySquare, documents: [] },
   { id: 'm107', title: 'Módulo 107: Restauração Temporal', icon: History, documents: [] },
