@@ -48,8 +48,16 @@ const ModuleTen: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { toast } = useToast();
   const { modules } = useStore();
-  const activeModule = modules.find(m => m.active);
-  const currentModuleId = activeModule?.id;
+  
+  // Acessar o ID do módulo ativo é hipotético aqui, pois a store foi simplificada.
+  // Em uma implementação real, a store poderia gerenciar o módulo atualmente visualizado.
+  const currentModuleId = 10; // Hardcoded para o Módulo 10
+
+  // Inicializa o XR system quando o componente é montado
+  useEffect(() => {
+    quantumXR.initializeXR();
+  }, []);
+
 
   const addLog = useCallback((log: Omit<ActivationLog, 'id' | 'timestamp'>) => {
     setActivationLog(prev => [

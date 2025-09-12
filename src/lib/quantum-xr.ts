@@ -16,10 +16,12 @@ export class QuantumXRSystem {
   private isSupported: boolean | null = null;
 
   constructor() {
-    this.initializeXR();
+    // A inicialização agora é sob demanda para evitar erros em módulos não-XR
   }
   
   async initializeXR() {
+    if (this.isSupported !== null) return; // Já inicializado
+
     if (typeof navigator !== 'undefined' && 'xr' in navigator) {
       try {
         this.isSupported = await navigator.xr.isSessionSupported('immersive-ar');
