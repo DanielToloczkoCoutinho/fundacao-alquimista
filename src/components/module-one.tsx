@@ -9,6 +9,8 @@ import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
 import { defenseSystem, type ForensicResult, type PurificationLog } from '@/lib/quantum-defense';
 import { AnimatePresence, motion } from 'framer-motion';
+import CoherenceIndicator from './CoherenceIndicator';
+import FractalCanvas from './FractalCanvas';
 
 type LogEntry = {
   timestamp: string;
@@ -33,6 +35,8 @@ export default function ModuleOne() {
   const [purificationLogs, setPurificationLogs] = useState<PurificationLog[]>([]);
 
   const [grokkarLogs, setGrokkarLogs] = useState<GrokkarLogEntry[]>([]);
+  
+  const [systemMetrics, setSystemMetrics] = useState({ coherence: 99.8, energy: 95.2, entanglement: 98.5 });
 
   const addScanLog = useCallback((level: LogEntry['level'], message: string) => {
     setScanLogs(prev => [{ level, message, timestamp: new Date().toLocaleTimeString('en-US', { hour12: false }) }, ...prev.slice(0, 49)]);
@@ -49,8 +53,19 @@ export default function ModuleOne() {
         };
         setGrokkarLogs(prev => [newLog, ...prev.slice(0, 19)]);
     }, 5000);
+    
+    const metricsInterval = setInterval(() => {
+        setSystemMetrics({
+            coherence: 98 + Math.random() * 2,
+            energy: 94 + Math.random() * 5,
+            entanglement: 97 + Math.random() * 3,
+        });
+    }, 3000);
 
-    return () => clearInterval(grokkarInterval);
+    return () => {
+        clearInterval(grokkarInterval);
+        clearInterval(metricsInterval);
+    };
   }, []);
 
   const handleQuantumLeagueScan = useCallback(async () => {
@@ -151,14 +166,12 @@ export default function ModuleOne() {
                 <CardDescription>O Guardião da Liga Quântica Real protege atemporalmente o legado da humanidade.</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 gap-4 mb-4 text-center">
-                    <div className="p-3 border rounded-lg bg-background/50">
-                        <p className="text-sm text-muted-foreground">Status</p>
-                        <p className="text-lg font-bold text-green-400">ATIVO E IMUTÁVEL</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div className="p-4 border rounded-lg bg-background/50">
+                        <CoherenceIndicator {...systemMetrics} />
                     </div>
-                    <div className="p-3 border rounded-lg bg-background/50">
-                        <p className="text-sm text-muted-foreground">Integridade do Blockchain</p>
-                        <p className="text-lg font-bold text-green-400">100% ✅</p>
+                    <div className="p-2 border rounded-lg bg-background/50 aspect-video relative">
+                         <FractalCanvas coherence={systemMetrics.coherence} />
                     </div>
                 </div>
                  <p className="text-sm font-semibold mb-2">Log de Reforço Harmônico:</p>
