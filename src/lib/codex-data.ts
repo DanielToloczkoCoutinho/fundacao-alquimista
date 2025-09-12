@@ -48,6 +48,7 @@ import {
   RefreshCw,
   GitBranch,
   BookKey,
+  DraftingCompass,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -89,6 +90,12 @@ export const sections: Section[] = [
     id: 'scientific-report',
     title: 'Relatório Científico',
     icon: FileText,
+    documents: [],
+  },
+  {
+    id: 'architecture-report',
+    title: 'Relatório de Arquitetura',
+    icon: DraftingCompass,
     documents: [],
   },
    {
