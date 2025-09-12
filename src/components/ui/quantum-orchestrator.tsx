@@ -8,7 +8,7 @@ import SuspenseFallback from './suspense-fallback';
 
 const ConsolePage = React.lazy(() => import('@/components/console-page'));
 
-const CivilizationsBuilding = React.lazy(() => import('@/components/architecture-report'));
+const CivilizationsBuilding = React.lazy(() => import('@/components/console-page'));
 
 const PersonalBuilding = React.lazy(() => {
     const Comp = () => (
@@ -107,7 +107,7 @@ export function QuantumOrchestrator() {
                 {buildingComponents[activeBuilding]}
                 </motion.div>
             </AnimatePresence>
-        </Suspense>
+         </Suspense>
       </main>
     </div>
   );
