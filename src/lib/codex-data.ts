@@ -556,6 +556,12 @@ export const sections: Section[] = [
     icon: Milestone,
     documents: [],
   },
+  {
+    id: 'm39-1',
+    title: 'Módulo 39.1: Integridade',
+    icon: ShieldCheck,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
