@@ -35,6 +35,7 @@ import {
   DatabaseZap,
   Landmark,
   Cat,
+  SlidersHorizontal,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -408,6 +409,12 @@ export const sections: Section[] = [
     icon: Cat,
     documents: [],
   },
+  {
+    id: 'm17',
+    title: 'Módulo 17: Afinador da Realidade',
+    icon: SlidersHorizontal,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
@@ -469,4 +476,3 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
-

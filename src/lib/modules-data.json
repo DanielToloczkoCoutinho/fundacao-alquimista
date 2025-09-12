@@ -204,6 +204,18 @@
       "guardiao_responsavel": "PHIARA",
       "assinatura_vibracional": "Ω-BIOSYS-285-PHI",
       "registroakashico": "bafkreimodulo016_biosys"
+    },
+    {
+      "modulo_id": "M017",
+      "nome": "Afinador Supremo da Realidade",
+      "frequenciabasehz": 396,
+      "equacoes_associadas": ["EQ-CALIBRATE-FIELD", "EQ-DETECT-DISSONANCE"],
+      "funcao_vibracional": "Calibra e otimiza campos vibracionais para manter a harmonia da realidade.",
+      "dimensao_operacional": "Omnidimensional",
+      "status": "Ativo",
+      "guardiao_responsavel": "ZENNITH",
+      "assinatura_vibracional": "Ω-TUNER-396-ZN",
+      "registroakashico": "bafkreimodulo017_tuner"
     }
   ]
 }

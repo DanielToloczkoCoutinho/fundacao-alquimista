@@ -56,6 +56,7 @@ import ModuleThirteen from '@/components/module-thirteen';
 import ModuleFourteen from '@/components/module-fourteen';
 import ModuleFifteen from '@/components/module-fifteen';
 import ModuleSixteen from '@/components/module-sixteen';
+import ModuleSeventeen from '@/components/module-seventeen';
 
 
 // --- Configuração do Firebase ---
@@ -183,6 +184,7 @@ const App = () => {
         case 'm14': return <ModuleFourteen />;
         case 'm15': return <ModuleFifteen />;
         case 'm16': return <ModuleSixteen />;
+        case 'm17': return <ModuleSeventeen />;
         case 'm250': return <Module250 />;
         case 'm251': return <Module251 />;
         case 'm300': return <Module300 />;
