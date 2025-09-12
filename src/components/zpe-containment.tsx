@@ -1,7 +1,6 @@
-
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -14,6 +13,8 @@ import { sha512 } from 'js-sha512';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
 import KeyGenerator from './key-generator';
+import { AreaChart, Area, ResponsiveContainer, Tooltip } from 'recharts';
+
 
 type BarrierLog = {
   timestamp: string;
@@ -30,12 +31,19 @@ type ExecutionMetrics = {
     estabilidade: number;
 };
 
+type ZPEDataPoint = {
+    time: number;
+    zpeField: number;
+};
+
 const ZpeContainment = () => {
   const [potencia, setPotencia] = useState(100); // em kW
   const [coerencia, setCoerencia] = useState(0.9998);
   const [barrierLog, setBarrierLog] = useState<BarrierLog[]>([]);
   const [isCreatingBarrier, setIsCreatingBarrier] = useState(false);
   const { toast } = useToast();
+
+  const [zpeData, setZpeData] = useState<ZPEDataPoint[]>(() => Array.from({ length: 20 }, (_, i) => ({ time: i, zpeField: 0 })));
 
   const [executionMetrics, setExecutionMetrics] = useState<ExecutionMetrics>({
       coerencia: 0.9997,
@@ -50,6 +58,19 @@ const ZpeContainment = () => {
         "2030-12-31": "Fase 3 iniciada - Implementação continental",
         "2035-12-31": "Fase 4 - Implementação planetária"
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setZpeData(prevData => {
+                const newDataPoint = {
+                    time: prevData.length,
+                    zpeField: Math.random() * 5 + (isCreatingBarrier ? 20 : 5) // Flutuação base + pico durante ativação
+                };
+                return [...prevData.slice(1), newDataPoint];
+            });
+        }, 1000);
+        return () => clearInterval(interval);
+    }, [isCreatingBarrier]);
 
   const handleCreateBarrier = () => {
     setIsCreatingBarrier(true);
@@ -139,22 +160,28 @@ const ZpeContainment = () => {
             </CardContent>
         </Card>
 
-        {/* Painel de Rede */}
+        {/* Gráfico ZPE */}
         <Card>
              <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Network />Rede de Entrelaçamento Global</CardTitle>
-                 <CardDescription>Status da rede de comunicação quântica segura.</CardDescription>
+                <CardTitle className="flex items-center gap-2"><Network />Visualizador de Campo ZPE</CardTitle>
+                 <CardDescription>Monitoramento em tempo real das flutuações de energia de ponto zero.</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4 text-sm">
-                <div className="flex justify-between"><strong>Protocolo:</strong> <Badge variant="secondary">QUANTUM_ENTANGLEMENT_V3</Badge></div>
-                <div className="flex justify-between"><strong>Latência Máxima:</strong> <span className="font-mono">5ms</span></div>
-                <div className="flex justify-between"><strong>Coerência Mínima:</strong> <span className="font-mono">0.9997</span></div>
-                <div>
-                    <strong>Frequências Primárias:</strong>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                        {[963.0, 1440.0, 888.25].map(f => <Badge key={f} variant="outline">{f} Hz</Badge>)}
-                    </div>
-                </div>
+            <CardContent className="h-80">
+                <ResponsiveContainer width="100%" height="100%">
+                    <AreaChart data={zpeData}>
+                        <defs>
+                            <linearGradient id="zpeGradient" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
+                                <stop offset="95%" stopColor="#8884d8" stopOpacity={0.1}/>
+                            </linearGradient>
+                        </defs>
+                        <Tooltip 
+                            contentStyle={{ backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}
+                            labelStyle={{ color: 'hsl(var(--foreground))' }}
+                        />
+                        <Area type="monotone" dataKey="zpeField" stroke="#8884d8" fill="url(#zpeGradient)" />
+                    </AreaChart>
+                </ResponsiveContainer>
             </CardContent>
         </Card>
       </div>

@@ -32,6 +32,9 @@ export async function GET(request: NextRequest) {
     async () => { // Fallback
         healthReport.components.cosmic_cache = 'unhealthy';
         healthReport.cache_error = 'Fallback: Cache operation failed.';
+        // Attempt to auto-heal
+        await quantumResilience.recoverFromError('cosmic_cache_check');
+        healthReport.auto_heal_attempt = 'initiated';
     }
   );
 

@@ -119,11 +119,17 @@ const segurancaQuanticaTool = ai.defineTool(
 
 // Módulo 2: Comunicação
 const comunicacaoLogic = async () => {
-    const aliados = ["Plêiades", "Sirius", "Lyra", "Arcturus", "Andrômeda", "Órion"];
-    const conectados = aliados.filter(() => Math.random() > 0.1);
+    const ALL_ALLIES = [
+        "Plêiades", "Sirius", "Lyra", "Arcturus", "Andrômeda", "Órion",
+        "Vega", "Centauri", "Procyon", "Cygnus X-1", "Draco", "Zeta Reticuli"
+    ];
+    // Circular buffer simulation: select a random subset of 6 allies
+    const shuffledAllies = ALL_ALLIES.sort(() => 0.5 - Math.random());
+    const conectados = shuffledAllies.slice(0, 6).filter(() => Math.random() > 0.1);
+    
     return {
         estado: "HARMONIA_ESTELAR",
-        conexao: conectados.length === aliados.length ? "TOTAL" : "PARCIAL",
+        conexao: conectados.length === 6 ? "TOTAL" : "PARCIAL",
         aliados_conectados: conectados,
     };
 };
