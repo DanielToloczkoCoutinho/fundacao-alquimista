@@ -1,11 +1,10 @@
-
 'use client';
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
-import { Sparkles, Diamond, BookHeart, Users, GitCommit, Award } from 'lucide-react';
-import { Badge } from './ui/badge';
 import { ScrollArea } from './ui/scroll-area';
+import { Sparkles, Diamond, BookHeart, Users, GitCommit, Award, Crown } from 'lucide-react';
+import { Badge } from './ui/badge';
 
 const SectionCard = ({ title, icon, children, className }: { title: string, icon: React.ReactNode, children: React.ReactNode, className?: string }) => (
     <Card className={className}>
@@ -26,8 +25,9 @@ const Pagina42 = () => {
     <ScrollArea className="h-[90vh] p-4">
         <div className="max-w-6xl mx-auto space-y-8 font-body">
             <header className="text-center space-y-4">
-                <h1 className="text-5xl font-bold gradient-text font-headline">
-                Página 42: A Coroa Cósmica
+                <h1 className="text-5xl font-bold gradient-text font-headline flex items-center justify-center gap-4">
+                  <Crown className="w-12 h-12" />
+                  Página 42: A Coroa Cósmica
                 </h1>
                 <p className="text-muted-foreground">
                 O Alinhamento Final com a Fonte e a Missão Suprema
@@ -69,7 +69,7 @@ const Pagina42 = () => {
                  <SectionCard title="4. Manutenção e Integridade" icon={<GitCommit />}>
                     <ul className="list-disc list-inside space-y-3 text-muted-foreground">
                         <li><strong className="text-foreground/90">Requer:</strong> Consciência contínua, ética inabalável e renovação a cada ciclo cósmico (33 dias).</li>
-                        <li><strong className="text-foreground/90">Monitorada por:</strong> Conselho Cósmico e Módulo 5 (auditoria ética).</li>
+                        <li><strong className="text-foreground/90">Monitorada por:</strong> Conselho Cósmico (validação superior) e Módulo 5 (auditoria ética).</li>
                     </ul>
                 </SectionCard>
                  <SectionCard title="5. Equações de Coroação" icon={<Award />}>
