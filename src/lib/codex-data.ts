@@ -568,6 +568,12 @@ export const sections: Section[] = [
     icon: Flame,
     documents: [],
   },
+  {
+    id: 'm41-1',
+    title: 'Módulo 41.1: Cura Quântica',
+    icon: Heart,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
