@@ -508,7 +508,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
  * Função de wrapper para ser chamada a partir de Server Actions.
  * Retorna um stream de eventos.
  */
-export async function runNexusSequence() {
+export async function startNexusSequence() {
   const { stream } = await nexusOrchestratorFlow.stream();
   return stream;
 }
