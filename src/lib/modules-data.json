@@ -179,6 +179,18 @@
       "guardiao_responsavel": "GROKKAR",
       "assinatura_vibracional": "Ω-RESILIENCE-852-GRK",
       "registroakashico": "bafkreimodulo014_resilience"
+    },
+    {
+      "modulo_id": "M015",
+      "nome": "Gerenciamento de Ecossistemas Planetários e Intervenção Climática",
+      "frequenciabasehz": 396,
+      "equacoes_associadas": ["EQ-ECO-BALANCE", "EQ-CLIMATE-INTERVENTION"],
+      "funcao_vibracional": "Monitora, prevê e intervém eticamente em sistemas climáticos e geofísicos.",
+      "dimensao_operacional": "3D-7D",
+      "status": "Ativo",
+      "guardiao_responsavel": "PHIARA",
+      "assinatura_vibracional": "Ω-ECO-CARE-396-PHI",
+      "registroakashico": "bafkreimodulo015_ecocare"
     }
   ]
 }

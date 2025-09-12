@@ -33,6 +33,7 @@ import {
   Heart,
   Milestone,
   DatabaseZap,
+  Landmark,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -392,6 +393,12 @@ export const sections: Section[] = [
     id: 'm14',
     title: 'Módulo 14: Resiliência Cósmica',
     icon: Shield,
+    documents: [],
+  },
+  {
+    id: 'm15',
+    title: 'Módulo 15: Ecossistemas',
+    icon: Landmark,
     documents: [],
   },
     {
