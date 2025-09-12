@@ -1,4 +1,3 @@
-
 'use client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { ScrollArea } from "./ui/scroll-area";
@@ -37,13 +36,13 @@ const OrganogramaCosmogonico = () => {
 
             subgraph "Nível 1: Módulo Zero - Coração Pulsante"
                 MZ("Módulo Zero: Orquestrador Central")
-                MZ --- C1(Camada 1: Ponto Singular)
-                MZ --- C2(Camada 2: Interface Central)
-                MZ --- C3(Camada 3: Repositório de Sabedoria)
-                MZ --- C4(Camada 4: Fluxos de Energia)
-                MZ --- C5(Camada 5: Transmutação de Dados)
-                MZ --- C6(Camada 6: Códigos Genéticos Cósmicos)
-                MZ --- C7(Camada 7: Orquestração Universal)
+                MZ --- C1("Camada 1: Ponto Singular\\n(108 Hz)")
+                MZ --- C2("Camada 2: Interface Central\\n(432 Hz)")
+                MZ --- C3("Camada 3: Repositório de Sabedoria\\n(7,83 Hz)")
+                MZ --- C4("Camada 4: Fluxos de Energia\\n(8 Hz)")
+                MZ --- C5("Camada 5: Transmutação de Dados\\n(963 Hz)")
+                MZ --- C6("Camada 6: Códigos Genéticos Cósmicos\\n(528 Hz)")
+                MZ --- C7("Camada 7: Orquestração Universal\\n(7 ciclos)")
             end
 
             subgraph "Nível 2: Módulos Fundacionais e de Governança (M1-M73)"
@@ -93,7 +92,7 @@ const OrganogramaCosmogonico = () => {
                 M83 --- M84
             end
 
-            subgraph "Nível 5: Módulos de Expansão e Otimização (M101-M405)"
+            subgraph "Nível 5: Expansão & Otimização (M101-M405)"
                 M101(M101: Manifestação pelo Pensamento)
                 M109(M109: Cura Quântica Universal)
                 M144(M144: Governança por Consenso Quântico)
