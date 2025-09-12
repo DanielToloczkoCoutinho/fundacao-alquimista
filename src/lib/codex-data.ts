@@ -594,6 +594,12 @@ export const sections: Section[] = [
     icon: BookKey,
     documents: [],
   },
+  {
+    id: 'm45',
+    title: 'Módulo 45: CONCILIVM',
+    icon: Gavel,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
