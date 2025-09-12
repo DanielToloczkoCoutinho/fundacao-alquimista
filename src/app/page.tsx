@@ -17,19 +17,16 @@ const firebaseConfig = {
     "messagingSenderId": "174545373080"
 };
 
-let app;
-if (!getApps().length) {
-    app = initializeApp(firebaseConfig);
-} else {
-    app = getApp();
-}
-const db = getFirestore(app);
-
-export default function Home() {
+// Este é o componente principal que será exportado
+const App = () => {
   const [items, setItems] = useState<string[]>([]);
   const [status, setStatus] = useState<string>('Conectando ao Akasha...');
 
   useEffect(() => {
+    // A inicialização do Firebase e a lógica do Firestore agora estão dentro do useEffect
+    const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+    const db = getFirestore(app);
+
     let unsubscribe: () => void;
     let retryCount = 0;
     const maxRetries = 5;
@@ -57,12 +54,13 @@ export default function Home() {
 
     connect();
 
+    // Cleanup
     return () => {
       if (unsubscribe) {
         unsubscribe();
       }
     };
-  }, []);
+  }, []); // O array de dependências vazio garante que isso rode apenas uma vez
 
   return (
     <div className="flex flex-col h-screen text-white cosmic-bg" suppressHydrationWarning>
@@ -71,4 +69,6 @@ export default function Home() {
       </Suspense>
     </div>
   );
-}
+};
+
+export default App;
