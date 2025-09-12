@@ -560,12 +560,6 @@ export const sections: Section[] = [
     documents: [],
   },
   {
-    id: 'm39',
-    title: 'Módulo 39: Orquestrador de Portais',
-    icon: Milestone,
-    documents: [],
-  },
-  {
     id: 'm39-1',
     title: 'Módulo 39.1: Integridade',
     icon: ShieldCheck,

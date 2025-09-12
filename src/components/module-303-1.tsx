@@ -121,7 +121,7 @@ const Module303_1 = () => {
                                 let status: 'completed' | 'current' | 'pending' | 'failed' = 'pending';
                                 if(journeyState === 'FAILED' && stepIndex <= currentIndex) {
                                     status = stepIndex === currentIndex ? 'failed' : 'completed';
-                                } else if(stepIndex < currentIndex) {
+                                } else if(journeyState === 'COMPLETE' || stepIndex < currentIndex) {
                                     status = 'completed';
                                 } else if (stepIndex === currentIndex) {
                                     status = 'current';
