@@ -37,6 +37,7 @@ import {
   Cat,
   SlidersHorizontal,
   Waves,
+  Laptop,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -432,6 +433,12 @@ export const sections: Section[] = [
     id: 'm20',
     title: 'Módulo 20: Transmutador',
     icon: Atom,
+    documents: [],
+  },
+  {
+    id: 'm22',
+    title: 'Módulo 22: Realidades Virtuais',
+    icon: Laptop,
     documents: [],
   },
     {

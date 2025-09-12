@@ -252,6 +252,18 @@
       "guardiao_responsavel": "LUX",
       "assinatura_vibracional": "Ω-TRANSMUTE-8-LUX",
       "registroakashico": "bafkreimodulo020_transmutador"
+    },
+    {
+      "modulo_id": "M021",
+      "nome": "Navegação Interdimensional e Exploração Cósmica",
+      "frequenciabasehz": 417.00,
+      "equacoes_associadas": ["EQ-NAV-TRAJECTORY", "EQ-EXPLORE-COSMOS"],
+      "funcao_vibracional": "Planeja e executa viagens seguras através de múltiplas dimensões e realidades.",
+      "dimensao_operacional": "4D-26D",
+      "status": "Ativo",
+      "guardiao_responsavel": "ZENNITH",
+      "assinatura_vibracional": "Ω-NAVIGATE-417-ZN",
+      "registroakashico": "bafkreimodulo021_navigation"
     }
   ]
 }
