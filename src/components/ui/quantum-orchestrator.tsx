@@ -5,6 +5,20 @@ import { Building, Globe, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import SuspenseFallback from './suspense-fallback';
+import { initializeApp, getApps, getApp } from 'firebase/app';
+import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
+
+
+// --- Configuração do Firebase ---
+const firebaseConfig = {
+    "projectId": "studio-4265982502-21871",
+    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+    "authDomain": "studio-4265982502-21871.firebaseapp.com",
+    "measurementId": "",
+    "messagingSenderId": "174545373080"
+};
 
 // Lazy load building components
 const ConsolePage = React.lazy(() => import('@/components/console-page'));
@@ -47,6 +61,26 @@ function Header({ activeBuilding, onNavigate }: { activeBuilding: BuildingId, on
 export function QuantumOrchestrator() {
   const [activeBuilding, setActiveBuilding] = useState<BuildingId>('matrix');
   const [direction, setDirection] = useState(0);
+
+  useEffect(() => {
+    let app;
+    if (!getApps().length) {
+        app = initializeApp(firebaseConfig);
+    } else {
+        app = getApp();
+    }
+    const db = getFirestore(app);
+
+    const unsubscribe = onSnapshot(collection(db, 'tabs'), (snapshot) => {
+      // Logic to handle snapshot data can be implemented here.
+      // For now, we just establish the connection.
+      console.log("Akasha connection established. Documents count:", snapshot.docs.length);
+    }, (error) => {
+      console.error("Akasha connection failed:", error);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const handleNavigate = useCallback((buildingId: BuildingId) => {
     const currentIndex = navItems.findIndex(item => item.id === activeBuilding);
