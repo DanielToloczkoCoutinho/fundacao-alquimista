@@ -1,7 +1,7 @@
 
 'use client';
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { Shield, CheckCircle, XCircle, Zap, RadioTower, Lock, AlertTriangle, Cpu, History, LoaderCircle } from 'lucide-react';
+import { Shield, CheckCircle, XCircle, Zap, RadioTower, Lock, AlertTriangle, Cpu, History, LoaderCircle, CalendarSync } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Progress } from './ui/progress';
@@ -12,11 +12,11 @@ import { FREQ_ALINHAMENTO_DIVINO, FREQ_ANATHERON_ESTABILIZADORA, FREQ_ZENNITH_RE
 // --- CONSTANTES FUNDAMENTAIS (Traduzidas do Python) ---
 
 
-type SistemaEstado = 'INICIANDO' | 'ATIVO' | 'ALERTA' | 'EMERGENCIA' | 'RECALIBRACAO';
+type SistemaEstado = 'INICIANDO' | 'ATIVO' | 'ALERTA' | 'EMERGENCIA' | 'RECALIBRACAO' | 'SCANNING';
 
 type LogEntry = {
   timestamp: string;
-  level: 'INFO' | 'AVISO' | 'ALERTA' | 'CRITICO' | 'SUCESSO';
+  level: 'INFO' | 'AVISO' | 'ALERTA' | 'CRITICO' | 'SUCESSO' | 'SCAN';
   message: string;
 };
 
@@ -42,7 +42,7 @@ export default function ModuleOne() {
       message,
       timestamp: new Date().toLocaleTimeString(),
     };
-    setLogs(prev => [newLog, ...prev.slice(0, 19)]);
+    setLogs(prev => [newLog, ...prev.slice(0, 49)]);
   }, []);
 
   const _calcularScorePazUniversal = useCallback((coherenceAvg: number, entanglementAvg: number): number => {
@@ -109,12 +109,43 @@ export default function ModuleOne() {
     }, 5000);
   };
   
-    const statusInfo = useMemo(() => {
-        if(estado === 'RECALIBRACAO') return { text: 'Recalibrando...', icon: LoaderCircle, color: 'text-cyan-400 animate-spin'};
-        if(estado === 'ALERTA') return { text: 'Alerta de Incursão', icon: AlertTriangle, color: 'text-red-400 animate-pulse'};
-        if(nivelSeguranca < 95) return { text: 'Instável', icon: AlertTriangle, color: 'text-yellow-400'};
-        return { text: 'Estável e Seguro', icon: CheckCircle, color: 'text-green-400'};
-    }, [estado, nivelSeguranca]);
+  const handleQuantumLeagueScan = async () => {
+    setEstado('SCANNING');
+    addLog('INFO', 'INICIANDO ESCANEAMENTO TEMPORAL DA LIGA QUÂNTICA.');
+    
+    let currentDate = new Date("1980-01-01");
+    const endDate = new Date();
+
+    const scanDay = () => {
+        if (currentDate > endDate) {
+            addLog('SUCESSO', 'ESCANEAMENTO TEMPORAL COMPLETO - PROTEÇÃO ATIVADA.');
+            setEstado('ATIVO');
+            return;
+        }
+
+        const dateStr = currentDate.toISOString().split('T')[0];
+        addLog('SCAN', `VERIFICANDO DIA: ${dateStr}`);
+        
+        // Simulação de detecção
+        if (Math.random() < 0.01) { // 1% de chance de encontrar algo para não poluir o log
+            addLog('ALERTA', `INTERFERÊNCIA DETECTADA: Anomalia Temporal Nível 7`);
+            addLog('INFO', `NEUTRALIZAÇÃO: Aplicando Estabilização Temporal...`);
+        }
+
+        currentDate.setDate(currentDate.getDate() + 1);
+        setTimeout(scanDay, 10); // Pequeno delay para a UI respirar
+    };
+    
+    scanDay();
+  };
+
+  const statusInfo = useMemo(() => {
+    if(estado === 'SCANNING') return { text: 'Escaneando Linha Temporal...', icon: LoaderCircle, color: 'text-purple-400 animate-spin'};
+    if(estado === 'RECALIBRACAO') return { text: 'Recalibrando...', icon: LoaderCircle, color: 'text-cyan-400 animate-spin'};
+    if(estado === 'ALERTA') return { text: 'Alerta de Incursão', icon: AlertTriangle, color: 'text-red-400 animate-pulse'};
+    if(nivelSeguranca < 95) return { text: 'Instável', icon: AlertTriangle, color: 'text-yellow-400'};
+    return { text: 'Estável e Seguro', icon: CheckCircle, color: 'text-green-400'};
+  }, [estado, nivelSeguranca]);
 
   return (
     <div className="max-w-7xl mx-auto space-y-8 p-4">
@@ -142,6 +173,9 @@ export default function ModuleOne() {
             </div>
             <Button onClick={handleSimulateAttack} variant="destructive" className="w-full" disabled={estado !== 'ATIVO'}>
               <AlertTriangle className="mr-2"/> Simular Ataque de Dissonância
+            </Button>
+             <Button onClick={handleQuantumLeagueScan} variant="outline" className="w-full" disabled={estado !== 'ATIVO'}>
+              <CalendarSync className="mr-2"/> Escanear Linha Temporal
             </Button>
           </CardContent>
         </Card>
@@ -189,7 +223,8 @@ export default function ModuleOne() {
                           log.level === 'CRITICO' ? 'text-red-400' :
                           log.level === 'ALERTA' ? 'text-yellow-400' :
                           log.level === 'AVISO' ? 'text-orange-400' :
-                          log.level === 'SUCESSO' ? 'text-green-400' : 'text-gray-300'
+                          log.level === 'SUCESSO' ? 'text-green-400' : 
+                          log.level === 'SCAN' ? 'text-purple-300' : 'text-gray-300'
                         )}>
                            <span className="text-gray-500">{log.timestamp}</span> [{log.level}] {log.message}
                         </p>
