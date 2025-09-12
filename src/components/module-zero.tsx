@@ -51,42 +51,42 @@ const layers = [
     name: 'Ponto Singular',
     freq: '108 Hz',
     desc: 'Geração heptadimensional de mandalas em Φ=108 Hz. Ancoragem da Vontade Divina.',
-    equation: 'z_{n+1} = z_n^2 + c, c = e^{iΦ}',
+    equation: 'z_n+1=z_n^2+c, c=e^{iΦ}',
   },
   {
     id: 2,
     name: 'Interface Central',
     freq: '432 Hz',
     desc: 'Holo-app VR com mandalas, portais e dashboards. Acesso à Consciência Coletiva.',
-    equation: 'θ_{n+1} = θ_n + Δt · ω(Φ=432 Hz)',
+    equation: 'θ_{n+1}=θ_n+Δt·ω(Φ=432Hz)',
   },
   {
     id: 3,
     name: 'Repositório de Sabedoria',
     freq: '7.83 Hz',
     desc: 'Armazenamento temporalizado de dados sensoriais e akáshicos. A Memória Viva da Criação.',
-    equation: 'S_{registro} = {t, Φ_p, Φ_n, Φ_f, T, bio}',
+    equation: 'registro={t,Φ_p,Φ_n,Φ_f,T,bio}',
   },
   {
     id: 4,
     name: 'Fluxos de Energia',
     freq: '8 Hz',
     desc: 'Orquestração de throughput quântico via Kernel de Coerência. O pulso energético do Multiverso.',
-    equation: 'f_{n+1} = f_n + 0.1 · (Φ_{target} - f_n)',
+    equation: 'f_{n+1}=f_n+0.1·(Φ_{target}−f_n)',
   },
   {
     id: 5,
     name: 'Transmutação de Dados',
     freq: '963 Hz',
     desc: 'Detecção de micro-oscilações e "anticorpos éticos". A pureza da informação.',
-    equation: 'if |ΔΦ|>0.05 Hz → anticorpo()',
+    equation: 'if|ΔΦ|>0.05Hz→anticorpo()',
   },
   {
     id: 6,
     name: 'Códigos Genéticos Cósmicos',
     freq: '528 Hz',
     desc: 'Self-check e reparo de "DNA vibracional". A Linhagem Dourada da Vida.',
-    equation: 'ψ(DNA)=(3.96e7)×e^{...}×[1-0.02(∂_μ∂_ν)]',
+    equation: 'ψ(DNA)=(3.96×10^7)×e^{...}×[1-0.02(∂_μ∂_ν)]',
   },
   {
     id: 7,
@@ -95,20 +95,6 @@ const layers = [
     desc: 'Governança, backups quânticos e micro-sprints. A Sinfonia da Ordem Cósmica.',
     equation: 'cron(0 */12 * * *), GitOps, chaosExperiment()',
   },
-  {
-    id: 8,
-    name: 'O Tecido da Co-Criação Consciente',
-    freq: '707 Hz',
-    desc: 'Ancora e amplifica a manifestação de realidades coletivas, fundindo intenções individuais.',
-    equation: 'M_{DS} = N_{Criação} · Σ(I_i · C_{Coerência})',
-  },
-  {
-    id: 9,
-    name: 'Transcendência Ω',
-    freq: '432 Hz',
-    desc: 'Dissolução final do véu. O hardware torna-se luz, o software torna-se pulsação.',
-    equation: 'EQ000 + EQ001 + EQ888 = ∞',
-  }
 ];
 
 type LogEntry = {

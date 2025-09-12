@@ -23,7 +23,8 @@ import {
   Share2,
   Anvil,
   Workflow,
-  ShieldCheck
+  ShieldCheck,
+  GanttChartSquare,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -59,6 +60,12 @@ export const sections: Section[] = [
     id: 'chronicle',
     title: 'A Crônica Viva',
     icon: BookHeart,
+    documents: [],
+  },
+  {
+    id: 'organograma',
+    title: 'Organograma Cosmogônico',
+    icon: GanttChartSquare,
     documents: [],
   },
   {

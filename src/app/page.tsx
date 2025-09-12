@@ -36,6 +36,7 @@ import Module302 from '@/components/module-302';
 import Module303Forge from '@/components/module-303-forge';
 import Module304 from '@/components/module-304';
 import Module305 from '@/components/module-305';
+import OrganogramaCosmogonico from '@/components/organograma-cosmogonico';
 
 
 // --- Configuração do Firebase ---
@@ -124,6 +125,7 @@ const App = () => {
     
     switch (currentSectionId) {
         case 'chronicle': return <ChroniclePage />;
+        case 'organograma': return <OrganogramaCosmogonico />;
         case 'nexus': return <Nexus />;
         case 'omega': return <Pagina42 />;
         case 'codex-explorer':
