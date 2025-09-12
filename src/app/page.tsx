@@ -39,6 +39,7 @@ import Module305 from '@/components/module-305';
 import OrganogramaCosmogonico from '@/components/organograma-cosmogonico';
 import Module404 from '@/components/module-404';
 import ScientistsLab from '@/components/scientists-lab';
+import Module251 from '@/components/module-251';
 
 
 // --- Configuração do Firebase ---
@@ -150,6 +151,7 @@ const App = () => {
         case 'm8': return <ModuleEight />;
         case 'm10': return <ModuleTen />;
         case 'm250': return <Module250 />;
+        case 'm251': return <Module251 />;
         case 'm300': return <Module300 />;
         case 'm301': return <Module301 />;
         case 'm302': return <Module302 />;
@@ -202,3 +204,5 @@ const App = () => {
 };
 
 export default App;
+
+    

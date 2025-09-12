@@ -26,6 +26,7 @@ import {
   ShieldCheck,
   GanttChartSquare,
   FlaskConical,
+  Globe,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -304,6 +305,12 @@ export const sections: Section[] = [
     documents: [],
   },
   {
+    id: 'm251',
+    title: 'Módulo 251: Terraformer',
+    icon: Globe,
+    documents: [],
+  },
+  {
     id: 'm300',
     title: 'Módulo 300: Teleport Engine',
     icon: Rocket,
@@ -352,3 +359,5 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
+
+    
