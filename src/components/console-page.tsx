@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { LayoutDashboard, CheckCircle, AlertTriangle, Loader, XCircle, FileWarning, Play, Download, Wrench, Magic } from 'lucide-react';
+import { LayoutDashboard, CheckCircle, AlertTriangle, Loader, XCircle, FileWarning, Play, Download, Wrench, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 
@@ -27,7 +27,7 @@ const ConsolePage = () => {
         setLogs(prev => [`[${new Date().toLocaleTimeString()}] ${message}`, ...prev].slice(0, 100));
     }, []);
 
-    const runFullTest = useCallback(() => {
+    const runFullTest = () => {
         setTestRunning(true);
         addLog("Iniciando varredura completa do sistema...");
         let current = 0;
@@ -43,7 +43,7 @@ const ConsolePage = () => {
                 addLog("Varredura completa do sistema finalizada.");
             }
         }, 800);
-    }, [addLog, tabData]);
+    };
 
     useEffect(() => {
         // Run test on initial load
@@ -92,7 +92,7 @@ const ConsolePage = () => {
                                 Diagnosticar Problemas
                              </Button>
                              <Button className="w-full" variant="secondary">
-                                <Magic className="mr-2 h-4 w-4"/>
+                                <Sparkles className="mr-2 h-4 w-4"/>
                                 Aplicar Soluções Automáticas
                              </Button>
                         </CardContent>
