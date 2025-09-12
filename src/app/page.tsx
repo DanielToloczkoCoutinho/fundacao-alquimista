@@ -155,7 +155,7 @@ const App = () => {
                     <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador. <Badge>Ativo</Badge></h1>
                     <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
                      <p className="text-amber-400 mt-4 text-sm">{status}</p>
-                    <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
+                    <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: ${new Date().toLocaleString()}</p>
                      <div>
                         <h2 className="text-xl mt-4">Abas (Debug)</h2>
                         <ul>
@@ -182,3 +182,5 @@ const App = () => {
 };
 
 export default App;
+
+    

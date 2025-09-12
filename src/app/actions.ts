@@ -5,7 +5,7 @@ import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarizati
 import { runNexusSequence } from '@/ai/flows/nexus-orchestrator';
 import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
 import type { ProcessTrinaCommandInput, ProcessTrinaCommandOutput } from '@/ai/flows/trina-protocol-flow';
-import { stellarSync } from '@/lib/stellar-sync';
+import { runStellarSync as performStellarSync } from '@/lib/stellar-sync';
 
 
 export async function getLinkSummary(url: string) {
@@ -42,9 +42,6 @@ export async function handleTrinaAction(
 }
 
 export async function runStellarSync() {
-    const result = await stellarSync.synchronize({
-        coordinates: [-25.44993, -49.29922], // Curitiba
-        equation: 'EQ144'
-    });
+    const result = await performStellarSync();
     return result;
 }

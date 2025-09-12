@@ -64,4 +64,12 @@ class StellarSync {
   }
 }
 
-export const stellarSync = new StellarSync();
+const stellarSync = new StellarSync();
+
+export async function runStellarSync() {
+    const result = await stellarSync.synchronize({
+        coordinates: [-25.44993, -49.29922], // Curitiba
+        equation: 'EQ144'
+    });
+    return result;
+}
