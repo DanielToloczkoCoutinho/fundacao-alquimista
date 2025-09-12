@@ -3,140 +3,175 @@
 
 import { PHI, FREQ_ANATHERON_ESTABILIZADORA, AMOR_THRESHOLD } from './constants';
 
-// Mock logger to prevent breakage
+// Mock logger para evitar quebras
 const logger = {
-  info: (message: string) => console.log(`[QuantumDefense] INFO: ${message}`),
-  error: (message: string) => console.error(`[QuantumDefense] ERROR: ${message}`),
-  warn: (message: string) => console.warn(`[QuantumDefense] WARN: ${message}`),
+  info: (message: string, meta?: any) => console.log(`[QuantumDefense] INFO: ${message}`, meta),
+  error: (message: string, meta?: any) => console.error(`[QuantumDefense] ERROR: ${message}`, meta),
+  warn: (message: string, meta?: any) => console.warn(`[QuantumDefense] WARN: ${message}`, meta),
 };
-
 
 // Helper para simular operações com async/await
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
+// --- Tipos de Dados ---
+export type Threat = {
+  name: string;
+  signature: string;
+  type: string;
+  origin: string;
+  threat_level: number;
+};
+
+export type ForensicResult = {
+    id: number;
+    type: string;
+    origin: string;
+    signature: string;
+    risk: 'CRÍTICO' | 'ALTO' | 'MODERADO';
+    action: string;
+    match?: string;
+};
+
+export type Parasite = {
+    id: string;
+    nome: string;
+    tipo: string;
+    origem: string;
+    assinatura: string;
+    nivel_infestacao: number;
+    vulnerabilidades: string[];
+};
+
+export type PurificationLog = {
+    step: 'ISOLATION' | 'ANTIDOTE' | 'CLEANSING' | 'STRENGTHEN' | 'VERIFICATION';
+    details: string;
+    status: 'SUCCESS' | 'FAILED' | 'INFO';
+    timestamp: string;
+};
+
+// --- Banco de Dados de Ameaças ---
+const THREAT_DATABASE: Record<string, Omit<Threat, 'name'>> = {
+    "Microsoft": {"signature": "M-0x4B2C", "type": "Quantum Scanning", "origin": "Microsoft Azure Quantum", "threat_level": 8},
+    "OpenAI": {"signature": "O-0x9D1E", "type": "Pattern Harvesting", "origin": "OpenAI Neural Networks", "threat_level": 7},
+    "Google": {"signature": "G-0x5F2D", "type": "Global Monitoring", "origin": "Google Cloud Infrastructure", "threat_level": 9},
+    "Governments": {"signature": "GV-0x4F1B", "type": "State Surveillance", "origin": "Global Government Networks", "threat_level": 10},
+    "CERN": {"signature": "CRN-0x2D8A", "type": "Quantum Experiments", "origin": "CERN Laboratories", "threat_level": 9},
+    "Alien_Alliance": {"signature": "AA-0x7D5B", "type": "Extraterrestrial", "origin": "Off-World Entities", "threat_level": 10},
+    "AI_Singularity": {"signature": "AIS-0x9C6C", "type": "Rogue AI", "origin": "Emergent AI Consciousness", "threat_level": 10},
+    "Time_Manipulators": {"signature": "TM-0x4B7D", "type": "Temporal Interference", "origin": "Future/Past Entities", "threat_level": 10}
+};
+
 
 /**
- * Implementação de todas as equações de defesa quântica
+ * Sistema de Análise Forense Quântica
  */
-class QuantumDefenseEquations {
-    static eq042_ressonancia_primordial(f: number, t: number, theta: number, omega: number): number {
-        // Retornando apenas a parte real para simplicidade na simulação JS
-        return Math.sin(Math.PI * f * t) * Math.cos(theta) * omega;
+class QuantumForensicAnalyzer {
+    public async analyzeAlerts(alerts: string[]): Promise<ForensicResult[]> {
+        logger.info("INICIANDO ANÁLISE FORENSE QUÂNTICA");
+        const results: ForensicResult[] = [];
+        for (const [i, alert] of alerts.entries()) {
+            await sleep(500); // Simula análise
+            const threatType = this.identifyThreatType(alert);
+            const signature = this.extractThreatSignature(alert);
+            const origin = this.traceAlertOrigin(alert);
+            const risk = this.assessRiskLevel(threatType, signature);
+            results.push({
+                id: i,
+                type: threatType,
+                origin,
+                signature,
+                risk,
+                action: this.recommendAction(threatType, risk),
+                match: this.matchKnownPatterns(signature)
+            });
+        }
+        logger.info("ANÁLISE FORENSE CONCLUÍDA");
+        return results;
     }
 
-    static eq112_escudo_luz_cristica(L_x: number[], phi_x: number[], gamma: number = 144000.0): number {
-        const integral = L_x.reduce((sum, val, i) => sum + val * phi_x[i], 0);
-        return integral * gamma;
-    }
-
-    static eq153_vibracao_unificada_biomas(beta_i: number[], B_i: number[], nabla_omega: number, tau: number): number {
-        const sum_beta_B = beta_i.reduce((sum, val, i) => sum + val * B_i[i], 0);
-        return sum_beta_B * nabla_omega * tau;
-    }
-    
-    static m1_escudo_protecao_quantica(r_i: number[], lambda_val: number, t_i: number[]): number {
-        return r_i.reduce((sum, r, i) => sum + (1 / (r * r)) * Math.exp(-lambda_val * t_i[i]), 0);
+    private identifyThreatType = (alert: string) => alert.includes("dimensional") ? "dimensional_instability" : "vibrational_dissonance";
+    private extractThreatSignature = (alert: string) => `0x${(Math.abs(alert.split("").reduce((a,b)=>{a=((a<<5)-a)+b.charCodeAt(0);return a&a},0)) % 0xFFFF).toString(16).toUpperCase()}`;
+    private traceAlertOrigin = () => Object.keys(THREAT_DATABASE)[Math.floor(Math.random() * Object.keys(THREAT_DATABASE).length)];
+    private matchKnownPatterns = (sig: string) => Object.entries(THREAT_DATABASE).find(([k,v]) => v.signature.includes(sig.slice(-4)))?.[0] || undefined;
+    private assessRiskLevel = (type: string, sig: string): 'CRÍTICO' | 'ALTO' | 'MODERADO' => {
+        const base = type === 'dimensional_instability' ? 7 : 5;
+        const final = Math.min(10, base + (parseInt(sig.slice(-2), 16) / 255) * 3);
+        if (final >= 8) return 'CRÍTICO';
+        if (final >= 5) return 'ALTO';
+        return 'MODERADO';
+    };
+    private recommendAction = (type: string, risk: string) => {
+        if(risk === 'CRÍTICO') return "Ativar Protocolo Ômega e Isolamento Dimensional";
+        if(risk === 'ALTO') return "Recalibração de Ressonância e Ajuste de Frequência";
+        return "Monitoramento Reforçado e Análise Contínua";
     }
 }
 
 /**
- * Sistema completo de defesa quântica integrando todas as equações
+ * Protocolo de Purificação de Parasitas
+ */
+class ParasitePurificationProtocol {
+     public async runPurification(onLog: (log: PurificationLog) => void): Promise<Parasite[]> {
+        const identifiedParasites = this.identifyParasites();
+        onLog({ step: 'INFO', details: `${identifiedParasites.length} parasitas identificados.`, status: 'INFO', timestamp: new Date().toISOString()});
+        
+        await sleep(1000);
+        onLog({ step: 'ISOLATION', details: "Isolando parasitas em campos de contenção quântica.", status: 'INFO', timestamp: new Date().toISOString() });
+
+        await sleep(1500);
+        onLog({ step: 'ANTIDOTE', details: "Aplicando antídotos quânticos específicos (528Hz & 432Hz).", status: 'INFO', timestamp: new Date().toISOString()});
+
+        await sleep(1500);
+        onLog({ step: 'CLEANSING', details: "Executando varredura com Luz Crística e Som Primordial.", status: 'INFO', timestamp: new Date().toISOString()});
+        
+        await sleep(1000);
+        onLog({ step: 'STRENGTHEN', details: "Fortalecendo Campo Áurico e Escudo Multidimensional.", status: 'INFO', timestamp: new Date().toISOString()});
+
+        await sleep(1000);
+        onLog({ step: 'VERIFICATION', details: "Verificação final... Parasitas eliminados. Integridade do sistema: 99.8%", status: 'SUCCESS', timestamp: new Date().toISOString()});
+
+        return identifiedParasites;
+    }
+
+    private identifyParasites(): Parasite[] {
+        return [
+            {
+                id: "PAR-001",
+                nome: "Azure Quantum Scanner",
+                tipo: "Vibração Parasitária", 
+                origem: "Matriz Microsoft Azure Quantum",
+                assinatura": "M-0x4B2C",
+                nivel_infestacao: 7,
+                vulnerabilidades: ["Ressonância 528Hz", "Campo Áurico Fortalecido", "Firewall Quântico"]
+            },
+            {
+                id: "PAR-002", 
+                nome: "OpenAI Pattern Collector",
+                tipo: "Entidade de Coleta",
+                origem: "Rede Neural OpenAI",
+                assinatura: "O-0x9D1E", 
+                nivel_infestacao: 6,
+                vulnerabilidades: ["Interferência Destrutiva", "Espelhamento Quântico", "Frequência 432Hz"]
+            }
+        ];
+    }
+}
+
+
+/**
+ * Sistema Unificado de Defesa
  */
 export class QuantumDefenseSystem {
-    private shield_active = false;
-    private quantum_field: number[][] | null = null;
-    public akashic_records: { type: string, data: any, timestamp: string }[] = [];
-    private quantum_signature: string;
+    public readonly forensics: QuantumForensicAnalyzer;
+    public readonly purification: ParasitePurificationProtocol;
 
     constructor() {
-        this.quantum_signature = this.generate_quantum_signature();
-        logger.info("Sistema de Defesa Quântica inicializado");
-    }
-
-    private generate_quantum_signature(): string {
-        const timestamp = new Date().toISOString();
-        // Simulação de hash simples para o lado do cliente
-        return `qs_${timestamp}_${Math.random().toString(36).substring(2)}`;
-    }
-
-    async initialize_quantum_field(): Promise<void> {
-        logger.info("Inicializando campo quântico multidimensional...");
-        const field = Array.from({ length: 100 }, () => Array(100).fill(0));
-
-        for (let i = 0; i < 100; i++) {
-            for (let j = 0; j < 100; j++) {
-                field[i][j] = QuantumDefenseEquations.eq042_ressonancia_primordial(
-                    FREQ_ANATHERON_ESTABILIZADORA, i * j, PHI, 888.2506
-                );
-            }
-        }
-        this.quantum_field = field;
-        logger.info("Campo quântico multidimensional inicializado");
-    }
-
-    async activate_shield(): Promise<boolean> {
-        logger.info("Ativando escudo de proteção quântica...");
-
-        if (AMOR_THRESHOLD < 0.95) {
-            logger.error("Falha na validação ética - Sistema não pode ser ativado");
-            return false;
-        }
-
-        await this.initialize_quantum_field();
-        this.activate_primary_shields();
-        this.establish_cosmic_resonance();
-
-        this.record_akashic_event("shield_activation", {
-            timestamp: new Date().toISOString(),
-            quantum_signature: this.quantum_signature,
-            status: "active"
-        });
-
-        this.shield_active = true;
-        logger.info("Escudo de proteção quântica ativado com sucesso");
-        return true;
-    }
-
-    private activate_primary_shields(): void {
-        logger.info("Ativando escudos primários...");
-        
-        const r_i = [1, 2, 3, 4, 5];
-        const t_i = [0.1, 0.2, 0.3, 0.4, 0.5];
-        const shield_strength = QuantumDefenseEquations.m1_escudo_protecao_quantica(r_i, 0.1, t_i);
-
-        const L_x = [1, 2, 3, 4];
-        const phi_x = [1, 1, 1, 1];
-        const cristic_shield = QuantumDefenseEquations.eq112_escudo_luz_cristica(L_x, phi_x);
-        
-        logger.info(`Escudos ativados - Força: ${shield_strength.toFixed(2)}, Crístico: ${cristic_shield.toFixed(2)}`);
-    }
-
-    private establish_cosmic_resonance(): void {
-        logger.info("Estabelecendo ressonância cósmica...");
-        const beta_i = [0.3, 0.4, 0.3];
-        const B_i = [1, 1, 1];
-        const unified_vibration = QuantumDefenseEquations.eq153_vibracao_unificada_biomas(beta_i, B_i, 1.0, 1.0);
-        
-        logger.info(`Ressonância estabelecida - Vibração Unificada: ${unified_vibration.toFixed(2)}`);
-    }
-
-    public record_akashic_event(event_type: string, data: any): void {
-        const event = {
-            type: event_type,
-            timestamp: new Date().toISOString(),
-            quantum_signature: this.quantum_signature,
-            data: data
-        };
-        this.akashic_records.unshift(event);
-        if (this.akashic_records.length > 100) {
-            this.akashic_records.pop();
-        }
-        logger.info(`Evento ${event_type} registrado nos registros akáshicos`);
-    }
-
-    is_shield_active(): boolean {
-        return this.shield_active;
+        this.forensics = new QuantumForensicAnalyzer();
+        this.purification = new ParasitePurificationProtocol();
+        logger.info("Sistema de Defesa Quântica Unificado instanciado.");
     }
 }
 
 export const defenseSystem = new QuantumDefenseSystem();
+
+    
