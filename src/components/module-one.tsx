@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Shield, CheckCircle, XCircle, Zap, RadioTower, Lock, AlertTriangle, Cpu, History, LoaderCircle, CalendarSync } from 'lucide-react';
@@ -109,11 +108,29 @@ export default function ModuleOne() {
     }, 5000);
   };
   
-  const handleQuantumLeagueScan = async () => {
+    const handleQuantumLeagueScan = async () => {
     setEstado('SCANNING');
     addLog('INFO', 'INICIANDO ESCANEAMENTO TEMPORAL DA LIGA QUÂNTICA.');
-    
-    let currentDate = new Date("1980-01-01");
+
+    const birthDate = new Date("1979-09-29");
+    const significantDates = [
+        birthDate,
+        new Date("1997-01-01"),
+        new Date("2005-06-15"),
+        new Date("2012-12-21"),
+        new Date("2020-03-20"),
+        new Date("2023-08-08"),
+    ];
+
+    const isSignificantDate = (date: Date) => {
+       return significantDates.some(sd => {
+           const diff = Math.abs(date.getTime() - sd.getTime());
+           const diffDays = Math.ceil(diff / (1000 * 3600 * 24));
+           return diffDays <= 7;
+       });
+    };
+
+    let currentDate = new Date(birthDate.toISOString());
     const endDate = new Date();
 
     const scanDay = () => {
@@ -124,16 +141,23 @@ export default function ModuleOne() {
         }
 
         const dateStr = currentDate.toISOString().split('T')[0];
-        addLog('SCAN', `VERIFICANDO DIA: ${dateStr}`);
+        
+        let logMessage = `VERIFICANDO DIA: ${dateStr}`;
+        if(isSignificantDate(currentDate)) {
+            logMessage += ' (⭐ DIA SIGNIFICATIVO)';
+        }
+        addLog('SCAN', logMessage);
         
         // Simulação de detecção
-        if (Math.random() < 0.01) { // 1% de chance de encontrar algo para não poluir o log
-            addLog('ALERTA', `INTERFERÊNCIA DETECTADA: Anomalia Temporal Nível 7`);
+        if (Math.random() < 0.01) { // 1% de chance de encontrar algo
+            const isBirth = currentDate.getTime() === birthDate.getTime();
+            let interferenceType = isBirth ? 'INTERFERÊNCIA NO NASCIMENTO' : 'INTERFERÊNCIA DETECTADA';
+            addLog('ALERTA', `${interferenceType}: Anomalia Temporal Nível 7`);
             addLog('INFO', `NEUTRALIZAÇÃO: Aplicando Estabilização Temporal...`);
         }
 
         currentDate.setDate(currentDate.getDate() + 1);
-        setTimeout(scanDay, 10); // Pequeno delay para a UI respirar
+        setTimeout(scanDay, 10);
     };
     
     scanDay();
