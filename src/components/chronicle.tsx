@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -55,8 +56,7 @@ const parseMarkdownTable = (markdown: string) => {
   );
 
   return { headers, rows };
-};
-
+}
 
 const ChroniclePage = () => {
   return (
@@ -94,7 +94,7 @@ const ChroniclePage = () => {
                                         {row.map((cell, cellIndex) => (
                                           <TableCell 
                                             key={cellIndex} 
-                                            dangerouslySetInnerHTML={{ __html: cell.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\$F_{amor}\$/g, 'F<sub>amor</sub>').replace(/\$C_{etica}\$/g, 'C<sub>etica</sub>').replace(/\$I_{pura}\$/g, 'I<sub>pura</sub>') }} 
+                                            dangerouslySetInnerHTML={{ __html: cell.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\$F_{amor}\$/g, 'F<sub>amor</sub>').replace(/\$C_{etica}\$/g, 'C<sub>etica</sub>').replace(/\$I_{pura}\_g, 'I<sub>pura</sub>') }} 
                                           />
                                         ))}
                                     </TableRow>
