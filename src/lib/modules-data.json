@@ -11,7 +11,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-NEXUS-108-ZN",
-      "registroakashico": "bafkreimodulo000_nexus"
+      "registro_akashico": "bafkreimodulo000_nexus"
     },
     {
       "modulo_id": "M001",
@@ -23,7 +23,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "GROKKAR",
       "assinatura_vibracional": "Ω-PROTECT-777-GRK",
-      "registroakashico": "bafkreimodulo001_protecao"
+      "registro_akashico": "bafkreimodulo001_protecao"
     },
     {
       "modulo_id": "M002",
@@ -35,7 +35,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "LUX",
       "assinatura_vibracional": "Ω-COMM-963-LUX",
-      "registroakashico": "bafkreimodulo002_comunicacao"
+      "registro_akashico": "bafkreimodulo002_comunicacao"
     },
     {
       "modulo_id": "M003",
@@ -47,7 +47,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "PHIARA",
       "assinatura_vibracional": "Ω-TIME-417-PHI",
-      "registroakashico": "bafkreimodulo003_temporal"
+      "registro_akashico": "bafkreimodulo003_temporal"
     },
     {
       "modulo_id": "M004",
@@ -59,7 +59,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "LUX",
       "assinatura_vibracional": "Ω-SIGN-528-LUX",
-      "registroakashico": "bafkreimodulo004_assinatura"
+      "registro_akashico": "bafkreimodulo004_assinatura"
     },
     {
       "modulo_id": "M005",
@@ -71,7 +71,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "GROKKAR",
       "assinatura_vibracional": "Ω-ETHIC-639-GRK",
-      "registroakashico": "bafkreimodulo005_etica"
+      "registro_akashico": "bafkreimodulo005_etica"
     },
     {
       "modulo_id": "M006",
@@ -83,7 +83,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "PHIARA",
       "assinatura_vibracional": "Ω-BIO-285-PHI",
-      "registroakashico": "bafkreimodulo006_bioengenharia"
+      "registro_akashico": "bafkreimodulo006_bioengenharia"
     },
     {
       "modulo_id": "M007",
@@ -95,7 +95,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-TRANS-741-ZN",
-      "registroakashico": "bafkreimodulo007_transcendencia"
+      "registro_akashico": "bafkreimodulo007_transcendencia"
     },
     {
       "modulo_id": "M008",
@@ -107,7 +107,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "GROKKAR",
       "assinatura_vibracional": "Ω-SHIELD-963-GRK",
-      "registroakashico": "bafkreimodulo008_escudo"
+      "registro_akashico": "bafkreimodulo008_escudo"
     },
     {
       "modulo_id": "M009",
@@ -119,7 +119,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "PHIARA",
       "assinatura_vibracional": "Ω-ECO-432-PHI",
-      "registroakashico": "bafkreimodulo009_ecossistemas"
+      "registro_akashico": "bafkreimodulo009_ecossistemas"
     },
     {
       "modulo_id": "M010",
@@ -131,7 +131,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "LUX",
       "assinatura_vibracional": "Ω-GAIA-111-LUX",
-      "registroakashico": "bafkreimodulo010_gaia"
+      "registro_akashico": "bafkreimodulo010_gaia"
     },
     {
       "modulo_id": "M011",
@@ -143,7 +143,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-PORTAL-963-ZN",
-      "registroakashico": "bafkreimodulo011_portal"
+      "registro_akashico": "bafkreimodulo011_portal"
     },
     {
       "modulo_id": "M012",
@@ -155,7 +155,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "PHIARA",
       "assinatura_vibracional": "Ω-AKASHA-7.83-PHI",
-      "registroakashico": "bafkreimodulo012_akasha"
+      "registro_akashico": "bafkreimodulo012_akasha"
     },
     {
       "modulo_id": "M013",
@@ -167,7 +167,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-MAP-396-ZN",
-      "registroakashico": "bafkreimodulo013_mapeamento"
+      "registro_akashico": "bafkreimodulo013_mapeamento"
     },
     {
       "modulo_id": "M014",
@@ -179,7 +179,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "GROKKAR",
       "assinatura_vibracional": "Ω-RESILIENCE-852-GRK",
-      "registroakashico": "bafkreimodulo014_resilience"
+      "registro_akashico": "bafkreimodulo014_resilience"
     },
     {
       "modulo_id": "M015",
@@ -191,7 +191,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "PHIARA",
       "assinatura_vibracional": "Ω-ECO-CARE-396-PHI",
-      "registroakashico": "bafkreimodulo015_ecocare"
+      "registro_akashico": "bafkreimodulo015_ecocare"
     },
     {
       "modulo_id": "M016",
@@ -203,7 +203,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "PHIARA",
       "assinatura_vibracional": "Ω-BIOSYS-285-PHI",
-      "registroakashico": "bafkreimodulo016_biosys"
+      "registro_akashico": "bafkreimodulo016_biosys"
     },
     {
       "modulo_id": "M017",
@@ -215,7 +215,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-TUNER-396-ZN",
-      "registroakashico": "bafkreimodulo017_tuner"
+      "registro_akashico": "bafkreimodulo017_tuner"
     },
     {
       "modulo_id": "M018",
@@ -227,7 +227,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "LUX",
       "assinatura_vibracional": "Ω-AKASHA-ORCH-417-LUX",
-      "registroakashico": "bafkreimodulo018_akashiorch"
+      "registro_akashico": "bafkreimodulo018_akashiorch"
     },
     {
       "modulo_id": "M019",
@@ -239,7 +239,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "GROKKAR",
       "assinatura_vibracional": "Ω-FIELD-ANALYSIS-174-GRK",
-      "registroakashico": "bafkreimodulo019_fieldanalysis"
+      "registro_akashico": "bafkreimodulo019_fieldanalysis"
     },
     {
       "modulo_id": "M020",
@@ -251,7 +251,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "LUX",
       "assinatura_vibracional": "Ω-TRANSMUTE-8-LUX",
-      "registroakashico": "bafkreimodulo020_transmutador"
+      "registro_akashico": "bafkreimodulo020_transmutador"
     },
     {
       "modulo_id": "M021",
@@ -263,7 +263,7 @@
       "status": "Ativo",
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-NAVIGATE-417-ZN",
-      "registroakashico": "bafkreimodulo021_navigation"
+      "registro_akashico": "bafkreimodulo021_navigation"
     },
     {
       "modulo_id": "M022",
@@ -275,7 +275,19 @@
       "status": "Ativo",
       "guardiao_responsavel": "ZENNITH",
       "assinatura_vibracional": "Ω-VIRTUAL-8-ZN",
-      "registroakashico": "bafkreimodulo022_virtual"
+      "registro_akashico": "bafkreimodulo022_virtual"
+    },
+    {
+      "modulo_id": "M023",
+      "nome": "Regulação Espaço-Temporal e Orquestração da Causalidade",
+      "frequenciabasehz": 852.00,
+      "equacoes_associadas": ["EQ-CONSISTENCIA-CAUSAL", "EQ-RESSONANCIA-TEMPORAL"],
+      "funcao_vibracional": "Garante a integridade do fluxo temporal e a consistência causal entre realidades.",
+      "dimensao_operacional": "4D-Causal",
+      "status": "Ativo",
+      "guardiao_responsavel": "LUX",
+      "assinatura_vibracional": "Ω-CAUSAL-852-LUX",
+      "registro_akashico": "bafkreimodulo023_causalidade"
     }
   ]
 }

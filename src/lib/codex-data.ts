@@ -38,6 +38,7 @@ import {
   SlidersHorizontal,
   Waves,
   Laptop,
+  History,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -445,6 +446,12 @@ export const sections: Section[] = [
     id: 'm22',
     title: 'Módulo 22: Realidades Virtuais',
     icon: Laptop,
+    documents: [],
+  },
+  {
+    id: 'm23',
+    title: 'Módulo 23: Regulação Temporal',
+    icon: History,
     documents: [],
   },
     {
