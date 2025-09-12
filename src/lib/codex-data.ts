@@ -316,13 +316,13 @@ export const sections: Section[] = [
   },
   {
     id: 'm303-forge',
-    title: 'Módulo 303: Molecular Forge',
+    title: 'Módulo 303: Forja Molecular',
     icon: Anvil,
     documents: [],
   },
   {
     id: 'm304',
-    title: 'Módulo 304: Teleport Orchestrator',
+    title: 'M304: LUMEN-CUSTOS',
     icon: Workflow,
     documents: [],
   },
