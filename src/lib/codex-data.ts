@@ -46,6 +46,7 @@ import {
   Clock,
   RefreshCw,
   GitBranch,
+  BookKey,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -109,8 +110,8 @@ export const sections: Section[] = [
   },
    {
     id: 'pagina-43',
-    title: 'Módulo 43: Harmonia dos Portais',
-    icon: Zap,
+    title: 'Página 43: A Chama Eterna',
+    icon: Flame,
     documents: [],
   },
   {
@@ -579,6 +580,18 @@ export const sections: Section[] = [
     id: 'm42',
     title: 'Módulo 42: Sincronização Temporal',
     icon: GitBranch,
+    documents: [],
+  },
+  {
+    id: 'm43',
+    title: 'Módulo 43: Harmonia dos Portais',
+    icon: Zap,
+    documents: [],
+  },
+  {
+    id: 'm44',
+    title: 'Módulo 44: VERITAS',
+    icon: BookKey,
     documents: [],
   },
     {

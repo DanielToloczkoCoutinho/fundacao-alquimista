@@ -46,7 +46,7 @@ import Pagina31 from '@/components/pagina-31';
 import Pagina34 from '@/components/pagina-34';
 import Pagina39 from '@/components/pagina-39';
 import Pagina40 from '@/components/pagina-40';
-import Pagina43 from '@/components/module-43';
+import Pagina43 from '@/components/pagina-43';
 import Module11 from '@/components/module-11';
 import ModuleTwelve from '@/components/module-twelve';
 import ModuleThirteen from '@/components/module-thirteen';
@@ -80,6 +80,8 @@ import Module40 from '@/components/module-40';
 import Module41_1 from '@/components/module-41-1';
 import Module42 from '@/components/module-42';
 import ConsolePage from '@/components/console-page';
+import Module43 from '@/components/module-43';
+import Module44 from '@/components/module-44';
 
 
 // --- Configuração do Firebase ---
@@ -233,6 +235,8 @@ const App = () => {
         case 'm40': return <Module40 />;
         case 'm41-1': return <Module41_1 />;
         case 'm42': return <Module42 />;
+        case 'm43': return <Module43 />;
+        case 'm44': return <Module44 />;
         case 'm250': return <Module250 />;
         case 'm251': return <Module251 />;
         case 'm300': return <Module300 />;
