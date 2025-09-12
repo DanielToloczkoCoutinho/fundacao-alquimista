@@ -562,6 +562,12 @@ export const sections: Section[] = [
     icon: ShieldCheck,
     documents: [],
   },
+  {
+    id: 'm40',
+    title: 'Módulo 40: Transmutação',
+    icon: Flame,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',

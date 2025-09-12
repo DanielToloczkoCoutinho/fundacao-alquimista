@@ -76,6 +76,7 @@ import Module36 from '@/components/module-36';
 import Module37 from '@/components/module-37';
 import Pagina38 from '@/components/pagina-38';
 import Module39_1 from '@/components/module-39-1';
+import Module40 from '@/components/module-40';
 
 
 // --- Configuração do Firebase ---
@@ -226,6 +227,7 @@ const App = () => {
         case 'm38': return <Pagina38 />;
         case 'm39': return <Pagina39 />;
         case 'm39-1': return <Module39_1 />;
+        case 'm40': return <Module40 />;
         case 'm250': return <Module250 />;
         case 'm251': return <Module251 />;
         case 'm300': return <Module300 />;
