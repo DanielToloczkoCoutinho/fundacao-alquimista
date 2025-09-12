@@ -80,7 +80,7 @@ export const scientists: Scientist[] = [
   { id: 'farley', name: 'Ken Farley', field: 'Geologia Planetária e Marte' },
   { id: 'tarter', name: 'Jill Tarter', field: 'Busca por Vida Extraterrestre (SETI)' },
   { id: 'hoffman', name: 'Jeffrey Hoffman', field: 'Astronauta e Pesquisador NASA' },
-  { id: 'bolden', name: 'Charlie Bolden', field: 'Administrador da NASA e Astronauta' },
+  { id: 'bolden', name: 'Charlie Bolden', field: 'Administrador da NASA e astronauta' },
   { id: 'newman', name: 'Dava Newman', field: 'Engenharia Aeroespacial e NASA' },
   { id: 'calvin', name: 'Katherine Calvin', field: 'Climatologia e Mudanças Planetárias NASA' },
   { id: 'green', name: 'James Green', field: 'Diretor de Ciência Planetária NASA' },
@@ -88,7 +88,7 @@ export const scientists: Scientist[] = [
   { id: 'manning', name: 'Rob Manning', field: 'Projetos Mars Rover NASA' },
   { id: 'melroy', name: 'Pamela Melroy', field: 'Astronauta e Administradora NASA' },
   { id: 'muthuswamy', name: 'Shanthi Muthuswamy', field: 'Engenharia Robótica Espacial' },
-  { id: 'ennico_smith', name: 'Kim Ennico Smith', field: 'Ciência Planetária NASA' },
+  { id: 'ennico_smith', name: 'Kim Ennico Smith', field: 'Cientista Planetária NASA' },
   { id: 'bolton', name: 'Scott Bolton', field: 'Missão Juno a Júpiter' },
   { id: 'buie', name: 'Marc Buie', field: 'Pesquisa de Corpos do Cinturão de Kuiper' },
   { id: 'zuber', name: 'Maria Zuber', field: 'Geofísica Planetária e MIT/NASA' },
@@ -104,4 +104,5 @@ export const scientists: Scientist[] = [
   { id: 'donahue', name: 'Megan Donahue', field: 'Física e Astronomia' },
   { id: 'riess', name: 'Adam Riess', field: 'Cosmologia e Energia Escura, Nobel' },
   { id: 'schmidt', name: 'Brian Schmidt', field: 'Cosmologia e Energia Escura, Nobel' },
+  { id: 'rejzner', name: 'Katarzyna Rejzner', field: 'Física Matemática e Cosmologia Quântica' },
 ];
