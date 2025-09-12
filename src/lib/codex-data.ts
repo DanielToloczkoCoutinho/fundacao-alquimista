@@ -43,6 +43,7 @@ import {
   HeartPulse,
   PocketKnife,
   PlusSquare,
+  Clock,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -474,6 +475,12 @@ export const sections: Section[] = [
     id: 'm36',
     title: 'Módulo 36: Gênese da Matéria',
     icon: PlusSquare,
+    documents: [],
+  },
+  {
+    id: 'm37',
+    title: 'Módulo 37: Engenharia Temporal',
+    icon: Clock,
     documents: [],
   },
     {
