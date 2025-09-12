@@ -190,5 +190,3 @@ export class MultiversalSimulator {
 
 
 export const multiversalSimulator = new MultiversalSimulator();
-
-    
