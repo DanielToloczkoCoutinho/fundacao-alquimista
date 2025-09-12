@@ -131,7 +131,7 @@ export const sections: Section[] = [
   },
    {
     id: 'omega',
-    title: 'Módulo Ω (A Chegada)',
+    title: 'Página 42: A Coroa Cósmica',
     icon: Sparkles,
     documents: [],
   },
