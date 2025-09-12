@@ -33,7 +33,7 @@ export class QuantumCryptography {
     if (existingKey) return existingKey;
 
     try {
-      const key = await crypto.subtle.generateKey(this.algorithm, true, ['encrypt', 'decrypt']);
+      const key = await window.crypto.subtle.generateKey(this.algorithm, true, ['encrypt', 'decrypt']);
       this.quantumKeyDistribution.set(keyId, key);
       
       // Armazenar metadados da chave no cache cósmico
@@ -53,11 +53,11 @@ export class QuantumCryptography {
 
   async encryptData(data: any, keyId: string): Promise<{ encrypted: ArrayBuffer; iv: Uint8Array }> {
     const key = await this.generateQuantumKey(keyId);
-    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const iv = window.crypto.getRandomValues(new Uint8Array(12));
     const encodedData = new TextEncoder().encode(JSON.stringify(data));
 
     try {
-      const encrypted = await crypto.subtle.encrypt(
+      const encrypted = await window.crypto.subtle.encrypt(
         { ...this.algorithm, iv },
         key,
         encodedData
@@ -76,7 +76,7 @@ export class QuantumCryptography {
     if (!key) throw new Error(`Chave quântica não encontrada: ${keyId}`);
 
     try {
-      const decrypted = await crypto.subtle.decrypt(
+      const decrypted = await window.crypto.subtle.decrypt(
         { ...this.algorithm, iv },
         key,
         encryptedData
