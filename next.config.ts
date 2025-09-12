@@ -7,9 +7,6 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    // allowedDevOrigins was moved out of experimental in recent Next.js versions
-  },
   allowedDevOrigins: ["https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev"],
   async headers() {
     return [
