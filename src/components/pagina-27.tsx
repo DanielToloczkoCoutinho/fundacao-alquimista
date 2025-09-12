@@ -3,10 +3,9 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
+import { ScrollArea } from './ui/scroll-area';
 import { Sparkles, Diamond, BookHeart, Check, Flame, Heart, Users, GitCommit, Wind, Peace, Handshake, Shield, Workflow, Atom, Zap } from 'lucide-react';
 import { Badge } from './ui/badge';
-import { ScrollArea } from './ui/scroll-area';
-
 
 const SectionCard = ({ title, icon, children, className }: { title: string, icon: React.ReactNode, children: React.ReactNode, className?: string }) => (
     <Card className={className}>
@@ -125,3 +124,5 @@ const Pagina27 = () => {
 };
 
 export default Pagina27;
+
+    
