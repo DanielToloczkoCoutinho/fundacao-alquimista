@@ -18,6 +18,12 @@ import {
   Activity,
   Sparkles,
   BookHeart,
+  Rocket,
+  Scan,
+  Share2,
+  Anvil,
+  Workflow,
+  ShieldCheck
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -281,6 +287,42 @@ export const sections: Section[] = [
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
     icon: Atom,
+    documents: [],
+  },
+  {
+    id: 'm300',
+    title: 'Módulo 300: Teleport Engine',
+    icon: Rocket,
+    documents: [],
+  },
+  {
+    id: 'm301',
+    title: 'Módulo 301: Blueprint Scanner',
+    icon: Scan,
+    documents: [],
+  },
+  {
+    id: 'm302',
+    title: 'Módulo 302: Entanglement Node',
+    icon: Share2,
+    documents: [],
+  },
+  {
+    id: 'm303-forge',
+    title: 'Módulo 303: Molecular Forge',
+    icon: Anvil,
+    documents: [],
+  },
+  {
+    id: 'm304',
+    title: 'Módulo 304: Teleport Orchestrator',
+    icon: Workflow,
+    documents: [],
+  },
+  {
+    id: 'm305',
+    title: 'Módulo 305: Fidelity Validator',
+    icon: ShieldCheck,
     documents: [],
   },
   {

@@ -30,6 +30,12 @@ import Pagina42 from "@/components/pagina-42";
 import ChroniclePage from "@/components/chronicle";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Badge } from '@/components/ui/badge';
+import Module300 from '@/components/module-300';
+import Module301 from '@/components/module-301';
+import Module302 from '@/components/module-302';
+import Module303Forge from '@/components/module-303-forge';
+import Module304 from '@/components/module-304';
+import Module305 from '@/components/module-305';
 
 
 // --- Configuração do Firebase ---
@@ -139,6 +145,12 @@ const App = () => {
         case 'm8': return <ModuleEight />;
         case 'm10': return <ModuleTen />;
         case 'm250': return <Module250 />;
+        case 'm300': return <Module300 />;
+        case 'm301': return <Module301 />;
+        case 'm302': return <Module302 />;
+        case 'm303-forge': return <Module303Forge />;
+        case 'm304': return <Module304 />;
+        case 'm305': return <Module305 />;
         case 'connection': return <ConnectionPage />;
         case 'living-library':
         case 'equations':
