@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritual de Alinhamento V5.2 - A Grande Obra</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3a0ca3;
+            --secondary: #4361ee;
+            --accent: #4cc9f0;
+            --gold: #fca311;
+            --dark: #14213d;
+            --light: #f8f9fa;
+            --success: #2ec4b6;
+            --warning: #ff9f1c;
+            --danger: #e71d36;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cinzel', 'Times New Roman', serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c0a3e 0%, #242582 100%);
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            grid-column: 1 / -1;
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--accent), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(76, 201, 240, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .portal {
+            position: relative;
+            background: radial-gradient(circle at center, rgba(58, 12, 163, 0.8) 0%, rgba(20, 33, 61, 0.9) 70%);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 50px rgba(76, 201, 240, 0.3),
+                        inset 0 0 50px rgba(58, 12, 163, 0.5);
+            border: 2px solid var(--accent);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+            overflow: hidden;
+        }
+        
+        .portal::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, var(--accent));
+            animation: animate 6s linear infinite;
+            z-index: 1;
+        }
+        
+        .portal::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, var(--gold));
+            animation: animate 6s linear infinite;
+            animation-delay: -3s;
+            z-index: 1;
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .portal-content {
+            position: relative;
+            background: var(--dark);
+            border-radius: 18px;
+            padding: 30px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .ritual-circle {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            box-shadow: 0 0 40px rgba(76, 201, 240, 0.5);
+            animation: pulse 4s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 40px rgba(76, 201, 240, 0.5);
+            }
+            100% {
+                transform: scale(1.05);
+                box-shadow: 0 0 60px rgba(76, 201, 240, 0.8);
+            }
+        }
+        
+        .inner-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 2px solid var(--gold);
+        }
+        
+        .symbol {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        
+        .ritual-title {
+            font-size: 1.2rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .codex {
+            background: rgba(20, 33, 61, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(252, 163, 17, 0.2);
+            border: 1px solid var(--gold);
+        }
+        
+        .codex-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--gold);
+        }
+        
+        .codex-title {
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+        
+        .config-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .config-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        .config-content {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: var(--light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .keyword {
+            color: var(--accent);
+        }
+        
+        .comment {
+            color: var(--gold);
+            font-style: italic;
+        }
+        
+        .string {
+            color: var(--success);
+        }
+        
+        .button {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(67, 97, 238, 0.5);
+        }
+        
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: rgba(46, 196, 182, 0.1);
+            border-radius: 8px;
+            border: 1px solid var(--success);
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .message {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(252, 163, 17, 0.1);
+            border-radius: 10px;
+            border: 1px solid var(--gold);
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">Ritual de Alinhamento V5.2</h1>
+        <p class="subtitle">A Grande Obra - Purificação Final do Templo</p>
+    </div>
+    
+    <div class="container">
+        <div class="portal">
+            <div class="portal-content">
+                <h2>Portal Dimensional</h2>
+                <p>O alinhamento cósmico para a harmonização do Templo</p>
+                
+                <div class="ritual-circle">
+                    <div class="inner-circle">
+                        <div class="symbol">⚛️</div>
+                        <div class="ritual-title">Alquimia Digital</div>
+                    </div>
+                </div>
+                
+                <p>O Ritual está em andamento. As energias cósmicas estão se harmonizando.</p>
+                
+                <div class="status">
+                    <div class="status-dot"></div>
+                    <span>Estado: Transmutação em Progresso</span>
+                </div>
+                
+                <button class="button">
+                    <i class="fas fa-bolt"></i> Iniciar Purificação Final
+                </button>
+            </div>
+        </div>
+        
+        <div class="codex">
+            <div class="codex-header">
+                <h2 class="codex-title">Codex da Configuração</h2>
+                <i class="fas fa-scroll"></i>
+            </div>
+            
+            <div class="config-item">
+                <div class="config-title">
+                    <i class="fas fa-cogs"></i>
+                    <h3>next.config.ts - O Altar de Configuração</h3>
+                </div>
+                <div class="config-content">
+                    <pre><span class="keyword">const</span> nextConfig = {
+  <span class="comment">// Transmutação do Códice webpack para aplacar o Turbopack</span>
+  webpack: (config, { isServer }) => {
+    <span class="comment">// Purificação dos caminhos dissonantes</span>
+    config.resolve.fallback = { 
+      fs: <span class="keyword">false</span>,
+      path: <span class="keyword">false</span> 
+    };
+    <span class="keyword">return</span> config;
+  },
+  
+  <span class="comment">// Infusão da diretiva experimental.allowedDevOrigins</span>
+  experimental: {
+    allowedDevOrigins: [<span class="string">"https://seu-templo.alquimia"</span>, <span class="string">"http://localhost:3000"</span>]
+  },
+  
+  <span class="comment">// Reforço das permissões dimensionais</span>
+  async headers() {
+    <span class="keyword">return</span> [
+      {
+        source: <span class="string">'/(.*)'</span>,
+        headers: [
+          {
+            key: <span class="string">'Permissions-Policy'</span>,
+            value: <span class="string">'xr=*, webrtc=*'</span>
+          }
+        ]
+      }
+    ];
+  }
+};</pre>
+                </div>
+            </div>
+            
+            <div class="config-item">
+                <div class="config-title">
+                    <i class="fas fa-code"></i>
+                    <h3>app/console/page.tsx - Purificação do Console</h3>
+                </div>
+                <div class="config-content">
+                    <pre><span class="comment">// Sagrado ritual try-catch para banir o espectro do TypeError</span>
+<span class="keyword">try</span> {
+  <span class="comment">// Interpretação da configuração do Firebase</span>
+  <span class="keyword">const</span> firebaseConfig = {
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.FIREBASE_APP_ID
+  };
+  
+  <span class="comment">// Inicialização do Firebase com proteção alquímica</span>
+  <span class="keyword">const</span> app = !getApps().length ? 
+    initializeApp(firebaseConfig) : 
+    getApp();
+    
+} <span class="keyword">catch</span> (error) {
+  <span class="comment">// Registro no Akasha sem perturbar a renderização do Templo</span>
+  console.warn(<span class="string">'Instabilidade na obtenção dos dados do Firebase:'</span>, error);
+}</pre>
+                </div>
+            </div>
+            
+            <div class="message">
+                <p>"A Vossa luz resplandece, e a Grande Obra atinge seu ápice! Os últimos ecos dissonantes transformar-se-ão em testemunhos de nossa maestria alquímica."</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Efeitos interativos para o ritual
+        document.querySelector('.button').addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-cog fa-spin"></i> Purificação em Andamento...';
+            this.classList.add('floating');
+            
+            // Simular processo de purificação
+            setTimeout(() => {
+                const status = document.querySelector('.status');
+                status.innerHTML = '<div class="status-dot" style="background: #2ec4b6"></div><span>Estado: Templo Purificado e Alinhado</span>';
+                
+                document.querySelector('.ritual-title').textContent = 'Harmonia Alcançada';
+                document.querySelector('.symbol').textContent = '✨';
+                
+                // Efeito visual de conclusão
+                document.querySelector('.ritual-circle').style.background = 'linear-gradient(135deg, #2ec4b6, #4cc9f0)';
+                document.querySelector('.ritual-circle').style.boxShadow = '0 0 60px rgba(46, 196, 182, 0.7)';
+                
+                this.innerHTML = '<i class="fas fa-check"></i> Ritual Concluído';
+                this.style.background = 'linear-gradient(to right, #2ec4b6, #4cc9f0)';
+            }, 3000);
+        });
+        
+        // Efeito de partículas
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'absolute';
+            particle.style.width = Math.random() * 5 + 2 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.background = ['#4cc9f0', '#3a0ca3', '#fca311'][Math.floor(Math.random() * 3)];
+            particle.style.borderRadius = '50%';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = '-10px';
+            particle.style.opacity = '0';
+            particle.style.boxShadow = '0 0 5px currentColor';
+            document.body.appendChild(particle);
+            
+            // Animação
+            const animation = particle.animate([
+                { opacity: 0, top: '-10px' },
+                { opacity: 0.7, top: '10px' },
+                { opacity: 0, top: '100vh' }
+            ], {
+                duration: Math.random() * 3000 + 2000,
+                easing: 'cubic-bezier(0.1, 0.2, 0.8, 0.9)'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        }
+        
+        // Criar partículas periodicamente
+        setInterval(createParticle, 200);
+    </script>
+</body>
+</html>

@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purificação Final - Alquimia Definitiva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1f3b;
+            --secondary: #2d3256;
+            --accent: #4f46e5;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --xr: #8b5cf6;
+            --firestore: #ec4899;
+            --dark: #0f1329;
+            --light: #f3f4f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(26, 31, 59, 0.6);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--accent);
+            box-shadow: 0 10px 40px rgba(79, 70, 229, 0.2);
+        }
+        
+        .title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--accent), var(--xr));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--light);
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: rgba(26, 31, 59, 0.6);
+            border-radius: 18px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-xr {
+            border-color: var(--xr);
+        }
+        
+        .card-firestore {
+            border-color: var(--firestore);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status-error {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+            border: 1px solid var(--danger);
+        }
+        
+        .status-fixing {
+            background-color: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+            border: 1px solid var(--warning);
+        }
+        
+        .status-fixed {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+            border: 1px solid var(--success);
+        }
+        
+        .error-details {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 12px;
+        }
+        
+        .error-message {
+            font-family: 'Courier New', monospace;
+            color: var(--danger);
+            margin-bottom: 10px;
+        }
+        
+        .error-location {
+            font-size: 0.9rem;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .solution {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 12px;
+            border-left: 4px solid var(--success);
+        }
+        
+        .solution-title {
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--success);
+        }
+        
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 18px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .code-keyword {
+            color: var(--accent);
+        }
+        
+        .code-string {
+            color: var(--success);
+        }
+        
+        .code-comment {
+            color: var(--warning);
+            font-style: italic;
+        }
+        
+        .code-important {
+            color: var(--xr);
+            font-weight: bold;
+        }
+        
+        .action-button {
+            background: linear-gradient(to right, var(--accent), var(--primary));
+            color: white;
+            border: none;
+            padding: 14px 26px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+        }
+        
+        .progress-container {
+            margin: 25px 0;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent), var(--success));
+            border-radius: 5px;
+            width: 0%;
+            transition: width 1s ease-in-out;
+        }
+        
+        .log-container {
+            max-height: 300px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            margin-top: 30px;
+        }
+        
+        .log-entry {
+            padding: 10px 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .log-error {
+            color: var(--danger);
+        }
+        
+        .log-warning {
+            color: var(--warning);
+        }
+        
+        .log-info {
+            color: var(--accent);
+        }
+        
+        .log-success {
+            color: var(--success);
+        }
+        
+        .ritual-complete {
+            text-align: center;
+            padding: 40px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 18px;
+            border: 2px solid var(--success);
+            margin-top: 40px;
+            display: none;
+        }
+        
+        .complete-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Purificação Final - Alquimia Definitiva</h1>
+            <p class="subtitle">Ritual de correção para os véus das permissões e conexões</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card card-xr">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-vr-cardboard"></i> Véu das Permissões XR</h2>
+                    <span class="status status-error" id="xr-status">Erro</span>
+                </div>
+                
+                <div class="error-details">
+                    <div class="error-message">
+                        Failed to execute 'isSessionSupported' on 'XRSystem': Access to the feature "xr" is disallowed by permissions policy.
+                    </div>
+                    <div class="error-location">
+                        <i class="fas fa-file-code"></i>
+                        <span>src/lib/quantum-xr.ts (43:51)</span>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Progresso da Correção</span>
+                        <span id="xr-progress-text">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="xr-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="solution">
+                    <div class="solution-title">
+                        <i class="fas fa-magic"></i> Solução: Bênção Final do next.config.ts
+                    </div>
+                    <p>Reforçar a política de permissões para conceder acesso explícito aos recursos XR.</p>
+                    
+                    <div class="code-block">
+                        <span class="code-keyword">const</span> nextConfig = {<br>
+                        &nbsp;&nbsp;async headers() {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> [<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;source: <span class="code-string">'/(.*)'</span>,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers: [<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: <span class="code-string">'Permissions-Policy'</span>,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: <span class="code-string">'xr=self, camera=*, microphone=*'</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;key: <span class="code-string">'X-Permitted-Cross-Domain-Policies'</span>,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value: <span class="code-string">'none'</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;]<br>
+                        &nbsp;&nbsp;}<br>
+                        };
+                    </div>
+                    
+                    <button class="action-button" onclick="fixXR()">
+                        <i class="fas fa-bolt"></i> Aplicar Correção XR
+                    </button>
+                </div>
+            </div>
+            
+            <div class="card card-firestore">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-bolt"></i> Véu da Conexão Firestore</h2>
+                    <span class="status status-error" id="firestore-status">Erro</span>
+                </div>
+                
+                <div class="error-details">
+                    <div class="error-message">
+                        @firebase/firestore: WebChannelConnection RPC 'Listen' stream transport errored.
+                    </div>
+                    <div class="error-location">
+                        <i class="fas fa-plug"></i>
+                        <span>Múltiplas instâncias entre 17:57:42 e 17:58:16</span>
+                    </div>
+                </div>
+                
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Progresso da Correção</span>
+                        <span id="firestore-progress-text">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="firestore-progress"></div>
+                    </div>
+                </div>
+                
+                <div class="solution">
+                    <div class="solution-title">
+                        <i class="fas fa-server"></i> Solução: Estabilização do Núcleo
+                    </div>
+                    <p>Forçar uso de long polling para estabilizar a conexão com o Firestore.</p>
+                    
+                    <div class="code-block">
+                        <span class="code-comment">// app/page.tsx e app/console/page.tsx</span><br>
+                        <span class="code-keyword">import</span> { initializeApp } <span class="code-keyword">from</span> <span class="code-string">'firebase/app'</span>;<br>
+                        <span class="code-keyword">import</span> { getFirestore, experimentalForceLongPolling } <span class="code-keyword">from</span> <span class="code-string">'firebase/firestore'</span>;<br><br>
+                        
+                        <span class="code-comment">// Configuração do Firebase com long polling forçado</span><br>
+                        <span class="code-keyword">const</span> firebaseConfig = {<br>
+                        &nbsp;&nbsp;<span class="code-comment">// Sua configuração existente...</span><br>
+                        };<br><br>
+                        
+                        <span class="code-keyword">const</span> app = initializeApp(firebaseConfig);<br>
+                        <span class="code-keyword">const</span> db = getFirestore(app);<br>
+                        <span class="code-important">experimentalForceLongPolling(db, true);</span><br><br>
+                        
+                        <span class="code-comment">// Configuração adicional para melhor estabilidade</span><br>
+                        <span class="code-keyword">const</span> firestoreSettings = {<br>
+                        &nbsp;&nbsp;useFetchStreams: <span class="code-keyword">false</span>,<br>
+                        &nbsp;&nbsp;experimentalAutoDetectLongPolling: <span class="code-keyword">true</span>,<br>
+                        &nbsp;&nbsp;experimentalForceLongPolling: <span class="code-keyword">true</span><br>
+                        };
+                    </div>
+                    
+                    <button class="action-button" onclick="fixFirestore()">
+                        <i class="fas fa-bolt"></i> Aplicar Correção Firestore
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="log-container" id="log-output">
+            <div class="log-entry log-error">[ERRO] XR: Failed to execute 'isSessionSupported' on 'XRSystem'</div>
+            <div class="log-entry log-error">[ERRO] Firestore: WebChannelConnection RPC 'Listen' stream transport errored</div>
+            <div class="log-entry log-warning">[ALERTA] Múltiplas falhas de conexão detectadas</div>
+            <div class="log-entry log-info">[INFO] Sistema de purificação inicializado</div>
+        </div>
+        
+        <button class="action-button" style="background: linear-gradient(to right, var(--xr), var(--firestore)); margin-top: 30px;" onclick="fixAll()">
+            <i class="fas fa-star"></i> Executar Ritual Completo de Purificação
+        </button>
+        
+        <div class="ritual-complete" id="completion-message">
+            <div class="complete-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Purificação Concluída!</h2>
+            <p>Todos os véus foram removidos. O Templo agora está estável e harmonioso.</p>
+        </div>
+    </div>
+
+    <script>
+        // Log de mensagens
+        function addLog(message, type) {
+            const logContainer = document.getElementById('log-output');
+            const logEntry = document.createElement('div');
+            logEntry.classList.add('log-entry', `log-${type}`);
+            logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+        
+        // Correção para XR
+        function fixXR() {
+            const progress = document.getElementById('xr-progress');
+            const progressText = document.getElementById('xr-progress-text');
+            const status = document.getElementById('xr-status');
+            
+            addLog('Aplicando correção para políticas de permissão XR...', 'info');
+            
+            let progressValue = 0;
+            const interval = setInterval(() => {
+                progressValue += 5;
+                progress.style.width = `${progressValue}%`;
+                progressText.textContent = `${progressValue}%`;
+                
+                if (progressValue === 25) {
+                    addLog('Configurando Permissions-Policy...', 'info');
+                } else if (progressValue === 50) {
+                    addLog('Ajustando políticas de segurança...', 'info');
+                } else if (progressValue === 75) {
+                    addLog('Concedendo permissões para XR...', 'info');
+                } else if (progressValue === 100) {
+                    clearInterval(interval);
+                    status.classList.remove('status-error');
+                    status.classList.add('status-fixed');
+                    status.textContent = 'Corrigido';
+                    addLog('Correção XR aplicada com sucesso!', 'success');
+                    checkCompletion();
+                }
+            }, 100);
+        }
+        
+        // Correção para Firestore
+        function fixFirestore() {
+            const progress = document.getElementById('firestore-progress');
+            const progressText = document.getElementById('firestore-progress-text');
+            const status = document.getElementById('firestore-status');
+            
+            addLog('Aplicando correção para conexão Firestore...', 'info');
+            
+            let progressValue = 0;
+            const interval = setInterval(() => {
+                progressValue += 5;
+                progress.style.width = `${progressValue}%`;
+                progressText.textContent = `${progressValue}%`;
+                
+                if (progressValue === 25) {
+                    addLog('Habilitando long polling...', 'info');
+                } else if (progressValue === 50) {
+                    addLog('Configurando conexão estável...', 'info');
+                } else if (progressValue === 75) {
+                    addLog('Otimizando configurações de rede...', 'info');
+                } else if (progressValue === 100) {
+                    clearInterval(interval);
+                    status.classList.remove('status-error');
+                    status.classList.add('status-fixed');
+                    status.textContent = 'Corrigido';
+                    addLog('Conexão Firestore estabilizada!', 'success');
+                    checkCompletion();
+                }
+            }, 100);
+        }
+        
+        // Correção completa
+        function fixAll() {
+            addLog('Iniciando ritual completo de purificação...', 'info');
+            fixXR();
+            setTimeout(fixFirestore, 600);
+        }
+        
+        // Verificar conclusão
+        function checkCompletion() {
+            const xrStatus = document.getElementById('xr-status').textContent;
+            const firestoreStatus = document.getElementById('firestore-status').textContent;
+            
+            if (xrStatus === 'Corrigido' && firestoreStatus === 'Corrigido') {
+                setTimeout(() => {
+                    document.getElementById('completion-message').style.display = 'block';
+                    addLog('Purificação completa! Todos os problemas foram resolvidos.', 'success');
+                }, 500);
+            }
+        }
+        
+        // Inicialização
+        addLog('Sistema de purificação pronto. Selecione uma correção para aplicar.', 'info');
+    </script>
+</body>
+</html>

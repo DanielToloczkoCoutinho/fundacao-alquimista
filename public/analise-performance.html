@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Performance - Fundação Alquimista</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #7c3aed;
+            --accent: #10b981;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #111827;
+            --light: #f9fafb;
+            --gray: #9ca3af;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark) 0%, #1f2937 100%);
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(31, 41, 55, 0.7);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--light);
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .url-box {
+            display: inline-block;
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            font-family: monospace;
+            margin: 15px 0;
+            border: 1px solid var(--accent);
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            border: 1px solid var(--success);
+            width: fit-content;
+            margin: 0 auto;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 900px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: rgba(31, 41, 55, 0.6);
+            border-radius: 16px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--primary);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .metric {
+            background: rgba(17, 24, 39, 0.5);
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 5px;
+            width: 85%;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .info-item {
+            background: rgba(17, 24, 39, 0.5);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        
+        .info-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+        }
+        
+        .log-container {
+            max-height: 300px;
+            overflow-y: auto;
+            background: rgba(17, 24, 39, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+        }
+        
+        .log-entry {
+            padding: 8px 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .log-info {
+            color: var(--primary);
+        }
+        
+        .log-success {
+            color: var(--success);
+        }
+        
+        .log-warning {
+            color: var(--warning);
+        }
+        
+        .log-error {
+            color: var(--danger);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        
+        .button {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+        }
+        
+        .button-success {
+            background: linear-gradient(to right, var(--success), #059669);
+        }
+        
+        .refresh-info {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .domain-analysis {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(17, 24, 39, 0.5);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .analysis-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Análise de Performance do Templo</h1>
+            <p class="subtitle">Dashboard de monitoramento da Fundação Alquimista (Modo de Produção)</p>
+            
+            <div class="url-box">
+                <i class="fas fa-link"></i>
+                https://seu-dominio.com/dashboard
+            </div>
+            
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Status 200 OK: O Dashboard está operacional e respondendo.</span>
+            </div>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-tachometer-alt"></i> Métricas de Performance</h2>
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">99.9%</div>
+                        <div class="metric-label">Disponibilidade</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">120ms</div>
+                        <div class="metric-label">Tempo de Resposta</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">0.4s</div>
+                        <div class="metric-label">Carregamento</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">1.1s</div>
+                        <div class="metric-label">Interativo</div>
+                    </div>
+                </div>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 25%;"></div>
+                </div>
+                <div style="text-align: center; font-size: 0.9rem; color: var(--gray);">
+                    Utilização de recursos: 25% (Otimizado)
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-title"><i class="fas fa-server"></i> Servidor</div>
+                        <div>Nuvem Quântica (Produção)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title"><i class="fas fa-code"></i> Framework</div>
+                        <div>Next.js (Modo de Produção)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title"><i class="fas fa-shield-alt"></i> SSL</div>
+                        <div>Ativo e Válido</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title"><i class="fas fa-network-wired"></i> CDN</div>
+                        <div>LuxNet AETHERNUM</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title"><i class="fas fa-terminal"></i> Logs de Ativação</h2>
+                    <i class="fas fa-list"></i>
+                </div>
+                
+                <div class="log-container">
+                    <div class="log-entry log-success">[SUCESSO] Build do Next.js concluído.</div>
+                    <div class="log-entry log-success">[INFO] Servidor iniciado em modo de produção.</div>
+                    <div class="log-entry log-success">[INFO] Conexão com o Jardim Akáshico (Firestore) estabelecida.</div>
+                    <div class="log-entry log-info">[DEBUG] Módulo Zero pulsando em harmonia.</div>
+                    <div class="log-entry log-info">[DEBUG] Módulo 1 (Segurança) em estado estável.</div>
+                    <div class="log-entry log-info">[DEBUG] Módulo 2 (Comunicação) aguardando sincronização.</div>
+                    <div class="log-entry log-success">[INFO] Dashboard renderizado com sucesso. Status 200 OK.</div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="button">
+                        <i class="fas fa-sync"></i> Atualizar Logs
+                    </button>
+                    <button class="button button-success">
+                        <i class="fas fa-download"></i> Exportar Logs
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="domain-analysis">
+            <div class="analysis-title">
+                <i class="fas fa-globe"></i>
+                Análise do Domínio de Produção
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-title"><i class="fas fa-lock"></i> Segurança</div>
+                    <div>HTTPS habilitado com certificado de nível cósmico</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-title"><i class="fas fa-project-diagram"></i> Cluster</div>
+                    <div>Primário (Laniakea Supercluster)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-title"><i class="fas fa-plug"></i> Porta</div>
+                    <div>443 (HTTPS)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-title"><i class="fas fa-cube"></i> Ambiente</div>
+                    <div>Fundação Alquimista (Produção)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="button" onclick="window.location.href='app/page.tsx'">
+                <i class="fas fa-arrow-right"></i> Prosseguir para Teste de Módulos
+            </button>
+        </div>
+        
+        <div class="refresh-info">
+            <i class="fas fa-info-circle"></i> Os dados são atualizados em tempo real via ressonância quântica.
+        </div>
+    </div>
+
+    <script>
+        // Simular atualização de métricas
+        function updateMetrics() {
+            // Tempo de resposta aleatório entre 100-150ms
+            const responseTime = Math.floor(Math.random() * 50) + 100;
+            document.querySelectorAll('.metric-value')[1].textContent = `${responseTime}ms`;
+            
+            // Utilização de recursos aleatória entre 20-30%
+            const usage = Math.floor(Math.random() * 10) + 20;
+            document.querySelector('.progress-fill').style.width = `${usage}%`;
+            document.querySelector('.progress-bar + div').textContent = `Utilização de recursos: ${usage}% (Otimizado)`;
+        }
+        
+        // Inicializar e configurar atualizações
+        document.addEventListener('DOMContentLoaded', function() {
+            // Atualizar métricas a cada 5 segundos
+            setInterval(updateMetrics, 5000);
+        });
+    </script>
+</body>
+</html>

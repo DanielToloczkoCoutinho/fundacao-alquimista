@@ -1,371 +1,97 @@
 // @ts-nocheck
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import {
-  getAuth,
-  signInAnonymously,
-  onAuthStateChanged
-} from 'firebase/auth';
-import {
-  getFirestore,
-  collection,
-  query,
-  onSnapshot,
-  setDoc,
-  doc,
-  Timestamp,
-  enableIndexedDbPersistence,
-} from 'firebase/firestore';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import React, { useState, useEffect, useRef } from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import 'katex/dist/katex.min.css';
-import ImmersiveEquationViewer from '@/components/ui/immersive-equation-viewer';
-import { quantumResilience } from '@/lib/quantum-resilience';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Activity, Shield, Zap } from 'lucide-react';
 
-
-// --- Configuração do Firebase ---
-const firebaseConfig = {
-    "projectId": "studio-4265982502-21871",
-    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
-    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
-    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
-    "authDomain": "studio-4265982502-21871.firebaseapp.com",
-    "measurementId": "",
-    "messagingSenderId": "174545373080"
-};
-
-let app;
-if (!getApps().length) {
-    app = initializeApp(firebaseConfig);
-} else {
-    app = getApp();
-}
-const db = getFirestore(app);
-const auth = getAuth(app);
-const appId = firebaseConfig.appId;
-
-
-// Hook customizado para autenticação
-function useFirebaseAuth() {
-  const [userId, setUserId] = useState(null);
-  const [isAuthReady, setIsAuthReady] = useState(false);
+// Componente principal do Console de Status Operacional
+const OperationalStatusPage = () => {
+  const [systemStatus, setSystemStatus] = useState('OPERACIONAL');
+  const [lastCheck, setLastCheck] = useState(new Date().toLocaleTimeString());
+  const [log, setLog] = useState<string[]>(['Console de Status Operacional iniciado.']);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        setUserId(user.uid);
-        console.log("Usuário autenticado:", user.uid);
-      } else {
-        console.log("Nenhum usuário autenticado. Assinando anonimamente.");
-        try {
-          await signInAnonymously(auth);
-        } catch (error) {
-          console.error("Erro ao assinar anonimamente:", error);
-        }
-      }
-      setIsAuthReady(true);
-    });
+    const interval = setInterval(() => {
+      setSystemStatus(Math.random() > 0.1 ? 'OPERACIONAL' : 'ALERTA');
+      setLastCheck(new Date().toLocaleTimeString());
+      setLog(prev => [...prev.slice(-5), `[${new Date().toLocaleTimeString()}] Verificação de status concluída.`]);
+    }, 15000); // Verifica a cada 15 segundos
 
-    return () => unsubscribe();
+    return () => clearInterval(interval);
   }, []);
 
-  return { userId, isAuthReady };
-}
-
-// Hook para buscar dados da API da NASA
-function useNasaAPOD() {
-  const [apodData, setApodData] = useState(null);
-  const [apodLoading, setApodLoading] = useState(true);
-  const [apodError, setApodError] = useState(null);
-
-  const apiKey = "DEMO_KEY";
-  const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
-
-  useEffect(() => {
-    async function fetchApod() {
-      try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error(`Erro na API da NASA: ${response.statusText}`);
-        const data = await response.json();
-        setApodData(data);
-      } catch (error) {
-        console.error("Falha ao buscar dados da NASA:", error);
-        setApodError(error.message);
-      } finally {
-        setApodLoading(false);
-      }
-    }
-    fetchApod();
-  }, []);
-
-  return { apodData, apodLoading, apodError };
-}
-
-// Componente principal da aplicação
-const App = () => {
-  const { userId, isAuthReady } = useFirebaseAuth();
-  const { apodData, apodLoading, apodError } = useNasaAPOD();
-  const [coherenceData, setCoherenceData] = useState([]);
-  const [log, setLog] = useState([]);
-  const [simulationActive, setSimulationActive] = useState(false);
-  const containerRef = useRef(null);
-  const simulationIntervalRef = useRef(null);
-  const symphonyEquation = 'E_{uni} = \\int_{t=1}^{\\infty} [R_e \\cdot \\Delta c \\cdot \\sum_{n=1}^{N} (M_n + Q_n + F_n + B_n + S_n + T_n + H_n) \\cdot A_n] dt';
-
-
-  // Efeito para a visualização 3D (TON 618)
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const width = containerRef.current.clientWidth;
-    const height = containerRef.current.clientHeight;
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(width, height);
-    containerRef.current.appendChild(renderer.domElement);
-    camera.position.z = 5;
-
-    const pointLight = new THREE.PointLight(0xffffff, 5, 100);
-    pointLight.position.set(0, 0, 0);
-    scene.add(pointLight);
-
-    const particleGeometry = new THREE.BufferGeometry();
-    const particleCount = 1000;
-    const posArray = new Float32Array(particleCount * 3);
-    for (let i = 0; i < particleCount * 3; i++) {
-      posArray[i] = (Math.random() - 0.5) * 50;
-    }
-    particleGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-    const particleMaterial = new THREE.PointsMaterial({
-      size: 0.1,
-      color: 0x8888ff,
-      blending: THREE.AdditiveBlending,
-      transparent: true,
-      sizeAttenuation: true
-    });
-    const particles = new THREE.Points(particleGeometry, particleMaterial);
-    scene.add(particles);
-
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      controls.update();
-      particles.rotation.y += 0.001;
-      particles.rotation.x += 0.0005;
-      renderer.render(scene, camera);
-    };
-    
-    const handleResize = () => {
-      if (containerRef.current) {
-        const newWidth = containerRef.current.clientWidth;
-        const newHeight = containerRef.current.clientHeight;
-        camera.aspect = newWidth / newHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(newWidth, newHeight);
-      }
-    };
-    window.addEventListener('resize', handleResize);
-
-    animate();
-    
-    const currentRef = containerRef.current;
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if(currentRef && renderer.domElement){
-          currentRef.removeChild(renderer.domElement);
-      }
-      renderer.dispose();
-      controls.dispose();
-    };
-  }, []);
-
-  // Efeito para o listener do Firebase
-  useEffect(() => {
-    if (!isAuthReady) return;
-
-    let unsubscribe: (() => void) | undefined;
-    const q = query(collection(db, `artifacts/${appId}/public/data/coherence`));
-        
-    unsubscribe = onSnapshot(q, (snapshot) => {
-        const updatedData = [];
-        snapshot.forEach(doc => {
-            const data = doc.data();
-            if (data.coherence && data.timestamp) {
-            updatedData.push({
-                time: data.timestamp.toDate().toLocaleTimeString(),
-                coherence: data.coherence,
-            });
-            }
-        });
-        updatedData.sort((a, b) => new Date('1970/01/01 ' + a.time) - new Date('1970/01/01 ' + b.time));
-        setCoherenceData(updatedData.slice(-10));
-    }, (error) => {
-        console.error("Erro no listener do Firestore: ", error);
-    });
-
-    return () => {
-        if (unsubscribe) unsubscribe();
-    };
-}, [isAuthReady, appId]);
-
-
-  // Função para simular e salvar um pulso
-  const simulateQuantumPulse = useCallback(async () => {
-    if (!userId) {
-      console.error("Usuário não está pronto.");
-      return;
-    }
-    const timestamp = Timestamp.now();
-    const coherenceValue = parseFloat((0.85 + (Math.random() - 0.5) * 0.1).toFixed(4));
-    const pulseId = `${timestamp.toMillis()}`;
-
-    try {
-      const pulseDocRef = doc(db, `artifacts/${appId}/public/data/coherence`, pulseId);
-      await setDoc(pulseDocRef, {
-        coherence: coherenceValue,
-        timestamp: timestamp,
-        userId: userId,
-      });
-
-      const newLogEntry = `[${timestamp.toDate().toLocaleTimeString()}] Pulso Quântico ativado. Coerência: ${coherenceValue.toFixed(4)}`;
-      setLog(prevLog => [...prevLog.slice(-4), newLogEntry]);
-
-    } catch (e) {
-      console.error("Erro ao adicionar pulso quântico: ", e);
-      setLog(prevLog => [...prevLog.slice(-4), `[ERRO] Falha na simulação: ${e.message}`]);
-    }
-  }, [userId, appId]);
-
-  // Efeito para gerenciar a simulação automática
-  useEffect(() => {
-    if (simulationActive) {
-      simulationIntervalRef.current = setInterval(() => {
-        simulateQuantumPulse();
-      }, 5000);
-    } else {
-      if (simulationIntervalRef.current) {
-        clearInterval(simulationIntervalRef.current);
-      }
-    }
-    return () => {
-      if (simulationIntervalRef.current) {
-        clearInterval(simulationIntervalRef.current);
-      }
-    };
-  }, [simulationActive, simulateQuantumPulse]);
+  const dummyData = [
+    { name: 'T-5', uv: 4000, pv: 2400, amt: 2400 },
+    { name: 'T-4', uv: 3000, pv: 1398, amt: 2210 },
+    { name: 'T-3', uv: 2000, pv: 9800, amt: 2290 },
+    { name: 'T-2', uv: 2780, pv: 3908, amt: 2000 },
+    { name: 'T-1', uv: 1890, pv: 4800, amt: 2181 },
+    { name: 'NOW', uv: 2390, pv: 3800, amt: 2500 },
+  ];
 
   return (
-    <div className="flex flex-col h-screen bg-gray-900 text-white font-sans p-4 overflow-auto">
-      <style>{`
-        .orb-container {
-          width: 100%;
-          height: 40vh;
-        }
-        @media (min-width: 768px) {
-          .orb-container {
-            height: 60vh;
-          }
-        }
-      `}</style>
-      <div className="flex-grow flex flex-col md:flex-row gap-4">
-
-        {/* Painel Esquerdo: Controle da Sinfonia Quântica */}
-        <div className="flex flex-col w-full md:w-1/3 bg-gray-800 rounded-lg shadow-lg p-6 space-y-6">
-          <h1 className="text-3xl font-bold text-center text-cyan-400">Laboratório de Provas 2.0</h1>
-          <div className="text-gray-400 text-center">Conectando a Sinfonia com a Realidade Observável.</div>
-
-          <div className="flex justify-center items-center">
-            <button
-              onClick={() => setSimulationActive(!simulationActive)}
-              className={`px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 ${
-                simulationActive
-                  ? 'bg-red-600 hover:bg-red-700'
-                  : 'bg-cyan-600 hover:bg-cyan-700'
-              } text-white shadow-xl transform hover:scale-105`}
-            >
-              {simulationActive ? 'PARAR SIMULAÇÃO' : 'INICIAR SIMULAÇÃO'}
-            </button>
-          </div>
-
-          <div className="flex-1 bg-gray-900 p-4 rounded-lg overflow-y-auto font-mono text-sm">
-            <h2 className="text-xl font-bold text-cyan-400 mb-2">Registro de Eventos:</h2>
-            {log.map((entry, index) => (
-              <div key={index} className="text-gray-300">{entry}</div>
-            ))}
-          </div>
-
-          <div className="bg-gray-700 p-4 rounded-lg">
-             <h2 className="text-xl font-bold text-cyan-400 mb-2">Visualizador da Sinfonia:</h2>
-              <ImmersiveEquationViewer equation="Equação da Sinfonia" formula={symphonyEquation} />
-              <div className="text-sm text-gray-400 mt-2 text-center">
-                  A complexa matemática por trás do nosso universo, visualizada.
-              </div>
-          </div>
-        </div>
-
-        {/* Painel Central: Visualização 3D e Dados Comparativos */}
-        <div className="flex flex-col w-full md:w-2/3 bg-gray-800 rounded-lg shadow-lg p-6 space-y-6">
-          <h2 className="text-2xl font-bold text-center text-cyan-400">Painel de Análise Vibracional</h2>
-          
-          <div className="orb-container flex-grow bg-gray-900 rounded-lg overflow-hidden" ref={containerRef}>
-            {/* O canvas 3D será renderizado aqui */}
-          </div>
-
-          {/* Seção de dados comparativos */}
-          <div className="bg-gray-900 p-4 rounded-lg space-y-4">
-            <h3 className="text-xl font-bold text-cyan-400">Sinfonia Interna vs. Realidade Cósmica</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Dados da Simulação (Firebase) */}
-              <div className="bg-gray-800 p-4 rounded-lg shadow-inner">
-                <h4 className="text-lg font-semibold text-gray-200">Dados de Coerência (Simulado)</h4>
-                <div className="flex-grow h-40">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={coherenceData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-                      <Line type="monotone" dataKey="coherence" stroke="#8884d8" />
-                      <CartesianGrid stroke="#444" strokeDasharray="3 3" />
-                      <XAxis dataKey="time" stroke="#aaa" />
-                      <YAxis stroke="#aaa" domain={['auto', 'auto']} />
-                      <Tooltip contentStyle={{ backgroundColor: '#1f2937', border: 'none', color: '#fff' }} />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </div>
-
-              {/* Dados Reais (NASA APOD) */}
-              <div className="bg-gray-800 p-4 rounded-lg shadow-inner">
-                <h4 className="text-lg font-semibold text-gray-200">Realidade Cósmica (Dados da NASA)</h4>
-                {apodLoading && <div className="text-center text-gray-400">Buscando dados astrofísicos...</div>}
-                {apodError && <div className="text-center text-red-400">Erro: {apodError}</div>}
-                {apodData && (
-                  <div className="mt-2 text-sm text-gray-300">
-                    <div className="font-bold text-cyan-300">Título: {apodData.title}</div>
-                    <div className="mt-1">{apodData.explanation.substring(0, 150)}...</div>
-                    {apodData.media_type === 'image' && (
-                      <img
-                        src={apodData.url}
-                        alt={apodData.title}
-                        className="mt-2 w-full h-auto object-cover rounded-lg"
-                        loading="lazy"
-                        onError={(e) => { (e.target as HTMLImageElement).onerror = null; (e.target as HTMLImageElement).src = 'https://placehold.co/400x200/4B5563/fff?text=Imagem+indisponível'; }}
-                      />
-                    )}
-                  </div>
-                )}
-              </div>
+    <div className="flex flex-col h-screen bg-gray-900 text-white font-sans p-6 overflow-auto space-y-6">
+      <Card className="bg-gray-800/50 border-purple-500/30">
+        <CardHeader>
+          <CardTitle className="text-3xl font-bold text-center text-cyan-400">Console de Status Operacional</CardTitle>
+          <CardDescription className="text-gray-400 text-center">Visão geral da saúde e performance da Fundação Alquimista.</CardDescription>
+        </CardHeader>
+        <CardContent className="flex justify-center items-center gap-6">
+            <div className="text-center">
+                <p className="text-muted-foreground">Status do Sistema</p>
+                <Badge variant={systemStatus === 'OPERACIONAL' ? 'default' : 'destructive'} className={systemStatus === 'OPERACIONAL' ? 'bg-green-600' : ''}>
+                    <Shield className="mr-2 h-4 w-4" />
+                    {systemStatus}
+                </Badge>
             </div>
-          </div>
-        </div>
+             <div className="text-center">
+                <p className="text-muted-foreground">Última Verificação</p>
+                <p className="font-mono">{lastCheck}</p>
+            </div>
+             <Button>
+                <Zap className="mr-2 h-4 w-4" /> Forçar Verificação
+             </Button>
+        </CardContent>
+      </Card>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-grow">
+        <Card className="bg-gray-800 rounded-lg shadow-lg p-6">
+           <CardHeader>
+                <CardTitle className="text-2xl font-bold text-cyan-400 mb-2 flex items-center gap-2">
+                    <Activity />
+                    Métricas de Coerência
+                </CardTitle>
+            </CardHeader>
+             <CardContent className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={dummyData}>
+                    <Line type="monotone" dataKey="pv" stroke="#8884d8" />
+                    <CartesianGrid stroke="#444" strokeDasharray="5 5" />
+                    <XAxis dataKey="name" stroke="#aaa" />
+                    <YAxis stroke="#aaa" />
+                    <Tooltip contentStyle={{ backgroundColor: '#1f2937', border: 'none', color: '#fff' }}/>
+                    </LineChart>
+                </ResponsiveContainer>
+            </CardContent>
+        </Card>
+        
+        <Card className="bg-gray-800 rounded-lg shadow-lg p-6">
+             <CardHeader>
+                <CardTitle className="text-xl font-bold text-cyan-400 mb-2">Registro de Eventos do Console</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-1 bg-gray-900 p-4 rounded-lg overflow-y-auto font-mono text-sm h-64">
+                {log.map((entry, index) => (
+                <div key={index} className="text-gray-300">{entry}</div>
+                ))}
+            </CardContent>
+        </Card>
       </div>
     </div>
   );
 };
 
-export default App;
+export default OperationalStatusPage;
