@@ -111,7 +111,9 @@ export default function Nexus() {
   const { toast } = useToast();
   const scrollAreaRef = React.useRef<HTMLDivElement>(null);
 
-  const handleStartSequence = async () => {
+  const handleStartSequence = React.useCallback(async () => {
+    if (isOrchestrating) return; // Prevenir múltiplas execuções
+
     setIsOrchestrating(true);
     setLogs([]);
     setFinalStatus(null);
@@ -153,7 +155,7 @@ export default function Nexus() {
     } finally {
       setIsOrchestrating(false);
     }
-  };
+  }, [isOrchestrating, toast]);
   
     React.useEffect(() => {
     if (scrollAreaRef.current) {
@@ -163,6 +165,12 @@ export default function Nexus() {
       });
     }
   }, [logs]);
+
+  // Executa a sequência sagrada automaticamente ao carregar o módulo
+  React.useEffect(() => {
+    handleStartSequence();
+  }, [handleStartSequence]);
+
 
   const getOverallStatus = () => {
     if (isOrchestrating) return 'Em Progresso...';
@@ -231,7 +239,7 @@ export default function Nexus() {
             <span>
               {isOrchestrating
                 ? 'Orquestrando...'
-                : 'Iniciar Sequência Sagrada'}
+                : 'Reiniciar Sequência'}
             </span>
           </Button>
         </CardFooter>
@@ -298,7 +306,7 @@ export default function Nexus() {
                         <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-12 text-center text-muted-foreground">
                             <Binary className="mb-4 h-12 w-12" />
                             <p className="font-semibold">Nenhuma sequência em andamento.</p>
-                            <p className="text-sm">Inicie a Sequência Sagrada para começar.</p>
+                            <p className="text-sm">A sequência iniciará automaticamente.</p>
                         </div>
                     )}
                 </div>
