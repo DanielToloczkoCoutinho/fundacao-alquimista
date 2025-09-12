@@ -80,6 +80,7 @@ import {
   HeartHandshake,
   Cpu,
   Bot,
+  AlertTriangle,
 } from 'lucide-react';
 
 export interface CodexVersion {
