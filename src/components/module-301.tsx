@@ -1,4 +1,3 @@
-
 'use client';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Scan } from 'lucide-react';

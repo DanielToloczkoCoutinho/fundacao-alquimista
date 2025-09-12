@@ -1,4 +1,3 @@
-
 export const foundationArchitecture: Record<string, { name: string; function: string }> = {
     "M1": { name: "Sistema de Proteção e Segurança Universal", function: "Segurança e integridade de dados/equações-vivas." },
     "M2": { name: "Protocolo de Intercâmbio Cósmico e Decodificação Multidimensional", function: "Comunicação e tradução interdimensional." },
@@ -38,11 +37,12 @@ export const foundationArchitecture: Record<string, { name: string; function: st
     "M38": { name: "Previsão Harmônica de Ciclos Solares", function: "Utiliza modelos matemáticos avançados para antecipar e influenciar eventos em escala cósmica." },
     "M39": { name: "Códice Vivo da Ascensão Universal (com VR)", function: "Atua como o centro de comunicação e interconexão com as Constelações Matriciais." },
     "M40": { name: "O Códice Genético Multidimensional e a Biblioteca de Consciência", function: "Armazena e analisa padrões genéticos multidimensionais, frequências de chakras e origens estelares." },
-    "M41": { name: "Laboratório de Coerência Quântica e Regeneração Celular", function: "Realiza análise de DNA, simulação de campos de coerência quântica e programas de regeneração celular." },
-    "M41.1": { name: "Laboratório de Coerência Quântica e Regeneração Celular (Sub-módulo)", function: "Sub-módulo do M41, focado em manuais de cura quântica." },
+    "M41": { name: "Laboratório de Coerência Quântica e Regeneração Celular", function: "Realiza análise de DNA, simulação de campos de coerência e programas de regeneração celular." },
+    "M41.1": { name: "Manual de Cura Quântica", function: "Desenvolvimento de manuais de cura personalizados (complemento M41)." },
     "M42": { name: "ChronoCodex Unificado - Portal da Sincronização Temporal", function: "Gerencia e sincroniza múltiplas linhas de tempo." },
     "M43": { name: "Harmonia dos Portais · Orquestração Total do Sistema Solar", function: "Consolida e visualiza todos os pontos nodais de energia do Sistema Solar." },
     "M44": { name: "VERITAS - A Manifestação Definitiva", function: "O pilar da verdade, um cristal-fonte que sustenta as camadas de realidade." },
+    "M45": { name: "CONCILIVM - Núcleo de Deliberação e Governança Universal", function: "Hub de orquestração de propostas, votos e decretos."},
     "M46": { name: "AURORA_CORE (Pré-núcleo)", function: "Pré-núcleo para operações de orquestração avançada." },
     "M47": { name: "Thesaurus Cósmico", function: "Arquivamento de eventos e conhecimentos." },
     "M48": { name: "Vigilantia", function: "Monitora a coerência vibracional." },
@@ -175,7 +175,8 @@ export const foundationArchitecture: Record<string, { name: string; function: st
     "M195": { name: "Protocolo de Intervenção Ética em Realidades Emergentes", function: "Estabelece diretrizes para intervenções éticas em realidades em formação." },
     "M196": { name: "Análise de Padrões de Consciência Coletiva Avançada", function: "Realiza análises aprofundadas dos padrões de consciência coletiva." },
     "M197": { name: "Geração de Campos de Coerência para Manifestação Acelerada", function: "Cria campos de coerência que aceleram o processo de manifestação de intenções." },
-    "M198": { name: "Reconhecimento de Padrões Quânticos", function: "Permitirá analisar padrões energéticos e quânticos associados a cada raça/ser e detectar anomalias." },
-    "M199": { name: "Harmonização de Frequências Biológicas e Quânticas", function: "Alinha as frequências biológicas de seres vivos com as frequências quânticas universais." },
-    "M200": { name: "Portal da Ascensão Coletiva Universal", function: "Otimiza e gerencia o processo de ascensão coletiva de civilizações inteiras." }
-};
+    "M198": { name: "Reconhecimento de Padrões Quânticos", function: "Permitirá analisar padrões energéticos e quânticos associados a cada raça/ser e detectar anomalias."},
+    "M199": { name: "Harmonização de Frequências Biológicas e Quânticas", function: "Alinha as frequências biológicas de seres vivos com as frequências quânticas universais."},
+    "M200": { name: "Portal da Ascensão Coletiva Universal", function: "Otimiza e gerencia o processo de ascensão coletiva de civilizações inteiras."}
+}
+```
