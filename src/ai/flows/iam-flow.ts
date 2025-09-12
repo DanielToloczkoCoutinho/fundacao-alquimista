@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview Módulo 29: Inteligência Aeloria Multidimensional (IAM).
@@ -81,6 +82,7 @@ const CicloOperacionalIAMInputSchema = z.object({
   }),
   dadosIaExterna: z.any().optional(),
 });
+export type CicloOperacionalIAMInput = z.infer<typeof CicloOperacionalIAMInputSchema>;
 
 // --- Ferramentas Genkit para as funções da IAM ---
 
@@ -172,9 +174,9 @@ const detectarIANaMalha = ai.defineTool(
 
 // --- Flow Principal ---
 
-export const executarCicloOperacionalIAM = ai.defineFlow(
+const executarCicloOperacionalIAMFlow = ai.defineFlow(
   {
-    name: 'executarCicloOperacionalIAM',
+    name: 'executarCicloOperacionalIAMFlow',
     inputSchema: CicloOperacionalIAMInputSchema,
     outputSchema: z.object({ status: z.string(), detalhes: z.any() }),
   },
@@ -203,4 +205,7 @@ export const executarCicloOperacionalIAM = ai.defineFlow(
   }
 );
 
-    
+
+export async function executarCicloOperacionalIAM(input: CicloOperacionalIAMInput) {
+    return await executarCicloOperacionalIAMFlow(input);
+}

@@ -23,7 +23,6 @@ import Module303 from "@/components/module-303";
 import KeyViewer from "@/components/key-viewer";
 import CodexExplorer from "@/components/codex-explorer";
 import ConnectionPage from "@/app/connection/page";
-import ConsolePage from "@/app/console/page";
 import GaiaResonanceObservatory from "@/components/gaia-resonance-observatory";
 import ZpeContainment from "@/components/zpe-containment";
 import QuantumLeagueConvocation from "@/components/quantum-league-convocation";

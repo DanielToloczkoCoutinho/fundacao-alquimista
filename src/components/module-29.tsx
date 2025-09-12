@@ -12,7 +12,7 @@ import { BrainCircuit, Zap, CheckCircle, AlertTriangle, LoaderCircle, History, B
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
-import { executarCicloOperacionalIAM } from '@/ai/flows/iam-flow';
+import { executarCicloOperacionalIAM } from '@/app/actions';
 
 type IamLog = {
     id: string;

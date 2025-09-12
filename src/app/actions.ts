@@ -1,3 +1,4 @@
+
 // This file is now located at src/app/actions.ts
 'use server';
 
@@ -7,7 +8,19 @@ import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
 import type { ProcessTrinaCommandInput, ProcessTrinaCommandOutput } from '@/ai/flows/trina-protocol-flow';
 import { runStellarSync as performStellarSync } from '@/lib/stellar-sync';
 import { executarCicloOperacionalIAM as runIAMCycle } from '@/ai/flows/iam-flow';
-import type { CicloOperacionalIAMInput } from '@/ai/flows/iam-flow';
+import { z } from 'zod';
+
+const CicloOperacionalIAMInputSchema = z.object({
+  iamId: z.string(),
+  acoesRecentes: z.array(z.any()),
+  ambienteDinamico: z.object({
+    tipo: z.string(),
+    complexidade: z.number(),
+    instabilidade: z.number(),
+  }),
+  dadosIaExterna: z.any().optional(),
+});
+export type CicloOperacionalIAMInput = z.infer<typeof CicloOperacionalIAMInputSchema>;
 
 
 export async function getLinkSummary(url: string) {
