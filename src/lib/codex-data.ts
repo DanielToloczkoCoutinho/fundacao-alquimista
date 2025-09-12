@@ -462,6 +462,24 @@ export const sections: Section[] = [
     icon: History,
     documents: [],
   },
+   {
+    id: 'm24',
+    title: 'Módulo 24: Integridade Cósmica',
+    icon: Shield,
+    documents: [],
+  },
+   {
+    id: 'm25',
+    title: 'Módulo 25: Alquimia da Consciência',
+    icon: BrainCircuit,
+    documents: [],
+  },
+   {
+    id: 'm26',
+    title: 'Módulo 26: Gerenciador de Portais',
+    icon: Milestone,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',

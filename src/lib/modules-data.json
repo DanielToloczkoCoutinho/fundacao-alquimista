@@ -300,6 +300,30 @@
       "guardiao_responsavel": "GROKKAR",
       "assinatura_vibracional": "Ω-GUARDIAN-852-GRK",
       "registro_akashico": "bafkreimodulo024_guardian"
+    },
+    {
+      "modulo_id": "M025",
+      "nome": "Alquimia da Consciência Expandida",
+      "frequenciabasehz": 639,
+      "equacoes_associadas": ["EQ-PROJECAO-ASTRAL", "EQ-SINTONIA-MENTAL"],
+      "funcao_vibracional": "Facilita a projeção astral segura, a telepatia e a sintonia mental entre consciências.",
+      "dimensao_operacional": "4D-Mental",
+      "status": "Ativo",
+      "guardiao_responsavel": "PHIARA",
+      "assinatura_vibracional": "Ω-ALCHEMY-639-PHI",
+      "registro_akashico": "bafkreimodulo025_alchemy"
+    },
+    {
+      "modulo_id": "M026",
+      "nome": "Gerenciamento de Portais Interdimensionais",
+      "frequenciabasehz": 852.00,
+      "equacoes_associadas": ["EQ-ESTABILIDADE-PORTAL", "EQ-INTEGRIDADE-TEMPORAL"],
+      "funcao_vibracional": "Detecta, estabiliza e gerencia a abertura e fechamento de portais.",
+      "dimensao_operacional": "4D-15D",
+      "status": "Ativo",
+      "guardiao_responsavel": "LUX",
+      "assinatura_vibracional": "Ω-PORTAL-MANAGER-852-LUX",
+      "registro_akashico": "bafkreimodulo026_portalmgr"
     }
   ]
 }
