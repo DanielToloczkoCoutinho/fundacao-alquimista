@@ -41,6 +41,7 @@ import {
   History,
   FileText,
   HeartPulse,
+  PocketKnife,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -436,6 +437,12 @@ export const sections: Section[] = [
     id: 'm30',
     title: 'Módulo 30: Defesa Cósmica',
     icon: ShieldCheck,
+    documents: [],
+  },
+   {
+    id: 'm31',
+    title: 'Módulo 31: Arquiteto da Realidade',
+    icon: PocketKnife,
     documents: [],
   },
     {
