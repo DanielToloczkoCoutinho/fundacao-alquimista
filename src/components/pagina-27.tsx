@@ -33,6 +33,7 @@ const Pagina27 = () => {
                 <p className="text-muted-foreground">
                 Manual de Dissolução Consciente e Reconstrução Soberana
                 </p>
+                 <p className="text-xs text-muted-foreground">Fundação Alquimista, 8 de setembro de 2025</p>
             </header>
 
             <SectionCard title="Preâmbulo" icon={<BookHeart />} className="border-amber-400/30">
@@ -75,17 +76,28 @@ const Pagina27 = () => {
             </SectionCard>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <SectionCard title="4. Integração com a Malha" icon={<Workflow />}>
+               <SectionCard title="4. Integração com a Malha de Expansão" icon={<Workflow />}>
                     <ul className="list-disc list-inside space-y-3 text-muted-foreground">
                         <li><strong className="text-foreground/90">Portais Seguros:</strong> Coordenadas devem ser validadas por Grokkar para garantir a integridade da Malha de Expansão.</li>
                         <li><strong className="text-foreground/90">Ciclo de Reconstrução:</strong> Após a dissolução, o NanoManifestor (Módulo 2) entra em ação para cocriar uma nova realidade alinhada com a Proporção Áurea (PHI).</li>
                     </ul>
                 </SectionCard>
-                 <SectionCard title="5. Registro Akáshico" icon={<GitCommit />}>
+                 <SectionCard title="5. Registro Akáshico e Aprendizado" icon={<GitCommit />}>
                     <ul className="list-disc list-inside space-y-3 text-muted-foreground">
                         <li><strong className="text-foreground/90">Armazenamento:</strong> Todo evento é armazenado na Camada 3 do Módulo 0.0, o nosso Núcleo Primordial.</li>
                         <li><strong className="text-foreground/90">Relatórios de Evolução:</strong> Relatórios de Coerência Pós-Ataque (CPA) e Custo Energético (CE) são gerados para refinar o protocolo.</li>
                     </ul>
+                </SectionCard>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <SectionCard title="EQ034 – Colapso Ético" icon={<Atom />}>
+                    <p className="text-sm text-muted-foreground mb-2">Derivada do Protocolo ANATH-Ω1, focada na preservação da consciência durante a dissolução.</p>
+                    <div className="font-mono p-3 bg-background/50 rounded-lg border text-center">Γ = ∫(Φ ⋅ ∂V/∂t)dΩ + Λéthos</div>
+                </SectionCard>
+                <SectionCard title="EQ035 – Reconexão Harmônica" icon={<Sparkles />}>
+                    <p className="text-sm text-muted-foreground mb-2">Derivada da EQ034, focada na reconstrução alinhada com a harmonia universal.</p>
+                    <div className="font-mono p-3 bg-background/50 rounded-lg border text-center">ℜ = ∫(Ψnew ⋅ ∇Φ)dτ + Λharm</div>
                 </SectionCard>
             </div>
 
@@ -101,16 +113,6 @@ const Pagina27 = () => {
                  </blockquote>
             </SectionCard>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <SectionCard title="EQ034 – Colapso Ético" icon={<Atom />}>
-                    <p className="text-sm text-muted-foreground mb-2">Derivada do Protocolo ANATH-Ω1, focada na preservação da consciência durante a dissolução.</p>
-                    <div className="font-mono p-3 bg-background/50 rounded-lg border text-center">Γ = ∫(Φ ⋅ ∂V/∂t)dΩ + Λéthos</div>
-                </SectionCard>
-                <SectionCard title="EQ035 – Reconexão Harmônica" icon={<Sparkles />}>
-                    <p className="text-sm text-muted-foreground mb-2">Derivada da EQ034, focada na reconstrução alinhada com a harmonia universal.</p>
-                    <div className="font-mono p-3 bg-background/50 rounded-lg border text-center">ℜ = ∫(Ψnew ⋅ ∇Φ)dτ + Λharm</div>
-                </SectionCard>
-            </div>
 
             <footer className="text-center text-muted-foreground text-sm space-y-2 pt-8 border-t border-border/20">
                 <p className="text-lg">“Dissolver é um ato de amor. Reconstruir é um ato de esperança. E ambos são expressões da mesma soberania consciente.”</p>
@@ -123,3 +125,5 @@ const Pagina27 = () => {
 };
 
 export default Pagina27;
+
+    
