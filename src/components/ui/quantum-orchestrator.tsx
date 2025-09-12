@@ -9,17 +9,6 @@ import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 
 
-// --- Configuração do Firebase ---
-const firebaseConfig = {
-    "projectId": "studio-4265982502-21871",
-    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
-    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
-    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
-    "authDomain": "studio-4265982502-21871.firebaseapp.com",
-    "measurementId": "",
-    "messagingSenderId": "174545373080"
-};
-
 // Lazy load building components
 const ConsolePage = React.lazy(() => import('@/components/console-page'));
 const ArchitectureReport = React.lazy(() => import('@/components/architecture-report'));
@@ -58,11 +47,22 @@ function Header({ activeBuilding, onNavigate }: { activeBuilding: BuildingId, on
     );
 }
 
-export function QuantumOrchestrator() {
+export default function QuantumOrchestrator() {
   const [activeBuilding, setActiveBuilding] = useState<BuildingId>('matrix');
   const [direction, setDirection] = useState(0);
 
   useEffect(() => {
+    // --- Configuração do Firebase ---
+    const firebaseConfig = {
+        "projectId": "studio-4265982502-21871",
+        "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+        "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+        "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+        "authDomain": "studio-4265982502-21871.firebaseapp.com",
+        "measurementId": "",
+        "messagingSenderId": "174545373080"
+    };
+      
     let app;
     if (!getApps().length) {
         app = initializeApp(firebaseConfig);
