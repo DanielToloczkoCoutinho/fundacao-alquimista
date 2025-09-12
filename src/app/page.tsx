@@ -59,6 +59,7 @@ import Module24 from '@/components/module-24';
 import Module25 from '@/components/module-25';
 import Module26 from '@/components/module-26';
 import Module28 from '@/components/module-28';
+import Module29 from '@/components/module-29';
 import ScientificReport from '@/components/scientific-report';
 
 
@@ -189,6 +190,7 @@ const App = () => {
         case 'm25': return <Module25 />;
         case 'm26': return <Module26 />;
         case 'm28': return <Module28 />;
+        case 'm29': return <Module29 />;
         case 'm250': return <Module250 />;
         case 'm251': return <Module251 />;
         case 'm300': return <Module300 />;
@@ -243,5 +245,3 @@ const App = () => {
 };
 
 export default App;
-
-    

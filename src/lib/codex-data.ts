@@ -427,6 +427,12 @@ export const sections: Section[] = [
     icon: HeartPulse,
     documents: [],
   },
+  {
+    id: 'm29',
+    title: 'Módulo 29: Inteligência IAM',
+    icon: BrainCircuit,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
@@ -488,5 +494,3 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
-
-    

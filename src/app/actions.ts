@@ -6,6 +6,8 @@ import { startNexusSequence as runNexusSequence } from '@/ai/flows/nexus-orchest
 import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
 import type { ProcessTrinaCommandInput, ProcessTrinaCommandOutput } from '@/ai/flows/trina-protocol-flow';
 import { runStellarSync as performStellarSync } from '@/lib/stellar-sync';
+import { executarCicloOperacionalIAM as runIAMCycle } from '@/ai/flows/iam-flow';
+import type { CicloOperacionalIAMInput } from '@/ai/flows/iam-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -44,4 +46,15 @@ export async function handleTrinaAction(
 export async function runStellarSync() {
     const result = await performStellarSync();
     return result;
+}
+
+
+export async function executarCicloOperacionalIAM(input: CicloOperacionalIAMInput): Promise<any> {
+    try {
+        const result = await runIAMCycle(input);
+        return result;
+    } catch (e: any) {
+        console.error('Error executing IAM cycle:', e);
+        return { status: 'FALHA', detalhes: { error: e.message || 'An unknown error occurred.' } };
+    }
 }
