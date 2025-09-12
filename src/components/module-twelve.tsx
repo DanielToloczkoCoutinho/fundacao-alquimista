@@ -7,7 +7,7 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { ScrollArea } from './ui/scroll-area';
-import { DatabaseZap, Archive, FileSearch, Sparkles, AlertTriangle, CheckCircle, LoaderCircle, History, ShieldCheck, Milestone, Atom, Dna } from 'lucide-react';
+import { DatabaseZap, Archive, FileSearch, Sparkles, AlertTriangle, CheckCircle, LoaderCircle, History, ShieldCheck, Milestone, Atom, Dna, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
 import { useToast } from '@/hooks/use-toast';
