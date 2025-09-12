@@ -77,7 +77,6 @@ import {
   Map,
   HeartHandshake,
   Bot,
-  AlertTriangle,
   Fingerprint,
 } from 'lucide-react';
 
@@ -226,6 +225,12 @@ export const sections: Section[] = [
   },
   {
     id: 'console',
+    title: 'Painel de Controle',
+    icon: LayoutDashboard,
+    documents: [],
+  },
+   {
+    id: 'civilizations',
     title: 'Civilizações',
     icon: Globe,
     documents: [],
@@ -793,7 +798,7 @@ export const sections: Section[] = [
   { id: 'm187', title: 'Módulo 187: Governança Universal e Equilíbrio Dimensional', icon: Gavel, documents: [] },
   { id: 'm188', title: 'Módulo 188: Desenvolvimento de Códigos de Ética Quântica', icon: FileText, documents: [] },
   { id: 'm189', title: 'Módulo 189: Manipulação de Gravidade em Realidades Paralelas', icon: GitBranch, documents: [] },
-  { id: 'm190', title: 'Módulo 190: Desafios Éticos em Viagens Interdimensionais', icon: AlertTriangle, documents: [] },
+  { id: 'm190', title: 'Módulo 190: Desafios Éticos em Viagens Interdimensionais', icon: Fingerprint, documents: [] },
   { id: 'm191', title: 'Módulo 191: Dimensões Paralelas e Fluxos Energéticos Cruzados', icon: GitBranch, documents: [] },
   { id: 'm192', title: 'Módulo 192: Ressonâncias Cósmicas e Sincronização de Consciências', icon: Waves, documents: [] },
   { id: 'm193', title: 'Módulo 193: Arquitetura de Sistemas de Cura Multidimensional', icon: Heart, documents: [] },
@@ -865,4 +870,3 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
-```
