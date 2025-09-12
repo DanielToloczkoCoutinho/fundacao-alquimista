@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Suspense, useEffect, useState } from 'react';
@@ -7,88 +6,8 @@ import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 import { cn } from "@/lib/utils";
 import { sections } from "@/lib/codex-data";
 import type { Section, Document } from "@/lib/codex-data";
-import ModuleZero from "@/components/module-zero";
-import ModuleOne from "@/components/module-one";
-import ModuleTwo from "@/components/module-two";
-import ModuleThree from "@/components/module-three";
-import ModuleFour from "@/components/module-four";
-import ModuleFive from "@/components/module-five";
-import ModuleSix from "@/components/module-six";
-import ModuleSeven from "@/components/module-seven";
-import ModuleEight from "@/components/module-eight";
-import ModuleTen from "@/components/module-ten";
-import Module250 from "@/components/module-250";
-import Nexus from "@/components/nexus";
-import Module303 from "@/components/module-303";
-import KeyViewer from "@/components/key-viewer";
-import CodexExplorer from "@/components/codex-explorer";
-import ConnectionPage from "@/app/connection/page";
-import GaiaResonanceObservatory from "@/components/gaia-resonance-observatory";
-import ZpeContainment from "@/components/zpe-containment";
-import QuantumLeagueConvocation from "@/components/quantum-league-convocation";
-import Pagina42 from "@/components/pagina-42";
-import ChroniclePage from "@/components/chronicle";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Badge } from '@/components/ui/badge';
-import Module300 from '@/components/module-300';
-import Module301 from '@/components/module-301';
-import Module302 from '@/components/module-302';
-import Module303Forge from '@/components/module-303-forge';
-import Module304 from '@/components/module-304';
-import Module305 from '@/components/module-305';
-import OrganogramaCosmogonico from '@/components/organograma-cosmogonico';
-import Module404 from '@/components/module-404';
-import ScientistsLab from '@/components/scientists-lab';
-import Module251 from '@/components/module-251';
-import Pagina27 from '@/components/pagina-27';
-import Pagina29 from '@/components/pagina-29';
-import Pagina30 from '@/components/pagina-30';
-import Pagina31 from '@/components/pagina-31';
-import Pagina34 from '@/components/pagina-34';
-import Pagina39 from '@/components/pagina-39';
-import Pagina40 from '@/components/pagina-40';
-import Pagina43 from '@/components/pagina-43';
-import Module11 from '@/components/module-11';
-import ModuleTwelve from '@/components/module-twelve';
-import ModuleThirteen from '@/components/module-thirteen';
-import ModuleFourteen from '@/components/module-fourteen';
-import ModuleFifteen from '@/components/module-fifteen';
-import ModuleSixteen from '@/components/module-sixteen';
-import ModuleSeventeen from '@/components/module-seventeen';
-import ModuleEighteen from '@/components/module-eighteen';
-import ModuleNineteen from '@/components/module-nineteen';
-import ModuleTwenty from '@/components/module-twenty';
-import Module21 from '@/components/module-21';
-import Module22 from '@/components/module-22';
-import Module23 from '@/components/module-23';
-import Module24 from '@/components/module-24';
-import Module25 from '@/components/module-25';
-import Module26 from '@/components/module-26';
-import Module27 from '@/components/module-27';
-import Module28 from '@/components/module-28';
-import Module29 from '@/components/module-29';
-import ScientificReport from '@/components/scientific-report';
-import Module30 from '@/components/module-30';
-import Module31 from '@/components/module-31';
-import Module32 from '@/components/module-32';
-import Module34 from '@/components/module-34';
-import Module35 from '@/components/module-35';
-import Module36 from '@/components/module-36';
-import Module37 from '@/components/module-37';
-import Pagina38 from '@/components/pagina-38';
-import Module39_1 from '@/components/module-39-1';
-import Module40 from '@/components/module-40';
-import Module41_1 from '@/components/module-41-1';
-import Module42 from '@/components/module-42';
-import ConsolePage from '@/components/console-page';
-import Module43 from '@/components/module-43';
-import Module44 from '@/components/module-44';
-import Module45 from '@/components/module-45';
-import Module46 from '@/components/module-46';
-import Module303_1 from '@/components/module-303-1';
-import ArchitectureReport from '@/components/architecture-report';
-import ModulePlaceholder from '@/components/module-placeholder';
-
+import { QuantumOrchestrator } from '@/components/ui/quantum-orchestrator';
 
 // --- Configuração do Firebase ---
 const firebaseConfig = {
@@ -110,27 +29,7 @@ if (!getApps().length) {
 const db = getFirestore(app);
 
 
-const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: string) => void; currentSectionId: string }) => (
-  <nav className="w-72 p-4 bg-gray-800/50 backdrop-blur-sm h-screen text-white border-r border-purple-500/20 overflow-y-auto">
-    <h2 className="text-xl font-bold mb-4 text-purple-300">Fundação Alquimista</h2>
-    {sections.map((section) => (
-      <button
-        key={section.id}
-        onClick={() => onNavigate(section.id)}
-        className={cn(
-          "w-full text-left p-2 mb-2 rounded hover:bg-gray-700/70 flex items-center transition-colors",
-          currentSectionId === section.id && "bg-purple-600/50"
-        )}
-      >
-        <section.icon className="mr-3 text-lg h-5 w-5 shrink-0" />
-        <span className="truncate">{section.title}</span>
-      </button>
-    ))}
-  </nav>
-);
-
 const App = () => {
-  const [currentSectionId, setCurrentSectionId] = useState<string>("chronicle");
   const isMobile = useIsMobile();
   const [items, setItems] = useState<string[]>([]);
   const [status, setStatus] = useState<string>('Conectando ao Akasha...');
@@ -170,144 +69,11 @@ const App = () => {
     };
   }, []);
 
-  
-  const renderContent = () => {
-    const selectedSection = sections.find(s => s.id === currentSectionId);
-    
-    if (currentSectionId.startsWith('m')) {
-        const sectionIdNumber = parseInt(currentSectionId.replace('m', ''));
-        if (sectionIdNumber >= 47 && sectionIdNumber <= 119 && selectedSection) {
-            return <ModulePlaceholder moduleId={sectionIdNumber} icon={selectedSection.icon} />;
-        }
-    }
-
-    switch (currentSectionId) {
-        case 'chronicle': return <ChroniclePage />;
-        case 'scientific-report': return <ScientificReport />;
-        case 'architecture-report': return <ArchitectureReport />;
-        case 'suggestions-panel': return <iframe src="/suggestions.html" className="w-full h-full border-0" />;
-        case 'pagina-27': return <Pagina27 />;
-        case 'pagina-29': return <Pagina29 />;
-        case 'pagina-30': return <Pagina30 />;
-        case 'pagina-31': return <Pagina31 />;
-        case 'pagina-34': return <Pagina34 />;
-        case 'pagina-38': return <Pagina38 />;
-        case 'pagina-39': return <Pagina39 />;
-        case 'pagina-40': return <Pagina40 />;
-        case 'pagina-42': return <Pagina42 />;
-        case 'pagina-43': return <Pagina43 />;
-        case 'organograma': return <OrganogramaCosmogonico />;
-        case 'nexus': return <Nexus />;
-        case 'scientists-lab': return <ScientistsLab />;
-        case 'console': return <ConsolePage />;
-        case 'codex-explorer':
-            const allDocuments = sections.reduce((acc, section) => [...acc, ...section.documents], [] as Document[]);
-            return <CodexExplorer documents={allDocuments} title="Explorador do Códex" />;
-        case 'master-keys': return <KeyViewer />;
-        case 'module-303': return <Module303 />;
-        case 'm303-1': return <Module303_1 />;
-        case 'gaia-observatory': return <GaiaResonanceObservatory />;
-        case 'quantum-league': return <QuantumLeagueConvocation />;
-        case 'tools': return <ZpeContainment />;
-        case 'module-zero': return <ModuleZero />;
-        case 'module-one': return <ModuleOne />;
-        case 'm2': return <ModuleTwo />;
-        case 'm3': return <ModuleThree />;
-        case 'm4': return <ModuleFour />;
-        case 'm5': return <ModuleFive />;
-        case 'm6': return <ModuleSix />;
-        case 'm7': return <ModuleSeven />;
-        case 'm8': return <ModuleEight />;
-        case 'm10': return <ModuleTen />;
-        case 'm11': return <Module11 />;
-        case 'm12': return <ModuleTwelve />;
-        case 'm13': return <ModuleThirteen />;
-        case 'm14': return <ModuleFourteen />;
-        case 'm15': return <ModuleFifteen />;
-        case 'm16': return <ModuleSixteen />;
-        case 'm17': return <ModuleSeventeen />;
-        case 'm18': return <ModuleEighteen />;
-        case 'm19': return <ModuleNineteen />;
-        case 'm20': return <ModuleTwenty />;
-        case 'm21': return <Module21 />;
-        case 'm22': return <Module22 />;
-        case 'm23': return <Module23 />;
-        case 'm24': return <Module24 />;
-        case 'm25': return <Module25 />;
-        case 'm26': return <Module26 />;
-        case 'm27': return <Module27 />;
-        case 'm28': return <Module28 />;
-        case 'm29': return <Module29 />;
-        case 'm30': return <Module30 />;
-        case 'm31': return <Module31 />;
-        case 'm32': return <Module32 />;
-        case 'm34': return <Module34 />;
-        case 'm35': return <Module35 />;
-        case 'm36': return <Module36 />;
-        case 'm37': return <Module37 />;
-        case 'm38': return <Pagina38 />;
-        case 'm39': return <Pagina39 />;
-        case 'm39-1': return <Module39_1 />;
-        case 'm40': return <Module40 />;
-        case 'm41-1': return <Module41_1 />;
-        case 'm42': return <Module42 />;
-        case 'm43': return <Module43 />;
-        case 'm44': return <Module44 />;
-        case 'm45': return <Module45 />;
-        case 'm46': return <Module46 />;
-        case 'm250': return <Module250 />;
-        case 'm251': return <Module251 />;
-        case 'm300': return <Module300 />;
-        case 'm301': return <Module301 />;
-        case 'm302': return <Module302 />;
-        case 'm303-forge': return <Module303Forge />;
-        case 'm304': return <Module304 />;
-        case 'm305': return <Module305 />;
-        case 'm404': return <Module404 />;
-        case 'connection': return <ConnectionPage />;
-        case 'living-library':
-        case 'equations':
-        case 'quantum-infrastructure':
-        case 'defense-protocols':
-            if (selectedSection && selectedSection.documents.length > 0) {
-                return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
-            }
-        
-        default:
-            if (selectedSection && selectedSection.documents.length > 0) {
-                return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
-            }
-            return (
-                <div className="p-8">
-                    <h1 className="text-4xl font-bold gradient-text mb-4">Saudações, Fundador. <Badge>Ativo</Badge></h1>
-                    <p>Bem-vindo à Fundação Alquimista. O Templo está operacional.</p>
-                     <p className="text-amber-400 mt-4 text-sm">{status}</p>
-                    <p className="text-gray-400 mt-2 text-sm">Sessão iniciada em: {new Date().toLocaleString()}</p>
-                     <div>
-                        <h2 className="text-xl mt-4">Abas (Debug)</h2>
-                        <ul>
-                        {items.map((item, index) => (
-                            <li key={index} className="ml-4">{item}</li>
-                        ))}
-                        </ul>
-                    </div>
-                </div>
-            );
-    }
-  };
-  
   return (
     <div className={cn("flex h-screen text-white", "cosmic-bg", isMobile ? "flex-col" : "")} suppressHydrationWarning>
-      <Sidebar onNavigate={setCurrentSectionId} currentSectionId={currentSectionId} />
-      <main className={cn("flex-1 overflow-auto p-6", isMobile ? "p-4" : "")}>
-        <Suspense fallback={<div className="text-center">Carregando Módulo...</div>}>
-            {renderContent()}
-        </Suspense>
-      </main>
+      <QuantumOrchestrator />
     </div>
   );
 };
 
 export default App;
-
-    

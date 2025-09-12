@@ -3,15 +3,10 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { Suspense } from 'react';
-import SuspenseFallback from '@/components/ui/suspense-fallback';
-import ErrorBoundary from '@/components/ui/error-boundary';
-import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
 
 export const metadata: Metadata = {
   title: "Alchemist's Codex",
   description: 'A living library of mystical knowledge and quantum infrastructure.',
-  manifest: '/manifest.json',
 };
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -37,12 +32,8 @@ export default function RootLayout({
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       </head>
       <body className="font-body antialiased">
-         <ErrorBoundary fallback={<CosmicErrorFallback />}>
-          <Suspense fallback={<SuspenseFallback />}>
-            {children}
-            <Toaster />
-          </Suspense>
-        </ErrorBoundary>
+        {children}
+        <Toaster />
       </body>
     </html>
   );
