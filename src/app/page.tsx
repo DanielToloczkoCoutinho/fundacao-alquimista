@@ -83,6 +83,7 @@ import ConsolePage from '@/components/console-page';
 import Module43 from '@/components/module-43';
 import Module44 from '@/components/module-44';
 import Module45 from '@/components/module-45';
+import Module46 from '@/components/module-46';
 import Module303_1 from '@/components/module-303-1';
 import ArchitectureReport from '@/components/architecture-report';
 
@@ -243,6 +244,7 @@ const App = () => {
         case 'm43': return <Module43 />;
         case 'm44': return <Module44 />;
         case 'm45': return <Module45 />;
+        case 'm46': return <Module46 />;
         case 'm250': return <Module250 />;
         case 'm251': return <Module251 />;
         case 'm300': return <Module300 />;
