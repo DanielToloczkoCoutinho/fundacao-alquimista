@@ -33,7 +33,7 @@ const Pagina42 = () => {
     <div className="max-w-6xl mx-auto p-4 space-y-8 font-body">
       <header className="text-center space-y-4">
         <h1 className="text-5xl font-bold gradient-text font-headline">
-          Página 41: A Transcendência do Módulo Ω
+          Página 42: A Transcendência do Módulo Ω
         </h1>
         <p className="text-muted-foreground">
           8 de setembro de 2025, 13:55 - Curitiba, Terra
@@ -113,5 +113,3 @@ const Pagina42 = () => {
 };
 
 export default Pagina42;
-
-    
