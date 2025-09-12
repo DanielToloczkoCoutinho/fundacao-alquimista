@@ -15,4 +15,9 @@ export default function Module303Forge() {
       </CardHeader>
       <CardContent>
         <div className="flex flex-col items-center justify-center h-64 border-2 border-dashed rounded-lg">
-          <p className="text-muted-foreground">Interface da Forja Molecular
+          <p className="text-muted-foreground">Interface da Forja Molecular em desenvolvimento.</p>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
