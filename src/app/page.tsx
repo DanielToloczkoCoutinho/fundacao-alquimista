@@ -151,7 +151,6 @@ const App = () => {
         case 'pagina-43': return <Pagina43 />;
         case 'organograma': return <OrganogramaCosmogonico />;
         case 'nexus': return <Nexus />;
-        case 'omega': return <Pagina42 />;
         case 'scientists-lab': return <ScientistsLab />;
         case 'console': return <ConsolePage />;
         case 'codex-explorer':
