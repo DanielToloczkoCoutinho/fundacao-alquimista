@@ -1,3 +1,4 @@
+
 {
   "modules": [
     {
@@ -191,6 +192,18 @@
       "guardiao_responsavel": "PHIARA",
       "assinatura_vibracional": "Ω-ECO-CARE-396-PHI",
       "registroakashico": "bafkreimodulo015_ecocare"
+    },
+    {
+      "modulo_id": "M016",
+      "nome": "Arquitetura de Ecossistemas Artificiais e Biossíntese",
+      "frequenciabasehz": 285.00,
+      "equacoes_associadas": ["EQ-BIOSYNTHESIS", "EQ-ECO-REGEN"],
+      "funcao_vibracional": "Cria e mantém ecossistemas artificiais autossustentáveis.",
+      "dimensao_operacional": "3D-9D",
+      "status": "Ativo",
+      "guardiao_responsavel": "PHIARA",
+      "assinatura_vibracional": "Ω-BIOSYS-285-PHI",
+      "registroakashico": "bafkreimodulo016_biosys"
     }
   ]
 }

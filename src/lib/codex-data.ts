@@ -34,6 +34,7 @@ import {
   Milestone,
   DatabaseZap,
   Landmark,
+  Cat,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -401,6 +402,12 @@ export const sections: Section[] = [
     icon: Landmark,
     documents: [],
   },
+  {
+    id: 'm16',
+    title: 'Módulo 16: Biossíntese',
+    icon: Cat,
+    documents: [],
+  },
     {
     id: 'm250',
     title: 'Módulo 250: Nano-Assembler',
@@ -439,7 +446,7 @@ export const sections: Section[] = [
   },
   {
     id: 'm304',
-    title: 'M304: LUMEN-CUSTOS',
+    title: 'Módulo 304: LUMEN-CUSTOS',
     icon: Workflow,
     documents: [],
   },
@@ -462,3 +469,4 @@ export const sections: Section[] = [
     documents: [],
   },
 ];
+
