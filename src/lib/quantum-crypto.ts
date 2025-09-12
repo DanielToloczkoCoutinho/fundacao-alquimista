@@ -1,4 +1,3 @@
-
 'use client';
 
 // Mock implementations to prevent breakage, aligning with architectural purification.

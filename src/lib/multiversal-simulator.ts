@@ -1,4 +1,3 @@
-
 'use client';
 
 import { quantumResilience } from './quantum-resilience';
