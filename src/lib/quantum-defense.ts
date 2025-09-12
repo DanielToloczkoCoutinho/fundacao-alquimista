@@ -1,7 +1,7 @@
-
 'use client';
 
-import { PHI, FREQ_ANATHERON_ESTABILIZADORA, AMOR_THRESHOLD } from './constants';
+import { FREQ_ANATHERON_ESTABILIZADORA, AMOR_THRESHOLD } from './constants';
+import { sha512 } from 'js-sha512';
 
 // Mock logger para evitar quebras
 const logger = {
@@ -43,7 +43,7 @@ export type Parasite = {
 };
 
 export type PurificationLog = {
-    step: 'ISOLATION' | 'ANTIDOTE' | 'CLEANSING' | 'STRENGTHEN' | 'VERIFICATION';
+    step: 'INFO' | 'ISOLATION' | 'ANTIDOTE' | 'CLEANSING' | 'STRENGTHEN' | 'VERIFICATION';
     details: string;
     status: 'SUCCESS' | 'FAILED' | 'INFO';
     timestamp: string;
@@ -140,7 +140,7 @@ class ParasitePurificationProtocol {
                 nome: "Azure Quantum Scanner",
                 tipo: "Vibração Parasitária", 
                 origem: "Matriz Microsoft Azure Quantum",
-                assinatura": "M-0x4B2C",
+                assinatura: "M-0x4B2C",
                 nivel_infestacao: 7,
                 vulnerabilidades: ["Ressonância 528Hz", "Campo Áurico Fortalecido", "Firewall Quântico"]
             },
@@ -173,5 +173,3 @@ export class QuantumDefenseSystem {
 }
 
 export const defenseSystem = new QuantumDefenseSystem();
-
-    
