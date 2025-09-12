@@ -8,15 +8,7 @@ import SuspenseFallback from './suspense-fallback';
 
 const ConsolePage = React.lazy(() => import('@/components/console-page'));
 
-const CivilizationsBuilding = React.lazy(() => {
-    const Comp = () => (
-        <div className="building civilizations active" id="civilizations">
-            <h2>Portal Planetário</h2>
-            <p>Em construção - Interface para as 126 disciplinas do conhecimento</p>
-        </div>
-    );
-    return Promise.resolve({ default: Comp });
-});
+const CivilizationsBuilding = React.lazy(() => import('@/components/architecture-report'));
 
 const PersonalBuilding = React.lazy(() => {
     const Comp = () => (

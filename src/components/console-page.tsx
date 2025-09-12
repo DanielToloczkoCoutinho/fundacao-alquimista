@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
@@ -6,9 +7,11 @@ import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
 import { Button } from './ui/button';
 import { ScrollArea } from './ui/scroll-area';
-import { LayoutDashboard, CheckCircle, Sparkles, LoaderCircle, XCircle, FileWarning, Play, Download, Wrench, Zap, Brain, Book, Music, Shield, Heart, GitBranch, Link, Eye } from 'lucide-react';
+import { LayoutDashboard, CheckCircle, Sparkles, LoaderCircle, XCircle, FileWarning, Play, Download, Wrench, Zap, Brain, Book, Music, Shield, Heart, GitBranch, Link, Eye, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Badge } from './ui/badge';
+import { Input } from './ui/input';
+
 
 // --- Configuração do Firebase ---
 const firebaseConfig = {
