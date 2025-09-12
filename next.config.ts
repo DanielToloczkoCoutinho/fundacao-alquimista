@@ -12,10 +12,6 @@ const nextConfig: NextConfig = {
       {
         source: '/:path*',
         headers: [
-          {
-            key: 'Permissions-Policy',
-            value: 'xr-spatial-tracking=*, camera=*, microphone=*',
-          },
            {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin-allow-popups',
