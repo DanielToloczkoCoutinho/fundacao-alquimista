@@ -41,6 +41,7 @@ import {
   Laptop,
   History,
   FileText,
+  HeartPulse,
 } from 'lucide-react';
 
 export interface CodexVersion {
@@ -418,6 +419,12 @@ export const sections: Section[] = [
     id: 'm26',
     title: 'Módulo 26: Gerenciador de Portais',
     icon: Milestone,
+    documents: [],
+  },
+  {
+    id: 'm28',
+    title: 'Módulo 28: Harmonização Vibracional',
+    icon: HeartPulse,
     documents: [],
   },
     {
