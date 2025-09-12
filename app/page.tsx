@@ -44,12 +44,6 @@ const firebaseConfig = {
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const db = getFirestore(app);
-try {
-  // @ts-ignore
-  db.settings({ experimentalForceLongPolling: true, useFetchStreams: false });
-} catch (e) {
-  console.warn("Could not set Firestore settings", e);
-}
 
 
 const Sidebar = ({ onNavigate, currentSectionId }: { onNavigate: (content: string) => void; currentSectionId: string }) => (
@@ -139,6 +133,13 @@ const App = () => {
         case 'm8': return <ModuleEight />;
         case 'm10': return <ModuleTen />;
         case 'connection': return <ConnectionPage />;
+        case 'living-library':
+        case 'equations':
+        case 'quantum-infrastructure':
+        case 'defense-protocols':
+            if (selectedSection && selectedSection.documents.length > 0) {
+                return <CodexExplorer documents={selectedSection.documents} title={selectedSection.title} />;
+            }
         
         default:
             if (selectedSection && selectedSection.documents.length > 0) {
