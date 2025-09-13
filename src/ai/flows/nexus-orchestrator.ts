@@ -157,6 +157,23 @@ const conscienciaCosmicaTool = ai.defineTool(
     }
 );
 
+const defesaAvancadaTool = ai.defineTool(
+    {
+        name: 'defesaAvancadaTool',
+        description: 'Módulo 10: Integração de Sistemas de Defesa Avançada e IA Aeloria.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), readiness: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 10: Defesa Avançada...');
+        await new Promise(resolve => setTimeout(resolve, 400));
+        return {
+            status: 'DEFESAS_INTEGRADAS_E_ATIVAS',
+            readiness: 0.99 + Math.random() * 0.01,
+        };
+    }
+);
+
 const iamTool = ai.defineTool(
     {
         name: 'iamTool',
@@ -344,6 +361,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
       
       // Fase 3: Orquestração Avançada e Governança
       if(proceed) {
+        proceed = await runModule('DEFESA_AVANCADA', 'Defesa Avançada', defesaAvancadaTool, {}, r => ({
+            proceed: r.readiness > 0.95,
+            message: `Prontidão de defesa: ${(r.readiness * 100).toFixed(1)}%`,
+        }));
+      }
+      if(proceed) {
         proceed = await runModule('IAM', 'IAM', iamTool, {}, r => ({
             proceed: r.ethicalBalance > 0.9,
             message: `Balanço ético: ${r.ethicalBalance.toFixed(2)}`,
@@ -383,7 +406,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
