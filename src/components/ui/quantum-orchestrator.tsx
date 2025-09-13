@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -56,6 +56,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
   AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
   THESAURUS_COSMICO: <Archive className="h-5 w-5 text-orange-200" />,
+  INTERFACE_COSMICA_INTERATIVA: <MessageSquare className="h-5 w-5 text-teal-300" />,
   APOGEU_CONSCIENCIA: <Crown className="h-5 w-5 text-yellow-300" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
   EDUCACAO_INTEGRAL: <GraduationCap className="h-5 w-5 text-green-300" />,
@@ -117,6 +118,7 @@ const moduleNames: Record<string, string> = {
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     THESAURUS_COSMICO: "Thesaurus Cósmico (M47)",
+    INTERFACE_COSMICA_INTERATIVA: "Interface Cósmica (M71)",
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
@@ -252,3 +254,5 @@ export default function QuantumOrchestrator() {
     
 
   
+
+    

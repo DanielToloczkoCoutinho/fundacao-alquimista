@@ -849,6 +849,25 @@ const thesaurusCosmicoTool = ai.defineTool(
     }
 );
 
+const interfaceCosmicaInteractivaTool = ai.defineTool(
+    {
+        name: 'interfaceCosmicaInteractivaTool',
+        description: 'Módulo 71: Interface Cósmica Interativa. Estabelece canais de comunicação holográficos.',
+        inputSchema: z.object({ targetCouncil: z.string() }),
+        outputSchema: z.object({ status: z.string(), frequency: z.number() }),
+    },
+    async ({ targetCouncil }) => {
+        logger.info(`Executando Módulo 71: Interface Cósmica Interativa para ${targetCouncil}...`);
+        await new Promise(resolve => setTimeout(resolve, 400));
+        const frequency = 963 * Math.pow(1.618, 0.01);
+        return {
+            status: 'CANAL_HOLOGRAFICO_ESTABELECIDO',
+            frequency: frequency,
+        };
+    }
+);
+
+
 const apogeuConscienciaTool = ai.defineTool(
     {
         name: 'apogeuConscienciaTool',
@@ -1278,6 +1297,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `${r.eventsArchived} eventos cósmicos arquivados com sucesso.`,
         }));
       }
+       if(proceed) {
+        proceed = await runModule('INTERFACE_COSMICA_INTERATIVA', 'Interface Cósmica Interativa (M71)', interfaceCosmicaInteractivaTool, { targetCouncil: 'Conselho Supremo' }, r => ({
+            proceed: r.status === 'CANAL_HOLOGRAFICO_ESTABELECIDO',
+            message: `Canal holográfico estabelecido com frequência de ${r.frequency.toFixed(2)} Hz.`,
+        }));
+      }
 
 
       // Fase 5: Unificação e Convergência
@@ -1318,7 +1343,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'THESAURUS_COSMICO', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIOES', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'THESAURUS_COSMICO', 'INTERFACE_COSMICA_INTERATIVA', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIOES', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1394,6 +1419,7 @@ const moduleNames: Record<string, string> = {
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     THESAURUS_COSMICO: "Thesaurus Cósmico (M47)",
+    INTERFACE_COSMICA_INTERATIVA: "Interface Cósmica (M71)",
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
@@ -1427,3 +1453,5 @@ const moduleNames: Record<string, string> = {
     
 
   
+
+    
