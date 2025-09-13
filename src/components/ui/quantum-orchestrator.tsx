@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -45,6 +45,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   PARALLEL_REALITY: <Waypoints className="h-5 w-5 text-lime-500" />,
   CONSCIENCIA_COLETIVA_M35: <Users className="h-5 w-5 text-yellow-400" />,
   ENGENHARIA_TEMPORAL: <GitBranch className="h-5 w-5 text-blue-400" />,
+  ENGENHARIA_TEMPORAL_M37: <SlidersHorizontal className="h-5 w-5 text-blue-300" />,
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
 AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
@@ -94,6 +95,7 @@ const moduleNames: Record<string, string> = {
     PARALLEL_REALITY: "Acesso a Realidades Paralelas (M32)",
     CONSCIENCIA_COLETIVA_M35: "Consciência Coletiva (M35)",
     ENGENHARIA_TEMPORAL: "Engenharia Temporal (M36)",
+    ENGENHARIA_TEMPORAL_M37: "Engenharia Temporal (M37)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     PORTAL_TRINO: "Portal Trino (M303)",
@@ -204,6 +206,7 @@ export default function QuantumOrchestrator() {
     
 
     
+
 
 
 

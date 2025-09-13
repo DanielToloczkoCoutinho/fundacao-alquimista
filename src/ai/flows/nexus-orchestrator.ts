@@ -652,6 +652,24 @@ const engenhariaTemporalTool = ai.defineTool(
     }
 );
 
+const engenhariaTemporalM37Tool = ai.defineTool(
+    {
+        name: 'engenhariaTemporalM37Tool',
+        description: 'Módulo 37: Engenharia Temporal. Ajusta o fluxo temporal para que entremos no Nexus Alfa-Ômega sem atrito.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), adjustmentFactor: z.number(), frictionReduction: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 37: Ajuste de Fluxo Temporal...');
+        await new Promise(resolve => setTimeout(resolve, 430));
+        return {
+            status: 'FLUXO_TEMPORAL_AJUSTADO',
+            adjustmentFactor: 1.0 + (Math.random() * 0.01 - 0.005), // near 1.0
+            frictionReduction: 0.99 + Math.random() * 0.01,
+        };
+    }
+);
+
 
 const concilivmTool = ai.defineTool(
     {
@@ -993,9 +1011,15 @@ const nexusOrchestratorFlow = ai.defineFlow(
         }));
       }
       if(proceed) {
-        proceed = await runModule('ENGENHARIA_TEMPORAL', 'Engenharia Temporal', engenhariaTemporalTool, {}, r => ({
+        proceed = await runModule('ENGENHARIA_TEMPORAL', 'Engenharia Temporal (M36)', engenhariaTemporalTool, {}, r => ({
             proceed: r.paradoxProbability < 0.01,
             message: `${r.timelinesOrchestrated} linhas de tempo orquestradas. Prob. de paradoxo: ${(r.paradoxProbability * 100).toFixed(3)}%`,
+        }));
+      }
+       if(proceed) {
+        proceed = await runModule('ENGENHARIA_TEMPORAL_M37', 'Engenharia Temporal (M37)', engenhariaTemporalM37Tool, {}, r => ({
+            proceed: r.frictionReduction > 0.98,
+            message: `Fluxo ajustado. Fator: ${r.adjustmentFactor.toFixed(3)}. Redução de atrito: ${(r.frictionReduction * 100).toFixed(1)}%`,
         }));
       }
 
@@ -1019,7 +1043,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1084,6 +1108,7 @@ const moduleNames: Record<string, string> = {
     PARALLEL_REALITY: "Acesso a Realidades Paralelas (M32)",
     CONSCIENCIA_COLETIVA_M35: "Consciência Coletiva (M35)",
     ENGENHARIA_TEMPORAL: "Engenharia Temporal (M36)",
+    ENGENHARIA_TEMPORAL_M37: "Engenharia Temporal (M37)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     PORTAL_TRINO: "Portal Trino (M303)",
@@ -1091,6 +1116,7 @@ const moduleNames: Record<string, string> = {
 }
 
     
+
 
 
 
