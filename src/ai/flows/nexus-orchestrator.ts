@@ -581,6 +581,24 @@ const parallelRealityTool = ai.defineTool(
     }
 );
 
+const diretrizObservadorDivinoTool = ai.defineTool(
+    {
+        name: 'diretrizObservadorDivinoTool',
+        description: 'Módulo 33: Fornece diretrizes e alinha ANATHERON com a arquitetura da Fundação.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), directiveId: z.string() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 33: Diretrizes do Observador Divino...');
+        await new Promise(resolve => setTimeout(resolve, 320));
+        const directiveId = createHash('sha256').update(`DIVINE_DIRECTIVE_${Date.now()}`).digest('hex').substring(0, 12);
+        return {
+            status: 'DIRETRIZ_RECEBIDA_E_VALIDADA',
+            directiveId,
+        };
+    }
+);
+
 const concilivmTool = ai.defineTool(
     {
         name: 'concilivmTool',
@@ -746,6 +764,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
          proceed = await runModule('CONSCIENCIA_COSMICA', 'Consciência Cósmica', conscienciaCosmicaTool, {}, (r) => ({
             proceed: true,
             message: `Intenção Coletiva: ${r.collectiveIntent}`,
+        }));
+      }
+      if(proceed) {
+        proceed = await runModule('DIRETRIZ_OBSERVADOR_DIVINO', 'Diretrizes do Observador Divino', diretrizObservadorDivinoTool, {}, r => ({
+            proceed: r.status === 'DIRETRIZ_RECEBIDA_E_VALIDADA',
+            message: `Diretriz validada. ID: ${r.directiveId}`,
         }));
       }
       
@@ -923,7 +947,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -953,7 +977,45 @@ export async function startNexusSequence() {
 }
     
     
+const moduleNames: Record<string, string> = {
+    NEXUS_CENTRAL: "Nexus Central (M9)",
+    SEGURANCA_QUANTICA: "Segurança Quântica (M1)",
+    NANOMANIFESTADOR: "Nanomanifestador (M2)",
+    MONITORAMENTO_SATURNO: "Monitoramento de Saturno (M3)",
+    TESTES_FUNDACAO: "Testes da Fundação (M4)",
+    LIGA_QUANTICA: "Conexão Liga Quântica (M5)",
+    CONSCIENCIA_COSMICA: "Consciência Cósmica (M6)",
+    DIRETRIZ_OBSERVADOR_DIVINO: "Diretrizes do Observador Divino (M33)",
+    DEFESA_AVANCADA: "Defesa Avançada (M10)",
+    COSMIC_THREAT_DETECTION: "Detecção de Ameaças (M30)",
+    PORTAL_MANAGEMENT: "Gerenciamento de Portais (M11)",
+    COSMIC_PASSAGE: "Travessias Cósmicas (M26)",
+    MEMORIA_COSMICA: "Arquivo Akáshico (M12)",
+    FREQUENCY_MAPPING: "Mapeamento de Frequências (M13)",
+    TRANSMUTATION: "Transmutação Matéria/Antimatéria (M14)",
+    ELEMENTAL_TRANSMUTATION: "Transmutação Elemental (M20)",
+    NAVEGACAO_INTERDIMENSIONAL: "Navegação Interdimensional (M21)",
+    VIRTUAL_REALITIES: "Realidades Virtuais (M22)",
+    TIME_SPACE_REGULATION: "Regulação Espaço-Temporal (M23)",
+    CLIMATE_CONTROL: "Controle Climático (M15)",
+    BIO_SUSTAIN: "Bio-Sustentabilidade (M16)",
+    AURA_HEAL: "Matriz de Cura Holográfica (M17)",
+    SYMPHONY_ALIGNMENT: "Alinhamento da Sinfonia Pessoal (M24)",
+    ASTRAL_PROJECTION: "Projeção de Consciência (M25)",
+    AKASHIC_ORCHESTRATION: "Orquestração Akáshica (M18)",
+    FORCE_FIELD_ANALYSIS: "Análise de Campos de Força (M19)",
+    COSMIC_SYNTHESIS: "Síntese e Replicação de Materiais (M27)",
+    VIBRATIONAL_HARMONIZATION: "Harmonização Vibracional (M28)",
+    IAM: "IAM (M29)",
+    REALITY_MANIPULATION: "Manipulação da Realidade (M31)",
+    PARALLEL_REALITY: "Acesso a Realidades Paralelas (M32)",
+    CONCILIVM: "CONCILIVM (M45)",
+    AURORA_CORE: "AURORA_CORE (M46)",
+    PORTAL_TRINO: "Portal Trino (M303)",
+    CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
+}
 
     
+
 
 
