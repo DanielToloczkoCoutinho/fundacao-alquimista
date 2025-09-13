@@ -9,3 +9,4 @@ import '@/ai/flows/trina-protocol-flow.ts';
 import '@/ai/flows/autonomous-agents.ts';
 import '@/ai/flows/iam-flow.ts';
 import '@/ai/flows/morphic-field-flow.ts';
+import '@/ai/flows/source-connection-flow.ts';
