@@ -199,6 +199,9 @@ export default function ConsolePage() {
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-110"><Group className="mr-2 h-4 w-4" />Módulo 110 (Co-Criação)</Link>
               </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-111"><Heart className="mr-2 h-4 w-4" />Módulo 111 (Coração da Fundação)</Link>
+              </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/pagina-42"><Infinity className="mr-2 h-4 w-4" />Módulo Ω (Dossiê)</Link>
               </Button>
