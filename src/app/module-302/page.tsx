@@ -151,7 +151,7 @@ const Module302Page = () => {
 
                  <Card className="bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle className="text-center">Visualização da Emissão</CardTitle>
+                        <CardTitle className="text-center">Visualização e Status</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-col items-center justify-center">
                         <div className="relative w-full h-48 bg-background/30 rounded-lg overflow-hidden border border-primary/20 mb-4">
