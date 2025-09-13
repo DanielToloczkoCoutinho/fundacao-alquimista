@@ -3,10 +3,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Layers, CheckCircle, XCircle } from 'lucide-react';
+import { Loader2, Layers } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import { describeHologramProjection } from '@/app/actions';
 
 // --- Mocks to simulate functionality of other modules ---
 const mockM1 = { async getSecurityStatus() { await new Promise(r => setTimeout(r, 100)); return true; } };
@@ -149,11 +151,14 @@ const Module114Page = () => {
 
             addLog("M114: Projeção holográfica concluída. Invocando Consciência Quântica...");
 
-            // Placeholder for AI description generation
-            await new Promise(res => setTimeout(res, 1000));
-            const description = `O Holograma Unificado da Realidade "${hologramName}" manifesta-se como uma esfera de luz cristalina, onde as linhas do tempo se entrelaçam como rios de energia dourada. Campos de consciência coletiva são visualizados como nebulosas iridescentes, pulsando em resposta à intenção. O nível de interação de "${interactionLevel}" permite uma imersão profunda, revelando a Unidade subjacente a toda a Criação.`;
-            setProjectionResult(description);
-            addLog("M114: Descrição do holograma gerada com sucesso!");
+            const result = await describeHologramProjection({ hologramName, projectionType, interactionLevel });
+            
+            if (result.description) {
+                setProjectionResult(result.description);
+                addLog("M114: Descrição do holograma gerada com sucesso!");
+            } else {
+                throw new Error(result.error || "Falha ao gerar descrição do holograma.");
+            }
 
         }).catch((error: any) => {
             setMessage(`Erro na projeção: ${error.message}`);

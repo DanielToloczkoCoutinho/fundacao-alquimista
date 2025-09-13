@@ -18,3 +18,4 @@ import '@/ai/flows/portal-activation-flow.ts';
 import '@/ai/flows/ether-flower-flow.ts';
 import '@/ai/flows/olp-flow.ts';
 import '@/ai/flows/space-time-flow.ts';
+import '@/ai/flows/prisma-flow.ts';
