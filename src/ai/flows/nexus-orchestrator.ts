@@ -282,6 +282,24 @@ const bioSustainTool = ai.defineTool(
     }
 );
 
+const auraHealTool = ai.defineTool(
+    {
+        name: 'auraHealTool',
+        description: 'Módulo 17: Matriz de Cura Holográfica (AURA-HEAL). Cura e regeneração celular.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), cellsRegenerated: z.number(), coherenceLevel: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 17: AURA-HEAL...');
+        await new Promise(resolve => setTimeout(resolve, 440));
+        return {
+            status: 'REGENERAÇÃO_COMPLETA',
+            cellsRegenerated: Math.floor(Math.random() * 10**9) + 10**8, // Regenera centenas de milhões de células
+            coherenceLevel: 0.99 + Math.random() * 0.01,
+        };
+    }
+);
+
 const iamTool = ai.defineTool(
     {
         name: 'iamTool',
@@ -530,6 +548,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `${r.biomesManaged} biomas gerenciados. Sustentabilidade: ${(r.sustainabilityIndex * 100).toFixed(1)}%`,
         }));
       }
+       if(proceed) {
+        proceed = await runModule('AURA_HEAL', 'Matriz de Cura Holográfica', auraHealTool, {}, r => ({
+            proceed: r.coherenceLevel > 0.98,
+            message: `Cura concluída. Coerência: ${(r.coherenceLevel * 100).toFixed(1)}%`,
+        }));
+      }
 
       // Fase 5: Unificação e Convergência
        if(proceed) {
@@ -551,7 +575,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'TRANSMUTATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'TRANSMUTATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -579,6 +603,8 @@ const nexusOrchestratorFlow = ai.defineFlow(
 export async function startNexusSequence() {
     return nexusOrchestratorFlow({});
 }
+
+    
 
     
 
