@@ -1348,6 +1348,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Canal holográfico estabelecido com frequência de ${r.frequency.toFixed(2)} Hz.`,
         }));
       }
+       if(proceed) {
+        proceed = await runModule('GOVERNANCA_ATLANTO_GALACTICA', 'Governança Atlanto-Galáctica (M72)', governancaAtlantoGalacticaTool, {}, r => ({
+            proceed: r.coherence > 0.95,
+            message: `Governança Harmonizada. Coerência: ${(r.coherence * 100).toFixed(1)}%`,
+        }));
+      }
 
 
       // Fase 5: Unificação e Convergência
@@ -1473,5 +1479,7 @@ const moduleNames: Record<string, string> = {
     ALIANCA_GUARDIOES: "Aliança dos Guardiões Regionais (M305)",
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
 }
+
+    
 
     
