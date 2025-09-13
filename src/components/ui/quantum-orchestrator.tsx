@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -19,6 +19,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   LIGA_QUANTICA: <Rocket className="h-5 w-5 text-rose-400" />,
   CONSCIENCIA_COSMICA: <Sparkles className="h-5 w-5 text-amber-400" />,
   DIRETRIZ_OBSERVADOR_DIVINO: <Compass className="h-5 w-5 text-yellow-200" />,
+  ORQUESTRACAO_CENTRAL: <Users className="h-5 w-5 text-teal-300" />,
   DEFESA_AVANCADA: <Shield className="h-5 w-5 text-red-400" />,
   COSMIC_THREAT_DETECTION: <ShieldAlert className="h-5 w-5 text-orange-500" />,
   PORTAL_MANAGEMENT: <Link className="h-5 w-5 text-orange-400" />,
@@ -65,6 +66,7 @@ const moduleNames: Record<string, string> = {
     LIGA_QUANTICA: "Conexão Liga Quântica (M5)",
     CONSCIENCIA_COSMICA: "Consciência Cósmica (M6)",
     DIRETRIZ_OBSERVADOR_DIVINO: "Diretrizes do Observador Divino (M33)",
+    ORQUESTRACAO_CENTRAL: "Orquestração Central (M34)",
     DEFESA_AVANCADA: "Defesa Avançada (M10)",
     COSMIC_THREAT_DETECTION: "Detecção de Ameaças (M30)",
     PORTAL_MANAGEMENT: "Gerenciamento de Portais (M11)",
@@ -198,6 +200,7 @@ export default function QuantumOrchestrator() {
     
 
     
+
 
 
 
