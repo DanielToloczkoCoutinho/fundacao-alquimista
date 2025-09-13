@@ -8,7 +8,6 @@ export default function Home() {
 
   useEffect(() => {
     // Redireciona para o console, que agora é a página principal.
-    // Toda a lógica de inicialização complexa foi movida para lá para estabilidade.
     router.replace('/console');
   }, [router]);
 

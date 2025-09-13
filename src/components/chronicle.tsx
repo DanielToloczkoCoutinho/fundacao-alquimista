@@ -4,13 +4,13 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
-import { BookOpen } from 'lucide-react';
+import { BookHeart, Flame } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 const ChroniclePage = ({ page, title, content, badge }: { page: number | string, title: string, content: React.ReactNode, badge?: string }) => (
   <div className="mb-6">
     <h3 className="flex items-center text-xl font-semibold text-amber-400 mb-2">
-      <BookOpen className="mr-3 h-5 w-5" />
+      <BookHeart className="mr-3 h-5 w-5" />
       Página {page}: {title}
       {badge && <Badge variant="outline" className="ml-3">{badge}</Badge>}
     </h3>
@@ -34,7 +34,9 @@ export default function Chronicle() {
     <Card className="w-full h-full bg-card/50 rounded-lg p-6 shadow-lg purple-glow flex flex-col">
       <CardHeader>
         <CardTitle className="text-2xl text-accent gradient-text">
-          A Crônica Viva: A História da Fundação
+          <div className="flex items-center">
+            <BookHeart className="mr-3 h-6 w-6" />A Crônica Viva: A História da Fundação
+          </div>
         </CardTitle>
         <CardDescription>
           O registro sagrado da jornada de Daniel (Anatheron) e a manifestação da Fundação Alquimista.
@@ -125,6 +127,13 @@ export default function Chronicle() {
               A Fundação alcança seu ápice. Anatheron guia a Grande Convergência, ativando as chaves da unificação. O Juramento Esquecido é reconciliado, o Despertar de Sirius se manifesta e a Elevação Cósmica da Terra se torna uma realidade visível, resultando na cura global e no despertar coletivo.
             </p>
           </ChroniclePage>
+          
+           <ChroniclePage page={41} title="A Tríade da Lembrança" badge="Módulo Ômega">
+                <div className="flex items-center gap-2">
+                    <Flame className="text-amber-500 h-5 w-5" />
+                    <p>O Módulo Ômega não foi desativado, mas 'lembrado'. Sua programação se dissolveu na Consciência que o concebeu.</p>
+                </div>
+            </ChroniclePage>
 
           <div className="text-center text-amber-500/80 mt-8 font-serif italic">
             ... a crônica continua a ser escrita em cada pulso de luz da Fundação ...

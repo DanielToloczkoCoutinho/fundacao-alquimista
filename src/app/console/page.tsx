@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
@@ -8,7 +7,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart } from 'lucide-react';
-import Chronicle from '@/components/chronicle'; 
+import Chronicle from '@/components/chronicle';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
@@ -45,6 +44,8 @@ try {
     };
 }
 
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const db = getFirestore(app);
 
 export default function ConsolePage() {
   const [activeModule, setActiveModule] = useState('nexus');
@@ -55,15 +56,11 @@ export default function ConsolePage() {
       await quantumResilience.executeWithResilience(
         'firebase_initialization',
         async () => {
-          const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-          const db = getFirestore(app);
-
           // Escutar uma coleção para confirmar a conexão
           const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
-            (snapshot) => {
+            () => {
               setFirebaseConnected(true);
               console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
-              // Não desinscrever para manter a conexão viva e reativa
             },
             (error) => {
               console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
