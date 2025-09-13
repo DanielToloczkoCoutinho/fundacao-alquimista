@@ -8,6 +8,8 @@ import { describeActivation as runDescribeActivation } from '@/ai/flows/activati
 import { describeRestoration as runDescribeRestoration } from '@/ai/flows/restoration-flow';
 import { describeHarmonization as runDescribeHarmonization } from '@/ai/flows/harmonization-flow';
 import { describeQuantumHealing as runDescribeQuantumHealing } from '@/ai/flows/healing-flow';
+import { describePortalActivation as runDescribePortalActivation } from '@/ai/flows/portal-activation-flow';
+
 
 export async function getLinkSummary(url: string) {
   try {
@@ -78,6 +80,16 @@ export async function describeHarmonization(data: { reality1: string, reality2: 
 export async function describeQuantumHealing(data: { target: string, purpose: string }) {
   try {
     const result = await runDescribeQuantumHealing(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describePortalActivation(data: { portalName: string, destination: string, purpose: string }) {
+  try {
+    const result = await runDescribePortalActivation(data);
     return { description: result.description, error: null };
   } catch (e: any) {
     console.error(e);
