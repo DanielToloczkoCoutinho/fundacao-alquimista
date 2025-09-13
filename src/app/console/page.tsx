@@ -215,6 +215,18 @@ export default function ConsolePage() {
                 <Link href="/module-115"><Waves className="mr-2 h-4 w-4" />Módulo 115 (Matriz de Ressonância)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-116"><Aperture className="mr-2 h-4 w-4" />Módulo 116 (Portais Quânticos)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-117"><Flower className="mr-2 h-4 w-4" />Módulo 117 (Flor do Éter)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-118"><Zap className="mr-2 h-4 w-4" />Módulo 118 (Luz Primordial)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-119"><Zap className="mr-2 h-4 w-4" />Módulo 119 (Templum Cosmica)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
                 <Link href="/pagina-42"><Infinity className="mr-2 h-4 w-4" />Módulo Ω (Dossiê)</Link>
               </Button>
             </CardContent>
