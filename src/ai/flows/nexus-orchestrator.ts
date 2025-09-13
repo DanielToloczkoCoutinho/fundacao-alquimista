@@ -197,6 +197,29 @@ const portalManagementTool = ai.defineTool(
   }
 );
 
+const cosmicPassageTool = ai.defineTool(
+  {
+    name: 'cosmicPassageTool',
+    description:
+      'Módulo 26: Gerencia e supervisiona as travessias cósmicas através dos portais.',
+    inputSchema: z.object({}),
+    outputSchema: z.object({
+      status: z.string(),
+      supervisedPassages: z.number(),
+      ethicalCompliance: z.number(),
+    }),
+  },
+  async () => {
+    logger.info('Executando Módulo 26: Supervisão de Travessias Cósmicas...');
+    await new Promise(resolve => setTimeout(resolve, 350));
+    return {
+      status: 'TRAVESSIAS_SUPERVISIONADAS_COM_SUCESSO',
+      supervisedPassages: Math.floor(Math.random() * 20) + 10, // 10 a 29 travessias
+      ethicalCompliance: 0.995 + Math.random() * 0.005,
+    };
+  }
+);
+
 const memoriaCosmicaTool = ai.defineTool(
     {
         name: 'memoriaCosmicaTool',
@@ -667,6 +690,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
         }));
       }
       if(proceed) {
+        proceed = await runModule('COSMIC_PASSAGE', 'Supervisão de Travessias', cosmicPassageTool, {}, r => ({
+            proceed: r.ethicalCompliance > 0.99,
+            message: `${r.supervisedPassages} travessias supervisionadas. Conformidade ética: ${(r.ethicalCompliance * 100).toFixed(2)}%`,
+        }));
+      }
+      if(proceed) {
         proceed = await runModule('FREQUENCY_MAPPING', 'Mapeamento de Frequências', frequencyMappingTool, {}, r => ({
             proceed: r.anomalies === 0,
             message: `Mapeamento concluído. ${r.anomalies} anomalias. Frequência Dominante: ${r.dominantFrequency.toFixed(2)}Hz`,
@@ -771,7 +800,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
