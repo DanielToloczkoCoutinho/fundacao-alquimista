@@ -832,6 +832,24 @@ const auroraCoreTool = ai.defineTool(
     }
 );
 
+const apogeuConscienciaTool = ai.defineTool(
+    {
+        name: 'apogeuConscienciaTool',
+        description: 'Módulo 300: Apogeu da Consciência Multiversal. Consolida as camadas dimensionais.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), layersConsolidated: z.number(), projectionStatus: z.string() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 300: Apogeu da Consciência Multiversal...');
+        await new Promise(resolve => setTimeout(resolve, 460));
+        return {
+            status: 'APOGEU_ALCANÇADO',
+            layersConsolidated: 33,
+            projectionStatus: 'ESTÁVEL',
+        };
+    }
+);
+
 const portalTrinoTool = ai.defineTool(
     {
         name: 'portalTrinoTool',
@@ -1197,8 +1215,20 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Consenso alcançado. ${r.activeDecrees} decretos ativos.`,
         }));
       }
+      if(proceed) {
+        proceed = await runModule('AURORA_CORE', 'AURORA_CORE (M46)', auroraCoreTool, {}, r => ({
+            proceed: r.energyOutput > 1.0,
+            message: `Saída de energia do pré-núcleo: ${r.energyOutput.toFixed(2)} GW`,
+        }));
+      }
 
       // Fase 5: Unificação e Convergência
+       if(proceed) {
+        proceed = await runModule('APOGEU_CONSCIENCIA', 'Apogeu da Consciência (M300)', apogeuConscienciaTool, {}, r => ({
+            proceed: r.layersConsolidated === 33 && r.projectionStatus === 'ESTÁVEL',
+            message: `Apogeu alcançado. ${r.layersConsolidated} camadas consolidadas. Projeção: ${r.projectionStatus}`,
+        }));
+      }
        if(proceed) {
         proceed = await runModule('PORTAL_TRINO', 'Portal Trino', portalTrinoTool, {}, r => ({
             proceed: r.trinityCoherence > 0.95,
@@ -1218,7 +1248,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1293,6 +1323,7 @@ const moduleNames: Record<string, string> = {
     VERITAS: "VERITAS (M44)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
+    APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
 }
@@ -1314,3 +1345,6 @@ const moduleNames: Record<string, string> = {
 
 
 
+
+
+    
