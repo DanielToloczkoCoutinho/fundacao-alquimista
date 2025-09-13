@@ -13,15 +13,37 @@ import { quantumResilience } from '@/lib/quantum-resilience';
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 
-const firebaseConfig = {
-    "projectId": "studio-4265982502-21871",
-    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
-    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
-    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
-    "authDomain": "studio-4265982502-21871.firebaseapp.com",
-    "measurementId": "",
-    "messagingSenderId": "174545373080"
-};
+// A configuração do Firebase agora é tratada com segurança
+let firebaseConfig = {};
+try {
+  const configString = process.env.NEXT_PUBLIC_FIREBASE_CONFIG;
+  if (configString) {
+    firebaseConfig = JSON.parse(configString);
+  } else {
+     // Configuração de fallback para evitar erro de parse
+    firebaseConfig = {
+        "projectId": "studio-4265982502-21871",
+        "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+        "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+        "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+        "authDomain": "studio-4265982502-21871.firebaseapp.com",
+        "measurementId": "",
+        "messagingSenderId": "174545373080"
+    };
+    console.warn("Variável de ambiente NEXT_PUBLIC_FIREBASE_CONFIG não definida. Usando configuração de fallback.");
+  }
+} catch (error) {
+  console.error("Falha ao analisar a configuração do Firebase a partir das variáveis de ambiente.", error);
+    firebaseConfig = {
+        "projectId": "studio-4265982502-21871",
+        "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+        "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+        "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+        "authDomain": "studio-4265982502-21871.firebaseapp.com",
+        "measurementId": "",
+        "messagingSenderId": "174545373080"
+    };
+}
 
 
 export default function ConsolePage() {
@@ -41,13 +63,15 @@ export default function ConsolePage() {
             (snapshot) => {
               setFirebaseConnected(true);
               console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
-              unsub(); // Desinscrever após a primeira resposta para confirmar a conexão
+              // Não desinscrever para manter a conexão viva e reativa
             },
             (error) => {
               console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
               setFirebaseConnected(false);
             }
           );
+           // Retornar a função de desinscrição para ser chamada quando o componente desmontar
+          return () => unsub();
         },
         async () => {
           console.error("Falha ao inicializar o Firebase mesmo com resiliência. Operando em modo offline.");

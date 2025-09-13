@@ -1,6 +1,5 @@
 'use client';
 
-// Mock implementations to prevent breakage and align with purification rituals.
 const logger = {
   info: (message: string, meta?: any) => console.log(`[XR-INFO] ${message}`, meta),
   error: (message: string, meta?: any) => console.error(`[XR-ERROR] ${message}`, meta),
@@ -24,7 +23,7 @@ export class QuantumXRSystem {
 
     if (typeof navigator !== 'undefined' && 'xr' in navigator) {
       try {
-        this.isSupported = await navigator.xr.isSessionSupported('immersive-ar');
+        this.isSupported = await (navigator as any).xr.isSessionSupported('immersive-ar');
         logger.info('Suporte XR verificado', { supported: this.isSupported });
       } catch (e: any) {
         this.isSupported = false;
@@ -45,7 +44,9 @@ export class QuantumXRSystem {
   }
 
   async startARSession(canvas: HTMLCanvasElement) {
+    await this.initializeXR(); // Garante que a verificação de suporte foi feita
     if (!this.isSupported) {
+      logger.error('Realidade Aumentada não suportada neste dispositivo.');
       throw new Error('Realidade Aumentada não suportada neste dispositivo.');
     }
     if (this.xrSession) {
@@ -54,7 +55,7 @@ export class QuantumXRSystem {
     }
 
     try {
-      this.xrSession = await navigator.xr!.requestSession('immersive-ar', {
+      this.xrSession = await (navigator as any).xr!.requestSession('immersive-ar', {
         requiredFeatures: ['hit-test', 'dom-overlay'],
         domOverlay: { root: document.body }
       });
@@ -64,14 +65,17 @@ export class QuantumXRSystem {
       this.setupXRHandlers();
 
     } catch (error: any) {
-      logger.error('Falha ao iniciar sessão AR', { error: error.message });
+      logger.error('Falha ao iniciar sessão AR', { error: error.message, stack: error.stack });
       throw error;
     }
   }
   
   endSession() {
     if (this.xrSession) {
-        this.xrSession.end();
+        this.xrSession.end().catch((err: any) => {
+          logger.error('Erro ao tentar finalizar a sessão XR.', {error: err});
+        });
+        this.xrSession = null;
     }
   }
 
