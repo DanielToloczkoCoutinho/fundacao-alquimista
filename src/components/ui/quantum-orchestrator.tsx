@@ -7,7 +7,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -19,6 +19,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   CONSCIENCIA_COSMICA: <Sparkles className="h-5 w-5 text-amber-400" />,
   DEFESA_AVANCADA: <Shield className="h-5 w-5 text-red-400" />,
   PORTAL_MANAGEMENT: <Link className="h-5 w-5 text-orange-400" />,
+  MEMORIA_COSMICA: <Library className="h-5 w-5 text-blue-300" />,
   IAM: <Aperture className="h-5 w-5 text-cyan-400" />,
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
   AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
@@ -44,6 +45,7 @@ const moduleNames: Record<string, string> = {
     CONSCIENCIA_COSMICA: "Consciência Cósmica (M6)",
     DEFESA_AVANCADA: "Defesa Avançada (M10)",
     PORTAL_MANAGEMENT: "Gerenciamento de Portais (M11)",
+    MEMORIA_COSMICA: "Arquivo Akáshico (M12)",
     IAM: "IAM (M29)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",

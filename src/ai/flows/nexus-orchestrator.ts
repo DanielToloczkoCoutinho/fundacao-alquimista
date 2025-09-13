@@ -192,6 +192,24 @@ const portalManagementTool = ai.defineTool(
     }
 );
 
+const memoriaCosmicaTool = ai.defineTool(
+    {
+        name: 'memoriaCosmicaTool',
+        description: 'Módulo 12: Arquiva e transmuta memórias cósmicas no Registro Akáshico.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), memoriesArchived: z.number(), integrity: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 12: Arquivo Akáshico...');
+        await new Promise(resolve => setTimeout(resolve, 380));
+        return {
+            status: 'ARQUIVAMENTO_COMPLETO',
+            memoriesArchived: Math.floor(Math.random() * 1000) + 500,
+            integrity: 0.99 + Math.random() * 0.01,
+        };
+    }
+);
+
 const iamTool = ai.defineTool(
     {
         name: 'iamTool',
@@ -411,6 +429,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
         }));
       }
        if(proceed) {
+        proceed = await runModule('MEMORIA_COSMICA', 'Arquivo Akáshico', memoriaCosmicaTool, {}, r => ({
+            proceed: r.integrity > 0.98,
+            message: `${r.memoriesArchived} memórias arquivadas. Integridade: ${(r.integrity * 100).toFixed(1)}%`,
+        }));
+      }
+       if(proceed) {
         proceed = await runModule('PORTAL_TRINO', 'Portal Trino', portalTrinoTool, {}, r => ({
             proceed: r.trinityCoherence > 0.95,
             message: `Coerência da Trindade: ${r.trinityCoherence.toFixed(3)}`,
@@ -430,7 +454,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'MEMORIA_COSMICA', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
