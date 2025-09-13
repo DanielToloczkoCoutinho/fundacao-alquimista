@@ -170,6 +170,9 @@ export default function ConsolePage() {
                 <Link href="/module-100"><Crown className="mr-2 h-4 w-4" />Módulo 100 (Unificação Energética)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-101"><Sparkles className="mr-2 h-4 w-4" />Módulo 101 (Manifestação)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
                 <Link href="/pagina-42"><Infinity className="mr-2 h-4 w-4" />Módulo Ω (Dossiê)</Link>
               </Button>
             </CardContent>
