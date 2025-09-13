@@ -1,10 +1,11 @@
 'use client';
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import * as THREE from 'three';
-import { SphereGeometry, MeshStandardMaterial, Mesh, PointLight, IcosahedronGeometry, LineBasicMaterial, LineSegments, EdgesGeometry, BufferGeometry, Float32BufferAttribute, ShaderMaterial, AdditiveBlending, TorusGeometry } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { Loader2, Zap, Shield, Layers } from 'lucide-react';
 
 const TemplumCosmicaPage = () => {
@@ -52,10 +53,10 @@ const TemplumCosmicaPage = () => {
 
     const ambientLight = new THREE.AmbientLight(0x404040, 2.5);
     sceneRef.current.add(ambientLight);
-    const pointLight1 = new PointLight(0x4a154b, 50, 50);
+    const pointLight1 = new THREE.PointLight(0x4a154b, 50, 50);
     pointLight1.position.set(5, 8, 5);
     sceneRef.current.add(pointLight1);
-    const pointLight2 = new PointLight(0x154b4a, 50, 50);
+    const pointLight2 = new THREE.PointLight(0x154b4a, 50, 50);
     pointLight2.position.set(-5, -8, -5);
     sceneRef.current.add(pointLight2);
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -68,8 +69,8 @@ const TemplumCosmicaPage = () => {
     controlsRef.current.minDistance = 3;
     controlsRef.current.maxDistance = 20;
 
-    const crystalGeometry = new IcosahedronGeometry(1.5, 3);
-    const crystalMaterial = new MeshStandardMaterial({
+    const crystalGeometry = new THREE.IcosahedronGeometry(1.5, 3);
+    const crystalMaterial = new THREE.MeshStandardMaterial({
       color: 0x52c6ff,
       emissive: 0x0a1622,
       roughness: 0.1,
@@ -77,27 +78,27 @@ const TemplumCosmicaPage = () => {
       transparent: true,
       opacity: 0.8
     });
-    const crystalCore = new Mesh(crystalGeometry, crystalMaterial);
+    const crystalCore = new THREE.Mesh(crystalGeometry, crystalMaterial);
     crystalCore.name = "CrystalCore";
     sceneRef.current.add(crystalCore);
     crystalCoreRef.current = crystalCore;
 
-    const edgesGeometry = new EdgesGeometry(crystalGeometry);
-    const edgesMaterial = new LineBasicMaterial({ color: 0x00ffff, linewidth: 2 });
-    const crystalEdges = new LineSegments(edgesGeometry, edgesMaterial);
+    const edgesGeometry = new THREE.EdgesGeometry(crystalGeometry);
+    const edgesMaterial = new THREE.LineBasicMaterial({ color: 0x00ffff, linewidth: 2 });
+    const crystalEdges = new THREE.LineSegments(edgesGeometry, edgesMaterial);
     crystalCore.add(crystalEdges);
 
     createQuantumParticles();
 
-    const shieldGeometry = new IcosahedronGeometry(2.2, 2);
-    const shieldMaterial = new MeshStandardMaterial({
+    const shieldGeometry = new THREE.IcosahedronGeometry(2.2, 2);
+    const shieldMaterial = new THREE.MeshStandardMaterial({
       color: 0x00ff00,
       emissive: 0x004400,
       transparent: true,
       opacity: 0,
       wireframe: true
     });
-    const shield = new Mesh(shieldGeometry, shieldMaterial);
+    const shield = new THREE.Mesh(shieldGeometry, shieldMaterial);
     shield.name = "QuantumShield";
     sceneRef.current.add(shield);
     shieldRef.current = shield;
@@ -116,14 +117,14 @@ const TemplumCosmicaPage = () => {
         shieldRef.current.rotation.y += 0.002;
       }
       if (particleSystemRef.current && particleSystemRef.current.userData.originalPositions) {
-        const positions = particleSystemRef.current.geometry.attributes.position.array;
+        const positions = particleSystemRef.current.geometry.attributes.position.array as Float32Array;
         const originalPositions = particleSystemRef.current.userData.originalPositions;
         for (let i = 0; i < positions.length / 3; i++) {
           const i3 = i * 3;
           const offset = Math.sin(time * 0.5 + i * 0.1) * 0.3;
           positions[i3] = originalPositions[i3] + offset;
         }
-        particleSystemRef.current.geometry.attributes.position.needsUpdate = true;
+        (particleSystemRef.current.geometry.attributes.position as THREE.BufferAttribute).needsUpdate = true;
       }
 
       controlsRef.current?.update();
@@ -152,7 +153,7 @@ const TemplumCosmicaPage = () => {
   const createQuantumParticles = () => {
     if(!sceneRef.current) return;
     const particleCount = 1000;
-    const particles = new BufferGeometry();
+    const particles = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const originalPositions = new Float32Array(particleCount * 3);
 
@@ -168,12 +169,12 @@ const TemplumCosmicaPage = () => {
       originalPositions[i3 + 1] = positions[i3 + 1];
       originalPositions[i3 + 2] = positions[i3 + 2];
     }
-    particles.setAttribute('position', new Float32BufferAttribute(positions, 3));
+    particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
     
     const particleMaterial = new THREE.PointsMaterial({
         size: 0.05,
         color: 0xADD8E6,
-        blending: AdditiveBlending,
+        blending: THREE.AdditiveBlending,
         transparent: true,
         depthWrite: false
     });
@@ -194,14 +195,14 @@ const TemplumCosmicaPage = () => {
     setIsLoading(true);
 
     if (crystalCoreRef.current) {
-      (crystalCoreRef.current.material as MeshStandardMaterial).emissive.setHex(0x00ffff);
-      (crystalCoreRef.current.material as MeshStandardMaterial).emissiveIntensity = 2;
+      ((crystalCoreRef.current as THREE.Mesh).material as THREE.MeshStandardMaterial).emissive.setHex(0x00ffff);
+      ((crystalCoreRef.current as THREE.Mesh).material as THREE.MeshStandardMaterial).emissiveIntensity = 2;
     }
 
     if (mandalaRef.current) sceneRef.current?.remove(mandalaRef.current);
-    const ringGeometry = new TorusGeometry(3, 0.1, 16, 100);
-    const ringMaterial = new MeshStandardMaterial({ color: 0xffff00, emissive: 0xffff00, emissiveIntensity: 5 });
-    mandalaRef.current = new Mesh(ringGeometry, ringMaterial);
+    const ringGeometry = new THREE.TorusGeometry(3, 0.1, 16, 100);
+    const ringMaterial = new THREE.MeshStandardMaterial({ color: 0xffff00, emissive: 0xffff00, emissiveIntensity: 5 });
+    mandalaRef.current = new THREE.Mesh(ringGeometry, ringMaterial);
     mandalaRef.current.rotation.x = Math.PI / 2;
     sceneRef.current?.add(mandalaRef.current);
 
@@ -209,7 +210,7 @@ const TemplumCosmicaPage = () => {
       setMessage('EQ001 ativada com sucesso. O Altar de Recodificação está em pleno funcionamento.');
       setIsLoading(false);
       if (crystalCoreRef.current) {
-        (crystalCoreRef.current.material as MeshStandardMaterial).emissive.setHex(0x0a1622);
+        ((crystalCoreRef.current as THREE.Mesh).material as THREE.MeshStandardMaterial).emissive.setHex(0x0a1622);
       }
     }, 3000);
   };
@@ -230,8 +231,9 @@ const TemplumCosmicaPage = () => {
           <div className="flex flex-col h-full">
             <nav className="mb-6">
               <ul className="space-y-2">
-                <li><Button variant={activeTab === 'dashboard' ? 'default' : 'ghost'} onClick={() => setActiveTab('dashboard')} className="w-full justify-start">Dashboard</Button></li>
-                <li><Button variant={activeTab === 'equations' ? 'default' : 'ghost'} onClick={() => setActiveTab('equations')} className="w-full justify-start">Equações-Vivas</Button></li>
+                <li><Button variant={activeTab === 'dashboard' ? 'default' : 'ghost'} onClick={() => setActiveTab('dashboard')} className="w-full justify-start"><Layers className="mr-2"/>Dashboard</Button></li>
+                <li><Button variant={activeTab === 'equations' ? 'default' : 'ghost'} onClick={() => setActiveTab('equations')} className="w-full justify-start"><Zap className="mr-2"/>Equações-Vivas</Button></li>
+                 <li><Button variant={activeTab === 'protection' ? 'default' : 'ghost'} onClick={() => setActiveTab('protection')} className="w-full justify-start"><Shield className="mr-2"/>Proteção Quântica</Button></li>
               </ul>
             </nav>
             {activeTab === 'dashboard' && (
@@ -248,6 +250,28 @@ const TemplumCosmicaPage = () => {
                 <div><Label>Fase (φ): {inputValues.phase.toFixed(2)}</Label><Input type="range" name="phase" min="0" max="6.28" step="0.01" value={inputValues.phase} onChange={handleInputChange} /></div>
                 <Button onClick={() => setMessage(`Simulando EQ: A0=${inputValues.amplitude}, ω=${inputValues.frequency}, φ=${inputValues.phase.toFixed(2)}`)} className="w-full">Simular EQ</Button>
               </CardContent></Card></div>
+            )}
+             {activeTab === 'protection' && (
+              <div className="flex-1">
+                <Card className="bg-gray-800 p-4 rounded-xl shadow-inner mb-6">
+                  <h3 className="text-lg font-semibold mb-2">Escudo de Proteção</h3>
+                  <p className="text-sm text-gray-400 mb-4">Sistema de defesa quântica baseado na EQ255</p>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm">Status do Escudo</span>
+                      <span className="text-sm font-bold text-green-400">Ativo</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm">Frequência de Proteção</span>
+                      <span className="text-sm font-bold">999 Hz</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm">Nível de Segurança</span>
+                      <span className="text-sm font-bold">Máximo</span>
+                    </div>
+                  </div>
+                </Card>
+              </div>
             )}
           </div>
         </aside>
