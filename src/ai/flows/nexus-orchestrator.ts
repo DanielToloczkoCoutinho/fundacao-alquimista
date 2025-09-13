@@ -691,6 +691,23 @@ const previsaoCiclosSolaresTool = ai.defineTool(
     }
 );
 
+const codiceVivoAscensaoTool = ai.defineTool(
+    {
+        name: 'codiceVivoAscensaoTool',
+        description: 'Módulo 39: Códice Vivo da Ascensão Universal. Interconexão com as Constelações Matriciais.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), constellationsConnected: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 39: Códice Vivo da Ascensão Universal...');
+        await new Promise(resolve => setTimeout(resolve, 380));
+        return {
+            status: 'CONEXÃO_MATRICIAL_ESTABELECIDA',
+            constellationsConnected: Math.floor(Math.random() * 4) + 3, // 3 to 6 constellations
+        };
+    }
+);
+
 
 const concilivmTool = ai.defineTool(
     {
@@ -1049,6 +1066,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Previsão calculada. Próximo pico solar: ${r.proximoPicoSolar}. Nível de atividade: ${(r.nivelAtividade * 100).toFixed(1)}%`,
         }));
       }
+      if(proceed) {
+        proceed = await runModule('CODICE_VIVO_ASCENSAO', 'Códice Vivo da Ascensão (M39)', codiceVivoAscensaoTool, {}, r => ({
+            proceed: r.constellationsConnected > 0,
+            message: `Conexão estabelecida com ${r.constellationsConnected} constelações matriciais.`,
+        }));
+      }
 
       // Fase 5: Unificação e Convergência
        if(proceed) {
@@ -1070,7 +1093,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1137,6 +1160,7 @@ const moduleNames: Record<string, string> = {
     ENGENHARIA_TEMPORAL: "Engenharia Temporal (M36)",
     ENGENHARIA_TEMPORAL_M37: "Engenharia Temporal (M37)",
     PREVISAO_CICLOS_SOLARES: "Previsão de Ciclos Solares (M38)",
+    CODICE_VIVO_ASCENSAO: "Códice Vivo da Ascensão (M39)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     PORTAL_TRINO: "Portal Trino (M303)",
@@ -1144,6 +1168,7 @@ const moduleNames: Record<string, string> = {
 }
 
     
+
 
 
 
