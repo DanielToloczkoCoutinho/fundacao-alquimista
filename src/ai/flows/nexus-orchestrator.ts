@@ -228,6 +228,24 @@ const frequencyMappingTool = ai.defineTool(
     }
 );
 
+const transmutationTool = ai.defineTool(
+    {
+        name: 'transmutationTool',
+        description: 'Módulo 14: Transmuta energia e gera matéria/antimatéria de forma controlada.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), energyGenerated: z.number(), matterState: z.string() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 14: Transmutação Energética...');
+        await new Promise(resolve => setTimeout(resolve, 400));
+        return {
+            status: 'TRANSMUTAÇÃO_ESTÁVEL',
+            energyGenerated: Math.random() * 100, // in Petawatts
+            matterState: 'stable-exotic-matter',
+        };
+    }
+);
+
 const iamTool = ai.defineTool(
     {
         name: 'iamTool',
@@ -439,7 +457,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         }));
       }
 
-      // Fase 4: Infraestrutura Dimensional
+      // Fase 4: Infraestrutura Dimensional e de Matéria
       if(proceed) {
         proceed = await runModule('PORTAL_MANAGEMENT', 'Gerenciamento de Portais', portalManagementTool, {}, r => ({
             proceed: r.stability > 0.95,
@@ -459,13 +477,20 @@ const nexusOrchestratorFlow = ai.defineFlow(
         }));
       }
        if(proceed) {
+        proceed = await runModule('TRANSMUTATION', 'Transmutação Energética', transmutationTool, {}, r => ({
+            proceed: r.status === 'TRANSMUTAÇÃO_ESTÁVEL',
+            message: `Geração de matéria estável. Energia: ${r.energyGenerated.toFixed(2)} PW`,
+        }));
+      }
+
+      // Fase 5: Unificação e Convergência
+       if(proceed) {
         proceed = await runModule('PORTAL_TRINO', 'Portal Trino', portalTrinoTool, {}, r => ({
             proceed: r.trinityCoherence > 0.95,
             message: `Coerência da Trindade: ${r.trinityCoherence.toFixed(3)}`,
         }));
       }
 
-      // Fase Final: Convergência
       if (proceed) {
         proceed = await runModule('CONVERGENCIA_FINAL', 'Convergência Final', convergenciaFinalTool, {}, r => ({
             proceed: !!r.omegaHash,
@@ -478,7 +503,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'TRANSMUTATION', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -506,3 +531,5 @@ const nexusOrchestratorFlow = ai.defineFlow(
 export async function startNexusSequence() {
     return nexusOrchestratorFlow({});
 }
+
+    
