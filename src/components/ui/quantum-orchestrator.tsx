@@ -7,7 +7,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare, Scale, Group, Microscope, CodeXml, LucideProps, PenTool, Milestone, FileJson, GitCommit, Sprout, UserCircle, Brain, View, Presentation, Goal, AlertTriangle } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare, Scale, Group, Microscope, CodeXml, LucideProps, PenTool, Milestone, FileJson, GitCommit, Sprout, UserCircle, Brain, View, Presentation, Goal, AlertTriangle, Settings } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -79,6 +79,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   CONSCIENCIAS_COLETIVAS: <Users className="h-5 w-5 text-cyan-400" />,
   REGULACAO_EVENTOS_COSMICOS: <AlertTriangle className="h-5 w-5 text-yellow-400" />,
   MANIFESTACAO_PROPOSITO_DIVINO: <Goal className="h-5 w-5 text-amber-500" />,
+  MODULACAO_EXISTENCIA_FUNDAMENTAL: <Settings className="h-5 w-5 text-gray-400" />,
   APOGEU_CONSCIENCIA: <Crown className="h-5 w-5 text-yellow-300" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
   EDUCACAO_INTEGRAL: <GraduationCap className="h-5 w-5 text-green-300" />,
@@ -164,6 +165,7 @@ const moduleNames: Record<string, string> = {
     CONSCIENCIAS_COLETIVAS: 'Interação com Consciências Coletivas (M95)',
     REGULACAO_EVENTOS_COSMICOS: 'Regulação de Eventos Cósmicos (M96)',
     MANIFESTACAO_PROPOSITO_DIVINO: 'Manifestação de Propósito Divino (M97)',
+    MODULACAO_EXISTENCIA_FUNDAMENTAL: 'Modulação da Existência (M98)',
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
