@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare, Scale } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare, Scale, Group } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -58,6 +58,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   THESAURUS_COSMICO: <Archive className="h-5 w-5 text-orange-200" />,
   INTERFACE_COSMICA_INTERATIVA: <MessageSquare className="h-5 w-5 text-teal-300" />,
   GOVERNANCA_ATLANTO_GALACTICA: <Scale className="h-5 w-5 text-indigo-300" />,
+  ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS: <Group className="h-5 w-5 text-lime-300" />,
   APOGEU_CONSCIENCIA: <Crown className="h-5 w-5 text-yellow-300" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
   EDUCACAO_INTEGRAL: <GraduationCap className="h-5 w-5 text-green-300" />,
@@ -121,6 +122,7 @@ const moduleNames: Record<string, string> = {
     THESAURUS_COSMICO: "Thesaurus Cósmico (M47)",
     INTERFACE_COSMICA_INTERATIVA: "Interface Cósmica (M71)",
     GOVERNANCA_ATLANTO_GALACTICA: "Governança Atlanto-Galáctica (M72)",
+    ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS: "Orquestração Ética (SAVCE) (M73)",
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
@@ -230,32 +232,5 @@ export default function QuantumOrchestrator() {
   );
 }
     
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    
-
-  
 
     
