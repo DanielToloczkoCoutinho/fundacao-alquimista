@@ -1,3 +1,4 @@
+
 import * as admin from 'firebase-admin';
 
 // A inicialização do admin pode ser feita uma única vez.
