@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -27,6 +27,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   BIO_SUSTAIN: <Leaf className="h-5 w-5 text-lime-400" />,
   AURA_HEAL: <Sparkles className="h-5 w-5 text-emerald-400" />,
   AKASHIC_ORCHESTRATION: <Database className="h-5 w-5 text-cyan-300" />,
+  FORCE_FIELD_ANALYSIS: <Waves className="h-5 w-5 text-sky-400" />,
   IAM: <Aperture className="h-5 w-5 text-cyan-400" />,
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
   AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
@@ -59,6 +60,7 @@ const moduleNames: Record<string, string> = {
     BIO_SUSTAIN: "Bio-Sustentabilidade (M16)",
     AURA_HEAL: "Matriz de Cura Holográfica (M17)",
     AKASHIC_ORCHESTRATION: "Orquestração Akáshica (M18)",
+    FORCE_FIELD_ANALYSIS: "Análise de Campos de Força (M19)",
     IAM: "IAM (M29)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
