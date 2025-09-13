@@ -634,6 +634,25 @@ const conscienciaColetivaToolM35 = ai.defineTool(
     }
 );
 
+const engenhariaTemporalTool = ai.defineTool(
+    {
+        name: 'engenhariaTemporalTool',
+        description: 'Módulo 36: Engenharia Temporal das Realidades Simultâneas. Orquestra linhas de tempo.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), timelinesOrchestrated: z.number(), paradoxProbability: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 36: Engenharia Temporal...');
+        await new Promise(resolve => setTimeout(resolve, 440));
+        return {
+            status: 'LINHAS_DE_TEMPO_HARMONIZADAS',
+            timelinesOrchestrated: Math.floor(Math.random() * 5) + 2,
+            paradoxProbability: Math.random() * 0.001,
+        };
+    }
+);
+
+
 const concilivmTool = ai.defineTool(
     {
         name: 'concilivmTool',
@@ -973,6 +992,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `${r.realitiesAccessed} realidades acessadas com conformidade ética de ${(r.ethicalCompliance * 100).toFixed(2)}%`,
         }));
       }
+      if(proceed) {
+        proceed = await runModule('ENGENHARIA_TEMPORAL', 'Engenharia Temporal', engenhariaTemporalTool, {}, r => ({
+            proceed: r.paradoxProbability < 0.01,
+            message: `${r.timelinesOrchestrated} linhas de tempo orquestradas. Prob. de paradoxo: ${(r.paradoxProbability * 100).toFixed(3)}%`,
+        }));
+      }
 
       // Fase 5: Unificação e Convergência
        if(proceed) {
@@ -994,7 +1019,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1058,6 +1083,7 @@ const moduleNames: Record<string, string> = {
     REALITY_MANIPULATION: "Manipulação da Realidade (M31)",
     PARALLEL_REALITY: "Acesso a Realidades Paralelas (M32)",
     CONSCIENCIA_COLETIVA_M35: "Consciência Coletiva (M35)",
+    ENGENHARIA_TEMPORAL: "Engenharia Temporal (M36)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     PORTAL_TRINO: "Portal Trino (M303)",
@@ -1065,6 +1091,7 @@ const moduleNames: Record<string, string> = {
 }
 
     
+
 
 
 
