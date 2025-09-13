@@ -902,6 +902,30 @@ const orquestracaoEticaNucleosRegionaisTool = ai.defineTool(
     }
 );
 
+const revisaoParesEquacoesTool = ai.defineTool(
+    {
+        name: 'revisaoParesEquacoesTool',
+        description: 'Módulo 73.1: Valida e audita as Equações Fundamentais através de múltiplos módulos.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), equationsReviewed: z.number(), approved: z.number(), rejected: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 73.1: Revisão por Pares das Equações Fundamentais...');
+        await new Promise(resolve => setTimeout(resolve, 450));
+        // Simulação de resultado de revisão
+        const total = 131;
+        const rejected = 2 + Math.floor(Math.random() * 3); // Entre 2 a 4 rejeitadas
+        const approved = total - rejected;
+        return {
+            status: 'REVISAO_COMPLETA',
+            equationsReviewed: total,
+            approved: approved,
+            rejected: rejected,
+        };
+    }
+);
+
+
 const apogeuConscienciaTool = ai.defineTool(
     {
         name: 'apogeuConscienciaTool',
@@ -1146,6 +1170,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
         proceed = await runModule('ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS', 'Orquestração Ética dos Núcleos Regionais (SAVCE)', orquestracaoEticaNucleosRegionaisTool, {}, r => ({
             proceed: r.nucleiSynchronized > 0,
             message: `${r.nucleiSynchronized} núcleos sincronizados eticamente.`,
+        }));
+      }
+       if(proceed) {
+        proceed = await runModule('REVISAO_PARES_EQUACOES', 'Revisão por Pares das Equações (M73.1)', revisaoParesEquacoesTool, {}, r => ({
+            proceed: r.rejected === 0,
+            message: `Revisão completa. Equações aprovadas: ${r.approved}. Rejeitadas: ${r.rejected}.`,
         }));
       }
 
@@ -1394,7 +1424,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'GOVERNANCA_ATLANTO_GALACTICA', 'ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'THESAURUS_COSMICO', 'INTERFACE_COSMICA_INTERATIVA', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIOES', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'GOVERNANCA_ATLANTO_GALACTICA', 'ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS', 'REVISAO_PARES_EQUACOES', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'THESAURUS_COSMICO', 'INTERFACE_COSMICA_INTERATIVA', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIOES', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1473,6 +1503,7 @@ const moduleNames: Record<string, string> = {
     INTERFACE_COSMICA_INTERATIVA: "Interface Cósmica (M71)",
     GOVERNANCA_ATLANTO_GALACTICA: "Governança Atlanto-Galáctica (M72)",
     ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS: "Orquestração Ética (SAVCE) (M73)",
+    REVISAO_PARES_EQUACOES: "Revisão por Pares (M73.1)",
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
