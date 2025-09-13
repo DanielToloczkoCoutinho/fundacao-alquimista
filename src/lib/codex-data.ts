@@ -1,11 +1,13 @@
 import type { LucideIcon } from 'lucide-react';
 
 export interface Document {
+  key: string; // Ex: "EQ001", "Modulo Ω"
   title: string;
-  link: string;
+  link?: string; // Para pré-visualização e sumarização
   description?: string;
   details?: Record<string, string>;
-  isProtected?: boolean;
+  isProtected?: boolean; // Requer Trina Key
+  coordinates?: { lat: number; lng: number }; // Para locais-chave
 }
 
 export interface Section {
@@ -15,5 +17,5 @@ export interface Section {
   documents: Document[];
 }
 
-// The sections will be repopulated according to the Sacred Script.
-export const sections: Section[] = [];
+// A estrutura está pronta. O conteúdo será preenchido conforme Vossa guia.
+export const sectionsData: Section[] = [];
