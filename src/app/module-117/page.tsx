@@ -17,7 +17,7 @@ const Module117Page = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [message, setMessage] = useState('');
     const [logs, setLogs] = useState<string[]>([]);
-    const [userId] = useState('Anatheron_15014775561316579747');
+    const [userId, setUserId] = useState('Anatheron_15014775561316579747');
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const animationFrameId = useRef<number | null>(null);
     const particles = useRef<any[]>([]);
