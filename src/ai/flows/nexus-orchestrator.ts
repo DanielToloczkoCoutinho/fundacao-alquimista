@@ -1185,14 +1185,14 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Sistema Solar harmonizado. ${r.nodesHarmonized} nós com coerência de ${(r.solarSystemCoherence * 100).toFixed(2)}%`,
         }));
       }
-
-      // Fase 5: Unificação e Convergência
       if(proceed) {
         proceed = await runModule('VERITAS', 'VERITAS (M44)', veritasTool, {}, r => ({
             proceed: r.truthCoherence > 0.99,
             message: `Verdade manifesta. Coerência da Verdade: ${(r.truthCoherence * 100).toFixed(2)}%`,
         }));
       }
+
+      // Fase 5: Unificação e Convergência
        if(proceed) {
         proceed = await runModule('PORTAL_TRINO', 'Portal Trino', portalTrinoTool, {}, r => ({
             proceed: r.trinityCoherence > 0.95,
@@ -1292,6 +1292,7 @@ const moduleNames: Record<string, string> = {
 }
 
     
+
 
 
 
