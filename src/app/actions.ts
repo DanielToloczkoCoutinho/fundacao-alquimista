@@ -11,6 +11,7 @@ import { describeQuantumHealing as runDescribeQuantumHealing } from '@/ai/flows/
 import { describePortalActivation as runDescribePortalActivation } from '@/ai/flows/portal-activation-flow';
 import { describeEtherFlower as runDescribeEtherFlower } from '@/ai/flows/ether-flower-flow';
 import { describeOlP as runDescribeOlp } from '@/ai/flows/olp-flow';
+import { describeSpaceTimeEngineering as runDescribeSpaceTimeEngineering } from '@/ai/flows/space-time-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -112,6 +113,16 @@ export async function describeEtherFlower(data: { phenomenon: string, purpose: s
 export async function describeOlP(data: { lightSource: string, purpose: string }) {
   try {
     const result = await runDescribeOlp(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeSpaceTimeEngineering(data: { type: string, destination: string, duration: string }) {
+  try {
+    const result = await runDescribeSpaceTimeEngineering(data);
     return { description: result.description, error: null };
   } catch (e: any) {
     console.error(e);
