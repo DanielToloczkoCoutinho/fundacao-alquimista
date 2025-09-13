@@ -182,6 +182,7 @@ const moduleNames: Record<string, string> = {
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
     ALIANCA_GUARDIÕES: "Aliança dos Guardiões Regionais (M305)",
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
+    TEMPLUM_COSMICA: "Templum Cosmica (M119)",
 }
 
 type ModuleStatus = {
