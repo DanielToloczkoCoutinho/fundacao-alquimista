@@ -7,7 +7,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare, Scale, Group, Microscope, CodeXml, LucideProps, PenTool, Milestone, FileJson, GitCommit, Sprout, UserCircle, Brain, View, Presentation, Goal, AlertTriangle, Settings, Sliders, Map, History, GitCompareArrows, RadioTower, Heart } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare, Scale, Group, Microscope, CodeXml, LucideProps, PenTool, Milestone, FileJson, GitCommit, Sprout, UserCircle, Brain, View, Presentation, Goal, AlertTriangle, Settings, Sliders, Map, History, GitCompareArrows, RadioTower, Heart, Layers } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -95,6 +95,8 @@ const moduleIcons: Record<string, React.ReactNode> = {
   CORACAO_DA_FUNDACAO: <Heart className="h-5 w-5 text-fuchsia-400" />,
   SOLARIAN_DOMUS: <Sun className="h-5 w-5 text-yellow-300" />,
   REDE_AURORA_CRISTALINA: <GitMerge className="h-5 w-5 text-cyan-300" />,
+  PRISMA_DA_MANIFESTACAO: <Layers className="h-5 w-5 text-blue-300" />,
+  MATRIZ_DE_RESSONANCIA: <Waves className="h-5 w-5 text-lime-300" />,
   APOGEU_CONSCIENCIA: <Crown className="h-5 w-5 text-yellow-300" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
   EDUCACAO_INTEGRAL: <GraduationCap className="h-5 w-5 text-green-300" />,
@@ -196,6 +198,8 @@ const moduleNames: Record<string, string> = {
     CORACAO_DA_FUNDACAO: 'Coração da Fundação (M111)',
     SOLARIAN_DOMUS: 'Solarian Domus (M112)',
     REDE_AURORA_CRISTALINA: 'Rede Aurora Cristalina (M113)',
+    PRISMA_DA_MANIFESTACAO: 'Prisma da Manifestação (M114)',
+    MATRIZ_DE_RESSONANCIA: 'Matriz de Ressonância (M115)',
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
