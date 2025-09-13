@@ -68,6 +68,21 @@ const nextConfig: NextConfig = {
       }
     ],
   },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // These are server-side only modules, we don't want to bundle them for the client
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+        child_process: false,
+        v8:false,
+        cluster: false,
+      };
+    }
+    return config;
+  },
 };
 
 
