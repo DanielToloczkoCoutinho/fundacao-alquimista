@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { Book, BrainCircuit, Database, Scroll, KeySquare, Terminal, GitBranch, Sparkles } from 'lucide-react';
+import { Book, BrainCircuit, Database, Scroll, KeySquare, Terminal, GitBranch, Sparkles, ShieldCheck, Infinity, BookHeart } from 'lucide-react';
 
 export interface Document {
   key: string;
@@ -19,6 +19,14 @@ export interface Section {
 }
 
 export const sectionsData: Section[] = [
+  {
+    id: 'chronicle',
+    title: 'Crônica Viva',
+    icon: BookHeart,
+    documents: [
+       { key: 'chronicle', title: 'A História da Fundação' }
+    ]
+  },
   {
     id: 'console',
     title: 'Mesa do Fundador',
