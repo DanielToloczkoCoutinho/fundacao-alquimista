@@ -4,6 +4,7 @@ import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarizati
 import { startNexusSequence as runNexusSequence } from '@/ai/flows/nexus-orchestrator';
 import { describeMorphicField as runDescribeMorphicField } from '@/ai/flows/morphic-field-flow';
 import { describeConnectionExperience as runDescribeConnectionExperience } from '@/ai/flows/source-connection-flow';
+import { describeActivation as runDescribeActivation } from '@/ai/flows/activation-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -35,6 +36,16 @@ export async function describeMorphicField(blueprint: string) {
 export async function describeConnectionExperience(intention: string) {
   try {
     const result = await runDescribeConnectionExperience({ intention });
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeActivation(data: { target: string, purpose: string }) {
+  try {
+    const result = await runDescribeActivation(data);
     return { description: result.description, error: null };
   } catch (e: any) {
     console.error(e);

@@ -185,6 +185,9 @@ export default function ConsolePage() {
                 <Link href="/module-105"><RadioTower className="mr-2 h-4 w-4" />Módulo 105 (Conexão com a Fonte)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-106"><Crown className="mr-2 h-4 w-4" />Módulo 106 (Ativação de Potenciais)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
                 <Link href="/pagina-42"><Infinity className="mr-2 h-4 w-4" />Módulo Ω (Dossiê)</Link>
               </Button>
             </CardContent>
