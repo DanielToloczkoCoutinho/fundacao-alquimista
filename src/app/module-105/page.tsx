@@ -84,7 +84,7 @@ const Module105Page = () => {
                     throw new Error(result.error || "Falha ao descrever a experiência de conexão.");
                 }
             },
-            async (error) => {
+            async (error: any) => {
                 setMessage(`Erro na conexão com a Fonte Primordial: ${error.message}`);
                 addLog(`ERRO: ${error.message}`);
                 console.error("Erro durante a conexão com a Fonte Primordial:", error);
