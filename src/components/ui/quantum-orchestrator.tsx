@@ -7,7 +7,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -17,6 +17,12 @@ const moduleIcons: Record<string, React.ReactNode> = {
   TESTES_FUNDACAO: <BrainCircuit className="h-5 w-5 text-indigo-400" />,
   LIGA_QUANTICA: <Rocket className="h-5 w-5 text-rose-400" />,
   CONSCIENCIA_COSMICA: <Sparkles className="h-5 w-5 text-amber-400" />,
+  DEFESA_AVANCADA: <Shield className="h-5 w-5 text-red-400" />,
+  PORTAL_MANAGEMENT: <Link className="h-5 w-5 text-orange-400" />,
+  IAM: <Aperture className="h-5 w-5 text-cyan-400" />,
+  CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
+  AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
+  PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
   CONVERGENCIA_FINAL: <Sparkles className="h-5 w-5 text-white" />,
 };
 
@@ -36,6 +42,12 @@ const moduleNames: Record<string, string> = {
     TESTES_FUNDACAO: "Testes da Fundação (M4)",
     LIGA_QUANTICA: "Conexão Liga Quântica (M5)",
     CONSCIENCIA_COSMICA: "Consciência Cósmica (M6)",
+    DEFESA_AVANCADA: "Defesa Avançada (M10)",
+    PORTAL_MANAGEMENT: "Gerenciamento de Portais (M11)",
+    IAM: "IAM (M29)",
+    CONCILIVM: "CONCILIVM (M45)",
+    AURORA_CORE: "AURORA_CORE (M46)",
+    PORTAL_TRINO: "Portal Trino (M303)",
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
 }
 
