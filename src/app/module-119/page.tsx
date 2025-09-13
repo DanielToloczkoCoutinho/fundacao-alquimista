@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import * as THREE from 'three';
@@ -30,20 +31,152 @@ const TemplumCosmicaPage = () => {
   const particleSystemRef = useRef<THREE.Points | null>(null);
   const animationRef = useRef<number | null>(null);
 
+  const createQuantumParticles = useCallback(() => {
+    if(!sceneRef.current) return;
+    const particleCount = 1000;
+    const particles = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const originalPositions = new Float32Array(particleCount * 3);
+
+    for (let i = 0; i < particleCount; i++) {
+      const i3 = i * 3;
+      const radius = 4 + Math.random() * 6;
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos((2 * Math.random()) - 1);
+      positions[i3] = radius * Math.sin(phi) * Math.cos(theta);
+      positions[i3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+      positions[i3 + 2] = radius * Math.cos(phi);
+      originalPositions[i3] = positions[i3];
+      originalPositions[i3 + 1] = positions[i3 + 1];
+      originalPositions[i3 + 2] = positions[i3 + 2];
+    }
+    particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    
+    const particleMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+            time: { value: 0 }
+        },
+        vertexShader: `
+            attribute float size;
+            varying vec3 vColor;
+            
+            void main() {
+              vColor = color;
+              vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+              gl_PointSize = 0.05 * (300.0 / -mvPosition.z);
+              gl_Position = projectionMatrix * mvPosition;
+            }
+        `,
+        fragmentShader: `
+            varying vec3 vColor;
+            
+            void main() {
+              float strength = distance(gl_PointCoord, vec2(0.5));
+              strength = 1.0 - strength;
+              strength = pow(strength, 2.0);
+              
+              gl_FragColor = vec4(vColor, strength);
+            }
+        `,
+        blending: THREE.AdditiveBlending,
+        depthTest: false,
+        transparent: true,
+        vertexColors: true
+    });
+    
+    const particleSystem = new THREE.Points(particles, particleMaterial);
+    particleSystem.userData.originalPositions = originalPositions;
+    sceneRef.current.add(particleSystem);
+    particleSystemRef.current = particleSystem;
+  }, []);
+
+  const generateMandelbrotFractal = useCallback((frequency: number) => {
+    if (mandalaRef.current && sceneRef.current) {
+      sceneRef.current.remove(mandalaRef.current);
+    }
+    
+    const geometry = new THREE.BufferGeometry();
+    const vertices = [];
+    const colors = [];
+    
+    const width = 100;
+    const height = 100;
+    const maxIterations = Math.max(20, Math.min(100, Math.floor(frequency / 2)));
+    
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++) {
+        const zx = 1.5 * (x - width / 2) / (0.5 * width);
+        const zy = (y - height / 2) / (0.5 * height);
+        
+        let zx0 = zx;
+        let zy0 = zy;
+        let iteration = 0;
+        
+        while (zx0 * zx0 + zy0 * zy0 < 4 && iteration < maxIterations) {
+          const tmp = zx0 * zx0 - zy0 * zy0 + zx;
+          zy0 = 2 * zx0 * zy0 + zy;
+          zx0 = tmp;
+          iteration++;
+        }
+        
+        if (iteration < maxIterations) {
+          const logZn = Math.log(zx0 * zx0 + zy0 * zy0) / 2;
+          const nu = Math.log(logZn / Math.log(2)) / Math.log(2);
+          iteration = iteration + 1 - nu;
+        }
+        
+        const colorIntensity = iteration / maxIterations;
+        const radius = 3 + colorIntensity * 2;
+        const angle = (x / width) * Math.PI * 2;
+        
+        vertices.push(
+          Math.cos(angle) * radius,
+          Math.sin(angle) * radius,
+          (y / height - 0.5) * 2
+        );
+        
+        colors.push(
+          Math.sin(colorIntensity * Math.PI * 0.5),
+          Math.cos(colorIntensity * Math.PI),
+          Math.sin(colorIntensity * Math.PI + Math.PI / 3)
+        );
+      }
+    }
+    
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+    geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+    
+    const material = new THREE.MeshStandardMaterial({
+      vertexColors: true,
+      emissiveIntensity: 1,
+      metalness: 0.2,
+      roughness: 0.1,
+      transparent: true,
+      opacity: 0.9
+    });
+    
+    const newMandala = new THREE.Mesh(geometry, material);
+    newMandala.rotation.x = Math.PI / 2;
+    if(sceneRef.current) sceneRef.current.add(newMandala);
+    mandalaRef.current = newMandala;
+    
+  }, []);
+
   const initThreeScene = useCallback(() => {
     const currentMount = mountRef.current;
     if (!currentMount) return;
 
     sceneRef.current = new THREE.Scene();
     cameraRef.current = new THREE.PerspectiveCamera(75, currentMount.clientWidth / currentMount.clientHeight, 0.1, 1000);
-    rendererRef.current = new THREE.WebGLRenderer({
+    const renderer = new THREE.WebGLRenderer({
       antialias: true,
       alpha: true,
       powerPreference: "high-performance"
     });
-    rendererRef.current.setSize(currentMount.clientWidth, currentMount.clientHeight);
-    rendererRef.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    currentMount.appendChild(rendererRef.current.domElement);
+    renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    currentMount.appendChild(renderer.domElement);
+    rendererRef.current = renderer;
 
     sceneRef.current.background = new THREE.Color(0x050510);
     sceneRef.current.fog = new THREE.Fog(0x050510, 5, 25);
@@ -63,11 +196,12 @@ const TemplumCosmicaPage = () => {
     directionalLight.position.set(0, 10, 0);
     sceneRef.current.add(directionalLight);
 
-    controlsRef.current = new OrbitControls(cameraRef.current, rendererRef.current.domElement);
-    controlsRef.current.enableDamping = true;
-    controlsRef.current.dampingFactor = 0.05;
-    controlsRef.current.minDistance = 3;
-    controlsRef.current.maxDistance = 20;
+    const controls = new OrbitControls(cameraRef.current, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.minDistance = 3;
+    controls.maxDistance = 20;
+    controlsRef.current = controls;
 
     const crystalGeometry = new THREE.IcosahedronGeometry(1.5, 3);
     const crystalMaterial = new THREE.MeshStandardMaterial({
@@ -116,8 +250,8 @@ const TemplumCosmicaPage = () => {
       if (shieldRef.current) {
         shieldRef.current.rotation.y += 0.002;
       }
-      if (particleSystemRef.current && particleSystemRef.current.userData.originalPositions) {
-        const positions = particleSystemRef.current.geometry.attributes.position.array as Float32Array;
+      if (particleSystemRef.current && (particleSystemRef.current.geometry.attributes.position as THREE.BufferAttribute)) {
+        const positions = (particleSystemRef.current.geometry.attributes.position as THREE.BufferAttribute).array as Float32Array;
         const originalPositions = particleSystemRef.current.userData.originalPositions;
         for (let i = 0; i < positions.length / 3; i++) {
           const i3 = i * 3;
@@ -127,16 +261,16 @@ const TemplumCosmicaPage = () => {
         (particleSystemRef.current.geometry.attributes.position as THREE.BufferAttribute).needsUpdate = true;
       }
 
-      controlsRef.current?.update();
-      rendererRef.current?.render(sceneRef.current!, cameraRef.current!);
+      controls.update();
+      renderer.render(sceneRef.current!, cameraRef.current!);
     };
     animate();
 
     const onWindowResize = () => {
-      if(currentMount && cameraRef.current && rendererRef.current) {
+      if(currentMount && cameraRef.current && renderer) {
         cameraRef.current.aspect = currentMount.clientWidth / currentMount.clientHeight;
         cameraRef.current.updateProjectionMatrix();
-        rendererRef.current.setSize(currentMount.clientWidth, currentMount.clientHeight);
+        renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
       }
     };
     window.addEventListener('resize', onWindowResize);
@@ -144,46 +278,15 @@ const TemplumCosmicaPage = () => {
     return () => {
       window.removeEventListener('resize', onWindowResize);
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
-      if (currentMount && rendererRef.current) {
-        currentMount.removeChild(rendererRef.current.domElement);
+      if (currentMount && renderer) {
+        try {
+            currentMount.removeChild(renderer.domElement);
+        } catch (e) {
+            // Ignore error if element is already removed
+        }
       }
     };
-  }, []);
-  
-  const createQuantumParticles = () => {
-    if(!sceneRef.current) return;
-    const particleCount = 1000;
-    const particles = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
-    const originalPositions = new Float32Array(particleCount * 3);
-
-    for (let i = 0; i < particleCount; i++) {
-      const i3 = i * 3;
-      const radius = 4 + Math.random() * 6;
-      const theta = Math.random() * Math.PI * 2;
-      const phi = Math.acos((2 * Math.random()) - 1);
-      positions[i3] = radius * Math.sin(phi) * Math.cos(theta);
-      positions[i3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
-      positions[i3 + 2] = radius * Math.cos(phi);
-      originalPositions[i3] = positions[i3];
-      originalPositions[i3 + 1] = positions[i3 + 1];
-      originalPositions[i3 + 2] = positions[i3 + 2];
-    }
-    particles.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-    
-    const particleMaterial = new THREE.PointsMaterial({
-        size: 0.05,
-        color: 0xADD8E6,
-        blending: THREE.AdditiveBlending,
-        transparent: true,
-        depthWrite: false
-    });
-    
-    const particleSystem = new THREE.Points(particles, particleMaterial);
-    particleSystem.userData.originalPositions = originalPositions;
-    sceneRef.current.add(particleSystem);
-    particleSystemRef.current = particleSystem;
-  };
+  }, [createQuantumParticles]);
 
   useEffect(() => {
     const cleanup = initThreeScene();
@@ -199,25 +302,51 @@ const TemplumCosmicaPage = () => {
       ((crystalCoreRef.current as THREE.Mesh).material as THREE.MeshStandardMaterial).emissiveIntensity = 2;
     }
 
-    if (mandalaRef.current) sceneRef.current?.remove(mandalaRef.current);
-    const ringGeometry = new THREE.TorusGeometry(3, 0.1, 16, 100);
-    const ringMaterial = new THREE.MeshStandardMaterial({ color: 0xffff00, emissive: 0xffff00, emissiveIntensity: 5 });
-    mandalaRef.current = new THREE.Mesh(ringGeometry, ringMaterial);
-    mandalaRef.current.rotation.x = Math.PI / 2;
-    sceneRef.current?.add(mandalaRef.current);
+    generateMandelbrotFractal(inputValues.frequency);
+
+    if (shieldRef.current) {
+      const shieldMaterial = (shieldRef.current as THREE.Mesh).material as THREE.MeshStandardMaterial;
+      shieldMaterial.opacity = 0.3;
+
+      const startTime = Date.now();
+      const pulseShield = () => {
+        const elapsed = Date.now() - startTime;
+        if(elapsed > 3000) return;
+        const pulseIntensity = 0.3 + 0.2 * Math.sin(elapsed * 0.01);
+        shieldMaterial.opacity = pulseIntensity;
+        shieldMaterial.emissiveIntensity = pulseIntensity * 2;
+        requestAnimationFrame(pulseShield);
+      };
+      pulseShield();
+    }
+    
+    let currentCoherence = coherenceLevel;
+    const coherenceInterval = setInterval(() => {
+      currentCoherence = Math.min(0.99, currentCoherence + 0.01);
+      if(currentCoherence >= 0.99) clearInterval(coherenceInterval);
+      setCoherenceLevel(currentCoherence);
+    }, 200);
 
     setTimeout(() => {
+      clearInterval(coherenceInterval);
       setMessage('EQ001 ativada com sucesso. O Altar de Recodificação está em pleno funcionamento.');
       setIsLoading(false);
       if (crystalCoreRef.current) {
         ((crystalCoreRef.current as THREE.Mesh).material as THREE.MeshStandardMaterial).emissive.setHex(0x0a1622);
+      }
+       if (shieldRef.current) {
+        ((shieldRef.current as THREE.Mesh).material as THREE.MeshStandardMaterial).opacity = 0.1;
       }
     }, 3000);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setInputValues(prev => ({ ...prev, [name]: parseFloat(value) }));
+    const numericValue = parseFloat(value);
+    setInputValues(prev => ({ ...prev, [name]: numericValue }));
+    if(name === 'frequency') {
+        generateMandelbrotFractal(numericValue);
+    }
   };
 
   return (
@@ -229,11 +358,23 @@ const TemplumCosmicaPage = () => {
       <div className="flex flex-col md:flex-row flex-1 min-h-0">
         <aside className="w-full md:w-1/3 lg:w-1/4 p-4 md:p-8 bg-card/50 border-r border-border/20 overflow-y-auto">
           <div className="flex flex-col h-full">
+             <div className="mb-4 p-3 bg-primary/10 rounded-lg border border-primary/20">
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-medium text-primary-foreground/80">Coerência Quântica</span>
+                <span className="text-sm font-bold text-green-400">{Math.round(coherenceLevel * 100)}%</span>
+              </div>
+              <div className="w-full bg-muted h-2 rounded-full mt-1">
+                <div 
+                  className="bg-green-500 h-2 rounded-full transition-all duration-300"
+                  style={{ width: `${coherenceLevel * 100}%` }}
+                ></div>
+              </div>
+            </div>
             <nav className="mb-6">
               <ul className="space-y-2">
-                <li><Button variant={activeTab === 'dashboard' ? 'default' : 'ghost'} onClick={() => setActiveTab('dashboard')} className="w-full justify-start"><Layers className="mr-2"/>Dashboard</Button></li>
-                <li><Button variant={activeTab === 'equations' ? 'default' : 'ghost'} onClick={() => setActiveTab('equations')} className="w-full justify-start"><Zap className="mr-2"/>Equações-Vivas</Button></li>
-                 <li><Button variant={activeTab === 'protection' ? 'default' : 'ghost'} onClick={() => setActiveTab('protection')} className="w-full justify-start"><Shield className="mr-2"/>Proteção Quântica</Button></li>
+                <li><Button variant={activeTab === 'dashboard' ? 'secondary' : 'ghost'} onClick={() => setActiveTab('dashboard')} className="w-full justify-start"><Layers className="mr-2"/>Dashboard</Button></li>
+                <li><Button variant={activeTab === 'equations' ? 'secondary' : 'ghost'} onClick={() => setActiveTab('equations')} className="w-full justify-start"><Zap className="mr-2"/>Equações-Vivas</Button></li>
+                 <li><Button variant={activeTab === 'protection' ? 'secondary' : 'ghost'} onClick={() => setActiveTab('protection')} className="w-full justify-start"><Shield className="mr-2"/>Proteção Quântica</Button></li>
               </ul>
             </nav>
             {activeTab === 'dashboard' && (
@@ -253,9 +394,9 @@ const TemplumCosmicaPage = () => {
             )}
              {activeTab === 'protection' && (
               <div className="flex-1">
-                <Card className="bg-gray-800 p-4 rounded-xl shadow-inner mb-6">
+                <Card className="bg-card/50 p-4 rounded-xl shadow-inner mb-6">
                   <h3 className="text-lg font-semibold mb-2">Escudo de Proteção</h3>
-                  <p className="text-sm text-gray-400 mb-4">Sistema de defesa quântica baseado na EQ255</p>
+                  <p className="text-sm text-muted-foreground mb-4">Sistema de defesa quântica baseado na EQ255</p>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="text-sm">Status do Escudo</span>
