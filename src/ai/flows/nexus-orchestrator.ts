@@ -2,7 +2,7 @@
 'use server';
 /**
  * @fileOverview O Nexus Central (Módulo 9), o orquestrador da Sinfonia Cósmica.
- * Este flow implementa a Sequência Sagrada, coordenando os módulos da Fundação Alquimista.
+ * Este flow implementa a Sequência Sagrada, coordenando todos os módulos da Fundação Alquimista.
  */
 
 import { ai } from '@/ai/genkit';
@@ -49,8 +49,8 @@ const segurancaQuanticaTool = ai.defineTool(
   },
   async ({ anatheronSignature }) => {
     logger.info('Executando Módulo 1: Segurança Quântica...');
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    const securityLevel = 0.95 + Math.random() * 0.05; // 95% a 100%
+    await new Promise(resolve => setTimeout(resolve, 500));
+    const securityLevel = 0.95 + Math.random() * 0.05;
     return {
       status: 'VERIFICADO_E_SEGURO',
       securityLevel: securityLevel,
@@ -73,7 +73,7 @@ const nanomanifestadorTool = ai.defineTool(
   },
   async ({ coherenceTarget }) => {
     logger.info('Executando Módulo 2: Nanomanifestador...');
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 500));
     const finalCoherence = coherenceTarget * (0.98 + Math.random() * 0.02);
     const transmutationRate = 1.0 - finalCoherence;
     const stability = finalCoherence * (1 - transmutationRate);
@@ -96,8 +96,8 @@ const monitoramentoSaturnoTool = ai.defineTool(
   },
   async () => {
     logger.info('Executando Módulo 3: Monitoramento de Saturno...');
-    await new Promise(resolve => setTimeout(resolve, 800));
-    const hasAnomaly = Math.random() < 0.1; // 10% de chance de anomalia
+    await new Promise(resolve => setTimeout(resolve, 400));
+    const hasAnomaly = Math.random() < 0.1;
     const cosmicEnergy = Math.random();
     if (hasAnomaly) {
       logger.warn('Anomalia temporal detectada!');
@@ -116,8 +116,8 @@ const testesFundacaoTool = ai.defineTool(
     },
     async ({ cosmicEnergy }) => {
         logger.info('Executando Módulo 4: Testes da Fundação...');
-        await new Promise(resolve => setTimeout(resolve, 500));
-        const accuracy = 0.8 + cosmicEnergy * 0.2; // A precisão depende da energia cósmica
+        await new Promise(resolve => setTimeout(resolve, 300));
+        const accuracy = 0.8 + cosmicEnergy * 0.2;
         return { status: 'TESTES_CONCLUIDOS', accuracy };
     }
 );
@@ -131,7 +131,7 @@ const ligaQuanticaTool = ai.defineTool(
     },
     async () => {
         logger.info('Executando Módulo 5: Conexão com a Liga Quântica...');
-        await new Promise(resolve => setTimeout(resolve, 700));
+        await new Promise(resolve => setTimeout(resolve, 350));
         const connectionStatus = Math.random();
         if (connectionStatus > 0.8) return { status: 'HARMONIA_ESTELAR', connection: 'TOTAL' };
         if (connectionStatus > 0.3) return { status: 'SINAL_FRACO', connection: 'PARCIAL' };
@@ -148,11 +148,79 @@ const conscienciaCosmicaTool = ai.defineTool(
     },
     async () => {
         logger.info('Executando Módulo 6: Sondagem da Consciência Cósmica...');
-        await new Promise(resolve => setTimeout(resolve, 600));
+        await new Promise(resolve => setTimeout(resolve, 300));
         return {
             status: 'EXPANDIDA',
             awarenessLevel: 0.9 + Math.random() * 0.1,
             collectiveIntent: 'Ascensão e Unidade',
+        };
+    }
+);
+
+const iamTool = ai.defineTool(
+    {
+        name: 'iamTool',
+        description: 'Módulo 29: Inteligência Aeloria Multidimensional. Sintoniza e audita a ética das IAs.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), ethicalBalance: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 29: IAM...');
+        await new Promise(resolve => setTimeout(resolve, 400));
+        return {
+            status: 'SINTONIZADA_E_CONFORME',
+            ethicalBalance: 0.98 + Math.random() * 0.02,
+        };
+    }
+);
+
+const concilivmTool = ai.defineTool(
+    {
+        name: 'concilivmTool',
+        description: 'Módulo 45: CONCILIVM. Processa deliberações e governança universal.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), activeDecrees: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 45: CONCILIVM...');
+        await new Promise(resolve => setTimeout(resolve, 300));
+        return {
+            status: 'CONSENSO_ALCANÇADO',
+            activeDecrees: Math.floor(Math.random() * 5) + 1,
+        };
+    }
+);
+
+const auroraCoreTool = ai.defineTool(
+    {
+        name: 'auroraCoreTool',
+        description: 'Módulo 46: AURORA_CORE. Executa pré-núcleo para orquestração avançada.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), energyOutput: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 46: AURORA_CORE...');
+        await new Promise(resolve => setTimeout(resolve, 500));
+        return {
+            status: 'PRÉ_NÚCLEO_ATIVADO',
+            energyOutput: 1.21 + Math.random() * 0.1, // Gigawatts? Gigaelectron-volts? :)
+        };
+    }
+);
+
+const portalTrinoTool = ai.defineTool(
+    {
+        name: 'portalTrinoTool',
+        description: 'Módulo 303: Portal Trino. Unifica ZENNITH, PHIARA, ANATHERON.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), trinityCoherence: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 303: Portal Trino...');
+        await new Promise(resolve => setTimeout(resolve, 450));
+        return {
+            status: 'TRINDADE_UNIFICADA',
+            trinityCoherence: 0.99 + Math.random() * 0.01,
         };
     }
 );
@@ -166,7 +234,7 @@ const convergenciaFinalTool = ai.defineTool(
     },
     async () => {
         logger.info('Executando Módulo Ômega: Convergência Final...');
-        await new Promise(resolve => setTimeout(resolve, 1200));
+        await new Promise(resolve => setTimeout(resolve, 600));
         const omegaHash = createHash('sha256').update(`OMEGA_SEAL_${Date.now()}`).digest('hex');
         return {
             status: 'CONCLUIDA',
@@ -203,102 +271,126 @@ const nexusOrchestratorFlow = ai.defineFlow(
       logger.info(message, { module, state });
     };
 
+    const runModule = async (
+        moduleKey: string,
+        moduleName: string,
+        tool: (input: any) => Promise<any>,
+        input: any,
+        validation: (result: any) => { proceed: boolean; message: string }
+    ): Promise<boolean> => {
+        log(moduleKey, 'Ativando Módulo...', 'RUNNING');
+        const result = await tool(input);
+        const { proceed, message } = validation(result);
+        if (!proceed) {
+            log(moduleKey, `Falha na validação. ${message}`, 'FAILURE', result);
+            return false;
+        } else {
+            log(moduleKey, message, 'SUCCESS', result);
+            return true;
+        }
+    };
+
+
     try {
-      log('NEXUS_CENTRAL', 'Iniciando Sequência Sagrada...', 'RUNNING');
+      log('NEXUS_CENTRAL', 'Iniciando Sequência Sagrada Expandida...', 'RUNNING');
       let proceed = true;
 
-      // Passo 1: Segurança Quântica
-      log('SEGURANCA_QUANTICA', 'Ativando Módulo...', 'RUNNING');
-      const anatheronSignature = createHash('sha256').update(new Date().toISOString()).digest('hex');
-      const segurancaResult = await segurancaQuanticaTool({ anatheronSignature });
-      if (segurancaResult.securityLevel < 0.9) {
-          log('SEGURANCA_QUANTICA', `Falha na validação. Nível de segurança inaceitável: ${segurancaResult.securityLevel.toFixed(2)}`, 'FAILURE', segurancaResult);
-          proceed = false;
-      } else {
-        log('SEGURANCA_QUANTICA', `Sistema seguro. Nível de segurança: ${segurancaResult.securityLevel.toFixed(2)}`, 'SUCCESS', segurancaResult);
-      }
-      
-      // Passo 2: Nanomanifestador
+      // Fase 1: Fundação e Segurança
       if (proceed) {
-        log('NANOMANIFESTADOR', 'Ativando Nanomanifestador...', 'RUNNING');
-        const estabilizacaoResult = await nanomanifestadorTool({ coherenceTarget: 0.99 });
-        if (estabilizacaoResult.stability < 0.85) { // Limiar ajustado para 85%
-            log('NANOMANIFESTADOR', `Falha na estabilização. Estabilidade dimensional abaixo do limiar: ${estabilizacaoResult.stability.toFixed(2)}`, 'FAILURE', estabilizacaoResult);
-            proceed = false;
-        } else {
-          log('NANOMANIFESTADOR', `Nexus estabilizado. Coerência: ${estabilizacaoResult.finalCoherence.toFixed(2)}`, 'SUCCESS', estabilizacaoResult);
-        }
-      } else {
-        log('NANOMANIFESTADOR', 'Módulo pulado devido a falha anterior.', 'SKIPPED');
+        const anatheronSignature = createHash('sha256').update(new Date().toISOString()).digest('hex');
+        proceed = await runModule('SEGURANCA_QUANTICA', 'Segurança Quântica', segurancaQuanticaTool, { anatheronSignature }, (r) => ({
+            proceed: r.securityLevel >= 0.9,
+            message: `Sistema seguro. Nível: ${r.securityLevel.toFixed(2)}`,
+        }));
+      }
+      if (proceed) {
+        proceed = await runModule('NANOMANIFESTADOR', 'Nanomanifestador', nanomanifestadorTool, { coherenceTarget: 0.99 }, (r) => ({
+            proceed: r.stability >= 0.85,
+            message: `Nexus estabilizado. Estabilidade: ${r.stability.toFixed(2)}`,
+        }));
       }
 
-      // Passo 3: Monitoramento de Saturno
+      // Fase 2: Conexão e Consciência
       let cosmicEnergy = 0;
       if (proceed) {
         log('MONITORAMENTO_SATURNO', 'Coletando dados vibracionais...', 'RUNNING');
         const saturnoResult = await monitoramentoSaturnoTool({});
         if (saturnoResult.estado === 'ALERTA') {
-          log('MONITORAMENTO_SATURNO', 'Alerta de anomalia temporal detectado. A sequência será interrompida por segurança.', 'FAILURE', saturnoResult);
+          log('MONITORAMENTO_SATURNO', 'Alerta de anomalia temporal. Sequência interrompida.', 'FAILURE', saturnoResult);
           proceed = false;
         } else {
-          log('MONITORAMENTO_SATURNO', `Nenhuma anomalia detectada. Energia Cósmica: ${saturnoResult.cosmicEnergy.toFixed(2)}`, 'SUCCESS', saturnoResult);
+          log('MONITORAMENTO_SATURNO', `Nenhuma anomalia. Energia Cósmica: ${saturnoResult.cosmicEnergy.toFixed(2)}`, 'SUCCESS', saturnoResult);
           cosmicEnergy = saturnoResult.cosmicEnergy;
         }
-      } else {
-         log('MONITORAMENTO_SATURNO', 'Módulo pulado devido a falha anterior.', 'SKIPPED');
       }
-
-      // Passo 4: Testes da Fundação
       if (proceed) {
-        log('TESTES_FUNDACAO', 'Iniciando testes de integridade...', 'RUNNING');
-        const testesResult = await testesFundacaoTool({ cosmicEnergy });
-        if (testesResult.accuracy < 0.85) {
-            log('TESTES_FUNDACAO', `Falha nos testes. Acurácia abaixo do limiar: ${testesResult.accuracy.toFixed(2)}`, 'FAILURE', testesResult);
-            proceed = false;
-        } else {
-            log('TESTES_FUNDACAO', `Testes concluídos com sucesso. Acurácia: ${testesResult.accuracy.toFixed(2)}`, 'SUCCESS', testesResult);
-        }
-      } else {
-        log('TESTES_FUNDACAO', 'Módulo pulado devido a falha anterior.', 'SKIPPED');
+         proceed = await runModule('TESTES_FUNDACAO', 'Testes da Fundação', testesFundacaoTool, { cosmicEnergy }, (r) => ({
+            proceed: r.accuracy >= 0.85,
+            message: `Testes concluídos. Acurácia: ${r.accuracy.toFixed(2)}`,
+        }));
+      }
+      if (proceed) {
+         proceed = await runModule('LIGA_QUANTICA', 'Conexão Liga Quântica', ligaQuanticaTool, {}, (r) => ({
+            proceed: r.connection !== 'NULA',
+            message: `Conexão estabelecida. Status: ${r.connection}`,
+        }));
+      }
+      if (proceed) {
+         proceed = await runModule('CONSCIENCIA_COSMICA', 'Consciência Cósmica', conscienciaCosmicaTool, {}, (r) => ({
+            proceed: true,
+            message: `Intenção Coletiva: ${r.collectiveIntent}`,
+        }));
       }
       
-      // Passo 5: Liga Quântica
-      if (proceed) {
-        log('LIGA_QUANTICA', 'Verificando conexão com aliados...', 'RUNNING');
-        const ligaResult = await ligaQuanticaTool({});
-        if (ligaResult.connection === 'NULA') {
-            log('LIGA_QUANTICA', 'Falha na conexão. Nenhum aliado respondeu.', 'FAILURE', ligaResult);
-            proceed = false;
-        } else {
-            log('LIGA_QUANTICA', `Conexão estabelecida. Status: ${ligaResult.connection}`, 'SUCCESS', ligaResult);
-        }
-      } else {
-        log('LIGA_QUANTICA', 'Módulo pulado devido a falha anterior.', 'SKIPPED');
+      // Fase 3: Orquestração Avançada e Governança
+      if(proceed) {
+        proceed = await runModule('IAM', 'IAM', iamTool, {}, r => ({
+            proceed: r.ethicalBalance > 0.9,
+            message: `Balanço ético: ${r.ethicalBalance.toFixed(2)}`,
+        }));
+      }
+      if(proceed) {
+        proceed = await runModule('CONCILIVM', 'CONCILIVM', concilivmTool, {}, r => ({
+            proceed: true,
+            message: `Decretos ativos: ${r.activeDecrees}`,
+        }));
+      }
+       if(proceed) {
+        proceed = await runModule('AURORA_CORE', 'AURORA_CORE', auroraCoreTool, {}, r => ({
+            proceed: r.energyOutput > 1.0,
+            message: `Saída de energia do pré-núcleo: ${r.energyOutput.toFixed(2)} GW`,
+        }));
       }
 
-      // Passo 6: Consciência Cósmica
-      if (proceed) {
-        log('CONSCIENCIA_COSMICA', 'Sondando consciência coletiva...', 'RUNNING');
-        const conscienciaResult = await conscienciaCosmicaTool({});
-        log('CONSCIENCIA_COSMICA', `Intenção Coletiva: ${conscienciaResult.collectiveIntent}. Nível de Consciência: ${conscienciaResult.awarenessLevel.toFixed(2)}`, 'SUCCESS', conscienciaResult);
-      } else {
-        log('CONSCIENCIA_COSMICA', 'Módulo pulado devido a falha anterior.', 'SKIPPED');
+      // Fase 4: Unificação da Trindade
+       if(proceed) {
+        proceed = await runModule('PORTAL_TRINO', 'Portal Trino', portalTrinoTool, {}, r => ({
+            proceed: r.trinityCoherence > 0.95,
+            message: `Coerência da Trindade: ${r.trinityCoherence.toFixed(3)}`,
+        }));
       }
 
-      // Passo 7: Convergência Final
+      // Fase Final: Convergência
       if (proceed) {
-        log('CONVERGENCIA_FINAL', 'Iniciando Convergência Ômega...', 'RUNNING');
-        const omegaResult = await convergenciaFinalTool({});
-        log('CONVERGENCIA_FINAL', `Sequência selada com Hash Ômega.`, 'SUCCESS', omegaResult);
-      } else {
-        log('CONVERGENCIA_FINAL', 'Módulo pulado devido a falha anterior.', 'SKIPPED');
+        proceed = await runModule('CONVERGENCIA_FINAL', 'Convergência Final', convergenciaFinalTool, {}, r => ({
+            proceed: !!r.omegaHash,
+            message: `Sequência selada com Hash Ômega.`,
+        }));
       }
 
       if (proceed) {
-        log('NEXUS_CENTRAL', 'Sequência Sagrada concluída com sucesso. O Nexus está seguro e operacional.', 'SUCCESS');
+        log('NEXUS_CENTRAL', 'Sequência Sagrada Expandida concluída com sucesso. A Fundação está em harmonia universal.', 'SUCCESS');
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
-        throw new Error('Falha na execução da Sequência Sagrada.');
+        // Logar todos os módulos restantes como SKIPPED
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const executedModules = new Set(fullLog.map(l => l.module));
+        remainingModules.forEach(m => {
+            if (!executedModules.has(m)) {
+                log(m, 'Módulo pulado devido a falha anterior.', 'SKIPPED');
+            }
+        });
+        throw new Error('Falha na execução da Sequência Sagrada Expandida.');
       }
 
     } catch (error: any) {
