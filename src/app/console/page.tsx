@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
@@ -103,7 +104,9 @@ export default function ConsolePage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-          {renderModule()}
+           <Suspense fallback={<SuspenseFallback />}>
+            <QuantumOrchestrator />
+          </Suspense>
         </div>
 
         <div className="space-y-6">
@@ -113,8 +116,8 @@ export default function ConsolePage() {
               <CardDescription>Acesse os Módulos e Portais.</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col space-y-2">
-               <Button variant="outline" onClick={() => setActiveModule('chronicle')} className="justify-start">
-                  <BookHeart className="mr-2 h-4 w-4" />Crônica Viva
+               <Button variant="outline" asChild className="justify-start">
+                  <Link href="/chronicle"><BookHeart className="mr-2 h-4 w-4" />Crônica Viva</Link>
                </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-zero"><Book className="mr-2 h-4 w-4" />Módulo Zero (Biblioteca Chave)</Link>
