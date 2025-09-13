@@ -210,6 +210,24 @@ const memoriaCosmicaTool = ai.defineTool(
     }
 );
 
+const frequencyMappingTool = ai.defineTool(
+    {
+        name: 'frequencyMappingTool',
+        description: 'Módulo 13: Mapeia frequências energéticas e detecta anomalias.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), anomalies: z.number(), dominantFrequency: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 13: Mapeamento de Frequências...');
+        await new Promise(resolve => setTimeout(resolve, 370));
+        return {
+            status: 'MAPEAMENTO_COMPLETO',
+            anomalies: Math.random() < 0.05 ? 1 : 0, // 5% de chance de anomalia
+            dominantFrequency: 432 + (Math.random() * 10 - 5), // Frequência dominante em torno de 432Hz
+        };
+    }
+);
+
 const iamTool = ai.defineTool(
     {
         name: 'iamTool',
@@ -428,6 +446,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `${r.activePortals} portais ativos. Estabilidade: ${(r.stability * 100).toFixed(1)}%`,
         }));
       }
+      if(proceed) {
+        proceed = await runModule('FREQUENCY_MAPPING', 'Mapeamento de Frequências', frequencyMappingTool, {}, r => ({
+            proceed: r.anomalies === 0,
+            message: `Mapeamento concluído. ${r.anomalies} anomalias. Frequência Dominante: ${r.dominantFrequency.toFixed(2)}Hz`,
+        }));
+      }
        if(proceed) {
         proceed = await runModule('MEMORIA_COSMICA', 'Arquivo Akáshico', memoriaCosmicaTool, {}, r => ({
             proceed: r.integrity > 0.98,
@@ -454,7 +478,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'MEMORIA_COSMICA', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
