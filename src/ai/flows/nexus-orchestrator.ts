@@ -726,6 +726,24 @@ const codiceGeneticoTool = ai.defineTool(
     }
 );
 
+const quantumCoherenceLabTool = ai.defineTool(
+    {
+        name: 'quantumCoherenceLabTool',
+        description: 'Módulo 41: Laboratório de Coerência Quântica e Regeneração Celular.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), dnaAnalyzed: z.boolean(), coherenceFieldStable: z.boolean() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 41: Laboratório de Coerência Quântica...');
+        await new Promise(resolve => setTimeout(resolve, 410));
+        return {
+            status: 'ANÁLISE_E_REGENERAÇÃO_CONCLUÍDAS',
+            dnaAnalyzed: true,
+            coherenceFieldStable: Math.random() > 0.02, // 98% chance of being stable
+        };
+    }
+);
+
 const concilivmTool = ai.defineTool(
     {
         name: 'concilivmTool',
@@ -1095,6 +1113,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `${r.patternsAnalyzed} padrões genéticos analisados. ${r.stellarOriginsDetected} origens estelares detectadas.`,
         }));
       }
+      if(proceed) {
+        proceed = await runModule('LABORATORIO_COERENCIA', 'Laboratório de Coerência Quântica (M41)', quantumCoherenceLabTool, {}, r => ({
+            proceed: r.coherenceFieldStable,
+            message: `Análise de DNA e regeneração concluídas. Campo de coerência estável.`,
+        }));
+      }
 
       // Fase 5: Unificação e Convergência
        if(proceed) {
@@ -1116,7 +1140,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1185,6 +1209,7 @@ const moduleNames: Record<string, string> = {
     PREVISAO_CICLOS_SOLARES: "Previsão de Ciclos Solares (M38)",
     CODICE_VIVO_ASCENSAO: "Códice Vivo da Ascensão (M39)",
     CODICE_GENETICO: "Códice Genético (M40)",
+    LABORATORIO_COERENCIA: "Laboratório de Coerência Quântica (M41)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     PORTAL_TRINO: "Portal Trino (M303)",
@@ -1192,6 +1217,7 @@ const moduleNames: Record<string, string> = {
 }
 
     
+
 
 
 
