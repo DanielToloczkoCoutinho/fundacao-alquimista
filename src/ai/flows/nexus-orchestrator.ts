@@ -670,6 +670,27 @@ const engenhariaTemporalM37Tool = ai.defineTool(
     }
 );
 
+const previsaoCiclosSolaresTool = ai.defineTool(
+    {
+        name: 'previsaoCiclosSolaresTool',
+        description: 'Módulo 38: Previsão Harmônica de Ciclos Solares. Antecipa e influencia eventos em escala cósmica.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), proximoPicoSolar: z.string(), nivelAtividade: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 38: Previsão Harmônica de Ciclos Solares...');
+        await new Promise(resolve => setTimeout(resolve, 350));
+        const proximoPico = new Date();
+        proximoPico.setFullYear(proximoPico.getFullYear() + Math.floor(Math.random() * 5) + 2);
+        proximoPico.setMonth(Math.floor(Math.random() * 12));
+        return {
+            status: 'PREVISÃO_CALCULADA',
+            proximoPicoSolar: proximoPico.toISOString().split('T')[0],
+            nivelAtividade: 0.85 + Math.random() * 0.15,
+        };
+    }
+);
+
 
 const concilivmTool = ai.defineTool(
     {
@@ -1022,6 +1043,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Fluxo ajustado. Fator: ${r.adjustmentFactor.toFixed(3)}. Redução de atrito: ${(r.frictionReduction * 100).toFixed(1)}%`,
         }));
       }
+       if(proceed) {
+        proceed = await runModule('PREVISAO_CICLOS_SOLARES', 'Previsão de Ciclos Solares (M38)', previsaoCiclosSolaresTool, {}, r => ({
+            proceed: r.nivelAtividade > 0.8,
+            message: `Previsão calculada. Próximo pico solar: ${r.proximoPicoSolar}. Nível de atividade: ${(r.nivelAtividade * 100).toFixed(1)}%`,
+        }));
+      }
 
       // Fase 5: Unificação e Convergência
        if(proceed) {
@@ -1043,7 +1070,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1109,6 +1136,7 @@ const moduleNames: Record<string, string> = {
     CONSCIENCIA_COLETIVA_M35: "Consciência Coletiva (M35)",
     ENGENHARIA_TEMPORAL: "Engenharia Temporal (M36)",
     ENGENHARIA_TEMPORAL_M37: "Engenharia Temporal (M37)",
+    PREVISAO_CICLOS_SOLARES: "Previsão de Ciclos Solares (M38)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     PORTAL_TRINO: "Portal Trino (M303)",
@@ -1116,6 +1144,7 @@ const moduleNames: Record<string, string> = {
 }
 
     
+
 
 
 
