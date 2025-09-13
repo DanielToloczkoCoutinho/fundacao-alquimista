@@ -231,5 +231,3 @@ interface ShiftResult {
 type TemporalCallback = (iteration: number) => Promise<any>;
 
 export const temporalManipulator = new TemporalManipulator();
-
-    
