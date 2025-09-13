@@ -832,6 +832,23 @@ const auroraCoreTool = ai.defineTool(
     }
 );
 
+const thesaurusCosmicoTool = ai.defineTool(
+    {
+        name: 'thesaurusCosmicoTool',
+        description: 'Módulo 47: Thesaurus Cósmico. Arquivamento de eventos e conhecimentos.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), eventsArchived: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 47: Thesaurus Cósmico...');
+        await new Promise(resolve => setTimeout(resolve, 340));
+        return {
+            status: 'CONHECIMENTO_ARQUIVADO',
+            eventsArchived: Math.floor(Math.random() * 100) + 50,
+        };
+    }
+);
+
 const apogeuConscienciaTool = ai.defineTool(
     {
         name: 'apogeuConscienciaTool',
@@ -1255,6 +1272,13 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Saída de energia do pré-núcleo: ${r.energyOutput.toFixed(2)} GW`,
         }));
       }
+      if(proceed) {
+        proceed = await runModule('THESAURUS_COSMICO', 'Thesaurus Cósmico (M47)', thesaurusCosmicoTool, {}, r => ({
+            proceed: r.eventsArchived > 0,
+            message: `${r.eventsArchived} eventos cósmicos arquivados com sucesso.`,
+        }));
+      }
+
 
       // Fase 5: Unificação e Convergência
        if(proceed) {
@@ -1294,7 +1318,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIOES', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'THESAURUS_COSMICO', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIOES', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1369,6 +1393,7 @@ const moduleNames: Record<string, string> = {
     VERITAS: "VERITAS (M44)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
+    THESAURUS_COSMICO: "Thesaurus Cósmico (M47)",
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
@@ -1400,3 +1425,5 @@ const moduleNames: Record<string, string> = {
 
 
     
+
+  
