@@ -5,6 +5,8 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { Loader2, Heart, CheckCircle, XCircle } from 'lucide-react';
+import { Label } from '@/components/ui/label';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 // Mocks para simular a funcionalidade de outros módulos da Fundação
 const mockM1 = { async getSecurityStatus() { await new Promise(r => setTimeout(r, 100)); return Math.random() > 0.05; } };
