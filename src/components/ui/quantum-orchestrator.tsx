@@ -82,12 +82,13 @@ const moduleIcons: Record<string, React.ReactNode> = {
   MODULACAO_EXISTENCIA_FUNDAMENTAL: <Settings className="h-5 w-5 text-gray-400" />,
   RECALIBRADORES_LEIS_FISICAS: <Zap className="h-5 w-5 text-yellow-500" />,
   UNIFICACAO_ENERGETICA: <Crown className="h-5 w-5 text-white" />,
+  MANIFESTACAO: <Sparkles className="h-5 w-5 text-amber-400" />,
+  CAMPOS_MORFOGENETICOS: <BrainCircuit className="h-5 w-5 text-purple-400" />,
   APOGEU_CONSCIENCIA: <Crown className="h-5 w-5 text-yellow-300" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
   EDUCACAO_INTEGRAL: <GraduationCap className="h-5 w-5 text-green-300" />,
   ALIANCA_GUARDIÕES: <MapPin className="h-5 w-5 text-orange-300" />,
   CONVERGENCIA_FINAL: <Sparkles className="h-5 w-5 text-white" />,
-  MANIFESTACAO: <Sparkles className="h-5 w-5 text-amber-400" />,
 };
 
 const stateIcons: Record<LogEntry['state'], React.ReactNode> = {
@@ -172,6 +173,7 @@ const moduleNames: Record<string, string> = {
     RECALIBRADORES_LEIS_FISICAS: 'Recalibradores de Leis Físicas (M99)',
     UNIFICACAO_ENERGETICA: 'Unificação Energética (M100)',
     MANIFESTACAO: 'Manifestação de Realidades (M101)',
+    CAMPOS_MORFOGENETICOS: 'Arquitetura de Campos Morfogenéticos (M102)',
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",

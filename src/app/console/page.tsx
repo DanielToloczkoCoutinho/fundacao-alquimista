@@ -6,7 +6,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, AlertTriangle, Goal, Settings, Zap, Crown } from 'lucide-react';
+import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, AlertTriangle, Goal, Settings, Zap, Crown, BrainCircuit } from 'lucide-react';
 import Chronicle from '@/components/chronicle';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { initializeApp, getApps, getApp } from "firebase/app";
@@ -171,6 +171,9 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-101"><Sparkles className="mr-2 h-4 w-4" />Módulo 101 (Manifestação)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-102"><BrainCircuit className="mr-2 h-4 w-4" />Módulo 102 (Campos Morfogenéticos)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/pagina-42"><Infinity className="mr-2 h-4 w-4" />Módulo Ω (Dossiê)</Link>

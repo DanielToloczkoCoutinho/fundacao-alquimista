@@ -2,6 +2,7 @@
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
 import { startNexusSequence as runNexusSequence } from '@/ai/flows/nexus-orchestrator';
+import { describeMorphicField as runDescribeMorphicField } from '@/ai/flows/morphic-field-flow';
 
 export async function getLinkSummary(url: string) {
   try {
@@ -17,4 +18,14 @@ export async function startNexusSequence() {
   // This must be awaited, otherwise the stream will close prematurely
   const stream = await runNexusSequence();
   return stream;
+}
+
+export async function describeMorphicField(blueprint: string) {
+  try {
+    const result = await runDescribeMorphicField({ blueprint });
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
 }
