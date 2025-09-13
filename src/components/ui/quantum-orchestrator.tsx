@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare, Scale, Group, Microscope, CodeXml, LucideProps, PenTool, Milestone } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare, Scale, Group, Microscope, CodeXml, LucideProps, PenTool, Milestone, FileJson, GitCommit } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -62,7 +62,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   NAVEGACAO_TEMPORAL_ETICA: <Compass className="h-5 w-5 text-blue-300" />,
   LUMEN_CUSTOS: <Shield className="h-5 w-5 text-yellow-200" />,
   UNIVERSUM_UNIFICATUM: <Globe className="h-5 w-5 text-cyan-400" />,
-  INTERMODULUM_VIVENS: <CodeXml className="h-5 w-5 text-green-400" />,
+  INTERMODULUM_VIVENS: <FileJson className="h-5 w-5 text-green-400" />,
   NOVO_SONHO_GALACTICO: <PenTool className="h-5 w-5 text-rose-300" />,
   REALIZACAO_TRANSCENDENCIA: <Milestone className="h-5 w-5 text-amber-500" />,
   APOGEU_CONSCIENCIA: <Crown className="h-5 w-5 text-yellow-300" />,
@@ -243,10 +243,3 @@ export default function QuantumOrchestrator() {
     </Card>
   );
 }
-    
-
-    
-
-    
-
-    

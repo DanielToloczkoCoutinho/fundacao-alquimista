@@ -1627,6 +1627,3 @@ const moduleNames: Record<string, string> = {
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
 }
 
-    
-
-    
