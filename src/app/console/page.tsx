@@ -149,6 +149,9 @@ export default function ConsolePage() {
                 <Link href="/module-93"><Presentation className="mr-2 h-4 w-4" />Módulo 93 (Simulações Imersivas)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-94"><Dna className="mr-2 h-4 w-4" />Módulo 94 (Morfogênese)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
                 <Link href="/pagina-42"><Infinity className="mr-2 h-4 w-4" />Módulo Ω (Dossiê)</Link>
               </Button>
             </CardContent>
