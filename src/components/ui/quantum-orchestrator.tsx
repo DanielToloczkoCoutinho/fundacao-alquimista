@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -48,6 +48,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   ENGENHARIA_TEMPORAL_M37: <SlidersHorizontal className="h-5 w-5 text-blue-300" />,
   PREVISAO_CICLOS_SOLARES: <Sun className="h-5 w-5 text-orange-400" />,
   CODICE_VIVO_ASCENSAO: <BookOpen className="h-5 w-5 text-yellow-200" />,
+  CODICE_GENETICO: <Dna className="h-5 w-5 text-purple-300" />,
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
 AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
@@ -100,6 +101,7 @@ const moduleNames: Record<string, string> = {
     ENGENHARIA_TEMPORAL_M37: "Engenharia Temporal (M37)",
     PREVISAO_CICLOS_SOLARES: "Previsão de Ciclos Solares (M38)",
     CODICE_VIVO_ASCENSAO: "Códice Vivo da Ascensão (M39)",
+    CODICE_GENETICO: "Códice Genético (M40)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     PORTAL_TRINO: "Portal Trino (M303)",
@@ -210,6 +212,7 @@ export default function QuantumOrchestrator() {
     
 
     
+
 
 
 
