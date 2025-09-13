@@ -16,11 +16,7 @@ import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 // A configuração do Firebase agora é tratada com segurança
 let firebaseConfig = {};
 try {
-  const configString = process.env.NEXT_PUBLIC_FIREBASE_CONFIG;
-  if (configString) {
-    firebaseConfig = JSON.parse(configString);
-  } else {
-     // Configuração de fallback para evitar erro de parse
+  // Use a fallback configuration directly as process.env might not be reliable here.
     firebaseConfig = {
         "projectId": "studio-4265982502-21871",
         "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
@@ -30,10 +26,8 @@ try {
         "measurementId": "",
         "messagingSenderId": "174545373080"
     };
-    console.warn("Variável de ambiente NEXT_PUBLIC_FIREBASE_CONFIG não definida. Usando configuração de fallback.");
-  }
 } catch (error) {
-  console.error("Falha ao analisar a configuração do Firebase a partir das variáveis de ambiente.", error);
+  console.error("Falha ao analisar a configuração do Firebase. Usando configuração de fallback.", error);
     firebaseConfig = {
         "projectId": "studio-4265982502-21871",
         "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
