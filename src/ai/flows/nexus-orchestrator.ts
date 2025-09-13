@@ -545,6 +545,24 @@ const iamTool = ai.defineTool(
     }
 );
 
+const realityManipulationTool = ai.defineTool(
+    {
+        name: 'realityManipulationTool',
+        description: 'Módulo 31: Manipulação Quântica da Realidade.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), realityCoherence: z.number(), ethicalCompliance: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 31: Manipulação Quântica da Realidade...');
+        await new Promise(resolve => setTimeout(resolve, 480));
+        return {
+            status: 'REALIDADE_AJUSTADA_COM_SUCESSO',
+            realityCoherence: 0.999 + Math.random() * 0.001,
+            ethicalCompliance: 1.0,
+        };
+    }
+);
+
 const concilivmTool = ai.defineTool(
     {
         name: 'concilivmTool',
@@ -854,6 +872,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Harmonização concluída. ${r.dissonancesCorrected} dissonâncias corrigidas. Índice de Harmonia: ${(r.harmonyIndex * 100).toFixed(1)}%`,
         }));
       }
+      if(proceed) {
+        proceed = await runModule('REALITY_MANIPULATION', 'Manipulação da Realidade', realityManipulationTool, {}, r => ({
+            proceed: r.ethicalCompliance === 1.0,
+            message: `Realidade ajustada. Coerência: ${(r.realityCoherence * 100).toFixed(2)}%`,
+        }));
+      }
 
       // Fase 5: Unificação e Convergência
        if(proceed) {
@@ -875,7 +899,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'REALITY_MANIPULATION', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -907,3 +931,4 @@ export async function startNexusSequence() {
     
 
     
+

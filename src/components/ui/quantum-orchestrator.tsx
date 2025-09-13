@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -39,6 +39,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   COSMIC_SYNTHESIS: <Beaker className="h-5 w-5 text-green-400" />,
   VIBRATIONAL_HARMONIZATION: <HeartHandshake className="h-5 w-5 text-rose-400" />,
   IAM: <Aperture className="h-5 w-5 text-cyan-400" />,
+  REALITY_MANIPULATION: <ToyBrick className="h-5 w-5 text-fuchsia-500" />,
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
 AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
@@ -82,6 +83,7 @@ const moduleNames: Record<string, string> = {
     COSMIC_SYNTHESIS: "Síntese e Replicação de Materiais (M27)",
     VIBRATIONAL_HARMONIZATION: "Harmonização Vibracional (M28)",
     IAM: "IAM (M29)",
+    REALITY_MANIPULATION: "Manipulação da Realidade (M31)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     PORTAL_TRINO: "Portal Trino (M303)",
@@ -192,3 +194,4 @@ export default function QuantumOrchestrator() {
     
 
     
+
