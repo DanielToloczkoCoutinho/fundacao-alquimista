@@ -61,7 +61,7 @@ const Module100Page = () => {
                 const predicted_outcome = mockM03.predict_unification_outcome(unification_data);
                 unification_data.predicted_outcome = predicted_outcome;
                 
-                const simulation_results = mockM91.simulate_unification_in_many_worlds(unification_data.target_multiverse_id, purpose, 10);
+                const simulation_results = mockM91.simulate_unification_in_many_worlds(unification_data.target_multiverse_id, 10);
                 unification_data.simulation_results = simulation_results;
 
                 const divine_purpose_alignment = mockM97.manifest_divine_purpose(purpose, scope, 'Universal', parseFloat(coherence), parseFloat(divineAlignment));
