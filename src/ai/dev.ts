@@ -13,3 +13,4 @@ import '@/ai/flows/source-connection-flow.ts';
 import '@/ai/flows/activation-flow.ts';
 import '@/ai/flows/restoration-flow.ts';
 import '@/ai/flows/harmonization-flow.ts';
+import '@/ai/flows/healing-flow.ts';
