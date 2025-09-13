@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -35,6 +35,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   ASTRAL_PROJECTION: <Feather className="h-5 w-5 text-gray-300" />,
   AKASHIC_ORCHESTRATION: <Database className="h-5 w-5 text-cyan-300" />,
   FORCE_FIELD_ANALYSIS: <Waves className="h-5 w-5 text-sky-400" />,
+  COSMIC_SYNTHESIS: <Beaker className="h-5 w-5 text-green-400" />,
   IAM: <Aperture className="h-5 w-5 text-cyan-400" />,
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
   AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
@@ -75,6 +76,7 @@ const moduleNames: Record<string, string> = {
     ASTRAL_PROJECTION: "Projeção de Consciência (M25)",
     AKASHIC_ORCHESTRATION: "Orquestração Akáshica (M18)",
     FORCE_FIELD_ANALYSIS: "Análise de Campos de Força (M19)",
+    COSMIC_SYNTHESIS: "Síntese e Replicação de Materiais (M27)",
     IAM: "IAM (M29)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
@@ -183,4 +185,6 @@ export default function QuantumOrchestrator() {
     </Card>
   );
 }
+    
+
     
