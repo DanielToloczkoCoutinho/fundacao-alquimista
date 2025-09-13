@@ -5,6 +5,7 @@ import { startNexusSequence as runNexusSequence } from '@/ai/flows/nexus-orchest
 import { describeMorphicField as runDescribeMorphicField } from '@/ai/flows/morphic-field-flow';
 import { describeConnectionExperience as runDescribeConnectionExperience } from '@/ai/flows/source-connection-flow';
 import { describeActivation as runDescribeActivation } from '@/ai/flows/activation-flow';
+import { describeRestoration as runDescribeRestoration } from '@/ai/flows/restoration-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -46,6 +47,16 @@ export async function describeConnectionExperience(intention: string) {
 export async function describeActivation(data: { target: string, purpose: string }) {
   try {
     const result = await runDescribeActivation(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeRestoration(data: { targetTimeline: string, anomalyDescription: string }) {
+  try {
+    const result = await runDescribeRestoration(data);
     return { description: result.description, error: null };
   } catch (e: any) {
     console.error(e);
