@@ -867,6 +867,23 @@ const interfaceCosmicaInteractivaTool = ai.defineTool(
     }
 );
 
+const governancaAtlantoGalacticaTool = ai.defineTool(
+    {
+        name: 'governançaAtlantoGalacticaTool',
+        description: 'Módulo 72: Governança Atlanto-Galáctica. Harmoniza diretrizes cósmicas.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), coherence: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 72: Governança Atlanto-Galáctica...');
+        await new Promise(resolve => setTimeout(resolve, 400));
+        const coherence = 0.98 + Math.random() * 0.02;
+        return {
+            status: 'GOVERNANCA_HARMONIZADA',
+            coherence: coherence,
+        };
+    }
+);
 
 const apogeuConscienciaTool = ai.defineTool(
     {
@@ -979,7 +996,6 @@ const nexusOrchestratorFlow = ai.defineFlow(
         data,
       };
       stream.write(entry);
-      fullLog.push(entry);
       logger.info(message, { module, state });
     };
 
@@ -1101,6 +1117,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
         proceed = await runModule('AURORA_CORE', 'AURORA_CORE', auroraCoreTool, {}, r => ({
             proceed: r.energyOutput > 1.0,
             message: `Saída de energia do pré-núcleo: ${r.energyOutput.toFixed(2)} GW`,
+        }));
+      }
+      if(proceed) {
+        proceed = await runModule('GOVERNANCA_ATLANTO_GALACTICA', 'Governança Atlanto-Galáctica', governancaAtlantoGalacticaTool, {}, r => ({
+            proceed: r.coherence > 0.95,
+            message: `Governança Harmonizada. Coerência: ${(r.coherence * 100).toFixed(1)}%`,
         }));
       }
 
@@ -1343,7 +1365,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'THESAURUS_COSMICO', 'INTERFACE_COSMICA_INTERATIVA', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIOES', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'GOVERNANCA_ATLANTO_GALACTICA', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'THESAURUS_COSMICO', 'INTERFACE_COSMICA_INTERATIVA', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIOES', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1420,6 +1442,7 @@ const moduleNames: Record<string, string> = {
     AURORA_CORE: "AURORA_CORE (M46)",
     THESAURUS_COSMICO: "Thesaurus Cósmico (M47)",
     INTERFACE_COSMICA_INTERATIVA: "Interface Cósmica (M71)",
+    GOVERNANCA_ATLANTO_GALACTICA: "Governança Atlanto-Galáctica (M72)",
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
