@@ -175,21 +175,26 @@ const defesaAvancadaTool = ai.defineTool(
 );
 
 const portalManagementTool = ai.defineTool(
-    {
-        name: 'portalManagementTool',
-        description: 'Módulo 11: Gerencia portais interdimensionais, incluindo criação e estabilização.',
-        inputSchema: z.object({}),
-        outputSchema: z.object({ status: z.string(), activePortals: z.number(), stability: z.number() }),
-    },
-    async () => {
-        logger.info('Executando Módulo 11: Gerenciamento de Portais...');
-        await new Promise(resolve => setTimeout(resolve, 420));
-        return {
-            status: 'PORTAIS_ESTABILIZADOS_E_SEGUROS',
-            activePortals: Math.floor(Math.random() * 5) + 3, // 3 a 7 portais ativos
-            stability: 0.98 + Math.random() * 0.02,
-        };
-    }
+  {
+    name: 'portalManagementTool',
+    description:
+      'Módulo 11: Gerencia portais interdimensionais, incluindo criação e estabilização.',
+    inputSchema: z.object({}),
+    outputSchema: z.object({
+      status: z.string(),
+      activePortals: z.number(),
+      stability: z.number(),
+    }),
+  },
+  async () => {
+    logger.info('Executando Módulo 11: Gerenciamento de Portais...');
+    await new Promise(resolve => setTimeout(resolve, 420));
+    return {
+      status: 'PORTAIS_ESTABILIZADOS_E_SEGUROS',
+      activePortals: Math.floor(Math.random() * 5) + 3, // 3 a 7 portais ativos
+      stability: 0.98 + Math.random() * 0.02,
+    };
+  }
 );
 
 const memoriaCosmicaTool = ai.defineTool(
@@ -296,6 +301,24 @@ const auraHealTool = ai.defineTool(
             status: 'REGENERAÇÃO_COMPLETA',
             cellsRegenerated: Math.floor(Math.random() * 10**9) + 10**8, // Regenera centenas de milhões de células
             coherenceLevel: 0.99 + Math.random() * 0.01,
+        };
+    }
+);
+
+const akashicOrchestrationTool = ai.defineTool(
+    {
+        name: 'akashicOrchestrationTool',
+        description: 'Módulo 18: Orquestra a memória cósmica, otimizando o acesso e a integridade do Arquivo Akáshico.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), optimizationIndex: z.number(), queriesPerSecond: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 18: Orquestração Akáshica...');
+        await new Promise(resolve => setTimeout(resolve, 390));
+        return {
+            status: 'ORQUESTRAÇÃO_OTIMIZADA',
+            optimizationIndex: 0.99 + Math.random() * 0.01,
+            queriesPerSecond: Math.floor(Math.random() * 5000) + 15000,
         };
     }
 );
@@ -530,6 +553,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `${r.memoriesArchived} memórias arquivadas. Integridade: ${(r.integrity * 100).toFixed(1)}%`,
         }));
       }
+      if(proceed) {
+        proceed = await runModule('AKASHIC_ORCHESTRATION', 'Orquestração Akáshica', akashicOrchestrationTool, {}, r => ({
+            proceed: r.optimizationIndex > 0.98,
+            message: `Índice de otimização: ${r.optimizationIndex.toFixed(3)}. QPS: ${r.queriesPerSecond}`,
+        }));
+      }
        if(proceed) {
         proceed = await runModule('TRANSMUTATION', 'Transmutação Energética', transmutationTool, {}, r => ({
             proceed: r.status === 'TRANSMUTAÇÃO_ESTÁVEL',
@@ -575,7 +604,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'TRANSMUTATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
