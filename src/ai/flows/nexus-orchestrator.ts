@@ -359,6 +359,24 @@ const elementalTransmutationTool = ai.defineTool(
     }
 );
 
+const navegacaoInterdimensionalTool = ai.defineTool(
+    {
+        name: 'navegacaoInterdimensionalTool',
+        description: 'Módulo 21: Controla a navegação e propulsão interdimensional.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), trajectoryCalculated: z.boolean(), energyConsumption: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 21: Navegação Interdimensional...');
+        await new Promise(resolve => setTimeout(resolve, 410));
+        return {
+            status: 'TRAJETÓRIA_CALCULADA',
+            trajectoryCalculated: true,
+            energyConsumption: Math.random() * 100 + 50, // in Gigawatts
+        };
+    }
+);
+
 const iamTool = ai.defineTool(
     {
         name: 'iamTool',
@@ -608,6 +626,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
         }));
       }
        if(proceed) {
+        proceed = await runModule('NAVEGACAO_INTERDIMENSIONAL', 'Navegação Interdimensional', navegacaoInterdimensionalTool, {}, r => ({
+            proceed: r.trajectoryCalculated,
+            message: `Trajetória calculada. Consumo de energia: ${r.energyConsumption.toFixed(2)} GW`,
+        }));
+      }
+       if(proceed) {
         proceed = await runModule('CLIMATE_CONTROL', 'Controle Climático', climateControlTool, {}, r => ({
             proceed: r.balanceIndex > 0.95 && r.anomalies === 0,
             message: `Sistemas planetários em harmonia. Índice de equilíbrio: ${r.balanceIndex.toFixed(2)}`,
@@ -652,7 +676,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'FORCE_FIELD_ANALYSIS', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'FORCE_FIELD_ANALYSIS', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -688,5 +712,7 @@ export async function startNexusSequence() {
     
 
 
+
+    
 
     
