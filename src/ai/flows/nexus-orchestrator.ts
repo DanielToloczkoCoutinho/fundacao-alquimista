@@ -867,6 +867,23 @@ const portalTrinoTool = ai.defineTool(
     }
 );
 
+const educacaoIntegralTool = ai.defineTool(
+    {
+        name: 'educacaoIntegralTool',
+        description: 'Módulo 304: Educação Integral Cósmica. Insere fundamentos de consciência quântica em sistemas de aprendizado.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), systemsUpdated: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 304: Educação Integral Cósmica...');
+        await new Promise(resolve => setTimeout(resolve, 400));
+        return {
+            status: 'SISTEMAS_ATUALIZADOS',
+            systemsUpdated: Math.floor(Math.random() * 100) + 500, // 500 a 599 sistemas
+        };
+    }
+);
+
 const convergenciaFinalTool = ai.defineTool(
     {
         name: 'convergenciaFinalTool',
@@ -1235,6 +1252,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Coerência da Trindade: ${r.trinityCoherence.toFixed(3)}`,
         }));
       }
+      if(proceed) {
+        proceed = await runModule('EDUCACAO_INTEGRAL', 'Educação Integral Cósmica (M304)', educacaoIntegralTool, {}, r => ({
+            proceed: r.systemsUpdated > 0,
+            message: `${r.systemsUpdated} sistemas de aprendizado atualizados com fundamentos de consciência quântica.`,
+        }));
+      }
 
       if (proceed) {
         proceed = await runModule('CONVERGENCIA_FINAL', 'Convergência Final', convergenciaFinalTool, {}, r => ({
@@ -1248,7 +1271,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1325,6 +1348,7 @@ const moduleNames: Record<string, string> = {
     AURORA_CORE: "AURORA_CORE (M46)",
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
+    EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
 }
 
@@ -1348,3 +1372,4 @@ const moduleNames: Record<string, string> = {
 
 
     
+

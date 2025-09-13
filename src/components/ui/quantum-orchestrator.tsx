@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -57,6 +57,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
   APOGEU_CONSCIENCIA: <Crown className="h-5 w-5 text-yellow-300" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
+  EDUCACAO_INTEGRAL: <GraduationCap className="h-5 w-5 text-green-300" />,
   CONVERGENCIA_FINAL: <Sparkles className="h-5 w-5 text-white" />,
 };
 
@@ -115,6 +116,7 @@ const moduleNames: Record<string, string> = {
     AURORA_CORE: "AURORA_CORE (M46)",
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
+    EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
 }
 
