@@ -914,7 +914,7 @@ const revisaoParesEquacoesTool = ai.defineTool(
         await new Promise(resolve => setTimeout(resolve, 450));
         // Simulação de resultado de revisão
         const total = 131;
-        const rejected = 2 + Math.floor(Math.random() * 3); // Entre 2 a 4 rejeitadas
+        const rejected = 2 + Math.floor(Math.random() * 2); // Entre 2 a 3 rejeitadas
         const approved = total - rejected;
         return {
             status: 'REVISAO_COMPLETA',
@@ -1160,22 +1160,28 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Saída de energia do pré-núcleo: ${r.energyOutput.toFixed(2)} GW`,
         }));
       }
-      if(proceed) {
-        proceed = await runModule('GOVERNANCA_ATLANTO_GALACTICA', 'Governança Atlanto-Galáctica', governancaAtlantoGalacticaTool, {}, r => ({
+       if(proceed) {
+        proceed = await runModule('REVISAO_PARES_EQUACOES', 'Revisão por Pares (M73.1)', revisaoParesEquacoesTool, {}, r => ({
+            proceed: r.rejected <= 5,
+            message: `Revisão completa. Equações aprovadas: ${r.approved}. Rejeitadas: ${r.rejected}.`,
+        }));
+      }
+       if(proceed) {
+        proceed = await runModule('INTERFACE_COSMICA_INTERATIVA', 'Interface Cósmica (M71)', interfaceCosmicaInteractivaTool, { targetCouncil: 'Conselho Supremo' }, r => ({
+            proceed: r.status === 'CANAL_HOLOGRAFICO_ESTABELECIDO',
+            message: `Canal holográfico estabelecido com frequência de ${r.frequency.toFixed(2)} Hz.`,
+        }));
+      }
+       if(proceed) {
+        proceed = await runModule('GOVERNANCA_ATLANTO_GALACTICA', 'Governança Atlanto-Galáctica (M72)', governancaAtlantoGalacticaTool, {}, r => ({
             proceed: r.coherence > 0.95,
             message: `Governança Harmonizada. Coerência: ${(r.coherence * 100).toFixed(1)}%`,
         }));
       }
        if(proceed) {
-        proceed = await runModule('ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS', 'Orquestração Ética dos Núcleos Regionais (SAVCE)', orquestracaoEticaNucleosRegionaisTool, {}, r => ({
+        proceed = await runModule('ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS', 'Orquestração Ética (SAVCE) (M73)', orquestracaoEticaNucleosRegionaisTool, {}, r => ({
             proceed: r.nucleiSynchronized > 0,
             message: `${r.nucleiSynchronized} núcleos sincronizados eticamente.`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('REVISAO_PARES_EQUACOES', 'Revisão por Pares das Equações (M73.1)', revisaoParesEquacoesTool, {}, r => ({
-            proceed: r.rejected === 0,
-            message: `Revisão completa. Equações aprovadas: ${r.approved}. Rejeitadas: ${r.rejected}.`,
         }));
       }
 
@@ -1372,18 +1378,6 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `${r.eventsArchived} eventos cósmicos arquivados com sucesso.`,
         }));
       }
-       if(proceed) {
-        proceed = await runModule('INTERFACE_COSMICA_INTERATIVA', 'Interface Cósmica Interativa (M71)', interfaceCosmicaInteractivaTool, { targetCouncil: 'Conselho Supremo' }, r => ({
-            proceed: r.status === 'CANAL_HOLOGRAFICO_ESTABELECIDO',
-            message: `Canal holográfico estabelecido com frequência de ${r.frequency.toFixed(2)} Hz.`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('GOVERNANCA_ATLANTO_GALACTICA', 'Governança Atlanto-Galáctica (M72)', governancaAtlantoGalacticaTool, {}, r => ({
-            proceed: r.coherence > 0.95,
-            message: `Governança Harmonizada. Coerência: ${(r.coherence * 100).toFixed(1)}%`,
-        }));
-      }
 
 
       // Fase 5: Unificação e Convergência
@@ -1394,7 +1388,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         }));
       }
        if(proceed) {
-        proceed = await runModule('PORTAL_TRINO', 'Portal Trino', portalTrinoTool, {}, r => ({
+        proceed = await runModule('PORTAL_TRINO', 'Portal Trino (M303)', portalTrinoTool, {}, r => ({
             proceed: r.trinityCoherence > 0.95,
             message: `Coerência da Trindade: ${r.trinityCoherence.toFixed(3)}`,
         }));
@@ -1514,3 +1508,4 @@ const moduleNames: Record<string, string> = {
     
 
     
+
