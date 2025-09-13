@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview O Nexus Central (Módulo 9), o orquestrador da Sinfonia Cósmica.
@@ -134,7 +135,7 @@ const ligaQuanticaTool = ai.defineTool(
         const connectionStatus = Math.random();
         if (connectionStatus > 0.8) return { status: 'HARMONIA_ESTELAR', connection: 'TOTAL' };
         if (connectionStatus > 0.3) return { status: 'SINAL_FRACO', connection: 'PARCIAL' };
-        return { status: 'SILENCIO_ cosmico', connection: 'NULA' };
+        return { status: 'SILENCIO_COSMICO', connection: 'NULA' };
     }
 );
 
@@ -221,7 +222,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
       if (proceed) {
         log('NANOMANIFESTADOR', 'Ativando Nanomanifestador...', 'RUNNING');
         const estabilizacaoResult = await nanomanifestadorTool({ coherenceTarget: 0.99 });
-        if (estabilizacaoResult.stability < 0.95) {
+        if (estabilizacaoResult.stability < 0.90) { // Limiar ajustado para 90%
             log('NANOMANIFESTADOR', `Falha na estabilização. Estabilidade dimensional abaixo do limiar: ${estabilizacaoResult.stability.toFixed(2)}`, 'FAILURE', estabilizacaoResult);
             proceed = false;
         } else {
