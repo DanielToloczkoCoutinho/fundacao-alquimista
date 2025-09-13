@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -52,6 +52,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   LABORATORIO_COERENCIA: <FlaskConical className="h-5 w-5 text-lime-400" />,
   CHRONOCODEX_UNIFICADO: <Globe className="h-5 w-5 text-sky-300" />,
   ORQUESTRACAO_SISTEMA_SOLAR: <Orbit className="h-5 w-5 text-yellow-500" />,
+  VERITAS: <Gem className="h-5 w-5 text-cyan-200" />,
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
 AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
@@ -108,6 +109,7 @@ const moduleNames: Record<string, string> = {
     LABORATORIO_COERENCIA: "Laboratório de Coerência Quântica (M41)",
     CHRONOCODEX_UNIFICADO: "ChronoCodex Unificado (M42)",
     ORQUESTRACAO_SISTEMA_SOLAR: "Orquestração do Sistema Solar (M43)",
+    VERITAS: "VERITAS (M44)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     PORTAL_TRINO: "Portal Trino (M303)",
@@ -218,6 +220,7 @@ export default function QuantumOrchestrator() {
     
 
     
+
 
 
 
