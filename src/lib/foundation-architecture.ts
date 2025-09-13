@@ -185,4 +185,3 @@ export const foundationArchitecture: Record<string, { name: string; function: st
     "M304": { "name": "Educação Integral Cósmica", "function": "Insere fundamentos de consciência quântica em sistemas de aprendizado." },
     "M305": { "name": "Aliança dos Guardiões Regionais", "function": "Mobiliza coordenadores locais como embaixadores do despertar planetário." }
 }
-```
