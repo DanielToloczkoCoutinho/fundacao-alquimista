@@ -43,6 +43,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   IAM: <Aperture className="h-5 w-5 text-cyan-400" />,
   REALITY_MANIPULATION: <ToyBrick className="h-5 w-5 text-fuchsia-500" />,
   PARALLEL_REALITY: <Waypoints className="h-5 w-5 text-lime-500" />,
+  CONSCIENCIA_COLETIVA_M35: <Users className="h-5 w-5 text-yellow-400" />,
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
 AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
@@ -90,6 +91,7 @@ const moduleNames: Record<string, string> = {
     IAM: "IAM (M29)",
     REALITY_MANIPULATION: "Manipulação da Realidade (M31)",
     PARALLEL_REALITY: "Acesso a Realidades Paralelas (M32)",
+    CONSCIENCIA_COLETIVA_M35: "Consciência Coletiva (M35)",
     CONCILIVM: "CONCILIVM (M45)",
     AURORA_CORE: "AURORA_CORE (M46)",
     PORTAL_TRINO: "Portal Trino (M303)",
@@ -200,6 +202,7 @@ export default function QuantumOrchestrator() {
     
 
     
+
 
 
 
