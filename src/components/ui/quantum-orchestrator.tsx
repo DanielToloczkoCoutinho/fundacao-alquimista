@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -19,6 +19,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   LIGA_QUANTICA: <Rocket className="h-5 w-5 text-rose-400" />,
   CONSCIENCIA_COSMICA: <Sparkles className="h-5 w-5 text-amber-400" />,
   DEFESA_AVANCADA: <Shield className="h-5 w-5 text-red-400" />,
+  COSMIC_THREAT_DETECTION: <ShieldAlert className="h-5 w-5 text-orange-500" />,
   PORTAL_MANAGEMENT: <Link className="h-5 w-5 text-orange-400" />,
   COSMIC_PASSAGE: <Route className="h-5 w-5 text-cyan-400" />,
   MEMORIA_COSMICA: <Library className="h-5 w-5 text-blue-300" />,
@@ -39,7 +40,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   VIBRATIONAL_HARMONIZATION: <HeartHandshake className="h-5 w-5 text-rose-400" />,
   IAM: <Aperture className="h-5 w-5 text-cyan-400" />,
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
-  AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
+AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
   CONVERGENCIA_FINAL: <Sparkles className="h-5 w-5 text-white" />,
 };
@@ -61,6 +62,7 @@ const moduleNames: Record<string, string> = {
     LIGA_QUANTICA: "Conexão Liga Quântica (M5)",
     CONSCIENCIA_COSMICA: "Consciência Cósmica (M6)",
     DEFESA_AVANCADA: "Defesa Avançada (M10)",
+    COSMIC_THREAT_DETECTION: "Detecção de Ameaças (M30)",
     PORTAL_MANAGEMENT: "Gerenciamento de Portais (M11)",
     COSMIC_PASSAGE: "Travessias Cósmicas (M26)",
     MEMORIA_COSMICA: "Arquivo Akáshico (M12)",
