@@ -5,9 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Zap, Shield, CheckCircle, XCircle } from 'lucide-react';
+import { Loader2, Zap, Shield, CheckCircle, XCircle, Cpu } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
+// Mocks para simular a funcionalidade de outros módulos da Fundação
 const mockM5 = { getEthicalScore: async (id: string) => 0.85 + (id.length % 15) / 100 };
 const mockM105 = { checkConnection: async () => true };
 const mockM63 = { adjustPhase: async (id: string) => true };
@@ -136,7 +137,7 @@ const Module202Page = () => {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <Zap className="text-cyan-400" /> Módulo 202: O Corredor de Alcor
+                        <Cpu className="text-cyan-400" /> Módulo 202: O Corredor de Alcor
                     </CardTitle>
                     <CardDescription>
                         Túnel ressonante para saltos de coerência graduais e aceleração da ascensão.
