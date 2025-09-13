@@ -19,3 +19,4 @@ import '@/ai/flows/ether-flower-flow.ts';
 import '@/ai/flows/olp-flow.ts';
 import '@/ai/flows/space-time-flow.ts';
 import '@/ai/flows/prisma-flow.ts';
+import '@/ai/flows/resonance-matrix-flow.ts';

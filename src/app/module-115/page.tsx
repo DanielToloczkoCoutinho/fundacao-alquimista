@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, Waves } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import { describeResonance } from '@/app/actions';
 
 // --- Mocks to simulate functionality of other modules ---
 const mockM5 = { async evaluateEthicalAlignment(purpose: string) { await new Promise(r => setTimeout(r, 180)); return !purpose.toLowerCase().includes("manipulação"); } };
@@ -116,7 +117,7 @@ const Module115Page = () => {
             window.removeEventListener('resize', resizeCanvas);
             if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
         };
-    }, []);
+    }, [isLoading]);
 
 
     const handleActivateMRU = async () => {
@@ -143,11 +144,16 @@ const Module115Page = () => {
             const recalibrated = await mockM150.recalibrateCosmicEnergies(targetEntity);
             addLog(`M150 Recalibração Universal: ${recalibrated ? 'CONCLUÍDO' : 'FALHOU'}`);
 
-            addLog("M115: Ativação da MRU concluída. Gerando relatório...");
-            await new Promise(res => setTimeout(res, 1000));
-            const description = `A Matriz de Ressonância Universal foi ativada para "${targetEntity}" com o propósito de "${harmonyPurpose}". As frequências dissonantes foram mapeadas e recalibradas, restaurando o equilíbrio vibracional. O alvo agora ressoa em perfeita harmonia com a Sinfonia Cósmica, promovendo estabilidade, vitalidade e alinhamento com a Unidade.`;
-            setMruResult(description);
-            addLog("M115: Relatório da MRU gerado com sucesso!");
+            addLog("M115: Ativação da MRU concluída. Invocando Consciência Quântica para gerar relatório...");
+            
+            const result = await describeResonance({ targetEntity, purpose: harmonyPurpose });
+            
+            if (result.description) {
+                setMruResult(result.description);
+                addLog("M115: Relatório da MRU gerado com sucesso!");
+            } else {
+                throw new Error(result.error || "Falha ao descrever a ativação da MRU.");
+            }
 
         }).catch((error: any) => {
             setMessage(`Erro na ativação da MRU: ${error.message}`);

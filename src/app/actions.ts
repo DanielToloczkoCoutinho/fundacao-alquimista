@@ -13,6 +13,7 @@ import { describeEtherFlower as runDescribeEtherFlower } from '@/ai/flows/ether-
 import { describeOlP as runDescribeOlp } from '@/ai/flows/olp-flow';
 import { describeSpaceTimeEngineering as runDescribeSpaceTimeEngineering } from '@/ai/flows/space-time-flow';
 import { describeHologramProjection as runDescribeHologramProjection } from '@/ai/flows/prisma-flow';
+import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-matrix-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -134,6 +135,16 @@ export async function describeSpaceTimeEngineering(data: { type: string, destina
 export async function describeHologramProjection(data: { hologramName: string, projectionType: string, interactionLevel: string }) {
   try {
     const result = await runDescribeHologramProjection(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeResonance(data: { targetEntity: string, purpose: string }) {
+  try {
+    const result = await runDescribeResonance(data);
     return { description: result.description, error: null };
   } catch (e: any) {
     console.error(e);
