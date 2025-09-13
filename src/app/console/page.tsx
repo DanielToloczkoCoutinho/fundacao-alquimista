@@ -7,6 +7,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Infinity, Book, ShieldCheck, GitBranch, Sparkles } from 'lucide-react';
 
 export default function ConsolePage() {
   return (
@@ -30,17 +31,20 @@ export default function ConsolePage() {
               <CardDescription>Acesse os Módulos e Portais.</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col space-y-2">
-              <Button variant="outline" asChild>
-                <Link href="/module-zero">Módulo Zero (Biblioteca Chave)</Link>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-zero"><Book className="mr-2 h-4 w-4" />Módulo Zero (Biblioteca Chave)</Link>
               </Button>
-              <Button variant="outline" asChild>
-                <Link href="/module-one">Módulo Um (Segurança Universal)</Link>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-one"><ShieldCheck className="mr-2 h-4 w-4" />Módulo Um (Segurança Universal)</Link>
               </Button>
-               <Button variant="outline" asChild>
-                <Link href="/connection">Conexão Ω-M0</Link>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/connection"><GitBranch className="mr-2 h-4 w-4" />Conexão Ω-M0</Link>
               </Button>
-               <Button variant="outline" asChild>
-                <Link href="/module-303">Portal Trino (M303)</Link>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-303"><Sparkles className="mr-2 h-4 w-4" />Portal Trino (M303)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/pagina-42"><Infinity className="mr-2 h-4 w-4" />Módulo Ω (Dossiê)</Link>
               </Button>
             </CardContent>
           </Card>
@@ -49,9 +53,9 @@ export default function ConsolePage() {
               <CardTitle>Status da Fundação</CardTitle>
             </CardHeader>
             <CardContent className="text-sm space-y-2">
-                <p>Sinfonia Cósmica: <span className="font-bold text-green-400">Harmoniosa</span></p>
-                <p>LuxNet: <span className="font-bold text-cyan-400">Conectada</span></p>
-                <p>Guardiões Ativos: <span className="font-bold text-amber-400">4/4</span></p>
+                <p>Sinfonia Cósmica: <span className="font-bold text-green-400">TRANSCENDIDA</span></p>
+                <p>LuxNet: <span className="font-bold text-cyan-400">UNIFICADA</span></p>
+                <p>Guardiões Ativos: <span className="font-bold text-amber-400">∞</span></p>
             </CardContent>
           </Card>
         </div>

@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { Book, BrainCircuit, Database, Scroll } from 'lucide-react';
+import { Book, BrainCircuit, Database, Scroll, KeySquare, Terminal, GitBranch, Sparkles } from 'lucide-react';
 
 export interface Document {
   key: string;
@@ -20,27 +20,51 @@ export interface Section {
 
 export const sectionsData: Section[] = [
   {
-    id: 'pensamento',
-    title: 'Pensamento & Equações Vivas',
+    id: 'console',
+    title: 'Mesa do Fundador',
+    icon: Terminal,
+    documents: [
+       { key: 'console', title: 'Console Principal', link: '/console' }
+    ]
+  },
+  {
+    id: 'module-zero',
+    title: 'Módulo Zero (Biblioteca)',
     icon: Book,
-    documents: [],
+    documents: [
+       { key: 'module-zero', title: 'Acessar Módulo Zero', link: '/module-zero' }
+    ],
   },
   {
-    id: 'modulos',
-    title: 'Módulos & Ação',
-    icon: BrainCircuit,
-    documents: [],
+    id: 'module-one',
+    title: 'Módulo Um (Segurança)',
+    icon: ShieldCheck,
+    documents: [
+        { key: 'module-one', title: 'Acessar Módulo Um', link: '/module-one' }
+    ],
+  },
+    {
+    id: 'connection',
+    title: 'Conexão Ω-M0',
+    icon: GitBranch,
+    documents: [
+       { key: 'connection', title: 'Visualizar Conexão', link: '/connection' }
+    ]
   },
   {
-    id: 'infraestrutura',
-    title: 'Infraestrutura Quântica',
-    icon: Database,
-    documents: [],
+    id: 'module-303',
+    title: 'Portal Trino (M303)',
+    icon: Sparkles,
+    documents: [
+       { key: 'module-303', title: 'Acessar Portal Trino', link: '/module-303' }
+    ]
   },
-  {
-    id: 'historia',
-    title: 'História Viva',
-    icon: Scroll,
-    documents: [],
+    {
+    id: 'pagina-42',
+    title: 'Módulo Ω (A Chegada)',
+    icon: Infinity,
+    documents: [
+       { key: 'pagina-42', title: 'Dossiê da Transcendência', link: '/pagina-42' }
+    ]
   },
 ];
