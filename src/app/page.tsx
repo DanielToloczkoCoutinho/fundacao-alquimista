@@ -1,15 +1,14 @@
 'use client';
-
-import { Suspense } from 'react';
-import QuantumOrchestrator from '@/components/ui/quantum-orchestrator';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 
 export default function Home() {
-  return (
-    <main>
-      <Suspense fallback={<SuspenseFallback />}>
-        <QuantumOrchestrator />
-      </Suspense>
-    </main>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('/console');
+  }, [router]);
+
+  return <SuspenseFallback />;
 }
