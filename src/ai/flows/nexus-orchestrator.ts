@@ -246,6 +246,24 @@ const transmutationTool = ai.defineTool(
     }
 );
 
+const climateControlTool = ai.defineTool(
+    {
+        name: 'climateControlTool',
+        description: 'Módulo 15: Monitora e intervém eticamente em sistemas climáticos e geofísicos.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), balanceIndex: z.number(), anomalies: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 15: Controle Climático e Geofísico...');
+        await new Promise(resolve => setTimeout(resolve, 410));
+        return {
+            status: 'EQUILIBRIO_HARMONICO',
+            balanceIndex: 0.97 + Math.random() * 0.03,
+            anomalies: Math.random() < 0.02 ? 1 : 0, // 2% chance of anomaly
+        };
+    }
+);
+
 const iamTool = ai.defineTool(
     {
         name: 'iamTool',
@@ -482,6 +500,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Geração de matéria estável. Energia: ${r.energyGenerated.toFixed(2)} PW`,
         }));
       }
+       if(proceed) {
+        proceed = await runModule('CLIMATE_CONTROL', 'Controle Climático', climateControlTool, {}, r => ({
+            proceed: r.balanceIndex > 0.95 && r.anomalies === 0,
+            message: `Sistemas planetários em harmonia. Índice de equilíbrio: ${r.balanceIndex.toFixed(2)}`,
+        }));
+      }
 
       // Fase 5: Unificação e Convergência
        if(proceed) {
@@ -503,7 +527,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'TRANSMUTATION', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DEFESA_AVANCADA', 'IAM', 'CONCILIVM', 'AURORA_CORE', 'PORTAL_MANAGEMENT', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'TRANSMUTATION', 'CLIMATE_CONTROL', 'PORTAL_TRINO', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
