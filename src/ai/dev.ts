@@ -16,3 +16,4 @@ import '@/ai/flows/harmonization-flow.ts';
 import '@/ai/flows/healing-flow.ts';
 import '@/ai/flows/portal-activation-flow.ts';
 import '@/ai/flows/ether-flower-flow.ts';
+import '@/ai/flows/olp-flow.ts';

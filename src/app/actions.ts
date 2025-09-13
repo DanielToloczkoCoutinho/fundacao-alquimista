@@ -10,6 +10,7 @@ import { describeHarmonization as runDescribeHarmonization } from '@/ai/flows/ha
 import { describeQuantumHealing as runDescribeQuantumHealing } from '@/ai/flows/healing-flow';
 import { describePortalActivation as runDescribePortalActivation } from '@/ai/flows/portal-activation-flow';
 import { describeEtherFlower as runDescribeEtherFlower } from '@/ai/flows/ether-flower-flow';
+import { describeOlP as runDescribeOlp } from '@/ai/flows/olp-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -101,6 +102,16 @@ export async function describePortalActivation(data: { portalName: string, desti
 export async function describeEtherFlower(data: { phenomenon: string, purpose: string }) {
   try {
     const result = await runDescribeEtherFlower(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeOlP(data: { lightSource: string, purpose: string }) {
+  try {
+    const result = await runDescribeOlp(data);
     return { description: result.description, error: null };
   } catch (e: any) {
     console.error(e);
