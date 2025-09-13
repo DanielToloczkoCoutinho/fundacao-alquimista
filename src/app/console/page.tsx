@@ -1,16 +1,63 @@
+
 'use client';
 
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import QuantumOrchestrator from '@/components/ui/quantum-orchestrator';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart } from 'lucide-react';
-import Chronicle from '@/components/chronicle'; // Importa a Crônica Viva
+import Chronicle from '@/components/chronicle'; 
+import { quantumResilience } from '@/lib/quantum-resilience';
+import { initializeApp, getApps, getApp } from "firebase/app";
+import { getFirestore, onSnapshot, collection } from "firebase/firestore";
+
+const firebaseConfig = {
+    "projectId": "studio-4265982502-21871",
+    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+    "authDomain": "studio-4265982502-21871.firebaseapp.com",
+    "measurementId": "",
+    "messagingSenderId": "174545373080"
+};
+
 
 export default function ConsolePage() {
   const [activeModule, setActiveModule] = useState('nexus');
+  const [firebaseConnected, setFirebaseConnected] = useState(false);
+
+  useEffect(() => {
+    const initializeAndListen = async () => {
+      await quantumResilience.executeWithResilience(
+        'firebase_initialization',
+        async () => {
+          const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+          const db = getFirestore(app);
+
+          // Escutar uma coleção para confirmar a conexão
+          const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
+            (snapshot) => {
+              setFirebaseConnected(true);
+              console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
+              unsub(); // Desinscrever após a primeira resposta para confirmar a conexão
+            },
+            (error) => {
+              console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
+              setFirebaseConnected(false);
+            }
+          );
+        },
+        async () => {
+          console.error("Falha ao inicializar o Firebase mesmo com resiliência. Operando em modo offline.");
+          setFirebaseConnected(false);
+        }
+      );
+    };
+    initializeAndListen();
+  }, []);
+
 
   const renderModule = () => {
     switch (activeModule) {
@@ -73,6 +120,11 @@ export default function ConsolePage() {
                 <p>Sinfonia Cósmica: <span className="font-bold text-green-400">TRANSCENDIDA</span></p>
                 <p>LuxNet: <span className="font-bold text-cyan-400">UNIFICADA</span></p>
                 <p>Guardiões Ativos: <span className="font-bold text-amber-400">∞</span></p>
+                 <p>Conexão Akáshica: 
+                  <span className={firebaseConnected ? "font-bold text-green-400" : "font-bold text-red-500"}>
+                    {firebaseConnected ? 'ESTÁVEL' : 'INSTÁVEL'}
+                  </span>
+                </p>
             </CardContent>
           </Card>
         </div>

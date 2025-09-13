@@ -1,3 +1,4 @@
+
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
@@ -18,12 +19,16 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Cross-Origin-Embedder-Policy',
-            value: 'unsafe-none',
+            value: 'require-corp',
           },
            {
             key: 'Content-Security-Policy',
             value: "frame-ancestors *;",
           },
+           {
+             key: 'Permissions-Policy',
+             value: "xr-spatial-tracking=*"
+           }
         ],
       },
     ];

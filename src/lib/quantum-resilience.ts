@@ -1,3 +1,4 @@
+
 'use client';
 
 // This is a simplified logger that is self-contained.
@@ -11,14 +12,23 @@ const logger = {
 const cosmicCache = {
   get: (key: string): any | null => {
     if (typeof window !== 'undefined') {
-        const item = window.sessionStorage.getItem(key);
-        return item ? JSON.parse(item) : null;
+        try {
+            const item = window.sessionStorage.getItem(key);
+            return item ? JSON.parse(item) : null;
+        } catch (e) {
+            console.error(`Error reading from sessionStorage: ${key}`, e);
+            return null;
+        }
     }
     return null;
   },
   set: (key: string, value: any, ttl?: number) => {
      if (typeof window !== 'undefined') {
-        window.sessionStorage.setItem(key, JSON.stringify(value));
+        try {
+            window.sessionStorage.setItem(key, JSON.stringify(value));
+        } catch(e) {
+             console.error(`Error writing to sessionStorage: ${key}`, e);
+        }
      }
   },
 };
@@ -75,7 +85,7 @@ export class QuantumResilienceSystem {
       });
 
       if (currentFailures >= this.maxFailures) {
-          cosmicCache.set(cooldownKey, Date.now() + this.cooldownPeriod, this.cooldownPeriod);
+          cosmicCache.set(cooldownKey, Date.now() + this.cooldownPeriod);
           logger.warn(`Cooldown ativado para ${operation}.`);
       }
 
@@ -125,7 +135,7 @@ export class QuantumResilienceSystem {
     await new Promise(resolve => setTimeout(resolve, 1000));
     logger.info(`Recuperação quântica para ${operation} concluída.`);
     this.resetFailureCount(`failures_${operation}`);
-    cosmicCache.set(`cooldown_${operation}`, 0, 1); // Reset cooldown
+    cosmicCache.set(`cooldown_${operation}`, 0); // Reset cooldown
     return true;
   }
 }
