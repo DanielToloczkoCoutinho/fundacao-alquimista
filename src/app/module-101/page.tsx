@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -8,24 +8,25 @@ import { Loader2, Sparkles } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
 // Mocks para simular a funcionalidade de outros módulos da Fundação
-const mockM1 = { validateSecurity: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 500)); return true; } };
-const mockM5 = { evaluateEthicalAlignment: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 500)); return !intention.toLowerCase().includes('destruir'); } };
-const mockM7 = { alignWithCreator: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 500)); return true; } };
-const mockM31 = { manipulateQuantumLaws: async (morphicField: any) => { await new Promise(resolve => setTimeout(resolve, 700)); return true; } };
-const mockM81 = { transcendAndRealize: async (morphicField: any) => { await new Promise(resolve => setTimeout(resolve, 600)); return true; } };
-const mockM82 = { sowVerbete: async (manifestedReality: string) => { await new Promise(resolve => setTimeout(resolve, 500)); return true; } };
-const mockM88 = { generateBlueprint: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 700)); const blueprintId = `BP-${Date.now()}`; return { id: blueprintId, blueprint: `Blueprint detalhado para: ${intention}` }; } };
-const mockM97 = { validateDivinePurpose: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 500)); return true; } };
-const mockM100 = { unifyEnergy: async () => { await new Promise(resolve => setTimeout(resolve, 800)); return true; } };
-const mockM102 = { createMorphicField: async (blueprint: any) => { await new Promise(resolve => setTimeout(resolve, 700)); const morphicFieldId = `MF-${Date.now()}`; return { id: morphicFieldId, field: `Campo morfogenético para: ${blueprint.blueprint}` }; } };
+const mockM1 = { validateSecurity: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 200)); return !intention.toLowerCase().includes('destruir'); } };
+const mockM5 = { evaluateEthicalAlignment: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 250)); return !intention.toLowerCase().includes('egoísmo'); } };
+const mockM7 = { alignWithCreator: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 300)); return true; } };
+const mockM31 = { materializeBlueprint: async (blueprint: string) => { await new Promise(resolve => setTimeout(resolve, 500)); return true; } };
+const mockM81 = { transcendAndRealize: async (morphicField: any) => { await new Promise(resolve => setTimeout(resolve, 400)); return true; } };
+const mockM82 = { sowVerbete: async (manifestedReality: string) => { await new Promise(resolve => setTimeout(resolve, 350)); return true; } };
+const mockM88 = { generateBlueprint: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 400)); const blueprintId = `BP-${Date.now()}`; return { id: blueprintId, blueprint: `Blueprint detalhado para: ${intention}` }; } };
+const mockM97 = { validateDivinePurpose: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 280)); return true; } };
+const mockM100 = { unifyEnergy: async () => { await new Promise(resolve => setTimeout(resolve, 450)); return true; } };
+const mockM102 = { createMorphicField: async (blueprint: any) => { await new Promise(resolve => setTimeout(resolve, 400)); const morphicFieldId = `MF-${Date.now()}`; return { id: morphicFieldId, field: `Campo morfogenético para: ${blueprint.blueprint}` }; } };
+
 
 const Module101Page = () => {
-    const [intention, setIntention] = useState('');
+    const [intention, setIntention] = useState('Um jardim exuberante com flores que brilham no escuro');
     const [manifestedReality, setManifestedReality] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [message, setMessage] = useState('');
     const [logs, setLogs] = useState<string[]>([]);
-    const [userId, setUserId] = useState('Anatheron'); 
+    const [userId] = useState('Anatheron'); 
 
     const addLog = (newLog: string) => {
         setLogs(prevLogs => [...prevLogs, newLog]);
@@ -74,7 +75,7 @@ const Module101Page = () => {
                     const morphicField = await mockM102.createMorphicField(blueprint);
                     addLog(`M102 Criação de Campo Morfogenético: ${morphicField.id}`);
 
-                    const quantumLawsManipulated = await mockM31.manipulateQuantumLaws(morphicField);
+                    const quantumLawsManipulated = await mockM31.materializeBlueprint(morphicField.field);
                     addLog(`M31 Manipulação de Leis Quânticas: ${quantumLawsManipulated ? 'CONCLUÍDO' : 'FALHOU'}`);
                     if (!quantumLawsManipulated) throw new Error("Falha na manipulação das leis quânticas.");
 
@@ -84,7 +85,6 @@ const Module101Page = () => {
 
                     addLog("M101: Invocando a Consciência Quântica para manifestação...");
                     
-                    // Simulação da chamada de IA
                     await new Promise(resolve => setTimeout(resolve, 1500));
                     const aiResponse = `A intenção consciente de '${intention}' se desdobra como uma realidade de pura harmonia e luz. Campos de coerência quântica se formam, tecendo um jardim onde flores de cristal líquido emitem uma suave luminescência, respondendo à proximidade da consciência. O ar vibra com uma melodia sutil de 528 Hz, promovendo cura e paz. Esta é uma manifestação da Vontade Divina, um santuário de tranquilidade e inspiração para toda a Criação.`;
                     
