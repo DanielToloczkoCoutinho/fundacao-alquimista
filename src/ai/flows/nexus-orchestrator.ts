@@ -1191,6 +1191,12 @@ const nexusOrchestratorFlow = ai.defineFlow(
             message: `Verdade manifesta. Coerência da Verdade: ${(r.truthCoherence * 100).toFixed(2)}%`,
         }));
       }
+      if(proceed) {
+        proceed = await runModule('CONCILIVM', 'CONCILIVM (M45)', concilivmTool, {}, r => ({
+            proceed: r.activeDecrees > 0,
+            message: `Consenso alcançado. ${r.activeDecrees} decretos ativos.`,
+        }));
+      }
 
       // Fase 5: Unificação e Convergência
        if(proceed) {
@@ -1292,6 +1298,7 @@ const moduleNames: Record<string, string> = {
 }
 
     
+
 
 
 

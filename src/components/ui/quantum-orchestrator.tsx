@@ -54,7 +54,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   ORQUESTRACAO_SISTEMA_SOLAR: <Orbit className="h-5 w-5 text-yellow-500" />,
   VERITAS: <Gem className="h-5 w-5 text-cyan-200" />,
   CONCILIVM: <Network className="h-5 w-5 text-lime-400" />,
-AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
+  AURORA_CORE: <Sparkles className="h-5 w-5 text-pink-400" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
   CONVERGENCIA_FINAL: <Sparkles className="h-5 w-5 text-white" />,
 };
@@ -220,6 +220,7 @@ export default function QuantumOrchestrator() {
     
 
     
+
 
 
 
