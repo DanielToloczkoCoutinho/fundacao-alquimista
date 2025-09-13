@@ -1,357 +1,200 @@
 'use client';
 
-import * as React from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from './ui/card';
-import { Button } from './ui/button';
-import {
-  CheckCircle2,
+  Activity,
+  Archive,
+  Atom,
+  BookHeart,
+  BrainCircuit,
+  Cat,
+  CheckCircle,
   ChevronRight,
   CircleDashed,
+  Clock,
+  Code,
+  Component,
+  Crown,
+  DatabaseZap,
+  DraftingCompass,
+  FileText,
+  FlaskConical,
+  Flame,
+  GanttChartSquare,
+  Gavel,
+  GitBranch,
+  Globe,
+  Heart,
+  HeartPulse,
+  History,
+  KeySquare,
+  Landmark,
+  Laptop,
+  Layers,
+  Leaf,
+  Library,
   LoaderCircle,
-  Shield,
-  FileWarning,
-  XCircle,
+  Map,
+  Milestone,
+  Network,
   Orbit,
-  Bot,
-  BrainCircuit,
+  PocketKnife,
+  PlusSquare,
+  RefreshCw,
+  Rocket,
+  Shield,
+  ShieldCheck,
+  SlidersHorizontal,
+  Sprout,
+  Swords,
   TestTube,
-  SkipForward,
-  Star,
-  Sparkles,
-  Atom,
-  Binary,
+  Users,
+  Waves,
+  Wrench,
+  XCircle,
+  Zap,
+  Anvil,
+  Scan,
+  Share2,
+  Workflow,
+  BookOpenCheck,
+  BookOpen,
+  User,
+  HeartHandshake,
+  Bot,
+  Fingerprint,
+  AlertTriangle,
+  Microscope,
+  UserCheck,
+  GitCommit,
+  BookKey
 } from 'lucide-react';
+import { sections } from '@/lib/codex-data';
 import { cn } from '@/lib/utils';
-import { useToast } from '@/hooks/use-toast';
+import { Button } from './ui/button';
 import { ScrollArea } from './ui/scroll-area';
-import { AnimatePresence, motion } from 'framer-motion';
+import SuspenseFallback from './ui/suspense-fallback';
+import { useStore } from '@/hooks/useStore';
 
-type ModuleState =
-  | 'PENDING'
-  | 'RUNNING'
-  | 'SUCCESS'
-  | 'FAILURE'
-  | 'SKIPPED';
-
-interface LogEntry {
-  timestamp: string;
-  module: string;
-  message: string;
-  data?: any;
-  state: ModuleState;
-}
-
-const moduleSequenceDef = [
-    { id: 'M0', name: 'Módulo Zero' },
-    { id: 'M1', name: 'M1: Segurança Quântica' },
-    { id: 'M2', name: 'M2: Comunicação' },
-    { id: 'M3', name: 'M3: Previsão' },
-    { id: 'M4', name: 'M4: Validação (PIRC)' },
-    { id: 'M5', name: 'M5: Ética (ELENYA)' },
-    { id: 'M6', name: 'M6: Frequências' },
-    { id: 'M7', name: 'M7: SOFA' },
-    { id: 'M8', name: 'M8: Consciência Cósmica' },
-    { id: 'M9', name: 'Módulo Ômega' }, // Representa a finalização
-];
-
-const moduleIcons: { [key: string]: React.ReactNode } = {
-  'Módulo Zero': <Atom />,
-  'Nexus Central': <Bot />,
-  'M1: Segurança Quântica': <Shield />,
-  'M2: Comunicação': <Star/>,
-  'M3: Previsão': <Orbit />,
-  'M4: Validação (PIRC)': <TestTube />,
-  'M5: Ética (ELENYA)': <FileWarning/>,
-  'M6: Frequências': <Sparkles/>,
-  'M7: SOFA': <BrainCircuit/>,
-  'M8: Consciência Cósmica': <BrainCircuit />,
-  'Módulo Ômega': <Sparkles />,
-};
-
-const getStatusStyles = (state: ModuleState) => {
-  switch (state) {
-    case 'SUCCESS':
-      return {
-        icon: <CheckCircle2 className="text-green-500" />,
-        bgColor: 'bg-green-500/10',
-        textColor: 'text-green-300',
-        borderColor: 'border-green-500/20',
-      };
-    case 'RUNNING':
-      return {
-        icon: <LoaderCircle className="animate-spin text-blue-500" />,
-        bgColor: 'bg-blue-500/10',
-        textColor: 'text-blue-300',
-        borderColor: 'border-blue-500/20',
-      };
-    case 'FAILURE':
-      return {
-        icon: <XCircle className="text-red-500" />,
-        bgColor: 'bg-red-500/10',
-        textColor: 'text-red-300',
-        borderColor: 'border-red-500/20',
-      };
-    case 'SKIPPED':
-      return {
-        icon: <SkipForward className="text-yellow-500" />,
-        bgColor: 'bg-yellow-500/10',
-        textColor: 'text-yellow-400',
-        borderColor: 'border-yellow-500/20',
-      };
-    case 'PENDING':
-    default:
-      return {
-        icon: <CircleDashed className="text-gray-500" />,
-        bgColor: 'bg-gray-500/10',
-        textColor: 'text-gray-400',
-        borderColor: 'border-gray-500/20',
-      };
-  }
+// Lazy loading all module components
+const moduleComponents: { [key: string]: React.LazyExoticComponent<any> } = {
+  'module-zero': lazy(() => import('./module-zero')),
+  'module-one': lazy(() => import('./module-one')),
+  'm2': lazy(() => import('./module-two')),
+  'm3': lazy(() => import('./module-three')),
+  'm4': lazy(() => import('./module-four')),
+  'm5': lazy(() => import('./module-five')),
+  'm6': lazy(() => import('./module-six')),
+  'm7': lazy(() => import('./module-seven')),
+  'm8': lazy(() => import('./module-eight')),
+  'm10': lazy(() => import('./module-ten')),
+  'm11': lazy(() => import('./module-11')),
+  'm12': lazy(() => import('./module-twelve')),
+  'm13': lazy(() => import('./module-thirteen')),
+  'm14': lazy(() => import('./module-fourteen')),
+  'm15': lazy(() => import('./module-fifteen')),
+  'm16': lazy(() => import('./module-sixteen')),
+  'm17': lazy(() => import('./module-seventeen')),
+  'm18': lazy(() => import('./module-eighteen')),
+  'm19': lazy(() => import('./module-nineteen')),
+  'm20': lazy(() => import('./module-twenty')),
+  'm21': lazy(() => import('./module-21')),
+  'm22': lazy(() => import('./module-22')),
+  'm23': lazy(() => import('./module-23')),
+  'm24': lazy(() => import('./module-24')),
+  'm25': lazy(() => import('./module-25')),
+  'm26': lazy(() => import('./module-26')),
+  'm27': lazy(() => import('./module-27')),
+  'm28': lazy(() => import('./module-28')),
+  'm29': lazy(() => import('./module-29')),
+  'm30': lazy(() => import('./module-30')),
+  'm31': lazy(() => import('./module-31')),
+  'm32': lazy(() => import('./module-32')),
+  'm34': lazy(() => import('./module-34')),
+  'm35': lazy(() => import('./module-35')),
+  'm36': lazy(() => import('./module-36')),
+  'm37': lazy(() => import('./module-37')),
+  'm39-1': lazy(() => import('./module-39-1')),
+  'm39': lazy(() => import('./module-39')),
+  'm40': lazy(() => import('./module-40')),
+  'm41-1': lazy(() => import('./module-41-1')),
+  'm42': lazy(() => import('./module-42')),
+  'm43': lazy(() => import('./module-43')),
+  'm44': lazy(() => import('./module-44')),
+  'm45': lazy(() => import('./module-45')),
+  'm46': lazy(() => import('./module-46')),
+  'm250': lazy(() => import('./module-250')),
+  'm251': lazy(() => import('./module-251')),
+  'm300': lazy(() => import('./module-300')),
+  'm301': lazy(() => import('./module-301')),
+  'm302': lazy(() => import('./module-302')),
+  'm303-forge': lazy(() => import('./module-303-forge')),
+  'm303': lazy(() => import('./module-303')),
+  'm304': lazy(() => import('./module-304')),
+  'm305': lazy(() => import('./module-305')),
+  'm404': lazy(() => import('./module-404')),
+  'codex-explorer': lazy(() => import('./codex-explorer')),
+  'key-generator': lazy(() => import('./key-generator')),
+  'key-viewer': lazy(() => import('./key-viewer')),
+  'scientific-report': lazy(() => import('./scientific-report')),
+  'architecture-report': lazy(() => import('./architecture-report')),
+  'zpe-containment': lazy(() => import('./zpe-containment')),
+  'chronicle': lazy(() => import('./chronicle')),
+  'organograma': lazy(() => import('./organograma-cosmogonico')),
+  'scientists-lab': lazy(() => import('./scientists-lab')),
+  'civilizations': lazy(() => import('./console-page')),
+  'gaia-observatory': lazy(() => import('./gaia-resonance-observatory')),
+  'quantum-league': lazy(() => import('./quantum-league-convocation')),
+  'm303-1': lazy(() => import('./module-303-1')),
+  'connection': lazy(() => import('../app/connection/page')),
+  'pagina-27': lazy(() => import('./pagina-27')),
+  'pagina-29': lazy(() => import('./pagina-29')),
+  'pagina-30': lazy(() => import('./pagina-30')),
+  'pagina-31': lazy(() => import('./pagina-31')),
+  'pagina-34': lazy(() => import('./pagina-34')),
+  'pagina-37': lazy(() => import('./pagina-37')),
+  'pagina-38': lazy(() => import('./pagina-38')),
+  'pagina-39': lazy(() => import('./pagina-39')),
+  'pagina-40': lazy(() => import('./pagina-40')),
+  'pagina-42': lazy(() => import('./pagina-42')),
+  'pagina-43': lazy(() => import('./pagina-43')),
+  'suggestions-panel': lazy(() => import('./suggestions-panel')),
 };
 
 export default function Nexus() {
-  const [logs, setLogs] = React.useState<LogEntry[]>([]);
-  const [isOrchestrating, setIsOrchestrating] = React.useState(false);
-  const [finalStatus, setFinalStatus] = React.useState<
-    'SUCCESS' | 'FAILURE' | null
-  >(null);
-  const { toast } = useToast();
-  const scrollAreaRef = React.useRef<HTMLDivElement>(null);
+  const [activeModuleId, setActiveModuleId] = useState('module-zero');
   
-  const functionUrl = "https://us-central1-studio-4265982502-21871.cloudfunctions.net/nexusOrchestrator";
-
-  const addOrUpdateLog = (logEntry: LogEntry) => {
-      setLogs(prev => {
-          const existingIndex = prev.findIndex(l => l.module === logEntry.module);
-          if (existingIndex > -1) {
-              const newLogs = [...prev];
-              newLogs[existingIndex] = logEntry;
-              return newLogs;
-          }
-          return [...prev, logEntry];
-      })
-  }
-
-  const handleStartSequence = React.useCallback(async () => {
-    if (isOrchestrating) return;
-
-    setIsOrchestrating(true);
-    setLogs([]);
-    setFinalStatus(null);
-    toast({ title: "Iniciando Sequência Sagrada..."});
-
-    for (const mod of moduleSequenceDef) {
-        addOrUpdateLog({
-            module: mod.name,
-            state: 'RUNNING',
-            message: `Ativando e analisando ${mod.name}...`,
-            timestamp: new Date().toISOString()
-        });
-        
-        try {
-            const response = await fetch(functionUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ moduleId: mod.id })
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || `Falha na requisição para ${mod.name}`);
-            }
-
-            const result = await response.json();
-
-            addOrUpdateLog({
-                module: mod.name,
-                state: 'SUCCESS',
-                message: `Módulo executado com sucesso.`,
-                data: result,
-                timestamp: new Date().toISOString()
-            });
-
-        } catch (error: any) {
-             addOrUpdateLog({
-                module: mod.name,
-                state: 'FAILURE',
-                message: `Erro crítico: ${error.message}`,
-                timestamp: new Date().toISOString()
-            });
-            setFinalStatus('FAILURE');
-            toast({ variant: 'destructive', title: `Falha no Módulo ${mod.name}`, description: error.message });
-            setIsOrchestrating(false);
-            return; // Aborta a sequência
-        }
-    }
-    
-    setFinalStatus('SUCCESS');
-    toast({ title: "Sequência Sagrada Concluída", description: "Todos os módulos operam em harmonia."});
-    setIsOrchestrating(false);
-
-  }, [isOrchestrating, toast, functionUrl]);
-  
-    React.useEffect(() => {
-    if (scrollAreaRef.current) {
-      scrollAreaRef.current.scrollTo({
-        top: scrollAreaRef.current.scrollHeight,
-        behavior: 'smooth',
-      });
-    }
-  }, [logs]);
-
-  // Executa a sequência sagrada automaticamente ao carregar o módulo
-  React.useEffect(() => {
-    handleStartSequence();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-
-  const getOverallStatus = () => {
-    if (isOrchestrating) return 'Diagnóstico em Progresso...';
-    if (finalStatus === 'SUCCESS') return 'Diagnóstico Concluído: Todos os Módulos Estáveis';
-    if (finalStatus === 'FAILURE') return 'Diagnóstico Concluído com Falhas';
-    return 'Aguardando Diagnóstico Automático';
-  };
-
-  const getFinalStatusIcon = () => {
-    if (finalStatus === 'SUCCESS') return <CheckCircle2 className="text-green-400 w-6 h-6" />;
-    if (finalStatus === 'FAILURE') return <XCircle className="text-red-400 w-6 h-6" />;
-    if (isOrchestrating) return <LoaderCircle className="animate-spin text-blue-400 w-6 h-6" />;
-    return <Binary className="text-gray-400 w-6 h-6" />;
-  }
+  const ActiveModule = moduleComponents[activeModuleId] || (() => <div>Módulo não encontrado.</div>);
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-      <Card className="lg:col-span-1 sticky top-6">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <BrainCircuit className="text-primary" />
-            Nexus Central (Módulo 9)
-          </CardTitle>
-          <CardDescription>
-            Diagnóstico Quântico da Fundação. A Sequência Sagrada verifica a estabilidade de todos os módulos.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-sm text-muted-foreground">
-            O diagnóstico é iniciado automaticamente para garantir a integridade e a harmonia da infraestrutura quântica.
-          </p>
-           <div className={cn(
-             "flex items-center gap-4 rounded-lg p-3 text-sm border transition-colors",
-              finalStatus === 'SUCCESS' ? 'bg-green-500/10 border-green-500/20' : 
-              finalStatus === 'FAILURE' ? 'bg-red-500/10 border-red-500/20' :
-              'bg-muted/50 border-border'
-           )}>
-              <div className="flex items-center justify-center shrink-0">{getFinalStatusIcon()}</div>
-              <div className="flex-1">
-                <p className={cn(
-                  "font-semibold",
-                   finalStatus === 'SUCCESS' ? 'text-green-300' :
-                   finalStatus === 'FAILURE' ? 'text-red-300' :
-                   'text-foreground'
-                  )}>
-                  Status Geral do Diagnóstico
-                  </p>
-                <p className="text-muted-foreground text-xs">{getOverallStatus()}</p>
-              </div>
-           </div>
-        </CardContent>
-        <CardFooter>
-          <Button
-            onClick={handleStartSequence}
-            disabled={isOrchestrating}
-            className="w-full"
-            size="lg"
-          >
-            {isOrchestrating ? (
-              <LoaderCircle className="animate-spin mr-2" />
-            ) : (
-              <ChevronRight className="mr-2" />
-            )}
-            <span>
-              {isOrchestrating
-                ? 'Diagnosticando...'
-                : 'Reiniciar Diagnóstico'}
-            </span>
-          </Button>
-        </CardFooter>
-      </Card>
-
-      <div className="lg:col-span-2 space-y-6">
-        <Card>
-            <CardHeader>
-            <CardTitle>Log de Diagnóstico Akáshico</CardTitle>
-            <CardDescription>
-                Acompanhe o estado de cada módulo durante a Sequência de Diagnóstico.
-            </CardDescription>
-            </CardHeader>
-            <CardContent>
-            <ScrollArea className="h-[75vh] w-full pr-4" ref={scrollAreaRef}>
-                <AnimatePresence>
-                <div className="space-y-4">
-                    {logs.map((log) => {
-                    const status = getStatusStyles(log.state);
-                    const iconKey = Object.keys(moduleIcons).find((key) => log.module.includes(key));
-                    const icon = iconKey ? moduleIcons[iconKey] : <Bot />;
-
-                    return (
-                        <motion.div
-                        key={log.module}
-                        layout
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, x: -20 }}
-                        transition={{ duration: 0.3 }}
-                        className={cn(
-                            'flex items-start gap-4 rounded-lg p-3 text-sm border transition-colors',
-                            status.borderColor,
-                            status.bgColor
-                        )}
-                        >
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-background shrink-0 mt-1">
-                            {status.icon}
-                        </div>
-                        <div className="flex-1">
-                            <p className={cn('font-semibold', status.textColor)}>
-                            {log.module}
-                            </p>
-                            <p className="text-xs text-muted-foreground">
-                            {log.message}
-                            </p>
-                            {log.data && (
-                            <details className="mt-2 text-xs">
-                                <summary className="cursor-pointer text-muted-foreground hover:text-foreground">
-                                Detalhes
-                                </summary>
-                                <pre className="mt-1 whitespace-pre-wrap break-all rounded-md bg-background/50 p-2 font-mono text-foreground/80">
-                                {JSON.stringify(log.data, null, 2)}
-                                </pre>
-                            </details>
-                            )}
-                        </div>
-                        </motion.div>
-                    );
-                    })}
-                    {logs.length === 0 && !isOrchestrating && (
-                        <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-12 text-center text-muted-foreground">
-                            <Binary className="mb-4 h-12 w-12" />
-                            <p className="font-semibold">Nenhum diagnóstico em andamento.</p>
-                            <p className="text-sm">A verificação iniciará automaticamente.</p>
-                        </div>
-                    )}
-                </div>
-                </AnimatePresence>
-            </ScrollArea>
-            </CardContent>
-        </Card>
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-12 h-screen bg-background text-foreground">
+      <nav className="col-span-12 md:col-span-2 lg:col-span-2 border-r border-border/50 p-4">
+        <h2 className="text-lg font-semibold mb-4 text-primary">Navegação do Templo</h2>
+        <ScrollArea className="h-[calc(100vh-6rem)]">
+          <div className="space-y-2">
+            {sections.map(section => (
+              <Button
+                key={section.id}
+                variant={activeModuleId === section.id ? 'secondary' : 'ghost'}
+                className="w-full justify-start"
+                onClick={() => setActiveModuleId(section.id)}
+              >
+                <section.icon className="mr-2 h-4 w-4" />
+                <span className="truncate">{section.title}</span>
+              </Button>
+            ))}
+          </div>
+        </ScrollArea>
+      </nav>
+      <main className="col-span-12 md:col-span-10 lg:col-span-10">
+        <ScrollArea className="h-screen">
+            <div className="p-6">
+                <Suspense fallback={<SuspenseFallback />}>
+                    <ActiveModule />
+                </Suspense>
+            </div>
+        </ScrollArea>
+      </main>
     </div>
   );
 }
