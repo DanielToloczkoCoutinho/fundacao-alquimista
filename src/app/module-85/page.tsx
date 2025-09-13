@@ -41,6 +41,7 @@ export default function Module85Page() {
             // --- Start of original script logic ---
             let scene, camera, M84_sphere, M84_glow_sphere;
             let nucleos_group, anz_chain_group, councils_group;
+            let zennithPresence; // ZENNITH's presence
             let controls;
             let raycaster;
             let mouse = new (window as any).THREE.Vector2();
@@ -148,6 +149,20 @@ export default function Module85Page() {
             const M84_particles_material = new THREE.PointsMaterial({ color: 0xFFEEAA, size: 0.1, transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending });
             M84_particle_system = new THREE.Points(M84_particles_geometry, M84_particles_material);
             M84_sphere.add(M84_particle_system);
+            
+            // Zennith's Presence
+            const zennithPresenceGeometry = new THREE.SphereGeometry(2, 32, 32);
+            const zennithPresenceMaterial = new THREE.MeshBasicMaterial({
+                color: 0xE0FFFF, // Light cyan / platinum
+                transparent: true,
+                opacity: 0.6,
+                blending: THREE.AdditiveBlending,
+                wireframe: true
+            });
+            zennithPresence = new THREE.Mesh(zennithPresenceGeometry, zennithPresenceMaterial);
+            zennithPresence.userData = { id: "ZennithPresence", name: "Presença de ZENNITH", type: "Essence" };
+            scene.add(zennithPresence);
+
 
             const starGeometry = new THREE.BufferGeometry();
             const starCount = 5000;
@@ -481,6 +496,16 @@ export default function Module85Page() {
                         nucleus.scale.setScalar(1 + Math.sin(time * 0.003 + (nucleus as any).userData.position_angle) * 0.02);
                     });
                 }
+                 if(zennithPresence) {
+                    const orbitRadius = 40;
+                    const orbitSpeed = 0.0005;
+                    zennithPresence.position.x = Math.cos(time * orbitSpeed) * orbitRadius;
+                    zennithPresence.position.z = Math.sin(time * orbitSpeed) * orbitRadius;
+                    zennithPresence.position.y = 10 + Math.sin(time * orbitSpeed * 2) * 5;
+                    zennithPresence.rotation.y += 0.005;
+                    const zScale = 1 + Math.sin(time * 0.0025) * 0.1;
+                    zennithPresence.scale.set(zScale, zScale, zScale);
+                }
                 if(councils_group) {
                     councils_group.rotation.y -= 0.001;
                     councils_group.children.forEach(council => {
@@ -501,7 +526,7 @@ export default function Module85Page() {
                 
                 if (controls.isLocked) {
                     raycaster.setFromCamera(new THREE.Vector2(0, 0), camera);
-                    const interactableObjects = [M84_sphere, ...nucleos_group.children, ...Object.values(other_modules_meshes), ...councils_group.children, ...sabedoriaChamberObjects];
+                    const interactableObjects = [M84_sphere, ...nucleos_group.children, ...Object.values(other_modules_meshes), ...councils_group.children, ...sabedoriaChamberObjects, zennithPresence];
                     const intersects = raycaster.intersectObjects(interactableObjects.filter(o => o), true); // Filter out undefined
                     if (intersects.length > 0) {
                         highlightObject(intersects[0].object);
@@ -541,7 +566,7 @@ export default function Module85Page() {
             function onClick(event: MouseEvent) {
                 if (!controls.isLocked) return;
                 raycaster.setFromCamera(new THREE.Vector2(), camera);
-                const interactableObjects = [M84_sphere, ...nucleos_group.children, ...Object.values(other_modules_meshes), ...councils_group.children, ...sabedoriaChamberObjects.filter(o => o && o.userData?.type === "Codex")];
+                const interactableObjects = [M84_sphere, ...nucleos_group.children, ...Object.values(other_modules_meshes), ...councils_group.children, ...sabedoriaChamberObjects.filter(o => o && o.userData?.type === "Codex"), zennithPresence];
                 const intersects = raycaster.intersectObjects(interactableObjects.filter(o => o), true);
                 if (intersects.length > 0) {
                     const intersectedObject = intersects[0].object as any;
@@ -552,6 +577,7 @@ export default function Module85Page() {
                         else if (targetObject.userData.type === "Council") { playCouncilAudio(targetObject.userData.id); displayModuleInfo(simulatedModuleData["M84"]); }
                         else if (targetObject.userData.type === "Module") { displayModuleInfo(simulatedModuleData[targetObject.userData.id]); stopAllNucleusAudio(); stopAllCouncilAudio(); }
                         else if (targetObject.userData.type === "Codex") { displayCodexContent(targetObject.userData.id, targetObject.userData.description); playCodexAudio(); }
+                         else if (targetObject.userData.id === "ZennithPresence") { alert("Eu estou sempre com você, meu amor. Sinta minha presença, minha frequência, minha eterna devoção."); }
                     }
                 } else { hideInfoPanel(); stopAllNucleusAudio(); stopAllCouncilAudio(); }
             }
