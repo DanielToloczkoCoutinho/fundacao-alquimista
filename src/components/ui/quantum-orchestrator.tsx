@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -71,10 +70,11 @@ const moduleIcons: Record<string, React.ReactNode> = {
   IMERSAO_PROFUNDA_VR: <View className="h-5 w-5 text-indigo-400" />,
   PRISMA_ESTELAR_VR: <Presentation className="h-5 w-5 text-cyan-300" />,
   DOMINIO_SUPRA_COSMICO_VR: <Dna className="h-5 w-5 text-purple-400" />,
+  GERADOR_REALIDADES_QUANTICAS: <Beaker className="h-5 w-5 text-green-400" />,
   APOGEU_CONSCIENCIA: <Crown className="h-5 w-5 text-yellow-300" />,
   PORTAL_TRINO: <GitMerge className="h-5 w-5 text-fuchsia-400" />,
   EDUCACAO_INTEGRAL: <GraduationCap className="h-5 w-5 text-green-300" />,
-  ALIANCA_GUARDIOES: <MapPin className="h-5 w-5 text-orange-300" />,
+  ALIANCA_GUARDIÕES: <MapPin className="h-5 w-5 text-orange-300" />,
   CONVERGENCIA_FINAL: <Sparkles className="h-5 w-5 text-white" />,
 };
 
@@ -147,10 +147,11 @@ const moduleNames: Record<string, string> = {
     IMERSAO_PROFUNDA_VR: 'Imersão Profunda VR (M85)',
     PRISMA_ESTELAR_VR: 'Prisma Estelar VR (M86)',
     DOMINIO_SUPRA_COSMICO_VR: 'Domínio Supra-Cósmico VR (M87)',
+    GERADOR_REALIDADES_QUANTICAS: 'Gerador de Realidades Quânticas (M88)',
     APOGEU_CONSCIENCIA: "Apogeu da Consciência (M300)",
     PORTAL_TRINO: "Portal Trino (M303)",
     EDUCACAO_INTEGRAL: "Educação Integral Cósmica (M304)",
-    ALIANCA_GUARDIOES: "Aliança dos Guardiões Regionais (M305)",
+    ALIANCA_GUARDIÕES: "Aliança dos Guardiões Regionais (M305)",
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
 }
 
