@@ -8,7 +8,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -30,6 +30,7 @@ const moduleIcons: Record<string, React.ReactNode> = {
   CLIMATE_CONTROL: <Watch className="h-5 w-5 text-green-400" />,
   BIO_SUSTAIN: <Leaf className="h-5 w-5 text-lime-400" />,
   AURA_HEAL: <Sparkles className="h-5 w-5 text-emerald-400" />,
+  SYMPHONY_ALIGNMENT: <HeartPulse className="h-5 w-5 text-pink-400" />,
   AKASHIC_ORCHESTRATION: <Database className="h-5 w-5 text-cyan-300" />,
   FORCE_FIELD_ANALYSIS: <Waves className="h-5 w-5 text-sky-400" />,
   IAM: <Aperture className="h-5 w-5 text-cyan-400" />,
@@ -67,6 +68,7 @@ const moduleNames: Record<string, string> = {
     CLIMATE_CONTROL: "Controle Climático (M15)",
     BIO_SUSTAIN: "Bio-Sustentabilidade (M16)",
     AURA_HEAL: "Matriz de Cura Holográfica (M17)",
+    SYMPHONY_ALIGNMENT: "Alinhamento da Sinfonia Pessoal (M24)",
     AKASHIC_ORCHESTRATION: "Orquestração Akáshica (M18)",
     FORCE_FIELD_ANALYSIS: "Análise de Campos de Força (M19)",
     IAM: "IAM (M29)",
@@ -177,5 +179,4 @@ export default function QuantumOrchestrator() {
     </Card>
   );
 }
-
     
