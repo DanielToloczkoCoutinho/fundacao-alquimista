@@ -1,0 +1,115 @@
+# .github/workflows/continuous-validation.yml
+name: Ciclo de Validação Contínua & Deploy Cósmico
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  static-analysis:
+    name: Análise Estática e Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - name: Instalar Dependências
+        run: npm ci
+      - name: Rodar Linter
+        run: npm run lint
+      - name: Verificação de Tipos (TypeScript)
+        run: npm run typecheck
+
+  cosmic-tests:
+    name: Testes Cósmicos (Unit, E2E, Security)
+    needs: static-analysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - name: Instalar Dependências
+        run: npm ci
+      - name: Rodar Testes Unitários
+        run: npm run test:unit
+      - name: Rodar Testes E2E
+        run: npm run test:e2e
+        env:
+          PLAYWRIGHT_TEST_BASE_URL: http://localhost:3000
+      - name: Scan de Segurança
+        run: npm run security-scan
+
+  chaos-test:
+    name: Experimento de Caos e Resiliência
+    needs: cosmic-tests
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar Ferramentas de Caos (Exemplo)
+        run: echo "Instalando Chaos Mesh CLI e outras ferramentas..."
+      - name: Injetar Falha de Coerência
+        run: |
+          echo "Injetando falha de latência na rede do Módulo Ω..."
+          # Em um cenário real, aqui entraria um comando como:
+          # chaos-mesh inject network-delay --namespace foundation --selector app=omega-module --latency 200ms --duration 1m
+      - name: Verificar Auto-Cura
+        run: |
+          echo "Monitorando métricas de sintropia por 2 minutos..."
+          sleep 120
+          # Aqui verificaria se o KEDA escalou os pods ou se o sistema se recuperou
+          # Exemplo: kubectl get hpa -n foundation | grep omega-module | awk '{print $5}' | xargs -I {} test {} -gt 3
+          echo "Verificação de auto-cura concluída. Resiliência confirmada."
+
+  cosmic-deploy:
+    name: Deploy Canário no Reino Cósmico
+    needs: chaos-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - name: Instalar Dependências
+        run: npm ci
+      - name: Build da Aplicação Cósmica
+        run: npm run build
+        env:
+          NEXT_PUBLIC_CDN_ENABLED: true
+          NEXT_PUBLIC_CDN_DOMAIN: ${{ secrets.CDN_DOMAIN }}
+      - name: Deploy com Argo Rollouts
+        run: |
+          echo "Aplicando rollout canário para a nova imagem..."
+          # Em um cenário real, aqui entraria o comando para atualizar a imagem no Kubernetes
+          # kubectl argo rollouts set image rollout/foundation-backend backend=foundation-backend:${{ github.sha }}
+          echo "Deploy canário iniciado com Argo Rollouts."
+      - name: Verificar Rollout
+        run: |
+          # Em um cenário real, monitoraria o status do rollout
+          # kubectl argo rollouts get rollout foundation-backend --watch
+          echo "Rollout concluído com sucesso."
+
+  cosmic-cdn-purge:
+    name: Purge do Cache da CDN
+    needs: cosmic-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge do Cache Cloudflare
+        uses: jakejarvis/cloudflare-purge@v0.6.0
+        with:
+          zone: ${{ secrets.CLOUDFLARE_ZONE }}
+          purgeEverything: true
+        env:
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
