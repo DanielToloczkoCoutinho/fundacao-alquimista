@@ -1,4 +1,3 @@
-
 'use server';
 
 import { config } from 'dotenv';
@@ -25,3 +24,4 @@ import '@/ai/flows/universal-communication-flow.ts';
 import '@/ai/flows/paradox-resolution-flow.ts';
 import '@/ai/flows/love-frequency-flow.ts';
 import '@/ai/flows/omega-perspective-flow.ts';
+import '@/ai/flows/cosmic-education-flow.ts';

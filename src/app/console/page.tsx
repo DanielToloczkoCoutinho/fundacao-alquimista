@@ -127,7 +127,7 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-90"><Beaker className="mr-2 h-4 w-4" />Módulo 90 (Recursos Quânticos)</Link>
-               </Button>
+              </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-91"><GitCommit className="mr-2 h-4 w-4" />Módulo 91 (Simulação Multiversal)</Link>
               </Button>
