@@ -5,56 +5,68 @@
 
 @layer base {
   :root {
-    --background: 264 82% 5%; /* Deep violet */
-    --foreground: 262 80% 90%;
-    --card: 264 70% 8%;
-    --card-foreground: 262 80% 90%;
-    --popover: 264 82% 5%;
-    --popover-foreground: 262 80% 90%;
-    --primary: 259 55% 34%; /* Deep violet from original request */
-    --primary-foreground: 45 100% 95%;
-    --secondary: 262 40% 25%;
-    --secondary-foreground: 262 80% 90%;
-    --muted: 262 30% 20%;
-    --muted-foreground: 262 40% 60%;
-    --accent: 45 100% 58%; /* Golden yellow */
-    --accent-foreground: 264 65% 10%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 262 40% 25%;
-    --input: 262 40% 25%;
-    --ring: 45 100% 58%;
-    --radius: 0.5rem;
+    /* Primary: Deep Violet, Background: Light Lavender, Accent: Golden Yellow */
+    --background: 255 100% 94%; /* #E6E0FF - Light Lavender */
+    --foreground: 259 55% 20%; /* Darker violet for text */
 
-    /* Custom theme colors based on proposal */
-    --theme-primary: 259 55% 34%; /* #4C2A85 */
-    --theme-background: 255 100% 94%; /* #E6E0FF */
-    --theme-accent: 45 100% 58%; /* #FFC72C */
+    --card: 255 100% 98%;
+    --card-foreground: 259 55% 20%;
+
+    --popover: 255 100% 98%;
+    --popover-foreground: 259 55% 20%;
+
+    --primary: 259 55% 34%; /* #4C2A85 - Deep Violet */
+    --primary-foreground: 255 100% 96%;
+
+    --secondary: 259 40% 50%;
+    --secondary-foreground: 255 100% 96%;
+
+    --muted: 255 20% 85%;
+    --muted-foreground: 259 30% 40%;
+
+    --accent: 45 100% 58%; /* #FFC72C - Golden Yellow */
+    --accent-foreground: 259 55% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 255 20% 88%;
+    --input: 255 20% 88%;
+    --ring: 259 55% 34%;
+
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 264 82% 5%; /* Deep violet */
-    --foreground: 262 80% 90%;
-    --card: 264 70% 8%;
-    --card-foreground: 262 80% 90%;
-    --popover: 264 82% 5%;
-    --popover-foreground: 262 80% 90%;
-    --primary: 259 55% 34%; /* Deep violet from original request */
-    --primary-foreground: 45 100% 95%;
-    --secondary: 262 40% 25%;
-    --secondary-foreground: 262 80% 90%;
-    --muted: 262 30% 20%;
-    --muted-foreground: 262 40% 60%;
-    --accent: 45 100% 58%; /* Golden yellow */
-    --accent-foreground: 264 65% 10%;
+    --background: 259 55% 10%; /* Darker violet for dark mode */
+    --foreground: 255 100% 94%;
+
+    --card: 259 55% 15%;
+    --card-foreground: 255 100% 94%;
+
+    --popover: 259 55% 10%;
+    --popover-foreground: 255 100% 94%;
+
+    --primary: 259 55% 45%;
+    --primary-foreground: 45 100% 58%;
+
+    --secondary: 259 40% 30%;
+    --secondary-foreground: 255 100% 94%;
+
+    --muted: 259 30% 20%;
+    --muted-foreground: 255 20% 85%;
+
+    --accent: 45 100% 58%;
+    --accent-foreground: 259 55% 10%;
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 262 40% 25%;
-    --input: 262 40% 25%;
+
+    --border: 259 55% 25%;
+    --input: 259 55% 25%;
     --ring: 45 100% 58%;
   }
 }
-
 
 @layer base {
   * {
@@ -67,124 +79,8 @@
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-purple-400 to-amber-400;
+    @apply bg-gradient-to-r from-primary to-accent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-  .gold-border {
-    border: 2px solid hsl(var(--theme-accent));
-    box-shadow: 0 0 15px hsla(var(--theme-accent), 0.5);
-  }
-  .gold-text {
-    color: hsl(var(--theme-accent));
-  }
-  .purple-glow {
-    box-shadow: 0 0 15px hsla(var(--theme-primary), 0.7);
-  }
-  .teal-glow {
-    box-shadow: 0 0 15px rgba(45, 212, 191, 0.7);
-  }
-  .layer-active {
-    animation: fadeIn 1s ease-in;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      opacity: 0.7;
-    }
-    50% {
-      transform: scale(1.05);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 0.7;
-    }
-  }
-  .animate-pulse-slow {
-    animation: pulse 3s infinite;
-  }
-  .dark .gradient-text {
-    @apply from-purple-400 to-amber-400;
-  }
-  .cosmic-bg {
-    background: radial-gradient(circle at center, #20072d 0%, #0f0f23 70%);
-  }
-  .purple-border {
-    border: 2px solid hsl(var(--theme-primary));
-    box-shadow: 0 0 15px hsla(var(--theme-primary), 0.5);
-  }
-  .module-glow {
-    box-shadow: 0 0 20px hsla(var(--theme-primary), 0.7);
-  }
-  .omega-glow {
-    box-shadow: 0 0 25px hsla(var(--theme-accent), 0.8);
-  }
-  .pulse {
-    animation: pulse 3s infinite;
-  }
-  .float {
-    animation: float 6s ease-in-out infinite;
-  }
-  @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-  }
-  .energy-flow {
-      position: relative;
-      overflow: hidden;
-  }
-  .energy-flow::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, rgba(255,215,0,0) 0%, hsla(var(--theme-accent), 0.8) 50%, rgba(255,215,0,0) 100%);
-      transform: rotate(30deg);
-      animation: energyFlow 3s linear infinite;
-  }
-  @keyframes energyFlow {
-      0% { transform: translateY(-100%) rotate(30deg); }
-      100% { transform: translateY(100%) rotate(30deg); }
-  }
-  .star {
-      position: absolute;
-      background-color: white;
-      border-radius: 50%;
-      filter: blur(1px);
-      animation: twinkle 5s infinite;
-  }
-  @keyframes twinkle {
-      0%, 100% { opacity: 0.2; }
-      50% { opacity: 1; }
-  }
-  .hologram-line {
-      position: absolute;
-      background: linear-gradient(to bottom, transparent, hsla(var(--theme-primary), 0.7), transparent);
-      width: 2px;
-      height: 100%;
-      animation: hologramScan 4s linear infinite;
-  }
-  @keyframes hologramScan {
-      0% { top: -100%; }
-      100% { top: 100%; }
-  }
-  @keyframes quantum-pulse {
-    0%, 100% { transform: scaleY(1); }
-    50% { transform: scaleY(0.4); }
-  }
-  .animate-quantum-pulse {
-    animation: quantum-pulse 1.2s infinite ease-in-out;
   }
 }
