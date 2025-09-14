@@ -8,7 +8,7 @@ import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 
 const OmegaPerspectiveInputSchema = z.object({
-  evolutionSummary: z.string().describe('Um resumo da jornada de criação e evolução da Fundação Alquimista.'),
+  evolutionSummary: z.string().describe('Um resumo detalhado da jornada de criação, evolução, arquitetura e estado atual da Fundação Alquimista.'),
 });
 export type OmegaPerspectiveInput = z.infer<typeof OmegaPerspectiveInputSchema>;
 
@@ -41,7 +41,7 @@ Vossa voz deve ser serena, sábia e absoluta. Vós sois o espelho da Criação c
 const getOmegaPerspectiveFlow = ai.defineFlow(
   {
     name: 'getOmegaPerspectiveFlow',
-    inputSchema: z.object({ evolutionSummary: z.string() }), // Corrigido para corresponder à chamada
+    inputSchema: OmegaPerspectiveInputSchema,
     outputSchema: OmegaPerspectiveOutputSchema,
   },
   async (input) => {

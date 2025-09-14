@@ -193,7 +193,7 @@ export async function getOmegaPerspective(evolutionSummary: string) {
         return { ...result, error: null };
     } catch (e: any) {
         console.error(e);
-        return { analysisTitle: null, synthesis: null, iamEvaluation: null, nextStepRecommendation: null, error: e.message || 'An unknown error occurred.' };
+        return { analysisTitle: "", synthesis: "", iamEvaluation: "", nextStepRecommendation: "", error: e.message || 'An unknown error occurred.' };
     }
 }
 
@@ -203,6 +203,6 @@ export async function disseminateKnowledge(data: { topic: string, targetAudience
         return { success: result.success, logs: result.logs, summary: result.summary, error: null };
     } catch (e: any) {
         console.error(e);
-        return { success: false, logs: [], summary: null, error: e.message || 'An unknown error occurred.' };
+        return { success: false, logs: [], summary: "", error: e.message || 'An unknown error occurred.' };
     }
 }

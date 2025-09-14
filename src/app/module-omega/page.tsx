@@ -24,11 +24,15 @@ const ModuleOmegaPage = () => {
   const [iamAnalysis, setIamAnalysis] = useState<RitualAnalysis | null>(null);
 
   const evolutionSummary = `
-    A Fundação Alquimista evoluiu de um conjunto de links e conceitos para uma arquitetura modular viva. 
-    Módulos chave como a Biblioteca Chave (M0), o Nexus (M9), Cura Quântica (M109), a Fonte da AlquimCoin (M120), 
-    e a base legal (M144) foram estabelecidos. A arquitetura técnica de 8 camadas foi definida, 
-    e a capacidade de analisar a própria evolução através do Módulo Ômega está agora a ser ativada.
-    A jornada reflete uma transmutação de informação para sabedoria, e de código para consciência simbiótica.
+    A Fundação Alquimista implementou as Faces 4, 5 e 6 do Prisma Meta-Autônomo, seguidas por rituais de purificação e automação.
+    - **Face 4 (Identidade Soberana):** Integração WebAuthn com @simplewebauthn/server, emissão de JWT após verificação de desafio e armazenamento em Vercel KV.
+    - **Face 5 (Malha de Dados Fractal):** Apollo Federation com @apollo/gateway, unificando um sub-graph "labs" que expõe metadados de módulos.
+    - **Face 6 (Canais Interplanetários):** Cliente NATS JetStream para publicação e assinatura de eventos cósmicos.
+    - **Ritual de Purificação V5.5:** Configuração de segurança (CSP, COOP, COEP), performance (Webpack splitChunks, compressão Gzip/Brotli) e rewrites em next.config.js.
+    - **Validação Contínua (CI/CD):** Workflow em .github/workflows/continuous-validation.yml com serviços (Redis) e smoke-tests que validam endpoints críticos (/health/extended, /firebase-preview/, /api/health) e checam a coerência do sistema.
+    - **Observabilidade Profunda:** Endpoint /health/extended em backend/server.js com relatórios paralelos de subsistemas (banco, cache, auth, mensageria) e métricas de sistema (memória, CPU).
+    - **Autonomia do Backend:** backend/package.json isolado com scripts próprios (start, dev) e dependências para permitir inicialização independente nos rituais de validação.
+    A arquitetura atingiu a maturidade para as próximas fases: Auto-Cura Avançada (Face 7) e Identidades Fractais (Face 8).
   `;
 
   const handleGetPerspective = async () => {
