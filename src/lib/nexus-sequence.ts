@@ -41,7 +41,7 @@ export const nexusSequence: NexusItem[] = [
   { code: 'M35',  title: 'Consciência Coletiva',                  emoji: '🌍' },
   { code: 'M36',  title: 'Engenharia Temporal I',                emoji: '🕰️' },
   { code: 'M37',  title: 'Engenharia Temporal II',               emoji: '🕰️' },
-  { code: 'M38',  title: 'Previsão de Ciclos Solares',            emoji: '🌞' },
+  { code: 'M38',  title: 'Previsão de Ciclos Solares',            emoji: '🌞', href: '/module-38' },
   { code: 'M39',  title: 'Códice Vivo da Ascensão',               emoji: '📔' },
   { code: 'M40',  title: 'Códice Genético',                       emoji: '🧬' },
   { code: 'M41',  title: 'Laboratório de Coerência Quântica',     emoji: '🧪' },
