@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Gavel, Scale, Shield, Users } from 'lucide-react';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { Gavel, Scale, Shield, Users } from 'lucide-react';
 
 const CodeBlock = ({ children }: { children: React.ReactNode }) => (
   <pre className="bg-black/50 p-4 rounded-md overflow-x-auto text-sm text-cyan-300 font-mono">
@@ -117,7 +117,7 @@ contract LexFundamentalis {
         return false;
     }
 }
-    `];
+    `;
     
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
@@ -178,4 +178,4 @@ contract LexFundamentalis {
             </div>
         </div>
     );
-};
+}
