@@ -1,4 +1,3 @@
-
 # .github/workflows/continuous-validation.yml
 name: Ciclo de Validação Contínua & Deploy Cósmico
 

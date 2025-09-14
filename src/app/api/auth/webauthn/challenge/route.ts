@@ -1,4 +1,3 @@
-
 import { NextResponse, NextRequest } from 'next/server';
 import { generateAuthenticationOptions, GenerateAuthenticationOptionsOpts } from '@simplewebauthn/server';
 
@@ -51,4 +50,3 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
-
