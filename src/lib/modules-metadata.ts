@@ -107,7 +107,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M101',title: 'Manifestação',                          emoji: '✨', route: '/module-101', category: 'mid' },
   { code: 'M102',title: 'Campos Morfogenéticos',                 emoji: '🌀', route: '/module-102', category: 'mid' },
   { code: 'M103',title: 'Modulação Local',                       emoji: '🎚️', route: '/module-103', category: 'mid' },
-  { code: 'M104',title: 'Engenharia do Espaço-Tempo',            emoji: '🕰️', route: '/module-104', category: 'mid' },
+  { code: 'M104',title: 'Engenharia do Espaço-Tempo',            emoji: '🗺️', route: '/module-104', category: 'mid' },
   { code: 'M105',title: 'Conexão com a Fonte',                   emoji: '🌌', route: '/module-105', category: 'mid' },
   { code: 'M106',title: 'Ativação de Potenciais',                emoji: '🔋', route: '/module-106', category: 'mid' },
   { code: 'M107',title: 'Restauração Temporal',                  emoji: '⏳', route: '/module-107', category: 'mid' },
