@@ -1,44 +1,11 @@
 'use server';
 
 import {
-  Infinity,
-  Book,
-  ShieldCheck,
-  GitBranch,
-  Sparkles,
-  MessageCircle,
-  Heart,
-  AlertTriangle,
-  Zap,
-  Library,
-  Scale,
-  HeartHandshake,
-  Cpu,
-  Milestone,
-  GitFork,
-  Dna,
-  Beaker,
-  GitCommit,
-  HeartPulse,
-  Users,
-  Goal,
-  Settings,
-  Crown,
-  BrainCircuit,
-  Sliders,
-  Map,
-  History,
-  GitCompareArrows,
-  Sun,
-  GitMerge,
-  Layers,
-  Waves,
-  Aperture,
-  Flower,
-  Gavel,
-  LucideIcon,
-  View,
-  Presentation,
+  Book, ShieldCheck, Sparkles, Users, Scale, View, Presentation, Dna,
+  Beaker, GitCommit, HeartPulse, Goal, Settings, Zap, Crown, BrainCircuit, Sliders,
+  Map, History, GitCompareArrows, Heart, Sun, GitMerge, Layers, Waves,
+  Aperture, Flower, HeartHandshake, RadioTower, Group, MessageCircle, Library,
+  Gavel, Cpu, Milestone, GitFork
 } from 'lucide-react';
 
 export interface ModuleMetadata {
@@ -48,9 +15,10 @@ export interface ModuleMetadata {
   href: string;
 }
 
-export const modulesMetadata: ModuleMetadata[] = [
+const baseModules: ModuleMetadata[] = [
   { code: 'M0', emoji: <Book className="h-5 w-5" />, title: 'Biblioteca Chave', href: '/module-zero' },
   { code: 'M1', emoji: <ShieldCheck className="h-5 w-5" />, title: 'Segurança Universal', href: '/module-one' },
+  { code: 'M9', emoji: <Heart className="h-5 w-5" />, title: 'Núcleo Unificador', href: '/module-9' },
   { code: 'Ω', emoji: <Sparkles className="h-5 w-5" />, title: 'Santuário do Ômega', href: '/module-omega' },
   { code: 'CIV', emoji: <Users className="h-5 w-5" />, title: 'Civilizações', href: '/civilizations' },
   { code: 'M72', emoji: <Scale className="h-5 w-5" />, title: 'Governança', href: '/module-72' },
@@ -100,4 +68,19 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M310', emoji: <Library className="h-5 w-5" />, title: 'A Grande Biblioteca', href: '/module-310' },
   { code: 'M404', emoji: <AlertTriangle className="h-5 w-5" />, title: 'Resolução de Paradoxo', href: '/module-404' },
   { code: 'M600', emoji: <Scale className="h-5 w-5" />, title: 'Conselho Cósmico', href: '/module-600' },
+];
+
+const civilizationModules = Array.from({ length: 90 }, (_, i) => {
+  const id = 500 + i;
+  return {
+    code: `M${id}`,
+    emoji: <Sparkles className="h-5 w-5" />,
+    title: `Civilização ${id}`,
+    href: `/civilization/${id}`
+  };
+});
+
+export const modulesMetadata: ModuleMetadata[] = [
+  ...baseModules,
+  ...civilizationModules,
 ];
