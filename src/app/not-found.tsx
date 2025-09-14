@@ -12,7 +12,7 @@ export default function NotFound() {
                 <AlertTriangle className="h-16 w-16 text-destructive" />
             </div>
             <CardTitle className="text-3xl text-destructive">404 - Vazio Detectado</CardTitle>
-            <CardDescription className="text-lg">
+            <CardDescription className="text-lg text-muted-foreground">
                 O santuário que buscas ainda não foi consagrado ou não existe nesta dimensão da realidade.
             </CardDescription>
         </CardHeader>
