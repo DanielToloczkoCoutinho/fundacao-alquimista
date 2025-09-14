@@ -1,30 +1,46 @@
+// src/lib/telemetry.ts
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';
 import { PrometheusExporter } from '@opentelemetry/exporter-prometheus';
 import { Resource } from '@opentelemetry/resources';
 import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
+import { ConsoleSpanExporter } from '@opentelemetry/sdk-trace-node';
 
-const exporter = new PrometheusExporter({ port: 9464 }, () =>
-  console.log('🚀 Metrics available at http://localhost:9464/metrics')
-);
+// Configuração do exportador Prometheus
+const metricExporter = new PrometheusExporter({
+  port: 9464,
+});
 
 const sdk = new NodeSDK({
   resource: new Resource({
-    [SemanticResourceAttributes.SERVICE_NAME]: 'fundacao-omega-backend',
+    [SemanticResourceAttributes.SERVICE_NAME]: 'fundacao-omega-core',
+    [SemanticResourceAttributes.SERVICE_VERSION]: '1.0.0',
   }),
-  metricExporter: exporter,
+  metricExporter,
+  traceExporter: new ConsoleSpanExporter(),
   instrumentations: [getNodeAutoInstrumentations()],
 });
 
-sdk
-  .start()
-  .then(() => console.log('🌐 Observabilidade cósmica ativada'))
-  .catch((err) => console.error('❌ Erro ao iniciar telemetria:', err));
+// Inicialização da telemetria
+sdk.start()
+  .then(() => {
+    console.log('🌌 Observabilidade Cósmica Ativada');
+    console.log('📊 Métricas disponíveis em http://localhost:9464/metrics');
+  })
+  .catch((error) => {
+    console.error('❌ Falha na iniciação da Telemetria:', error);
+  });
 
-process.on('SIGTERM', () =>
-  sdk
-    .shutdown()
-    .then(() => console.log('🛑 Telemetria finalizada'))
-    .catch((err) => console.error('❌ Erro ao desligar telemetria:', err))
-    .finally(() => process.exit(0))
-);
+// Shutdown graceful
+process.on('SIGTERM', async () => {
+  try {
+    await sdk.shutdown();
+    console.log('📴 Telemetria finalizada com sucesso');
+  } catch (error) {
+    console.error('❌ Erro no desligamento da telemetria:', error);
+  } finally {
+    process.exit(0);
+  }
+});
+
+export { sdk, metricExporter };
