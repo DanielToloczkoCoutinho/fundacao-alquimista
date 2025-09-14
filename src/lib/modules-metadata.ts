@@ -71,6 +71,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M40', emoji: '🧬', title: 'Códice Genético Multidimensional', route: '/module-40', category: 'mid' },
   { code: 'M41', emoji: '🔬', title: 'Laboratório de Coerência Quântica', route: '/module-41', category: 'mid' },
   { code: 'M42', emoji: '📚', title: 'ChronoCodex Unificado', route: '/module-42', category: 'mid' },
+  { code: 'M43', emoji: '🪐', title: 'Orquestração do Sistema Solar', route: '/module-43', category: 'mid' },
   { code: 'M85', emoji: '🌌', title: 'Imersão VR', route: '/module-85', category: 'mid' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR', route: '/module-86', category: 'mid' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
