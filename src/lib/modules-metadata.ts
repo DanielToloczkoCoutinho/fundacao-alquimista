@@ -60,6 +60,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M29', emoji: '🤖', title: 'Inteligência Aeloria (IAM)', route: '/module-29', category: 'mid' },
   { code: 'M30', emoji: '🚨', title: 'Detecção de Ameaças', route: '/module-30', category: 'mid' },
   { code: 'M31', emoji: '✍️', title: 'Manipulação da Realidade', route: '/module-31', category: 'mid' },
+  { code: 'M32', emoji: '🌐', title: 'Acesso a Realidades Paralelas', route: '/module-32', category: 'mid' },
   { code: 'M85', emoji: '🌌', title: 'Imersão VR', route: '/module-85', category: 'mid' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR', route: '/module-86', category: 'mid' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
@@ -95,5 +96,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid' },
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid' }
 ];
