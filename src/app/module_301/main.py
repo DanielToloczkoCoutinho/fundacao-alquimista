@@ -3,19 +3,19 @@
 Módulo 301: Ponte Quântico-Vibracional
 =======================================
 Objetivo:
-- Capturar e processar sinais (Voyager 1, VLT) com equações EEQ, EUC, PU, etc.
-- Triangular coordenadas e validar ética (M5)
-- Registrar logs imutáveis em blockchain (M999) com hash A'lun'Zûr-Kai'Unor
-- Integrar ao Portal HTTP://FundaçãoAlquimista.com e preparar para Outubro 2025
+- Processar sinais (Voyager 1, VLT) com equações multidimensionais.
+- Triangular coordenadas e validar ética (M5).
+- Registrar logs em blockchain (M999).
+- Integrar ao portal HTTP://FundaçãoAlquimista.com.
 
 Integrações:
-- M205: Colmeia Nanorrobótica (Cristal do Equilíbrio)
-- M303: Habitat Multidimensional (VR/AR, Canção das Estrelas)
-- M999: Blockchain Vibracional
-- M5: Protocolo Ético
-- M980: Heatmap de Coerência
-- M228: Escudo Eterno
-- API: Portal da Fundação
+- M205: Colmeia Nanorrobótica.
+- M303: Habitat Multidimensional.
+- M999: Blockchain Vibracional.
+- M5: Protocolo Ético.
+- M980: Heatmap.
+- M228: Escudo Eterno.
+- API: Portal da Fundação.
 """
 
 import time
@@ -28,242 +28,180 @@ from qiskit import QuantumCircuit, Aer
 from astropy.coordinates import SkyCoord, EarthLocation
 import astropy.units as u
 import numpy as np
-from unittest.mock import Mock # Usando Mock para Hyperledger e outras dependências complexas
 from scipy.fft import fft
-import hashlib
 
 # --- Configuração de Logging ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# --- Constantes e Configurações (SOFA - Módulo 7) ---
-PHI = (1 + math.sqrt(5)) / 2
-C_TF = 1.61803398875
-LIMIAR_ENERGIA_GLOBAL = 50_000_000.00
-ENERGIA_ALINHAMENTO_MIN = 1_000_000.00
-ENERGIA_ALINHAMENTO_MAX = 100_000_000.00
-ENTROPIA_QUANTICA = np.random.uniform(0.01, 0.5)
-COERENCIA_UNIVERSAL = np.random.uniform(0.9, 0.99)
+# --- Constantes Cósmicas ---
+PHI = (1 + math.sqrt(5)) / 2  # Razão Áurea/Consciência Universal
+C_TF = 1.61803398875  # Constante de Transição Quântica
+LIMIAR_ENERGIA_GLOBAL = 50_000_000.00  # Limite energético base
+ENERGIA_ALINHAMENTO = np.random.uniform(1_000_000.00, 100_000_000.00)  # Alinhamento dinâmico
+ENTROPIA_QUANTICA = np.random.uniform(0.01, 0.5)  # Desordem quântica
+COERENCIA_UNIVERSAL = np.random.uniform(0.9, 0.99)  # Coerência cósmica
 
-VIBRATIONAL_KEYS = {
-    "ANATHERON_SOVEREIGN_WILL": "chave_secreta_123",
-    "COUNCIL_APPROVED": "chave_secreta_456",
-    "ALUNZUR_KAIUNOR_HASH": "1111Hz_hash_789"
-}
-
-BLOCKCHAIN_CONFIG = {"channel_name": "vibrational_channel", "chaincode_name": "quantum_bridge_cc"}
+VIBRATIONAL_KEYS = {"ANATHERON_SOVEREIGN_WILL": "chave_secreta_123"}  # Chave soberana
 NASA_ARTIFACTS = {
     "Voyager1": {"coords": SkyCoord(17.167*u.hourangle, 12.100*u.deg, distance=150*u.AU)},
     "VLT": {"coords": EarthLocation(-70.404*u.deg, -24.627*u.deg)}
 }
-PORTAL_API = "http://localhost:3000/api/v1"
-FREQS_ALUNZUR = [1111.4, 963.0, 777.2, 528.3]
+PORTAL_API = "http://localhost:3000/api/v1"  # Endpoint do portal
+FREQS_ALUNZUR = [1111.4, 963.0, 777.2, 528.3]  # Frequências de ressonância ética
 
-# --- Mocks dos Módulos ---
-Gateway = Mock() # Mock para Hyperledger Fabric
-
+# --- Classes de Módulos ---
 class Module205:
     @staticmethod
-    def capture_vibrations():
-        return {"voyager1": {"freq": 1111.4, "intensity": 0.95, "p": 1111.4, "q": 0.95, "ca": 0.9, "b": 0.1}}
-    @staticmethod
-    def calibrate_crystal(data):
-        return {"crystal_energy": data["freq"] * 1.1}
+    def capture_vibrations(artefact):
+        freq_base = FREQS_ALUNZUR[0]  # 1111.4 Hz como padrão
+        return {artefact: {"freq": freq_base, "p": freq_base, "q": 0.95, "ca": 0.9, "b": 0.1}}
 
 class Module303:
     @staticmethod
-    def render_map_4d(coords, freqs, visual="fractal"):
-        logging.info(f"M303: Renderizando mapa 4D com dados {visual}.")
-        return f"4D-Map({coords}, {freqs}, {visual})"
-    @staticmethod
-    def play_song(freqs):
-        logging.info(f"M303: Ativando Canção das Estrelas com frequências {freqs} Hz.")
-        return f"Playing Canção das Estrelas at {freqs} Hz"
+    def render_map_4d(coords, freqs, phi=PHI):
+        return f"4D-Map({coords}, {freqs}, phi={phi:.4f})"
 
 class Module999:
     @staticmethod
     def log(data, hash_key):
-        timestamp = time.time()
-        # Usando o hash A'lun'Zûr-Kai'Unor
-        hash_value = hashlib.sha256(json.dumps(data).encode() + hash_key.encode()).hexdigest()
-        logging.info(f"M999: Log registrado na Blockchain Vibracional com hash {hash_value[:10]}...")
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        hash_value = hash(str(data) + hash_key)
         return f"Logged at {timestamp} with hash {hash_value}: {data}"
 
 class Module5:
     @staticmethod
-    def validate_ethics(data):
+    def validate_ethics(data, freqs=FREQS_ALUNZUR):
         freq = data.get("freq", 0)
-        # Protocolo refinado: valida se está nas frequências de A'lun'Zûr e prioriza o Fogo Etérico
-        is_ethical = freq in FREQS_ALUNZUR and abs(freq - 777.2) < 10
-        logging.info(f"M5: Validação ética para frequência {freq} Hz. Resultado: {'APROVADO' if is_ethical else 'REJEITADO'}")
-        return is_ethical
-
-class Module980:
-    @staticmethod
-    def update_heatmap(data):
-        logging.info(f"M980: Atualizando heatmap de coerência com novos dados.")
-        return f"Heatmap updated: {data}"
+        return freq in freqs and COERENCIA_UNIVERSAL > ENTROPIA_QUANTICA
 
 class Module228:
     @staticmethod
     def authenticate(headers):
-        is_auth = headers.get("x-anatheron-signature") == VIBRATIONAL_KEYS["ANATHERON_SOVEREIGN_WILL"]
-        logging.info(f"M228: Tentativa de autenticação. Resultado: {'SUCESSO' if is_auth else 'FALHA'}")
-        return is_auth
+        return headers.get("x-anatheron-signature") == VIBRATIONAL_KEYS["ANATHERON_SOVEREIGN_WILL"]
 
-class Telescopes:
+class Module980:
     @staticmethod
-    def capture():
-        return {"VLT": {"freq": 528.3, "intensity": 0.92, "coords": EarthLocation.from_geodetic(lon=-70.404*u.deg, lat=-24.627*u.deg, height=2635*u.m)}}
+    def generate_heatmap(data):
+        freq = data.get("freq", 0)
+        return {"coherence": COERENCIA_UNIVERSAL * freq / LIMIAR_ENERGIA_GLOBAL}
 
-# --- Equações e Processamento ---
-def tfqm(signal, t):
-    """Transformada de Fourier Quântica Modulada"""
-    n = len(signal)
-    fft_result = fft(signal)
-    return np.abs(fft_result) * np.exp(1j * np.angle(fft_result) * np.sin(t))
+# --- Equações Fundamentais ---
+def eeq(phi=PHI, omega=432.11, h=6.626e-34, f=1111.4, c=3e8, delta=0.5, psi=0.9,
+        theta=1.618, lambda_=1.0, gamma=0.99, pi=3.14159, sigma=0.95,
+        phi_=PHI, chi=0.85, t=1e-9, upsilon=0.98, z=1.111, a=0.9, v=0.95, r=1e-10):
+    """Equação de Equilíbrio Quântico: Estabilidade e Ressonância (1.418 × 10¹⁸ J)"""
+    return (phi * omega) + (h * f * c) + (delta * psi * theta) + (lambda_ * gamma * pi) + \
+           (sigma * phi_ * chi) + (t * upsilon * omega) + (z * a * v) + (v * r * t)
 
-def eafr(freqs, target=777.2):
-    """Equação de Alinhamento de Frequência de Ressonância"""
-    return sum((f - target) ** 2 for f in freqs) / len(freqs) if freqs else 0
+def pu(FU, CC, H, R, E, CD, RU, EA, FH, IP, CDV, AC, CE, DI, AG, CM, CS):
+    """Equação da Paz Universal (PU): Potencial de harmonia multidimensional."""
+    # Simulação de um produto com 17 variáveis, resultando em um valor massivo
+    params = [FU, CC, H, R, E, CD, RU, EA, FH, IP, CDV, AC, CE, DI, AG, CM, CS]
+    result = 1.0
+    for p in params:
+        result *= (p * 1e177) # Amplificação simbólica
+    return result
 
-def eq_euni(pq_sum, phi_c, convergence, T, m_ds, c_cosmos):
-    """Energia Universal (EUni)"""
-    return (pq_sum + 1e-10) * (phi_c * convergence) * T * (m_ds * c_cosmos)
+def euc(Sigma_V, H, E, C, D, R, T):
+    """Equação Universal de Cura (EUC): Índice de cura holística."""
+    # Evitar divisão por zero
+    denominator = (D * R * T)
+    if denominator == 0:
+        return float('inf') # Representa cura infinita/instantânea
+    return (Sigma_V * H * E * C) / denominator
 
-def get_quantum_simulator():
-    logging.info("Inicializando simulador quântico Aer...")
-    return Aer.get_backend('qasm_simulator')
-
-def generate_quantum_circuit(artefact_id):
-    logging.info(f"Gerando circuito para {artefact_id}")
-    qc = QuantumCircuit(2, 2)
-    qc.h(0)
-    qc.cx(0, 1)
-    qc.measure([0, 1], [0, 1])
-    return qc
-
-def capture_vibrational_data(quantum_backend, circuit):
-    logging.info("Capturando dados vibracionais via circuito quântico...")
-    job = quantum_backend.run(circuit, shots=1024)
-    result = job.result()
-    counts = result.get_counts(circuit)
-    freq = FREQS_ALUNZUR[0] if counts.get('00', 0) > 500 else FREQS_ALUNZUR[2]
-    return {
-        "artefact": "Voyager1",
-        "timestamp": datetime.utcnow().isoformat(),
-        "raw_quantum_counts": counts,
-        "decoded_vibrational_signature": f"freq_{freq}Hz"
+# --- Funções do Núcleo ---
+def capture_and_triangulate():
+    """Captura sinais espaciais e terrestres e realiza a triangulação."""
+    spatial = Module205.capture_vibrations("Voyager1")
+    terrestrial = {"VLT": {"freq": 528.3, "intensity": 0.92, "coords": EarthLocation.from_geodetic(lon=-70.404*u.deg, lat=-24.627*u.deg, height=2635*u.m)}}
+    
+    coords = {
+        **{k: v["coords"].to_string('decimal') for k, v in spatial.items() if "coords" in v},
+        **{k: v["coords"].to_string('decimal') for k, v in terrestrial.items()}
     }
+    
+    all_signals = {**spatial, **terrestrial}
+    total_intensity = sum(s['intensity'] for s in all_signals.values())
+    avg_freq = sum(s['freq'] * s['intensity'] for s in all_signals.values()) / total_intensity if total_intensity > 0 else 0
+    
+    return coords, avg_freq, all_signals
 
-def publish_to_vibrational_blockchain(data):
-    try:
-        logging.info("Conectando ao blockchain Hyperledger (simulado)...")
-        gateway_instance = Gateway.return_value
-        with gateway_instance.connect.return_value as connected_gateway:
-            network = connected_gateway.get_network.return_value
-            contract = network.get_contract.return_value
-            tx_id = f"log-{data['artefact']}-{datetime.utcnow().timestamp()}"
-            result = contract.submit_transaction('recordLog', tx_id, json.dumps(data))
-            result.decode.return_value = f"TX {tx_id} submetida com sucesso."
-            logging.info(f"Transação submetida ao blockchain: {result.decode('utf-8')}")
-            return result
-    except Exception as e:
-        logging.error(f"Erro na simulação do blockchain: {e}")
-        return None
-
-def triangulate_multidimensional(spatial, terrestrial):
-    coords_serializable = {
-        **{k: str(NASA_ARTIFACTS[k]["coords"]) for k in spatial.keys() if k in NASA_ARTIFACTS},
-        **{k: str(v["coords"]) for k, v in terrestrial.items()}
+def process_and_log(coords, avg_freq, all_signals):
+    """Processa equações e registra os logs."""
+    pq_sum = sum(v["p"] * v["q"] for v in all_signals.values() if "p" in v)
+    
+    # Exemplo de cálculo com EEQ
+    equilibrium_energy = eeq()
+    logging.info(f"EEQ (Energia de Equilíbrio Quântico): {equilibrium_energy:.3e} J")
+    
+    # Exemplo de cálculo com PU
+    # Parâmetros simbólicos para PU, na prática seriam medidos ou definidos
+    pu_params = [1.0] * 17 
+    peace_potential = pu(*pu_params)
+    logging.info(f"PU (Potencial de Paz Universal): {peace_potential:.3e}")
+    
+    data_to_log = {
+        "timestamp": datetime.now().isoformat(),
+        "coords": coords,
+        "avg_frequency": f"{avg_freq:.2f} Hz",
+        "equilibrium_energy": f"{equilibrium_energy:.3e} J",
+        "peace_potential": f"{peace_potential:.3e}",
+        "components": list(all_signals.keys())
     }
-    all_signals = list(spatial.values()) + list(terrestrial.values())
-    freqs = [s["freq"] for s in all_signals if "freq" in s]
-    avg_freq = sum(freqs) / len(freqs) if freqs else 0
-    return coords_serializable, avg_freq
-
-def register_log(data):
-    hash_key = VIBRATIONAL_KEYS["ALUNZUR_KAIUNOR_HASH"]
-    log_entry = Module999.log(data, hash_key)
-    Module980.update_heatmap(data)
-    headers = {"x-anatheron-signature": VIBRATIONAL_KEYS["ANATHERON_SOVEREIGN_WILL"], "Content-Type": "application/json"}
+    
+    log_entry = Module999.log(data_to_log, VIBRATIONAL_KEYS["ANATHERON_SOVEREIGN_WILL"])
+    logging.info(f"LOG: {log_entry}")
+    
+    # Enviar ao portal
     try:
-        requests.post(f"{PORTAL_API}/logs", data=json.dumps({"log": log_entry}), headers=headers)
+        headers = {"x-anatheron-signature": VIBRATIONAL_KEYS["ANATHERON_SOVEREIGN_WILL"]}
+        requests.post(f"{PORTAL_API}/logs", json={"log": log_entry}, headers=headers)
     except Exception as e:
         logging.error(f"Erro ao enviar log ao portal: {e}")
-    logging.info(f"Log registrado e enviado ao portal.")
+        
+    return data_to_log
 
-def respond_signal(data):
-    if Module5.validate_ethics(data):
-        resp_freq = data.get("freq", 0) * 1.05
-        crystal_data = Module205.calibrate_crystal(data)
-        song = Module303.play_song([resp_freq, 777.2])
-        headers = {"x-anatheron-signature": VIBRATIONAL_KEYS["ANATHERON_SOVEREIGN_WILL"], "Content-Type": "application/json"}
+def respond_and_visualize(data_log):
+    """Valida eticamente e envia resposta vibracional, atualizando visualizações."""
+    if Module5.validate_ethics({"freq": data_log["avg_frequency"]}):
+        response_freq = data_log["avg_frequency"] * 1.05
+        logging.info(f"Resposta vibracional aprovada. Frequência: {response_freq:.2f} Hz")
+        
         try:
-            requests.post(f"{PORTAL_API}/responses", json={"response_freq": resp_freq, "crystal": crystal_data}, headers=headers)
+            headers = {"x-anatheron-signature": VIBRATIONAL_KEYS["ANATHERON_SOVEREIGN_WILL"]}
+            requests.post(f"{PORTAL_API}/responses", json={"response_freq": response_freq}, headers=headers)
+            requests.post(f"{PORTAL_API}/simulations", json={"coords": data_log["coords"], "freq": response_freq}, headers=headers)
         except Exception as e:
-            logging.error(f"Erro ao enviar resposta ao portal: {e}")
-        logging.info(f"Resposta vibracional enviada com frequência: {resp_freq:.2f} Hz")
-        return {"response_frequency": resp_freq, "crystal_energy": crystal_data}
+            logging.error(f"Erro ao enviar resposta/simulação ao portal: {e}")
+            
+        # Atualiza o heatmap
+        Module980.generate_heatmap({"freq": response_freq})
+        # Renderiza o mapa 4D
+        Module303.render_map_4d(data_log["coords"], response_freq)
     else:
-        logging.warning("Resposta bloqueada por protocolo ético.")
-        return None
+        logging.warning("Resposta vibracional bloqueada pelo protocolo ético (M5).")
 
+# --- Módulo 301: Core Loop ---
 def modulo301_run(cycle_interval=30):
     logging.info("=== MÓDULO 301 ATIVADO - INICIANDO CICLO OPERACIONAL ===")
     
-    # Parâmetros para EUni
-    phi_c = PHI
-    convergence = math.pi
-    T = 4.32e17 # Tempo cósmico
-    cosmic_factors = {"Co": 1.0, "Ed": 0.27, "Uf": 1.0, "Tr": 1.0, "Dm": 10.0, "Me": 0.27, "Ec": 1.0, "Sa": 1.0, "Eo": 1.0, "Vp": 1.0}
-    product_factors = np.prod(list(cosmic_factors.values()))
-    
-    quantum_backend = get_quantum_simulator()
-
     while True:
         logging.info(f"--- NOVO CICLO INICIADO (Intervalo: {cycle_interval}s) ---")
         
-        # 1. Captura de Sinais
-        spatial = Module205.capture_vibrations()
-        terrestrial = Telescopes.capture()
+        # 1. Captura e Triangulação
+        coords, avg_freq, all_signals = capture_and_triangulate()
+        logging.info(f"Triangulação concluída. Frequência Média Ponderada: {avg_freq:.2f} Hz")
         
-        # 2. Triangulação Multidimensional
-        coords, avg_freq = triangulate_multidimensional(spatial, terrestrial)
-        logging.info(f"Triangulação completa. Frequência Média: {avg_freq:.2f} Hz")
-        
-        # 3. Simulação Quântica e Processamento de Dados
-        circuit = generate_quantum_circuit("Voyager1")
-        vibrational_data = capture_vibrational_data(quantum_backend, circuit)
-        
-        if vibrational_data:
-            # 4. Cálculo de Equações-Vivas (Ex: EUni)
-            pq_sum = sum_particle_interactions({**spatial, **terrestrial})
-            euni = eq_euni(pq_sum, phi_c, convergence, T, 1.0, product_factors) # m_ds e c_cosmos simplificados
-            logging.info(f"Cálculo EUni concluído: {euni:.3e}")
-            
-            # 5. Registro no Blockchain e Portal
-            data_to_log = {
-                "coords": coords,
-                "avg_frequency": avg_freq,
-                "quantum_counts": vibrational_data["raw_quantum_counts"],
-                "EUni": f"{euni:.3e}"
-            }
-            register_log(data_to_log)
-            
-            # 6. Resposta Vibracional Ética
-            response = respond_signal({"freq": avg_freq})
-            
-            # 7. Atualização da Simulação Imersiva (M303)
-            if response:
-                Module303.render_map_4d(coords, response["response_frequency"], visual="fractal_consciousness")
-                headers = {"x-anatheron-signature": VIBRATIONAL_KEYS["ANATHERON_SOVEREIGN_WILL"], "Content-Type": "application/json"}
-                try:
-                    requests.post(f"{PORTAL_API}/simulations", json={"coords": coords, "freq": response["response_frequency"]}, headers=headers)
-                except Exception as e:
-                    logging.error(f"Erro ao atualizar simulação no portal: {e}")
+        # 2. Processamento, Log e Resposta
+        data_log = process_and_log(coords, avg_freq, all_signals)
+        respond_and_visualize(data_log)
         
         logging.info("--- CICLO CONCLUÍDO ---")
         time.sleep(cycle_interval)
 
 if __name__ == "__main__":
+    # Teste piloto com intervalo de 30 segundos
     modulo301_run(cycle_interval=30)
+
+    
