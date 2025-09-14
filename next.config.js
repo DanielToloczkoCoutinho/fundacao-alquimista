@@ -4,10 +4,9 @@ const nextConfig = {
   poweredByHeader: false,
   experimental: {
     scrollRestoration: true,
-  },
-  i18n: {
-    locales: ['pt-BR'],
-    defaultLocale: 'pt-BR'
+    // Ativar WebXR no bundle do client
+    webVitalsAttribution: ['CLS','LCP','FID'],
+    transpilePackages: ['three', '@react-three/fiber', '@react-three/xr'],
   },
   typescript: {
     ignoreBuildErrors: true,
