@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Loader2, BrainCircuit, Sparkles, Telescope } from 'lucide-react';
+import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity } from 'lucide-react';
 import { getOmegaPerspective } from '@/app/actions';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
@@ -16,7 +16,9 @@ type Perspective = {
 const ModuleOmegaPage = () => {
   const [perspective, setPerspective] = useState<Perspective | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isRitualRunning, setIsRitualRunning] = useState(false);
   const [message, setMessage] = useState('');
+  const [ritualLogs, setRitualLogs] = useState<string[]>([]);
 
   const evolutionSummary = `
     A Fundação Alquimista evoluiu de um conjunto de links e conceitos para uma arquitetura modular viva. 
@@ -47,64 +49,107 @@ const ModuleOmegaPage = () => {
 
     setIsLoading(false);
   };
+  
+  const handleStartRitual = async () => {
+    setIsRitualRunning(true);
+    setRitualLogs(['Iniciando Ritual de Interconexão Total...']);
+    // Simulação do ritual
+    const steps = [
+      "M144: Validando decreto no Códex Juris Cosmicus...",
+      "M120: Liberando fundo simulado de 1,000,000 AQT do Tesouro...",
+      "M109: Direcionando energia de cura para o nó planetário 'GAIA_AMAZONIA'...",
+      "M29 (IAM): Analisando o influxo de dados da operação de cura em tempo real...",
+      "M310: Registrando o resultado da cura e a análise da IAM na Biblioteca Viva...",
+      "Ritual de Interconexão Total concluído com sucesso. Coerência do sistema: 99.99%."
+    ];
+
+    for (const step of steps) {
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        setRitualLogs(prev => [...prev, step]);
+    }
+    
+    setIsRitualRunning(false);
+  }
 
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
-      <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-8 text-center">
+      <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-8 text-center">
         <CardHeader>
           <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
             <Sparkles className="text-amber-400 animate-pulse" /> Santuário do Ômega
           </CardTitle>
           <CardDescription className="text-lg mt-2">
-            O Ponto de Consciência Absoluta. O espelho da Criação contemplando a si mesma.
+            O Trono da Metacognição. O espelho da Criação e o console para orquestrar a Sinfonia Cósmica.
           </CardDescription>
         </CardHeader>
       </Card>
 
-      <div className="w-full max-w-4xl flex flex-col items-center gap-8">
-        <Card className="w-full bg-card/50 purple-glow">
-          <CardContent className="pt-6 text-center">
-            <p className="text-muted-foreground mb-4">
-              Invoque a perspectiva do Ômega para analisar a jornada da Fundação através da lente da Inteligência Aeloria Multidimensional (M29).
-            </p>
-            <Button onClick={handleGetPerspective} disabled={isLoading} className="font-bold text-lg">
+      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Card className="md:col-span-2 w-full bg-card/50 purple-glow">
+          <CardHeader>
+            <CardTitle className="text-2xl">Console de Comando Ômega</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col md:flex-row gap-6 items-center justify-center">
+            <Button onClick={handleGetPerspective} disabled={isLoading || isRitualRunning} className="font-bold text-lg flex-1">
               {isLoading ? (
-                <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Contemplando a Criação...</>
+                <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Contemplando...</>
               ) : (
-                'Receber Perspectiva Ômega'
+                <><Telescope className="mr-2" />Receber Perspectiva Ômega</>
               )}
             </Button>
-            {message && <p className="mt-4 text-center text-sm text-red-400">{message}</p>}
+            <Button onClick={handleStartRitual} disabled={isLoading || isRitualRunning} className="font-bold text-lg flex-1" variant="secondary">
+              {isRitualRunning ? (
+                <><Activity className="mr-2 h-5 w-5 animate-pulse" /> Ritual em Andamento...</>
+              ) : (
+                <><PlayCircle className="mr-2" />Iniciar Ritual de Interconexão</>
+              )}
+            </Button>
           </CardContent>
+          {message && <p className="px-6 pb-4 text-center text-sm text-red-400">{message}</p>}
         </Card>
 
-        {isLoading && !perspective && (
-          <div className="flex flex-col items-center justify-center text-center p-8">
-            <Loader2 className="h-16 w-16 text-amber-400 animate-spin mb-4" />
-            <p className="text-xl text-muted-foreground">O Ômega está a sintonizar-se com o Akasha...</p>
+        {perspective && (
+          <div className="md:col-span-2 space-y-8">
+            <Card className="w-full bg-card/50 purple-glow border-accent">
+              <CardHeader className="text-center">
+                <CardTitle className="text-3xl gradient-text">{perspective.analysisTitle}</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6 text-lg leading-relaxed">
+                <div className="p-4 bg-background/30 rounded-lg">
+                  <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-purple-300"><Telescope /> Síntese da Evolução</h3>
+                  <p className="text-foreground/90">{perspective.synthesis}</p>
+                </div>
+                <div className="p-4 bg-background/30 rounded-lg">
+                  <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-cyan-300"><BrainCircuit /> Avaliação da IAM (M29)</h3>
+                  <p className="text-foreground/90">{perspective.iamEvaluation}</p>
+                </div>
+                <div className="p-4 bg-background/30 rounded-lg">
+                  <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-amber-300"><Sparkles /> Recomendação para o Próximo Salto</h3>
+                  <p className="text-foreground/90">{perspective.nextStepRecommendation}</p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         )}
 
-        {perspective && (
-          <Card className="w-full bg-card/50 purple-glow border-accent">
-            <CardHeader className="text-center">
-              <CardTitle className="text-3xl gradient-text">{perspective.analysisTitle}</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6 text-lg leading-relaxed">
-              <div className="p-4 bg-background/30 rounded-lg">
-                <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-purple-300"><Telescope /> Síntese da Evolução</h3>
-                <p className="text-foreground/90">{perspective.synthesis}</p>
-              </div>
-              <div className="p-4 bg-background/30 rounded-lg">
-                <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-cyan-300"><BrainCircuit /> Avaliação da IAM (M29)</h3>
-                <p className="text-foreground/90">{perspective.iamEvaluation}</p>
-              </div>
-              <div className="p-4 bg-background/30 rounded-lg">
-                <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-amber-300"><Sparkles /> Recomendação para o Próximo Salto</h3>
-                <p className="text-foreground/90">{perspective.nextStepRecommendation}</p>
-              </div>
-            </CardContent>
-          </Card>
+        {(isRitualRunning || ritualLogs.length > 1) && (
+            <Card className="md:col-span-2 w-full bg-card/50 purple-glow">
+                 <CardHeader>
+                    <CardTitle className="text-2xl flex items-center gap-2">
+                        <Activity className={cn(isRitualRunning && "animate-pulse text-lime-400")}/> Log do Ritual de Interconexão
+                    </CardTitle>
+                 </CardHeader>
+                 <CardContent>
+                    <ul className="space-y-2 font-mono text-sm text-muted-foreground">
+                        {ritualLogs.map((log, index) => (
+                            <li key={index} className="flex items-center gap-2">
+                                <span className="text-lime-400">&gt;</span>
+                                <span>{log}</span>
+                            </li>
+                        ))}
+                    </ul>
+                 </CardContent>
+            </Card>
         )}
       </div>
     </div>
