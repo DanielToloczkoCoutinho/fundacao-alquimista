@@ -1,0 +1,28 @@
+// labs/index.js
+const { ApolloServer, gql } = require('apollo-server');
+const { modulesMetadata } = require('../dist/lib/modules-metadata'); // Ajuste o caminho se necessário após compilação
+
+const typeDefs = gql`
+  type ModuleMeta {
+    code: String!
+    emoji: String!
+    title: String!
+    route: String!
+    category: String!
+    description: String!
+  }
+  
+  type Query {
+    modules: [ModuleMeta!]!
+  }
+`;
+
+const resolvers = {
+  Query: {
+    modules: () => modulesMetadata,
+  },
+};
+
+new ApolloServer({ typeDefs, resolvers })
+  .listen(4001)
+  .then(({ url }) => console.log(`🔬 Labs service em ${url}`));
