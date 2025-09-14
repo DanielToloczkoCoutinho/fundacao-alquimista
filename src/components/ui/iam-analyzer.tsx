@@ -61,6 +61,7 @@ export default function IAMAnalyzer({ analysis }: IAMAnalyzerProps) {
     };
 
     const drawFractal = () => {
+        if (!ctx) return;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
@@ -92,7 +93,9 @@ export default function IAMAnalyzer({ analysis }: IAMAnalyzerProps) {
     drawFractal();
 
     return () => {
-        cancelAnimationFrame(animationFrameId);
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+        }
     };
 }, [analysis]);
 
@@ -129,9 +132,9 @@ export default function IAMAnalyzer({ analysis }: IAMAnalyzerProps) {
           <MetricDisplay icon={<Gauge className="h-4 w-4" />} label="Alinhamento Inter-Módulo" value={(analysis.interModuleAlignment * 100).toFixed(2)} unit="%" />
         </div>
 
-        <div className="p-3 bg-background/50 rounded-lg flex-grow">
+        <div className="p-3 bg-background/50 rounded-lg flex-grow flex flex-col">
             <h4 className="font-semibold text-primary-foreground mb-2">Visualização Fractal</h4>
-            <div className="relative w-full h-40 bg-black/30 rounded-md overflow-hidden">
+            <div className="relative w-full flex-grow bg-black/30 rounded-md overflow-hidden">
                  <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
             </div>
         </div>

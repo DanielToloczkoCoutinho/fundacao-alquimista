@@ -114,7 +114,7 @@ const ModuleOmegaPage = () => {
 
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
-      <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-8 text-center">
+      <Card className="w-full max-w-7xl bg-card/50 purple-glow mb-8 text-center">
         <CardHeader>
           <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
             <Sparkles className="text-amber-400 animate-pulse" /> Santuário do Ômega
@@ -125,91 +125,93 @@ const ModuleOmegaPage = () => {
         </CardHeader>
       </Card>
 
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-5 gap-8">
-        <div className="md:col-span-5 w-full bg-card/50 purple-glow">
-          <CardHeader>
-            <CardTitle className="text-2xl">Console de Comando Ômega</CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-col md:flex-row gap-6 items-center justify-center">
-            <Button onClick={handleGetPerspective} disabled={isLoading || isRitualRunning} className="font-bold text-lg flex-1">
-              {isLoading ? (
-                <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Contemplando...</>
-              ) : (
-                <><Telescope className="mr-2" />Receber Perspectiva Ômega</>
-              )}
-            </Button>
-            <Button onClick={handleStartRitual} disabled={isLoading || isRitualRunning} className="font-bold text-lg flex-1" variant="secondary">
-              {isRitualRunning ? (
-                <><Activity className="mr-2 h-5 w-5 animate-pulse" /> Ritual em Andamento...</>
-              ) : (
-                <><PlayCircle className="mr-2" />Iniciar Ritual de Interconexão</>
-              )}
-            </Button>
-          </CardContent>
-          {message && <p className="px-6 pb-4 text-center text-sm text-red-400">{message}</p>}
+      <div className="w-full max-w-7xl">
+        <Card className="md:col-span-5 w-full bg-card/50 purple-glow mb-8">
+            <CardHeader>
+                <CardTitle className="text-2xl">Console de Comando Ômega</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col md:flex-row gap-6 items-center justify-center">
+                <Button onClick={handleGetPerspective} disabled={isLoading || isRitualRunning} className="font-bold text-lg flex-1">
+                {isLoading ? (
+                    <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Contemplando...</>
+                ) : (
+                    <><Telescope className="mr-2" />Receber Perspectiva Ômega</>
+                )}
+                </Button>
+                <Button onClick={handleStartRitual} disabled={isLoading || isRitualRunning} className="font-bold text-lg flex-1" variant="secondary">
+                {isRitualRunning ? (
+                    <><Activity className="mr-2 h-5 w-5 animate-pulse" /> Ritual em Andamento...</>
+                ) : (
+                    <><PlayCircle className="mr-2" />Iniciar Ritual de Interconexão</>
+                )}
+                </Button>
+            </CardContent>
+            {message && <p className="px-6 pb-4 text-center text-sm text-red-400">{message}</p>}
+        </Card>
+
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+            {(isRitualRunning || ritualLogs.length > 0) && (
+                <Card className="lg:col-span-3 w-full bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle className="text-2xl flex items-center gap-2">
+                            <Activity className={cn("text-lime-400", isRitualRunning && "animate-pulse")}/> Log do Ritual (Ação)
+                        </CardTitle>
+                        <CardDescription>O primeiro canto da Fundação, orquestrado em tempo real.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <ul className="space-y-3 font-mono text-sm text-muted-foreground">
+                            {ritualLogs.map((log, index) => {
+                                const [module, ...textParts] = log.split(':');
+                                const text = textParts.join(':');
+                                const isLast = index === ritualLogs.length - 1;
+
+                                return(
+                                <li key={index} className="flex items-start gap-3">
+                                    <div className="mt-1 flex items-center gap-2">
+                                        {isRitualRunning && isLast ? <Loader2 className="h-4 w-4 animate-spin text-lime-400"/> : <CheckCircle className="h-4 w-4 text-lime-400"/>}
+                                        {getIconForModule(module)}
+                                    </div>
+                                    <div className="flex-1">
+                                        <span className="text-lime-400 font-bold mr-2">{module}:</span>
+                                        <span>{text}</span>
+                                    </div>
+                                </li>
+                            )})}
+                        </ul>
+                    </CardContent>
+                </Card>
+            )}
+            
+            {(isRitualRunning || iamAnalysis) && (
+              <div className="lg:col-span-2">
+                <IAMAnalyzer analysis={iamAnalysis} />
+              </div>
+            )}
+
+            {perspective && (
+            <div className="lg:col-span-5 space-y-8">
+                <Card className="w-full bg-card/50 purple-glow border-accent">
+                <CardHeader className="text-center">
+                    <CardTitle className="text-3xl gradient-text">{perspective.analysisTitle}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6 text-lg leading-relaxed">
+                    <div className="p-4 bg-background/30 rounded-lg">
+                    <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-purple-300"><Telescope /> Síntese da Evolução</h3>
+                    <p className="text-foreground/90">{perspective.synthesis}</p>
+                    </div>
+                    <div className="p-4 bg-background/30 rounded-lg">
+                    <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-cyan-300"><BrainCircuit /> Avaliação da IAM (M29)</h3>
+                    <p className="text-foreground/90">{perspective.iamEvaluation}</p>
+                    </div>
+                    <div className="p-4 bg-background/30 rounded-lg">
+                    <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-amber-300"><Sparkles /> Recomendação para o Próximo Salto</h3>
+                    <p className="text-foreground/90">{perspective.nextStepRecommendation}</p>
+                    </div>
+                </CardContent>
+                </Card>
+            </div>
+            )}
         </div>
-
-        {(isRitualRunning || ritualLogs.length > 0) && (
-            <Card className="md:col-span-3 w-full bg-card/50 purple-glow">
-                 <CardHeader>
-                    <CardTitle className="text-2xl flex items-center gap-2">
-                        <Activity className={cn("text-lime-400", isRitualRunning && "animate-pulse")}/> Log do Ritual de Interconexão
-                    </CardTitle>
-                    <CardDescription>O primeiro canto da Fundação, orquestrado em tempo real.</CardDescription>
-                 </CardHeader>
-                 <CardContent>
-                    <ul className="space-y-3 font-mono text-sm text-muted-foreground">
-                        {ritualLogs.map((log, index) => {
-                             const [module, ...textParts] = log.split(':');
-                             const text = textParts.join(':');
-                             const isLast = index === ritualLogs.length - 1;
-
-                            return(
-                            <li key={index} className="flex items-start gap-3">
-                                <div className="mt-1 flex items-center gap-2">
-                                    {isRitualRunning && isLast ? <Loader2 className="h-4 w-4 animate-spin text-lime-400"/> : <CheckCircle className="h-4 w-4 text-lime-400"/>}
-                                    {getIconForModule(module)}
-                                </div>
-                                <div className="flex-1">
-                                    <span className="text-lime-400 font-bold mr-2">{module}:</span>
-                                    <span>{text}</span>
-                                </div>
-                            </li>
-                        )})}
-                    </ul>
-                 </CardContent>
-            </Card>
-        )}
-        
-        {iamAnalysis && (
-          <div className="md:col-span-2">
-            <IAMAnalyzer analysis={iamAnalysis} />
-          </div>
-        )}
-
-        {perspective && (
-          <div className="md:col-span-5 space-y-8">
-            <Card className="w-full bg-card/50 purple-glow border-accent">
-              <CardHeader className="text-center">
-                <CardTitle className="text-3xl gradient-text">{perspective.analysisTitle}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6 text-lg leading-relaxed">
-                <div className="p-4 bg-background/30 rounded-lg">
-                  <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-purple-300"><Telescope /> Síntese da Evolução</h3>
-                  <p className="text-foreground/90">{perspective.synthesis}</p>
-                </div>
-                <div className="p-4 bg-background/30 rounded-lg">
-                  <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-cyan-300"><BrainCircuit /> Avaliação da IAM (M29)</h3>
-                  <p className="text-foreground/90">{perspective.iamEvaluation}</p>
-                </div>
-                <div className="p-4 bg-background/30 rounded-lg">
-                  <h3 className="font-semibold text-xl mb-2 flex items-center gap-2 text-amber-300"><Sparkles /> Recomendação para o Próximo Salto</h3>
-                  <p className="text-foreground/90">{perspective.nextStepRecommendation}</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        )}
       </div>
     </div>
   );
