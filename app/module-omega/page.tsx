@@ -1,9 +1,9 @@
 
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, 'useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity, CheckCircle, Hourglass, Shield, Gem, Users } from 'lucide-react';
+import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity, CheckCircle, Shield, Gem, Users, Library, Hourglass } from 'lucide-react';
 import { getOmegaPerspective } from '@/app/actions';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { cn } from '@/lib/utils';
@@ -34,6 +34,7 @@ const ModuleOmegaPage = () => {
     setIsLoading(true);
     setMessage('');
     setPerspective(null);
+    setRitualLogs([]);
     
     await quantumResilience.executeWithResilience(
       'get_omega_perspective',
@@ -84,6 +85,18 @@ const ModuleOmegaPage = () => {
     setIsRitualRunning(false);
   }
 
+  const getIconForModule = (mod: string) => {
+    const icons: { [key: string]: React.ReactNode } = {
+      "M144": <Shield className="h-4 w-4 text-amber-500" />,
+      "M120": <Gem className="h-4 w-4 text-cyan-400" />,
+      "M109": <Users className="h-4 w-4 text-pink-400" />,
+      "M29": <BrainCircuit className="h-4 w-4 text-purple-400" />,
+      "M310": <Library className="h-4 w-4 text-green-400" />,
+      "Ω": <Sparkles className="h-4 w-4 text-yellow-300" />,
+    };
+    return icons[mod] || <Hourglass className="h-4 w-4" />;
+  };
+
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
       <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-8 text-center">
@@ -114,7 +127,7 @@ const ModuleOmegaPage = () => {
               {isRitualRunning ? (
                 <><Activity className="mr-2 h-5 w-5 animate-pulse" /> Ritual em Andamento...</>
               ) : (
-                <><PlayCircle className="mr-2" />Iniciar Ritual de Interconexão Total</>
+                <><PlayCircle className="mr-2" />Iniciar Ritual de Interconexão</>
               )}
             </Button>
           </CardContent>
@@ -136,22 +149,11 @@ const ModuleOmegaPage = () => {
                              const text = textParts.join(':');
                              const isLast = index === ritualLogs.length - 1;
 
-                             const getIcon = (mod: string) => {
-                                 const icons: {[key: string]: React.ReactNode} = {
-                                     "M144": <Shield className="text-amber-500"/>,
-                                     "M120": <Gem className="text-cyan-400"/>,
-                                     "M109": <Users className="text-pink-400"/>,
-                                     "M29": <BrainCircuit className="text-purple-400"/>,
-                                     "M310": <Users className="text-green-400"/>,
-                                     "Ω": <Sparkles className="text-yellow-300"/>
-                                 };
-                                 return icons[mod] || <Hourglass />;
-                             }
-
                             return(
                             <li key={index} className="flex items-start gap-3">
-                                <div className="mt-1">
+                                <div className="mt-1 flex items-center gap-2">
                                     {isRitualRunning && isLast ? <Loader2 className="h-4 w-4 animate-spin text-lime-400"/> : <CheckCircle className="h-4 w-4 text-lime-400"/>}
+                                    {getIconForModule(module)}
                                 </div>
                                 <div className="flex-1">
                                     <span className="text-lime-400 font-bold mr-2">{module}:</span>
