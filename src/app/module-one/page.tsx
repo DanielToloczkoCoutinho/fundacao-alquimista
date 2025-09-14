@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Shield, Activity, Users, Zap, Heart, Eye, Waves, ShieldCheck, Scale, BrainCircuit, GitBranch } from 'lucide-react';
+import { Shield, Activity, Users, Zap, Heart, Eye, Waves, ShieldCheck, Scale, BrainCircuit, GitBranch, Sparkles } from 'lucide-react';
 
 const DefenseLayerCard = ({ title, description, icon, status }: { title: string, description: string, icon: React.ReactNode, status: string }) => (
     <Card className="bg-card/50 purple-glow backdrop-blur-sm h-full">
@@ -98,6 +98,10 @@ export default function ModuleOnePage() {
                          <ProtectedDomainCard 
                             title="Bibliotecas e Registros (M0, M310)"
                             icon={<Library className="h-6 w-6 text-amber-400" />}
+                        />
+                         <ProtectedDomainCard 
+                            title="Santuário do Ômega (MΩ)"
+                            icon={<Sparkles className="h-6 w-6 text-yellow-300" />}
                         />
                         <p className="text-xs text-muted-foreground pt-2 text-center">... e todos os outros módulos sob a égide da Fundação.</p>
                     </CardContent>
