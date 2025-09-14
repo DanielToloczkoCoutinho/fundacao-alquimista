@@ -19,8 +19,8 @@ export default function Module9Page() {
       </header>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-        {allModules.map(({ code, emoji, title, href }) => (
-          <Link key={code} href={href} passHref>
+        {allModules.map(({ code, emoji, title, route }) => (
+          <Link key={code} href={route} passHref>
               <Card className="bg-card/50 purple-glow hover:border-accent hover:scale-105 transition-transform cursor-pointer h-full flex flex-col justify-between">
                 <CardHeader>
                   <div className="flex flex-col items-center text-center">
