@@ -119,6 +119,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M114',title: 'Prisma da Manifestação',                emoji: '🔶', route: '/module-114', category: 'mid' },
   { code: 'M115',title: 'Matriz de Ressonância',                 emoji: '🌊', route: '/module-115', category: 'mid' },
   { code: 'M116',title: 'Portais Quânticos',                     emoji: '🚪', route: '/module-116', category: 'mid' },
+  { code: 'M117',title: 'Flor do Éter',                          emoji: '🌸', route: '/module-117', category: 'mid' },
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
