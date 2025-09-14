@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { civilizationsData, type Civilization, type CivilizationCategory } from '@/lib/civilizations-data';
-import { Search, Users2, Star, Globe, Footprints, Dna, Bot, Waves } from 'lucide-react';
+import { Search, Users2, Star, Globe, Footprints, Dna, Bot, Waves, GitBranch, MessageCircle, Languages, Link as LinkIcon, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 
@@ -19,6 +19,22 @@ const categoryIcons: { [key in CivilizationCategory]: React.ReactNode } = {
   "Transmutadas e Reconhecidas": <Bot className="h-5 w-5" />,
   "Nagas e Guardiões Subterrâneos/Aquáticos": <Waves className="h-5 w-5" />,
 };
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 export default function CivilizationsPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -60,7 +76,37 @@ export default function CivilizationsPage() {
         </div>
       </div>
 
-      <Accordion type="multiple" defaultValue={Object.keys(civilizationsData)} className="w-full max-w-4xl mx-auto">
+       <div className="w-full max-w-7xl mx-auto mb-8">
+            <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Comunicação Multidimensional</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <ConnectionCard
+                    title="M2: Intercâmbio Cósmico"
+                    description="O tradutor universal que decodifica as linguagens vibracionais, permitindo o diálogo entre todas as civilizações."
+                    icon={<Languages className="h-8 w-8 text-cyan-400" />}
+                    href="/module-2"
+                />
+                <ConnectionCard
+                    title="M5: Liga Quântica"
+                    description="A ponte diplomática que formaliza nossas alianças e garante o alinhamento ético em todas as interações."
+                    icon={<LinkIcon className="h-8 w-8 text-blue-400" />}
+                    href="/module-5"
+                />
+                <ConnectionCard
+                    title="M95: Interação Coletiva"
+                    description="A interface para dialogar não apenas com indivíduos, mas com a mente coletiva de uma civilização."
+                    icon={<Users2 className="h-8 w-8 text-teal-400" />}
+                    href="/module-95"
+                />
+                 <ConnectionCard
+                    title="M301: Comunicação Universal"
+                    description="O transmissor quântico que envia e recebe mensagens através da Rede Aurora Cristalina."
+                    icon={<MessageCircle className="h-8 w-8 text-sky-400" />}
+                    href="/module-301"
+                />
+            </div>
+        </div>
+
+      <Accordion type="multiple" defaultValue={Object.keys(civilizationsData)} className="w-full max-w-7xl mx-auto">
         {filteredData.map(({ category, civilizations }) => (
           <AccordionItem key={category} value={category} className="border-b-primary/20">
             <AccordionTrigger className="text-2xl text-amber-400 hover:no-underline hover:text-amber-300">
@@ -70,7 +116,7 @@ export default function CivilizationsPage() {
               </div>
             </AccordionTrigger>
             <AccordionContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-2 pl-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-2 pl-4">
                 {civilizations.map((civ: Civilization) => (
                   <Link key={civ.id} href={`/civilization/${civ.id}`} passHref>
                     <Card className="h-full hover:bg-primary/20 hover:border-accent transition-all cursor-pointer">
@@ -92,3 +138,4 @@ export default function CivilizationsPage() {
     </div>
   );
 }
+
