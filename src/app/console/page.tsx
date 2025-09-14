@@ -225,7 +225,7 @@ export default function ConsolePage() {
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-119"><Zap className="mr-2 h-4 w-4" />Módulo 119 (Templum Cosmica)</Link>
               </Button>
-               <Button variant="outline" asChild className="justify-start">
+              <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-120"><Sparkles className="mr-2 h-4 w-4" />Módulo 120 (A Fonte)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
