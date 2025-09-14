@@ -42,6 +42,6 @@ export async function startChatBot() {
     await chatBot.start(port);
     console.log(`🤖 ChatOps Fractal rodando na porta ${port}`);
   } catch (error) {
-    console.error('❌ Erro ao iniciar o ChatOps Fractal:', error);
+    console.error('❌ Falha na ativação do Bot:', error);
   }
 }
