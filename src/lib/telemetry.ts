@@ -1,25 +1,22 @@
-// telemetry.ts
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';
-import { JaegerExporter } from '@opentelemetry/exporter-jaeger';
+import { PrometheusExporter } from '@opentelemetry/exporter-prometheus';
 
-const exporter = new JaegerExporter({
-  // Jaeger agent configuration
-  // host: 'localhost',
-  // port: 6832,
-});
+const exporter = new PrometheusExporter(
+  { startServer: true, port: Number(process.env.OTEL_METRIC_PORT) || 9464 },
+  () => console.log(`🚀 Metrics server em http://localhost:${exporter.port}/metrics`)
+);
 
 const sdk = new NodeSDK({
-  serviceName: 'fundacao-alquimista-backend',
-  traceExporter: exporter,
+  metricExporter: exporter,
   instrumentations: [getNodeAutoInstrumentations()],
 });
 
 try {
   sdk.start();
-  console.log('🚀 Observabilidade Fractal (OpenTelemetry) ativada e conectada ao Jaeger.');
+  console.log('🌐 OpenTelemetry initialized');
 } catch (error) {
-  console.error('Falha ao iniciar OpenTelemetry SDK:', error);
+    console.error('❌ OTEL init error', error);
 }
 
 process.on('SIGTERM', () => {

@@ -1,8 +1,8 @@
 require('dotenv').config();
+require('../src/lib/telemetry'); // Ativa a Observabilidade Fractal
 const http = require('http');
 const app = require('./app');
 const { initializeWebSocket } = require('./services/websocketService');
-require('../src/lib/telemetry'); // Ativa a Observabilidade Fractal
 
 const PORT = process.env.PORT || 4000;
 
