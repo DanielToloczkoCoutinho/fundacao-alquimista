@@ -1,3 +1,4 @@
+
 # 🧬 Fundação Alquimista — Documento de Origem
 
 ## ✨ Visão Geral
