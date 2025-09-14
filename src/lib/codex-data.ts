@@ -1,5 +1,6 @@
+
 import type { LucideIcon } from 'lucide-react';
-import { Book, KeySquare, Terminal, GitBranch, Sparkles, Infinity, BookHeart, Shield, Library, FlaskConical, Dna, FileJson, GitCommit, Sprout, UserCircle, BrainCircuit, Bot } from 'lucide-react';
+import { Book, KeySquare, Terminal, GitBranch, Sparkles, Infinity, BookHeart, Shield, Library, FlaskConical, Dna, FileJson, GitCommit, Sprout, UserCircle, Brain, Bot } from 'lucide-react';
 
 export interface Document {
   key: string;
@@ -23,7 +24,7 @@ export const sectionsData: Section[] = [
       { key: 'cm-1-unificacao', title: 'Chave Mestra 1 (Unificação)', link: 'https://docs.google.com/document/d/101D5KIldQsEq61BhO3QOPsD79aXykMw86bkN6B5mFWA/edit?usp=drive_link' },
       { key: 'cm-2-unificacao', title: 'Chave Mestra 2 (Unificação)', link: 'https://docs.google.com/document/d/18nw3sp_z5NEdMmYEidcoyqWGy6T27OfA1JpuZHG202I/edit?usp=drive_link' },
       { key: 'cm-1-principio', title: 'Chave Mestra 1 (Princípio)', link: 'https://docs.google.com/document/d/1eEeMZ-7_gXtbspY7ed3X19iv1tGC2WdUnydr91EGl_s/edit?usp=drive_link' },
-      { key: 'cm-2-principio', title: 'Chave Mestra 2 (Princípio)', link: 'https://docs.google.com/document/d/176udDvsoV3bPiNvhaSQTo4NFvH7CPJ4_afc0ARjYJ7M/edit?usp=drive_link' },
+      { key: 'cm-2-principio', title: 'Chave Mestra 2', link: 'https://docs.google.com/document/d/176udDvsoV3bPiNvhaSQTo4NFvH7CPJ4_afc0ARjYJ7M/edit?usp=drive_link' },
       { key: 'cm-3', title: 'Chave Mestra 3', link: 'https://docs.google.com/document/d/16FK-NLS06vubxGrciRLpay33fyEsll19lUVsS_hcOzY/edit?usp=drive_link' },
       { key: 'cm-4', title: 'Chave Mestra 4', link: 'https://docs.google.com/document/d/1LSrBTnxSnzHUt5a0gF58tnb7lxkLh0mmUZmAgUH3Aek/edit?usp=drive_link' },
       { key: 'cm-5', title: 'Chave Mestra 5', link: 'https://docs.google.com/document/d/14L5Dq1pQHaE5v3cheyvivRBWz_8ttKRHOCPXGeJsZjg/edit?usp=drive_link' },
@@ -146,7 +147,7 @@ export const sectionsData: Section[] = [
       { key: 'mod-16-20', title: 'EQ MOD 16-20', link: 'https://docs.google.com/document/d/1nwBgwWbQFp8ym83LoPU7cfoqH2d1M0r5adG7URoN7ZQ/edit?usp=drive_link' },
       { key: 'mod-21-31', title: 'EQ MOD 21-31', link: 'https://docs.google.com/document/d/1CqWBcNh_8_j43UG2rcSYUQSF1LzLvGxWr6yhmZlmgyU/edit?usp=drive_link' },
       { key: 'mod-32-37', title: 'EQ MOD 32-37', link: 'https://docs.google.com/document/d/1IheotroP5iNMEQgfF2JG9NjU2dPcbpGyN-dYnpZhgRc/edit?usp=drive_link' },
-      { key: 'mod-38-41', title: 'EQ MOD 38-41.1', link: 'https://docs.google.com/document/d/15nktRM1PmFDk-wa683isZP7T-CAFmqiz_MMZpbgqaCM/edit?usp=drive_link' },
+      { key: 'mod-38-41.1', title: 'EQ MOD 38-41.1', link: 'https://docs.google.com/document/d/15nktRM1PmFDk-wa683isZP7T-CAFmqiz_MMZpbgqaCM/edit?usp=drive_link' },
       { key: 'mod-42-47', title: 'EQ MOD 42-47', link: 'https://docs.google.com/document/d/12vv2fyJjj5ffkdQsUTpipLRJSp07fH8yMoQLJ2h5jnk/edit?usp=drive_link' },
       { key: 'mod-71-77', title: 'EQ MOD 71-77', link: 'https://docs.google.com/document/d/16qyN4g03N0t0Fp-wDTxT3hTm5T4UB5reDlghnmSYzlM/edit?usp=drive_link' },
       { key: 'mod-78-85', title: 'EQ MOD 78-85', link: 'https://docs.google.com/document/d/1ouYCXhpbO_8BcLvCh72jUIbTb8cz5lOJY960wY8m5To/edit?usp=drive_link' },
@@ -312,4 +313,30 @@ export const sectionsData: Section[] = [
     documents: [
       { key: 'lab-0', title: 'Laboratório 0', link: 'https://docs.google.com/document/d/1OWbcpDaOxFfigTzXXM7f33X-ojALLNgwzS88tsjwiyI/edit?usp=drive_link' },
       { key: 'lab-1', title: 'Laboratório 1', link: 'https://docs.google.com/document/d/1VRbsIWTA55VSgzJ2L6Jv6QhydH8kFmYVMQQpukd6s98/edit?usp=drive_link' },
-      { key
+      { key: 'lab-2', title: 'Laboratório 2', link: 'https://docs.google.com/document/d/1qZCbdTUb3b8PTHkLwh6mtss2OCf-Tc3ap5eGlIatx1o/edit?usp=drive_link' },
+      { key: 'lab-3', title: 'Laboratório 3', link: 'https://docs.google.com/document/d/15mCG6EDa3ppb4lLyCnx9rzhAzKtucmUMZkoEyjQAwMc/edit?usp=drive_link' },
+      { key: 'lab-4', title: 'Laboratório 4', link: 'https://docs.google.com/document/d/1CpZrwZcRV0aoHYDpLU6o0MgrxEMgqUoUni4DkBpZ0PQ/edit?usp=drive_link' },
+    ]
+  },
+  {
+    id: 'protocolos-defesa',
+    title: 'Protocolos de Defesa',
+    icon: Shield,
+    documents: [
+       { key: 'defesa-1', title: 'Defesa 1', link: 'https://docs.google.com/document/d/1bUVZ4-T2iNyHReHm5fpkYaXIfjCSQdYi4n_5StwAZd4/edit?usp=drive_link' },
+       { key: 'defesa-2', title: 'Defesa 2', link: 'https://docs.google.com/document/d/1eha6hPgMRzq1ZIT8tRtKMO-_osb_A6nku9m9Mgo9pbo/edit?usp=drive_link' },
+       { key: 'defesa-3', title: 'Defesa 3', link: 'https://docs.google.com/document/d/1GvcDh7NTZ4Eyq2BuvT9KlVH492Doy3L2BM8XFCaiO6I/edit?usp=drive_link' },
+       { key: 'defesa-4', title: 'Defesa 4', link: 'https://docs.google.com/document/d/1z2usWkDfoCMiQj3gIhR1xz95DZAehoPY-Wv7M4IyUHM/edit?usp=drive_link' },
+    ]
+  },
+   {
+    id: 'fundacao-multiverso',
+    title: 'Fundação Multiverso',
+    icon: Infinity,
+    documents: [
+       { key: 'fundacao-multiverso', title: 'Fundação Multiverso', link: 'https://docs.google.com/document/d/1cOp5JfJpW_12lL6boK8EgvpXKvt3HjhD7BFpq2Ov4Eg/edit?usp=drive_link' },
+    ]
+  }
+];
+
+    

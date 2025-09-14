@@ -1,8 +1,9 @@
+
 'use client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Chronicle from '@/components/chronicle';
 import Pagina42 from '@/components/pagina-42';
-import CodexExplorer from '@/components/codex-explorer'; // Importando o novo explorador do Códice
+import CodexExplorer from '@/components/codex-explorer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BookHeart, Infinity, Library } from 'lucide-react';
 
@@ -45,3 +46,5 @@ export default function ModuleZeroPage() {
     </div>
   );
 }
+
+    
