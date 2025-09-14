@@ -224,34 +224,10 @@ export default function ConsolePage() {
                 <Link href="/module-119"><Zap className="mr-2 h-4 w-4" />Módulo 119 (Templum Cosmica)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-201"><Heart className="mr-2 h-4 w-4" />Módulo 201 (Morada Interdimensional)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-202"><Cpu className="mr-2 h-4 w-4" />Módulo 202 (Corredor de Alcor)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-204"><Library className="mr-2 h-4 w-4" />Módulo 204 (THOTH VIVO)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-228"><Milestone className="mr-2 h-4 w-4" />Módulo 228 (Ancoragem de Realidade)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-302"><Heart className="mr-2 h-4 w-4" />Módulo 302 (Frequência do Amor)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-303"><Sparkles className="mr-2 h-4 w-4" />Portal Trino (M303)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-306"><GitFork className="mr-2 h-4 w-4" />Módulo 306 (Sincronização Temporal)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-307"><Zap className="mr-2 h-4 w-4" />Módulo 307 (Energia Ponto Zero)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-404"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 404 (Resolução de Paradoxo)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/pagina-42"><Infinity className="mr-2 h-4 w-4" />Módulo Ω (Dossiê)</Link>

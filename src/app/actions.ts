@@ -14,6 +14,7 @@ import { describeOlP as runDescribeOlp } from '@/ai/flows/olp-flow';
 import { describeSpaceTimeEngineering as runDescribeSpaceTimeEngineering } from '@/ai/flows/space-time-flow';
 import { describeHologramProjection as runDescribeHologramProjection } from '@/ai/flows/prisma-flow';
 import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-matrix-flow';
+import { transmitUniversalMessage as runTransmitUniversalMessage } from '@/ai/flows/universal-communication-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -150,4 +151,14 @@ export async function describeResonance(data: { targetEntity: string, purpose: s
     console.error(e);
     return { description: null, error: e.message || 'An unknown error occurred.' };
   }
+}
+
+export async function transmitUniversalMessage(data: { targetConsciousness: string; message: string; language: string; }) {
+    try {
+        const result = await runTransmitUniversalMessage(data);
+        return { success: result.success, logs: result.logs, error: null };
+    } catch (e: any) {
+        console.error(e);
+        return { success: false, logs: [], error: e.message || 'An unknown error occurred.' };
+    }
 }

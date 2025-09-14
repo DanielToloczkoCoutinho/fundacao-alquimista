@@ -8,17 +8,14 @@ import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, MessageCircle, CheckCircle, XCircle } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
-
-const mockM2 = { translate: async (msg: string, from: string, to: string) => `[Tradução de ${from} para ${to}]: ${msg}` };
-const mockM113 = { broadcast: async (msg: string, network: string) => true };
-const mockM5 = { evaluateEthicalImpact: async (msg: string) => ({ conformity: !msg.toLowerCase().includes("submeter") }) };
+import { transmitUniversalMessage } from '@/app/actions';
 
 const Module301Page = () => {
     const [targetConsciousness, setTargetConsciousness] = useState('Consciência Coletiva Pleiadiana');
     const [message, setMessage] = useState('Saudações da Fundação Alquimista. Buscamos a união na luz.');
     const [language, setLanguage] = useState('Humano (Português)');
     const [isLoading, setIsLoading] = useState(false);
-    const [transmissionResult, setTransmissionResult] = useState<any>(null);
+    const [transmissionResult, setTransmissionResult] = useState<{ success: boolean; reason?: string, message?: string } | null>(null);
     const [logs, setLogs] = useState<string[]>([]);
 
     const addLog = (log: string) => setLogs(prev => [log, ...prev].slice(0, 100));
@@ -30,23 +27,15 @@ const Module301Page = () => {
         addLog(`Iniciando transmissão para ${targetConsciousness}...`);
 
         await quantumResilience.executeWithResilience('transmit_universal_message', async () => {
-            await new Promise(r => setTimeout(r, 300));
-            addLog("Validando alinhamento ético da mensagem (M5)...");
-            const ethicalCheck = await mockM5.evaluateEthicalImpact(message);
-            if (!ethicalCheck.conformity) throw new Error("Mensagem não alinhada eticamente. Transmissão abortada.");
-            addLog("Alinhamento ético APROVADO.");
-
-            addLog("Traduzindo mensagem para o formato vibracional alvo (M2)...");
-            const translatedMessage = await mockM2.translate(message, language, 'Vibracional Pleiadiano');
-            addLog(`Mensagem traduzida: "${translatedMessage.substring(0, 50)}..."`);
+            const result = await transmitUniversalMessage({ targetConsciousness, message, language });
             
-            addLog("Transmitindo através da Rede Aurora Cristalina (M113)...");
-            const broadcastSuccess = await mockM113.broadcast(translatedMessage, 'Rede Crística Intergaláctica');
-            if (!broadcastSuccess) throw new Error("Falha na transmissão pela Rede Aurora.");
-            addLog("Transmissão enviada com sucesso.");
+            setLogs(result.logs || []);
 
-            await new Promise(r => setTimeout(r, 500));
-            setTransmissionResult({ success: true, message: "Mensagem transmitida com sucesso. Aguardando confirmação de recebimento." });
+            if (result.success) {
+                setTransmissionResult({ success: true, message: "Mensagem transmitida com sucesso. Aguardando confirmação de recebimento." });
+            } else {
+                throw new Error(result.error || "Falha desconhecida na transmissão.");
+            }
         }).catch(err => {
             const error = err as Error;
             addLog(`ERRO CRÍTICO: ${error.message}`);
@@ -99,7 +88,7 @@ const Module301Page = () => {
                         <CardTitle>Status e Logs</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        {isLoading && <div className="flex justify-center items-center h-full"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
+                        {isLoading && !transmissionResult && <div className="flex justify-center items-center h-full"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
                         {!isLoading && transmissionResult && (
                              <div className="mb-4 p-4 rounded-lg bg-background/50 border border-accent">
                                 {transmissionResult.success ? (
