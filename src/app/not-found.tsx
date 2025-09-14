@@ -1,9 +1,22 @@
+'use client';
+
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { AlertTriangle } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function NotFound() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // Render nothing on the server to avoid mismatch
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-background text-foreground p-4">
       <Card className="w-full max-w-md bg-card/50 purple-glow text-center">

@@ -28,41 +28,23 @@ export default function ConsolePage() {
   useEffect(() => {
     setIsClient(true);
     
-    const initializeAndListen = async () => {
-      const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-      const db = getFirestore(app);
+    const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+    const db = getFirestore(app);
 
-      await quantumResilience.executeWithResilience(
-        'firebase_initialization',
-        async () => {
-          // Escutar uma coleção para confirmar a conexão
-          const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
-            () => {
-              if (!firebaseConnected) {
-                setFirebaseConnected(true);
-                console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
-              }
-            },
-            (error) => {
-              console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
-              setFirebaseConnected(false);
-            }
-          );
-           // Retornar a função de desinscrição para ser chamada quando o componente desmontar
-          return () => unsub();
-        },
-        async () => {
-          console.error("Falha ao inicializar o Firebase mesmo com resiliência. Operando em modo offline.");
-          setFirebaseConnected(false);
+    const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
+      () => {
+        if (!firebaseConnected) {
+          setFirebaseConnected(true);
+          console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
         }
-      );
-    };
+      },
+      (error) => {
+        console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
+        setFirebaseConnected(false);
+      }
+    );
     
-    initializeAndListen();
-
-    // A função de limpeza será retornada pelo executeWithResilience se a task principal for bem-sucedida,
-    // mas precisamos de um retorno aqui também para o useEffect.
-    return () => {};
+    return () => unsub();
   }, [firebaseConnected]);
   
   if (!isClient) {
