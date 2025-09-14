@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+      - "4000:4000" # Se o backend e frontend rodam no mesmo container
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/fundacao
+      - JWT_SECRET=a-very-secret-key-for-the-foundation
+      # Adicione outras variáveis de ambiente necessárias
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  prometheus:
+    image: prom/prometheus:v2.37.0
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana:9.2.3
+    ports:
+      - "3001:3000" # Porta externa 3001 mapeada para a 3000 do Grafana
+    volumes:
+      - ./monitoring/grafana-dashboard.json:/etc/grafana/provisioning/dashboards/fundacao.json
+
+volumes:
+  mongo-data:

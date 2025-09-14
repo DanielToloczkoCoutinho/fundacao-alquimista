@@ -4,7 +4,6 @@ const nextConfig = {
   poweredByHeader: false,
   experimental: {
     scrollRestoration: true,
-    // Ativar WebXR no bundle do client
     webVitalsAttribution: ['CLS','LCP','FID'],
     transpilePackages: ['three', '@react-three/drei', '@react-three/xr'],
   },
@@ -41,14 +40,15 @@ const nextConfig = {
             key: 'Cross-Origin-Embedder-Policy',
             value: 'require-corp',
           },
-           {
-            key: 'Content-Security-Policy',
-            value: "frame-ancestors *;",
+        ],
+      },
+      {
+        source: '/xr/:path*',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
           },
-           {
-             key: 'Permissions-Policy',
-             value: "xr-spatial-tracking=*"
-           }
         ],
       },
     ];

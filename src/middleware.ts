@@ -9,6 +9,7 @@ export function middleware(request: NextRequest) {
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('X-XSS-Protection', '1; mode=block')
 
+  // Aplica X-Frame-Options a tudo, exceto às rotas de Realidade Aumentada
   if (!pathname.startsWith('/xr')) {
     response.headers.set('X-Frame-Options', 'DENY')
   }
