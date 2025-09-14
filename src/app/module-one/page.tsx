@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Shield, Activity, Users, Zap, Heart, Eye, Waves, ShieldCheck, Scale, BrainCircuit, GitBranch, Sparkles } from 'lucide-react';
+import { Shield, Activity, Users, Zap, Heart, Eye, Waves, ShieldCheck, Scale, BrainCircuit, GitBranch, Sparkles, Library } from 'lucide-react';
 
 const DefenseLayerCard = ({ title, description, icon, status }: { title: string, description: string, icon: React.ReactNode, status: string }) => (
     <Card className="bg-card/50 purple-glow backdrop-blur-sm h-full">
