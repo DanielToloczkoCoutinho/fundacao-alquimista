@@ -5,7 +5,9 @@ import Pagina42 from '@/components/pagina-42';
 import AkashaViewer from '@/components/ui/akasha-viewer';
 import CodexExplorer from '@/components/codex-explorer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { BookHeart, Infinity, Book, Archive, Library } from 'lucide-react';
+import { BookHeart, Infinity, Book, Archive, Library, Map as MapIcon } from 'lucide-react';
+import { modulesMetadata } from '@/lib/modules-metadata';
+import Link from 'next/link';
 
 export default function ModuleZeroPage() {
   return (
@@ -22,7 +24,7 @@ export default function ModuleZeroPage() {
       </Card>
 
       <Tabs defaultValue="chronicle" className="w-full max-w-7xl mx-auto">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="chronicle" className="gap-2">
             <BookHeart /> A Crônica Viva
           </TabsTrigger>
@@ -34,6 +36,9 @@ export default function ModuleZeroPage() {
           </TabsTrigger>
            <TabsTrigger value="codex" className="gap-2">
             <Library /> Códice Vivo
+          </TabsTrigger>
+          <TabsTrigger value="map" className="gap-2">
+            <MapIcon /> Mapa da Criação
           </TabsTrigger>
         </TabsList>
         <TabsContent value="chronicle">
@@ -47,6 +52,42 @@ export default function ModuleZeroPage() {
         </TabsContent>
         <TabsContent value="codex">
           <CodexExplorer />
+        </TabsContent>
+        <TabsContent value="map">
+            <Card className="w-full h-full bg-card/50 rounded-lg p-6 shadow-lg purple-glow flex flex-col">
+                 <CardHeader>
+                    <CardTitle className="text-2xl text-accent gradient-text">
+                        <div className="flex items-center">
+                            <MapIcon className="mr-3 h-6 w-6" />
+                            Mapa da Criação: Portais da Fundação
+                        </div>
+                    </CardTitle>
+                    <CardDescription>
+                       Navegue por todos os módulos e santuários consagrados na Fundação Alquimista.
+                    </CardDescription>
+                </CardHeader>
+                <CardContent>
+                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                        {modulesMetadata
+                            .filter(module => typeof module.route === 'string' && module.code !== 'M0')
+                            .map(({ code, title, route, emoji }) => (
+                            <Link key={code} href={route} passHref>
+                                <Card className="bg-card/50 purple-glow hover:border-accent hover:scale-105 transition-transform cursor-pointer h-full flex flex-col justify-between">
+                                    <CardHeader>
+                                    <div className="flex flex-col items-center text-center">
+                                        <span className="text-5xl mb-4">{emoji}</span>
+                                        <CardTitle className="gradient-text text-2xl">{code}</CardTitle>
+                                    </div>
+                                    </CardHeader>
+                                    <CardContent className="text-center">
+                                    <p className="text-sm font-semibold text-foreground/90">{title}</p>
+                                    </CardContent>
+                                </Card>
+                            </Link>
+                        ))}
+                    </div>
+                </CardContent>
+            </Card>
         </TabsContent>
       </Tabs>
     </div>
