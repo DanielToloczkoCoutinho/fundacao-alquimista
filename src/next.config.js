@@ -48,9 +48,9 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "frame-ancestors 'self' https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
-              "frame-src https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
-              "connect-src 'self' https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
+              "frame-ancestors 'self' https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev http://localhost:9000",
+              "frame-src https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev http://localhost:9000",
+              "connect-src 'self' https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev http://localhost:9000",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https://picsum.photos",
@@ -91,24 +91,24 @@ const nextConfig = {
     return [
       {
         source: '/firebase-preview/:path*',
-        destination: 'https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/:path*'
+        destination: 'http://localhost:9000/:path*'
       },
       {
         source: '/civilizations/:path*',
-        destination: 'https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/civilizations/:path*',
+        destination: 'http://localhost:9000/civilizations/:path*',
       },
       {
         source: '/civilizations',
-        destination: 'https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/civilizations',
+        destination: 'http://localhost:9000/civilizations',
       },
       // Rewrite genérico para todos os módulos
       {
         source: '/module-:id/:path*',
-        destination: 'https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/module-:id/:path*',
+        destination: 'http://localhost:9000/module-:id/:path*',
       },
       {
         source: '/module-:id',
-        destination: 'https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/module-:id',
+        destination: 'http://localhost:9000/module-:id',
       },
     ];
   },
