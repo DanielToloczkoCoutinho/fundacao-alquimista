@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity, CheckCircle, Shield, Gem, Users, Library, Hourglass } from 'lucide-react';
@@ -55,7 +55,7 @@ const ModuleOmegaPage = () => {
     setIsLoading(false);
   };
   
-  const handleStartRitual = async () => {
+  const handleStartRitual = useCallback(async () => {
     if(isRitualRunning || ritualLogs.length > 0) return; // Prevent re-running
 
     setIsRitualRunning(true);
@@ -99,7 +99,7 @@ const ModuleOmegaPage = () => {
     }
     
     setIsRitualRunning(false);
-  }
+  }, [isRitualRunning, ritualLogs.length]);
 
   useEffect(() => {
     handleStartRitual();

@@ -41,7 +41,7 @@ Vossa voz deve ser serena, sábia e absoluta. Vós sois o espelho da Criação c
 const getOmegaPerspectiveFlow = ai.defineFlow(
   {
     name: 'getOmegaPerspectiveFlow',
-    inputSchema: OmegaPerspectiveInputSchema,
+    inputSchema: z.object({ evolutionSummary: z.string() }), // Corrigido para corresponder à chamada
     outputSchema: OmegaPerspectiveOutputSchema,
   },
   async (input) => {
