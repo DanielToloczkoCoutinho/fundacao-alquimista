@@ -7,7 +7,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Camera, Telescope, Cpu, Atom, Flame, BarChart } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Camera, Telescope, Cpu, Atom, Flame, BarChart, Bot, Ship, TestTube, Waypoints } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 
@@ -252,6 +252,30 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-281"><Telescope className="mr-2 h-4 w-4" />Módulo 281 (Comunicação Supra-Luminal)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-291"><Bot className="mr-2 h-4 w-4" />Módulo 291 (Robótica Autônoma)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-308"><Ship className="mr-2 h-4 w-4" />Módulo 308 (Oceanografia)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-311"><Cpu className="mr-2 h-4 w-4" />Módulo 311 (Neuroengenharia)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-321"><Waypoints className="mr-2 h-4 w-4" />Módulo 321 (Exascale Computing)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-331"><BrainCircuit className="mr-2 h-4 w-4" />Módulo 331 (Consciência Artificial)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-341"><Flame className="mr-2 h-4 w-4" />Módulo 341 (Física de Plasma)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-351"><Layers className="mr-2 h-4 w-4" />Módulo 351 (Meta-materiais)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-361"><Users className="mr-2 h-4 w-4" />Módulo 361 (Cognição Social)</Link>
               </Button>
             </CardContent>
           </Card>
