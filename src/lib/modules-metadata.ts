@@ -51,6 +51,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M20', emoji: '🔥', title: 'Orquestrador Elemental', route: '/module-20', category: 'mid' },
   { code: 'M21', emoji: '🚀', title: 'Navegação Interdimensional', route: '/module-21', category: 'mid' },
   { code: 'M22', emoji: '🕶️', title: 'Realidades Virtuais', route: '/module-22', category: 'mid' },
+  { code: 'M23', emoji: '⏳', title: 'Regulação Espaço-Temporal', route: '/module-23', category: 'mid' },
   { code: 'M85', emoji: '🌌', title: 'Imersão VR', route: '/module-85', category: 'mid' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR', route: '/module-86', category: 'mid' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
