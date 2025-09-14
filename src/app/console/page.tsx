@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, AlertTriangle, Goal, Settings, Zap, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Heart, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, MessageCircle, Library, Scale, Gavel, Users2 } from 'lucide-react';
 import { initializeApp, getApps, getApp } from "firebase/app";
-import { getFirestore, onSnapshot, collection } from "firebase/firestore";
+import { getFirestore, onSnapshot, collection, enableIndexedDbPersistence } from "firebase/firestore";
 
 const firebaseConfig = {
     "projectId": "studio-4265982502-21871",
@@ -20,19 +20,29 @@ const firebaseConfig = {
     "messagingSenderId": "174545373080"
 };
 
+// Evita inicialização duplicada do Firebase no HMR
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const db = getFirestore(app);
+
+if (typeof window !== 'undefined') {
+  enableIndexedDbPersistence(db).catch(err =>
+    console.warn('Firestore persistence failed:', err)
+  )
+}
+
 export default function ConsolePage() {
   const [firebaseConnected, setFirebaseConnected] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [logs, setLogs] = useState<any[]>([])
 
   useEffect(() => {
     setIsClient(true);
     
-    // Evita inicialização duplicada do Firebase no HMR
-    const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-    const db = getFirestore(app);
-
-    const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
-      () => {
+    const unsub = onSnapshot(
+      collection(db, 'console-data'),
+      { includeMetadataChanges: true }, 
+      (snapshot) => {
+        setLogs(snapshot.docs.map(d => ({ id: d.id, ...d.data() })));
         if (!firebaseConnected) {
           setFirebaseConnected(true);
           console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");

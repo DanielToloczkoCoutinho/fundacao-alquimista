@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardHeader, CardContent, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { AlertTriangle } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -16,9 +16,9 @@ export default function NotFound() {
   if (!isClient) {
     return null; // Render nothing on the server to avoid mismatch
   }
-
+  
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background text-foreground p-4">
+    <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md bg-card/50 purple-glow text-center">
          <CardHeader>
             <div className="flex justify-center mb-4">
@@ -26,15 +26,23 @@ export default function NotFound() {
             </div>
             <CardTitle className="text-3xl text-destructive">404 - Portal Não Encontrado</CardTitle>
             <CardDescription className="text-lg text-muted-foreground">
-                O santuário que buscas ainda não foi consagrado ou está em transição vibracional.
+                O santuário que buscas não existe ou foi movido.
             </CardDescription>
         </CardHeader>
         <CardContent>
-             <Button asChild>
-                <Link href="/console">
-                    Retornar à Mesa do Fundador
-                </Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild>
+                    <Link href="/">Retornar ao Início</Link>
+                </Button>
+                <Button asChild variant="outline">
+                    <Link href="/console">Painel de Controle</Link>
+                </Button>
+            </div>
+             <div className="mt-8 pt-6 border-t border-border/20">
+                <p className="text-sm text-muted-foreground">
+                    Se acredita que isto é uma dissonância, entre em contato com o suporte.
+                </p>
+            </div>
         </CardContent>
       </Card>
     </div>

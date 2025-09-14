@@ -1,21 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
+  experimental: {
+    scrollRestoration: true,
+  },
+  i18n: {
+    locales: ['pt-BR'],
+    defaultLocale: 'pt-BR'
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
     ignoreDuringBuilds: true,
   },
-  poweredByHeader: false,
   compress: true,
   generateEtags: false,
-  
-  i18n: {
-    locales: ['pt-BR'],
-    defaultLocale: 'pt-BR',
-  },
-  
   async headers() {
     return [
       {
