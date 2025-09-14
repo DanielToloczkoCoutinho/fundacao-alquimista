@@ -31,6 +31,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   // Módulos de Expansão (Mid)
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'mid' },
   { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno', route: '/module-3', category: 'mid' },
+  { code: 'M5', emoji: '🔗', title: 'Conexão Liga Quântica', route: '/module-5', category: 'mid' },
   { code: 'M85', emoji: '🌌', title: 'Imersão VR', route: '/module-85', category: 'mid' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR', route: '/module-86', category: 'mid' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
