@@ -29,6 +29,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M78', emoji: '🔗', title: 'UNIVERSUM_UNIFICATUM', route: '/module-78', category: 'council' },
   { code: 'M79', emoji: '📐', title: 'INTERMODULUM_VIVENS', route: '/module-79', category: 'council' },
   { code: 'M81', emoji: '🕊️', title: 'Realização Transcendência', route: '/module-81', category: 'council' },
+  { code: 'M81.1', emoji: '⚛️', title: 'A Tríade Cosmogônica', route: '/module-81-1', category: 'council' },
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council' },
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'council' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'council' },
