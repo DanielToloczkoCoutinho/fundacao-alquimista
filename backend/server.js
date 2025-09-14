@@ -5,7 +5,7 @@ require('../src/lib/telemetry');
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const WebSocket = require('ws');
-const { startChatBot } = require('../src/lib/chatops');
+const { startChatBot, chatBot } = require('../src/lib/chatops');
 const fetch = require('node-fetch');
 
 const app = express();
@@ -44,14 +44,11 @@ app.get('/health/extended', async (req, res) => {
     res.json({
       status: 'Ω',
       timestamp: new Date().toISOString(),
-      metrics: {
-        syntropy_coherence: coherenceMatch ? parseFloat(coherenceMatch[1]) : 'N/A'
-      },
       subsystems: {
         telemetry: 'active',
-        chatops: 'active',
+        chatops: chatBot.receiver.app.receiver.client.badConnection ? 'stopped' : 'listening',
         database: 'connected',
-        quantum_entanglement: 'stable'
+        coherence: coherenceMatch ? `${coherenceMatch[1]}%` : 'N/A'
       }
     });
   } catch (error) {
