@@ -195,30 +195,6 @@ export default function ConsolePage() {
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-111"><Heart className="mr-2 h-4 w-4" />Módulo 111 (Coração da Fundação)</Link>
               </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-112"><Sun className="mr-2 h-4 w-4" />Módulo 112 (Solarian Domus)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-113"><GitMerge className="mr-2 h-4 w-4" />Módulo 113 (Rede Aurora Cristalina)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-114"><Layers className="mr-2 h-4 w-4" />Módulo 114 (Prisma da Manifestação)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-115"><Waves className="mr-2 h-4 w-4" />Módulo 115 (Matriz de Ressonância)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-116"><Aperture className="mr-2 h-4 w-4" />Módulo 116 (Portais Quânticos)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-117"><Flower className="mr-2 h-4 w-4" />Módulo 117 (Flor do Éter)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-118"><Zap className="mr-2 h-4 w-4" />Módulo 118 (Luz Primordial)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-119"><Zap className="mr-2 h-4 w-4" />Módulo 119 (Templum Cosmica)</Link>
-              </Button>
             </CardContent>
           </Card>
            <Card className="bg-card/50 purple-glow">
