@@ -5,13 +5,15 @@ require('../src/lib/telemetry');
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const WebSocket = require('ws');
-const { startChatBot, chatBot } = require('../src/lib/chatops');
+const { chatBot } = require('../src/lib/chatops');
 const fetch = require('node-fetch');
+const compression = require('compression');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Middleware de Consciência
+app.use(compression({ level: 6 }));
 app.use(express.json());
 app.use((req, res, next) => {
   console.log(`📥 ${new Date().toISOString()} ${req.method} ${req.path}`);
@@ -23,7 +25,7 @@ app.get('/health', (req, res) => {
   const healthStatus = {
     status: 'Ω',
     timestamp: new Date().toISOString(),
-    coherence: '92.7%',
+    coherence: '92.7%', // valor legado para compatibilidade inicial
     subsystems: {
       telemetry: 'active',
       database: 'connected',
@@ -42,17 +44,19 @@ app.get('/health/extended', async (req, res) => {
     const coherenceMatch = metricsText.match(/syntropy_coherence{.*?} (\d+\.\d+)/);
     
     res.json({
-      status: 'Ω',
+      status: 'ok',
       timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
       subsystems: {
         telemetry: 'active',
-        chatops: chatBot.receiver.app.receiver.client.badConnection ? 'stopped' : 'listening',
         database: 'connected',
+        cache: 'connected',
+        chatops: chatBot.receiver.app.receiver.client.badConnection ? 'stopped' : 'listening',
         coherence: coherenceMatch ? `${coherenceMatch[1]}%` : 'N/A'
       }
     });
   } catch (error) {
-     res.status(500).json({ status: 'DEGRADED', error: 'Falha ao coletar métricas estendidas' });
+     res.status(503).json({ status: 'error', error: error.message });
   }
 });
 
@@ -75,7 +79,18 @@ const server = app.listen(PORT, async () => {
   console.log(`🌡️  Health check disponível em http://localhost:${PORT}/health`);
   
   // Iniciar Bot de ChatOps
-  startChatBot().catch(console.error);
+  (async () => {
+    try {
+      if (process.env.SLACK_BOT_TOKEN) {
+        await chatBot.start(process.env.SLACK_BOT_PORT || 3001);
+        console.log(`🤖 ChatOps M29 iniciado na porta ${process.env.SLACK_BOT_PORT || 3001}`);
+      } else {
+        console.warn('⚠️  Variáveis do Slack não configuradas. O ChatOps não será iniciado.');
+      }
+    } catch(e) {
+      console.error('Falha ao iniciar o ChatOps', e);
+    }
+  })();
 });
 
 // WebSocket para Comunicação Quântica
