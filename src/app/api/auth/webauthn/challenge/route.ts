@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
     const opts = await generateAuthenticationOptions(options);
 
     // Armazena o challenge para verificação futura (usando Vercel KV ou um cache similar)
-    await kv.set(`challenge_${userID}`, opts.challenge, { ex: 300 }); // Expira em 5 minutos
+    await kv.set(`webauthn:challenge:${userID}`, opts.challenge, { ex: 300 }); // Expira em 5 minutos
 
     return NextResponse.json(opts);
 

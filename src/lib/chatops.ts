@@ -26,7 +26,7 @@ chatBot.command('/m29', async ({ command, ack, say }) => {
         await say(`🏥 *Status da Fundação Omega*
 • Saúde: ${health.status}
 • UTC: ${health.timestamp}
-• Coerência: ${health.coherence || '92.7%'}
+• Coerência: ${health.coherence || 'N/A'}
 • Subsistemas: ${Object.entries(health.subsystems || {})
   .map(([k, v]) => `${k}: ${v}`)
   .join(', ')}`);
@@ -37,8 +37,8 @@ chatBot.command('/m29', async ({ command, ack, say }) => {
         const metrics = await metricsRes.text();
         
         // Extrair métricas específicas
-        const coherenceMatch = metrics.match(/syntropy_coherence{.*?} (\\d+\\.\\d+)/);
-        const latencyMatch = metrics.match(/quantum_latency{.*?} (\\d+\\.\\d+)/);
+        const coherenceMatch = metrics.match(/syntropy_coherence{.*?} (\d+\.\d+)/);
+        const latencyMatch = metrics.match(/quantum_latency{.*?} (\d+\.\d+)/);
         
         await say(`📊 *Métricas da Fundação*
 • Coerência Sintrópica: ${coherenceMatch ? coherenceMatch[1] + '%' : 'N/A'}
@@ -100,7 +100,7 @@ export const startChatBot = async () => {
     
     // Publicar status de inicialização
     try {
-        if (process.env.SLACK_STATUS_CHANNEL) {
+        if (process.env.SLACK_STATUS_CHANNEL && process.env.SLACK_BOT_TOKEN) {
             await slackClient.chat.postMessage({
               channel: process.env.SLACK_STATUS_CHANNEL,
               text: '🔄 *Sistema de ChatOps M29 Iniciado*\nOs comandos `/m29` estão disponíveis para operações da Fundação.',
