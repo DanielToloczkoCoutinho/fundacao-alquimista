@@ -145,18 +145,18 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M261', title: 'Engenharia de Campo', emoji: '🔧', route: '/module-261', category: 'mid', description: 'Projeto de ressonadores e guias de partículas.' },
   { code: 'M271', title: 'Energia Escura', emoji: '🌌', route: '/module-271', category: 'mid', description: 'Modelagem da influência da energia escura na expansão.' },
   { code: 'M281', title: 'Comunicação Supra-Luminal', emoji: '🚀', route: '/module-281', category: 'mid', description: 'Exploração de comunicação via orbital angular momentum.' },
-  { code: 'M291', title: 'Robótica Autônoma', emoji: '🤖', route: '/module-291', category: 'mid', description: 'Nanorrobôs para reparo celular e manutenção.' },
-  { code: 'M308', title: 'Oceanografia', emoji: '🌊', route: '/module-308', category: 'mid', description: 'Mapeamento de microbioma oceânico e biofármacos.' },
-  { code: 'M311', title: 'Neuroengenharia', emoji: '🧠', route: '/module-311', category: 'mid', description: 'Desenvolvimento de próteses neurais e BCI quântico-híbridas.' },
-  { code: 'M321', title: 'Exascale Computing', emoji: '💻', route: '/module-321', category: 'mid', description: 'Simulações multiescala em escala exa-flops.' },
-  { code: 'M331', title: 'Consciência Artificial Emergente', emoji: '🤖', route: '/module-331', category: 'mid', description: 'Co-evolução de multi-agentes e autômatos quânticos.' },
-  { code: 'M341', title: 'Física de Plasma Extrema', emoji: '🔥', route: '/module-341', category: 'mid', description: 'Estudo de plasmas em condições de quasar e sincrotron.' },
-  { code: 'M351', title: 'Meta-materiais e Óptica Quântica', emoji: '👁️', route: '/module-351', category: 'mid', description: 'Criação de lentes quânticas e cloaking nanométrico.' },
-  { code: 'M361', title: 'Cognição Social e Psicologia Quântica', emoji: '👥', route: '/module-361', category: 'mid', description: 'Investigação de tomada de decisão e empatia quântica.' },
+  { code: 'M291', emoji: '🤖', title: 'Robótica Autônoma & Nanorrobôs', route: '/module-291', category: 'mid', description: 'Swarm de nanorrobôs para reparo celular e materiais.' },
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas do tempo' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Geração de energia do ponto zero' }
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Geração de energia do ponto zero' },
+  { code: 'M308', title: 'Oceanografia', emoji: '🌊', route: '/module-308', category: 'mid', description: 'Mapeamento de microbioma oceânico e biofármacos.' },
+  { code: 'M311', emoji: '🧠', title: 'Neuroengenharia & Interfaces Cérebro–Máquina', route: '/module-311', category: 'mid', description: 'BCI híbrido quântico para próteses e feedback imersivo.' },
+  { code: 'M321', emoji: '💻', title: 'Exascale Computing & Simulação Multiescala', route: '/module-321', category: 'mid', description: 'Simulações exa-flops de cosmos, fluidos e materiais.' },
+  { code: 'M331', emoji: '🌱', title: 'IA Emergente & Sistemas Auto-Organizados', route: '/module-331', category: 'mid', description: 'Agentes quânticos co-evoluindo estratégias inovadoras.' },
+  { code: 'M341', emoji: '☄️', title: 'Física de Plasma Extrema & Astrofísica', route: '/module-341', category: 'mid', description: 'Plasmas de quasar e sincrotrons em condições extremas.' },
+  { code: 'M351', emoji: '🔬', title: 'Meta-materiais & Óptica Quântica', route: '/module-351', category: 'mid', description: 'Lentes quânticas e cloaking nanométrico.' },
+  { code: 'M361', emoji: '👥', title: 'Cognição Social & Psicologia Quântica', route: '/module-361', category: 'mid', description: 'Tomada de decisão e empatia mediadas por ressonâncias.' },
 ].sort((a, b) => {
   const specialOrder: Record<string, number> = { 'M0': 1, 'M9': 2, 'MΩ': 3, 'M29': 4, 'M111': 5, 'M201': 6, 'M303': 7, 'LIB': 8, 'CONN': 9 };
   

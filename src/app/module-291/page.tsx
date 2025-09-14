@@ -28,7 +28,7 @@ export default function Module291Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Bot className="text-blue-400" /> Módulo 291: Robótica Autônoma & Nanorrobôs
+                        <Bot className="text-blue-400" /> Módulo 291: Robótica Autônoma & Nanorrobôs (4D+)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Enxame Inteligente. Projeta e coordena nuvens de nanorrobôs para reparo celular e manutenção de materiais.
@@ -59,9 +59,6 @@ export default function Module291Page() {
                         href="/module-17"
                     />
                 </div>
-            </div>
-             <div className="mt-12">
-                 <Button variant="secondary" size="lg">Acessar Console do Enxame</Button>
             </div>
         </div>
     );

@@ -2,7 +2,6 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Users, BrainCircuit, Heart } from 'lucide-react';
 import Link from 'next/link';
 
@@ -28,7 +27,7 @@ export default function Module361Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Users className="text-pink-400" /> Módulo 361: Cognição Social & Psicologia Quântica
+                        <Users className="text-pink-400" /> Módulo 361: Cognição Social & Psicologia Quântica (5D)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Laboratório da Empatia. Investiga a tomada de decisão, a empatia e a consciência coletiva através de ressonâncias quânticas.
@@ -59,9 +58,6 @@ export default function Module361Page() {
                         href="/module-302"
                     />
                 </div>
-            </div>
-             <div className="mt-12">
-                 <Button variant="secondary" size="lg">Acessar Análise de Ressonância de Grupo</Button>
             </div>
         </div>
     );

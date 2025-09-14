@@ -2,7 +2,6 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Waypoints, GitCommit, Cpu } from 'lucide-react';
 import Link from 'next/link';
 
@@ -28,7 +27,7 @@ export default function Module321Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Waypoints className="text-red-400" /> Módulo 321: Exascale Computing & Simulação Multiescala
+                        <Waypoints className="text-red-400" /> Módulo 321: Exascale Computing & Simulação Multiescala (8D+)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Motor do Multiverso. Executa simulações de cosmos, fluidos e materiais em escala exa-flops.
@@ -59,9 +58,6 @@ export default function Module321Page() {
                         href="/module-29"
                     />
                 </div>
-            </div>
-             <div className="mt-12">
-                 <Button variant="secondary" size="lg">Submeter Job de Simulação</Button>
             </div>
         </div>
     );

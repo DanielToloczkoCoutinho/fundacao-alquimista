@@ -2,7 +2,6 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Cpu, BrainCircuit, GitCommit } from 'lucide-react';
 import Link from 'next/link';
 
@@ -28,7 +27,7 @@ export default function Module311Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Cpu className="text-purple-400" /> Módulo 311: Neuroengenharia & Interfaces Cérebro-Máquina
+                        <Cpu className="text-purple-400" /> Módulo 311: Neuroengenharia & Interfaces Cérebro–Máquina (6D)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A Ponte Sináptica. Desenvolve próteses neurais e interfaces cérebro-computador (BCI) quântico-híbridas.
@@ -59,9 +58,6 @@ export default function Module311Page() {
                         href="/module-93"
                     />
                 </div>
-            </div>
-             <div className="mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Sessão de Interface Neural</Button>
             </div>
         </div>
     );

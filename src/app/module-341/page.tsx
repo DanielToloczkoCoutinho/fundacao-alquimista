@@ -2,7 +2,6 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Flame, Atom, Zap } from 'lucide-react';
 import Link from 'next/link';
 
@@ -28,7 +27,7 @@ export default function Module341Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Flame className="text-red-500" /> Módulo 341: Física de Plasma Extrema & Astrofísica
+                        <Flame className="text-red-500" /> Módulo 341: Física de Plasma Extrema & Astrofísica (9D)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A Forja Estelar. Estuda plasmas em condições de quasar e síncrotron para desvendar os segredos da criação estelar.
@@ -54,14 +53,11 @@ export default function Module341Page() {
                     />
                     <ConnectionCard
                         title="Módulo 307: Reator ZPE"
-                        description="As reações de plasma aqui estudadas podem desbloquear novos métodos para extração de energia do ponto zero."
+                        description="As reações de plasma aqui estudadas são a chave para a próxima geração de Reatores de Ponto Zero, prometendo energia ainda mais limpa e abundante."
                         icon={<Zap className="h-8 w-8 text-yellow-400" />}
                         href="/module-307"
                     />
                 </div>
-            </div>
-             <div className="mt-12">
-                 <Button variant="destructive" size="lg">Iniciar Simulação de Quasar</Button>
             </div>
         </div>
     );

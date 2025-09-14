@@ -2,7 +2,6 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Layers, Shield, Cpu } from 'lucide-react';
 import Link from 'next/link';
 
@@ -28,7 +27,7 @@ export default function Module351Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Layers className="text-teal-300" /> Módulo 351: Meta-materiais & Óptica Quântica
+                        <Layers className="text-teal-300" /> Módulo 351: Meta-materiais & Óptica Quântica (4D+)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A Oficina do Invisível. Cria lentes quânticas e materiais com índice de refração negativo para manipulação da luz.
@@ -59,9 +58,6 @@ export default function Module351Page() {
                         href="/module-181"
                     />
                 </div>
-            </div>
-             <div className="mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Simulação de Nanofabricação</Button>
             </div>
         </div>
     );
