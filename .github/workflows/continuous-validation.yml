@@ -1,108 +1,64 @@
-# .github/workflows/continuous-validation.yml
-name: Validação Contínua e Experimentos de Caos
+name: Continuous Validation
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  schedule:
-    - cron: '0 3 * * *' # Execução diária às 3AM
 
 jobs:
   smoke-tests:
-    name: "✅ Smoke Tests — Auto-Validação"
+    name: "⚡ Smoke Tests — Auto-Validação"
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
+    services:
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping" 
+          --health-interval 10s 
+          --health-timeout 5s 
+          --health-retries 5
+
     steps:
-      - name: "🔄 Checkout do Código"
+      - name: Checkout code
         uses: actions/checkout@v4
-      
-      - name: "🔧 Configurar Node.js"
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
-      - name: "🔧 Instalar Dependências (Root)"
-        run: npm ci
+      - name: Install dependencies
+        run: |
+          npm ci
+          cd backend && npm ci
 
-      - name: "🔧 Instalar Dependências (Backend)"
-        run: cd backend && npm ci
-
-      - name: "🏗️ Build da Aplicação"
+      - name: Build frontend
         run: npm run build
-      
-      - name: "🛰️ Iniciar Servidor Backend"
+
+      - name: Start backend server
         run: |
           cd backend
           npm start &
           npx wait-on http://localhost:4000/health/extended --timeout 120000
 
-      - name: "🛰️ Iniciar Servidor Frontend"
+      - name: Start frontend server
         run: |
-          npm start &
+          npm run start:test &
           npx wait-on http://localhost:3000 --timeout 60000
-      
-      - name: "🧪 Executar Smoke Tests"
+
+      - name: Execute smoke tests
         run: |
           curl --fail http://localhost:4000/health/extended || exit 1
           curl --fail http://localhost:3000/firebase-preview/ || exit 1
           curl --fail http://localhost:4000/health || exit 1
           
-      - name: "🛑 Encerrar Servidores"
+      - name: Cleanup
         if: always()
         run: |
           npx kill-port 3000 || echo "Port 3000 not found"
           npx kill-port 4000 || echo "Port 4000 not found"
-          
-  chaos-experiment:
-    name: "🌪️ Experimento de Caos - Teste de Resiliência"
-    runs-on: ubuntu-latest
-    needs: smoke-tests
-    timeout-minutes: 30
-    
-    steps:
-    - name: "🔄 Checkout do Código"
-      uses: actions/checkout@v4
-      
-    - name: "🐳 Configurar Ambiente de Teste"
-      run: |
-        # Em um cenário real, aqui seria o docker-compose ou k8s apply
-        echo "Simulando setup do ambiente de teste"
-        
-    - name: "🧪 Executar Health Check Pré-Caos"
-      run: |
-        echo "Simulando health check pré-caos"
-        # curl --fail --retry 5 --retry-delay 5 http://localhost:4000/health
-        
-    - name: "🌪️ Injetar Caos de Rede"
-      run: |
-        echo "Simulando injeção de caos. Em um ambiente real, este passo teria acesso ao container do backend."
-        echo "🔥 Caos injetado: 500ms delay, 10% loss, 2% duplicate"
-        sleep 30 # Manter caos ativo
-        
-    - name: "🩺 Testar Resiliência Durante Caos"
-      run: |
-        echo "Simulando teste de resiliência sob caos."
-        # timeout 60 bash -c '...'
-        
-    - name: "🔄 Restaurar Normalidade"
-      run: |
-        echo "Simulando remoção do caos."
-        sleep 10
-        
-    - name: "✅ Validar Auto-Cura Pós-Caos"
-      run: |
-        echo "Simulando health check pós-caos"
-        # curl --fail --retry 5 --retry-delay 5 http://localhost:4000/health
-        
-    - name: "📊 Gerar Relatório de Resiliência"
-      run: |
-        echo "📈 RELATÓRIO DE RESILIÊNCIA CÓSMICA" > report.md
-        echo "==================================" >> report.md
-        echo "- Data: $(date)" >> report.md
-        echo "- Sistema sobreviveu ao caos: ✅" >> report.md
-        echo "- Tempo de recuperação simulado: <10 segundos" >> report.md
-        cat report.md
-

@@ -10,7 +10,7 @@ const fetch = require('node-fetch');
 const compression = require('compression');
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.BACKEND_PORT || 4000;
 
 // Middleware de Consciência
 app.use(compression({ level: 6 }));
