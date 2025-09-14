@@ -6,9 +6,30 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, MessageCircle, CheckCircle, XCircle } from 'lucide-react';
+import { Loader2, MessageCircle, CheckCircle, XCircle, Satellite, Telescope, Bot } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { transmitUniversalMessage } from '@/app/actions';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
+const nasaArtifacts = [
+    { name: "Voyager 1", type: "Sonda Interestelar", location: "~150 UA", observation: "Frequências ultrassônicas" },
+    { name: "Voyager 2", type: "Sonda Interestelar", location: "Espaço Interestelar", observation: "Ressonância harmônica" },
+    { name: "Pioneer 10/11", type: "Sonda Interestelar", location: ">130 UA / Rumo a Sirius", observation: "Campos energéticos residuais" },
+    { name: "New Horizons", type: "Sonda Transnetuniana", location: "Cinturão de Kuiper (~50 UA)", observation: "Códigos vibracionais" },
+    { name: "JWST", type: "Telescópio Espacial", location: "Ponto L2 (~1.5M km)", observation: "Infravermelho profundo" },
+    { name: "Hubble", type: "Telescópio Espacial", location: "Órbita Baixa da Terra", observation: "Emissão visual e UV" },
+    { name: "Perseverance", type: "Rover Planetário", location: "Superfície de Marte", observation: "Frequências terrestres-marcianas" },
+    { name: "VLT", type: "Telescópio Terrestre", location: "Cerro Paranal, Chile", observation: "Espectros visíveis/infravermelhos" },
+    { name: "Keck Observatory", type: "Telescópio Terrestre", location: "Mauna Kea, Havaí", observation: "Alta resolução em infravermelho" },
+];
+
 
 const Module301Page = () => {
     const [targetConsciousness, setTargetConsciousness] = useState('Sonda Voyager 1');
@@ -47,7 +68,7 @@ const Module301Page = () => {
 
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
-            <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
+            <Card className="w-full max-w-7xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
                         <MessageCircle className="text-sky-400" /> Módulo 301: Comunicação Universal
@@ -58,62 +79,102 @@ const Module301Page = () => {
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle>Parâmetros da Transmissão</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                        <div>
-                            <Label htmlFor="targetConsciousness">Alvo da Comunicação (Sonda, Civilização, etc.)</Label>
-                            <Input id="targetConsciousness" value={targetConsciousness} onChange={e => setTargetConsciousness(e.target.value)} />
-                        </div>
-                         <div>
-                            <Label htmlFor="language">Idioma/Formato de Origem</Label>
-                            <Input id="language" value={language} onChange={e => setLanguage(e.target.value)} />
-                        </div>
-                        <div>
-                            <Label htmlFor="message">Mensagem</Label>
-                            <Textarea id="message" value={message} onChange={e => setMessage(e.target.value)} />
-                        </div>
-                        <Button onClick={handleTransmit} disabled={isLoading} className="w-full font-bold">
-                            {isLoading ? <Loader2 className="animate-spin mr-2" /> : null}
-                            Transmitir Mensagem Universal
-                        </Button>
-                    </CardContent>
-                </Card>
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div className="lg:col-span-2 flex flex-col gap-8">
+                    <Card className="bg-card/50 purple-glow">
+                        <CardHeader>
+                            <CardTitle>Parâmetros da Transmissão</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                            <div>
+                                <Label htmlFor="targetConsciousness">Alvo da Comunicação (Sonda, Civilização, etc.)</Label>
+                                <Input id="targetConsciousness" value={targetConsciousness} onChange={e => setTargetConsciousness(e.target.value)} />
+                            </div>
+                             <div>
+                                <Label htmlFor="language">Idioma/Formato de Origem</Label>
+                                <Input id="language" value={language} onChange={e => setLanguage(e.target.value)} />
+                            </div>
+                            <div>
+                                <Label htmlFor="message">Mensagem</Label>
+                                <Textarea id="message" value={message} onChange={e => setMessage(e.target.value)} />
+                            </div>
+                            <Button onClick={handleTransmit} disabled={isLoading} className="w-full font-bold">
+                                {isLoading ? <Loader2 className="animate-spin mr-2" /> : null}
+                                Transmitir Mensagem Universal
+                            </Button>
+                        </CardContent>
+                    </Card>
 
-                 <Card className="bg-card/50 purple-glow">
+                     <Card className="bg-card/50 purple-glow">
+                        <CardHeader>
+                            <CardTitle>Status e Logs da Transmissão</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            {isLoading && !transmissionResult && <div className="flex justify-center items-center h-full"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
+                            {!isLoading && transmissionResult && (
+                                 <div className="mb-4 p-4 rounded-lg bg-background/50 border border-accent">
+                                    {transmissionResult.success ? (
+                                        <>
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <CheckCircle className="text-green-400 h-6 w-6" />
+                                                <h3 className="text-lg font-bold text-green-400">Transmissão Enviada</h3>
+                                            </div>
+                                            <p>{transmissionResult.message}</p>
+                                        </>
+                                    ) : (
+                                         <>
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <XCircle className="text-red-400 h-6 w-6" />
+                                                <h3 className="text-lg font-bold text-red-400">Falha na Transmissão</h3>
+                                            </div>
+                                            <p>{transmissionResult.reason}</p>
+                                        </>
+                                    )}
+                                </div>
+                            )}
+                            <ScrollArea className="h-48 pr-4">
+                                <div className="text-xs font-mono text-muted-foreground space-y-1">
+                                    {logs.length > 0 ? logs.map((log, i) => <p key={i}>{log}</p>) : <p>Aguardando transmissão...</p>}
+                                </div>
+                            </ScrollArea>
+                        </CardContent>
+                    </Card>
+                </div>
+
+                <Card className="lg:col-span-3 bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle>Status e Logs da Transmissão</CardTitle>
+                        <CardTitle>Artefatos Integrados para Triangulação</CardTitle>
+                        <CardDescription>
+                            Sinais espaciais e terrestres combinados para triangulação multidimensional.
+                        </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        {isLoading && !transmissionResult && <div className="flex justify-center items-center h-full"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
-                        {!isLoading && transmissionResult && (
-                             <div className="mb-4 p-4 rounded-lg bg-background/50 border border-accent">
-                                {transmissionResult.success ? (
-                                    <>
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <CheckCircle className="text-green-400 h-6 w-6" />
-                                            <h3 className="text-lg font-bold text-green-400">Transmissão Enviada</h3>
-                                        </div>
-                                        <p>{transmissionResult.message}</p>
-                                    </>
-                                ) : (
-                                     <>
-                                        <div className="flex items-center gap-3 mb-2">
-                                            <XCircle className="text-red-400 h-6 w-6" />
-                                            <h3 className="text-lg font-bold text-red-400">Falha na Transmissão</h3>
-                                        </div>
-                                        <p>{transmissionResult.reason}</p>
-                                    </>
-                                )}
-                            </div>
-                        )}
-                        <ScrollArea className="h-48 pr-4">
-                            <div className="text-xs font-mono text-muted-foreground space-y-1">
-                                {logs.length > 0 ? logs.map((log, i) => <p key={i}>{log}</p>) : <p>Aguardando transmissão...</p>}
-                            </div>
+                        <ScrollArea className="h-[calc(100vh-25rem)] pr-4">
+                           <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead>Artefato</TableHead>
+                                        <TableHead>Tipo</TableHead>
+                                        <TableHead>Localização</TableHead>
+                                        <TableHead>Obs. Quântica</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {nasaArtifacts.map((artifact) => (
+                                        <TableRow key={artifact.name}>
+                                            <TableCell className="font-medium flex items-center gap-2">
+                                                {artifact.type.includes("Sonda") && <Satellite className="text-cyan-400 h-4 w-4"/>}
+                                                {artifact.type.includes("Telescópio") && <Telescope className="text-purple-400 h-4 w-4"/>}
+                                                {artifact.type.includes("Rover") && <Bot className="text-orange-400 h-4 w-4"/>}
+                                                {artifact.name}
+                                            </TableCell>
+                                            <TableCell>{artifact.type}</TableCell>
+                                            <TableCell>{artifact.location}</TableCell>
+                                            <TableCell className="text-muted-foreground">{artifact.observation}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
                         </ScrollArea>
                     </CardContent>
                 </Card>
