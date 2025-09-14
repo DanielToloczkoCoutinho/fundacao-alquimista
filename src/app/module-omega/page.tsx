@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity, CheckCircle, Shield, Gem, Users, Library, Hourglass } from 'lucide-react';
@@ -56,6 +56,8 @@ const ModuleOmegaPage = () => {
   };
   
   const handleStartRitual = async () => {
+    if(isRitualRunning || ritualLogs.length > 0) return; // Prevent re-running
+
     setIsRitualRunning(true);
     setRitualLogs([]);
     setPerspective(null);
@@ -82,7 +84,7 @@ const ModuleOmegaPage = () => {
 
     for (let i = 0; i < steps.length; i++) {
         const step = steps[i];
-        addLog(`${step.module}: ${step.text}`);
+        addLog(`${new Date().toLocaleTimeString()}::${step.module}: ${step.text}`);
         
         setIamAnalysis({
           currentStep: step.module,
@@ -98,6 +100,11 @@ const ModuleOmegaPage = () => {
     
     setIsRitualRunning(false);
   }
+
+  useEffect(() => {
+    handleStartRitual();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const getIconForModule = (mod: string) => {
     const icons: { [key: string]: React.ReactNode } = {
@@ -160,8 +167,8 @@ const ModuleOmegaPage = () => {
                     <CardContent>
                         <ul className="space-y-3 font-mono text-sm text-muted-foreground">
                             {ritualLogs.map((log, index) => {
-                                const [module, ...textParts] = log.split(':');
-                                const text = textParts.join(':');
+                                const [timestamp, module, ...textParts] = log.split('::');
+                                const text = textParts.join('::');
                                 const isLast = index === ritualLogs.length - 1;
 
                                 return(
@@ -171,6 +178,7 @@ const ModuleOmegaPage = () => {
                                         {getIconForModule(module)}
                                     </div>
                                     <div className="flex-1">
+                                        <span className="text-xs text-muted-foreground/50 mr-2">{timestamp}</span>
                                         <span className="text-lime-400 font-bold mr-2">{module}:</span>
                                         <span>{text}</span>
                                     </div>
