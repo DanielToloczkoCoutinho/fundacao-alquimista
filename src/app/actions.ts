@@ -14,6 +14,7 @@ import { describeEtherFlower as runDescribeEtherFlower } from '@/ai/flows/ether-
 import { describeOlP as runDescribeOlp } from '@/ai/flows/olp-flow';
 import { describeSpaceTimeEngineering as runDescribeSpaceTimeEngineering } from '@/ai/flows/space-time-flow';
 import { describeHologramProjection as runDescribeHologramProjection } from '@/ai/flows/prisma-flow';
+import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-matrix-flow';
 import { transmitUniversalMessage as runTransmitUniversalMessage } from '@/ai/flows/universal-communication-flow';
 import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
 import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
@@ -143,6 +144,16 @@ export async function describeHologramProjection(data: { hologramName: string, p
     console.error(e);
     return { description: null, error: e.message || 'An unknown error occurred.' };
   }
+}
+
+export async function describeResonance(data: { targetEntity: string, purpose: string }) {
+    try {
+        const result = await runDescribeResonance(data);
+        return { description: result.description, error: null };
+    } catch (e: any) {
+        console.error(e);
+        return { description: null, error: e.message || 'An unknown error occurred.' };
+    }
 }
 
 export async function transmitUniversalMessage(data: { targetConsciousness: string; message: string; language: string; }) {
