@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
         userStore[userID] = { id: userID, username: `user-${userID}`, devices: [], currentChallenge: null };
     }
   
-    const rpID = process.env.RP_ID || 'localhost';
+    const rpID = process.env.RP_ID || 'fundacao.alquimista';
   
     const options: GenerateAuthenticationOptionsOpts = {
       rpID,
@@ -51,3 +51,4 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+

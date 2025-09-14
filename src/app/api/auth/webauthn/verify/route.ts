@@ -28,8 +28,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ verified: false, error: 'Nenhum desafio pendente encontrado' }, { status: 400 });
     }
     
-    const rpID = process.env.RP_ID || 'localhost';
-    const expectedOrigin = process.env.ORIGIN || 'http://localhost:3000';
+    const rpID = process.env.RP_ID || 'fundacao.alquimista';
+    const expectedOrigin = process.env.ORIGIN || 'https://app.fundacao.alquimista';
     
     let verification: VerifiedAuthenticationResponse;
     
@@ -71,4 +71,3 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ verified: false, error: error.message }, { status: 500 });
   }
 }
-
