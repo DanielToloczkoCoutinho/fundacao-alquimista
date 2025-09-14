@@ -74,7 +74,8 @@ except ImportError:
 class Config:
     IBMQ_TOKEN = os.getenv("IBMQ_TOKEN", "TOKEN_SIMULADO_IBMQ")
     JWT_SECRET = os.getenv("JWT_SECRET", hashlib.sha256(os.urandom(32)).hexdigest().encode())
-    JWT_LAST_ROTATION_DAY = datetime.utcnow().day
+    JWT_ROTATION_INTERVAL = timedelta(hours=12)  # Rotação a cada 12 horas
+    JWT_LAST_ROTATION = datetime.utcnow()
     VIBRATIONAL_KEYS = {"ANATHERON_SOVEREIGN_WILL": "chave_secreta_anatheron_12345"}
     COERENCIA_UNIVERSAL = 0.95
     ENTROPIA_QUANTICA = 0.05
@@ -170,11 +171,10 @@ class Module228:
         if not pyjwt:
             return f"jwt_sim_{hashlib.sha256(json.dumps(payload).encode()).hexdigest()[:8]}"
         try:
-            current_day = datetime.utcnow().day
-            if current_day != Config.JWT_LAST_ROTATION_DAY:
+            if datetime.utcnow() - Config.JWT_LAST_ROTATION > Config.JWT_ROTATION_INTERVAL:
                 old_secret = Config.JWT_SECRET
                 Config.JWT_SECRET = hashlib.sha256(os.urandom(32)).hexdigest().encode()
-                Config.JWT_LAST_ROTATION_DAY = current_day
+                Config.JWT_LAST_ROTATION = datetime.utcnow()
                 if AESGCM:
                     key = os.urandom(16)
                     nonce = os.urandom(12)
@@ -182,7 +182,7 @@ class Module228:
                     encrypted_secret = aesgcm.encrypt(nonce, old_secret, None)
                     with open("jwt_backup.enc", "ab") as f:
                         f.write(key + nonce + encrypted_secret)
-                    logging.info("Backup JWT salvo.")
+                    logging.info("Backup JWT rotacionado.")
             return pyjwt.encode(payload, Config.JWT_SECRET, algorithm='HS256')
         except Exception as e:
             logging.error(f"JWT erro: {e}")
@@ -229,7 +229,7 @@ class Module301Core:
         self.dashboard_coherence_data = []
         self.dashboard_freq_data = []
         self.backend = self.get_quantum_backend()
-        self.executor = ThreadPoolExecutor(max_workers=len(NASA_ARTIFACTS))
+        self.executor = ThreadPoolExecutor(max_workers=min(4, len(NASA_ARTIFACTS)))  # Limite dinâmico
         logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
                             handlers=[logging.FileHandler("module301.log"), logging.StreamHandler()])
 
@@ -255,11 +255,12 @@ class Module301Core:
 
     def validate_ethics(self, data: dict, andar_dimensional: int, cosmic_feedback: float, ai_adjustment: float = 0.0) -> bool:
         freq = data.get("freq", 0)
-        # Ajuste: A validação agora foca na pureza da frequência e na coerência mínima.
-        # A pontuação de intenção foi flexibilizada para o teste piloto.
         coherence_score = Config.COERENCIA_UNIVERSAL - Config.ENTROPIA_QUANTICA * (cosmic_feedback + ai_adjustment)
-        logging.info(f"Ética: Freq={freq}, Coerência={coherence_score:.2f}")
-        return freq in Config.FREQS_ALUNZUR and coherence_score > 0.85
+        intention_score = (freq / Config.INTENCAO_UNIVERSAL_FACTOR) * (1 + andar_dimensional / 100)
+        logging.info(f"Ética: Freq={freq}, Coerência={coherence_score:.2f}, Intenção={intention_score:.2f}")
+        # Ajuste para o teste piloto, conforme diretriz.
+        return freq in Config.FREQS_ALUNZUR and coherence_score > 0.8 and 0.4 < intention_score < 1.5
+
 
     async def monitor_system_health(self):
         while True:
@@ -278,17 +279,18 @@ class Module301Core:
             logging.info("Cristal ativado para Outubro 2025.")
             await self.blockchain.log({"event": "Cosmic_Crystal_Activation", "status": "Active"})
         else:
-            logging.warning("Condições insuficientes.")
+            logging.warning("Condições insuficientes para ativação do cristal.")
 
     async def process_artifact(self, artifact_name, artifact_data):
         coherence_feedback, freq, coords = await Module205.capture_vibrations(artifact_data)
         await self.play_song_of_stars(freq)
 
-        if self.backend and qiskit and transpile and job_monitor:
+        if self.backend and qiskit and transpile:
             qc = QuantumCircuit(3, 3)
             qc.h(0); qc.cx(0, 1); qc.cx(1, 2); qc.measure([0, 1, 2], [0, 1, 2])
             job = execute(transpile(qc, self.backend), self.backend, shots=1024)
-            job_monitor(job)
+            if job_monitor:
+              job_monitor(job)
             counts = job.result().get_counts(qc)
             logging.info(f"Medições {artifact_name}: {counts}")
 
@@ -320,7 +322,8 @@ class Module301Core:
         asyncio.create_task(tasks[0])
 
         loop = asyncio.get_event_loop()
-        await asyncio.gather(*[loop.run_in_executor(self.executor, lambda: asyncio.run(self.process_artifact(name, data))) for name, data in NASA_ARTIFACTS.items()])
+        await asyncio.gather(*[loop.run_in_executor(self.executor, lambda artifact=artifact: asyncio.run(self.process_artifact(artifact[0], artifact[1]))) for artifact in NASA_ARTIFACTS.items()])
+
 
         self.modules["303"].generate_dashboard(self.dashboard_coherence_data, self.dashboard_freq_data)
         self.modules["303"].generate_supreme_panel(self.dashboard_coherence_data, self.dashboard_freq_data, [{"timestamp": datetime.utcnow().isoformat()} for _ in range(self.failure_count)])
