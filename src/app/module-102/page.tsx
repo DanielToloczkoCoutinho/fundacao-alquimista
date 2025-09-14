@@ -35,7 +35,7 @@ const mockM94 = {
 };
 
 const Module102Page = () => {
-  const [blueprintInput, setBlueprintInput] = useState('Comunicação com a Voyager 1 em 1111.4 Hz');
+  const [blueprintInput, setBlueprintInput] = useState('Um campo de coerência para harmonizar o sistema solar.');
   const [morphicField, setMorphicField] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
@@ -192,3 +192,5 @@ const Module102Page = () => {
 };
 
 export default Module102Page;
+
+    
