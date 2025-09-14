@@ -23,8 +23,11 @@ const firebaseConfig = {
 
 export default function ConsolePage() {
   const [firebaseConnected, setFirebaseConnected] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+    
     const initializeAndListen = async () => {
       const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
       const db = getFirestore(app);
@@ -61,6 +64,10 @@ export default function ConsolePage() {
     // mas precisamos de um retorno aqui também para o useEffect.
     return () => {};
   }, [firebaseConnected]);
+  
+  if (!isClient) {
+    return <SuspenseFallback />;
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
