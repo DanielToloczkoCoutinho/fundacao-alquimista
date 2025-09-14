@@ -1,3 +1,4 @@
+'use server';
 
 export interface RitualStep {
   modulo: string;
@@ -17,7 +18,7 @@ export const ritualLog: RitualLogEntry[] = [
   {
     id: 'RIT-001',
     nome: 'Ritual de Interconexão Total',
-    data: '2025-09-14T01:52:00-03',
+    data: '2025-09-14T01:52:00-03:00',
     executor: 'Daniel Toloczko Coutinho Anatheron',
     etapas: [
       { modulo: 'M144', acao: 'Deliberação do Conselho' },
