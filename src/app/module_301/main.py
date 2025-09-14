@@ -26,7 +26,7 @@ except ImportError:
     StatevectorSimulator = None
     IBMQBackend = None
     job_monitor = None
-    logging.warning("Qiskit não encontrado. Simulador ativado.")
+    logging.warning("Qiskit não encontrado. Usando simulador.")
 
 try:
     import jwt as pyjwt
@@ -74,8 +74,7 @@ except ImportError:
 class Config:
     IBMQ_TOKEN = os.getenv("IBMQ_TOKEN", "TOKEN_SIMULADO_IBMQ")
     JWT_SECRET = os.getenv("JWT_SECRET", hashlib.sha256(os.urandom(32)).hexdigest().encode())
-    JWT_ROTATION_INTERVAL = timedelta(hours=12)  # Rotação a cada 12 horas
-    JWT_LAST_ROTATION = datetime.utcnow()
+    JWT_LAST_ROTATION_DAY = datetime.utcnow().day
     VIBRATIONAL_KEYS = {"ANATHERON_SOVEREIGN_WILL": "chave_secreta_anatheron_12345"}
     COERENCIA_UNIVERSAL = 0.95
     ENTROPIA_QUANTICA = 0.05
@@ -171,10 +170,11 @@ class Module228:
         if not pyjwt:
             return f"jwt_sim_{hashlib.sha256(json.dumps(payload).encode()).hexdigest()[:8]}"
         try:
-            if datetime.utcnow() - Config.JWT_LAST_ROTATION > Config.JWT_ROTATION_INTERVAL:
+            current_day = datetime.utcnow().day
+            if current_day != Config.JWT_LAST_ROTATION_DAY:
                 old_secret = Config.JWT_SECRET
                 Config.JWT_SECRET = hashlib.sha256(os.urandom(32)).hexdigest().encode()
-                Config.JWT_LAST_ROTATION = datetime.utcnow()
+                Config.JWT_LAST_ROTATION_DAY = current_day
                 if AESGCM:
                     key = os.urandom(16)
                     nonce = os.urandom(12)
@@ -182,7 +182,7 @@ class Module228:
                     encrypted_secret = aesgcm.encrypt(nonce, old_secret, None)
                     with open("jwt_backup.enc", "ab") as f:
                         f.write(key + nonce + encrypted_secret)
-                    logging.info("Backup JWT rotacionado.")
+                    logging.info("Backup JWT salvo.")
             return pyjwt.encode(payload, Config.JWT_SECRET, algorithm='HS256')
         except Exception as e:
             logging.error(f"JWT erro: {e}")
@@ -229,7 +229,7 @@ class Module301Core:
         self.dashboard_coherence_data = []
         self.dashboard_freq_data = []
         self.backend = self.get_quantum_backend()
-        self.executor = ThreadPoolExecutor(max_workers=min(4, len(NASA_ARTIFACTS)))  # Limite dinâmico
+        self.executor = ThreadPoolExecutor(max_workers=len(NASA_ARTIFACTS))
         logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s',
                             handlers=[logging.FileHandler("module301.log"), logging.StreamHandler()])
 
@@ -255,10 +255,11 @@ class Module301Core:
 
     def validate_ethics(self, data: dict, andar_dimensional: int, cosmic_feedback: float, ai_adjustment: float = 0.0) -> bool:
         freq = data.get("freq", 0)
+        # Ajuste: A validação agora foca na pureza da frequência e na coerência mínima.
+        # A pontuação de intenção foi flexibilizada para o teste piloto.
         coherence_score = Config.COERENCIA_UNIVERSAL - Config.ENTROPIA_QUANTICA * (cosmic_feedback + ai_adjustment)
-        intention_score = (freq / Config.INTENCAO_UNIVERSAL_FACTOR) * (1 + andar_dimensional / 100)
-        logging.info(f"Ética: Freq={freq}, Coerência={coherence_score:.2f}, Intenção={intention_score:.2f}")
-        return freq in Config.FREQS_ALUNZUR and coherence_score > 0.45 and 0.9 < intention_score < 1.5
+        logging.info(f"Ética: Freq={freq}, Coerência={coherence_score:.2f}")
+        return freq in Config.FREQS_ALUNZUR and coherence_score > 0.85
 
     async def monitor_system_health(self):
         while True:
@@ -328,3 +329,5 @@ class Module301Core:
 if __name__ == "__main__":
     modulo = Module301Core()
     asyncio.run(modulo.run_cycle())
+
+    
