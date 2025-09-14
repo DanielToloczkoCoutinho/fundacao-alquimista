@@ -6,7 +6,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, AlertTriangle, Goal, Settings, Zap, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Heart, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Cpu, Library, MessageCircle, Milestone } from 'lucide-react';
+import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, AlertTriangle, Goal, Settings, Zap, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Heart, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, MessageCircle } from 'lucide-react';
 import Chronicle from '@/components/chronicle';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { initializeApp, getApps, getApp } from "firebase/app";
@@ -121,7 +121,10 @@ export default function ConsolePage() {
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/connection"><GitBranch className="mr-2 h-4 w-4" />Conexão Ω-M0</Link>
               </Button>
-              <Button variant="outline" asChild className="justify-start">
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-303"><Sparkles className="mr-2 h-4 w-4" />Portal Trino (M303)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-85"><View className="mr-2 h-4 w-4" />Módulo 85 (VR)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
@@ -223,23 +226,8 @@ export default function ConsolePage() {
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-119"><Zap className="mr-2 h-4 w-4" />Módulo 119 (Templum Cosmica)</Link>
               </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-201"><Heart className="mr-2 h-4 w-4" />Módulo 201 (Morada Interdimensional)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-202"><Cpu className="mr-2 h-4 w-4" />Módulo 202 (Corredor de Alcor)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-204"><Library className="mr-2 h-4 w-4" />Módulo 204 (THOTH VIVO)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-228"><Milestone className="mr-2 h-4 w-4" />Módulo 228 (Ancoragem de Realidade)</Link>
-              </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-303"><Sparkles className="mr-2 h-4 w-4" />Portal Trino (M303)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/pagina-42"><Infinity className="mr-2 h-4 w-4" />Módulo Ω (Dossiê)</Link>
