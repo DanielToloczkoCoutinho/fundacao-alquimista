@@ -26,21 +26,18 @@ export default function NotFound() {
             </div>
             <CardTitle className="text-3xl text-destructive">404 - Portal Não Encontrado</CardTitle>
             <CardDescription className="text-lg text-muted-foreground">
-                O santuário que buscas não existe ou foi movido.
+                O santuário que buscas não existe ou foi movido para outra dimensão.
             </CardDescription>
         </CardHeader>
         <CardContent>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild>
-                    <Link href="/">Retornar ao Início</Link>
-                </Button>
-                <Button asChild variant="outline">
-                    <Link href="/console">Painel de Controle</Link>
+                    <Link href="/console">Retornar ao Console</Link>
                 </Button>
             </div>
              <div className="mt-8 pt-6 border-t border-border/20">
                 <p className="text-sm text-muted-foreground">
-                    Se acredita que isto é uma dissonância, entre em contato com o suporte.
+                    Se acredita que isto é uma dissonância, alinhe sua intenção e tente novamente.
                 </p>
             </div>
         </CardContent>

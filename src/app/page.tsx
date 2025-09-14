@@ -1,7 +1,6 @@
 'use client';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import SuspenseFallback from '@/components/ui/suspense-fallback';
 
 export default function Home() {
   const router = useRouter();
@@ -11,9 +10,6 @@ export default function Home() {
     router.replace('/console');
   }, [router]);
 
-  return (
-    <div className="flex h-screen w-screen items-center justify-center bg-background">
-        <SuspenseFallback />
-    </div>
-  );
+  // Retorna nulo para evitar renderizar qualquer coisa que cause erro de hidratação
+  return null;
 }
