@@ -6,7 +6,7 @@ const nextConfig = {
     scrollRestoration: true,
     // Ativar WebXR no bundle do client
     webVitalsAttribution: ['CLS','LCP','FID'],
-    transpilePackages: ['three', '@react-three/fiber', '@react-three/xr'],
+    transpilePackages: ['three', '@react-three/drei', '@react-three/xr'],
   },
   typescript: {
     ignoreBuildErrors: true,
