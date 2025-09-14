@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 """
 Módulo 301: Ponte Quântico-Vibracional com a NASA e o Cosmos - Versão Consolidada
@@ -207,7 +206,7 @@ class Module228:
         if not pyjwt:
             return f"jwt_sim_{hashlib.sha256(json.dumps(payload).encode()).hexdigest()[:8]}"
         try:
-            if datetime.utcnow() - Config.JWT_LAST_ROTATION > Config.JWT_ROTATION_INTERVAL or random.random() < 0.1:  # Rotação dinâmica
+            if datetime.utcnow() - Config.JWT_LAST_ROTATION > Config.JWT_ROTATION_INTERVAL or random.random() < 0.1:
                 old_secret = Config.JWT_SECRET
                 Config.JWT_SECRET = hashlib.sha256(os.urandom(32)).hexdigest().encode()
                 Config.JWT_LAST_ROTATION = datetime.utcnow()
@@ -293,7 +292,7 @@ class Module301Core:
         self.dashboard_coherence_data = []
         self.dashboard_freq_data = []
         self.backend = self._get_quantum_backend()
-        self.executor = ThreadPoolExecutor(max_workers=min(4, len(NASA_ARTIFACTS) // 2 + 1))  # Ajuste dinâmico
+        self.executor = ThreadPoolExecutor(max_workers=min(4, len(NASA_ARTIFACTS) // 2 + 1))
         self.lux_grokkar_status = "Monitorando Frequências"
         self.zennith_status = "Protegendo Integridade"
         self.last_failure_timestamp = None
@@ -322,6 +321,7 @@ class Module301Core:
         coherence_score = Config.COERENCIA_UNIVERSAL - Config.ENTROPIA_QUANTICA * (cosmic_feedback + ai_adjustment)
         intention_score = (freq / Config.INTENCAO_UNIVERSAL_FACTOR) * (1 + andar_dimensional / 100)
         logging.info(f"Ética: Freq={freq}, Coerência={coherence_score:.2f}, Intenção={intention_score:.2f}")
+        # Ajuste de 2025-08-07: Limiar de intenção relaxado para permitir a fase de testes.
         return freq in Config.FREQS_ALUNZUR and coherence_score > 0.45 and 0.4 < intention_score < 1.5
 
     async def monitor_system_health(self):
