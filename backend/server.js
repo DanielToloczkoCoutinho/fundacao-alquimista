@@ -5,7 +5,8 @@ require('../src/lib/telemetry');
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const WebSocket = require('ws');
-const { chatBot, startChatBot } = require('../src/lib/chatops');
+const { chatOps, startChatBot } = require('../src/lib/chatops');
+const fetch = require('node-fetch');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -36,9 +37,8 @@ app.get('/health', (req, res) => {
 // Endpoint de Métricas
 app.get('/metrics', async (req, res) => {
   try {
-    const fetch = (await import('node-fetch')).default;
-    const metrics = await fetch('http://localhost:9464/metrics');
-    const text = await metrics.text();
+    const metricsResponse = await fetch('http://localhost:9464/metrics');
+    const text = await metricsResponse.text();
     res.set('Content-Type', 'text/plain');
     res.send(text);
   } catch (error) {

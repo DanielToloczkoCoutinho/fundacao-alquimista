@@ -45,10 +45,12 @@ chatBot.command('/m29', async ({ command, ack, say }) => {
   }
 });
 
-// Inicie no backend:
-// import { startChatBot } from '../src/lib/chatops'; startChatBot();
 export const startChatBot = async () => {
-  const port = process.env.SLACK_BOT_PORT ? parseInt(process.env.SLACK_BOT_PORT) : 3001;
-  await chatBot.start(port);
-  console.log(`🤖 ChatOps M29 iniciado na porta ${port}`);
+  const port = process.env.SLACK_BOT_PORT ? parseInt(process.env.SLACK_BOT_PORT, 10) : 3001;
+  if (process.env.SLACK_BOT_TOKEN) {
+      await chatBot.start(port);
+      console.log(`🤖 ChatOps M29 iniciado na porta ${port}`);
+  } else {
+      console.warn('⚠️  Variáveis do Slack não configuradas. O ChatOps não será iniciado.');
+  }
 };

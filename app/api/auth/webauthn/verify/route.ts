@@ -5,6 +5,7 @@ import { verifyAuthenticationResponse } from '@simplewebauthn/server';
 import type { AuthenticationResponseJSON, VerifiedAuthenticationResponse } from '@simplewebauthn/types';
 import { kv } from '@vercel/kv';
 import jwt from 'jsonwebtoken';
+import { randomBytes } from 'crypto';
 
 // Em um app real, o usuário e seus dispositivos seriam recuperados de um banco de dados.
 const userStore: any = {
@@ -15,10 +16,28 @@ const userStore: any = {
     }
 };
 
+// Classe auxiliar para decodificar authenticatorData se necessário
+class AuthenticatorData {
+    private rpIdHash: Buffer;
+    private flags: number;
+    public counter: number;
+    public transports?: string[];
+
+    constructor(buffer: Buffer) {
+        this.rpIdHash = buffer.slice(0, 32);
+        this.flags = buffer.readUInt8(32);
+        this.counter = buffer.readUInt32BE(33);
+        // ... Lógica adicional para decodificar transports e outros dados se necessário
+    }
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const body: { credential: AuthenticationResponseJSON, userId: string } = await request.json();
-    const { credential, userId } = body;
+    const { credential, userId, expectedChallenge: clientChallenge } = await request.json();
+
+    if (!credential || !userId) {
+      return NextResponse.json({ error: 'Dados de autenticação incompletos' }, { status: 400 });
+    }
     
     const user = userStore[userId];
     if (!user) {
@@ -31,19 +50,17 @@ export async function POST(request: NextRequest) {
     }
     
     const rpID = process.env.RP_ID || 'localhost';
-    const expectedOrigin = process.env.ORIGIN || (process.env.NODE_ENV === 'production' ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+    const origin = process.env.NEXTAUTH_URL || `https://${rpID}`;
     
-    // Em uma implementação real, você recuperaria o dispositivo do seu banco de dados
     const device = user.devices.find((d: any) => d.credentialID === credential.id);
     if (!device) {
        console.warn(`Dispositivo com ID ${credential.id} não encontrado para o usuário ${userId}. Em uma aplicação real, isso deveria ser um erro.`);
-       // Para fins de demonstração, continuaremos sem o authenticator exato.
     }
 
     const verification: VerifiedAuthenticationResponse = await verifyAuthenticationResponse({
         response: credential,
         expectedChallenge,
-        expectedOrigin,
+        expectedOrigin: origin,
         expectedRPID: rpID,
         authenticator: device || { // Mock para demonstração. Use o dispositivo real em produção.
             credentialID: Buffer.from(credential.id, 'base64'),
@@ -59,47 +76,52 @@ export async function POST(request: NextRequest) {
     if (verified) {
       await kv.del(`webauthn:challenge:${userId}`);
       
+      const sessionId = randomBytes(16).toString('hex');
+      const tokenPayload = {
+        sub: userId,
+        sid: sessionId,
+        auth_time: Math.floor(Date.now() / 1000),
+        amr: ['webauthn'],
+        'x-fond-ctx': {
+          security_level: 'quantum',
+          auth_method: 'passkey'
+        }
+      };
+
       const token = jwt.sign(
-        { 
-          sub: userId,
-          auth_time: Math.floor(Date.now() / 1000)
-        },
+        tokenPayload,
         process.env.JWT_SECRET as string,
         { 
-          expiresIn: '1h',
-          issuer: 'fundacao-omega',
-          audience: 'fundacao-omega-web'
+          expiresIn: '8h',
+          issuer: 'fundacao-omega-auth',
+          audience: ['fundacao-omega-web', 'fundacao-omega-api'],
+          header: {
+            alg: 'HS256',
+            typ: 'JWT',
+            kid: 'omega-auth-key-1'
+          }
         }
       );
       
       return NextResponse.json({ 
         verified: true, 
-        token,
+        token: {
+          access_token: token,
+          token_type: 'Bearer',
+          expires_in: 28800,
+          refresh_token: randomBytes(32).toString('hex')
+        },
         user: {
           id: userId,
-          name: await kv.get<string>(`user:${userId}:name`) || 'Guardião Anônimo'
+          name: await kv.get<string>(`user:${userId}:name`) || 'Guardião da Fundação',
+          session_id: sessionId
         }
       });
     } else {
-      return NextResponse.json({ error: "Falha na verificação de autenticação" }, { status: 400 });
+      return NextResponse.json({ error: "Falha na verificação de autenticação" }, { status: 401 });
     }
   } catch (error: any) {
-    console.error('Erro na verificação WebAuthn:', error);
-    return NextResponse.json({ error: 'Falha interna do servidor', details: error.message }, { status: 500 });
+    console.error('Erro crítico na verificação WebAuthn:', error);
+    return NextResponse.json({ error: 'Falha interna do servidor de autenticação', details: error.message }, { status: 500 });
   }
-}
-
-// Classe auxiliar para decodificar authenticatorData se necessário
-class AuthenticatorData {
-    private rpIdHash: Buffer;
-    private flags: number;
-    public counter: number;
-    public transports?: string[];
-
-    constructor(buffer: Buffer) {
-        this.rpIdHash = buffer.slice(0, 32);
-        this.flags = buffer.readUInt8(32);
-        this.counter = buffer.readUInt32BE(33);
-        // ... Lógica adicional para decodificar transports e outros dados se necessário
-    }
 }
