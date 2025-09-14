@@ -69,7 +69,7 @@ const Module112Page = () => {
         gradient.addColorStop(1, `rgba(255, 0, 0, ${energyLevel / 100 * 0.3})`);
         ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.arc(centerX, centerY, energyRadius, 0, 2 * Math.PI);
+        ctx.arc(centerX, centerY, energyRadius, 0, Math.PI * 2);
         ctx.fill();
 
         for (let i = 0; i < 30; i++) {

@@ -111,10 +111,10 @@ export default function ConsolePage() {
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
               </Button>
-              <Button variant="outline" asChild className="justify-start">
+               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-302"><Heart className="mr-2 h-4 w-4" />Módulo 302 (Frequência do Amor)</Link>
               </Button>
-              <Button variant="outline" asChild className="justify-start">
+               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-404"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 404 (Resolução de Paradoxo)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
