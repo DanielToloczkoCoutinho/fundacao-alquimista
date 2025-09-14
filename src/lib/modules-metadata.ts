@@ -85,6 +85,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M46', emoji: '🌅', title: 'AURORA_CORE', route: '/module-46', category: 'mid' },
   { code: 'M47', emoji: '🗂️', title: 'Thesaurus Cósmico', route: '/module-47', category: 'mid' },
   { code: 'M80', emoji: '📜', title: 'O Manuscrito Vivo', route: '/module-80', category: 'mid' },
+  { code: 'M82', emoji: '✒️', title: 'O Verbo Semente', route: '/module-82', category: 'mid' },
   { code: 'M85', emoji: '🌌', title: 'Imersão VR', route: '/module-85', category: 'mid' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR', route: '/module-86', category: 'mid' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
