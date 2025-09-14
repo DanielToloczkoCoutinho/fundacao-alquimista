@@ -6,7 +6,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Star, Globe, Footprints, Dna, Bot, Waves, BookOpen, Cpu, FlaskConical, Link, Archive } from 'lucide-react';
-import type { Civilization, CivilizationCategory } from '@/lib/civilizations-data';
+import { civilizationsData, type Civilization, type CivilizationCategory } from '@/lib/civilizations-data';
 
 const categoryIcons: { [key in CivilizationCategory]: React.ReactNode } = {
   "Estelares e Galácticas": <Star className="h-6 w-6 text-yellow-400" />,
