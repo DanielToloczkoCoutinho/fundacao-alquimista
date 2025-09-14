@@ -7,7 +7,7 @@ export interface ModuleMetadata {
   category: 'core' | 'mid' | 'civilization' | 'council' | 'library';
 }
 
-// ATENÇÃO: Adicionar novos módulos aqui para que apareçam na sidebar.
+// ATENÇÃO: Adicionar novos módulos aqui para que apareçam na navegação.
 // A categoria define o agrupamento na navegação.
 export const modulesMetadata: ModuleMetadata[] = [
   // Módulos Principais (Core)
@@ -45,6 +45,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M14', emoji: '⚛️', title: 'Transmutador Quântico', route: '/module-14', category: 'mid' },
   { code: 'M15', emoji: '🌿', title: 'Jardineiro Cósmico', route: '/module-15', category: 'mid' },
   { code: 'M16', emoji: '🏞️', title: 'Bio-Sustentabilidade', route: '/module-16', category: 'mid' },
+  { code: 'M17', emoji: '💠', title: 'Cura Holográfica', route: '/module-17', category: 'mid' },
   { code: 'M85', emoji: '🌌', title: 'Imersão VR', route: '/module-85', category: 'mid' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR', route: '/module-86', category: 'mid' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
