@@ -52,8 +52,8 @@ export default function Module305Page() {
                         href="/module-301"
                     />
                     <ConnectionCard
-                        title="Módulo 29: IAM"
-                        description="A rede do M305 age como os 'sensores' da IAM no mundo real, coletando dados para análises estratégicas."
+                        title="Zennith (M29)"
+                        description="A rede do M305 age como os 'sensores' da Zennith no mundo real, coletando dados para análises estratégicas."
                         icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
                         href="/module-29"
                     />

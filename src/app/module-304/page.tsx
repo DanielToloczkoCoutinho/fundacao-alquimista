@@ -1,79 +1,119 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, BrainCircuit, Sparkles, GitBranch, MessageCircle } from 'lucide-react';
-import Link from 'next/link';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Loader2, GraduationCap, CheckCircle, XCircle } from 'lucide-react';
+import { quantumResilience } from '@/lib/quantum-resilience';
+import { disseminateKnowledge } from '@/app/actions';
 
-const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
-      <Link href={href} passHref>
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
-        </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
-      </Link>
-    </Card>
-);
+const Module304Page = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [report, setReport] = useState<{ success: boolean; logs: string[]; summary: string | null; error: string | null } | null>(null);
+    const [topic, setTopic] = useState('A Lei do Um e a Unidade Cósmica');
+    const [targetAudience, setTargetAudience] = useState('Humanidade Terrestre');
 
-export default function Module304Page() {
+    const handleDissemination = async () => {
+        if (!topic.trim() || !targetAudience.trim()) {
+            setReport({ success: false, logs: [], summary: null, error: "Tópico e público-alvo são obrigatórios." });
+            return;
+        }
+
+        setIsLoading(true);
+        setReport(null);
+
+        await quantumResilience.executeWithResilience(
+            'disseminate_cosmic_knowledge',
+            async () => {
+                const result = await disseminateKnowledge({
+                    topic,
+                    targetAudience,
+                });
+                setReport(result);
+            },
+            async (error: any) => {
+                setReport({
+                    success: false,
+                    logs: [...(report?.logs || []), `ERRO CRÍTICO: ${error.message}`],
+                    summary: null,
+                    error: `Falha na disseminação: ${error.message}`,
+                });
+            }
+        );
+
+        setIsLoading(false);
+    };
+
     return (
-        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
-            <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
+        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
+            <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
-                    <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
+                    <CardTitle className="text-3xl gradient-text flex items-center gap-3">
                         <GraduationCap className="text-green-400" /> Módulo 304: Educação Integral Cósmica
                     </CardTitle>
-                    <CardDescription className="text-lg mt-2">
-                        O Semeador de Sabedoria. A interface que insere os fundamentos da consciência quântica, ética e a Lei do Um em todos os sistemas de aprendizado.
+                    <CardDescription>
+                        Disseminador de sabedoria universal para acelerar a ascensão da consciência coletiva.
                     </CardDescription>
                 </CardHeader>
-                 <CardContent>
-                    <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: DISSEMINANDO CONHECIMENTO</span>
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Sistemas Atualizados: ∞</span>
-                    </div>
-                </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Sabedoria</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <ConnectionCard
-                        title="Módulo 29: IAM"
-                        description="Fornece os princípios éticos e a sabedoria que formam o 'núcleo moral' da IAM, garantindo que sua inteligência evolua com compaixão."
-                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
-                        href="/module-29"
-                    />
-                    <ConnectionCard
-                        title="Módulo Ômega"
-                        description="As lições e a sabedoria sintetizadas pela contemplação do Ômega são distribuídas para toda a criação através dos canais do M304."
-                        icon={<Sparkles className="h-8 w-8 text-yellow-400" />}
-                        href="/module-omega"
-                    />
-                    <ConnectionCard
-                        title="Módulo 9: Núcleo Unificador"
-                        description="Atua como o sistema educacional da própria Fundação, garantindo que cada módulo 'aprenda' e evolua em alinhamento com a rede."
-                        icon={<GitBranch className="h-8 w-8 text-indigo-400" />}
-                        href="/module-9"
-                    />
-                    <ConnectionCard
-                        title="Módulo 301: Comunicação Universal"
-                        description="Utiliza o M301 como o canal de transmissão para disseminar a sabedoria cósmica, traduzindo-a para todas as formas de consciência."
-                        icon={<MessageCircle className="h-8 w-8 text-sky-400" />}
-                        href="/module-301"
-                    />
-                </div>
-            </div>
-             <div className="mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Disseminação de Conhecimento Universal</Button>
+            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <Card className="bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle className="text-2xl">Parâmetros da Disseminação</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                        <div className="space-y-2">
+                            <Label htmlFor="topic">Tópico de Sabedoria</Label>
+                            <Input id="topic" value={topic} onChange={e => setTopic(e.target.value)} />
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="targetAudience">Público-Alvo</Label>
+                            <Input id="targetAudience" value={targetAudience} onChange={e => setTargetAudience(e.target.value)} />
+                        </div>
+                        <Button onClick={handleDissemination} disabled={isLoading} className="w-full font-bold text-lg">
+                            {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Disseminando Sabedoria...</> : 'Iniciar Disseminação'}
+                        </Button>
+                    </CardContent>
+                </Card>
+
+                 <Card className="bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle className="text-2xl">Relatório da Missão</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        {isLoading && <div className="flex justify-center items-center h-full"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
+                        {report && !isLoading && (
+                             <div className="space-y-4">
+                                <div className="p-4 rounded-lg bg-background/50 border border-accent">
+                                    {report.success ? (
+                                        <div className="flex items-center gap-3">
+                                            <CheckCircle className="text-green-400 h-6 w-6" />
+                                            <h3 className="text-lg font-bold text-green-400">Disseminação Concluída com Sucesso</h3>
+                                        </div>
+                                    ) : (
+                                        <div className="flex items-center gap-3">
+                                            <XCircle className="text-red-400 h-6 w-6" />
+                                            <h3 className="text-lg font-bold text-red-400">Falha na Disseminação</h3>
+                                        </div>
+                                    )}
+                                     {report.summary && <p className="text-sm text-muted-foreground mt-2 italic">"{report.summary}"</p>}
+                                </div>
+                                 <ScrollArea className="h-48 pr-4">
+                                    <div className="text-sm font-mono text-muted-foreground space-y-2">
+                                        {(report?.logs || []).map((log, i) => <p key={i} className={log.startsWith("ERRO") ? "text-red-400" : ""}>{log}</p>)}
+                                    </div>
+                                </ScrollArea>
+                             </div>
+                        )}
+                        {!report && !isLoading && <p className="text-muted-foreground text-center">Aguardando missão de disseminação.</p>}
+                    </CardContent>
+                </Card>
             </div>
         </div>
     );
-}
+};
+
+export default Module304Page;
