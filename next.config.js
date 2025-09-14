@@ -46,7 +46,18 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; frame-ancestors 'self' https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; connect-src 'self' https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://picsum.photos; object-src 'none'; base-uri 'self';"
+            value: [
+              "default-src 'self'",
+              "frame-ancestors 'self' https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
+              "frame-src https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
+              "connect-src 'self' https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "font-src 'self' https://fonts.gstatic.com",
+              "img-src 'self' data: https://picsum.photos",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com",
+              "object-src 'none'",
+              "base-uri 'self'"
+            ].join('; ')
           }
         ],
       },
@@ -59,6 +70,13 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: '/civilizations/:path*',
+        headers: [
+          { key: 'Cross-Origin-Opener-Policy',    value: 'same-origin' },
+          { key: 'Cross-Origin-Embedder-Policy',  value: 'require-corp' },
+        ],
+      },
     ];
   },
   async rewrites() {
@@ -66,7 +84,15 @@ const nextConfig = {
       {
         source: '/firebase-preview/:path*',
         destination: 'https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/:path*'
-      }
+      },
+      {
+        source: '/civilizations/:path*',
+        destination: 'https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/civilizations/:path*',
+      },
+      {
+        source: '/civilizations',
+        destination: 'https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/civilizations',
+      },
     ];
   },
   images: {
