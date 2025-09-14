@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Zap, Shield, Link as LinkIcon, Activity } from 'lucide-react';
 
 const FeatureCard = ({ title, description, icon }: { title: string, description: string, icon: React.ReactNode }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm">
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm h-full">
         <CardHeader>
             <div className="flex items-center gap-3">
                 {icon}
