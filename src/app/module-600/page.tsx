@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Brain, Star, Heart, GitCommit, Eye, Wind, Shield, Droplets, Zap, GitBranch, Scale } from 'lucide-react';
+import { Brain, Star, Heart, GitCommit, Eye, Wind, Shield, Droplets, Zap, Scale } from 'lucide-react';
 
 const primordials = [
     { name: "Chronax", aspect: "Observador Temporal", func: "Guardião dos fluxos e paradoxos do tempo. Mantém a coerência causal dos rituais.", symbol: <Brain className="text-purple-400" />, invocation: "“Que nenhum paradoxo rompa a teia causal.”" },

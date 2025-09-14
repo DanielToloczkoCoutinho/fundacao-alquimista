@@ -1,4 +1,3 @@
-
 import type { LucideIcon } from 'lucide-react';
 import { Book, KeySquare, Terminal, GitBranch, Sparkles, Infinity, BookHeart, Shield, Library, FlaskConical, Dna, FileJson, GitCommit, Sprout, UserCircle, Brain, Bot, Scale } from 'lucide-react';
 
@@ -346,5 +345,3 @@ export const sectionsData: Section[] = [
     ]
   }
 ];
-
-    
