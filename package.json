@@ -57,6 +57,7 @@
     "@simplewebauthn/server": "^10.0.0",
     "@slack/bolt": "^3.19.0",
     "@tensorflow/tfjs": "^4.20.0",
+    "@vercel/kv": "^2.0.0",
     "apollo-server": "^3.13.0",
     "apollo-server-cloud-functions": "^3.13.0",
     "chart.js": "^4.4.3",

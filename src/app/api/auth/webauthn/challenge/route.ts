@@ -1,13 +1,16 @@
+'use server';
+
 import { NextResponse, NextRequest } from 'next/server';
 import { generateAuthenticationOptions, GenerateAuthenticationOptionsOpts } from '@simplewebauthn/server';
+import { kv } from '@vercel/kv';
 
-// Simulação em memória. Em um aplicativo real, use um banco de dados (ex: Redis, Firestore).
+// Em um app real, o usuário seria recuperado de uma sessão ou banco de dados.
+// Usamos um objeto simples em memória para este exemplo.
 const userStore: any = {
     'anatheron-sovereign': {
         id: 'anatheron-sovereign',
         username: 'ANATHERON',
-        devices: [],
-        currentChallenge: null,
+        devices: [], // Dispositivos registrados seriam armazenados aqui.
     }
 };
 
@@ -20,12 +23,11 @@ export async function POST(request: NextRequest) {
 
     const user = userStore[userID];
     if (!user) {
-        // Para simplificar, criaremos um usuário se ele não existir.
-        // Em um app real, o registro seria um fluxo separado.
-        userStore[userID] = { id: userID, username: `user-${userID}`, devices: [], currentChallenge: null };
+        // Para simplificar, não criaremos um usuário se ele não existir.
+        return NextResponse.json({ error: 'Usuário não encontrado' }, { status: 404 });
     }
   
-    const rpID = process.env.RP_ID || 'fundacao.alquimista';
+    const rpID = process.env.RP_ID || 'localhost';
   
     const options: GenerateAuthenticationOptionsOpts = {
       rpID,
@@ -40,8 +42,8 @@ export async function POST(request: NextRequest) {
 
     const opts = await generateAuthenticationOptions(options);
 
-    // Armazena o challenge para verificação futura.
-    userStore[userID].currentChallenge = opts.challenge;
+    // Armazena o challenge para verificação futura (usando Vercel KV ou um cache similar)
+    await kv.set(`challenge_${userID}`, opts.challenge, { ex: 300 }); // Expira em 5 minutos
 
     return NextResponse.json(opts);
 
