@@ -60,7 +60,7 @@ jobs:
           curl --fail http://localhost:3000/firebase-preview/ || exit 1
           
           # Testar API de saúde
-          curl --fail http://localhost:4000/health || exit 1
+          curl --fail http://localhost:3000/api/health || exit 1
           
           # Teste de resiliência avançada
           timeout 30s bash -c '

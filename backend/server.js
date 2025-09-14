@@ -31,12 +31,7 @@ app.get('/health', (req, res) => {
   const healthStatus = {
     status: 'Ω',
     timestamp: new Date().toISOString(),
-    coherence: '92.7%', // valor legado para compatibilidade inicial
-    subsystems: {
-      telemetry: 'active',
-      database: 'connected',
-      quantum_entanglement: 'stable'
-    }
+    version: '1.0.0'
   };
   
   res.status(200).json(healthStatus);
