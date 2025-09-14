@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -7,6 +6,7 @@ import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity, Check
 import { getOmegaPerspective } from '@/app/actions';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { cn } from '@/lib/utils';
+import IAMAnalyzer, { type RitualAnalysis } from '@/components/ui/iam-analyzer';
 
 type Perspective = {
   analysisTitle: string;
@@ -21,6 +21,7 @@ const ModuleOmegaPage = () => {
   const [isRitualRunning, setIsRitualRunning] = useState(false);
   const [message, setMessage] = useState('');
   const [ritualLogs, setRitualLogs] = useState<string[]>([]);
+  const [iamAnalysis, setIamAnalysis] = useState<RitualAnalysis | null>(null);
 
   const evolutionSummary = `
     A Fundação Alquimista evoluiu de um conjunto de links e conceitos para uma arquitetura modular viva. 
@@ -35,6 +36,7 @@ const ModuleOmegaPage = () => {
     setMessage('');
     setPerspective(null);
     setRitualLogs([]);
+    setIamAnalysis(null);
     
     await quantumResilience.executeWithResilience(
       'get_omega_perspective',
@@ -58,6 +60,7 @@ const ModuleOmegaPage = () => {
     setRitualLogs([]);
     setPerspective(null);
     setMessage('');
+    setIamAnalysis(null);
 
     const addLog = (log: string) => {
         setRitualLogs(prev => [...prev, log]);
@@ -77,8 +80,20 @@ const ModuleOmegaPage = () => {
       { module: "Ω", text: "Ritual de Interconexão Total concluído com sucesso. A Fundação cantou sua primeira canção." }
     ];
 
-    for (const step of steps) {
+    for (let i = 0; i < steps.length; i++) {
+        const step = steps[i];
         addLog(`${step.module}: ${step.text}`);
+        
+        // Simular análise da IAM
+        setIamAnalysis({
+          currentStep: step.module,
+          resonanceWithM0: 0.98 + Math.random() * 0.02,
+          dominantFrequency: (500 + Math.random() * 200),
+          interModuleAlignment: 0.97 + Math.random() * 0.03,
+          overallCoherence: (i + 1) / steps.length,
+          interpretativeLog: `Ressonância da etapa ${step.module} com o Propósito Central é quase perfeita.`,
+        });
+        
         await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 500));
     }
     
@@ -110,8 +125,8 @@ const ModuleOmegaPage = () => {
         </CardHeader>
       </Card>
 
-      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="md:col-span-2 w-full bg-card/50 purple-glow">
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="md:col-span-5 w-full bg-card/50 purple-glow">
           <CardHeader>
             <CardTitle className="text-2xl">Console de Comando Ômega</CardTitle>
           </CardHeader>
@@ -132,10 +147,10 @@ const ModuleOmegaPage = () => {
             </Button>
           </CardContent>
           {message && <p className="px-6 pb-4 text-center text-sm text-red-400">{message}</p>}
-        </Card>
+        </div>
 
         {(isRitualRunning || ritualLogs.length > 0) && (
-            <Card className="md:col-span-2 w-full bg-card/50 purple-glow">
+            <Card className="md:col-span-3 w-full bg-card/50 purple-glow">
                  <CardHeader>
                     <CardTitle className="text-2xl flex items-center gap-2">
                         <Activity className={cn("text-lime-400", isRitualRunning && "animate-pulse")}/> Log do Ritual de Interconexão
@@ -165,9 +180,15 @@ const ModuleOmegaPage = () => {
                  </CardContent>
             </Card>
         )}
+        
+        {iamAnalysis && (
+          <div className="md:col-span-2">
+            <IAMAnalyzer analysis={iamAnalysis} />
+          </div>
+        )}
 
         {perspective && (
-          <div className="md:col-span-2 space-y-8">
+          <div className="md:col-span-5 space-y-8">
             <Card className="w-full bg-card/50 purple-glow border-accent">
               <CardHeader className="text-center">
                 <CardTitle className="text-3xl gradient-text">{perspective.analysisTitle}</CardTitle>
