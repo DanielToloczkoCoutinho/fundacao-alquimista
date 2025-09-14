@@ -21,7 +21,7 @@
     "eternal-peace": "tsx scripts/eternal-peace.ts"
   },
   "dependencies": {
-    "@apollo/gateway": "^2.7.2",
+    "@apollo/gateway": "^2.4.2",
     "@apollo/server": "^4.9.5",
     "@apollo/subgraph": "^2.4.2",
     "@genkit-ai/googleai": "^1.14.1",
@@ -58,7 +58,7 @@
     "@react-three/drei": "^9.109.2",
     "@react-three/fiber": "^8.16.8",
     "@simplewebauthn/browser": "^10.0.0",
-    "@simplewebauthn/server": "^10.0.0",
+    "@simplewebauthn/server": "^8.3.2",
     "@slack/bolt": "^3.19.0",
     "@tensorflow/tfjs": "^4.20.0",
     "@vercel/kv": "^2.0.0",

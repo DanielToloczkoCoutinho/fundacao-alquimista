@@ -1,8 +1,8 @@
 'use server';
 
 import { NextResponse, NextRequest } from 'next/server';
-import { verifyAuthenticationResponse } from '@simplewebauthn/server';
-import type { AuthenticationResponseJSON, VerifiedAuthenticationResponse } from '@simplewebauthn/types';
+import { verifyAuthenticationResponse, VerifiedAuthenticationResponse } from '@simplewebauthn/server';
+import type { AuthenticationResponseJSON } from '@simplewebauthn/types';
 import { kv } from '@vercel/kv';
 import jwt from 'jsonwebtoken';
 import { randomBytes } from 'crypto';

@@ -5,7 +5,7 @@ require('../src/lib/telemetry');
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const WebSocket = require('ws');
-const { chatOps, startChatBot } = require('../src/lib/chatops');
+const { startChatBot } = require('../src/lib/chatops');
 const fetch = require('node-fetch');
 
 const app = express();
