@@ -25,6 +25,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M73', emoji: '🛡️', title: 'SAVCE', route: '/module-73', category: 'council' },
   { code: 'M73.1', emoji: '🧐', title: 'Revisão por Pares', route: '/module-73-1', category: 'council' },
   { code: 'M74', emoji: '⌛', title: 'CRONOS_FLUXUS', route: '/module-74', category: 'council' },
+  { code: 'M77', emoji: '🛡️', title: 'LUMEN-CUSTOS', route: '/module-77', category: 'council' },
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council' },
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'council' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'council' },
@@ -120,4 +121,3 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid' }
 ];
-
