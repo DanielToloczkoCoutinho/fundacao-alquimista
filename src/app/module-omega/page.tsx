@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity } from 'lucide-react';
 import { getOmegaPerspective } from '@/app/actions';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import { cn } from '@/lib/utils';
 
 type Perspective = {
   analysisTitle: string;
@@ -32,6 +33,7 @@ const ModuleOmegaPage = () => {
     setIsLoading(true);
     setMessage('');
     setPerspective(null);
+    setRitualLogs([]);
 
     await quantumResilience.executeWithResilience(
       'get_omega_perspective',
@@ -53,6 +55,9 @@ const ModuleOmegaPage = () => {
   const handleStartRitual = async () => {
     setIsRitualRunning(true);
     setRitualLogs(['Iniciando Ritual de Interconexão Total...']);
+    setPerspective(null);
+    setMessage('');
+
     // Simulação do ritual
     const steps = [
       "M144: Validando decreto no Códex Juris Cosmicus...",
