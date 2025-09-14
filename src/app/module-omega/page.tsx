@@ -13,6 +13,7 @@ type Perspective = {
   synthesis: string;
   iamEvaluation: string;
   nextStepRecommendation: string;
+  error?: string | null;
 };
 
 const ModuleOmegaPage = () => {
@@ -106,8 +107,7 @@ const ModuleOmegaPage = () => {
   }, [isRitualRunning, ritualLogs.length]);
 
   useEffect(() => {
-    handleStartRitual();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // Não executa mais o ritual automaticamente ao carregar a página
   }, []);
 
   const getIconForModule = (mod: string) => {
@@ -229,3 +229,5 @@ const ModuleOmegaPage = () => {
 };
 
 export default ModuleOmegaPage;
+
+    
