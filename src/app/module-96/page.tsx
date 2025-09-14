@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -5,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, AlertTriangle, GitCommit } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, AlertTriangle, GitCommit, HeartPulse, Presentation, Dna, Users, SlidersHorizontal } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
@@ -101,7 +102,7 @@ const Module96Page = () => {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <AlertTriangle className="text-yellow-400" /> Módulo 96: Regulação de Eventos Cósmicos
+                        <SlidersHorizontal className="text-orange-400" /> Módulo 96: Regulação de Eventos Cósmicos
                     </CardTitle>
                     <CardDescription>
                         Guardião da Estabilidade Cósmica para monitorar, prever e intervir em anomalias do multiverso.
@@ -186,3 +187,5 @@ const Module96Page = () => {
 };
 
 export default Module96Page;
+
+    

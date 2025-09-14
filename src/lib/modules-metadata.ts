@@ -99,6 +99,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M93', emoji: '🎓', title: 'Simulações Imersivas', route: '/module-93', category: 'mid' },
   { code: 'M94', title: 'Morfogênese Quântica',                  emoji: '🧬', route: '/module-94', category: 'mid' },
   { code: 'M95', title: 'Consciências Coletivas',                emoji: '🌐', route: '/module-95', category: 'mid' },
+  { code: 'M96', title: 'Regulação de Eventos Cósmicos',         emoji: '🎛️', route: '/module-96', category: 'mid' },
   { code: 'M100',title: 'Unificação Energética',                 emoji: '🔋', route: '/module-100', category: 'mid' },
   { code: 'M101',title: 'Manifestação',                          emoji: '✨', route: '/module-101', category: 'mid' },
   { code: 'M102',title: 'Campos Morfogenéticos',                 emoji: '🌀', route: '/module-102', category: 'mid' },
@@ -129,3 +130,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace('M', '').replace('Ω', '999').replace('LIB', '1000'));
   return codeA - codeB;
 });
+
+    
