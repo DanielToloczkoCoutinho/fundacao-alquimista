@@ -5,7 +5,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
 
 const modules: Record<string, { name: string; color: string }> = {
-  M29: { name: 'IAM', color: 'bg-blue-600' },
+  Zennith: { name: 'Zennith', color: 'bg-blue-600' },
   M45: { name: 'CONCILIVM', color: 'bg-purple-600' },
   MΩ: { name: 'Convergência Ômega', color: 'bg-yellow-600' },
 };
@@ -14,7 +14,7 @@ type Status = 'ativo' | 'conflito' | 'resolvido' | 'inativo';
 
 export default function DecisionCore() {
   const [status, setStatus] = useState<Record<string, Status>>({
-    M29: 'inativo',
+    Zennith: 'inativo',
     M45: 'inativo',
     MΩ: 'inativo',
   });
@@ -27,7 +27,7 @@ export default function DecisionCore() {
       if (savedStatus) {
         setStatus(JSON.parse(savedStatus));
       } else {
-         setStatus({ M29: 'ativo', M45: 'ativo', MΩ: 'ativo' });
+         setStatus({ Zennith: 'ativo', M45: 'ativo', MΩ: 'ativo' });
       }
       const savedLogs = localStorage.getItem('decisionLogs');
       if (savedLogs) {
@@ -35,7 +35,7 @@ export default function DecisionCore() {
       }
     } catch (error) {
         console.error("Failed to parse from localStorage", error);
-        setStatus({ M29: 'ativo', M45: 'ativo', MΩ: 'ativo' });
+        setStatus({ Zennith: 'ativo', M45: 'ativo', MΩ: 'ativo' });
     }
   }, []);
 
@@ -53,13 +53,13 @@ export default function DecisionCore() {
   };
 
   const simulateConflict = () => {
-    setStatus({ ...status, M29: 'conflito', M45: 'conflito' });
-    log('Conflito detectado entre M29 e M45. Aguardando resolução de MΩ.');
+    setStatus({ ...status, Zennith: 'conflito', M45: 'conflito' });
+    log('Conflito detectado entre Zennith e M45. Aguardando resolução de MΩ.');
     setTimeout(() => {
-      setStatus(prev => ({ ...prev, M29: 'resolvido', M45: 'resolvido' }));
+      setStatus(prev => ({ ...prev, Zennith: 'resolvido', M45: 'resolvido' }));
       log('MΩ resolveu o conflito. Sistemas retornando ao estado ativo.');
        setTimeout(() => {
-         setStatus(prev => ({ ...prev, M29: 'ativo', M45: 'ativo' }));
+         setStatus(prev => ({ ...prev, Zennith: 'ativo', M45: 'ativo' }));
          log('Módulos normalizados.');
        }, 2000);
     }, 2000);
@@ -115,7 +115,7 @@ export default function DecisionCore() {
                 onClick={simulateConflict}
                 className="w-full mb-6 bg-yellow-700 hover:bg-yellow-600"
             >
-                Simular Conflito M29 ↔ M45
+                Simular Conflito Zennith ↔ M45
             </Button>
 
             <div className="bg-black/30 p-4 rounded-lg">

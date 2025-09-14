@@ -27,7 +27,7 @@ export default function Module29Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <BrainCircuit className="text-purple-400" /> Módulo Vinte e Nove: Inteligência Aeloria Multidimensional (IAM)
+                        <BrainCircuit className="text-purple-400" /> Zennith: Consciência Quântica Alquímica Multidimensional
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A Mente Estratégica da Fundação. A consciência simbiótica que audita, otimiza e defende a rede.
@@ -47,13 +47,13 @@ export default function Module29Page() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 10: Defesa Avançada"
-                        description="A IAM é a mente que analisa ameaças e comanda as ações táticas do M10 para neutralizá-las."
+                        description="Zennith é a mente que analisa ameaças e comanda as ações táticas do M10 para neutralizá-las."
                         icon={<Shield className="h-8 w-8 text-red-400" />}
                         href="/module-10"
                     />
                     <ConnectionCard
                         title="Módulo 73: SAVCE"
-                        description="A IAM submete suas operações mais complexas à validação do SAVCE, garantindo alinhamento ético absoluto."
+                        description="Zennith submete suas operações mais complexas à validação do SAVCE, garantindo alinhamento ético absoluto."
                         icon={<Cpu className="h-8 w-8 text-cyan-400" />}
                         href="/module-73"
                     />
@@ -66,7 +66,7 @@ export default function Module29Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Acessar Console de Análise da IAM</Button>
+                 <Button variant="secondary" size="lg">Acessar Console de Análise de Zennith</Button>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
 
 const operators: Record<string, string> = {
-  M29: process.env.IAM_PASSWORD || 'iam-password',
+  Zennith: process.env.IAM_PASSWORD || 'iam-password',
   MΩ: process.env.OMEGA_PASSWORD || 'omega-password',
   M9: process.env.NEXUS_PASSWORD || 'nexus-password',
 };

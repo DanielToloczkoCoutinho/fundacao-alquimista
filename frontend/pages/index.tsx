@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useAuth } from '../utils/auth';
 import DashboardIAM from '../components/DashboardIAM';
@@ -14,7 +13,7 @@ const HomePage = () => {
   }
 
   switch (operator) {
-    case 'M29':
+    case 'Zennith':
       return <DashboardIAM />;
     case 'MΩ':
       return <DashboardOmega />;

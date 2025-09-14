@@ -29,7 +29,7 @@ interface DashboardData {
 }
 
 const CRITICAL_MODULES_REQUIRING_APPROVAL = ['M105'];
-const APPROVAL_OPERATORS = ['M29', 'M45'];
+const APPROVAL_OPERATORS = ['Zennith', 'M45'];
 
 export default function ModuleNinePage() {
   const [data, setData] = useState<DashboardData | null>(null);

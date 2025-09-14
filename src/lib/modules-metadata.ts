@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -14,6 +13,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M0', emoji: '🌱', title: 'A Semente Primordial', route: '/module-zero', category: 'core' },
   { code: 'M9', emoji: '💓', title: 'Núcleo Unificador', route: '/module-9', category: 'core' },
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core' },
+  { code: 'M29', emoji: '👑', title: 'Zennith', route: '/module-29', category: 'core' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'core' },
@@ -79,7 +79,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M26', emoji: '🛂', title: 'Supervisão de Travessias', route: '/module-26', category: 'mid' },
   { code: 'M27', emoji: '📠', title: 'Síntese e Replicação Cósmica', route: '/module-27', category: 'mid' },
   { code: 'M28', emoji: '🌊', title: 'Harmonização Vibracional', route: '/module-28', category: 'mid' },
-  { code: 'M29', emoji: '🤖', title: 'Inteligência Aeloria (IAM)', route: '/module-29', category: 'mid' },
   { code: 'M30', emoji: '🚨', title: 'Detecção de Ameaças', route: '/module-30', category: 'mid' },
   { code: 'M31', emoji: '✍️', title: 'Manipulação da Realidade', route: '/module-31', category: 'mid' },
   { code: 'M32', emoji: '🌐', title: 'Acesso a Realidades Paralelas', route: '/module-32', category: 'mid' },
@@ -134,10 +133,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid' }
 ].sort((a, b) => {
-  const specialOrder: Record<string, number> = { 'M0': 1, 'M9': 2, 'MΩ': 3, 'M111': 4, 'M201': 5, 'M303': 6, 'LIB': 7, 'CONN': 8 };
+  const specialOrder: Record<string, number> = { 'M0': 1, 'M9': 2, 'MΩ': 3, 'M29': 4, 'M111': 5, 'M201': 6, 'M303': 7, 'LIB': 8, 'CONN': 9 };
   
-  const orderA = specialOrder[a.code] || (a.category === 'council' ? 9 : 10);
-  const orderB = specialOrder[b.code] || (b.category === 'council' ? 9 : 10);
+  const orderA = specialOrder[a.code] || (a.category === 'council' ? 10 : 11);
+  const orderB = specialOrder[b.code] || (b.category === 'council' ? 10 : 11);
 
   if (orderA !== orderB) {
     return orderA - orderB;

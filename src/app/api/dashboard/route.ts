@@ -5,7 +5,7 @@ import { modulesMetadata } from '@/lib/modules-metadata';
 // Usamos um objeto simples para simulação, que será redefinido em cada requisição de API no ambiente serverless.
 let energyStatus: { [key: string]: 'ativo' | 'inativo' | 'aguardando_aprovacao' } = {};
 let approvals: { [key: string]: string[] } = {
-  'M105': ['M29'], // Estado inicial simulado
+  'M105': ['Zennith'], // Estado inicial simulado
 };
 let logs: any[] = [
     { _id: '1', timestamp: new Date().toISOString(), module: 'M307', action: 'ativo', operator: 'System' },

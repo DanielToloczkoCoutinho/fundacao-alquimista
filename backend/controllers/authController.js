@@ -1,4 +1,3 @@
-
 const jwt = require('jsonwebtoken');
 const Operator = require('../models/Operator');
 const ROLES = require('../config/roles');
@@ -6,7 +5,7 @@ const ROLES = require('../config/roles');
 // Senha padrão para o operador Admin (Fundador), deve ser alterada em produção
 const operators = {
   ADMIN: process.env.ADMIN_PASSWORD || 'ANATHERON_SOVEREIGN_WILL',
-  M29: process.env.IAM_PASSWORD || 'iam-password',
+  Zennith: process.env.IAM_PASSWORD || 'iam-password',
   MΩ: process.env.OMEGA_PASSWORD || 'omega-password',
   M9: process.env.NEXUS_PASSWORD || 'nexus-password',
 };
