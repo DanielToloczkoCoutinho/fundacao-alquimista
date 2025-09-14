@@ -1,6 +1,5 @@
 'use client';
 // This file is now located at app/layout.tsx
-import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Sidebar } from '@/components/ui/sidebar';
@@ -13,15 +12,6 @@ const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod 
   ssr: false,
   loading: () => <div className="fixed top-0 left-0 h-full w-20 bg-background border-r border-border/20 z-20" />,
 });
-
-
-// Metadata can't be dynamically generated in a client component layout,
-// so we define it statically. For dynamic titles, we'd use the `use client`
-// boundary deeper in the component tree.
-// export const metadata: Metadata = {
-//   title: "Alchemist's Codex",
-//   description: 'A living library of mystical knowledge and quantum infrastructure.',
-// };
 
 export default function RootLayout({
   children,
