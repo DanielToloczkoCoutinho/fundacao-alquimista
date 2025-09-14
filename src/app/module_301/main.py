@@ -3,15 +3,15 @@
 Módulo 301: Ponte Quântico-Vibracional
 =======================================
 Objetivo:
-- Capturar sinais de sondas (Voyager 1) e telescópios terrestres (VLT)
-- Triangular coordenadas e frequências com validação ética
-- Registrar logs em blockchain vibracional (M999)
+- Capturar e decodificar sinais (Voyager 1, VLT) com EAFR e TFQM
+- Triangular coordenadas e frequências com validação ética (M5)
+- Registrar logs imutáveis em blockchain (M999) com hash A’lun’Zûr-Kai’Unor
 - Responder comandos quântico-vibracionais
-- Integrar ao Portal HTTP://FundaçãoAlquimista.com
+- Integrar ao Portal HTTP://FundaçãoAlquimista.com e preparar para Outubro 2025
 
 Integrações:
-- M205: Colmeia Nanorrobótica
-- M303: Habitat Multidimensional
+- M205: Colmeia Nanorrobótica (Cristal do Equilíbrio)
+- M303: Habitat Multidimensional (VR/AR, Canção das Estrelas)
 - M999: Blockchain Vibracional
 - M5: Protocolo Ético
 - M980: Heatmap de Coerência
@@ -30,6 +30,7 @@ from astropy.coordinates import SkyCoord, EarthLocation
 import astropy.units as u
 import numpy as np
 from unittest.mock import Mock # Using Mock for Hyperledger as it's a complex dependency
+from scipy.fft import fft
 
 # --- Configuração de Logging ---
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -62,7 +63,7 @@ class Module205:
         return {"voyager1": {"freq": 1111.4, "intensity": 0.95}}
     @staticmethod
     def calibrate_crystal(data):
-        return {"crystal_energy": data["freq"] * 1.1}
+        return {"crystal_energy": data["freq"] * 1.1}  # Exemplo
 
 class Module303:
     @staticmethod
@@ -102,14 +103,42 @@ class Telescopes:
     def capture():
         return {"VLT": {"freq": 528.3, "intensity": 0.92, "coords": EarthLocation.from_geodetic(lon=-70.404*u.deg, lat=-24.627*u.deg)}}
 
-# --- Funções Quânticas e Blockchain ---
+# --- Equações e Processamento ---
+
+def tfqm(signal, t):
+    """Transformada de Fourier Quântica Modulada"""
+    n = len(signal)
+    fft_result = fft(signal)
+    return np.abs(fft_result) * np.exp(1j * np.angle(fft_result) * np.sin(t))
+
+def eafr(freqs, target=777.2):
+    """Equação de Alinhamento de Frequência de Ressonância"""
+    return sum((f - target) ** 2 for f in freqs) / len(freqs)
+
+def eq_euni(pq_sum, phi_c, convergence, T, m_ds, c_cosmos):
+    """Energia Universal (EUni)"""
+    return (pq_sum + 1e-10) * (phi_c * convergence) * T * (m_ds * c_cosmos)
+
+def eq_universal_complete(params):
+    """Equação Universal Completa (simplificada)"""
+    return sum(params.get(k, 0) for k in params) * math.pi
+
+def eq_field_of_consciousness(freqs, s_tuning):
+    """Campo de Consciência"""
+    return np.trapz([f * s for f, s in zip(freqs, s_tuning)])
+
+def eq_matrix_of_probability(manifest, convergence):
+    """Matriz de Probabilidade"""
+    return sum(m * c for m, c in zip(manifest, convergence))
+
+# --- Funções Principais ---
 
 def get_quantum_simulator():
     logging.info("Inicializando simulador quântico Aer...")
     return Aer.get_backend('qasm_simulator')
 
 def generate_quantum_circuit(artefact_id):
-    logging.info(f"Gerando circuito quântico para {artefact_id}")
+    logging.info(f"Gerando circuito para {artefact_id}")
     qc = QuantumCircuit(2, 2)
     qc.h(0)
     qc.cx(0, 1)
@@ -121,7 +150,6 @@ def capture_vibrational_data(quantum_backend, circuit):
     job = quantum_backend.run(circuit, shots=1024)
     result = job.result()
     counts = result.get_counts(circuit)
-    logging.info(f"Dados quânticos: {counts}")
     freq = FREQS_ALUNZUR[0] if counts.get('00', 0) > 500 else FREQS_ALUNZUR[2]
     return {
         "artefact": "Voyager1",
@@ -134,32 +162,27 @@ def publish_to_vibrational_blockchain(data):
     # Mocking Hyperledger Fabric interaction
     Gateway = Mock()
     gateway_instance = Gateway.return_value
-    connected_gateway = gateway_instance.connect.return_value.__enter__.return_value
-    network = connected_gateway.get_network.return_value
-    contract = network.get_contract.return_value
-
     try:
         logging.info("Conectando ao blockchain vibracional...")
-        tx_id = f"log-{data['artefact']}-{datetime.utcnow().timestamp()}"
-        result = contract.submit_transaction('recordLog', tx_id, json.dumps(data))
-        result.decode.return_value = f"TX {tx_id} submitted successfully."
-        logging.info(f"Transação submetida: {result.decode('utf-8')}")
-        return result
+        with gateway_instance.connect.return_value as connected_gateway:
+            network = connected_gateway.get_network.return_value
+            contract = network.get_contract.return_value
+            tx_id = f"log-{data['artefact']}-{datetime.utcnow().timestamp()}"
+            result = contract.submit_transaction('recordLog', tx_id, json.dumps(data))
+            result.decode.return_value = f"TX {tx_id} submitted successfully."
+            logging.info(f"Transação submetida: {result.decode('utf-8')}")
+            return result
     except Exception as e:
         logging.error(f"Erro no blockchain: {e}")
         return None
 
-# --- Funções de Triangulação e Integração ---
-
 def triangulate_multidimensional(spatial, terrestrial):
     # Converting astropy objects to serializable format
     coords_serializable = {}
-    for k, v in spatial.items():
-        if 'coords' in NASA_ARTIFACTS[k]:
-             coords_serializable[k] = str(NASA_ARTIFACTS[k]['coords'])
-    for k, v in terrestrial.items():
-        if 'coords' in v:
-            coords_serializable[k] = str(v['coords'])
+    if 'Voyager1' in spatial and 'coords' in NASA_ARTIFACTS['Voyager1']:
+        coords_serializable['Voyager1'] = str(NASA_ARTIFACTS['Voyager1']['coords'])
+    if 'VLT' in terrestrial and 'coords' in terrestrial['VLT']:
+        coords_serializable['VLT'] = str(terrestrial['VLT']['coords'])
 
     all_signals = list(spatial.values()) + list(terrestrial.values())
     freqs = [s["freq"] for s in all_signals if "freq" in s]
@@ -174,7 +197,7 @@ def register_log(data):
     try:
         requests.post(f"{PORTAL_API}/logs", json={"log": log_entry}, headers=headers)
     except Exception as e:
-        logging.error(f"Erro ao enviar log ao portal: {e}")
+        logging.error(f"Erro ao enviar log: {e}")
     logging.info(log_entry)
 
 def respond_signal(data):
@@ -203,16 +226,12 @@ def modulo301_run(cycle_interval=30):
     cosmic_factors = {"Co": 1.0, "Ed": 0.27, "Uf": 1.0, "Tr": 1.0, "Dm": 10.0,
                       "Me": 0.27, "Ec": 1.0, "Sa": 1.0, "Eo": 1.0, "Vp": 1.0}
     
-    # Example frequency values for cosmic_factors to avoid division by zero or errors
-    cosmic_factors_freqs = {"Co": 1.0, "Ed": 0.27, "Uf": 1.0, "Tr": 1.0, "Dm": 10.0, "Me": 0.27, "Ec": 1.0, "Sa": 1.0, "Eo": 1.0, "Vp": 1.0}
-    hf = 1.0 / math.sqrt(sum(f**2 for f in cosmic_factors_freqs.values())) if cosmic_factors_freqs else 1.0
-
     quantum_backend = get_quantum_simulator()
 
     while True:
         # Captura de sinais
-        spatial = Module205.capture_vibrations()
-        terrestrial = Telescopes.capture()
+        spatial = capture_spatial_signals()
+        terrestrial = capture_terrestrial_signals()
         
         # Triangulação
         coords, avg_freq = triangulate_multidimensional(spatial, terrestrial)
@@ -222,15 +241,22 @@ def modulo301_run(cycle_interval=30):
         # Dados quânticos
         circuit = generate_quantum_circuit("Voyager1")
         vibrational_data = capture_vibrational_data(quantum_backend, circuit)
+        
         if vibrational_data:
             publish_to_vibrational_blockchain(vibrational_data)
             freq_str = vibrational_data["decoded_vibrational_signature"].replace("freq_", "").replace("Hz", "")
-            freq = float(freq_str)
-            
+            try:
+                freq = float(freq_str)
+            except ValueError:
+                logging.warning(f"Could not decode frequency from signature: {vibrational_data['decoded_vibrational_signature']}")
+                freq = avg_freq
+
             pq_sum = sum_particle_interactions({**spatial, **terrestrial})
-            euni = eq_euni(pq_sum, phi_c, convergence, T, product_cosmic_factors(cosmic_factors), hf)
+            m_ds = 1.0 # Mock value for dark matter
+            c_cosmos = 1.0 # Mock value for cosmic constants
+            euni = eq_euni(pq_sum, phi_c, convergence, T, m_ds, c_cosmos)
             
-            data = {"coords": coords, "freq": freq, "EUni": euni}
+            data = {"coords": coords, "avg_frequency": avg_freq, "decoded_freq": freq, "EUni": euni}
             register_log(data)
             
             response = respond_signal({"freq": avg_freq})
