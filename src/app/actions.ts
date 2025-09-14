@@ -19,6 +19,8 @@ import { transmitUniversalMessage as runTransmitUniversalMessage } from '@/ai/fl
 import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
 import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
 import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-perspective-flow';
+import { disseminateKnowledge as runDisseminateKnowledge } from '@/ai/flows/cosmic-education-flow';
+
 
 export async function getLinkSummary(url: string) {
   try {
@@ -193,5 +195,15 @@ export async function getOmegaPerspective(evolutionSummary: string) {
     } catch (e: any) {
         console.error(e);
         return { analysisTitle: null, synthesis: null, iamEvaluation: null, nextStepRecommendation: null, error: e.message || 'An unknown error occurred.' };
+    }
+}
+
+export async function disseminateKnowledge(data: { topic: string, targetAudience: string }) {
+    try {
+        const result = await runDisseminateKnowledge(data);
+        return { success: result.success, logs: result.logs, summary: result.summary, error: null };
+    } catch (e: any) {
+        console.error(e);
+        return { success: false, logs: [], summary: null, error: e.message || 'An unknown error occurred.' };
     }
 }

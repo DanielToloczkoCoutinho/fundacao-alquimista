@@ -42,6 +42,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'council' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'council' },
   { code: 'M300',title: 'Apogeu da Consciência',                 emoji: '🚀', route: '/module-300', category: 'council' },
+  { code: 'M304',title: 'Educação Integral Cósmica',             emoji: '🎓', route: '/module-304', category: 'council' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'council' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/module-600', category: 'council' },
 
