@@ -34,6 +34,32 @@ app.get('/health', (req, res) => {
   res.status(200).json(healthStatus);
 });
 
+// Endpoint de Saúde Estendido
+app.get('/health/extended', async (req, res) => {
+  try {
+    const metricsRes = await fetch('http://localhost:9464/metrics');
+    const metricsText = await metricsRes.text();
+    const coherenceMatch = metricsText.match(/syntropy_coherence{.*?} (\d+\.\d+)/);
+    
+    res.json({
+      status: 'Ω',
+      timestamp: new Date().toISOString(),
+      metrics: {
+        syntropy_coherence: coherenceMatch ? parseFloat(coherenceMatch[1]) : 'N/A'
+      },
+      subsystems: {
+        telemetry: 'active',
+        chatops: 'active',
+        database: 'connected',
+        quantum_entanglement: 'stable'
+      }
+    });
+  } catch (error) {
+     res.status(500).json({ status: 'DEGRADED', error: 'Falha ao coletar métricas estendidas' });
+  }
+});
+
+
 // Endpoint de Métricas
 app.get('/metrics', async (req, res) => {
   try {

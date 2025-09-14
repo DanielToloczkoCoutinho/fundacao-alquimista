@@ -10,9 +10,33 @@ on:
     - cron: '0 3 * * *' # Execução diária às 3AM
 
 jobs:
+  smoke-tests:
+    name: "✅ Testes de Fumaça - Validação da Fundação"
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: "🔄 Checkout do Código"
+        uses: actions/checkout@v4
+      - name: "🔧 Instalar Dependências"
+        run: npm ci
+      - name: "🏗️ Build da Aplicação"
+        run: npm run build
+      - name: "🛰️ Iniciar Servidores em Background"
+        run: |
+          npm start &
+          npx next start -p 3000 &
+          sleep 15
+      - name: "🧪 Testar Endpoints Críticos"
+        run: |
+          echo "Verificando Health Check Estendido..."
+          curl --fail http://localhost:4000/health/extended || exit 1
+          echo "Verificando rota de preview..."
+          curl --fail http://localhost:3000/firebase-preview/ || exit 1
+          
   chaos-experiment:
     name: "🌪️ Experimento de Caos - Teste de Resiliência"
     runs-on: ubuntu-latest
+    needs: smoke-tests
     timeout-minutes: 30
     
     steps:
