@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, HeartPulse, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, BrainCircuit } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, BrainCircuit } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---

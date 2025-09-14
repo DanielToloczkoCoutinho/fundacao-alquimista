@@ -187,7 +187,7 @@ const moduleNames: Record<string, string> = {
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
     TEMPLUM_COSMICA: "Templum Cosmica (M119)",
     ZPE_REATOR: "ZPE Reator (M307)",
-    THOTH_VIVO: "THOTH VIVO (M204)",
+    THOTH_VIVO: "THOTH VIVO (M310)",
 }
 
 type ModuleStatus = {
