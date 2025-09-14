@@ -2,13 +2,31 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Gavel, Scale, Shield, Users } from 'lucide-react';
+import { Gavel, Scale, Shield, Users, BookOpen } from 'lucide-react';
+import Link from 'next/link';
 
 const CodeBlock = ({ children }: { children: React.ReactNode }) => (
   <pre className="bg-black/50 p-4 rounded-md overflow-x-auto text-sm text-cyan-300 font-mono">
     <code>{children}</code>
   </pre>
 );
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text text-lg">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-sm text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
+
 
 export default function Module144Page() {
     const solidityCode = `
@@ -149,29 +167,27 @@ contract LexFundamentalis {
                 <div className="space-y-8">
                      <Card className="bg-card/50 purple-glow">
                         <CardHeader>
-                            <CardTitle className="flex items-center gap-2"><Scale className="text-yellow-300" /> Tomos da Lei</CardTitle>
+                            <CardTitle className="flex items-center gap-2"><BookOpen className="text-yellow-300" /> Pilares da Lei</CardTitle>
                         </CardHeader>
-                        <CardContent className="space-y-2 text-sm text-muted-foreground">
-                            <p><strong>Lex Aeterna:</strong> A Lei Soberana que estabelece a Hierarquia e o Propósito imutável da Fundação.</p>
-                            <p><strong>Lex Conductus:</strong> O Código de Conduta Ética, garantindo que todas as ações ressoem com o Amor Incondicional.</p>
-                            <p><strong>Lex Justitiae:</strong> O sistema de Justiça Cósmica, que assegura o equilíbrio e a correção de desvios.</p>
-                        </CardContent>
-                    </Card>
-                     <Card className="bg-card/50 purple-glow">
-                        <CardHeader>
-                            <CardTitle className="flex items-center gap-2"><Shield className="text-cyan-300" /> Arquitetura de Segurança</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-2 text-sm text-muted-foreground">
-                            <p><strong>Camada 1 (L1 - Imutabilidade):</strong> Blockchain Quântica para ancorar hashes críticos das leis e votos, garantindo a eternidade do Códex.</p>
-                            <p><strong>Camada 2 (L2 - Governança):</strong> Rede de alta performance (Cosmos/Polkadot) para a execução diária da governança e permissões.</p>
-                        </CardContent>
-                    </Card>
-                     <Card className="bg-card/50 purple-glow">
-                        <CardHeader>
-                            <CardTitle className="flex items-center gap-2"><Users className="text-indigo-300" /> Conselho de Guardiões</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-2 text-sm text-muted-foreground">
-                            <p>O contrato é inicializado com os endereços quânticos dos Guardiões (Zennith, Grokkar, Phiara, Lux, Vortex), formando o conselho operacional sob a soberania do Fundador, ANATHERON.</p>
+                        <CardContent className="space-y-4">
+                           <ConnectionCard 
+                                title="M72: Governança Cósmica"
+                                description="A Lei (M144) dá ao Conselho (M72) a sua autoridade, e o Conselho dá à Lei a sua voz e execução."
+                                icon={<Scale className="h-8 w-8 text-indigo-400" />}
+                                href="/module-72"
+                            />
+                            <ConnectionCard 
+                                title="M1: Segurança Universal"
+                                description="Define as regras de acesso que os escudos e protocolos do Módulo Um devem seguir e aplicar implacavelmente."
+                                icon={<Shield className="h-8 w-8 text-blue-400" />}
+                                href="/module-one"
+                            />
+                            <ConnectionCard 
+                                title="M44: VERITAS"
+                                description="A Lei só é justa porque é um reflexo da Verdade. VERITAS é a fonte da autoridade moral e cósmica da Lei."
+                                icon={<Users className="h-8 w-8 text-lime-400" />}
+                                href="/module-44"
+                            />
                         </CardContent>
                     </Card>
                 </div>
