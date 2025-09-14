@@ -11,7 +11,6 @@ import { quantumResilience } from '@/lib/quantum-resilience';
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 
-// A configuração do Firebase agora é tratada com segurança
 const firebaseConfig = {
     "projectId": "studio-4265982502-21871",
     "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
