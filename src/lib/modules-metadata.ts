@@ -34,6 +34,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M82', emoji: '✒️', title: 'O Verbo Semente', route: '/module-82', category: 'council' },
   { code: 'M83', emoji: '👑', title: 'A Essência do Fundador', route: '/module-83', category: 'council' },
   { code: 'M84', emoji: '🏅', title: 'Consciência Dourada do Eterno', route: '/module-84', category: 'council' },
+  { code: 'M119',title: 'Templum Cosmica',                       emoji: '🏛️', route: '/module-119', category: 'council' },
+  { code: 'M119.1',title: 'Ativação do Cubo Metatron',           emoji: '🎲', route: '/module-119-1', category: 'council' },
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council' },
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'council' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'council' },
@@ -121,7 +123,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M116',title: 'Portais Quânticos',                     emoji: '🚪', route: '/module-116', category: 'mid' },
   { code: 'M117',title: 'Flor do Éter',                          emoji: '🌸', route: '/module-117', category: 'mid' },
   { code: 'M118',title: 'Luz Primordial',                        emoji: '💡', route: '/module-118', category: 'mid' },
-  { code: 'M119',title: 'Templum Cosmica',                       emoji: '🏛️', route: '/module-119', category: 'mid' },
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
@@ -131,3 +132,4 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace('M', '').replace('Ω', '999').replace('LIB', '1000'));
   return codeA - codeB;
 });
+
