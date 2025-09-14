@@ -95,6 +95,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M88', emoji: '⚙️', title: 'Gerador de Realidades Quânticas', route: '/module-88', category: 'mid' },
   { code: 'M90', emoji: '🧱', title: 'Recursos Quânticos', route: '/module-90', category: 'mid' },
   { code: 'M91', emoji: '🖥️', title: 'Simulação Multiversal', route: '/module-91', category: 'mid' },
+  { code: 'M92', emoji: '💖', title: 'Campos de Cura', route: '/module-92', category: 'mid' },
   { code: 'M100',title: 'Unificação Energética',                 emoji: '🔋', route: '/module-100', category: 'mid' },
   { code: 'M101',title: 'Manifestação',                          emoji: '✨', route: '/module-101', category: 'mid' },
   { code: 'M102',title: 'Campos Morfogenéticos',                 emoji: '🌀', route: '/module-102', category: 'mid' },
