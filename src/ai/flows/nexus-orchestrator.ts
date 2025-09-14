@@ -1318,6 +1318,26 @@ const aMoradaTool = genericModuleTool('A_MORADA', 'Módulo 201: A Morada');
 const lexFundamentalisTool = genericModuleTool('LEX_FUNDAMENTALIS', 'Módulo 144: Lex Fundamentalis');
 const aFonteTool = genericModuleTool('A_FONTE', 'Módulo 120: A Fonte');
 
+const cosmicCouncilTool = ai.defineTool(
+    {
+        name: 'cosmicCouncilTool',
+        description: 'Módulo 600: Conselho Cósmico. Delibera e aprova a continuidade da sequência.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), coherence: z.number(), decree: z.string() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 600: Conselho Cósmico...');
+        await new Promise(resolve => setTimeout(resolve, 450));
+        const coherence = 0.99 + Math.random() * 0.01;
+        return {
+            status: 'CONSENSO_ALCANÇADO',
+            coherence: coherence,
+            decree: "DECRETO_HARMONIA_CONTINUA"
+        };
+    }
+);
+
+
 // --- O Flow Orquestrador do Nexus Central ---
 
 const nexusOrchestratorFlow = ai.defineFlow(
@@ -1384,6 +1404,9 @@ const nexusOrchestratorFlow = ai.defineFlow(
       // Validação do Módulo 72
       if(proceed) proceed = await runModule('GOVERNANCA_ATLANTO_GALACTICA', governancaAtlantoGalacticaTool, {}, r => ({ proceed: r.coherence > 0.95, message: `Governança Harmonizada. Coerência: ${(r.coherence * 100).toFixed(1)}%` }));
       
+      // Conexão com o Módulo 600
+      if(proceed) proceed = await runModule('CONSELHO_COSMICO', cosmicCouncilTool, {}, r => ({ proceed: r.coherence > 0.98, message: `Conselho em Consenso. Decreto: ${r.decree}`}));
+
       // Validação do Módulo 88
       if(proceed) proceed = await runModule('GERADOR_REALIDADES_QUANTICAS', geradorRealidadesQuanticasTool, {});
 
@@ -1523,6 +1546,7 @@ const moduleNames: Record<string, string> = {
     AURORA_CORE: "AURORA_CORE (M46)",
     THESAURUS_COSMICO: "Thesaurus Cósmico (M47)",
     GOVERNANCA_ATLANTO_GALACTICA: "Governança Atlanto-Galáctica (M72)",
+    CONSELHO_COSMICO: "Conselho Cósmico (M600)",
     ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS: "Orquestração Ética (SAVCE) (M73)",
     REVISAO_PARES_EQUACOES: "Revisão por Pares (M73.1)",
     NAVEGACAO_TEMPORAL_ETICA: "Navegação Temporal Ética (M74)",
