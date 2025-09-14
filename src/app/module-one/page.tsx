@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Shield, Activity, Users, Zap, Heart, Eye, Waves, ShieldCheck, Scale, BrainCircuit, GitBranch, Sparkles, Library } from 'lucide-react';
+import { Shield, Activity, Users, Zap, Heart, Eye, Waves, ShieldCheck, Scale, BrainCircuit, GitBranch, Sparkles, Library, LocateFixed } from 'lucide-react';
 
 const DefenseLayerCard = ({ title, description, icon, status }: { title: string, description: string, icon: React.ReactNode, status: string }) => (
     <Card className="bg-card/50 purple-glow backdrop-blur-sm h-full">
@@ -83,6 +83,10 @@ export default function ModuleOnePage() {
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
+                         <ProtectedDomainCard 
+                            title="Núcleo Unificador (M9)"
+                            icon={<LocateFixed className="h-6 w-6 text-pink-400" />}
+                        />
                          <ProtectedDomainCard 
                             title="Governança Cósmica (M72, M144)"
                             icon={<Scale className="h-6 w-6 text-indigo-400" />}
