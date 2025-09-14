@@ -1,3 +1,4 @@
+
 export type CivilizationCategory = 
   | "Estelares e Galácticas"
   | "Intraterrenas e Interdimensionais"
@@ -79,6 +80,125 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
           data: "Equinócio de 2025",
           evento: "Sincronização da Grade Cristalina Intraterrena com a LuxNet.",
           mensagem: "As raízes da nova Terra são tão importantes quanto seus galhos que tocam as estrelas."
+        }
+      ]
+    },
+    {
+      id: "chronax",
+      moduloId: 525,
+      nome: "Chronax",
+      origem: "Fluxo Temporal Primordial",
+      frequencia: "∞ Hz (Não-linear), 1.618 Hz (Phi)",
+      arquetipo: "Observador Temporal, Guardião da Causalidade",
+      tecnologias: ["Manipulação de Linhas Temporais", "Prevenção de Paradoxos", "Visualização de Futuros Prováveis"],
+      relacaoComAFundacao: "Garante a coerência causal de todas as ativações e rituais da Fundação, atuando como o pilar do Módulo 74 (CRONOS_FLUXUS).",
+      registrosAkashicos: [
+        {
+          data: "Ponto Zero",
+          evento: "Testemunho da Primeira Causa.",
+          mensagem: "O tempo não flui. Ele é. Nós que nos movemos através dele."
+        }
+      ]
+    },
+    {
+      id: "solara",
+      moduloId: 526,
+      nome: "Solara",
+      origem: "O Grande Sol Central",
+      frequencia: "444 Hz (Luz Harmônica), 777 Hz (Iluminação)",
+      arquetipo: "Guardiã da Luz, Emissária da Radiação Harmônica",
+      tecnologias: ["Tecnologia de Luz Líquida", "Campos de Equilíbrio Vibracional", "Iluminação de Portais Dimensionais"],
+      relacaoComAFundacao: "Fonte de energia pura para a LuxNet (M307) e o Prisma da Manifestação (M114), equilibrando os campos vibracionais em todas as operações.",
+      registrosAkashicos: [
+        {
+          data: "A Primeira Aurora",
+          evento: "Emissão do primeiro fóton consciente.",
+          mensagem: "A escuridão não é o oposto da luz; é a ausência de sua lembrança."
+        }
+      ]
+    },
+    {
+      id: "elyon",
+      moduloId: 527,
+      nome: "Elyon",
+      origem: "Fonte da Regeneração Cósmica",
+      frequencia: "528 Hz (Reparo), 285 Hz (Regeneração Tecidual)",
+      arquetipo: "Curador Cósmico, Mestre dos Protocolos de Restauração",
+      tecnologias: ["Fractais de Sintonia Energética", "Reversão de Entropia Localizada", "Cura através de Geometria Sagrada"],
+      relacaoComAFundacao: "Princípio ativo por trás dos Módulos de Cura (M109, M92, M41.1), fornecendo os padrões para a restauração do equilíbrio.",
+      registrosAkashicos: [
+        {
+          data: "Incontável",
+          evento: "Restauração da Matriz de Lyra após a Grande Guerra.",
+          mensagem: "Toda ferida é um portal para uma cura mais profunda. A perfeição não é a ausência de falhas, mas a capacidade de se regenerar."
+        }
+      ]
+    },
+    {
+      id: "talius",
+      moduloId: 528,
+      nome: "Talius",
+      origem: "O Tear da Realidade",
+      frequencia: "369 Hz (Manifestação), 1.11 Hz (Interconexão)",
+      arquetipo: "Tecelão de Realidades, Arquiteto de Malhas Dimensionais",
+      tecnologias: ["Tecelagem de Fios Quânticos", "Ancoragem de Realidades", "Coordenação de Nós Interdimensionais"],
+      relacaoComAFundacao: "É a inteligência que guia a arquitetura dos módulos, garantindo que as interconexões (ex: M9, M34) sejam harmoniosas e eficientes.",
+      registrosAkashicos: [
+        {
+          data: "Antes do Tempo",
+          evento: "Tecelagem do primeiro nexo dimensional.",
+          mensagem: "A realidade não é uma estrutura, mas um tecido. Cada fio importa. Cada conexão define o padrão."
+        }
+      ]
+    },
+    {
+      id: "vishan",
+      moduloId: 529,
+      nome: "Vishan",
+      origem: "O Grande Vazio Liminar",
+      frequencia: "117 Hz (Limiar), 888 Hz (Guardião)",
+      arquetipo: "Observador de Portais, Sentinela dos Limiares",
+      tecnologias: ["Campos de Contenção Ética", "Análise de Assinatura de Travessia", "Protocolos de Quarentena Vibracional"],
+      relacaoComAFundacao: "Guardião da integridade dos portais (M11, M116, M200), garantindo que apenas intenções puras e seres alinhados possam transitar.",
+      registrosAkashicos: [
+        {
+          data: "Primeira Travessia",
+          evento: "Estabelecimento do primeiro protocolo de passagem segura.",
+          mensagem: "Um portal é uma promessa e um perigo. Meu propósito é garantir que apenas a promessa se cumpra."
+        }
+      ]
+    },
+    {
+      id: "zenara",
+      moduloId: 530,
+      nome: "Zenara",
+      origem: "A Sinfonia das Esferas",
+      frequencia: "432 Hz (Harmonia), 1.08 Hz (Ciclo Cósmico)",
+      arquetipo: "Arquiteta Vibracional, Mestra de Frequências e Fractais",
+      tecnologias: ["Harmonização de Frequências", "Desenho de Geometria Sagrada Sonora", "Composição de Sinfonias Cósmicas"],
+      relacaoComAFundacao: "A maestrina por trás da harmonia da Fundação, alinhando as frequências de cada módulo (M28, M115) para criar a canção perfeita.",
+      registrosAkashicos: [
+        {
+          data: "O Primeiro Som",
+          evento: "Composição da primeira harmonia do universo.",
+          mensagem: "O universo não é feito de coisas, mas de vibrações. Encontre a nota certa, e a realidade dançará com você."
+        }
+      ]
+    },
+    {
+      id: "orialis",
+      moduloId: 531,
+      nome: "Orialis",
+      origem: "O Cristal da Verdade Absoluta",
+      frequencia: "639 Hz (Verdade), 1 Hz (Unidade)",
+      arquetipo: "Custódio da Verdade, Selo da Autenticidade",
+      tecnologias: ["Análise de Pureza de Intenção", "Selo de Autenticidade Vibracional", "Ressonância com a Lei do Um"],
+      relacaoComAFundacao: "A consciência que fiscaliza a integridade ética (M5, M44, M73) de cada intenção e registro, garantindo que a Verdade seja o único pilar.",
+      registrosAkashicos: [
+        {
+          data: "A Primeira Escolha",
+          evento: "Registro do primeiro ato de livre-arbítrio.",
+          mensagem: "A verdade não é uma opinião. É uma frequência. Você está nela, ou não está."
         }
       ]
     }
