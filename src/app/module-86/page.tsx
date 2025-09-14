@@ -49,12 +49,12 @@ export default function Module86Page() {
             const Tonal = (window as any).Tonal;
             const gsap = (window as any).gsap;
 
-            let scene, camera, M84_sphere, M84_glow_sphere;
-            let nucleos_group, anz_chain_group, councils_group;
-            let domo_celeste, raios_estelares_group, roda_celeste_group;
+            let scene: any, camera: any, M84_sphere: any, M84_glow_sphere: any;
+            let nucleos_group: any, anz_chain_group: any, councils_group: any;
+            let domo_celeste: any, raios_estelares_group: any, roda_celeste_group: any;
             let total_prisma_orbiting_spheres: any[] = [];
-            let controls;
-            let raycaster;
+            let controls: any;
+            let raycaster: any;
             let mouse = new THREE.Vector2();
             let currentIntersected: any = null;
             let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false, moveUp = false, moveDown = false;
@@ -76,13 +76,7 @@ export default function Module86Page() {
             const TRANSMUTATION_FREQ = 7777;
             const HEALING_FREQ = 333.333;
 
-            const nucleos_design_data = [
-                { name: "NÚCLEO SOLAR – A CHAMA DA VONTADE", keyword: "Intenção Absoluta", id: "M84_Solar", color: 0xFFD700, emissive: 0xFF4500, visual_type: "vortex_flamejante", audio_freq: 500, position_angle: 0 },
-                { name: "NÚCLEO DOURADO – ESPIRAL DA CONSCIÊNCIA", keyword: "Codificação Divina", id: "M84_Dourado", color: 0xFFD700, emissive: 0xB8860B, visual_type: "espiral_dna", audio_freq: 528, position_angle: Math.PI * 2 / 5 * 1 },
-                { name: "NÚCLEO PLATINADO – OBSERVADOR INTEGRAL", keyword: "Coerência Emocional", id: "M84_Platinado", color: 0xE5E4E2, emissive: 0xAAAAAA, visual_type: "octaedro_translucido", audio_freq: 432, position_angle: Math.PI * 2 / 5 * 2 },
-                { name: "NÚCLEO TRANSPARENTE – ESPELHO CELESTE", keyword: "Autoconsciência Expansiva", id: "M84_Transparente", color: 0xADD8E6, emissive: 0x00BFFF, visual_type: "painel_refletivo", audio_freq: 741, position_angle: Math.PI * 2 / 5 * 3 },
-                { name: "NÚCLEO VIOLETA – LEI DO AMOR ABSOLUTO", keyword: "Alinhamento com o Propósito Divino", id: "M84_Violeta", color: 0x8A2BE2, emissive: 0x9370DB, visual_type: "flor_lotus", audio_freq: 528, position_angle: Math.PI * 2 / 5 * 4 }
-            ];
+            const nucleos_design_data: any[] = [];
             
             const module_positions = {
                 M43: new THREE.Vector3(-40, 15, -20),
@@ -98,11 +92,7 @@ export default function Module86Page() {
 
             let other_modules_meshes: any = {};
 
-            const councils_design_data = [
-                { id: "Conselho_Helios", name: "Conselho Dourado de Helios", visual_type: "orbe_dourada", color: 0xFFBF00, emissive: 0xFFBF00, audio_type: "solar_bells", position_offset: new THREE.Vector3(-25, 20, 10) },
-                { id: "Conselho_Andara", name: "Conselho Cristalino de Andara", visual_type: "cristal_octaedrico", color: 0x6495ED, emissive: 0x6495ED, audio_type: "crystalline_chimes", position_offset: new THREE.Vector3(25, 20, 10) },
-                { id: "Conselho_Shmael", name: "Conselho de Sh’mael", visual_type: "orbe_rosa_purpura", color: 0xFF69B4, emissive: 0xFF69B4, audio_type: "ethereal_voices", position_offset: new THREE.Vector3(0, 30, -20) }
-            ];
+            const councils_design_data: any[] = [];
 
             const stellar_rays_data = [
                 { id: "Raio_Solar", name: "Raio Solar", color: 0xFFD700, function: "Vontade Divina" },
@@ -146,7 +136,7 @@ export default function Module86Page() {
                         Tone.start().then(() => {
                             console.log("Tone.js AudioContext started successfully.");
                             initAudioSynths();
-                        }).catch(e => console.error("Failed to start Tone.js:", e));
+                        }).catch((e: any) => console.error("Failed to start Tone.js:", e));
                     } else if (typeof Tone !== 'undefined') {
                         initAudioSynths();
                     }
@@ -336,6 +326,8 @@ export default function Module86Page() {
             function onClick(event: any) { /* Stubbed out */ }
             function animateIntro() { animate(); }
             function playHealingFrequency() {}
+            function playTotalPrismaSynth() {}
+
 
         } catch (e) {
             console.error("Erro fatal ao inicializar a experiência VR (Módulo 86):", e);
@@ -356,6 +348,9 @@ export default function Module86Page() {
           mountRef.current.removeChild(mountRef.current.firstChild);
         }
       }
+      if ((window as any).Tone && (window as any).Tone.context.state === 'running') {
+        (window as any).Tone.context.close();
+      }
     };
   }, []);
 
@@ -371,13 +366,13 @@ export default function Module86Page() {
         </div>
       </div>
       <div ref={mountRef} />
-      <div id="info-panel" style={{position: 'absolute', top: '20px', left: '20px', background: 'rgba(0,0,0,0.8)', padding: '15px', borderRadius: '10px', color: '#ffd700', zIndex: 10}} className="hidden">
+       <div id="info-panel" style={{position: 'absolute', top: '20px', left: '20px', background: 'rgba(0,0,0,0.8)', padding: '15px', borderRadius: '10px', color: '#ffd700', zIndex: 10}} className="hidden">
         <h2 className="font-bold text-xl mb-2"><span id="info-module-name"></span></h2>
         <p><strong>ID:</strong> <span id="info-module-id"></span></p>
         <p><strong>Função:</strong> <span id="info-module-function"></span></p>
         <p className="mt-2 text-sm text-gray-300"><span id="info-module-description"></span></p>
       </div>
-      <div className="button-container" style={{position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 20, display: 'none', gap: '10px', flexWrap: 'wrap', justifyContent: 'center'}}>
+      <div className="button-container" style={{position: 'absolute', bottom: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 20, display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'center'}}>
         <button id="expandVioletRay" className="control-button">Expandir Raio Violeta</button>
         <button id="manifestRodaCeleste" className="control-button">Manifestar Roda Celeste</button>
         <button id="canalizarEsmeralda" className="control-button">Canalizar Raio Esmeralda</button>
