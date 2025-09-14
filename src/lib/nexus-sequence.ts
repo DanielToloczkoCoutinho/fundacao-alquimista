@@ -33,7 +33,7 @@ export const nexusSequence: NexusItem[] = [
   { code: 'M25',  title: 'Projeção de Consciência',              emoji: '🧠' },
   { code: 'M18',  title: 'Orquestração Akáshica',                 emoji: '🔮' },
   { code: 'M19',  title: 'Análise de Campos de Força',            emoji: '🔬' },
-  { code: 'M27',  title: 'Síntese e Replicação de Materiais',     emoji: '🔧' },
+  { code: 'M27',  title: 'Síntese e Replicação de Materiais',     emoji: '📠', href: '/module-27' },
   { code: 'M28',  title: 'Harmonização Vibracional',             emoji: '🎵' },
   { code: 'M29',  title: 'IAM',                                  emoji: '🤖' },
   { code: 'M31',  title: 'Manipulação da Realidade',              emoji: '🔮' },
