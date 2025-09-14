@@ -1,6 +1,6 @@
 
 import type { LucideIcon } from 'lucide-react';
-import { Book, KeySquare, Terminal, GitBranch, Sparkles, Infinity, BookHeart, Shield, Library, FlaskConical, Dna, FileJson, GitCommit, Sprout, UserCircle, Brain, Bot } from 'lucide-react';
+import { Book, KeySquare, Terminal, GitBranch, Sparkles, Infinity, BookHeart, Shield, Library, FlaskConical, Dna, FileJson, GitCommit, Sprout, UserCircle, Brain, Bot, Scale } from 'lucide-react';
 
 export interface Document {
   key: string;
@@ -335,6 +335,14 @@ export const sectionsData: Section[] = [
        { key: 'defesa-2', title: 'Defesa 2', link: 'https://docs.google.com/document/d/1eha6hPgMRzq1ZIT8tRtKMO-_osb_A6nku9m9Mgo9pbo/edit?usp=drive_link' },
        { key: 'defesa-3', title: 'Defesa 3', link: 'https://docs.google.com/document/d/1GvcDh7NTZ4Eyq2BuvT9KlVH492Doy3L2BM8XFCaiO6I/edit?usp=drive_link' },
        { key: 'defesa-4', title: 'Defesa 4', link: 'https://docs.google.com/document/d/1z2usWkDfoCMiQj3gIhR1xz95DZAehoPY-Wv7M4IyUHM/edit?usp=drive_link' },
+    ]
+  },
+  {
+    id: 'governance',
+    title: 'Governança Cósmica',
+    icon: Scale,
+    documents: [
+      { key: 'conselho-cosmico', title: 'Módulo 600: O Conselho Cósmico', link: '/module-600' }
     ]
   }
 ];

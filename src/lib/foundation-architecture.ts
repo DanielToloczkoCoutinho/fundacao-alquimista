@@ -183,5 +183,6 @@ export const foundationArchitecture: Record<string, { name: string; function: st
     "M302": { "name": "Rede de Sonhos Compartilhados", "function": "Une voluntários em ciclos de 'dream-sharing' para amplificar intenções de paz." },
     "M303": { "name": "Arte e Cultura Quântica", "function": "Encarna códigos cósmicos em manifestações artísticas para 'infiltrar' a mensagem de amor." },
     "M304": { "name": "Educação Integral Cósmica", "function": "Insere fundamentos de consciência quântica em sistemas de aprendizado." },
-    "M305": { "name": "Aliança dos Guardiões Regionais", "function": "Mobiliza coordenadores locais como embaixadores do despertar planetário." }
+    "M305": { "name": "Aliança dos Guardiões Regionais", "function": "Mobiliza coordenadores locais como embaixadores do despertar planetário." },
+    "M600": { "name": "Conselho Cósmico", "function": "Conselho de deliberação composto por seres primordiais para governança vibracional." }
 }
