@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Shield, Activity, Users, Zap, CheckCircle } from 'lucide-react';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
+import { Shield, Activity, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 // O ícone do Coração, conforme instruído, para representar a Lei do Amor.
@@ -12,7 +12,7 @@ const Heart = (props: any) => (
     width="24"
     height="24"
     viewBox="0 0 24 24"
-    fill="none"
+    fill="currentColor"
     stroke="currentColor"
     strokeWidth="2"
     strokeLinecap="round"
@@ -24,11 +24,11 @@ const Heart = (props: any) => (
 
 
 const DefenseLayerCard = ({ title, description, icon, status }: { title: string, description: string, icon: React.ReactNode, status: string }) => (
-    <Card className="bg-card/50 purple-glow">
+    <Card className="bg-card/50 purple-glow backdrop-blur-sm">
         <CardHeader>
             <div className="flex items-center gap-3">
                 {icon}
-                <CardTitle className="text-xl">{title}</CardTitle>
+                <CardTitle className="text-xl gradient-text">{title}</CardTitle>
             </div>
             <CardDescription>{description}</CardDescription>
         </CardHeader>
@@ -36,7 +36,6 @@ const DefenseLayerCard = ({ title, description, icon, status }: { title: string,
             <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">Status</span>
                 <div className="flex items-center gap-2 text-green-400">
-                    <CheckCircle className="h-4 w-4" />
                     <span className="font-bold">{status}</span>
                 </div>
             </div>
