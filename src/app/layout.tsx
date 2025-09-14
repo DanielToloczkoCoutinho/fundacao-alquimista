@@ -2,7 +2,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { Sidebar } from '@/components/ui/sidebar';
 
 export const metadata: Metadata = {
   title: "Alchemist's Codex",
@@ -23,17 +22,9 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,700&display=swap"
           rel="stylesheet"
         />
-         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" async></script>
       </head>
-      <body className="font-body antialiased">
-        <div className="flex">
-          <Sidebar />
-          <main className="flex-1 ml-20">
-            {children}
-          </main>
-        </div>
+      <body className="font-body antialiased text-base md:text-lg">
+        {children}
         <Toaster />
       </body>
     </html>
