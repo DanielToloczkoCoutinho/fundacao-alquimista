@@ -1,26 +1,23 @@
-FROM node:18-alpine AS base
-
-FROM base AS deps
-RUN apk add --no-cache libc6-compat
+# Estágio 1: Builder
+FROM node:18-alpine AS builder
 WORKDIR /app
-COPY package.json package-lock.json* ./
+COPY package*.json ./
 RUN npm ci
-
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
-FROM base AS runner
+# Estágio 2: Runner
+FROM node:18-alpine
 WORKDIR /app
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+
+# Copiar dependências de produção
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+# Copiar build da aplicação Next.js
+COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-USER nextjs
+
+# Expor a porta e iniciar a aplicação
 EXPOSE 3000
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
