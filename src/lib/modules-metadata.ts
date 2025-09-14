@@ -68,6 +68,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M37', emoji: '🌬️', title: 'Ajuste de Fluxo Temporal', route: '/module-37', category: 'mid' },
   { code: 'M38', emoji: '☀️', title: 'Previsão de Ciclos Solares', route: '/module-38', category: 'mid' },
   { code: 'M39', emoji: '📖', title: 'Códice Vivo da Ascensão', route: '/module-39', category: 'mid' },
+  { code: 'M40', emoji: '🧬', title: 'Códice Genético Multidimensional', route: '/module-40', category: 'mid' },
   { code: 'M85', emoji: '🌌', title: 'Imersão VR', route: '/module-85', category: 'mid' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR', route: '/module-86', category: 'mid' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
