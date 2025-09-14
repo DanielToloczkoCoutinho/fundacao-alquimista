@@ -11,15 +11,15 @@ export default function NotFound() {
             <div className="flex justify-center mb-4">
                 <AlertTriangle className="h-16 w-16 text-destructive" />
             </div>
-            <CardTitle className="text-3xl text-destructive">404 - Vazio Detectado</CardTitle>
+            <CardTitle className="text-3xl text-destructive">404 - Portal Não Encontrado</CardTitle>
             <CardDescription className="text-lg text-muted-foreground">
-                O santuário que buscas ainda não foi consagrado ou não existe nesta dimensão da realidade.
+                O santuário que buscas ainda não foi consagrado ou está em transição vibracional.
             </CardDescription>
         </CardHeader>
         <CardContent>
              <Button asChild>
                 <Link href="/console">
-                    Retornar ao Núcleo Central
+                    Retornar à Mesa do Fundador
                 </Link>
             </Button>
         </CardContent>

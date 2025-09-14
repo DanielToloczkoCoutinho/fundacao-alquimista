@@ -25,18 +25,20 @@ export default function ConsolePage() {
   const [firebaseConnected, setFirebaseConnected] = useState(false);
 
   useEffect(() => {
-    const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-    const db = getFirestore(app);
-
     const initializeAndListen = async () => {
+      const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+      const db = getFirestore(app);
+
       await quantumResilience.executeWithResilience(
         'firebase_initialization',
         async () => {
           // Escutar uma coleção para confirmar a conexão
           const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
             () => {
-              setFirebaseConnected(true);
-              console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
+              if (!firebaseConnected) {
+                setFirebaseConnected(true);
+                console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
+              }
             },
             (error) => {
               console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
@@ -52,11 +54,16 @@ export default function ConsolePage() {
         }
       );
     };
+    
     initializeAndListen();
-  }, []);
+
+    // A função de limpeza será retornada pelo executeWithResilience se a task principal for bem-sucedida,
+    // mas precisamos de um retorno aqui também para o useEffect.
+    return () => {};
+  }, [firebaseConnected]);
 
   return (
-    <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
+    <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
       <header className="mb-8">
         <h1 className="text-4xl font-bold gradient-text">Mesa do Fundador</h1>
         <p className="text-muted-foreground">O Console Unificado da Fundação Alquimista.</p>
