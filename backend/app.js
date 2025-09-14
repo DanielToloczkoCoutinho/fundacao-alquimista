@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const compression = require('compression'); // Adicionado
 require('./config/db'); // Conexão com o banco de dados
 
 const authRoutes = require('./routes/authRoutes');
@@ -12,9 +13,10 @@ const { authMiddleware } = require('./middleware/authMiddleware');
 
 const app = express();
 
-// Middlewares de Segurança
+// Middlewares de Segurança e Performance
 app.use(helmet());
 app.use(cors());
+app.use(compression()); // Adicionado
 app.use(express.json());
 
 const limiter = rateLimit({
