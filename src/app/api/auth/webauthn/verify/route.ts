@@ -70,14 +70,8 @@ export async function POST(request: NextRequest) {
     const { verified } = verification;
     
     if (verified) {
-      // Limpe o challenge usado
-      await kv.del(`webauthn:challenge:${userId}`);
-      
       const token = jwt.sign(
-        { 
-          sub: userId,
-          auth_time: Math.floor(Date.now() / 1000)
-        },
+        { sub: userId, auth_time: Math.floor(Date.now() / 1000) },
         process.env.JWT_SECRET as string,
         { 
           expiresIn: '1h',
@@ -85,6 +79,9 @@ export async function POST(request: NextRequest) {
           audience: 'fundacao-omega-web'
         }
       );
+
+      // Limpe o challenge usado
+      await kv.del(`webauthn:challenge:${userId}`);
       
       return NextResponse.json({ 
         verified: true, 

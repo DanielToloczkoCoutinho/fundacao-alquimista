@@ -36,6 +36,7 @@ app.get('/health', (req, res) => {
 // Endpoint de Métricas
 app.get('/metrics', async (req, res) => {
   try {
+    const fetch = (await import('node-fetch')).default;
     const metrics = await fetch('http://localhost:9464/metrics');
     const text = await metrics.text();
     res.set('Content-Type', 'text/plain');

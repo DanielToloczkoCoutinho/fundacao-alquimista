@@ -6,6 +6,8 @@ import fetch from 'node-fetch';
 export const chatBot = new App({
   token: process.env.SLACK_BOT_TOKEN!,
   signingSecret: process.env.SLACK_SIGNING_SECRET!,
+  socketMode: true,
+  appToken: process.env.SLACK_APP_TOKEN!
 });
 
 chatBot.command('/m29', async ({ command, ack, say }) => {
@@ -37,13 +39,14 @@ chatBot.command('/m29', async ({ command, ack, say }) => {
     await say(`🤖 Comandos /m29 disponíveis:
 • status
 • metrics
-• deploy <MODULE>
-• rollback <MODULE>
+• deploy <MÓDULO>
+• rollback <MÓDULO>
 • help`);
   }
 });
 
-// no backend, chame startChatBot()
+// Inicie no backend:
+// import { startChatBot } from '../src/lib/chatops'; startChatBot();
 export const startChatBot = async () => {
   const port = process.env.SLACK_BOT_PORT ? parseInt(process.env.SLACK_BOT_PORT) : 3001;
   await chatBot.start(port);
