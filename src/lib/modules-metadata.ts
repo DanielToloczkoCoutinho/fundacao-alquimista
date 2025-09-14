@@ -114,7 +114,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M108',title: 'Harmonização de Realidades',            emoji: '🎭', route: '/module-108', category: 'mid' },
   { code: 'M109',title: 'Cura Quântica',                         emoji: '🩹', route: '/module-109', category: 'mid' },
   { code: 'M110',title: 'Co-Criação',                            emoji: '🤲', route: '/module-110', category: 'mid' },
-  { code: 'M112',title: 'Solarian Domus',                        emoji: '🏠', route: '/module-112', category: 'mid' },
+  { code: 'M112',title: 'Solarian Domus',                        emoji: '☀️', route: '/module-112', category: 'mid' },
   { code: 'M113',title: 'Rede Aurora Cristalina',                emoji: '🌈', route: '/module-113', category: 'mid' },
   { code: 'M114',title: 'Prisma da Manifestação',                emoji: '🔶', route: '/module-114', category: 'mid' },
   { code: 'M115',title: 'Matriz de Ressonância',                 emoji: '📊', route: '/module-115', category: 'mid' },
@@ -136,3 +136,4 @@ export const modulesMetadata: ModuleMetadata[] = [
     
 
     
+
