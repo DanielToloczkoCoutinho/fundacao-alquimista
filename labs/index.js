@@ -1,6 +1,6 @@
 // labs/index.js
 const { ApolloServer, gql } = require('apollo-server');
-const { modulesMetadata } = require('../src/lib/modules-metadata'); // Ajuste o caminho se necessário após compilação
+const { modulesMetadata } = require('../src/lib/modules-metadata');
 
 const typeDefs = gql`
   type ModuleMeta {
