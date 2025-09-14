@@ -15,6 +15,8 @@ import { describeSpaceTimeEngineering as runDescribeSpaceTimeEngineering } from 
 import { describeHologramProjection as runDescribeHologramProjection } from '@/ai/flows/prisma-flow';
 import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-matrix-flow';
 import { transmitUniversalMessage as runTransmitUniversalMessage } from '@/ai/flows/universal-communication-flow';
+import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
+import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -161,4 +163,24 @@ export async function transmitUniversalMessage(data: { targetConsciousness: stri
         console.error(e);
         return { success: false, logs: [], error: e.message || 'An unknown error occurred.' };
     }
+}
+
+export async function resolveParadox(data: { description: string }) {
+  try {
+    const result = await runResolveParadox(data);
+    return { success: result.success, logs: result.logs, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { success: false, logs: [], error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function emitLoveFrequency(data: { targetArea: string, frequency: number, purpose: string }) {
+  try {
+    const result = await runEmitLoveFrequency(data);
+    return { success: result.success, logs: result.logs, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { success: false, logs: [], error: e.message || 'An unknown error occurred.' };
+  }
 }

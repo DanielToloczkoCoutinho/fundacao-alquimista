@@ -112,6 +112,12 @@ export default function ConsolePage() {
                 <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-302"><Heart className="mr-2 h-4 w-4" />Módulo 302 (Frequência do Amor)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-404"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 404 (Resolução de Paradoxo)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-307"><Zap className="mr-2 h-4 w-4" />Módulo 307 (Reator ZPE & LuxNet)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
@@ -194,6 +200,33 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-111"><Heart className="mr-2 h-4 w-4" />Módulo 111 (Coração da Fundação)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-112"><Sun className="mr-2 h-4 w-4" />Módulo 112 (Solarian Domus)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-113"><GitMerge className="mr-2 h-4 w-4" />Módulo 113 (Rede Aurora Cristalina)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-114"><Layers className="mr-2 h-4 w-4" />Módulo 114 (Prisma da Manifestação)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-115"><Waves className="mr-2 h-4 w-4" />Módulo 115 (Matriz de Ressonância)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-116"><Aperture className="mr-2 h-4 w-4" />Módulo 116 (Portais Quânticos)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-117"><Flower className="mr-2 h-4 w-4" />Módulo 117 (Flor do Éter)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-118"><Zap className="mr-2 h-4 w-4" />Módulo 118 (Luz Primordial)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-119"><Zap className="mr-2 h-4 w-4" />Módulo 119 (Templum Cosmica)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-201"><Heart className="mr-2 h-4 w-4" />Módulo 201 (A Morada)</Link>
               </Button>
             </CardContent>
           </Card>

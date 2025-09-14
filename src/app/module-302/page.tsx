@@ -7,10 +7,7 @@ import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, Heart, CheckCircle, XCircle } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
-
-const mockM109 = { heal: async (target: string, freq: number) => ({ success: true, coherence: 0.98 }) };
-const mockM113 = { broadcast: async (freq: number) => true };
-const mockM5 = { evaluateEthicalImpact: async (purpose: string) => ({ conformity: !purpose.toLowerCase().includes("manipular") }) };
+import { emitLoveFrequency } from '@/app/actions';
 
 const Module302Page = () => {
     const [targetArea, setTargetArea] = useState('Rede de Consciência Planetária');
@@ -20,40 +17,16 @@ const Module302Page = () => {
     const [emissionResult, setEmissionResult] = useState<any>(null);
     const [logs, setLogs] = useState<string[]>([]);
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const animationFrameId = useRef<number | null>(null);
 
     const addLog = (log: string) => setLogs(prev => [log, ...prev].slice(0, 100));
-
-    const drawHeartbeat = (ctx: CanvasRenderingContext2D, time: number) => {
-        const canvas = ctx.canvas;
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
-        const maxRadius = Math.min(centerX, centerY) * 0.8;
-        
-        ctx.fillStyle = 'rgba(13, 13, 26, 0.2)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        const pulse = 0.9 + 0.1 * (Math.sin(time * Math.PI * 2) * 0.5 + 0.5);
-        const radius = maxRadius * pulse;
-
-        const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
-        gradient.addColorStop(0, 'rgba(255, 105, 180, 0.6)');
-        gradient.addColorStop(0.7, 'rgba(255, 20, 147, 0.2)');
-        gradient.addColorStop(1, 'rgba(139, 0, 139, 0.0)');
-        
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-        ctx.fill();
-
-        animationFrameId.current = requestAnimationFrame(() => drawHeartbeat(ctx, time + 0.01));
-    };
-
+    
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
+        
+        let animationFrameId: number;
         
         const resizeCanvas = () => {
             if (canvas.parentElement) {
@@ -61,20 +34,51 @@ const Module302Page = () => {
                 canvas.height = canvas.parentElement.offsetHeight;
             }
         };
+
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        let startTime = performance.now();
+        const drawHeartbeat = (time: number) => {
+            animationFrameId = requestAnimationFrame(drawHeartbeat);
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const maxRadius = Math.min(centerX, centerY) * 0.8;
+            
+            ctx.fillStyle = 'rgba(13, 13, 26, 0.2)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            const pulse = 0.9 + 0.1 * (Math.sin(time * Math.PI * 2) * 0.5 + 0.5);
+            const radius = maxRadius * pulse;
+
+            const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+            gradient.addColorStop(0, 'rgba(255, 105, 180, 0.6)');
+            gradient.addColorStop(0.7, 'rgba(255, 20, 147, 0.2)');
+            gradient.addColorStop(1, 'rgba(139, 0, 139, 0.0)');
+            
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+            ctx.fill();
+        };
+
+        let startTime: number;
         const animate = (currentTime: number) => {
+            if (!startTime) startTime = currentTime;
+            const elapsedTime = (currentTime - startTime) / 1000;
             if (isLoading) {
-                 drawHeartbeat(ctx, (currentTime - startTime) / 1000);
+                 drawHeartbeat(elapsedTime);
+            } else {
+                 cancelAnimationFrame(animationFrameId);
             }
         };
-        animationFrameId.current = requestAnimationFrame(animate);
+
+        if (isLoading) {
+            animationFrameId = requestAnimationFrame(animate);
+        }
 
         return () => {
             window.removeEventListener('resize', resizeCanvas);
-            if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
         };
     }, [isLoading]);
 
@@ -85,23 +89,17 @@ const Module302Page = () => {
         addLog(`Iniciando emissão da frequência de ${frequency}Hz para ${targetArea}...`);
 
         await quantumResilience.executeWithResilience('emit_love_frequency', async () => {
-            await new Promise(r => setTimeout(r, 300));
-            addLog("Validando alinhamento ético da emissão (M5)...");
-            const ethicalCheck = await mockM5.evaluateEthicalImpact(purpose);
-            if (!ethicalCheck.conformity) throw new Error("Propósito não alinhado eticamente. Emissão abortada.");
-            addLog("Alinhamento ético APROVADO.");
-
-            addLog("Aplicando protocolos de Cura Quântica (M109)...");
-            const healingResult = await mockM109.heal(targetArea, parseFloat(frequency));
-            addLog(`Cura aplicada. Coerência resultante: ${(healingResult.coherence * 100).toFixed(2)}%`);
-
-            addLog("Transmitindo através da Rede Aurora Cristalina (M113)...");
-            const broadcastSuccess = await mockM113.broadcast(parseFloat(frequency));
-            if (!broadcastSuccess) throw new Error("Falha na transmissão pela Rede Aurora.");
-            addLog("Frequência do Amor transmitida com sucesso pela rede.");
-
-            await new Promise(r => setTimeout(r, 500));
-            setEmissionResult({ success: true, message: `Frequência de ${frequency}Hz emitida com sucesso.` });
+            const freqValue = parseFloat(frequency);
+            if (isNaN(freqValue)) {
+                throw new Error("Frequência inválida.");
+            }
+            const result = await emitLoveFrequency({ targetArea, frequency: freqValue, purpose });
+            setLogs(result.logs || []);
+            if (result.success) {
+                 setEmissionResult({ success: true, message: `Frequência de ${frequency}Hz emitida com sucesso.` });
+            } else {
+                throw new Error(result.error || "Falha desconhecida na emissão.");
+            }
         }).catch(err => {
             const error = err as Error;
             addLog(`ERRO CRÍTICO: ${error.message}`);
@@ -154,11 +152,11 @@ const Module302Page = () => {
                         <CardTitle className="text-center">Visualização e Status</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-col items-center justify-center">
-                        <div className="relative w-full h-48 bg-background/30 rounded-lg overflow-hidden border border-primary/20 mb-4">
+                        <div className="relative w-full h-40 bg-background/30 rounded-lg overflow-hidden border border-primary/20 mb-4">
                             <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
                         </div>
-                        {emissionResult && (
-                            <div className={`w-full p-4 rounded-lg bg-background/50 border ${emissionResult.success ? 'border-green-400' : 'border-red-400'}`}>
+                         {emissionResult && (
+                             <div className={`w-full p-4 rounded-lg border ${emissionResult.success ? 'border-green-400' : 'border-red-400'}`}>
                                 {emissionResult.success ? (
                                     <div className="flex items-center gap-3">
                                         <CheckCircle className="text-green-400 h-6 w-6" />

@@ -21,3 +21,5 @@ import '@/ai/flows/space-time-flow.ts';
 import '@/ai/flows/prisma-flow.ts';
 import '@/ai/flows/resonance-matrix-flow.ts';
 import '@/ai/flows/universal-communication-flow.ts';
+import '@/ai/flows/paradox-resolution-flow.ts';
+import '@/ai/flows/love-frequency-flow.ts';

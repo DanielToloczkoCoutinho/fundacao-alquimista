@@ -6,10 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
-
-const mockM107 = { restore: async (timeline: string, point: string) => ({ success: true, stability: 0.99 }) };
-const mockM108 = { harmonize: async (timeline: string, conflict: string) => ({ success: true, dissonanceReduced: 0.98 }) };
-const mockM5 = { evaluateEthicalImpact: async (action: string) => ({ conformity: !action.toLowerCase().includes("apagar") }) };
+import { resolveParadox } from '@/app/actions';
 
 const Module404Page = () => {
     const [paradoxDescription, setParadoxDescription] = useState('Um loop causal foi detectado na linha temporal Terra-Gama-2042, onde um evento futuro está impedindo sua própria causa de ocorrer.');
@@ -26,26 +23,13 @@ const Module404Page = () => {
         addLog(`Iniciando resolução do paradoxo: "${paradoxDescription.substring(0, 50)}..."`);
 
         await quantumResilience.executeWithResilience('resolve_paradox', async () => {
-            await new Promise(r => setTimeout(r, 300));
-            addLog("Analisando impacto ético da intervenção (M5)...");
-            const ethicalCheck = await mockM5.evaluateEthicalImpact(paradoxDescription);
-            if (!ethicalCheck.conformity) throw new Error("Intervenção não alinhada eticamente. Resolução abortada.");
-            addLog("Alinhamento ético APROVADO.");
-
-            addLog("Harmonizando linhas temporais conflitantes (M108)...");
-            const harmonizationResult = await mockM108.harmonize('Terra-Gama-2042', paradoxDescription);
-            if (!harmonizationResult.success) throw new Error("Falha na harmonização das realidades.");
-            addLog(`Harmonização concluída. Dissonância causal reduzida.`);
-
-            addLog("Restaurando a linha do tempo original (M107)...");
-            const restorationResult = await mockM107.restore('Terra-Gama-2042', 'Ponto de Inflexão Causal');
-            if (!restorationResult.success) throw new Error("Falha na restauração da linha do tempo.");
-            addLog(`Restauração concluída. Estabilidade final: ${(restorationResult.stability * 100).toFixed(2)}%`);
-
-            await new Promise(r => setTimeout(r, 500));
-            setResolutionResult({ success: true, message: `Paradoxo resolvido e linha do tempo estabilizada com sucesso.` });
-            addLog("Operação finalizada.");
-
+            const result = await resolveParadox({ description: paradoxDescription });
+            setLogs(result.logs || []);
+            if (result.success) {
+                setResolutionResult({ success: true, message: `Paradoxo resolvido e linha do tempo estabilizada com sucesso.` });
+            } else {
+                throw new Error(result.error || "Falha desconhecida na resolução do paradoxo.");
+            }
         }).catch(err => {
             const error = err as Error;
             addLog(`ERRO CRÍTICO: ${error.message}`);
