@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { nexusSequence, type NexusItem } from '@/lib/nexus-sequence';
+import { nexusSequence } from '@/lib/nexus-sequence';
 import { CheckCircle, CircleDot, Loader } from 'lucide-react';
 import Link from 'next/link';
 
