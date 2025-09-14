@@ -12,6 +12,8 @@ export interface RitualLogEntry {
   executor: string;
   etapas: RitualStep[];
   resultado: string;
+  outcome: "SUCCESS" | "PARTIAL" | "STANDBY" | "ANOMALY";
+  coherenceSnapshot: number;
 }
 
 export const ritualLog: RitualLogEntry[] = [
@@ -27,6 +29,8 @@ export const ritualLog: RitualLogEntry[] = [
       { modulo: 'M29', acao: 'Análise IAM' },
       { modulo: 'M310', acao: 'Registro Akáshico Final' }
     ],
-    resultado: 'Rede ativada com sucesso. Coerência vibracional: 99.98%'
+    resultado: 'Rede ativada com sucesso. Coerência vibracional: 99.98%',
+    outcome: 'SUCCESS',
+    coherenceSnapshot: 0.9998
   }
 ];
