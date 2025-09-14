@@ -7,8 +7,8 @@ const nextConfig = {
     webVitalsAttribution: ['CLS','LCP','FID'],
     transpilePackages: ['three', '@react-three/drei', '@react-three/xr'],
     allowedDevOrigins: [
-      'https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev',
-      'http://localhost:9000',
+      'https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev',
+      'http://localhost:6000',
     ],
   },
   typescript: {
@@ -48,9 +48,9 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "frame-ancestors 'self' http://localhost:9000",
-              "frame-src http://localhost:9000",
-              "connect-src 'self' http://localhost:9000",
+              "frame-ancestors 'self' https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
+              "frame-src 'self' https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
+              "connect-src 'self' https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https://picsum.photos",
@@ -90,6 +90,14 @@ const nextConfig = {
   async rewrites() {
     return [
       {
+        source: '/console/:path*',
+        destination: 'https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/console/:path*',
+      },
+      {
+        source: '/console',
+        destination: 'https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/console',
+      },
+      {
         source: '/firebase-preview/:path*',
         destination: 'http://localhost:9000/:path*'
       },
@@ -103,12 +111,12 @@ const nextConfig = {
       },
       // Rewrite genérico para todos os módulos
       {
-        source: '/module-:id/:path*',
-        destination: 'http://localhost:9000/module-:id/:path*',
+        source: '/module-600/:path*',
+        destination: 'https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/module-600/:path*',
       },
       {
-        source: '/module-:id',
-        destination: 'http://localhost:9000/module-:id',
+        source: '/module-600',
+        destination: 'https://6000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev/module-600',
       },
     ];
   },
