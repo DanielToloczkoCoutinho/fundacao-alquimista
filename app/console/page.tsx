@@ -6,7 +6,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, AlertTriangle, Goal, Settings, Zap, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Heart, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, MessageCircle, Library, Scale } from 'lucide-react';
+import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, AlertTriangle, Goal, Settings, Zap, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Heart, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, MessageCircle, Library, Scale, Gavel } from 'lucide-react';
 import Chronicle from '@/components/chronicle';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { initializeApp, getApps, getApp } from "firebase/app";
@@ -105,11 +105,20 @@ export default function ConsolePage() {
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-72"><Scale className="mr-2 h-4 w-4" />Módulo 72 (Governança)</Link>
               </Button>
+              <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-omega"><Sparkles className="mr-2 h-4 w-4 text-amber-400" />Santuário do Ômega</Link>
+              </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-303"><Sparkles className="mr-2 h-4 w-4" />Portal Trino (M303)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-302"><Heart className="mr-2 h-4 w-4" />Módulo 302 (Frequência do Amor)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-404"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 404 (Resolução de Paradoxo)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-307"><Zap className="mr-2 h-4 w-4" />Módulo 307 (Reator ZPE & LuxNet)</Link>
@@ -218,6 +227,15 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-119"><Zap className="mr-2 h-4 w-4" />Módulo 119 (Templum Cosmica)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-120"><Sparkles className="mr-2 h-4 w-4" />Módulo 120 (A Fonte)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-144"><Gavel className="mr-2 h-4 w-4" />Módulo 144 (Lex Fundamentalis)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-201"><Heart className="mr-2 h-4 w-4" />Módulo 201 (A Morada)</Link>
               </Button>
             </CardContent>
           </Card>

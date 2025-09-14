@@ -17,7 +17,7 @@ import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-
 import { transmitUniversalMessage as runTransmitUniversalMessage } from '@/ai/flows/universal-communication-flow';
 import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
 import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
-
+import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-perspective-flow';
 
 export async function getLinkSummary(url: string) {
   try {
@@ -183,4 +183,14 @@ export async function emitLoveFrequency(data: { targetArea: string, frequency: n
     console.error(e);
     return { success: false, logs: [], error: e.message || 'An unknown error occurred.' };
   }
+}
+
+export async function getOmegaPerspective(evolutionSummary: string) {
+    try {
+        const result = await runGetOmegaPerspective({ evolutionSummary });
+        return { ...result, error: null };
+    } catch (e: any) {
+        console.error(e);
+        return { analysisTitle: null, synthesis: null, iamEvaluation: null, nextStepRecommendation: null, error: e.message || 'An unknown error occurred.' };
+    }
 }
