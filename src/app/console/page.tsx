@@ -88,7 +88,7 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/connection"><GitBranch className="mr-2 h-4 w-4" />Conexão Ω-M0</Link>
-              </Button>
+               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-72"><Scale className="mr-2 h-4 w-4" />Módulo 72 (Governança)</Link>
               </Button>
