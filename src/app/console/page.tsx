@@ -72,7 +72,7 @@ export default function ConsolePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
+    <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
       <header className="mb-8">
         <h1 className="text-4xl font-bold gradient-text">Mesa do Fundador</h1>
         <p className="text-muted-foreground">O Console Unificado da Fundação Alquimista.</p>

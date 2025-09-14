@@ -2,7 +2,6 @@
 // This file is now located at app/layout.tsx
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { Sidebar } from '@/components/ui/sidebar';
 import ErrorBoundary from '@/components/ui/error-boundary';
 import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
 import dynamic from 'next/dynamic';
