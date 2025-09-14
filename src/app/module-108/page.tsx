@@ -13,7 +13,7 @@ import { describeHarmonization } from '@/app/actions';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
 const mockM2 = { async establishDimensionalCommunication(realityId: string) { await new Promise(res => setTimeout(res, 600)); return true; } };
-const mockM28 = { async harmonizeVibrationalField(targetData: any) { await new Promise(res => setTimeout(res, 700)); return true; } };
+const mockM28 = { async harmonizeVibrationalField(targetData: any) { await new Promise(r => setTimeout(r, 700)); return true; } };
 const mockM32 = { async accessParallelReality(realityId: string) { await new Promise(res => setTimeout(res, 650)); return true; } };
 const mockM42 = { async synchronizeTimelines(syncPoint: string) { await new Promise(res => setTimeout(res, 750)); return true; } };
 const mockM73 = { async validateEthicalAlignment(opData: any) { await new Promise(res => setTimeout(res, 800)); return true; } };
