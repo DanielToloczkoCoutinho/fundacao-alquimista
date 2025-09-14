@@ -99,6 +99,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M91', emoji: '🖥️', title: 'Simulação Multiversal', route: '/module-91', category: 'mid' },
   { code: 'M92', emoji: '💖', title: 'Campos de Cura', route: '/module-92', category: 'mid' },
   { code: 'M93', emoji: '🎓', title: 'Simulações Imersivas', route: '/module-93', category: 'mid' },
+  { code: 'M94', title: 'Morfogênese Quântica',                  emoji: '🧬', route: '/module-94', category: 'mid' },
   { code: 'M100',title: 'Unificação Energética',                 emoji: '🔋', route: '/module-100', category: 'mid' },
   { code: 'M101',title: 'Manifestação',                          emoji: '✨', route: '/module-101', category: 'mid' },
   { code: 'M102',title: 'Campos Morfogenéticos',                 emoji: '🌀', route: '/module-102', category: 'mid' },

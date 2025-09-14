@@ -117,7 +117,7 @@ const Module94Page = () => {
                     <CardContent className="space-y-6">
                         <div className="flex gap-2">
                            <Button variant="outline" onClick={loadScenario1}>Cenário 1: Regeneração</Button>
-                           <Button variant="outline" onClick={loadScenario2}>Cenário 2: Coerção</Button>
+                           <Button variant="outline" onClick={loadScenario2}>Cenário 2: Coerção (Teste Ético)</Button>
                         </div>
                         <div className="space-y-2">
                             <Label htmlFor="targetEntity">ID da Entidade Alvo</Label>
