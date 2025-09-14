@@ -4,17 +4,16 @@
 
 @layer base {
   :root {
-    /* Primary: Deep Violet, Background: Light Lavender, Accent: Golden Yellow */
-    --background: 259 55% 10%; /* #1A103D - Deep Violet */
-    --foreground: 45 100% 58%; /* #FFD700 - Golden Yellow */
+    --background: 259 55% 10%; /* Deep Violet */
+    --foreground: 255 100% 94%; /* Light Lavender for text */
 
-    --card: 259 55% 15%; /* Darker violet for cards */
-    --card-foreground: 255 100% 94%; /* Light Lavender for card text */
+    --card: 259 55% 15%;
+    --card-foreground: 255 100% 94%;
 
     --popover: 259 55% 10%;
     --popover-foreground: 255 100% 94%;
 
-    --primary: 259 55% 45%; /* #4C2A85 - Brighter Violet */
+    --primary: 259 55% 45%; /* Brighter Violet */
     --primary-foreground: 45 100% 58%; /* Golden Yellow */
 
     --secondary: 259 40% 30%;
@@ -23,7 +22,7 @@
     --muted: 259 30% 20%;
     --muted-foreground: 255 20% 85%;
 
-    --accent: 45 100% 58%; /* #FFC72C - Golden Yellow */
+    --accent: 45 100% 58%; /* Golden Yellow */
     --accent-foreground: 259 55% 10%;
 
     --destructive: 0 62.8% 30.6%;
@@ -37,7 +36,7 @@
   }
 
   .dark {
-    /* Keeping dark theme consistent with the new base theme */
+     /* Dark theme is the default, so this matches :root */
     --background: 259 55% 10%;
     --foreground: 255 100% 94%;
 
@@ -74,17 +73,12 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Literata', serif;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Literata', serif;
     font-weight: bold;
     color: hsl(var(--foreground));
-  }
-  a {
-    color: hsl(var(--accent));
-  }
-  a:hover {
-    text-decoration: underline;
   }
 }
 

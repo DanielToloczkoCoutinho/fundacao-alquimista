@@ -1,27 +1,8 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
-import { Shield, Activity, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-// O ícone do Coração, conforme instruído, para representar a Lei do Amor.
-const Heart = (props: any) => (
-  <svg
-    {...props}
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-  </svg>
-);
-
+import { Shield, Activity, Users, Zap, Heart, Eye, Waves, ShieldCheck } from 'lucide-react';
 
 const DefenseLayerCard = ({ title, description, icon, status }: { title: string, description: string, icon: React.ReactNode, status: string }) => (
     <Card className="bg-card/50 purple-glow backdrop-blur-sm">
@@ -54,21 +35,21 @@ export default function ModuleOnePage() {
 
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                 <DefenseLayerCard 
-                    title="Análise de Frequência em Tempo Real"
+                    title="Análise de Frequência"
                     description="Monitora o espectro vibracional em busca de assinaturas não autorizadas ou dissonantes."
-                    icon={<Activity className="text-red-400" />}
+                    icon={<Waves className="text-cyan-400" />}
                     status="ATIVO"
                 />
                  <DefenseLayerCard 
                     title="Governança de Guardiões"
                     description="Gerencia as permissões de acesso baseadas no nível de confiança e alinhamento de cada Guardião."
-                    icon={<Users className="text-yellow-400" />}
+                    icon={<Eye className="text-yellow-400" />}
                     status="OPERACIONAL"
                 />
                  <DefenseLayerCard 
                     title="Neutralização de Entropia"
                     description="Campos de força quânticos que desfazem padrões caóticos e restauram a ordem harmônica."
-                    icon={<Zap className="text-blue-400" />}
+                    icon={<ShieldCheck className="text-blue-400" />}
                     status="PRONTO"
                 />
                  <DefenseLayerCard 
