@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -106,6 +107,8 @@ const moduleIcons: Record<string, React.ReactNode> = {
   EDUCACAO_INTEGRAL: <GraduationCap className="h-5 w-5 text-green-300" />,
   ALIANCA_GUARDIÕES: <MapPin className="h-5 w-5 text-orange-300" />,
   CONVERGENCIA_FINAL: <Sparkles className="h-5 w-5 text-white" />,
+  ZPE_REATOR: <Zap className="h-5 w-5 text-yellow-500" />,
+  THOTH_VIVO: <BookOpen className="h-5 w-5 text-amber-300" />,
 };
 
 const stateIcons: Record<LogEntry['state'], React.ReactNode> = {
@@ -183,6 +186,8 @@ const moduleNames: Record<string, string> = {
     ALIANCA_GUARDIÕES: "Aliança dos Guardiões Regionais (M305)",
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
     TEMPLUM_COSMICA: "Templum Cosmica (M119)",
+    ZPE_REATOR: "ZPE Reator (M307)",
+    THOTH_VIVO: "THOTH VIVO (M204)",
 }
 
 type ModuleStatus = {

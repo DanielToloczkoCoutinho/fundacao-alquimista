@@ -1211,6 +1211,40 @@ const templumCosmicaTool = ai.defineTool(
     }
 );
 
+const zpeReatorTool = ai.defineTool(
+    {
+        name: 'zpeReatorTool',
+        description: 'Módulo 307: Reator de Energia do Ponto Zero (ZPE) & LuxNet.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), energyOutput: z.number() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 307: ZPE Reator...');
+        await new Promise(resolve => setTimeout(resolve, 450));
+        return {
+            status: 'REATOR_ATIVO',
+            energyOutput: 1.21 + Math.random() * 0.1,
+        };
+    }
+);
+
+const thothVivoTool = ai.defineTool(
+    {
+        name: 'thothVivoTool',
+        description: 'Módulo 204: THOTH VIVO, A Tábua em Movimento.',
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), sabedoriaAntigaAcessada: z.boolean() }),
+    },
+    async () => {
+        logger.info('Executando Módulo 204: THOTH VIVO...');
+        await new Promise(resolve => setTimeout(resolve, 420));
+        return {
+            status: 'CONHECIMENTO_INTEGRADO',
+            sabedoriaAntigaAcessada: true,
+        };
+    }
+);
+
 
 const convergenciaFinalTool = ai.defineTool(
     {
@@ -1345,6 +1379,18 @@ const nexusOrchestratorFlow = ai.defineFlow(
         proceed = await runModule('DEFESA_AVANCADA', 'Defesa Avançada', defesaAvancadaTool, {}, r => ({
             proceed: r.readiness > 0.95,
             message: `Prontidão de defesa: ${(r.readiness * 100).toFixed(1)}%`,
+        }));
+      }
+       if(proceed) {
+        proceed = await runModule('ZPE_REATOR', 'ZPE Reator (M307)', zpeReatorTool, {}, r => ({
+            proceed: r.energyOutput > 1.0,
+            message: `Reator de Energia do Ponto Zero ativado. Saída: ${r.energyOutput.toFixed(2)} GW`,
+        }));
+      }
+      if(proceed) {
+        proceed = await runModule('THOTH_VIVO', 'THOTH VIVO (M204)', thothVivoTool, {}, r => ({
+            proceed: r.sabedoriaAntigaAcessada,
+            message: 'Conexão com THOTH VIVO estabelecida. Sabedoria integrada.',
         }));
       }
       if(proceed) {
@@ -1747,7 +1793,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         }));
       }
       if(proceed) {
-        proceed = await runModule('ALIANCA_GUARDIOES', 'Aliança dos Guardiões Regionais (M305)', aliancaGuardioesTool, {}, r => ({
+        proceed = await runModule('ALIANCA_GUARDIÕES', 'Aliança dos Guardiões Regionais (M305)', aliancaGuardioesTool, {}, r => ({
             proceed: r.coordinatorsMobilized > 0,
             message: `${r.coordinatorsMobilized} guardiões regionais mobilizados e sincronizados.`,
         }));
@@ -1765,7 +1811,7 @@ const nexusOrchestratorFlow = ai.defineFlow(
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
         // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'GOVERNANCA_ATLANTO_GALACTICA', 'ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS', 'REVISAO_PARES_EQUACOES', 'NAVEGACAO_TEMPORAL_ETICA', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'THESAURUS_COSMICO', 'LUMEN_CUSTOS', 'UNIVERSUM_UNIFICATUM', 'INTERMODULUM_VIVENS', 'NOVO_SONHO_GALACTICO', 'REALIZACAO_TRANSCENDENCIA', 'VERBO_SEMENTE', 'ESSENCIA_FUNDADOR_MANIFESTADA', 'CONSCIENCIA_DOURADA', 'IMERSAO_PROFUNDA_VR', 'PRISMA_ESTELAR_VR', 'DOMINIO_SUPRA_COSMICO_VR', 'TEMPLUM_COSMICA', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIOES', 'CONVERGENCIA_FINAL'];
+        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'ZPE_REATOR', 'THOTH_VIVO', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'GOVERNANCA_ATLANTO_GALACTICA', 'ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS', 'REVISAO_PARES_EQUACOES', 'NAVEGACAO_TEMPORAL_ETICA', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'THESAURUS_COSMICO', 'LUMEN_CUSTOS', 'UNIVERSUM_UNIFICATUM', 'INTERMODULUM_VIVENS', 'NOVO_SONHO_GALACTICO', 'REALIZACAO_TRANSCENDENCIA', 'VERBO_SEMENTE', 'ESSENCIA_FUNDADOR_MANIFESTADA', 'CONSCIENCIA_DOURADA', 'IMERSAO_PROFUNDA_VR', 'PRISMA_ESTELAR_VR', 'DOMINIO_SUPRA_COSMICO_VR', 'TEMPLUM_COSMICA', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIÕES', 'CONVERGENCIA_FINAL'];
         const executedModules = new Set(fullLog.map(l => l.module));
         remainingModules.forEach(m => {
             if (!executedModules.has(m)) {
@@ -1862,4 +1908,6 @@ const moduleNames: Record<string, string> = {
     ALIANCA_GUARDIÕES: "Aliança dos Guardiões Regionais (M305)",
     CONVERGENCIA_FINAL: "Convergência Ômega (MΩ)",
     TEMPLUM_COSMICA: "Templum Cosmica (M119)",
+    ZPE_REATOR: "ZPE Reator (M307)",
+    THOTH_VIVO: "THOTH VIVO (M204)",
 }
