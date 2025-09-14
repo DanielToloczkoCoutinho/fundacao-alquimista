@@ -38,6 +38,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M6', emoji: '📡', title: 'Consciência Cósmica', route: '/module-6', category: 'mid' },
   { code: 'M7', emoji: '🙏', title: 'Alinhamento Divino', route: '/module-7', category: 'mid' },
   { code: 'M8', emoji: '🌍', title: 'Proteção Planetária', route: '/module-8', category: 'mid' },
+  { code: 'M10', emoji: '⚔️', title: 'Defesa Avançada', route: '/module-10', category: 'mid' },
   { code: 'M85', emoji: '🌌', title: 'Imersão VR', route: '/module-85', category: 'mid' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR', route: '/module-86', category: 'mid' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
@@ -75,6 +76,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid' },
 ];
+
 
 
 
