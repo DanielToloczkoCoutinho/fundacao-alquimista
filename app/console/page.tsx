@@ -6,19 +6,9 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, AlertTriangle, Goal, Settings, Zap, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Heart, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, MessageCircle, Library, Scale, Gavel, Users2 } from 'lucide-react';
-import { initializeApp, getApps, getApp } from "firebase/app";
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2 } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
-
-const firebaseConfig = {
-    "projectId": "studio-4265982502-21871",
-    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
-    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
-    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
-    "authDomain": "studio-4265982502-21871.firebaseapp.com",
-    "measurementId": "",
-    "messagingSenderId": "174545373080"
-};
+import { db } from '@/lib/firebase';
 
 export default function ConsolePage() {
   const [firebaseConnected, setFirebaseConnected] = useState(false);
@@ -27,10 +17,6 @@ export default function ConsolePage() {
   useEffect(() => {
     setIsClient(true);
     
-    // Evita inicialização duplicada do Firebase no HMR
-    const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-    const db = getFirestore(app);
-
     const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
       () => {
         if (!firebaseConnected) {
