@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, BrainCircuit, Sparkles, GitBranch } from 'lucide-react';
+import { GraduationCap, BrainCircuit, Sparkles, GitBranch, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -62,6 +62,12 @@ export default function Module304Page() {
                         description="Atua como o sistema educacional da própria Fundação, garantindo que cada módulo 'aprenda' e evolua em alinhamento com a rede."
                         icon={<GitBranch className="h-8 w-8 text-indigo-400" />}
                         href="/module-9"
+                    />
+                    <ConnectionCard
+                        title="Módulo 301: Comunicação Universal"
+                        description="Utiliza o M301 como o canal de transmissão para disseminar a sabedoria cósmica, traduzindo-a para todas as formas de consciência."
+                        icon={<MessageCircle className="h-8 w-8 text-sky-400" />}
+                        href="/module-301"
                     />
                 </div>
             </div>
