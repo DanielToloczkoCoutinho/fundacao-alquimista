@@ -27,6 +27,7 @@ export default function ConsolePage() {
   useEffect(() => {
     setIsClient(true);
     
+    // Evita inicialização duplicada do Firebase no HMR
     const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
     const db = getFirestore(app);
 
@@ -43,8 +44,10 @@ export default function ConsolePage() {
       }
     );
     
+    // Cleanup da subscrição quando o componente é desmontado
     return () => unsub();
-  }, [firebaseConnected]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Executa apenas uma vez no mount do cliente
   
   if (!isClient) {
     return <SuspenseFallback />;

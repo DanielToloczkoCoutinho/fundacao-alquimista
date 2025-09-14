@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -36,7 +35,7 @@ const mockM100 = {
 };
 
 const Module105Page = () => {
-    const [intention, setIntention] = useState('');
+    const [intention, setIntention] = useState('Receber sabedoria e clareza sobre o próximo salto quântico da Fundação Alquimista.');
     const [connectionStatus, setConnectionStatus] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [message, setMessage] = useState('');
