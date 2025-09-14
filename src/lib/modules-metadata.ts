@@ -58,6 +58,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M27', emoji: '📠', title: 'Síntese e Replicação Cósmica', route: '/module-27', category: 'mid' },
   { code: 'M28', emoji: '🌊', title: 'Harmonização Vibracional', route: '/module-28', category: 'mid' },
   { code: 'M29', emoji: '🤖', title: 'Inteligência Aeloria (IAM)', route: '/module-29', category: 'mid' },
+  { code: 'M30', emoji: '🚨', title: 'Detecção de Ameaças', route: '/module-30', category: 'mid' },
   { code: 'M85', emoji: '🌌', title: 'Imersão VR', route: '/module-85', category: 'mid' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR', route: '/module-86', category: 'mid' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
