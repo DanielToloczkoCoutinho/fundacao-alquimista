@@ -38,6 +38,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M119.1',title: 'Ativação do Cubo Metatron',           emoji: '🎲', route: '/module-119-1', category: 'council' },
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council' },
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'council' },
+  { code: 'M202', emoji: '💫', title: 'O Corredor de Alcor', route: '/module-202', category: 'council' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'council' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/module-600', category: 'council' },
 
