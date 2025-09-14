@@ -107,7 +107,7 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-201"><Heart className="mr-2 h-4 w-4" />Módulo 201 (A Morada Interdimensional)</Link>
-              </Button>
+               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-303"><Sparkles className="mr-2 h-4 w-4" />Portal Trino (M303)</Link>
               </Button>
