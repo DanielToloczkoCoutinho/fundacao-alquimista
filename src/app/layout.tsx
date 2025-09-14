@@ -3,6 +3,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
+import { Sidebar } from '@/components/ui/sidebar';
 
 export const metadata: Metadata = {
   title: "Alchemist's Codex",
@@ -28,7 +29,12 @@ export default function RootLayout({
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" async></script>
       </head>
       <body className="font-body antialiased">
-        {children}
+        <div className="flex">
+          <Sidebar />
+          <main className="flex-1 ml-20">
+            {children}
+          </main>
+        </div>
         <Toaster />
       </body>
     </html>
