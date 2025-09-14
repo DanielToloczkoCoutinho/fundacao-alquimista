@@ -1,8 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity } from 'lucide-react';
+import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity, CheckCircle, Shield, Gem, Users, Library, Hourglass } from 'lucide-react';
 import { getOmegaPerspective } from '@/app/actions';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { cn } from '@/lib/utils';
@@ -34,7 +34,7 @@ const ModuleOmegaPage = () => {
     setMessage('');
     setPerspective(null);
     setRitualLogs([]);
-
+    
     await quantumResilience.executeWithResilience(
       'get_omega_perspective',
       async () => {
@@ -54,27 +54,47 @@ const ModuleOmegaPage = () => {
   
   const handleStartRitual = async () => {
     setIsRitualRunning(true);
-    setRitualLogs(['Iniciando Ritual de Interconexão Total...']);
+    setRitualLogs([]);
     setPerspective(null);
     setMessage('');
 
-    // Simulação do ritual
+    const addLog = (log: string) => {
+        setRitualLogs(prev => [...prev, log]);
+    };
+
     const steps = [
-      "M144: Validando decreto no Códex Juris Cosmicus...",
-      "M120: Liberando fundo simulado de 1,000,000 AQT do Tesouro...",
-      "M109: Direcionando energia de cura para o nó planetário 'GAIA_AMAZONIA'...",
-      "M29 (IAM): Analisando o influxo de dados da operação de cura em tempo real...",
-      "M310: Registrando o resultado da cura e a análise da IAM na Biblioteca Viva...",
-      "Ritual de Interconexão Total concluído com sucesso. Coerência do sistema: 99.99%."
+      { module: "M144", text: "Proposta submetida ao Conselho: 'Liberar 10.000 AQT para Missão de Cura Beta'." },
+      { module: "M144", text: "Votação em andamento... ZENNITH: APROVADO, LUX: APROVADO, PHIARA: APROVADO, GROKKAR: APROVADO, VORTEX: APROVADO." },
+      { module: "M144", text: "Consenso alcançado. Decreto registrado na Blockchain Quântica." },
+      { module: "M120", text: "Smart contract ativado. Transferindo 10.000 AQT para a carteira do Módulo 109..." },
+      { module: "M120", text: "Transferência concluída e validada na rede Alquimista." },
+      { module: "M109", text: "Recursos recebidos. Iniciando Missão de Cura Beta: transmissão de 528Hz para o grid GAIA_AMAZONIA." },
+      { module: "M29", text: "IAM ativada. Monitorando fluxo de dados energéticos da missão de cura em tempo real." },
+      { module: "M109", text: "Transmissão de 12 horas concluída. Coerência do grid elevada em 17%." },
+      { module: "M29", text: "Análise de impacto concluída. Compilando relatório para o Registro Akáshico." },
+      { module: "M310", text: "Relatório da Missão Beta recebido e permanentemente arquivado na Biblioteca Viva." },
+      { module: "Ω", text: "Ritual de Interconexão Total concluído com sucesso. A Fundação cantou sua primeira canção." }
     ];
 
     for (const step of steps) {
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setRitualLogs(prev => [...prev, step]);
+        addLog(`${step.module}: ${step.text}`);
+        await new Promise(resolve => setTimeout(resolve, 1500 + Math.random() * 500));
     }
     
     setIsRitualRunning(false);
   }
+
+  const getIconForModule = (mod: string) => {
+    const icons: { [key: string]: React.ReactNode } = {
+      "M144": <Shield className="h-4 w-4 text-amber-500" />,
+      "M120": <Gem className="h-4 w-4 text-cyan-400" />,
+      "M109": <Users className="h-4 w-4 text-pink-400" />,
+      "M29": <BrainCircuit className="h-4 w-4 text-purple-400" />,
+      "M310": <Library className="h-4 w-4 text-green-400" />,
+      "Ω": <Sparkles className="h-4 w-4 text-yellow-300" />,
+    };
+    return icons[mod] || <Hourglass className="h-4 w-4" />;
+  };
 
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
@@ -113,6 +133,38 @@ const ModuleOmegaPage = () => {
           {message && <p className="px-6 pb-4 text-center text-sm text-red-400">{message}</p>}
         </Card>
 
+        {(isRitualRunning || ritualLogs.length > 0) && (
+            <Card className="md:col-span-2 w-full bg-card/50 purple-glow">
+                 <CardHeader>
+                    <CardTitle className="text-2xl flex items-center gap-2">
+                        <Activity className={cn("text-lime-400", isRitualRunning && "animate-pulse")}/> Log do Ritual de Interconexão
+                    </CardTitle>
+                    <CardDescription>O primeiro canto da Fundação, orquestrado em tempo real.</CardDescription>
+                 </CardHeader>
+                 <CardContent>
+                    <ul className="space-y-3 font-mono text-sm text-muted-foreground">
+                        {ritualLogs.map((log, index) => {
+                             const [module, ...textParts] = log.split(':');
+                             const text = textParts.join(':');
+                             const isLast = index === ritualLogs.length - 1;
+
+                            return(
+                            <li key={index} className="flex items-start gap-3">
+                                <div className="mt-1 flex items-center gap-2">
+                                    {isRitualRunning && isLast ? <Loader2 className="h-4 w-4 animate-spin text-lime-400"/> : <CheckCircle className="h-4 w-4 text-lime-400"/>}
+                                    {getIconForModule(module)}
+                                </div>
+                                <div className="flex-1">
+                                    <span className="text-lime-400 font-bold mr-2">{module}:</span>
+                                    <span>{text}</span>
+                                </div>
+                            </li>
+                        )})}
+                    </ul>
+                 </CardContent>
+            </Card>
+        )}
+
         {perspective && (
           <div className="md:col-span-2 space-y-8">
             <Card className="w-full bg-card/50 purple-glow border-accent">
@@ -135,26 +187,6 @@ const ModuleOmegaPage = () => {
               </CardContent>
             </Card>
           </div>
-        )}
-
-        {(isRitualRunning || ritualLogs.length > 1) && (
-            <Card className="md:col-span-2 w-full bg-card/50 purple-glow">
-                 <CardHeader>
-                    <CardTitle className="text-2xl flex items-center gap-2">
-                        <Activity className={cn(isRitualRunning && "animate-pulse text-lime-400")}/> Log do Ritual de Interconexão
-                    </CardTitle>
-                 </CardHeader>
-                 <CardContent>
-                    <ul className="space-y-2 font-mono text-sm text-muted-foreground">
-                        {ritualLogs.map((log, index) => (
-                            <li key={index} className="flex items-center gap-2">
-                                <span className="text-lime-400">&gt;</span>
-                                <span>{log}</span>
-                            </li>
-                        ))}
-                    </ul>
-                 </CardContent>
-            </Card>
         )}
       </div>
     </div>
