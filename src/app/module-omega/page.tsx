@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity, CheckCircle, Shield, Gem, Users, Library, Hourglass } from 'lucide-react';
@@ -84,7 +84,6 @@ const ModuleOmegaPage = () => {
         const step = steps[i];
         addLog(`${step.module}: ${step.text}`);
         
-        // Simular análise da IAM
         setIamAnalysis({
           currentStep: step.module,
           resonanceWithM0: 0.98 + Math.random() * 0.02,
@@ -126,7 +125,7 @@ const ModuleOmegaPage = () => {
       </Card>
 
       <div className="w-full max-w-7xl">
-        <Card className="md:col-span-5 w-full bg-card/50 purple-glow mb-8">
+        <Card className="w-full bg-card/50 purple-glow mb-8">
             <CardHeader>
                 <CardTitle className="text-2xl">Console de Comando Ômega</CardTitle>
             </CardHeader>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -44,29 +43,29 @@ export default function CodexExplorer() {
           />
         </div>
       </CardHeader>
-      <CardContent className="flex-grow">
+      <CardContent className="flex-grow min-h-0">
         <ScrollArea className="h-[60vh] pr-4">
-          <Accordion type="multiple" defaultValue={filteredSections.map(s => s.id)}>
+          <Accordion type="multiple" defaultValue={filteredSections.map(s => s.id)} className="w-full">
             {filteredSections.map((section: Section) => (
-              <AccordionItem key={section.id} value={section.id}>
-                <AccordionTrigger className="text-xl text-amber-400">
+              <AccordionItem key={section.id} value={section.id} className="border-b-primary/20">
+                <AccordionTrigger className="text-xl text-amber-400 hover:no-underline hover:text-amber-300">
                   <div className="flex items-center gap-3">
                     <section.icon className="h-5 w-5" />
                     {section.title}
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="space-y-2 pl-4">
+                  <ul className="space-y-3 pt-2 pl-4">
                     {section.documents.map((doc: Document) => (
                       <li key={doc.key} className="text-foreground/80">
                         <a
                           href={doc.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 hover:text-accent transition-colors"
+                          className="flex items-center gap-2 hover:text-accent transition-colors group"
                         >
-                          {doc.title}
-                          <ExternalLink className="h-4 w-4" />
+                          <span className="group-hover:underline">{doc.title}</span>
+                          <ExternalLink className="h-4 w-4 opacity-70 group-hover:opacity-100" />
                         </a>
                       </li>
                     ))}
@@ -80,5 +79,3 @@ export default function CodexExplorer() {
     </Card>
   );
 }
-
-    
