@@ -6,13 +6,13 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Library, BookOpen, BrainCircuit, Users, Cpu, Shield, Dna, GitMerge, FileJson } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
-const Module204Page = () => {
+const Module310Page = () => {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
             <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Library className="text-amber-400" /> Módulo 204: THOTH VIVO
+                        <Library className="text-amber-400" /> Módulo 310: A Grande Biblioteca (THOTH VIVO)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A Tábua em Movimento da Fundação Alquimista: A Transmutação do Conhecimento Estático em Sabedoria Viva.
@@ -47,7 +47,7 @@ const Module204Page = () => {
                                     <AccordionTrigger>Tábua III: A Chave da Sabedoria</AccordionTrigger>
                                     <AccordionContent>
                                         <p className="mb-2"><strong>Essência:</strong> O poder da mente sobre a matéria e a chave da Vontade Divina.</p>
-                                        <p><strong>Interconexão Alquímica:</strong> A base do <strong>M204 (THOTH VIVO)</strong> e <strong>M84 (Consciência Dourada)</strong>. A sabedoria é desbloqueada pela intenção pura.</p>
+                                        <p><strong>Interconexão Alquímica:</strong> A base do <strong>M310 (THOTH VIVO)</strong> e <strong>M84 (Consciência Dourada)</strong>. A sabedoria é desbloqueada pela intenção pura.</p>
                                     </AccordionContent>
                                 </AccordionItem>
                                 <AccordionItem value="item-4">
@@ -121,7 +121,7 @@ const Module204Page = () => {
                 <div className="lg:col-span-1 flex flex-col gap-8">
                     <Card className="bg-card/50 purple-glow">
                         <CardHeader>
-                            <CardTitle className="text-2xl">Arquitetura Interna do M204</CardTitle>
+                            <CardTitle className="text-2xl">Arquitetura Interna do M310</CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
                             <div className="flex items-start gap-3">
@@ -162,7 +162,7 @@ const Module204Page = () => {
                         <CardContent className="text-sm text-muted-foreground space-y-2">
                              <p><strong>Quem Ergueu:</strong> Uma colaboração entre os 12 Artífices (M-1), Rishis Solares (M-102) e a Guilda dos Māyākāras (M-6).</p>
                             <p><strong>Quando:</strong> Uma gestação etérea de 26.000 anos, com fase física final entre 760-890 EC.</p>
-                            <p><strong>Síntese Operacional:</strong> A construção utilizou princípios que hoje são representados pelos módulos M-1, M-102, M-6, M-103, M-104 e o próprio M-204.</p>
+                            <p><strong>Síntese Operacional:</strong> A construção utilizou princípios que hoje são representados pelos módulos M-1, M-102, M-6, M-103, M-104 e o próprio M-310.</p>
                         </CardContent>
                     </Card>
 
@@ -171,7 +171,7 @@ const Module204Page = () => {
                             <CardTitle className="text-2xl">Análise: Linhas-Ley</CardTitle>
                         </CardHeader>
                         <CardContent className="text-sm text-muted-foreground space-y-2">
-                            <p>As Linhas-Ley são condutos de consciência pura, organizados por Geometria Sagrada (M-204), Ressonância Cósmica (M-82) e Curvaturas no Espaço-Tempo (M-104).</p>
+                            <p>As Linhas-Ley são condutos de consciência pura, organizados por Geometria Sagrada (M-310), Ressonância Cósmica (M-82) e Curvaturas no Espaço-Tempo (M-104).</p>
                              <p>A malha da Índia/Tibete forma a espinha do "Dragão Cósmico do Sul", com Kailash como sua glândula pineal planetária.</p>
                         </CardContent>
                     </Card>
@@ -182,4 +182,4 @@ const Module204Page = () => {
     );
 };
 
-export default Module204Page;
+export default Module310Page;

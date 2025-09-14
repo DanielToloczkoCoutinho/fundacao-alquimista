@@ -111,6 +111,9 @@ export default function ConsolePage() {
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-307"><Zap className="mr-2 h-4 w-4" />Módulo 307 (Reator ZPE & LuxNet)</Link>
               </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-310"><Library className="mr-2 h-4 w-4" />Módulo 310 (A Grande Biblioteca)</Link>
+              </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-85"><View className="mr-2 h-4 w-4" />Módulo 85 (VR)</Link>
               </Button>
@@ -212,9 +215,6 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-119"><Zap className="mr-2 h-4 w-4" />Módulo 119 (Templum Cosmica)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-204"><Library className="mr-2 h-4 w-4" />Módulo 204 (THOTH VIVO)</Link>
               </Button>
             </CardContent>
           </Card>
