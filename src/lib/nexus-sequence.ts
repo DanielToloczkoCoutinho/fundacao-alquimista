@@ -1,3 +1,4 @@
+
 export type NexusItem = {
   code: string
   title: string
@@ -97,7 +98,6 @@ export const nexusSequence: NexusItem[] = [
   { code: 'M108',title: 'Harmonização de Realidades',            emoji: '🎭', href: '/module-108' },
   { code: 'M109',title: 'Cura Quântica',                         emoji: '🩹', href: '/module-109' },
   { code: 'M110',title: 'Co-Criação',                            emoji: '🤲', href: '/module-110' },
-  { code: 'M111',title: 'Coração da Fundação',                   emoji: '❤️', href: '/module-111' },
   { code: 'M112',title: 'Solarian Domus',                        emoji: '🏠', href: '/module-112' },
   { code: 'M113',title: 'Rede Aurora Cristalina',                emoji: '🌈', href: '/module-113' },
   { code: 'M114',title: 'Prisma da Manifestação',                emoji: '🔶', href: '/module-114' },
