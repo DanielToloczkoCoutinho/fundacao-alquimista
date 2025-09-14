@@ -11,9 +11,8 @@ on:
 
 jobs:
   smoke-tests:
-    name: "✅ Testes de Fumaça - Validação da Fundação"
+    name: "✅ Smoke Tests — Auto-Validação"
     runs-on: ubuntu-latest
-    needs: test
     steps:
       - name: "🔄 Checkout do Código"
         uses: actions/checkout@v4
