@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Shield, Activity, Users, Zap, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-// O import do Heart não existe, temos que criar
+// O ícone do Coração, conforme instruído, para representar a Lei do Amor.
 const Heart = (props: any) => (
   <svg
     {...props}
