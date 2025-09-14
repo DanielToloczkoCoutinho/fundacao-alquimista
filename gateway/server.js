@@ -6,8 +6,8 @@ async function startGateway() {
   const gateway = new ApolloGateway({
     serviceList: [
       { name: 'labs',   url: 'http://localhost:4001/graphql' },
-      // { name: 'identity', url: 'http://localhost:4002/graphql' },
-      // … outros sub-graphs …
+      { name: 'identity', url: 'http://localhost:4002/graphql' },
+      // adicione outros sub-graphs conforme for crescendo
     ],
   });
 
