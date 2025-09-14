@@ -73,9 +73,3 @@ export default function CodexExplorer() {
                 </AccordionContent>
               </AccordionItem>
             ))}
-          </Accordion>
-        </ScrollArea>
-      </CardContent>
-    </Card>
-  );
-}

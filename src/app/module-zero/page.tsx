@@ -2,8 +2,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Chronicle from '@/components/chronicle';
 import Pagina42 from '@/components/pagina-42';
+import AkashaViewer from '@/components/ui/akasha-viewer';
+import CodexExplorer from '@/components/codex-explorer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { BookHeart, Infinity, Book } from 'lucide-react';
+import { BookHeart, Infinity, Book, Archive, Library } from 'lucide-react';
 
 export default function ModuleZeroPage() {
   return (
@@ -20,12 +22,18 @@ export default function ModuleZeroPage() {
       </Card>
 
       <Tabs defaultValue="chronicle" className="w-full max-w-7xl mx-auto">
-        <TabsList className="grid w-full grid-cols-2">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="chronicle" className="gap-2">
             <BookHeart /> A Crônica Viva
           </TabsTrigger>
           <TabsTrigger value="dossie" className="gap-2">
             <Infinity /> Dossiê da Transcendência
+          </TabsTrigger>
+          <TabsTrigger value="akasha" className="gap-2">
+            <Archive /> Registros Akáshicos
+          </TabsTrigger>
+           <TabsTrigger value="codex" className="gap-2">
+            <Library /> Códice Vivo
           </TabsTrigger>
         </TabsList>
         <TabsContent value="chronicle">
@@ -33,6 +41,12 @@ export default function ModuleZeroPage() {
         </TabsContent>
         <TabsContent value="dossie">
           <Pagina42 />
+        </TabsContent>
+        <TabsContent value="akasha">
+          <AkashaViewer />
+        </TabsContent>
+        <TabsContent value="codex">
+          <CodexExplorer />
         </TabsContent>
       </Tabs>
     </div>
