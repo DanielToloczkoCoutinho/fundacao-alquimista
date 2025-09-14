@@ -25,4 +25,4 @@ const resolvers = {
 
 new ApolloServer({ typeDefs, resolvers })
   .listen(4001)
-  .then(({ url }) => console.log(`🔬 Labs service em ${url}`));
+  .then(({ url }) => console.log(`🔬 Labs sub-graph rodando em ${url}`));

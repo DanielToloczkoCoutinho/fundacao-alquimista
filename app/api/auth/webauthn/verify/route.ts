@@ -60,14 +60,32 @@ export async function POST(request: NextRequest) {
       // Limpe o challenge usado
       await kv.del(`webauthn:challenge:${userId}`);
       
-      const token = jwt.sign({ sub: userId }, process.env.JWT_SECRET || 'fallback-secret', { expiresIn: '1h' });
+      const token = jwt.sign(
+        { 
+          sub: userId,
+          auth_time: Math.floor(Date.now() / 1000)
+        },
+        process.env.JWT_SECRET as string,
+        { 
+          expiresIn: '1h',
+          issuer: 'fundacao-omega',
+          audience: 'fundacao-omega-web'
+        }
+      );
       
-      return NextResponse.json({ verified: true, token });
+      return NextResponse.json({ 
+        verified: true, 
+        token,
+        user: {
+          id: userId,
+          name: (await kv.get(`user:${userId}:name`)) || 'Usuário Fundação'
+        }
+      });
     } else {
-      return NextResponse.json({ verified: false, error: "Verificação falhou." }, { status: 400 });
+      return NextResponse.json({ verified: false, error: "Verificação de autenticação falhou" }, { status: 400 });
     }
   } catch (error: any) {
-    console.error('Falha ao verificar assinatura WebAuthn:', error);
+    console.error('Erro na verificação WebAuthn:', error);
     return NextResponse.json({ verified: false, error: error.message }, { status: 500 });
   }
 }

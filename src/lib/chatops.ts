@@ -2,8 +2,8 @@
 
 import { App } from '@slack/bolt';
 import { WebClient } from '@slack/web-api';
+import fetch from 'node-fetch';
 
-// Configuração inicial do cliente Slack
 const slackClient = new WebClient(process.env.SLACK_BOT_TOKEN);
 
 export const chatBot = new App({
@@ -11,7 +11,7 @@ export const chatBot = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
 });
 
-// Comando básico de status
+// Comando de status estendido
 chatBot.command('/m29', async ({ command, ack, say }) => {
   await ack();
   
@@ -36,6 +36,7 @@ chatBot.command('/m29', async ({ command, ack, say }) => {
         const metricsRes = await fetch('http://localhost:9464/metrics');
         const metrics = await metricsRes.text();
         
+        // Extrair métricas específicas
         const coherenceMatch = metrics.match(/syntropy_coherence{.*?} (\\d+\\.\\d+)/);
         const latencyMatch = metrics.match(/quantum_latency{.*?} (\\d+\\.\\d+)/);
         
@@ -50,7 +51,9 @@ chatBot.command('/m29', async ({ command, ack, say }) => {
         if (!module) {
           await say('❌ Especifique o módulo para deploy. Ex: `/m29 deploy M291`');
         } else {
+          // Integração com ArgoCD (exemplo)
           await say(`🚀 Iniciando deploy do módulo *${module}*...`);
+          // TODO: Chamada para API do ArgoCD
           await new Promise(resolve => setTimeout(resolve, 2000));
           await say(`✅ Deploy do módulo *${module}* iniciado com sucesso.
 Monitoramento: https://argocd.fundacao-omega.app/applications/${module}`);
@@ -63,6 +66,7 @@ Monitoramento: https://argocd.fundacao-omega.app/applications/${module}`);
           await say('❌ Especifique o módulo para rollback. Ex: `/m29 rollback M291`');
         } else {
           await say(`↩️ Iniciando rollback do módulo *${moduleToRollback}*...`);
+          // TODO: Integração com API do ArgoCD/Flux
           await new Promise(resolve => setTimeout(resolve, 1500));
           await say(`✅ Rollback do módulo *${moduleToRollback}* concluído.
 Status: https://argocd.fundacao-omega.app/applications/${moduleToRollback}`);
@@ -93,7 +97,8 @@ export const startChatBot = async () => {
     const port = process.env.SLACK_BOT_PORT ? parseInt(process.env.SLACK_BOT_PORT) : 3001;
     await chatBot.start(port);
     console.log(`🤖 Bot de ChatOps iniciado na porta ${port}`);
-
+    
+    // Publicar status de inicialização
     try {
         if (process.env.SLACK_STATUS_CHANNEL) {
             await slackClient.chat.postMessage({
