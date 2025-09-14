@@ -19,20 +19,22 @@ export default function Module9Page() {
       </header>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-        {allModules.map(({ code, emoji, title, route }) => (
-          <Link key={code} href={route} passHref>
-              <Card className="bg-card/50 purple-glow hover:border-accent hover:scale-105 transition-transform cursor-pointer h-full flex flex-col justify-between">
-                <CardHeader>
-                  <div className="flex flex-col items-center text-center">
-                    <span className="text-5xl mb-4">{emoji}</span>
-                    <CardTitle className="gradient-text text-2xl">{code}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-sm font-semibold text-foreground/90">{title}</p>
-                </CardContent>
-              </Card>
-          </Link>
+        {allModules
+            .filter(module => typeof module.route === 'string')
+            .map(({ code, title, route, emoji }) => (
+            <Link key={code} href={route} passHref>
+                <Card className="bg-card/50 purple-glow hover:border-accent hover:scale-105 transition-transform cursor-pointer h-full flex flex-col justify-between">
+                    <CardHeader>
+                    <div className="flex flex-col items-center text-center">
+                        <span className="text-5xl mb-4">{emoji}</span>
+                        <CardTitle className="gradient-text text-2xl">{code}</CardTitle>
+                    </div>
+                    </CardHeader>
+                    <CardContent className="text-center">
+                    <p className="text-sm font-semibold text-foreground/90">{title}</p>
+                    </CardContent>
+                </Card>
+            </Link>
         ))}
       </div>
     </main>
