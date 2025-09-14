@@ -94,15 +94,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
   { code: 'M88', emoji: '⚙️', title: 'Gerador de Realidades Quânticas', route: '/module-88', category: 'mid' },
   { code: 'M90', emoji: '🧱', title: 'Recursos Quânticos', route: '/module-90', category: 'mid' },
-  { code: 'M91', emoji: '🖥️', title: 'Simulação Multiversal', route: '/module-91', category: 'mid' },
-  { code: 'M92', emoji: '💖', title: 'Campos de Cura', route: '/module-92', category: 'mid' },
-  { code: 'M93', emoji: '🕶️', title: 'Simulações Imersivas', route: '/module-93', category: 'mid' },
-  { code: 'M94', emoji: '🧬', title: 'Morfogênese Quântica', route: '/module-94', category: 'mid' },
-  { code: 'M95', emoji: '🌐', title: 'Consciências Coletivas', route: '/module-95', category: 'mid' },
-  { code: 'M96', emoji: '⚙️', title: 'Regulação de Eventos Cósmicos', route: '/module-96', category: 'mid' },
-  { code: 'M97', emoji: '✨', title: 'Manifestação de Propósito Divino', route: '/module-97', category: 'mid' },
-  { code: 'M98', emoji: '🎚️', title: 'Modulação da Existência Fundamental', route: '/module-98', category: 'mid' },
-  { code: 'M99', emoji: '⚖️', title: 'Recalibradores de Leis', route: '/module-99', category: 'mid' },
   { code: 'M100',title: 'Unificação Energética',                 emoji: '🔋', route: '/module-100', category: 'mid' },
   { code: 'M101',title: 'Manifestação',                          emoji: '✨', route: '/module-101', category: 'mid' },
   { code: 'M102',title: 'Campos Morfogenéticos',                 emoji: '🌀', route: '/module-102', category: 'mid' },
@@ -128,4 +119,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid' }
-];
+].sort((a, b) => {
+  const codeA = parseInt(a.code.replace('M', '').replace('Ω', '999').replace('LIB', '1000'));
+  const codeB = parseInt(b.code.replace('M', '').replace('Ω', '999').replace('LIB', '1000'));
+  return codeA - codeB;
+});

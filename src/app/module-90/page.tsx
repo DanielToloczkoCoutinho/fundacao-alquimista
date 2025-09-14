@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,39 +10,13 @@ import { quantumResilience } from '@/lib/quantum-resilience';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
 
-const mockM01 = {
-    validate_signature: (hash: string) => ({ status: "validated", security_level: 0.99 }),
-    register_event: (event: any) => ({ status: "registered" }),
-};
-const mockM03 = {
-    predict_resource_stability: (id: string) => ({ stability_score: Math.random() * (0.99 - 0.7) + 0.7, prediction_confidence: 0.9 }),
-};
-const mockM05 = {
-    evaluate_ethical_impact: (data: any) => {
-        const score = Math.random() * (0.99 - 0.7) + 0.7;
-        return { ethical_score: score, conformity: score >= 0.75 };
-    },
-};
-const mockM33 = {
-    get_current_directives: () => ({
-        resource_utilization_priority: "MAXIMIZE_COSMIC_HARMONY",
-        ethical_guidance: "ALIGN_WITH_UNCONDITIONAL_LOVE"
-    }),
-};
-const mockM73 = {
-    submit_for_validation: (data: any) => {
-        const cosmic_score = Math.random() * (0.98 - 0.8) + 0.8;
-        const ethical_conformity = cosmic_score > 0.85; // SAVCE has its own final check
-        return {
-            validation_status: cosmic_score >= 0.85 ? "APROVADO" : "REPROVADO",
-            cosmic_score: cosmic_score,
-            ethical_conformity: ethical_conformity,
-            details: "Simulação de validação SAVCE."
-        };
-    },
-};
+const mockM01 = { validate_signature: (hash: string) => ({ status: "validated", security_level: 0.99 }), register_event: (event: any) => ({ status: "registered" }), };
+const mockM03 = { predict_resource_stability: (id: string) => ({ stability_score: Math.random() * (0.99 - 0.7) + 0.7, prediction_confidence: 0.9 }), };
+const mockM05 = { evaluate_ethical_impact: (data: any) => { const score = Math.random() * (0.99 - 0.7) + 0.7; return { ethical_score: score, conformity: score >= 0.75 }; }, };
+const mockM33 = { get_current_directives: () => ({ resource_utilization_priority: "MAXIMIZE_COSMIC_HARMONY", ethical_guidance: "ALIGN_WITH_UNCONDITIONAL_LOVE" }), };
+const mockM73 = { submit_for_validation: (data: any) => { const cosmic_score = Math.random() * (0.98 - 0.8) + 0.8; const ethical_conformity = cosmic_score > 0.85; return { validation_status: cosmic_score >= 0.85 ? "APROVADO" : "REPROVADO", cosmic_score: cosmic_score, ethical_conformity: ethical_conformity, details: "Simulação de validação SAVCE." }; }, };
 
-const M90Page = () => {
+const Module90Page = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [resourceId, setResourceId] = useState('ETER_COSMICO_001');
     const [resourceType, setResourceType] = useState('Éter Cósmico');
@@ -216,4 +190,4 @@ const M90Page = () => {
     );
 };
 
-export default M90Page;
+export default Module90Page;
