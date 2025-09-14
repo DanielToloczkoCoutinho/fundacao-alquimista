@@ -117,8 +117,8 @@ contract LexFundamentalis {
         return false;
     }
 }
-    `;
-
+    `];
+    
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
@@ -179,5 +179,3 @@ contract LexFundamentalis {
         </div>
     );
 };
-
-export default Module144Page;
