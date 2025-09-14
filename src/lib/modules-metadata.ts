@@ -131,12 +131,20 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M116',title: 'Portais Quânticos', emoji: '🚪', route: '/module-116', category: 'mid', description: 'Passagem dimensional controlada' },
   { code: 'M117',title: 'Flor do Éter', emoji: '🌸', route: '/module-117', category: 'mid', description: 'Fonte de energia sutil primordial' },
   { code: 'M118',title: 'Luz Primordial', emoji: '💡', route: '/module-118', category: 'mid', description: 'Gerador do espectro lumínico original' },
-  { code: 'M142', title: 'Quantum Tomography', emoji: '📸', route: '/module-142', category: 'mid', description: 'Visualização de estados quânticos via tomografia.' },
-  { code: 'M151', title: 'Particle Collider', emoji: '💥', route: '/module-151', category: 'mid', description: 'Simulação de colisões de partículas de alta energia.' },
-  { code: 'M161', title: 'Neutrino Observatory', emoji: '🔭', route: '/module-161', category: 'mid', description: 'Detecção de neutrinos e assinaturas de matéria escura.' },
-  { code: 'M171', title: 'Astrobiology Lab', emoji: '👽', route: '/module-171', category: 'mid', description: 'Simulação de atmosferas e bioassinaturas de exoplanetas.' },
-  { code: 'M181', title: 'Bio-Cybernetic Lab', emoji: '🧠', route: '/module-181', category: 'mid', description: 'Interface entre cérebros biológicos e redes quânticas.' },
-  { code: 'M191', title: 'Time-Crystal Lab', emoji: '💎', route: '/module-191', category: 'mid', description: 'Geração e estudo de "cristais temporais".' },
+  { code: 'M142', title: 'Tomografia Quântica', emoji: '📸', route: '/module-142', category: 'mid', description: 'Visualização de estados quânticos via tomografia.' },
+  { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'mid', description: 'Simulação de colisões de partículas de alta energia.' },
+  { code: 'M161', title: 'Observatório de Neutrinos', emoji: '🔭', route: '/module-161', category: 'mid', description: 'Detecção de neutrinos e assinaturas de matéria escura.' },
+  { code: 'M171', title: 'Laboratório de Astrobiologia', emoji: '👽', route: '/module-171', category: 'mid', description: 'Simulação de atmosferas e bioassinaturas de exoplanetas.' },
+  { code: 'M181', title: 'Interface Bio-Cibernética', emoji: '🧠', route: '/module-181', category: 'mid', description: 'Interface entre cérebros biológicos e redes quânticas.' },
+  { code: 'M191', title: 'Laboratório de Cristais Temporais', emoji: '💎', route: '/module-191', category: 'mid', description: 'Geração e estudo de "cristais temporais".' },
+  { code: 'M211', title: 'Fusão Controlada', emoji: '🔥', route: '/module-211', category: 'mid', description: 'Laboratório de simulação de reações de fusão.' },
+  { code: 'M221', title: 'Ondas Gravitacionais', emoji: '🌊', route: '/module-221', category: 'mid', description: 'Observatório e análise de ondas gravitacionais.' },
+  { code: 'M231', title: 'Metamateriais', emoji: '🎭', route: '/module-231', category: 'mid', description: 'Laboratório de materiais com índice de refração negativo.' },
+  { code: 'M241', title: 'Consciência Quântica', emoji: '🧠', route: '/module-241', category: 'mid', description: 'Estudo de correlações quânticas em sistemas biológicos.' },
+  { code: 'M251', title: 'Energia do Ponto Zero', emoji: '⚡', route: '/module-251', category: 'mid', description: 'Laboratório de extração de energia do vácuo quântico.' },
+  { code: 'M261', title: 'Engenharia de Campo', emoji: '🔧', route: '/module-261', category: 'mid', description: 'Projeto de ressonadores e guias de partículas.' },
+  { code: 'M271', title: 'Energia Escura', emoji: '🌌', route: '/module-271', category: 'mid', description: 'Modelagem da influência da energia escura na expansão.' },
+  { code: 'M281', title: 'Comunicação Supra-Luminal', emoji: '🚀', route: '/module-281', category: 'mid', description: 'Exploração de comunicação via orbital angular momentum.' },
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas do tempo' },
@@ -155,4 +163,3 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace(/\D/g, ''));
   return codeA - codeB;
 });
-

@@ -7,7 +7,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Camera, Telescope, Cpu, Atom } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Camera, Telescope, Cpu, Atom, Flame, BarChart } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 
@@ -228,6 +228,30 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-201"><Heart className="mr-2 h-4 w-4" />Módulo 201 (A Morada)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-211"><Flame className="mr-2 h-4 w-4" />Módulo 211 (Fusão Controlada)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-221"><Waves className="mr-2 h-4 w-4" />Módulo 221 (Ondas Gravitacionais)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-231"><Layers className="mr-2 h-4 w-4" />Módulo 231 (Metamateriais)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-241"><BrainCircuit className="mr-2 h-4 w-4" />Módulo 241 (Consciência Quântica)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-251"><Zap className="mr-2 h-4 w-4" />Módulo 251 (Energia do Ponto Zero)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-261"><GitBranch className="mr-2 h-4 w-4" />Módulo 261 (Engenharia de Campo)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-271"><BarChart className="mr-2 h-4 w-4" />Módulo 271 (Energia Escura)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-281"><Telescope className="mr-2 h-4 w-4" />Módulo 281 (Comunicação Supra-Luminal)</Link>
               </Button>
             </CardContent>
           </Card>
