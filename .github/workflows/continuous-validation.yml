@@ -30,6 +30,16 @@ jobs:
     name: Testes Cósmicos (Unit, E2E, Security)
     needs: static-analysis
     runs-on: ubuntu-latest
+    services:
+      fundacao-omega-backend:
+        image: node:18
+        ports:
+          - 3000:3000
+        options: --name fundacao-omega-backend
+        volumes:
+          - ${{ github.workspace }}:/app
+        working-dir: /app
+        command: sh -c "npm ci && node backend/server.js"
     steps:
       - uses: actions/checkout@v4
       - name: Setup Node.js
@@ -48,31 +58,30 @@ jobs:
       - name: Scan de Segurança
         run: npm run security-scan
 
-  chaos-test:
-    name: Experimento de Caos e Resiliência
-    needs: cosmic-tests
+  chaos-experiment:
+    name: "🌪️ Experimento de Caos — Resiliência Ω"
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: cosmic-tests
     steps:
-      - uses: actions/checkout@v4
-      - name: Instalar Ferramentas de Caos (Exemplo)
-        run: echo "Instalando Chaos Mesh CLI e outras ferramentas..."
-      - name: Injetar Falha de Coerência
+      - name: Checkout do Códice
+        uses: actions/checkout@v3
+
+      - name: Injetar caos de rede
         run: |
-          echo "Injetando falha de latência na rede do Módulo Ω..."
-          # Em um cenário real, aqui entraria um comando como:
-          # chaos-mesh inject network-delay --namespace foundation --selector app=omega-module --latency 200ms --duration 1m
-      - name: Verificar Auto-Cura
+          echo "Simulando a injeção de caos. Em um ambiente real, este passo teria acesso ao container do backend."
+          echo "🔧 Injetando 200ms de delay + 5% packet loss"
+          sleep 5
+          echo "♻️ Revertendo o caos"
+          
+      - name: Validar auto-cura
         run: |
-          echo "Monitorando métricas de sintropia por 2 minutos..."
-          sleep 120
-          # Aqui verificaria se o KEDA escalou os pods ou se o sistema se recuperou
-          # Exemplo: kubectl get hpa -n foundation | grep omega-module | awk '{print $5}' | xargs -I {} test {} -gt 3
-          echo "Verificação de auto-cura concluída. Resiliência confirmada."
+          echo "🔍 Verificando health após caos"
+          echo "Simulando verificação. Em um ambiente real, faria uma requisição ao health check."
+          # curl --fail --retry 5 --retry-delay 5 http://localhost:3000/health
 
   cosmic-deploy:
     name: Deploy Canário no Reino Cósmico
-    needs: chaos-test
+    needs: chaos-experiment
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     steps:

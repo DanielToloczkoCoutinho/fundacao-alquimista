@@ -26,7 +26,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Rotas públicas
-app.get('/api/health', (req, res) => res.json({ status: 'healthy', timestamp: new Date() }));
+app.get('/health', (req, res) => res.status(200).json({ status: 'Ω', timestamp: new Date().toISOString() }));
 app.use('/api/auth', authRoutes);
 
 // Rotas protegidas
