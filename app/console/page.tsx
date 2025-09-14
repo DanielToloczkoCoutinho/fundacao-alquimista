@@ -42,7 +42,6 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const db = getFirestore(app);
 
 export default function ConsolePage() {
-  const [activeModule, setActiveModule] = useState('nexus');
   const [firebaseConnected, setFirebaseConnected] = useState(false);
 
   useEffect(() => {
@@ -73,21 +72,6 @@ export default function ConsolePage() {
     initializeAndListen();
   }, []);
 
-
-  const renderModule = () => {
-    switch (activeModule) {
-      case 'chronicle':
-        return <Chronicle />;
-      case 'nexus':
-      default:
-        return (
-          <Suspense fallback={<SuspenseFallback />}>
-            <QuantumOrchestrator />
-          </Suspense>
-        );
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
       <header className="mb-8">
@@ -110,11 +94,8 @@ export default function ConsolePage() {
             </CardHeader>
             <CardContent className="flex flex-col space-y-2">
                <Button variant="outline" asChild className="justify-start">
-                  <Link href="/chronicle"><BookHeart className="mr-2 h-4 w-4" />Crônica Viva</Link>
+                  <Link href="/module-zero"><Book className="mr-2 h-4 w-4" />Módulo Zero (Biblioteca Chave)</Link>
                </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-zero"><Book className="mr-2 h-4 w-4" />Módulo Zero (Biblioteca Chave)</Link>
-              </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-one"><ShieldCheck className="mr-2 h-4 w-4" />Módulo Um (Segurança Universal)</Link>
               </Button>
@@ -123,6 +104,12 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-303"><Sparkles className="mr-2 h-4 w-4" />Portal Trino (M303)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-307"><Zap className="mr-2 h-4 w-4" />Módulo 307 (Reator ZPE & LuxNet)</Link>
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-85"><View className="mr-2 h-4 w-4" />Módulo 85 (VR)</Link>
@@ -228,12 +215,6 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-204"><Library className="mr-2 h-4 w-4" />Módulo 204 (THOTH VIVO)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/pagina-42"><Infinity className="mr-2 h-4 w-4" />Módulo Ω (Dossiê)</Link>
               </Button>
             </CardContent>
           </Card>
