@@ -7,6 +7,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 import { nexusSequence, type NexusItem } from '@/lib/nexus-sequence';
 import { CheckCircle, CircleDot, Loader } from 'lucide-react';
+import Link from 'next/link';
 
 const stateIcons: Record<string, React.ReactNode> = {
   PENDING: <CircleDot className="h-4 w-4 text-muted-foreground" />,
@@ -78,22 +79,32 @@ export default function QuantumOrchestrator() {
                     
                     if (!isVisible && currentIndex === -1 && !isRunning) return null;
                     
-                    return (
-                        <div key={item.code} className={cn(
-                          "rounded-lg p-3 border transition-all duration-500 flex items-center gap-4", 
-                          {
-                            'opacity-0 translate-y-2': !isVisible,
-                            'opacity-100 translate-y-0': isVisible,
-                            'border-primary/20 bg-primary/5': state === 'PENDING',
-                            'border-blue-500/50 bg-blue-500/10 scale-105 shadow-lg shadow-blue-500/20': state === 'RUNNING',
-                            'border-green-500/30 bg-green-500/5': state === 'SUCCESS',
-                          }
-                        )}>
-                            <span className="text-2xl">{item.emoji}</span>
-                            <span className="font-mono text-sm font-bold text-foreground/90">{item.code}</span>
-                            <span className="text-sm text-muted-foreground flex-1">{item.title}</span>
-                            <div className="ml-auto">{stateIcons[state]}</div>
-                        </div>
+                    const ModuleCard = (
+                      <div className={cn(
+                        "rounded-lg p-3 border transition-all duration-500 flex items-center gap-4 group-hover:bg-primary/20",
+                        {
+                          'opacity-0 translate-y-2': !isVisible,
+                          'opacity-100 translate-y-0': isVisible,
+                          'border-primary/20 bg-primary/5': state === 'PENDING',
+                          'border-blue-500/50 bg-blue-500/10 scale-105 shadow-lg shadow-blue-500/20': state === 'RUNNING',
+                          'border-green-500/30 bg-green-500/5': state === 'SUCCESS',
+                        }
+                      )}>
+                          <span className="text-2xl">{item.emoji}</span>
+                          <span className="font-mono text-sm font-bold text-foreground/90">{item.code}</span>
+                          <span className="text-sm text-muted-foreground flex-1">{item.title}</span>
+                          <div className="ml-auto">{stateIcons[state]}</div>
+                      </div>
+                    );
+
+                    return item.href ? (
+                      <Link key={item.code} href={item.href} className="group cursor-pointer">
+                        {ModuleCard}
+                      </Link>
+                    ) : (
+                      <div key={item.code}>
+                        {ModuleCard}
+                      </div>
                     );
                 })}
                  {!isRunning && currentIndex >= nexusSequence.length - 1 && (
