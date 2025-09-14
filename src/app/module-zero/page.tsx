@@ -5,7 +5,8 @@ import Chronicle from '@/components/chronicle';
 import Pagina42 from '@/components/pagina-42';
 import CodexExplorer from '@/components/codex-explorer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { BookHeart, Infinity, Library } from 'lucide-react';
+import { BookHeart, Infinity, Library, Archive } from 'lucide-react';
+import AkashaViewer from '@/components/ui/akasha-viewer';
 
 export default function ModuleZeroPage() {
   return (
@@ -22,9 +23,12 @@ export default function ModuleZeroPage() {
       </Card>
 
       <Tabs defaultValue="codex" className="w-full max-w-7xl mx-auto">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="codex" className="gap-2">
-            <Library /> Códice Vivo da Fundação
+            <Library /> Códice Vivo
+          </TabsTrigger>
+          <TabsTrigger value="akasha" className="gap-2">
+            <Archive /> Registros Akáshicos
           </TabsTrigger>
           <TabsTrigger value="chronicle" className="gap-2">
             <BookHeart /> A Crônica
@@ -36,6 +40,9 @@ export default function ModuleZeroPage() {
         <TabsContent value="codex">
           <CodexExplorer />
         </TabsContent>
+        <TabsContent value="akasha">
+          <AkashaViewer />
+        </TabsContent>
         <TabsContent value="chronicle">
           <Chronicle />
         </TabsContent>
@@ -46,5 +53,3 @@ export default function ModuleZeroPage() {
     </div>
   );
 }
-
-    
