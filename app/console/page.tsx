@@ -7,70 +7,51 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Infinity, Book, ShieldCheck, GitBranch, Sparkles, BookHeart, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, AlertTriangle, Goal, Settings, Zap, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Heart, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, MessageCircle, Library, Scale, Gavel, Users2 } from 'lucide-react';
-import Chronicle from '@/components/chronicle';
-import { quantumResilience } from '@/lib/quantum-resilience';
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 
-// A configuração do Firebase agora é tratada com segurança
-let firebaseConfig = {};
-try {
-  // Use a fallback configuration directly as process.env might not be reliable here.
-    firebaseConfig = {
-        "projectId": "studio-4265982502-21871",
-        "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
-        "storageBucket": "studio-4265982502-21871.firebasestorage.app",
-        "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
-        "authDomain": "studio-4265982502-21871.firebaseapp.com",
-        "measurementId": "",
-        "messagingSenderId": "174545373080"
-    };
-} catch (error) {
-  console.error("Falha ao analisar a configuração do Firebase. Usando configuração de fallback.", error);
-    firebaseConfig = {
-        "projectId": "studio-4265982502-21871",
-        "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
-        "storageBucket": "studio-4265982502-21871.firebasestorage.app",
-        "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
-        "authDomain": "studio-4265982502-21871.firebaseapp.com",
-        "measurementId": "",
-        "messagingSenderId": "174545373080"
-    };
-}
-
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
+const firebaseConfig = {
+    "projectId": "studio-4265982502-21871",
+    "appId": "1:174545373080:web:2fb8c5af49a2bae8054ded",
+    "storageBucket": "studio-4265982502-21871.firebasestorage.app",
+    "apiKey": "AIzaSyCkkmmK5d8XPvGPUo0jBlSqGNAnE7BuEZg",
+    "authDomain": "studio-4265982502-21871.firebaseapp.com",
+    "measurementId": "",
+    "messagingSenderId": "174545373080"
+};
 
 export default function ConsolePage() {
   const [firebaseConnected, setFirebaseConnected] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const initializeAndListen = async () => {
-      await quantumResilience.executeWithResilience(
-        'firebase_initialization',
-        async () => {
-          // Escutar uma coleção para confirmar a conexão
-          const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
-            () => {
-              setFirebaseConnected(true);
-              console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
-            },
-            (error) => {
-              console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
-              setFirebaseConnected(false);
-            }
-          );
-           // Retornar a função de desinscrição para ser chamada quando o componente desmontar
-          return () => unsub();
-        },
-        async () => {
-          console.error("Falha ao inicializar o Firebase mesmo com resiliência. Operando em modo offline.");
-          setFirebaseConnected(false);
+    setIsClient(true);
+    
+    // Evita inicialização duplicada do Firebase no HMR
+    const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+    const db = getFirestore(app);
+
+    const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
+      () => {
+        if (!firebaseConnected) {
+          setFirebaseConnected(true);
+          console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
         }
-      );
-    };
-    initializeAndListen();
-  }, []);
+      },
+      (error) => {
+        console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
+        setFirebaseConnected(false);
+      }
+    );
+    
+    // Cleanup da subscrição quando o componente é desmontado
+    return () => unsub();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Executa apenas uma vez no mount do cliente
+  
+  if (!isClient) {
+    return <SuspenseFallback />;
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
@@ -104,7 +85,7 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/connection"><GitBranch className="mr-2 h-4 w-4" />Conexão Ω-M0</Link>
-              </Button>
+               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-72"><Scale className="mr-2 h-4 w-4" />Módulo 72 (Governança)</Link>
               </Button>
