@@ -39,6 +39,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council' },
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'council' },
   { code: 'M202', emoji: '💫', title: 'O Corredor de Alcor', route: '/module-202', category: 'council' },
+  { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'council' },
   { code: 'M300',title: 'Apogeu da Consciência',                 emoji: '🚀', route: '/module-300', category: 'council' },
   { code: 'M304',title: 'Educação Integral Cósmica',             emoji: '🎓', route: '/module-304', category: 'council' },
   { code: 'M305',title: 'Aliança dos Guardiões Regionais',       emoji: '🤝', route: '/module-305', category: 'council' },
