@@ -59,7 +59,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno', route: '/module-3', category: 'mid' },
   { code: 'M4', emoji: '🧪', title: 'Testes da Fundação', route: '/module-4', category: 'mid' },
   { code: 'M5', emoji: '🔗', title: 'Conexão Liga Quântica', route: '/module-5', category: 'mid' },
-  { code: 'M6', emoji: '📡', title: 'Consciência Cósmica', route: '/module-6', category: 'mid' },
+  { code: 'M6', emoji: '📡', title: 'Sondagem da Consciência', route: '/module-6', category: 'mid' },
   { code: 'M7', emoji: '🙏', title: 'Alinhamento Divino', route: '/module-7', category: 'mid' },
   { code: 'M8', emoji: '🌍', title: 'Proteção Planetária', route: '/module-8', category: 'mid' },
   { code: 'M10', emoji: '⚔️', title: 'Defesa Avançada', route: '/module-10', category: 'mid' },
@@ -74,7 +74,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M19', emoji: '🛡️‍', title: 'Análise de Campos de Força', route: '/module-19', category: 'mid' },
   { code: 'M20', emoji: '🔥', title: 'Orquestrador Elemental', route: '/module-20', category: 'mid' },
   { code: 'M21', emoji: '🚀', title: 'Navegação Interdimensional', route: '/module-21', category: 'mid' },
-  { code: 'M22', emoji: '🕶️', title: 'Realidades Virtuais', route: '/module-22', category: 'mid' },
+  { code: 'M22', emoji: '🕶️', title: 'Motor da Realidade Quântica', route: '/module-22', category: 'mid' },
   { code: 'M23', emoji: '⏳', title: 'Regulação Espaço-Temporal', route: '/module-23', category: 'mid' },
   { code: 'M24', emoji: '🎶', title: 'Alinhamento da Sinfonia Pessoal', route: '/module-24', category: 'mid' },
   { code: 'M25', emoji: '👁️', title: 'Projeção de Consciência', route: '/module-25', category: 'mid' },
@@ -133,7 +133,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307' }
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid' }
 ].sort((a, b) => {
   const specialOrder: Record<string, number> = { 'M0': 1, 'M9': 2, 'MΩ': 3, 'M29': 4, 'M111': 5, 'M201': 6, 'M303': 7, 'LIB': 8, 'CONN': 9 };
   
