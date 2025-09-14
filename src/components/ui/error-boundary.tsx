@@ -18,11 +18,12 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
   }
 
   static getDerivedStateFromError(error: Error) {
+    console.error('Dissonância capturada pelo ErrorBoundary:', error);
     return { hasError: true };
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo);
+    console.error('Detalhes da dissonância:', error, errorInfo);
   }
 
   render() {

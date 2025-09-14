@@ -11,5 +11,9 @@ export default function Home() {
     router.replace('/console');
   }, [router]);
 
-  return <SuspenseFallback />;
+  return (
+    <div className="flex h-screen w-screen items-center justify-center bg-background">
+        <SuspenseFallback />
+    </div>
+  );
 }
