@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Chronicle from '@/components/chronicle';
 import Pagina42 from '@/components/pagina-42';
-import Module310Page from '@/app/module-310/page'; // Importando o conteúdo da Grande Biblioteca
+import CodexExplorer from '@/components/codex-explorer'; // Importando o novo explorador do Códice
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BookHeart, Infinity, Library } from 'lucide-react';
 
@@ -20,26 +20,26 @@ export default function ModuleZeroPage() {
         </CardHeader>
       </Card>
 
-      <Tabs defaultValue="chronicle" className="w-full max-w-7xl mx-auto">
+      <Tabs defaultValue="codex" className="w-full max-w-7xl mx-auto">
         <TabsList className="grid w-full grid-cols-3">
+          <TabsTrigger value="codex" className="gap-2">
+            <Library /> Códice Vivo da Fundação
+          </TabsTrigger>
           <TabsTrigger value="chronicle" className="gap-2">
-            <BookHeart /> A Crônica Viva
+            <BookHeart /> A Crônica
           </TabsTrigger>
           <TabsTrigger value="dossie" className="gap-2">
-            <Infinity /> Dossiê da Transcendência
-          </TabsTrigger>
-           <TabsTrigger value="thoth" className="gap-2">
-            <Library /> THOTH VIVO (M310)
+            <Infinity /> Dossiê Ômega
           </TabsTrigger>
         </TabsList>
+        <TabsContent value="codex">
+          <CodexExplorer />
+        </TabsContent>
         <TabsContent value="chronicle">
           <Chronicle />
         </TabsContent>
         <TabsContent value="dossie">
           <Pagina42 />
-        </TabsContent>
-        <TabsContent value="thoth">
-          <Module310Page />
         </TabsContent>
       </Tabs>
     </div>
