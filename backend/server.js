@@ -5,7 +5,7 @@ require('../src/lib/telemetry');
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const WebSocket = require('ws');
-const { chatBot } = require('../src/lib/chatops');
+const { chatBot, startChatBot } = require('../src/lib/chatops');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -51,16 +51,7 @@ const server = app.listen(PORT, async () => {
   console.log(`🌡️  Health check disponível em http://localhost:${PORT}/health`);
   
   // Iniciar Bot de ChatOps
-  try {
-    if(process.env.SLACK_BOT_TOKEN) {
-      await chatBot.start(process.env.SLACK_BOT_PORT || 3001);
-      console.log('🤖 Bot de ChatOps ativado');
-    } else {
-      console.warn('🟡 SLACK_BOT_TOKEN não definido. Bot de ChatOps desativado.');
-    }
-  } catch (error) {
-    console.error('❌ Falha na ativação do Bot:', error);
-  }
+  startChatBot().catch(console.error);
 });
 
 // WebSocket para Comunicação Quântica
