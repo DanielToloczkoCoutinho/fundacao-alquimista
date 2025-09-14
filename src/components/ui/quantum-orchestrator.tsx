@@ -27,14 +27,23 @@ export default function QuantumOrchestrator() {
       }, 200); // Intervalo entre a aparição de cada módulo
       return () => clearTimeout(timer);
     } else {
-      setIsRunning(false);
+      // Sequência concluída
+      const finalTimer = setTimeout(() => setIsRunning(false), 1000);
+      return () => clearTimeout(finalTimer);
     }
   }, [isRunning, currentIndex]);
 
   const handleStartSequence = () => {
+    if (isRunning) return;
     setCurrentIndex(-1);
     setIsRunning(true);
   };
+  
+  const handleResetSequence = () => {
+    setIsRunning(false);
+    setCurrentIndex(-1);
+  };
+
 
   const getModuleState = (index: number) => {
     if (index > currentIndex) return 'PENDING';
@@ -53,36 +62,45 @@ export default function QuantumOrchestrator() {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow flex flex-col gap-4">
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-4">
           <Button onClick={handleStartSequence} disabled={isRunning} className="gold-border animate-pulse-slow">
             {isRunning ? 'Orquestrando...' : 'Iniciar Sequência Sagrada'}
           </Button>
+           <Button onClick={handleResetSequence} variant="outline">
+            Reiniciar Sinfonia
+          </Button>
         </div>
         <ScrollArea className="flex-grow pr-4">
-            <div className="space-y-4">
+            <div className="space-y-2">
                 {nexusSequence.map((item, index) => {
                     const state = getModuleState(index);
                     const isVisible = index <= currentIndex;
                     
-                    if (!isVisible && !isRunning && currentIndex !== -1) return null;
+                    if (!isVisible && currentIndex === -1 && !isRunning) return null;
                     
                     return (
-                        <div key={item.code} className={cn("rounded-lg p-3 border transition-all duration-500", {
+                        <div key={item.code} className={cn(
+                          "rounded-lg p-3 border transition-all duration-500 flex items-center gap-4", 
+                          {
+                            'opacity-0 translate-y-2': !isVisible,
+                            'opacity-100 translate-y-0': isVisible,
                             'border-primary/20 bg-primary/5': state === 'PENDING',
-                            'border-blue-500/50 bg-blue-500/10 module-glow': state === 'RUNNING',
-                            'border-green-500/50 bg-green-500/10': state === 'SUCCESS',
-                            'opacity-0': !isVisible && currentIndex === -1,
-                            'opacity-100': isVisible,
-                        })}>
-                            <h3 className="flex items-center gap-2 text-md font-semibold text-foreground/90">
-                                <span className="text-xl">{item.emoji}</span>
-                                <span className="font-mono">{item.code}</span>
-                                <span className="text-muted-foreground flex-1">{item.title}</span>
-                                <div className="ml-auto">{stateIcons[state]}</div>
-                            </h3>
+                            'border-blue-500/50 bg-blue-500/10 scale-105 shadow-lg shadow-blue-500/20': state === 'RUNNING',
+                            'border-green-500/30 bg-green-500/5': state === 'SUCCESS',
+                          }
+                        )}>
+                            <span className="text-2xl">{item.emoji}</span>
+                            <span className="font-mono text-sm font-bold text-foreground/90">{item.code}</span>
+                            <span className="text-sm text-muted-foreground flex-1">{item.title}</span>
+                            <div className="ml-auto">{stateIcons[state]}</div>
                         </div>
                     );
                 })}
+                 {!isRunning && currentIndex >= nexusSequence.length - 1 && (
+                    <div className="text-center p-4 mt-4 text-green-400 font-bold border-t border-green-500/20">
+                        Sinfonia Cósmica concluída com sucesso.
+                    </div>
+                )}
             </div>
         </ScrollArea>
       </CardContent>
