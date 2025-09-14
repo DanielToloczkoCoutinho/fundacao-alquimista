@@ -65,7 +65,7 @@ const Module99Page = () => {
                 const ethical_impact = mockM05.evaluate_ethical_impact({ description: purpose });
                 recalibration_data.ethical_impact = ethical_impact;
 
-                const simulation_results = mockM91.simulate_recalibration_in_many_worlds(recalibration_data.target_reality_id, purpose, 5);
+                const simulation_results = mockM91.simulate_recalibration_in_many_worlds(recalibration_data.target_reality_id, 5);
                 recalibration_data.simulation_results = simulation_results;
 
                 const anomaly_check = mockM96.detect_and_regulate_anomaly(`ANOMALY_RECALIB_${recalibration_data.recalibration_id}`);
