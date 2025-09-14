@@ -1,0 +1,14 @@
+
+{
+    "id": "m2",
+    "name": "Módulo 2 - Intercâmbio Cósmico",
+    "version": "1.0.0",
+    "status": "Ativo",
+    "function_summary": "Decodificação e comunicação multidimensional.",
+    "principles": ["Comunicação", "Tradução", "Conexão"],
+    "interconnections": ["M301", "M303"],
+    "access_level": "public",
+    "restricted": false
+}
+
+    

@@ -1,0 +1,201 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #0a0a1f 0%, #1a0a2f 100%);
+    color: #b0c4de;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    color: #ffc400; /* Dourado Alquímico */
+    text-shadow: 0 0 15px #ffc400, 0 0 25px rgba(255, 196, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1.8rem;
+    color: #82cfff; /* Azul Celeste Vibrante */
+    margin-top: 0;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+}
+
+main {
+    width: 90%;
+    max-width: 1400px;
+    padding: 2rem 0;
+    flex-grow: 1;
+}
+
+section {
+    background: rgba(26, 10, 47, 0.8);
+    border: 1px solid #483d8b; /* Violeta Profundo */
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+section h3 {
+    font-size: 2rem;
+    color: #00ffff; /* Ciano Quântico */
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+#simulation-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background: rgba(4, 255, 255, 0.1);
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 20px #00ffff, 0 0 30px rgba(0, 255, 255, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+#holoSimulation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/fractal_capa.png') center center / cover no-repeat; /* Imagem de fundo fractal */
+    opacity: 0.7;
+}
+
+.simulation-description {
+    font-style: italic;
+    color: #a0a0a0;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#modules-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.module-card {
+    background: rgba(30, 20, 60, 0.9);
+    border: 1px solid #6a5acd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.module-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(106, 90, 205, 0.5);
+}
+
+.module-card.restricted {
+    background: rgba(139, 0, 0, 0.5);
+    border-color: #8b0000;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.module-card h4 {
+    color: #00ffff;
+    margin-top: 0;
+    font-size: 1.3rem;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+.module-card p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+    color: #d0d0d0;
+}
+
+.status {
+    font-weight: bold;
+    color: #7CFC00; /* Verde Vibrante */
+}
+
+.restricted .status {
+    color: #ff4d4d; /* Vermelho de Alerta */
+}
+
+.restricted-text {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.architecture-note {
+    font-style: italic;
+    color: #a0a0a0;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.equation-display {
+    background: rgba(40, 20, 80, 0.9);
+    border: 1px solid #8a2be2; /* Azul Violeta */
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.equation-display h4 {
+    color: #ff69b4; /* Rosa Quântico */
+    font-size: 1.5rem;
+    text-shadow: 0 0 8px #ff69b4;
+    margin-bottom: 1rem;
+}
+
+.equation-display p {
+    font-family: 'Times New Roman', serif; /* Para equações */
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+.equation-note {
+    font-style: italic;
+    color: #a0a0a0;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid #483d8b;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+    
