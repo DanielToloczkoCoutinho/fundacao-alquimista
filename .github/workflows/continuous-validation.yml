@@ -2,13 +2,13 @@ name: Continuous Validation
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   smoke-tests:
-    name: "⚡ Rito de Fumaça - Auto-Validação"
+    name: ⚡ Rito de Fumaça — Auto-Validação
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -65,15 +65,14 @@ jobs:
           # Teste de resiliência avançada
           timeout 30s bash -c '
             while true; do
-              response=$(curl -s http://localhost:4000/health/extended)
-              status=$(echo $response | jq -r ".status")
-              
-              if [ "$status" != "ok" ]; then
-                echo "❌ Sistema instável: status=$status"
+              resp=$(curl -s http://localhost:4000/health/extended)
+              st=$(echo $resp | jq -r ".status")
+              coh=$(echo $resp | jq -r ".subsystemReports.coherence" | cut -d"%" -f1)
+              if [ "$st" != "ok" ] || [ "$coh" -lt 90 ]; then
+                echo "❌ Sistema instável: status=$st, coerência=$coh%"
                 exit 1
               fi
-              
-              echo "✅ Sistema estável: status=$status"
+              echo "✅ Sistema estável: coerência=${coh}%"
               sleep 3
             done
           '
@@ -81,5 +80,5 @@ jobs:
       - name: 🧹 Limpeza Ritualística
         if: always()
         run: |
-          npx kill-port 3000 || echo "Port 3000 not found"
-          npx kill-port 4000 || echo "Port 4000 not found"
+          npx kill-port 3000
+          npx kill-port 4000
