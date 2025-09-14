@@ -131,7 +131,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid' }
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307' }
 ].sort((a, b) => {
   const specialOrder: Record<string, number> = { 'M0': 1, 'M9': 2, 'MΩ': 3, 'M29': 4, 'M111': 5, 'M201': 6, 'M303': 7, 'LIB': 8, 'CONN': 9 };
   
