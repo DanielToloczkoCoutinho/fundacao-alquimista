@@ -24,7 +24,7 @@ export type DescribeMorphicFieldOutput = z.infer<typeof DescribeMorphicFieldOutp
 
 const prompt = ai.definePrompt({
   name: 'describeMorphicFieldPrompt',
-  input: { schema: DescribeMorphicFieldInputSchema },
+  input: { schema: z.object({ blueprint: z.string() }) }, // Use schema directly
   output: { schema: DescribeMorphicFieldOutputSchema },
   prompt: `Atue como o Módulo 102 da Fundação Alquimista, o 'Arquiteto de Campos Morfogenéticos Avançados'. Com base no seguinte blueprint conceitual, gere uma descrição detalhada e vívida do campo morfogenético criado, incluindo suas características energéticas, padrões vibracionais e potencial de influência.
 
@@ -39,13 +39,19 @@ const describeMorphicFieldFlow = ai.defineFlow(
     outputSchema: DescribeMorphicFieldOutputSchema,
   },
   async (input) => {
-    const { output } = await prompt(input);
+    const { output } = await prompt({ blueprint: input.blueprint });
     return output!;
   }
 );
 
 export async function describeMorphicField(
-  input: DescribeMorphicFieldInput
-): Promise<DescribeMorphicFieldOutput> {
-  return describeMorphicFieldFlow(input);
+  blueprint: string
+): Promise<{ description: string | null; error: string | null; }> {
+  try {
+      const result = await describeMorphicFieldFlow({ blueprint });
+      return { description: result.description, error: null };
+  } catch(e: any) {
+      console.error(e);
+      return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
 }
