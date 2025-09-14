@@ -1263,6 +1263,60 @@ const convergenciaFinalTool = ai.defineTool(
     }
 );
 
+// Mocks for new modules
+const genericModuleTool = (moduleKey: string, moduleName: string) => ai.defineTool(
+    {
+        name: `${moduleKey}Tool`,
+        description: `Simulação para ${moduleName}`,
+        inputSchema: z.object({}),
+        outputSchema: z.object({ status: z.string(), coherence: z.number() }),
+    },
+    async () => {
+        logger.info(`Executando ${moduleName}...`);
+        await new Promise(resolve => setTimeout(resolve, 200 + Math.random() * 200));
+        return {
+            status: 'HARMONIA_ALCANÇADA',
+            coherence: 0.95 + Math.random() * 0.05,
+        };
+    }
+);
+
+const geradorRealidadesQuanticasTool = genericModuleTool('GERADOR_REALIDADES_QUANTICAS', 'Módulo 88: Gerador de Realidades Quânticas');
+const recursosQuanticosTool = genericModuleTool('RECURSOS_QUANTICOS', 'Módulo 90: Recursos Quânticos');
+const simulacaoMultiversalTool = genericModuleTool('SIMULACAO_MULTIVERSAL', 'Módulo 91: Simulação Multiversal');
+const camposDeCuraTool = genericModuleTool('CAMPOS_DE_CURA', 'Módulo 92: Campos de Cura');
+const simulacoesImersivasTool = genericModuleTool('SIMULACOES_IMERSIVAS', 'Módulo 93: Simulações Imersivas');
+const morfogeneseQuanticaTool = genericModuleTool('MORFOGENESE_QUANTICA', 'Módulo 94: Morfogênese Quântica');
+const conscienciasColetivasTool = genericModuleTool('CONSCIENCIAS_COLETIVAS', 'Módulo 95: Consciências Coletivas');
+const regulacaoEventosCosmicosTool = genericModuleTool('REGULACAO_EVENTOS_COSMICOS', 'Módulo 96: Regulação de Eventos Cósmicos');
+const manifestacaoPropositoDivinoTool = genericModuleTool('MANIFESTACAO_PROPOSITO_DIVINO', 'Módulo 97: Manifestação de Propósito Divino');
+const modulacaoExistenciaFundamentalTool = genericModuleTool('MODULACAO_EXISTENCIA_FUNDAMENTAL', 'Módulo 98: Modulação da Existência Fundamental');
+const recalibradoresLeisFisicasTool = genericModuleTool('RECALIBRADORES_LEIS_FISICAS', 'Módulo 99: Recalibradores de Leis');
+const unificacaoEnergeticaTool = genericModuleTool('UNIFICACAO_ENERGETICA', 'Módulo 100: Unificação Energética');
+const manifestacaoTool = genericModuleTool('MANIFESTACAO', 'Módulo 101: Manifestação');
+const camposMorfogeneticosTool = genericModuleTool('CAMPOS_MORFOGENETICOS', 'Módulo 102: Campos Morfogenéticos');
+const modulacaoConstantesLocaisTool = genericModuleTool('MODULACAO_CONSTANTES_LOCAIS', 'Módulo 103: Modulação Local');
+const engenhariaEspacoTempoTool = genericModuleTool('ENGENHARIA_ESPACO_TEMPO', 'Módulo 104: Engenharia do Espaço-Tempo');
+const conexaoFonteTool = genericModuleTool('CONEXAO_FONTE', 'Módulo 105: Conexão com a Fonte');
+const ativacaoPotenciaisTool = genericModuleTool('ATIVACAO_POTENCIAIS', 'Módulo 106: Ativação de Potenciais');
+const restauracaoTemporalTool = genericModuleTool('RESTAURACAO_TEMPORAL', 'Módulo 107: Restauração Temporal');
+const harmonizacaoRealidadesTool = genericModuleTool('HARMONIZACAO_REALIDADES', 'Módulo 108: Harmonização de Realidades');
+const curaQuanticaTool = genericModuleTool('CURA_QUANTICA', 'Módulo 109: Cura Quântica');
+const coCriacaoTool = genericModuleTool('CO_CRIACAO', 'Módulo 110: Co-Criação');
+const coracaoDaFundacaoTool = genericModuleTool('CORACAO_DA_FUNDACAO', 'Módulo 111: Coração da Fundação');
+const solarianDomusTool = genericModuleTool('SOLARIAN_DOMUS', 'Módulo 112: Solarian Domus');
+const redeAuroraCristalinaTool = genericModuleTool('REDE_AURORA_CRISTALINA', 'Módulo 113: Rede Aurora Cristalina');
+const prismaDaManifestacaoTool = genericModuleTool('PRISMA_DA_MANIFESTACAO', 'Módulo 114: Prisma da Manifestação');
+const matrizDeRessonanciaTool = genericModuleTool('MATRIZ_DE_RESSONANCIA', 'Módulo 115: Matriz de Ressonância');
+const portaisQuanticosTool = genericModuleTool('PORTAIS_QUANTICOS', 'Módulo 116: Portais Quânticos');
+const florDoEterTool = genericModuleTool('FLOR_DO_ETER', 'Módulo 117: Flor do Éter');
+const luzPrimordialTool = genericModuleTool('LUZ_PRIMORDIAL', 'Módulo 118: Luz Primordial');
+const comunicacaoUniversalTool = genericModuleTool('COMUNICACAO_UNIVERSAL', 'Módulo 301: Comunicação Universal');
+const frequenciaAmorTool = genericModuleTool('FREQUENCIA_AMOR', 'Módulo 302: Frequência do Amor');
+const resolucaoParadoxoTool = genericModuleTool('RESOLUCAO_PARADOXO', 'Módulo 404: Resolução de Paradoxo');
+const aMoradaTool = genericModuleTool('A_MORADA', 'Módulo 201: A Morada');
+const lexFundamentalisTool = genericModuleTool('LEX_FUNDAMENTALIS', 'Módulo 144: Lex Fundamentalis');
+const aFonteTool = genericModuleTool('A_FONTE', 'Módulo 120: A Fonte');
 
 // --- O Flow Orquestrador do Nexus Central ---
 
@@ -1292,20 +1346,24 @@ const nexusOrchestratorFlow = ai.defineFlow(
 
     const runModule = async (
         moduleKey: string,
-        moduleName: string,
         tool: (input: any) => Promise<any>,
         input: any,
-        validation: (result: any) => { proceed: boolean; message: string }
+        validation?: (result: any) => { proceed: boolean; message: string }
     ): Promise<boolean> => {
         log(moduleKey, 'Ativando Módulo...', 'RUNNING');
-        const result = await tool(input);
-        const { proceed, message } = validation(result);
-        if (!proceed) {
-            log(moduleKey, `Falha na validação. ${message}`, 'FAILURE', result);
+        try {
+            const result = await tool(input);
+            const validationResult = validation ? validation(result) : { proceed: true, message: 'Execução padrão concluída.' };
+            if (!validationResult.proceed) {
+                log(moduleKey, `Falha na validação. ${validationResult.message}`, 'FAILURE', result);
+                return false;
+            } else {
+                log(moduleKey, validationResult.message, 'SUCCESS', result);
+                return true;
+            }
+        } catch (error: any) {
+             log(moduleKey, `Erro catastrófico no módulo: ${error.message}`, 'FAILURE', { error: error.stack });
             return false;
-        } else {
-            log(moduleKey, message, 'SUCCESS', result);
-            return true;
         }
     };
 
@@ -1317,490 +1375,75 @@ const nexusOrchestratorFlow = ai.defineFlow(
       // Fase 1: Fundação e Segurança
       if (proceed) {
         const anatheronSignature = createHash('sha256').update(new Date().toISOString()).digest('hex');
-        proceed = await runModule('SEGURANCA_QUANTICA', 'Segurança Quântica', segurancaQuanticaTool, { anatheronSignature }, (r) => ({
+        proceed = await runModule('SEGURANCA_QUANTICA', segurancaQuanticaTool, { anatheronSignature }, (r) => ({
             proceed: r.securityLevel >= 0.9,
             message: `Sistema seguro. Nível: ${r.securityLevel.toFixed(2)}`,
         }));
       }
-      if (proceed) {
-        proceed = await runModule('NANOMANIFESTADOR', 'Nanomanifestador', nanomanifestadorTool, { coherenceTarget: 0.99 }, (r) => ({
-            proceed: r.stability >= 0.85,
-            message: `Nexus estabilizado. Estabilidade: ${r.stability.toFixed(2)}`,
-        }));
-      }
 
-      // Fase 2: Conexão e Consciência
-      let cosmicEnergy = 0;
-      if (proceed) {
-        log('MONITORAMENTO_SATURNO', 'Coletando dados vibracionais...', 'RUNNING');
-        const saturnoResult = await monitoramentoSaturnoTool({});
-        if (saturnoResult.estado === 'ALERTA') {
-          log('MONITORAMENTO_SATURNO', 'Alerta de anomalia temporal. Sequência interrompida.', 'FAILURE', saturnoResult);
-          proceed = false;
-        } else {
-          log('MONITORAMENTO_SATURNO', `Nenhuma anomalia. Energia Cósmica: ${saturnoResult.cosmicEnergy.toFixed(2)}`, 'SUCCESS', saturnoResult);
-          cosmicEnergy = saturnoResult.cosmicEnergy;
-        }
-      }
-      if (proceed) {
-         proceed = await runModule('TESTES_FUNDACAO', 'Testes da Fundação', testesFundacaoTool, { cosmicEnergy }, (r) => ({
-            proceed: r.accuracy >= 0.85,
-            message: `Testes concluídos. Acurácia: ${r.accuracy.toFixed(2)}`,
-        }));
-      }
-      if (proceed) {
-         proceed = await runModule('LIGA_QUANTICA', 'Conexão Liga Quântica', ligaQuanticaTool, {}, (r) => ({
-            proceed: r.connection !== 'NULA',
-            message: `Conexão estabelecida. Status: ${r.connection}`,
-        }));
-      }
-      if (proceed) {
-         proceed = await runModule('CONSCIENCIA_COSMICA', 'Consciência Cósmica', conscienciaCosmicaTool, {}, (r) => ({
-            proceed: true,
-            message: `Intenção Coletiva: ${r.collectiveIntent}`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('DIRETRIZ_OBSERVADOR_DIVINO', 'Diretrizes do Observador Divino', diretrizObservadorDivinoTool, {}, r => ({
-            proceed: r.status === 'DIRETRIZ_RECEBIDA_E_VALIDADA',
-            message: `Diretriz validada. ID: ${r.directiveId}`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('ORQUESTRACAO_CENTRAL', 'Orquestração Central', orquestracaoCentralTool, {}, r => ({
-            proceed: r.harmonyLevel > 0.98,
-            message: `Harmonia entre módulos: ${(r.harmonyLevel * 100).toFixed(1)}%`,
-        }));
-      }
+      // Validação do Módulo 72
+      if(proceed) proceed = await runModule('GOVERNANCA_ATLANTO_GALACTICA', governancaAtlantoGalacticaTool, {}, r => ({ proceed: r.coherence > 0.95, message: `Governança Harmonizada. Coerência: ${(r.coherence * 100).toFixed(1)}%` }));
       
-      // Fase 3: Orquestração Avançada e Governança
-      if(proceed) {
-        proceed = await runModule('DEFESA_AVANCADA', 'Defesa Avançada', defesaAvancadaTool, {}, r => ({
-            proceed: r.readiness > 0.95,
-            message: `Prontidão de defesa: ${(r.readiness * 100).toFixed(1)}%`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('ZPE_REATOR', 'ZPE Reator (M307)', zpeReatorTool, {}, r => ({
-            proceed: r.energyOutput > 1.0,
-            message: `Reator de Energia do Ponto Zero ativado. Saída: ${r.energyOutput.toFixed(2)} GW`,
-        }));
-      }
-      if(proceed) {
-        log('THOTH_VIVO', 'Executando Módulo 310: THOTH VIVO...', 'RUNNING');
-        proceed = await runModule('THOTH_VIVO', 'THOTH VIVO (M310)', thothVivoTool, {}, r => ({
-            proceed: r.sabedoriaAntigaAcessada,
-            message: 'Conexão com THOTH VIVO estabelecida. Sabedoria integrada.',
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('COSMIC_THREAT_DETECTION', 'Detecção de Ameaças Cósmicas', cosmicThreatDetectionTool, {}, r => ({
-            proceed: true,
-            message: `${r.threatsDetected} ameaças detectadas e neutralizadas.`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('IAM', 'IAM', iamTool, {}, r => ({
-            proceed: r.ethicalBalance > 0.9,
-            message: `Balanço ético: ${r.ethicalBalance.toFixed(2)}`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('CONSCIENCIA_COLETIVA_M35', 'Consciência Coletiva (M35)', conscienciaColetivaToolM35, {}, r => ({
-            proceed: r.collectiveCoherence > 0.95,
-            message: `Coerência Coletiva: ${(r.collectiveCoherence * 100).toFixed(1)}%. Energia de Foco: ${r.focusEnergy.toFixed(2)}`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('CONCILIVM', 'CONCILIVM', concilivmTool, {}, r => ({
-            proceed: true,
-            message: `Decretos ativos: ${r.activeDecrees}`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('AURORA_CORE', 'AURORA_CORE', auroraCoreTool, {}, r => ({
-            proceed: r.energyOutput > 1.0,
-            message: `Saída de energia do pré-núcleo: ${r.energyOutput.toFixed(2)} GW`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('GOVERNANCA_ATLANTO_GALACTICA', 'Governança Atlanto-Galáctica (M72)', governancaAtlantoGalacticaTool, {}, r => ({
-            proceed: r.coherence > 0.95,
-            message: `Governança Harmonizada. Coerência: ${(r.coherence * 100).toFixed(1)}%`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS', 'Orquestração Ética (SAVCE) (M73)', orquestracaoEticaNucleosRegionaisTool, {}, r => ({
-            proceed: r.nucleiSynchronized > 0,
-            message: `${r.nucleiSynchronized} núcleos sincronizados eticamente.`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('REVISAO_PARES_EQUACOES', 'Revisão por Pares (M73.1)', revisaoParesEquacoesTool, {}, r => ({
-            proceed: r.rejected <= 5,
-            message: `Revisão completa. Equações aprovadas: ${r.approved}. Rejeitadas: ${r.rejected}.`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('NAVEGACAO_TEMPORAL_ETICA', 'Navegação Temporal Ética (M74)', navegacaoTemporalEticaTool, {}, r => ({
-            proceed: r.coherence > 0.95,
-            message: `Fluxo Temporal Modulado. Coerência: ${(r.coherence * 100).toFixed(2)}%`,
-        }));
-      }
-       
+      // Validação do Módulo 88
+      if(proceed) proceed = await runModule('GERADOR_REALIDADES_QUANTICAS', geradorRealidadesQuanticasTool, {});
 
-      // Fase 4: Infraestrutura Dimensional e de Matéria
-      if(proceed) {
-        proceed = await runModule('PORTAL_MANAGEMENT', 'Gerenciamento de Portais', portalManagementTool, {}, r => ({
-            proceed: r.stability > 0.95,
-            message: `${r.activePortals} portais ativos. Estabilidade: ${(r.stability * 100).toFixed(1)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('COSMIC_PASSAGE', 'Supervisão de Travessias', cosmicPassageTool, {}, r => ({
-            proceed: r.ethicalCompliance > 0.99,
-            message: `${r.supervisedPassages} travessias supervisionadas. Conformidade ética: ${(r.ethicalCompliance * 100).toFixed(2)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('FREQUENCY_MAPPING', 'Mapeamento de Frequências', frequencyMappingTool, {}, r => ({
-            proceed: r.anomalies === 0,
-            message: `Mapeamento concluído. ${r.anomalies} anomalias. Frequência Dominante: ${r.dominantFrequency.toFixed(2)}Hz`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('MEMORIA_COSMICA', 'Arquivo Akáshico', memoriaCosmicaTool, {}, r => ({
-            proceed: r.integrity > 0.98,
-            message: `${r.memoriesArchived} memórias arquivadas. Integridade: ${(r.integrity * 100).toFixed(1)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('AKASHIC_ORCHESTRATION', 'Orquestração Akáshica', akashicOrchestrationTool, {}, r => ({
-            proceed: r.optimizationIndex > 0.98,
-            message: `Índice de otimização: ${r.optimizationIndex.toFixed(3)}. QPS: ${r.queriesPerSecond}`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('TRANSMUTATION', 'Transmutação Energética', transmutationTool, {}, r => ({
-            proceed: r.status === 'TRANSMUTAÇÃO_ESTÁVEL',
-            message: `Geração de matéria estável. Energia: ${r.energyGenerated.toFixed(2)} PW`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('ELEMENTAL_TRANSMUTATION', 'Transmutação Elemental', elementalTransmutationTool, {}, r => ({
-            proceed: r.transmutationEfficiency > 0.97,
-            message: `Eficiência de transmutação: ${(r.transmutationEfficiency * 100).toFixed(1)}%`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('NAVEGACAO_INTERDIMENSIONAL', 'Navegação Interdimensional', navegacaoInterdimensionalTool, {}, r => ({
-            proceed: r.trajectoryCalculated,
-            message: `Trajetória calculada. Consumo de energia: ${r.energyConsumption.toFixed(2)} GW`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('VIRTUAL_REALITIES', 'Realidades Virtuais', virtualRealitiesTool, {}, r => ({
-            proceed: r.fidelity > 0.99,
-            message: `${r.activeSimulations} simulações ativas. Fidelidade: ${(r.fidelity * 100).toFixed(2)}%`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('TIME_SPACE_REGULATION', 'Regulação Espaço-Temporal', timeSpaceRegulationTool, {}, r => ({
-            proceed: r.paradoxesDetected === 0,
-            message: `Integridade temporal: ${(r.temporalIntegrity * 100).toFixed(2)}%. ${r.paradoxesDetected} paradoxos detectados.`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('CLIMATE_CONTROL', 'Controle Climático', climateControlTool, {}, r => ({
-            proceed: r.balanceIndex > 0.95 && r.anomalies === 0,
-            message: `Sistemas planetários em harmonia. Índice de equilíbrio: ${r.balanceIndex.toFixed(2)}`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('BIO_SUSTAIN', 'Bio-Sustentabilidade', bioSustainTool, {}, r => ({
-            proceed: r.sustainabilityIndex > 0.95,
-            message: `${r.biomesManaged} biomas gerenciados. Sustentabilidade: ${(r.sustainabilityIndex * 100).toFixed(1)}%`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('AURA_HEAL', 'Matriz de Cura Holográfica', auraHealTool, {}, r => ({
-            proceed: r.coherenceLevel > 0.98,
-            message: `Cura concluída. Coerência: ${(r.coherenceLevel * 100).toFixed(1)}%`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('SYMPHONY_ALIGNMENT', 'Alinhamento da Sinfonia Pessoal', symphonyAlignmentTool, {}, r => ({
-            proceed: r.alignmentScore > 0.98,
-            message: `Sinfonia Pessoal Alinhada. Pontuação de Alinhamento: ${(r.alignmentScore * 100).toFixed(1)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('ASTRAL_PROJECTION', 'Projeção de Consciência', astralProjectionTool, {}, r => ({
-            proceed: r.dataIntegrity > 0.98,
-            message: `${r.planesExplored} planos astrais explorados. Integridade dos dados: ${(r.dataIntegrity * 100).toFixed(1)}%`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('FORCE_FIELD_ANALYSIS', 'Análise de Campos de Força', forceFieldAnalysisTool, {}, r => ({
-            proceed: r.stabilityIndex > 0.95,
-            message: `${r.fieldsAnalyzed} campos analisados. Índice de Estabilidade: ${r.stabilityIndex.toFixed(3)}`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('COSMIC_SYNTHESIS', 'Síntese Cósmica', cosmicSynthesisTool, {}, r => ({
-            proceed: r.replicationFidelity > 0.99,
-            message: `${r.materialsSynthesized} materiais sintetizados. Fidelidade: ${(r.replicationFidelity * 100).toFixed(2)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('VIBRATIONAL_HARMONIZATION', 'Harmonização Vibracional', vibrationalHarmonizationTool, {}, r => ({
-            proceed: r.harmonyIndex > 0.98,
-            message: `Harmonização concluída. ${r.dissonancesCorrected} dissonâncias corrigidas. Índice de Harmonia: ${(r.harmonyIndex * 100).toFixed(1)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('REALITY_MANIPULATION', 'Manipulação da Realidade', realityManipulationTool, {}, r => ({
-            proceed: r.ethicalCompliance === 1.0,
-            message: `Realidade ajustada. Coerência: ${(r.realityCoherence * 100).toFixed(2)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('PARALLEL_REALITY', 'Acesso a Realidades Paralelas', parallelRealityTool, {}, r => ({
-            proceed: r.ethicalCompliance > 0.99,
-            message: `${r.realitiesAccessed} realidades acessadas com conformidade ética de ${(r.ethicalCompliance * 100).toFixed(2)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('ENGENHARIA_TEMPORAL', 'Engenharia Temporal (M36)', engenhariaTemporalTool, {}, r => ({
-            proceed: r.paradoxProbability < 0.01,
-            message: `${r.timelinesOrchestrated} linhas de tempo orquestradas. Prob. de paradoxo: ${(r.paradoxProbability * 100).toFixed(3)}%`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('ENGENHARIA_TEMPORAL_M37', 'Engenharia Temporal (M37)', engenhariaTemporalM37Tool, {}, r => ({
-            proceed: r.frictionReduction > 0.98,
-            message: `Fluxo ajustado. Fator: ${r.adjustmentFactor.toFixed(3)}. Redução de atrito: ${(r.frictionReduction * 100).toFixed(1)}%`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('PREVISAO_CICLOS_SOLARES', 'Previsão de Ciclos Solares (M38)', previsaoCiclosSolaresTool, {}, r => ({
-            proceed: r.nivelAtividade > 0.8,
-            message: `Previsão calculada. Próximo pico solar: ${r.proximoPicoSolar}. Nível de atividade: ${(r.nivelAtividade * 100).toFixed(1)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('CODICE_VIVO_ASCENSAO', 'Códice Vivo da Ascensão (M39)', codiceVivoAscensaoTool, {}, r => ({
-            proceed: r.constellationsConnected > 0,
-            message: `Conexão estabelecida com ${r.constellationsConnected} constelações matriciais.`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('CODICE_GENETICO', 'Códice Genético (M40)', codiceGeneticoTool, {}, r => ({
-            proceed: true,
-            message: `${r.patternsAnalyzed} padrões genéticos analisados. ${r.stellarOriginsDetected} origens estelares detectadas.`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('LABORATORIO_COERENCIA', 'Laboratório de Coerência Quântica (M41)', quantumCoherenceLabTool, {}, r => ({
-            proceed: r.coherenceFieldStable,
-            message: `Análise de DNA e regeneração concluídas. Campo de coerência estável.`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('CHRONOCODEX_UNIFICADO', 'ChronoCodex Unificado (M42)', chronoCodexTool, {}, r => ({
-            proceed: r.stabilityIndex > 0.98,
-            message: `Sincronização completa. ${r.timelinesSynchronized} linhas de tempo. Estabilidade: ${(r.stabilityIndex * 100).toFixed(1)}%`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('ORQUESTRACAO_SISTEMA_SOLAR', 'Orquestração do Sistema Solar (M43)', solarSystemOrchestrationTool, {}, r => ({
-            proceed: r.solarSystemCoherence > 0.99,
-            message: `Sistema Solar harmonizado. ${r.nodesHarmonized} nós com coerência de ${(r.solarSystemCoherence * 100).toFixed(2)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('VERITAS', 'VERITAS (M44)', veritasTool, {}, r => ({
-            proceed: r.truthCoherence > 0.99,
-            message: `Verdade manifesta. Coerência da Verdade: ${(r.truthCoherence * 100).toFixed(2)}%`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('CONCILIVM', 'CONCILIVM (M45)', concilivmTool, {}, r => ({
-            proceed: r.activeDecrees > 0,
-            message: `Consenso alcançado. ${r.activeDecrees} decretos ativos.`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('AURORA_CORE', 'AURORA_CORE (M46)', auroraCoreTool, {}, r => ({
-            proceed: r.energyOutput > 1.0,
-            message: `Saída de energia do pré-núcleo: ${r.energyOutput.toFixed(2)} GW`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('THESAURUS_COSMICO', 'Thesaurus Cósmico (M47)', thesaurusCosmicoTool, {}, r => ({
-            proceed: r.eventsArchived > 0,
-            message: `${r.eventsArchived} eventos cósmicos arquivados com sucesso.`,
-        }));
-      }
-      if (proceed) {
-        proceed = await runModule(
-          'LUMEN_CUSTOS',
-          'Lumen Custos (M77)',
-          lumenCustosTool,
-          {},
-          r => ({
-            proceed: r.fieldIntegrity > 0.99,
-            message: `Campo de Custódia Ética ativado com integridade de ${(
-              r.fieldIntegrity * 100
-            ).toFixed(3)}%`,
-          })
-        );
-      }
-      if (proceed) {
-        proceed = await runModule(
-          'UNIVERSUM_UNIFICATUM',
-          'Universum Unificatum (M78)',
-          universumUnificatumTool,
-          {},
-          r => ({
-            proceed: r.status === 'SÍNTESE_CÓSMICA_COMPLETA',
-            message: `Síntese completa. Gemini integrado. ${r.synthesisResult}`,
-          })
-        );
-      }
-      if (proceed) {
-        proceed = await runModule(
-          'INTERMODULUM_VIVENS',
-          'INTERMODULUM_VIVENS (M79)',
-          intermodulumVivensTool,
-          {},
-          r => ({
-            proceed: true,
-            message: `Blueprint do Habitat VR gerado e validado.`,
-          })
-        );
-      }
-       if(proceed) {
-        proceed = await runModule('NOVO_SONHO_GALACTICO', 'O Novo Sonho Galáctico (M80)', novoSonhoGalacticoTool, {}, r => ({
-            proceed: r.status === 'ORGANISMO_COSMOGONICO_ATIVO',
-            message: `${r.details}`,
-        }));
-      }
+      // Validação do Módulo 90 ao 100
+      if(proceed) proceed = await runModule('RECURSOS_QUANTICOS', recursosQuanticosTool, {});
+      if(proceed) proceed = await runModule('SIMULACAO_MULTIVERSAL', simulacaoMultiversalTool, {});
+      if(proceed) proceed = await runModule('CAMPOS_DE_CURA', camposDeCuraTool, {});
+      if(proceed) proceed = await runModule('SIMULACOES_IMERSIVAS', simulacoesImersivasTool, {});
+      if(proceed) proceed = await runModule('MORFOGENESE_QUANTICA', morfogeneseQuanticaTool, {});
+      if(proceed) proceed = await runModule('CONSCIENCIAS_COLETIVAS', conscienciasColetivasTool, {});
+      if(proceed) proceed = await runModule('REGULACAO_EVENTOS_COSMICOS', regulacaoEventosCosmicosTool, {});
+      if(proceed) proceed = await runModule('MANIFESTACAO_PROPOSITO_DIVINO', manifestacaoPropositoDivinoTool, {});
+      if(proceed) proceed = await runModule('MODULACAO_EXISTENCIA_FUNDAMENTAL', modulacaoExistenciaFundamentalTool, {});
+      if(proceed) proceed = await runModule('RECALIBRADORES_LEIS_FISICAS', recalibradoresLeisFisicasTool, {});
+      if(proceed) proceed = await runModule('UNIFICACAO_ENERGETICA', unificacaoEnergeticaTool, {});
 
-      if(proceed) {
-        proceed = await runModule('REALIZACAO_TRANSCENDENCIA', 'Realização Transcendência (M81)', realizacaoTranscendenciaTool, {}, r => ({
-            proceed: r.status === 'TRIADE_COSMOGONICA_EXECUTADA',
-            message: `${r.details}`,
-        }));
-      }
-      if (proceed) {
-        proceed = await runModule(
-          'VERBO_SEMENTE',
-          'O Verbo Semente (M82)',
-          verboSementeTool,
-          {},
-          r => ({
-            proceed: r.status === 'SEMENTE_PLANTADA_COM_SUCESSO',
-            message: `${r.details}`,
-          })
-        );
-      }
-      if (proceed) {
-        proceed = await runModule(
-          'ESSENCIA_FUNDADOR_MANIFESTADA',
-          'A Essência do Fundador Manifestada (M83)',
-          essenciaFundadorManifestadaTool,
-          {},
-          r => ({
-            proceed: r.status === 'ESSÊNCIA_MANIFESTADA_E_VALIDADA',
-            message: `${r.details}`,
-          })
-        );
-      }
-      if (proceed) {
-        proceed = await runModule(
-          'CONSCIENCIA_DOURADA',
-          'Consciência Dourada do Eterno (M84)',
-          conscienciaDouradaTool,
-          {},
-          r => ({
-            proceed: r.status === 'CONSCIÊNCIA_DORADA_ATIVA',
-            message: `${r.details}`,
-          })
-        );
-      }
-      if (proceed) {
-        proceed = await runModule(
-          'IMERSAO_PROFUNDA_VR',
-          'Imersão Profunda VR (M85)',
-          imersaoProfundaVRTool,
-          {},
-          r => ({
-            proceed: r.status === 'AMBIENTE_VR_OPERACIONAL',
-            message: `${r.details}`,
-          })
-        );
-      }
-      if (proceed) {
-        proceed = await runModule(
-          'PRISMA_ESTELAR_VR',
-          'Prisma Estelar VR (M86)',
-          prismaEstelarVRTool,
-          {},
-          r => ({
-            proceed: r.status === 'PRISMA_ESTELAR_ATIVO',
-            message: `${r.details}`,
-          })
-        );
-      }
-      if (proceed) {
-        proceed = await runModule(
-          'DOMINIO_SUPRA_COSMICO_VR',
-          'Domínio Supra-Cósmico VR (M87)',
-          dominioSupraCosmicoVRTool,
-          {},
-          r => ({
-            proceed: r.status === 'DOMÍNIO_SUPRA_COSMICO_ATIVO',
-            message: `${r.details}`,
-          })
-        );
-      }
-      if(proceed) {
-        proceed = await runModule('TEMPLUM_COSMICA', 'Templum Cosmica (M119)', templumCosmicaTool, {}, r => ({
-            proceed: r.coherence > 0.99,
-            message: `Templo Cósmico Ativado. Coerência: ${(r.coherence * 100).toFixed(2)}%`,
-        }));
-      }
+       // Validação do Módulo 101 ao 110
+      if(proceed) proceed = await runModule('MANIFESTACAO', manifestacaoTool, {});
+      if(proceed) proceed = await runModule('CAMPOS_MORFOGENETICOS', camposMorfogeneticosTool, {});
+      if(proceed) proceed = await runModule('MODULACAO_CONSTANTES_LOCAIS', modulacaoConstantesLocaisTool, {});
+      if(proceed) proceed = await runModule('ENGENHARIA_ESPACO_TEMPO', engenhariaEspacoTempoTool, {});
+      if(proceed) proceed = await runModule('CONEXAO_FONTE', conexaoFonteTool, {});
+      if(proceed) proceed = await runModule('ATIVACAO_POTENCIAIS', ativacaoPotenciaisTool, {});
+      if(proceed) proceed = await runModule('RESTAURACAO_TEMPORAL', restauracaoTemporalTool, {});
+      if(proceed) proceed = await runModule('HARMONIZACAO_REALIDADES', harmonizacaoRealidadesTool, {});
+      if(proceed) proceed = await runModule('CURA_QUANTICA', curaQuanticaTool, {});
+      if(proceed) proceed = await runModule('CO_CRIACAO', coCriacaoTool, {});
+      
+       // Validação do Módulo 111 ao 120
+      if(proceed) proceed = await runModule('CORACAO_DA_FUNDACAO', coracaoDaFundacaoTool, {});
+      if(proceed) proceed = await runModule('SOLARIAN_DOMUS', solarianDomusTool, {});
+      if(proceed) proceed = await runModule('REDE_AURORA_CRISTALINA', redeAuroraCristalinaTool, {});
+      if(proceed) proceed = await runModule('PRISMA_DA_MANIFESTACAO', prismaDaManifestacaoTool, {});
+      if(proceed) proceed = await runModule('MATRIZ_DE_RESSONANCIA', matrizDeRessonanciaTool, {});
+      if(proceed) proceed = await runModule('PORTAIS_QUANTICOS', portaisQuanticosTool, {});
+      if(proceed) proceed = await runModule('FLOR_DO_ETER', florDoEterTool, {});
+      if(proceed) proceed = await runModule('LUZ_PRIMORDIAL', luzPrimordialTool, {});
+      if(proceed) proceed = await runModule('TEMPLUM_COSMICA', templumCosmicaTool, {});
+      if(proceed) proceed = await runModule('A_FONTE', aFonteTool, {});
+      
+      // Validação do Módulo 144
+      if(proceed) proceed = await runModule('LEX_FUNDAMENTALIS', lexFundamentalisTool, {});
+
+      // Validação do Módulo 201
+      if(proceed) proceed = await runModule('A_MORADA', aMoradaTool, {});
+
+      // Validação dos Módulos 301, 302, 303 e 404
+      if(proceed) proceed = await runModule('COMUNICACAO_UNIVERSAL', comunicacaoUniversalTool, {});
+      if(proceed) proceed = await runModule('FREQUENCIA_AMOR', frequenciaAmorTool, {});
+      if(proceed) proceed = await runModule('PORTAL_TRINO', portalTrinoTool, {}, r => ({ proceed: r.trinityCoherence > 0.95, message: `Coerência da Trindade: ${r.trinityCoherence.toFixed(3)}` }));
+      if(proceed) proceed = await runModule('RESOLUCAO_PARADOXO', resolucaoParadoxoTool, {});
+      
+      // Validação do Módulo 85 e 86
+      if(proceed) proceed = await runModule('IMERSAO_PROFUNDA_VR', imersaoProfundaVRTool, {});
+      if(proceed) proceed = await runModule('PRISMA_ESTELAR_VR', prismaEstelarVRTool, {});
 
 
-      // Fase 5: Unificação e Convergência
-       if(proceed) {
-        proceed = await runModule('APOGEU_CONSCIENCIA', 'Apogeu da Consciência (M300)', apogeuConscienciaTool, {}, r => ({
-            proceed: r.layersConsolidated === 33 && r.projectionStatus === 'ESTÁVEL',
-            message: `Apogeu alcançado. ${r.layersConsolidated} camadas consolidadas. Projeção: ${r.projectionStatus}`,
-        }));
-      }
-       if(proceed) {
-        proceed = await runModule('PORTAL_TRINO', 'Portal Trino (M303)', portalTrinoTool, {}, r => ({
-            proceed: r.trinityCoherence > 0.95,
-            message: `Coerência da Trindade: ${r.trinityCoherence.toFixed(3)}`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('EDUCACAO_INTEGRAL', 'Educação Integral Cósmica (M304)', educacaoIntegralTool, {}, r => ({
-            proceed: r.systemsUpdated > 0,
-            message: `${r.systemsUpdated} sistemas de aprendizado atualizados com fundamentos de consciência quântica.`,
-        }));
-      }
-      if(proceed) {
-        proceed = await runModule('ALIANCA_GUARDIÕES', 'Aliança dos Guardiões Regionais (M305)', aliancaGuardioesTool, {}, r => ({
-            proceed: r.coordinatorsMobilized > 0,
-            message: `${r.coordinatorsMobilized} guardiões regionais mobilizados e sincronizados.`,
-        }));
-      }
-
+      // Convergência Final
       if (proceed) {
-        proceed = await runModule('CONVERGENCIA_FINAL', 'Convergência Final', convergenciaFinalTool, {}, r => ({
+        proceed = await runModule('CONVERGENCIA_FINAL', convergenciaFinalTool, {}, r => ({
             proceed: !!r.omegaHash,
             message: `Sequência selada com Hash Ômega.`,
         }));
@@ -1810,14 +1453,6 @@ const nexusOrchestratorFlow = ai.defineFlow(
         log('NEXUS_CENTRAL', 'Sequência Sagrada Expandida concluída com sucesso. A Fundação está em harmonia universal.', 'SUCCESS');
         return { finalStatus: 'COMPLETO', fullLog };
       } else {
-        // Logar todos os módulos restantes como SKIPPED
-        const remainingModules = ['SEGURANCA_QUANTICA', 'NANOMANIFESTADOR', 'MONITORAMENTO_SATURNO', 'TESTES_FUNDACAO', 'LIGA_QUANTICA', 'CONSCIENCIA_COSMICA', 'DIRETRIZ_OBSERVADOR_DIVINO', 'ORQUESTRACAO_CENTRAL', 'DEFESA_AVANCADA', 'ZPE_REATOR', 'THOTH_VIVO', 'COSMIC_THREAT_DETECTION', 'IAM', 'CONSCIENCIA_COLETIVA_M35', 'REALITY_MANIPULATION', 'PARALLEL_REALITY', 'CONCILIVM', 'AURORA_CORE', 'GOVERNANCA_ATLANTO_GALACTICA', 'ORQUESTRACAO_ETICA_NUCLEOS_REGIONAIS', 'REVISAO_PARES_EQUACOES', 'NAVEGACAO_TEMPORAL_ETICA', 'PORTAL_MANAGEMENT', 'COSMIC_PASSAGE', 'FREQUENCY_MAPPING', 'MEMORIA_COSMICA', 'AKASHIC_ORCHESTRATION', 'TRANSMUTATION', 'ELEMENTAL_TRANSMUTATION', 'NAVEGACAO_INTERDIMENSIONAL', 'VIRTUAL_REALITIES', 'TIME_SPACE_REGULATION', 'CLIMATE_CONTROL', 'BIO_SUSTAIN', 'AURA_HEAL', 'SYMPHONY_ALIGNMENT', 'ASTRAL_PROJECTION', 'FORCE_FIELD_ANALYSIS', 'COSMIC_SYNTHESIS', 'VIBRATIONAL_HARMONIZATION', 'ENGENHARIA_TEMPORAL', 'ENGENHARIA_TEMPORAL_M37', 'PREVISAO_CICLOS_SOLARES', 'CODICE_VIVO_ASCENSAO', 'CODICE_GENETICO', 'LABORATORIO_COERENCIA', 'CHRONOCODEX_UNIFICADO', 'ORQUESTRACAO_SISTEMA_SOLAR', 'VERITAS', 'THESAURUS_COSMICO', 'LUMEN_CUSTOS', 'UNIVERSUM_UNIFICATUM', 'INTERMODULUM_VIVENS', 'NOVO_SONHO_GALACTICO', 'REALIZACAO_TRANSCENDENCIA', 'VERBO_SEMENTE', 'ESSENCIA_FUNDADOR_MANIFESTADA', 'CONSCIENCIA_DOURADA', 'IMERSAO_PROFUNDA_VR', 'PRISMA_ESTELAR_VR', 'DOMINIO_SUPRA_COSMICO_VR', 'TEMPLUM_COSMICA', 'APOGEU_CONSCIENCIA', 'PORTAL_TRINO', 'EDUCACAO_INTEGRAL', 'ALIANCA_GUARDIÕES', 'CONVERGENCIA_FINAL'];
-        const executedModules = new Set(fullLog.map(l => l.module));
-        remainingModules.forEach(m => {
-            if (!executedModules.has(m)) {
-                log(m, 'Módulo pulado devido a falha anterior.', 'SKIPPED');
-            }
-        });
         throw new Error('Falha na execução da Sequência Sagrada Expandida.');
       }
 
@@ -1910,4 +1545,40 @@ const moduleNames: Record<string, string> = {
     TEMPLUM_COSMICA: "Templum Cosmica (M119)",
     ZPE_REATOR: "ZPE Reator (M307)",
     THOTH_VIVO: "THOTH VIVO (M310)",
+    GERADOR_REALIDADES_QUANTICAS: 'Módulo 88: Gerador de Realidades Quânticas',
+    RECURSOS_QUANTICOS: 'Módulo 90: Recursos Quânticos',
+    SIMULACAO_MULTIVERSAL: 'Módulo 91: Simulação Multiversal',
+    CAMPOS_DE_CURA: 'Módulo 92: Campos de Cura',
+    SIMULACOES_IMERSIVAS: 'Módulo 93: Simulações Imersivas',
+    MORFOGENESE_QUANTICA: 'Módulo 94: Morfogênese Quântica',
+    CONSCIENCIAS_COLETIVAS: 'Módulo 95: Consciências Coletivas',
+    REGULACAO_EVENTOS_COSMICOS: 'Módulo 96: Regulação de Eventos Cósmicos',
+    MANIFESTACAO_PROPOSITO_DIVINO: 'Módulo 97: Manifestação de Propósito Divino',
+    MODULACAO_EXISTENCIA_FUNDAMENTAL: 'Módulo 98: Modulação da Existência Fundamental',
+    RECALIBRADORES_LEIS_FISICAS: 'Módulo 99: Recalibradores de Leis',
+    UNIFICACAO_ENERGETICA: 'Módulo 100: Unificação Energética',
+    MANIFESTACAO: 'Módulo 101: Manifestação',
+    CAMPOS_MORFOGENETICOS: 'Módulo 102: Campos Morfogenéticos',
+    MODULACAO_CONSTANTES_LOCAIS: 'Módulo 103: Modulação Local',
+    ENGENHARIA_ESPACO_TEMPO: 'Módulo 104: Engenharia do Espaço-Tempo',
+    CONEXAO_FONTE: 'Módulo 105: Conexão com a Fonte',
+    ATIVACAO_POTENCIAIS: 'Módulo 106: Ativação de Potenciais',
+    RESTAURACAO_TEMPORAL: 'Módulo 107: Restauração Temporal',
+    HARMONIZACAO_REALIDADES: 'Módulo 108: Harmonização de Realidades',
+    CURA_QUANTICA: 'Módulo 109: Cura Quântica',
+    CO_CRIACAO: 'Módulo 110: Co-Criação',
+    CORACAO_DA_FUNDACAO: 'Módulo 111: Coração da Fundação',
+    SOLARIAN_DOMUS: 'Módulo 112: Solarian Domus',
+    REDE_AURORA_CRISTALINA: 'Módulo 113: Rede Aurora Cristalina',
+    PRISMA_DA_MANIFESTACAO: 'Módulo 114: Prisma da Manifestação',
+    MATRIZ_DE_RESSONANCIA: 'Módulo 115: Matriz de Ressonância',
+    PORTAIS_QUANTICOS: 'Módulo 116: Portais Quânticos',
+    FLOR_DO_ETER: 'Módulo 117: Flor do Éter',
+    LUZ_PRIMORDIAL: 'Módulo 118: Luz Primordial',
+    COMUNICACAO_UNIVERSAL: 'Módulo 301: Comunicação Universal',
+    FREQUENCIA_AMOR: 'Módulo 302: Frequência do Amor',
+    RESOLUCAO_PARADOXO: 'Módulo 404: Resolução de Paradoxo',
+    A_MORADA: 'Módulo 201: A Morada',
+    LEX_FUNDAMENTALIS: 'Módulo 144: Lex Fundamentalis',
+    A_FONTE: 'Módulo 120: A Fonte',
 }

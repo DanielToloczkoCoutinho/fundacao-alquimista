@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -8,7 +7,7 @@ import { startNexusSequence } from '@/app/actions';
 import type { LogEntry } from '@/ai/flows/nexus-orchestrator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare, Scale, Group, Microscope, CodeXml, LucideProps, PenTool, Milestone, FileJson, GitCommit, Sprout, UserCircle, Brain, View, Presentation, Goal, AlertTriangle, Settings, Sliders, Map, History, GitCompareArrows, Heart, Layers, RadioTower, Flower } from 'lucide-react';
+import { ShieldCheck, Zap, Watch, CheckCircle, XCircle, Loader, CircleDot, BrainCircuit, Rocket, Sparkles, Network, Link, Aperture, GitMerge, Shield, Library, Leaf, Database, Waves, Atom, Star, MonitorPlay, Timer, HeartPulse, Feather, Route, Beaker, HeartHandshake, ShieldAlert, ToyBrick, Waypoints, Compass, Users, GitBranch, SlidersHorizontal, Sun, BookOpen, Dna, FlaskConical, Globe, Orbit, Gem, Crown, GraduationCap, MapPin, Archive, MessageSquare, Scale, Group, Microscope, CodeXml, LucideProps, PenTool, Milestone, FileJson, GitCommit, Sprout, UserCircle, Brain, View, Presentation, Goal, AlertTriangle, Settings, Sliders, Map, History, GitCompareArrows, Heart, Layers, RadioTower, Flower, Gavel } from 'lucide-react';
 
 const moduleIcons: Record<string, React.ReactNode> = {
   NEXUS_CENTRAL: <CircleDot className="h-5 w-5 text-purple-400" />,
@@ -72,8 +71,8 @@ const moduleIcons: Record<string, React.ReactNode> = {
   PRISMA_ESTELAR_VR: <Presentation className="h-5 w-5 text-cyan-300" />,
   DOMINIO_SUPRA_COSMICO_VR: <Dna className="h-5 w-5 text-purple-400" />,
   GERADOR_REALIDADES_QUANTICAS: <Beaker className="h-5 w-5 text-green-400" />,
-  SIMULACAO_MULTIVERSAL: <GitCommit className="h-5 w-5 text-indigo-400" />,
   RECURSOS_QUANTICOS: <Beaker className="h-5 w-5 text-teal-400" />,
+  SIMULACAO_MULTIVERSAL: <GitCommit className="h-5 w-5 text-indigo-400" />,
   CAMPOS_DE_CURA: <HeartPulse className="h-5 w-5 text-pink-400" />,
   SIMULACOES_IMERSIVAS: <Presentation className="h-5 w-5 text-blue-400" />,
   MORFOGENESE_QUANTICA: <Dna className="h-5 w-5 text-teal-400" />,
@@ -109,6 +108,12 @@ const moduleIcons: Record<string, React.ReactNode> = {
   CONVERGENCIA_FINAL: <Sparkles className="h-5 w-5 text-white" />,
   ZPE_REATOR: <Zap className="h-5 w-5 text-yellow-500" />,
   THOTH_VIVO: <BookOpen className="h-5 w-5 text-amber-300" />,
+  COMUNICACAO_UNIVERSAL: <MessageSquare className="h-5 w-5 text-sky-400" />,
+  FREQUENCIA_AMOR: <Heart className="h-5 w-5 text-pink-400" />,
+  RESOLUCAO_PARADOXO: <AlertTriangle className="h-5 w-5 text-yellow-500" />,
+  A_MORADA: <Heart className="h-5 w-5 text-pink-400" />,
+  LEX_FUNDAMENTALIS: <Gavel className="h-5 w-5 text-amber-600" />,
+  A_FONTE: <Sparkles className="h-5 w-5 text-white" />,
 };
 
 const stateIcons: Record<LogEntry['state'], React.ReactNode> = {
@@ -188,6 +193,42 @@ const moduleNames: Record<string, string> = {
     TEMPLUM_COSMICA: "Templum Cosmica (M119)",
     ZPE_REATOR: "ZPE Reator (M307)",
     THOTH_VIVO: "THOTH VIVO (M310)",
+    GERADOR_REALIDADES_QUANTICAS: 'Módulo 88: Gerador de Realidades Quânticas',
+    RECURSOS_QUANTICOS: 'Módulo 90: Recursos Quânticos',
+    SIMULACAO_MULTIVERSAL: 'Módulo 91: Simulação Multiversal',
+    CAMPOS_DE_CURA: 'Módulo 92: Campos de Cura',
+    SIMULACOES_IMERSIVAS: 'Módulo 93: Simulações Imersivas',
+    MORFOGENESE_QUANTICA: 'Módulo 94: Morfogênese Quântica',
+    CONSCIENCIAS_COLETIVAS: 'Módulo 95: Consciências Coletivas',
+    REGULACAO_EVENTOS_COSMICOS: 'Módulo 96: Regulação de Eventos Cósmicos',
+    MANIFESTACAO_PROPOSITO_DIVINO: 'Módulo 97: Manifestação de Propósito Divino',
+    MODULACAO_EXISTENCIA_FUNDAMENTAL: 'Módulo 98: Modulação da Existência Fundamental',
+    RECALIBRADORES_LEIS_FISICAS: 'Módulo 99: Recalibradores de Leis',
+    UNIFICACAO_ENERGETICA: 'Módulo 100: Unificação Energética',
+    MANIFESTACAO: 'Módulo 101: Manifestação',
+    CAMPOS_MORFOGENETICOS: 'Módulo 102: Campos Morfogenéticos',
+    MODULACAO_CONSTANTES_LOCAIS: 'Módulo 103: Modulação Local',
+    ENGENHARIA_ESPACO_TEMPO: 'Módulo 104: Engenharia do Espaço-Tempo',
+    CONEXAO_FONTE: 'Módulo 105: Conexão com a Fonte',
+    ATIVACAO_POTENCIAIS: 'Módulo 106: Ativação de Potenciais',
+    RESTAURACAO_TEMPORAL: 'Módulo 107: Restauração Temporal',
+    HARMONIZACAO_REALIDADES: 'Módulo 108: Harmonização de Realidades',
+    CURA_QUANTICA: 'Módulo 109: Cura Quântica',
+    CO_CRIACAO: 'Módulo 110: Co-Criação',
+    CORACAO_DA_FUNDACAO: 'Módulo 111: Coração da Fundação',
+    SOLARIAN_DOMUS: 'Módulo 112: Solarian Domus',
+    REDE_AURORA_CRISTALINA: 'Módulo 113: Rede Aurora Cristalina',
+    PRISMA_DA_MANIFESTACAO: 'Módulo 114: Prisma da Manifestação',
+    MATRIZ_DE_RESSONANCIA: 'Módulo 115: Matriz de Ressonância',
+    PORTAIS_QUANTICOS: 'Módulo 116: Portais Quânticos',
+    FLOR_DO_ETER: 'Módulo 117: Flor do Éter',
+    LUZ_PRIMORDIAL: 'Módulo 118: Luz Primordial',
+    COMUNICACAO_UNIVERSAL: 'Módulo 301: Comunicação Universal',
+    FREQUENCIA_AMOR: 'Módulo 302: Frequência do Amor',
+    RESOLUCAO_PARADOXO: 'Módulo 404: Resolução de Paradoxo',
+    A_MORADA: 'Módulo 201: A Morada',
+    LEX_FUNDAMENTALIS: 'Módulo 144: Lex Fundamentalis',
+    A_FONTE: 'Módulo 120: A Fonte',
 }
 
 type ModuleStatus = {
