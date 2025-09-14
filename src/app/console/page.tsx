@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
@@ -34,7 +33,7 @@ export default function ConsolePage() {
     // Cleanup da subscrição quando o componente é desmontado
     return () => unsub();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Executa apenas uma vez no mount do cliente
+  }, []); // Executa apenas uma vez no cliente
   
   if (!isClient) {
     return <SuspenseFallback />;

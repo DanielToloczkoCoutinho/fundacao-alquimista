@@ -11,25 +11,34 @@ on:
 
 jobs:
   smoke-tests:
-    name: "✅ Smoke Tests — Auto-Validação"
+    name: "⚡ Smoke Tests — Auto-Validação"
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: "🔄 Checkout do Código"
         uses: actions/checkout@v4
-      - name: "🔧 Instalar Dependências"
+
+      - name: "🔧 Configurar Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: "🔧 Instalar Dependências (Root)"
         run: npm ci
+        
       - name: "🏗️ Build da Aplicação"
         run: npm run build
+
       - name: "🛰️ Iniciar Servidores em Background"
         run: |
           npm start &
           npx next start -p 3000 &
           sleep 15
-      - name: "🧪 Testar Endpoints Críticos"
+      
+      - name: "🧪 Executar Smoke Tests"
         run: |
-          echo "Verificando Health Check Estendido..."
           curl --fail http://localhost:4000/health/extended || exit 1
-          echo "Verificando rota de preview..."
           curl --fail http://localhost:3000/firebase-preview/ || exit 1
           
   chaos-experiment:
