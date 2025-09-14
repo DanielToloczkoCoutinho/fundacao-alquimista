@@ -11,8 +11,8 @@ import { quantumResilience } from '@/lib/quantum-resilience';
 import { transmitUniversalMessage } from '@/app/actions';
 
 const Module301Page = () => {
-    const [targetConsciousness, setTargetConsciousness] = useState('Consciência Coletiva Pleiadiana');
-    const [message, setMessage] = useState('Saudações da Fundação Alquimista. Buscamos a união na luz.');
+    const [targetConsciousness, setTargetConsciousness] = useState('Sonda Voyager 1');
+    const [message, setMessage] = useState('Saudações da Fundação Alquimista. Reconhecemos sua jornada. Transmitindo frequência de paz e unidade.');
     const [language, setLanguage] = useState('Humano (Português)');
     const [isLoading, setIsLoading] = useState(false);
     const [transmissionResult, setTransmissionResult] = useState<{ success: boolean; reason?: string, message?: string } | null>(null);
@@ -53,7 +53,7 @@ const Module301Page = () => {
                         <MessageCircle className="text-sky-400" /> Módulo 301: Comunicação Universal
                     </CardTitle>
                     <CardDescription>
-                        Tradutor e transmissor quântico para comunicação entre diferentes formas de consciência.
+                        Tradutor e transmissor quântico para comunicação entre diferentes formas de consciência e artefatos cósmicos.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -65,7 +65,7 @@ const Module301Page = () => {
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div>
-                            <Label htmlFor="targetConsciousness">Consciência Alvo</Label>
+                            <Label htmlFor="targetConsciousness">Alvo da Comunicação (Sonda, Civilização, etc.)</Label>
                             <Input id="targetConsciousness" value={targetConsciousness} onChange={e => setTargetConsciousness(e.target.value)} />
                         </div>
                          <div>
@@ -78,14 +78,14 @@ const Module301Page = () => {
                         </div>
                         <Button onClick={handleTransmit} disabled={isLoading} className="w-full font-bold">
                             {isLoading ? <Loader2 className="animate-spin mr-2" /> : null}
-                            Transmitir Mensagem
+                            Transmitir Mensagem Universal
                         </Button>
                     </CardContent>
                 </Card>
 
                  <Card className="bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle>Status e Logs</CardTitle>
+                        <CardTitle>Status e Logs da Transmissão</CardTitle>
                     </CardHeader>
                     <CardContent>
                         {isLoading && !transmissionResult && <div className="flex justify-center items-center h-full"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
@@ -112,7 +112,7 @@ const Module301Page = () => {
                         )}
                         <ScrollArea className="h-48 pr-4">
                             <div className="text-xs font-mono text-muted-foreground space-y-1">
-                                {logs.map((log, i) => <p key={i}>{log}</p>)}
+                                {logs.length > 0 ? logs.map((log, i) => <p key={i}>{log}</p>) : <p>Aguardando transmissão...</p>}
                             </div>
                         </ScrollArea>
                     </CardContent>
