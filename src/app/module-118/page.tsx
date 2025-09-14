@@ -19,7 +19,7 @@ const Module118Page = () => {
     const [logs, setLogs] = useState<string[]>([]);
     const [userId, setUserId] = useState('carregando...');
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const animationFrameId = useRef<number | null>(null);
+    let animationFrameId: number | null = null;
     const lightParticles = useRef<any[]>([]);
     const lightWaves = useRef<any[]>([]);
 
@@ -80,7 +80,7 @@ const Module118Page = () => {
             }
         });
 
-        animationFrameId.current = requestAnimationFrame(() => drawOLP(ctx));
+        animationFrameId = requestAnimationFrame(() => drawOLP(ctx));
     };
 
     useEffect(() => {
@@ -94,15 +94,15 @@ const Module118Page = () => {
                 canvas.width = canvas.parentElement.offsetWidth;
                 canvas.height = canvas.parentElement.offsetHeight;
             }
-            if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
-            animationFrameId.current = requestAnimationFrame(() => drawOLP(ctx));
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            animationFrameId = requestAnimationFrame(() => drawOLP(ctx));
         };
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
         lightParticles.current = Array.from({ length: 150 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
+            x: Math.random() * (canvas?.width || 0),
+            y: Math.random() * (canvas?.height || 0),
             vx: (Math.random() - 0.5) * 1,
             vy: (Math.random() - 0.5) * 1,
             radius: Math.random() * 1.5 + 0.5,
@@ -111,8 +111,8 @@ const Module118Page = () => {
         }));
         
         lightWaves.current = Array.from({ length: 10 }, (_, i) => ({
-            x: canvas.width / 2,
-            y: canvas.height / 2,
+            x: (canvas?.width || 0) / 2,
+            y: (canvas?.height || 0) / 2,
             radius: i * 20,
             speed: 1,
             alpha: 1 - (i * 0.1),
@@ -120,8 +120,9 @@ const Module118Page = () => {
 
         return () => {
             window.removeEventListener('resize', resizeCanvas);
-            if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleMaintainOrder = async () => {
