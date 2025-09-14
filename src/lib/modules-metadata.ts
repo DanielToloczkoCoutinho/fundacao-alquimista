@@ -130,10 +130,3 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace('M', '').replace('Ω', '999').replace('LIB', '1000'));
   return codeA - codeB;
 });
-
-    
-
-    
-
-    
-

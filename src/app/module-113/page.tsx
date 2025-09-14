@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -112,8 +113,10 @@ const Module113Page = () => {
         if (!ctx) return;
 
         const resizeCanvas = () => {
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
+            if(canvas.parentElement){
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
             if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
             animationFrameId.current = requestAnimationFrame(() => drawAuroraNetwork(ctx, coherenceLevel));
         };
