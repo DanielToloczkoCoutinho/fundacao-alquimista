@@ -16,8 +16,8 @@ async function startGateway() {
     subscriptions: false,
   });
 
-  const { url } = await server.listen({ port: 4000 });
-  console.log(`🚀 Gateway pronto em ${url}`);
+  const { url } = await server.listen({ port: process.env.GATEWAY_PORT || 4000 });
+  console.log(`🚀 Gateway rodando em ${url}`);
 }
 
 startGateway();
