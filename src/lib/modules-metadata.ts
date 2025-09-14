@@ -103,7 +103,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M97', title: 'Manifestação de Propósito Divino',      emoji: '✨', route: '/module-97', category: 'mid' },
   { code: 'M98', title: 'Modulação da Existência Fundamental',   emoji: '🎚️', route: '/module-98', category: 'mid' },
   { code: 'M99', title: 'Recalibradores de Leis Físicas',          emoji: '⚖️', route: '/module-99', category: 'mid' },
-  { code: 'M100',title: 'Unificação Energética',                 emoji: '🔋', route: '/module-100', category: 'mid' },
+  { code: 'M100',title: 'Unificação Energética',                 emoji: '👑', route: '/module-100', category: 'mid' },
   { code: 'M101',title: 'Manifestação',                          emoji: '✨', route: '/module-101', category: 'mid' },
   { code: 'M102',title: 'Campos Morfogenéticos',                 emoji: '🌀', route: '/module-102', category: 'mid' },
   { code: 'M103',title: 'Modulação Local',                       emoji: '🎚️', route: '/module-103', category: 'mid' },
@@ -133,5 +133,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace('M', '').replace('Ω', '999').replace('LIB', '1000'));
   return codeA - codeB;
 });
+
+    
 
     
