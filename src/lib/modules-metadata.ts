@@ -20,6 +20,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   
   // Conselho e Governança
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'council' },
+  { code: 'M71', emoji: '🛰️', title: 'Comunicação Holográfica', route: '/module-71', category: 'council' },
   { code: 'M72', emoji: '⚖️', title: 'Governança', route: '/module-72', category: 'council' },
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council' },
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'council' },
