@@ -108,5 +108,5 @@ export const nexusSequence: NexusItem[] = [
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', href: '/module-301' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', href: '/module-302' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid' }
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307' }
 ]

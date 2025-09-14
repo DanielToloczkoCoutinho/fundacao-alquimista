@@ -52,6 +52,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'library' },
 
   // Módulos de Expansão (Mid)
+  { code: 'CONN', emoji: '⚡', title: 'Caixa de Luz', route: '/connection', category: 'mid' },
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'mid' },
   { code: 'M2', emoji: '🗣️', title: 'Intercâmbio Cósmico', route: '/module-2', category: 'mid' },
   { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno', route: '/module-3', category: 'mid' },
@@ -134,7 +135,16 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid' }
 ].sort((a, b) => {
-  const codeA = parseInt(a.code.replace('M', '').replace('Ω', '999').replace('LIB', '1000'));
-  const codeB = parseInt(b.code.replace('M', '').replace('Ω', '999').replace('LIB', '1000'));
+  const specialOrder: Record<string, number> = { 'M0': 1, 'M9': 2, 'MΩ': 3, 'M111': 4, 'M201': 5, 'M303': 6, 'LIB': 7, 'CONN': 8 };
+  
+  const orderA = specialOrder[a.code] || (a.category === 'council' ? 9 : 10);
+  const orderB = specialOrder[b.code] || (b.category === 'council' ? 9 : 10);
+
+  if (orderA !== orderB) {
+    return orderA - orderB;
+  }
+  
+  const codeA = parseInt(a.code.replace(/\D/g, ''));
+  const codeB = parseInt(b.code.replace(/\D/g, ''));
   return codeA - codeB;
 });
