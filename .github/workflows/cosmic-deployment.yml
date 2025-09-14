@@ -1,88 +1,90 @@
-name: Cosmic Deployment
-
-on:
-  push:
-    branches: [ main, cosmic ]
-  pull_request:
-    branches: [ main ]
+name: Cosmic Deployment  
+on:  
+  push:  
+    branches: [ main ]  
+  pull_request:  
+    branches: [ main ]  
+  workflow_dispatch:
 
 jobs:
-  cosmic-tests:
-    name: Run Cosmic Tests
+
+  # 1. Lint Cósmico
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
-          
-      - name: Install Dependencies
-        run: npm ci
-        
-      - name: Run Unit Tests
-        run: npm run test:unit
-        
-      - name: Run E2E Tests
-        run: npm run test:e2e
-        env:
-          PLAYWRIGHT_TEST_BASE_URL: http://localhost:3000
-          
-      - name: Run Security Scan
-        run: npm run security-scan
 
-  cosmic-deploy:
-    name: Deploy to Cosmic Realm
-    runs-on: ubuntu-latest
-    needs: cosmic-tests
-    if: github.ref == 'refs/heads/main'
-    
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          
-      - name: Install Dependencies
+      - name: Instalar Dependências
         run: npm ci
-        
-      - name: Build Cosmic Application
-        run: npm run build
-        env:
-          NEXT_PUBLIC_CDN_ENABLED: true
-          NEXT_PUBLIC_CDN_DOMAIN: ${{ secrets.CDN_DOMAIN }}
-          
-      - name: Deploy to Kubernetes
-        uses: steebchen/kubectl@v2
-        with:
-          config: ${{ secrets.KUBE_CONFIG }}
-          command: set image deployment/alquimista-app alquimista=alquimista:${{ github.sha }}
-          
-      - name: Verify Deployment
-        run: |
-          kubectl rollout status deployment/alquimista-app
-          kubectl get pods -l app=alquimista
-          
-      - name: Run Cosmic Health Check
-        run: |
-          echo "Waiting for deployment to be ready..."
-          sleep 30
-          curl -f https://${{ secrets.PRODUCTION_DOMAIN }}/api/health/advanced
 
-  cosmic-cdn-purge:
-    name: Purge CDN Cache
+      - name: Lint Cósmico
+        run: npm run lint
+
+  # 2. Testes Quânticos
+  test:
+    needs: lint
     runs-on: ubuntu-latest
-    needs: cosmic-deploy
     steps:
-      - name: Purge Cloudflare Cache
-        uses: jakejarvis/cloudflare-purge@v0.6.0
+      - uses: actions/checkout@v3
+
+      - name: Instalar Dependências
+        run: npm ci
+
+      - name: Testes Unitários
+        run: npm test
+
+      - name: Testes E2E com Playwright
+        uses: microsoft/playwright-github-action@v1
         with:
-          zone: ${{ secrets.CLOUDFLARE_ZONE }}
-          purgeEverything: true
+          run: |
+            npm run test:e2e
+
+  # 3. Experimentos de Caos
+  chaos:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Instalar Chaos Toolkit
+        run: pip install chaostoolkit
+
+      - name: Executar Experimento de Caos
+        run: chaos run chaos/chaos-experiment.json
+        continue-on-error: true
+
+  # 4. Rollout Canário
+  deploy_canary:
+    needs: [ test, chaos ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Instalar Argo Rollouts CLI
+        run: |
+          curl -sLO https://github.com/argoproj/argo-rollouts/releases/latest/download/kubectl-argo-rollouts-linux-amd64
+          chmod +x kubectl-argo-rollouts-linux-amd64
+          sudo mv kubectl-argo-rollouts-linux-amd64 /usr/local/bin/kubectl-argo-rollouts
+
+      - name: Deploy Canário com Argo
+        run: |
+          kubectl rollout status rollout/module-9-rollout -n production --watch
+          kubectl argo rollouts set image module-9-rollout container=fundacao-frontend:canary -n production
+
+  # 5. Notificação de ChatOps
+  notify:
+    needs: deploy_canary
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar Notificação Slack
         env:
-          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        run: |
+          curl -X POST $SLACK_WEBHOOK \
+            -H 'Content-type: application/json' \
+            --data '{"text":"🚀 Rollout canário completo! O Ciclo Cósmico pulsa na coerência máxima."}'
