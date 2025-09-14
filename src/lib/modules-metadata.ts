@@ -26,6 +26,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M73.1', emoji: '🧐', title: 'Revisão por Pares', route: '/module-73-1', category: 'council' },
   { code: 'M74', emoji: '⌛', title: 'CRONOS_FLUXUS', route: '/module-74', category: 'council' },
   { code: 'M77', emoji: '🛡️', title: 'LUMEN-CUSTOS', route: '/module-77', category: 'council' },
+  { code: 'M78', emoji: '🔗', title: 'UNIVERSUM_UNIFICATUM', route: '/module-78', category: 'council' },
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council' },
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'council' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'council' },
