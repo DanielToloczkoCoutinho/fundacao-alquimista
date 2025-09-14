@@ -30,6 +30,7 @@ export const modulesMetadata: ModuleMetadata[] = [
 
   // Módulos de Expansão (Mid)
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'mid' },
+  { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno', route: '/module-3', category: 'mid' },
   { code: 'M85', emoji: '🌌', title: 'Imersão VR', route: '/module-85', category: 'mid' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR', route: '/module-86', category: 'mid' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR', route: '/module-87', category: 'mid' },
@@ -62,9 +63,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M116', emoji: '🚪', title: 'Portais Quânticos', route: '/module-116', category: 'mid' },
   { code: 'M117', emoji: '🌸', title: 'Flor do Éter', route: '/module-117', category: 'mid' },
   { code: 'M118', emoji: '💡', title: 'Luz Primordial', route: '/module-118', category: 'mid' },
-  { code: 'M119', emoji: '🏛️', title: 'Templum Cosmica', route: '/module-119', category: 'mid' },
-  { code: 'M202', emoji: '🌀', title: 'Corredor de Alcor', route: '/module-202', category: 'mid' },
-  { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'mid' },
   { code: 'M301', emoji: '📡', title: 'Comunicação Universal', route: '/module-301', category: 'mid' },
   { code: 'M302', emoji: '💖', title: 'Frequência do Amor', route: '/module-302', category: 'mid' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
