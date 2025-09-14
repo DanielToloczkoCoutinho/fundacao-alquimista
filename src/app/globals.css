@@ -1,10 +1,12 @@
+/* This file is now located at app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 259 55% 10%; /* Deep Violet */
+    /* Primary: Deep Violet, Background: Light Lavender, Accent: Golden Yellow */
+    --background: 259 55% 10%; /* #4C2A85 - Deep Violet */
     --foreground: 255 100% 94%; /* Light Lavender for text */
 
     --card: 259 55% 15%;
@@ -22,7 +24,7 @@
     --muted: 259 30% 20%;
     --muted-foreground: 255 20% 85%;
 
-    --accent: 45 100% 58%; /* Golden Yellow */
+    --accent: 45 100% 58%; /* #FFC72C - Golden Yellow */
     --accent-foreground: 259 55% 10%;
 
     --destructive: 0 62.8% 30.6%;
