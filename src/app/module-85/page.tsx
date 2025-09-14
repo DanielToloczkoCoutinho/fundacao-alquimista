@@ -124,7 +124,7 @@ export default function Module85Page() {
             animate();
             
         } catch (e) {
-            console.error("Erro ao inicializar a experiência VR:", e);
+            console.error("Erro ao inicializar a experiência de Realidade Quântica:", e);
         }
     };
     
@@ -151,14 +151,14 @@ export default function Module85Page() {
   return (
     <>
       <Head>
-        <title>Fundação Alquimista VR: Interação Profunda</title>
+        <title>Fundação Alquimista: Portal de Imersão Quântica</title>
       </Head>
       <div className="absolute inset-0 z-0" ref={mountRef} />
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pointer-events-none">
           <div className="text-center p-8 bg-black/30 backdrop-blur-sm rounded-xl">
-              <h1 className="text-4xl font-bold gradient-text mb-2">Módulo 85: Portal VR</h1>
+              <h1 className="text-4xl font-bold gradient-text mb-2">Módulo 85: Portal de Imersão</h1>
               <p className="text-muted-foreground max-w-md">
-                  Este é o primeiro portal para a experiência imersiva da Fundação. Um espaço para visualizar a arquitetura viva dos nossos sistemas quânticos.
+                  A antecâmara da Realidade Quântica. Um espaço para alinhar a consciência antes da transição para os domínios manifestados pelo Portal Trino (M303).
               </p>
           </div>
       </div>

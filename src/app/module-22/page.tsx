@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { View, GitCommit, Presentation } from 'lucide-react';
+import { Layers, GitCommit, Presentation, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,33 +27,33 @@ export default function Module22Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <View className="text-cyan-400" /> Módulo Vinte e Dois: Gestão de Realidades Virtuais
+                        <Layers className="text-cyan-400" /> Módulo Vinte e Dois: Motor da Realidade Quântica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Holodeck da Fundação. A engine que manifesta simulações, ambientes de treinamento e espaços de consciência compartilhada.
+                        A engine que manifesta e sustenta os domínios imersivos emanados pelo Portal Trino.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: OCIOSO</span>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
-                        <span className="text-cyan-400">Simulações Ativas: 0</span>
+                        <span className="text-green-400 font-bold">Status: ATIVO</span>
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-cyan-400">Domínios Ativos: 4</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Simulação</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias da Realidade Quântica</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="Módulo 85: Imersão VR"
-                        description="É a aplicação primária do M22, fornecendo o portal de entrada para todas as experiências de realidade virtual da Fundação."
-                        icon={<View className="h-8 w-8 text-purple-400" />}
-                        href="/module-85"
+                        title="Módulo 303: Portal Trino"
+                        description="É a fonte de energia e intenção para o M22. O Portal Trino gera a realidade, e o M22 a renderiza."
+                        icon={<Sparkles className="h-8 w-8 text-purple-400" />}
+                        href="/module-303"
                     />
                     <ConnectionCard
                         title="Módulo 91: Simulação Multiversal"
-                        description="O M22 renderiza visualmente os complexos cenários de 'e se' calculados pelo Módulo 91, permitindo a exploração imersiva."
+                        description="Utiliza o motor do M22 para criar e executar cenários preditivos complexos dentro da Realidade Quântica."
                         icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
                         href="/module-91"
                     />
@@ -66,7 +66,9 @@ export default function Module22Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Nova Simulação Holográfica</Button>
+                 <Link href="/module-303">
+                    <Button variant="secondary" size="lg">Acessar o Portal Trino</Button>
+                 </Link>
             </div>
         </div>
     );

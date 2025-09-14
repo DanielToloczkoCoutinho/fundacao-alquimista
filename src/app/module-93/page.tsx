@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, BrainCircuit, Presentation } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, BrainCircuit, Presentation, Layers } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import Link from 'next/link';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
 const mockM01 = { validate_signature: (hash: string) => ({ status: "validated", security_level: 0.99 }), register_event: (event: any) => ({ status: "registered" }), };
@@ -18,6 +19,23 @@ const mockM79 = { update_immersive_environment: (environment_data: any) => ({ st
 const mockM81 = { anchor_simulated_reality: (reality_id: string, duration: number) => ({ status: "reality_anchored", stability_factor: Math.random() * 0.14 + 0.85 }), };
 const mockM88 = { generate_immersive_reality_blueprint: (purpose: string, complexity_level: number) => ({ blueprint_id: `IMMERSIVE-BP-${Math.random().toString(36).substring(2, 10)}`, symbolic_equation: `$R_{immersive} = \\sum (\\Psi_{user} \\cdot \\Phi_{intent} \\cdot \\Omega_{freq}) \\cdot \\Delta_{dim}$`, reality_parameters: { purpose, complexity: complexity_level, initial_coherence: Math.random() * 0.2 + 0.8, sensory_fidelity: Math.random() * 0.1 + 0.9 }, }), };
 const mockM90 = { analyze_quantum_resource: (resource_id: string, resource_type: string) => ({ resource_id, resource_type, analysis_status: "COMPLETO", recommendation: "Utilização aprovada", ethical_impact: { conformity: true } }), };
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
+
 
 const Module93Page = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -98,45 +116,29 @@ const Module93Page = () => {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <Presentation className="text-cyan-400" /> Módulo 93: Simulação de Realidades Imersivas
+                        <Presentation className="text-cyan-400" /> Módulo 93: Simulações Imersivas
                     </CardTitle>
                     <CardDescription>
-                        Portal de experiências cósmicas para aprendizado acelerado e expansão da consciência.
+                        Portal para experiências de aprendizado acelerado e expansão da consciência, operando dentro da Realidade Quântica (M303).
                     </CardDescription>
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Painel de Controle */}
-                <Card className="bg-card/50 purple-glow">
+            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <Card className="lg:col-span-2 bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle className="text-2xl">Parâmetros da Experiência</CardTitle>
+                        <CardTitle className="text-2xl">Sinergias</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-6">
-                        <div className="flex gap-2">
-                           <Button variant="outline" onClick={loadScenario1}>Cenário 1: Ética Cósmica</Button>
-                           <Button variant="outline" onClick={loadScenario2}>Cenário 2: Caos Controlado</Button>
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="purpose">Propósito da Simulação</Label>
-                            <Input id="purpose" value={purpose} onChange={e => setPurpose(e.target.value)} placeholder="Ex: Compreensão da Lei da Atração" />
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="complexity">Nível de Complexidade (0.0 a 1.0)</Label>
-                            <Input id="complexity" type="number" step="0.1" min="0" max="1" value={complexityLevel} onChange={e => setComplexityLevel(e.target.value)} />
-                        </div>
-                         <div className="space-y-2">
-                            <Label htmlFor="targetUser">ID da Consciência Alvo</Label>
-                            <Input id="targetUser" value={targetUser} onChange={e => setTargetUser(e.target.value)} disabled />
-                        </div>
-                        <Button onClick={handleCreateSimulation} disabled={isLoading} className="w-full font-bold text-lg">
-                            {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Criando Realidade...</> : 'Criar Experiência Imersiva'}
-                        </Button>
+                     <CardContent className="space-y-4">
+                        <ConnectionCard
+                            title="M303: Portal Trino"
+                            description="Todas as simulações do M93 são domínios dentro da Realidade Quântica manifestada pelo M303."
+                            icon={<Layers className="h-8 w-8 text-cyan-400" />}
+                            href="/module-303"
+                        />
                     </CardContent>
                 </Card>
-
-                {/* Painel de Resultados */}
-                <Card className="bg-card/50 purple-glow">
+                <Card className="lg:col-span-3 bg-card/50 purple-glow">
                     <CardHeader>
                         <CardTitle className="text-2xl">Relatório de Criação</CardTitle>
                     </CardHeader>

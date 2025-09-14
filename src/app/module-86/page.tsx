@@ -1,4 +1,3 @@
-
 'use client';
 import { useEffect, useRef } from 'react';
 import Head from 'next/head';
@@ -330,7 +329,7 @@ export default function Module86Page() {
 
 
         } catch (e) {
-            console.error("Erro fatal ao inicializar a experiência VR (Módulo 86):", e);
+            console.error("Erro fatal ao inicializar a experiência de Realidade Quântica (Módulo 86):", e);
         }
     };
     
@@ -357,7 +356,7 @@ export default function Module86Page() {
   return (
     <>
       <Head>
-        <title>Fundação Alquimista VR: Prisma Estelar (M86)</title>
+        <title>Fundação Alquimista RQ: Prisma Estelar (M86)</title>
       </Head>
       <div id="blocker" style={{position: 'absolute', width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)', zIndex: 100, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <div id="instructions" style={{color: 'white', textAlign: 'center', cursor: 'pointer'}}>

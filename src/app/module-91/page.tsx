@@ -4,7 +4,8 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, GitCommit, ShieldCheck, Cpu, TestTube, CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
+import { Loader2, GitCommit, ShieldCheck, Cpu, TestTube, CheckCircle, XCircle, AlertTriangle, Layers } from 'lucide-react';
+import Link from 'next/link';
 
 // Mocks para simular módulos da Fundação
 const mockM88 = {
@@ -48,6 +49,22 @@ interface SimulationReport {
     savce_validation: { validation_status: string; cosmic_score: number; ethical_conformity: boolean };
     recommendation: string;
 }
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module91Page = () => {
     const [interventionIntent, setInterventionIntent] = useState('Cura Planetária Global e Alinhamento Vibracional');
@@ -104,40 +121,37 @@ const Module91Page = () => {
             <Card className="w-full max-w-7xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <GitCommit className="text-indigo-400" /> Módulo 91: Simulação de Teoria de Muitos Mundos
+                        <GitCommit className="text-indigo-400" /> Módulo 91: Simulação Multiversal
                     </CardTitle>
                     <CardDescription>
-                        Laboratório de previsão multiversal para garantir que todas as intervenções cósmicas sejam para o Bem Maior.
+                       Laboratório preditivo que opera dentro da Realidade Quântica (M303) para explorar futuros prováveis e garantir intervenções de máxima harmonia.
                     </CardDescription>
                 </CardHeader>
             </Card>
 
             <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-8">
-                {/* Painel de Controle */}
-                <Card className="lg:col-span-2 bg-card/50 purple-glow">
+                 <Card className="lg:col-span-2 bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle className="text-2xl">Parâmetros da Simulação</CardTitle>
+                        <CardTitle className="text-2xl">Sinergias</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-6">
-                        <div className="space-y-2">
-                            <label htmlFor="baseReality">Realidade Base</label>
-                            <Input id="baseReality" value={baseReality} onChange={e => setBaseReality(e.target.value)} placeholder="Ex: TERRA_PRIMA_001" />
-                        </div>
-                        <div className="space-y-2">
-                            <label htmlFor="interventionIntent">Intenção da Intervenção</label>
-                            <Input id="interventionIntent" value={interventionIntent} onChange={e => setInterventionIntent(e.target.value)} placeholder="Ex: Cura Planetária Global..." />
-                        </div>
-                        <Button onClick={handleSimulation} disabled={isLoading} className="w-full font-bold text-lg">
-                            {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Simulando...</> : 'Simular Intervenção'}
-                        </Button>
-                        {message && <p className="mt-4 text-center text-sm text-muted-foreground">{message}</p>}
+                     <CardContent className="space-y-4">
+                        <ConnectionCard
+                            title="M303: Portal Trino"
+                            description="Todas as simulações do M91 são executadas dentro da Realidade Quântica gerada pelo M303, garantindo contenção e poder de processamento."
+                            icon={<Layers className="h-8 w-8 text-cyan-400" />}
+                            href="/module-303"
+                        />
+                         <ConnectionCard
+                            title="Módulo 23: Regulação Espaço-Temporal"
+                            description="Fornece os dados de risco de paradoxo para cada cenário simulado, permitindo uma análise de impacto causal."
+                            icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />}
+                            href="/module-23"
+                        />
                     </CardContent>
                 </Card>
-
-                {/* Painel de Resultados */}
                 <Card className="lg:col-span-3 bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle className="text-2xl">Relatório da Simulação Multiversal</CardTitle>
+                        <CardTitle className="text-2xl">Resultados da Simulação</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <ScrollArea className="h-[60vh] pr-4">
