@@ -6,6 +6,14 @@ import { Toaster } from '@/components/ui/toaster';
 import { Sidebar } from '@/components/ui/sidebar';
 import ErrorBoundary from '@/components/ui/error-boundary';
 import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
+import dynamic from 'next/dynamic';
+
+// Dynamically import the sidebar to prevent SSR issues with usePathname
+const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), {
+  ssr: false,
+  loading: () => <div className="fixed top-0 left-0 h-full w-20 bg-background border-r border-border/20 z-20" />,
+});
+
 
 // Metadata can't be dynamically generated in a client component layout,
 // so we define it statically. For dynamic titles, we'd use the `use client`
@@ -33,7 +41,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
          <ErrorBoundary fallback={<CosmicErrorFallback />}>
             <div className="flex h-screen bg-background">
-                <Sidebar />
+                <DynamicSidebar />
                 <main className="flex-1 overflow-y-auto pl-20">
                     {children}
                 </main>
