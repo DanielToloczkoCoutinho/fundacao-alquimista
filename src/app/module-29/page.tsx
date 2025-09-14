@@ -1,3 +1,4 @@
+
 'use client';
 import { ZennithDashboard } from "@/components/ui/ZennithDashboard";
 import { Suspense } from "react";
