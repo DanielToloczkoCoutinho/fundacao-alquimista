@@ -10,7 +10,7 @@ const CodeBlock = ({ children }: { children: React.ReactNode }) => (
   </pre>
 );
 
-const Module144Page = () => {
+export default function Module144Page() {
     const solidityCode = `
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.19;
