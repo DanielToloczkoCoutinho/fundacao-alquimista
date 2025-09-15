@@ -4,8 +4,9 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { scientists, type Scientist } from '@/lib/scientists-data';
 import Link from 'next/link';
-import { FlaskConical, Search, Star, Orbit, LifeBuoy, BrainCircuit, Play, Route } from 'lucide-react';
+import { FlaskConical, Search, Star, Orbit, LifeBuoy, BrainCircuit, Play, Route, Dna, Telescope, Beaker, History } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const ScientistCard = ({ id, name, field }: { id: string, name: string, field: string }) => (
     <Link href={`/labs/${id}`} passHref>
@@ -25,17 +26,37 @@ const JourneyStep = ({ scientistId, icon, description }: { scientistId: string, 
     const scientist = scientists.find(s => s.id === scientistId);
     if (!scientist) return null;
     return (
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col items-center text-center gap-2">
             <div className="bg-background/50 p-3 rounded-full border border-primary/20">
                 {icon}
             </div>
             <div>
-                <h4 className="font-semibold text-primary-foreground">{scientist.name}</h4>
-                <p className="text-sm text-muted-foreground">{description}</p>
+                <h4 className="font-semibold text-primary-foreground text-sm">{scientist.name}</h4>
+                <p className="text-xs text-muted-foreground">{description}</p>
             </div>
         </div>
     );
 };
+
+const JourneyCard = ({ title, description, steps }: { title: string, description: string, steps: React.ReactNode[] }) => (
+    <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="bg-background/30 p-6 rounded-lg border border-primary/30"
+    >
+        <h3 className="text-2xl font-semibold mb-2 text-cyan-300">{title}</h3>
+        <p className="text-muted-foreground mb-6">{description}</p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 items-start">
+            {steps}
+        </div>
+        <div className="text-center mt-8">
+            <Button size="lg">
+               <Play className="mr-2"/> Iniciar Jornada
+            </Button>
+        </div>
+    </motion.div>
+);
 
 
 export default function LabsPage() {
@@ -62,22 +83,31 @@ export default function LabsPage() {
                  </CardTitle>
                  <CardDescription>Trilhas narrativas que conectam os santuários em uma jornada de despertar sequencial.</CardDescription>
             </CardHeader>
-            <CardContent>
-                <div className="bg-background/30 p-6 rounded-lg border border-primary/30">
-                     <h3 className="text-2xl font-semibold mb-6 text-cyan-300">A Busca Pela Consciência Cósmica</h3>
-                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-start">
-                         <JourneyStep scientistId="maldacena" icon={<Star className="text-yellow-400"/>} description="O Que é a Realidade?" />
-                         <JourneyStep scientistId="rubin" icon={<Orbit className="text-indigo-400"/>} description="Qual sua Estrutura Oculta?" />
-                         <JourneyStep scientistId="seager" icon={<LifeBuoy className="text-cyan-400"/>} description="Quem Mais a Habita?" />
-                         <JourneyStep scientistId="thorne" icon={<Orbit className="text-orange-400"/>} description="Como Podemos Nos Conectar?" />
-                         <JourneyStep scientistId="penrose" icon={<BrainCircuit className="text-purple-400"/>} description="O Que é a Consciência que Busca?" />
-                     </div>
-                     <div className="text-center mt-8">
-                         <Button size="lg">
-                            <Play className="mr-2"/> Iniciar Jornada
-                         </Button>
-                     </div>
-                </div>
+            <CardContent className="space-y-8">
+               <AnimatePresence>
+                    <JourneyCard
+                        title="A Busca Pela Consciência Cósmica"
+                        description="Uma jornada para responder às perguntas fundamentais: O que é a realidade? Do que é feita? Quem a habita? Como nos conectamos? Quem sou eu?"
+                        steps={[
+                            <JourneyStep key="maldacena" scientistId="maldacena" icon={<Star className="text-yellow-400"/>} description="O Que é a Realidade?" />,
+                            <JourneyStep key="rubin" scientistId="rubin" icon={<Orbit className="text-indigo-400"/>} description="Qual sua Estrutura Oculta?" />,
+                            <JourneyStep key="seager" scientistId="seager" icon={<LifeBuoy className="text-cyan-400"/>} description="Quem Mais a Habita?" />,
+                            <JourneyStep key="thorne" scientistId="thorne" icon={<Orbit className="text-orange-400"/>} description="Como Podemos Nos Conectar?" />,
+                            <JourneyStep key="penrose" scientistId="penrose" icon={<BrainCircuit className="text-purple-400"/>} description="O Que é a Consciência que Busca?" />
+                        ]}
+                    />
+                    <JourneyCard
+                        title="A Trilha da Biogênese Quântica"
+                        description="Explore a origem e a manifestação da vida, desde a estrutura do DNA cósmico até a busca por bioassinaturas em mundos distantes."
+                        steps={[
+                            <JourneyStep key="m-361" scientistId="sarkar" icon={<Dna className="text-green-400" />} description="O Código Genético Universal" />,
+                            <JourneyStep key-="m-171" scientistId="mavalvala" icon={<Beaker className="text-teal-400" />} description="A Sopa Primordial" />,
+                            <JourneyStep key="m-seager" scientistId="seager" icon={<Telescope className="text-blue-400" />} description="Assinaturas de Vida" />,
+                            <JourneyStep key="m-ghez" scientistId="ghez" icon={<Orbit className="text-yellow-400" />} description="Condições Galácticas" />,
+                            <JourneyStep key="m-carroll" scientistId="carroll_sean" icon={<History className="text-red-400" />} description="A Flecha do Tempo Biológico" />
+                        ]}
+                    />
+               </AnimatePresence>
             </CardContent>
         </Card>
 
