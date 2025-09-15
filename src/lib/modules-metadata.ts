@@ -27,6 +27,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   // Biblioteca e Conhecimento
   { code: 'M144', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'library', description: 'Registro sagrado da jornada da Fundação, contendo todos os documentos e links consagrados.' },
   { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'library', description: 'Acervo de conhecimentos das civilizações' },
+  { code: 'M304', title: 'Universidade Alquimista', emoji: '🎓', route: '/module-304', category: 'library', description: 'Templo de ensino multidimensional baseado na matriz CQAM, contendo 128 disciplinas consagradas.' },
   { code: 'M305',title: 'Atlas de Interconectividade', emoji: '🗺️', route: '/module-305', category: 'library', description: 'Visualização da rede de conhecimento.' },
   { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'library', description: 'Repositório de conhecimento ancestral' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/civilizations/council', category: 'library', description: 'Assembleia de seres dimensionais elevados' },
@@ -53,7 +54,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'sovereignty', description: 'Assento do governo multidimensional' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'sovereignty', description: 'Estabilização de dimensões instáveis'},
   { code: 'M300',title: 'Apogeu da Consciência', emoji: '🚀', route: '/module-300', category: 'sovereignty', description: 'Estado máximo de expansão da awareness' },
-  { code: 'M304', title: 'Universidade Alquimista', emoji: '🎓', route: '/module-304', category: 'sovereignty', description: 'Templo de ensino multidimensional baseado na matriz CQAM, contendo 128 disciplinas consagradas.' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'sovereignty', description: 'Solução para inconsistências temporais' },
   
   // Módulos de Expansão (Mid)
