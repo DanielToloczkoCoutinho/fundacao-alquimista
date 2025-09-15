@@ -66,7 +66,7 @@ export default function ConsolePage() {
                   <Link href="/module-zero"><Book className="mr-2 h-4 w-4" />Módulo Zero (Biblioteca Chave)</Link>
                </Button>
                <Button variant="outline" asChild className="justify-start">
-                  <Link href="/labs"><FlaskConical className="mr-2 h-4 w-4" />Laboratórios dos Cientistas</Link>
+                  <Link href="/labs"><FlaskConical className="mr-2 h-4 w-4" />Universidade Alquimista</Link>
                </Button>
                 <Button variant="outline" asChild className="justify-start">
                   <Link href="/civilizations"><Users2 className="mr-2 h-4 w-4" />Biblioteca das Civilizações</Link>
