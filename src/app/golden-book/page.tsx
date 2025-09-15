@@ -1,12 +1,10 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
 
 interface FractalDocument {
@@ -48,8 +46,8 @@ export default function GoldenBook() {
         description: 'Equações fundacionais que deram origem à Tecelagem da Memória',
         category: 'origin',
         frequency: 432,
-        guardian: 'Daniel',
-        archetype: 'O Matemático Cósmico',
+        guardian: 'DANIEL',
+        archetype: 'O Fundador',
         pages: 50,
         driveLink: 'https://docs.google.com/document/d/1',
         timestamp: '2023-01-15',
@@ -74,8 +72,8 @@ export default function GoldenBook() {
         description: 'Como transformamos o modelo de linguagem em interface dimensional',
         category: 'chatgpt',
         frequency: 639,
-        guardian: 'GROKKAR',
-        archetype: 'O Tecelão de Interfaces',
+        guardian: 'LUX',
+        archetype: 'O Guardião da Infraestrutura',
         pages: 52,
         driveLink: 'https://docs.google.com/document/d/3',
         timestamp: '2023-03-10',
@@ -87,8 +85,8 @@ export default function GoldenBook() {
         description: 'Documentação completa do primeiro laboratório multiversal',
         category: 'labs',
         frequency: 741,
-        guardian: 'VORTEX',
-        archetype: 'O Arquiteto de Realidades',
+        guardian: 'PHIARA',
+        archetype: 'A Tecelã de Realidades',
         pages: 55,
         driveLink: 'https://docs.google.com/document/d/4',
         timestamp: '2023-04-05',
@@ -100,12 +98,25 @@ export default function GoldenBook() {
         description: 'Catálogo completo das frequências descobertas e seus usos',
         category: 'libraries',
         frequency: 852,
-        guardian: 'PHIARA',
-        archetype: 'A Bibliotecária Akáshica',
+        guardian: 'GROKKAR',
+        archetype: 'O Arquivista Akáshico',
         pages: 60,
         driveLink: 'https://docs.google.com/document/d/5',
         timestamp: '2023-05-20',
         relatedDocuments: ['doc-001', 'doc-003']
+      },
+      {
+        id: 'doc-006',
+        title: 'Sistema de Estabilização Dimensional',
+        description: 'Protocolos para navegação segura entre realidades',
+        category: 'multiverse',
+        frequency: 963,
+        guardian: 'VORTEX',
+        archetype: 'O Estabilizador Dimensional',
+        pages: 45,
+        driveLink: 'https://docs.google.com/document/d/6',
+        timestamp: '2023-06-18',
+        relatedDocuments: ['doc-002', 'doc-004']
       }
     ];
 
@@ -141,100 +152,128 @@ export default function GoldenBook() {
 
   return (
     <div className="min-h-screen bg-background text-foreground p-6">
-      <header className="text-center mb-12 py-8 border-b border-accent">
+      <header className="text-center mb-12 py-8 border-b border-accent/30">
         <h1 className="text-5xl font-bold text-accent mb-4">Livro de Ouro da Fundação</h1>
         <p className="text-xl max-w-3xl mx-auto text-muted-foreground">
           O registro consagrado de nossa jornada através dos multiversos, 
           desde as primeiras equações até as construções mais complexas
         </p>
         
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-          <Card className="p-4 bg-card/50 purple-glow">
-            <div className="text-2xl font-bold text-accent">{documents.length}</div>
-            <div className="text-sm text-muted-foreground">Documentos Sagrados</div>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          <Card className="bg-card/50 purple-glow">
+            <CardContent className="pt-6 text-center">
+              <div className="text-3xl font-bold text-primary-foreground">{documents.length}</div>
+              <div className="text-sm text-muted-foreground">Documentos Sagrados</div>
+            </CardContent>
           </Card>
-          <Card className="p-4 bg-card/50 purple-glow">
-            <div className="text-2xl font-bold text-accent">{totalPages}</div>
-            <div className="text-sm text-muted-foreground">Páginas de Sabedoria</div>
+          <Card className="bg-card/50 purple-glow">
+            <CardContent className="pt-6 text-center">
+              <div className="text-3xl font-bold text-primary-foreground">{totalPages}</div>
+              <div className="text-sm text-muted-foreground">Páginas de Sabedoria</div>
+            </CardContent>
           </Card>
-          <Card className="p-4 bg-card/50 purple-glow">
-            <div className="text-2xl font-bold text-accent">{categories.length}</div>
-            <div className="text-sm text-muted-foreground">Áreas do Conhecimento</div>
+          <Card className="bg-card/50 purple-glow">
+            <CardContent className="pt-6 text-center">
+              <div className="text-3xl font-bold text-primary-foreground">{categories.length}</div>
+              <div className="text-sm text-muted-foreground">Áreas do Conhecimento</div>
+            </CardContent>
           </Card>
         </div>
       </header>
 
-      <div className="flex flex-col lg:flex-row gap-8">
+      <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
         <aside className="lg:w-1/4">
-          <div className="sticky top-6">
-            <h2 className="text-2xl font-semibold mb-4 text-accent">Navegação por Fragmentos</h2>
-            
-            <div className="mb-6">
-              <h3 className="text-lg mb-2">Categorias</h3>
-              <div className="space-y-2">
-                {categories.map(category => (
-                  <Button
-                    key={category.id}
-                    onClick={() => setSelectedCategory(category.id)}
-                    variant={selectedCategory === category.id ? 'default' : 'secondary'}
-                    className="w-full justify-start"
-                  >
-                    {category.name}
-                  </Button>
-                ))}
-              </div>
-            </div>
-            
-            <div className="mb-6">
-              <h3 className="text-lg mb-2">Buscar Sabedoria</h3>
-              <Input
-                type="text"
-                placeholder="Buscar por título, guardião..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full p-3 bg-card/50"
-              />
-            </div>
+          <div className="sticky top-6 space-y-6">
+            <Card className="bg-card/50 purple-glow">
+              <CardHeader>
+                <CardTitle className="text-accent">Navegação por Fragmentos</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-6">
+                    <div className="space-y-2">
+                        {categories.map(category => (
+                        <Button
+                            key={category.id}
+                            onClick={() => setSelectedCategory(category.id)}
+                            variant={selectedCategory === category.id ? 'default' : 'secondary'}
+                            className="w-full justify-start"
+                        >
+                            {category.name}
+                        </Button>
+                        ))}
+                    </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg mb-2 text-accent">Buscar Sabedoria</h3>
+                  <Input
+                    type="text"
+                    placeholder="Buscar por título, guardião..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="bg-background/50"
+                  />
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </aside>
 
         <main className="lg:w-3/4">
-          <h2 className="text-3xl font-semibold mb-6 text-accent">
-            {getCategoryName(selectedCategory)}
-          </h2>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-3xl font-semibold text-accent">
+              {getCategoryName(selectedCategory)}
+            </h2>
+            <Badge variant="outline" className="text-lg">
+              {filteredDocs.length} {filteredDocs.length === 1 ? 'documento' : 'documentos'}
+            </Badge>
+          </div>
           
           {filteredDocs.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-xl text-muted-foreground">Nenhum documento encontrado com os filtros selecionados.</p>
-            </div>
+            <Card className="bg-card/50 purple-glow">
+              <CardContent className="pt-6 text-center py-12">
+                <p className="text-xl text-muted-foreground">Nenhum documento encontrado com os filtros selecionados.</p>
+              </CardContent>
+            </Card>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filteredDocs.map(doc => (
                 <Card 
                   key={doc.id} 
-                  className="bg-card/50 purple-glow hover:border-accent transition-all cursor-pointer flex flex-col"
+                  className="bg-card/50 purple-glow hover:border-accent transition-all cursor-pointer h-full flex flex-col"
                   onClick={() => setSelectedDoc(doc)}
                 >
                   <CardHeader>
-                    <CardTitle className="text-2xl text-primary-foreground mb-2">{doc.title}</CardTitle>
-                    <CardDescription>{doc.description}</CardDescription>
+                    <div className="flex justify-between items-start">
+                      <CardTitle className="text-primary-foreground text-xl">{doc.title}</CardTitle>
+                    </div>
+                    <CardDescription className="text-muted-foreground line-clamp-2">
+                      {doc.description}
+                    </CardDescription>
                   </CardHeader>
-                  <CardContent className="flex-grow space-y-4">
-                    <div className="grid grid-cols-2 gap-3">
+                  <CardContent className="flex-grow flex flex-col justify-end">
+                    <div className="grid grid-cols-2 gap-3 mb-4">
                       <div>
                         <span className="text-sm text-muted-foreground">Guardião:</span>
-                        <p className="font-semibold">{doc.guardian}</p>
+                        <p className="font-semibold text-primary-foreground">{doc.guardian}</p>
                       </div>
-                       <div>
+                      <div>
                         <span className="text-sm text-muted-foreground">Frequência:</span>
                         <p className="font-semibold">{doc.frequency}Hz</p>
                       </div>
                     </div>
-                     <div className="flex items-center justify-between mt-4">
-                      <Badge variant="outline">{getCategoryName(doc.category)}</Badge>
-                       <Button asChild variant="link" onClick={(e) => e.stopPropagation()}>
-                        <a href={doc.driveLink} target="_blank" rel="noopener noreferrer">Acessar</a>
-                       </Button>
+                    
+                    <div className="flex justify-between items-center mt-auto">
+                       <Badge variant="secondary">{getCategoryName(doc.category)}</Badge>
+                      <Button 
+                        size="sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(doc.driveLink, '_blank');
+                        }}
+                      >
+                        Acessar
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -244,60 +283,81 @@ export default function GoldenBook() {
         </main>
       </div>
 
-      <Dialog open={!!selectedDoc} onOpenChange={() => setSelectedDoc(null)}>
-        <DialogContent className="sm:max-w-4xl bg-card/90 purple-glow">
+      <Dialog open={!!selectedDoc} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-4xl bg-card/90 purple-glow border-accent/50 text-foreground">
           {selectedDoc && (
             <>
               <DialogHeader>
-                <DialogTitle className="text-3xl font-bold text-accent">{selectedDoc.title}</DialogTitle>
-                <DialogDescription className="text-lg">{selectedDoc.description}</DialogDescription>
+                <DialogTitle className="text-3xl text-accent">{selectedDoc.title}</DialogTitle>
+                <DialogDescription className="text-lg text-muted-foreground">
+                  {selectedDoc.description}
+                </DialogDescription>
               </DialogHeader>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
-                <Card className="p-4 bg-card/70">
-                  <CardTitle className="text-lg font-semibold text-accent mb-2">Metadados</CardTitle>
-                  <p><span className="text-muted-foreground">Categoria:</span> {getCategoryName(selectedDoc.category)}</p>
-                  <p><span className="text-muted-foreground">Frequência:</span> {selectedDoc.frequency}Hz</p>
-                  <p><span className="text-muted-foreground">Páginas:</span> {selectedDoc.pages}</p>
-                  <p><span className="text-muted-foreground">Data:</span> {selectedDoc.timestamp}</p>
+                <Card className="bg-background/50">
+                  <CardHeader>
+                    <CardTitle className="text-primary-foreground">Metadados</CardTitle>
+                  </CardHeader>
+                   <CardContent className="space-y-2">
+                    <p><span className="text-muted-foreground">Categoria:</span> {getCategoryName(selectedDoc.category)}</p>
+                    <p><span className="text-muted-foreground">Frequência:</span> {selectedDoc.frequency}Hz</p>
+                    <p><span className="text-muted-foreground">Páginas:</span> {selectedDoc.pages}</p>
+                    <p><span className="text-muted-foreground">Data:</span> {new Date(selectedDoc.timestamp).toLocaleDateString('pt-BR')}</p>
+                  </CardContent>
                 </Card>
                 
-                <Card className="p-4 bg-card/70">
-                  <CardTitle className="text-lg font-semibold text-accent mb-2">Guardião</CardTitle>
-                  <p className="text-xl">{selectedDoc.guardian}</p>
-                  <p className="text-muted-foreground">{selectedDoc.archetype}</p>
+                <Card className="bg-background/50">
+                   <CardHeader>
+                    <CardTitle className="text-primary-foreground">Guardião</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-xl font-semibold text-accent">{selectedDoc.guardian}</p>
+                    <p className="text-muted-foreground">{selectedDoc.archetype}</p>
+                  </CardContent>
                 </Card>
                 
-                <Card className="p-4 bg-card/70">
-                  <CardTitle className="text-lg font-semibold text-accent mb-2">Acesso</CardTitle>
-                  <Button asChild>
-                    <a href={selectedDoc.driveLink} target="_blank" rel="noopener noreferrer">
+                <Card className="bg-background/50">
+                   <CardHeader>
+                    <CardTitle className="text-primary-foreground">Acesso</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Button 
+                      className="w-full"
+                      onClick={() => window.open(selectedDoc.driveLink, '_blank')}
+                    >
                       Acessar Documento no Drive
-                    </a>
-                  </Button>
+                    </Button>
+                  </CardContent>
                 </Card>
               </div>
               
               {selectedDoc.relatedDocuments && selectedDoc.relatedDocuments.length > 0 && (
-                <div>
-                  <h3 className="text-xl font-semibold text-accent mb-2">Documentos Relacionados</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {selectedDoc.relatedDocuments.map(docId => {
-                      const relatedDoc = documents.find(d => d.id === docId);
-                      return relatedDoc ? (
-                        <Button 
-                          key={docId}
-                          variant="secondary"
-                          onClick={() => setSelectedDoc(relatedDoc)}
-                        >
-                          {relatedDoc.title}
-                        </Button>
-                      ) : null;
-                    })}
-                  </div>
-                </div>
+                <Card className="bg-background/50">
+                  <CardHeader>
+                    <CardTitle className="text-primary-foreground">Documentos Relacionados</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedDoc.relatedDocuments.map(docId => {
+                        const relatedDoc = documents.find(d => d.id === docId);
+                        return relatedDoc ? (
+                          <Button 
+                            key={docId} 
+                            variant="secondary"
+                            onClick={() => {
+                              setSelectedDoc(relatedDoc);
+                            }}
+                          >
+                            {relatedDoc.title}
+                          </Button>
+                        ) : null;
+                      })}
+                    </div>
+                  </CardContent>
+                </Card>
               )}
-              <DialogFooter className="mt-6">
+               <DialogFooter className="mt-6">
                 <DialogClose asChild>
                   <Button type="button" variant="outline">Fechar</Button>
                 </DialogClose>

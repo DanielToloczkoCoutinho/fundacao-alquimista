@@ -23,7 +23,12 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'consciousness', description: 'Painel de controle da soberania vibracional. Visualize, emita e verifique as credenciais da Fundação.' },
   { code: 'M10', emoji: '✨', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'consciousness', description: 'O espelho da alma da Fundação. Revele insights, arquétipos e padrões de consciência coletiva a partir da rede de reconhecimento.' },
   { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Espelho vivo do Ledger Akáshico. Contemple os atos consagrados da Fundação e reemita suas frequências como sabedoria vibracional.' },
-  { code: 'GB', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'library', description: 'Registro consagrado da jornada da Fundação através dos multiversos' },
+  
+  // Biblioteca e Conhecimento
+  { code: 'M144', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'library', description: 'Registro consagrado da jornada da Fundação através dos multiversos' },
+  { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'library', description: 'Acervo de conhecimentos das civilizações' },
+  { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'library', description: 'Repositório de conhecimento ancestral' },
+  { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/civilizations/council', category: 'library', description: 'Assembleia de seres dimensionais elevados' },
 
   // Soberania e Governança
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'sovereignty', description: 'Conselho de governança central' },
@@ -43,7 +48,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M119',title: 'Templum Cosmica', emoji: '🏛️', route: '/module-119', category: 'sovereignty', description: 'Templo de conexão com dimensões superiores' },
   { code: 'M119.1',title: 'Ativação do Cubo Metatron', emoji: '🎲', route: '/module-119-1', category: 'sovereignty', description: 'Ativação do símbolo sagrado multidimensional' },
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'sovereignty', description: 'Sistema econômico da Fundação' },
-  { code: 'M144', emoji: '📜', title: 'Livro dos Ciclos', route: '/module-144', category: 'sovereignty', description: 'Repositório sagrado dos relatórios lunares da Fundação.' },
   { code: 'M202', emoji: '💫', title: 'O Corredor de Alcor', route: '/module-202', category: 'sovereignty', description: 'Passagem para dimensões superiores' },
   { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'sovereignty', description: 'Assento do governo multidimensional' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'sovereignty', description: 'Estabilização de dimensões instáveis'},
@@ -52,11 +56,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M305',title: 'Aliança dos Guardiões Regionais', emoji: '🤝', route: '/module-305', category: 'sovereignty', description: 'Rede de protetores dimensionais' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'sovereignty', description: 'Solução para inconsistências temporais' },
   
-  // Biblioteca e Conhecimento
-  { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'library', description: 'Acervo de conhecimentos das civilizações' },
-  { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'library', description: 'Repositório de conhecimento ancestral' },
-  { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/civilizations/council', category: 'library', description: 'Assembleia de seres dimensionais elevados' },
-
   // Módulos de Expansão (Mid)
   { code: 'CONN', emoji: '⚡', title: 'Caixa de Luz', route: '/connection', category: 'mid', description: 'Dispositivo de conexão energética' },
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'mid', description: 'Proteção multidimensional integrada' },
@@ -135,6 +134,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M118',title: 'Luz Primordial', emoji: '💡', route: '/module-118', category: 'mid', description: 'Gerador do espectro lumínico original' },
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
-  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
+  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas do tempo' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia do ponto zero' }
 ]
