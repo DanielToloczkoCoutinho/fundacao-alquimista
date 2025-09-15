@@ -80,7 +80,7 @@ export const scientists: Scientist[] = [
   { id: 'farley', name: 'Ken Farley', field: 'Geologia Planetária e Marte' },
   { id: 'tarter', name: 'Jill Tarter', field: 'Busca por Vida Extraterrestre (SETI)' },
   { id: 'hoffman', name: 'Jeffrey Hoffman', field: 'Astronauta e Pesquisador NASA' },
-  { id: 'bolden', name: 'Charlie Bolden', field: 'Administrador da NASA e astronauta' },
+  { id: 'bolden', name: 'Charlie Bolden', field: 'Administrador da NASA e Astronauta' },
   { id: 'newman', name: 'Dava Newman', field: 'Engenharia Aeroespacial e NASA' },
   { id: 'calvin', name: 'Katherine Calvin', field: 'Climatologia e Mudanças Planetárias NASA' },
   { id: 'green', name: 'James Green', field: 'Diretor de Ciência Planetária NASA' },
