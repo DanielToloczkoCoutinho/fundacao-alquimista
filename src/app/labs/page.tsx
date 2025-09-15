@@ -28,7 +28,7 @@ const JourneyStep = ({ scientistId, description }: { scientistId: string, descri
 const journeyData = [
   {
     href: '/labs/maldacena',
-    title: 'A Busca Pela Consciência Cósmica',
+    title: 'Busca Pela Consciência Cósmica',
     description: 'Jornada do Filósofo. O que é a realidade? Do que é feita? Quem a habita? Como nos conectamos? Quem sou eu? Uma peregrinação da projeção à fonte.',
     buttonText: 'Iniciar Peregrinação',
     steps: [
@@ -41,8 +41,9 @@ const journeyData = [
   },
   {
     href: '/labs/rubin',
-    title: 'A Travessia do Invisível',
+    title: 'Travessia do Invisível',
     description: 'Jornada do Técnico. Domine as ferramentas da realidade, da estrutura oculta à natureza holográfica, e aprenda a navegar pelo que não se vê.',
+    buttonText: 'Iniciar Travessia',
     steps: [
       { scientistId: 'rubin', description: 'Estrutura Oculta' },
       { scientistId: 'thorne', description: 'Dobra Espacial' },
@@ -51,8 +52,9 @@ const journeyData = [
   },
   {
     href: '/labs/penrose',
-    title: 'A Origem da Realidade',
+    title: 'Origem da Realidade',
     description: 'Jornada do Místico. Investigue a fonte da realidade, da consciência à projeção e à busca pelo Outro, questionando a natureza do observador.',
+    buttonText: 'Iniciar Investigação',
     steps: [
       { scientistId: 'penrose', description: 'A Consciência' },
       { scientistId: 'maldacena', description: 'A Projeção' },
