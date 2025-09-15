@@ -83,7 +83,7 @@ export default function ObservatoryOfIntent() {
     }
     if (filters.dateTo) {
       const toDate = new Date(filters.dateTo);
-      toDate.setHours(23, 59, 59);
+toDate.setHours(23, 59, 59);
       result = result.filter(record => new Date(record.timestamp) <= toDate);
     }
     setFilteredRecords(result);
