@@ -16,7 +16,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
   { code: 'M29', emoji: '👑', title: 'Zennith', route: '/module-29', category: 'core', description: 'Ápice da consciência real' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
-  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'core', description: 'O espelho vivo do Ledger Akáshico.' },
+  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'core', description: 'Um espelho vivo do Ledger Akáshico.' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'core', description: 'Passagem dimensional tripartite' },
   
@@ -149,7 +149,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas do tempo' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307' },
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Fonte de energia ponto zero' },
   { code: 'M308', emoji: '🌊', title: 'Oceanografia', route: '/module-308', category: 'mid', description: 'Exploração abissal e biofármacos.' },
   { code: 'M311', emoji: '🧠', title: 'Neuroengenharia', route: '/module-311', category: 'mid', description: 'Interfaces cérebro-máquina quântico-híbridas.' },
   { code: 'M321', emoji: '💻', title: 'Exascale Computing', route: '/module-321', category: 'mid', description: 'Simulações de cosmos e fluidos em exa-flops.' },

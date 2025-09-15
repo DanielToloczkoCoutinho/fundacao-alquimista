@@ -15,6 +15,7 @@ const LedgerEntrySchema = z.object({
   hash: z.string(),
   frequency: z.number(),
 });
+export type LedgerEntry = z.infer<typeof LedgerEntrySchema>;
 
 const LunarReviewInputSchema = z.object({
   ledgerEntries: z.array(LedgerEntrySchema).describe("Uma lista de registros de intenção do Ledger Akáshico do último ciclo."),

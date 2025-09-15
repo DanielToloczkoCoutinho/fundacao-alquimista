@@ -1,10 +1,10 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Loader2, BookOpen, CheckCircle, Hash, Music, Sparkles } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { runLunarReview, LunarReviewOutput } from '@/ai/flows/lunar-review-flow';
+import { runLunarReview, type LunarReviewOutput } from '@/ai/flows/lunar-review-flow';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
 const LedgerEntryDisplay = ({ entry, rank }: { entry: any, rank: number }) => (
@@ -57,8 +57,9 @@ export default function Module144Page() {
         oscillator.type = 'sine';
         oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
         const gainNode = audioContext.createGain();
-        gainNode.gain.setValueAtTime(0.5, audioContext.currentTime);
-        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 3);
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.5);
+        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 3);
         oscillator.connect(gainNode);
         gainNode.connect(audioContext.destination);
         oscillator.start();
