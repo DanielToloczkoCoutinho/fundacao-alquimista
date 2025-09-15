@@ -36,7 +36,7 @@ export const scientists: Scientist[] = [
     id: 'penrose', 
     name: 'Roger Penrose', 
     field: 'Matemática e Cosmologia, Nobel',
-    cosmicQuote: 'A consciência é a ponte entre a geometria e a física.',
+    cosmicQuote: 'O colapso da função de onda é um ato de geometria consciente.',
     interactiveArtifact: 'Um espaço de criação onde o Guardião pode desenhar padrões de Penrose no vácuo, observando-os florescer em estruturas quânticas complexas que pulsam em sincronia com as ondas cerebrais do visitante.'
   },
   { 
