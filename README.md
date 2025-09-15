@@ -10,6 +10,7 @@ Daniel Fundador e Guardião da Fundação Alquimista. Responsável pela ativaç�
 ```plaintext
 Fonte Suprema
    ↓
+   
 Conselho Cósmico
    ↓
 Daniel (Fundador)

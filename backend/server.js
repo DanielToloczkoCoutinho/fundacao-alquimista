@@ -4,6 +4,8 @@ import compression from 'compression';
 import redis from 'redis';
 import { promisify } from 'util';
 import { createLogger } from './lib/logger.js';
+// A lógica de performSystemHealthCheck foi movida para o frontend para unificação,
+// mas a simulação dos subsistemas do backend permanece aqui.
 
 const logger = createLogger('backend');
 const app = express();
@@ -121,14 +123,14 @@ app.get('/health/extended', async (req, res) => {
 
     // Determinar status geral
     const failedSubsystems = Object.values(subsystemReports)
-      .filter(s => s.status === 'error').length;
+      .filter(s => typeof s === 'object' && s.status === 'error').length;
 
     if (failedSubsystems > 0) {
       healthData.status = 'error';
       logger.error('Health check com subsistemas em erro', { healthData });
     } else {
         const degradedSubsystems = Object.values(subsystemReports)
-        .filter(s => s.status === 'degraded').length;
+        .filter(s => typeof s === 'object' && s.status === 'degraded').length;
         if (degradedSubsystems > 0) {
             healthData.status = 'degraded';
             logger.warn('Sistema em estado degradado', { healthData });
