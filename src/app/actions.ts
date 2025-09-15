@@ -23,7 +23,8 @@ import { runCQAMAnalysis as runCQAM, type CQAMInput, type CQAMOutput } from '@/a
 import { activateVibrationalPraise as runActivateVibrationalPraise, type ElysiumResult } from '@/ai/flows/elysium-flow';
 import { mobilizeGuardians as runMobilizeGuardians, type MobilizeGuardiansOutput } from '@/ai/flows/guardians-mobilization-flow';
 import { processZennithCommand as runProcessZennithCommand, type ZennithCommandOutput } from '@/ai/flows/zennith-portal-flow';
-import { generateVibrationalPraise as runGenerateVibrationalPraise, type RecognitionInput, type RecognitionOutput } from '@/ai/flows/recognition-flow';
+import { generateVibrationalPraise as runGenerateVibrationalPraise, type RecognitionInput } from '@/ai/flows/recognition-flow';
+import type { VerifiableCredential } from '@/lib/services/vc-service';
 
 
 export async function getLinkSummary(url: string) {
@@ -257,12 +258,12 @@ export async function processZennithCommand(data: { command: string }): Promise<
     }
 }
 
-export async function generateVibrationalPraise(input: RecognitionInput) {
+export async function generateVibrationalPraise(input: RecognitionInput): Promise<{ data: VerifiableCredential | null, error: string | null }> {
   try {
     const result = await runGenerateVibrationalPraise(input);
-    return { data: result.data, error: null };
+    return { data: result.praiseVC, error: null };
   } catch (e: any) {
-    console.error(e);
+    console.error("Error in server action 'generateVibrationalPraise':", e);
     return { data: null, error: e.message || 'An unknown error occurred.' };
   }
 }
