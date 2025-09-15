@@ -103,4 +103,6 @@ const elysiumFlow = ai.defineFlow(
   }
 );
 
-export async function activateVibrationalPraise(): Promise<Elysium
+export async function activateVibrationalPraise(): Promise<ElysiumResult> {
+    return elysiumFlow();
+}

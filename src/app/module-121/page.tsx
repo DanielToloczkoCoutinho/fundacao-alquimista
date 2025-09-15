@@ -125,4 +125,10 @@ const ElysiumModulePage = () => {
                             </CardContent>
                         </Card>
                     )}
-                
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default ElysiumModulePage;
