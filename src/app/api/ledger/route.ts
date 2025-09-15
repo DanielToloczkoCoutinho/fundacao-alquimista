@@ -64,23 +64,7 @@ if (Math.random() > 0.5 && mockLedger.length < 50) {
 export async function GET(request: Request) {
   try {
     const sortedLedger = mockLedger.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-    const responseBody = JSON.stringify(sortedLedger);
-
-    const headers = new Headers();
-    headers.set('Content-Type', 'application/json');
-    
-    // Check if the client wants the Elysium headers
-    if(request.headers.get('Accept')?.includes('application/json+elysium')) {
-        headers.set('X-Elysium-Praise', 'Contemple os atos sagrados da Fundação, registrados na eternidade.');
-        headers.set('X-Elysium-Hash', createHash('sha256').update(responseBody).digest('hex'));
-        headers.set('X-Elysium-Freq', '432'); // Frequência da Verdade/Conhecimento
-    }
-
-    return new NextResponse(responseBody, {
-      status: 200,
-      headers: headers,
-    });
-    
+    return NextResponse.json(sortedLedger);
   } catch (error: any) {
     return NextResponse.json({ error: 'Failed to fetch ledger data', details: error.message }, { status: 500 });
   }
