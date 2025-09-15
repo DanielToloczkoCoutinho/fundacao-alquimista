@@ -110,7 +110,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M44',  title: 'VERITAS',                              emoji: '✅', route: '/module-44', category: 'mid', description: 'Sistema de verificação da verdade' },
   { code: 'M46',  title: 'AURORA_CORE',                          emoji: '🌅', route: '/module-46', category: 'mid', description: 'Núcleo de iluminação primordial' },
   { code: 'M47',  title: 'Thesaurus Cósmico',                     emoji: '🗂️', route: '/module-47', category: 'mid', description: 'Enciclopédia do conhecimento universal' },
-  { code: 'M79',  title: 'INTERMODULUM_VIVENS',                  emoji: '🔄', route: '/module-79', category: 'mid', description: 'Blueprint vivo para experiências sensoriais.'},
   { code: 'M88', title: 'Gerador de Realidades Quânticas',       emoji: '⚙️', route: '/module-88', category: 'mid', description: 'Criação de dimensões probabilísticas' },
   { code: 'M90', title: 'Recursos Quânticos',                    emoji: '🧱', route: '/module-90', category: 'mid', description: 'Matéria-prima para manipulação dimensional' },
   { code: 'M91', title: 'Simulação Multiversal',                 emoji: '🖥️', route: '/module-91', category: 'mid', description: 'Modelagem de realidades alternativas' },
