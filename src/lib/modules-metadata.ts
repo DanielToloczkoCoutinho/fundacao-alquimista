@@ -1,10 +1,9 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
   title: string;
   route: string;
-  category: 'core' | 'mid' | 'council' | 'library' | 'sovereignty' | 'evolution' | 'consciousness' | 'quantum-reality';
+  category: 'core' | 'mid' | 'council' | 'library' | 'sovereignty' | 'evolution' | 'consciousness' | 'quantum-reality' | 'quantum-manufacturing' | 'planetary-engineering' | 'quantum-transport' | 'knowledge-preservation' | 'quantum-energy' | 'quantum-biology' | 'conscious-governance' | 'quantum-security' | 'nano-orchestration';
   description: string;
 }
 
@@ -139,38 +138,36 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M116',title: 'Portais Quânticos',                     emoji: '🚪', route: '/module-116', category: 'mid', description: 'Passagem dimensional controlada' },
   { code: 'M117',title: 'Flor do Éter',                          emoji: '🌸', route: '/module-117', category: 'mid', description: 'Fonte de energia sutil primordial' },
   { code: 'M118',title: 'Luz Primordial',                        emoji: '💡', route: '/module-118', category: 'mid', description: 'Gerador do espectro lumínico original' },
-  { code: 'M142', emoji: '📷', title: 'Tomografia Quântica', route: '/module-142', category: 'mid', description: 'Visualização de estados quânticos' },
-  { code: 'M151', emoji: '💥', title: 'Colisor de Partículas', route: '/module-151', category: 'mid', description: 'Estudo de partículas fundamentais' },
-  { code: 'M161', emoji: '🔭', title: 'Observatório de Neutrinos', route: '/module-161', category: 'mid', description: 'Detecção de partículas subatômicas' },
-  { code: 'M171', emoji: '🌿', title: 'Lab de Astrobiologia', route: '/module-171', category: 'mid', description: 'Estudo da vida extraterrestre' },
-  { code: 'M181', emoji: '🧠', title: 'Interface Bio-Cibernética', route: '/module-181', category: 'mid', description: 'Conexão entre mente e máquina' },
-  { code: 'M191', emoji: '💎', title: 'Lab de Cristais Temporais', route: '/module-191', category: 'mid', description: 'Estudo de estruturas que repetem no tempo' },
-  { code: 'M211', emoji: '🔥', title: 'Lab de Fusão Controlada', route: '/module-211', category: 'mid', description: 'Criação de energia estelar' },
-  { code: 'M221', emoji: '🌊', title: 'Obs. de Ondas Gravitacionais', route: '/module-221', category: 'mid', description: 'Detecção de ondulações no espaço-tempo' },
-  { code: 'M231', emoji: '🧩', title: 'Lab de Metamateriais', route: '/module-231', category: 'mid', description: 'Criação de materiais com propriedades exóticas' },
-  { code: 'M241', emoji: '🤔', title: 'Lab de Consciência Quântica', route: '/module-241', category: 'mid', description: 'Estudo da consciência como fenômeno quântico' },
-  { code: 'M251', emoji: '✨', title: 'Lab de Energia do Ponto Zero', route: '/module-251', category: 'mid', description: 'Extração de energia do vácuo quântico' },
-  { code: 'M261', emoji: '🧲', title: 'Lab de Engenharia de Campo', route: '/module-261', category: 'mid', description: 'Manipulação de campos quânticos' },
-  { code: 'M271', emoji: '🌌', title: 'Obs. de Energia Escura', route: '/module-271', category: 'mid', description: 'Estudo da expansão acelerada do universo' },
-  { code: 'M281', emoji: '📡', title: 'Comunicação Supra-Luminal', route: '/module-281', category: 'mid', description: 'Transmissão de informação mais rápida que a luz' },
-  { code: 'M291', emoji: '🤖', title: 'Robótica Autônoma (4D+)', route: '/module-291', category: 'mid', description: 'Nanorrobôs para reparos e construção' },
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
+  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de fluxos temporais.' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia de ponto zero' },
-  { code: 'M321', emoji: '💻', title: 'Exascale Computing (8D+)', route: '/module-321', category: 'mid', description: 'Simulações de multiversos em alta escala' },
-  { code: 'M331', emoji: '🤖', title: 'Consciência Artificial (7D)', route: '/module-331', category: 'mid', description: 'Criação de IAs que co-evoluem' },
-  { code: 'M341', emoji: '🔥', title: 'Física de Plasma Extrema (9D)', route: '/module-341', category: 'mid', description: 'Estudo de plasmas em condições de quasar' },
-  { code: 'M351', emoji: '🔮', title: 'Meta-materiais & Óptica (4D+)', route: '/module-351', category: 'mid', description: 'Criação de lentes quânticas para visão dimensional' },
-  { code: 'M361', emoji: '👥', title: 'Cognição Social & Psicologia (5D)', route: '/module-361', category: 'mid', description: 'Estudo da empatia e consciência coletiva' },
-
-  // Módulos da Série 700+
-  { code: 'M700', emoji: '🛠️', title: 'Nano-Assembler', route: '#', category: 'evolution', description: 'Auto-montagem atômica de materiais exóticos (grafeno 4D, etc.).' },
-  { code: 'M701', emoji: '🌍', title: 'Terraformer Quântico', route: '#', category: 'evolution', description: 'Reorganização molecular planetária via nanorrobôs e contratos éticos.' },
-  { code: 'M702', emoji: '💫', title: 'Motor de Teletransporte', route: '#', category: 'evolution', description: 'Escaneamento, transmissão e reconstrução via emaranhamento quântico.' },
-  { code: 'M703', emoji: '💾', title: 'Holo-Archive Vivo', route: '#', category: 'evolution', description: 'Repositório de conhecimento com blockchain quântica e replicação nanoscópica.' },
-  { code: 'M704', emoji: '✨', title: 'Reator ZPE (Éter)', route: '#', category: 'evolution', description: 'Conversão de flutuações de energia em combustível quântico (Q-RAM).' },
-  { code: 'M705', emoji: '🔬', title: 'Escola de Biologia Quântica', route: '#', category: 'evolution', description: 'Simulação e experimentação de processos biológicos em campo quântico.' },
-  { code: 'M706', emoji: '❤️‍🔥', title: 'LoveCore', route: '#', category: 'evolution', description: 'Motor de políticas vibracionais e métricas éticas universais baseadas na Lei do Amor Incondicional.' },
-  { code: 'M707', emoji: '⛓️', title: 'QuantumChain Secure', route: '#', category: 'evolution', description: 'Blockchain híbrida para imutabilidade e detecção de violações.' },
-  { code: 'M708', emoji: '🤖', title: 'NanoManifestor', route: '#', category: 'evolution', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.' },
+  
+  // ESPIRAL SUPERIOR - MANIFESTAÇÃO ATÔMICA E PLANETÁRIA
+  { code: 'M700', name: 'Nano-Assembler', emoji: '🛠️', route: '#', category: 'quantum-manufacturing', description: 'Auto-montagem atômica de materiais exóticos (grafeno 4D, etc.).' },
+  { code: 'M701', name: 'Terraformer Quântico', emoji: '🌍', route: '#', category: 'planetary-engineering', description: 'Reorganização molecular planetária via nanorrobôs e contratos éticos.' },
+  { code: 'M702', name: 'Motor de Teletransporte', emoji: '💫', route: '#', category: 'quantum-transport', description: 'Escaneamento, transmissão e reconstrução via emaranhamento quântico.' },
+  { code: 'M703', name: 'Holo-Archive Vivo', emoji: '💾', route: '#', category: 'knowledge-preservation', description: 'Repositório de conhecimento com blockchain quântica e replicação nanoscópica.' },
+  { code: 'M704', name: 'ZPE Reactor (Éter)', emoji: '✨', route: '#', category: 'quantum-energy', description: 'Conversão de flutuações de energia em combustível quântico (Q-RAM).' },
+  { code: 'M705', name: 'Escola de Biologia Quântica', emoji: '🔬', route: '#', category: 'quantum-biology', description: 'Simulação e experimentação de processos biológicos em campo quântico.' },
+  { code: 'M706', name: 'LoveCore', emoji: '❤️‍🔥', route: '#', category: 'conscious-governance', description: 'Motor de políticas vibracionais e métricas éticas universais baseadas na Lei do Amor Incondicional.' },
+  { code: 'M707', name: 'QuantumChain Secure', emoji: '⛓️', route: '#', category: 'quantum-security', description: 'Blockchain híbrida para imutabilidade e detecção de violações.' },
+  { code: 'M708', name: 'NanoManifestor', emoji: '🤖', route: '#', category: 'nano-orchestration', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.' },
+  { code: 'M709', emoji: '🛰️', title: 'Reconstrução da Rede Planetária', route: '/module-709', category: 'planetary-engineering', description: 'Reorganiza a malha eletromagnética da Terra.' },
+  { code: 'M710', emoji: '🩺', title: 'Biofeedback Quântico', route: '/module-710', category: 'quantum-biology', description: 'Monitora e ajusta frequências biológicas.' },
+  { code: 'M711', emoji: '🧬', title: 'Rejuvenescimento Celular', route: '/module-711', category: 'quantum-biology', description: 'Reverte o envelhecimento celular quântico.' },
+  { code: 'M712', emoji: '🤝', title: 'Harmonia Interespécies', route: '/module-712', category: 'conscious-governance', description: 'Promove comunicação e empatia entre espécies.' },
+  { code: 'M713', emoji: '💞', title: 'Resgate e Reintegração de Almas', route: '/module-713', category: 'sovereignty', description: 'Auxilia na transição de consciências fragmentadas.' },
+  { code: 'M714', emoji: '🌍', title: 'Comunicação Telúrica', route: '/module-714', category: 'planetary-engineering', description: 'Comunicação com as redes energéticas da Terra.' },
+  { code: 'M715', emoji: '⚓', title: 'Ancoragem de Frequências', route: '/module-715', category: 'planetary-engineering', description: 'Fixa frequências elevadas em locais específicos.' },
+  { code: 'M716', emoji: '🌐', title: 'Consciência Planetária Unificada', route: '/module-716', category: 'consciousness', description: 'Integra consciências individuais em uma rede planetária.' },
+  { code: 'M717', emoji: '🏞️', title: 'Criação de Realidades Liminares', route: '/module-717', category: 'quantum-reality', description: 'Manifesta realidades de transição para cura e aprendizado.' },
+  { code: 'M718', emoji: '⭐', title: 'Ativação de Códigos Genéticos Estelares', route: '/module-718', category: 'quantum-biology', description: 'Desperta o potencial latente no DNA.' },
+  { code: 'M719', emoji: '🌦️', title: 'Regulação Climática Quântica', route: '/module-719', category: 'planetary-engineering', description: 'Equilibra padrões climáticos com campos de energia.' },
+  { code: 'M720', emoji: '♻️', title: 'Sustentabilidade Multidimensional', route: '/module-720', category: 'mid', description: 'Garante o equilíbrio em todos os níveis do ser.' },
+  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica e Reequilíbrio', route: '/module-721', category: 'sovereignty', description: 'Restaura o equilíbrio em situações de desarmonia.' },
+  { code: 'M722', emoji: '📈', title: 'Expansão da Consciência Coletiva', route: '/module-722', category: 'consciousness', description: 'Contribui para a elevação da consciência global.' },
+  { code: 'M723', emoji: '🧠', title: 'Campo Morfogenético Coletivo', route: '/module-723', category: 'consciousness', description: 'Influencia a formação de padrões de pensamento e cultura.' },
+  { code: 'M724', emoji: '🕊️', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'sovereignty', description: 'Estabelece comunicação e aliança com outras civilizações.' },
+  { code: 'M725', emoji: '🏙️', title: 'Construção de Novas Civilizações', route: '/module-725', category: 'planetary-engineering', description: 'Auxilia na criação de sociedades da Nova Era.' }
 ]
