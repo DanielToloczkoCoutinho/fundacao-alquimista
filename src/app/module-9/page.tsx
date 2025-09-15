@@ -7,7 +7,6 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, Zap, GitBranch, ShieldCheck, Heart, Users, BrainCircuit, BarChart, Check, Download } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
-import { modulesMetadata } from '@/lib/modules-metadata';
 
 interface AnalysisResult {
   totalModules: number;
