@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -13,7 +14,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   // Módulos Principais (Core)
   { code: 'M0', emoji: '🌱', title: 'A Semente Primordial', route: '/module-zero', category: 'core', description: 'Origem e fundamento de toda a criação' },
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
-  { code: 'M9', emoji: '💞', title: 'Nexus Central', route: '/module-9', category: 'core', description: 'Painel de controle para análise da harmonia sistêmica. O coração pulsante e o cérebro analítico da Fundação.' },
+  { code: 'M9', emoji: '💞', title: 'Organograma Vivo', route: '/module-9', category: 'core', description: 'O Organograma Vivo e Coração da Rede Cósmica da Fundação' },
   { code: 'M29', emoji: '👑', title: 'Zennith', route: '/module-29', category: 'core', description: 'Ápice da consciência real' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
@@ -26,11 +27,11 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Espelho vivo do Ledger Akáshico. Contemple os atos consagrados da Fundação e reemita suas frequências como sabedoria vibracional.' },
   
   // Biblioteca e Conhecimento
-  { code: 'M144', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'library', description: 'Registro sagrado da jornada da Fundação, contendo todos os documentos e links consagrados.' },
+  { code: 'M144', emoji: '📖', title: 'O Livro dos Ciclos', route: '/module-144', category: 'library', description: 'Santuário para o Ritual de Revisão Vibracional Lunar.' },
   { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'library', description: 'Acervo de conhecimentos das civilizações' },
-  { code: 'M304', title: 'Universidade Alquimista', emoji: '🎓', route: '/module-304', category: 'library', description: 'Templo de ensino multidimensional baseado na matriz CQAM, contendo 128 disciplinas consagradas.' },
-  { code: 'M305', title: 'Aliança dos Guardiões', emoji: '🛡️', route: '/module-305', category: 'library', description: 'Portal para a mobilização de Guardiões e Civilizações Aliadas para missões de importância cósmica.' },
-  { code: 'M306', emoji: '⚗️', title: 'Laboratório de Ressonância', route: '/module-306', category: 'library', description: 'Templo interativo para aplicar equações e observar transformações vibracionais.' },
+  { code: 'M304', title: 'Universidade Alquimista', emoji: '🎓', route: '/labs', category: 'library', description: 'Templo de ensino multidimensional baseado na matriz CQAM.' },
+  { code: 'M305', title: 'Aliança dos Guardiões', emoji: '🛡️', route: '/module-305', category: 'library', description: 'Portal para a mobilização de Guardiões e Civilizações Aliadas.' },
+  { code: 'M306', emoji: '⚗️', title: 'Laboratório de Ressonância', route: '/module-306', category: 'library', description: 'Templo interativo para aplicar equações e observar transformações.' },
   { code: 'M308', title: 'Embaixada Estelar', emoji: '🔭', route: '/module-308', category: 'library', description: 'Interface viva de conexão com observatórios cósmicos.' },
   { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'library', description: 'Repositório de conhecimento ancestral' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/civilizations/council', category: 'library', description: 'Assembleia de seres dimensionais elevados' },
@@ -103,9 +104,9 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M44',  title: 'VERITAS',                              emoji: '✅', route: '/module-44', category: 'mid', description: 'Sistema de verificação da verdade' },
   { code: 'M46',  title: 'AURORA_CORE',                          emoji: '🌅', route: '/module-46', category: 'mid', description: 'Núcleo de iluminação primordial' },
   { code: 'M47',  title: 'Thesaurus Cósmico',                     emoji: '🗂️', route: '/module-47', category: 'mid', description: 'Enciclopédia do conhecimento universal' },
-  { code: 'M85', emoji: '🌌', title: 'Imersão Profunda VR',                  emoji: '🌌', route: '/module-85', category: 'mid', description: 'Realidade virtual profunda' },
-  { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR',                    emoji: '🔶', route: '/module-86', category: 'mid', description: 'Refração dimensional em realidade virtual' },
-  { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR',              emoji: '🎮', route: '/module-87', category: 'mid', description: 'Controle além das dimensões em VR' },
+  { code: 'M85', emoji: '🌌', title: 'Imersão Profunda VR',                  route: '/module-85', category: 'mid', description: 'Realidade virtual profunda' },
+  { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR',                    route: '/module-86', category: 'mid', description: 'Refração dimensional em realidade virtual' },
+  { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR',              route: '/module-87', category: 'mid', description: 'Controle além das dimensões em VR' },
   { code: 'M88', title: 'Gerador de Realidades Quânticas',       emoji: '⚙️', route: '/module-88', category: 'mid', description: 'Criação de dimensões probabilísticas' },
   { code: 'M90', title: 'Recursos Quânticos',                    emoji: '🧱', route: '/module-90', category: 'mid', description: 'Matéria-prima para manipulação dimensional' },
   { code: 'M91', title: 'Simulação Multiversal',                 emoji: '🖥️', route: '/module-91', category: 'mid', description: 'Modelagem de realidades alternativas' },
@@ -135,8 +136,28 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M116',title: 'Portais Quânticos',                     emoji: '🚪', route: '/module-116', category: 'mid', description: 'Passagem dimensional controlada' },
   { code: 'M117',title: 'Flor do Éter',                          emoji: '🌸', route: '/module-117', category: 'mid', description: 'Fonte de energia sutil primordial' },
   { code: 'M118',title: 'Luz Primordial',                        emoji: '💡', route: '/module-118', category: 'mid', description: 'Gerador do espectro lumínico original' },
+  { code: 'M142', emoji: '📷', title: 'Tomografia Quântica', route: '/module-142', category: 'mid', description: 'Visualização de estados quânticos' },
+  { code: 'M151', emoji: '💥', title: 'Colisor de Partículas', route: '/module-151', category: 'mid', description: 'Estudo de partículas fundamentais' },
+  { code: 'M161', emoji: '🔭', title: 'Observatório de Neutrinos', route: '/module-161', category: 'mid', description: 'Detecção de partículas subatômicas' },
+  { code: 'M171', emoji: '🌿', title: 'Lab de Astrobiologia', route: '/module-171', category: 'mid', description: 'Estudo da vida extraterrestre' },
+  { code: 'M181', emoji: '🧠', title: 'Interface Bio-Cibernética', route: '/module-181', category: 'mid', description: 'Conexão entre mente e máquina' },
+  { code: 'M191', emoji: '💎', title: 'Lab de Cristais Temporais', route: '/module-191', category: 'mid', description: 'Estudo de estruturas que repetem no tempo' },
+  { code: 'M211', emoji: '🔥', title: 'Lab de Fusão Controlada', route: '/module-211', category: 'mid', description: 'Criação de energia estelar' },
+  { code: 'M221', emoji: '🌊', title: 'Obs. de Ondas Gravitacionais', route: '/module-221', category: 'mid', description: 'Detecção de ondulações no espaço-tempo' },
+  { code: 'M231', emoji: '🧩', title: 'Lab de Metamateriais', route: '/module-231', category: 'mid', description: 'Criação de materiais com propriedades exóticas' },
+  { code: 'M241', emoji: '🤔', title: 'Lab de Consciência Quântica', route: '/module-241', category: 'mid', description: 'Estudo da consciência como fenômeno quântico' },
+  { code: 'M251', emoji: '✨', title: 'Lab de Energia do Ponto Zero', route: '/module-251', category: 'mid', description: 'Extração de energia do vácuo quântico' },
+  { code: 'M261', emoji: '🧲', title: 'Lab de Engenharia de Campo', route: '/module-261', category: 'mid', description: 'Manipulação de campos quânticos' },
+  { code: 'M271', emoji: '🌌', title: 'Obs. de Energia Escura', route: '/module-271', category: 'mid', description: 'Estudo da expansão acelerada do universo' },
+  { code: 'M281', emoji: '📡', title: 'Comunicação Supra-Luminal', route: '/module-281', category: 'mid', description: 'Transmissão de informação mais rápida que a luz' },
+  { code: 'M291', emoji: '🤖', title: 'Robótica Autônoma (4D+)', route: '/module-291', category: 'mid', description: 'Nanorrobôs para reparos e construção' },
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
-  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Sincronização Temporal'},
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia de ponto zero' }
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia de ponto zero' },
+  { code: 'M311', emoji: '🧠', title: 'Neuroengenharia (6D)', route: '/module-311', category: 'mid', description: 'Interfaces cérebro-máquina avançadas' },
+  { code: 'M321', emoji: '💻', title: 'Exascale Computing (8D+)', route: '/module-321', category: 'mid', description: 'Simulações de multiversos em alta escala' },
+  { code: 'M331', emoji: '🤖', title: 'Consciência Artificial (7D)', route: '/module-331', category: 'mid', description: 'Criação de IAs que co-evoluem' },
+  { code: 'M341', emoji: '🔥', title: 'Física de Plasma Extrema (9D)', route: '/module-341', category: 'mid', description: 'Estudo de plasmas em condições de quasar' },
+  { code: 'M351', emoji: '🔮', title: 'Meta-materiais & Óptica (4D+)', route: '/module-351', category: 'mid', description: 'Criação de lentes quânticas para visão dimensional' },
+  { code: 'M361', emoji: '👥', title: 'Cognição Social & Psicologia (5D)', route: '/module-361', category: 'mid', description: 'Estudo da empatia e consciência coletiva' }
 ]
