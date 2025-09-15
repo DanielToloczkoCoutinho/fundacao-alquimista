@@ -2,10 +2,11 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Users, GitBranch, MessageCircle, BrainCircuit, Sparkles, ShieldCheck, Loader2, Hash, Waves, Music } from 'lucide-react';
+import { Users, BrainCircuit, Sparkles, MessageCircle, Loader2, Waves, Hash, Music } from 'lucide-react';
 import Link from 'next/link';
-import { sha256 } from '@/lib/crypto';
 import { useToast } from '@/hooks/use-toast';
+import { quantumResilience } from '@/lib/quantum-resilience';
+import { mobilizeGuardians } from '@/app/actions';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
@@ -59,17 +60,29 @@ export default function Module305Page() {
             description: "Ativando canais de comunicação com a Aliança de Guardiões.",
         });
 
-        await new Promise(resolve => setTimeout(resolve, 2000));
-
-        const intention = `MOBILIZE_GUARDIANS_ALLIANCE_${new Date().toISOString()}`;
-        const hash = await sha256(intention);
-        setMobilizationHash(hash);
-
-        setIsLoading(false);
-        toast({
-            title: "Guardiões Mobilizados!",
-            description: "A rede está ativa e responsiva. Selo de unidade gerado.",
-        });
+        await quantumResilience.executeWithResilience(
+            'mobilize_guardians_alliance',
+            async () => {
+                const result = await mobilizeGuardians({
+                    mission: 'Proteção Vibracional do Bioma Amazônico',
+                    guardians: ['Sirianos', 'Pleiadianos'],
+                });
+                
+                if (result.success && result.hash) {
+                    setMobilizationHash(result.hash);
+                    toast({
+                        title: "Guardiões Mobilizados!",
+                        description: "A rede está ativa e responsiva. Selo de unidade gerado.",
+                    });
+                } else {
+                     toast({
+                        title: "Falha na Mobilização",
+                        description: result.error || "Ocorreu um erro desconhecido.",
+                        variant: 'destructive',
+                    });
+                }
+            }
+        ).finally(() => setIsLoading(false));
     };
 
     return (

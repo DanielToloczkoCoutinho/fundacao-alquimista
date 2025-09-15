@@ -8,7 +8,6 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, GraduationCap, CheckCircle, XCircle, Hash, Music } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { disseminateKnowledge } from '@/app/actions';
-import { sha256 } from '@/lib/crypto';
 import { useToast } from '@/hooks/use-toast';
 
 const Module304Page = () => {
@@ -57,13 +56,7 @@ const Module304Page = () => {
                     targetAudience,
                 });
                 
-                const intentionHash = await sha256(`${topic}-${targetAudience}-${result.summary}`);
-
-                setReport({
-                    ...result,
-                    hash: intentionHash,
-                    frequency: 432 // Frequência da Verdade
-                });
+                setReport(result);
             },
             async (error: any) => {
                 setReport({

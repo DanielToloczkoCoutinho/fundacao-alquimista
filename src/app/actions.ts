@@ -10,7 +10,7 @@ import { describeHarmonization as runDescribeHarmonization } from '@/ai/flows/ha
 import { describeQuantumHealing as runDescribeQuantumHealing } from '@/ai/flows/healing-flow';
 import { describePortalActivation as runDescribePortalActivation } from '@/ai/flows/portal-activation-flow';
 import { describeEtherFlower as runDescribeEtherFlower } from '@/ai/flows/ether-flower-flow';
-import { describeOlP as runDescribeOlp } from '@/ai/flows/olp-flow';
+import { describeOlP as runDescribeOlp } from '@/aiflows/olp-flow';
 import { describeSpaceTimeEngineering as runDescribeSpaceTimeEngineering } from '@/ai/flows/space-time-flow';
 import { describeHologramProjection as runDescribeHologramProjection } from '@/ai/flows/prisma-flow';
 import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-matrix-flow';
@@ -21,6 +21,8 @@ import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-
 import { disseminateKnowledge as runDisseminateKnowledge, type DisseminateKnowledgeOutput } from '@/ai/flows/cosmic-education-flow';
 import { runCQAMAnalysis as runCQAM, type CQAMInput } from '@/ai/flows/cqam-flow';
 import { activateVibrationalPraise as runActivateVibrationalPraise } from '@/ai/flows/elysium-flow';
+import { mobilizeGuardians as runMobilizeGuardians } from '@/ai/flows/guardians-mobilization-flow';
+import { processZennithCommand as runProcessZennithCommand, type ZennithCommandOutput } from '@/ai/flows/zennith-portal-flow';
 
 export async function getLinkSummary(url: string) {
   try {
@@ -227,4 +229,25 @@ export async function activateVibrationalPraise() {
     console.error(e);
     return { status: "ERRO", blockchainHash: "", frequency: 0, praise: null, error: e.message || 'An unknown error occurred.' };
   }
+}
+
+export async function mobilizeGuardians(data: { mission: string; guardians: string[] }): Promise<{ success: boolean; hash: string | null; error: string | null; }> {
+    try {
+        const result = await runMobilizeGuardians(data);
+        return { ...result, error: null };
+    } catch (e: any) {
+        console.error(e);
+        return { success: false, hash: null, error: e.message || 'An unknown error occurred.' };
+    }
+}
+
+export async function processZennithCommand(data: { command: string }): Promise<ZennithCommandOutput & { error: string | null; }> {
+    try {
+        const result = await runProcessZennithCommand(data);
+        return { ...result, error: null };
+    } catch (e: any) {
+        console.error(e);
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+        return { response: "Erro na comunicação com Zennith.", hash: "", frequency: 0, error: errorMsg };
+    }
 }
