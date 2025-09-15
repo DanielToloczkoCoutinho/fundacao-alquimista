@@ -101,7 +101,7 @@ export default function LabsPage() {
                         description="Explore a origem e a manifestação da vida, desde a estrutura do DNA cósmico até a busca por bioassinaturas em mundos distantes."
                         steps={[
                             <JourneyStep key="m-361" scientistId="sarkar" icon={<Dna className="text-green-400" />} description="O Código Genético Universal" />,
-                            <JourneyStep key-="m-171" scientistId="mavalvala" icon={<Beaker className="text-teal-400" />} description="A Sopa Primordial" />,
+                            <JourneyStep key="m-171" scientistId="mavalvala" icon={<Beaker className="text-teal-400" />} description="A Sopa Primordial" />,
                             <JourneyStep key="m-seager" scientistId="seager" icon={<Telescope className="text-blue-400" />} description="Assinaturas de Vida" />,
                             <JourneyStep key="m-ghez" scientistId="ghez" icon={<Orbit className="text-yellow-400" />} description="Condições Galácticas" />,
                             <JourneyStep key="m-carroll" scientistId="carroll_sean" icon={<History className="text-red-400" />} description="A Flecha do Tempo Biológico" />
