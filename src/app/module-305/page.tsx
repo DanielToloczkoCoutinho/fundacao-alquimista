@@ -66,13 +66,15 @@ export default function InterconnectivityAtlas() {
       });
 
       eq.disciplinas.forEach(discId => {
-        const targetNode = nodes.find(n => n.type === 'discipline' && n.id === `disc-disc-${discId.toLowerCase()}`);
-        if(targetNode) {
-            links.push({
-                source: `eq-${eq.id}`,
-                target: targetNode.id,
-                value: 2,
-            });
+        // The discipline ID in equations-data is just the code, e.g., "MAT", "QUA".
+        // We need to find the full discipline entry.
+        const discipline = disciplines.find(d => d.id.toUpperCase().includes(discId));
+        if (discipline) {
+          links.push({
+            source: `eq-${eq.id}`,
+            target: `disc-${discipline.id}`,
+            value: 2,
+          });
         }
       });
     });
@@ -80,9 +82,7 @@ export default function InterconnectivityAtlas() {
     return { nodes, links };
   }, []);
 
-  const renderGraph = () => {
-    if (!svgRef.current) return;
-
+  const filteredGraphData = useMemo(() => {
     let displayNodes = [...graphData.nodes];
     let displayLinks = [...graphData.links];
 
@@ -98,15 +98,33 @@ export default function InterconnectivityAtlas() {
         const lowerSearchTerm = searchTerm.toLowerCase();
         const relevantNodeIds = new Set(
             displayNodes
-                .filter(n => n.name.toLowerCase().includes(lowerSearchTerm))
+                .filter(n => n.name.toLowerCase().includes(lowerSearchTerm) || (n.guardian && n.guardian.toLowerCase().includes(lowerSearchTerm)))
                 .map(n => n.id)
         );
+
         if (relevantNodeIds.size > 0) {
-            displayNodes = displayNodes.filter(n => relevantNodeIds.has(n.id));
-            displayLinks = displayLinks.filter(l => relevantNodeIds.has(l.source as string) || relevantNodeIds.has(l.target as string));
+          const linkedNodeIds = new Set(relevantNodeIds);
+          displayLinks.forEach(link => {
+            if (relevantNodeIds.has(link.source) || relevantNodeIds.has(link.target)) {
+              linkedNodeIds.add(link.source);
+              linkedNodeIds.add(link.target);
+            }
+          });
+
+          displayNodes = displayNodes.filter(n => linkedNodeIds.has(n.id));
+          displayLinks = displayLinks.filter(l => linkedNodeIds.has(l.source) && linkedNodeIds.has(l.target));
+        } else {
+            displayNodes = [];
+            displayLinks = [];
         }
     }
 
+    return { nodes: displayNodes, links: displayLinks };
+  }, [viewMode, searchTerm, graphData]);
+
+
+  useEffect(() => {
+    if (!svgRef.current) return;
 
     const svg = d3.select(svgRef.current);
     svg.selectAll("*").remove();
@@ -114,16 +132,18 @@ export default function InterconnectivityAtlas() {
     const width = svgRef.current.clientWidth;
     const height = svgRef.current.clientHeight;
 
-    const simulation = d3.forceSimulation(displayNodes as d3.SimulationNodeDatum[])
-      .force('link', d3.forceLink(displayLinks).id((d: any) => d.id).distance(120))
+    const simulation = d3.forceSimulation(filteredGraphData.nodes as d3.SimulationNodeDatum[])
+      .force('link', d3.forceLink(filteredGraphData.links).id((d: any) => d.id).distance(120))
       .force('charge', d3.forceManyBody().strength(-250))
       .force('center', d3.forceCenter(width / 2, height / 2))
       .force('x', d3.forceX(width / 2).strength(0.05))
       .force('y', d3.forceY(height / 2).strength(0.05));
 
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
+
     const link = svg.append('g')
       .selectAll('line')
-      .data(displayLinks)
+      .data(filteredGraphData.links)
       .enter().append('line')
       .attr('stroke', 'hsl(var(--border))')
       .attr('stroke-opacity', 0.4)
@@ -131,10 +151,10 @@ export default function InterconnectivityAtlas() {
 
     const node = svg.append('g')
       .selectAll('circle')
-      .data(displayNodes)
+      .data(filteredGraphData.nodes)
       .enter().append('circle')
       .attr('r', (d: any) => d.type === 'discipline' ? 8 : 12)
-      .attr('fill', d3.scaleOrdinal(d3.schemeCategory10).domain(d3.range(10).map(String)))
+      .attr('fill', (d: any) => color(d.group.toString()))
       .attr('stroke', 'hsl(var(--background))')
       .attr('stroke-width', 1.5)
       .call((d3.drag() as any)
@@ -149,7 +169,7 @@ export default function InterconnectivityAtlas() {
           if (!event.active) simulation.alphaTarget(0);
           d.fx = null; d.fy = null;
         }))
-      .on('click', (event, d: any) => {
+      .on('click', (event: any, d: any) => {
         setSelectedNode(d);
         setIsDialogOpen(true);
       });
@@ -167,13 +187,16 @@ export default function InterconnectivityAtlas() {
         .attr('cx', (d: any) => d.x)
         .attr('cy', (d: any) => d.y);
     });
-  };
-
-  useEffect(renderGraph, [viewMode, searchTerm, graphData]);
+  }, [filteredGraphData]);
+  
   useEffect(() => {
-    window.addEventListener('resize', renderGraph);
-    return () => window.removeEventListener('resize', renderGraph);
-  }, [renderGraph]);
+    const handleResize = () => {
+      // Re-trigger render
+      setViewMode(vm => vm);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="min-h-screen p-4 md:p-8">
@@ -249,7 +272,7 @@ export default function InterconnectivityAtlas() {
                  <p><span className="text-muted-foreground">Frequência:</span> {selectedNode.frequency || 'N/A'} Hz</p>
                  <p><span className="text-muted-foreground">Domínio:</span> {selectedNode.domain || 'N/A'}</p>
                  <p><span className="text-muted-foreground">Guardião:</span> {selectedNode.guardian || 'N/A'}</p>
-                 <p><span className="text-muted-foreground">Conexões:</span> {graphData.links.filter(l => l.source === selectedNode.id || l.target === selectedNode.id).length}</p>
+                 <p><span className="text-muted-foreground">Conexões:</span> {graphData.nodes.filter(n => n.id === selectedNode.id).length > 0 ? filteredGraphData.links.filter(l => l.source === selectedNode.id || l.target === selectedNode.id).length : 0}</p>
               </div>
 
               <DialogFooter>
