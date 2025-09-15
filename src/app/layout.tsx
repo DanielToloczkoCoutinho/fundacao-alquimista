@@ -5,11 +5,13 @@ import { Toaster } from '@/components/ui/toaster';
 import ErrorBoundary from '@/components/ui/error-boundary';
 import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
 import dynamic from 'next/dynamic';
+import { useState, useEffect } from 'react';
+import SuspenseFallback from '@/components/ui/suspense-fallback';
+
 
 // Dynamically import the sidebar to prevent SSR issues with usePathname
 const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), {
   ssr: false,
-  loading: () => <div className="fixed top-0 left-0 h-full w-20 bg-background border-r border-border/20 z-20" />,
 });
 
 export default function RootLayout({
@@ -17,6 +19,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -28,14 +36,23 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
-         <ErrorBoundary fallback={<CosmicErrorFallback />}>
+        <ErrorBoundary fallback={<CosmicErrorFallback />}>
+          {isMounted ? (
             <div className="flex h-screen bg-background">
                 <DynamicSidebar />
                 <main className="flex-1 overflow-y-auto pl-20">
                     {children}
                 </main>
             </div>
-            <Toaster />
+          ) : (
+            <div className="flex h-screen bg-background">
+                <div className="fixed top-0 left-0 h-full w-20 bg-background border-r border-border/20 z-20" />
+                <main className="flex-1 overflow-y-auto pl-20">
+                  <SuspenseFallback />
+                </main>
+            </div>
+          )}
+          <Toaster />
         </ErrorBoundary>
       </body>
     </html>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
@@ -37,7 +36,7 @@ export default function ConsolePage() {
   }, []); // Executa apenas uma vez no cliente
   
   if (!isClient) {
-    return <SuspenseFallback />;
+    return null;
   }
 
   return (
