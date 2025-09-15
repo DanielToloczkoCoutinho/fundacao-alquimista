@@ -6,6 +6,7 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
+import { sha256 } from '@/lib/crypto';
 
 const DisseminateKnowledgeInputSchema = z.object({
   topic: z.string().describe('O tópico ou princípio a ser disseminado.'),
@@ -17,6 +18,8 @@ const DisseminateKnowledgeOutputSchema = z.object({
   success: z.boolean(),
   logs: z.array(z.string()),
   summary: z.string().describe("Um resumo do pacote de conhecimento disseminado."),
+  hash: z.string().describe("Selo de Coerência SHA-256 da análise."),
+  frequency: z.number().describe("Frequência da Verdade em Hz."),
 });
 export type DisseminateKnowledgeOutput = z.infer<typeof DisseminateKnowledgeOutputSchema>;
 
@@ -73,11 +76,15 @@ const disseminateKnowledgeFlow = ai.defineFlow(
       logs.push("M113: Transmissão enviada com sucesso.");
       
       logs.push("M304: Disseminação de conhecimento finalizada.");
-      return { success: true, logs, summary: knowledgePacket };
+      
+      const hash = await sha256(`${topic}-${knowledgePacket}`);
+
+      return { success: true, logs, summary: knowledgePacket, hash, frequency: 432 };
 
     } catch (error: any) {
       logs.push(`ERRO CRÍTICO: ${error.message}`);
-      return { success: false, logs, summary: "" };
+      const hash = await sha256(`${topic}-ERROR-${error.message}`);
+      return { success: false, logs, summary: "", hash, frequency: 432 };
     }
   }
 );

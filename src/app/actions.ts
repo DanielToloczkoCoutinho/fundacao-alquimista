@@ -18,7 +18,7 @@ import { transmitUniversalMessage as runTransmitUniversalMessage } from '@/ai/fl
 import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
 import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
 import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-perspective-flow';
-import { disseminateKnowledge as runDisseminateKnowledge } from '@/ai/flows/cosmic-education-flow';
+import { disseminateKnowledge as runDisseminateKnowledge, type DisseminateKnowledgeOutput } from '@/ai/flows/cosmic-education-flow';
 import { runCQAMAnalysis as runCQAM, type CQAMInput } from '@/ai/flows/cqam-flow';
 import { activateVibrationalPraise as runActivateVibrationalPraise } from '@/ai/flows/elysium-flow';
 
@@ -198,17 +198,18 @@ export async function getOmegaPerspective(evolutionSummary: string) {
     }
 }
 
-export async function disseminateKnowledge(data: { topic: string, targetAudience: string }) {
+export async function disseminateKnowledge(data: { topic: string, targetAudience: string }): Promise<DisseminateKnowledgeOutput & { error: string | null }> {
     try {
         const result = await runDisseminateKnowledge(data);
-        return { success: result.success, logs: result.logs, summary: result.summary, error: null };
+        return { ...result, error: null };
     } catch (e: any) {
         console.error(e);
-        return { success: false, logs: [], summary: "", error: e.message || 'An unknown error occurred.' };
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+        return { success: false, logs: [], summary: "", hash: "", frequency: 0, error: errorMsg };
     }
 }
 
-export async function runCQAM(input: CQAMInput) {
+export async function runCQAMAnalysis(input: CQAMInput) {
     try {
         const result = await runCQAM(input);
         return { data: result, error: null };
