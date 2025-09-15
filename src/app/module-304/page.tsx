@@ -5,13 +5,14 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, GraduationCap, CheckCircle, XCircle } from 'lucide-react';
+import { Loader2, GraduationCap, CheckCircle, XCircle, Hash } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { disseminateKnowledge } from '@/app/actions';
+import { sha256 } from '@/lib/crypto';
 
 const Module304Page = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [report, setReport] = useState<{ success: boolean; logs: string[]; summary: string | null; error: string | null } | null>(null);
+    const [report, setReport] = useState<{ success: boolean; logs: string[]; summary: string | null; error: string | null; hash?: string; frequency?: number; } | null>(null);
     const [topic, setTopic] = useState('A Lei do Um e a Unidade Cósmica');
     const [targetAudience, setTargetAudience] = useState('Humanidade Terrestre');
 
@@ -31,7 +32,14 @@ const Module304Page = () => {
                     topic,
                     targetAudience,
                 });
-                setReport(result);
+                
+                const intentionHash = await sha256(`${topic}-${targetAudience}`);
+
+                setReport({
+                    ...result,
+                    hash: intentionHash,
+                    frequency: 432 // Frequência da Verdade
+                });
             },
             async (error: any) => {
                 setReport({
@@ -100,6 +108,13 @@ const Module304Page = () => {
                                         </div>
                                     )}
                                      {report.summary && <p className="text-sm text-muted-foreground mt-2 italic">"{report.summary}"</p>}
+                                     {report.hash && (
+                                         <div className="mt-4 pt-2 border-t border-primary/20">
+                                             <p className="text-xs font-semibold text-amber-300 flex items-center gap-2"><Hash className="h-3 w-3"/>Selo de Coerência (SHA-256)</p>
+                                             <p className="font-mono text-xs text-muted-foreground break-all">{report.hash}</p>
+                                             <p className="text-xs font-semibold text-cyan-300 mt-1">Frequência Ressonante: {report.frequency} Hz (Verdade)</p>
+                                         </div>
+                                     )}
                                 </div>
                                  <ScrollArea className="h-48 pr-4">
                                     <div className="text-sm font-mono text-muted-foreground space-y-2">

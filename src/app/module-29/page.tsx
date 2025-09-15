@@ -1,7 +1,8 @@
-
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
+import { sha256 } from '@/lib/crypto';
+import { useToast } from '@/hooks/use-toast';
 
 const Module29PortalPage: React.FC = () => {
     const natsMessagesRef = useRef<HTMLDivElement>(null);
@@ -9,6 +10,8 @@ const Module29PortalPage: React.FC = () => {
     const natsStatusRef = useRef<HTMLSpanElement>(null);
     const natsStatusTextRef = useRef<HTMLSpanElement>(null);
     const deployBtnRef = useRef<HTMLButtonElement>(null);
+    const [commandHash, setCommandHash] = useState('');
+    const { toast } = useToast();
 
     const addMessage = (text: string, type: 'system' | 'user' | 'error') => {
         const natsMessages = natsMessagesRef.current;
@@ -21,85 +24,49 @@ const Module29PortalPage: React.FC = () => {
         natsMessages.scrollTop = natsMessages.scrollHeight;
     };
 
+    const handleGenericCommand = async (commandName: string, successMessage: string, duration: number = 1500) => {
+        addMessage(`Sistema: Executando ${commandName}...`, 'system');
+        const hash = await sha256(`${commandName}-${Date.now()}`);
+        setCommandHash(hash);
+        toast({
+            title: `Comando: ${commandName}`,
+            description: `Hash de intenção: ${hash.substring(0, 20)}...`
+        });
+        setTimeout(() => {
+            addMessage(`Sistema: ${successMessage}`, 'system');
+            toast({
+                title: "Execução Concluída",
+                description: successMessage,
+            });
+        }, duration);
+    }
+
     useEffect(() => {
-        const handleConnectNats = () => {
-            const natsStatus = natsStatusRef.current;
-            const natsStatusText = natsStatusTextRef.current;
-            if (!natsStatus || !natsStatusText) return;
-
-            natsStatus.className = 'status-indicator status-connecting';
-            natsStatusText.textContent = 'Conectando...';
-
-            setTimeout(() => {
-                natsStatus.className = 'status-indicator status-online';
-                natsStatusText.textContent = 'Online';
-                addMessage('Sistema: Conectado ao servidor NATS com sucesso!', 'system');
-            }, 2000);
-        };
-
+        const handleConnectNats = () => handleGenericCommand("Conexão NATS", "Conectado ao servidor NATS com sucesso!", 2000);
         const handleSendMessage = () => {
             const messageInput = messageInputRef.current;
             if (!messageInput || messageInput.value.trim() === '') return;
-
-            addMessage(`Você: ${messageInput.value}`, 'user');
+            const userMessage = messageInput.value;
+            addMessage(`Você: ${userMessage}`, 'user');
             messageInput.value = '';
-
-            setTimeout(() => {
-                addMessage('Sistema: Mensagem recebida e processada em 5 dimensões paralelas.', 'system');
-            }, 1000);
+            handleGenericCommand(`Envio de Mensagem: "${userMessage}"`, "Mensagem recebida e processada em 5 dimensões paralelas.", 1000);
         };
-
-        const handleQueryData = () => {
-            addMessage('Sistema: Executando query GraphQL na malha de dados fractal...', 'system');
-            setTimeout(() => {
-                addMessage('Sistema: Query executada com sucesso. 42 dimensões consultadas.', 'system');
-            }, 1500);
-        };
-        
-        const handleRefreshSchema = () => {
-            addMessage('Sistema: Atualizando schema do GraphQL Federation...', 'system');
-            setTimeout(() => {
-                addMessage('Sistema: Schema atualizado com sucesso. Novos laboratórios integrados.', 'system');
-            }, 1200);
-        };
-
+        const handleQueryData = () => handleGenericCommand("Query GraphQL", "Query executada com sucesso. 42 dimensões consultadas.");
+        const handleRefreshSchema = () => handleGenericCommand("Atualização de Schema", "Schema atualizado com sucesso. Novos laboratórios integrados.", 1200);
         const handleRegisterDevice = () => {
-            const usernameInput = document.getElementById('username') as HTMLInputElement;
-            const username = usernameInput?.value || 'UsuarioMultidimensional';
-            addMessage(`Sistema: Iniciando registro do dispositivo para ${username}...`, 'system');
-            setTimeout(() => {
-                addMessage('Sistema: Dispositivo registrado com sucesso! Chave criptográfica multidimensional gerada.', 'system');
-            }, 1500);
+            const username = (document.getElementById('username') as HTMLInputElement)?.value || 'UsuarioMultidimensional';
+            handleGenericCommand(`Registro de Dispositivo para ${username}`, "Dispositivo registrado com sucesso! Chave criptográfica multidimensional gerada.");
         };
-
         const handleAuthenticate = () => {
-            const usernameInput = document.getElementById('username') as HTMLInputElement;
-            const username = usernameInput?.value || 'UsuarioMultidimensional';
-            addMessage(`Sistema: Iniciando autenticação multidimensional para ${username}...`, 'system');
-            setTimeout(() => {
-                addMessage('Sistema: Autenticação bem-sucedida! Acesso concedido a 7 dimensões.', 'system');
-            }, 1500);
+            const username = (document.getElementById('username') as HTMLInputElement)?.value || 'UsuarioMultidimensional';
+            handleGenericCommand(`Autenticação para ${username}`, "Autenticação bem-sucedida! Acesso concedido a 7 dimensões.");
         };
-        
         const handleDeployAll = () => {
             const btn = deployBtnRef.current;
             if(!btn) return;
-            const originalText = btn.innerHTML;
-
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Implantando...';
-            btn.disabled = true;
-
-            addMessage('Sistema: Iniciando implantação completa dos sistemas...', 'system');
-
-            setTimeout(() => addMessage('Sistema: Malha de Dados Fractal implantada com sucesso!', 'system'), 1000);
-            setTimeout(() => addMessage('Sistema: Identidade Multidimensional configurada!', 'system'), 2000);
-            setTimeout(() => addMessage('Sistema: Canais Interplanetários estabelecidos!', 'system'), 3000);
-            setTimeout(() => {
-                addMessage('Sistema: Todos os sistemas implantados com sucesso! Fundação pronta para ascensão meta-autônoma.', 'system');
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            }, 4000);
+            handleGenericCommand("Deploy Completo", "Todos os sistemas implantados com sucesso! Fundação pronta para ascensão meta-autônoma.", 4000);
         };
+        const handleKeypress = (e: KeyboardEvent) => e.key === 'Enter' && handleSendMessage();
 
         const connectNatsBtn = document.getElementById('connect-nats');
         const sendMessageBtn = document.getElementById('send-message');
@@ -110,7 +77,6 @@ const Module29PortalPage: React.FC = () => {
         const authenticateBtn = document.getElementById('authenticate');
         const deployAllBtn = deployBtnRef.current;
 
-
         connectNatsBtn?.addEventListener('click', handleConnectNats);
         sendMessageBtn?.addEventListener('click', handleSendMessage);
         queryDataBtn?.addEventListener('click', handleQueryData);
@@ -118,12 +84,6 @@ const Module29PortalPage: React.FC = () => {
         registerDeviceBtn?.addEventListener('click', handleRegisterDevice);
         authenticateBtn?.addEventListener('click', handleAuthenticate);
         deployAllBtn?.addEventListener('click', handleDeployAll);
-        
-        const handleKeypress = (e: KeyboardEvent) => {
-            if (e.key === 'Enter') {
-                handleSendMessage();
-            }
-        };
         messageInputEl?.addEventListener('keypress', handleKeypress);
 
         setTimeout(() => addMessage('Sistema: Portal da Fundação Alquimista inicializado. Aguardando comandos.', 'system'), 500);
@@ -138,7 +98,7 @@ const Module29PortalPage: React.FC = () => {
             authenticateBtn?.removeEventListener('click', handleAuthenticate);
             deployAllBtn?.removeEventListener('click', handleDeployAll);
         };
-    }, []);
+    }, [toast]); // Added toast to dependency array
 
   return (
     <>
@@ -665,5 +625,3 @@ const Module29PortalPage: React.FC = () => {
 };
 
 export default Module29PortalPage;
-
-    
