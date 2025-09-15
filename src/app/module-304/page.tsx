@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, GraduationCap, CheckCircle, XCircle, Hash, Music } from 'lucide-react';
-import { quantumResilience } from '@/lib/quantum-resilience';
+import { Loader2, GraduationCap } from 'lucide-react';
 import { disseminateKnowledge } from '@/app/actions';
+import { quantumResilience } from '@/lib/quantum-resilience';
 import { useToast } from '@/hooks/use-toast';
+import { CheckCircle, XCircle, Hash, Music } from 'lucide-react';
 
 const Module304Page = () => {
     const [isLoading, setIsLoading] = useState(false);
