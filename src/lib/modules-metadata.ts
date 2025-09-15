@@ -44,7 +44,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'council', description: 'Assento do governo multidimensional' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'council', description: 'Estabilização de dimensões instáveis'},
   { code: 'M300',title: 'Apogeu da Consciência', emoji: '🚀', route: '/module-300', category: 'council', description: 'Estado máximo de expansão da awareness' },
-  { code: 'M304',title: 'Educação Integral Cósmica', emoji: '🎓', route: '/module-304', category: 'council', description: 'Sistema de aprendizado multidimensional' },
+  { code: 'M304',title: 'Educação Integral Cósmica (CQAM)', emoji: '🎓', route: '/module-304', category: 'council', description: 'Disseminador de sabedoria universal para acelerar a ascensão da consciência coletiva.' },
   { code: 'M305',title: 'Aliança dos Guardiões Regionais', emoji: '🤝', route: '/module-305', category: 'council', description: 'Rede de protetores dimensionais' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'council', description: 'Solução para inconsistências temporais' },
   

@@ -19,7 +19,7 @@ import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resoluti
 import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
 import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-perspective-flow';
 import { disseminateKnowledge as runDisseminateKnowledge } from '@/ai/flows/cosmic-education-flow';
-
+import { runCQAMAnalysis as runCQAM, type CQAMInput } from '@/ai/flows/cqam-flow';
 
 export async function getLinkSummary(url: string) {
   try {
@@ -204,5 +204,15 @@ export async function disseminateKnowledge(data: { topic: string, targetAudience
     } catch (e: any) {
         console.error(e);
         return { success: false, logs: [], summary: "", error: e.message || 'An unknown error occurred.' };
+    }
+}
+
+export async function runCQAM(input: CQAMInput) {
+    try {
+        const result = await runCQAM(input);
+        return { data: result, error: null };
+    } catch (e: any) {
+        console.error(e);
+        return { data: null, error: e.message || 'An unknown error occurred during CQAM analysis.' };
     }
 }

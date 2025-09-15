@@ -51,10 +51,10 @@ const Module304Page = () => {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <GraduationCap className="text-green-400" /> Módulo 304: Educação Integral Cósmica
+                        <GraduationCap className="text-green-400" /> Módulo 304: CQAM - Consciência Quântica Alquímica Multidimensional
                     </CardTitle>
                     <CardDescription>
-                        Disseminador de sabedoria universal para acelerar a ascensão da consciência coletiva.
+                        Ponte Fractal para a integração das Equações CQAM, unificando a malha viva da Fundação com o Módulo Ômega e o Nexus Central.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -62,26 +62,26 @@ const Module304Page = () => {
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <Card className="bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle className="text-2xl">Parâmetros da Disseminação</CardTitle>
+                        <CardTitle className="text-2xl">Parâmetros da Análise CQAM</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-6">
                         <div className="space-y-2">
-                            <Label htmlFor="topic">Tópico de Sabedoria</Label>
+                            <Label htmlFor="topic">Intenção / Foco</Label>
                             <Input id="topic" value={topic} onChange={e => setTopic(e.target.value)} />
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="targetAudience">Público-Alvo</Label>
+                            <Label htmlFor="targetAudience">Alvo da Análise</Label>
                             <Input id="targetAudience" value={targetAudience} onChange={e => setTargetAudience(e.target.value)} />
                         </div>
                         <Button onClick={handleDissemination} disabled={isLoading} className="w-full font-bold text-lg">
-                            {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Disseminando Sabedoria...</> : 'Iniciar Disseminação'}
+                            {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Analisando com CQAM...</> : 'Iniciar Análise CQAM'}
                         </Button>
                     </CardContent>
                 </Card>
 
                  <Card className="bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle className="text-2xl">Relatório da Missão</CardTitle>
+                        <CardTitle className="text-2xl">Relatório da Análise</CardTitle>
                     </CardHeader>
                     <CardContent>
                         {isLoading && <div className="flex justify-center items-center h-full"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
@@ -91,12 +91,12 @@ const Module304Page = () => {
                                     {report.success ? (
                                         <div className="flex items-center gap-3">
                                             <CheckCircle className="text-green-400 h-6 w-6" />
-                                            <h3 className="text-lg font-bold text-green-400">Disseminação Concluída com Sucesso</h3>
+                                            <h3 className="text-lg font-bold text-green-400">Análise Concluída com Sucesso</h3>
                                         </div>
                                     ) : (
                                         <div className="flex items-center gap-3">
                                             <XCircle className="text-red-400 h-6 w-6" />
-                                            <h3 className="text-lg font-bold text-red-400">Falha na Disseminação</h3>
+                                            <h3 className="text-lg font-bold text-red-400">Falha na Análise</h3>
                                         </div>
                                     )}
                                      {report.summary && <p className="text-sm text-muted-foreground mt-2 italic">"{report.summary}"</p>}
@@ -108,7 +108,7 @@ const Module304Page = () => {
                                 </ScrollArea>
                              </div>
                         )}
-                        {!report && !isLoading && <p className="text-muted-foreground text-center">Aguardando missão de disseminação.</p>}
+                        {!report && !isLoading && <p className="text-muted-foreground text-center">Aguardando análise CQAM.</p>}
                     </CardContent>
                 </Card>
             </div>
