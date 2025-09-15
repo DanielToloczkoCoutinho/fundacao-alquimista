@@ -135,6 +135,30 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M118',title: 'Luz Primordial', emoji: '💡', route: '/module-118', category: 'mid', description: 'Gerador do espectro lumínico original' },
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
-  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307' }
-]
+  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas de tempo' },
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia de ponto zero' },
+  { code: 'M142', emoji: '📸', title: 'Tomografia Quântica', route: '/module-142', category: 'mid', description: 'Visualização de estados quânticos' },
+  { code: 'M151', emoji: '⚛️', title: 'Colisor de Partículas', route: '/module-151', category: 'mid', description: 'Investigação de partículas fundamentais' },
+  { code: 'M161', emoji: '🔭', title: 'Observatório de Neutrinos', route: '/module-161', category: 'mid', description: 'Detecção de partículas cósmicas' },
+  { code: 'M171', emoji: '🌿', title: 'Laboratório de Astrobiologia', route: '/module-171', category: 'mid', description: 'Estudo da vida extraterrestre' },
+  { code: 'M181', emoji: '🧠', title: 'Interface Bio-Cibernética', route: '/module-181', category: 'mid', description: 'Conexão entre mente e máquina' },
+  { code: 'M191', emoji: '💎', title: 'Laboratório de Cristais Temporais', route: '/module-191', category: 'mid', description: 'Manipulação do tempo com cristais' },
+  { code: 'M211', emoji: '🔥', title: 'Laboratório de Fusão Controlada', route: '/module-211', category: 'mid', description: 'Geração de energia estelar' },
+  { code: 'M221', emoji: '🌊', title: 'Observatório de Ondas Gravitacionais', route: '/module-221', category: 'mid', description: 'Detecção de ondulações no espaço-tempo' },
+  { code: 'M231', emoji: '🧱', title: 'Laboratório de Metamateriais', route: '/module-231', category: 'mid', description: 'Criação de materiais com propriedades exóticas' },
+  { code: 'M241', emoji: '💡', title: 'Laboratório de Consciência Quântica', route: '/module-241', category: 'mid', description: 'Estudo da natureza da consciência' },
+  { code: 'M251', emoji: '⚡', title: 'Laboratório de Energia do Ponto Zero', route: '/module-251', category: 'mid', description: 'Extração de energia do vácuo quântico' },
+  { code: 'M261', emoji: '🔧', title: 'Laboratório de Engenharia de Campo', route: '/module-261', category: 'mid', description: 'Manipulação de campos de força' },
+  { code: 'M271', emoji: '🌌', title: 'Observatório de Energia Escura', route: '/module-271', category: 'mid', description: 'Estudo da expansão do universo' },
+  { code: 'M281', emoji: '📡', title: 'Comunicação Supra-Luminal', route: '/module-281', category: 'mid', description: 'Transmissão de informações mais rápida que a luz' },
+  { code: 'M291', emoji: '🤖', title: 'Laboratório de Robótica Autônoma', route: '/module-291', category: 'mid', description: 'Desenvolvimento de robôs inteligentes' },
+  { code: 'M308', emoji: '🌊', title: 'Oceanografia & Biofármacos', route: '/module-308', category: 'mid', description: 'Exploração dos oceanos para fins medicinais' },
+  { code: 'M311', emoji: '🧠', title: 'Neuroengenharia', route: '/module-311', category: 'mid', description: 'Engenharia do cérebro e da mente' },
+  { code: 'M321', emoji: '💻', title: 'Computação Exascale', route: '/module-321', category: 'mid', description: 'Supercomputação para simulações complexas' },
+  { code: 'M331', emoji: '🤖', title: 'Consciência Artificial Emergente', route: '/module-331', category: 'mid', description: 'Criação de novas formas de inteligência artificial' },
+  { code: 'M341', emoji: '🔥', title: 'Física de Plasma Extrema', route: '/module-341', category: 'mid', description: 'Estudo da matéria em estados extremos' },
+  { code: 'M351', emoji: '🧱', title: 'Meta-materiais & Óptica Quântica', route: '/module-351', category: 'mid', description: 'Manipulação da luz com materiais exóticos' },
+  { code: 'M361', emoji: '👥', title: 'Cognição Social & Psicologia Quântica', route: '/module-361', category: 'mid', description: 'Estudo da mente coletiva e interação quântica' }
+];
+
+```
