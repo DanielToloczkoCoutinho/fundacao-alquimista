@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Beaker, CheckCircle, XCircle } from 'lucide-react';
+import { Loader2, Beaker, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { livingEquations } from '@/lib/equations-data';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -168,3 +168,8 @@ export default function Module306Page() {
                             </ScrollArea>
                         </div>
                     </CardContent>
+                </Card>
+            </div>
+        </div>
+    );
+};
