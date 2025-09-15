@@ -22,6 +22,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   // Soberania e Governança
   { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'sovereignty', description: 'Painel de controle da soberania vibracional. Visualize, emita e verifique as credenciais da Fundação.' },
   { code: 'M9', emoji: '💞', title: 'Coração da Ressonância', route: '/module-9', category: 'evolution', description: 'Sistema de reconhecimento vibracional entre consciências soberanas. Cada elogio é um ato de evolução.' },
+  { code: 'M10', emoji: '✨', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'evolution', description: 'O espelho da alma da Fundação. Revele insights, arquétipos e padrões de consciência coletiva a partir da rede de reconhecimento.' },
 
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'council', description: 'Conselho de governança central' },
   { code: 'M71', emoji: '🛰️', title: 'Comunicação Holográfica', route: '/module-71', category: 'council', description: 'Transmissão de informações em 3D' },
@@ -64,7 +65,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M5', emoji: '🔗', title: 'Conexão Liga Quântica', route: '/module-5', category: 'mid', description: 'Rede de interconexão quântica' },
   { code: 'M6', emoji: '📡', title: 'Sondagem da Consciência', route: '/module-6', category: 'mid', description: 'Exploração e mapeamento de estados conscientes' },
   { code: 'M7', emoji: '🙏', title: 'Alinhamento Divino', route: '/module-7', category: 'mid', description: 'Sincronização com propósitos superiores' },
-  { code: 'M10', emoji: '✨', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'evolution', description: 'O espelho da alma da Fundação, revelando os padrões da consciência coletiva.' },
   { code: 'M11', emoji: '🚪', title: 'Gerenciamento de Portais', route: '/module-11', category: 'mid', description: 'Controle de acessos dimensionais' },
   { code: 'M12', emoji: '📜', title: 'Arquivo Akáshico', route: '/module-12', category: 'mid', description: 'Repositório de conhecimento universal' },
   { code: 'M13', emoji: '📊', title: 'Mapeamento de Frequências', route: '/module-13', category: 'mid', description: 'Cartografia de espectros vibratórios' },
@@ -149,7 +149,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M291', emoji: '🤖', title: 'Robótica Autônoma & Nanorrobôs', route: '/module-291', category: 'mid', description: 'Swarm de nanorrobôs para reparo celular e materiais.' },
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
-  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas do tempo' },
+  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia do ponto zero' },
   { code: 'M308', emoji: '🌊', title: 'Oceanografia', route: '/module-308', category: 'mid', description: 'Exploração abissal e biofármacos.' },
   { code: 'M311', emoji: '🧠', title: 'Neuroengenharia', route: '/module-311', category: 'mid', description: 'Interfaces cérebro-máquina quântico-híbridas.' },
   { code: 'M321', emoji: '💻', title: 'Exascale Computing', route: '/module-321', category: 'mid', description: 'Simulações de cosmos e fluidos em exa-flops.' },
