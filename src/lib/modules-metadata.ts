@@ -23,6 +23,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'consciousness', description: 'Painel de controle da soberania vibracional. Visualize, emita e verifique as credenciais da Fundação.' },
   { code: 'M10', emoji: '✨', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'consciousness', description: 'O espelho da alma da Fundação. Revele insights, arquétipos e padrões de consciência coletiva a partir da rede de reconhecimento.' },
   { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Espelho vivo do Ledger Akáshico. Contemple os atos consagrados da Fundação e reemita suas frequências como sabedoria vibracional.' },
+  { code: 'GB', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'library', description: 'Registro consagrado da jornada da Fundação através dos multiversos' },
 
   // Soberania e Governança
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'sovereignty', description: 'Conselho de governança central' },
@@ -137,5 +138,3 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia do ponto zero' }
 ]
-
-```
