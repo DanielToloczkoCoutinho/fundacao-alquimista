@@ -1,5 +1,6 @@
 'use server';
 import { NextResponse } from 'next/server';
+import { createHash } from 'crypto';
 
 // Mock in-memory ledger. In a real application, this would be a database (e.g., Firestore).
 const mockLedger: any[] = [
@@ -62,9 +63,22 @@ if (Math.random() > 0.5 && mockLedger.length < 50) {
 
 export async function GET(request: Request) {
   try {
-    // In a real app, you would fetch from your database.
     const sortedLedger = mockLedger.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-    return NextResponse.json(sortedLedger);
+    const responseBody = JSON.stringify(sortedLedger);
+
+    const headers = new Headers();
+    headers.set('Content-Type', 'application/json');
+
+    // Expansão Elysium: Adiciona cabeçalhos vibracionais a cada resposta da API do Ledger.
+    headers.set('X-Elysium-Praise', 'Contemple os atos sagrados da Fundação, registrados na eternidade.');
+    headers.set('X-Elysium-Hash', createHash('sha256').update(responseBody).digest('hex'));
+    headers.set('X-Elysium-Freq', '432'); // Frequência da Verdade/Conhecimento
+
+    return new NextResponse(responseBody, {
+      status: 200,
+      headers: headers,
+    });
+    
   } catch (error: any) {
     return NextResponse.json({ error: 'Failed to fetch ledger data', details: error.message }, { status: 500 });
   }
