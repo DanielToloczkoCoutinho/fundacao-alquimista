@@ -5,6 +5,7 @@ import { Card, CardHeader, CardContent, CardTitle, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { AlertTriangle } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import SuspenseFallback from '@/components/ui/suspense-fallback';
 
 export default function NotFound() {
   const [isClient, setIsClient] = useState(false);
@@ -14,7 +15,8 @@ export default function NotFound() {
   }, []);
 
   if (!isClient) {
-    return null; // Render nothing on the server to avoid mismatch
+    // Retorna um fallback estático ou nulo no servidor para garantir a correspondência.
+    return <SuspenseFallback />;
   }
   
   return (

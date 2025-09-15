@@ -36,6 +36,8 @@ export default function ConsolePage() {
   }, []); // Executa apenas uma vez no cliente
   
   if (!isClient) {
+    // Retorna null no servidor para evitar qualquer renderização que cause erro de hidratação.
+    // O conteúdo real será renderizado apenas no cliente após a montagem.
     return null;
   }
 
