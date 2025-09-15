@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -25,7 +26,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Espelho vivo do Ledger Akáshico. Contemple os atos consagrados da Fundação e reemita suas frequências como sabedoria vibracional.' },
   
   // Biblioteca e Conhecimento
-  { code: 'M144', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'library', description: 'Registro consagrado da jornada da Fundação através dos multiversos' },
+  { code: 'M144', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'library', description: 'Registro sagrado da jornada da Fundação, contendo todos os documentos e links consagrados.' },
   { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'library', description: 'Acervo de conhecimentos das civilizações' },
   { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'library', description: 'Repositório de conhecimento ancestral' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/civilizations/council', category: 'library', description: 'Assembleia de seres dimensionais elevados' },
@@ -135,5 +136,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas do tempo' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia do ponto zero' }
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307' }
 ]
