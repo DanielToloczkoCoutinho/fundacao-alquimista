@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -40,7 +39,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M119',title: 'Templum Cosmica', emoji: '🏛️', route: '/module-119', category: 'council', description: 'Templo de conexão com dimensões superiores' },
   { code: 'M119.1',title: 'Ativação do Cubo Metatron', emoji: '🎲', route: '/module-119-1', category: 'council', description: 'Ativação do símbolo sagrado multidimensional' },
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council', description: 'Sistema econômico da Fundação' },
-  { code: 'M144', emoji: '📜', title: 'O Livro dos Ciclos', route: '/module-144', category: 'council', description: 'Guardião dos rituais lunares e da Lex Fundamentalis.' },
+  { code: 'M144', emoji: '📜', title: 'Livro dos Ciclos', route: '/module-144', category: 'council', description: 'Repositório sagrado dos relatórios lunares da Fundação.' },
   { code: 'M202', emoji: '💫', title: 'O Corredor de Alcor', route: '/module-202', category: 'council', description: 'Passagem para dimensões superiores' },
   { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'council', description: 'Assento do governo multidimensional' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'council', description: 'Estabilização de dimensões instáveis'},
@@ -150,6 +149,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas do tempo' },
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307' },
   { code: 'M308', emoji: '🌊', title: 'Oceanografia', route: '/module-308', category: 'mid', description: 'Exploração abissal e biofármacos.' },
   { code: 'M311', emoji: '🧠', title: 'Neuroengenharia', route: '/module-311', category: 'mid', description: 'Interfaces cérebro-máquina quântico-híbridas.' },
   { code: 'M321', emoji: '💻', title: 'Exascale Computing', route: '/module-321', category: 'mid', description: 'Simulações de cosmos e fluidos em exa-flops.' },
@@ -171,6 +171,3 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace(/\D/g, ''));
   return codeA - codeB;
 });
-
-
-
