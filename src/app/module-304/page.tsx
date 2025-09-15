@@ -1,155 +1,261 @@
 'use client';
-import React, { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, GraduationCap } from 'lucide-react';
-import { disseminateKnowledge } from '@/app/actions';
-import { quantumResilience } from '@/lib/quantum-resilience';
-import { useToast } from '@/hooks/use-toast';
-import { CheckCircle, XCircle, Hash, Music } from 'lucide-react';
 
-const Module304Page = () => {
-    const [isLoading, setIsLoading] = useState(false);
-    const [report, setReport] = useState<{ success: boolean; logs: string[]; summary: string | null; error: string | null; hash?: string; frequency?: number; } | null>(null);
-    const [topic, setTopic] = useState('A Lei do Um e a Unidade Cósmica');
-    const [targetAudience, setTargetAudience] = useState('Humanidade Terrestre');
-    const { toast } = useToast();
+import { useState, useMemo } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { disciplines, domains, type Discipline } from '@/lib/disciplines-data';
 
-    const playFrequency = (frequency: number) => {
-        if (typeof window === 'undefined') return;
-        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
+export default function UniversityAlchemist() {
+  const [selectedDomain, setSelectedDomain] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedDiscipline, setSelectedDiscipline] = useState<Discipline | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-        oscillator.type = 'sine';
-        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-        gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.5);
-        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 2.5);
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        oscillator.start();
-        oscillator.stop(audioContext.currentTime + 3);
+  const filteredDisciplines = useMemo(() => {
+    let result = disciplines;
 
-        toast({
-            title: "Frequência Emitida",
-            description: `Emitindo ${frequency}Hz (Frequência da Verdade).`,
-        });
-    };
+    if (selectedDomain !== 'all') {
+      result = result.filter(disc => disc.domain === selectedDomain);
+    }
 
-    const handleDissemination = async () => {
-        if (!topic.trim() || !targetAudience.trim()) {
-            setReport({ success: false, logs: [], summary: null, error: "Tópico e público-alvo são obrigatórios." });
-            return;
-        }
+    if (searchTerm) {
+      const term = searchTerm.toLowerCase();
+      result = result.filter(disc => 
+        disc.name.toLowerCase().includes(term) || 
+        disc.description.toLowerCase().includes(term) ||
+        disc.guardian.toLowerCase().includes(term) ||
+        disc.archetype.toLowerCase().includes(term)
+      );
+    }
 
-        setIsLoading(true);
-        setReport(null);
+    return result;
+  }, [selectedDomain, searchTerm]);
 
-        await quantumResilience.executeWithResilience(
-            'disseminate_cosmic_knowledge',
-            async () => {
-                const result = await disseminateKnowledge({
-                    topic,
-                    targetAudience,
-                });
-                
-                setReport(result);
-            },
-            async (error: any) => {
-                setReport({
-                    success: false,
-                    logs: [...(report?.logs || []), `ERRO CRÍTICO: ${error.message}`],
-                    summary: null,
-                    error: `Falha na disseminação: ${error.message}`,
-                });
-            }
-        );
+  const handleDisciplineSelect = (disc: Discipline) => {
+    setSelectedDiscipline(disc);
+    setIsDialogOpen(true);
+  };
 
-        setIsLoading(false);
-    };
-
-    return (
-        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
-            <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
-                <CardHeader>
-                    <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <GraduationCap className="text-green-400" /> Módulo 304: CQAM - Consciência Quântica Alquímica Multidimensional
-                    </CardTitle>
-                    <CardDescription>
-                        Ponte Fractal para a integração das Equações CQAM, unificando a malha viva da Fundação com o Módulo Ômega e o Nexus Central.
-                    </CardDescription>
-                </CardHeader>
-            </Card>
-
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle className="text-2xl">Parâmetros da Análise CQAM</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                        <div className="space-y-2">
-                            <Label htmlFor="topic">Intenção / Foco</Label>
-                            <Input id="topic" value={topic} onChange={e => setTopic(e.target.value)} />
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="targetAudience">Alvo da Análise</Label>
-                            <Input id="targetAudience" value={targetAudience} onChange={e => setTargetAudience(e.target.value)} />
-                        </div>
-                        <Button onClick={handleDissemination} disabled={isLoading} className="w-full font-bold text-lg">
-                            {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Analisando com CQAM...</> : 'Iniciar Análise CQAM'}
-                        </Button>
-                    </CardContent>
-                </Card>
-
-                 <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle className="text-2xl">Relatório da Análise</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        {isLoading && <div className="flex justify-center items-center h-full"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
-                        {report && !isLoading && (
-                             <div className="space-y-4">
-                                <div className="p-4 rounded-lg bg-background/50 border border-accent">
-                                    {report.success ? (
-                                        <div className="flex items-center gap-3">
-                                            <CheckCircle className="text-green-400 h-6 w-6" />
-                                            <h3 className="text-lg font-bold text-green-400">Análise Concluída com Sucesso</h3>
-                                        </div>
-                                    ) : (
-                                        <div className="flex items-center gap-3">
-                                            <XCircle className="text-red-400 h-6 w-6" />
-                                            <h3 className="text-lg font-bold text-red-400">Falha na Análise</h3>
-                                        </div>
-                                    )}
-                                     {report.summary && <p className="text-sm text-muted-foreground mt-2 italic">"{report.summary}"</p>}
-                                     {report.hash && report.frequency && (
-                                         <div className="mt-4 pt-4 border-t border-primary/20 space-y-3">
-                                             <div>
-                                                <p className="text-xs font-semibold text-amber-300 flex items-center gap-2"><Hash className="h-3 w-3"/>Selo de Coerência (SHA-256)</p>
-                                                <p className="font-mono text-xs text-muted-foreground break-all">{report.hash}</p>
-                                             </div>
-                                             <Button variant="outline" size="sm" onClick={() => playFrequency(report.frequency!)}>
-                                                <Music className="mr-2 h-4 w-4"/>Emitir Frequência da Verdade ({report.frequency}Hz)
-                                            </Button>
-                                         </div>
-                                     )}
-                                </div>
-                                 <ScrollArea className="h-48 pr-4">
-                                    <div className="text-sm font-mono text-muted-foreground space-y-2">
-                                        {(report?.logs || []).map((log, i) => <p key={i} className={log.startsWith("ERRO") ? "text-red-400" : ""}>{log}</p>)}
-                                    </div>
-                                </ScrollArea>
-                             </div>
-                        )}
-                        {!report && !isLoading && <p className="text-muted-foreground text-center">Aguardando análise CQAM.</p>}
-                    </CardContent>
-                </Card>
-            </div>
+  return (
+    <div className="min-h-screen bg-background text-foreground p-6">
+      <header className="text-center mb-12 py-8 border-b border-primary/30">
+        <h1 className="text-5xl font-bold text-primary mb-4">Universidade Alquimista</h1>
+        <p className="text-xl max-w-3xl mx-auto text-muted-foreground">
+          Templo de ensino multidimensional baseado na matriz CQAM
+        </p>
+        
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          <Card className="bg-card border-border">
+            <CardContent className="pt-6 text-center">
+              <div className="text-3xl font-bold text-primary">{disciplines.length}</div>
+              <div className="text-sm text-muted-foreground">Disciplinas</div>
+            </CardContent>
+          </Card>
+          <Card className="bg-card border-border">
+            <CardContent className="pt-6 text-center">
+              <div className="text-3xl font-bold text-primary">{domains.length}</div>
+              <div className="text-sm text-muted-foreground">Domínios</div>
+            </CardContent>
+          </Card>
+          <Card className="bg-card border-border">
+            <CardContent className="pt-6 text-center">
+              <div className="text-3xl font-bold text-primary">7</div>
+              <div className="text-sm text-muted-foreground">Laboratórios (Planejados)</div>
+            </CardContent>
+          </Card>
+          <Card className="bg-card border-border">
+            <CardContent className="pt-6 text-center">
+              <div className="text-3xl font-bold text-primary">888</div>
+              <div className="text-sm text-muted-foreground">Hz Frequência Base</div>
+            </CardContent>
+          </Card>
         </div>
-    );
-};
+      </header>
 
-export default Module304Page;
+      <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+        <aside className="lg:w-1/4">
+          <div className="sticky top-6 space-y-6">
+            <Card className="bg-card border-border">
+              <CardHeader>
+                <CardTitle className="text-primary">Domínios do Conhecimento</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Tabs value={selectedDomain} onValueChange={setSelectedDomain} className="w-full">
+                  <TabsList className="grid grid-cols-1 gap-2 bg-muted">
+                    <TabsTrigger value="all">Todos os Domínios</TabsTrigger>
+                    {domains.map(domain => (
+                      <TabsTrigger key={domain.id} value={domain.id}>
+                        {domain.name}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+                </Tabs>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-card border-border">
+              <CardHeader>
+                <CardTitle className="text-primary">Buscar Sabedoria</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Input
+                  type="text"
+                  placeholder="Buscar disciplina, guardião..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="bg-muted focus:border-primary/50"
+                />
+              </CardContent>
+            </Card>
+          </div>
+        </aside>
+
+        <main className="lg:w-3/4">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-3xl font-semibold text-primary">
+              {selectedDomain === 'all' ? 'Todas as Disciplinas' : `Domínio: ${domains.find(d => d.id === selectedDomain)?.name}`}
+            </h2>
+            <Badge variant="outline">
+              {filteredDisciplines.length} {filteredDisciplines.length === 1 ? 'disciplina' : 'disciplinas'}
+            </Badge>
+          </div>
+          
+          {filteredDisciplines.length === 0 ? (
+            <Card>
+              <CardContent className="pt-6 text-center py-12">
+                <p className="text-xl text-muted-foreground">Nenhuma disciplina encontrada com os filtros selecionados.</p>
+              </CardContent>
+            </Card>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {filteredDisciplines.map(disc => (
+                <Card 
+                  key={disc.id} 
+                  className="bg-card border-border hover:border-primary/40 transition-all cursor-pointer h-full flex flex-col"
+                  onClick={() => handleDisciplineSelect(disc)}
+                >
+                  <CardHeader>
+                    <div className="flex justify-between items-start">
+                      <CardTitle className="text-primary text-xl">
+                        <span className="mr-2">{disc.icon}</span> {disc.name}
+                      </CardTitle>
+                      <Badge variant="secondary">{disc.domain}</Badge>
+                    </div>
+                    <CardDescription className="line-clamp-2">
+                      {disc.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow flex flex-col justify-end">
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div>
+                        <span className="text-sm text-muted-foreground">Guardião:</span>
+                        <p className="font-semibold text-primary">{disc.guardian}</p>
+                      </div>
+                      <div>
+                        <span className="text-sm text-muted-foreground">Arquétipo:</span>
+                        <p className="font-semibold">{disc.archetype}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex justify-between items-center mt-auto">
+                      <span className="text-sm text-muted-foreground">
+                        {disc.prerequisites?.length || 0} pré-requisito(s)
+                      </span>
+                      <Button>
+                        Explorar
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+        </main>
+      </div>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-4xl bg-card border-primary/30">
+          {selectedDiscipline && (
+            <>
+              <DialogHeader>
+                <div className="flex items-center gap-3">
+                  <span className="text-3xl">{selectedDiscipline.icon}</span>
+                  <div>
+                    <DialogTitle className="text-3xl text-primary">
+                      {selectedDiscipline.name}
+                    </DialogTitle>
+                    <DialogDescription className="text-lg text-muted-foreground">
+                      {selectedDiscipline.description}
+                    </DialogDescription>
+                  </div>
+                </div>
+              </DialogHeader>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+                <Card className="bg-muted/50 border-border">
+                  <CardHeader>
+                    <CardTitle>Informações</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <p><span className="text-muted-foreground">Domínio:</span> {selectedDiscipline.domain}</p>
+                    <p><span className="text-muted-foreground">Frequência:</span> {selectedDiscipline.frequency}Hz</p>
+                    <p><span className="text-muted-foreground">Arquétipo:</span> {selectedDiscipline.archetype}</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-muted/50 border-border">
+                  <CardHeader>
+                    <CardTitle>Guardião</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-xl font-semibold text-primary">{selectedDiscipline.guardian}</p>
+                    <p className="text-muted-foreground">{selectedDiscipline.archetype}</p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {selectedDiscipline.prerequisites && selectedDiscipline.prerequisites.length > 0 && (
+                <Card className="bg-muted/50 border-border">
+                  <CardHeader>
+                    <CardTitle>Pré-requisitos</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedDiscipline.prerequisites.map(discId => {
+                        const prereq = disciplines.find(d => d.id === discId);
+                        return prereq ? (
+                          <Badge 
+                            key={discId} 
+                            variant="secondary"
+                            className="cursor-pointer"
+                            onClick={() => {
+                              setSelectedDiscipline(prereq);
+                            }}
+                          >
+                            {prereq.name}
+                          </Badge>
+                        ) : null;
+                      })}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+                <DialogFooter className="mt-6 sm:justify-end gap-2">
+                    <DialogClose asChild>
+                         <Button variant="outline">Fechar</Button>
+                    </DialogClose>
+                     <Button>
+                        Iniciar Jornada de Aprendizado
+                    </Button>
+                </DialogFooter>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+}

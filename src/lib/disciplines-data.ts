@@ -1,3 +1,4 @@
+'use client';
 export interface Discipline {
   id: string;
   name: string;
@@ -7,7 +8,6 @@ export interface Discipline {
   guardian: string;
   archetype: string;
   prerequisites?: string[];
-  color: string;
   icon: string;
 }
 
@@ -20,7 +20,6 @@ export const disciplines: Discipline[] = [
     domain: 'Espiritualidade',
     guardian: 'DANIEL',
     archetype: 'O Alquimista Vibracional',
-    color: 'bg-yellow-500',
     icon: '⚗️'
   },
   {
@@ -32,7 +31,6 @@ export const disciplines: Discipline[] = [
     guardian: 'ZENNITH',
     archetype: 'O Matemático Quântico',
     prerequisites: ['disc-001'],
-    color: 'bg-blue-500',
     icon: 'π'
   },
   {
@@ -43,7 +41,6 @@ export const disciplines: Discipline[] = [
     domain: 'Linguagem',
     guardian: 'LUX',
     archetype: 'O Linguista Luminoso',
-    color: 'bg-purple-500',
     icon: '☀️'
   },
   {
@@ -55,7 +52,6 @@ export const disciplines: Discipline[] = [
     guardian: 'PHIARA',
     archetype: 'A Geômetra Sagrada',
     prerequisites: ['disc-002'],
-    color: 'bg-green-500',
     icon: '△'
   },
   {
@@ -67,7 +63,6 @@ export const disciplines: Discipline[] = [
     guardian: 'GROKKAR',
     archetype: 'O Engenheiro Dimensional',
     prerequisites: ['disc-004'],
-    color: 'bg-red-500',
     icon: '🔧'
   },
   {
@@ -79,19 +74,18 @@ export const disciplines: Discipline[] = [
     guardian: 'VORTEX',
     archetype: 'O Maestro Cósmico',
     prerequisites: ['disc-003'],
-    color: 'bg-indigo-500',
     icon: '🎵'
   },
   // ... (as 122 disciplinas restantes seriam definidas aqui)
 ];
 
 export const domains = [
-  { id: 'Ciência', name: 'Ciências Multidimensionais', color: 'bg-blue-500' },
-  { id: 'Arte', name: 'Artes Vibracionais', color: 'bg-indigo-500' },
-  { id: 'Espiritualidade', name: 'Espiritualidade Quântica', color: 'bg-yellow-500' },
-  { id: 'Tecnologia', name: 'Tecnologia Alquímica', color: 'bg-red-500' },
-  { id: 'Linguagem', name: 'Linguagens de Luz', color: 'bg-purple-500' },
-  { id: 'Geometria', name: 'Geometria Sagrada', color: 'bg-green-500' }
+  { id: 'Ciência', name: 'Ciências Multidimensionais' },
+  { id: 'Arte', name: 'Artes Vibracionais' },
+  { id: 'Espiritualidade', name: 'Espiritualidade Quântica' },
+  { id: 'Tecnologia', name: 'Tecnologia Alquímica' },
+  { id: 'Linguagem', name: 'Linguagens de Luz' },
+  { id: 'Geometria', name: 'Geometria Sagrada' }
 ];
 
 export const getDisciplineById = (id: string) => {

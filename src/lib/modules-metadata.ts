@@ -53,7 +53,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'sovereignty', description: 'Assento do governo multidimensional' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'sovereignty', description: 'Estabilização de dimensões instáveis'},
   { code: 'M300',title: 'Apogeu da Consciência', emoji: '🚀', route: '/module-300', category: 'sovereignty', description: 'Estado máximo de expansão da awareness' },
-  { code: 'M304',title: 'Universidade Alquimista (CQAM)', emoji: '🎓', route: '/module-304', category: 'sovereignty', description: 'Disseminador de sabedoria universal.' },
+  { code: 'M304',title: 'Universidade Alquimista', emoji: '🎓', route: '/module-304', category: 'sovereignty', description: 'Templo de ensino multidimensional baseado na matriz CQAM.' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'sovereignty', description: 'Solução para inconsistências temporais' },
   
   // Módulos de Expansão (Mid)
