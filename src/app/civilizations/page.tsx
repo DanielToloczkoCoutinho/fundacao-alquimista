@@ -10,6 +10,7 @@ import { civilizationsData, type Civilization, type CivilizationCategory } from 
 import { Search, Users2, Star, Globe, Footprints, Dna, Bot, Waves, GitBranch, MessageCircle, Languages, Link as LinkIcon, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 const categoryIcons: { [key in CivilizationCategory]: React.ReactNode } = {
   "Estelares e Galácticas": <Star className="h-5 w-5" />,
@@ -61,6 +62,11 @@ export default function CivilizationsPage() {
             Um repositório vivo de sabedoria, história e cultura que honra cada linhagem estelar e terrestre.
           </CardDescription>
         </CardHeader>
+        <CardContent>
+          <Button asChild>
+            <Link href="/civilizations/council">Acessar o Conselho Cósmico</Link>
+          </Button>
+        </CardContent>
       </Card>
       
        <div className="w-full max-w-4xl mx-auto mb-8">
@@ -138,4 +144,3 @@ export default function CivilizationsPage() {
     </div>
   );
 }
-

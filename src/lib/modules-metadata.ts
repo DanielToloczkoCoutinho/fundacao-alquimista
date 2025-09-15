@@ -47,11 +47,11 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M304',title: 'Educação Integral Cósmica', emoji: '🎓', route: '/module-304', category: 'council', description: 'Sistema de aprendizado multidimensional' },
   { code: 'M305',title: 'Aliança dos Guardiões Regionais', emoji: '🤝', route: '/module-305', category: 'council', description: 'Rede de protetores dimensionais' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'council', description: 'Solução para inconsistências temporais' },
-  { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/module-600', category: 'council', description: 'Assembleia de seres dimensionais elevados' },
-
+  
   // Biblioteca e Conhecimento
   { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'library', description: 'Acervo de conhecimentos das civilizações' },
   { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'library', description: 'Repositório de conhecimento ancestral' },
+  { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/civilizations/council', category: 'library', description: 'Assembleia de seres dimensionais elevados' },
 
   // Módulos de Expansão (Mid)
   { code: 'CONN', emoji: '⚡', title: 'Caixa de Luz', route: '/connection', category: 'mid', description: 'Dispositivo de conexão energética' },
