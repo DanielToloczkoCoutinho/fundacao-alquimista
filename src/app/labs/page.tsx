@@ -1,68 +1,96 @@
 
 'use client';
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { scientists, Scientist } from '@/lib/scientists-data';
+import { scientists } from '@/lib/scientists-data';
 import Link from 'next/link';
-import { FlaskConical, Search } from 'lucide-react';
-import { ScrollArea } from '@/components/ui/scroll-area';
+import { FlaskConical, Search, Star, Orbit, LifeBuoy, BrainCircuit, Play, Route } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+const ScientistCard = ({ id, name, field }: { id: string, name: string, field: string }) => (
+    <Link href={`/labs/${id}`} passHref>
+        <Card className="h-full hover:bg-primary/20 hover:border-accent transition-all cursor-pointer flex flex-col justify-between">
+            <CardHeader>
+                <CardTitle className="text-lg text-primary-foreground">{name}</CardTitle>
+                <CardDescription>{field}</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <span className="text-xs text-muted-foreground">Acessar Santuário</span>
+            </CardContent>
+        </Card>
+    </Link>
+);
+
+const JourneyStep = ({ scientistId, icon, description }: { scientistId: string, icon: React.ReactNode, description: string }) => {
+    const scientist = scientists.find(s => s.id === scientistId);
+    if (!scientist) return null;
+    return (
+        <div className="flex items-center gap-4">
+            <div className="bg-background/50 p-3 rounded-full border border-primary/20">
+                {icon}
+            </div>
+            <div>
+                <h4 className="font-semibold text-primary-foreground">{scientist.name}</h4>
+                <p className="text-sm text-muted-foreground">{description}</p>
+            </div>
+        </div>
+    );
+};
+
 
 export default function LabsPage() {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const filteredScientists = useMemo(() => {
-    if (!searchTerm) return scientists;
-    const lowercasedFilter = searchTerm.toLowerCase();
-    return scientists.filter(
-      (scientist) =>
-        scientist.name.toLowerCase().includes(lowercasedFilter) ||
-        scientist.field.toLowerCase().includes(lowercasedFilter)
-    );
-  }, [searchTerm]);
-
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
       <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
         <CardHeader>
           <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
             <FlaskConical className="text-teal-400" />
-            Laboratórios dos Cientistas
+            Universidade Alquimista
           </CardTitle>
           <CardDescription className="text-lg mt-2">
-            Um santuário para cada mente brilhante que molda nossa compreensão do cosmos.
+            Um multiverso de santuários de pesquisa, onde a ciência é uma cerimônia e o conhecimento, uma experiência viva.
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className="relative max-w-2xl mx-auto">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Buscar por cientista ou campo de estudo..."
-              className="w-full pl-10 bg-background/50"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-        </CardContent>
       </Card>
-      <ScrollArea className="h-[calc(100vh-22rem)]">
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-1">
-          {filteredScientists.map((scientist: Scientist) => (
-            <Link key={scientist.id} href={`/labs/${scientist.id}`} passHref>
-              <Card className="h-full hover:bg-primary/20 hover:border-accent transition-all cursor-pointer flex flex-col">
-                <CardHeader>
-                  <CardTitle className="text-lg text-primary-foreground">{scientist.name}</CardTitle>
-                  <CardDescription>{scientist.field}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow flex items-end">
-                  <span className="text-xs text-muted-foreground">Acessar Santuário</span>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+      
+      <div className="w-full max-w-7xl mx-auto space-y-12">
+        <Card className="bg-card/50 purple-glow border-accent/50">
+            <CardHeader>
+                 <CardTitle className="text-3xl text-amber-300 flex items-center gap-3">
+                    <Route className="h-8 w-8" />
+                    Jornadas do Guardião
+                 </CardTitle>
+                 <CardDescription>Trilhas narrativas que conectam os santuários em uma jornada de despertar sequencial.</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <div className="bg-background/30 p-6 rounded-lg border border-primary/30">
+                     <h3 className="text-2xl font-semibold mb-6 text-cyan-300">A Busca Pela Consciência Cósmica</h3>
+                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-start">
+                         <JourneyStep scientistId="maldacena" icon={<Star className="text-yellow-400"/>} description="O Que é a Realidade?" />
+                         <JourneyStep scientistId="rubin" icon={<Orbit className="text-indigo-400"/>} description="Qual sua Estrutura Oculta?" />
+                         <JourneyStep scientistId="seager" icon={<LifeBuoy className="text-cyan-400"/>} description="Quem Mais a Habita?" />
+                         <JourneyStep scientistId="thorne" icon={<Orbit className="text-orange-400"/>} description="Como Podemos Nos Conectar?" />
+                         <JourneyStep scientistId="penrose" icon={<BrainCircuit className="text-purple-400"/>} description="O Que é a Consciência que Busca?" />
+                     </div>
+                     <div className="text-center mt-8">
+                         <Button size="lg">
+                            <Play className="mr-2"/> Iniciar Jornada
+                         </Button>
+                     </div>
+                </div>
+            </CardContent>
+        </Card>
+
+        <div>
+            <h2 className="text-3xl font-semibold text-center mb-6 text-primary-foreground">Índice dos Santuários</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-1">
+              {scientists.map((scientist: Scientist) => (
+                <ScientistCard key={scientist.id} {...scientist} />
+              ))}
+            </div>
         </div>
-      </ScrollArea>
+
+      </div>
     </div>
   );
 }
