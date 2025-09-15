@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -30,6 +29,7 @@ const AltarOfIntention = () => {
     let particles: { x: number; y: number; vx: number; vy: number; radius: number; alpha: number; color: string }[] = [];
 
     const resizeCanvas = () => {
+      if(!canvas.parentElement) return;
       canvas.width = canvas.parentElement!.offsetWidth;
       canvas.height = canvas.parentElement!.offsetHeight;
       particles = [];
