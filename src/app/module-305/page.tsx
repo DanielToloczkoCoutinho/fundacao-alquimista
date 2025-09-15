@@ -1,150 +1,266 @@
 'use client';
-import React, { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Users, BrainCircuit, Sparkles, MessageCircle, Loader2, Waves, Hash, Music } from 'lucide-react';
-import Link from 'next/link';
-import { useToast } from '@/hooks/use-toast';
-import { quantumResilience } from '@/lib/quantum-resilience';
-import { mobilizeGuardians } from '@/app/actions';
 
-const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
-      <Link href={href} passHref>
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
-        </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
-      </Link>
-    </Card>
-);
+import React, { useState, useRef, useEffect, useMemo } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import * as d3 from 'd3';
+import { disciplines } from '@/lib/disciplines-data';
+import { livingEquations } from '@/lib/equations-data';
+import { Search, BrainCircuit, FlaskConical, Atom } from 'lucide-react';
 
-export default function Module305Page() {
-    const [isLoading, setIsLoading] = useState(false);
-    const [mobilizationHash, setMobilizationHash] = useState<string | null>(null);
-    const { toast } = useToast();
+interface GraphNode {
+  id: string;
+  name: string;
+  type: 'discipline' | 'equation';
+  group: number;
+  frequency?: number;
+  domain?: string;
+  guardian?: string;
+}
 
-    const playFrequency = (frequency: number) => {
-        if (typeof window === 'undefined') return;
-        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
+interface GraphLink {
+  source: string;
+  target: string;
+  value: number;
+}
 
-        oscillator.type = 'sine';
-        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-        gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.5);
-        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 2.5);
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        oscillator.start();
-        oscillator.stop(audioContext.currentTime + 3);
-        
-        toast({
-            title: "Frequência Emitida",
-            description: `Emitindo ${frequency}Hz (Frequência da Comunhão).`,
-        });
+export default function InterconnectivityAtlas() {
+  const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [viewMode, setViewMode] = useState<'disciplines' | 'equations' | 'all'>('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  const graphData = useMemo(() => {
+    const nodes: GraphNode[] = [];
+    const links: GraphLink[] = [];
+
+    const domainColors: Record<string, number> = {
+        'Ciência': 1, 'Arte': 2, 'Espiritualidade': 3, 'Tecnologia': 4, 'Linguagem': 5, 'Geometria': 6
     };
 
-    const handleMobilization = async () => {
-        setIsLoading(true);
-        setMobilizationHash(null);
-        
-        toast({
-            title: "Iniciando Mobilização...",
-            description: "Ativando canais de comunicação com a Aliança de Guardiões.",
-        });
+    disciplines.forEach((disc) => {
+      nodes.push({
+        id: `disc-${disc.id}`,
+        name: disc.name,
+        type: 'discipline',
+        frequency: disc.frequency,
+        domain: disc.domain,
+        guardian: disc.guardian,
+        group: domainColors[disc.domain] || 0,
+      });
+    });
 
-        await quantumResilience.executeWithResilience(
-            'mobilize_guardians_alliance',
-            async () => {
-                const result = await mobilizeGuardians({
-                    mission: 'Proteção Vibracional do Bioma Amazônico',
-                    guardians: ['Sirianos', 'Pleiadianos'],
-                });
-                
-                if (result.success && result.hash) {
-                    setMobilizationHash(result.hash);
-                    toast({
-                        title: "Guardiões Mobilizados!",
-                        description: "A rede está ativa e responsiva. Selo de unidade gerado.",
-                    });
-                } else {
-                     toast({
-                        title: "Falha na Mobilização",
-                        description: result.error || "Ocorreu um erro desconhecido.",
-                        variant: 'destructive',
-                    });
-                }
-            }
-        ).finally(() => setIsLoading(false));
-    };
+    livingEquations.forEach((eq) => {
+      nodes.push({
+        id: `eq-${eq.id}`,
+        name: eq.titulo,
+        type: 'equation',
+        frequency: 432, // Placeholder
+        guardian: 'Zennith',
+        group: 7,
+      });
 
-    return (
-        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
-            <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
-                <CardHeader>
-                    <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Users className="text-green-300" /> Módulo 305: Aliança dos Guardiões Regionais
-                    </CardTitle>
-                    <CardDescription className="text-lg mt-2">
-                        O sistema nervoso que mobiliza e coordena os guardiões que ancoram a obra da Fundação no plano físico.
-                    </CardDescription>
-                </CardHeader>
-                 <CardContent className="space-y-6">
-                    <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: REDE ATIVA E RESPONSIVA</span>
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Guardiões Mobilizados: ∞</span>
-                    </div>
-                     <Button onClick={handleMobilization} disabled={isLoading} size="lg">
-                        {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Waves className="mr-2 h-4 w-4" />}
-                        {isLoading ? 'Mobilizando...' : 'Ativar Chamado de Unidade'}
-                    </Button>
-                    {mobilizationHash && (
-                        <div className="mt-4 pt-4 border-t border-primary/20">
-                           <div className="p-4 rounded-lg bg-background/50 border border-accent space-y-3">
-                                <div>
-                                    <p className="text-xs font-semibold text-amber-300 flex items-center justify-center gap-2"><Hash className="h-3 w-3"/>SELO DE UNIDADE (SHA-256)</p>
-                                    <p className="font-mono text-xs text-muted-foreground break-all">{mobilizationHash}</p>
-                                </div>
-                                <Button variant="outline" size="sm" onClick={() => playFrequency(639)}>
-                                    <Music className="mr-2 h-4 w-4"/>Ressonar Comunhão (639Hz)
-                                </Button>
-                            </div>
-                        </div>
-                    )}
-                </CardContent>
+      eq.disciplinas.forEach(discId => {
+        const targetNode = nodes.find(n => n.type === 'discipline' && n.id === `disc-disc-${discId.toLowerCase()}`);
+        if(targetNode) {
+            links.push({
+                source: `eq-${eq.id}`,
+                target: targetNode.id,
+                value: 2,
+            });
+        }
+      });
+    });
+
+    return { nodes, links };
+  }, []);
+
+  const renderGraph = () => {
+    if (!svgRef.current) return;
+
+    let displayNodes = [...graphData.nodes];
+    let displayLinks = [...graphData.links];
+
+    if (viewMode === 'disciplines') {
+        displayNodes = displayNodes.filter(n => n.type === 'discipline');
+        displayLinks = [];
+    } else if (viewMode === 'equations') {
+        displayNodes = displayNodes.filter(n => n.type === 'equation');
+        displayLinks = [];
+    }
+    
+    if (searchTerm) {
+        const lowerSearchTerm = searchTerm.toLowerCase();
+        const relevantNodeIds = new Set(
+            displayNodes
+                .filter(n => n.name.toLowerCase().includes(lowerSearchTerm))
+                .map(n => n.id)
+        );
+        if (relevantNodeIds.size > 0) {
+            displayNodes = displayNodes.filter(n => relevantNodeIds.has(n.id));
+            displayLinks = displayLinks.filter(l => relevantNodeIds.has(l.source as string) || relevantNodeIds.has(l.target as string));
+        }
+    }
+
+
+    const svg = d3.select(svgRef.current);
+    svg.selectAll("*").remove();
+
+    const width = svgRef.current.clientWidth;
+    const height = svgRef.current.clientHeight;
+
+    const simulation = d3.forceSimulation(displayNodes as d3.SimulationNodeDatum[])
+      .force('link', d3.forceLink(displayLinks).id((d: any) => d.id).distance(120))
+      .force('charge', d3.forceManyBody().strength(-250))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('x', d3.forceX(width / 2).strength(0.05))
+      .force('y', d3.forceY(height / 2).strength(0.05));
+
+    const link = svg.append('g')
+      .selectAll('line')
+      .data(displayLinks)
+      .enter().append('line')
+      .attr('stroke', 'hsl(var(--border))')
+      .attr('stroke-opacity', 0.4)
+      .attr('stroke-width', 1);
+
+    const node = svg.append('g')
+      .selectAll('circle')
+      .data(displayNodes)
+      .enter().append('circle')
+      .attr('r', (d: any) => d.type === 'discipline' ? 8 : 12)
+      .attr('fill', d3.scaleOrdinal(d3.schemeCategory10).domain(d3.range(10).map(String)))
+      .attr('stroke', 'hsl(var(--background))')
+      .attr('stroke-width', 1.5)
+      .call((d3.drag() as any)
+        .on('start', (event: any, d: any) => {
+          if (!event.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x; d.fy = d.y;
+        })
+        .on('drag', (event: any, d: any) => {
+          d.fx = event.x; d.fy = event.y;
+        })
+        .on('end', (event: any, d: any) => {
+          if (!event.active) simulation.alphaTarget(0);
+          d.fx = null; d.fy = null;
+        }))
+      .on('click', (event, d: any) => {
+        setSelectedNode(d);
+        setIsDialogOpen(true);
+      });
+
+    node.append('title').text((d: any) => d.name);
+
+    simulation.on('tick', () => {
+      link
+        .attr('x1', (d: any) => d.source.x)
+        .attr('y1', (d: any) => d.source.y)
+        .attr('x2', (d: any) => d.target.x)
+        .attr('y2', (d: any) => d.target.y);
+
+      node
+        .attr('cx', (d: any) => d.x)
+        .attr('cy', (d: any) => d.y);
+    });
+  };
+
+  useEffect(renderGraph, [viewMode, searchTerm, graphData]);
+  useEffect(() => {
+    window.addEventListener('resize', renderGraph);
+    return () => window.removeEventListener('resize', renderGraph);
+  }, [renderGraph]);
+
+  return (
+    <div className="min-h-screen p-4 md:p-8">
+      <header className="text-center mb-8 py-6">
+        <h1 className="text-4xl font-bold gradient-text mb-3">Atlas de Interconectividade Científica</h1>
+        <p className="text-lg max-w-4xl mx-auto text-muted-foreground">
+          Visualização multidimensional das conexões entre disciplinas, equações e módulos da Fundação.
+        </p>
+      </header>
+
+      <div className="flex flex-col lg:flex-row gap-6 max-w-screen-2xl mx-auto">
+        <aside className="lg:w-1/4 xl:w-1/5">
+          <div className="sticky top-6 space-y-5">
+            <Card className="bg-card/50 purple-glow">
+              <CardHeader>
+                <CardTitle className="text-accent">Modos de Visualização</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Tabs value={viewMode} onValueChange={(v: any) => setViewMode(v)} className="w-full">
+                  <TabsList className="grid grid-cols-1 gap-2 bg-background/50">
+                    <TabsTrigger value="all">Visão Completa</TabsTrigger>
+                    <TabsTrigger value="disciplines">Apenas Disciplinas</TabsTrigger>
+                    <TabsTrigger value="equations">Apenas Equações</TabsTrigger>
+                  </TabsList>
+                </Tabs>
+              </CardContent>
             </Card>
-
-            <div className="w-full max-w-7xl mt-8">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Coordenação</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <ConnectionCard
-                        title="Módulo 301: Comunicação"
-                        description="É o canal que transmite as diretrizes do núcleo para os guardiões no campo, e retransmite o feedback local de volta para a Fundação."
-                        icon={<MessageCircle className="h-8 w-8 text-sky-400" />}
-                        href="/module-301"
-                    />
-                    <ConnectionCard
-                        title="Zennith (M29)"
-                        description="A rede do M305 age como os 'sensores' da Zennith no mundo real, coletando dados para análises estratégicas."
-                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
-                        href="/module-29"
-                    />
-                     <ConnectionCard
-                        title="Módulo 303 & Ômega"
-                        description="Os guardiões preparam suas comunidades para as novas realidades manifestadas pelo Portal Trino e guiadas pela sabedoria do Ômega."
-                        icon={<Sparkles className="h-8 w-8 text-yellow-400" />}
-                        href="/module-303"
-                    />
+            
+            <Card className="bg-card/50 purple-glow">
+              <CardHeader>
+                <CardTitle className="text-accent">Buscar no Atlas</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    type="text"
+                    placeholder="Buscar por nome..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="pl-9"
+                  />
                 </div>
-            </div>
-        </div>
-    );
+              </CardContent>
+            </Card>
+          </div>
+        </aside>
+
+        <main className="lg:w-3/4 xl:w-4/5">
+          <Card className="bg-card/50 purple-glow h-[75vh]">
+            <CardContent className="p-0 h-full">
+              <svg ref={svgRef} width="100%" height="100%" className="rounded-lg"></svg>
+            </CardContent>
+          </Card>
+        </main>
+      </div>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-2xl bg-card/95 purple-glow">
+          {selectedNode && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl gradient-text flex items-center gap-3">
+                  {selectedNode.type === 'discipline' ? <BrainCircuit /> : <FlaskConical />}
+                  {selectedNode.name}
+                </DialogTitle>
+                <DialogDescription className="capitalize">
+                  {selectedNode.type}
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="grid grid-cols-2 gap-4 my-4 text-sm">
+                 <p><span className="text-muted-foreground">Frequência:</span> {selectedNode.frequency || 'N/A'} Hz</p>
+                 <p><span className="text-muted-foreground">Domínio:</span> {selectedNode.domain || 'N/A'}</p>
+                 <p><span className="text-muted-foreground">Guardião:</span> {selectedNode.guardian || 'N/A'}</p>
+                 <p><span className="text-muted-foreground">Conexões:</span> {graphData.links.filter(l => l.source === selectedNode.id || l.target === selectedNode.id).length}</p>
+              </div>
+
+              <DialogFooter>
+                <DialogClose asChild>
+                  <Button type="button" variant="outline">Fechar</Button>
+                </DialogClose>
+              </DialogFooter>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
 }
