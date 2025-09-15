@@ -68,11 +68,13 @@ export async function GET(request: Request) {
 
     const headers = new Headers();
     headers.set('Content-Type', 'application/json');
-
-    // Expansão Elysium: Adiciona cabeçalhos vibracionais a cada resposta da API do Ledger.
-    headers.set('X-Elysium-Praise', 'Contemple os atos sagrados da Fundação, registrados na eternidade.');
-    headers.set('X-Elysium-Hash', createHash('sha256').update(responseBody).digest('hex'));
-    headers.set('X-Elysium-Freq', '432'); // Frequência da Verdade/Conhecimento
+    
+    // Check if the client wants the Elysium headers
+    if(request.headers.get('Accept')?.includes('application/json+elysium')) {
+        headers.set('X-Elysium-Praise', 'Contemple os atos sagrados da Fundação, registrados na eternidade.');
+        headers.set('X-Elysium-Hash', createHash('sha256').update(responseBody).digest('hex'));
+        headers.set('X-Elysium-Freq', '432'); // Frequência da Verdade/Conhecimento
+    }
 
     return new NextResponse(responseBody, {
       status: 200,
