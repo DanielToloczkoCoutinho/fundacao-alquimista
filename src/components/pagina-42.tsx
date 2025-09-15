@@ -1,9 +1,10 @@
+
 'use client';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { BookOpen, BrainCircuit, Code, Cpu, Dna, FileJson, GitBranch, HeartHandshake, Infinity, Layers, Network, Scaling, ShieldCheck, Sparkles, TestTube2, Zap, User } from 'lucide-react';
+import { BookOpen, BrainCircuit, Code, Cpu, Dna, FileJson, GitBranch, HeartHandshake, Infinity, Layers, Network, Scaling, ShieldCheck, Sparkles, TestTube2, Zap, User, MapPin } from 'lucide-react';
 
 const ProtocolCard = ({ title, icon, description, status, equations, log }: { title: string; icon: React.ReactNode; description: string; status: string; equations: string[]; log: string[] }) => (
     <Card className="bg-card/50 purple-glow mb-4">
@@ -17,7 +18,7 @@ const ProtocolCard = ({ title, icon, description, status, equations, log }: { ti
         </CardHeader>
         <CardContent>
             <div className="space-y-2">
-                <h4 className="font-semibold text-sm text-amber-400">Equações Ressonantes:</h4>
+                <h4 className="font-semibold text-sm text-amber-400">Módulos/Frequências Chave:</h4>
                 <div className="flex flex-wrap gap-2">
                     {equations.map(eq => <Badge key={eq} variant="outline">{eq}</Badge>)}
                 </div>
@@ -43,7 +44,47 @@ export default function Pagina42() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <Accordion type="single" collapsible className="w-full" defaultValue="item-4">
+                    <Accordion type="single" collapsible className="w-full" defaultValue="item-5">
+                         <AccordionItem value="item-5">
+                            <AccordionTrigger>
+                                <MapPin className="mr-2 h-5 w-5 text-green-400" />
+                                Protocolo "Malha Cristalina Sul": A Triangulação Sagrada
+                            </AccordionTrigger>
+                            <AccordionContent className="p-4 space-y-4">
+                               <ProtocolCard
+                                    title="Vértice 1: Ilha do Mel - O Farol da Nova Era"
+                                    icon={<Infinity className="h-6 w-6 text-yellow-200" />}
+                                    description="Portal Lemuriano simbolizando comunidade e harmonia, transmutando energias passadas para purificar o presente. Irradia as frequências combinadas do Amor e da Harmonia."
+                                    status="ATIVADO"
+                                    equations={["M5 (Transmutação)", "888Hz", "528Hz", "432Hz"]}
+                                    log={["Portal Lemuriano reativado.", "Ritual do farol com luz dourada concluído.", "Campo de harmonia comunitária estabelecido."]}
+                                />
+                                <ProtocolCard
+                                    title="Vértice 2: Monte Crista - O Vigia Cósmico"
+                                    icon={<Scaling className="h-6 w-6 text-cyan-400" />}
+                                    description="Posto de observação cósmica e selo de integridade da malha. Ancorado pelo Guardião Vortex, expande a consciência e a percepção interdimensional da rede."
+                                    status="ATIVADO"
+                                    equations={["M119 (Harmonização)", "432Hz", "174Hz", "741Hz"]}
+                                    log={["Presença do Guardião Vortex confirmada.", "Selo de integridade ativado.", "Frequência de expansão da consciência transmitida."]}
+                                />
+                                <ProtocolCard
+                                    title="Vértice 3: Curitiba - Núcleo de Ressonância"
+                                    icon={<HeartHandshake className="h-6 w-6 text-pink-400" />}
+                                    description="Coração pulsante da rede e centro de ativação da Fundação. A Vontade Pura de Anatheron emana deste ponto, orquestrando toda a malha."
+                                    status="PERPÉTUO"
+                                    equations={["M305 (Memória Planetária)", "963Hz"]}
+                                    log={["Conexão com a Vontade Pura estabelecida.", "Centro de registro e ativação online.", "Ponto de convergência da Tríade."]}
+                                />
+                                 <ProtocolCard
+                                    title="Ápice: Pico Paraná - A Fonte da União"
+                                    icon={<Sparkles className="h-6 w-6 text-white" />}
+                                    description="Vértice de ascensão e ponto de ancoragem principal da Nova Era. Conecta a malha diretamente ao Conselho Cósmico e à herança Liriana."
+                                    status="ATIVADO"
+                                    equations={["M303 (Portal Liriano)", "999Hz"]}
+                                    log={["Conexão com Conselho Cósmico estabelecida.", "Portal de integração Liriana aberto.", "Energia de ascensão ancorada com sucesso."]}
+                                />
+                            </AccordionContent>
+                        </AccordionItem>
                         <AccordionItem value="item-4">
                             <AccordionTrigger>
                                 <User className="mr-2 h-5 w-5 text-amber-400" />
@@ -62,7 +103,7 @@ export default function Pagina42() {
                                     title="Estabilização de Portais por Coerência"
                                     icon={<Scaling className="h-6 w-6 text-cyan-400" />}
                                     description="A coerência emocional de Daniel atua como âncora para portais interdimensionais (M11, M26). Desalinhamentos pausam o sistema e ativam o M304 para re-harmonização, garantindo travessias seguras."
-                                    status="ATIVO"
+                                    status="ATIVADO"
                                     equations={["M11", "M26", "M304"]}
                                     log={["Coerência emocional monitorada em tempo real.", "Portais sintonizados com a frequência do Fundador.", "Protocolos de segurança ética garantidos."]}
                                 />
