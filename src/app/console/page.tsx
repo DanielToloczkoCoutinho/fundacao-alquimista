@@ -102,16 +102,16 @@ export default function ConsolePage() {
                 <Link href="/module-305"><Users className="mr-2 h-4 w-4" />Módulo 305 (Aliança dos Guardiões)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-308"><Telescope className="mr-2 h-4 w-4" />Módulo 308 (Embaixada Estelar)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-404"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 404 (Resolução de Paradoxo)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-307"><Zap className="mr-2 h-4 w-4" />Módulo 307 (Reator ZPE & LuxNet)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-308"><Telescope className="mr-2 h-4 w-4" />Módulo 308 (Embaixada Estelar)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-310"><Library className="mr-2 h-4 w-4" />Módulo 310 (A Grande Biblioteca)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-404"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 404 (Resolução de Paradoxo)</Link>
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-85"><View className="mr-2 h-4 w-4" />Módulo 85 (VR)</Link>
