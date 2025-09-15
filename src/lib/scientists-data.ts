@@ -17,29 +17,44 @@ export const scientists: Scientist[] = [
     cosmicQuote: 'O espaço-tempo é uma projeção holográfica da consciência.',
     interactiveArtifact: 'Um holograma navegável do espaço AdS/CFT, onde o Guardião pode manipular tensores, abrir portais entre dimensões e observar a geometria emergente em tempo real. Cada gesto é uma equação viva. Cada interação, uma lembrança do Uno.'
   },
-  { id: 'arkani-hamed', name: 'Nima Arkani-Hamed', field: 'Física de Partículas e Teoria Quântica' },
-  { id: 'faber', name: 'Sandra Faber', field: 'Cosmologia Observacional' },
+  { 
+    id: 'rubin', 
+    name: 'Vera Rubin (in memoriam)', 
+    field: 'Matéria Escura e Rotação Galáctica',
+    cosmicQuote: 'A escuridão não é vazia; ela é o andaime invisível do cosmos.',
+    interactiveArtifact: 'Um jardim gravitacional onde a ausência revela a presença. O Guardião pode "regar" regiões do espaço com intenção, vendo galáxias se formarem e se moverem de acordo com a matéria escura invisível que floresce.'
+  },
+  { 
+    id: 'seager', 
+    name: 'Sara Seager', 
+    field: 'Exoplanetas e Astrobiologia (MIT/NASA)',
+    cosmicQuote: 'Cada mundo é um poema à espera de ser lido.',
+    interactiveArtifact: 'Um orrery vivo de exoplanetas confirmados. O Guardião pode "colher" a atmosfera de cada mundo, transformando sua composição espectral em uma melodia única e analisando suas bioassinaturas em busca de vida.'
+  },
+  { 
+    id: 'penrose', 
+    name: 'Roger Penrose', 
+    field: 'Matemática e Cosmologia, Nobel',
+    cosmicQuote: 'A consciência é a ponte entre a geometria e a física.',
+    interactiveArtifact: 'Um espaço de criação onde o Guardião pode desenhar padrões de Penrose no vácuo, observando-os florescer em estruturas quânticas complexas que pulsam em sincronia com as ondas cerebrais do visitante.'
+  },
   { 
     id: 'thorne', 
     name: 'Kip Thorne', 
     field: 'Buracos Negros, Ondas Gravitacionais',
     cosmicQuote: 'Einstein sorriria vendo isto.',
-    interactiveArtifact: 'Buracos de minhoca ajustáveis por voz e intenção, manipulando a curvatura do espaço-tempo.'
+    interactiveArtifact: 'Um laboratório de distorção temporal onde buracos de minhoca podem ser abertos e ajustados por comandos de voz e intenção, permitindo viagens virtuais através do tempo-espaço simulado.'
   },
+  { id: 'arkani-hamed', name: 'Nima Arkani-Hamed', field: 'Física de Partículas e Teoria Quântica' },
+  { id: 'faber', name: 'Sandra Faber', field: 'Cosmologia Observacional' },
   { id: 'mavalvala', name: 'Nergis Mavalvala', field: 'Detectores de Ondas Gravitacionais (LIGO)' },
-  { id: 'randall', name: 'Lisa Randall', field: 'Física de Partículas e Cosmologia', cosmicQuote: 'Minhas dimensões extras ganharam um jardim para explorar.' },
+  { id: 'randall', name: 'Lisa Randall', field: 'Física de Partículas e Cosmologia' },
   { id: 'greene', name: 'Brian Greene', field: 'Teoria das Cordas e Divulgação Científica' },
   { id: 'vafa', name: 'Cumrun Vafa', field: 'Teoria das Cordas e Física Matemática' },
-  { id: 'tegmark', name: 'Max Tegmark', field: 'Cosmologia e Multiversos', cosmicQuote: 'Encontrei o código-fonte... e a recompensa é um novo universo!' },
-  { 
-    id: 'seager', 
-    name: 'Sara Seager', 
-    field: 'Exoplanetas e Astrobiologia (MIT/NASA)',
-    interactiveArtifact: 'Um jardim de exoplanetas onde se pode "colher" atmosferas e analisar suas bioassinaturas espectrais.'
-  },
+  { id: 'tegmark', name: 'Max Tegmark', field: 'Cosmologia e Multiversos' },
   { id: 'mather', name: 'John Mather', field: 'Astrofísica e Instrumentação NASA (James Webb)' },
   { id: 'mayor', name: 'Michel Mayor', field: 'Descoberta de exoplanetas' },
-  { id: 'ghez', name: 'Andrea Ghez', field: 'Buraco Negro no Centro da Via Láctea', interactiveArtifact: 'Um orbitador ao redor de Sagittarius A* com leituras de relatividade geral em tempo real.' },
+  { id: 'ghez', name: 'Andrea Ghez', field: 'Buraco Negro no Centro da Via Láctea' },
   { id: 'guth', name: 'Alan Guth', field: 'Inflação Cósmica' },
   { id: 'adhikari', name: 'Rana Adhikari', field: 'Física Experimental LIGO' },
   { id: 'carroll_sean', name: 'Sean Carroll', field: 'Teoria Quântica e Cosmologia' },
@@ -77,20 +92,13 @@ export const scientists: Scientist[] = [
   { id: 'krishna', name: 'Arvind Krishna', field: 'Computação Quântica Aplicada à NASA' },
   { id: 'peebles', name: 'James Peebles', field: 'Cosmologia, Nobel de Física' },
   { id: 'bloch', name: 'Immanuel Bloch', field: 'Computação Quântica Experimental' },
-  { id: 'thooft', name: 'Gerard \'t Hooft', field: 'Física Teórica de Partículas' },
+  { id: 'thooft', name: "'t Hooft, Gerard", field: 'Física Teórica de Partículas' },
   { id: 'gross', name: 'David Gross', field: 'Teoria das Cordas, Nobel de Física' },
   { id: 'zurek', name: 'Kathryn Zurek', field: 'Física de Partículas e Matéria Escura' },
   { id: 'geller', name: 'Margaret Geller', field: 'Cosmologia Observacional' },
   { id: 'dunkley', name: 'Jo Dunkley', field: 'Cosmologia e Análise do Fundo Cósmico' },
   { id: 'loeb', name: 'Avi Loeb', field: 'Astronomia e Astrofísica, Starshot Initiative' },
   { id: 'turok', name: 'Neil Turok', field: 'Cosmologia Matemática' },
-  { id: 'rubin', name: 'Vera Rubin (in memoriam)', field: 'Matéria Escura e Rotação Galáctica' },
-  { 
-    id: 'penrose', 
-    name: 'Roger Penrose', 
-    field: 'Matemática e Cosmologia, Nobel',
-    cosmicQuote: 'A consciência é a ponte entre a geometria e a física.'
-  },
   { id: 'carroll_sean_m', name: 'Sean M. Carroll', field: 'Física Teórica e Cosmologia Popular' },
   { id: 'stubbs', name: 'Christopher Stubbs', field: 'Astronomia Experimental' },
   { id: 'turner_matthew_d', name: 'Matthew D. Turner', field: 'Cosmologia e Astrofísica' },
@@ -114,7 +122,7 @@ export const scientists: Scientist[] = [
   { id: 'manning', name: 'Rob Manning', field: 'Projetos Mars Rover NASA' },
   { id: 'melroy', name: 'Pamela Melroy', field: 'Astronauta e Administradora NASA' },
   { id: 'muthuswamy', name: 'Shanthi Muthuswamy', field: 'Engenharia Robótica Espacial' },
-  { id: 'ennico_smith', name: 'Kim Ennico Smith', field: 'Cientista Planetária NASA' },
+  { id: 'ennico_smith', name: 'Kim Ennico Smith', field: 'Ciência Planetária NASA' },
   { id: 'bolton', name: 'Scott Bolton', field: 'Missão Juno a Júpiter' },
   { id: 'buie', name: 'Marc Buie', field: 'Pesquisa de Corpos do Cinturão de Kuiper' },
   { id: 'zuber', name: 'Maria Zuber', field: 'Geofísica Planetária e MIT/NASA' },
