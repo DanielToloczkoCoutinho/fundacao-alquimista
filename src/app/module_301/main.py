@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 """
 Módulo 301: Ponte Quântico-Vibracional com a NASA e o Cosmos - Versão Consolidada
