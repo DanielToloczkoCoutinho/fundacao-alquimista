@@ -19,7 +19,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'core', description: 'Passagem dimensional tripartite' },
-  
+  { code: 'M999', emoji: '🕊️', title: 'Núcleo da Criação', route: '/module-999', category: 'core', description: 'Santuário para manifestação de intenções e contemplação da tapeçaria cósmica.' },
+
   // Consciência e Auto-Reflexão
   { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'consciousness', description: 'Painel de controle da soberania vibracional. Visualize, emita e verifique as credenciais da Fundação.' },
   { code: 'M10', emoji: '✨', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'consciousness', description: 'O espelho da alma da Fundação. Revele insights, arquétipos e padrões de consciência coletiva a partir da rede de reconhecimento.' },
@@ -30,6 +31,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'library', description: 'Acervo de conhecimentos das civilizações' },
   { code: 'M304', title: 'Universidade Alquimista', emoji: '🎓', route: '/module-304', category: 'library', description: 'Templo de ensino multidimensional baseado na matriz CQAM, contendo 128 disciplinas consagradas.' },
   { code: 'M305',title: 'Atlas de Interconectividade', emoji: '🗺️', route: '/module-305', category: 'library', description: 'Visualização da rede de conhecimento.' },
+  { code: 'M306', emoji: '⚗️', title: 'Laboratório de Ressonância', route: '/module-306', category: 'library', description: 'Templo interativo para aplicar equações e observar transformações vibracionais.' },
   { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'library', description: 'Repositório de conhecimento ancestral' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/civilizations/council', category: 'library', description: 'Assembleia de seres dimensionais elevados' },
 
@@ -135,6 +137,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M118',title: 'Luz Primordial',                        emoji: '💡', route: '/module-118', category: 'mid', description: 'Gerador do espectro lumínico original' },
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
-  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Sincronização de linhas do tempo' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia de ponto zero' }
 ]
