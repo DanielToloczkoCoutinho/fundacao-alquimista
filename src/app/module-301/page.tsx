@@ -1,7 +1,7 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Ship, Dna, TestTube } from 'lucide-react';
 import Link from 'next/link';
 
@@ -27,7 +27,7 @@ export default function Module301Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Ship className="text-blue-300" /> Módulo 301: Oceanografia & Biofármacos Marinhos (5D)
+                        <Ship className="text-blue-300" /> Módulo 308: Oceanografia & Biofármacos Marinhos
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Explorador Abissal. Mapeia o microbioma oceânico e extrai compostos bioativos para cura e evolução.
@@ -58,6 +58,9 @@ export default function Module301Page() {
                         href="/module-109"
                     />
                 </div>
+            </div>
+             <div className="mt-12">
+                 <Button variant="secondary" size="lg">Visualizar Mapa do Microbioma</Button>
             </div>
         </div>
     );

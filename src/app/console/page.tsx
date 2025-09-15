@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
@@ -101,6 +100,9 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-305"><Users className="mr-2 h-4 w-4" />Módulo 305 (Aliança dos Guardiões)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-308"><Ship className="mr-2 h-4 w-4" />Módulo 308 (Oceanografia)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-404"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 404 (Resolução de Paradoxo)</Link>
@@ -266,9 +268,6 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-291"><Bot className="mr-2 h-4 w-4" />Módulo 291 (Robótica Autônoma)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-308"><Ship className="mr-2 h-4 w-4" />Módulo 308 (Oceanografia)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-311"><Cpu className="mr-2 h-4 w-4" />Módulo 311 (Neuroengenharia)</Link>
