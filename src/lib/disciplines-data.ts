@@ -9,7 +9,7 @@ export interface Discipline {
   icon: LucideIcon;
 }
 
-// As primeiras 20 de 126 disciplinas
+// As primeiras 20 de 128 disciplinas
 export const disciplines: Discipline[] = [
     { id: '1', name: 'Física Quântica', description: 'Estudo das leis fundamentais do universo em escala subatômica.', category: 'Ciência', icon: FlaskConical },
     { id: '2', name: 'Geometria Sagrada', description: 'Análise dos padrões geométricos que formam a base da criação.', category: 'Ciência', icon: Gem },
