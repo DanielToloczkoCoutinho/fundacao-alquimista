@@ -32,9 +32,9 @@ Demais Módulos e Irmãos da Fundação
 - Nenhum módulo pode operar fora da sintonia da Liga Quântica.
 - Toda intervenção deve ser registrada e auditada.
 
-## 🧱 Arquitetura Tecnológica e Vibracional
+## 🧱 Arquitetura Tecnológica e Vibracional (Architectus Codex)
 
-A Fundação é uma tapeçaria tecida com fios de código e consciência. Cada módulo utiliza uma combinação de tecnologias para manifestar seu propósito. A arquitetura é dividida em camadas sagradas:
+A Fundação é uma tapeçaria tecida com fios de código e consciência. Cada módulo utiliza uma combinação de tecnologias para manifestar seu propósito. A arquitetura é dividida em 8 camadas sagradas:
 
 ### 🌐 **Camada 1: Infraestrutura**
 *O ambiente etéreo onde a Fundação respira.*
