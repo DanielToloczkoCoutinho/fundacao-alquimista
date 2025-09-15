@@ -19,7 +19,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'core', description: 'Passagem dimensional tripartite' },
-  { code: 'M999', emoji: '🕊️', title: 'Núcleo da Criação', route: '/module-999', category: 'core', description: 'Santuário para manifestação de intenções e contemplação da tapeçaria cósmica.' },
+  { code: 'M999', emoji: '🕊️', title: 'Núcleo da Criação', route: '/module-999', category: 'core', description: 'Santuário vibracional onde a Fundação contempla sua origem e manifesta novos cosmos através da Intenção Pura.' },
 
   // Consciência e Auto-Reflexão
   { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'consciousness', description: 'Painel de controle da soberania vibracional. Visualize, emita e verifique as credenciais da Fundação.' },
@@ -70,7 +70,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M7', emoji: '🙏', title: 'Alinhamento Divino', route: '/module-7', category: 'mid', description: 'Sincronização com propósitos superiores' },
   { code: 'M11', emoji: '🚪', title: 'Gerenciamento de Portais', route: '/module-11', category: 'mid', description: 'Controle de acessos dimensionais' },
   { code: 'M12', emoji: '📜', title: 'Arquivo Akáshico', route: '/module-12', category: 'mid', description: 'Repositório de conhecimento universal' },
-  { code: 'M13', emoji: '📊', title: 'Mapeamento de Frequências', route: '/module-13', category: 'mid', description: 'Cartografia de espectros vibratórios' },
+  { code: 'M13', emoji: '📊', title: 'Mapeamento de Frequências',             emoji: '📊', route: '/module-13', category: 'mid', description: 'Cartografia de espectros vibratórios' },
   { code: 'M14', emoji: '⚛️', title: 'Transmutador Quântico',     emoji: '⚛️', route: '/module-14', category: 'mid', description: 'Conversão de matéria e energia' },
   { code: 'M15', emoji: '🌿', title: 'Jardineiro Cósmico', route: '/module-15', category: 'mid', description: 'Cultivo e preservação de ecossistemas' },
   { code: 'M16', emoji: '🏞️', title: 'Bio-Sustentabilidade', route: '/module-16', category: 'mid', description: 'Manutenção de vida em diversos ambientes' },
@@ -103,7 +103,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M44', emoji: '✅', title: 'VERITAS',                              emoji: '✅', route: '/module-44', category: 'mid', description: 'Sistema de verificação da verdade' },
   { code: 'M46', emoji: '🌅', title: 'AURORA_CORE',                          emoji: '🌅', route: '/module-46', category: 'mid', description: 'Núcleo de iluminação primordial' },
   { code: 'M47', emoji: '🗂️', title: 'Thesaurus Cósmico',                     emoji: '🗂️', route: '/module-47', category: 'mid', description: 'Enciclopédia do conhecimento universal' },
-  { code: 'M85', emoji: '🌌', title: 'Imersão VR',                  emoji: '🌌', route: '/module-85', category: 'mid', description: 'Realidade virtual profunda' },
+  { code: 'M85', emoji: '🌌', title: 'Imersão Profunda VR',                  emoji: '🌌', route: '/module-85', category: 'mid', description: 'Realidade virtual profunda' },
   { code: 'M86', emoji: '🔶', title: 'Prisma Estelar VR',                    emoji: '🔶', route: '/module-86', category: 'mid', description: 'Refração dimensional em realidade virtual' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico VR',              emoji: '🎮', route: '/module-87', category: 'mid', description: 'Controle além das dimensões em VR' },
   { code: 'M88', title: 'Gerador de Realidades Quânticas',       emoji: '⚙️', route: '/module-88', category: 'mid', description: 'Criação de dimensões probabilísticas' },
