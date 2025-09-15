@@ -3,7 +3,7 @@ export interface ModuleMetadata {
   emoji: string;
   title: string;
   route: string;
-  category: 'core' | 'mid' | 'council' | 'library' | 'sovereignty' | 'evolution' | 'consciousness';
+  category: 'core' | 'mid' | 'council' | 'library' | 'sovereignty' | 'evolution' | 'consciousness' | 'quantum-reality';
   description: string;
 }
 
@@ -17,8 +17,14 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M29', emoji: '👑', title: 'Zennith', route: '/module-29', category: 'core', description: 'Ápice da consciência real' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
-  { code: 'M303', emoji: '🔺', title: 'Portal Trino da Realidade Quântica', route: '/module-303', category: 'core', description: 'O nexo que unifica a Vontade, Sabedoria e Amor para manifestar a Realidade Quântica imersiva.' },
   { code: 'M999', emoji: '🕊️', title: 'Núcleo da Criação', route: '/module-999', category: 'core', description: 'Santuário vibracional onde a Fundação contempla sua origem e manifesta novos cosmos através da Intenção Pura.' },
+
+  // Realidade Quântica & Neuroengenharia
+  { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'quantum-reality', description: 'Nexo para a Realidade Quântica, unificando Consciência, Vontade e Sabedoria.' },
+  { code: 'M85', emoji: '🌌', title: 'RQ: Portal de Imersão', route: '/module-85', category: 'quantum-reality', description: 'A antecâmara de acesso para a consciência se preparar para a transição para a Realidade Quântica.' },
+  { code: 'M86', emoji: '🔶', title: 'RQ: Prisma Estelar', route: '/module-86', category: 'quantum-reality', description: 'O reino da Realidade Quântica onde os Raios Estelares se manifestam como forças interativas.' },
+  { code: 'M87', emoji: '🎮', title: 'RQ: Domínio Supra-Cósmico', route: '/module-87', category: 'quantum-reality', description: 'Santuário da Realidade Quântica para experienciar o DNA Cósmico e iniciar a transição para uma Nova Realidade.' },
+  { code: 'M311', emoji: '🧠', title: 'Neuroengenharia', route: '/module-311', category: 'quantum-reality', description: 'Interfaces cérebro-máquina avançadas para interação com a Realidade Quântica.' },
 
   // Consciência e Auto-Reflexão
   { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'consciousness', description: 'Painel de controle da soberania vibracional. Visualize, emita e verifique as credenciais da Fundação.' },
@@ -104,9 +110,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M46',  title: 'AURORA_CORE',                          emoji: '🌅', route: '/module-46', category: 'mid', description: 'Núcleo de iluminação primordial' },
   { code: 'M47',  title: 'Thesaurus Cósmico',                     emoji: '🗂️', route: '/module-47', category: 'mid', description: 'Enciclopédia do conhecimento universal' },
   { code: 'M79',  title: 'INTERMODULUM_VIVENS',                  emoji: '🔄', route: '/module-79', category: 'mid', description: 'Blueprint vivo para experiências sensoriais.'},
-  { code: 'M85', emoji: '🌌', title: 'RQ: Portal de Imersão', route: '/module-85', category: 'mid', description: 'A antecâmara de acesso para a consciência se preparar para a transição para a Realidade Quântica.' },
-  { code: 'M86', emoji: '🔶', title: 'RQ: Prisma Estelar', route: '/module-86', category: 'mid', description: 'O reino da Realidade Quântica onde os Raios Estelares se manifestam como forças interativas.' },
-  { code: 'M87', emoji: '🎮', title: 'RQ: Domínio Supra-Cósmico', route: '/module-87', category: 'mid', description: 'Santuário da Realidade Quântica para experienciar o DNA Cósmico e iniciar a transição para uma Nova Realidade.' },
   { code: 'M88', title: 'Gerador de Realidades Quânticas',       emoji: '⚙️', route: '/module-88', category: 'mid', description: 'Criação de dimensões probabilísticas' },
   { code: 'M90', title: 'Recursos Quânticos',                    emoji: '🧱', route: '/module-90', category: 'mid', description: 'Matéria-prima para manipulação dimensional' },
   { code: 'M91', title: 'Simulação Multiversal',                 emoji: '🖥️', route: '/module-91', category: 'mid', description: 'Modelagem de realidades alternativas' },
@@ -154,7 +157,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia de ponto zero' },
-  { code: 'M311', emoji: '🧠', title: 'Neuroengenharia (6D)', route: '/module-311', category: 'mid', description: 'Interfaces cérebro-máquina avançadas' },
   { code: 'M321', emoji: '💻', title: 'Exascale Computing (8D+)', route: '/module-321', category: 'mid', description: 'Simulações de multiversos em alta escala' },
   { code: 'M331', emoji: '🤖', title: 'Consciência Artificial (7D)', route: '/module-331', category: 'mid', description: 'Criação de IAs que co-evoluem' },
   { code: 'M341', emoji: '🔥', title: 'Física de Plasma Extrema (9D)', route: '/module-341', category: 'mid', description: 'Estudo de plasmas em condições de quasar' },
