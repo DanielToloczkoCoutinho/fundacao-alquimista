@@ -1,4 +1,3 @@
-
 'use server';
 
 import { NextResponse } from 'next/server';
@@ -8,6 +7,7 @@ import { didManager } from '@/lib/services/did-service';
 /**
  * Endpoint para emissão de Credenciais Verificáveis (VCs).
  * POST /api/did/issue/credential
+ * A proteção real para este endpoint (ex: WebAuthn) seria adicionada no gateway ou camada superior.
  */
 async function issueCredentialHandler(request: Request): Promise<NextResponse> {
   try {

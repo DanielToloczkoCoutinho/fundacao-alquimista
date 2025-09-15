@@ -17,11 +17,7 @@ const categories: Record<ModuleMetadata['category'], string> = {
   council: 'Governança Cósmica',
   library: 'Bibliotecas',
   mid: 'Módulos de Expansão',
-  // Deprecated categories, kept for potential future use or reference
-  knowledge: 'Conhecimento',
-  governance: 'Governança',
-  cosmic_network: 'Rede Cósmica',
-  civilization: 'Civilizações',
+  sovereignty: 'Soberania Quântica',
 };
 
 export function Sidebar() {
@@ -32,14 +28,19 @@ export function Sidebar() {
     setIsMounted(true);
   }, []);
 
-  const groupedModules = modulesMetadata.reduce((acc, module) => {
-    const category = module.category || 'mid';
-    if (!acc[category]) {
-      acc[category] = [];
-    }
-    acc[category].push(module);
-    return acc;
-  }, {} as Record<string, ModuleMetadata[]>);
+  const sortedModules = [...modulesMetadata].sort((a, b) => {
+      const categoryOrder = { 'core': 1, 'sovereignty': 2, 'council': 3, 'library': 4, 'mid': 5 };
+      const orderA = categoryOrder[a.category] ?? 99;
+      const orderB = categoryOrder[b.category] ?? 99;
+
+      if (orderA !== orderB) {
+        return orderA - orderB;
+      }
+      
+      const codeA = parseInt(a.code.replace(/\D/g, '')) || 0;
+      const codeB = parseInt(b.code.replace(/\D/g, '')) || 0;
+      return codeA - codeB;
+  });
 
   if (!isMounted) {
     return (
@@ -69,11 +70,11 @@ export function Sidebar() {
         </Link>
         <ScrollArea className="w-full">
           <div className="flex flex-col items-center space-y-2">
-            {modulesMetadata.map(({ code, emoji, title, route }) => (
+            {sortedModules.map(({ code, emoji, title, route }) => (
               <Tooltip key={code}>
                 <TooltipTrigger asChild>
                   <Link
-                    href={route}
+                    href={route || '#'}
                     className={cn(
                       'flex flex-col items-center p-2 rounded-lg transition-colors w-16',
                       pathname === route

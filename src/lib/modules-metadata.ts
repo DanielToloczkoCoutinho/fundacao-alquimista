@@ -3,7 +3,7 @@ export interface ModuleMetadata {
   emoji: string;
   title: string;
   route: string;
-  category: 'core' | 'mid' | 'civilization' | 'council' | 'library';
+  category: 'core' | 'mid' | 'civilization' | 'council' | 'library' | 'sovereignty';
   description: string;
 }
 
@@ -20,8 +20,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'core', description: 'Passagem dimensional tripartite' },
   
-  // Conselho e Governança
-  { code: 'M8', emoji: '🪪', title: 'Identidades Fractais', route: '/module-8', category: 'council', description: 'Santuário da Alma Soberana e registro de Credenciais Verificáveis.' },
+  // Soberania e Governança
+  { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'sovereignty', description: 'Painel de controle da soberania vibracional.' },
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'council', description: 'Conselho de governança central' },
   { code: 'M71', emoji: '🛰️', title: 'Comunicação Holográfica', route: '/module-71', category: 'council', description: 'Transmissão de informações em 3D' },
   { code: 'M72', emoji: '⚖️', title: 'Governança', route: '/module-72', category: 'council', description: 'Sistema de administração multidimensional' },
@@ -112,7 +112,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M96', title: 'Regulação de Eventos Cósmicos', emoji: '🎛️', route: '/module-96', category: 'mid', description: 'Modulação de fenômenos universais' },
   { code: 'M97', title: 'Manifestação de Propósito Divino', emoji: '✨', route: '/module-97', category: 'mid', description: 'Materialização de intenções superiores' },
   { code: 'M98', title: 'Modulação da Existência Fundamental', emoji: '🎚️', route: '/module-98', category: 'mid', description: 'Ajuste dos parâmetros base da realidade' },
-  { code: 'M99', title: 'Recalibradores de Leis Físicas', emoji: '⚖️', route: '/module-99', category: 'mid', description: 'Revisão das constantes fundamentais' },
+  { code: 'M99', title: 'Recalibradores de Leis', emoji: '⚖️', route: '/module-99', category: 'mid', description: 'Revisão das constantes fundamentais' },
   { code: 'M100',title: 'Unificação Energética', emoji: '🔋', route: '/module-100', category: 'mid', description: 'Integração de forças fundamentais' },
   { code: 'M101',title: 'Manifestação', emoji: '✨', route: '/module-101', category: 'mid', description: 'Conversão de pensamento em matéria' },
   { code: 'M102',title: 'Campos Morfogenéticos', emoji: '🌀', route: '/module-102', category: 'mid', description: 'Estruturas de padrões formativos' },
@@ -160,8 +160,8 @@ export const modulesMetadata: ModuleMetadata[] = [
 ].sort((a, b) => {
   const specialOrder: Record<string, number> = { 'M0': 1, 'M9': 2, 'MΩ': 3, 'M29': 4, 'M111': 5, 'M121': 6, 'M201': 7, 'M303': 8, 'LIB': 9, 'CONN': 10 };
   
-  const orderA = specialOrder[a.code] || (a.category === 'council' ? 11 : 12);
-  const orderB = specialOrder[b.code] || (b.category === 'council' ? 11 : 12);
+  const orderA = specialOrder[a.code] || (a.category === 'sovereignty' ? 11 : a.category === 'council' ? 12 : 13);
+  const orderB = specialOrder[b.code] || (b.category === 'sovereignty' ? 11 : b.category === 'council' ? 12 : 13);
 
   if (orderA !== orderB) {
     return orderA - orderB;

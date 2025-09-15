@@ -45,7 +45,7 @@ export async function issueVerifiableCredential(
   const vc: VerifiableCredential = {
     '@context': [
       'https://www.w3.org/2018/credentials/v1',
-      'https://beta.api.schemas.verite.id/v1/base',
+      'https://alquimista.foundation/schemas/v1', // Usando um contexto próprio
     ],
     type: ['VerifiableCredential', ...credentialType],
     issuer: ISSUER_DID,
