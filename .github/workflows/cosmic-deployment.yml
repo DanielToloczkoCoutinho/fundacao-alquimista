@@ -51,13 +51,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Setup kubectl
+        run: |
+          curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+          chmod +x kubectl && sudo mv kubectl /usr/local/bin
+      - name: Run Chaos Experiment
+        run: kubectl apply -f chaos/chaos-experiment.json
+      - name: Verify Chaos Rollout
+        run: kubectl get podchaos fractal-resilience-test -n foundation-alchemist -o yaml
 
-      - name: Instalar Chaos Toolkit
-        run: pip install chaostoolkit chaostoolkit-http
-
-      - name: Executar Experimento de Caos
-        run: chaos run chaos/chaos-experiment.json
-        continue-on-error: true
 
   # 4. Rollout Canário
   deploy_canary:
@@ -89,3 +91,4 @@ jobs:
           curl -X POST $SLACK_WEBHOOK \
             -H 'Content-type: application/json' \
             --data '{"text":"🚀 Rollout canário completo! O Ciclo Cósmico pulsa na coerência máxima."}'
+

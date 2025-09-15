@@ -1,7 +1,33 @@
 
 'use server';
 
-import { VerifiableCredential, Presentation } from 'verite';
+// A biblioteca 'verite' não foi encontrada.
+// Esta é uma implementação mock/simulada para manter a funcionalidade conceitual.
+// Em um sistema de produção, seria necessário usar uma biblioteca funcional de VC.
+
+export interface VerifiableCredential {
+  '@context': string[];
+  type: string[];
+  issuer: string;
+  issuanceDate: string;
+  credentialSubject: Record<string, any> & { id: string };
+  proof?: {
+    type: string;
+    created: string;
+    verificationMethod: string;
+    proofPurpose: string;
+    jws: string;
+  };
+}
+
+export interface Presentation {
+  '@context': string[];
+  type: string[];
+  verifiableCredential: VerifiableCredential[];
+  holder: string;
+  proof?: any;
+}
+
 
 // Simulação de uma chave de emissor (deveria vir de um KMS ou hardware seguro)
 const ISSUER_DID = 'did:web:alquimista.foundation:issuer';

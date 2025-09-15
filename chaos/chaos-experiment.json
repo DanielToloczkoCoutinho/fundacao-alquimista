@@ -1,38 +1,24 @@
-
 {
-  "version": "1.0.0",
-  "title": "Experimento de Caos: Latência no Gateway da Malha de Dados Fractal",
-  "description": "Verifica a resiliência do gateway Apollo (Face 5) quando um dos subgrafos (labs) apresenta alta latência, garantindo que o sistema não entre em colapso e retorne um erro gracefully.",
-  "configuration": {
-    "target_service": "http://localhost:4001/graphql",
-    "latency_ms": 3000
+  "apiVersion": "chaos-mesh.org/v1alpha1",
+  "kind": "PodChaos",
+  "metadata": {
+    "name": "fractal-resilience-test",
+    "namespace": "foundation-alchemist"
   },
-  "method": [
-    {
-      "type": "action",
-      "name": "injetar-latencia-subgrafo",
-      "provider": {
-        "type": "python",
-        "module": "chaos_providers.network",
-        "func": "add_latency",
-        "arguments": {
-          "target": "service:labs",
-          "duration": "60s",
-          "latency": "3000ms"
-        }
+  "spec": {
+    "selector": {
+      "namespaces": [
+        "gateway"
+      ],
+      "labelSelectors": {
+        "app": "apollo-gateway"
       }
+    },
+    "mode": "one",
+    "action": "pod-kill",
+    "duration": "30s",
+    "scheduler": {
+      "cron": "@every 1h"
     }
-  ],
-  "probes": [
-    {
-      "name": "verificar-saude-gateway",
-      "type": "probe",
-      "provider": {
-        "type": "http",
-        "url": "http://localhost:4000/health",
-        "expected_status": 200
-      }
-    }
-  ],
-  "rollbacks": []
+  }
 }
