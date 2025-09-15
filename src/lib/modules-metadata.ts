@@ -133,6 +133,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M116',title: 'Portais Quânticos', emoji: '🚪', route: '/module-116', category: 'mid', description: 'Passagem dimensional controlada' },
   { code: 'M117',title: 'Flor do Éter', emoji: '🌸', route: '/module-117', category: 'mid', description: 'Fonte de energia sutil primordial' },
   { code: 'M118',title: 'Luz Primordial', emoji: '💡', route: '/module-118', category: 'mid', description: 'Gerador do espectro lumínico original' },
+  { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
+  { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
+  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas temporais divergentes' },
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia do ponto zero' },
   { code: 'M142', title: 'Tomografia Quântica', emoji: '📸', route: '/module-142', category: 'mid', description: 'Visualização de estados quânticos via tomografia.' },
   { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'mid', description: 'Simulação de colisões de partículas de alta energia.' },
   { code: 'M161', title: 'Observatório de Neutrinos', emoji: '🔭', route: '/module-161', category: 'mid', description: 'Detecção de neutrinos e assinaturas de matéria escura.' },
@@ -148,10 +152,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M271', emoji: '🌌', title: 'Energia Escura', route: '/module-271', category: 'mid', description: 'Modelagem da influência da energia escura na expansão.' },
   { code: 'M281', emoji: '🚀', title: 'Comunicação Supra-Luminal', route: '/module-281', category: 'mid', description: 'Exploração de comunicação via orbital angular momentum.' },
   { code: 'M291', emoji: '🤖', title: 'Robótica Autônoma & Nanorrobôs', route: '/module-291', category: 'mid', description: 'Swarm de nanorrobôs para reparo celular e materiais.' },
-  { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
-  { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
-  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas temporais divergentes' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia do ponto zero' },
   { code: 'M308', emoji: '🌊', title: 'Oceanografia', route: '/module-308', category: 'mid', description: 'Exploração abissal e biofármacos.' },
   { code: 'M311', emoji: '🧠', title: 'Neuroengenharia', route: '/module-311', category: 'mid', description: 'Interfaces cérebro-máquina quântico-híbridas.' },
   { code: 'M321', emoji: '💻', title: 'Exascale Computing', route: '/module-321', category: 'mid', description: 'Simulações de cosmos e fluidos em exa-flops.' },
@@ -173,4 +173,3 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace(/\D/g, ''));
   return codeA - codeB;
 });
-

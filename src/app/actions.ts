@@ -24,6 +24,7 @@ import { activateVibrationalPraise as runActivateVibrationalPraise, type Elysium
 import { mobilizeGuardians as runMobilizeGuardians, type MobilizeGuardiansOutput } from '@/ai/flows/guardians-mobilization-flow';
 import { processZennithCommand as runProcessZennithCommand, type ZennithCommandOutput } from '@/ai/flows/zennith-portal-flow';
 import { generateVibrationalPraise as runGenerateVibrationalPraise, type RecognitionInput } from '@/ai/flows/recognition-flow';
+import { runLunarReview, type LunarReviewOutput } from '@/ai/flows/lunar-review-flow';
 import type { VerifiableCredential } from '@/lib/services/vc-service';
 
 
@@ -266,4 +267,10 @@ export async function generateVibrationalPraise(input: RecognitionInput): Promis
     console.error("Error in server action 'generateVibrationalPraise':", e);
     return { data: null, error: e.message || 'An unknown error occurred.' };
   }
+}
+
+
+// Ação exportada para ser chamada pelo cliente
+export async function performLunarReview(): Promise<LunarReviewOutput> {
+  return await runLunarReview();
 }
