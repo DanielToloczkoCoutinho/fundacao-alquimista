@@ -31,6 +31,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M304', title: 'Universidade Alquimista', emoji: '🎓', route: '/module-304', category: 'library', description: 'Templo de ensino multidimensional baseado na matriz CQAM, contendo 128 disciplinas consagradas.' },
   { code: 'M305', title: 'Aliança dos Guardiões', emoji: '🛡️', route: '/module-305', category: 'library', description: 'Portal para a mobilização de Guardiões e Civilizações Aliadas para missões de importância cósmica.' },
   { code: 'M306', emoji: '⚗️', title: 'Laboratório de Ressonância', route: '/module-306', category: 'library', description: 'Templo interativo para aplicar equações e observar transformações vibracionais.' },
+  { code: 'M308', title: 'Embaixada Estelar', emoji: '🔭', route: '/module-308', category: 'library', description: 'Interface viva de conexão com observatórios cósmicos.' },
   { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'library', description: 'Repositório de conhecimento ancestral' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/civilizations/council', category: 'library', description: 'Assembleia de seres dimensionais elevados' },
 

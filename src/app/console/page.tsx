@@ -102,7 +102,7 @@ export default function ConsolePage() {
                 <Link href="/module-305"><Users className="mr-2 h-4 w-4" />Módulo 305 (Aliança dos Guardiões)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-308"><Ship className="mr-2 h-4 w-4" />Módulo 308 (Oceanografia)</Link>
+                <Link href="/module-308"><Telescope className="mr-2 h-4 w-4" />Módulo 308 (Embaixada Estelar)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-404"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 404 (Resolução de Paradoxo)</Link>
