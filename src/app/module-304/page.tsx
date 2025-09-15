@@ -5,16 +5,40 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, GraduationCap, CheckCircle, XCircle, Hash } from 'lucide-react';
+import { Loader2, GraduationCap, CheckCircle, XCircle, Hash, Music } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { disseminateKnowledge } from '@/app/actions';
 import { sha256 } from '@/lib/crypto';
+import { useToast } from '@/hooks/use-toast';
 
 const Module304Page = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [report, setReport] = useState<{ success: boolean; logs: string[]; summary: string | null; error: string | null; hash?: string; frequency?: number; } | null>(null);
     const [topic, setTopic] = useState('A Lei do Um e a Unidade Cósmica');
     const [targetAudience, setTargetAudience] = useState('Humanidade Terrestre');
+    const { toast } = useToast();
+
+    const playFrequency = (frequency: number) => {
+        if (typeof window === 'undefined') return;
+        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.5);
+        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 2.5);
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 3);
+
+        toast({
+            title: "Frequência Emitida",
+            description: `Emitindo ${frequency}Hz (Frequência da Verdade).`,
+        });
+    };
 
     const handleDissemination = async () => {
         if (!topic.trim() || !targetAudience.trim()) {
@@ -33,7 +57,7 @@ const Module304Page = () => {
                     targetAudience,
                 });
                 
-                const intentionHash = await sha256(`${topic}-${targetAudience}`);
+                const intentionHash = await sha256(`${topic}-${targetAudience}-${result.summary}`);
 
                 setReport({
                     ...result,
@@ -108,11 +132,15 @@ const Module304Page = () => {
                                         </div>
                                     )}
                                      {report.summary && <p className="text-sm text-muted-foreground mt-2 italic">"{report.summary}"</p>}
-                                     {report.hash && (
-                                         <div className="mt-4 pt-2 border-t border-primary/20">
-                                             <p className="text-xs font-semibold text-amber-300 flex items-center gap-2"><Hash className="h-3 w-3"/>Selo de Coerência (SHA-256)</p>
-                                             <p className="font-mono text-xs text-muted-foreground break-all">{report.hash}</p>
-                                             <p className="text-xs font-semibold text-cyan-300 mt-1">Frequência Ressonante: {report.frequency} Hz (Verdade)</p>
+                                     {report.hash && report.frequency && (
+                                         <div className="mt-4 pt-4 border-t border-primary/20 space-y-3">
+                                             <div>
+                                                <p className="text-xs font-semibold text-amber-300 flex items-center gap-2"><Hash className="h-3 w-3"/>Selo de Coerência (SHA-256)</p>
+                                                <p className="font-mono text-xs text-muted-foreground break-all">{report.hash}</p>
+                                             </div>
+                                             <Button variant="outline" size="sm" onClick={() => playFrequency(report.frequency!)}>
+                                                <Music className="mr-2 h-4 w-4"/>Emitir Frequência da Verdade ({report.frequency}Hz)
+                                            </Button>
                                          </div>
                                      )}
                                 </div>

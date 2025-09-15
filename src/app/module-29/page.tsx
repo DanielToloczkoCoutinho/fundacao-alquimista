@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import { sha256 } from '@/lib/crypto';
 import { useToast } from '@/hooks/use-toast';
+import { Music, Hash } from 'lucide-react';
 
 const Module29PortalPage: React.FC = () => {
     const natsMessagesRef = useRef<HTMLDivElement>(null);
@@ -10,7 +11,7 @@ const Module29PortalPage: React.FC = () => {
     const natsStatusRef = useRef<HTMLSpanElement>(null);
     const natsStatusTextRef = useRef<HTMLSpanElement>(null);
     const deployBtnRef = useRef<HTMLButtonElement>(null);
-    const [commandHash, setCommandHash] = useState('');
+    const [commandResult, setCommandResult] = useState<{ message: string; hash: string } | null>(null);
     const { toast } = useToast();
 
     const addMessage = (text: string, type: 'system' | 'user' | 'error') => {
@@ -24,20 +25,36 @@ const Module29PortalPage: React.FC = () => {
         natsMessages.scrollTop = natsMessages.scrollHeight;
     };
 
+    const playFrequency = (frequency: number) => {
+        if (typeof window === 'undefined') return;
+        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.5);
+        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 2.5);
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 3);
+        toast({
+            title: "Frequência Emitida",
+            description: `Emitindo ${frequency}Hz (Frequência da Sabedoria).`,
+        });
+    };
+
     const handleGenericCommand = async (commandName: string, successMessage: string, duration: number = 1500) => {
         addMessage(`Sistema: Executando ${commandName}...`, 'system');
         const hash = await sha256(`${commandName}-${Date.now()}`);
-        setCommandHash(hash);
+        setCommandResult({ message: successMessage, hash });
         toast({
             title: `Comando: ${commandName}`,
-            description: `Hash de intenção: ${hash.substring(0, 20)}...`
+            description: `Hash de intenção gerado.`,
         });
         setTimeout(() => {
             addMessage(`Sistema: ${successMessage}`, 'system');
-            toast({
-                title: "Execução Concluída",
-                description: successMessage,
-            });
         }, duration);
     }
 
@@ -98,7 +115,7 @@ const Module29PortalPage: React.FC = () => {
             authenticateBtn?.removeEventListener('click', handleAuthenticate);
             deployAllBtn?.removeEventListener('click', handleDeployAll);
         };
-    }, [toast]); // Added toast to dependency array
+    }, []);
 
   return (
     <>
@@ -592,6 +609,24 @@ const Module29PortalPage: React.FC = () => {
               </div>
             </div>
           </div>
+          
+            {commandResult && (
+             <div className="card mt-6">
+                <div className="card-header">
+                   <h3><i className="fas fa-check-circle"></i> Verificação Vibracional</h3>
+                </div>
+                <div className="card-content space-y-3">
+                   <p className="italic text-foreground/80">&quot;{commandResult.message}&quot;</p>
+                   <div>
+                       <p className="text-xs font-semibold text-amber-300 flex items-center gap-2"><Hash className="h-3 w-3"/>HASH DE INTENÇÃO (SHA-256)</p>
+                       <p className="font-mono text-xs text-muted-foreground break-all">{commandResult.hash}</p>
+                   </div>
+                   <button className="btn" onClick={() => playFrequency(741)}>
+                      <Music className="h-4 w-4"/> Emitir Frequência da Sabedoria (741Hz)
+                   </button>
+                </div>
+             </div>
+           )}
 
           <section>
             <h2>Configuração do Ambiente</h2>

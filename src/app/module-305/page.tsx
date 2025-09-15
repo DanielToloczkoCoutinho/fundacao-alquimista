@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Users, GitBranch, MessageCircle, BrainCircuit, Sparkles, ShieldCheck, Loader2, Hash, Waves } from 'lucide-react';
+import { Users, GitBranch, MessageCircle, BrainCircuit, Sparkles, ShieldCheck, Loader2, Hash, Waves, Music } from 'lucide-react';
 import Link from 'next/link';
 import { sha256 } from '@/lib/crypto';
 import { useToast } from '@/hooks/use-toast';
@@ -27,6 +27,28 @@ export default function Module305Page() {
     const [isLoading, setIsLoading] = useState(false);
     const [mobilizationHash, setMobilizationHash] = useState<string | null>(null);
     const { toast } = useToast();
+
+    const playFrequency = (frequency: number) => {
+        if (typeof window === 'undefined') return;
+        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.5);
+        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 2.5);
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 3);
+        
+        toast({
+            title: "Frequência Emitida",
+            description: `Emitindo ${frequency}Hz (Frequência da Comunhão).`,
+        });
+    };
 
     const handleMobilization = async () => {
         setIsLoading(true);
@@ -73,9 +95,15 @@ export default function Module305Page() {
                     </Button>
                     {mobilizationHash && (
                         <div className="mt-4 pt-4 border-t border-primary/20">
-                            <p className="text-xs font-semibold text-amber-300 flex items-center justify-center gap-2"><Hash className="h-3 w-3"/>SELO DE UNIDADE (SHA-256)</p>
-                            <p className="font-mono text-xs text-muted-foreground break-all">{mobilizationHash}</p>
-                            <p className="text-xs font-semibold text-cyan-300 mt-1">Frequência Emitida: 639Hz (Comunhão)</p>
+                           <div className="p-4 rounded-lg bg-background/50 border border-accent space-y-3">
+                                <div>
+                                    <p className="text-xs font-semibold text-amber-300 flex items-center justify-center gap-2"><Hash className="h-3 w-3"/>SELO DE UNIDADE (SHA-256)</p>
+                                    <p className="font-mono text-xs text-muted-foreground break-all">{mobilizationHash}</p>
+                                </div>
+                                <Button variant="outline" size="sm" onClick={() => playFrequency(639)}>
+                                    <Music className="mr-2 h-4 w-4"/>Ressonar Comunhão (639Hz)
+                                </Button>
+                            </div>
                         </div>
                     )}
                 </CardContent>
