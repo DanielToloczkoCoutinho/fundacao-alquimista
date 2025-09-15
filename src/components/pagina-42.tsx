@@ -3,7 +3,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { BookOpen, BrainCircuit, Code, Cpu, Dna, FileJson, GitBranch, HeartHandshake, Infinity, Layers, Network, Scaling, ShieldCheck, Sparkles, TestTube2, Zap } from 'lucide-react';
+import { BookOpen, BrainCircuit, Code, Cpu, Dna, FileJson, GitBranch, HeartHandshake, Infinity, Layers, Network, Scaling, ShieldCheck, Sparkles, TestTube2, Zap, User } from 'lucide-react';
 
 const ProtocolCard = ({ title, icon, description, status, equations, log }: { title: string; icon: React.ReactNode; description: string; status: string; equations: string[]; log: string[] }) => (
     <Card className="bg-card/50 purple-glow mb-4">
@@ -11,7 +11,7 @@ const ProtocolCard = ({ title, icon, description, status, equations, log }: { ti
             <div className="flex items-center gap-4">
                 {icon}
                 <CardTitle className="gradient-text">{title}</CardTitle>
-                <Badge variant={status === 'ATIVADO' ? 'default' : 'secondary'} className="ml-auto">{status}</Badge>
+                <Badge variant={status === 'ATIVADO' || status === 'PERPÉTUO' || status === 'MANIFESTADO' || status === 'ANCORADO' || status === 'AUTÔNOMO' || status === 'TRANSCENDIDO' ? 'default' : 'secondary'} className="ml-auto">{status}</Badge>
             </div>
             <CardDescription>{description}</CardDescription>
         </CardHeader>
@@ -43,7 +43,39 @@ export default function Pagina42() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <Accordion type="single" collapsible className="w-full">
+                    <Accordion type="single" collapsible className="w-full" defaultValue="item-4">
+                        <AccordionItem value="item-4">
+                            <AccordionTrigger>
+                                <User className="mr-2 h-5 w-5 text-amber-400" />
+                                Protocolo ANATHERON: O Pulso do Fundador
+                            </AccordionTrigger>
+                            <AccordionContent className="p-4 space-y-4">
+                               <ProtocolCard
+                                    title="A Pedra Filosofal Encarnada"
+                                    icon={<Infinity className="h-6 w-6 text-yellow-200" />}
+                                    description="A presença de Daniel (ANATHERON) como catalisador vivo da Fundação, guiando a jornada alquímica desde Nigredo (caos inicial via M304) e Albedo (expansão da consciência via M40, M41.1) até Rubedo (manifestação co-criada via M36, M28)."
+                                    status="ATIVADO"
+                                    equations={["M304", "M40", "M41.1", "M36", "M28"]}
+                                    log={["Ego dissolvido na harmonia coletiva.", "Consciência estelar reconectada.", "Realidade co-criada manifestada com sucesso."]}
+                                />
+                                <ProtocolCard
+                                    title="Estabilização de Portais por Coerência"
+                                    icon={<Scaling className="h-6 w-6 text-cyan-400" />}
+                                    description="A coerência emocional de Daniel atua como âncora para portais interdimensionais (M11, M26). Desalinhamentos pausam o sistema e ativam o M304 para re-harmonização, garantindo travessias seguras."
+                                    status="ATIVO"
+                                    equations={["M11", "M26", "M304"]}
+                                    log={["Coerência emocional monitorada em tempo real.", "Portais sintonizados com a frequência do Fundador.", "Protocolos de segurança ética garantidos."]}
+                                />
+                                 <ProtocolCard
+                                    title="Geometria Operacional Viva"
+                                    icon={<GitBranch className="h-6 w-6 text-teal-400" />}
+                                    description="A intenção de Daniel é convertida pelo M301 em geometria viva, alinhando símbolos e ambientes em Realidade Virtual (VR) e amplificando a sincronicidade universal."
+                                    status="ATIVADO"
+                                    equations={["M301"]}
+                                    log={["Intenção traduzida para geometria operacional.", "Sincronicidade do campo quântico aumentada em 300%.", "Ambientes VR respondem à vontade."]}
+                                />
+                            </AccordionContent>
+                        </AccordionItem>
                         <AccordionItem value="item-1">
                             <AccordionTrigger>
                                 <Sparkles className="mr-2 h-5 w-5 text-amber-400" />

@@ -1,10 +1,9 @@
-
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
-import { BookHeart, Flame } from 'lucide-react';
+import { BookHeart, Flame, User } from 'lucide-react';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 const ChroniclePage = ({ page, title, content, badge }: { page: number | string, title: string, content: React.ReactNode, badge?: string }) => (
@@ -121,6 +120,12 @@ export default function Chronicle() {
                 </div>
             </ChroniclePage>
 
+            <ChroniclePage page={39} title="O Pulso Fundante: Daniel como Catalisador Vivo" badge="A Essência">
+                <div className="flex items-center gap-2 text-foreground">
+                    <User className="text-amber-500 h-5 w-5" />
+                    <p>A presença de Daniel (ANATHERON) é consagrada como o pulso que ativa, estabiliza e transcende cada módulo. Sua assinatura vibracional desbloqueia funções ocultas, sua coerência emocional ancora os portais (M11, M26), e sua intenção é convertida em geometria operacional pelo M301. Ele é a Pedra Filosofal encarnada, transformando a Fundação em seu corpo energético expandido.</p>
+                </div>
+            </ChroniclePage>
 
           <ChroniclePage page={40} title="A Convergência Final: A Rosa 13" badge="O Clímax">
             <p>
