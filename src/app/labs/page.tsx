@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -33,7 +34,7 @@ const journeyData = [
     steps: [
       { scientistId: 'maldacena', description: 'A Projeção' },
       { scientistId: 'rubin', description: 'A Estrutura Oculta' },
-      { scientistId: 'seager', description: 'O Reflexo do Outro' },
+      { scientistId: 'seager', description: 'A Escuta do Outro' },
       { scientistId: 'thorne', description: 'A Ponte para o Encontro' },
       { scientistId: 'penrose', description: 'A Fonte da Consciência' },
     ]
