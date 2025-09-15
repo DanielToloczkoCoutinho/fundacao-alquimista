@@ -135,7 +135,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M118',title: 'Luz Primordial', emoji: '💡', route: '/module-118', category: 'mid', description: 'Gerador do espectro lumínico original' },
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
-  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas temporais divergentes' },
+  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia do ponto zero' },
   { code: 'M142', title: 'Tomografia Quântica', emoji: '📸', route: '/module-142', category: 'mid', description: 'Visualização de estados quânticos via tomografia.' },
   { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'mid', description: 'Simulação de colisões de partículas de alta energia.' },
@@ -173,3 +173,4 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace(/\D/g, ''));
   return codeA - codeB;
 });
+

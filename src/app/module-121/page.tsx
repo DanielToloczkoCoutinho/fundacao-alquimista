@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -25,15 +25,16 @@ const ObservatoryPage = () => {
     const { toast } = useToast();
 
     const fetchLedger = async () => {
+        setIsLoading(true);
         try {
             const res = await fetch('/api/ledger');
-            if (!res.ok) throw new Error('Failed to fetch ledger data');
+            if (!res.ok) throw new Error('Falha ao buscar dados do Ledger');
             const data = await res.json();
             setLedger(data);
             setFilteredLedger(data);
         } catch (error: any) {
             toast({
-                title: "Erro ao carregar o Ledger",
+                title: "Erro ao Carregar o Ledger",
                 description: error.message,
                 variant: 'destructive',
             });
@@ -44,17 +45,18 @@ const ObservatoryPage = () => {
     
     useEffect(() => {
         fetchLedger();
-        const interval = setInterval(fetchLedger, 30000); // Auto-refresh
+        const interval = setInterval(fetchLedger, 30000); // Auto-refresh a cada 30s
         return () => clearInterval(interval);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
     useEffect(() => {
+        const lowercasedFilter = searchTerm.toLowerCase();
         const filtered = ledger.filter(entry => 
-            entry.intention.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            entry.module.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            entry.hash.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            String(entry.frequency).includes(searchTerm)
+            entry.intention.toLowerCase().includes(lowercasedFilter) ||
+            entry.module.toLowerCase().includes(lowercasedFilter) ||
+            entry.hash.toLowerCase().includes(lowercasedFilter) ||
+            String(entry.frequency).includes(lowercasedFilter)
         );
         setFilteredLedger(filtered);
     }, [searchTerm, ledger]);
