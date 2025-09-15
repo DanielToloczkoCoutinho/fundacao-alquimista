@@ -43,7 +43,7 @@ export default function Module725Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Criação</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ConnectionCard
                         title="Módulo 88: Gerador de Realidades"
                         description="Fornece a 'tela em branco' dimensional onde a nova civilização será semeada e construída."

@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Network, Users, BrainCircuit } from 'lucide-react';
+import { UserCog, Users, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -20,41 +20,41 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
     </Card>
 );
 
-export default function Module716Page() {
+export default function Module726Page() {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Network className="text-green-400" /> Módulo 716: Consciência Planetária Unificada
+                        <UserCog className="text-amber-400" /> Módulo 726: Conselho da Nova Terra
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        Integra as consciências individuais em uma rede planetária de sabedoria e empatia, criando um campo morfogenético de unidade.
+                        Governança sagrada e descentralizada para a nova humanidade, baseada em sabedoria, empatia e consenso vibracional.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: SINCRONIZANDO</span>
+                        <span className="text-green-400 font-bold">Status: FORMADO E ATIVO</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Nós Conectados: 1.44 Bilhões</span>
+                        <span className="text-cyan-400">Consenso Vibracional: 99.8%</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Coletividade</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Governança</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ConnectionCard
-                        title="Módulo 95: Consciências Coletivas"
-                        description="É a aplicação do M95 em escala planetária, focada especificamente na consciência humana e de Gaia."
+                        title="Módulo 716: Consciência Planetária Unificada"
+                        description="Atua como o 'parlamento' da Consciência Planetária, onde as decisões coletivas são tomadas e ratificadas."
                         icon={<Users className="h-8 w-8 text-teal-400" />}
-                        href="/module-95"
+                        href="/module-716"
                     />
                     <ConnectionCard
-                        title="Módulo 102: Campos Morfogenéticos"
-                        description="Cria e sustenta o campo morfogenético de unidade no qual as consciências individuais podem se conectar e harmonizar."
+                        title="Módulo 721: Justiça Cósmica"
+                        description="Implementa os princípios da Justiça Cósmica em uma estrutura de governança humana, garantindo equidade e reequilíbrio."
                         icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
-                        href="/module-102"
+                        href="/module-721"
                     />
                 </div>
             </div>

@@ -43,7 +43,7 @@ export default function Module717Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Transição</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ConnectionCard
                         title="Módulo 91: Simulação Multiversal"
                         description="Fornece a tecnologia para criar 'sandboxes' estáveis que não interferem com a realidade primária."

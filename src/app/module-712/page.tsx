@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Users, Heart } from 'lucide-react';
+import { Users, Heart, GitBranch } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,7 +43,7 @@ export default function Module712Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Unidade</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ConnectionCard
                         title="Módulo 302: Frequência do Amor"
                         description="Amplifica a frequência do amor incondicional como a base para a comunicação interespécies."

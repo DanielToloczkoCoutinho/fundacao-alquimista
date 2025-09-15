@@ -43,7 +43,7 @@ export default function Module714Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias Planetárias</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ConnectionCard
                         title="Módulo 709: Rede Planetária"
                         description="Fornece os dados sobre o estado da grade telúrica para que o M709 possa realizar reparos e otimizações."

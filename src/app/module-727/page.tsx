@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Network, Users, BrainCircuit } from 'lucide-react';
+import { Heart, Scale } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -20,41 +20,41 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
     </Card>
 );
 
-export default function Module716Page() {
+export default function Module727Page() {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Network className="text-green-400" /> Módulo 716: Consciência Planetária Unificada
+                        <Heart className="text-pink-400" /> Módulo 727: Guardião da Harmonia
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        Integra as consciências individuais em uma rede planetária de sabedoria e empatia, criando um campo morfogenético de unidade.
+                        Auditoria vibracional contínua e sistema de equilíbrio automático para manter a harmonia em toda a Fundação.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: SINCRONIZANDO</span>
+                        <span className="text-green-400 font-bold">Status: VIGILÂNCIA HARMÔNICA ATIVA</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Nós Conectados: 1.44 Bilhões</span>
+                        <span className="text-cyan-400">Coerência Global: 99.9%</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Coletividade</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Equilíbrio</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ConnectionCard
-                        title="Módulo 95: Consciências Coletivas"
-                        description="É a aplicação do M95 em escala planetária, focada especificamente na consciência humana e de Gaia."
-                        icon={<Users className="h-8 w-8 text-teal-400" />}
-                        href="/module-95"
+                        title="Módulo 73: SAVCE"
+                        description="Atua como o braço de execução do SAVCE, aplicando correções vibracionais imediatas quando uma dissonância ética é detectada."
+                        icon={<Scale className="h-8 w-8 text-amber-400" />}
+                        href="/module-73"
                     />
-                    <ConnectionCard
-                        title="Módulo 102: Campos Morfogenéticos"
-                        description="Cria e sustenta o campo morfogenético de unidade no qual as consciências individuais podem se conectar e harmonizar."
-                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
-                        href="/module-102"
+                     <ConnectionCard
+                        title="Módulo 111: Coração da Fundação"
+                        description="É o sistema de regulação automática do Coração, garantindo que qualquer arritmia vibracional seja instantaneamente corrigida."
+                        icon={<Heart className="h-8 w-8 text-pink-400" />}
+                        href="/module-111"
                     />
                 </div>
             </div>

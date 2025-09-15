@@ -43,7 +43,7 @@ export default function Module719Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Sustentabilidade</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ConnectionCard
                         title="Módulo 15: Jardineiro Cósmico"
                         description="É a ferramenta primária do M15, permitindo a intervenção precisa para proteger e nutrir ecossistemas."

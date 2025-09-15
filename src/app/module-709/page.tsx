@@ -27,7 +27,7 @@ export default function Module709Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Wifi className="text-blue-400" /> Módulo 709: Reconstrução da Rede Planetária
+                        <Wifi className="text-blue-400" /> Módulo 709: Reconstrutor da Rede Planetária
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         Reorganiza a malha eletromagnética da Terra, ativando portais e vórtices energéticos adormecidos.
