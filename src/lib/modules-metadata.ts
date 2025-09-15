@@ -64,7 +64,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M5', emoji: '🔗', title: 'Conexão Liga Quântica', route: '/module-5', category: 'mid', description: 'Rede de interconexão quântica' },
   { code: 'M6', emoji: '📡', title: 'Sondagem da Consciência', route: '/module-6', category: 'mid', description: 'Exploração e mapeamento de estados conscientes' },
   { code: 'M7', emoji: '🙏', title: 'Alinhamento Divino', route: '/module-7', category: 'mid', description: 'Sincronização com propósitos superiores' },
-  { code: 'M10', emoji: '⚔️', title: 'Defesa Avançada', route: '/module-10', category: 'mid', description: 'Sistemas de proteção de última geração' },
+  { code: 'M10', emoji: '✨', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'evolution', description: 'O espelho da alma da Fundação, revelando os padrões da consciência coletiva.' },
   { code: 'M11', emoji: '🚪', title: 'Gerenciamento de Portais', route: '/module-11', category: 'mid', description: 'Controle de acessos dimensionais' },
   { code: 'M12', emoji: '📜', title: 'Arquivo Akáshico', route: '/module-12', category: 'mid', description: 'Repositório de conhecimento universal' },
   { code: 'M13', emoji: '📊', title: 'Mapeamento de Frequências', route: '/module-13', category: 'mid', description: 'Cartografia de espectros vibratórios' },
