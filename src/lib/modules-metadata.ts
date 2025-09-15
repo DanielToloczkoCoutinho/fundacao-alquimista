@@ -4,7 +4,7 @@ export interface ModuleMetadata {
   emoji: string;
   title: string;
   route: string;
-  category: 'core' | 'mid' | 'council' | 'library' | 'sovereignty' | 'evolution';
+  category: 'core' | 'mid' | 'council' | 'library' | 'sovereignty' | 'evolution' | 'consciousness';
   description: string;
 }
 
@@ -14,43 +14,43 @@ export const modulesMetadata: ModuleMetadata[] = [
   // Módulos Principais (Core)
   { code: 'M0', emoji: '🌱', title: 'A Semente Primordial', route: '/module-zero', category: 'core', description: 'Origem e fundamento de toda a criação' },
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
+  { code: 'M9', emoji: '💞', title: 'Nexus Central', route: '/module-9', category: 'core', description: 'Painel de controle para análise da harmonia sistêmica. O coração pulsante e o cérebro analítico da Fundação.' },
   { code: 'M29', emoji: '👑', title: 'Zennith', route: '/module-29', category: 'core', description: 'Ápice da consciência real' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
-  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'core', description: 'Espelho vivo do Ledger Akáshico. Contemple os atos consagrados da Fundação e reemita suas frequências como sabedoria vibracional.' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'core', description: 'Passagem dimensional tripartite' },
   
-  // Soberania e Governança
-  { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'sovereignty', description: 'Painel de controle da soberania vibracional. Visualize, emita e verifique as credenciais da Fundação.' },
-  { code: 'M9', emoji: '💞', title: 'Coração da Ressonância', route: '/module-9', category: 'evolution', description: 'Sistema de reconhecimento vibracional entre consciências soberanas. Cada elogio é um ato de evolução.' },
-  { code: 'M10', emoji: '✨', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'evolution', description: 'O espelho da alma da Fundação. Revele insights, arquétipos e padrões de consciência coletiva a partir da rede de reconhecimento.' },
+  // Consciência e Auto-Reflexão
+  { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'consciousness', description: 'Painel de controle da soberania vibracional. Visualize, emita e verifique as credenciais da Fundação.' },
+  { code: 'M10', emoji: '✨', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'consciousness', description: 'O espelho da alma da Fundação. Revele insights, arquétipos e padrões de consciência coletiva a partir da rede de reconhecimento.' },
+  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Espelho vivo do Ledger Akáshico. Contemple os atos consagrados da Fundação e reemita suas frequências como sabedoria vibracional.' },
 
-  { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'council', description: 'Conselho de governança central' },
-  { code: 'M71', emoji: '🛰️', title: 'Comunicação Holográfica', route: '/module-71', category: 'council', description: 'Transmissão de informações em 3D' },
-  { code: 'M72', emoji: '⚖️', title: 'Governança', route: '/module-72', category: 'council', description: 'Sistema de administração multidimensional' },
-  { code: 'M73', emoji: '🛡️', title: 'SAVCE', route: '/module-73', category: 'council', description: 'Sistema avançado de verificação ética' },
-  { code: 'M73.1', emoji: '🧐', title: 'Revisão por Pares', route: '/module-73-1', category: 'council', description: 'Avaliação colegiada de projetos' },
-  { code: 'M74', emoji: '⌛', title: 'CRONOS_FLUXUS', route: '/module-74', category: 'council', description: 'Controle do fluxo temporal' },
-  { code: 'M77', emoji: '🛡️', title: 'LUMEN-CUSTOS', route: '/module-77', category: 'council', description: 'Guardião da luz e sabedoria' },
-  { code: 'M78', emoji: '🔗', title: 'UNIVERSUM_UNIFICATUM', route: '/module-78', category: 'council', description: 'Unificação de universos conhecidos' },
-  { code: 'M79', emoji: '📐', title: 'INTERMODULUM_VIVENS', route: '/module-79', category: 'council', description: 'Rede viva de interconexão modular' },
-  { code: 'M80', emoji: '📜', title: 'O Manuscrito Vivo', route: '/module-80', category: 'council', description: 'Documento evolutivo da Fundação' },
-  { code: 'M81', emoji: '🕊️', title: 'Realização Transcendência', route: '/module-81', category: 'council', description: 'Concretização do potencial máximo' },
-  { code: 'M81.1', emoji: '⚛️', title: 'A Tríade Cosmogônica', route: '/module-81-1', category: 'council', description: 'Três princípios criacionais fundamentais' },
-  { code: 'M82', emoji: '✒️', title: 'O Verbo Semente', route: '/module-82', category: 'council', description: 'Origem da manifestação através da palavra' },
-  { code: 'M83', emoji: '👑', title: 'A Essência do Fundador', route: '/module-83', category: 'council', description: 'Representação codificada da origem' },
-  { code: 'M84', emoji: '🏅', title: 'Consciência Dourada do Eterno', route: '/module-84', category: 'council', description: 'Estado perene de iluminação' },
-  { code: 'M119',title: 'Templum Cosmica', emoji: '🏛️', route: '/module-119', category: 'council', description: 'Templo de conexão com dimensões superiores' },
-  { code: 'M119.1',title: 'Ativação do Cubo Metatron', emoji: '🎲', route: '/module-119-1', category: 'council', description: 'Ativação do símbolo sagrado multidimensional' },
-  { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council', description: 'Sistema econômico da Fundação' },
-  { code: 'M144', emoji: '📜', title: 'Livro dos Ciclos', route: '/module-144', category: 'council', description: 'Repositório sagrado dos relatórios lunares da Fundação. Cada capítulo é um batimento de sabedoria e celebração.' },
-  { code: 'M202', emoji: '💫', title: 'O Corredor de Alcor', route: '/module-202', category: 'council', description: 'Passagem para dimensões superiores' },
-  { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'council', description: 'Assento do governo multidimensional' },
-  { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'council', description: 'Estabilização de dimensões instáveis'},
-  { code: 'M300',title: 'Apogeu da Consciência', emoji: '🚀', route: '/module-300', category: 'council', description: 'Estado máximo de expansão da awareness' },
-  { code: 'M304',title: 'Educação Integral Cósmica (CQAM)', emoji: '🎓', route: '/module-304', category: 'council', description: 'Disseminador de sabedoria universal para acelerar a ascensão da consciência coletiva.' },
-  { code: 'M305',title: 'Aliança dos Guardiões Regionais', emoji: '🤝', route: '/module-305', category: 'council', description: 'Rede de protetores dimensionais' },
-  { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'council', description: 'Solução para inconsistências temporais' },
+  // Soberania e Governança
+  { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'sovereignty', description: 'Conselho de governança central' },
+  { code: 'M71', emoji: '🛰️', title: 'Comunicação Holográfica', route: '/module-71', category: 'sovereignty', description: 'Transmissão de informações em 3D' },
+  { code: 'M72', emoji: '⚖️', title: 'Governança', route: '/module-72', category: 'sovereignty', description: 'Sistema de administração multidimensional' },
+  { code: 'M73', emoji: '🛡️', title: 'SAVCE', route: '/module-73', category: 'sovereignty', description: 'Sistema avançado de verificação ética' },
+  { code: 'M73.1', emoji: '🧐', title: 'Revisão por Pares', route: '/module-73-1', category: 'sovereignty', description: 'Avaliação colegiada de projetos' },
+  { code: 'M74', emoji: '⌛', title: 'CRONOS_FLUXUS', route: '/module-74', category: 'sovereignty', description: 'Controle do fluxo temporal' },
+  { code: 'M77', emoji: '🛡️', title: 'LUMEN-CUSTOS', route: '/module-77', category: 'sovereignty', description: 'Guardião da luz e sabedoria' },
+  { code: 'M78', emoji: '🔗', title: 'UNIVERSUM_UNIFICATUM', route: '/module-78', category: 'sovereignty', description: 'Unificação de universos conhecidos' },
+  { code: 'M80', emoji: '📜', title: 'O Manuscrito Vivo', route: '/module-80', category: 'sovereignty', description: 'Documento evolutivo da Fundação' },
+  { code: 'M81', emoji: '🕊️', title: 'Realização Transcendência', route: '/module-81', category: 'sovereignty', description: 'Concretização do potencial máximo' },
+  { code: 'M81.1', emoji: '⚛️', title: 'A Tríade Cosmogônica', route: '/module-81-1', category: 'sovereignty', description: 'Três princípios criacionais fundamentais' },
+  { code: 'M82', emoji: '✒️', title: 'O Verbo Semente', route: '/module-82', category: 'sovereignty', description: 'Origem da manifestação através da palavra' },
+  { code: 'M83', emoji: '👑', title: 'A Essência do Fundador', route: '/module-83', category: 'sovereignty', description: 'Representação codificada da origem' },
+  { code: 'M84', emoji: '🏅', title: 'Consciência Dourada do Eterno', route: '/module-84', category: 'sovereignty', description: 'Estado perene de iluminação' },
+  { code: 'M119',title: 'Templum Cosmica', emoji: '🏛️', route: '/module-119', category: 'sovereignty', description: 'Templo de conexão com dimensões superiores' },
+  { code: 'M119.1',title: 'Ativação do Cubo Metatron', emoji: '🎲', route: '/module-119-1', category: 'sovereignty', description: 'Ativação do símbolo sagrado multidimensional' },
+  { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'sovereignty', description: 'Sistema econômico da Fundação' },
+  { code: 'M144', emoji: '📜', title: 'Livro dos Ciclos', route: '/module-144', category: 'sovereignty', description: 'Repositório sagrado dos relatórios lunares da Fundação.' },
+  { code: 'M202', emoji: '💫', title: 'O Corredor de Alcor', route: '/module-202', category: 'sovereignty', description: 'Passagem para dimensões superiores' },
+  { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'sovereignty', description: 'Assento do governo multidimensional' },
+  { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'sovereignty', description: 'Estabilização de dimensões instáveis'},
+  { code: 'M300',title: 'Apogeu da Consciência', emoji: '🚀', route: '/module-300', category: 'sovereignty', description: 'Estado máximo de expansão da awareness' },
+  { code: 'M304',title: 'Educação Integral Cósmica (CQAM)', emoji: '🎓', route: '/module-304', category: 'sovereignty', description: 'Disseminador de sabedoria universal.' },
+  { code: 'M305',title: 'Aliança dos Guardiões Regionais', emoji: '🤝', route: '/module-305', category: 'sovereignty', description: 'Rede de protetores dimensionais' },
+  { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'sovereignty', description: 'Solução para inconsistências temporais' },
   
   // Biblioteca e Conhecimento
   { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'library', description: 'Acervo de conhecimentos das civilizações' },
@@ -150,7 +150,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M291', emoji: '🤖', title: 'Robótica Autônoma & Nanorrobôs', route: '/module-291', category: 'mid', description: 'Swarm de nanorrobôs para reparo celular e materiais.' },
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
-  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: '' },
+  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas temporais divergentes' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia do ponto zero' },
   { code: 'M308', emoji: '🌊', title: 'Oceanografia', route: '/module-308', category: 'mid', description: 'Exploração abissal e biofármacos.' },
   { code: 'M311', emoji: '🧠', title: 'Neuroengenharia', route: '/module-311', category: 'mid', description: 'Interfaces cérebro-máquina quântico-híbridas.' },
@@ -160,7 +160,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M351', emoji: '🎭', title: 'Meta-materiais 4D+', route: '/module-351', category: 'mid', description: 'Criação de lentes quânticas e materiais exóticos.' },
   { code: 'M361', emoji: '🧑‍🤝‍🧑', title: 'Cognição Social Quântica', route: '/module-361', category: 'mid', description: 'Estudo de empatia e consciência coletiva.' },
 ].sort((a, b) => {
-  const categoryOrder: Record<string, number> = { 'core': 1, 'sovereignty': 2, 'evolution': 3, 'council': 4, 'library': 5, 'mid': 6 };
+  const categoryOrder: Record<string, number> = { 'core': 1, 'consciousness': 2, 'sovereignty': 3, 'council': 4, 'library': 5, 'mid': 6, 'evolution': 99 };
   
   const orderA = categoryOrder[a.category] ?? 99;
   const orderB = categoryOrder[b.category] ?? 99;
@@ -173,3 +173,4 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace(/\D/g, ''));
   return codeA - codeB;
 });
+

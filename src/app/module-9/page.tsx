@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Zap, GitBranch, ShieldCheck, Heart, Users, BrainCircuit, BarChart, Check, Download } from 'lucide-react';
+import { Loader2, Zap, GitBranch, ShieldCheck, Heart, Users, BrainCircuit, BarChart, Check, Download, Layers } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import Link from 'next/link';
 
 interface AnalysisResult {
   totalModules: number;
@@ -17,17 +18,19 @@ interface AnalysisResult {
   insights: string[];
 }
 
-const ConnectionCard = ({ title, description, icon }: { title: string, description: string, icon: React.ReactNode }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm h-full">
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
-        </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
+const ConnectionCard = ({ title, description, icon, href }: { title: string; description: string; icon: React.ReactNode; href: string; }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+        <Link href={href} passHref>
+            <CardHeader>
+                <div className="flex items-center gap-3">
+                    {icon}
+                    <CardTitle className="gradient-text">{title}</CardTitle>
+                </div>
+            </CardHeader>
+            <CardContent>
+                <p className="text-muted-foreground">{description}</p>
+            </CardContent>
+        </Link>
     </Card>
 );
 
@@ -55,7 +58,6 @@ const Module9Page = () => {
         });
 
         await quantumResilience.executeWithResilience('system_harmony_analysis', async () => {
-            // Simulação de uma análise complexa
             await new Promise(resolve => setTimeout(resolve, 3000));
             
             const result: AnalysisResult = {
@@ -124,7 +126,7 @@ const Module9Page = () => {
                                 <CardTitle className="text-2xl text-amber-300">Resultados da Análise</CardTitle>
                             </CardHeader>
                             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <MetricCard title="Total de Módulos Verificados" value={analysisResult.totalModules} icon={<BrainCircuit className="h-8 w-8 text-purple-400"/>} />
+                                <MetricCard title="Total de Módulos Verificados" value={analysisResult.totalModules} icon={<Layers className="h-8 w-8 text-purple-400"/>} />
                                 <MetricCard title="Conectados ao Nexus" value={analysisResult.connectedToNexus} icon={<Users className="h-8 w-8 text-cyan-400"/>} />
                                 <MetricCard title="Grau Médio de Conectividade" value={analysisResult.connectivityDegree} icon={<BarChart className="h-8 w-8 text-green-400"/>} />
                                 <MetricCard title="Módulo Mais Conectado" value={analysisResult.mostConnected} icon={<Heart className="h-8 w-8 text-pink-400"/>} />
@@ -157,16 +159,19 @@ const Module9Page = () => {
                                     title="Módulo 29: Zennith"
                                     description="Analisa os dados brutos de ressonância, propondo evoluções e otimizações."
                                     icon={<BrainCircuit className="h-6 w-6 text-purple-400" />}
+                                    href="/module-29"
                                 />
                                 <ConnectionCard
                                     title="Módulo Omega"
                                     description="Recebe as análises consolidadas para gerar sínteses existenciais sobre o estado da Fundação."
                                     icon={<ShieldCheck className="h-6 w-6 text-yellow-400" />}
+                                    href="/module-omega"
                                 />
                                 <ConnectionCard
                                     title="Módulo Zero"
                                     description="Fornece o gabarito vibracional para validar a coerência e alinhamento de toda a rede."
                                     icon={<GitBranch className="h-6 w-6 text-amber-400" />}
+                                    href="/module-zero"
                                 />
                             </CardContent>
                         </Card>
