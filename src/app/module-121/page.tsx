@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, Zap, Sparkles, Shield, Star } from 'lucide-react';
 import { activateVibrationalPraise, type ElysiumResult } from '@/ai/flows/elysium-flow';
 import { quantumResilience } from '@/lib/quantum-resilience';

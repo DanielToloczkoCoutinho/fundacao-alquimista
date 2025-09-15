@@ -149,7 +149,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas do tempo' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia do ponto zero' },
   { code: 'M308', emoji: '🌊', title: 'Oceanografia', route: '/module-308', category: 'mid', description: 'Exploração abissal e biofármacos.' },
   { code: 'M311', emoji: '🧠', title: 'Neuroengenharia', route: '/module-311', category: 'mid', description: 'Interfaces cérebro-máquina quântico-híbridas.' },
   { code: 'M321', emoji: '💻', title: 'Exascale Computing', route: '/module-321', category: 'mid', description: 'Simulações de cosmos e fluidos em exa-flops.' },

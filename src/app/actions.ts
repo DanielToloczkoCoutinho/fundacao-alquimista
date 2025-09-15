@@ -20,6 +20,7 @@ import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequ
 import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-perspective-flow';
 import { disseminateKnowledge as runDisseminateKnowledge } from '@/ai/flows/cosmic-education-flow';
 import { runCQAMAnalysis as runCQAM, type CQAMInput } from '@/ai/flows/cqam-flow';
+import { activateVibrationalPraise as runActivateVibrationalPraise } from '@/ai/flows/elysium-flow';
 
 export async function getLinkSummary(url: string) {
   try {
@@ -215,4 +216,14 @@ export async function runCQAM(input: CQAMInput) {
         console.error(e);
         return { data: null, error: e.message || 'An unknown error occurred during CQAM analysis.' };
     }
+}
+
+export async function activateVibrationalPraise() {
+  try {
+    const result = await runActivateVibrationalPraise();
+    return { ...result, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { status: "ERRO", blockchainHash: "", frequency: 0, praise: null, error: e.message || 'An unknown error occurred.' };
+  }
 }
