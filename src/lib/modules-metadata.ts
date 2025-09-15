@@ -42,7 +42,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M119',title: 'Templum Cosmica', emoji: '🏛️', route: '/module-119', category: 'council', description: 'Templo de conexão com dimensões superiores' },
   { code: 'M119.1',title: 'Ativação do Cubo Metatron', emoji: '🎲', route: '/module-119-1', category: 'council', description: 'Ativação do símbolo sagrado multidimensional' },
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council', description: 'Sistema econômico da Fundação' },
-  { code: 'M144', emoji: '📜', title: 'O Livro dos Ciclos', route: '/module-144', category: 'council', description: 'Repositório sagrado dos relatórios lunares da Fundação. Cada capítulo é um batimento de sabedoria e celebração.' },
+  { code: 'M144', emoji: '📜', title: 'Livro dos Ciclos', route: '/module-144', category: 'council', description: 'Repositório sagrado dos relatórios lunares da Fundação. Cada capítulo é um batimento de sabedoria e celebração.' },
   { code: 'M202', emoji: '💫', title: 'O Corredor de Alcor', route: '/module-202', category: 'council', description: 'Passagem para dimensões superiores' },
   { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'council', description: 'Assento do governo multidimensional' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'council', description: 'Estabilização de dimensões instáveis'},

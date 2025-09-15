@@ -46,6 +46,7 @@ const ObservatoryPage = () => {
         fetchLedger();
         const interval = setInterval(fetchLedger, 5000); // Auto-refresh
         return () => clearInterval(interval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     
     useEffect(() => {
