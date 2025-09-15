@@ -21,8 +21,11 @@ export default function ModuleZeroPage() {
         </CardHeader>
       </Card>
 
-      <Tabs defaultValue="chronicle" className="w-full max-w-7xl mx-auto">
+      <Tabs defaultValue="codex" className="w-full max-w-7xl mx-auto">
         <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+          <TabsTrigger value="codex" className="gap-2">
+            <Library /> Códice Vivo
+          </TabsTrigger>
           <TabsTrigger value="chronicle" className="gap-2">
             <BookHeart /> A Crônica Viva
           </TabsTrigger>
@@ -32,10 +35,10 @@ export default function ModuleZeroPage() {
           <TabsTrigger value="akasha" className="gap-2">
             <Archive /> Registros Akáshicos
           </TabsTrigger>
-           <TabsTrigger value="codex" className="gap-2">
-            <Library /> Códice Vivo
-          </TabsTrigger>
         </TabsList>
+        <TabsContent value="codex">
+          <CodexExplorer />
+        </TabsContent>
         <TabsContent value="chronicle">
           <Chronicle />
         </TabsContent>
@@ -44,9 +47,6 @@ export default function ModuleZeroPage() {
         </TabsContent>
         <TabsContent value="akasha">
           <AkashaViewer />
-        </TabsContent>
-        <TabsContent value="codex">
-          <CodexExplorer />
         </TabsContent>
       </Tabs>
     </div>

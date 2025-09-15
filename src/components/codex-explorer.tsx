@@ -5,21 +5,35 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { sectionsData, type Section, type Document } from '@/lib/codex-data';
+import { codexDatabase, type CodexEntry } from '@/lib/codex-data';
 import { ExternalLink, Search } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+
+interface Section {
+  id: string;
+  title: string;
+  documents: CodexEntry[];
+}
 
 export default function CodexExplorer() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredSections = sectionsData
-    .map(section => {
-      const filteredDocs = section.documents.filter(doc =>
-        doc.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        section.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      return { ...section, documents: filteredDocs };
-    })
-    .filter(section => section.documents.length > 0);
+  const filteredData = codexDatabase.filter(doc =>
+    doc.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    doc.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    doc.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
+  const sections = filteredData.reduce((acc, doc) => {
+    let section = acc.find(s => s.id === doc.category);
+    if (!section) {
+      section = { id: doc.category, title: doc.category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()), documents: [] };
+      acc.push(section);
+    }
+    section.documents.push(doc);
+    return acc;
+  }, [] as Section[]);
+
 
   return (
     <Card className="w-full h-full bg-card/50 rounded-lg p-6 shadow-lg purple-glow flex flex-col">
@@ -36,7 +50,7 @@ export default function CodexExplorer() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input
             type="search"
-            placeholder="Pesquisar equações, módulos, chaves..."
+            placeholder="Pesquisar crônicas, equações, chaves..."
             className="w-full pl-10 bg-background/50"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -45,19 +59,18 @@ export default function CodexExplorer() {
       </CardHeader>
       <CardContent className="flex-grow min-h-0">
         <ScrollArea className="h-[60vh] pr-4">
-          <Accordion type="multiple" defaultValue={filteredSections.map(s => s.id)} className="w-full">
-            {filteredSections.map((section: Section) => (
+          <Accordion type="multiple" defaultValue={sections.map(s => s.id)} className="w-full">
+            {sections.map((section: Section) => (
               <AccordionItem key={section.id} value={section.id} className="border-b-primary/20">
                 <AccordionTrigger className="text-xl text-amber-400 hover:no-underline hover:text-amber-300">
                   <div className="flex items-center gap-3">
-                    <section.icon className="h-5 w-5" />
                     {section.title}
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="space-y-3 pt-2 pl-4">
-                    {section.documents.map((doc: Document) => (
-                      <li key={doc.key} className="text-foreground/80">
+                    {section.documents.map((doc: CodexEntry) => (
+                      <li key={doc.id} className="text-foreground/80">
                         <a
                           href={doc.link}
                           target="_blank"
