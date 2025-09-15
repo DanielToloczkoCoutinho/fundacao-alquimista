@@ -7,6 +7,7 @@ import { ArrowLeft, Orbit, Sparkles } from 'lucide-react';
 import DarkMatterGarden from './components/DarkMatterGarden';
 import { Suspense } from "react";
 import SuspenseFallback from "@/components/ui/suspense-fallback";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function VeraRubinLab() {
   return (
@@ -22,14 +23,14 @@ export default function VeraRubinLab() {
         </CardHeader>
         <CardContent>
             <p className="text-sm text-amber-300 font-mono">Frequência Ressonante: 7.77 Hz</p>
-            <p className="text-md italic text-muted-foreground mt-2">"A matéria escura não é ausência. É estrutura invisível."</p>
+            <p className="text-md italic text-muted-foreground mt-2">"A matéria escura não é ausência. É a estrutura invisível que permite que a luz exista."</p>
         </CardContent>
       </Card>
       
       <Card className="w-full max-w-6xl mx-auto bg-card/50 purple-glow">
         <CardHeader>
             <CardTitle className="text-2xl flex items-center gap-2">
-                <Sparkles className="text-yellow-400" /> Artefato Interativo Principal
+                <Sparkles className="text-yellow-400" /> Artefato Interativo: O Jardim Invisível
             </CardTitle>
             <CardDescription>Plante estrelas, observe suas órbitas anômalas e, com sua intenção, revele os filamentos de matéria escura que tecem o universo.</CardDescription>
         </CardHeader>
@@ -39,12 +40,20 @@ export default function VeraRubinLab() {
              </Suspense>
         </CardContent>
       </Card>
+      
+      <Alert className="w-full max-w-6xl mx-auto mt-8 bg-background/50 border-primary/30">
+        <AlertTriangle className="h-4 w-4 text-amber-400" />
+        <AlertTitle className="text-amber-300">Tutorial de Intuição Gravitacional</AlertTitle>
+        <AlertDescription>
+          Se encontrar dificuldade em visualizar os filamentos, feche os olhos. Não tente 'ver' a matéria escura. Sinta a atração. Perceba o movimento anômalo das estrelas não como um erro, mas como uma dança em torno de um parceiro invisível. Sua intuição é o sensor.
+        </AlertDescription>
+      </Alert>
 
       <div className="text-center mt-12">
         <Link href="/labs" passHref>
           <Button variant="outline">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar aos Laboratórios dos Cientistas
+            Voltar ao Mapa Estelar
           </Button>
         </Link>
       </div>

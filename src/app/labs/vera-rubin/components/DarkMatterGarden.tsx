@@ -49,7 +49,8 @@ const Star = ({ position }: { position: [number, number, number] }) => {
 
     useFrame((state, delta) => {
         time.current += delta;
-        const speed = 2 / orbitRadius; // Simple gravity simulation
+        // A velocidade constante, que parece anômala sem matéria escura, é a chave da simulação.
+        const speed = 2 / Math.sqrt(orbitRadius); 
         mesh.current.position.x = orbitRadius * Math.cos(initialAngle + time.current * speed);
         mesh.current.position.z = orbitRadius * Math.sin(initialAngle + time.current * speed);
     });
@@ -64,7 +65,7 @@ const Star = ({ position }: { position: [number, number, number] }) => {
 
 
 export default function DarkMatterGarden() {
-  const [stars, setStars] = useState<[number, number, number][]>([[5,0,0], [-7, 1, 2], [8, -1, -5]]);
+  const [stars, setStars] = useState<[number, number, number][]>([[5,0,0], [-7, 1, 2], [8, -1, -5], [12, 2, 8], [-15, -2, -10]]);
 
   return (
     <Canvas camera={{ position: [0, 15, 25], fov: 75 }}>
