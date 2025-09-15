@@ -79,7 +79,7 @@ export default function ConsolePage() {
                </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-72"><Scale className="mr-2 h-4 w-4" />Módulo 72 (Governança)</Link>
-              </Button>
+               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-600"><Scale className="mr-2 h-4 w-4" />Módulo 600 (Conselho Cósmico)</Link>
               </Button>
@@ -97,6 +97,9 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-304"><GraduationCap className="mr-2 h-4 w-4" />Módulo 304 (CQAM)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-305"><Users className="mr-2 h-4 w-4" />Módulo 305 (Aliança dos Guardiões)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-404"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 404 (Resolução de Paradoxo)</Link>
