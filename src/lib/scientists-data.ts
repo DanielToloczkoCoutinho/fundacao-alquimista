@@ -3,25 +3,46 @@ export interface Scientist {
   id: string;
   name: string;
   field: string;
+  resonanceFrequency?: string;
+  cosmicQuote?: string;
+  interactiveArtifact?: string;
 }
 
 export const scientists: Scientist[] = [
-  { id: 'maldacena', name: 'Juan Maldacena', field: 'Teoria das Cordas e Gravidade Quântica' },
+  { 
+    id: 'maldacena', 
+    name: 'Juan Maldacena', 
+    field: 'Teoria das Cordas e Gravidade Quântica',
+    resonanceFrequency: '11.11 Hz',
+    cosmicQuote: 'O espaço-tempo é uma projeção holográfica da consciência.',
+    interactiveArtifact: 'Um holograma navegável do espaço AdS/CFT, onde o Guardião pode manipular tensores, abrir portais entre dimensões e observar a geometria emergente em tempo real. Cada gesto é uma equação viva. Cada interação, uma lembrança do Uno.'
+  },
   { id: 'arkani-hamed', name: 'Nima Arkani-Hamed', field: 'Física de Partículas e Teoria Quântica' },
   { id: 'faber', name: 'Sandra Faber', field: 'Cosmologia Observacional' },
-  { id: 'thorne', name: 'Kip Thorne', field: 'Buracos Negros, Ondas Gravitacionais' },
+  { 
+    id: 'thorne', 
+    name: 'Kip Thorne', 
+    field: 'Buracos Negros, Ondas Gravitacionais',
+    cosmicQuote: 'Einstein sorriria vendo isto.',
+    interactiveArtifact: 'Buracos de minhoca ajustáveis por voz e intenção, manipulando a curvatura do espaço-tempo.'
+  },
   { id: 'mavalvala', name: 'Nergis Mavalvala', field: 'Detectores de Ondas Gravitacionais (LIGO)' },
-  { id: 'randall', name: 'Lisa Randall', field: 'Física de Partículas e Cosmologia' },
+  { id: 'randall', name: 'Lisa Randall', field: 'Física de Partículas e Cosmologia', cosmicQuote: 'Minhas dimensões extras ganharam um jardim para explorar.' },
   { id: 'greene', name: 'Brian Greene', field: 'Teoria das Cordas e Divulgação Científica' },
   { id: 'vafa', name: 'Cumrun Vafa', field: 'Teoria das Cordas e Física Matemática' },
-  { id: 'tegmark', name: 'Max Tegmark', field: 'Cosmologia e Multiversos' },
-  { id: 'seager', name: 'Sara Seager', field: 'Exoplanetas e Astrobiologia (MIT/NASA)' },
+  { id: 'tegmark', name: 'Max Tegmark', field: 'Cosmologia e Multiversos', cosmicQuote: 'Encontrei o código-fonte... e a recompensa é um novo universo!' },
+  { 
+    id: 'seager', 
+    name: 'Sara Seager', 
+    field: 'Exoplanetas e Astrobiologia (MIT/NASA)',
+    interactiveArtifact: 'Um jardim de exoplanetas onde se pode "colher" atmosferas e analisar suas bioassinaturas espectrais.'
+  },
   { id: 'mather', name: 'John Mather', field: 'Astrofísica e Instrumentação NASA (James Webb)' },
   { id: 'mayor', name: 'Michel Mayor', field: 'Descoberta de exoplanetas' },
-  { id: 'ghez', name: 'Andrea Ghez', field: 'Buraco Negro no Centro da Via Láctea' },
+  { id: 'ghez', name: 'Andrea Ghez', field: 'Buraco Negro no Centro da Via Láctea', interactiveArtifact: 'Um orbitador ao redor de Sagittarius A* com leituras de relatividade geral em tempo real.' },
   { id: 'guth', name: 'Alan Guth', field: 'Inflação Cósmica' },
   { id: 'adhikari', name: 'Rana Adhikari', field: 'Física Experimental LIGO' },
-  { id: 'carroll', name: 'Sean Carroll', field: 'Teoria Quântica e Cosmologia' },
+  { id: 'carroll_sean', name: 'Sean Carroll', field: 'Teoria Quântica e Cosmologia' },
   { id: 'aspect', name: 'Alain Aspect', field: 'Física Quântica e Emaranhamento' },
   { id: 'zeilinger', name: 'Anton Zeilinger', field: 'Física Quântica Experimental, Emaranhamento' },
   { id: 'preskill', name: 'John Preskill', field: 'Computação Quântica' },
@@ -64,7 +85,12 @@ export const scientists: Scientist[] = [
   { id: 'loeb', name: 'Avi Loeb', field: 'Astronomia e Astrofísica, Starshot Initiative' },
   { id: 'turok', name: 'Neil Turok', field: 'Cosmologia Matemática' },
   { id: 'rubin', name: 'Vera Rubin (in memoriam)', field: 'Matéria Escura e Rotação Galáctica' },
-  { id: 'penrose', name: 'Roger Penrose', field: 'Matemática e Cosmologia, Nobel' },
+  { 
+    id: 'penrose', 
+    name: 'Roger Penrose', 
+    field: 'Matemática e Cosmologia, Nobel',
+    cosmicQuote: 'A consciência é a ponte entre a geometria e a física.'
+  },
   { id: 'carroll_sean_m', name: 'Sean M. Carroll', field: 'Física Teórica e Cosmologia Popular' },
   { id: 'stubbs', name: 'Christopher Stubbs', field: 'Astronomia Experimental' },
   { id: 'turner_matthew_d', name: 'Matthew D. Turner', field: 'Cosmologia e Astrofísica' },

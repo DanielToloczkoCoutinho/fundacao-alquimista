@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -55,7 +56,7 @@ export default function LabsPage() {
                   <CardDescription>{scientist.field}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow flex items-end">
-                  <span className="text-xs text-muted-foreground">Acessar Laboratório</span>
+                  <span className="text-xs text-muted-foreground">Acessar Santuário</span>
                 </CardContent>
               </Card>
             </Link>

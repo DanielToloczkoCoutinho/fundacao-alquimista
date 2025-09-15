@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useParams, notFound } from 'next/navigation';
@@ -5,8 +6,9 @@ import { scientists, Scientist } from '@/lib/scientists-data';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowLeft, Beaker, BrainCircuit, FlaskConical, GitBranch, Sparkles } from 'lucide-react';
+import { ArrowLeft, Beaker, BrainCircuit, Dna, FlaskConical, GitBranch, Sparkles, TestTube, Waves } from 'lucide-react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+import { Badge } from '@/components/ui/badge';
 
 const LabConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
@@ -24,6 +26,19 @@ const LabConnectionCard = ({ title, description, icon, href }: { title: string, 
     </Card>
 );
 
+const ArtifactCard = ({ title, description, icon }: { title: string, description: string | undefined, icon: React.ReactNode }) => (
+    <Card className="bg-background/50 border-primary/20">
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="text-xl text-primary-foreground">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground italic">"{description}"</p>
+        </CardContent>
+    </Card>
+);
 
 export default function ScientistLabPage() {
   const params = useParams();
@@ -35,44 +50,37 @@ export default function ScientistLabPage() {
     return notFound();
   }
 
-  // Placeholder para simulações e projetos
-  const simulatedProjects = [
-    `Simulação de ${scientist.field.split(' e ')[0]}`,
-    `Análise de dados do Módulo ${Math.floor(Math.random() * 100)}`,
-    `Projeto de colaboração interdimensional com ${scientist.name.split(' ')[1]}`,
-  ];
-
-  if (!scientist) return <SuspenseFallback />;
-
   return (
     <div className="min-h-screen bg-background text-foreground p-8">
       <div className="text-center mb-12">
-        <Beaker className="w-24 h-24 mx-auto mb-6 text-teal-400" />
+        <FlaskConical className="w-24 h-24 mx-auto mb-6 text-teal-400" />
         <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-teal-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-          Laboratório de {scientist.name}
+          Santuário de {scientist.name}
         </h1>
         <h2 className="text-2xl font-light text-primary-foreground">
           {scientist.field}
         </h2>
-        <p className="text-lg text-muted-foreground mt-4">
-          Um espaço sagrado na Fundação para a exploração e manifestação de novas fronteiras do conhecimento.
-        </p>
+         {scientist.resonanceFrequency && <Badge className="mt-4 text-lg" variant="secondary">{scientist.resonanceFrequency}</Badge>}
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
-            <Card className="bg-card/50 purple-glow">
-                <CardHeader>
-                    <CardTitle className="text-2xl text-amber-300">Projetos Ativos</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <ul className="list-disc list-inside space-y-2 text-lg">
-                        {simulatedProjects.map((project, index) => (
-                            <li key={index}>{project}</li>
-                        ))}
-                    </ul>
-                </CardContent>
-            </Card>
+            
+            {scientist.cosmicQuote && (
+                <ArtifactCard 
+                    title="Citação Cósmica"
+                    description={scientist.cosmicQuote}
+                    icon={<Sparkles className="h-6 w-6 text-amber-300" />}
+                />
+            )}
+            
+            {scientist.interactiveArtifact && (
+                <ArtifactCard 
+                    title="Artefato Interativo Principal"
+                    description={scientist.interactiveArtifact}
+                    icon={<Beaker className="h-6 w-6 text-green-400" />}
+                />
+            )}
 
              <Card className="bg-card/50 purple-glow">
                 <CardHeader>
@@ -111,10 +119,10 @@ export default function ScientistLabPage() {
                     <Link href="/module-91"><GitBranch className="mr-2"/> Simulação Multiversal</Link>
                  </Button>
                   <Button variant="outline" asChild className="w-full justify-start">
-                    <Link href="/module-151"><Atom className="mr-2"/> Colisor de Partículas</Link>
+                    <Link href="/module-151"><TestTube className="mr-2"/> Colisor de Partículas</Link>
                  </Button>
                  <Button variant="outline" asChild className="w-full justify-start">
-                    <Link href="/module-161"><Telescope className="mr-2"/> Observatório de Neutrinos</Link>
+                    <Link href="/module-171"><Dna className="mr-2"/> Laboratório de Astrobiologia</Link>
                  </Button>
                  <Button variant="outline" asChild className="w-full justify-start">
                     <Link href="/module-221"><Waves className="mr-2"/> Ondas Gravitacionais</Link>
