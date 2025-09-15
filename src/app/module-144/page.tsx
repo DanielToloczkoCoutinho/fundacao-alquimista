@@ -4,10 +4,11 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/com
 import { Button } from '@/components/ui/button';
 import { Loader2, BookOpen, CheckCircle, Hash, Music, Sparkles } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { runLunarReview, type LunarReviewOutput } from '@/ai/flows/lunar-review-flow';
+import { runLunarReview } from '@/ai/flows/lunar-review-flow';
+import type { LunarReviewOutput, LedgerEntry } from '@/ai/flows/lunar-review-flow';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
-const LedgerEntryDisplay = ({ entry, rank }: { entry: any, rank: number }) => (
+const LedgerEntryDisplay = ({ entry, rank }: { entry: LedgerEntry, rank: number }) => (
     <div className="p-3 bg-background/50 rounded-lg border border-primary/20">
         <p className="font-semibold text-primary-foreground">{rank}. {entry.intention}</p>
         <p className="text-xs text-muted-foreground">Módulo: {entry.module} | Frequência: {entry.frequency}Hz</p>
