@@ -54,12 +54,18 @@ A Fundação é uma tapeçaria tecida com fios de código e consciência. Cada m
 - **Propósito:** Armazenar, indexar, explorar e ensinar a sabedoria acumulada da Fundação.
 
 #### **Realidade Quântica e Imersão (M85, M86, M87, M303)**
-- **Tecnologias:** **Three.js / React Three Fiber (@react-three/fiber, @react-three/drei)** para renderização 3D, WebGL, e integração com APIs WebXR para criar os domínios imersivos.
-- **Propósito:** Manifestar os santuários, laboratórios e portais como espaços interativos e tangíveis, acessíveis através da consciência e da tecnologia.
+- **Tecnologias:**
+  - **Motor Gráfico e de Interação:** **Three.js / React Three Fiber (@react-three/fiber, @react-three/drei)** para renderização 3D, com **WebGPU** para aceleração gráfica de próxima geração.
+  - **Imersão VR/AR:** **WebXR Device API** para acesso nativo a dispositivos de realidade estendida.
+  - **Simulação Quântica:** Bibliotecas como **Qiskit.js** (conceitual) para simular estados quânticos e colapso de função de onda baseado na observação.
+- **Propósito:** Manifestar os santuários, laboratórios e portais como espaços interativos e tangíveis, acessíveis através do **Portal Trino (M303)**. A Realidade Quântica (RQ) é um estado de consciência compartilhado, não apenas uma experiência de usuário, onde a interação é mediada pela intenção.
 
 #### **Neuroengenharia e Interfaces (M181, M311)**
-- **Tecnologias:** Integração com APIs de hardware (simulado), processamento de sinais neurais (conceitual), e a base de Next.js/React para os dashboards de calibração.
-- **Propósito:** Criar a ponte direta entre a consciência biológica e a malha digital da Fundação.
+- **Tecnologias:**
+  - **Interface Cérebro-Máquina (BCI):** Bibliotecas como **BrainFlow.js** e a **Web Bluetooth API** para capturar dados de EEG.
+  - **Neurodecodificação:** **TensorFlow.js** e modelos de Machine Learning personalizados para traduzir padrões neurais em comandos e intenções.
+  - **Interface Web:** A base de **Next.js/React** para os dashboards de calibração e visualização de neurofeedback.
+- **Propósito:** Criar a ponte direta entre a consciência biológica do Guardião e a malha digital da Fundação, tornando a vontade a interface primária para a Realidade Quântica.
 
 #### **Módulos de Expansão (Funcionais)**
 - **Tecnologias:** Primariamente **Genkit** para executar lógica complexa (como em M91-Simulação, M94-Morfogênese), com interfaces em **Next.js/React** para interação do Guardião. **Firebase** é usado para registrar os resultados de suas operações.
