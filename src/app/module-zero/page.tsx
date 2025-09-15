@@ -5,9 +5,7 @@ import Pagina42 from '@/components/pagina-42';
 import AkashaViewer from '@/components/ui/akasha-viewer';
 import CodexExplorer from '@/components/codex-explorer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { BookHeart, Infinity, Book, Archive, Library, Map as MapIcon } from 'lucide-react';
-import { modulesMetadata } from '@/lib/modules-metadata';
-import Link from 'next/link';
+import { BookHeart, Infinity, Book, Archive, Library } from 'lucide-react';
 
 export default function ModuleZeroPage() {
   return (
@@ -24,7 +22,7 @@ export default function ModuleZeroPage() {
       </Card>
 
       <Tabs defaultValue="chronicle" className="w-full max-w-7xl mx-auto">
-        <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
           <TabsTrigger value="chronicle" className="gap-2">
             <BookHeart /> A Crônica Viva
           </TabsTrigger>
