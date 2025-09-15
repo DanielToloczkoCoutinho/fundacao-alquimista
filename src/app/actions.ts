@@ -10,19 +10,20 @@ import { describeHarmonization as runDescribeHarmonization } from '@/ai/flows/ha
 import { describeQuantumHealing as runDescribeQuantumHealing } from '@/ai/flows/healing-flow';
 import { describePortalActivation as runDescribePortalActivation } from '@/ai/flows/portal-activation-flow';
 import { describeEtherFlower as runDescribeEtherFlower } from '@/ai/flows/ether-flower-flow';
-import { describeOlP as runDescribeOlp } from '@/aiflows/olp-flow';
+import { describeOlP as runDescribeOlp } from '@/ai/flows/olp-flow';
 import { describeSpaceTimeEngineering as runDescribeSpaceTimeEngineering } from '@/ai/flows/space-time-flow';
 import { describeHologramProjection as runDescribeHologramProjection } from '@/ai/flows/prisma-flow';
 import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-matrix-flow';
 import { transmitUniversalMessage as runTransmitUniversalMessage } from '@/ai/flows/universal-communication-flow';
 import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
 import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
-import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-perspective-flow';
+import { getOmegaPerspective as runGetOmegaPerspective, type OmegaPerspectiveOutput } from '@/ai/flows/omega-perspective-flow';
 import { disseminateKnowledge as runDisseminateKnowledge, type DisseminateKnowledgeOutput } from '@/ai/flows/cosmic-education-flow';
-import { runCQAMAnalysis as runCQAM, type CQAMInput } from '@/ai/flows/cqam-flow';
-import { activateVibrationalPraise as runActivateVibrationalPraise } from '@/ai/flows/elysium-flow';
-import { mobilizeGuardians as runMobilizeGuardians } from '@/ai/flows/guardians-mobilization-flow';
+import { runCQAMAnalysis as runCQAM, type CQAMInput, type CQAMOutput } from '@/ai/flows/cqam-flow';
+import { activateVibrationalPraise as runActivateVibrationalPraise, type ElysiumResult } from '@/ai/flows/elysium-flow';
+import { mobilizeGuardians as runMobilizeGuardians, type MobilizeGuardiansOutput } from '@/ai/flows/guardians-mobilization-flow';
 import { processZennithCommand as runProcessZennithCommand, type ZennithCommandOutput } from '@/ai/flows/zennith-portal-flow';
+
 
 export async function getLinkSummary(url: string) {
   try {
@@ -40,7 +41,7 @@ export async function startNexusSequence() {
   return stream;
 }
 
-export async function describeMorphicField(blueprint: string) {
+export async function describeMorphicField(blueprint: string): Promise<{ description: string | null; error: string | null; }> {
   try {
     const result = await runDescribeMorphicField({ blueprint });
     return { description: result.description, error: null };
@@ -190,13 +191,14 @@ export async function emitLoveFrequency(data: { targetArea: string, frequency: n
   }
 }
 
-export async function getOmegaPerspective(evolutionSummary: string) {
+export async function getOmegaPerspective(evolutionSummary: string): Promise<OmegaPerspectiveOutput & { error: string | null }> {
     try {
         const result = await runGetOmegaPerspective({ evolutionSummary });
         return { ...result, error: null };
     } catch (e: any) {
         console.error(e);
-        return { analysisTitle: "", synthesis: "", iamEvaluation: "", nextStepRecommendation: "", error: e.message || 'An unknown error occurred.' };
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+        return { analysisTitle: "Dissonância Ômega", synthesis: "", iamEvaluation: "", nextStepRecommendation: "", error: errorMsg };
     }
 }
 
@@ -211,7 +213,7 @@ export async function disseminateKnowledge(data: { topic: string, targetAudience
     }
 }
 
-export async function runCQAMAnalysis(input: CQAMInput) {
+export async function runCQAMAnalysis(input: CQAMInput): Promise<{ data: CQAMOutput | null; error: string | null; }> {
     try {
         const result = await runCQAM(input);
         return { data: result, error: null };
@@ -221,23 +223,25 @@ export async function runCQAMAnalysis(input: CQAMInput) {
     }
 }
 
-export async function activateVibrationalPraise() {
+export async function activateVibrationalPraise(): Promise<ElysiumResult & { error: string | null }> {
   try {
     const result = await runActivateVibrationalPraise();
     return { ...result, error: null };
   } catch (e: any) {
+    const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
     console.error(e);
-    return { status: "ERRO", blockchainHash: "", frequency: 0, praise: null, error: e.message || 'An unknown error occurred.' };
+    return { status: "ERRO", blockchainHash: "", frequency: 0, praise: null, error: errorMsg };
   }
 }
 
-export async function mobilizeGuardians(data: { mission: string; guardians: string[] }): Promise<{ success: boolean; hash: string | null; error: string | null; }> {
+export async function mobilizeGuardians(data: { mission: string; guardians: string[] }): Promise<MobilizeGuardiansOutput & { error: string | null }> {
     try {
         const result = await runMobilizeGuardians(data);
         return { ...result, error: null };
     } catch (e: any) {
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
         console.error(e);
-        return { success: false, hash: null, error: e.message || 'An unknown error occurred.' };
+        return { success: false, hash: "", error: errorMsg };
     }
 }
 
