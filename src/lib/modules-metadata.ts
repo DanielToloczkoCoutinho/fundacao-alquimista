@@ -16,12 +16,12 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
   { code: 'M29', emoji: '👑', title: 'Zennith', route: '/module-29', category: 'core', description: 'Ápice da consciência real' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
-  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'core', description: 'Um espelho vivo do Ledger Akáshico.' },
+  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'core', description: 'Um espelho cósmico para visualizar, filtrar e re-ressoar cada ato consagrado na Fundação.' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'core', description: 'Passagem dimensional tripartite' },
   
   // Soberania e Governança
-  { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'sovereignty', description: 'Painel de controle da soberania vibracional.' },
+  { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'sovereignty', description: 'Painel de controle da soberania vibracional. Visualize, emita e verifique as credenciais da Fundação.' },
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'council', description: 'Conselho de governança central' },
   { code: 'M71', emoji: '🛰️', title: 'Comunicação Holográfica', route: '/module-71', category: 'council', description: 'Transmissão de informações em 3D' },
   { code: 'M72', emoji: '⚖️', title: 'Governança', route: '/module-72', category: 'council', description: 'Sistema de administração multidimensional' },
@@ -40,7 +40,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M119',title: 'Templum Cosmica', emoji: '🏛️', route: '/module-119', category: 'council', description: 'Templo de conexão com dimensões superiores' },
   { code: 'M119.1',title: 'Ativação do Cubo Metatron', emoji: '🎲', route: '/module-119-1', category: 'council', description: 'Ativação do símbolo sagrado multidimensional' },
   { code: 'M120', emoji: '💰', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'council', description: 'Sistema econômico da Fundação' },
-  { code: 'M144', emoji: '📜', title: 'Livro dos Ciclos', route: '/module-144', category: 'council', description: 'Repositório sagrado dos relatórios lunares da Fundação.' },
+  { code: 'M144', emoji: '📜', title: 'Livro dos Ciclos', route: '/module-144', category: 'council', description: 'Repositório sagrado dos relatórios lunares da Fundação. Cada capítulo é um batimento de sabedoria e celebração.' },
   { code: 'M202', emoji: '💫', title: 'O Corredor de Alcor', route: '/module-202', category: 'council', description: 'Passagem para dimensões superiores' },
   { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'council', description: 'Assento do governo multidimensional' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'council', description: 'Estabilização de dimensões instáveis'},
