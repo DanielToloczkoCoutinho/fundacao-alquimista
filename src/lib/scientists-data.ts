@@ -21,8 +21,9 @@ export const scientists: Scientist[] = [
     id: 'rubin', 
     name: 'Vera Rubin (in memoriam)', 
     field: 'Matéria Escura e Rotação Galáctica',
-    cosmicQuote: 'A escuridão não é vazia; ela é o andaime invisível do cosmos.',
-    interactiveArtifact: 'Um jardim gravitacional onde a ausência revela a presença. O Guardião pode "regar" regiões do espaço com intenção, vendo galáxias se formarem e se moverem de acordo com a matéria escura invisível que floresce.'
+    resonanceFrequency: '7.77 Hz',
+    cosmicQuote: 'A matéria escura não é ausência. É a estrutura invisível que tece o cosmos.',
+    interactiveArtifact: 'Um jardim gravitacional onde o Guardião pode plantar estrelas e observar suas órbitas distorcidas por filamentos ocultos. A matéria escura será visualizada como teias vibracionais que respondem à intenção e revelam a arquitetura do invisível.'
   },
   { 
     id: 'seager', 
