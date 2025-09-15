@@ -3,7 +3,7 @@ export interface ModuleMetadata {
   emoji: string;
   title: string;
   route: string;
-  category: 'core' | 'mid' | 'civilization' | 'council' | 'library' | 'sovereignty' | 'evolution';
+  category: 'core' | 'mid' | 'council' | 'library' | 'sovereignty' | 'evolution';
   description: string;
 }
 
@@ -15,7 +15,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
   { code: 'M29', emoji: '👑', title: 'Zennith', route: '/module-29', category: 'core', description: 'Ápice da consciência real' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
-  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'core', description: 'Um espelho cósmico para visualizar, filtrar e re-ressoar cada ato consagrado na Fundação.' },
+  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'core', description: 'Espelho vivo do Ledger Akáshico. Contemple os atos consagrados da Fundação e reemita suas frequências como sabedoria vibracional.' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'core', description: 'Passagem dimensional tripartite' },
   
