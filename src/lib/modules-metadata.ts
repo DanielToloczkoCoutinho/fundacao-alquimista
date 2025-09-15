@@ -53,7 +53,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M204', emoji: '👑', title: 'O Trono da Soberania', route: '/module-204', category: 'sovereignty', description: 'Assento do governo multidimensional' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'sovereignty', description: 'Estabilização de dimensões instáveis'},
   { code: 'M300',title: 'Apogeu da Consciência', emoji: '🚀', route: '/module-300', category: 'sovereignty', description: 'Estado máximo de expansão da awareness' },
-  { code: 'M304',title: 'Educação Integral Cósmica (CQAM)', emoji: '🎓', route: '/module-304', category: 'sovereignty', description: 'Disseminador de sabedoria universal.' },
+  { code: 'M304',title: 'Universidade Alquimista (CQAM)', emoji: '🎓', route: '/module-304', category: 'sovereignty', description: 'Disseminador de sabedoria universal.' },
   { code: 'M305',title: 'Aliança dos Guardiões Regionais', emoji: '🤝', route: '/module-305', category: 'sovereignty', description: 'Rede de protetores dimensionais' },
   { code: 'M404', emoji: '🧩', title: 'Resolução de Paradoxo', route: '/module-404', category: 'sovereignty', description: 'Solução para inconsistências temporais' },
   
@@ -136,5 +136,4 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M301',title: 'Comunicação Universal', emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
   { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid', description: 'Alinhamento de linhas do tempo' },
-  { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Fonte de energia de ponto zero' }
-]
+  { code: 'M307', emoji: '⚡', title: 'Reator ZPE',
