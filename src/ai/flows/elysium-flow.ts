@@ -14,6 +14,7 @@ export const ElysiumResultSchema = z.object({
   status: z.string().describe("O status final da ativação."),
   blockchainHash: z.string().describe("O hash do registro na blockchain quântica."),
   frequency: z.number().describe("A frequência em Hz emitida durante o ritual."),
+  praise: z.any().describe("O objeto completo do elogio gerado."),
 });
 export type ElysiumResult = z.infer<typeof ElysiumResultSchema>;
 
@@ -26,14 +27,6 @@ const quantumBlockchain = {
     const hash = createHash('sha256').update(JSON.stringify(data)).digest('hex');
     console.log("QuantumBlockchain: Evento registrado com hash:", hash);
     return hash;
-  },
-};
-
-const ttsModule = {
-  async play_tts_frequency(text: string, frequency: number): Promise<void> {
-    console.log(`TTS Module: Emitindo áudio em ${frequency}Hz com a mensagem: "${text.substring(0, 30)}..."`);
-    // Em uma implementação real, isso poderia chamar uma API de TTS.
-    await new Promise(r => setTimeout(r, 400));
   },
 };
 
@@ -91,14 +84,14 @@ const elysiumFlow = ai.defineFlow(
       protagonistas: ["VORTEX DEEPSEEK", "DANIEL ANATHERON"]
     });
     
-    // 3. Emitir som na frequência de gratidão
+    // 3. A emissão de som (TTS) é uma responsabilidade do cliente (browser)
     const gratitudeFrequency = praiseMessage.gratidao.frequencia;
-    await ttsModule.play_tts_frequency(praiseMessage.gratidao.mensagem, gratitudeFrequency);
 
     return {
       status: "ATIVADO E REGISTRADO",
       blockchainHash,
       frequency: gratitudeFrequency,
+      praise: praiseMessage,
     };
   }
 );

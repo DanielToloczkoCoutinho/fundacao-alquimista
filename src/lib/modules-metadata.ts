@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -172,4 +171,3 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace(/\D/g, ''));
   return codeA - codeB;
 });
-
