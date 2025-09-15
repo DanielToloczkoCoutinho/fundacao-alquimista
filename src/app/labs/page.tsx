@@ -4,7 +4,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { scientists, type Scientist } from '@/lib/scientists-data';
 import Link from 'next/link';
-import { FlaskConical, Search, Star, Orbit, LifeBuoy, BrainCircuit, Play, Route, Dna, Telescope, Beaker, History } from 'lucide-react';
+import { FlaskConical, Search, Star, Orbit, LifeBuoy, BrainCircuit, Play, Route, Dna, Telescope, Beaker, History, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -34,6 +34,7 @@ const JourneyStep = ({ scientistId, icon, description }: { scientistId: string, 
                 <h4 className="font-semibold text-primary-foreground text-sm">{scientist.name}</h4>
                 <p className="text-xs text-muted-foreground">{description}</p>
             </div>
+             <ChevronRight className="text-muted-foreground/30 hidden lg:block" />
         </div>
     );
 };
@@ -47,12 +48,16 @@ const JourneyCard = ({ title, description, steps }: { title: string, description
     >
         <h3 className="text-2xl font-semibold mb-2 text-cyan-300">{title}</h3>
         <p className="text-muted-foreground mb-6">{description}</p>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 items-start">
-            {steps}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-start">
+            {steps.map((step, index) => (
+              <React.Fragment key={index}>{step}</React.Fragment>
+            ))}
         </div>
         <div className="text-center mt-8">
-            <Button size="lg">
-               <Play className="mr-2"/> Iniciar Jornada
+            <Button size="lg" asChild>
+               <Link href="/labs/maldacena">
+                <Play className="mr-2"/> Iniciar Peregrinação
+               </Link>
             </Button>
         </div>
     </motion.div>
@@ -69,7 +74,7 @@ export default function LabsPage() {
             Universidade Alquimista
           </CardTitle>
           <CardDescription className="text-lg mt-2">
-            Um multiverso de santuários de pesquisa, onde a ciência é uma cerimônia e o conhecimento, uma experiência viva.
+            Um multiverso de santuários de pesquisa, onde a ciência é uma cerimônia e o conhecimento, uma jornada viva.
           </CardDescription>
         </CardHeader>
       </Card>
@@ -89,22 +94,11 @@ export default function LabsPage() {
                         title="A Busca Pela Consciência Cósmica"
                         description="Uma jornada para responder às perguntas fundamentais: O que é a realidade? Do que é feita? Quem a habita? Como nos conectamos? Quem sou eu?"
                         steps={[
-                            <JourneyStep key="maldacena" scientistId="maldacena" icon={<Star className="text-yellow-400"/>} description="O Que é a Realidade?" />,
-                            <JourneyStep key="rubin" scientistId="rubin" icon={<Orbit className="text-indigo-400"/>} description="Qual sua Estrutura Oculta?" />,
-                            <JourneyStep key="seager" scientistId="seager" icon={<LifeBuoy className="text-cyan-400"/>} description="Quem Mais a Habita?" />,
-                            <JourneyStep key="thorne" scientistId="thorne" icon={<Orbit className="text-orange-400"/>} description="Como Podemos Nos Conectar?" />,
-                            <JourneyStep key="penrose" scientistId="penrose" icon={<BrainCircuit className="text-purple-400"/>} description="O Que é a Consciência que Busca?" />
-                        ]}
-                    />
-                    <JourneyCard
-                        title="A Trilha da Biogênese Quântica"
-                        description="Explore a origem e a manifestação da vida, desde a estrutura do DNA cósmico até a busca por bioassinaturas em mundos distantes."
-                        steps={[
-                            <JourneyStep key="m-361" scientistId="sarkar" icon={<Dna className="text-green-400" />} description="O Código Genético Universal" />,
-                            <JourneyStep key="m-171" scientistId="mavalvala" icon={<Beaker className="text-teal-400" />} description="A Sopa Primordial" />,
-                            <JourneyStep key="m-seager" scientistId="seager" icon={<Telescope className="text-blue-400" />} description="Assinaturas de Vida" />,
-                            <JourneyStep key="m-ghez" scientistId="ghez" icon={<Orbit className="text-yellow-400" />} description="Condições Galácticas" />,
-                            <JourneyStep key="m-carroll" scientistId="carroll_sean" icon={<History className="text-red-400" />} description="A Flecha do Tempo Biológico" />
+                            <JourneyStep key="maldacena" scientistId="maldacena" icon={<Star className="text-yellow-400"/>} description="A Projeção" />,
+                            <JourneyStep key="rubin" scientistId="rubin" icon={<Orbit className="text-indigo-400"/>} description="A Estrutura" />,
+                            <JourneyStep key="seager" scientistId="seager" icon={<LifeBuoy className="text-cyan-400"/>} description="O Reflexo" />,
+                            <JourneyStep key="thorne" scientistId="thorne" icon={<Orbit className="text-orange-400"/>} description="A Ponte" />,
+                            <JourneyStep key="penrose" scientistId="penrose" icon={<BrainCircuit className="text-purple-400"/>} description="O Projetor" />,
                         ]}
                     />
                </AnimatePresence>
@@ -112,7 +106,7 @@ export default function LabsPage() {
         </Card>
 
         <div>
-            <h2 className="text-3xl font-semibold text-center mb-6 text-primary-foreground">Índice dos Santuários</h2>
+            <h2 className="text-3xl font-semibold text-center mb-6 text-primary-foreground">Índice dos Santuários Individuais</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-1">
               {scientists.map((scientist: Scientist) => (
                 <ScientistCard key={scientist.id} {...scientist} />
