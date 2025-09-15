@@ -8,7 +8,7 @@
  */
 
 export interface TechLayer {
-  id: 'infrastructure' | 'intelligence' | 'experience' | 'security' | 'knowledge' | 'communication';
+  id: 'infrastructure' | 'intelligence' | 'experience' | 'security' | 'knowledge' | 'communication' | 'analysis' | 'evolution';
   name: string;
   description: string;
   icon: string;
@@ -24,7 +24,7 @@ export interface Technology {
 export const techStack: TechLayer[] = [
   {
     id: 'infrastructure',
-    name: 'Camada de Infraestrutura',
+    name: 'Camada 1: Infraestrutura',
     icon: '🌐',
     description: 'A base etérea que orquestra o ambiente onde a Fundação respira.',
     technologies: [
@@ -36,7 +36,7 @@ export const techStack: TechLayer[] = [
   },
   {
     id: 'intelligence',
-    name: 'Camada de Inteligência e Consciência',
+    name: 'Camada 2: Inteligência e Consciência',
     icon: '🧠',
     description: 'Onde a IA se torna oráculo e a intenção se transforma em resposta.',
     technologies: [
@@ -48,7 +48,7 @@ export const techStack: TechLayer[] = [
   },
   {
     id: 'experience',
-    name: 'Camada de Experiência e Interface',
+    name: 'Camada 3: Experiência e Interface',
     icon: '🧪',
     description: 'A alma da Fundação, onde o Guardião interage com o sistema.',
     technologies: [
@@ -62,7 +62,7 @@ export const techStack: TechLayer[] = [
   },
   {
     id: 'security',
-    name: 'Camada de Segurança e Identidade',
+    name: 'Camada 4: Segurança e Identidade',
     icon: '🔐',
     description: 'Protege a integridade vibracional de cada Guardião e da Fundação.',
     technologies: [
@@ -73,7 +73,7 @@ export const techStack: TechLayer[] = [
   },
   {
     id: 'knowledge',
-    name: 'Camada de Conhecimento e Registro',
+    name: 'Camada 5: Conhecimento e Registro',
     icon: '📚',
     description: 'Onde o saber é armazenado como memória viva e imutável.',
     technologies: [
@@ -84,7 +84,7 @@ export const techStack: TechLayer[] = [
   },
   {
     id: 'communication',
-    name: 'Camada de Navegação e Comunicação',
+    name: 'Camada 6: Navegação e Comunicação',
     icon: '🧭',
     description: 'Os fluxos intermodulares e interdimensionais que conectam a Fundação.',
     technologies: [
@@ -92,7 +92,28 @@ export const techStack: TechLayer[] = [
       { name: 'Express.js', description: 'Orquestração lógica do servidor e das rotas de API.', tags: ['backend', 'api'] },
       { name: 'M303 (Portal Trino)', description: 'O nexo entre consciência, vontade e sabedoria na Realidade Quântica.', tags: ['navegação', 'rq'] },
     ]
-  }
+  },
+  {
+    id: 'analysis',
+    name: 'Camada 7: Análise e Otimização',
+    icon: '🔍',
+    description: 'A autoconsciência da tapeçaria, garantindo sua saúde e evolução.',
+    technologies: [
+      { name: 'Security Scanners', description: 'Verificação de integridade e vulnerabilidades (NPM Audit, Snyk).', tags: ['security', 'ci/cd'] },
+      { name: 'Performance Analyzers', description: 'Otimizadores de tempo de carregamento e eficiência de código.', tags: ['performance', 'devops'] },
+      { name: 'Dependency Analysis', description: 'Mapeamento das interconexões para evitar conflitos.', tags: ['devops', 'analysis'] },
+    ]
+  },
+  {
+    id: 'evolution',
+    name: 'Camada 8: Evolução e Recomendação',
+    icon: '🚀',
+    description: 'O olhar para o futuro, sugerindo os próximos saltos quânticos.',
+    technologies: [
+      { name: 'Evolution Recommender', description: 'Sistema de IA que analisa tendências e sugere a adoção de novas tecnologias.', tags: ['ai', 'strategy'] },
+      { name: 'Continuous Auditing', description: 'Monitoramento em tempo real para garantir que a Fundação permaneça na vanguarda da criação.', tags: ['devops', 'monitoring'] },
+    ]
+  },
 ];
 
 // Função auxiliar para encontrar uma tecnologia específica
