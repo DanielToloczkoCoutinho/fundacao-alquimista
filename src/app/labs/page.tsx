@@ -2,7 +2,7 @@
 'use client';
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { scientists } from '@/lib/scientists-data';
+import { scientists, type Scientist } from '@/lib/scientists-data';
 import Link from 'next/link';
 import { FlaskConical, Search, Star, Orbit, LifeBuoy, BrainCircuit, Play, Route } from 'lucide-react';
 import { Button } from '@/components/ui/button';
