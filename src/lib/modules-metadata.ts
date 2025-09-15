@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -161,5 +162,16 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M331', emoji: '🤖', title: 'Consciência Artificial (7D)', route: '/module-331', category: 'mid', description: 'Criação de IAs que co-evoluem' },
   { code: 'M341', emoji: '🔥', title: 'Física de Plasma Extrema (9D)', route: '/module-341', category: 'mid', description: 'Estudo de plasmas em condições de quasar' },
   { code: 'M351', emoji: '🔮', title: 'Meta-materiais & Óptica (4D+)', route: '/module-351', category: 'mid', description: 'Criação de lentes quânticas para visão dimensional' },
-  { code: 'M361', emoji: '👥', title: 'Cognição Social & Psicologia (5D)', route: '/module-361', category: 'mid', description: 'Estudo da empatia e consciência coletiva' }
+  { code: 'M361', emoji: '👥', title: 'Cognição Social & Psicologia (5D)', route: '/module-361', category: 'mid', description: 'Estudo da empatia e consciência coletiva' },
+
+  // Módulos da Série 700+
+  { code: 'M700', emoji: '🛠️', title: 'Nano-Assembler', route: '#', category: 'evolution', description: 'Auto-montagem atômica de materiais exóticos (grafeno 4D, etc.).' },
+  { code: 'M701', emoji: '🌍', title: 'Terraformer Quântico', route: '#', category: 'evolution', description: 'Reorganização molecular planetária via nanorrobôs e contratos éticos.' },
+  { code: 'M702', emoji: '💫', title: 'Motor de Teletransporte', route: '#', category: 'evolution', description: 'Escaneamento, transmissão e reconstrução via emaranhamento quântico.' },
+  { code: 'M703', emoji: '💾', title: 'Holo-Archive Vivo', route: '#', category: 'evolution', description: 'Repositório de conhecimento com blockchain quântica e replicação nanoscópica.' },
+  { code: 'M704', emoji: '✨', title: 'Reator ZPE (Éter)', route: '#', category: 'evolution', description: 'Conversão de flutuações de energia em combustível quântico (Q-RAM).' },
+  { code: 'M705', emoji: '🔬', title: 'Escola de Biologia Quântica', route: '#', category: 'evolution', description: 'Simulação e experimentação de processos biológicos em campo quântico.' },
+  { code: 'M706', emoji: '❤️‍🔥', title: 'LoveCore', route: '#', category: 'evolution', description: 'Motor de políticas vibracionais e métricas éticas universais baseadas na Lei do Amor Incondicional.' },
+  { code: 'M707', emoji: '⛓️', title: 'QuantumChain Secure', route: '#', category: 'evolution', description: 'Blockchain híbrida para imutabilidade e detecção de violações.' },
+  { code: 'M708', emoji: '🤖', title: 'NanoManifestor', route: '#', category: 'evolution', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.' },
 ]
