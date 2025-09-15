@@ -4,8 +4,19 @@ import Link from 'next/link';
 import { Card, CardHeader, CardContent, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { AlertTriangle } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function NotFound() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null; // Render nothing on the server to avoid mismatch
+  }
+  
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md bg-card/50 purple-glow text-center">
@@ -21,10 +32,7 @@ export default function NotFound() {
         <CardContent>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild>
-                    <Link href="/">Retornar ao Início</Link>
-                </Button>
-                <Button asChild variant="outline">
-                    <Link href="/console">Painel de Controle</Link>
+                    <Link href="/console">Retornar ao Console</Link>
                 </Button>
             </div>
              <div className="mt-8 pt-6 border-t border-border/20">
