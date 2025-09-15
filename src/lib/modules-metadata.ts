@@ -17,7 +17,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
   { code: 'M29', emoji: '👑', title: 'Zennith', route: '/module-29', category: 'core', description: 'Ápice da consciência real' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
-  { code: 'M121', emoji: '🛰️', title: 'Observatório de Intenções', route: '/module-121', category: 'core', description: 'O espelho vivo do Ledger Akáshico.' },
+  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'core', description: 'O espelho vivo do Ledger Akáshico.' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'core', description: 'Passagem dimensional tripartite' },
   
@@ -159,10 +159,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M351', emoji: '🎭', title: 'Meta-materiais 4D+', route: '/module-351', category: 'mid', description: 'Criação de lentes quânticas e materiais exóticos.' },
   { code: 'M361', emoji: '🧑‍🤝‍🧑', title: 'Cognição Social Quântica', route: '/module-361', category: 'mid', description: 'Estudo de empatia e consciência coletiva.' },
 ].sort((a, b) => {
-  const specialOrder: Record<string, number> = { 'M0': 1, 'M9': 2, 'MΩ': 3, 'M29': 4, 'M111': 5, 'M201': 6, 'M303': 7, 'LIB': 8, 'CONN': 9 };
+  const specialOrder: Record<string, number> = { 'M0': 1, 'M9': 2, 'MΩ': 3, 'M29': 4, 'M111': 5, 'M121': 6, 'M201': 7, 'M303': 8, 'LIB': 9, 'CONN': 10 };
   
-  const orderA = specialOrder[a.code] || (a.category === 'council' ? 10 : 11);
-  const orderB = specialOrder[b.code] || (b.category === 'council' ? 10 : 11);
+  const orderA = specialOrder[a.code] || (a.category === 'council' ? 11 : 12);
+  const orderB = specialOrder[b.code] || (b.category === 'council' ? 11 : 12);
 
   if (orderA !== orderB) {
     return orderA - orderB;
@@ -172,4 +172,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   const codeB = parseInt(b.code.replace(/\D/g, ''));
   return codeA - codeB;
 });
+
 
