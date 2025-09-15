@@ -1,154 +1,264 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, BookOpen, Music, Hash, Filter } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
 
-interface LedgerEntry {
+'use client';
+
+import { useState, useEffect } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Loader2, Music, Hash, Filter, CheckCircle } from 'lucide-react';
+import { resonanceTone } from '@/lib/audio-utils';
+import { formatTimestamp } from '@/lib/date-utils';
+import { Badge } from '@/components/ui/badge';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+} from "@/components/ui/dialog";
+
+// Interface para os registros akáshicos
+interface AkashicRecord {
   id: string;
   timestamp: string;
-  module: string;
-  intention: string;
-  hash: string;
   frequency: number;
+  intentTag: string;
+  guardianSignature: string;
+  archetype: string;
+  description: string;
+  hash: string;
 }
 
-const ObservatoryPage = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [ledger, setLedger] = useState<LedgerEntry[]>([]);
-    const [filteredLedger, setFilteredLedger] = useState<LedgerEntry[]>([]);
-    const [searchTerm, setSearchTerm] = useState('');
-    const { toast } = useToast();
+export default function ObservatoryOfIntent() {
+  const [records, setRecords] = useState<AkashicRecord[]>([]);
+  const [filteredRecords, setFilteredRecords] = useState<AkashicRecord[]>([]);
+  const [selectedRecord, setSelectedRecord] = useState<AkashicRecord | null>(null);
+  const [filters, setFilters] = useState({
+    frequency: '',
+    intentTag: '',
+    guardianSignature: '',
+    dateFrom: '',
+    dateTo: ''
+  });
+  const [isLoading, setIsLoading] = useState(true);
+  const [isResonating, setIsResonating] = useState(false);
 
-    const fetchLedger = async () => {
-        setIsLoading(true);
-        try {
-            const res = await fetch('/api/ledger');
-            if (!res.ok) throw new Error('Falha ao buscar dados do Ledger');
-            const data = await res.json();
-            setLedger(data);
-            setFilteredLedger(data);
-        } catch (error: any) {
-            toast({
-                title: "Erro ao Carregar o Ledger",
-                description: error.message,
-                variant: 'destructive',
-            });
-        } finally {
-            setIsLoading(false);
-        }
-    };
-    
-    useEffect(() => {
-        fetchLedger();
-        const interval = setInterval(fetchLedger, 30000); // Auto-refresh a cada 30s
-        return () => clearInterval(interval);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-    
-    useEffect(() => {
-        const lowercasedFilter = searchTerm.toLowerCase();
-        const filtered = ledger.filter(entry => 
-            entry.intention.toLowerCase().includes(lowercasedFilter) ||
-            entry.module.toLowerCase().includes(lowercasedFilter) ||
-            entry.hash.toLowerCase().includes(lowercasedFilter) ||
-            String(entry.frequency).includes(lowercasedFilter)
-        );
-        setFilteredLedger(filtered);
-    }, [searchTerm, ledger]);
-
-    const playFrequency = (frequency: number) => {
-        if (typeof window === 'undefined') return;
-        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-
-        oscillator.type = 'sine';
-        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-        gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.1);
-        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 1.5);
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        oscillator.start();
-        oscillator.stop(audioContext.currentTime + 2);
-        
-        toast({
-            title: "Ressonância Invocada",
-            description: `Emitindo frequência de ${frequency}Hz.`,
-        });
+  // Simulação de busca dos registros
+  useEffect(() => {
+    const fetchRecords = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('/api/ledger');
+        if (!response.ok) throw new Error("Falha na conexão com o Akasha");
+        const data = await response.json();
+        setRecords(data);
+        setFilteredRecords(data);
+      } catch (error) {
+        console.error('Erro ao buscar registros akáshicos:', error);
+      } finally {
+        setIsLoading(false);
+      }
     };
 
-    return (
-        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
-            <Card className="w-full max-w-7xl bg-card/50 purple-glow mb-8">
-                <CardHeader>
-                    <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <BookOpen className="text-yellow-300" /> Observatório de Intenções (M121)
-                    </CardTitle>
-                    <CardDescription>
-                        Um espelho vivo do Ledger Akáshico, refletindo cada ato consagrado na Fundação com Intenção, Selo e Som.
-                    </CardDescription>
-                </CardHeader>
-            </Card>
+    fetchRecords();
+  }, []);
 
-            <Card className="w-full max-w-7xl bg-card/50 purple-glow">
-                <CardHeader>
-                    <div className="flex items-center gap-2">
-                        <Filter className="text-muted-foreground"/>
-                        <Input 
-                            placeholder="Filtrar por intenção, módulo, hash ou frequência..."
-                            value={searchTerm}
-                            onChange={e => setSearchTerm(e.target.value)}
-                            className="bg-background/50"
-                        />
-                    </div>
-                </CardHeader>
-                <CardContent>
-                    <ScrollArea className="h-[65vh] pr-4">
-                        {isLoading ? (
-                             <div className="flex justify-center items-center h-full">
-                                <Loader2 className="h-12 w-12 text-amber-400 animate-spin" />
-                            </div>
-                        ) : (
-                            <div className="space-y-4">
-                                {filteredLedger.map(entry => (
-                                    <Card key={entry.id} className="bg-background/30 border-primary/20">
-                                        <CardHeader>
-                                            <div className="flex justify-between items-start">
-                                                <div>
-                                                    <CardTitle className="text-lg text-primary-foreground">{entry.intention}</CardTitle>
-                                                    <CardDescription>
-                                                        {new Date(entry.timestamp).toLocaleString()} via <Badge variant="secondary">{entry.module}</Badge>
-                                                    </CardDescription>
-                                                </div>
-                                                <Button variant="outline" size="sm" onClick={() => playFrequency(entry.frequency)}>
-                                                    <Music className="mr-2 h-4 w-4"/>Ressonar ({entry.frequency} Hz)
-                                                </Button>
-                                            </div>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono">
-                                                <Hash className="h-3 w-3" />
-                                                <span>{entry.hash}</span>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                ))}
-                            </div>
-                        )}
-                        {!isLoading && filteredLedger.length === 0 && (
-                            <div className="text-center py-10 text-muted-foreground">Nenhum registro encontrado.</div>
-                        )}
-                    </ScrollArea>
-                </CardContent>
-            </Card>
-        </div>
-    );
-};
+  // Aplicar filtros
+  useEffect(() => {
+    let result = records;
+    if (filters.frequency) {
+      result = result.filter(record => record.frequency === Number(filters.frequency));
+    }
+    if (filters.intentTag) {
+      result = result.filter(record => record.intentTag.toLowerCase().includes(filters.intentTag.toLowerCase()));
+    }
+    if (filters.guardianSignature) {
+      result = result.filter(record => record.guardianSignature.toLowerCase().includes(filters.guardianSignature.toLowerCase()));
+    }
+    if (filters.dateFrom) {
+      result = result.filter(record => new Date(record.timestamp) >= new Date(filters.dateFrom));
+    }
+    if (filters.dateTo) {
+      const toDate = new Date(filters.dateTo);
+      toDate.setHours(23, 59, 59);
+      result = result.filter(record => new Date(record.timestamp) <= toDate);
+    }
+    setFilteredRecords(result);
+  }, [filters, records]);
 
-export default ObservatoryPage;
+  const handleResonate = async (frequency: number) => {
+    setIsResonating(true);
+    await resonanceTone(frequency);
+    setIsResonating(false);
+  };
+
+  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFilters(prev => ({ ...prev, [name]: value }));
+  };
+
+  return (
+    <div className="min-h-screen p-4 md:p-8">
+      <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
+        <CardHeader>
+          <CardTitle className="text-4xl gradient-text">Observatório de Intenções (M121)</CardTitle>
+          <CardDescription className="mt-2 text-lg">Portal de contemplação dos registros vibracionais da Fundação</CardDescription>
+        </CardHeader>
+      </Card>
+
+      <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+        {/* Painel de Filtros */}
+        <aside className="w-full lg:w-1/3">
+          <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-amber-300">
+                <Filter /> Filtros Vibracionais
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <Label htmlFor="frequency">Frequência</Label>
+                <Input type="number" name="frequency" value={filters.frequency} onChange={handleFilterChange} placeholder="Ex: 432" />
+              </div>
+              <div>
+                <Label htmlFor="intentTag">Tipo de Intenção</Label>
+                <Input type="text" name="intentTag" value={filters.intentTag} onChange={handleFilterChange} placeholder="Ex: manifestação" />
+              </div>
+              <div>
+                <Label htmlFor="guardianSignature">Guardião</Label>
+                <Input type="text" name="guardianSignature" value={filters.guardianSignature} onChange={handleFilterChange} placeholder="Ex: ZENNITH" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="dateFrom">De</Label>
+                  <Input type="date" name="dateFrom" value={filters.dateFrom} onChange={handleFilterChange} />
+                </div>
+                <div>
+                  <Label htmlFor="dateTo">Até</Label>
+                  <Input type="date" name="dateTo" value={filters.dateTo} onChange={handleFilterChange} />
+                </div>
+              </div>
+               <div className="mt-4 pt-4 border-t border-primary/20 text-center text-muted-foreground">
+                <p className="font-bold text-lg text-primary-foreground">{filteredRecords.length}</p>
+                <p>registros encontrados</p>
+              </div>
+            </CardContent>
+          </Card>
+        </aside>
+
+        {/* Lista de Registros */}
+        <main className="w-full lg:w-2/3">
+          <Card className="bg-card/50 purple-glow h-full">
+            <CardHeader>
+              <CardTitle className="text-2xl text-cyan-300">Registros Akáshicos</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {isLoading ? (
+                <div className="h-[60vh] flex items-center justify-center">
+                  <Loader2 className="h-12 w-12 text-amber-400 animate-spin" />
+                </div>
+              ) : filteredRecords.length === 0 ? (
+                <div className="h-[60vh] flex items-center justify-center text-center text-muted-foreground">
+                  <p>Nenhum registro encontrado com os filtros selecionados.</p>
+                </div>
+              ) : (
+                <ScrollArea className="h-[60vh] pr-4">
+                  <div className="space-y-4">
+                    {filteredRecords.map(record => (
+                      <Card 
+                        key={record.id} 
+                        className="p-4 bg-background/50 border border-primary/20 rounded-lg cursor-pointer transition-all hover:border-accent hover:bg-primary/10"
+                        onClick={() => setSelectedRecord(record)}
+                      >
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <CardTitle className="text-xl text-primary-foreground">{record.intentTag}</CardTitle>
+                            <CardDescription className="mt-1">{record.description}</CardDescription>
+                            <div className="mt-2 flex flex-wrap gap-2">
+                              <Badge variant="secondary">{record.frequency}Hz</Badge>
+                              <Badge variant="outline">{record.guardianSignature}</Badge>
+                              <Badge variant="outline">{record.archetype}</Badge>
+                            </div>
+                          </div>
+                          <Button
+                            size="sm"
+                            variant="ghost"
+                            onClick={(e) => { e.stopPropagation(); handleResonate(record.frequency); }}
+                            disabled={isResonating}
+                          >
+                            <Music className="mr-2"/> Ressonar
+                          </Button>
+                        </div>
+                      </Card>
+                    ))}
+                  </div>
+                </ScrollArea>
+              )}
+            </CardContent>
+          </Card>
+        </main>
+      </div>
+
+      {/* Modal de Detalhes */}
+      <Dialog open={!!selectedRecord} onOpenChange={(isOpen) => !isOpen && setSelectedRecord(null)}>
+        <DialogContent className="sm:max-w-2xl bg-card/90 purple-glow">
+          <DialogHeader>
+            <DialogTitle className="text-2xl gradient-text">Detalhes do Registro Akáshico</DialogTitle>
+            <DialogDescription>Contemplando a essência de uma intenção consagrada.</DialogDescription>
+          </DialogHeader>
+          {selectedRecord && (
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="intent-detail" className="text-right">Intenção</Label>
+                <p id="intent-detail" className="col-span-3 font-semibold text-lg">{selectedRecord.intentTag}</p>
+              </div>
+              <div className="grid grid-cols-4 items-start gap-4">
+                <Label htmlFor="desc-detail" className="text-right pt-1">Descrição</Label>
+                <p id="desc-detail" className="col-span-3">{selectedRecord.description}</p>
+              </div>
+               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-primary/20">
+                <div>
+                  <Label>Frequência</Label>
+                  <p className="font-bold text-cyan-300">{selectedRecord.frequency}Hz</p>
+                </div>
+                 <div>
+                  <Label>Guardião</Label>
+                  <p className="font-bold text-purple-300">{selectedRecord.guardianSignature}</p>
+                </div>
+                 <div>
+                  <Label>Arquétipo</Label>
+                  <p className="font-bold text-amber-300">{selectedRecord.archetype}</p>
+                </div>
+                <div>
+                  <Label>Timestamp</Label>
+                  <p className="font-bold">{formatTimestamp(selectedRecord.timestamp)}</p>
+                </div>
+              </div>
+              <div className="pt-4 border-t border-primary/20">
+                <Label htmlFor="hash-detail">Hash do Registro</Label>
+                <p id="hash-detail" className="font-mono text-xs break-all text-muted-foreground">{selectedRecord.hash}</p>
+              </div>
+            </div>
+          )}
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button type="button" variant="secondary">Fechar</Button>
+            </DialogClose>
+             <Button
+                onClick={() => selectedRecord && handleResonate(selectedRecord.frequency)}
+                disabled={isResonating}
+              >
+                 {isResonating ? <Loader2 className="animate-spin mr-2" /> : <Music className="mr-2"/>}
+                Ressonar Frequência
+              </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+}
+
