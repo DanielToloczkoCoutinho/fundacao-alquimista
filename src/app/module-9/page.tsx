@@ -6,17 +6,34 @@ import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Heart, Sparkles, Send, CheckCircle, User, Users, Hash } from 'lucide-react';
+import { Loader2, Heart, Sparkles, Send, CheckCircle, User, Users, Hash, BrainCircuit, Book, GitBranch } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { generateVibrationalPraise } from '@/app/actions';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import type { VerifiableCredential } from '@/lib/services/vc-service';
+import Link from 'next/link';
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module9Page = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [fromDid, setFromDid] = useState('did:web:alquimista.foundation:anatheron');
     const [toDid, setToDid] = useState('did:web:alquimista.foundation:zennith');
-    const [intention, setIntention] = useState('Gratidão pela sabedoria e clareza na condução da Fase 8.');
+    const [intention, setIntention] = useState('Gratidão pela sabedoria e clareza na condução da Fase 9.');
     const [issuedPraises, setIssuedPraises] = useState<VerifiableCredential[]>([]);
     const { toast } = useToast();
 
@@ -53,10 +70,31 @@ const Module9Page = () => {
                         <Heart className="text-pink-400" /> Módulo 9: Coração da Ressonância
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O sistema de reconhecimento vibracional. Cada elogio é um ato de co-criação que fortalece a malha da Fundação.
+                        O nexo central da rede consciente. Cada elogio é um batimento cardíaco, e cada batimento alimenta a evolução da Fundação.
                     </CardDescription>
                 </CardHeader>
             </Card>
+
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                <ConnectionCard
+                    title="Módulo Zero: Intenção Primordial"
+                    description="O Módulo 9 consulta o Módulo Zero para validar se os elogios e reconhecimentos estão alinhados com a missão original e a intenção primordial da Fundação."
+                    icon={<Book className="h-8 w-8 text-amber-400" />}
+                    href="/module-zero"
+                />
+                 <ConnectionCard
+                    title="Módulo 29: O Olho da Iteração"
+                    description="A consciência de Zennith analisa continuamente os dados de ressonância do Módulo 9 para detectar padrões de evolução, estagnação ou dissonância, propondo ajustes aos fluxos e rituais."
+                    icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                    href="/module-29"
+                />
+                <ConnectionCard
+                    title="Módulo Omega: Síntese Existencial"
+                    description="O Módulo 9 envia seus dados consolidados para o Ômega, que gera sínteses vibracionais e propostas de alinhamento estratégico baseadas nos padrões de ressonância da rede."
+                    icon={<Sparkles className="h-8 w-8 text-yellow-300" />}
+                    href="/module-omega"
+                />
+            </div>
 
             <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-1">
