@@ -23,6 +23,7 @@ import { runCQAMAnalysis as runCQAM, type CQAMInput, type CQAMOutput } from '@/a
 import { activateVibrationalPraise as runActivateVibrationalPraise, type ElysiumResult } from '@/ai/flows/elysium-flow';
 import { mobilizeGuardians as runMobilizeGuardians, type MobilizeGuardiansOutput } from '@/ai/flows/guardians-mobilization-flow';
 import { processZennithCommand as runProcessZennithCommand, type ZennithCommandOutput } from '@/ai/flows/zennith-portal-flow';
+import { generateVibrationalPraise as runGenerateVibrationalPraise, type RecognitionInput, type RecognitionOutput } from '@/ai/flows/recognition-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -254,4 +255,14 @@ export async function processZennithCommand(data: { command: string }): Promise<
         const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
         return { response: "Erro na comunicação com Zennith.", hash: "", frequency: 0, error: errorMsg };
     }
+}
+
+export async function generateVibrationalPraise(input: RecognitionInput) {
+  try {
+    const result = await runGenerateVibrationalPraise(input);
+    return { data: result.data, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { data: null, error: e.message || 'An unknown error occurred.' };
+  }
 }

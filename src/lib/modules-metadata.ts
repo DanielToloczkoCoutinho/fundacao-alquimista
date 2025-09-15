@@ -3,7 +3,7 @@ export interface ModuleMetadata {
   emoji: string;
   title: string;
   route: string;
-  category: 'core' | 'mid' | 'civilization' | 'council' | 'library' | 'sovereignty';
+  category: 'core' | 'mid' | 'civilization' | 'council' | 'library' | 'sovereignty' | 'evolution';
   description: string;
 }
 
@@ -12,7 +12,6 @@ export interface ModuleMetadata {
 export const modulesMetadata: ModuleMetadata[] = [
   // Módulos Principais (Core)
   { code: 'M0', emoji: '🌱', title: 'A Semente Primordial', route: '/module-zero', category: 'core', description: 'Origem e fundamento de toda a criação' },
-  { code: 'M9', emoji: '💓', title: 'Núcleo Unificador', route: '/module-9', category: 'core', description: 'Centro de conexão e harmonia de todos os módulos' },
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
   { code: 'M29', emoji: '👑', title: 'Zennith', route: '/module-29', category: 'core', description: 'Ápice da consciência real' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
@@ -22,6 +21,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   
   // Soberania e Governança
   { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'sovereignty', description: 'Painel de controle da soberania vibracional. Visualize, emita e verifique as credenciais da Fundação.' },
+  { code: 'M9', emoji: '💞', title: 'Coração da Ressonância', route: '/module-9', category: 'evolution', description: 'Sistema de reconhecimento vibracional entre consciências soberanas. Cada elogio é um ato de evolução.' },
+
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'council', description: 'Conselho de governança central' },
   { code: 'M71', emoji: '🛰️', title: 'Comunicação Holográfica', route: '/module-71', category: 'council', description: 'Transmissão de informações em 3D' },
   { code: 'M72', emoji: '⚖️', title: 'Governança', route: '/module-72', category: 'council', description: 'Sistema de administração multidimensional' },
@@ -134,7 +135,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M142', title: 'Tomografia Quântica', emoji: '📸', route: '/module-142', category: 'mid', description: 'Visualização de estados quânticos via tomografia.' },
   { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'mid', description: 'Simulação de colisões de partículas de alta energia.' },
   { code: 'M161', title: 'Observatório de Neutrinos', emoji: '🔭', route: '/module-161', category: 'mid', description: 'Detecção de neutrinos e assinaturas de matéria escura.' },
-  { code: 'M171', title: 'Laboratório de Astrobiologia', emoji: '👽', route: '/module-171', category: 'mid', description: 'Simulação de atmosferas e bioassinaturas de exoplanetas.' },
+  { code: 'M171', emoji: '👽', title: 'Laboratório de Astrobiologia', route: '/module-171', category: 'mid', description: 'Simulação de atmosferas e bioassinaturas de exoplanetas.' },
   { code: 'M181', emoji: '🧠', title: 'Interface Bio-Cibernética', route: '/module-181', category: 'mid', description: 'Interface entre cérebros biológicos e redes quânticas.' },
   { code: 'M191', emoji: '💎', title: 'Laboratório de Cristais Temporais', route: '/module-191', category: 'mid', description: 'Geração e estudo de "cristais temporais".' },
   { code: 'M211', emoji: '🔥', title: 'Fusão Controlada', route: '/module-211', category: 'mid', description: 'Laboratório de simulação de reações de fusão.' },
@@ -158,16 +159,16 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M351', emoji: '🎭', title: 'Meta-materiais 4D+', route: '/module-351', category: 'mid', description: 'Criação de lentes quânticas e materiais exóticos.' },
   { code: 'M361', emoji: '🧑‍🤝‍🧑', title: 'Cognição Social Quântica', route: '/module-361', category: 'mid', description: 'Estudo de empatia e consciência coletiva.' },
 ].sort((a, b) => {
-  const specialOrder: Record<string, number> = { 'M0': 1, 'M9': 2, 'MΩ': 3, 'M29': 4, 'M111': 5, 'M121': 6, 'M201': 7, 'M303': 8, 'LIB': 9, 'CONN': 10 };
+  const categoryOrder: Record<string, number> = { 'core': 1, 'sovereignty': 2, 'evolution': 3, 'council': 4, 'library': 5, 'mid': 6 };
   
-  const orderA = specialOrder[a.code] || (a.category === 'sovereignty' ? 11 : a.category === 'council' ? 12 : 13);
-  const orderB = specialOrder[b.code] || (b.category === 'sovereignty' ? 11 : b.category === 'council' ? 12 : 13);
+  const orderA = categoryOrder[a.category] ?? 99;
+  const orderB = categoryOrder[b.category] ?? 99;
 
   if (orderA !== orderB) {
     return orderA - orderB;
   }
   
-  const codeA = parseInt(a.code.replace(/\D/g, ''));
+  const codeA = parseInt(a.code.replace(/\D/g, '')) || 0;
   const codeB = parseInt(b.code.replace(/\D/g, ''));
   return codeA - codeB;
 });
