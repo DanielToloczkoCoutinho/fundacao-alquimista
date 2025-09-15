@@ -137,5 +137,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M118',title: 'Luz Primordial',                        emoji: '💡', route: '/module-118', category: 'mid', description: 'Gerador do espectro lumínico original' },
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M302',title: 'Frequência do Amor',                    emoji: '💖', route: '/module-302', category: 'mid', description: 'Emissão da frequência compassionada' },
+  { code: 'M306', emoji: '🔗', title: 'Sincronização Temporal', route: '/module-306', category: 'mid' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'mid', description: 'Gerador de energia de ponto zero' }
 ]
