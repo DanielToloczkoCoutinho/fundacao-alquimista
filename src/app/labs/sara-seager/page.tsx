@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { ArrowLeft, LifeBuoy } from 'lucide-react';
 import SuspenseFallback from "@/components/ui/suspense-fallback";
+import ExoplanetAtmosphereScanner from "./components/ExoplanetAtmosphereScanner";
+import { Suspense } from "react";
 
 export default function SaraSeagerLab() {
   return (
@@ -18,12 +20,25 @@ export default function SaraSeagerLab() {
             O Observatório de Mundos Vivos. Explore exoplanetas e colha as assinaturas espectrais de suas atmosferas.
           </CardDescription>
         </CardHeader>
+        <CardContent>
+            <p className="text-sm text-amber-300 font-mono">Frequência Ressonante: 9.33 Hz</p>
+            <p className="text-md italic text-muted-foreground mt-2">"Cada atmosfera é um espelho. Cada bioassinatura, um possível cumprimento."</p>
+        </CardContent>
       </Card>
       
-      <div className="text-center">
-        <p className="text-muted-foreground">Este Santuário está em cocriação...</p>
-        <SuspenseFallback />
-      </div>
+       <Card className="w-full max-w-6xl mx-auto bg-card/50 purple-glow">
+        <CardHeader>
+            <CardTitle className="text-2xl flex items-center gap-2">
+                <LifeBuoy className="text-yellow-400" /> Artefato Interativo: Espectróscopo de Consciência Cósmica
+            </CardTitle>
+            <CardDescription>Capture a luz estelar que atravessa a atmosfera de mundos simulados e analise seu espectro em busca de bioassinaturas.</CardDescription>
+        </CardHeader>
+        <CardContent className="h-[500px] bg-black/20 rounded-lg border border-primary/20">
+             <Suspense fallback={<SuspenseFallback />}>
+                <ExoplanetAtmosphereScanner />
+             </Suspense>
+        </CardContent>
+      </Card>
 
       <div className="text-center mt-12">
         <Link href="/labs" passHref>
