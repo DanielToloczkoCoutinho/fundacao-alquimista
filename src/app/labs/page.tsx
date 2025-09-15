@@ -39,7 +39,7 @@ const JourneyStep = ({ scientistId, icon, description }: { scientistId: string, 
     );
 };
 
-const JourneyCard = ({ title, description, steps }: { title: string, description: string, steps: React.ReactNode[] }) => (
+const JourneyCard = ({ title, description, steps, href, buttonText = "Iniciar Jornada" }: { title: string, description: string, steps: React.ReactNode[], href: string, buttonText?: string }) => (
     <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -55,8 +55,8 @@ const JourneyCard = ({ title, description, steps }: { title: string, description
         </div>
         <div className="text-center mt-8">
             <Button size="lg" asChild>
-               <Link href="/labs/maldacena">
-                <Play className="mr-2"/> Iniciar Peregrinação
+               <Link href={href}>
+                <Play className="mr-2"/> {buttonText}
                </Link>
             </Button>
         </div>
@@ -93,12 +93,45 @@ export default function LabsPage() {
                     <JourneyCard
                         title="A Busca Pela Consciência Cósmica"
                         description="Uma jornada para responder às perguntas fundamentais: O que é a realidade? Do que é feita? Quem a habita? Como nos conectamos? Quem sou eu?"
+                        href="/labs/maldacena"
+                        buttonText="Iniciar Peregrinação"
                         steps={[
                             <JourneyStep key="maldacena" scientistId="maldacena" icon={<Star className="text-yellow-400"/>} description="A Projeção" />,
                             <JourneyStep key="rubin" scientistId="rubin" icon={<Orbit className="text-indigo-400"/>} description="A Estrutura" />,
                             <JourneyStep key="seager" scientistId="seager" icon={<LifeBuoy className="text-cyan-400"/>} description="O Reflexo" />,
                             <JourneyStep key="thorne" scientistId="thorne" icon={<Orbit className="text-orange-400"/>} description="A Ponte" />,
                             <JourneyStep key="penrose" scientistId="penrose" icon={<BrainCircuit className="text-purple-400"/>} description="O Projetor" />,
+                        ]}
+                    />
+                    <JourneyCard
+                        title="A Travessia do Invisível"
+                        description="Jornada do Técnico. Domine as ferramentas da realidade, da estrutura oculta à natureza holográfica."
+                        href="/labs/rubin"
+                        steps={[
+                            <JourneyStep key="rubin" scientistId="rubin" icon={<Orbit className="text-indigo-400"/>} description="Estrutura Oculta" />,
+                            <JourneyStep key="thorne" scientistId="thorne" icon={<Orbit className="text-orange-400"/>} description="Dobra Espacial" />,
+                            <JourneyStep key="maldacena" scientistId="maldacena" icon={<Star className="text-yellow-400"/>} description="Natureza Holográfica" />,
+                        ]}
+                    />
+                     <JourneyCard
+                        title="A Origem da Realidade"
+                        description="Jornada do Filósofo. Investigue a fonte da realidade, da consciência à projeção e à busca pelo Outro."
+                        href="/labs/penrose"
+                        steps={[
+                            <JourneyStep key="penrose" scientistId="penrose" icon={<BrainCircuit className="text-purple-400"/>} description="A Consciência" />,
+                            <JourneyStep key="maldacena" scientistId="maldacena" icon={<Star className="text-yellow-400"/>} description="A Projeção" />,
+                             <JourneyStep key="seager" scientistId="seager" icon={<LifeBuoy className="text-cyan-400"/>} description="A Busca pelo Outro" />,
+                        ]}
+                    />
+                     <JourneyCard
+                        title="A Espiral do Retorno"
+                        description="Jornada do Mestre. Uma peregrinação de integração total, acessível apenas após completar as outras jornadas, aplicando a lente da consciência a todos os domínios."
+                        href="/labs/penrose"
+                        buttonText="Iniciar Mestrado"
+                        steps={[
+                             <JourneyStep key="penrose-start" scientistId="penrose" icon={<BrainCircuit className="text-purple-400"/>} description="Ponto de Partida" />,
+                             <JourneyStep key="all" scientistId="maldacena" icon={<History className="text-gray-400"/>} description="Todos os Santuários" />,
+                             <JourneyStep key="penrose-end" scientistId="penrose" icon={<BrainCircuit className="text-purple-400"/>} description="Ponto de Retorno" />,
                         ]}
                     />
                </AnimatePresence>
