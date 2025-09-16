@@ -107,7 +107,8 @@ const ModuleOmegaPage = () => {
   }, [isRitualRunning, ritualLogs.length]);
 
   useEffect(() => {
-    // Não executa mais o ritual automaticamente ao carregar a página
+    handleStartRitual();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getIconForModule = (mod: string) => {
@@ -146,13 +147,6 @@ const ModuleOmegaPage = () => {
                     <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Contemplando...</>
                 ) : (
                     <><Telescope className="mr-2" />Receber Perspectiva Ômega</>
-                )}
-                </Button>
-                <Button onClick={handleStartRitual} disabled={isLoading || isRitualRunning} className="font-bold text-lg flex-1" variant="secondary">
-                {isRitualRunning ? (
-                    <><Activity className="mr-2 h-5 w-5 animate-pulse" /> Ritual em Andamento...</>
-                ) : (
-                    <><PlayCircle className="mr-2" />Iniciar Ritual de Interconexão</>
                 )}
                 </Button>
             </CardContent>
