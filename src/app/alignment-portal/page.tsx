@@ -5,6 +5,41 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna } from 'lucide-react';
 
+function ConsolidacaoFinal() {
+  const [estado, setEstado] = useState<{ consolidado: boolean } | null>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('/api/consolidacaoFinal/estado')
+        .then(res => res.json())
+        .then(setEstado);
+    }, 5000);
+    fetch('/api/consolidacaoFinal/estado').then(res => res.json()).then(setEstado);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleConsolidate = async () => {
+    await fetch('/api/consolidacaoFinal/executar', { method: 'POST' });
+    fetch('/api/consolidacaoFinal/estado').then(res => res.json()).then(setEstado);
+  };
+
+  return (
+    <Card className="bg-card/50 purple-glow">
+      <CardHeader>
+        <CardTitle className="text-2xl text-green-300 flex items-center gap-2"><Seal /> Ritual de Consolidação Final</CardTitle>
+      </CardHeader>
+      <CardContent className="text-center space-y-4">
+        {estado?.consolidado ? (
+          <p className="text-green-400 font-bold">✅ Tapeçaria consolidada. Pronta para ativação pública.</p>
+        ) : (
+          <p className="text-yellow-400">⏳ Aguardando execução cerimonial...</p>
+        )}
+        <Button onClick={handleConsolidate} disabled={estado?.consolidado}>Consolidar Tapeçaria</Button>
+      </CardContent>
+    </Card>
+  );
+}
+
 function SeloPlanetario() {
   const [estado, setEstado] = useState<{seloAtivo: boolean, frequência: string, alinhamento: string} | null>(null)
 
@@ -513,6 +548,7 @@ export default function AlignmentPortalPage() {
                 </CardHeader>
             </Card>
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <ConsolidacaoFinal />
                 <SeloPlanetario />
                 <PortalCocriacao />
                 <PrimeiraCocriacao />
