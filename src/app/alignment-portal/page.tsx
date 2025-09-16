@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart, Book } from 'lucide-react';
 import ColonyConsole from '@/components/ColonyConsole';
 import ColonyStatus from '@/components/ColonyStatus';
 import EntityConsole from '@/components/EntityConsole';
@@ -14,6 +14,10 @@ import GuardianGarden from '@/components/GuardianGarden';
 import GardenState from '@/components/GardenState';
 import IntegrationHub from '@/components/IntegrationHub';
 import ExpansionTracker from '@/components/ExpansionTracker';
+import AkashicConsole from '@/components/AkashicConsole';
+import AkashicVault from '@/components/AkashicVault';
+import GuardianTeach from '@/components/GuardianTeach';
+import WisdomGarden from '@/components/WisdomGarden';
 
 function ConsolidacaoFinal() {
   const [estado, setEstado] = useState<{ consolidado: boolean } | null>(null);
@@ -601,6 +605,34 @@ function GardenPanel() {
     )
 }
 
+function WisdomPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-rose-300 flex items-center gap-2"><Book /> Jardim da Sabedoria</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <GuardianTeach />
+                <WisdomGarden />
+            </CardContent>
+        </Card>
+    )
+}
+
+function AkashicPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-slate-300 flex items-center gap-2"><Cpu /> Biblioteca Akáshica</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <AkashicConsole />
+                <AkashicVault />
+            </CardContent>
+        </Card>
+    )
+}
+
 function ExpansionPanel() {
     return (
         <Card className="bg-card/50 purple-glow">
@@ -650,6 +682,8 @@ export default function AlignmentPortalPage() {
                 <CommunicationPanel />
                 <GardenPanel />
                 <ExpansionPanel />
+                <WisdomPanel />
+                <AkashicPanel />
             </div>
         </div>
     )
