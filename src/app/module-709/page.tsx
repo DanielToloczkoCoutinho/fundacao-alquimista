@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Wifi, GitBranch, Heart } from 'lucide-react';
+import { Wifi, GitBranch, Heart, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -58,10 +58,10 @@ export default function Module709Page() {
                         href="/module-16"
                     />
                     <ConnectionCard
-                        title="Módulo 11: Gerenciamento de Portais"
-                        description="Reativa e estabiliza os portais energéticos naturais do planeta, integrando-os à rede da Fundação."
-                        icon={<GitBranch className="h-8 w-8 text-purple-400" />}
-                        href="/module-11"
+                        title="M304: Universidade Alquimista"
+                        description="A geofísica quântica e a harmonização de redes telúricas são campos de estudo avançado na Universidade."
+                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                        href="/module-304"
                     />
                 </div>
             </div>

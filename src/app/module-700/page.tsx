@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Microscope, Dna, Recycle } from 'lucide-react';
+import { Microscope, Dna, Recycle, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +44,7 @@ export default function Module700Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Fabricação</span>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 94: Morfogênese Quântica"
                         description="O Nano-Assembler é a ferramenta que constrói as estruturas genéticas complexas projetadas pelo M94."
@@ -56,6 +56,12 @@ export default function Module700Page() {
                         description="Leva a replicação do M27 a um novo nível, permitindo não apenas a cópia, mas a construção de materiais totalmente novos."
                         icon={<Recycle className="h-8 w-8 text-green-400" />}
                         href="/module-27"
+                    />
+                     <ConnectionCard
+                        title="M304: Universidade Alquimista"
+                        description="As descobertas e capacidades deste laboratório são integradas ao currículo da Universidade, expandindo o conhecimento sobre a manipulação da matéria."
+                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                        href="/module-304"
                     />
                 </div>
             </div>

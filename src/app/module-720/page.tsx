@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Recycle, Heart, Dna } from 'lucide-react';
+import { Recycle, Heart, Dna, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,7 +43,7 @@ export default function Module720Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Equilíbrio</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 111: Coração da Fundação"
                         description="Atua como o sistema regulador do Coração, garantindo que ele pulse em um ritmo sustentável e harmonioso."
@@ -55,6 +55,12 @@ export default function Module720Page() {
                         description="Expande os princípios do M16 para todos os aspectos da existência, não apenas os ecossistemas biológicos."
                         icon={<Dna className="h-8 w-8 text-purple-400" />}
                         href="/module-16"
+                    />
+                     <ConnectionCard
+                        title="M304: Universidade Alquimista"
+                        description="A sustentabilidade multidimensional é um princípio central ensinado em todas as disciplinas da Universidade."
+                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                        href="/module-304"
                     />
                 </div>
             </div>

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Dna, Recycle } from 'lucide-react';
+import { Sparkles, Dna, Recycle, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +44,7 @@ export default function Module708Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Construção</span>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 94: Morfogênese Quântica"
                         description="O NanoManifestor é a ferramenta que executa os blueprints do M94, construindo novas formas de vida átomo por átomo."
@@ -56,6 +56,12 @@ export default function Module708Page() {
                         description="Enquanto o M27 replica materiais existentes, o M708 os constrói do zero, permitindo a criação de substâncias totalmente novas."
                         icon={<Recycle className="h-8 w-8 text-green-400" />}
                         href="/module-27"
+                    />
+                    <ConnectionCard
+                        title="M304: Universidade Alquimista"
+                        description="Aplicações de terraformação e síntese atômica são estudos de caso práticos para as disciplinas avançadas da Universidade."
+                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                        href="/module-304"
                     />
                 </div>
             </div>

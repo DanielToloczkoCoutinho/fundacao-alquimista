@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Anchor, Zap, Heart } from 'lucide-react';
+import { Anchor, Zap, Heart, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,7 +43,7 @@ export default function Module715Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Manifestação</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 302: Frequência do Amor"
                         description="O M302 emite a frequência, e o M715 a 'ancora', garantindo sua permanência e estabilidade no local alvo."
@@ -55,6 +55,12 @@ export default function Module715Page() {
                         description="Fornece a energia de ponto zero necessária para criar o campo de contenção que segura a frequência ancorada."
                         icon={<Zap className="h-8 w-8 text-yellow-400" />}
                         href="/module-307"
+                    />
+                     <ConnectionCard
+                        title="M304: Universidade Alquimista"
+                        description="A engenharia de campos de frequência é uma especialização prática dentro do Domínio de Tecnologia Alquímica."
+                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                        href="/module-304"
                     />
                 </div>
             </div>

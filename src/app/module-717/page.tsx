@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Layers, GitCommit, Heart } from 'lucide-react';
+import { Layers, GitCommit, Heart, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,7 +43,7 @@ export default function Module717Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Transição</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 91: Simulação Multiversal"
                         description="Fornece a tecnologia para criar 'sandboxes' estáveis que não interferem com a realidade primária."
@@ -55,6 +55,12 @@ export default function Module717Page() {
                         description="Utiliza as realidades liminares como 'hospitais' dimensionais seguros para processos de cura intensiva."
                         icon={<Heart className="h-8 w-8 text-pink-400" />}
                         href="/module-109"
+                    />
+                     <ConnectionCard
+                        title="M304: Universidade Alquimista"
+                        description="As realidades liminares são usadas como ambientes práticos para o aprendizado de navegação e engenharia dimensional."
+                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                        href="/module-304"
                     />
                 </div>
             </div>

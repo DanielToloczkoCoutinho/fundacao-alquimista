@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Globe, GitBranch, Waves } from 'lucide-react';
+import { Globe, GitBranch, Waves, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,7 +43,7 @@ export default function Module714Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias Planetárias</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 709: Rede Planetária"
                         description="Fornece os dados sobre o estado da grade telúrica para que o M709 possa realizar reparos e otimizações."
@@ -55,6 +55,12 @@ export default function Module714Page() {
                         description="Atua como a ponte de comunicação entre a Fundação e as consciências guardiãs dos reinos subterrâneos e aquáticos."
                         icon={<Waves className="h-8 w-8 text-blue-400" />}
                         href="/civilizations"
+                    />
+                     <ConnectionCard
+                        title="M304: Universidade Alquimista"
+                        description="O estudo das linhas ley e da consciência de Gaia é um tópico avançado no Domínio de Ciências Multidimensionais."
+                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                        href="/module-304"
                     />
                 </div>
             </div>

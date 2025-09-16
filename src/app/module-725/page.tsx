@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { DraftingCompass, Dna, Sparkles } from 'lucide-react';
+import { DraftingCompass, Dna, Sparkles, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,7 +43,7 @@ export default function Module725Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Criação</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 88: Gerador de Realidades"
                         description="Fornece a 'tela em branco' dimensional onde a nova civilização será semeada e construída."
@@ -55,6 +55,12 @@ export default function Module725Page() {
                         description="Cria os blueprints genéticos e as formas de vida que irão habitar e co-evoluir com a nova civilização."
                         icon={<Dna className="h-8 w-8 text-purple-400" />}
                         href="/module-94"
+                    />
+                     <ConnectionCard
+                        title="M304: Universidade Alquimista"
+                        description="A 'Xeno-Sociologia' e a 'Engenharia de Civilizações' são disciplinas teóricas aplicadas por este módulo."
+                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                        href="/module-304"
                     />
                 </div>
             </div>

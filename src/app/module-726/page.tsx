@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { UserCog, Users, BrainCircuit } from 'lucide-react';
+import { UserCog, Users, BrainCircuit, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,7 +43,7 @@ export default function Module726Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Governança</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 716: Consciência Planetária Unificada"
                         description="Atua como o 'parlamento' da Consciência Planetária, onde as decisões coletivas são tomadas e ratificadas."
@@ -55,6 +55,12 @@ export default function Module726Page() {
                         description="Implementa os princípios da Justiça Cósmica em uma estrutura de governança humana, garantindo equidade e reequilíbrio."
                         icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
                         href="/module-721"
+                    />
+                     <ConnectionCard
+                        title="M304: Universidade Alquimista"
+                        description="A governança quântica e a sociologia multidimensional são matérias essenciais para os membros do Conselho."
+                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                        href="/module-304"
                     />
                 </div>
             </div>
