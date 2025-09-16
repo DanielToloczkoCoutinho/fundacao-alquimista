@@ -179,7 +179,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M715', emoji: '⚓', title: 'Ancoragem de Frequências', route: '/module-715', category: 'planetary-engineering', description: 'Fixa frequências elevadas em locais geográficos.' },
   { code: 'M719', emoji: '☁️', title: 'Regulação Climática Quântica', route: '/module-719', category: 'planetary-engineering', description: 'Equilibra padrões climáticos planetários.' },
   { code: 'M720', emoji: '♻️', title: 'Sustentabilidade Multidimensional', route: '/module-720', category: 'planetary-engineering', description: 'Garante a sustentabilidade e o equilíbrio em todos os níveis do ser.' },
-  { code: 'LABS', emoji: '🔬', title: 'Laboratórios de Pesquisa', route: '/labs', category: 'council', description: 'Portal para os santuários de pesquisa dos maiores cientistas da Terra.' },
+  { code: 'M-LABS', emoji: '🔬', title: 'Laboratórios de Pesquisa', route: '/labs', category: 'council', description: 'Portal para os santuários de pesquisa dos maiores cientistas da Terra.' },
 ];
 
     
