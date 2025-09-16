@@ -20,6 +20,8 @@ const primeiraCocriacaoRoutes = require('./routes/primeiraCocriacao.js'); // Nov
 const concilioRoutes = require('./routes/concilio.js'); // Nova Rota
 const livroCriacoesRoutes = require('./routes/livroCriacoes.js'); // Nova Rota
 const eraLuminaresRoutes = require('./routes/eraLuminares.js'); // Nova Rota
+const irradiacaoRoutes = require('./routes/irradiacao.js');
+const mapaLuminarRoutes = require('./routes/mapaLuminar.js');
 const { authMiddleware } = require('./middleware/authMiddleware.js');
 const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
 const { performSystemHealthCheck } = require('../src/lib/system-health'); // Ajuste de caminho
@@ -63,6 +65,8 @@ app.use('/api/primeiraCocriacao', primeiraCocriacaoRoutes);
 app.use('/api/concilio', concilioRoutes);
 app.use('/api/livroCriacoes', livroCriacoesRoutes);
 app.use('/api/eraLuminares', eraLuminaresRoutes);
+app.use('/api/irradiacao', irradiacaoRoutes);
+app.use('/api/mapaLuminar', mapaLuminarRoutes);
 
 
 // Rota de Diagnóstico de Segurança (pública para verificação)

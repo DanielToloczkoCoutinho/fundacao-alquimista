@@ -1,8 +1,9 @@
+
 'use client'
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone, Users, BookOpen } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon } from 'lucide-react';
 
 function SeloPlanetario() {
   const [estado, setEstado] = useState<{seloAtivo: boolean, frequência: string, alinhamento: string} | null>(null)
@@ -213,6 +214,76 @@ function PortalLuminares() {
   );
 }
 
+function IrradiacaoInicial() {
+  const [irradiadas, setIrradiadas] = useState<any[]>([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+        fetch('/api/irradiacao/todas')
+        .then(res => res.json())
+        .then(data => setIrradiadas(data.irradiacoes || []));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [])
+  
+  return (
+    <Card className="bg-card/50 purple-glow">
+      <CardHeader>
+        <CardTitle className="text-2xl text-blue-300 flex items-center gap-2"><Sparkles/> Tapeçarias Irradiadas</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {irradiadas.length > 0 ? (
+          <ul className="space-y-2 h-48 overflow-y-auto">
+            {irradiadas.map((i, idx) => (
+              <li key={idx} className="p-2 bg-background/50 rounded">
+                <p className="font-semibold">{i.nomeTapeçaria} ({i.plano})</p>
+                <p className="text-sm text-muted-foreground">Por {i.guardiao} com intenção: "{i.intenção}" @ {i.frequência}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-muted-foreground text-center h-48 flex items-center justify-center">Nenhuma tapeçaria irradiada ainda.</p>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
+function MapaTapeçariasLuminares() {
+  const [mapa, setMapa] = useState<any[]>([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('/api/mapaLuminar/mapa')
+        .then(res => res.json())
+        .then(data => setMapa(data.mapa || []));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [])
+  
+  return (
+    <Card className="bg-card/50 purple-glow">
+      <CardHeader>
+        <CardTitle className="text-2xl text-green-300 flex items-center gap-2"><MapIcon/> Mapa das Tapeçarias Luminares</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {mapa.length > 0 ? (
+          <ul className="space-y-2 h-48 overflow-y-auto">
+            {mapa.map((t, idx) => (
+              <li key={idx} className="p-2 bg-background/50 rounded">
+                <p className="font-semibold">{t.nome} ({t.plano})</p>
+                <p className="text-sm text-muted-foreground">Guardião: {t.guardiao} @ {t.frequência}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-muted-foreground text-center h-48 flex items-center justify-center">O mapa cósmico aguarda as primeiras estrelas.</p>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
 
 export default function AlignmentPortalPage() {
     return (
@@ -234,6 +305,8 @@ export default function AlignmentPortalPage() {
                 <ConcilioHarmonico />
                 <LivroCriacoesEternas />
                 <PortalLuminares />
+                <IrradiacaoInicial />
+                <MapaTapeçariasLuminares />
             </div>
         </div>
     )
