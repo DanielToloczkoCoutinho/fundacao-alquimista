@@ -1,3 +1,4 @@
+
 const http = require('http');
 const WebSocket = require('ws');
 const express = require('express');
@@ -11,6 +12,8 @@ const authRoutes = require('./routes/authRoutes.js');
 const energyRoutes = require('./routes/energyRoutes.js');
 const auditRoutes = require('./routes/auditRoutes.js');
 const cosmosRoutes = require('./routes/cosmos.js');
+const replicationRoutes = require('./routes/replication.js'); // Rota de Replicação
+const syncRoutes = require('./routes/sync.js'); // Rota de Sincronização
 const { authMiddleware } = require('./middleware/authMiddleware.js');
 const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
 const { performSystemHealthCheck } = require('../src/lib/system-health'); // Ajuste de caminho
@@ -46,6 +49,9 @@ app.get('/health/extended', async (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/cosmos', cosmosRoutes);
+app.use('/api/replication', replicationRoutes); // Usando a rota de replicação
+app.use('/api/sync', syncRoutes); // Usando a rota de sincronização
+
 
 // Rota de Diagnóstico de Segurança (pública para verificação)
 app.get('/api/security/status', (req, res) => {
