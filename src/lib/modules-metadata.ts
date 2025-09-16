@@ -160,6 +160,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M117',title: 'Flor do Éter',                          emoji: '🌸', route: '/module-117', category: 'mid', description: 'Orquestração de fenômenos naturais' },
   { code: 'M118',title: 'Luz Primordial',                        emoji: '💡', route: '/module-118', category: 'mid', description: 'Organização da pureza da luz' },
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid', description: 'Transmissor quântico inter-consciências' },
+  { code: 'M308', title: 'Embaixada Estelar', emoji: '🛰️', route: '/module-308', category: 'mid', description: 'Interface com o cosmos observável' },
   { code: 'M404',title: 'Resolução de Paradoxo',                 emoji: '❗', route: '/module-404', category: 'mid', description: 'Neutralização de inconsistências causais' },
   { code: 'M709', emoji: '🌐', title: 'Reconstrutor da Rede Planetária', route: '/module-709', category: 'mid', description: 'Reorganiza a malha eletromagnética da Terra.'},
   { code: 'M710', emoji: '🛰️', title: 'Biofeedback Quântico', route: '/module-710', category: 'mid', description: 'Monitora e ajusta as frequências biológicas de seres vivos.'},

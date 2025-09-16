@@ -10,6 +10,7 @@ require('./config/db.js'); // Conexão com o banco de dados
 const authRoutes = require('./routes/authRoutes.js');
 const energyRoutes = require('./routes/energyRoutes.js');
 const auditRoutes = require('./routes/auditRoutes.js');
+const cosmosRoutes = require('./routes/cosmos.js');
 const { authMiddleware } = require('./middleware/authMiddleware.js');
 const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
 const { performSystemHealthCheck } = require('../src/lib/system-health'); // Ajuste de caminho
@@ -44,6 +45,7 @@ app.get('/health/extended', async (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/cosmos', cosmosRoutes);
 
 // Rota de Diagnóstico de Segurança (pública para verificação)
 app.get('/api/security/status', (req, res) => {

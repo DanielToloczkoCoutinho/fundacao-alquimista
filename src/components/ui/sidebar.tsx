@@ -74,11 +74,15 @@ export function Sidebar() {
         </Link>
         <ScrollArea className="w-full">
           <div className="flex flex-col items-center space-y-2">
-            {sortedModules.map(({ code, emoji, title, route }) => (
+            {sortedModules.map(({ code, emoji, title, route }) => {
+              if (!route) {
+                return null;
+              }
+              return (
               <Tooltip key={code}>
                 <TooltipTrigger asChild>
                   <Link
-                    href={route || '#'}
+                    href={route}
                     className={cn(
                       'flex flex-col items-center p-2 rounded-lg transition-colors w-16',
                       pathname === route
@@ -94,7 +98,7 @@ export function Sidebar() {
                   <p>{title}</p>
                 </TooltipContent>
               </Tooltip>
-            ))}
+            )})}
           </div>
         </ScrollArea>
       </nav>
