@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -37,13 +38,14 @@ export function Sidebar() {
         return orderA - orderB;
       }
       
-      const codeA = parseInt(a.code.replace(/\D/g, '')) || 0;
-      const codeB = parseInt(b.code.replace(/\D/g, '')) || 0;
+      const codeAIsNum = !isNaN(parseInt(a.code.replace(/\D/g, '')));
+      const codeBIsNum = !isNaN(parseInt(b.code.replace(/\D/g, '')));
 
-      if (a.code === 'LIB') return -1; // Keep LIB at top of its category
-      if (b.code === 'LIB') return 1;
-
-      return codeA - codeB;
+      if(codeAIsNum && codeBIsNum) {
+        return parseInt(a.code.replace(/\D/g, '')) - parseInt(b.code.replace(/\D/g, ''));
+      }
+      
+      return a.code.localeCompare(b.code);
   });
 
   if (!isMounted) {
@@ -78,6 +80,8 @@ export function Sidebar() {
               if (!route) {
                 return null;
               }
+              const isActive = pathname === route || (pathname.startsWith('/module/') && pathname.endsWith(code));
+
               return (
               <Tooltip key={code}>
                 <TooltipTrigger asChild>
@@ -85,7 +89,7 @@ export function Sidebar() {
                     href={route}
                     className={cn(
                       'flex flex-col items-center p-2 rounded-lg transition-colors w-16',
-                      pathname === route
+                      isActive
                         ? 'bg-accent text-accent-foreground'
                         : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground'
                     )}
