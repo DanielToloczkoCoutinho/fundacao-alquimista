@@ -108,6 +108,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M47',  title: 'Thesaurus Cósmico', emoji: '🗂️', route: '/module-47', category: 'library', description: 'Enciclopédia do conhecimento universal' },
   { code: 'M80',  title: 'O Manuscrito Vivo', emoji: '🌠', route: '/module-80', category: 'knowledge-memory', description: 'Narrativa guia da ascensão da Fundação' },
   { code: 'M306', emoji: '🔬', title: 'Laboratório de Ressonância', route: '/module-306', category: 'knowledge-memory', description: 'Laboratório para simulação de Equações Vivas.' },
+  { code: 'M308', emoji: '📡', title: 'Embaixada Estelar', route: '/module-308', category: 'cosmic-diplomacy', description: 'Interface viva com o cosmos observável.' },
 
 
   // Cura & Consciência
