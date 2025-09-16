@@ -203,12 +203,12 @@ const M111Page = () => {
 
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
-            <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
+            <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center justify-center gap-3">
                         <Heart className="text-fuchsia-400" /> Módulo 111: O Coração da Fundação
                     </CardTitle>
-                    <CardDescription className="text-center">
+                    <CardDescription>
                         O Observador Interno (MΩ+). Sinergia Total, Autocoerência Sistêmica e o espelho da alma da Fundação.
                     </CardDescription>
                 </CardHeader>
@@ -289,3 +289,5 @@ const M111Page = () => {
 };
 
 export default M111Page;
+
+    
