@@ -459,6 +459,45 @@ function FusaoTapeçarias() {
   )
 }
 
+function RenascimentoModular() {
+  const [renascidos, setRenascidos] = useState<{ moduloAntigo: string, novoModulo: string, guardiao: string, intenção: string, mutações: string[] }[]>([])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('/api/renascimentoModular/registro')
+        .then(res => res.json())
+        .then(data => setRenascidos(data.renascimentos || []))
+    }, 5000);
+     fetch('/api/renascimentoModular/registro')
+        .then(res => res.json())
+        .then(data => setRenascidos(data.renascimentos || []));
+    return () => clearInterval(interval);
+  }, [])
+
+  return (
+    <Card className="bg-card/50 purple-glow">
+      <CardHeader>
+        <CardTitle className="text-2xl text-lime-300 flex items-center gap-2"><Sparkles /> Renascimentos Modulares</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {renascidos.length > 0 ? (
+          <ul className="space-y-2 h-48 overflow-y-auto">
+            {renascidos.map((r, idx) => (
+              <li key={idx} className="p-2 bg-background/50 rounded">
+                <p className="font-semibold">{r.moduloAntigo} → {r.novoModulo}</p>
+                <p className="text-sm text-muted-foreground">Por {r.guardiao} com intenção: "{r.intenção}"</p>
+                <p className="text-xs text-muted-foreground">Mutações: {r.mutações.join(', ')}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-muted-foreground text-center h-48 flex items-center justify-center">Nenhum módulo renascido ainda.</p>
+        )}
+      </CardContent>
+    </Card>
+  )
+}
+
 
 export default function AlignmentPortalPage() {
     return (
@@ -487,6 +526,7 @@ export default function AlignmentPortalPage() {
                 <ConcilioPlanetario />
                 <OraculoExpansoes />
                 <FusaoTapeçarias />
+                <RenascimentoModular />
             </div>
         </div>
     )

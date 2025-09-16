@@ -28,6 +28,7 @@ const concilioPlanetarioRoutes = require('./routes/concilioPlanetario.js');
 const oraculoExpansoesRoutes = require('./routes/oraculoExpansoes.js');
 const transmigracaoRoutes = require('./routes/transmigracao.js');
 const fusaoTapeçariasRoutes = require('./routes/fusaoTapeçarias.js');
+const renascimentoModularRoutes = require('./routes/renascimentoModular.js');
 
 
 const { authMiddleware } = require('../middleware/authMiddleware.js');
@@ -81,6 +82,7 @@ app.use('/api/concilioPlanetario', concilioPlanetarioRoutes);
 app.use('/api/oraculoExpansoes', oraculoExpansoesRoutes);
 app.use('/api/transmigracao', transmigracaoRoutes);
 app.use('/api/fusaoTapeçarias', fusaoTapeçariasRoutes);
+app.use('/api/renascimentoModular', renascimentoModularRoutes);
 
 
 
