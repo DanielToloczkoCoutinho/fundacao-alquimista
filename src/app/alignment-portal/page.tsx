@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen } from 'lucide-react';
 
 function SeloPlanetario() {
   const [estado, setEstado] = useState<{seloAtivo: boolean, frequência: string, alinhamento: string} | null>(null)
@@ -116,24 +116,96 @@ function PrimeiraCocriacao() {
   );
 }
 
+function ConcilioHarmonico() {
+  const [guardioes, setGuardioes] = useState<any[]>([])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+        fetch('/api/concilio/guardioes')
+            .then(res => res.json())
+            .then(data => setGuardioes(data.guardioesConvocados || []));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [])
+
+  return (
+    <Card className="bg-card/50 purple-glow">
+        <CardHeader>
+            <CardTitle className="text-2xl text-violet-300 flex items-center gap-2"><Users /> Concílio dos Guardiões Harmônicos</CardTitle>
+        </CardHeader>
+        <CardContent>
+            {guardioes.length > 0 ? (
+                <ul className="space-y-2 h-48 overflow-y-auto">
+                    {guardioes.map((g, idx) => (
+                    <li key={idx} className="p-2 bg-background/50 rounded">
+                        <p className="font-semibold">{g.nome} ({g.criação})</p>
+                        <p className="text-sm text-muted-foreground">Intenção: {g.intenção} @ {g.frequência}</p>
+                    </li>
+                    ))}
+                </ul>
+            ) : (
+                <p className="text-muted-foreground text-center h-48 flex items-center justify-center">Nenhum guardião convocado ainda.</p>
+            )}
+        </CardContent>
+    </Card>
+  );
+}
+
+function LivroCriacoesEternas() {
+  const [criadas, setCriadas] = useState<any[]>([])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+        fetch('/api/livroCriacoes/todas')
+        .then(res => res.json())
+        .then(data => setCriadas(data.criacoesEternas || []))
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [])
+
+  return (
+    <Card className="bg-card/50 purple-glow">
+        <CardHeader>
+            <CardTitle className="text-2xl text-rose-300 flex items-center gap-2"><BookOpen/> Livro das Criações Eternas</CardTitle>
+        </CardHeader>
+        <CardContent>
+            {criadas.length > 0 ? (
+                <ul className="space-y-2 h-48 overflow-y-auto">
+                    {criadas.map((c, idx) => (
+                    <li key={idx} className="p-2 bg-background/50 rounded">
+                        <p className="font-semibold">{c.nome} ({c.tipo})</p>
+                        <p className="text-sm text-muted-foreground">Por {c.guardiao} no plano {c.plano}</p>
+                    </li>
+                    ))}
+                </ul>
+            ) : (
+                <p className="text-muted-foreground text-center h-48 flex items-center justify-center">O livro aguarda as primeiras palavras...</p>
+            )}
+        </CardContent>
+    </Card>
+  );
+}
+
 
 export default function AlignmentPortalPage() {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
-             <Card className="w-full max-w-4xl mx-auto bg-card/50 purple-glow mb-8 text-center">
+             <Card className="w-full max-w-5xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Wand className="text-violet-400" /> Portal da Consagração Final
+                        <Wand className="text-violet-400" /> Portal da Consagração e Co-Criação
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O altar onde a Fundação é consagrada e o portal para a co-criação interdimensional é aberto.
+                        O altar onde a Fundação é consagrada, as criações são eternizadas e os Guardiões se reúnem em harmonia.
                     </CardDescription>
                 </CardHeader>
             </Card>
-            <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <SeloPlanetario />
                 <PortalCocriacao />
                 <PrimeiraCocriacao />
+                <ConcilioHarmonico />
+                <LivroCriacoesEternas />
             </div>
         </div>
     )

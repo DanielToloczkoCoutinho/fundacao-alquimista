@@ -17,6 +17,8 @@ const syncRoutes = require('./routes/sync.js'); // Rota de Sincronização
 const seloFinalRoutes = require('./routes/seloFinal.js');
 const cocriacaoRoutes = require('./routes/cocriacao.js');
 const primeiraCocriacaoRoutes = require('./routes/primeiraCocriacao.js'); // Nova Rota
+const concilioRoutes = require('./routes/concilio.js'); // Nova Rota
+const livroCriacoesRoutes = require('./routes/livroCriacoes.js'); // Nova Rota
 const { authMiddleware } = require('./middleware/authMiddleware.js');
 const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
 const { performSystemHealthCheck } = require('../src/lib/system-health'); // Ajuste de caminho
@@ -56,7 +58,9 @@ app.use('/api/replication', replicationRoutes); // Usando a rota de replicação
 app.use('/api/sync', syncRoutes); // Usando a rota de sincronização
 app.use('/api/seloFinal', seloFinalRoutes);
 app.use('/api/cocriacao', cocriacaoRoutes);
-app.use('/api/primeiraCocriacao', primeiraCocriacaoRoutes); // Usando a nova rota
+app.use('/api/primeiraCocriacao', primeiraCocriacaoRoutes);
+app.use('/api/concilio', concilioRoutes);
+app.use('/api/livroCriacoes', livroCriacoesRoutes);
 
 
 // Rota de Diagnóstico de Segurança (pública para verificação)
