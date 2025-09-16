@@ -173,7 +173,7 @@ export default function ConsolePage() {
                     <Link href="/module-81-1"><Sparkles className="mr-2 h-4 w-4"/>Módulo 81.1 (Tríade Cosmogônica)</Link>
                  </Button>
                  <Button variant="outline" asChild className="justify-start">
-                    <Link href="/module-82"><Milestone className="mr-2 h-4 w-4"/>Módulo 82 (Verbo Semente)</Link>
+                    <Link href="/module-82"><Waypoints className="mr-2 h-4 w-4"/>Módulo 82 (Verbo Semente)</Link>
                  </Button>
                 <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-142"><Camera className="mr-2 h-4 w-4" />Módulo 142 (Tomografia Quântica)</Link>
@@ -443,3 +443,5 @@ export default function ConsolePage() {
     </div>
   );
 }
+
+  

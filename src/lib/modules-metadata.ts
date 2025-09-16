@@ -187,7 +187,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: "M68", emoji: "📜", title: "Responsabilidade Ética em Tecnologias", route: "/module-68", category: 'mid', description: "Diretrizes para o uso benéfico da tecnologia."},
   { code: "M69", emoji: "🎓", title: "Educação Universal e Conhecimento", route: "/module-69", category: 'mid', description: "Disseminação de sabedoria para a evolução coletiva."},
   { code: "M70", emoji: "🌿", title: "Sustentabilidade e Ecossistemas", route: "/module-70", category: 'mid', description: "Gestão sustentável e regeneração de recursos cósmicos."},
-  { code: "M71", emoji: '📡', title: 'Comunicação Holográfica Zenith', route: '/module-71', category: 'mid', description: 'Canal seguro para comunicação holográfica com Conselhos Superiores.' },
+  { code: 'M71', emoji: '📡', title: 'Comunicação Holográfica Zenith', route: '/module-71', category: 'mid', description: 'Canal seguro para comunicação holográfica com Conselhos Superiores.' },
   { code: "M74", emoji: '⏳', title: 'CRONOS_FLUXUS', route: '/module-74', category: 'mid', description: 'Navegação temporal ética e modulação da matriz temporal.'},
   { code: "M75", emoji: "🏗️", title: "Infraestrutura Universal", route: "/module-75", category: 'mid', description: "Hubs de desenvolvimento e expansão interdimensional."},
   { code: "M76", emoji: "🏛️", title: "Governança e Colaboração Universal", route: "/module-76", category: 'mid', description: "Estrutura para organização justa entre civilizações."},
@@ -230,3 +230,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M161', emoji: '🌾', title: 'Agricultura Cósmica Sustentável', route: '/module-161', category: 'mid', description: 'Produção de alimentos em qualquer ambiente.' },
   { code: 'M170', emoji: '🚀', title: 'Transporte Interdimensional Avançado', route: '/module-170', category: 'mid', description: 'Viagens cósmicas de alta velocidade.' },
 ];
+
+  
