@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -128,15 +127,28 @@ const Module93Page = () => {
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-5 gap-8">
                 <Card className="lg:col-span-2 bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle className="text-2xl">Sinergias</CardTitle>
+                        <CardTitle className="text-2xl">Parâmetros da Simulação</CardTitle>
                     </CardHeader>
-                     <CardContent className="space-y-4">
-                        <ConnectionCard
-                            title="M303: Portal Trino"
-                            description="Todas as simulações do M93 são domínios dentro da Realidade Quântica manifestada pelo M303."
-                            icon={<Layers className="h-8 w-8 text-cyan-400" />}
-                            href="/module-303"
-                        />
+                    <CardContent className="space-y-6">
+                        <div className="flex gap-2">
+                           <Button variant="outline" onClick={loadScenario1}>Cenário 1: Aprendizado</Button>
+                           <Button variant="outline" onClick={loadScenario2}>Cenário 2: Resiliência</Button>
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="purpose">Propósito da Simulação</Label>
+                            <Input id="purpose" value={purpose} onChange={e => setPurpose(e.target.value)} />
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="complexityLevel">Nível de Complexidade (0.0 a 1.0)</Label>
+                            <Input id="complexityLevel" type="number" step="0.1" min="0" max="1" value={complexityLevel} onChange={e => setComplexityLevel(e.target.value)} />
+                        </div>
+                        <div className="space-y-2">
+                            <Label htmlFor="targetUser">Consciência Alvo</Label>
+                            <Input id="targetUser" value={targetUser} onChange={e => setTargetUser(e.target.value)} />
+                        </div>
+                        <Button onClick={handleCreateSimulation} disabled={isLoading} className="w-full font-bold text-lg">
+                            {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Criando Realidade...</> : 'Criar Realidade Imersiva'}
+                        </Button>
                     </CardContent>
                 </Card>
                 <Card className="lg:col-span-3 bg-card/50 purple-glow">

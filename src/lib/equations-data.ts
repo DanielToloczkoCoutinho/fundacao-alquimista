@@ -548,5 +548,3 @@ export const livingEquations = [
         titulo: 'Equação da Métrica Vibracional Evolutiva'
     },
 ];
-
-    

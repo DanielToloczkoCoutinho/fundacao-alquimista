@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Settings2 } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Settings } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
@@ -117,7 +117,7 @@ const Module98Page = () => {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <Settings2 className="text-amber-400" /> Módulo 98: Modulação da Existência Fundamental
+                        <Settings className="text-amber-400" /> Módulo 98: Modulação da Existência Fundamental
                     </CardTitle>
                     <CardDescription>
                         Arquiteto Cósmico para o ajuste fino dos parâmetros que definem a própria realidade.

@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Goal, GitCommit, HeartPulse, Presentation, Dna, Users, AlertTriangle } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Goal } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
@@ -22,6 +22,7 @@ const mockM93 = { create_immersive_reality: (purpose: string, complexity: number
 const mockM94 = { perform_quantum_reprogramming: (id: string) => ({ status: "reprogramming_success", coherence_increase: Math.random() * 0.05 + 0.01 }), };
 const mockM95 = { interact_with_galactic_consciousness: (galaxy: string, type: string, purpose: string) => ({ status: "interaction_established", response_coherence: Math.random() * 0.2 + 0.8 }), };
 const mockM96 = { detect_and_regulate_anomaly: (id: string) => ({ status: "no_anomaly_detected", anomaly_risk: "LOW" }), };
+const mockM97 = { manifest_divine_purpose: (purpose: string, target_reality_id: string, scope: string, purity: number, ethical_factor: number) => { const status = ethical_factor >= 0.75 ? "SUCESSO" : "FALHA_VALIDACAO"; return { manifestation_status: status, alignment_score: status === "SUCESSO" ? Math.random() * 0.1 + 0.9 : Math.random() * 0.5 }; } };
 
 const Module97Page = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -61,6 +62,13 @@ const Module97Page = () => {
 
                 const anomaly_check = mockM96.detect_and_regulate_anomaly(`ANOMALY_CHECK_${manifestation_data.manifestation_id}`);
                 manifestation_data.anomaly_check = anomaly_check;
+
+                const divine_purpose_alignment = mockM97.manifest_divine_purpose(purpose, "TERRA_PRIME", 'Universal', parseFloat(purity), parseFloat(purity));
+                manifestation_data.divine_purpose_alignment = divine_purpose_alignment;
+
+                if (divine_purpose_alignment.manifestation_status === "FALHA_VALIDACAO") {
+                    throw new Error("Alinhamento de propósito divino falhou. Operação abortada eticamente.");
+                }
 
                 const savce_validation = mockM73.submit_for_validation({ type: "divine_purpose_manifestation", manifestation_data, manifestation_blueprint, ethical_impact });
                 manifestation_data.savce_validation = savce_validation;
@@ -164,10 +172,6 @@ const Module97Page = () => {
                                         <h4 className="font-semibold flex items-center gap-2"><Scale className="text-rose-400"/> Avaliação Ética (M05)</h4>
                                         <p>Score: {report.manifestation_details.ethical_impact.ethical_score.toFixed(2)}</p>
                                         <p>Conformidade: {report.manifestation_details.ethical_impact.conformity ? <CheckCircle className="inline text-green-500" /> : <XCircle className="inline text-red-500" />}</p>
-                                    </div>
-                                    <div className="p-3 bg-background/30 rounded-lg border border-primary/20">
-                                        <h4 className="font-semibold flex items-center gap-2"><GitCommit className="text-indigo-400"/> Simulação Multiversal (M91)</h4>
-                                        <p>Cenários Favoráveis: {report.manifestation_details.simulation_results.filter((r:any) => r.savce_validation.validation_status === 'APROVADO').length} de {report.manifestation_details.simulation_results.length}</p>
                                     </div>
                                      <div className="p-3 bg-accent/20 rounded-lg border border-accent">
                                         <h4 className="font-bold text-accent flex items-center gap-2"><ShieldCheck className="text-cyan-300"/> Veredito Final (SAVCE - M73)</h4>

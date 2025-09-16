@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, AlertTriangle, GitCommit, HeartPulse, Presentation, Dna, Users, SlidersHorizontal } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, AlertTriangle as AlertTriangleIcon } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
@@ -102,7 +101,7 @@ const Module96Page = () => {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <SlidersHorizontal className="text-orange-400" /> Módulo 96: Regulação de Eventos Cósmicos
+                        <AlertTriangleIcon className="text-orange-400" /> Módulo 96: Regulação de Eventos Cósmicos
                     </CardTitle>
                     <CardDescription>
                         Guardião da Estabilidade Cósmica para monitorar, prever e intervir em anomalias do multiverso.
@@ -167,7 +166,7 @@ const Module96Page = () => {
                                         <p>Conformidade: {report.anomaly_details.ethical_impact.conformity ? <CheckCircle className="inline text-green-500" /> : <XCircle className="inline text-red-500" />}</p>
                                     </div>
                                     <div className="p-3 bg-background/30 rounded-lg border border-primary/20">
-                                        <h4 className="font-semibold flex items-center gap-2"><GitCommit className="text-indigo-400"/> Simulação Multiversal (M91)</h4>
+                                        <h4 className="font-semibold flex items-center gap-2"><Info className="text-indigo-400"/> Simulação Multiversal (M91)</h4>
                                         <p>Cenários Favoráveis: {report.anomaly_details.simulation_results.filter((r:any) => r.savce_validation.validation_status === 'APROVADO').length} de {report.anomaly_details.simulation_results.length}</p>
                                     </div>
                                      <div className="p-3 bg-accent/20 rounded-lg border border-accent">
@@ -187,5 +186,3 @@ const Module96Page = () => {
 };
 
 export default Module96Page;
-
-    
