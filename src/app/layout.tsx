@@ -9,6 +9,7 @@ import { useState, useEffect, Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { SystemProvider } from '@/context/SystemContext';
 import { NetworkStatus } from '@/components/ui/NetworkStatus';
+import ClientSideToaster from '@/components/ui/client-toaster';
 
 // Adia a renderização da barra lateral para o lado do cliente para evitar erros de hidratação
 const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), {
@@ -50,20 +51,7 @@ export default function RootLayout({
               </main>
             </div>
             <NetworkStatus />
-            <Toaster
-              theme="dark"
-              toastOptions={{
-                classNames: {
-                  toast:
-                    "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
-                  description: "group-[.toast]:text-muted-foreground",
-                  actionButton:
-                    "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
-                  cancelButton:
-                    "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
-                },
-              }}
-            />
+            <ClientSideToaster />
           </SystemProvider>
         </ErrorBoundary>
       </body>

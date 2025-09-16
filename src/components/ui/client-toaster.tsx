@@ -1,15 +1,14 @@
 "use client"
 
-import * as React from "react"
-import { Toaster as Sonner, toast } from "sonner"
+import { Toaster as SonnerToaster } from "sonner"
+import { useToast } from "@/hooks/use-toast"
 
-type ToasterProps = React.ComponentProps<typeof Sonner>
+export default function ClientSideToaster() {
+  const { toasts } = useToast()
 
-const Toaster = ({ ...props }: ToasterProps) => {
   return (
-    <Sonner
+    <SonnerToaster
       theme="dark"
-      className="toaster group"
       toastOptions={{
         classNames: {
           toast:
@@ -21,9 +20,6 @@ const Toaster = ({ ...props }: ToasterProps) => {
             "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
         },
       }}
-      {...props}
     />
   )
 }
-
-export { Toaster, toast }
