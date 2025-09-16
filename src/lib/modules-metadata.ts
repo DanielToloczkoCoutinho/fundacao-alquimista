@@ -54,6 +54,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M31',  title: 'Manipulação da Realidade', emoji: '🔮', route: '/module-31', category: 'quantum-reality', description: 'Interface para reescrever o tecido da realidade manifestada.' },
   { code: 'M321', title: 'Computação Exascale (8D+)', emoji: '💻', route: '/module-321', category: 'cosmic-engineering', description: 'Simulação de cosmos em escala exa-flops' },
   { code: 'M717', emoji: '🏞️', title: 'Criação de Realidades Liminares', route: '/module-717', category: 'quantum-reality', description: 'Manifesta realidades intermediárias ou de transição.' },
+  { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'quantum-reality', description: 'Estabilização de realidades manifestadas' },
 
   // Segurança & Governança
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'security-governance', description: 'Proteção multidimensional integrada' },
