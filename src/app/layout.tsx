@@ -1,7 +1,7 @@
+
 'use client';
 // This file is now located at app/layout.tsx
 import './globals.css';
-import { Toaster } from 'sonner';
 import ErrorBoundary from '@/components/ui/error-boundary';
 import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
 import dynamic from 'next/dynamic';

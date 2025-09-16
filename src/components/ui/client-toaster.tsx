@@ -1,11 +1,11 @@
+
 "use client"
 
 import { Toaster as SonnerToaster } from "sonner"
-import { useToast } from "@/hooks/use-toast"
 
+// Este componente wrapper garante que o Toaster (que usa hooks de cliente)
+// só seja renderizado no lado do cliente, evitando erros de hidratação.
 export default function ClientSideToaster() {
-  const { toasts } = useToast()
-
   return (
     <SonnerToaster
       theme="dark"
