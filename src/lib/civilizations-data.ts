@@ -1,3 +1,4 @@
+
 export type CivilizationCategory = 
   | "Estelares e Galácticas"
   | "Intraterrenas e Interdimensionais"
