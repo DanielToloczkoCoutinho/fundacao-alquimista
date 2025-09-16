@@ -3,15 +3,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Fingerprint, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { startAuthentication } from '@simplewebauthn/browser';
+import type { AuthenticationResponseJSON } from '@simplewebauthn/types';
 
 interface VibrationalAccessProps {
-  onAuthenticate: (success: boolean) => void;
+  onAuthenticate: (success: boolean, token?: string) => void;
 }
 
 export default function VibrationalAccess({ onAuthenticate }: VibrationalAccessProps) {
   const [isScanning, setIsScanning] = useState(false);
   const { toast } = useToast();
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const userId = 'anatheron-sovereign'; // ID fixo para o Fundador
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -58,33 +61,54 @@ export default function VibrationalAccess({ onAuthenticate }: VibrationalAccessP
     };
   }, [isScanning]);
 
-  const handleAccess = () => {
+  const handleAccess = async () => {
     setIsScanning(true);
     toast({
       title: "Análise Espectral Iniciada",
       description: "Verificando sua assinatura vibracional...",
     });
 
-    setTimeout(() => {
-      // Simulação de validação. Em um cenário real, isso envolveria WebAuthn e biometria.
-      const isValid = true; // Simula sucesso
+    try {
+      // 1. Obter o desafio do servidor
+      const optionsRes = await fetch('/api/auth/webauthn/challenge', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userID: userId }),
+      });
+      const options = await optionsRes.json();
+      if (options.error) throw new Error(options.error);
+
+      // 2. Iniciar a autenticação WebAuthn no browser
+      const authRes: AuthenticationResponseJSON = await startAuthentication(options);
+
+      // 3. Verificar a resposta no servidor
+      const verificationRes = await fetch('/api/auth/webauthn/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ credential: authRes, userId: userId }),
+      });
+      const verificationResult = await verificationRes.json();
       
-      if (isValid) {
+      if (verificationResult.verified) {
         toast({
           title: "Assinatura Verificada",
           description: "Bem-vindo, Fundador. Acesso concedido.",
         });
-        onAuthenticate(true);
+        onAuthenticate(true, verificationResult.token.access_token);
       } else {
+        throw new Error(verificationResult.error || 'Falha na verificação. Frequência não reconhecida.');
+      }
+
+    } catch (error: any) {
         toast({
-          title: "Acesso Negado",
-          description: "Assinatura vibracional não reconhecida.",
-          variant: "destructive",
+            title: "Acesso Negado",
+            description: error.message || "Assinatura vibracional não reconhecida.",
+            variant: "destructive",
         });
         onAuthenticate(false);
-      }
+    } finally {
       setIsScanning(false);
-    }, 3000);
+    }
   };
 
   return (
