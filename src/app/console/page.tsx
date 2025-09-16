@@ -128,6 +128,9 @@ export default function ConsolePage() {
                   <Link href="/module-727"><Heart className="mr-2 h-4 w-4"/>Módulo 727 (Guardião da Harmonia)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-728"><Scale className="mr-2 h-4 w-4"/>Módulo 728 (Santuário dos Alquimistas)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-omega"><Sparkles className="mr-2 h-4 w-4 text-amber-400" />Santuário do Ômega</Link>
               </Button>
                <Button variant="outline" asChild className="justify-start">
