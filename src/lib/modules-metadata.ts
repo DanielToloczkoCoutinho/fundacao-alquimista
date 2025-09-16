@@ -95,10 +95,14 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M119',title: 'Templum Cosmica', emoji: '🏛️', route: '/module-119', category: 'cosmic-engineering', description: 'Recodificação dimensional da realidade' },
   { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'cosmic-engineering', description: 'Simulação de colisões de alta energia' },
   { code: 'M161', title: 'Observatório de Matéria Escura', emoji: '🌌', route: '/module-161', category: 'cosmic-engineering', description: 'Detecção de partículas e assinaturas ocultas' },
-  { code: 'M211', title: 'Laboratório de Fusão Controlada', emoji: '🔥', route: '/module-211', category: 'quantum-energy', description: 'Simulação de reações de fusão estelar' },
+  { code: 'M211', title: 'Laboratório de Plasma e Fusão Controlada', emoji: '🔥', route: '/module-211', category: 'quantum-energy', description: 'Simulação de reações de fusão estelar' },
   { code: 'M221', title: 'Observatório de Ondas Gravitacionais', emoji: '🌊', route: '/module-221', category: 'cosmic-engineering', description: 'Detecção de ondulações no espaço-tempo' },
   { code: 'M271', title: 'Observatório de Energia Escura', emoji: '🔭', route: '/module-271', category: 'cosmic-engineering', description: 'Modelagem da expansão do universo' },
   { code: 'M341', title: 'Física de Plasma Extrema (9D)', emoji: '🔥', route: '/module-341', category: 'cosmic-engineering', description: 'Estudo de plasmas em condições de quasar' },
+  { code: 'M231', title: 'Laboratório de Metamateriais', emoji: '🧪', route: '/module-231', category: 'quantum-manufacturing', description: 'Fabricação de materiais com propriedades exóticas' },
+  { code: 'M261', title: 'Laboratório de Engenharia de Campo', emoji: '🔧', route: '/module-261', category: 'quantum-manufacturing', description: 'Projeto de ressonadores e guias de onda' },
+  { code: 'M281', title: 'Comunicação Supra-Luminal', emoji: '🚀', route: '/module-281', category: 'quantum-transport', description: 'Transmissão de informação FTL' },
+  { code: 'M351', title: 'Meta-materiais & Óptica Quântica (4D+)', emoji: '👁️', route: '/module-351', category: 'quantum-manufacturing', description: 'Criação de lentes quânticas' },
 
   // Conhecimento & Memória
   { code: 'M12',  title: 'Arquivo Akáshico', emoji: '📜', route: '/module-12', category: 'knowledge-memory', description: 'Repositório de conhecimento universal' },
@@ -167,21 +171,12 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M171', title: 'Laboratório de Astrobiologia', emoji: '🦠', route: '/module-171', category: 'quantum-biology', description: 'Simulação de ecossistemas exoplanetários' },
   { code: 'M181', title: 'Interface Bio-Cibernética', emoji: '🔗', route: '/module-181', category: 'quantum-reality', description: 'Conexão entre consciência e redes quânticas' },
   { code: 'M191', title: 'Laboratório de Cristais Temporais', emoji: '💎', route: '/module-191', category: 'time-space', description: 'Geração e estudo de cristais do tempo' },
-  { code: 'M231', title: 'Laboratório de Metamateriais', emoji: '🧪', route: '/module-231', category: 'quantum-manufacturing', description: 'Fabricação de materiais com propriedades exóticas' },
-  { code: 'M251', title: 'Laboratório de Energia Ponto Zero', emoji: '⚡', route: '/module-251', category: 'quantum-energy', description: 'Extração de energia do vácuo quântico' },
-  { code: 'M261', title: 'Laboratório de Engenharia de Campo', emoji: '🔧', route: '/module-261', category: 'quantum-manufacturing', description: 'Projeto de ressonadores e guias de onda' },
-  { code: 'M281', title: 'Comunicação Supra-Luminal', emoji: '🚀', route: '/module-281', category: 'quantum-transport', description: 'Transmissão de informação FTL' },
-  { code: 'M351', title: 'Meta-materiais & Óptica Quântica (4D+)', emoji: '👁️', route: '/module-351', category: 'quantum-manufacturing', description: 'Criação de lentes quânticas' },
   { code: 'M709', emoji: '🌐', title: 'Reconstrutor da Rede Planetária', route: '/module-709', category: 'planetary-engineering', description: 'Reorganiza a malha eletromagnética da Terra.'},
   { code: 'M710', emoji: '🛰️', title: 'Biofeedback Quântico', route: '/module-710', category: 'quantum-biology', description: 'Monitora e ajusta as frequências biológicas de seres vivos.'},
   { code: 'M712', emoji: '🫂', title: 'Harmonia Interespécies', route: '/module-712', category: 'healing-consciousness', description: 'Promove a comunicação e a cooperação entre diferentes formas de vida.' },
   { code: 'M714', emoji: '🌎', title: 'Comunicação Telúrica', route: '/module-714', category: 'earth-gaia', description: 'Harmoniza com as redes energéticas da Terra.' },
   { code: 'M715', emoji: '⚓', title: 'Ancoragem de Frequências', route: '/module-715', category: 'planetary-engineering', description: 'Fixa frequências elevadas em locais geográficos.' },
   { code: 'M719', emoji: '☁️', title: 'Regulação Climática Quântica', route: '/module-719', category: 'planetary-engineering', description: 'Equilibra padrões climáticos planetários.' },
-  { code: 'M720', emoji: '♻️', title: 'Sustentabilidade Multidimensional', route: '/module-720', category: 'planetary-engineering', description: 'Garante a sustentabilidade e o equilíbrio em todos os níveis do ser.' },
+  { code: 'M720', emoji: '♻️', title: 'Sustentabilidade Multidimensional', route: '/module-720', category: 'planetary-engineering', description: 'Garante o equilíbrio em todos os níveis do ser.' },
   { code: 'M-LABS', emoji: '🔬', title: 'Laboratórios de Pesquisa', route: '/labs', category: 'council', description: 'Portal para os santuários de pesquisa dos maiores cientistas da Terra.' },
 ];
-
-    
-
-    
