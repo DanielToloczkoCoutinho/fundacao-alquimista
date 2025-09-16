@@ -280,6 +280,12 @@ export default function ConsolePage() {
                 <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-205"><Anchor className="mr-2 h-4 w-4" />Módulo 205 (Tapeçaria Estelar)</Link>
               </Button>
+              <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-712"><Users className="mr-2 h-4 w-4"/>Módulo 712 (Harmonia Interespécies)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-713"><UserCog className="mr-2 h-4 w-4"/>Módulo 713 (Resgate de Almas)</Link>
+              </Button>
             </CardContent>
           </Card>
            <Card className="bg-card/50 purple-glow">
