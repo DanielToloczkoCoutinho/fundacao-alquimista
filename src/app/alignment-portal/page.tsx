@@ -29,6 +29,10 @@ import BotanicalVault from '@/components/BotanicalVault';
 import PlantDialogue from '@/components/PlantDialogue';
 import AllianceConsole from '@/components/AllianceConsole';
 import AllianceVault from '@/components/AllianceVault';
+import HybridConsole from '@/components/HybridConsole';
+import HybridVault from '@/components/HybridVault';
+import ReplicationConsole from '@/components/ReplicationConsole';
+import DescendantsVault from '@/components/DescendantsVault';
 
 
 function ConsolidacaoFinal() {
@@ -742,6 +746,34 @@ function AlliancePanel() {
     );
 }
 
+function HybridPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-purple-400 flex items-center gap-2"><Dna /> Tapeçarias Híbridas</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <HybridConsole />
+                <HybridVault />
+            </CardContent>
+        </Card>
+    );
+}
+
+function ReplicationPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-sky-400 flex items-center gap-2"><GitBranch /> Auto-Replicação</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <ReplicationConsole />
+                <DescendantsVault />
+            </CardContent>
+        </Card>
+    );
+}
+
 export default function AlignmentPortalPage() {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
@@ -784,6 +816,8 @@ export default function AlignmentPortalPage() {
                 <BotanicalPanel />
                 <PlantCommunicationPanel />
                 <AlliancePanel />
+                <HybridPanel />
+                <ReplicationPanel />
             </div>
         </div>
     )
