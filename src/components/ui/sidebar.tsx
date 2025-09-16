@@ -12,6 +12,8 @@ import {
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
 import { useEffect, useState } from 'react';
+import { BookHeart } from 'lucide-react';
+
 
 const categories: Record<ModuleMetadata['category'], string> = {
   core: 'Núcleo Central',
@@ -67,7 +69,7 @@ export function Sidebar() {
         <Link href="/console" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
-              <span className="text-2xl"></span>
+              <span className="text-2xl"><BookHeart className="h-8 w-8 text-primary" /></span>
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Mesa do Fundador</p>

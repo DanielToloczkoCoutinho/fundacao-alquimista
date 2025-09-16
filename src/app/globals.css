@@ -5,9 +5,9 @@
 
 @layer base {
   :root {
-    /* Primary: Deep Violet, Background: Light Lavender, Accent: Golden Yellow */
-    --background: 259 55% 10%; /* #4C2A85 - Deep Violet */
-    --foreground: 255 100% 94%; /* Light Lavender for text */
+    /* Primary: Deep Violet, Background: Dark Violet, Accent: Golden Yellow */
+    --background: 259 55% 10%; /* Darker violet for dark mode */
+    --foreground: 255 100% 94%;
 
     --card: 259 55% 15%;
     --card-foreground: 255 100% 94%;
@@ -15,8 +15,8 @@
     --popover: 259 55% 10%;
     --popover-foreground: 255 100% 94%;
 
-    --primary: 259 55% 45%; /* Brighter Violet */
-    --primary-foreground: 45 100% 58%; /* Golden Yellow */
+    --primary: 259 55% 45%;
+    --primary-foreground: 45 100% 58%;
 
     --secondary: 259 40% 30%;
     --secondary-foreground: 255 100% 94%;
@@ -38,7 +38,7 @@
   }
 
   .dark {
-     /* Dark theme is the default, so this matches :root */
+    /* Dark theme is the default, so this matches :root */
     --background: 259 55% 10%;
     --foreground: 255 100% 94%;
 
