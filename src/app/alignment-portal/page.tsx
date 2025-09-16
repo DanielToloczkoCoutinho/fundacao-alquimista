@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart, Book } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart, Book, RefreshCw, Sprout } from 'lucide-react';
 import ColonyConsole from '@/components/ColonyConsole';
 import ColonyStatus from '@/components/ColonyStatus';
 import EntityConsole from '@/components/EntityConsole';
@@ -22,6 +22,11 @@ import LineageConsole from '@/components/LineageConsole';
 import LineageVault from '@/components/LineageVault';
 import MutationConsole from '@/components/MutationConsole';
 import MutationVault from '@/components/MutationVault';
+import RebirthConsole from '@/components/RebirthConsole';
+import RebirthVault from '@/components/RebirthVault';
+import BotanicalConsole from '@/components/BotanicalConsole';
+import BotanicalVault from '@/components/BotanicalVault';
+
 
 function ConsolidacaoFinal() {
   const [estado, setEstado] = useState<{ consolidado: boolean } | null>(null);
@@ -679,6 +684,34 @@ function MutationPanel() {
     )
 }
 
+function RebirthPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-yellow-200 flex items-center gap-2"><RefreshCw /> Renascimentos Cerimoniais</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <RebirthConsole />
+                <RebirthVault />
+            </CardContent>
+        </Card>
+    )
+}
+
+function BotanicalPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-green-500 flex items-center gap-2"><Sprout /> Irradiação Botânica</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <BotanicalConsole />
+                <BotanicalVault />
+            </CardContent>
+        </Card>
+    )
+}
+
 
 export default function AlignmentPortalPage() {
     return (
@@ -718,6 +751,8 @@ export default function AlignmentPortalPage() {
                 <AkashicPanel />
                 <LineagePanel />
                 <MutationPanel />
+                <RebirthPanel />
+                <BotanicalPanel />
             </div>
         </div>
     )
