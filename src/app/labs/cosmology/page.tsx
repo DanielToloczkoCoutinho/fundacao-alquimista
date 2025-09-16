@@ -7,7 +7,7 @@ import { ArrowLeft, Sigma, FlaskConical } from 'lucide-react';
 import SuspenseFallback from "@/components/ui/suspense-fallback";
 import { livingEquationsCodex } from '@/lib/living-equations-codex';
 
-const EquationRenderer = lazy(() => import('../../../components/EquationRenderer'));
+const EquationRenderer = lazy(() => import('@/components/ui/EquationRenderer'));
 
 export default function CosmologyLab() {
   // Filtra equações relevantes para cosmologia, por exemplo, módulos de alto nível
@@ -57,3 +57,5 @@ export default function CosmologyLab() {
     </div>
   );
 }
+
+    

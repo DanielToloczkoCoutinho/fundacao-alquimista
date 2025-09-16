@@ -151,7 +151,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M27',  title: 'Síntese e Replicação Cósmica',     emoji: '📠', route: '/module-27', category: 'mid', description: 'Criação de materiais e estruturas' },
   { code: 'M28',  title: 'Harmonização Vibracional',             emoji: '🎵', route: '/module-28', category: 'mid', description: 'Equilíbrio de frequências' },
   { code: 'M46',  title: 'AURORA_CORE',                          emoji: '🌅', route: '/module-46', category: 'mid', description: 'Núcleo de iluminação primordial' },
-  { code: 'M71',  title: 'Comunicação Holográfica', emoji: ' hologram', route: '/module-71', category: 'mid', description: 'Canal seguro para comunicação holográfica com Conselhos Superiores.' },
+  { code: 'M71',  title: 'Comunicação Holográfica Zenith', emoji: ' hologram', route: '/module-71', category: 'mid', description: 'Canal seguro para comunicação holográfica com Conselhos Superiores.' },
   { code: 'M81.1',title: 'A Tríade Cosmogônica', emoji: '🔺', route: '/module-81-1', category: 'mid', description: 'Mecanismo de execução da manifestação.' },
   { code: 'M102',title: 'Campos Morfogenéticos',                 emoji: '🌀', route: '/module-102', category: 'mid', description: 'Cria e manipula campos para influenciar a realidade.' },
   { code: 'M103',title: 'Modulação Local',                       emoji: '🎚️', route: '/module-103', category: 'mid', description: 'Ajuste fino de parâmetros em regiões específicas' },
@@ -194,8 +194,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: "M68", emoji: "📜", title: "Responsabilidade Ética em Tecnologias", route: "/module-68", category: 'mid', description: "Diretrizes para o uso benéfico da tecnologia."},
   { code: "M69", emoji: "🎓", title: "Educação Universal e Conhecimento", route: "/module-69", category: 'mid', description: "Disseminação de sabedoria para a evolução coletiva."},
   { code: "M70", emoji: "🌿", title: "Sustentabilidade e Ecossistemas", route: "/module-70", category: 'mid', description: "Gestão sustentável e regeneração de recursos cósmicos."},
-  { code: "M71", emoji: "📡", title: "Comunicação Holográfica Zenith", route: "/module-71", category: 'mid', description: "Canal seguro para comunicação com Conselhos Superiores."},
-  { code: "M74", emoji: "⏳", title: "Cronos Fluxus", route: "/module-74", category: 'mid', description: "Navegação temporal ética e modulação da matriz temporal."},
   { code: "M75", emoji: "🏗️", title: "Infraestrutura Universal", route: "/module-75", category: 'mid', description: "Hubs de desenvolvimento e expansão interdimensional."},
   { code: "M76", emoji: "🏛️", title: "Governança e Colaboração Universal", route: "/module-76", category: 'mid', description: "Estrutura para organização justa entre civilizações."},
   { code: "M81", emoji: "🔥", title: "Energias Renováveis Cósmicas", route: "/module-81", category: 'mid', description: "Aproveitamento do poder das estrelas para um futuro sustentável."},
@@ -206,4 +204,13 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: "M86", emoji: "🌱", title: "Equilíbrio e Regeneração Ecológica", route: "/module-86", category: 'mid', description: "Restauração da saúde dos ecossistemas em todas as dimensões."},
   { code: "M87", emoji: "🛡️", title: "Resiliência e Adaptação Cósmica", route: "/module-87", category: 'mid', description: "Tecnologias para que a vida prospere em qualquer ambiente."},
   { code: "M90", emoji: "📦", title: "Análise de Recursos Quânticos", route: "/module-90", category: 'mid', description: "Caracterização de recursos cósmicos para otimização e alinhamento ético."},
+  { code: "M93", emoji: "🕶️", title: "Simulações Imersivas", route: "/module-93", category: 'mid', description: "Ambientes de aprendizado profundo" },
+  { code: "M94", emoji: "🧬", title: "Morfogênese Quântica", route: "/module-94", category: 'mid', description: "Engenharia da vida e energia" },
+  { code: "M96", emoji: "⚙️", title: "Regulação de Eventos Cósmicos", route: "/module-96", category: 'mid', description: 'Monitoramento e intervenção em anomalias' },
+  { code: "M97", emoji: '✨', title: 'Manifestação de Propósito Divino', route: '/module-97', category: 'mid', description: 'Ancoragem da Vontade Divina' },
+  { code: "M98", emoji: '🎚️', title: 'Modulação da Existência Fundamental', route: '/module-98', category: 'mid', description: 'Ajuste de parâmetros da realidade' },
+  { code: "M99", emoji: '⚖️', title: 'Recalibradores de Leis', route: '/module-99', category: 'mid', description: 'Ajuste das leis físicas universais' },
+
 ];
+
+    
