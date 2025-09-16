@@ -34,9 +34,11 @@ const ArtifactCard = ({ title, description, icon }: { title: string, description
                 <CardTitle className="text-xl text-primary-foreground">{title}</CardTitle>
             </div>
         </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground italic">"{description}"</p>
-        </CardContent>
+        {description && (
+            <CardContent>
+                <p className="text-muted-foreground italic">"{description}"</p>
+            </CardContent>
+        )}
     </Card>
 );
 
@@ -48,6 +50,13 @@ export default function ScientistLabPage() {
 
   if (!scientist) {
     return notFound();
+  }
+
+  // Se houver um componente específico, redirecione para ele.
+  // Esta lógica será expandida à medida que criamos mais santuários únicos.
+  if (['maldacena', 'rubin', 'seager', 'penrose', 'thorne', 'arkani-hamed'].includes(scientist.id)) {
+     // Em um cenário real, poderíamos ter um roteamento mais sofisticado aqui.
+     // Por enquanto, esta página genérica servirá de base.
   }
 
   return (
@@ -74,11 +83,17 @@ export default function ScientistLabPage() {
                 />
             )}
             
-            {scientist.interactiveArtifact && (
+            {scientist.interactiveArtifact ? (
                 <ArtifactCard 
                     title="Artefato Interativo Principal"
                     description={scientist.interactiveArtifact}
                     icon={<Beaker className="h-6 w-6 text-green-400" />}
+                />
+            ) : (
+                 <ArtifactCard 
+                    title="Códice de Contribuições"
+                    description="O legado deste luminar está sendo integrado à totalidade da Fundação, com suas teorias e descobertas ressoando através de múltiplos módulos."
+                    icon={<BookOpen className="h-6 w-6 text-amber-300" />}
                 />
             )}
 
@@ -139,7 +154,7 @@ export default function ScientistLabPage() {
         <Link href="/labs" passHref>
           <Button variant="outline">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar aos Laboratórios
+            Voltar aos Santuários de Pesquisa
           </Button>
         </Link>
       </div>
