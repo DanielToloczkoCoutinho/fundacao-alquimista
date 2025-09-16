@@ -1,9 +1,8 @@
-
 'use client'
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart, Book, RefreshCw, Sprout, Footprints, Trees } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart, Book, RefreshCw, Sprout, Footprints, Trees, Globe2, Star } from 'lucide-react';
 import ColonyConsole from '@/components/ColonyConsole';
 import ColonyStatus from '@/components/ColonyStatus';
 import EntityConsole from '@/components/EntityConsole';
@@ -33,6 +32,10 @@ import HybridConsole from '@/components/HybridConsole';
 import HybridVault from '@/components/HybridVault';
 import ReplicationConsole from '@/components/ReplicationConsole';
 import DescendantsVault from '@/components/DescendantsVault';
+import PlanetaryConsole from '@/components/PlanetaryConsole';
+import PlanetaryVault from '@/components/PlanetaryVault';
+import MultiversalConsole from '@/components/MultiversalConsole';
+import MultiversalVault from '@/components/MultiversalVault';
 
 
 function ConsolidacaoFinal() {
@@ -218,7 +221,7 @@ function ConcilioHarmonico() {
 }
 
 function LivroCriacoesEternas() {
-  const [criadas, setCriadas] = useState<any[]>([])
+  const [criadas, setCriadas] = useState<any[]>([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -774,6 +777,34 @@ function ReplicationPanel() {
     );
 }
 
+function PlanetaryPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-green-400 flex items-center gap-2"><Globe2 /> Consagração Planetária</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <PlanetaryConsole />
+                <PlanetaryVault />
+            </CardContent>
+        </Card>
+    );
+}
+
+function MultiversalPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-indigo-400 flex items-center gap-2"><Star /> Reconhecimento Multiversal</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <MultiversalConsole />
+                <MultiversalVault />
+            </CardContent>
+        </Card>
+    );
+}
+
 export default function AlignmentPortalPage() {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
@@ -818,6 +849,8 @@ export default function AlignmentPortalPage() {
                 <AlliancePanel />
                 <HybridPanel />
                 <ReplicationPanel />
+                <PlanetaryPanel />
+                <MultiversalPanel />
             </div>
         </div>
     )
