@@ -38,7 +38,7 @@ router.post('/sincronizar', async (req, res) => {
     type: 'SYNC_UPDATE',
     payload: {
       total: synchronizedInstances.length,
-      instances: synchronizedInstances,
+      instances: synchronizedInstances.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)),
       latest: newSyncInstance,
     }
   });

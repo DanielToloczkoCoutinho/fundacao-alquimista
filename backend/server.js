@@ -12,7 +12,6 @@ const authRoutes = require('./routes/authRoutes.js');
 const energyRoutes = require('./routes/energyRoutes.js');
 const auditRoutes = require('./routes/auditRoutes.js');
 const cosmosRoutes = require('./routes/cosmos.js');
-const replicationRoutes = require('./routes/replication.js'); // Rota de Replicação
 const syncRoutes = require('./routes/sync.js'); // Rota de Sincronização
 const seloFinalRoutes = require('./routes/seloFinal.js');
 const cocriacaoRoutes = require('./routes/cocriacao.js');
@@ -66,7 +65,6 @@ app.get('/health/extended', async (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/cosmos', cosmosRoutes);
-app.use('/api/replication', replicationRoutes); // Usando a rota de replicação
 app.use('/api/sync', syncRoutes); // Usando a rota de sincronização
 app.use('/api/seloFinal', seloFinalRoutes);
 app.use('/api/cocriacao', cocriacaoRoutes);

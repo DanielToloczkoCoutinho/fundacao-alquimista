@@ -11,12 +11,17 @@ class NatsMessenger {
   }
 
   async connect() {
+    if (!process.env.NATS_URL) {
+        console.warn('⚠️  Variável de ambiente NATS_URL não definida. O serviço de mensageria NATS permanecerá offline.');
+        return false;
+    }
     try {
       this.nc = await connect({
-        servers: process.env.NATS_URL || 'nats://localhost:4222',
+        servers: process.env.NATS_URL,
         timeout: 10000,
         reconnect: true,
-        maxReconnectAttempts: -1 // Reconectar infinitamente
+        maxReconnectAttempts: -1, // Reconectar infinitamente
+        reconnectTimeWait: 5000, // Espera 5 segundos entre tentativas de reconexão
       });
 
       this.js = this.nc.jetstream();
@@ -27,31 +32,42 @@ class NatsMessenger {
       
       return true;
     } catch (error) {
-      console.error('❌ Falha na conexão NATS:', error);
+      console.error('❌ Falha na conexão inicial com o NATS:', error);
       return false;
     }
   }
 
   setupEventHandlers() {
-    this.nc.addEventListener('close', () => {
-      console.log('🔌 Conexão NATS fechada');
-      this.connected = false;
-    });
-
-    this.nc.addEventListener('reconnect', () => {
-      console.log('🔄 Reconectando ao NATS...');
-    });
-
-    this.nc.addEventListener('connect', () => {
-      console.log('✅ Reconectado ao NATS');
-      this.connected = true;
+    (async () => {
+        if (!this.nc) return;
+        for await (const status of this.nc.status()) {
+            switch(status.type) {
+                case 'close':
+                    console.log('🔌 Conexão NATS fechada');
+                    this.connected = false;
+                    break;
+                case 'reconnecting':
+                    console.log('🔄 Reconectando ao NATS...');
+                    break;
+                case 'reconnect':
+                    console.log(`✅ Reconectado ao NATS em ${status.data}`);
+                    this.connected = true;
+                    break;
+                case 'error':
+                    console.error('❌ Erro na conexão NATS:', status.data);
+                    break;
+                default:
+                    console.log('ℹ️ Status NATS:', status.type, status.data);
+            }
+        }
+    })().catch(err => {
+        console.error('Erro no handler de status do NATS:', err);
     });
   }
 
   async publishEvent(subject, data) {
     if (!this.connected) {
-      // throw new Error('Não conectado ao NATS');
-      console.warn('NATS não conectado. Pulando publicação de evento.');
+      console.warn(`NATS não conectado. Pulando publicação do evento no tópico '${subject}'.`);
       return;
     }
 
@@ -65,14 +81,14 @@ class NatsMessenger {
       console.log(`📤 Evento publicado: ${subject} [${pubAck.seq}]`);
       return pubAck;
     } catch (error) {
-      console.error('❌ Erro ao publicar evento:', error);
+      console.error('❌ Erro ao publicar evento NATS:', error);
       throw error;
     }
   }
 
   async subscribeToEvents(subject, callback) {
     if (!this.connected) {
-       console.warn('NATS não conectado. Não foi possível inscrever-se em eventos.');
+       console.warn(`NATS não conectado. Não foi possível inscrever-se no tópico '${subject}'.`);
        return;
     }
 
@@ -94,13 +110,13 @@ class NatsMessenger {
             await callback(data);
             msg.ack();
           } catch (error) {
-            console.error('❌ Erro ao processar mensagem:', error);
+            console.error('❌ Erro ao processar mensagem NATS:', error);
             msg.nak();
           }
         }
       })();
     } catch (error) {
-      console.error('❌ Erro na inscrição:', error);
+      console.error('❌ Erro na inscrição NATS:', error);
       throw error;
     }
   }
@@ -118,10 +134,10 @@ const natsMessenger = new NatsMessenger();
 
 // Inicialização automática
 (async () => {
-  await natsMessenger.connect();
+  const connected = await natsMessenger.connect();
   
   // Publicar evento de inicialização
-  if(natsMessenger.connected) {
+  if(connected) {
       await natsMessenger.publishEvent('fundacao.omega.events', {
         type: 'system.initialized',
         module: 'M000',
@@ -131,7 +147,7 @@ const natsMessenger = new NatsMessenger();
 
       // Inscrever-se em eventos de módulos
       natsMessenger.subscribeToEvents('fundacao.modules.*', (data) => {
-        console.log('📨 Evento de módulo recebido:', data);
+        console.log('📨 Evento de módulo recebido via NATS:', data);
         // Processar eventos de módulos aqui
       });
   }
