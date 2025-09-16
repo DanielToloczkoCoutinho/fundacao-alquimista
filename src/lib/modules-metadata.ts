@@ -230,5 +230,3 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M161', emoji: '🌾', title: 'Agricultura Cósmica Sustentável', route: '/module-161', category: 'mid', description: 'Produção de alimentos em qualquer ambiente.' },
   { code: 'M170', emoji: '🚀', title: 'Transporte Interdimensional Avançado', route: '/module-170', category: 'mid', description: 'Viagens cósmicas de alta velocidade.' },
 ];
-
-  
