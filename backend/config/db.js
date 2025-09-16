@@ -8,3 +8,4 @@ mongoose.connect(MONGO_URI)
   .catch(err => console.error('Falha na conexão com Akasha (MongoDB):', err));
 
 module.exports = mongoose;
+

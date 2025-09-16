@@ -1,8 +1,8 @@
-
 const express = require('express');
-const router = express.Router();
 const { getEnergyStatus, updateModuleStatus, approveModule, getApprovalStatus } = require('../controllers/energyController');
 const { authorize } = require('../middleware/authMiddleware');
+
+const router = express.Router();
 
 router.get('/status', authorize(['read', 'ADMIN']), getEnergyStatus);
 router.post('/status', authorize(['override', 'shutdown', 'restart', 'ADMIN']), updateModuleStatus);

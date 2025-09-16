@@ -1,4 +1,3 @@
-
 // Simula um estado persistente em memória. Em produção, isso poderia ser Redis ou outro cache rápido.
 let energyStatus = {
   M0: 'ativo', M307: 'ativo', M100: 'inativo', M106: 'inativo', M88: 'inativo',

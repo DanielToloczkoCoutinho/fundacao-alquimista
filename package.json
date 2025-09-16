@@ -19,7 +19,9 @@
     "db:populate-vectors": "tsx scripts/populate-vector-store.ts",
     "galactic-init": "tsx scripts/galactic-init.ts",
     "explore-cosmos": "tsx scripts/explore-cosmos.ts",
-    "eternal-peace": "tsx scripts/eternal-peace.ts"
+    "eternal-peace": "tsx scripts/eternal-peace.ts",
+    "backend": "nodemon backend/server.js",
+    "health": "node backend/health-check/index.js"
   },
   "dependencies": {
     "@apollo/gateway": "^2.7.2",
@@ -138,7 +140,7 @@
     "tsx": "^4.16.2",
     "typescript": "^5.3.3",
     "vitest": "^1.6.0",
-    "wait-on": "^7.0.1"
+    "wait-on": "^7.0.1",
+    "nodemon": "^3.0.1"
   }
 }
-    

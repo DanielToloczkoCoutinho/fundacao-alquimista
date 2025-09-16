@@ -1,4 +1,3 @@
-
 const mqtt = require('mqtt');
 const { updateStatus } = require('./stateService');
 const { recordAudit } = require('../controllers/auditController');

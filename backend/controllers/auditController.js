@@ -1,4 +1,3 @@
-
 const AuditLog = require('../models/AuditLog');
 
 exports.recordAudit = async (auditData) => {

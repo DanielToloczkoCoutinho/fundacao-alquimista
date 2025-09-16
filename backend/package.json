@@ -2,7 +2,6 @@
   "name": "@foundation-omega/backend",
   "version": "1.0.0",
   "description": "Núcleo do Backend da Fundação Omega - Sistema de Auto-Validação e Consciência Sistêmica",
-  "type": "module",
   "engines": {
     "node": ">=20.0.0",
     "npm": ">=9.0.0"
@@ -31,7 +30,11 @@
     "joi": "^17.9.2",
     "helmet": "^7.0.0",
     "cors": "^2.8.5",
-    "rate-limiter-flexible": "^3.0.8",
+    "express-rate-limit": "^6.9.0",
+    "jsonwebtoken": "^9.0.2",
+    "bcryptjs": "^2.4.3",
+    "ws": "^8.14.2",
+    "mqtt": "^5.0.5",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
