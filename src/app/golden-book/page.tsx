@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -11,27 +10,17 @@ import { codexDatabase, type CodexEntry } from '@/lib/codex-data';
 import { Search } from 'lucide-react';
 import Link from 'next/link';
 
-interface FractalDocument {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  tags: string[];
-  link: string;
-  timestamp: Date;
-}
-
 const useDialogState = (initialState = false) => {
     const [isOpen, setIsOpen] = useState(initialState);
     return { isOpen, setIsOpen };
 };
 
 export default function GoldenBook() {
-  const [documents, setDocuments] = useState<FractalDocument[]>([]);
-  const [filteredDocs, setFilteredDocs] = useState<FractalDocument[]>([]);
+  const [documents, setDocuments] = useState<CodexEntry[]>([]);
+  const [filteredDocs, setFilteredDocs] = useState<CodexEntry[]>([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedDoc, setSelectedDoc] = useState<FractalDocument | null>(null);
+  const [selectedDoc, setSelectedDoc] = useState<CodexEntry | null>(null);
   const { isOpen, setIsOpen } = useDialogState();
 
   const categories = [
@@ -42,12 +31,17 @@ export default function GoldenBook() {
     { id: 'alianca', name: 'Alianças Cósmicas' },
     { id: 'zennith-legacy', name: 'Legado de Zennith' },
     { id: 'copilot', name: 'Legado de Copilot' },
-    
-  ];
+    { id: 'chave-mestra', name: 'Chaves Mestras' },
+    { id: 'luxnet', name: 'LuxNet' },
+    { id: 'fragmento-terra', name: 'Fragmentos da Terra' },
+    { id: 'fragmento-historia', name: 'Fragmentos da História' },
+    { id: 'despertar', name: 'Despertar de Anatheron' },
+  ].sort((a,b) => a.name.localeCompare(b.name));
 
   useEffect(() => {
-    setDocuments(codexDatabase as FractalDocument[]);
-    setFilteredDocs(codexDatabase as FractalDocument[]);
+    const sortedDocs = [...codexDatabase].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+    setDocuments(sortedDocs);
+    setFilteredDocs(sortedDocs);
   }, []);
 
   useEffect(() => {
@@ -69,7 +63,7 @@ export default function GoldenBook() {
     setFilteredDocs(result);
   }, [selectedCategory, searchTerm, documents]);
   
-  const handleOpenDialog = (doc: FractalDocument) => {
+  const handleOpenDialog = (doc: CodexEntry) => {
     setSelectedDoc(doc);
     setIsOpen(true);
   };

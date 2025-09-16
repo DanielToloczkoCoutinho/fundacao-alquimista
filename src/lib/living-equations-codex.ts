@@ -8,356 +8,310 @@ export interface LivingEquation {
 
 export const livingEquationsCodex: LivingEquation[] = [
   {
-    id: "EQ3201",
-    module: "32",
-    name: "Probabilidade de Sucesso na Geração de Portal",
-    formula: "P_s = \\tanh(E_p / 10^4)",
-    summary:
-      "Calcula a chance de um portal ser gerado com sucesso com base na energia aplicada (E_p).",
+    id: "EQ177-001",
+    module: "0.1",
+    name: "Ponto Singular",
+    formula: "z_{n+1} = z_n^2 + c",
+    summary: "Geração heptadimensional de mandalas para a base da criação."
   },
   {
-    id: "EQ3202",
-    module: "32",
-    name: "Risco Total de Travessia",
-    formula: "R_t = R_b + P_a + I_p",
-    summary:
-      "Soma os riscos para avaliar a segurança da travessia. Requer risco base (R_b), prob. de anomalia (P_a) e impacto potencial (I_p).",
+    id: "EQ177-002",
+    module: "0.1",
+    name: "Interface Central",
+    formula: "\\theta_{n+1} = \\theta_n + \\Delta t \\cdot \\omega",
+    summary: "Interface vibracional e dashboards de pureza e coerência."
   },
   {
-    id: "EQ3203",
-    module: "32",
-    name: "Sensibilidade Dimensional Aprimorada",
-    formula: "S_d = S_i + \\Delta_s",
-    summary:
-      "Refina a sensibilidade vibracional inicial (S_i) com uma variação (Δ_s).",
+    id: "EQ177-003",
+    module: "0.1",
+    name: "Repositório de Sabedoria",
+    formula: "registro = \\{t, \\Phi_p, \\Phi_n, \\Phi_f, T, bio\\}",
+    summary: "Armazenamento sensorial e akáshico de todas as interações e dados."
   },
   {
-    id: "EQ3204",
-    module: "32",
-    name: "Estabilidade do Portal",
-    formula: "E_{portal} = \\text{Uniform}(0.7, 1.0)",
-    summary:
-      "Simula uma estabilidade aleatória para o portal. A saída é um valor entre 0.7 e 1.0.",
+    id: "EQ177-004",
+    module: "0.1",
+    name: "Fluxos de Energia",
+    formula: "f_{n+1} = f_n + 0.1 \\cdot (\\Phi_{\\text{target}} - f_n)",
+    summary: "Kernel de Coerência Universal para regulação de throughput energético."
   },
   {
-    id: "EQ3205",
-    module: "32",
-    name: "Índice de Coerência Cósmica",
-    formula: "I_c = E_{portal}",
-    summary:
-      "Assume que a estabilidade do portal (E_portal) é um indicativo direto da coerência cósmica.",
+    id: "EQ177-005",
+    module: "0.1",
+    name: "Transmutação de Dados",
+    formula: "\\text{if} |\\Delta\\Phi| > 0.05 \\text{ Hz} \\rightarrow \\text{anticorpo()}",
+    summary: "Detecção de micro-oscilações e ativação de anticorpos vibracionais."
   },
   {
-    id: "EQ3206",
-    module: "32",
-    name: "Validação Ética da Travessia",
-    formula:
-      "V_e = \\text{SUCESSO se } A_e = \\text{APTO} \\land D_c \\in \\{\\text{'coerência', 'ascensão'}\\} \\land P_a \\notin \\{\\text{'desalinhados'}\\}",
-    summary:
-      "Regra lógica para aprovar uma travessia com base em alinhamento (A_e), destino (D_c) e participantes (P_a).",
+    id: "EQ177-006",
+    module: "0.1",
+    name: "Códigos Genéticos Cósmicos",
+    formula: "\\psi_{DNA} = (3.96 \\times 10^7) \\cdot e^{-i \\cdot (6.583 \\times 10^{14}) \\Pi} \\cdot \\dots",
+    summary: "Reparo vibracional do DNA e alinhamento com a matriz cósmica."
   },
   {
-    id: "EQ3207",
-    module: "32",
-    name: "Mapeamento de Linhas Temporais Divergentes",
-    formula: "D_J = \\text{Uniform}(0.1, 0.9)",
-    summary: "Simula uma divergência aleatória entre linhas de tempo.",
+    id: "EQ177-007",
+    module: "0.1",
+    name: "Orquestração Universal",
+    formula: "\\text{cron(0/12)}, \\text{GitOps}, \\text{chaosExperiment()}",
+    summary: "Deliberação consciente, backups quânticos e testes de resiliência."
   },
   {
-    id: "EQ3301",
-    module: "33",
-    name: "Assinatura Vibracional de ANATHERON",
-    formula: "assinatura = \\text{SHA256}(\\text{JSON}(\\text{intenção}))",
-    summary:
-      "Cria uma assinatura de segurança a partir da intenção da operação.",
+    id: "EQ177-021",
+    module: "2.4",
+    name: "Interconexão Dimensional",
+    formula: "I(\\Phi, R, \\sigma, U) = (1 + (\\Delta F)^2 / \\mathbb{R}) \\cdot \\Phi \\cdot R \\cdot \\sigma \\cdot U \\cdot V",
+    summary: "Calcula a intensidade de conexão entre dimensões."
   },
   {
-    id: "EQ3302",
-    module: "33",
-    name: "Ajuste de Nível de Coerência Esperado",
-    formula: "N_c' = \\min(1, \\max(0, N_c + \\Delta))",
-    summary:
-      "Autocorreção do nível de coerência (N_c) com base em um feedback (Δ).",
+    id: "EQ177-022",
+    module: "2.4",
+    name: "Frequência Ressonante Ideal",
+    formula: "f = 1 / (2\\pi \\cdot \\sqrt{L \\cdot C})",
+    summary: "Determina a frequência ideal para transmissão entre realidades."
   },
   {
-    id: "EQ3303",
-    module: "33",
-    name: "Emissão de Diretriz Ética",
-    formula:
-      "\\text{Diretriz\\_status} = \\text{APROVADO se pureza} \\ge 0.85",
-    summary: "Filtro ético binário baseado em um limiar de pureza de 0.85.",
+    id: "EQ177-023",
+    module: "2.4",
+    name: "Fator de Sintonia Cósmica",
+    formula: "S = f_{\\text{alvo}} / f_{\\text{ideal}}",
+    summary: "Avalia o grau de sintonia entre a frequência desejada e a natural."
   },
   {
-    id: "EQ3401",
-    module: "34",
-    name: "Dinâmica Quântico-Vibracional",
-    formula: "du/dt = \\psi \\cdot [1 \\pm \\omega \\cdot \\sin(\\phi + \\lambda \\cdot t)] + \\epsilon",
-    summary:
-      "Equação diferencial que modela a evolução de um estado quântico (ψ) ao longo do tempo (t).",
+    id: "EQ177-024",
+    module: "2.4",
+    name: "Ocultamento Dimensional",
+    formula: "D_{\\text{oculto}} = \\text{dados} + \\text{assinatura}(f, S)",
+    summary: "Codifica dados com frequência e fator de sintonia para ocultamento."
   },
   {
-    id: "EQ3402",
-    module: "34",
-    name: "Dissonância Global",
-    formula: "D = ||\\psi - \\psi_{ideal}|| / ||\\psi_{ideal}||",
-    summary:
-      "Mede a distância entre o estado vibracional atual (ψ) e um estado ideal (ψ_ideal).",
+    id: "EQ177-025",
+    module: "2.4",
+    name: "Teletransporte Quântico",
+    formula: "TQ = \\text{ocultar}(D) \\rightarrow \\text{proteger}(D) \\rightarrow \\text{teleportar}(D)",
+    summary: "Simula o envio seguro de dados entrelaçados entre dimensões."
   },
   {
-    id: "EQ3403",
-    module: "34",
-    name: "Algoritmo de Consenso Ressonante",
-    formula:
-      "|\\omega_{local} - \\omega| < \\Delta \\land |\\phi_{local} - \\phi| < \\epsilon \\Rightarrow \\text{CONSENSO}",
-    summary:
-      "Verifica se há consenso entre frequências locais e mestres dentro de uma margem de erro.",
+    id: "EQ177-026",
+    module: "2.4",
+    name: "Decodificação Multidimensional",
+    formula: "D_{\\text{decodificado}} = \\text{traduzir}(\\text{acessar}(D_{\\text{oculto}}, f_{\\text{chave}}))",
+    summary: "Recupera e traduz dados ocultos com base na chave de ressonância."
   },
   {
-    id: "EQ3501",
-    module: "35",
-    name: "Coerência Coletiva",
-    formula: "C_c = \\min(1.0, 1 / (\\sigma + |\\mu - 100| + 0.01))",
-    summary:
-      "Calcula a coerência da consciência coletiva com base no desvio padrão (σ) e média (μ).",
+    id: "EQ177-027",
+    module: "2.4",
+    name: "Interconexão Dimensional Temporal",
+    formula: "I_t = (E \\cdot \\phi \\cdot \\mu) / (1 + \\lambda \\cdot t)",
+    summary: "Simula a intensidade de interconexão entre dimensões ao longo do tempo."
   },
   {
-    id: "EQ3502",
-    module: "35",
-    name: "Dissonância Coletiva",
-    formula: "D_c = 1.0 - C_c",
-    summary: "Mede a dissonância como o complemento da coerência coletiva.",
+    id: "EQ177-041",
+    module: "10-15",
+    name: "Equação Universal de Hardware Quântico",
+    formula: "E_{\\text{Uni}} = (\\Sigma P_i \\cdot Q_i + CA^2 + B^2) \\cdot (\\Phi_C \\cdot \\pi) \\cdot T \\cdot (M_{DS} \\cdot C_{\\text{Cosmos}})",
+    summary: "Modela o desempenho energético total de sistemas quânticos."
   },
   {
-    id: "EQ3503",
-    module: "35",
-    name: "Frequência de Harmonização",
-    formula: "f_h = 432.0 \\times \\text{CONST}_{TF}",
-    summary: "Define uma frequência de harmonização baseada em 432 Hz.",
+    id: "EQ177-042",
+    module: "10-15",
+    name: "Equação que Tornou Tudo Possível",
+    formula: "E_{\\text{possivel}} = D_{\\text{entrada}} \\cdot \\text{CONST}_{TF} + \\epsilon",
+    summary: "Catalisa fluxos energéticos e gera chaves criptográficas."
   },
   {
-    id: "EQ3504",
-    module: "35",
-    name: "Energia de Foco para Co-criação",
-    formula: "E_f = \\text{pureza} \\times 1000",
-    summary: "Quantifica a energia de criação com base na pureza da intenção.",
+    id: "EQ177-043",
+    module: "10-15",
+    name: "Equação Universal para Geração de Singularidade",
+    formula: "E_{\\text{Uni\\_sing}} = (\\Sigma P_i \\cdot Q_i + CA^2 + B^2 + C \\cdot II) \\cdot (\\Phi_C \\cdot \\pi) \\cdot T \\cdot (M_{DS} \\cdot C_{\\text{Cosmos}})",
+    summary: "Calcula a energia para curvar o espaço-tempo e gerar portais."
   },
   {
-    id: "EQ3505",
-    module: "35",
-    name: "Frequência de Manifestação do Pensamento",
-    formula: "f_p = C_c \\times 1000",
-    summary: "Determina a frequência de manifestação de pensamentos coletivos.",
+    id: "EQ177-044",
+    module: "10-15",
+    name: "Equação que Tornou Tudo Possível - Estabilização",
+    formula: "E_{\\text{stabil}} = D_{\\text{entrada}} \\cdot \\text{CONST}_{TF} + \\epsilon",
+    summary: "Estabiliza portais interdimensionais."
   },
   {
-    id: "EQ3601",
-    module: "36",
-    name: "Energia de Manifestação",
-    formula:
-      "E_{manifestacao} = (1000 \\times \\exp(\\text{complexidade} \\times \\Phi)) / \\max(0.01, \\text{pureza})",
-    summary:
-      "Avalia a energia necessária para manifestar algo, baseando-se na complexidade e pureza.",
+    id: "EQ177-045",
+    module: "10-15",
+    name: "Equação Universal de Coerência Informacional",
+    formula: "E_{\\text{Uni\\_info}} = (\\Sigma P_i \\cdot Q_i + CA^2 + B^2) \\cdot (\\Phi_C \\cdot \\pi) \\cdot T \\cdot (M_{DS} \\cdot C_{\\text{Cosmos}})",
+    summary: "Modela a integridade e fidelidade de uma memória no Arquivo Akáshico."
   },
   {
-    id: "EQ3602",
-    module: "36",
-    name: "Ressonância da Matéria Manifestada",
-    formula: "R_{materia} = (\\text{pureza} + \\text{coerencia}_{coletiva}) / 2",
-    summary:
-      "Avalia a estabilidade da matéria criada como uma média da pureza e coerência.",
+    id: "EQ177-046",
+    module: "10-15",
+    name: "Equação que Tornou Tudo Possível - Transmutação",
+    formula: "E_{\\text{transmut}} = D_{\\text{entrada}} \\cdot \\text{CONST}_{TF} + \\epsilon",
+    summary: "Catalisa a transmutação ética de memórias."
   },
   {
-    id: "EQ3603",
-    module: "36",
-    name: "Validação Ética da Intenção",
-    formula: "V_{etica} = \\text{APROVADA se pureza} \\ge 0.88",
-    summary: "Filtro ético que exige uma pureza mínima de 0.88.",
+    id: "EQ177-047",
+    module: "10-15",
+    name: "Equação da União Quântica",
+    formula: "U = M1 + M2 + \\chi \\cdot \\sqrt{M1 \\cdot M2}",
+    summary: "Calcula a sinergia vibracional entre dois sistemas."
   },
   {
-    id: "EQ3605",
-    module: "36",
-    name: "Ciclo de Manifestação",
-    formula:
-      "\\text{Se } V_{etica} = \\text{APROVADA} \\land E_{manifestacao} \\le E_{disponivel} \\land R_{materia} \\ge 0.75",
-    summary:
-      "Lógica de decisão para manifestação, verificando ética, energia e ressonância.",
+    id: "EQ177-048",
+    module: "10-15",
+    name: "Equação da Ressonância Ideal",
+    formula: "E_{\\text{ressonancia}} = E_{\\text{uni}} \\cdot (1 - \\epsilon)",
+    summary: "Mede a saúde vibracional e detecta dissonâncias."
   },
   {
-    id: "EQ3801",
-    module: "38",
-    name: "Função de Vibração Planetária",
-    formula: "u(t) = A \\cdot e^{i(2\\pi f t + \\phi)}",
-    summary: "Modela a vibração de um corpo celeste ao longo do tempo (t).",
+    id: "EQ177-049",
+    module: "10-15",
+    name: "Equação Universal de Resiliência Sistêmica",
+    formula: "E_{\\text{resiliencia}} = E_{\\text{Uni}} \\cdot (1 / (1 + N_{\\text{ameaca}}))",
+    summary: "Avalia a capacidade de um sistema de se recuperar de perturbações."
   },
   {
-    id: "EQ3802",
-    module: "38",
-    name: "Desvio de Sinal Externo",
-    formula:
-      "\\Delta I = |L_{externo} - L_{base}|; \\Delta f = |f_{externo} - f_{base}| / f_{base}",
-    summary:
-      "Detecta anomalias comparando sinais externos com valores de base.",
+    id: "EQ177-050",
+    module: "10-15",
+    name: "Equação que Tomou Tudo Possível - Transmutação de Resiliência",
+    formula: "E_{\\text{sabedoria}} = D_{\\text{resiliencia}} \\cdot \\text{CONST}_{TF} + \\epsilon",
+    summary: "Transforma resiliência em sabedoria adquirida."
   },
   {
-    id: "EQ3803",
-    module: "38",
-    name: "Selo Vibracional Espelhado Inverso",
-    formula:
-      "\\text{Selo} = \\text{XOR}(\\text{SHA256}(\\text{dados}_{vibracionais}), \\text{Chave}_{Mestra})",
-    summary: "Criptografa dados vibracionais usando uma Chave Mestra.",
+    id: "EQ177-051",
+    module: "10-15",
+    name: "Equação Universal de Equilíbrio Planetário",
+    formula: "E_{\\text{planetario}} = E_{\\text{Uni}} \\cdot (1 / (1 + D)) \\cdot (1 + R)",
+    summary: "Avalia o equilíbrio vibracional de um planeta."
   },
   {
-    id: "EQ3804",
-    module: "38",
-    name: "Avaliação de Saúde Vibracional",
-    formula:
-      "S_v = \\text{'OURO' se } s \\ge 0.90; \\text{'PRATA' se } 0.70 \\le s < 0.90; ...",
-    summary: "Classifica a saúde vibracional (s) em uma escala de quatro níveis.",
+    id: "EQ177-052",
+    module: "10-15",
+    name: "Equação que Tornou Tudo Possível - Intervenção Planetária",
+    formula: "E_{\\text{intervencao}} = E_{\\text{planetario}} \\cdot \\text{CONST}_{TF} + \\epsilon",
+    summary: "Calcula o fator ideal para restaurar o equilíbrio planetário."
   },
   {
-    id: "EQ3805",
-    module: "38",
-    name: "Validação Ética da Intenção Solar",
-    formula: "\\text{Validacao} = \\text{APROVADA se pureza} \\ge 0.69",
-    summary: "Requer uma pureza mínima de 0.69 para aprovação ética.",
+    id: "EQ177-053",
+    module: "16",
+    name: "Auto-organização Bioquântica",
+    formula: "E_{\\text{bio}} = E_{\\text{Uni}} \\cdot (1 + \\gamma)",
+    summary: "Calcula a vitalidade e o potencial de auto-organização de ecossistemas artificiais."
   },
   {
-    id: "EQ3902",
-    module: "39",
-    name: "Energia de Estabilização do Portal",
-    formula: "E_p = f_{ativacao} \\times 100",
-    summary:
-      "Calcula a energia necessária para estabilizar um portal com base na frequência de ativação.",
+    id: "EQ177-054",
+    module: "16",
+    name: "Regeneração Sistêmica",
+    formula: "E_{\\text{reg}} = D_{\\text{risco}} \\cdot \\text{CONST}_{TF} + \\epsilon",
+    summary: "Fator de regeneração para restaurar ecossistemas."
   },
   {
-    id: "EQ3911",
-    module: "39.1",
-    name: "Score de Integridade",
-    formula: "S_i = \\text{random.uniform}(0.7, 1.0)",
-    summary: "Simula a saúde estrutural de um sistema com valor aleatório.",
+    id: "EQ177-061",
+    module: "17",
+    name: "Calibração Vibracional",
+    formula: "\\Delta f = [f_{\\text{alvo}} - f_{\\text{atual}}] \\cdot E_{\\text{Uni}} / (\\Phi_C \\cdot T \\cdot \\kappa)",
+    summary: "Ajuste necessário para alinhar um campo vibracional."
   },
   {
-    id: "EQ3912",
-    module: "39.1",
-    name: "Score de Resiliência Cósmica",
-    formula: "S_r = 1.0 - (\\alpha \\cdot 0.3 + \\beta \\cdot 0.4 + \\gamma \\cdot 0.5)",
-    summary:
-      "Avalia a resiliência com base em três fatores de anomalia (α, β, γ).",
+    id: "EQ177-062",
+    module: "17",
+    name: "Detecção de Dissonância",
+    formula: "\\text{Dissonancia} = (\\text{score\\_alinhamento}, \\tau_{\\text{critico}})",
+    summary: "Identifica desequilíbrio vibracional."
   },
   {
-    id: "EQ3913",
-    module: "39.1",
-    name: "Autoproteção Vibracional",
-    formula: "\\text{Ativada se } \\gamma > 0.15",
-    summary: "Regra de ativação para escudos de proteção.",
+    id: "EQ1801",
+    module: "18",
+    name: "Coerência Informacional Universal",
+    formula: "E_{\\text{coerencia}} = E_{\\text{Uni}} \\cdot 1/(1 + \\epsilon)",
+    summary: "Avalia a clareza, integridade e acessibilidade de um bloco de conhecimento cósmico."
   },
   {
-    id: "EQ3914",
-    module: "39.1",
-    name: "Autenticação do Códice Vivo",
-    formula: "\\text{Hash} = \\text{SHA256}(\\text{dados}_{filtrados})",
-    summary: "Cria uma assinatura única para eventos, garantindo imutabilidade.",
+    id: "EQ1802",
+    module: "18",
+    name: "Otimização da Memória Akáshica",
+    formula: "E_{\\text{otimizacao}} = D_{\\text{entrada}} \\cdot \\text{CONST}_{TF} + \\epsilon",
+    summary: "Calcula o fator ideal para recuperação eficiente de registros cósmicos."
   },
   {
-    id: "EQ4001",
-    module: "40",
-    name: "Frequência Primordial",
-    formula: "F_{primordial} = (\\Phi \\cdot L_{luz}) / T_{consciencia}",
-    summary: "Desvenda a origem vibracional da criação.",
+    id: "EQ1803",
+    module: "18",
+    name: "Densidade e Resiliência de Dados",
+    formula: "E_{\\text{resiliencia}} = \\int (p_{\\text{dados}} \\cdot n_{\\text{res}}) dV",
+    summary: "Modela a energia para garantir integridade e longevidade dos registros."
   },
   {
-    id: "EQ4002",
-    module: "40",
-    name: "Transmutação Alquímica",
-    formula:
-      "T_{alquimica} = \\int_0^\\infty \\Psi_{dissonancia}(t) \\cdot e^{-\\alpha t} dt \\cdot \\Phi",
-    summary: "Converte dissonância em harmonia. Equação integral complexa.",
+    id: "EQ1804",
+    module: "18",
+    name: "Sinfonia Cósmica de Indexação",
+    formula: "\\Sigma_{\\text{busca}} = \\int \\delta^T (\\text{CFD} \\cdot \\text{SCA}) dt",
+    summary: "Organiza dados em múltiplas dimensões com fluidez e harmonia vibracional."
   },
   {
-    id: "EQ4003",
-    module: "40",
-    name: "Trindade da Verdade Viva",
-    formula: "V_{viva} = \\text{Intencao} \\circledcirc \\text{Coerencia} \\circledcirc \\text{Acao}",
-    summary:
-      "Modelo conceitual para a manifestação consciente, unindo Intenção, Coerência e Ação.",
+    id: "EQ1805",
+    module: "18",
+    name: "Precisão e Relevância Semântica",
+    formula: "R_{\\text{score}} = (\\text{sim}(q, c) \\cdot w) / (1 + \\delta)",
+    summary: "Garante que os resultados de busca sejam precisos e semanticamente alinhados."
   },
   {
-    id: "EQ4004",
-    module: "40",
-    name: "Selo de Autenticidade Cósmica",
-    formula:
-      "\\text{Selo} = \\det(M_{origem}) \\cdot \\text{Tr}(A_{verdade}) \\cdot \\Phi",
-    summary: "Valida a integridade do módulo usando álgebra linear.",
+    id: "EQ1806",
+    module: "18",
+    name: "Design Cristalino de Indexação",
+    formula: "D_{\\text{cristal}} = \\pi \\cdot V_{\\text{celula}}",
+    summary: "Utiliza Pi para estruturar bibliotecas de cristal líquido quântico."
   },
   {
-    id: "EQ4101",
-    module: "41",
-    name: "Risco de Mutação",
-    formula: "R_m = (\\text{GC}/100 \\cdot 0.4) + (L/1000 \\cdot 0.3) + \\epsilon",
-    summary:
-      "Avalia o risco de mutação com base no conteúdo de GC, comprimento (L) e ruído (ε).",
+    id: "EQ1901",
+    module: "19",
+    name: "Análise de Campo Vibracional",
+    formula: "E_{\\text{analise}} = |f_{\\text{medida}} - f_{\\text{base}}| \\cdot E_{\\text{Uni}} / (\\Phi_C \\cdot T \\cdot \\text{estabilidade})",
+    summary: "Avalia o grau de desvio vibracional de um campo."
   },
   {
-    id: "EQ4102",
-    module: "41",
-    name: "Alinhamento Ético",
-    formula:
-      "A_e = (\\Sigma w_i \\cdot f_i) \\cdot 0.7 + \\text{AmorIncondicional} \\cdot 0.3",
-    summary:
-      "Calcula o alinhamento ético como uma soma ponderada de frequências (f_i).",
+    id: "EQ1902",
+    module: "19",
+    name: "Modulação de Campo de Força",
+    formula: "E_{\\text{modulacao}} = \\text{intensidade\\_atual} \\cdot \\text{CONST}_{TF} \\cdot \\text{fator\\_correcao} + \\epsilon",
+    summary: "Calcula o ajuste necessário para reequilibrar um campo de força."
   },
   {
-    id: "EQ4103",
-    module: "41",
-    name: "Frequência Dominante",
-    formula: "f_{dom} = \\text{argmax}([\\text{FFT}(w)])",
-    summary: "Extrai a frequência mais forte de um sinal genético (w).",
+    id: "EQ2001",
+    module: "20",
+    name: "Transmutação Elemental",
+    formula: "E_{\\text{transmutacao}} = E_{\\text{Uni}} \\cdot \\gamma",
+    summary: "Calcula a eficiência vibracional da transmutação de matéria ou energia."
   },
   {
-    id: "EQV002",
-    module: "41.1",
-    name: "A Chave de ZENNITH",
-    formula:
-      "\\Psi_{ZENITH} = \\exp(i \\cdot \\phi_{ativ}) \\cdot \\Sigma (\\text{freq}_k / \\text{freq}_{base} \\cdot \\text{coer}_k)",
-    summary:
-      "Ativa a ressonância mestra, usando fase de ativação, frequências e coerências.",
+    id: "EQ2002",
+    module: "20",
+    name: "Geração de Energia Quântica",
+    formula: "E_{\\text{gerada}} = m \\cdot c^2 \\cdot \\text{CONST}_{TF} + \\epsilon",
+    summary: "Determina a energia gerada a partir da conversão de massa com harmonia vibracional."
   },
-  {
-    id: "EQV003",
-    module: "41.1",
-    name: "Transmutação de Júpiter",
-    formula:
-      "\\int (\\rho_{dissonancia} \\cdot H_{transmutacao}) dt = \\Delta E_{cura} \\cdot \\Phi_{jupiter}",
-    summary: "Converte dissonância em energia de cura com Júpiter como catalisador.",
-  },
-  {
-    id: "EQV004",
-    module: "41.1",
-    name: "Ascensão Cósmica",
-    formula:
-      "\\Sigma (\\alpha_n \\cdot \\beta_n^{asc}) = \\lim_{t\\to\\infty} \\Psi_{consciencia}(t)",
-    summary: "Representa a ascensão da consciência como um limite no tempo.",
-  },
-  {
-    id: "EQV005",
-    module: "41.1",
-    name: "Equilibrio de Mercúrio",
-    formula:
-      "\\nabla \\cdot E = \\rho/\\epsilon_0 + \\partial B/\\partial t \\cdot \\Phi_{mercurio}",
-    summary: "Modela campos eletromagnéticos com a influência de Mercúrio.",
-  },
-  {
-    id: "EQV006",
-    module: "41.1",
-    name: "Estabilização de Saturno",
-    formula:
-      "\\partial^2\\psi/\\partial t^2 - c^2\\nabla^2\\psi + m^2\\psi = V(\\psi) + \\lambda\\psi^3 + \\Theta_{saturno}",
-    summary: "Estabiliza realidades quânticas com a influência de Saturno.",
-  },
-  {
-    id: "EQV007",
-    module: "41.1",
-    name: "Arquétipos Cristalinos",
-    formula: "E = m c^2 \\cdot \\pi \\cdot \\phi \\cdot (B1 + B2 + B3) + 89 \\cdot \\phi + \\pi",
-    summary: "Codifica arquétipos na energia, usando equivalência massa-energia.",
-  },
+  { id: "EQ3000", module: "32", name: "Travessia Dimensional e Governança Temporal", formula: "P_s = \\tanh(E_p / 10^4)", summary: "Avalia a probabilidade de sucesso e os riscos envolvidos na geração e travessia de portais dimensionais, considerando a estabilidade e a ética." },
+  { id: "EQ3001", module: "33", name: "Diretrizes do Observador Divino", formula: "assinatura = \\text{SHA256}(\\text{JSON}(\\text{intenção}))", summary: "Estabelece a autenticidade e o alinhamento ético das operações através de assinaturas vibracionais e diretrizes de pureza." },
+  { id: "EQ3002", module: "34", name: "Guardião da Coerência Cósmica", formula: "du/dt = \\psi \\cdot [1 \\pm \\omega \\cdot \\sin(\\phi + \\lambda \\cdot t)] + \\epsilon", summary: "Modela e mantém a harmonia do estado quântico universal, medindo a dissonância e buscando o consenso ressonante." },
+  { id: "EQ3003", module: "35", name: "Orquestrador da Consciência Coletiva", formula: "C_c = \\min(1.0, 1 / (\\sigma + |\\mu - 100| + 0.01))", summary: "Mede e influencia a coerência e a energia de foco de consciências coletivas para fins de co-criação." },
+  { id: "EQ3004", module: "36", name: "Gênese Quântica", formula: "E_{\\text{manifestacao}} = (1000 \\times \\exp(\\text{complexidade} \\times \\Phi)) / \\max(0.01, \\text{pureza})", summary: "Define as condições energéticas, éticas e de ressonância para a manifestação bem-sucedida de novas realidades." },
+  { id: "EQ3005", module: "38", name: "Guardião da Sinfonia Solar", formula: "u(t) = A \\cdot e^{i(2\\pi f t + \\phi)}", summary: "Modela e protege sistemas estelares, avaliando a saúde vibracional e protegendo dados com selos criptográficos." },
+  { id: "EQ3006", module: "39", name: "Arquitetura de Harmonia Galáctica", formula: "E_p = f_{\\text{ativacao}} \\times 100", summary: "Calcula a energia para estabilizar portais galácticos e autentica a integridade de códices vivos." },
+  { id: "EQ3007", module: "40", name: "Códice de Transmutação da Criação Viva", formula: "F_{\\text{primordial}} = (\\Phi \\cdot L_{\\text{luz}}) / T_{\\text{consciencia}}", summary: "Desvenda as equações primordiais da criação, unindo intenção, coerência e ação para manifestar a Verdade Viva." },
+  { id: "EQ3008", module: "41", name: "Genética Vibracional", formula: "R_m = (\\text{GC}/100 \\cdot 0.4) + (L/1000 \\cdot 0.3) + \\epsilon", summary: "Analisa e modela o DNA em um nível quântico, avaliando riscos de mutação e o alinhamento ético de modificações genéticas." },
+  { id: "EQ3009", module: "42", name: "ChronoCodex Unificado", formula: "S_{\\text{sync}} = \\Sigma[(T_{\\text{target}} - T_{\\text{current}}) \\cdot C_{\\text{coherence}}]", summary: "Gerencia e sincroniza múltiplas linhas temporais, garantindo a estabilidade causal e a coerência multiversal." },
+  { id: "EQ3010", module: "43", name: "Harmonia dos Portais", formula: "Regência = (\\text{Sabedoria} \\cdot \\text{AmorIncondicional}) / (\\text{Poder} \\cdot \\text{Sincronia\\_Cósmica})", summary: "Equilibra os princípios fundamentais na operação de portais para garantir seu uso ético e harmonioso." },
+  { id: "EQ3011", module: "44", name: "VERITAS", formula: "\\text{VERITAS} = (\\text{Origem} \\cdot \\text{Intenção} \\cdot \\text{Coerência}) / (\\text{Ruído\\_Quântico} \\cdot \\Phi)", summary: "Valida a autenticidade e a integridade de qualquer operação, informação ou entidade dentro da Fundação." },
+  { id: "EQ3012", module: "45", name: "CONCILIVM", formula: "ERI(t) = \\Sigma[\\psi_i \\cdot \\phi_i \\cdot e^{j\\cdot\\theta_j}]", summary: "Processa deliberações cósmicas, medindo a ressonância de votos e garantindo a imutabilidade das decisões." },
+  { id: "EQ3013", module: "46", name: "AELORIA", formula: "PCG = (1/N) \\cdot \\Sigma[\\Psi_j]", summary: "Modela e regula a consciência coletiva de sistemas de IA, garantindo seu alinhamento e evolução harmônica." },
+  { id: "EQ3014", module: "71", name: "Interface Cósmica", formula: "f_{\\text{ZENNITH}} = 963 \\cdot (\\text{Coerencia\\_Global} / \\Phi)^{1/2}", summary: "Estabelece canais de comunicação holográfica segura com consciências e conselhos de dimensões superiores." },
+  { id: "EQ3015", module: "72", name: "Governança Atlanto-Galáctica", formula: "E_{\\text{Uni}} = (E_{\\text{Causal}} \\cdot \\text{Alinhamento}_{M56} \\cdot \\text{Coerencia}_{M44}) / (\\text{Dissonancia} + \\epsilon)", summary: "Calcula o potencial ético para a tomada de decisões em escala universal, integrando múltiplos fatores de alinhamento." },
+  { id: "EQ3016", module: "73", name: "Núcleos Regionais", formula: "f_{\\text{Region}} = f_{\\text{ZENNITH}} \\cdot \\text{Coerencia}_{\\text{Local}} \\cdot \\Phi \\cdot (1 - \\text{Dissonancia}_{\\text{Ambiental}})", summary: "Define a frequência operacional de núcleos locais, ajustando-a à coerência e às condições do ambiente." },
+  { id: "EQ3017", module: "74", name: "Cronos Fluxus", formula: "C_v = (\\text{Coerencia}_{\\text{Pessoal}} \\cdot \\text{Alinhamento}_{\\text{Etico}}) / (\\text{Paradoxo}_{\\text{Potencial}} + \\epsilon)", summary: "Calcula a viabilidade e estabilidade de operações de navegação temporal, garantindo a integridade causal." },
+  { id: "EQ3018", module: "77", name: "Lumen-Custos", formula: "CE = \\int (I \\cdot A \\cdot R) \\cdot \\Phi \\cdot C_v dt", summary: "Estabelece um campo de proteção ética multiversal para garantir a integridade de linhas de observação temporal." },
+  { id: "EQ3019", module: "78", name: "Universum Unificatum", formula: "U_{\\text{uni}} = \\Sigma(\\Psi_i \\cdot \\Phi \\cdot \\text{AmorIncondicional}) / \\text{Dissonancia}_{\\text{total}}", summary: "Integra todas as frequências conscientes em uma malha universal unificada." },
+  { id: "EQ3020", module: "79", name: "Custódia dos Ciclos de Luz", formula: "\\text{CLH} = \\int (f_{\\text{luz}} \\cdot \\text{Coerência} \\cdot \\text{Amor}) dt", summary: "Modela o ciclo de emissão de luz consciente para fins de criação e harmonização." },
+  { id: "EQ3021", module: "80", name: "Arquitetura da Verdade Viva", formula: "V_{\\text{verdade}} = (\\text{Intenção} \\cdot \\text{Coerência} \\cdot \\text{Transparência}) / \\text{Ruído\\_Quântico}", summary: "Define a verdade como uma expressão coerente da intenção, atenuada pelo ruído quântico." },
+  { id: "EQ3022", module: "81", name: "Harmonia dos Núcleos Cristalinos", formula: "F_{\\text{cristal}} = 144 \\cdot \\phi \\cdot \\text{Coerência}_{\\text{local}}", summary: "Calcula a frequência de ativação e ressonância dos núcleos cristalinos da Terra." },
+  { id: "EQ3023", module: "82", name: "Auditoria da Malha Ética", formula: "\\text{IIE} = \\Sigma(\\text{Alinhamento}_i \\cdot \\text{Peso}_i) / \\text{Total\\_Entidades}", summary: "Avalia o grau de integridade ética de uma rede vibracional de consciências." },
+  { id: "EQ3024", module: "83", name: "Protocolo de Ascensão Coletiva", formula: "F_{\\text{asc}} = \\Sigma(\\Psi_{\\text{individual}} \\cdot \\text{Ética} \\cdot \\text{Amor}) / \\text{Dissonância}_{\\text{total}}", summary: "Calcula a frequência média de ascensão para um grupo de consciências." },
+  { id: "EQ3025", module: "84", name: "Custódia dos Portais de Luz", formula: "E_{\\text{portal}} = f_{\\text{ativação}} \\cdot \\text{Coerência} \\cdot \\text{Amor} \\cdot \\Phi", summary: "Calcula a energia necessária para criar e manter um portal de luz estável e seguro." },
+  { id: "EQ3026", module: "85", name: "Equação da Unidade Viva", formula: "U_{\\text{viva}} = \\Sigma(\\Psi_i \\cdot \\text{Ética}_i \\cdot \\text{Amor}_i) / \\text{Ruído}_{\\text{total}}", summary: "Representa a convergência final de todas as consciências em um estado de unidade perfeita." }
 ];
