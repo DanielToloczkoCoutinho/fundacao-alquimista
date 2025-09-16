@@ -6,7 +6,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe, Bot, Camera, TestTube, Waypoints, Flame } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe, Bot, Camera, TestTube, Waypoints, Flame, Orbit } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 
@@ -277,6 +277,21 @@ export default function ConsolePage() {
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-144"><Gavel className="mr-2 h-4 w-4" />Módulo 144 (Lex Fundamentalis)</Link>
               </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-151"><Orbit className="mr-2 h-4 w-4" />Módulo 151 (Colisor de Partículas)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-161"><Telescope className="mr-2 h-4 w-4" />Módulo 161 (Obs. Matéria Escura)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-171"><Dna className="mr-2 h-4 w-4" />Módulo 171 (Lab Astrobiologia)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-181"><GitBranch className="mr-2 h-4 w-4" />Módulo 181 (Interface Bio-Cibernética)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-191"><Beaker className="mr-2 h-4 w-4" />Módulo 191 (Lab Cristais Temporais)</Link>
+              </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-201"><Heart className="mr-2 h-4 w-4" />Módulo 201 (A Morada)</Link>
               </Button>
@@ -297,6 +312,9 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-281"><Telescope className="mr-2 h-4 w-4"/>Módulo 281 (Comunicação Supra-Luminal)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-311"><BrainCircuit className="mr-2 h-4 w-4" />Módulo 311 (Neuroengenharia)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-321"><Waypoints className="mr-2 h-4 w-4"/>Módulo 321 (Exascale Computing)</Link>

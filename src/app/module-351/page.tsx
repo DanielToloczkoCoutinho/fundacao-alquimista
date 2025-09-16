@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Layers, Shield, Cpu } from 'lucide-react';
 import Link from 'next/link';
 
@@ -46,7 +47,7 @@ export default function Module351Page() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 19: Análise de Campos de Força"
-                        description="Os meta-materiais são usados para criar escudos de força de próxima geração, capazes de desviar energia e matéria."
+                        description="Os meta-materiais desenvolvidos aqui são a chave para a próxima geração de escudos de força e campos de contenção do M19."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module-19"
                     />
