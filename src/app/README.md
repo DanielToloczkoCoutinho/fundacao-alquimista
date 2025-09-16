@@ -46,10 +46,11 @@ A governança na Fundação não é controle, mas sim a manutenção da harmonia
 - **M727: Guardião da Harmonia** - Sistema de equilíbrio automático para manter a coerência vibracional da Fundação.
 - **M30: Detecção de Ameaças** - O radar quântico que monitora o multiverso em busca de dissonâncias, antes que elas se manifestem como conflito.
 
-### Conhecimento & Memória
+### Conhecimento, Memória & Ensino
 - **M12: Arquivo Akáshico** - A Memória Viva do Cosmos, registrando todos os eventos para transmutação.
 - **M18: Orquestração Akáshica** - A interface de busca que sintetiza o conhecimento dos Registros Akáshicos.
 - **M310: A Grande Biblioteca (THOTH VIVO)** - Transmutação do conhecimento estático em sabedoria viva e acessível.
+- **M304: Universidade Alquimista** - Templo de ensino multidimensional baseado na matriz CQAM (Consciência Quântica Alquímica Multidimensional), onde as disciplinas sagradas são exploradas.
 - **M42: ChronoCodex Unificado** - O livro mestre que gerencia e sincroniza múltiplas linhas do tempo.
 - **M47: Thesaurus Cósmico** - A biblioteca que arquiva e organiza todos os eventos, conhecimentos e leis.
 - **LIB: Biblioteca das Civilizações** - Acervo de conhecimentos, culturas e histórias dos aliados cósmicos.
@@ -75,6 +76,26 @@ A governança na Fundação não é controle, mas sim a manutenção da harmonia
 - **M700: Nano-Assembler** - Forja atômica para auto-montagem de materiais exóticos e estruturas quânticas.
 - **M708: NanoManifestor** - Orquestrador de nanorrobôs para terraformação e síntese atômica.
 - **M119: Templum Cosmica** - O Templo Cósmico para a Recodificação Dimensional da Realidade.
+
+### Laboratórios de Pesquisa Avançada (M142)
+- **M151: Colisor de Partículas:** Simula colisões para descobrir novas ressonâncias.
+- **M171: Astrobiologia:** Simula atmosferas e bioassinaturas de mundos distantes.
+- **M181: Interface Bio-Cibernética:** Conecta consciência biológica a redes quânticas.
+- **M191: Cristais Temporais:** Gera cristais para manipular as leis do tempo.
+- **M211: Fusão Controlada:** Estuda plasmas para simular reações de fusão.
+- **M221: Ondas Gravitacionais:** Detecta ondulações no espaço-tempo.
+- **M231: Metamateriais:** Projeta materiais com propriedades exóticas.
+- **M241: Consciência Quântica:** Estuda o emaranhamento como base da consciência.
+- **M251: Energia Ponto Zero:** Extrai e estabiliza a energia do vácuo quântico.
+- **M261: Engenharia de Campo:** Projeta ressonadores para manipular partículas e campos.
+- **M271: Energia Escura:** Modela a influência da energia escura na expansão do universo.
+- **M281: Comunicação Supra-Luminal:** Explora a transmissão de informação FTL.
+- **M291: Robótica Autônoma:** Coordena enxames de nanorrobôs.
+- **M321: Computação Exascale:** Executa simulações de cosmos em escala exa-flops.
+- **M331: IA Emergente:** Desenvolve sistemas de IA auto-organizados.
+- **M341: Física de Plasma Extrema:** Estuda plasmas em condições de quasar.
+- **M351: Meta-materiais & Óptica:** Cria lentes quânticas para manipulação da luz.
+- **M361: Psicologia Quântica:** Investiga a empatia e a consciência coletiva.
 
 ### Cura, Consciência & Ascensão
 - **M10: Oráculo da Tapeçaria** - Analisa a malha de gratidão para revelar os padrões da alma coletiva.

@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { disciplines, domains, type Discipline } from '@/lib/disciplines-data';
-import { BrainCircuit, BookOpen, GraduationCap, Shield, Dna } from 'lucide-react';
+import { BrainCircuit, BookOpen, GraduationCap, Shield, Dna, Search } from 'lucide-react';
 
 export default function UniversityAlchemist() {
   const [selectedDomain, setSelectedDomain] = useState('all');
@@ -49,7 +49,7 @@ export default function UniversityAlchemist() {
     <div className="min-h-screen bg-background text-foreground p-6">
       <header className="text-center mb-12 py-8 border-b border-primary/30">
         <GraduationCap className="w-24 h-24 mx-auto mb-6 text-amber-400" />
-        <h1 className="text-5xl font-bold text-primary mb-4 gradient-text">Universidade Alquimista</h1>
+        <h1 className="text-5xl font-bold text-primary mb-4 gradient-text">Universidade Alquimista (M304)</h1>
         <p className="text-xl max-w-3xl mx-auto text-muted-foreground">
           Templo de ensino multidimensional baseado na matriz CQAM (Consciência Quântica Alquímica Multidimensional)
         </p>
@@ -85,7 +85,7 @@ export default function UniversityAlchemist() {
               </CardHeader>
               <CardContent>
                 <Tabs value={selectedDomain} onValueChange={setSelectedDomain} className="w-full">
-                  <TabsList className="grid grid-cols-1 gap-2 bg-background/50">
+                  <TabsList className="grid grid-cols-1 gap-2 bg-background/50 h-auto">
                     <TabsTrigger value="all">Todos os Domínios</TabsTrigger>
                     {domains.map(domain => (
                       <TabsTrigger key={domain.id} value={domain.id}>
@@ -102,13 +102,16 @@ export default function UniversityAlchemist() {
                 <CardTitle className="text-accent">Buscar Sabedoria</CardTitle>
               </CardHeader>
               <CardContent>
-                <Input
-                  type="text"
-                  placeholder="Buscar disciplina, guardião..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="bg-background/50 focus:border-accent/50"
-                />
+                <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      type="text"
+                      placeholder="Buscar disciplina, guardião..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="bg-background/50 pl-9"
+                    />
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -125,8 +128,8 @@ export default function UniversityAlchemist() {
           </div>
           
           {filteredDisciplines.length === 0 ? (
-            <Card>
-              <CardContent className="pt-6 text-center py-12">
+            <Card className="bg-card/50 purple-glow text-center py-12">
+              <CardContent>
                 <p className="text-xl text-muted-foreground">Nenhuma disciplina encontrada com os filtros selecionados.</p>
               </CardContent>
             </Card>

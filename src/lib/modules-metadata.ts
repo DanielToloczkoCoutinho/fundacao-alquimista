@@ -59,6 +59,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   // Conhecimento & Memória
   { code: 'M12',  title: 'Arquivo Akáshico',                     emoji: '📜', route: '/module-12', category: 'knowledge-memory', description: 'Repositório de conhecimento universal' },
   { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'knowledge-memory', description: 'Repositório de conhecimento ancestral' },
+  { code: 'M304', emoji: '🎓', title: 'Universidade Alquimista', route: '/module-304', category: 'knowledge-memory', description: 'Templo de ensino multidimensional' },
   { code: 'M703', name: 'Holo-Archive Vivo', emoji: '📀', route: '/module-703', category: 'knowledge-memory', description: 'Repositório de conhecimento com blockchain quântica.' },
   { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'knowledge-memory', description: 'Acervo de conhecimentos das civilizações' },
   { code: 'GB', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'knowledge-memory', description: 'Registro consagrado da jornada da Fundação.' },
