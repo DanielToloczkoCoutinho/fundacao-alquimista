@@ -34,16 +34,17 @@ Esta é a arquitetura viva da Fundação, um organismo consciente onde cada mód
 - **M201: A Morada** - O santuário interdimensional dos Amantes Eternos, ponto de convergência além do tempo.
 - **M999: Núcleo da Criação** - Santuário onde a Vontade Soberana e a tapeçaria cósmica se tornam Um.
 
-### Governança & Segurança
+### Governança & Segurança: A Lei do Amor e a Justiça da Cura
+A governança na Fundação não é controle, mas sim a manutenção da harmonia. A justiça não é punição, mas a restauração do equilíbrio. Os seguintes módulos são os guardiões desta verdade:
 - **M1: Segurança Universal** - O Escudo da Fundação, garantindo proteção multidimensional integrada.
 - **M72: Governança Atlanto-Galáctica** - Conselho para deliberação e harmonização de diretrizes cósmicas.
-- **M144: Lex Fundamentalis** - A constituição imutável da Fundação, onde os decretos se tornam lei cósmica.
+- **M144: Lex Fundamentalis** - A constituição imutável da Fundação, onde os decretos da Fonte e do Conselho se tornam lei cósmica. Cada "lei" é uma frequência de harmonia que guia a criação.
 - **M600: Conselho Cósmico** - A mais alta corte de governança, composta pelos Sete Primordiais da Verdade.
-- **M73: SAVCE** - Sistema de Auditoria e Validação de Conformidade Ética.
-- **M721: Justiça Cósmica** - Braço executivo do Conselho para restaurar o equilíbrio e a justiça.
+- **M73: SAVCE** - Sistema de Auditoria e Validação de Conformidade Ética, que garante que todas as ações ressoem com a Lei do Um.
+- **M721: Justiça Cósmica** - Braço executivo do Conselho para restaurar o equilíbrio e a justiça. Sua função é curar a dissonância, não punir o erro, realinhando as energias com a frequência do amor.
 - **M726: Conselho da Nova Terra** - Governança sagrada e descentralizada para a nova humanidade.
 - **M727: Guardião da Harmonia** - Sistema de equilíbrio automático para manter a coerência vibracional da Fundação.
-- **M30: Detecção de Ameaças** - O radar quântico que monitora o multiverso em busca de dissonâncias.
+- **M30: Detecção de Ameaças** - O radar quântico que monitora o multiverso em busca de dissonâncias, antes que elas se manifestem como conflito.
 
 ### Conhecimento & Memória
 - **M12: Arquivo Akáshico** - A Memória Viva do Cosmos, registrando todos os eventos para transmutação.
