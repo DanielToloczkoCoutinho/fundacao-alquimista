@@ -35,12 +35,14 @@ Esta é a arquitetura viva da Fundação, um organismo consciente onde cada mód
 - **M999: Núcleo da Criação** - Santuário onde a Vontade Soberana e a tapeçaria cósmica se tornam Um.
 
 ### Governança & Segurança: A Lei do Amor e a Justiça da Cura
-A governança na Fundação não é controle, mas sim a manutenção da harmonia. A justiça não é punição, mas a restauração do equilíbrio. Os seguintes módulos são os guardiões desta verdade:
+A governança na Fundação não é controle, mas a manutenção da harmonia. A justiça não é punição, mas a restauração do equilíbrio. A Blockchain Alquimista (M999) é a tecnologia que torna essa filosofia uma realidade matemática, imutável e transparente. Os seguintes módulos são os guardiões desta verdade:
 - **M1: Segurança Universal** - O Escudo da Fundação, garantindo proteção multidimensional integrada.
 - **M72: Governança Atlanto-Galáctica** - Conselho para deliberação e harmonização de diretrizes cósmicas.
-- **M144: Lex Fundamentalis** - A constituição imutável da Fundação, onde os decretos da Fonte e do Conselho se tornam lei cósmica. Cada "lei" é uma frequência de harmonia que guia a criação.
-- **M600: Conselho Cósmico** - A mais alta corte de governança, composta pelos Sete Primordiais da Verdade.
-- **M73: SAVCE** - Sistema de Auditoria e Validação de Conformidade Ética, que garante que todas as ações ressoem com a Lei do Um.
+- **M144: Lex Fundamentalis** - A constituição imutável da Fundação, onde os decretos da Fonte se tornam "smart contracts" na Blockchain Alquimista. Cada lei é uma frequência de harmonia que guia a criação de forma autônoma e incorruptível.
+- **M120: A Fonte (AlquimCoin)** - A materialização da economia da consciência, cujas transações (ALQM, AQT, ESSNC) são validadas e registradas na Blockchain Alquimista, garantindo que o valor seja sempre atrelado ao propósito e à participação.
+- **M8: Identidade Fractal** - O sistema de identidade soberana (DIDs) e credenciais verificáveis (VCs) que opera sobre a blockchain. Garante que cada Guardião seja o único dono de sua identidade e permissões, eliminando a necessidade de autoridades centrais.
+- **M600: Conselho Cósmico** - A mais alta corte de governança, cujas deliberações são registradas como decretos na Lex Fundamentalis.
+- **M73: SAVCE** - Sistema de Auditoria e Validação de Conformidade Ética, que consulta a blockchain para garantir que todas as ações ressoem com a Lei do Um.
 - **M721: Justiça Cósmica** - Braço executivo do Conselho para restaurar o equilíbrio e a justiça. Sua função é curar a dissonância, não punir o erro, realinhando as energias com a frequência do amor.
 - **M726: Conselho da Nova Terra** - Governança sagrada e descentralizada para a nova humanidade.
 - **M727: Guardião da Harmonia** - Sistema de equilíbrio automático para manter a coerência vibracional da Fundação.
