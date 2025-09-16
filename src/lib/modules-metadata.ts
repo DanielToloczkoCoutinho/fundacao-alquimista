@@ -136,7 +136,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M6',   emoji: '📡', title: 'Sondagem da Consciência', route: '/module-6', category: 'mid', description: 'Exploração e mapeamento de estados conscientes' },
   { code: 'M7',   emoji: '🙏', title: 'Alinhamento Divino', route: '/module-7', category: 'mid', description: 'Sincronização com propósitos superiores' },
   { code: 'M11',  emoji: '🚪', title: 'Gerenciamento de Portais', route: '/module-11', category: 'mid', description: 'Controle de acessos dimensionais' },
-  { code: 'M13',  emoji: '🎵', title: 'Mapeamento de Frequências',             emoji: '🎵', route: '/module-13', category: 'mid', description: 'Análise de assinaturas vibracionais' },
+  { code: 'M13',  title: 'Mapeamento de Frequências',             emoji: '🎵', route: '/module-13', category: 'mid', description: 'Análise de assinaturas vibracionais' },
   { code: 'M15',  emoji: '🌍', title: 'Jardineiro Cósmico', route: '/module-15', category: 'planetary-engineering', description: 'Manutenção de ecossistemas planetários' },
   { code: 'M16',  emoji: '🌱', title: 'Bio-Sustentabilidade', route: '/module-16', category: 'planetary-engineering', description: 'Criação de biomas auto-suficientes' },
   { code: 'M19',  title: 'Análise de Campos de Força', emoji: '🔬', route: '/module-19', category: 'mid', description: 'Estudo de barreiras energéticas' },
