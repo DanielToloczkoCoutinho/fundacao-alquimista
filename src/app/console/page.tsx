@@ -10,6 +10,7 @@ import { onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import { cn } from '@/lib/utils';
 
 type ConnectionStatus = 'inicializando' | 'estável' | 'instável' | 'erro';
 
@@ -46,7 +47,6 @@ export default function ConsolePage() {
   useEffect(() => {
     setIsClient(true);
     
-    // Testar conexão com o Firestore
     const unsub = onSnapshot(collection(db, 'alchemist-codex-heartbeat'), 
       () => {
         if (connectionStatus !== 'estável') {
@@ -64,32 +64,8 @@ export default function ConsolePage() {
         });
       }
     );
-
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
-
-    let online = true;
-    const setIsOnline = (isOnline: boolean) => {
-      if (online !== isOnline) {
-        online = isOnline;
-        setConnectionStatus(isOnline ? 'inicializando' : 'instável');
-        if (isOnline) {
-          toast({ title: "Conexão de Rede Restaurada", description: "Sincronizando com a tapeçaria..." });
-        } else {
-          toast({ title: "Conexão de Rede Perdida", description: "Operando em modo offline.", variant: "destructive" });
-        }
-      }
-    };
-
-    window.addEventListener('online', handleOnline);
-    window.addEventListener('offline', handleOffline);
     
-    // Cleanup
-    return () => {
-        unsub();
-        window.removeEventListener('online', handleOnline);
-        window.removeEventListener('offline', handleOffline);
-    };
+    return () => unsub();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
