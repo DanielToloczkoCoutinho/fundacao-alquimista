@@ -229,5 +229,3 @@ const ModuleOmegaPage = () => {
 };
 
 export default ModuleOmegaPage;
-
-    
