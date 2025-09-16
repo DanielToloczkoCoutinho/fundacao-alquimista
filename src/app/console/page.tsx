@@ -107,6 +107,9 @@ export default function ConsolePage() {
                 <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-306"><Beaker className="mr-2 h-4 w-4"/>Módulo 306 (Laboratório de Ressonância)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-308"><Telescope className="mr-2 h-4 w-4" />Módulo 308 (Embaixada Estelar)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
@@ -216,7 +219,7 @@ export default function ConsolePage() {
                </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-115"><Waves className="mr-2 h-4 w-4" />Módulo 115 (Matriz de Ressonância)</Link>
-               </Button>
+              </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-116"><Aperture className="mr-2 h-4 w-4" />Módulo 116 (Portais Quânticos)</Link>
               </Button>
@@ -256,7 +259,3 @@ export default function ConsolePage() {
             </CardContent>
           </Card>
         </div>
-      </div>
-    </div>
-  );
-}

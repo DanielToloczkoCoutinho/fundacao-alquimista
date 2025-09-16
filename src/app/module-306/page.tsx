@@ -169,8 +169,4 @@ export default function Module306Page() {
                         </div>
                     </CardContent>
                 </Card>
-            </div>
-        </div>
-    );
-};
-    
+            
