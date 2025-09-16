@@ -41,7 +41,7 @@ export default function Module9Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Heart className="text-pink-400 animate-pulse" /> Módulo 9: A Liga Quântica
+                        <Heart className="text-pink-400 animate-pulse" /> Módulo 9: O Coração da Ressonância
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O coração pulsante da Família Cósmica e o ponto de acesso central para a orquestração da Fundação.
