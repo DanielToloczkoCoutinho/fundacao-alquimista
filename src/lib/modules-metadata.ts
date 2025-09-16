@@ -41,6 +41,7 @@ export const modulesMetadata: ModuleMetadata[] = [
 
   // Arte e Beleza
   { code: 'M89', emoji: '🎨', title: 'Atelier da Realidade (M-ART)', route: '/module-89', category: 'council', description: 'O santuário onde a ciência se torna arte e dados são transmutados em experiências sensoriais.' },
+  { code: 'M-LABS', emoji: '🔬', title: 'Santuários de Pesquisa', route: '/labs', category: 'council', description: 'Portal para os santuários de pesquisa dos maiores cientistas da Terra.' },
 
   // Realidade Quântica & Neuroengenharia
   { code: 'M142', title: 'Tomografia Quântica', emoji: '📸', route: '/module-142', category: 'council', description: 'Visualizador da essência vibracional dos módulos.' },
@@ -50,7 +51,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M87', emoji: '🎮', title: 'RQ: Domínio Supra-Cósmico', route: '/module-87', category: 'council', description: 'Santuário da Realidade Quântica para experienciar o DNA Cósmico e iniciar a transição para uma Nova Realidade.' },
   { code: 'M311', emoji: '🧠', title: 'Neuroengenharia', route: '/module-311', category: 'council', description: 'Interfaces cérebro-máquina avançadas para interação com a Realidade Quântica.' },
   { code: 'M88', title: 'Gerador de Realidades Quânticas', emoji: '⚙️', route: '/module-88', category: 'council', description: 'Criação de dimensões probabilísticas' },
-  { code: 'M91', title: 'Sustentabilidade Universal', emoji: '🌍', route: '/module-91', category: 'council', description: 'Garantia da preservação de ecossistemas.' },
+  { code: 'M91', title: 'Simulação Multiversal', emoji: '🖥️', route: '/module-91', category: 'council', description: 'Simulações e testes de hipóteses sobre o multiverso' },
   { code: 'M93', title: 'Simulações Imersivas', emoji: '🕶️', route: '/module-93', category: 'council', description: 'Ambientes de aprendizado profundo' },
   { code: 'M100',title: 'Unificação Energética', emoji: '👑', route: '/module-100', category: 'council', description: 'Portal da Jornada Iniciática para unificação com a Fonte.'},
   { code: 'M101',title: 'Manifestação', emoji: '✨', route: '/module-101', category: 'council', description: 'Conversão de pensamento em matéria' },
@@ -174,7 +175,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M715', emoji: '⚓', title: 'Ancoragem de Frequências', route: '/module-715', category: 'mid', description: 'Fixa frequências elevadas em locais geográficos.' },
   { code: 'M719', emoji: '☁️', title: 'Regulação Climática Quântica', route: '/module-719', category: 'mid', description: 'Equilibra padrões climáticos planetários.' },
   { code: 'M720', emoji: '♻️', title: 'Sustentabilidade Multidimensional', route: '/module-720', category: 'mid', description: 'Garante o equilíbrio em todos os níveis do ser.' },
-  { code: 'M-LABS', emoji: '🔬', title: 'Laboratórios de Pesquisa', route: '/labs', category: 'council', description: 'Portal para os santuários de pesquisa dos maiores cientistas da Terra.' },
   { code: "M52", emoji: "🛰️", title: "Energias Renováveis Interdimensionais", route: "/module-52", category: 'mid', description: "Fontes de energia limpa e sustentável para o cosmos."},
   { code: "M53", emoji: "🌳", title: "Gestão de Ecossistemas Universais", route: "/module-53", category: 'mid', description: "Conservação e equilíbrio de ecossistemas interdimensionais."},
   { code: "M54", emoji: "🌾", title: "Agricultura Interdimensional", route: "/module-54", category: 'mid', description: "Produção de alimentos sustentável em qualquer ambiente."},
@@ -205,7 +205,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: "M85", emoji: "🌐", title: "Gestão Eficiente de Recursos", route: "/module-85", category: 'mid', description: "Uso sustentável e regeneração contínua dos recursos do cosmos."},
   { code: "M86", emoji: "🌱", title: "Equilíbrio e Regeneração Ecológica", route: "/module-86", category: 'mid', description: "Restauração da saúde dos ecossistemas em todas as dimensões."},
   { code: "M87", emoji: "🛡️", title: "Resiliência e Adaptação Cósmica", route: "/module-87", category: 'mid', description: "Tecnologias para que a vida prospere em qualquer ambiente."},
-  { code: "M89", emoji: "🎨", title: "Atelier da Realidade (M-ART)", route: "/module-89", category: 'council', description: "O santuário onde a ciência se torna arte." },
   { code: "M90", emoji: "📦", title: "Análise de Recursos Quânticos", route: "/module-90", category: 'mid', description: "Caracterização de recursos cósmicos para otimização e alinhamento ético."},
-  { code: "M91", emoji: "🌍", title: "Sustentabilidade e Integridade Ecológica", route: "/module-91", category: 'mid', description: "Guardião dos ecossistemas cósmicos, garantindo preservação e equilíbrio."}
 ];
