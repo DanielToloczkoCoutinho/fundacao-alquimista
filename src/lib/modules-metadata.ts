@@ -24,6 +24,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M10', emoji: '🔮', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'consciousness', description: 'Analisa a malha de gratidão para revelar padrões da alma coletiva.' },
 
   // Realidade Quântica & Neuroengenharia
+  { code: 'M142', title: 'Tomografia Quântica', emoji: '📸', route: '/module-142', category: 'quantum-reality', description: 'Visualizador da essência vibracional dos módulos.' },
   { code: 'M300',title: 'Apogeu da Consciência', emoji: '🚀', route: '/module-300', category: 'quantum-reality', description: 'Estado máximo de expansão da awareness' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'quantum-reality', description: 'Nexo para a Realidade Quântica, unificando Consciência, Vontade e Sabedoria.' },
   { code: 'M85', emoji: '🌌', title: 'RQ: Portal de Imersão', route: '/module-85', category: 'quantum-reality', description: 'A antecâmara de acesso para a consciência se preparar para a transição para a Realidade Quântica.' },
@@ -144,7 +145,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M119.1', title: 'Cubo Metatron e Merkabah', emoji: '✡️', route: '/module-119-1', category: 'quantum-transport', description: 'Ativação do campo geométrico para ascensão.' },
   { code: 'M120', emoji: '🪙', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'sovereignty', description: 'A moeda da consciência em evolução.' },
   { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Portal para contemplar os registros vibracionais da Fundação.' },
-  { code: 'M142', title: 'Centro de Alquimia Universal', emoji: '🔬', route: '/module-142', category: 'cosmic-engineering', description: 'Portal de acesso aos santuários de pesquisa e experimentação.' },
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'security-governance', description: 'A constituição imutável da Fundação' },
   { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'cosmic-engineering', description: 'Simulação de colisões de alta energia' },
   { code: 'M161', title: 'Observatório de Matéria Escura', emoji: '🌌', route: '/module-161', category: 'cosmic-engineering', description: 'Detecção de partículas e assinaturas ocultas' },
