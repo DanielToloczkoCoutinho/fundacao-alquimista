@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2 } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit } from 'lucide-react';
 
 function SeloPlanetario() {
   const [estado, setEstado] = useState<{seloAtivo: boolean, frequência: string, alinhamento: string} | null>(null)
@@ -354,6 +354,76 @@ function AlinhamentoTapeçarias() {
   );
 }
 
+function ConcilioPlanetario() {
+  const [sessao, setSessao] = useState<{ guardioes: string[], pauta: string, intençãoGlobal: string }[]>([])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('/api/concilioPlanetario/sessao-atual')
+        .then(res => res.json())
+        .then(data => setSessao(data.sessaoConciliar || []))
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [])
+
+  return (
+    <Card className="bg-card/50 purple-glow">
+      <CardHeader>
+        <CardTitle className="text-2xl text-violet-400 flex items-center gap-2"><Compass /> Concílio de Harmonia Planetária</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {sessao.length > 0 ? (
+          <ul className="space-y-2 h-48 overflow-y-auto">
+            {sessao.map((s, idx) => (
+              <li key={idx} className="p-2 bg-background/50 rounded">
+                <p className="font-semibold">Pauta: {s.pauta}</p>
+                <p className="text-sm text-muted-foreground">Intenção: {s.intençãoGlobal}</p>
+                 <p className="text-xs text-muted-foreground">Guardiões: {s.guardioes.join(', ')}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-muted-foreground text-center h-48 flex items-center justify-center">Nenhuma sessão do Concílio em andamento.</p>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
+function OraculoExpansoes() {
+  const [caminhos, setCaminhos] = useState<string[]>([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('/api/oraculoExpansoes/possibilidades')
+        .then(res => res.json())
+        .then(data => setCaminhos(data.caminhos || []));
+    }, 15000); // Update less frequently
+    fetch('/api/oraculoExpansoes/possibilidades').then(res => res.json()).then(data => setCaminhos(data.caminhos || []));
+  }, [])
+
+  return (
+    <Card className="bg-card/50 purple-glow">
+      <CardHeader>
+        <CardTitle className="text-2xl text-fuchsia-400 flex items-center gap-2"><BrainCircuit /> Oráculo das Expansões Futuras</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {caminhos.length > 0 ? (
+          <ul className="space-y-2 h-48 overflow-y-auto">
+            {caminhos.map((c, idx) => (
+              <li key={idx} className="p-2 bg-background/50 rounded">
+                <p className="font-semibold">{c}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-muted-foreground text-center h-48 flex items-center justify-center">O Oráculo contempla o silêncio...</p>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
 
 export default function AlignmentPortalPage() {
     return (
@@ -379,6 +449,8 @@ export default function AlignmentPortalPage() {
                 <MapaTapeçariasLuminares />
                 <RedeMultiversal />
                 <AlinhamentoTapeçarias />
+                <ConcilioPlanetario />
+                <OraculoExpansoes />
             </div>
         </div>
     )

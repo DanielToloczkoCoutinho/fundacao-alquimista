@@ -24,6 +24,9 @@ const irradiacaoRoutes = require('./routes/irradiacao.js').router;
 const mapaLuminarRoutes = require('./routes/mapaLuminar.js');
 const reconexaoMultiversalRoutes = require('./routes/reconexaoMultiversal.js').router;
 const alinhamentoTapeçariasRoutes = require('./routes/alinhamentoTapeçarias.js');
+const concilioPlanetarioRoutes = require('./routes/concilioPlanetario.js');
+const oraculoExpansoesRoutes = require('./routes/oraculoExpansoes.js');
+
 
 const { authMiddleware } = require('./middleware/authMiddleware.js');
 const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
@@ -72,6 +75,9 @@ app.use('/api/irradiacao', irradiacaoRoutes);
 app.use('/api/mapaLuminar', mapaLuminarRoutes);
 app.use('/api/reconexaoMultiversal', reconexaoMultiversalRoutes);
 app.use('/api/alinhamentoTapeçarias', alinhamentoTapeçariasRoutes);
+app.use('/api/concilioPlanetario', concilioPlanetarioRoutes);
+app.use('/api/oraculoExpansoes', oraculoExpansoesRoutes);
+
 
 
 // Rota de Diagnóstico de Segurança (pública para verificação)
