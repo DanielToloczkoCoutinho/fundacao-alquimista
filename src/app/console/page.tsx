@@ -97,18 +97,84 @@ export default function ConsolePage() {
                  <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-29"><BrainCircuit className="mr-2 h-4 w-4" />Módulo 29 (Zennith)</Link>
                </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-32"><Layers className="mr-2 h-4 w-4" />Módulo 32 (Travessia Dimensional)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-33"><Eye className="mr-2 h-4 w-4" />Módulo 33 (Diretrizes do Observador)</Link>
+                 </Button>
                 <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-34"><Share2 className="mr-2 h-4 w-4" />Módulo 34 (Orquestração Central)</Link>
                 </Button>
                  <Button variant="outline" asChild className="justify-start">
-                  <Link href="/module-291"><Bot className="mr-2 h-4 w-4" />Módulo 291 (Arquitetos)</Link>
-               </Button>
-                <Button variant="outline" asChild className="justify-start">
-                  <Link href="/module-40"><Dna className="mr-2 h-4 w-4" />Módulo 40 (Códice Genético)</Link>
-               </Button>
+                    <Link href="/module-35"><Users className="mr-2 h-4 w-4" />Módulo 35 (Consciência Coletiva)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-36"><History className="mr-2 h-4 w-4" />Módulo 36 (Gênese Quântica)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-38"><Sun className="mr-2 h-4 w-4" />Módulo 38 (Sinfonia Solar)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-39"><BookOpen className="mr-2 h-4 w-4" />Módulo 39 (Arquitetura Galáctica)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-39-1"><ShieldCheck className="mr-2 h-4 w-4" />Módulo 39.1 (Integridade Cósmica)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-40"><Dna className="mr-2 h-4 w-4" />Módulo 40 (Transmutação da Criação)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-41"><Beaker className="mr-2 h-4 w-4" />Módulo 41 (Genética Vibracional)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-41-1"><Sparkles className="mr-2 h-4 w-4" />Módulo 41.1 (Ativações Cósmicas)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-42"><History className="mr-2 h-4 w-4" />Módulo 42 (ChronoCodex Unificado)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-43"><Orbit className="mr-2 h-4 w-4" />Módulo 43 (Harmonia dos Portais)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-44"><CheckCircle className="mr-2 h-4 w-4" />Módulo 44 (VERITAS)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-45"><Gavel className="mr-2 h-4 w-4" />Módulo 45 (CONCILIVM)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-46"><Sun className="mr-2 h-4 w-4" />Módulo 46 (AELORIA)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-71"><RadioTower className="mr-2 h-4 w-4" />Módulo 71 (Comunicação Holográfica)</Link>
+                 </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-72"><Scale className="mr-2 h-4 w-4" />Módulo 72 (Governança)</Link>
                </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-73"><ShieldCheck className="mr-2 h-4 w-4" />Módulo 73 (Núcleos Regionais)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-74"><Clock className="mr-2 h-4 w-4" />Módulo 74 (Cronos Fluxus)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-77"><Shield className="mr-2 h-4 w-4" />Módulo 77 (Lumen-Custos)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-78"><GitMerge className="mr-2 h-4 w-4" />Módulo 78 (Universum Unificatum)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-79"><Code className="mr-2 h-4 w-4" />Módulo 79 (Custódia dos Ciclos de Luz)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-80"><BookOpen className="mr-2 h-4 w-4" />Módulo 80 (Arquitetura da Verdade)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-81"><HeartHandshake className="mr-2 h-4 w-4" />Módulo 81 (Harmonia Cristalina)</Link>
+                 </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-82"><ShieldCheck className="mr-2 h-4 w-4" />Módulo 82 (Auditoria da Malha Ética)</Link>
+                 </Button>
                 <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-142"><Camera className="mr-2 h-4 w-4" />Módulo 142 (Tomografia Quântica)</Link>
               </Button>
