@@ -1,9 +1,10 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, CheckCircle, XCircle, ShieldCheck, Cpu, Scale, GitCommit } from 'lucide-react';
+import { Loader2, CheckCircle, XCircle, ShieldCheck } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { livingEquations } from '@/lib/equations-data';
 

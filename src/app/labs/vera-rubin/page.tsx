@@ -53,7 +53,7 @@ export default function VeraRubinLab() {
         <Link href="/labs" passHref>
           <Button variant="outline">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar ao Mapa Estelar
+            Voltar aos Santuários de Pesquisa
           </Button>
         </Link>
       </div>

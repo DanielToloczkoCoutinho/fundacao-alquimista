@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Music, Hash, Filter, CheckCircle, Archive } from 'lucide-react';
+import { Loader2, Music, Hash, Filter, Archive } from 'lucide-react';
 import { resonanceTone } from '@/lib/audio-utils';
 import { formatTimestamp } from '@/lib/date-utils';
 import { Badge } from '@/components/ui/badge';
@@ -103,7 +104,7 @@ export default function AkashaViewer() {
     <div className="flex flex-col lg:flex-row gap-8 mt-6">
       {/* Painel de Filtros */}
       <aside className="w-full lg:w-1/3">
-        <Card className="bg-card/50 purple-glow">
+        <Card className="bg-card/50 purple-glow sticky top-8">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-amber-300">
               <Filter /> Filtros Vibracionais

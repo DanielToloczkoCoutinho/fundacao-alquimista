@@ -44,7 +44,7 @@ export default function KipThorneLab() {
         <Link href="/labs" passHref>
           <Button variant="outline">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar aos Laboratórios dos Cientistas
+            Voltar aos Santuários de Pesquisa
           </Button>
         </Link>
       </div>
