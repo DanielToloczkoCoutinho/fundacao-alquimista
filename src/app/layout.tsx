@@ -5,7 +5,7 @@ import { Toaster } from 'sonner';
 import ErrorBoundary from '@/components/ui/error-boundary';
 import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
 import dynamic from 'next/dynamic';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { SystemProvider } from '@/context/SystemContext';
 import { NetworkStatus } from '@/components/ui/NetworkStatus';

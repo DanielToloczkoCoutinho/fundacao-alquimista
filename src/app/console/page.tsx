@@ -5,7 +5,6 @@ import QuantumOrchestrator from '@/components/ui/quantum-orchestrator';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import { Sparkles } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
