@@ -3,7 +3,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
-import { ArrowLeft, Orbit, Sparkles } from 'lucide-react';
+import { ArrowLeft, Orbit, Sparkles, AlertTriangle } from 'lucide-react';
 import DarkMatterGarden from './components/DarkMatterGarden';
 import { Suspense } from "react";
 import SuspenseFallback from "@/components/ui/suspense-fallback";

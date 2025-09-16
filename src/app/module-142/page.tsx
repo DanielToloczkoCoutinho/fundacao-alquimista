@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Camera, Layers, FlaskConical, Atom, Dna, BrainCircuit, Waves, TestTube, Waypoints, Flame, GitBranch, Telescope, BarChart, Rss, Network, CloudSun, Cpu, Microscope, Link as LinkIcon, UserCog, Recycle, Heart, Wifi, UserPlus, DraftingCompass, Globe, TestTube2 } from 'lucide-react';
+import { Camera, Layers, FlaskConical, Atom, Dna, BrainCircuit, Waves, TestTube, Waypoints, Flame, GitBranch, Telescope, BarChart, Rss, Network, CloudSun, Cpu, Microscope, Link as LinkIcon, UserCog, Recycle, Heart, Wifi, UserPlus, DraftingCompass, Globe, TestTube2, Anchor } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
