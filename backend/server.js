@@ -12,27 +12,48 @@ const energyRoutes = require('./routes/energyRoutes.js');
 const auditRoutes = require('./routes/auditRoutes.js');
 const { authMiddleware } = require('./middleware/authMiddleware.js');
 const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
+const { performSystemHealthCheck } = require('../src/lib/system-health'); // Ajuste de caminho
 
 const app = express();
 const server = http.createServer(app);
 
 // Middlewares de Segurança e Performance
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  methods: ['GET', 'POST'],
+  credentials: true,
+}));
 app.use(compression());
 app.use(express.json());
 
 const limiter = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutos
-	max: 100, // Limita cada IP a 100 requisições por janela
+	max: 500, // Limita cada IP a 500 requisições por janela
 	standardHeaders: true,
 	legacyHeaders: false,
+    message: 'Frequência de requisições excessiva detectada. Aguardando recalibração.',
 });
 app.use(limiter);
 
 // Rotas públicas
 app.get('/health', (req, res) => res.status(200).json({ status: 'Ω', timestamp: new Date().toISOString() }));
+app.get('/health/extended', async (req, res) => {
+    const report = await performSystemHealthCheck();
+    res.status(report.status === 'unhealthy' ? 503 : 200).json(report);
+});
+
 app.use('/api/auth', authRoutes);
+
+// Rota de Diagnóstico de Segurança (pública para verificação)
+app.get('/api/security/status', (req, res) => {
+  res.json({
+    helmet: 'ativo',
+    cors: 'protegido',
+    rateLimit: 'em operação',
+    headers: 'configurados via next.config.js',
+  })
+});
 
 // Rotas protegidas
 app.use('/api/energy', authMiddleware, energyRoutes);
