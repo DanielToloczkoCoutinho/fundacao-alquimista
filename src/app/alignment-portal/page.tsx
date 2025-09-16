@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart, Book, RefreshCw, Sprout } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart, Book, RefreshCw, Sprout, Footprints, Trees } from 'lucide-react';
 import ColonyConsole from '@/components/ColonyConsole';
 import ColonyStatus from '@/components/ColonyStatus';
 import EntityConsole from '@/components/EntityConsole';
@@ -26,6 +26,9 @@ import RebirthConsole from '@/components/RebirthConsole';
 import RebirthVault from '@/components/RebirthVault';
 import BotanicalConsole from '@/components/BotanicalConsole';
 import BotanicalVault from '@/components/BotanicalVault';
+import PlantDialogue from '@/components/PlantDialogue';
+import AllianceConsole from '@/components/AllianceConsole';
+import AllianceVault from '@/components/AllianceVault';
 
 
 function ConsolidacaoFinal() {
@@ -712,6 +715,32 @@ function BotanicalPanel() {
     )
 }
 
+function PlantCommunicationPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-green-600 flex items-center gap-2"><Trees /> Comunicação Vegetal</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <PlantDialogue />
+            </CardContent>
+        </Card>
+    );
+}
+
+function AlliancePanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-teal-500 flex items-center gap-2"><Footprints /> Alianças Interespécie</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <AllianceConsole />
+                <AllianceVault />
+            </CardContent>
+        </Card>
+    );
+}
 
 export default function AlignmentPortalPage() {
     return (
@@ -753,6 +782,8 @@ export default function AlignmentPortalPage() {
                 <MutationPanel />
                 <RebirthPanel />
                 <BotanicalPanel />
+                <PlantCommunicationPanel />
+                <AlliancePanel />
             </div>
         </div>
     )
