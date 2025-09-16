@@ -7,6 +7,7 @@ import CosmicErrorFallback from '@/components/ui/cosmic-error-fallback';
 import dynamic from 'next/dynamic';
 import { useState, useEffect } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+import { SystemProvider } from '@/context/SystemContext';
 
 
 // Dynamically import the sidebar to prevent SSR issues with usePathname
@@ -37,22 +38,24 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased" suppressHydrationWarning>
         <ErrorBoundary fallback={<CosmicErrorFallback />}>
-          {isMounted ? (
-            <div className="flex h-screen bg-background">
-                <DynamicSidebar />
-                <main className="flex-1 overflow-y-auto pl-20">
-                    {children}
-                </main>
-            </div>
-          ) : (
-            <div className="flex h-screen bg-background">
-                <div className="fixed top-0 left-0 h-full w-20 bg-background border-r border-border/20 z-20" />
-                <main className="flex-1 overflow-y-auto pl-20">
-                  <SuspenseFallback />
-                </main>
-            </div>
-          )}
-          <Toaster />
+         <SystemProvider>
+            {isMounted ? (
+              <div className="flex h-screen bg-background">
+                  <DynamicSidebar />
+                  <main className="flex-1 overflow-y-auto pl-20">
+                      {children}
+                  </main>
+              </div>
+            ) : (
+              <div className="flex h-screen bg-background">
+                  <div className="fixed top-0 left-0 h-full w-20 bg-background border-r border-border/20 z-20" />
+                  <main className="flex-1 overflow-y-auto pl-20">
+                    <SuspenseFallback />
+                  </main>
+              </div>
+            )}
+            <Toaster />
+          </SystemProvider>
         </ErrorBoundary>
       </body>
     </html>

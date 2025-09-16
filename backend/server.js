@@ -1,3 +1,5 @@
+const http = require('http');
+const WebSocket = require('ws');
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -9,8 +11,10 @@ const authRoutes = require('./routes/authRoutes.js');
 const energyRoutes = require('./routes/energyRoutes.js');
 const auditRoutes = require('./routes/auditRoutes.js');
 const { authMiddleware } = require('./middleware/authMiddleware.js');
+const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
 
 const app = express();
+const server = http.createServer(app);
 
 // Middlewares de Segurança e Performance
 app.use(helmet());
@@ -42,7 +46,10 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.BACKEND_PORT || 4000;
 
-app.listen(PORT, '0.0.0.0', () => {
+// Inicializa o servidor WebSocket
+initializeWebSocket(server);
+
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`[backend] Coração Oculto pulsando na porta ${PORT}`);
 });
 
