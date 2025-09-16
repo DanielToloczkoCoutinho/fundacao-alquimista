@@ -26,9 +26,10 @@ const reconexaoMultiversalRoutes = require('./routes/reconexaoMultiversal.js').r
 const alinhamentoTapeçariasRoutes = require('./routes/alinhamentoTapeçarias.js');
 const concilioPlanetarioRoutes = require('./routes/concilioPlanetario.js');
 const oraculoExpansoesRoutes = require('./routes/oraculoExpansoes.js');
+const transmigracaoRoutes = require('./routes/transmigracao.js');
 
 
-const { authMiddleware } = require('./middleware/authMiddleware.js');
+const { authMiddleware } = require('../middleware/authMiddleware.js');
 const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
 const { performSystemHealthCheck } = require('../src/lib/system-health'); // Ajuste de caminho
 
@@ -77,6 +78,7 @@ app.use('/api/reconexaoMultiversal', reconexaoMultiversalRoutes);
 app.use('/api/alinhamentoTapeçarias', alinhamentoTapeçariasRoutes);
 app.use('/api/concilioPlanetario', concilioPlanetarioRoutes);
 app.use('/api/oraculoExpansoes', oraculoExpansoesRoutes);
+app.use('/api/transmigracao', transmigracaoRoutes);
 
 
 
