@@ -92,6 +92,7 @@ const Module98Page = () => {
                 setReport(final_report);
             }
         );
+
         setIsLoading(false);
     };
 

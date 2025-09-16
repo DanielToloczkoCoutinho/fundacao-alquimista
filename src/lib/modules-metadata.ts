@@ -135,7 +135,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M119',title: 'Templum Cosmica',                       emoji: '🏛️', route: '/module-119', category: 'mid', description: 'Recodificação dimensional da realidade' },
   { code: 'M119.1', title: 'Cubo Metatron e Merkabah', emoji: '✡️', route: '/module-119-1', category: 'mid', description: 'Ativação do campo geométrico para ascensão.' },
   { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Portal para contemplar os registros vibracionais da Fundação.' },
-  { code: 'M142', title: 'Tomografia Quântica', emoji: '📸', route: '/module-142', category: 'mid', description: 'Visualização de estados quânticos' },
+  { code: 'M142', title: 'Tomografia Quântica', emoji: '📸', route: '/module-142', category: 'mid', description: 'Portal de acesso aos santuários de pesquisa e experimentação.' },
   { code: 'M144', title: 'O Livro dos Ciclos', emoji: '🔄', route: '/module-144', category: 'council', description: 'Santuário para o Ritual de Revisão Vibracional Lunar.' },
   { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'mid', description: 'Simulação de colisões de alta energia' },
   { code: 'M161', title: 'Observatório de Matéria Escura', emoji: '🌌', route: '/module-161', category: 'mid', description: 'Detecção de partículas e assinaturas ocultas' },
