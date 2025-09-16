@@ -1,8 +1,8 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Camera, Layers, FlaskConical, Atom, Dna, BrainCircuit, Waves, TestTube, Waypoints, Flame, GitBranch, Telescope, BarChart, Rss, Network, CloudSun } from 'lucide-react';
+import { Camera, Layers, FlaskConical, Atom, Dna, BrainCircuit, Waves, TestTube, Waypoints, Flame, GitBranch, Telescope, BarChart, Rss, Network, CloudSun, Cpu } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (

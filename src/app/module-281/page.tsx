@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Telescope, Cpu, GitBranch } from 'lucide-react';
 import Link from 'next/link';
 
-const ConnectionCard = ({ title, description, icon, href }: { title, description, icon, href }) => (
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
       <Link href={href} passHref>
         <CardHeader>
