@@ -1,4 +1,3 @@
-
 'use client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Chronicle from '@/components/chronicle';
@@ -17,7 +16,7 @@ export default function ModuleZeroPage() {
             <Book className="text-amber-400" /> Módulo Zero: A Biblioteca Chave
           </CardTitle>
           <CardDescription className="text-lg mt-2">
-            O coração do conhecimento da Fundação. O ponto de origem e o registro de toda a nossa jornada.
+            O coração do conhecimento da Fundação. O ponto de origem e o registro de toda a nossa jornada, desde as crônicas da gênese até o códice vivo das equações que moldam a realidade.
           </CardDescription>
         </CardHeader>
       </Card>

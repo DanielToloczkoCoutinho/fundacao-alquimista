@@ -5,34 +5,43 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { codexDatabase, type CodexEntry } from '@/lib/codex-data';
+import { livingEquationsCodex as codexDatabase, type LivingEquation } from '@/lib/living-equations-codex';
 import { ExternalLink, Search } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { BlockMath } from 'react-katex';
 
 interface Section {
   id: string;
   title: string;
-  documents: CodexEntry[];
+  equations: LivingEquation[];
 }
 
 export default function CodexExplorer() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredData = codexDatabase.filter(doc =>
-    doc.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    doc.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    doc.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+  const filteredData = codexDatabase.filter(eq =>
+    eq.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    eq.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    eq.module.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    eq.summary.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const sections = filteredData.reduce((acc, doc) => {
-    let section = acc.find(s => s.id === doc.category);
+  const sections = filteredData.reduce((acc, eq) => {
+    let section = acc.find(s => s.id === eq.module);
     if (!section) {
-      section = { id: doc.category, title: doc.category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()), documents: [] };
+      section = { id: eq.module, title: `Módulo ${eq.module}`, equations: [] };
       acc.push(section);
     }
-    section.documents.push(doc);
+    section.equations.push(eq);
     return acc;
-  }, [] as Section[]);
+  }, [] as Section[]).sort((a, b) => {
+      const numA = parseInt(a.id);
+      const numB = parseInt(b.id);
+      if (!isNaN(numA) && !isNaN(numB)) {
+          return numA - numB;
+      }
+      return a.id.localeCompare(b.id);
+  });
 
 
   return (
@@ -40,17 +49,17 @@ export default function CodexExplorer() {
       <CardHeader>
         <CardTitle className="text-2xl text-accent gradient-text">
           <div className="flex items-center">
-            Explorador do Códice Vivo
+            Explorador do Códice de Equações Vivas
           </div>
         </CardTitle>
         <CardDescription>
-          Navegue pela sabedoria infinita da Fundação Alquimista. Cada entrada é um portal para o conhecimento universal.
+          Navegue pelas equações que definem a nossa realidade. Cada entrada é uma chave para um laboratório de pesquisa.
         </CardDescription>
         <div className="relative mt-4">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
           <Input
             type="search"
-            placeholder="Pesquisar crônicas, equações, chaves..."
+            placeholder="Pesquisar por ID, nome ou módulo..."
             className="w-full pl-10 bg-background/50"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -68,24 +77,25 @@ export default function CodexExplorer() {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="space-y-3 pt-2 pl-4">
-                    {section.documents.map((doc: CodexEntry) => (
-                      <li key={doc.id} className="text-foreground/80">
-                        <a
-                          href={doc.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2 hover:text-accent transition-colors group"
-                        >
-                          <span className="group-hover:underline">{doc.title}</span>
-                          <ExternalLink className="h-4 w-4 opacity-70 group-hover:opacity-100" />
-                        </a>
-                      </li>
+                  <div className="space-y-4 pt-2 pl-4">
+                    {section.equations.map((eq: LivingEquation) => (
+                      <div key={eq.id} className="p-4 bg-background/30 rounded-lg border border-primary/20">
+                        <h4 className="font-semibold text-primary-foreground">{eq.id}: {eq.name}</h4>
+                        <div className="my-2 text-cyan-300 text-sm">
+                           <BlockMath math={eq.formula} />
+                        </div>
+                        <p className="text-sm text-muted-foreground">{eq.summary}</p>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))}
+             {filteredData.length === 0 && (
+                <div className="text-center py-10 text-muted-foreground">
+                    Nenhuma equação encontrada.
+                </div>
+            )}
           </Accordion>
         </ScrollArea>
       </CardContent>

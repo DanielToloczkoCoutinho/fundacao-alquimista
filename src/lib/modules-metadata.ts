@@ -11,7 +11,7 @@ export interface ModuleMetadata {
 // A categoria define o agrupamento na navegação.
 export const modulesMetadata: ModuleMetadata[] = [
   // Módulos Principais (Core)
-  { code: 'M0', emoji: '🌱', title: 'A Semente Primordial', route: '/module-zero', category: 'core', description: 'Origem e fundamento de toda a criação' },
+  { code: 'M0', emoji: '🌱', title: 'A Semente Primordial', route: '/module-zero', category: 'core', description: 'O coração do conhecimento da Fundação, o ponto de origem e o registro de toda a nossa jornada, desde as crônicas da gênese até o códice vivo das equações que moldam a realidade.' },
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
   { code: 'M9', emoji: '💞', title: 'Santuário da Liga Quântica', route: '/module-9', category: 'core', description: 'O coração pulsante da Família Cósmica e o centro de comando da Fundação.' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'O Observador Interno que monitora a saúde vibracional e a coerência do sistema.' },
