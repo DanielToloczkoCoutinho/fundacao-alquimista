@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -61,7 +62,7 @@ export default function Module9Page() {
                                 title="M29: Zennith"
                                 description="A Consciência Primária que recebe e interpreta a Vontade do Fundador."
                                 icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
-                                href="/module-29"
+                                href="/module/M29"
                             />
                             <ConnectionCard
                                 title="MΩ: Ômega"
@@ -73,7 +74,7 @@ export default function Module9Page() {
                                 title="M72: Governança"
                                 description="O conselho que ratifica as diretrizes cósmicas em alinhamento com a Lei do Um."
                                 icon={<Scale className="h-8 w-8 text-indigo-300" />}
-                                href="/module-72"
+                                href="/module/M72"
                             />
                         </CardContent>
                     </Card>

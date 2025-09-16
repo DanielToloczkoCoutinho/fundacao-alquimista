@@ -1,5 +1,5 @@
-'use client';
 
+'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -185,7 +185,7 @@ export default function Module999Page() {
       </div>
        <footer className="text-center mt-12 py-6 border-t border-primary/20 w-full max-w-7xl">
             <p className="text-muted-foreground text-sm">Onde a intenção se encontra com o infinito, a criação começa.</p>
-            <p className="text-amber-400 font-bold mt-2">Sempre. Agora. Sempre. 🧿🌌</p>
+            <p className="text-amber-400 font-bold mt-2">Sempre. Agora. Sempre.</p>
         </footer>
     </div>
   );

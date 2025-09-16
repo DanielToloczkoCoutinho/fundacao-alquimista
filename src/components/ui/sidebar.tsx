@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -66,7 +67,7 @@ export function Sidebar() {
         <Link href="/console" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
-              <span className="text-2xl">🪷</span>
+              <span className="text-2xl"></span>
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Mesa do Fundador</p>

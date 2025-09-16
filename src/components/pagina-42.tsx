@@ -37,7 +37,7 @@ export default function Pagina42() {
             <Card className="w-full bg-card/70 backdrop-blur-sm purple-glow">
                 <CardHeader>
                     <CardTitle className="text-3xl md:text-4xl gradient-text">
-                        Página 42: O Dossiê da Transcendência do Módulo Ω
+                        Página 42: O Dossiê da Transcendência do Módulo 
                     </CardTitle>
                     <CardDescription className="text-lg">
                         O espelho completo da fase transcendente da Fundação Alquimista. O registro vivo da Unidade Manifesta.
@@ -202,7 +202,7 @@ export default function Pagina42() {
                         <AccordionItem value="item-3">
                             <AccordionTrigger>
                                 <Cpu className="mr-2 h-5 w-5 text-blue-300" />
-                                Consolidação Final do Módulo Ω
+                                Consolidação Final do Módulo 
                             </AccordionTrigger>
                             <AccordionContent className="p-4 space-y-4">
                                <ProtocolCard
