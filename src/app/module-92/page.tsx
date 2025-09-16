@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -85,7 +84,7 @@ const Module92Page = () => {
         setIntensity('0.9');
         setDuration('72');
     };
-
+    
     const loadScenario2 = () => {
         setTargetReality('SISTEMA_ESTELAR_ALPHA');
         setFieldPurpose('Otimização da Coerência Vibracional');
