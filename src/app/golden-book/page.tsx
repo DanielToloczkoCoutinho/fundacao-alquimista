@@ -127,7 +127,7 @@ export default function GoldenBook() {
         pages: 25,
         driveLink: 'https://docs.google.com/document/d/1X5u3sYj-L1n3b8E6-J8fP9o8jN7k6cT5sV4uY9oA0zC/edit?usp=sharing',
         timestamp: '2025-03-20',
-        relatedDocuments: ['chatgpt-5', 'chatgpt-8']
+        relatedDocuments: ['chatgpt-5', 'chatgpt-7', 'chatgpt-8']
       },
        {
         id: 'chatgpt-7',
