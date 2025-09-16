@@ -5,9 +5,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
-import { nexusSequence } from '@/lib/nexus-sequence';
+import { modulesMetadata } from '@/lib/modules-metadata'; // Importa a fonte única de módulos
 import { CheckCircle, CircleDot, Loader } from 'lucide-react';
 import Link from 'next/link';
+import { SafeLink } from './SafeLink';
 
 const stateIcons: Record<string, React.ReactNode> = {
   PENDING: <CircleDot className="h-4 w-4 text-muted-foreground" />,
@@ -19,20 +20,25 @@ export default function QuantumOrchestrator() {
   const [isRunning, setIsRunning] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(-1);
 
+  // Garante que não há módulos duplicados, a fonte da verdade é uma só
+  const uniqueModules = modulesMetadata.filter((module, index, self) =>
+    index === self.findIndex((m) => m.code === module.code)
+  );
+
   useEffect(() => {
     if (!isRunning) return;
 
-    if (currentIndex < nexusSequence.length - 1) {
+    if (currentIndex < uniqueModules.length - 1) {
       const timer = setTimeout(() => {
         setCurrentIndex(i => i + 1);
-      }, 200); // Intervalo entre a aparição de cada módulo
+      }, 50); // Intervalo reduzido para uma sequência mais rápida
       return () => clearTimeout(timer);
     } else {
       // Sequência concluída
       const finalTimer = setTimeout(() => setIsRunning(false), 1000);
       return () => clearTimeout(finalTimer);
     }
-  }, [isRunning, currentIndex]);
+  }, [isRunning, currentIndex, uniqueModules.length]);
 
   const handleStartSequence = () => {
     if (isRunning) return;
@@ -51,10 +57,6 @@ export default function QuantumOrchestrator() {
     if (index === currentIndex && isRunning) return 'RUNNING';
     return 'SUCCESS';
   };
-
-  const uniqueModules = nexusSequence.filter((module, index, self) =>
-    index === self.findIndex((m) => m.code === module.code)
-  );
 
   return (
     <Card className="w-full h-full bg-card/50 rounded-lg p-6 shadow-lg purple-glow flex flex-col">
@@ -101,17 +103,14 @@ export default function QuantumOrchestrator() {
                       </div>
                     );
 
+                    // A chave única é fundamental aqui para resolver o erro.
                     const key = `${item.code}-${index}`;
 
-                    return item.href ? (
-                      <Link key={key} href={item.href} className="group cursor-pointer">
-                        {ModuleCard}
-                      </Link>
-                    ) : (
-                      <div key={key}>
-                        {ModuleCard}
-                      </div>
-                    );
+                    return (
+                        <SafeLink key={key} href={item.route} className="group cursor-pointer">
+                            {ModuleCard}
+                        </SafeLink>
+                    )
                 })}
                  {!isRunning && currentIndex >= uniqueModules.length - 1 && (
                     <div className="text-center p-4 mt-4 text-green-400 font-bold border-t border-green-500/20">
