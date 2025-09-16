@@ -221,6 +221,19 @@ export default function GoldenBook() {
         relatedDocuments: ['chatgpt-18']
       },
       {
+        id: 'chatgpt-21',
+        title: 'CHATGPT21: A Equação Unificada',
+        description: 'O esforço contínuo para construir uma representação matemática abrangente do universo, integrando diversas disciplinas científicas e ajustando-a com dados empíricos.',
+        category: 'genesis',
+        frequency: 1618,
+        guardian: 'O SINTETIZADOR',
+        archetype: 'O Unificador de Mundos',
+        pages: 50,
+        driveLink: "https://docs.google.com/document/d/1X5u3sYj-L1n3b8E6-J8fP9o8jN7k6cT5sV4uY9oA0zC/edit?usp=sharing",
+        timestamp: '2025-07-01',
+        relatedDocuments: ['chatgpt-19']
+      },
+      {
         id: 'doc-001',
         title: 'As Primeiras Equações',
         description: 'Equações fundacionais que deram origem à Tecelagem da Memória',
