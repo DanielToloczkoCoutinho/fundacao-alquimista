@@ -16,8 +16,13 @@ const moduleComponents: { [key: string]: React.ComponentType<any> } = {
 
 export default function ModulePage() {
   const params = useParams();
-  const code = params.code as string;
+  let code = params.code as string;
 
+  // Normaliza o código para lidar com variações (ex: 'module-one' vs 'M1')
+  if (code.toLowerCase() === 'module-one') code = 'M1';
+  if (code.toLowerCase() === 'module-zero') code = 'M0';
+  if (code.toLowerCase() === 'module-omega') code = 'M-OMEGA';
+  
   // Encontra o componente correspondente ao código
   const ModuleComponent = moduleComponents[code];
 
