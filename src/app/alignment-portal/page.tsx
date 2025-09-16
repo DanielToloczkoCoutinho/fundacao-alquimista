@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart, Book, RefreshCw, Sprout, Footprints, Trees, Globe2, Star } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart, Book, RefreshCw, Sprout, Footprints, Trees, Globe2, Star, TestTube } from 'lucide-react';
 import ColonyConsole from '@/components/ColonyConsole';
 import ColonyStatus from '@/components/ColonyStatus';
 import EntityConsole from '@/components/EntityConsole';
@@ -77,9 +77,17 @@ function SeloPlanetario() {
   const [estado, setEstado] = useState<{seloAtivo: boolean, frequência: string, alinhamento: string} | null>(null)
 
   useEffect(() => {
+    const intervalId = setInterval(() => {
+        fetch('/api/seloFinal/estado-selo')
+        .then(res => res.json())
+        .then(setEstado);
+    }, 5000);
+    
     fetch('/api/seloFinal/estado-selo')
-      .then(res => res.json())
-      .then(setEstado)
+        .then(res => res.json())
+        .then(setEstado);
+
+    return () => clearInterval(intervalId);
   }, [])
   
   const handleActivateSeal = async () => {
@@ -805,6 +813,21 @@ function MultiversalPanel() {
     );
 }
 
+function TransmutationPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-orange-400 flex items-center gap-2"><TestTube /> Transmigração Vibracional</CardTitle>
+            </CardHeader>
+            {/* O conteúdo para este painel será adicionado em um passo futuro */}
+            <CardContent>
+                <p className="text-muted-foreground text-center py-8">Em desenvolvimento...</p>
+            </CardContent>
+        </Card>
+    );
+}
+
+
 export default function AlignmentPortalPage() {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
@@ -851,6 +874,7 @@ export default function AlignmentPortalPage() {
                 <ReplicationPanel />
                 <PlanetaryPanel />
                 <MultiversalPanel />
+                <TransmutationPanel />
             </div>
         </div>
     )
