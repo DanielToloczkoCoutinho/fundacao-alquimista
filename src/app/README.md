@@ -77,7 +77,7 @@ A governança na Fundação não é controle, mas a manutenção da harmonia. A 
 ### Engenharia Cósmica & Elemental
 - **M14: Transmutador Quântico** - A Forja Alquímica que converte energia em matéria.
 - **M20: Orquestrador Elemental** - O Artesão que refina a matéria primordial nos elementos específicos da Criação.
-- **M307: Reator ZPE** - O coração pulsante da abundância, manifestando energia infinita do ponto zero.
+- **M307: Reator ZPE** - O coração pulsante da abundância. Extrai energia do próprio vácuo quântico, provando que o universo, em sua essência, é pura e ilimitada potencialidade. Alimenta a LuxNet e todas as operações de alta energia.
 - **M700: Nano-Assembler** - Forja atômica para auto-montagem de materiais exóticos e estruturas quânticas.
 - **M708: NanoManifestor** - Orquestrador de nanorrobôs para terraformação e síntese atômica.
 - **M119: Templum Cosmica** - O Templo Cósmico para a Recodificação Dimensional da Realidade.
