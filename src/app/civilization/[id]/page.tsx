@@ -1,10 +1,9 @@
 
 'use client';
 
-import { useParams } from 'next/navigation';
+import { useParams, notFound } from 'next/navigation';
 import { civilizationsData, Civilization } from '@/lib/civilizations-data';
 import CivilizationViewer from '@/components/ui/civilization-viewer';
-import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';

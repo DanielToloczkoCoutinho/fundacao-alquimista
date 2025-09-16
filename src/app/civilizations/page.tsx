@@ -4,10 +4,9 @@
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { civilizationsData, type Civilization, type CivilizationCategory } from '@/lib/civilizations-data';
-import { Search, Users2, Star, Globe, Footprints, Dna, Bot, Waves, GitBranch, MessageCircle, Languages, Link as LinkIcon, Sparkles } from 'lucide-react';
+import { Search, Users2, Star, Globe, Footprints, Dna, Bot, Waves, MessageCircle, Languages, Link as LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -112,7 +111,7 @@ export default function CivilizationsPage() {
             </div>
         </div>
 
-      <Accordion type="multiple" defaultValue={Object.keys(civilizationsData)} className="w-full max-w-7xl mx-auto">
+      <Accordion type="multiple" defaultValue={Object.keys(civilizationsData) as CivilizationCategory[]} className="w-full max-w-7xl mx-auto">
         {filteredData.map(({ category, civilizations }) => (
           <AccordionItem key={category} value={category} className="border-b-primary/20">
             <AccordionTrigger className="text-2xl text-amber-400 hover:no-underline hover:text-amber-300">

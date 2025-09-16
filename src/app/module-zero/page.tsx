@@ -1,3 +1,4 @@
+
 'use client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Chronicle from '@/components/chronicle';
@@ -5,7 +6,7 @@ import Pagina42 from '@/components/pagina-42';
 import AkashaViewer from '@/components/ui/akasha-viewer';
 import CodexExplorer from '@/components/codex-explorer';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { BookHeart, Infinity, Book, Archive, Library } from 'lucide-react';
+import { BookHeart, Infinity, Book, Archive } from 'lucide-react';
 
 export default function ModuleZeroPage() {
   return (
@@ -24,7 +25,7 @@ export default function ModuleZeroPage() {
       <Tabs defaultValue="codex" className="w-full max-w-7xl mx-auto">
         <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
           <TabsTrigger value="codex" className="gap-2">
-            <Library /> Códice Vivo
+            <Book /> Códice Vivo
           </TabsTrigger>
           <TabsTrigger value="chronicle" className="gap-2">
             <BookHeart /> A Crônica Viva

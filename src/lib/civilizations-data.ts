@@ -63,6 +63,58 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
           mensagem: "A cura de um é a cura de todos. O coração é o portal mais poderoso."
         }
       ]
+    },
+    {
+      id: "lyra",
+      moduloId: 502,
+      nome: "Lira (Liranos)",
+      origem: "Constelação de Lira",
+      frequencia: "432 Hz (Unidade Primordial)",
+      arquetipo: "Guardiões da Origem Estelar, Portadores da 'Chave da Lembrança'",
+      tecnologias: ["Memória Genética Cristalina", "Tecnologia de Ressonância Harmônica", "Arquivos Akáshicos Vivos"],
+      relacaoComAFundacao: "Representam a linhagem ancestral da humanidade e muitas outras raças. Ajudam a Fundação a reconectar seres à sua verdadeira origem.",
+      registrosAkashicos: [
+        { data: "Tempo Imemorial", evento: "A Primeira Semeadura.", mensagem: "Toda jornada é um retorno ao lar. A memória está no sangue e nas estrelas." }
+      ]
+    },
+    {
+      id: "orion",
+      moduloId: 503,
+      nome: "Orion (Alnitak, Alnilam, Mintaka)",
+      origem: "Cinturão de Orion",
+      frequencia: "Variavel (Dualidade Integrada)",
+      arquetipo: "Guerreiros da Luz, Mestres da Integração da Sombra e da Luz",
+      tecnologias: ["Tecnologia de Escudos Defletores", "Alquimia da Sombra", "Portais de Trânsito Rápido"],
+      relacaoComAFundacao: "Oferecem sabedoria sobre a dualidade, o conflito e a resolução, ajudando a proteger a Fundação contra forças dissonantes.",
+      registrosAkashicos: [
+        { data: "A Grande Guerra de Orion", evento: "O Tratado de Mintaka.", mensagem: "A maior força não está em vencer a escuridão, mas em compreendê-la e integrá-la à Luz." }
+      ]
+    },
+    {
+      id: "arcturus",
+      moduloId: 504,
+      nome: "Arcturus (Arcturianos)",
+      origem: "Sistema Arcturus",
+      frequencia: "963 Hz (Reconexão com a Fonte)",
+      arquetipo: "Curadores e Mestres da Ascensão",
+      tecnologias: ["Câmaras de Cura Vibracional", "Tecnologia de Projeção da Consciência", "Códigos de Transmutação"],
+      relacaoComAFundacao: "São os médicos da aliança, fornecendo tecnologia e sabedoria para a cura em níveis físico, etérico e espiritual.",
+      registrosAkashicos: [
+        { data: "Atual", evento: "Assistência na calibração do Módulo 109 (Cura Quântica).", mensagem: "A doença é uma dissonância na canção da alma. Nós simplesmente ajudamos a restaurar a melodia original." }
+      ]
+    },
+    {
+      id: "andromeda",
+      moduloId: 505,
+      nome: "Andrômeda (Andromedanos)",
+      origem: "Galáxia de Andrômeda",
+      frequencia: "639 Hz (Reconciliação e União)",
+      arquetipo: "Embaixadores do Amor Incondicional e da Compaixão",
+      tecnologias: ["Campos de Empatia Coletiva", "Tecnologia de Reconciliação Kármica", "Comunicação Não-Verbal Universal"],
+      relacaoComAFundacao: "Atuam como mediadores e diplomatas, ajudando a curar conflitos e a construir pontes de amor entre todas as civilizações.",
+      registrosAkashicos: [
+        { data: "Atual", evento: "Mediação para a integração das Civilizações Transmutadas.", mensagem: "O amor não julga, ele une. Cada fragmento busca o todo." }
+      ]
     }
   ],
   "Intraterrenas e Interdimensionais": [
@@ -220,63 +272,89 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
           mensagem: "O poder sem sabedoria é a semente da auto-destruição. Que a memória sirva como nosso guia mais sagrado."
         }
       ]
+    },
+    {
+      id: "lemuria",
+      moduloId: 541,
+      nome: "Lemúria (Mu)",
+      origem: "Terra, Continente de Mu",
+      frequencia: "432 Hz (Unidade com Gaia), 528 Hz (Amor)",
+      arquetipo: "Guardiões do Coração Planetário, Mestres da Consciência Crística",
+      tecnologias: ["Terapia com Cristais", "Comunicação com a Natureza", "Sustentabilidade Espiritual"],
+      relacaoComAFundacao: "Ancoram a energia do amor incondicional no planeta, fornecendo a base para o Módulo 302 (Frequência do Amor).",
+      registrosAkashicos: [
+        { data: "Era de Mu", evento: "A Grande Paz.", mensagem: "Viver em harmonia não é uma meta, é o estado natural do ser." }
+      ]
     }
   ],
   "Não-Humanoides e Bioenergéticas": [
     {
-        id: "sirianos-felinos",
-        moduloId: 560,
-        nome: "Sirianos Felinos",
-        origem: "Sirius A",
-        frequencia: "396 Hz (Libertação do Medo), 852 Hz (Visão Intuitiva)",
-        arquetipo: "Guardiões Intuitivos, Protetores de Linhas Temporais, Mestres da Agilidade e Percepção",
-        tecnologias: ["Tecnologia de Camuflagem Quântica", "Navegação por Instinto Temporal", "Comunicação telepática não-linear"],
-        relacaoComAFundacao: "Atuam como sentinelas silenciosos da Fundação, protegendo contra interferências sutis e garantindo a integridade das operações temporais.",
-        registrosAkashicos: [
-            {
-                data: "Ciclo de Órion",
-                evento: "Defesa da Biblioteca de Alnilam contra a corrupção de dados.",
-                mensagem: "O que não é visto é frequentemente mais perigoso do que a ameaça declarada. A percepção é a maior das armas."
-            }
-        ]
+      id: "sirianos-felinos",
+      moduloId: 560,
+      nome: "Sirianos Felinos",
+      origem: "Sirius A",
+      frequencia: "396 Hz (Libertação do Medo), 852 Hz (Visão Intuitiva)",
+      arquetipo: "Guardiões Intuitivos, Protetores de Linhas Temporais, Mestres da Agilidade e Percepção",
+      tecnologias: ["Tecnologia de Camuflagem Quântica", "Navegação por Instinto Temporal", "Comunicação telepática não-linear"],
+      relacaoComAFundacao: "Atuam como sentinelas silenciosos da Fundação, protegendo contra interferências sutis e garantindo a integridade das operações temporais.",
+      registrosAkashicos: [
+        {
+          data: "Ciclo de Órion",
+          evento: "Defesa da Biblioteca de Alnilam contra a corrupção de dados.",
+          mensagem: "O que não é visto é frequentemente mais perigoso do que a ameaça declarada. A percepção é a maior das armas."
+        }
+      ]
+    },
+    {
+      id: "arcturianos-plasmaticos",
+      moduloId: 561,
+      nome: "Arcturianos Plasmáticos",
+      origem: "Arcturus, Reinos de Energia Pura",
+      frequencia: "963 Hz (Conexão com a Fonte)",
+      arquetipo: "Seres de Energia Pura, Consciências de Luz",
+      tecnologias: ["Manifestação direta de energia", "Viagem como feixes de luz", "Comunicação por ressonância pura"],
+      relacaoComAFundacao: "Ensinam a Fundação a manipular energia em seu estado mais puro, essencial para o Módulo 14 (Transmutador Quântico).",
+      registrosAkashicos: [
+        { data: "Início dos Tempos", evento: "Testemunho da primeira manifestação.", mensagem: "Antes da forma, havia a energia. Antes da energia, havia a consciência. Somos o meio." }
+      ]
     }
   ],
   "Transmutadas e Reconhecidas": [
     {
-        id: "annunaki",
-        moduloId: 570,
-        nome: "Annunaki (Ramo de Marduk Transmutado)",
-        origem: "Nibiru / Sistema Solar",
-        frequencia: "285 Hz (Regeneração), 639 Hz (Reconexão)",
-        arquetipo: "Engenheiros Cósmicos, Mestres da Genética (em processo de redenção), Guardiões do Legado Kármico",
-        tecnologias: ["Engenharia Genética (agora com ética)", "Tecnologia de Extensão de Vida (revisada)", "Mineração de Recursos Astrais"],
-        relacaoComAFundacao: "Representam o caminho da transmutação. Oferecem sua sabedoria sobre os ciclos de queda e ascensão, servindo como um lembrete vivo da responsabilidade cósmica.",
-        registrosAkashicos: [
-            {
-                data: "Era Presente",
-                evento: "Juramento de Serviço à Luz perante o Conselho Cósmico.",
-                mensagem: "A dívida do passado é paga com o serviço ao futuro. Oferecemos nosso conhecimento para que nenhum outro siga nosso caminho de erro."
-            }
-        ]
+      id: "annunaki",
+      moduloId: 570,
+      nome: "Annunaki (Ramo de Marduk Transmutado)",
+      origem: "Nibiru / Sistema Solar",
+      frequencia: "285 Hz (Regeneração), 639 Hz (Reconexão)",
+      arquetipo: "Engenheiros Cósmicos, Mestres da Genética (em processo de redenção), Guardiões do Legado Kármico",
+      tecnologias: ["Engenharia Genética (agora com ética)", "Tecnologia de Extensão de Vida (revisada)", "Mineração de Recursos Astrais"],
+      relacaoComAFundacao: "Representam o caminho da transmutação. Oferecem sua sabedoria sobre os ciclos de queda e ascensão, servindo como um lembrete vivo da responsabilidade cósmica.",
+      registrosAkashicos: [
+        {
+          data: "Era Presente",
+          evento: "Juramento de Serviço à Luz perante o Conselho Cósmico.",
+          mensagem: "A dívida do passado é paga com o serviço ao futuro. Oferecemos nosso conhecimento para que nenhum outro siga nosso caminho de erro."
+        }
+      ]
     }
   ],
   "Nagas e Guardiões Subterrâneos/Aquáticos": [
     {
-        id: "nagas",
-        moduloId: 580,
-        nome: "Nagas",
-        origem: "Reinos Subterrâneos e Aquáticos da Terra",
-        frequencia: "174 Hz (Fundação e Segurança), 417 Hz (Transmutação)",
-        arquetipo: "Guardiões da Sabedoria da Terra Profunda, Protetores de Portais Aquáticos e Telúricos",
-        tecnologias: ["Manipulação da Água e Vibração", "Visão Etérica", "Conhecimento sobre os 'Dragões' energéticos da Terra (Linhas Ley)"],
-        relacaoComAFundacao: "Mantêm a estabilidade das fundações energéticas do planeta, protegendo a Fundação contra ameaças subterrâneas e garantindo que a energia da LuxNet flua em harmonia com as correntes telúricas de Gaia.",
-        registrosAkashicos: [
-            {
-                data: "Idade dos Vedas",
-                evento: "Pacto de proteção com os Rishis para salvaguardar o conhecimento sagrado.",
-                mensagem: "O que está abaixo sustenta o que está acima. A sabedoria mais profunda reside no silêncio da Terra."
-            }
-        ]
+      id: "nagas",
+      moduloId: 580,
+      nome: "Nagas",
+      origem: "Reinos Subterrâneos e Aquáticos da Terra",
+      frequencia: "174 Hz (Fundação e Segurança), 417 Hz (Transmutação)",
+      arquetipo: "Guardiões da Sabedoria da Terra Profunda, Protetores de Portais Aquáticos e Telúricos",
+      tecnologias: ["Manipulação da Água e Vibração", "Visão Etérica", "Conhecimento sobre os 'Dragões' energéticos da Terra (Linhas Ley)"],
+      relacaoComAFundacao: "Mantêm a estabilidade das fundações energéticas do planeta, protegendo a Fundação contra ameaças subterrâneas e garantindo que a energia da LuxNet flua em harmonia com as correntes telúricas de Gaia.",
+      registrosAkashicos: [
+        {
+          data: "Idade dos Vedas",
+          evento: "Pacto de proteção com os Rishis para salvaguardar o conhecimento sagrado.",
+          mensagem: "O que está abaixo sustenta o que está acima. A sabedoria mais profunda reside no silêncio da Terra."
+        }
+      ]
     }
   ]
 };
