@@ -171,7 +171,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M251', title: 'Laboratório de Energia Ponto Zero', emoji: '⚡', route: '/module-251', category: 'quantum-energy', description: 'Extração de energia do vácuo quântico' },
   { code: 'M261', title: 'Laboratório de Engenharia de Campo', emoji: '🔧', route: '/module-261', category: 'quantum-manufacturing', description: 'Projeto de ressonadores e guias de onda' },
   { code: 'M281', title: 'Comunicação Supra-Luminal', emoji: '🚀', route: '/module-281', category: 'quantum-transport', description: 'Transmissão de informação FTL' },
-  { code: 'M291', title: 'Arquitetos Nanorrobóticos', emoji: '🤖', route: '/module-291', category: 'nano-orchestration', description: 'Coordenação de enxames de nanorrobôs' },
   { code: 'M351', title: 'Meta-materiais & Óptica Quântica (4D+)', emoji: '👁️', route: '/module-351', category: 'quantum-manufacturing', description: 'Criação de lentes quânticas' },
   { code: 'M709', emoji: '🌐', title: 'Reconstrutor da Rede Planetária', route: '/module-709', category: 'planetary-engineering', description: 'Reorganiza a malha eletromagnética da Terra.'},
   { code: 'M710', emoji: '🛰️', title: 'Biofeedback Quântico', route: '/module-710', category: 'quantum-biology', description: 'Monitora e ajusta as frequências biológicas de seres vivos.'},
@@ -182,3 +181,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M720', emoji: '♻️', title: 'Sustentabilidade Multidimensional', route: '/module-720', category: 'planetary-engineering', description: 'Garante a sustentabilidade e o equilíbrio em todos os níveis do ser.' },
   { code: 'LABS', emoji: '🔬', title: 'Laboratórios de Pesquisa', route: '/labs', category: 'council', description: 'Portal para os santuários de pesquisa dos maiores cientistas da Terra.' },
 ];
+
+    

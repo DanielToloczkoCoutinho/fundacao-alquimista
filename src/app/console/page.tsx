@@ -6,7 +6,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe, Bot } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 
@@ -96,6 +96,9 @@ export default function ConsolePage() {
                </Button>
                  <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-29"><BrainCircuit className="mr-2 h-4 w-4" />Módulo 29 (Zennith)</Link>
+               </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-291"><Bot className="mr-2 h-4 w-4" />Módulo 291 (Arquitetos)</Link>
                </Button>
                 <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-40"><Dna className="mr-2 h-4 w-4" />Módulo 40 (Códice Genético)</Link>
@@ -317,3 +320,5 @@ export default function ConsolePage() {
     </div>
   );
 }
+
+    
