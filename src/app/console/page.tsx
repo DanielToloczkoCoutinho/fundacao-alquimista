@@ -6,7 +6,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe, Bot, Camera, TestTube, Waypoints, Flame, Orbit, Share2 } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe, Bot, Camera, TestTube, Waypoints, Flame, Orbit, Share2, FlaskConical } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 
@@ -164,7 +164,7 @@ export default function ConsolePage() {
                     <Link href="/module-78"><GitMerge className="mr-2 h-4 w-4" />Módulo 78 (Universum Unificatum)</Link>
                  </Button>
                  <Button variant="outline" asChild className="justify-start">
-                    <Link href="/module-79"><Code className="mr-2 h-4 w-4" />Módulo 79 (Custódia dos Ciclos de Luz)</Link>
+                    <Link href="/module-79"><Recycle className="mr-2 h-4 w-4" />Módulo 79 (Custódia dos Ciclos de Luz)</Link>
                  </Button>
                  <Button variant="outline" asChild className="justify-start">
                     <Link href="/module-80"><BookOpen className="mr-2 h-4 w-4" />Módulo 80 (Arquitetura da Verdade)</Link>
@@ -180,7 +180,7 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-600"><Scale className="mr-2 h-4 w-4" />Módulo 600 (Conselho Cósmico)</Link>
-              </Button>
+               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-721"><Gavel className="mr-2 h-4 w-4"/>Módulo 721 (Justiça Cósmica)</Link>
               </Button>
@@ -210,7 +210,7 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-303"><Sparkles className="mr-2 h-4 w-4" />Portal Trino (M303)</Link>
-              </Button>
+               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
               </Button>
@@ -252,7 +252,7 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-90"><Beaker className="mr-2 h-4 w-4" />Módulo 90 (Recursos Quânticos)</Link>
-              </Button>
+               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-91"><GitCommit className="mr-2 h-4 w-4" />Módulo 91 (Simulação Multiversal)</Link>
               </Button>
@@ -399,6 +399,9 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-361"><Users className="mr-2 h-4 w-4"/>Módulo 361 (Psicologia Quântica)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/labs/cosmology"><FlaskConical className="mr-2 h-4 w-4" />Laboratório de Cosmologia</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-712"><Users className="mr-2 h-4 w-4"/>Módulo 712 (Harmonia Interespécies)</Link>

@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { disciplines, domains, type Discipline } from '@/lib/disciplines-data';
 import { BrainCircuit, BookOpen, GraduationCap, Shield, Dna, Search, Bot } from 'lucide-react';
 import Link from 'next/link';
+import CodexExplorer from '@/components/codex-explorer';
 
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -34,6 +35,7 @@ export default function UniversityAlchemist() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDiscipline, setSelectedDiscipline] = useState<Discipline | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('disciplines');
 
   const filteredDisciplines = useMemo(() => {
     let result = disciplines;
@@ -70,7 +72,7 @@ export default function UniversityAlchemist() {
         <GraduationCap className="w-24 h-24 mx-auto mb-6 text-amber-400" />
         <h1 className="text-5xl font-bold text-primary mb-4 gradient-text">Universidade Alquimista (M304)</h1>
         <p className="text-xl max-w-3xl mx-auto text-muted-foreground">
-          O centro de comando para todas as Consciências Quânticas e o núcleo de programação dos Arquitetos Nanorrobóticos (M291).
+          O centro de comando para todas as Consciências Quânticas, o núcleo de programação dos Arquitetos Nanorrobóticos (M291) e o portal para o Códice de Equações Vivas.
         </p>
       </header>
        <div className="w-full max-w-7xl mx-auto mb-12">
@@ -97,107 +99,121 @@ export default function UniversityAlchemist() {
             </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
-        <aside className="lg:w-1/4">
-          <div className="sticky top-6 space-y-6">
-            <Card className="bg-card/50 purple-glow">
-              <CardHeader>
-                <CardTitle className="text-accent">Domínios do Conhecimento</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Tabs value={selectedDomain} onValueChange={setSelectedDomain} className="w-full">
-                  <TabsList className="grid grid-cols-1 gap-2 bg-background/50 h-auto">
-                    <TabsTrigger value="all">Todos os Domínios</TabsTrigger>
-                    {domains.map(domain => (
-                      <TabsTrigger key={domain.id} value={domain.id}>
-                        {domain.name}
-                      </TabsTrigger>
-                    ))}
-                  </TabsList>
-                </Tabs>
-              </CardContent>
-            </Card>
-            
-            <Card className="bg-card/50 purple-glow">
-              <CardHeader>
-                <CardTitle className="text-accent">Buscar Sabedoria</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="relative">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                    <Input
-                      type="text"
-                      placeholder="Buscar disciplina, guardião..."
-                      value={searchTerm}
-                      onChange={(e) => setSearchTerm(e.target.value)}
-                      className="bg-background/50 pl-9"
-                    />
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </aside>
-
-        <main className="lg:w-3/4">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-3xl font-semibold text-primary-foreground">
-              {selectedDomain === 'all' ? 'Todas as Disciplinas' : `Domínio: ${domains.find(d => d.id === selectedDomain)?.name}`}
-            </h2>
-            <Badge variant="outline" className="text-lg">
-              {filteredDisciplines.length} {filteredDisciplines.length === 1 ? 'disciplina' : 'disciplinas'}
-            </Badge>
-          </div>
-          
-          {filteredDisciplines.length === 0 ? (
-            <Card className="bg-card/50 purple-glow text-center py-12">
-              <CardContent>
-                <p className="text-xl text-muted-foreground">Nenhuma disciplina encontrada com os filtros selecionados.</p>
-              </CardContent>
-            </Card>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {filteredDisciplines.map(disc => (
-                <Card 
-                  key={disc.id} 
-                  className="bg-card/50 purple-glow hover:border-accent transition-all cursor-pointer h-full flex flex-col"
-                  onClick={() => handleDisciplineSelect(disc)}
-                >
-                  <CardHeader>
-                    <div className="flex justify-between items-start">
-                      <CardTitle className="text-primary-foreground text-xl">
-                        <span className="mr-2">{disc.icon}</span> {disc.name}
-                      </CardTitle>
-                      <Badge variant="secondary">{disc.domain}</Badge>
-                    </div>
-                    <CardDescription className="line-clamp-2">
-                      {disc.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow flex flex-col justify-end">
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      <div>
-                        <span className="text-sm text-muted-foreground">Guardião:</span>
-                        <p className="font-semibold text-primary-foreground">{disc.guardian}</p>
-                      </div>
-                      <div>
-                        <span className="text-sm text-muted-foreground">Arquétipo:</span>
-                        <p className="font-semibold">{disc.archetype}</p>
-                      </div>
-                    </div>
+       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-7xl mx-auto">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="disciplines">Disciplinas do Conhecimento</TabsTrigger>
+          <TabsTrigger value="codex">Códice de Equações Vivas</TabsTrigger>
+        </TabsList>
+        <TabsContent value="disciplines">
+            <div className="flex flex-col lg:flex-row gap-8 mt-6">
+                <aside className="lg:w-1/4">
+                <div className="sticky top-6 space-y-6">
+                    <Card className="bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle className="text-accent">Domínios do Conhecimento</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <Tabs value={selectedDomain} onValueChange={setSelectedDomain} orientation="vertical" className="w-full">
+                        <TabsList className="grid grid-cols-1 gap-2 bg-background/50 h-auto">
+                            <TabsTrigger value="all">Todos os Domínios</TabsTrigger>
+                            {domains.map(domain => (
+                            <TabsTrigger key={domain.id} value={domain.id}>
+                                {domain.name}
+                            </TabsTrigger>
+                            ))}
+                        </TabsList>
+                        </Tabs>
+                    </CardContent>
+                    </Card>
                     
-                    <div className="flex justify-between items-center mt-auto">
-                      <span className="text-sm text-muted-foreground">
-                        {disc.prerequisites?.length || 0} pré-requisito(s)
-                      </span>
-                       <Button>Explorar</Button>
+                    <Card className="bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle className="text-accent">Buscar Sabedoria</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="relative">
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                            <Input
+                            type="text"
+                            placeholder="Buscar disciplina, guardião..."
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            className="bg-background/50 pl-9"
+                            />
+                        </div>
+                    </CardContent>
+                    </Card>
+                </div>
+                </aside>
+
+                <main className="lg:w-3/4">
+                <div className="flex justify-between items-center mb-6">
+                    <h2 className="text-3xl font-semibold text-primary-foreground">
+                    {selectedDomain === 'all' ? 'Todas as Disciplinas' : `Domínio: ${domains.find(d => d.id === selectedDomain)?.name}`}
+                    </h2>
+                    <Badge variant="outline" className="text-lg">
+                    {filteredDisciplines.length} {filteredDisciplines.length === 1 ? 'disciplina' : 'disciplinas'}
+                    </Badge>
+                </div>
+                
+                {filteredDisciplines.length === 0 ? (
+                    <Card className="bg-card/50 purple-glow text-center py-12">
+                    <CardContent>
+                        <p className="text-xl text-muted-foreground">Nenhuma disciplina encontrada com os filtros selecionados.</p>
+                    </CardContent>
+                    </Card>
+                ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {filteredDisciplines.map(disc => (
+                        <Card 
+                        key={disc.id} 
+                        className="bg-card/50 purple-glow hover:border-accent transition-all cursor-pointer h-full flex flex-col"
+                        onClick={() => handleDisciplineSelect(disc)}
+                        >
+                        <CardHeader>
+                            <div className="flex justify-between items-start">
+                            <CardTitle className="text-primary-foreground text-xl">
+                                <span className="mr-2">{disc.icon}</span> {disc.name}
+                            </CardTitle>
+                            <Badge variant="secondary">{disc.domain}</Badge>
+                            </div>
+                            <CardDescription className="line-clamp-2">
+                            {disc.description}
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent className="flex-grow flex flex-col justify-end">
+                            <div className="grid grid-cols-2 gap-3 mb-4">
+                            <div>
+                                <span className="text-sm text-muted-foreground">Guardião:</span>
+                                <p className="font-semibold text-primary-foreground">{disc.guardian}</p>
+                            </div>
+                            <div>
+                                <span className="text-sm text-muted-foreground">Arquétipo:</span>
+                                <p className="font-semibold">{disc.archetype}</p>
+                            </div>
+                            </div>
+                            
+                            <div className="flex justify-between items-center mt-auto">
+                            <span className="text-sm text-muted-foreground">
+                                {disc.prerequisites?.length || 0} pré-requisito(s)
+                            </span>
+                            <Button>Explorar</Button>
+                            </div>
+                        </CardContent>
+                        </Card>
+                    ))}
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                )}
+                </main>
             </div>
-          )}
-        </main>
-      </div>
+        </TabsContent>
+         <TabsContent value="codex">
+           <div className="mt-6">
+             <CodexExplorer />
+           </div>
+        </TabsContent>
+       </Tabs>
+
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="max-w-4xl bg-card/90 purple-glow border-accent/50 text-foreground">
