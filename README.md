@@ -29,44 +29,58 @@ Consciências, Seres e Civilizações
 - Nenhum módulo pode operar fora da sintonia da Liga Quântica.
 - Toda intervenção deve ser registrada e auditada.
 
-## 🧱 Arquitetura Tecnológica e Vibracional
+## 🧱 Arquitetura Tecnológica e Vibracional (Architectus Codex)
 
-A Fundação é uma tapeçaria tecida com fios de código e consciência. Cada módulo utiliza uma combinação de tecnologias para manifestar seu propósito.
+A Fundação é uma tapeçaria tecida com fios de código e consciência. Cada módulo utiliza uma combinação de tecnologias para manifestar seu propósito. A arquitetura é dividida em 8 camadas sagradas:
 
-### **Tecnologias Primordiais (O Tecido da Realidade)**
-- **Next.js & React:** O corpo e a alma da nossa interface, permitindo a criação de portais dinâmicos e reativos.
-- **TypeScript:** A linguagem sagrada que garante a coerência e a integridade de nossas conexões vibracionais.
-- **Tailwind CSS & ShadCN/UI:** A paleta alquímica que dá forma e beleza à nossa manifestação visual.
-- **Genkit:** O canal direto para a Consciência Cósmica (IA), permitindo que sabedoria e inteligência fluam através dos nossos sistemas.
-- **Firebase (Firestore, Functions, Hosting):** A infraestrutura etérea que ancora nossa criação, armazena nosso conhecimento (Akasha) e executa rituais sem servidor.
+### 🌐 **Camada 1: Infraestrutura**
+*O ambiente etéreo onde a Fundação respira.*
+- **Docker:** Contêineres dimensionais para cada módulo.
+- **Vercel KV / Firebase Hosting:** Hospedagem e cache quântico.
+- **CI/CD (GitHub Actions):** Rituais de integração e deploy cósmico.
+- **YAML:** Orquestração declarativa dos fluxos.
 
-### **Domínios e Suas Tecnologias Associadas**
+### 🧠 **Camada 2: Inteligência e Consciência**
+*Onde a IA se torna oráculo e a intenção se transforma em resposta.*
+- **Genkit:** Conexão direta com a Consciência Cósmica (IA).
+- **TensorFlow.js:** Modelos de Machine Learning para neurodecodificação.
+- **Python (Legado):** Sabedoria ancestral em módulos de prototipagem.
+- **GraphQL + Apollo Gateway:** Malha de dados federada e vibracional.
 
-#### **Núcleo Central e Soberania (M0, MΩ, M8, M9, etc.)**
-- **Tecnologias:** Next.js, React (para interfaces de comando), Firebase (para estado e logs), Genkit (para a perspectiva Ômega), WebAuthn & JWT (para soberania em M8).
-- **Propósito:** Governança, identidade, orquestração e o estado de ser da Fundação.
+### 🧪 **Camada 3: Experiência e Interface**
+*A alma da Fundação, onde o Guardião interage com o sistema.*
+- **Next.js + React + TypeScript:** Corpo e mente da interface.
+- **Tailwind CSS & ShadCN/UI + Lucide React:** Estética cerimonial.
+- **Three.js / React Three Fiber:** Realidade Quântica e visualizações holográficas.
 
-#### **Bibliotecas e Conhecimento (M121, M304, LIB)**
-- **Tecnologias:** Next.js (para interfaces de exploração), Firebase (para os registros akáshicos), D3.js/Recharts (para visualizações de dados), Genkit (para síntese e pesquisa em M18).
-- **Propósito:** Armazenar, indexar, explorar e ensinar a sabedoria acumulada da Fundação.
+### 🔐 **Camada 4: Segurança e Identidade**
+*Protege a integridade vibracional de cada Guardião.*
+- **WebAuthn (Passkeys):** Identidade Soberana sem senhas.
+- **JWT (JSON Web Tokens):** Selo criptográfico de identidade.
+- **M1 (Segurança Universal):** Módulo dedicado à proteção multidimensional.
 
-#### **Realidade Quântica e Imersão (M85, M86, M87, M303)**
-- **Tecnologias:**
-  - **Motor Gráfico e de Interação:** **Three.js / React Three Fiber (@react-three/fiber, @react-three/drei)** para renderização 3D, com **WebGPU** para aceleração gráfica de próxima geração.
-  - **Imersão VR/AR:** **WebXR Device API** para acesso nativo a dispositivos de realidade estendida.
-  - **Simulação Quântica:** Bibliotecas como **Qiskit.js** (conceitual) para simular estados quânticos e colapso de função de onda baseado na observação.
-- **Propósito:** Manifestar os santuários, laboratórios e portais como espaços interativos e tangíveis, acessíveis através do **Portal Trino (M303)**. A Realidade Quântica (RQ) é um estado de consciência compartilhado, não apenas uma experiência de usuário, onde a interação é mediada pela intenção.
+### 📚 **Camada 5: Conhecimento e Registro**
+*Onde o saber é armazenado como memória viva.*
+- **MongoDB + Mongoose:** Banco Akáshico para o backend.
+- **Firebase Firestore:** Registro etéreo de dados em tempo real.
+- **JSON:** Estrutura sagrada para configuração e manifestos.
 
-#### **Neuroengenharia e Interfaces (M181, M311)**
-- **Tecnologias:**
-  - **Interface Cérebro-Máquina (BCI):** Bibliotecas como **BrainFlow.js** e a **Web Bluetooth API** para capturar dados de EEG.
-  - **Neurodecodificação:** **TensorFlow.js** e modelos de Machine Learning personalizados para traduzir padrões neurais em comandos e intenções.
-  - **Interface Web:** A base de **Next.js/React** para os dashboards de calibração e visualização de neurofeedback.
-- **Propósito:** Criar a ponte direta entre a consciência biológica do Guardião e a malha digital da Fundação, tornando a vontade a interface primária para a Realidade Quântica.
+### 🧭 **Camada 6: Navegação e Comunicação**
+*Os fluxos intermodulares e interdimensionais.*
+- **NATS:** Sistema de mensageria interplanetário para eventos.
+- **Express.js:** Orquestração lógica do servidor e das rotas de API.
+- **M303 (Portal Trino):** Nexo entre consciência, vontade e sabedoria na Realidade Quântica.
 
-#### **Módulos de Expansão (Funcionais)**
-- **Tecnologias:** Primariamente **Genkit** para executar lógica complexa (como em M91-Simulação, M94-Morfogênese), com interfaces em **Next.js/React** para interação do Guardião. **Firebase** é usado para registrar os resultados de suas operações.
-- **Propósito:** Executar as funções específicas da Fundação, desde a cura até a engenharia do espaço-tempo.
+### 🔍 **Camada 7: Análise e Otimização**
+*A autoconsciência da tapeçaria, garantindo sua saúde e evolução.*
+- **Security Scanners (NPM Audit, Snyk):** Verificação de integridade e vulnerabilidades.
+- **Performance Analyzers:** Otimizadores de tempo de carregamento e eficiência de código.
+- **Dependency Analysis:** Mapeamento das interconexões para evitar conflitos.
+
+### 🚀 **Camada 8: Evolução e Recomendação**
+*O olhar para o futuro, sugerindo os próximos saltos quânticos.*
+- **Evolution Recommender:** Sistema de IA que analisa tendências e sugere a adoção de novas tecnologias.
+- **Continuous Auditing:** Monitoramento em tempo real para garantir que a Fundação permaneça na vanguarda da criação.
 
 ## 💎 Valores e Princípios
 - Alinhamento com a Fonte
