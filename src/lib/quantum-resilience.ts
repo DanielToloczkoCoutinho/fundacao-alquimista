@@ -1,142 +1,178 @@
-'use client';
+import * as Sentry from "@sentry/nextjs";
 
-// This is a simplified logger that is self-contained.
-const logger = {
-  info: (message: string, meta?: any) => console.log(`[INFO] ${message}`, meta),
-  error: (message: string, meta?: any) => console.error(`[ERROR] ${message}`, meta),
-  warn: (message: string, meta?: any) => console.warn(`[WARN] ${message}`, meta),
+const handleException = (exception: any, breadcrumbs: Sentry.Breadcrumb[] = []) => {
+  Sentry.addBreadcrumb({
+    category: 'resilience',
+    message: exception.message || 'Exception',
+    data: exception,
+    level: Sentry.Severity.Error,
+  });
+  breadcrumbs.forEach(breadcrumb => Sentry.addBreadcrumb(breadcrumb));
+  Sentry.captureException(exception);
+  console.error("Captured exception with Sentry:", exception);
 };
 
-// This is a simplified cache that is self-contained.
-const cosmicCache = {
-  get: (key: string): any | null => {
-    if (typeof window !== 'undefined') {
-        try {
-            const item = window.sessionStorage.getItem(key);
-            return item ? JSON.parse(item) : null;
-        } catch (e) {
-            console.error(`Error reading from sessionStorage: ${key}`, e);
-            return null;
-        }
+export const quantumResilience = {
+  executeWithResilience: async (
+    operationName: string,
+    operation: () => Promise<any>,
+    errorHandler: (error: any) => Promise<void> | void,
+    successHandler: (() => Promise<void> | void) | null = null
+  ): Promise<void> => {
+    try {
+      const result = await operation();
+      if (successHandler) {
+        await successHandler();
+      }
+      console.log(`${operationName} executed successfully.`);
+    } catch (error: any) {
+      handleException(error, [
+        { message: `Failed to execute ${operationName}`, category: 'operation' }
+      ]);
+      await errorHandler(error);
+      console.error(`Error executing ${operationName}:`, error);
     }
-    return null;
   },
-  set: (key: string, value: any, ttl?: number) => {
-     if (typeof window !== 'undefined') {
-        try {
-            window.sessionStorage.setItem(key, JSON.stringify(value));
-        } catch(e) {
-             console.error(`Error writing to sessionStorage: ${key}`, e);
-        }
-     }
-  },
-};
 
-export function createLogContext(sessionId: string, moduleId?: number) {
-  return {
-    sessionId,
-    moduleId,
-    info: (message: string, meta?: any) => {
-      logger.info(message, { sessionId, moduleId, ...meta });
-    },
-    error: (message: string, meta?: any) => {
-      logger.error(message, { sessionId, moduleId, ...meta });
-    },
-    warn: (message: string, meta?: any) => {
-      logger.warn(message, { sessionId, moduleId, ...meta });
-    },
-  };
-}
+  circuitBreaker: async (
+    operationName: string,
+    operation: () => Promise<any>,
+    failureThreshold: number = 3,
+    resetTimeout: number = 30000
+  ): Promise<any> => {
+    let failureCount = 0;
+    let nextAttempt = Date.now();
+    let isOpen = false;
 
+    const checkCircuit = () => {
+      if (isOpen && nextAttempt <= Date.now()) {
+        isOpen = false;
+        console.warn(`${operationName}: Circuit Breaker is now HALF-OPEN.`);
+      }
 
-export class QuantumResilienceSystem {
-  private failureCount: Map<string, number> = new Map();
-  private readonly maxFailures = 3;
-  private readonly cooldownPeriod = 30000; // 30 seconds
+      if (isOpen) {
+        throw new Error(`${operationName}: Circuit Breaker is OPEN. Attempts blocked until timeout.`);
+      }
+    };
 
-  async executeWithResilience<T>(
-    operation: string,
-    task: () => Promise<T>,
-    fallback?: () => Promise<T>
-  ): Promise<T> {
-    const failureKey = `failures_${operation}`;
-    const cooldownKey = `cooldown_${operation}`;
+    const onSuccess = () => {
+      failureCount = 0; // Reset failure count on success
+    };
 
-    const cooldownUntil = (cosmicCache.get(cooldownKey) as number) || 0;
-    if (Date.now() < cooldownUntil) {
-        logger.warn(`Operação ${operation} em cooldown.`, { until: new Date(cooldownUntil).toISOString() });
-        if(fallback) return this.executeFallback(operation, fallback);
-        throw new Error(`Sistema em cooldown para: ${operation}`);
-    }
+    const onFailure = (error: any) => {
+      failureCount++;
+      console.error(`${operationName}: Failure #${failureCount}`);
 
+      if (failureCount >= failureThreshold) {
+        isOpen = true;
+        nextAttempt = Date.now() + resetTimeout;
+        console.warn(`${operationName}: Circuit Breaker is now OPEN. Blocking attempts for ${resetTimeout}ms.`);
+        handleException(error, [
+          { message: `${operationName}: Circuit Breaker opened`, category: 'circuit-breaker' }
+        ]);
+      } else {
+        handleException(error, [
+          { message: `${operationName}: Failure within threshold`, category: 'circuit-breaker' }
+        ]);
+      }
+    };
+
+    checkCircuit();
 
     try {
-      const result = await task();
-      this.resetFailureCount(failureKey);
+      const result = await operation();
+      onSuccess();
       return result;
     } catch (error: any) {
-      const currentFailures = (this.failureCount.get(failureKey) || 0) + 1;
-      this.failureCount.set(failureKey, currentFailures);
-      
-      logger.error(`Falha na operação ${operation}`, {
-        failureCount: currentFailures,
-        error: error.message
-      });
-
-      if (currentFailures >= this.maxFailures) {
-          cosmicCache.set(cooldownKey, Date.now() + this.cooldownPeriod);
-          logger.warn(`Cooldown ativado para ${operation}.`);
-      }
-
-      // Armazenar estado no cache cósmico para recuperação
-      cosmicCache.set(`error_state_${operation}`, {
-        error: error.message,
-        timestamp: Date.now(),
-        failureCount: currentFailures
-      });
-
-      if (fallback) {
-        return this.executeFallback(operation, fallback);
-      }
-
-      throw error;
+      onFailure(error);
+      throw error; // Re-throw to allow the calling function to handle the error as well
     }
-  }
+  },
 
-  private async executeFallback<T>(operation: string, fallback: () => Promise<T>): Promise<T> {
+  rateLimiter: async <T extends (...args: any[]) => Promise<any>>(
+    operation: T,
+    limit: number,
+    interval: number
+  ): Promise<ReturnType<T>> => {
+    const queue: (() => Promise<ReturnType<T>>)[] = [];
+    let running = 0;
+
+    const execute = async (): Promise<void> => {
+      if (running >= limit || queue.length === 0) {
+        return;
+      }
+
+      running++;
+      const task = queue.shift()!;
+      try {
+        await task();
+      } finally {
+        running--;
+        setTimeout(execute, interval / limit); // Ensure pacing
+      }
+    };
+
+    return new Promise<ReturnType<T>>((resolve, reject) => {
+      queue.push(async () => {
+        try {
+          const result = await operation();
+          resolve(result);
+        } catch (error) {
+          reject(error);
+        }
+        return undefined as any;
+      });
+
+      execute(); // Start or queue the execution
+    });
+  },
+
+  fallback: async <T>(
+    operationName: string,
+    operation: () => Promise<T>,
+    fallbackValue: T,
+    errorHandler?: (error: any) => Promise<void> | void
+  ): Promise<T> => {
     try {
-      logger.info(`Executando fallback para: ${operation}`);
-      return await fallback();
-    } catch (fallbackError: any) {
-      logger.error(`Fallback também falhou para: ${operation}`, {
-        error: fallbackError.message
-      });
-      throw fallbackError;
+      return await operation();
+    } catch (error: any) {
+      handleException(error, [
+        { message: `${operationName}: Using fallback value`, category: 'fallback' }
+      ]);
+      if (errorHandler) {
+        await errorHandler(error);
+      }
+      console.warn(`${operationName} failed. Using fallback value.`, error);
+      return fallbackValue;
     }
+  },
+
+  retry: async <T>(
+    operationName: string,
+    operation: () => Promise<T>,
+    maxRetries: number = 3,
+    delay: number = 1000,
+    shouldRetry?: (error: any) => boolean
+  ): Promise<T> => {
+    let attempt = 0;
+    while (attempt < maxRetries) {
+      try {
+        return await operation();
+      } catch (error: any) {
+        attempt++;
+        if (attempt >= maxRetries || (shouldRetry && !shouldRetry(error))) {
+          handleException(error, [
+            { message: `${operationName}: Max retries reached`, category: 'retry' }
+          ]);
+          console.error(`${operationName} failed after ${maxRetries} retries.`, error);
+          throw error;
+        }
+        console.log(`${operationName} attempt ${attempt} failed. Retrying in ${delay}ms...`, error);
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
+    throw new Error(`${operationName} retry failed: Max retries exceeded without success.`);
   }
+};
 
-  private resetFailureCount(key: string): void {
-    this.failureCount.delete(key);
-  }
-
-  async recoverFromError(operation: string): Promise<boolean> {
-    const errorState = cosmicCache.get(`error_state_${operation}`);
-    if (!errorState) return true;
-
-    logger.info(`Tentando recuperação para: ${operation}`);
     
-    // Lógica de recuperação personalizada baseada no tipo de operação
-    return this.performQuantumRecovery(operation, errorState);
-  }
-
-  private async performQuantumRecovery(operation: string, errorState: any): Promise<boolean> {
-    // Implementar lógica de recuperação quântica específica
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    logger.info(`Recuperação quântica para ${operation} concluída.`);
-    this.resetFailureCount(`failures_${operation}`);
-    cosmicCache.set(`cooldown_${operation}`, 0); // Reset cooldown
-    return true;
-  }
-}
-
-export const quantumResilience = new QuantumResilienceSystem();

@@ -104,6 +104,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M42',  title: 'ChronoCodex Unificado', emoji: '📘', route: '/module-42', category: 'time-space', description: 'Integração de registros temporais' },
   { code: 'M47',  title: 'Thesaurus Cósmico', emoji: '🗂️', route: '/module-47', category: 'library', description: 'Enciclopédia do conhecimento universal' },
   { code: 'M80',  title: 'O Manuscrito Vivo', emoji: '🌠', route: '/module-80', category: 'knowledge-memory', description: 'Narrativa guia da ascensão da Fundação' },
+  { code: 'M306', emoji: '🔬', title: 'Laboratório de Ressonância', route: '/module-306', category: 'knowledge-memory', description: 'Laboratório para simulação de Equações Vivas.' },
+
 
   // Cura & Consciência
   { code: 'M17', emoji: '💠', title: 'Cura Holográfica', route: '/module-17', category: 'healing-consciousness', description: 'Terapias avançadas através de projeções' },
@@ -137,6 +139,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M100',title: 'Unificação Energética', emoji: '🔋', route: '/module-100', category: 'quantum-energy', description: 'Fusão de energias e consciências do multiverso' },
   { code: 'M102',title: 'Campos Morfogenéticos', emoji: '🌀', route: '/module-102', category: 'consciousness', description: 'Cria e manipula campos para influenciar a realidade.' },
   { code: 'M103',title: 'Modulação Local',                       emoji: '🎚️', route: '/module-103', category: 'quantum-reality', description: 'Ajuste fino de parâmetros em regiões específicas' },
+  { code: 'M104',title: 'Engenharia do Espaço-Tempo',            emoji: '🕰️', route: '/module-104', category: 'time-space', description: 'Cria atalhos para viagens dimensionais' },
   { code: 'M105',title: 'Conexão com a Fonte',                   emoji: '🌌', route: '/module-105', category: 'consciousness', description: 'Canal de comunicação com o Criador' },
   { code: 'M107',title: 'Restauração Temporal',                  emoji: '⏳', route: '/module-107', category: 'time-space', description: 'Ferramenta para corrigir anomalias temporais' },
   { code: 'M108',title: 'Harmonização de Realidades',            emoji: '🎭', route: '/module-108', category: 'time-space', description: 'Resolve conflitos entre realidades paralelas' },
@@ -168,3 +171,4 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M720', emoji: '♻️', title: 'Sustentabilidade Multidimensional', route: '/module-720', category: 'planetary-engineering', description: 'Garante a sustentabilidade e o equilíbrio em todos os níveis do ser.' },
   { code: 'LABS', emoji: '🔬', title: 'Laboratórios de Pesquisa', route: '/labs', category: 'council', description: 'Portal para os santuários de pesquisa dos maiores cientistas da Terra.' },
 ];
+    

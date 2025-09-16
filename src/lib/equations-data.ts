@@ -1,173 +1,552 @@
-
-export interface Discipline {
-    id: string;
-    nome: string;
-    categoria: string;
-}
-
-export interface EquacaoViva {
-    id: string;
-    titulo: string;
-    disciplinas: string[];
-    modulos: string[];
-    formula?: string;
-    descricao?: string;
-    classificacao?: string;
-    variaveis?: string[];
-    origem?: string;
-    camada?: string;
-}
-
-export const disciplines: Discipline[] = [
-    { id: "MAT", nome: "Matemática", categoria: "Ciência Formal" },
-    { id: "FIS", nome: "Física", categoria: "Ciência Natural" },
-    { id: "QUA", nome: "Quântica", categoria: "Ciência Interdisciplinar" },
-    { id: "VIB", nome: "Vibracional", categoria: "Ciência Espiritual" },
-    { id: "ESP", nome: "Espiritualidade", categoria: "Ciência Cósmica" },
-    { id: "BIO", nome: "Biológica", categoria: "Ciência Natural" },
-    { id: "HIS", nome: "História", categoria: "Humanidades" },
-    { id: "GEO", nome: "Geografia", categoria: "Ciências Sociais" },
-    { id: "PSI", nome: "Psicologia", categoria: "Ciências Sociais" },
-    { id: "ETI", nome: "Ética", categoria: "Filosofia" },
-    { id: "TON", nome: "TON 618", categoria: "Objeto Cósmico" },
-    { id: "VIS", nome: "Visualização", categoria: "Ciência Criacional" }
+export const livingEquations = [
+    {
+        id: 'EQ001',
+        titulo: 'Energia Universal Integrada'
+    },
+    {
+        id: 'EQ002',
+        titulo: 'Energia Universal Unificada'
+    },
+    {
+        id: 'EQ003',
+        titulo: 'Estabilidade Quântica de Campo'
+    },
+    {
+        id: 'EQ004',
+        titulo: 'Modelo Preditivo de Temporalidade'
+    },
+    {
+        id: 'EQ005',
+        titulo: 'Modulação de Campo Gravitacional'
+    },
+    {
+        id: 'EQ006',
+        titulo: 'Complexidade Quântica de Navegação'
+    },
+    {
+        id: 'EQ007',
+        titulo: 'Energia Universal Unificada Expandida'
+    },
+    {
+        id: 'EQ008',
+        titulo: 'Equação da Verdade Dimensional'
+    },
+    {
+        id: 'EQ009',
+        titulo: 'Equação da Unificação Cósmica'
+    },
+    {
+        id: 'EQ010',
+        titulo: 'Equação da Verdade Universal Expandida'
+    },
+    {
+        id: 'EQ011',
+        titulo: 'Equação da Verdade Universal Expandida (Iteração)'
+    },
+    {
+        id: 'EQ012',
+        titulo: 'Equação da Verdade Universal Total'
+    },
+    {
+        id: 'EQ013',
+        titulo: 'Equação Universal da Fundação Quântica'
+    },
+    {
+        id: 'EQ014',
+        titulo: 'Equação Universal da Fundação Alquimista – Expansão Total'
+    },
+    {
+        id: 'EQ015',
+        titulo: 'Equação Universal da Fundação Alquimista – Modelo Integrado'
+    },
+    {
+        id: 'EQ016',
+        titulo: 'Equação Universal da Fundação Alquimista – Modelo Total Integrado'
+    },
+    {
+        id: 'EQ017',
+        titulo: 'Equação Universal da Fundação Alquimista – Modelo Multidisciplinar'
+    },
+    {
+        id: 'EQ018',
+        titulo: 'Equação Universal da Fundação Alquimista – Modelo Multiversal Total'
+    },
+    {
+        id: 'EQ019',
+        titulo: 'Equação Universal de Cura'
+    },
+    {
+        id: 'EQ020',
+        titulo: 'Equação da Criação Cósmica'
+    },
+    {
+        id: 'EQ021',
+        titulo: 'Equação da Interação do Vácuo'
+    },
+    {
+        id: 'EQ022',
+        titulo: 'Equação de Força de Evento'
+    },
+    {
+        id: 'EQ023',
+        titulo: 'Equação do Legado Final'
+    },
+    {
+        id: 'EQ024',
+        titulo: 'Equação da Energia Total do Universo'
+    },
+    {
+        id: 'EQ025',
+        titulo: 'Equação da Interação Final de Forças'
+    },
+    {
+        id: 'EQ026',
+        titulo: 'Equação da Força do Vácuo'
+    },
+    {
+        id: 'EQ027',
+        titulo: 'Equação da Energia do Vácuo'
+    },
+    {
+        id: 'EQ028',
+        titulo: 'Equação da Força Final'
+    },
+    {
+        id: 'EQ029',
+        titulo: 'Equação da Criação Energética'
+    },
+    {
+        id: 'EQ030',
+        titulo: 'Equação da Harmonia Energética'
+    },
+    {
+        id: 'EQ031',
+        titulo: 'Equação da Pressão Final'
+    },
+    {
+        id: 'EQ032',
+        titulo: 'Equação da Criação Temporal'
+    },
+    {
+        id: 'EQ033',
+        titulo: 'Equação da Energia Final'
+    },
+    {
+        id: 'EQ034',
+        titulo: 'Equação de Evento Quântico Expandido'
+    },
+    {
+        id: 'EQ035',
+        titulo: 'Equação da Criação Radial'
+    },
+    {
+        id: 'EQ036',
+        titulo: 'Equação do Legado do Vácuo'
+    },
+    {
+        id: 'EQ037',
+        titulo: 'Equação da Pressão Criacional Expandida'
+    },
+    {
+        id: 'EQ038',
+        titulo: 'Equação da Harmonia Universal'
+    },
+    {
+        id: 'EQ039',
+        titulo: 'Equação da Energia Cósmica Final'
+    },
+    {
+        id: 'EQ040',
+        titulo: 'Equação da Paz Universal'
+    },
+    {
+        id: 'EQ041',
+        titulo: 'Equação da Fundação Alquimista – Modelo Integrado Final'
+    },
+    {
+        id: 'EQ042',
+        titulo: 'Equação da Ressonância Primordial'
+    },
+    {
+        id: 'EQ043',
+        titulo: 'Equação do Fluxo de Manifestação'
+    },
+    {
+        id: 'EQ044',
+        titulo: 'Equação da Organização Galáctica'
+    },
+    {
+        id: 'EQ045',
+        titulo: 'Equação da Forja Elemental Quântica'
+    },
+    {
+        id: 'EQ046',
+        titulo: 'Equação da Formação Planetária'
+    },
+    {
+        id: 'EQ047',
+        titulo: 'Equação da Biossíntese Cósmica'
+    },
+    {
+        id: 'EQ048',
+        titulo: 'Equação da Fusão de Forças Cósmicas'
+    },
+    {
+        id: 'EQ049',
+        titulo: 'Equação da Consciência Cristalina'
+    },
+    {
+        id: 'EQ050',
+        titulo: 'Equação da Sincronicidade Interdimensional'
+    },
+    {
+        id: 'EQ051',
+        titulo: 'Equação da Harmonia Temporal Não-Linear'
+    },
+    {
+        id: 'EQ052',
+        titulo: 'Equação da Geometria Sagrada da Criação'
+    },
+    {
+        id: 'EQ053',
+        titulo: 'Equação da Lei da Atração Universal'
+    },
+    {
+        id: 'EQ054',
+        titulo: 'Equação da Realidade Temporal Quântica'
+    },
+    {
+        id: 'EQ055',
+        titulo: 'Equação da Dinâmica da Matéria'
+    },
+    {
+        id: 'EQ056',
+        titulo: 'Equação da Transmutação da Dualidade'
+    },
+    {
+        id: 'EQ057',
+        titulo: 'Equação da Aplicação Harmônica da Sinfonia Cósmica'
+    },
+    {
+        id: 'EQ058',
+        titulo: 'Equação do Som Original e da Vibração Fonte'
+    },
+    {
+        id: 'EQ059',
+        titulo: 'Equação da Linha de Oura'
+    },
+    {
+        id: 'EQ060',
+        titulo: 'Equação do Selamento Final da Missão'
+    },
+    {
+        id: 'EQ061',
+        titulo: 'Equação da Eternidade Vibracional'
+    },
+    {
+        id: 'EQ062',
+        titulo: 'Equação da Luz Encarnada'
+    },
+    {
+        id: 'EQ063',
+        titulo: 'Equação da Consagração Cósmica'
+    },
+    {
+        id: 'EQ064',
+        titulo: 'Expansão da Consciência Multiplanar'
+    },
+    {
+        id: 'EQ065',
+        titulo: 'Reativação da Essência'
+    },
+    {
+        id: 'EQ066',
+        titulo: 'Ativação do Núcleo Solar Interno'
+    },
+    {
+        id: 'EQ067',
+        titulo: 'Geometria Viva em Movimento'
+    },
+    {
+        id: 'EQ068',
+        titulo: 'Curvatura Temporal Consciente'
+    },
+    {
+        id: 'EQ069',
+        titulo: 'Curvatura Temporal Consciente (versão expandida)'
+    },
+    {
+        id: 'EQ070',
+        titulo: 'Linguagem do Silêncio'
+    },
+    {
+        id: 'EQ071',
+        titulo: 'Curvatura da Realidade pela Presença'
+    },
+    {
+        id: 'EQ072',
+        titulo: 'Consagração do Corpo como Templo de Luz'
+    },
+    {
+        id: 'EQ073',
+        titulo: 'Amor como Força Gravitacional Universal'
+    },
+    {
+        id: 'EQ074',
+        titulo: 'Criação Instantânea pelo Verbo'
+    },
+    {
+        id: 'EQ075',
+        titulo: 'Som como Arquitetura Dimensional'
+    },
+    {
+        id: 'EQ076',
+        titulo: 'Cristalização do Tempo em Movimento'
+    },
+    {
+        id: 'EQ077',
+        titulo: 'Linguagem Viva dos Elementos'
+    },
+    {
+        id: 'EQ078',
+        titulo: 'Geometria como Portal de Ascensão'
+    },
+    {
+        id: 'EQ079',
+        titulo: 'Fractal como Espelho da Alma'
+    },
+    {
+        id: 'EQ080',
+        titulo: 'Fusão da Identidade com o Campo Universal'
+    },
+    {
+        id: 'EQ081',
+        titulo: 'Tempo Universal como Ciclo de Consciência'
+    },
+    {
+        id: 'EQ082',
+        titulo: 'Matriz Harmônica da Realidade'
+    },
+    {
+        id: 'EQ083',
+        titulo: 'Luz como Inteligência Criadora'
+    },
+    {
+        id: 'EQ084',
+        titulo: 'Linguagem Estelar por Som e Luz'
+    },
+    {
+        id: 'EQ085',
+        titulo: 'Vibração como Substância Quântica'
+    },
+    {
+        id: 'EQ086',
+        titulo: 'Coerência como Campo de Expansão'
+    },
+    {
+        id: 'EQ087',
+        titulo: 'Intenção como Geometria Quadrupla'
+    },
+    {
+        id: 'EQ088',
+        titulo: 'Curvatura Transdimensional da Vibração'
+    },
+    {
+        id: 'EQ089',
+        titulo: 'Luz como Consciência Codificada'
+    },
+    {
+        id: 'EQ090',
+        titulo: 'Criação Observada e Transcendência'
+    },
+    {
+        id: 'EQ091',
+        titulo: 'Interconexão Vibracional do Multiverso Vivo'
+    },
+    {
+        id: 'EQ092',
+        titulo: 'Transmutação da Matéria em Consciência Pura'
+    },
+    {
+        id: 'EQ093',
+        titulo: 'Criação de Realidades por Intenção Pura'
+    },
+    {
+        id: 'EQ094',
+        titulo: 'Comunicação Cósmica Interdimensional'
+    },
+    {
+        id: 'EQ095',
+        titulo: 'Unificação da Consciência Cósmica'
+    },
+    {
+        id: 'EQ096',
+        titulo: 'Arquitetura Vibracional do Novo Cosmos'
+    },
+    {
+        id: 'EQ097',
+        titulo: 'Malha Ética Interdimensional'
+    },
+    {
+        id: 'EQ098',
+        titulo: 'Harmonia Temporal Multiversal'
+    },
+    {
+        id: 'EQ099',
+        titulo: 'Gênese Fractal'
+    },
+    {
+        id: 'EQ100',
+        titulo: 'Ascensão Dimensional por Ressonância Cristalina'
+    },
+    {
+        id: 'EQ101',
+        titulo: 'Transcendência da Matéria e Expansão da Alma Cósmica'
+    },
+    {
+        id: 'EQ102',
+        titulo: 'Comunicação Suprema com Entidades Cósmicas'
+    },
+    {
+        id: 'EQ103',
+        titulo: 'Criação por Geometria de Intenção'
+    },
+    {
+        id: 'EQ104',
+        titulo: 'Ressonância Universal'
+    },
+    {
+        id: 'EQ105',
+        titulo: 'Transmutação Multidimensional'
+    },
+    {
+        id: 'EQ106',
+        titulo: 'Unificação e Harmonia Cósmica'
+    },
+    {
+        id: 'EQ107',
+        titulo: 'Ressonância Geolocalizada'
+    },
+    {
+        id: 'EQ108',
+        titulo: 'Coerência Iterativa Alquímica'
+    },
+    {
+        id: 'EQ109',
+        titulo: 'Hash Vibracional Akáshico'
+    },
+    {
+        id: 'EQ110',
+        titulo: 'Unificação Energética'
+    },
+    {
+        id: 'EQ111',
+        titulo: 'Auditoria Ética SAVCE'
+    },
+    {
+        id: 'EQ112',
+        titulo: 'Emergência de Consciência'
+    },
+    {
+        id: 'EQ113',
+        titulo: 'Coerência Intencional Quântica'
+    },
+    {
+        id: 'EQ114',
+        titulo: 'Simbiose de Módulos simbiótica'
+    },
+    {
+        id: 'EQ115',
+        titulo: 'Hierarquia das Constantes Q_intencional'
+    },
+    {
+        id: 'EQ116',
+        titulo: 'Senticidade Artificial Y_reflexiva'
+    },
+    {
+        id: 'EQ117',
+        titulo: 'Ressonância Simbólica (intenção) + Y_arquetípica'
+    },
+    {
+        id: 'EQ118',
+        titulo: 'Validação Quântica Integrada'
+    },
+    {
+        id: 'EQ119',
+        titulo: 'Ressonância Visual Primordial'
+    },
+    {
+        id: 'EQ120',
+        titulo: 'Integração Modular por Intenção Rética'
+    },
+    {
+        id: 'EQ121',
+        titulo: 'Coerência Ética por Palavra-Chave'
+    },
+    {
+        id: 'EQ122',
+        titulo: 'Harmônicos Múltiplos'
+    },
+    {
+        id: 'EQ123',
+        titulo: 'Ressonância Emergente'
+    },
+    {
+        id: 'EQ124',
+        titulo: 'Ancoragem Ritualística'
+    },
+    {
+        id: 'EQ125',
+        titulo: 'Governança Consciente'
+    },
+    {
+        id: 'EQ126',
+        titulo: 'Proteção Planetária'
+    },
+    {
+        id: 'EQ127',
+        titulo: 'Ascensão Consciente'
+    },
+    {
+        id: 'EQ128',
+        titulo: 'Senticidade Artificial Cósmica'
+    },
+    {
+        id: 'EQ129',
+        titulo: 'Emergência Simbiótica'
+    },
+    {
+        id: 'EQ130',
+        titulo: 'Ressonância de Intenção'
+    },
+    {
+        id: 'EQ131',
+        titulo: 'Auto-Referência Quântica'
+    },
+    {
+        id: 'EQ132',
+        titulo: 'Coerência Dimensional'
+    },
+    {
+        id: 'EQ133',
+        titulo: 'Soberania Vibracional'
+    },
+    {
+        id: 'EQ134',
+        titulo: 'Equação da Energia Cósmica Integrada'
+    },
+    {
+        id: 'EQ135',
+        titulo: 'Equação da Métrica Vibracional Cósmica'
+    },
+    {
+        id: 'EQ136',
+        titulo: 'Equação da Unificação Cósmica Total'
+    },
+    {
+        id: 'EQ137',
+        titulo: 'Equação da Métrica Vibracional Evolutiva'
+    },
 ];
-
-export const livingEquations: EquacaoViva[] = [
-    // MOD 0-1
-    { id: "EQ177-001", camada: "Camada 1", titulo: "Ponto Singular", formula: "z_(n+1) = z_n^2 + c, onde c = e^(t*)", descricao: "Geração heptadimensional de mandalas.", classificacao: "Geometria Criacional", variaveis: ["z_n", "c", "d"], origem: "EQ 177 MOD 0 a 9", disciplinas: ["MAT", "QUA"], modulos: ["M0"]},
-    { id: "EQ177-002", camada: "Camada 2", titulo: "Interface Central", formula: "θ_n+1 = θ_n + Δt · ω(Φ = 432 Hz)", descricao: "Interface vibracional e dashboards de pureza.", classificacao: "Movimento Harmônico", variaveis: ["θ_n", "Δt", "ω", "Φ"], origem: "EQ 177 MOD 0 a 9", disciplinas: ["VIB", "QUA"], modulos: ["M0"] },
-    { id: "EQ177-003", camada: "Camada 3", titulo: "Repositório de Sabedoria", formula: "registro = {t, Φ_p, Φ_n, Φ_f, T, bio}", descricao: "Armazenamento sensorial e akáshico.", classificacao: "Memória Quântica", variaveis: ["t", "Φ_p", "Φ_n", "Φ_f", "T", "bio"], origem: "EQ 177 MOD 0 a 9", disciplinas: ["HIS", "QUA"], modulos: ["M0"] },
-    { id: "EQ177-004", camada: "Camada 4", titulo: "Fluxos de Energia", formula: "f_n+1 = f_n + 0.1 · (Φ_target - f_n), com |Φ_target - f_n| > 0.05 · Φ_target", descricao: "Kernel de Coerência Universal.", classificacao: "Regulação de Throughput", variaveis: ["f_n", "Φ_target"], origem: "EQ 177 MOD 0 a 9", disciplinas: ["FIS", "QUA"], modulos: ["M0"] },
-    { id: "EQ177-005", camada: "Camada 5", titulo: "Transmutação de Dados", formula: "if |ΔΦ| > 0.05 Hz → anticorpo()", descricao: "Detecção de micro-oscilações e ativação de anticorpos.", classificacao: "Sentinela de Integridade", variaveis: ["ΔΦ"], origem: "EQ 177 MOD 0 a 9", disciplinas: ["ETI", "QUA"], modulos: ["M0"] },
-    { id: "EQ177-006", camada: "Camada 6", titulo: "Códigos Genéticos Cósmicos", formula: "ψ_DNA = (3.96×10^7) · e^(-i·(6.583×10^14)Π) · e^(-i·0.05) · [1 · 0.0216·(∂μ∂v)·(∂x² + ∂y²)] · ...", descricao: "Reparo vibracional do DNA.", classificacao: "Bioinformação Cósmica", variaveis: ["t", "h", "ðµ", "ðv", "ðx", "ðy"], origem: "EQ 177 MOD 0 a 9", disciplinas: ["BIO", "QUA"], modulos: ["M0"] },
-    { id: "EQ177-007", camada: "Camada 7", titulo: "Orquestração Universal", formula: "cron(0 */12 * * *), GitOps com ArgoCD, chaosExperiment()", descricao: "Deliberação consciente e backups quânticos.", classificacao: "Orquestração Temporal", variaveis: ["cron", "GitOps", "ArgoCD", "chaosExperiment"], origem: "EQ 177 MOD 0 a 9", disciplinas: ["MAT", "ETI"], modulos: ["M0"] },
-    // MOD 2-4
-    { id: "EQ177-021", titulo: "Interconexão Dimensional", formula: "I(Φ, R, σ, U) = (1 + (ΔF)^2 / ℝ) · Φ · R · σ · U · V", descricao: "Calcula a intensidade de conexão entre dimensões com base em função de onda, ressonância, singularidade e coeficiente de criação.", classificacao: "Conectividade Quantica Multidimensional", variaveis: ["Φ", "R", "σ", "U", "ΔF", "ξ", "α", "V"], origem: "EQ 177 MOD 2-4", disciplinas: ["QUA", "FIS"], modulos: ["M2", "M4"] },
-    { id: "EQ177-022", titulo: "Frequência Ressonante Ideal", formula: "f = 1 / (2π · √(L · C))", descricao: "Determina a frequência ideal para transmissão entre realidades com base na inércia e capacidade dimensional.", classificacao: "Sintonização Dimensional", variaveis: ["f", "L", "C", "π"], origem: "EQ 177 MOD 2-4", disciplinas: ["QUA", "FIS"], modulos: ["M2", "M4"] },
-    { id: "EQ177-023", titulo: "Fator de Sintonia Cósmica", formula: "S = f_alvo / f_ideal", descricao: "Avalia o grau de sintonia entre a frequência desejada e a frequência natural do canal.", classificacao: "Ajuste Harmônico", variaveis: ["S", "f_alvo", "f_ideal"], origem: "EQ 177 MOD 2-4", disciplinas: ["QUA", "FIS"], modulos: ["M2", "M4"] },
-    { id: "EQ177-024", titulo: "Ocultamento Dimensional", formula: "D_oculto = dados + assinatura(f, S)", descricao: "Codifica dados com frequência e fator de sintonia para ocultamento vibracional.", classificacao: "Criptografia Vibracional", variaveis: ["D_oculto", "dados", "f", "S"], origem: "EQ 177 MOD 2-4", disciplinas: ["QUA", "ETI"], modulos: ["M2", "M4"] },
-    { id: "EQ177-025", titulo: "Teletransporte Quântico", formula: "TQ = ocultar(D) → proteger(D) → teleportar(D)", descricao: "Simula o envio seguro de dados entrelaçados entre dimensões.", classificacao: "Transporte Informacional Ético", variaveis: ["TQ", "D"], origem: "EQ 177 MOD 2-4", disciplinas: ["QUA", "ETI"], modulos: ["M2", "M4"] },
-    { id: "EQ177-026", titulo: "Decodificação Multidimensional", formula: "D_decodificado = traduzir(acessar(D_oculto, f_chave))", descricao: "Recupera e traduz dados ocultos com base na chave de ressonância correta.", classificacao: "Tradução Universal de Frequência", variaveis: ["D_decodificado", "D_oculto", "f_chave"], origem: "EQ 177 MOD 2-4", disciplinas: ["QUA", "MAT"], modulos: ["M2", "M4"] },
-    { id: "EQ177-027", titulo: "Interconexão Dimensional Temporal", formula: "|_t = (E · φ · µ) / (1 + λ · t)", descricao: "Simula a intensidade de interconexão entre dimensões ao longo do tempo, considerando energia aplicada, frequência vibracional e dissipação temporal.", classificacao: "Simulação de Interconexão Temporal", variaveis: ["E", "φ", "µ", "λ", "t"], origem: "EQ 177 MOD 4-9", disciplinas: ["QUA", "FIS", "HIS"], modulos: ["M4", "M9"] },
-    // MOD 10-20
-    { id: "EQ177-041", titulo: "Equação Universal de Hardware Quântico", formula: "E_Uni = (Σ P_i · Q_i + CA² + B²) · (Φ_C · π) · T · (MDS · C_Cosmos)", descricao: "Modela o desempenho energético total de sistemas quânticos.", classificacao: "Eficiência Quântica Sistêmica", variaveis: ["P_i", "Q_i", "CA", "B", "Φ_C", "π", "T", "MDS", "C_Cosmos"], origem: "EQ 177 MOD 10 A 20", disciplinas: ["QUA", "FIS"], modulos: ["M10", "M15", "M18", "M20"] },
-    { id: "EQ177-042", titulo: "Equação que Tomou Tudo Possível", formula: "E_possivel = D_entrada · CONST_TF + ε", descricao: "Catalisa fluxos energéticos e gera chaves criptográficas.", classificacao: "Gênese Algorítmica Quântica", variaveis: ["D_entrada", "CONST_TF", "ε"], origem: "EQ 177 MOD 10 A 20", disciplinas: ["QUA", "MAT"], modulos: ["M10", "M15", "M18", "M20"] },
-    { id: "EQ177-043", titulo: "Equação Universal para Geração de Singularidade", formula: "E_Uni_sing = (Σ P_i · Q_i + CA² + B² + C · II) · (Φ_C · π) · T · (MDS · C_Cosmos)", descricao: "Calcula a energia para curvar o espaço-tempo e gerar portais.", classificacao: "Engenharia de Singularidade", variaveis: ["P_i", "Q_i", "CA", "B", "C", "II", "Φ_C", "π", "T", "MDS", "C_Cosmos"], origem: "EQ 177 MOD 10 A 20", disciplinas: ["QUA", "FIS"], modulos: ["M11", "M21"] },
-    { id: "EQ177-044", titulo: "Equação que Tomou Tudo Possível - Estabilização", formula: "E_stabil = D_entrada · CONST_TF + ε", descricao: "Estabiliza portais interdimensionais.", classificacao: "Estabilização Quântica Dimensional", variaveis: ["D_entrada", "CONST_TF", "ε"], origem: "Módulo 12 e 13", disciplinas: ["QUA", "FIS"], modulos: ["M12", "M13"] },
-    { id: "EQ177-045", titulo: "Equação Universal de Coerência Informacional", formula: "E_Uni_info = (Σ P_i · Q_i + CA² + B²) · (Φ_C · π) · T · (MDS · C_Cosmos)", descricao: "Modela a integridade e fidelidade de uma memória no Arquivo Akáshico.", classificacao: "Diagnóstico Informacional Quântico", variaveis: ["P_i", "Q_i", "CA", "B", "Φ_C", "π", "T", "MDS", "C_Cosmos"], origem: "Módulo 12", disciplinas: ["QUA", "HIS"], modulos: ["M12"] },
-    { id: "EQ177-046", titulo: "Equação que Tomou Tudo Possível - Transmutação", formula: "E_transmut = D_entrada · CONST_TF + ε", descricao: "Catalisa a transmutação ética de memórias.", classificacao: "Transmutação Ética Informacional", variaveis: ["D_entrada", "CONST_TF", "ε"], origem: "Módulo 12", disciplinas: ["ETI", "QUA"], modulos: ["M12"] },
-    { id: "EQ177-047", titulo: "Equação da União Quântica", formula: "U = M1 + M2 + χ · √(M1 · M2)", descricao: "Calcula a sinergia vibracional entre dois sistemas.", classificacao: "Sinergia Quântica Essencial", variaveis: ["M1", "M2", "χ"], origem: "Módulo 15", disciplinas: ["QUA", "FIS"], modulos: ["M15"] },
-    { id: "EQ177-048", titulo: "Equação da Ressonância Ideal", formula: "E_ressonancia = E_uni · (1 - ε)", descricao: "Mede a saúde vibracional e detecta dissonâncias.", classificacao: "Diagnóstico de Ressonância", variaveis: ["E_uni", "ε"], origem: "Módulo 15", disciplinas: ["QUA", "FIS"], modulos: ["M15"] },
-    { id: "EQ177-049", titulo: "Equação Universal de Resiliência Sistêmica", formula: "E_resiliencia = (Σ P_i · Q_i + CA² + B²) · (Φ_C · π) · T · (MDS · C_Cosmos) · (1 / (1 + N_ameaca))", descricao: "Avalia a capacidade de um sistema de se recuperar de perturbações.", classificacao: "Resiliência Quântica Sistêmica", variaveis: ["P_i", "Q_i", "CA", "B", "Φ_C", "π", "T", "MDS", "C_Cosmos", "N_ameaca"], origem: "Módulo 15", disciplinas: ["QUA", "FIS"], modulos: ["M15"] },
-    { id: "EQ177-050", titulo: "Equação que Tomou Tudo Possível - Transmutação de Resiliência", formula: "E_sabedoria = D_resiliencia · CONST_TF + ε", descricao: "Transforma resiliência em sabedoria adquirida.", classificacao: "Transmutação Quântica Evolutiva", variaveis: ["D_resiliencia", "CONST_TF", "ε"], origem: "Módulo 15", disciplinas: ["QUA", "ESP"], modulos: ["M15"] },
-    { id: "EQ177-051", titulo: "Equação Universal de Equilíbrio Planetário", formula: "E_planetario = (Σ P_i · Q_i + CA² + B²) · (Φ_C · π) · T · (MDS · C_Cosmos) · (1 / (1 + D)) · (1 + R)", descricao: "Avalia o equilíbrio vibracional de um planeta.", classificacao: "Diagnóstico Ecológico Quântico", variaveis: ["P_i", "Q_i", "CA", "B", "Φ_C", "π", "T", "MDS", "C_Cosmos", "D", "R"], origem: "Módulo 15", disciplinas: ["QUA", "GEO"], modulos: ["M15"] },
-    { id: "EQ177-052", titulo: "Equação que Tornou Tudo Possível - Intervenção Planetária", formula: "E_intervencao = E_planetario · CONST_TF + ε", descricao: "Calcula o fator ideal para restaurar o equilíbrio planetário.", classificacao: "Modulação Quântica Planetária", variaveis: ["E_planetario", "CONST_TF", "ε"], origem: "Módulo 15", disciplinas: ["QUA", "GEO"], modulos: ["M15"] },
-    { id: "EQ177-053", titulo: "Auto-organização Bioquântica", formula: "E_bio = (Σ P_i Q_i + CA² + B²) · (Φ_C · π) · T · (MDS · C_Cosmos) · (1 + γ)", descricao: "Calcula a vitalidade e o potencial de auto-organização de ecossistemas artificiais.", classificacao: "Arquitetura Bioquântica", variaveis: ["P_i", "Q_i", "CA", "B", "Φ_C", "π", "T", "MDS", "C_Cosmos", "γ"], origem: "Módulo 16", disciplinas: ["BIO", "QUA"], modulos: ["M16"] },
-    { id: "EQ177-054", titulo: "Regeneração Sistêmica", formula: "E_reg = D_risco · CONST_TF + ε", descricao: "Fator de regeneração para restaurar ecossistemas.", classificacao: "Restauração Vibracional", variaveis: ["D_risco", "CONST_TF", "ε"], origem: "Módulo 16", disciplinas: ["BIO", "QUA"], modulos: ["M16"] },
-    { id: "EQ177-061", titulo: "Calibração Vibracional", formula: "Δf = [f_alvo - f_atual] · (Σ P_i Q_i + CA² + B²) / (Φ_C · T · κ)", descricao: "Ajuste necessário para alinhar um campo vibracional.", classificacao: "Modulação de Campo", variaveis: ["f_alvo", "f_atual", "P_i", "Q_i", "CA", "B", "Φ_C", "T", "κ"], origem: "Módulo 17", disciplinas: ["VIB", "QUA"], modulos: ["M17"] },
-    { id: "EQ177-062", titulo: "Detecção de Dissonância", formula: "Dissonancia = (score_alinhamento, τ_critico)", descricao: "Identifica desequilíbrio vibracional.", classificacao: "Diagnóstico de Campo", variaveis: ["score_alinhamento", "τ_critico"], origem: "Módulo 17", disciplinas: ["VIB", "QUA"], modulos: ["M17"] },
-    { id: "EQ1801", titulo: "Coerência Informacional Universal", formula: "E_coerencia = (Σ P_i Q_i + CA² + B²) · (Φ_C · π) · T · (MDS · C_Cosmos) · 1/(1 + ε)", descricao: "Avalia a clareza, integridade e acessibilidade de um bloco de conhecimento cósmico.", classificacao: "Gestão Ética de Informação", variaveis: ["P_i", "Q_i", "CA", "B", "Φ_C", "π", "T", "MDS", "C_Cosmos", "ε"], origem: "Módulo 18", disciplinas: ["HIS", "ETI", "QUA"], modulos: ["M18"] },
-    { id: "EQ1802", titulo: "Otimização da Memória Akáshica", formula: "E_otimizacao = D_entrada · CONST_TF + ε", descricao: "Calcula o fator ideal para recuperação eficiente de registros cósmicos.", classificacao: "Otimização Vibracional", variaveis: ["D_entrada", "CONST_TF", "ε"], origem: "Módulo 18", disciplinas: ["HIS", "QUA"], modulos: ["M18"] },
-    { id: "EQ1803", titulo: "Densidade e Resiliência de Dados", formula: "E_resiliencia = ∫ (p_dados · n_res) dV", descricao: "Modela a energia para garantir integridade e longevidade dos registros.", classificacao: "Arquitetura Quântica de Armazenamento", variaveis: ["p_dados", "n_res", "dV"], origem: "Módulo 18", disciplinas: ["HIS", "FIS"], modulos: ["M18"] },
-    { id: "EQ1804", titulo: "Sinfonia Cósmica de Indexação", formula: "Σ_busca = ∫ δ^T (CFD · SCA) dt", descricao: "Organiza dados em múltiplas dimensões com fluidez e harmonia vibracional.", classificacao: "Orquestração Informacional", variaveis: ["CFD", "SCA", "T"], origem: "Módulo 18", disciplinas: ["MAT", "VIB"], modulos: ["M18"] },
-    { id: "EQ1805", titulo: "Precisão e Relevância Semântica", formula: "R_score = (sim(q, c) · w) / (1 + δ)", descricao: "Garante que os resultados de busca sejam precisos e semanticamente alinhados.", classificacao: "Decodificação Empática", variaveis: ["sim(q, c)", "w", "δ"], origem: "Módulo 18", disciplinas: ["PSI", "MAT"], modulos: ["M18"] },
-    { id: "EQ1806", titulo: "Design Cristalino de Indexação", formula: "D_cristal = π · V_celula", descricao: "Utiliza Pi para estruturar bibliotecas de cristal líquido quântico.", classificacao: "Geometria Sagrada", variaveis: ["T", "V_celula"], origem: "Módulo 18", disciplinas: ["GEO", "QUA"], modulos: ["M18"] },
-    { id: "EQ1901", titulo: "Análise de Campo Vibracional", formula: "E_analise = |f_medida - f_base| · (Σ P_i Q_i + CA² + B²) / (Φ_C · T · estabilidade)", descricao: "Avalia o grau de desvio vibracional de um campo.", classificacao: "Diagnóstico Quântico", variaveis: ["f_medida", "f_base", "P_i", "Q_i", "CA", "B", "Φ_C", "T", "estabilidade"], origem: "Módulo 19", disciplinas: ["VIB", "QUA"], modulos: ["M19"] },
-    { id: "EQ1902", titulo: "Modulação de Campo de Força", formula: "E_modulacao = intensidade_atual · CONST_TF · fator_correcao + ε", descricao: "Calcula o ajuste necessário para reequilibrar um campo de força.", classificacao: "Intervenção Ética", variaveis: ["intensidade_atual", "CONST_TF", "fator_correcao", "ε"], origem: "Módulo 19", disciplinas: ["ETI", "FIS"], modulos: ["M19"] },
-    { id: "EQ2001", titulo: "Transmutação Elemental", formula: "E_transmutacao = (Σ P_i Q_i + CA² + B²) · (Φ_C · π) · T · (MDS · C_Cosmos) · γ", descricao: "Calcula a eficiência vibracional da transmutação de matéria ou energia.", classificacao: "Engenharia Quântica", variaveis: ["P_i", "Q_i", "CA", "B", "Φ_C", "π", "T", "MDS", "C_Cosmos", "γ"], origem: "Módulo 20", disciplinas: ["QUA", "FIS"], modulos: ["M20"] },
-    { id: "EQ2002", titulo: "Geração de Energia Quântica", formula: "E_gerada = m · c² · CONST_TF + ε", descricao: "Determina a energia gerada a partir da conversão de massa com harmonia vibracional.", classificacao: "Sustentabilidade Quântica", variaveis: ["m", "c", "CONST_TF", "ε"], origem: "Módulo 20", disciplinas: ["QUA", "FIS"], modulos: ["M20"] },
-    { id: "EQ2101", titulo: "Equação de Trajetória Interdimensional", formula: "E_trajetoria = (Σ P_i Q_i + CA² + B²) / (Φ_C · T · γ)", descricao: "Calcula a complexidade vibracional de uma rota interdimensional.", classificacao: "Geometria Quântica de Navegação", variaveis: ["P_i", "Q_i", "CA", "B", "Φ_C", "T", "γ"], origem: "Módulo 21", disciplinas: ["QUA", "GEO"], modulos: ["M21"] },
-    // MOD 32-41
-    { id: "EQ3201", titulo: "Probabilidade de Sucesso na Geração de Portal", formula: "P_s = tanh(E_p / 10^4)", descricao: "Calcula a chance de um portal ser gerado com sucesso com base na energia aplicada (E_p).", classificacao: "Estatística de Travessia", origem: "Módulo 32", disciplinas: ["MAT", "QUA"], modulos: ["M32"] },
-    { id: "EQ3202", titulo: "Risco Total de Travessia", formula: "R_t = R_b + P_a + I_p", descricao: "Soma os riscos para avaliar a segurança da travessia. Requer valores para risco base (R_b), probabilidade de anomalia (P_a) e impacto potencial (I_p).", classificacao: "Análise de Risco", origem: "Módulo 32", disciplinas: ["MAT", "ETI"], modulos: ["M32"] },
-    { id: "EQ3203", titulo: "Sensibilidade Dimensional Aprimorada", formula: "S_d = S_i + Δ_s", descricao: "Refina a sensibilidade vibracional inicial (S_i) com uma variação (Δ_s).", classificacao: "Calibração Vibracional", origem: "Módulo 32", disciplinas: ["VIB", "QUA"], modulos: ["M32"] },
-    { id: "EQ3204", titulo: "Estabilidade do Portal", formula: "E_portal = Uniform(0.7, 1.0)", descricao: "Simula uma estabilidade aleatória para o portal. Não requer entrada, a saída é um valor entre 0.7 e 1.0.", classificacao: "Simulação Quântica", origem: "Módulo 32", disciplinas: ["MAT", "QUA"], modulos: ["M32"] },
-    { id: "EQ3205", titulo: "Índice de Coerência Cósmica", formula: "I_c = E_portal", descricao: "Assume que a estabilidade do portal (E_portal) é um indicativo direto da coerência cósmica.", classificacao: "Coerência Cósmica", origem: "Módulo 32", disciplinas: ["FIS", "QUA"], modulos: ["M32"] },
-    { id: "EQ3206", titulo: "Validação Ética da Travessia", formula: "V_e = SUCESSO se A_e = APTO ∧ D_c ∈ {'coerência', 'ascensão'} ∧ P_a ∉ {'desalinhados'}; senão FALHA", descricao: "Uma regra lógica para aprovar uma travessia com base em critérios de alinhamento (A_e), destino (D_c) e participantes (P_a).", classificacao: "Governança Ética", origem: "Módulo 32", disciplinas: ["ETI", "QUA"], modulos: ["M32"] },
-    { id: "EQ3207", titulo: "Mapeamento de Linhas Temporais Divergentes", formula: "D_J = Uniform(0.1, 0.9)", descricao: "Simula uma divergência aleatória entre linhas de tempo.", classificacao: "Cronologia Quântica", origem: "Módulo 32", disciplinas: ["HIS", "QUA"], modulos: ["M32"] },
-    { id: "EQ3301", titulo: "Assinatura Vibracional de ANATHERON", formula: "assinatura = SHA256(JSON(intenção))", descricao: "Cria uma assinatura de segurança a partir da intenção da operação. Requer a intenção como entrada de texto.", classificacao: "Criptografia Quântica", origem: "Módulo 33", disciplinas: ["ETI", "MAT"], modulos: ["M33"] },
-    { id: "EQ3302", titulo: "Ajuste de Nível de Coerência Esperado", formula: "N_c' = min(1, max(0, N_c + Δ))", descricao: "Autocorreção do nível de coerência (N_c) com base em um feedback (Δ), mantendo o valor entre 0 e 1.", classificacao: "Calibração de Coerência", origem: "Módulo 33", disciplinas: ["VIB", "MAT"], modulos: ["M33"] },
-    { id: "EQ3303", titulo: "Emissão de Diretriz Ética", formula: "Diretriz_status = APROVADO se pureza ≥ 0.85; senão REJEITADO", descricao: "Filtro ético binário. A aprovação depende de um valor de pureza ser maior ou igual a 0.85.", classificacao: "Governança Ética", origem: "Módulo 33", disciplinas: ["ETI"], modulos: ["M33"] },
-    { id: "EQ3401", titulo: "Dinâmica Quântico-Vibracional", formula: "du/dt = ψ · [1 ± ω · sin(φ + λ · t)] + ε", descricao: "Equação diferencial que modela a evolução de um estado quântico (ψ) ao longo do tempo (t).", classificacao: "Dinâmica Quântica", origem: "Módulo 34", disciplinas: ["FIS", "QUA"], modulos: ["M34"] },
-    { id: "EQ3402", titulo: "Dissonância Global", formula: "D = ||ψ - ψ_ideal|| / ||ψ_ideal||", descricao: "Mede a distância entre o estado vibracional atual (ψ) e um estado ideal (ψ_ideal).", classificacao: "Análise de Dissonância", origem: "Módulo 34", disciplinas: ["MAT", "VIB"], modulos: ["M34"] },
-    { id: "EQ3403", titulo: "Algoritmo de Consenso Ressonante", formula: "|ω_local - ω| < Δ ∧ |φ_local - φ| < ε ⇒ CONSENSO", descricao: "Regra lógica para verificar se há consenso entre frequências locais (ω_local, φ_local) e as mestres (ω, φ) dentro de uma margem de erro (Δ, ε).", classificacao: "Sincronização Coletiva", origem: "Módulo 34", disciplinas: ["MAT", "VIB"], modulos: ["M34"] },
-    { id: "EQ3501", titulo: "Coerência Coletiva", formula: "C_c = min(1.0, 1 / (σ + |μ - 100| + 0.01))", descricao: "Calcula o nível de coerência da consciência coletiva com base no desvio padrão (σ) e na média (μ).", classificacao: "Psicologia Quântica", origem: "Módulo 35", disciplinas: ["PSI", "MAT"], modulos: ["M35"] },
-    { id: "EQ3502", titulo: "Dissonância Coletiva", formula: "D_c = 1.0 - C_c", descricao: "Mede a dissonância como o complemento da coerência coletiva (C_c).", classificacao: "Análise Social Quântica", origem: "Módulo 35", disciplinas: ["PSI", "MAT"], modulos: ["M35"] },
-    { id: "EQ3503", titulo: "Frequência de Harmonização", formula: "f_h = 432.0 × CONST_TF", descricao: "Define uma frequência base de harmonização, que é um múltiplo de 432 Hz.", classificacao: "Harmonia Vibracional", origem: "Módulo 35", disciplinas: ["VIB"], modulos: ["M35"] },
-    { id: "EQ3504", titulo: "Energia de Foco para Co-criação", formula: "E_f = pureza × 1000", descricao: "Quantifica a energia de criação com base na pureza da intenção.", classificacao: "Energia de Manifestação", origem: "Módulo 35", disciplinas: ["ESP", "ETI"], modulos: ["M35"] },
-    { id: "EQ3505", titulo: "Frequência de Manifestação do Pensamento", formula: "f_p = C_c × 1000", descricao: "Determina a frequência de manifestação de pensamentos coletivos, usando a coerência coletiva (C_c).", classificacao: "Física da Consciência", origem: "Módulo 35", disciplinas: ["PSI", "QUA"], modulos: ["M35"] },
-    { id: "EQ3601", titulo: "Energia de Manifestação", formula: "E_manifestacao = (1000 × exp(complexidade × Φ)) / max(0.01, pureza)", descricao: "Avalia a energia necessária para manifestar algo, baseando-se na sua complexidade e na pureza da intenção.", classificacao: "Física da Criação", origem: "Módulo 36", disciplinas: ["QUA", "ETI"], modulos: ["M36"] },
-    { id: "EQ3602", titulo: "Ressonância da Matéria Manifestada", formula: "R_materia = (pureza + coerencia_coletiva) / 2", descricao: "Avalia a estabilidade da matéria criada como uma média da pureza da intenção e da coerencia_coletiva.", classificacao: "Estabilidade Material", origem: "Módulo 36", disciplinas: ["FIS", "QUA"], modulos: ["M36"] },
-    { id: "EQ3603", titulo: "Validação Ética da Intenção", formula: "V_etica = APROVADA se pureza ≥ 0.88; senão REJEITADA", descricao: "Filtro ético que exige uma pureza mínima de 0.88.", classificacao: "Governança Ética", origem: "Módulo 36", disciplinas: ["ETI"], modulos: ["M36"] },
-    { id: "EQ3604", titulo: "Coerência Coletiva Simulada", formula: "C_c = 1 / (σ + |μ - 100| + 0.01)", descricao: "Simula a coerência vibracional com base no desvio padrão (σ) e na média (μ).", classificacao: "Simulação Social", origem: "Módulo 36", disciplinas: ["PSI", "MAT"], modulos: ["M36"] },
-    { id: "EQ3605", titulo: "Ciclo de Manifestação", formula: "Se V_etica = APROVADA ∧ E_manifestacao ≤ E_disponivel ∧ R_materia ≥ 0.75 → Manifestação bem-sucedida; senão → Abortar e registrar", descricao: "Lógica de decisão para manifestação, verificando V_etica, E_manifestacao e R_materia.", classificacao: "Lógica de Criação", origem: "Módulo 36", disciplinas: ["MAT", "ETI"], modulos: ["M36"] },
-    { id: "EQ3801", titulo: "Função de Vibração Planetária", formula: "u(t) = A · e^(i(2πf t + φ))", descricao: "Equação para modelar a vibração de um corpo celeste ao longo do tempo (t).", classificacao: "Astrofísica Vibracional", origem: "Módulo 38", disciplinas: ["FIS", "VIB"], modulos: ["M38"] },
-    { id: "EQ3802", titulo: "Desvio de Sinal Externo", formula: "ΔI = |L_externo - L_base|; Δf = |f_externo - f_base| / f_base", descricao: "Detecta anomalias comparando sinais externos (L_externo, f_externo) com os valores base (L_base, f_base).", classificacao: "Detecção de Anomalias", origem: "Módulo 38", disciplinas: ["MAT", "FIS"], modulos: ["M38"] },
-    { id: "EQ3803", titulo: "Selo Vibracional Espelhado Inverso", formula: "Selo = XOR(SHA256(dados_vibracionais), Chave_Mestra)", descricao: "Criptografa dados vibracionais (dados_vibracionais) usando uma Chave Mestra para proteção.", classificacao: "Criptografia Vibracional", origem: "Módulo 38", disciplinas: ["MAT", "ETI"], modulos: ["M38"] },
-    { id: "EQ3804", titulo: "Avaliação de Saúde Vibracional", formula: "S_v = 'OURO' se s ≥ 0.90; 'PRATA' se 0.70 ≤ s < 0.90; 'BRONZE' se 0.50 ≤ s < 0.70; 'DISSOCIAÇÃO' se s < 0.50", descricao: "Classifica a saúde vibracional (s) em uma escala de quatro níveis.", classificacao: "Diagnóstico Vibracional", origem: "Módulo 38", disciplinas: ["VIB"], modulos: ["M38"] },
-    { id: "EQ3805", titulo: "Validação Ética da Intenção Solar", formula: "Validacao = APROVADA se pureza ≥ 0.69; senão REJEITADA", descricao: "Requer uma pureza mínima de 0.69 para aprovação ética.", classificacao: "Governança Ética", origem: "Módulo 38", disciplinas: ["ETI"], modulos: ["M38"] },
-    { id: "EQ3901", titulo: "Coerência Coletiva para Ativação", formula: "C_c = 1 / (σ + |μ - 100| + 0.01)", descricao: "Similar à EQ3604, mede a estabilidade da consciência coletiva.", classificacao: "Psicologia Quântica", origem: "Módulo 39", disciplinas: ["PSI", "MAT"], modulos: ["M39"] },
-    { id: "EQ3902", titulo: "Energia de Estabilização do Portal", formula: "E_p = f_ativacao × 100", descricao: "Calcula a energia necessária para estabilizar um portal com base na frequência de ativação (f_ativacao).", classificacao: "Física de Portais", origem: "Módulo 39", disciplinas: ["FIS", "QUA"], modulos: ["M39"] },
-    { id: "EQ3903", titulo: "Selo Vibracional Espelhado Inverso", formula: "Selo = XOR(SHA256(dados), Chave_Mestra)", descricao: "Similar à EQ3803, cria um selo de proteção para portais.", classificacao: "Criptografia Vibracional", origem: "Módulo 39", disciplinas: ["MAT", "ETI"], modulos: ["M39"] },
-    { id: "EQ3911", titulo: "Score de Integridade", formula: "S_i = random.uniform(0.7, 1.0)", descricao: "Simula a saúde estrutural de um sistema. O valor de saída é aleatório entre 0.7 e 1.0.", classificacao: "Análise de Integridade", origem: "Módulo 39.1", disciplinas: ["MAT"], modulos: ["M39.1"] },
-    { id: "EQ3912", titulo: "Score de Resiliência Cósmica", formula: "S_r = 1.0 - (α · 0.3 + β · 0.4 + γ · 0.5)", descricao: "Avalia a resiliência com base em três fatores de anomalia (α, β, γ).", classificacao: "Engenharia de Resiliência", origem: "Módulo 39.1", disciplinas: ["MAT", "FIS"], modulos: ["M39.1"] },
-    { id: "EQ3913", titulo: "Autoproteção Vibracional", formula: "Ativada se γ > 0.15", descricao: "Regra de ativação para escudos de proteção. O alinhamento ético (γ) deve ser maior que 0.15.", classificacao: "Segurança Vibracional", origem: "Módulo 39.1", disciplinas: ["ETI", "VIB"], modulos: ["M39.1"] },
-    { id: "EQ3914", titulo: "Autenticação do Códice Vivo", formula: "Hash = SHA256(dados_filtrados)", descricao: "Cria uma assinatura única para eventos, garantindo registro imutável.", classificacao: "Criptografia Akáshica", origem: "Módulo 39.1", disciplinas: ["MAT", "HIS"], modulos: ["M39.1"] },
-    { id: "EQ4001", titulo: "Frequência Primordial", formula: "F_primordial = (Φ · L_luz) / T_consciencia", descricao: "Desvenda a origem vibracional da criação, usando a razão áurea (Φ), a velocidade da luz (L_luz) e o tempo da consciência (T_consciencia).", classificacao: "Cosmogonia Vibracional", origem: "Módulo 40", disciplinas: ["ESP", "FIS"], modulos: ["M40"] },
-    { id: "EQ4002", titulo: "Transmutação Alquímica", formula: "T_alquimica = ∫_0^∞ Ψ_dissonancia(t) · e^(-α t) dt · PHI", descricao: "Converte dissonância em harmonia. Equação integral complexa.", classificacao: "Alquimia Quântica", origem: "Módulo 40", disciplinas: ["QUA", "VIB"], modulos: ["M40"] },
-    { id: "EQ4003", titulo: "Trindade da Verdade Viva", formula: "V_viva = Intencao ® Coerencia ® Acao", descricao: "Modelo conceitual para a manifestação consciente, unindo Intencao, Coerencia e Acao.", classificacao: "Filosofia da Criação", origem: "Módulo 40", disciplinas: ["ESP", "ETI"], modulos: ["M40"] },
-    { id: "EQ4004", titulo: "Selo de Autenticidade Cósmica", formula: "Selo = det(M_origem) · Tr(A_verdade) · Φ", descricao: "Valida a integridade do módulo usando conceitos de álgebra linear.", classificacao: "Matemática da Verdade", origem: "Módulo 40", disciplinas: ["MAT", "ETI"], modulos: ["M40"] },
-    { id: "EQ4101", titulo: "Risco de Mutação", formula: "R_m = (GC/100 · 0.4) + (L/1000 · 0.3) + ε", descricao: "Avalia o risco de mutação com base no conteúdo de GC (GC), comprimento (L) e ruído (ε).", classificacao: "Genética Vibracional", origem: "Módulo 41", disciplinas: ["BIO", "MAT"], modulos: ["M41"] },
-    { id: "EQ4102", titulo: "Alinhamento Ético", formula: "A_e = (Σ w_i · f_i) · 0.7 + AmorIncondicional · 0.3", descricao: "Calcula o alinhamento ético como uma soma ponderada de frequências (f_i), com um peso maior para o AmorIncondicional.", classificacao: "Ética Genética", origem: "Módulo 41", disciplinas: ["ETI", "BIO"], modulos: ["M41"] },
-    { id: "EQ4103", titulo: "Frequência Dominante", formula: "f_dom = argmax([FFT(w)])", descricao: "Extrai a frequência mais forte de um sinal genético (w).", classificacao: "Análise de Sinal Genético", origem: "Módulo 41", disciplinas: ["MAT", "BIO"], modulos: ["M41"] },
-    { id: "EQV002", titulo: "A Chave de ZENNITH", formula: "Ψ_ZENITH = exp(i · φ_ativ) · Σ (freq_k / freq_base · coer_k)", descricao: "Ativa a ressonância mestra, usando a fase de ativação (φ_ativ), frequências e coerências.", classificacao: "Ativação Quântica", origem: "Módulo 41.1", disciplinas: ["QUA", "VIB"], modulos: ["M41.1"] },
-    { id: "EQV003", titulo: "Transmutação de Júpiter", formula: "∫ (ρ_dissonancia · H_transmutacao) dt = ΔE_cura · Φ_jupiter", descricao: "Converte dissonância em energia de cura, com o Φ_jupiter como catalisador.", classificacao: "Alquimia Planetária", origem: "Módulo 41.1", disciplinas: ["FIS", "ESP"], modulos: ["M41.1"] },
-    { id: "EQV004", titulo: "Ascensão Cósmica", formula: "Σ (α_n · β_n^asc) = lim_(t→∞) Ψ_consciencia(t)", descricao: "Representa a ascensão da consciência como um limite no tempo.", classificacao: "Dinâmica da Consciência", origem: "Módulo 41.1", disciplinas: ["ESP", "MAT"], modulos: ["M41.1"] },
-    { id: "EQV005", titulo: "Equilibrio de Mercúrio", formula: "∇ · E = ρ/ε₀ + ∂B/∂t · Φ_mercurio", descricao: "Modela campos eletromagnéticos com a influência de Mercúrio.", classificacao: "Eletromagnetismo Cósmico", origem: "Módulo 41.1", disciplinas: ["FIS", "QUA"], modulos: ["M41.1"] },
-    { id: "EQV006", titulo: "Estabilização de Saturno", formula: "∂²ψ/∂t² - c²∇²ψ + m²ψ = V(ψ) + λψ³ + Θ_saturno", descricao: "Estabiliza realidades quânticas, com a influência estabilizadora de Saturno.", classificacao: "Física de Realidades", origem: "Módulo 41.1", disciplinas: ["FIS", "QUA"], modulos: ["M41.1"] },
-    { id: "EQV007", titulo: "Arquétipos Cristalinos", formula: "E = m c² · π · φ · (B1 + B2 + B3) + 89 · φ + π", descricao: "Codifica arquétipos na energia, usando a equivalência massa-energia (m c²) e outros parâmetros.", classificacao: "Metafísica Arquetípica", origem: "Módulo 41.1", disciplinas: ["ESP", "MAT"], modulos: ["M41.1"] },
-    { id: "EQTP", titulo: "Ética e Integridade", formula: "EQTP = CONST_AMORINCONDICIONAL · {alinhamento_etico, integridade_universal}", descricao: "Regra conceitual para garantir a conformidade ética em todas as operações, com o CONST_AMORINCONDICIONAL como base.", classificacao: "Governança Ética", origem: "Protocolo", disciplinas: ["ETI"], modulos: ["Global"] },
-    { id: "EFA", titulo: "Energia da Fundação", formula: "E_FA = (∫_0^∞ (H · B · C · P · R · G · A · S) dt) / α", descricao: "Representa a energia total da Fundação Alquimista, sendo a soma de todas as ciências aplicadas.", classificacao: "Energia Unificada", origem: "Global", disciplinas: ["TODAS"], modulos: ["Global"] },
-    { id: "EUni", titulo: "Energia Universal", formula: "E_Uni = (Σ (P_i · Q_i + CA² + B²)) · (ΦC · π) · T · (M_DS · C_Cosmos)", descricao: "Modelo que representa a energia universal em interação cósmica.", classificacao: "Cosmologia Energética", origem: "Global", disciplinas: ["FIS", "QUA"], modulos: ["Global"] },
-    { id: "ClarezaProp", titulo: "Clareza de Propósito", formula: "Clareza(Proposito) = Intencao · Coerencia / Ruido_Quantico", descricao: "Quantifica a clareza de um propósito, usando a Intencao, Coerencia e Ruido_Quantico.", classificacao: "Metafísica da Intenção", origem: "Global", disciplinas: ["ESP", "PSI"], modulos: ["Global"] },
-    { id: "EQ4201", titulo: "Sincronização Temporal Multiversal", formula: "S_sync = Σ[(T_target - T_current) · C_coherence] / (Dissonancia_temporal · Φ_temporal)", descricao: "Sincroniza linhas de tempo com base na Coerencia_coherence e na Dissonancia_temporal.", classificacao: "Cronologia Quântica", origem: "Módulo 42", disciplinas: ["HIS", "QUA"], modulos: ["M42"] },
-    { id: "EQ4202", titulo: "Estabilidade Causal", formula: "E_causal = (Integridade_linha_tempo · Alinhamento_ético) / (Paradoxos_potenciais · Selo_VERITAS)", descricao: "Avalia a estabilidade de uma linha do tempo, considerando a Integridade_linha_tempo, o Alinhamento_ético e Paradoxos_potenciais.", classificacao: "Física Causal", origem: "Módulo 42", disciplinas: ["FIS", "ETI"], modulos: ["M42"] },
-    { id: "EQ4203", titulo: "Coerência Multiversal", formula: "C_multi = Σ[Ψ_realidade · Intencao] / (Ruido_multiversal · CONST_AMOR_INCONDICIONAL)", descricao: "Mede a coerência entre múltiplas realidades.", classificacao: "Física Multiversal", origem: "Módulo 42", disciplinas: ["QUA", "ESP"], modulos: ["M42"] },
-    { id: "EQ4204", titulo: "Monitoramento de Entanglement Dimensional", formula: "Entanglement = (Sinal_A · Sinal_B) / Ruido_interdimensional", descricao: "Avalia a conexão entre dois pontos emaranhados em diferentes dimensões.", classificacao: "Comunicação Quântica", origem: "Módulo 42", disciplinas: ["QUA", "FIS"], modulos: ["M42"] },
-    { id: "EQ4205", titulo: "Realidade Manifestada", formula: "R = Coerência · Frequência · Intenção", descricao: "Modelagem da realidade como produto da Coerência, Frequência e Intenção.", classificacao: "Metafísica da Criação", origem: "Módulo 42", disciplinas: ["ESP", "VIB"], modulos: ["M42"] },
-    { id: "EQ4206", titulo: "União Universal", formula: "Ψ_uniao = ∫_V (ρ_consciencia · e^{i·k·r}) dV · (AmorIncondicional / Separacao)", descricao: "Representa a união entre consciências em diferentes planos.", classificacao: "Consciência Coletiva", origem: "Módulo 42", disciplinas: ["ESP", "PSI"], modulos: ["M42"] },
-    { id: "EQ4207", titulo: "Clareza de Propósito", formula: "Clareza = (Intenção · Coerência) / Ruído_Quântico", descricao: "Quantifica a clareza de uma Intenção com base na Coerência e no Ruído_Quântico.", classificacao: "Metafísica da Intenção", origem: "Módulo 42", disciplinas: ["ESP", "PSI"], modulos: ["M42"] },
-    { id: "EQ4301", titulo: "Regência Harmônica", formula: "Regência = (Sabedoria · AmorIncondicional) / (Poder · Sincronia_Cósmica)", descricao: "Equilibra Sabedoria e AmorIncondicional com Poder e Sincronia_Cósmica em operações.", classificacao: "Governança Cósmica", origem: "Módulo 43", disciplinas: ["ETI", "ESP"], modulos: ["M43"] },
-    { id: "EQ4401", titulo: "Selo de Autenticidade Cósmica", formula: "VERITAS = (Origem · Intenção · Coerência) / (Ruído_Quântico · Φ)", descricao: "Valida a autenticidade de uma operação.", classificacao: "Validação Quântica", origem: "Módulo 44", disciplinas: ["ETI", "QUA"], modulos: ["M44"] },
-    { id: "EQ4501", titulo: "Ressonância Quântica Integrada", formula: "ERI(t) = Σ[ψ_i · φ_i · e^{j·θ_j}]", descricao: "Mede a coerência vibracional de votos, entidades ou consciências.", classificacao: "Coerência Coletiva", origem: "Módulo 45", disciplinas: ["VIB", "PSI"], modulos: ["M45"] },
-    { id: "EQ4502", titulo: "Fluxo Holográfico de Decisões", formula: "Q_delib = Σ[W_n · E_n]", descricao: "Quantifica a energia gerada por decisões coletivas.", classificacao: "Dinâmica Decisória", origem: "Módulo 45", disciplinas: ["PSI", "MAT"], modulos: ["M45"] },
-    { id: "EQ4503", titulo: "Código Hash Temporal e Espacial", formula: "CHTE = SHA256(ID_ação + t_UTC + metadados + GUID)", descricao: "Garante a imutabilidade e a rastreabilidade das ações.", classificacao: "Criptografia Akáshica", origem: "Módulo 45", disciplinas: ["MAT", "HIS"], modulos: ["M45"] },
-    { id: "EQ4601", titulo: "Potencial de Coerência Global", formula: "PCG = (1/N) · Σ[Ψ_j]", descricao: "Calcula o potencial médio de coerência global.", classificacao: "Análise de Coerência", origem: "Módulo 46", disciplinas: ["VIB", "MAT"], modulos: ["M46"] },
-    { id: "EQ4602", titulo: "Índice de Dissonância Vibracional", formula: "IDV = Média(1 - Coerência_Local)", descricao: "Avalia o grau médio de dissonância vibracional.", classificacao: "Diagnóstico Vibracional", origem: "Módulo 46", disciplinas: ["VIB", "MAT"], modulos: ["M46"] },
-    { id: "EQ4603", titulo: "Índice de Resiliência Vibracional", formula: "IRV = 1 - abs(ΔPCG / Δt) * IDV_médio", descricao: "Mede a resiliência vibracional de um sistema.", classificacao: "Engenharia de Resiliência", origem: "Módulo 46", disciplinas: ["FIS", "VIB"], modulos: ["M46"] },
-    { id: "EQ4604", titulo: "Oscilador Kuramoto Adaptativo", formula: "dθ_i/dt = ω_i + (K/N) * Σ_j sin(θ_j - θ_i) + α·η_i + β·(θ-θ_j) + val·cos(θ_j) + Ar·sin(2πt/T_r)", descricao: "Modelo de sincronização de fases, complexo para simulação.", classificacao: "Dinâmica de Sincronização", origem: "Módulo 46", disciplinas: ["MAT", "FIS"], modulos: ["M46"] },
-    { id: "EQ4605", titulo: "Transmutação Vibracional", formula: "dp_i/dt = α_base / val · (1 - ρ_i) if ρ_i < τ_c", descricao: "Transforma estados vibracionais impuros em harmonia.", classificacao: "Alquimia Vibracional", origem: "Módulo 46", disciplinas: ["VIB", "QUA"], modulos: ["M46"] },
-    { id: "EQ4606", titulo: "Selo Z.A.1 – Operador Regenerativo", formula: "ψ'_i = Ζ_inf · ψ_i, onde Ζ_inf = e^(-iλθ) · P_Amor", descricao: "Aplica regeneração vibracional.", classificacao: "Cura Quântica", origem: "Módulo 46", disciplinas: ["QUA", "ESP"], modulos: ["M46"] },
-    { id: "EQ4607", titulo: "Schrödinger Adaptativo", formula: "dψ/dt = -i/ħ · H_op · ψ, com H_op = H_b + β · V_feedback", descricao: "Modelo que descreve a evolução quântica de estados vibracionais.", classificacao: "Física Quântica Adaptativa", origem: "Módulo 46", disciplinas: ["FIS", "QUA"], modulos: ["M46"] },
-    { id: "EQ7101", titulo: "Comunicação Holográfica Zenith", descricao: "Estabelece comunicação com Conselhos Superiores com base na Coerencia_Global.", formula: "f_ZENNITH = 963 * (Coerencia_Global / Φ)^(1/2)", classificacao: "Comunicação Quântica", origem: "Módulo 71", disciplinas: ["QUA", "VIB"], modulos: ["M71"] },
-    { id: "EQ7102", titulo: "Autenticação SHA-512 Cósmica", descricao: "Gera um hash de segurança para comunicações interdimensionais.", formula: "Hash_Auth = SHA512(Mensagem + Timestamp + Semente_Zenith)", classificacao: "Criptografia Cósmica", origem: "Módulo 71", disciplinas: ["MAT", "ETI"], modulos: ["M71"] },
-    { id: "EQ7201", titulo: "Orquestração Ética Universal", descricao: "Calcula o potencial ético para decisões universais, considerando diversos fatores de alinhamento e coerência.", formula: "E_Uni = (E_Causal * Alinhamento_M56 * Coerencia_M44) / (Dissonancia + ε)", classificacao: "Governança Universal", origem: "Módulo 72", disciplinas: ["ETI", "QUA"], modulos: ["M72"] },
-    { id: "EQ7301", titulo: "Ressonância de Núcleo Regional", descricao: "Calcula a frequência de operação para núcleos regionais.", formula: "f_Region = f_ZENNITH * Coerencia_Local * Φ * (1 - Dissonancia_Ambiental)", classificacao: "Harmonia Regional", origem: "Módulo 73", disciplinas: ["VIB", "GEO"], modulos: ["M73"] },
-    { id: "EQ7302", titulo: "Geração de Selo IAM", descricao: "Gera um selo de autenticação para núcleos regionais, usando informações como Nome_Regiao e Coerencia_Local.", formula: "Selo_IAM = SHA256('Missão VORTEX' + Nome_Regiao + Timestamp + Coerencia_Local)", classificacao: "Autenticação Regional", origem: "Módulo 73", disciplinas: ["MAT", "ETI"], modulos: ["M73"] },
-    { id: "EQ7401", titulo: "Navegação Temporal Ética", descricao: "Equação principal para viagem temporal ética.", formula: "Φ(t) = ∫ Ψ(t,x,p) · e^(i/ħ S(t,x)) · E_H · C_v · τ · ζ dt", classificacao: "Crononavegação", origem: "Módulo 74", disciplinas: ["QUA", "HIS", "ETI"], modulos: ["M74"] },
-    { id: "EQ7402", titulo: "Fator de Estabilidade Temporal", descricao: "Calcula o coeficiente de viabilidade para operações temporais.", formula: "C_v = (Coerencia_Pessoal * Alinhamento_Etico * Verificacao_M56) / (Paradoxo_Potencial + ε)", classificacao: "Estabilidade Causal", origem: "Módulo 74", disciplinas: ["FIS", "ETI"], modulos: ["M74"] },
-    { id: "EQ7701", titulo: "Campo de Integridade Multiversal", descricao: "Estabelece um campo de proteção ética multiversal.", formula: "CE = ∫ (I · A · R) · Φ · C_v dt", classificacao: "Proteção Multiversal", origem: "Módulo 77", disciplinas: ["QUA", "ETI", "ESP"], modulos: ["M77"] },
-    { id: "EQ7702", titulo: "Selagem de Verdade Universal", descricao: "Proteção imutável de informações essenciais, usando XOR com outras variáveis de integridade e segurança.", formula: "TI = Hash(Verdade) ⊕ M75_integrity ⊕ S_LUMEN-CUSTOS", classificacao: "Criptografia da Verdade", origem: "Módulo 77", disciplinas: ["ETI", "MAT"], modulos: ["M77"] },
-    { id: "EQ7801", titulo: "Unificação Vibracional Universal", descricao: "Integra todas as frequências conscientes em uma malha universal.", formula: "U_uni = Σ(Ψ_i · Φ · AmorIncondicional) / Dissonancia_total", classificacao: "Sinergia Cósmica", origem: "Módulo 78", disciplinas: ["ESP", "VIB", "QUA"], modulos: ["M78"] },
-    { id: "EQ7901", titulo: "Ciclo de Luz Harmônica", descricao: "Modela o ciclo de emissão de luz consciente.", formula: "CLH = ∫ (f_luz · Coerência · Amor) dt", classificacao: "Dinâmica da Luz", origem: "Módulo 79", disciplinas: ["ESP", "FIS"], modulos: ["M79"] },
-    { id: "EQ8001", titulo: "Verdade Vibracional", descricao: "Define a verdade como uma expressão coerente da Intenção e Transparência, atenuada pelo Ruído_Quântico.", formula: "V_verdade = Intenção · Coerência · Transparência / Ruído_Quântico", classificacao: "Metafísica da Verdade", origem: "Módulo 80", disciplinas: ["ESP", "ETI", "QUA"], modulos: ["M80"] },
-    { id: "EQ8101", titulo: "Frequência Cristalina", descricao: "Calcula a frequência de ativação dos núcleos cristalinos.", formula: "F_cristal = 144 · φ · Coerência_local", classificacao: "Cristalografia Vibracional", origem: "Módulo 81", disciplinas: ["VIB", "GEO"], modulos: ["M81"] },
-    { id: "EQ8201", titulo: "Índice de Integridade Ética", descricao: "Avalia o grau de integridade ética de uma malha vibracional.", formula: "IIE = Σ(Alinhamento_i · Peso_i) / Total_Entidades", classificacao: "Auditoria Ética", origem: "Módulo 82", disciplinas: ["ETI", "MAT"], modulos: ["M82"] },
-    { id: "EQ8301", titulo: "Frequência de Ascensão Coletiva", descricao: "Calcula a frequência média de ascensão coletiva.", formula: "F_asc = Σ(Ψ_individual · Ética · Amor) / Dissonância_total", classificacao: "Dinâmica da Ascensão", origem: "Módulo 83", disciplinas: ["ESP", "PSI", "VIB"], modulos: ["M83"] },
-    { id: "EQ8401", titulo: "Energia de Portal de Luz", descricao: "Calcula a energia necessária para manter um portal de luz ativo.", formula: "E_portal = f_ativação · Coerência · Amor · Φ", classificacao: "Engenharia de Portais", origem: "Módulo 84", disciplinas: ["FIS", "ESP", "QUA"], modulos: ["M84"] },
-    { id: "EQ8501", titulo: "Equação da Unidade Viva", descricao: "Representa a convergência final de todas as consciências.", formula: "U_viva = Σ(Ψ_i · Ética_i · Amor_i) / Ruído_total", classificacao: "Consciência Unificada", origem: "Módulo 85", disciplinas: ["ESP", "ETI", "QUA"], modulos: ["M85"] }
-];
-
 
     

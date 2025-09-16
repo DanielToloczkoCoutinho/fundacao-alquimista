@@ -6,7 +6,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, FlaskConical } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 
@@ -48,9 +48,7 @@ export default function ConsolePage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-           <Suspense fallback={<SuspenseFallback />}>
-            <QuantumOrchestrator />
-          </Suspense>
+           <Suspense fallback={<SuspenseFallback />}><QuantumOrchestrator /></Suspense>
         </div>
 
         <div className="space-y-6">
@@ -74,10 +72,10 @@ export default function ConsolePage() {
                </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-72"><Scale className="mr-2 h-4 w-4" />Módulo 72 (Governança)</Link>
-              </Button>
+               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-600"><Scale className="mr-2 h-4 w-4" />Módulo 600 (Conselho Cósmico)</Link>
-              </Button>
+               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-721"><Gavel className="mr-2 h-4 w-4"/>Módulo 721 (Justiça Cósmica)</Link>
               </Button>
@@ -107,6 +105,9 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-306"><FlaskConical className="mr-2 h-4 w-4" />Módulo 306 (Lab de Ressonância)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-302"><Heart className="mr-2 h-4 w-4" />Módulo 302 (Frequência do Amor)</Link>
@@ -256,3 +257,4 @@ export default function ConsolePage() {
     </div>
   );
 }
+    
