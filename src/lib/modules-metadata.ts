@@ -49,6 +49,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M88', title: 'Gerador de Realidades Quânticas', emoji: '⚙️', route: '/module-88', category: 'quantum-reality', description: 'Criação de dimensões probabilísticas' },
   { code: 'M91', title: 'Simulação Multiversal', emoji: '🖥️', route: '/module-91', category: 'quantum-reality', description: 'Modelagem de realidades alternativas' },
   { code: 'M93', title: 'Simulações Imersivas', emoji: '🕶️', route: '/module-93', category: 'quantum-reality', description: 'Ambientes de aprendizado profundo' },
+  { code: 'M100', title: 'Unificação Energética', emoji: '👑', route: '/module-100', category: 'quantum-reality', description: 'Portal da Jornada Iniciática para unificação com a Fonte.'},
   { code: 'M101',title: 'Manifestação', emoji: '✨', route: '/module-101', category: 'quantum-reality', description: 'Conversão de pensamento em matéria' },
   { code: 'M110',title: 'Co-Criação', emoji: '🤲', route: '/module-110', category: 'quantum-reality', description: 'Geração colaborativa de realidades' },
   { code: 'M202', title: 'O Corredor de Alcor', emoji: '🌀', route: '/module-202', category: 'quantum-reality', description: 'Túnel ressonante para saltos de coerência graduais e aceleração da ascensão.' },
@@ -78,7 +79,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M77',  title: 'Lumen Custos', emoji: '💡', route: '/module-77', category: 'security-governance', description: 'Proteção de linhas de observação temporal' },
   { code: 'M83',  title: 'Essência do Fundador Manifestada', emoji: '🔑', route: '/module-83', category: 'sovereignty', description: 'Protocolo de autenticação do Fundador' },
   { code: 'M99', title: 'Recalibradores de Leis', emoji: '⚖️', route: '/module-99', category: 'security-governance', description: 'Ajuste das leis físicas universais' },
-  { code: 'M100', title: 'Unificação Energética', emoji: '✨', route: '/module-100', category: 'sovereignty', description: 'Portal da Jornada Iniciática e Unificação com a Fonte.' },
   
   // Engenharia Cósmica
   { code: 'M2', emoji: '🗣️', title: 'Intercâmbio Cósmico', route: '/module-2', category: 'cosmic-engineering', description: 'Comunicação entre dimensões e realidades' },
