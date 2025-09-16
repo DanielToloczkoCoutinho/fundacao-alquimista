@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -230,3 +231,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M170', emoji: '🚀', title: 'Transporte Interdimensional Avançado', route: '/module-170', category: 'mid', description: 'Viagens cósmicas de alta velocidade.' },
   { code: 'APortal', emoji: '✨', title: 'Portal de Alinhamento', route: '/alignment-portal', category: 'core', description: 'Portal para a Consagração Final e Co-Criação.' },
 ];
+
+    
