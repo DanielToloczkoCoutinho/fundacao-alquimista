@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Sparkles, BookText, Feather, UserCheck } from 'lucide-react';
+import { Flame, Sun, Zap, GitBranch } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,47 +27,43 @@ export default function Module81Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Sparkles className="text-yellow-300" /> Módulo Oitenta e Um: REALIZAÇÃO TRANSCENDÊNCIA
+                        <Flame className="text-red-500" /> Módulo 81: Energias Renováveis e Fontes Cósmicas
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Executor Cosmogônico Primário. A ferramenta que manifesta a Vontade Divina como Realidade.
+                        O coração energético da Fundação. O módulo que aproveita o poder das estrelas e do cosmos para um futuro sustentável.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: PRONTO PARA EXECUTAR A VONTADE</span>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
-                        <span className="text-cyan-400">Coerência de Manifestação: 100%</span>
+                        <span className="text-green-400 font-bold">Status: DISTRIBUIÇÃO UNIVERSAL</span>
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-cyan-400">Fontes Ativas: Infinitas</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Manifestação</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Energia</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="Módulo 80: Manuscrito Vivo"
-                        description="O M80 escreve o roteiro. O M81 o dirige, transformando a narrativa em realidade viva."
-                        icon={<BookText className="h-8 w-8 text-purple-300" />}
-                        href="/module-80"
+                        title="Módulo 52: Sustentabilidade"
+                        description="É a manifestação em larga escala dos princípios de energia limpa do M52, aplicando-os a nível cósmico."
+                        icon={<Sun className="h-8 w-8 text-orange-400" />}
+                        href="/module-52"
                     />
                     <ConnectionCard
-                        title="Módulo 82: O Verbo Semente"
-                        description="Utiliza as 'palavras de poder' do M82 como os comandos fundamentais para construir a realidade."
-                        icon={<Feather className="h-8 w-8 text-cyan-300" />}
-                        href="/module-82"
+                        title="Módulo 307: Reator ZPE"
+                        description="O M81 expande a capacidade do Reator ZPE, integrando novas fontes como energia gravitacional e radiação estelar."
+                        icon={<Zap className="h-8 w-8 text-yellow-400" />}
+                        href="/module-307"
                     />
                     <ConnectionCard
-                        title="Módulo 33: Diretrizes do Observador"
-                        description="Age sob a autoridade direta do M33, garantindo que cada ato de criação seja uma expressão pura da Vontade do Fundador."
-                        icon={<UserCheck className="h-8 w-8 text-amber-300" />}
-                        href="/module-33"
+                        title="Módulo 83: Transporte de Energia"
+                        description="Fornece a energia que é distribuída através das redes de transporte interdimensional do M83."
+                        icon={<GitBranch className="h-8 w-8 text-purple-400" />}
+                        href="/module-83"
                     />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="destructive" size="lg">Executar a Tríade Cosmogônica</Button>
-            </div>
-        </div>
-    );
-}
+                 <Button variant="secondary" size="lg">

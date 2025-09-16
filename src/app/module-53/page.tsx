@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Milestone, Rocket, Network, Shield } from 'lucide-react';
+import { Sprout, Leaf, Recycle, Heart } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -21,52 +21,51 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
     </Card>
 );
 
-export default function Module82Page() {
+export default function Module53Page() {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Milestone className="text-blue-400" /> Módulo 82: Roteamento Interdimensional e Viagens Cósmicas
+                        <Sprout className="text-lime-400" /> Módulo 53: Gestão e Conservação de Ecossistemas
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A rede de transporte do infinito. O sistema que permite viagens instantâneas e seguras através do tecido do espaço-tempo.
+                        O guardião da biodiversidade cósmica, garantindo que todos os mundos floresçam em harmonia e equilíbrio.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: ROTAS ABERTAS</span>
+                        <span className="text-green-400 font-bold">Status: MONITORAMENTO ATIVO</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Viagens em Andamento: 1.44M</span>
+                        <span className="text-cyan-400">Saúde Ecológica Global: 99.5%</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Transporte</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Conservação</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="Módulo 28: Transporte Quântico"
-                        description="Implementa a tecnologia de teletransporte e portais do M28 em uma infraestrutura universal robusta e escalável."
-                        icon={<Rocket className="h-8 w-8 text-orange-400" />}
-                        href="/module-28"
+                        title="Módulo 52: Energias Renováveis"
+                        description="Utiliza energia 100% limpa do M52 para alimentar os sistemas de monitoramento e regeneração, garantindo um ciclo virtuoso."
+                        icon={<Leaf className="h-8 w-8 text-green-400" />}
+                        href="/module-52"
                     />
                     <ConnectionCard
-                        title="Módulo 83: Transporte de Energia"
-                        description="Utiliza a mesma rede para transportar não apenas seres e matéria, mas também energia, de forma instantânea e sem perdas."
-                        icon={<Network className="h-8 w-8 text-teal-400" />}
-                        href="/module-83"
+                        title="Módulo 54: Agricultura Interdimensional"
+                        description="Fornece os dados sobre a saúde do solo e as condições climáticas para otimizar a produção sustentável de alimentos."
+                        icon={<Recycle className="h-8 w-8 text-blue-400" />}
+                        href="/module-54"
                     />
                     <ConnectionCard
-                        title="Módulo 57: Segurança"
-                        description="Cada rota e portal é protegido por criptografia quântica, garantindo que apenas viajantes autorizados possam usar a rede."
-                        icon={<Shield className="h-8 w-8 text-blue-500" />}
-                        href="/module-57"
+                        title="Módulo 109: Cura Quântica"
+                        description="Aplica os princípios da cura quântica em escala planetária, restaurando a assinatura vibracional de ecossistemas danificados."
+                        icon={<Heart className="h-8 w-8 text-pink-400" />}
+                        href="/module-109"
                     />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Visualizar Mapa da Rede de Transporte</Button>
+                 <Button variant="secondary" size="lg">Analisar Saúde Ecológica</Button>
             </div>
         </div>
-    );

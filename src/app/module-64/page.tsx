@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Milestone, Rocket, Network, Shield } from 'lucide-react';
+import { Zap, Sun, Atom, Orbit } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -21,52 +21,49 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
     </Card>
 );
 
-export default function Module82Page() {
+export default function Module64Page() {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Milestone className="text-blue-400" /> Módulo 82: Roteamento Interdimensional e Viagens Cósmicas
+                        <Zap className="text-yellow-300" /> Módulo 64: Sistemas de Energia Limpa e Renovável Universal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A rede de transporte do infinito. O sistema que permite viagens instantâneas e seguras através do tecido do espaço-tempo.
+                        A fonte da sustentabilidade. O módulo que aproveita as energias do cosmos para alimentar civilizações sem custo para o universo.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: ROTAS ABERTAS</span>
+                        <span className="text-green-400 font-bold">Status: FORNECIMENTO INFINITO</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Viagens em Andamento: 1.44M</span>
+                        <span className="text-cyan-400">Impacto Ambiental: 0%</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Transporte</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias Energéticas</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="Módulo 28: Transporte Quântico"
-                        description="Implementa a tecnologia de teletransporte e portais do M28 em uma infraestrutura universal robusta e escalável."
-                        icon={<Rocket className="h-8 w-8 text-orange-400" />}
-                        href="/module-28"
+                        title="Módulo 307: Reator ZPE"
+                        description="O M64 é a aplicação prática e em escala universal da tecnologia de energia do ponto zero desenvolvida no M307."
+                        icon={<Sun className="h-8 w-8 text-orange-400" />}
+                        href="/module-307"
                     />
                     <ConnectionCard
-                        title="Módulo 83: Transporte de Energia"
-                        description="Utiliza a mesma rede para transportar não apenas seres e matéria, mas também energia, de forma instantânea e sem perdas."
-                        icon={<Network className="h-8 w-8 text-teal-400" />}
-                        href="/module-83"
+                        title="Módulo 211: Fusão Controlada"
+                        description="Aplica os princípios da fusão controlada para criar mini-sóis artificiais como fontes de energia limpa e localizada."
+                        icon={<Atom className="h-8 w-8 text-blue-400" />}
+                        href="/module-211"
                     />
                     <ConnectionCard
-                        title="Módulo 57: Segurança"
-                        description="Cada rota e portal é protegido por criptografia quântica, garantindo que apenas viajantes autorizados possam usar a rede."
-                        icon={<Shield className="h-8 w-8 text-blue-500" />}
-                        href="/module-57"
+                        title="Módulo 65: Transporte Cósmico"
+                        description="Fornece a energia limpa e ilimitada para alimentar a frota de naves e a rede de portais da Fundação."
+                        icon={<Orbit className="h-8 w-8 text-purple-400" />}
+                        href="/module-65"
                     />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Visualizar Mapa da Rede de Transporte</Button>
-            </div>
-        </div>
-    );
+                 <

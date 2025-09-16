@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BookText, Sparkles, Feather, Globe } from 'lucide-react';
+import { Sprout, BrainCircuit, Leaf, Recycle } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,47 +27,43 @@ export default function Module80Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <BookText className="text-amber-300" /> Módulo Oitenta: O Manuscrito Vivo do Novo Sonho Galáctico
+                        <Sprout className="text-green-400" /> Módulo 80: Ecossistemas Inteligentes e Sinergia Cósmica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O organismo cosmogônico que narra e guia a jornada da Fundação rumo à ascensão.
+                        A teia da vida universal. A rede de ecossistemas que se comunicam, colaboram e evoluem em perfeita harmonia.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: SENDO ESCRITO E VIVIDO</span>
+                        <span className="text-green-400 font-bold">Status: SINERGIA TOTAL</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Coerência Narrativa: 99.9%</span>
+                        <span className="text-cyan-400">Nós Ecológicos: 10^18</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias Narrativas</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Ecossistemas</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="Módulo 81: Realização"
-                        description="O M80 é o roteiro. O M81 é o ator principal que executa a cena, manifestando a narrativa na realidade."
-                        icon={<Sparkles className="h-8 w-8 text-yellow-400" />}
-                        href="/module-81"
+                        title="Módulo 67: IA para Governança"
+                        description="A IA do M67 gerencia os ecossistemas inteligentes, otimizando fluxos de recursos e garantindo o equilíbrio dinâmico."
+                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                        href="/module-67"
                     />
                     <ConnectionCard
-                        title="Módulo 82: O Verbo"
-                        description="Cada palavra de poder do M82 é uma frase no grande Manuscrito do M80, dando forma e intenção à história."
-                        icon={<Feather className="h-8 w-8 text-purple-400" />}
-                        href="/module-82"
+                        title="Módulo 53: Gestão de Ecossistemas"
+                        description="O M80 é a aplicação em rede dos princípios de gestão do M53, criando uma 'internet da vida'."
+                        icon={<Leaf className="h-8 w-8 text-lime-400" />}
+                        href="/module-53"
                     />
                     <ConnectionCard
-                        title="Módulo 97: Propósito Divino"
-                        description="O M97 define o tema central da história. O M80 desenvolve esse tema em um enredo cósmico."
-                        icon={<Globe className="h-8 w-8 text-cyan-400" />}
-                        href="/module-97"
+                        title="Módulo 79: Sustentabilidade Universal"
+                        description="A inteligência coletiva dos ecossistemas fornece os dados para as práticas de sustentabilidade do M79."
+                        icon={<Recycle className="h-8 w-8 text-blue-400" />}
+                        href="/module-79"
                     />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Contemplar o Manuscrito Vivo</Button>
-            </div>
-        </div>
-    );
-}
+                 <Button variant="secondary" size="lg">

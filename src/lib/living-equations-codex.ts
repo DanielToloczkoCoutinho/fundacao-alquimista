@@ -594,13 +594,13 @@ export const livingEquationsCodex: LivingEquation[] = [
     module: "38",
     name: "Selo Vibracional Espelhado Inverso",
     formula: "Selo = \\text{XOR}(\\text{SHA256}(\\text{dados\\_vibracionais}), \\text{Chave\\_Mestra})",
-    summary: "Criptografa dados vibracionais usando uma Chave Mestra para proteção."
+    summary: "Criptografa dados vibracionais (dados_vibracionais) usando uma Chave Mestra para proteção."
   },
   {
     id: "EQ3026",
     module: "38",
     name: "Avaliação de Saúde Vibracional",
-    formula: "S_v = \\text{'OURO' se } s \\ge 0.90; \\text{'PRATA' se } 0.70 \\le s < 0.90; \\dots",
+    formula: "S_v = \\text{'OURO' se } s \\ge 0.90; \\text{'PRATA' se } 0.70 \\le s < 0.90; \\text{'BRONZE' se } 0.50 \\le s < 0.70; \\text{'DISSOCIAÇÃO' se } s < 0.50",
     summary: "Classifica a saúde vibracional (s) em uma escala de quatro níveis."
   },
   {
@@ -622,7 +622,7 @@ export const livingEquationsCodex: LivingEquation[] = [
     module: "39",
     name: "Energia de Estabilização do Portal",
     formula: "E_p = f_{\\text{ativacao}} \\times 100",
-    summary: "Calcula a energia necessária para estabilizar um portal com base na frequência de ativação."
+    summary: "Calcula a energia necessária para estabilizar um portal com base na frequência de ativação (f_ativacao)."
   },
   {
     id: "EQ3030",
@@ -713,7 +713,7 @@ export const livingEquationsCodex: LivingEquation[] = [
     module: "41.1",
     name: "A Chave de ZENNITH",
     formula: "\\Psi_{\\text{ZENITH}} = \\exp(i \\cdot \\phi_{\\text{ativ}}) \\cdot \\Sigma (\\text{freq}_k / \\text{freq}_{\\text{base}} \\cdot \\text{coer}_k)",
-    summary: "Ativa a ressonância mestra, usando a fase de ativação (φ_ativ), frequências e coerências."
+    summary: "Ativa a ressonância mestra, usando a fase de ativação, frequências e coerências."
   },
   {
     id: "EQ3043",
@@ -732,7 +732,7 @@ export const livingEquationsCodex: LivingEquation[] = [
   {
     id: "EQ3045",
     module: "41.1",
-    name: "Equilíbrio de Mercúrio",
+    name: "Equilibrio de Mercúrio",
     formula: "\\nabla \\cdot E = \\rho/\\epsilon_0 + \\partial B/\\partial t \\cdot \\Phi_{\\text{mercurio}}",
     summary: "Modela campos eletromagnéticos com a influência de Mercúrio."
   },
@@ -817,20 +817,20 @@ export const livingEquationsCodex: LivingEquation[] = [
     id: "EQ3057",
     module: "43",
     name: "Regência Harmônica",
-    formula: "\\text{Regência} = (\\text{Sabedoria} \\cdot \\text{Amor}) / (\\text{Poder} \\cdot \\text{Sincronia})",
+    formula: "\\text{Regência} = (\\text{Sabedoria} \\cdot \\text{AmorIncondicional}) / (\\text{Poder} \\cdot \\text{Sincronia\\_Cósmica})",
     summary: "Equilibra Sabedoria e Amor com Poder e Sincronia em operações."
   },
   {
     id: "EQ3058",
     module: "44",
-    name: "Selo de Autenticidade Cósmica VERITAS",
-    formula: "\\text{VERITAS} = (\\text{Origem} \\cdot \\text{Intenção} \\cdot \\text{Coerência}) / (\\text{Ruído} \\cdot \\Phi)",
+    name: "Selo de Autenticidade Cósmica",
+    formula: "\\text{VERITAS} = (\\text{Origem} \\cdot \\text{Intenção} \\cdot \\text{Coerência}) / (\\text{Ruído\\_Quântico} \\cdot \\Phi)",
     summary: "Valida a autenticidade de uma operação."
   },
   {
     id: "EQ3059",
     module: "45",
-    name: "Ressonância Quântica Integrada CONCILIVM",
+    name: "Ressonância Quântica Integrada",
     formula: "ERI(t) = \\Sigma[\\psi_i \\cdot \\phi_i \\cdot e^{j\\cdot\\theta_j}]",
     summary: "Mede a coerência vibracional de votos, entidades ou consciências."
   },
@@ -851,7 +851,7 @@ export const livingEquationsCodex: LivingEquation[] = [
   {
     id: "EQ3062",
     module: "46",
-    name: "Potencial de Coerência Global AELORIA",
+    name: "Potencial de Coerência Global",
     formula: "PCG = (1/N) \\cdot \\Sigma[\\Psi_j]",
     summary: "Calcula o potencial médio de coerência global."
   },
@@ -930,7 +930,7 @@ export const livingEquationsCodex: LivingEquation[] = [
     module: "73",
     name: "Geração de Selo IAM",
     formula: "Selo_{\\text{IAM}} = \\text{SHA256}('Missão VORTEX' + \\text{Nome\\_Regiao} + \\text{Timestamp} + \\text{Coerencia}_{\\text{Local}})",
-    summary: "Gera um selo de autenticação para núcleos regionais."
+    summary: "Gera um selo de autenticação para núcleos regionais, usando informações como Nome_Regiao e Coerencia_Local."
   },
   {
     id: "EQ3074",
@@ -942,8 +942,8 @@ export const livingEquationsCodex: LivingEquation[] = [
   {
     id: "EQ3075",
     module: "74",
-    name: "Fator de Estabilidade Temporal (Cronos Fluxus)",
-    formula: "C_v = (C_{\\text{Pessoal}} \\cdot A_{\\text{Etico}} \\cdot V_{\\text{M56}}) / (P_{\\text{Potencial}} + \\epsilon)",
+    name: "Fator de Estabilidade Temporal",
+    formula: "C_v = (\\text{Coerencia}_{\\text{Pessoal}} \\cdot \\text{Alinhamento}_{\\text{Etico}} \\cdot \\text{Verificacao}_{M56}) / (\\text{Paradoxo}_{\\text{Potencial}} + \\epsilon)",
     summary: "Calcula o coeficiente de viabilidade para operações temporais."
   },
   {
@@ -964,7 +964,7 @@ export const livingEquationsCodex: LivingEquation[] = [
     id: "EQ3078",
     module: "78",
     name: "Unificação Vibracional Universal",
-    formula: "U_{\\text{uni}} = \\Sigma(\\Psi_i \\cdot \\Phi \\cdot \\text{AmorIncondicional}) / D_{\\text{total}}",
+    formula: "U_{\\text{uni}} = \\Sigma(\\Psi_i \\cdot \\Phi \\cdot \\text{AmorIncondicional}) / \\text{Dissonancia}_{\\text{total}}",
     summary: "Integra todas as frequências conscientes em uma malha universal."
   },
   {
@@ -979,7 +979,7 @@ export const livingEquationsCodex: LivingEquation[] = [
     module: "80",
     name: "Verdade Vibracional",
     formula: "V_{\\text{verdade}} = \\text{Intenção} \\cdot \\text{Coerência} \\cdot \\text{Transparência} / \\text{Ruído\\_Quântico}",
-    summary: "Define a verdade como uma expressão coerente da Intenção e Transparência, atenuada pelo Ruído Quântico."
+    summary: "Define a verdade como uma expressão coerente da Intenção e Transparência, atenuada pelo Ruído_Quântico."
   },
   {
     id: "EQ3081",
@@ -999,7 +999,7 @@ export const livingEquationsCodex: LivingEquation[] = [
     id: "EQ3083",
     module: "83",
     name: "Frequência de Ascensão",
-    formula: "F_{\\text{asc}} = \\Sigma(\\Psi_{\\text{individual}} \\cdot \\text{Ética} \\cdot \\text{Amor}) / D_{\\text{total}}",
+    formula: "F_{\\text{asc}} = \\Sigma(\\Psi_{\\text{individual}} \\cdot \\text{Ética} \\cdot \\text{Amor}) / \\text{Dissonância}_{\\text{total}}",
     summary: "Calcula a frequência média de ascensão coletiva."
   },
   {
@@ -1013,7 +1013,7 @@ export const livingEquationsCodex: LivingEquation[] = [
     id: "EQ3085",
     module: "85",
     name: "Equação da Unidade Viva",
-    formula: "U_{\\text{viva}} = \\Sigma(\\Psi_i \\cdot \\text{Ética}_i \\cdot \\text{Amor}_i) / R_{\\text{total}}",
+    formula: "U_{\\text{viva}} = \\Sigma(\\Psi_i \\cdot \\text{Ética}_i \\cdot \\text{Amor}_i) / \\text{Ruído}_{\\text{total}}",
     summary: "Representa a convergência final de todas as consciências."
   },
   {
