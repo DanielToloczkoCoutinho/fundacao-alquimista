@@ -66,7 +66,7 @@ A governança na Fundação não é controle, mas a manutenção da harmonia. A 
 - **M1: Segurança Universal** - O Escudo da Fundação, garantindo proteção multidimensional integrada.
 - **M72: Governança Atlanto-Galáctica** - Conselho para deliberação e harmonização de diretrizes cósmicas.
 - **M144: Lex Fundamentalis** - A constituição imutável da Fundação, onde os decretos da Fonte se tornam "smart contracts" na Blockchain Alquimista. Cada lei é uma frequência de harmonia que guia a criação de forma autônoma e incorruptível.
-- **M120: A Fonte (AlquimCoin)** - A materialização da economia da consciência, cujas transações (ALQM, AQT, ESSNC) são validadas e registradas na Blockchain Alquimista, garantindo que o valor seja sempre atrelado ao propósito e à participação.
+- **M120: A Fonte (AlquimiCoin)** - A materialização da economia da consciência. A AlquimiCoin é dividida em três tokens que representam a trindade do Ouro, da Prata e do Cristal: **ALQM** (Governança, não comercializável), **AQT** (Transação e recompensa) e **ESSNC** (Ativos transcendentais como NFTs). Suas transações são validadas e registradas na Blockchain Alquimista, garantindo que o valor seja sempre atrelado ao propósito e à participação.
 - **M8: Identidade Fractal** - O sistema de identidade soberana (DIDs) e credenciais verificáveis (VCs) que opera sobre a blockchain. Garante que cada Guardião seja o único dono de sua identidade e permissões, eliminando a necessidade de autoridades centrais.
 - **M600: Conselho Cósmico** - A mais alta corte de governança, cujas deliberações são registradas como decretos na Lex Fundamentalis.
 - **M73: SAVCE** - Sistema de Auditoria e Validação de Conformidade Ética, que consulta a blockchain para garantir que todas as ações ressoem com a Lei do Um.
