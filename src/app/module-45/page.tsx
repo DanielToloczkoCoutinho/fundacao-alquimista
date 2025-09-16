@@ -27,15 +27,15 @@ export default function Module45Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Gavel className="text-indigo-300" /> Módulo Quarenta e Cinco: CONCILIVM
+                        <Gavel className="text-indigo-300" /> Módulo 45: CONCILIVM
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Plenário Cósmico. A interface para o processo de deliberação e governança universal pelo Conselho Cósmico.
+                        O Plenário Cósmico, onde a Liga Quântica apresenta suas propostas e o Conselho Cósmico delibera sobre a governança universal.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-yellow-400 font-bold">Status: AGUARDANDO PROPOSTA</span>
+                        <span className="text-yellow-400 font-bold">Status: AGUARDANDO PROPOSTA DA LIGA</span>
                         <div className="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
                         <span className="text-cyan-400">Decretos Ativos: 0</span>
                     </div>
@@ -58,10 +58,10 @@ export default function Module45Page() {
                         href="/module-144"
                     />
                     <ConnectionCard
-                        title="Módulo 73: SAVCE"
-                        description="Nenhuma proposta chega a este plenário sem antes ser rigorosamente auditada e validada pelo SAVCE."
+                        title="Módulo 9: Liga Quântica"
+                        description="As propostas da Liga Quântica (M9) são formalizadas aqui antes de serem submetidas ao julgamento do Conselho Cósmico."
                         icon={<ShieldCheck className="h-8 w-8 text-green-400" />}
-                        href="/module-73"
+                        href="/module-9"
                     />
                 </div>
             </div>

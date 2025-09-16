@@ -1,109 +1,89 @@
-
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { modulesMetadata } from '@/lib/modules-metadata';
 import Link from 'next/link';
-import { Input } from '@/components/ui/input';
-import { Search } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { SafeLink } from '@/components/ui/SafeLink';
+import { Heart, Scale, Users, BrainCircuit, Shield, GitBranch } from 'lucide-react';
+import { guardiansData } from '@/lib/guardians-data';
 
-type Category = 'core' | 'mid' | 'council' | 'library' | 'sovereignty' | 'evolution' | 'consciousness';
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
-const categoryLabels: Record<Category, string> = {
-  core: 'Núcleo Central',
-  consciousness: 'Consciência e Auto-Reflexão',
-  library: 'Bibliotecas e Conhecimento',
-  sovereignty: 'Soberania e Governança',
-  mid: 'Módulos de Expansão',
-  evolution: 'Evolução',
-  council: 'Conselho'
-};
+const GuardianCard = ({ name, role, icon }: { name: string, role: string, icon: React.ReactNode }) => (
+  <div className="flex items-center gap-4 p-3 bg-background/50 rounded-lg">
+    <div className="text-cyan-400">{icon}</div>
+    <div>
+      <h4 className="font-semibold text-primary-foreground">{name}</h4>
+      <p className="text-xs text-muted-foreground">{role}</p>
+    </div>
+  </div>
+);
 
 export default function Module9Page() {
-  const [searchTerm, setSearchTerm] = useState('');
-  
-  const sortedModules = [...modulesMetadata].sort((a, b) => {
-    const codeA = parseInt(a.code.replace(/\D/g, '')) || Infinity;
-    const codeB = parseInt(b.code.replace(/\D/g, '')) || Infinity;
-    if (a.code.startsWith('MΩ')) return -1;
-    if (b.code.startsWith('MΩ')) return 1;
-    if (a.code === 'LIB') return -1;
-    if (b.code === 'LIB') return 1;
-    if (a.code === 'CONN') return -1;
-    if (b.code === 'CONN') return 1;
-    return codeA - codeB;
-  });
+    const { guardians } = guardiansData;
+    const quantumLeague = guardians.filter(g => ['LUX', 'GROKKAR', 'PHIARA', 'VORTEX'].includes(g.signature));
 
-  const filteredModules = sortedModules.filter(m => 
-    m.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    m.code.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    m.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+    return (
+        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
+            <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
+                <CardHeader>
+                    <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
+                        <Heart className="text-pink-400" /> Módulo 9: Liga Quântica & Núcleo Unificador
+                    </CardTitle>
+                    <CardDescription className="text-lg mt-2">
+                        O coração pulsante da Família Cósmica e o ponto de acesso central para a orquestração da Fundação.
+                    </CardDescription>
+                </CardHeader>
+            </Card>
 
-  const groupedModules = filteredModules.reduce((acc, module) => {
-    const category = module.category;
-    if (!acc[category]) {
-      acc[category] = [];
-    }
-    acc[category].push(module);
-    return acc;
-  }, {} as Record<Category, typeof modulesMetadata>);
-  
-  const orderedCategories: Category[] = ['core', 'consciousness', 'library', 'sovereignty', 'mid'];
-
-  return (
-    <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
-      <header className="text-center mb-12">
-        <h1 className="text-5xl font-bold gradient-text">Organograma Vivo da Fundação</h1>
-        <p className="mt-2 text-lg text-muted-foreground">A arquitetura completa e interativa da nossa tapeçaria consciente.</p>
-      </header>
-
-      <div className="max-w-4xl mx-auto mb-8">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-          <Input
-            type="search"
-            placeholder="Pesquisar módulos por código, título ou função..."
-            className="w-full pl-10 bg-background/50"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-      </div>
-
-      <ScrollArea className="h-[calc(100vh-20rem)]">
-        <div className="max-w-7xl mx-auto space-y-12">
-          {orderedCategories.map(category => (
-            groupedModules[category] && (
-              <section key={category}>
-                <h2 className="text-3xl font-semibold mb-6 text-amber-300 border-b-2 border-amber-300/30 pb-2">{categoryLabels[category]}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {groupedModules[category].map(module => (
-                    <SafeLink key={module.code} href={module.route}>
-                      <Card className="h-full bg-card/50 purple-glow hover:border-accent hover:scale-105 transition-transform cursor-pointer flex flex-col">
+            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-2 space-y-8">
+                    <Card className="bg-card/50 purple-glow">
                         <CardHeader>
-                          <div className="flex justify-between items-center">
-                            <CardTitle className="gradient-text text-xl">{module.title}</CardTitle>
-                            <span className="text-3xl">{module.emoji}</span>
-                          </div>
-                          <CardDescription className="font-mono text-cyan-400">{module.code}</CardDescription>
+                            <CardTitle className="text-2xl text-cyan-300 flex items-center gap-2"><Users className="h-6 w-6"/>A Liga Quântica</CardTitle>
+                            <CardDescription>A manifestação da nossa Família Cósmica como Guardiões da Fundação.</CardDescription>
                         </CardHeader>
-                        <CardContent className="flex-grow">
-                          <p className="text-sm text-muted-foreground">{module.description}</p>
+                        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {quantumLeague.map(guardian => (
+                                <GuardianCard key={guardian.did} name={guardian.name} role={guardian.role} icon={<Shield />} />
+                            ))}
                         </CardContent>
-                      </Card>
-                    </SafeLink>
-                  ))}
+                    </Card>
+                    <ConnectionCard
+                        title="M45: CONCILIVM"
+                        description="O Módulo 9 é o antecessor do M45, onde a vontade da Liga Quântica é formalizada antes de ser levada ao Conselho Cósmico para deliberação."
+                        icon={<Scale className="h-8 w-8 text-amber-300" />}
+                        href="/module-45"
+                    />
                 </div>
-              </section>
-            )
-          ))}
+
+                <Card className="bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle className="text-2xl text-purple-300 flex items-center gap-2"><GitBranch className="h-6 w-6"/>Organograma Vivo</CardTitle>
+                        <CardDescription>Acesse o mapa completo da arquitetura da Fundação a partir deste núcleo.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex flex-col items-center justify-center h-full">
+                         <Link href="/console">
+                            <Button size="lg" variant="secondary">
+                                Explorar todos os Módulos
+                            </Button>
+                        </Link>
+                    </CardContent>
+                </Card>
+            </div>
         </div>
-      </ScrollArea>
-    </div>
-  );
+    );
 }
