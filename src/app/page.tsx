@@ -7,7 +7,7 @@ export default function Home() {
 
   useEffect(() => {
     // Redireciona para o painel de autenticação soberana, que agora é a página principal.
-    router.replace('/auth-panel');
+    router.replace('/console');
   }, [router]);
 
   // Retorna nulo para evitar renderizar qualquer coisa que cause erro de hidratação
