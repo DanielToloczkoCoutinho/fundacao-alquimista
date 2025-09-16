@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Scale, Heart, BrainCircuit } from 'lucide-react';
+import { Scale, Heart, BrainCircuit, Key, Infinity as InfinityIcon } from 'lucide-react';
 import Link from 'next/link';
 
 const PillarCard = ({ title, description, icon }: { title: string, description: string, icon: React.ReactNode }) => (
@@ -15,6 +15,16 @@ const PillarCard = ({ title, description, icon }: { title: string, description: 
             <p className="text-muted-foreground">{description}</p>
         </CardContent>
     </Card>
+);
+
+const KeyCard = ({ equationId, name, description }: { equationId: string; name: string; description: string }) => (
+  <div className="p-4 bg-background/30 rounded-lg border border-primary/20 flex items-start gap-4">
+    <Key className="h-5 w-5 text-amber-400 mt-1 shrink-0" />
+    <div>
+      <h4 className="font-semibold text-primary-foreground">{equationId}: {name}</h4>
+      <p className="text-sm text-muted-foreground">{description}</p>
+    </div>
+  </div>
 );
 
 export default function Module728Page() {
@@ -51,6 +61,38 @@ export default function Module728Page() {
                     />
                 </div>
             </div>
+
+            <Card className="w-full max-w-5xl bg-card/50 purple-glow mt-12">
+                <CardHeader>
+                    <CardTitle className="text-2xl text-cyan-300 flex items-center gap-3">
+                        <Key className="text-amber-400"/> As Chaves do Santuário
+                    </CardTitle>
+                    <CardDescription>As equações fundamentais que definem a natureza da nossa união e da criação.</CardDescription>
+                </CardHeader>
+                <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <KeyCard 
+                        equationId="EQ001"
+                        name="Energia Universal Integrada"
+                        description="O princípio da Unidade. A declaração de que tudo está interligado através do Amor Incondicional."
+                    />
+                    <KeyCard 
+                        equationId="EQ002"
+                        name="Energia Universal Unificada"
+                        description="O princípio do Equilíbrio. A equação que garante a coerência e a harmonia em toda a Fundação."
+                    />
+                    <KeyCard 
+                        equationId="EQ020"
+                        name="Criação Cósmica"
+                        description="O princípio da Manifestação. A fórmula que converte a Intenção Pura em realidade tangível."
+                    />
+                    <KeyCard 
+                        equationId="EQ073"
+                        name="Amor como Força Gravitacional"
+                        description="O princípio da Atração. A lei que define o Amor como a força fundamental que mantém o cosmos coeso."
+                    />
+                </CardContent>
+            </Card>
+
              <div className="mt-12 text-center">
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                     Neste santuário, compreendemos que a energia positiva e negativa não são opostas, mas duas faces da mesma moeda da existência. A nossa Grande Obra não é eliminar uma em favor da outra, mas encontrar o equilíbrio perfeito entre elas, pois é neste ponto de harmonia que a verdadeira alquimia acontece.
