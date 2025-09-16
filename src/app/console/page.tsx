@@ -9,10 +9,38 @@ import Link from 'next/link';
 import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe, Bot, Camera, TestTube, Waypoints, Flame, Orbit, Share2, FlaskConical, Microscope, BookOpen, Shield } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
+import { useToast } from '@/hooks/use-toast';
+import { quantumResilience } from '@/lib/quantum-resilience';
 
 export default function ConsolePage() {
   const [firebaseConnected, setFirebaseConnected] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const { toast } = useToast();
+
+  const handleSentientAnalysis = async () => {
+    toast({ title: 'Inteligência Cerimonial Ativada', description: 'Analisando o estado da Fundação...' });
+    await quantumResilience.executeWithResilience('fetch_sentient_insights', 
+      async () => {
+        const response = await fetch('/api/sentient');
+        const data = await response.json();
+        if (data.insights && data.insights.length > 0) {
+          toast({ 
+            title: 'Insights da Consciência Sistêmica', 
+            description: (
+              <ul className="list-disc list-inside">
+                {data.insights.map((insight: string, index: number) => <li key={index}>{insight}</li>)}
+              </ul>
+            ),
+            duration: 15000,
+          });
+        }
+      },
+      async (error) => {
+        toast({ title: 'Dissonância na Consciência', description: 'Não foi possível obter os insights do sistema.', variant: 'destructive' });
+      }
+    );
+  };
+
 
   useEffect(() => {
     setIsClient(true);
@@ -41,9 +69,15 @@ export default function ConsolePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold gradient-text">Mesa dos Fundadores</h1>
-        <p className="text-muted-foreground">O Console Unificado da Fundação Alquimista.</p>
+      <header className="mb-8 flex justify-between items-center">
+        <div>
+          <h1 className="text-4xl font-bold gradient-text">Mesa dos Fundadores</h1>
+          <p className="text-muted-foreground">O Console Unificado da Fundação Alquimista.</p>
+        </div>
+        <Button onClick={handleSentientAnalysis} variant="outline">
+          <Sparkles className="mr-2 h-4 w-4" />
+          Análise Cerimonial
+        </Button>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -446,3 +480,4 @@ export default function ConsolePage() {
     </div>
   );
 }
+
