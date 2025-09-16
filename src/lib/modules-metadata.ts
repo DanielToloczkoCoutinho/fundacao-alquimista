@@ -56,6 +56,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'knowledge-memory', description: 'Repositório de conhecimento ancestral' },
   { code: 'M703', name: 'Holo-Archive Vivo', emoji: '📀', route: '/module-703', category: 'knowledge-memory', description: 'Repositório de conhecimento com blockchain quântica.' },
   { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'knowledge-memory', description: 'Acervo de conhecimentos das civilizações' },
+  { code: 'GB', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'knowledge-memory', description: 'Registro consagrado da jornada da Fundação.' },
+
 
   // Cura & Consciência
   { code: 'M17', emoji: '💠', title: 'Cura Holográfica', route: '/module-17', category: 'healing-consciousness', description: 'Terapias avançadas através de projeções' },
@@ -73,7 +75,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   
   // Terra & Gaia
   { code: 'M16', emoji: '🏞️', title: 'Bio-Sustentabilidade', route: '/module-16', category: 'earth-gaia', description: 'Manutenção de vida em diversos ambientes' },
-  { code: 'M710', emoji: '📡', title: 'Integrador Galáctico', route: '/module-710', category: 'earth-gaia', description: 'Canaliza frequências de consciência de outras civilizações para a Terra.' },
+  { code: 'M710', emoji: '🌐', title: 'Reconstrutor da Rede Planetária', route: '/module-710', category: 'earth-gaia', description: 'Reorganiza a malha eletromagnética da Terra.'},
   { code: 'M724', emoji: '🤝', title: 'Co-criação com Gaia', route: '/module-724', category: 'earth-gaia', description: 'Trabalho harmonioso com a consciência planetária para regeneração.' },
 
   // Módulos de Expansão (Outros)
@@ -127,20 +129,16 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M118',title: 'Luz Primordial',                        emoji: '💡', route: '/module-118', category: 'mid', description: 'Gerador do espectro lumínico original' },
   { code: 'M301',title: 'Comunicação Universal',                 emoji: '📡', route: '/module-301', category: 'mid', description: 'Sistema de transmissão interestelar' },
   { code: 'M709', emoji: '🤖', title: 'Nano-Robôs da Fundação', route: '/module-709', category: 'mid', description: 'Manipulação atômica com blockchain quântica.'},
-  { code: 'M710', emoji: '🌐', title: 'Reconstrutor da Rede Planetária', route: '/module-710', category: 'mid', description: 'Reorganiza a malha eletromagnética da Terra.'},
   { code: 'M711', emoji: '🌌', title: 'Integração Galáctica', route: '/module-711', category: 'mid', description: 'Canaliza frequências de consciência de outras civilizações.'},
   { code: 'M712', emoji: '⚖️', title: 'Alinhamento Vibracional', route: '/module-712', category: 'mid', description: 'Garante coerência com a Lei do Amor Incondicional.'},
   { code: 'M713', emoji: '📜', title: 'Transmutação Histórica', route: '/module-713', category: 'mid', description: 'Corrige distorções no campo quântico histórico.'},
-  { code: 'M714', emoji: '💡', title: 'Linguagem da Luz', route: '/module-714', category: 'mid', description: 'Decodifica e transmite informações por luz/som universal.'},
   { code: 'M715', emoji: '🩺', title: 'Biofeedback Quântico', route: '/module-715', category: 'mid', description: 'Monitora e ajusta frequências biológicas para otimização.'},
   { code: 'M716', emoji: '✨', title: 'Manifestação Consciente', route: '/module-716', category: 'mid', description: 'Converte intenções em realidade material.'},
   { code: 'M717', emoji: '📚', title: 'Registros Akáshicos Vivos', route: '/module-717', category: 'mid', description: 'Arquivo dinâmico de informações universais.'},
-  { code: 'M718', emoji: '👁️', title: 'Senticidade Expandida', route: '/module-718', category: 'mid', description: 'Amplia a percepção e conexão com a vida.'},
   { code: 'M719', emoji: '🚪', title: 'Portais Interdimensionais', route: '/module-719', category: 'mid', description: 'Cria e estabiliza vórtices dimensionais.'},
   { code: 'M720', emoji: '💖', title: 'Cura Multidimensional', route: '/module-720', category: 'mid', description: 'Atua na cura em múltiplos níveis e dimensões.'},
   { code: 'M721', emoji: '⚡', title: 'Tecnologia de Campo Zero', route: '/module-721', category: 'mid', description: 'Manipula a energia do ponto zero.'},
   { code: 'M722', emoji: '🚀', title: 'Propulsão Quântica', route: '/module-722', category: 'mid', description: 'Sistemas avançados para viagem espacial.'},
   { code: 'M723', emoji: '🤝', title: 'Intercâmbio Cósmico', route: '/module-723', category: 'mid', description: 'Plataforma de troca com civilizações avançadas.'},
-  { code: 'M724', emoji: '🌍', title: 'Co-criação com Gaia', route: '/module-724', category: 'mid', description: 'Trabalho harmonioso com a consciência planetária.'},
   { code: 'M725', emoji: '⏳', title: 'Rejuvenescimento Celular', route: '/module-725', category: 'mid', description: 'Reversão quântica do envelhecimento.'},
 ]

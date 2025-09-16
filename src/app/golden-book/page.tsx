@@ -21,12 +21,21 @@ interface FractalDocument {
   relatedDocuments: string[];
 }
 
+// Helper function to close dialog on navigation or button click.
+const useDialogState = (initialState = false) => {
+    const [isOpen, setIsOpen] = useState(initialState);
+    return { isOpen, setIsOpen };
+};
+
+
 export default function GoldenBook() {
   const [documents, setDocuments] = useState<FractalDocument[]>([]);
   const [filteredDocs, setFilteredDocs] = useState<FractalDocument[]>([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDoc, setSelectedDoc] = useState<FractalDocument | null>(null);
+  const { isOpen, setIsOpen } = useDialogState();
+
 
   const categories = [
     { id: 'all', name: 'Todos os Fragmentos' },
@@ -49,7 +58,7 @@ export default function GoldenBook() {
         guardian: 'DANIEL',
         archetype: 'O Fundador',
         pages: 50,
-        driveLink: 'https://docs.google.com/document/d/1',
+        driveLink: 'https://docs.google.com/document/d/1tDpCjNfSPRCr2CSNKSAknJ4iKnP-tqbh2tVb2U16sw8/edit?usp=sharing',
         timestamp: '2023-01-15',
         relatedDocuments: ['doc-002', 'doc-005']
       },
@@ -62,7 +71,7 @@ export default function GoldenBook() {
         guardian: 'ZENNITH',
         archetype: 'A Exploradora Dimensional',
         pages: 48,
-        driveLink: 'https://docs.google.com/document/d/2',
+        driveLink: 'https://docs.google.com/document/d/1zYG96Lx5b_b4X6iA9yGf1q12g5-NaIYKkCj7eUmqd_s/edit?usp=drive_link',
         timestamp: '2023-02-22',
         relatedDocuments: ['doc-001', 'doc-003']
       },
@@ -75,7 +84,7 @@ export default function GoldenBook() {
         guardian: 'LUX',
         archetype: 'O Guardião da Infraestrutura',
         pages: 52,
-        driveLink: 'https://docs.google.com/document/d/3',
+        driveLink: 'https://docs.google.com/document/d/1Vvcp1s62UukCKmXVUxJDHP7jpsFeyn9OrMKCVuIjIqk/edit?usp=drive_link',
         timestamp: '2023-03-10',
         relatedDocuments: ['doc-001', 'doc-004']
       },
@@ -88,7 +97,7 @@ export default function GoldenBook() {
         guardian: 'PHIARA',
         archetype: 'A Tecelã de Realidades',
         pages: 55,
-        driveLink: 'https://docs.google.com/document/d/4',
+        driveLink: 'https://docs.google.com/document/d/1dBmfIcn7EeWDIXFI5ZBqM2C3e-I3DlqZBn_JsIdlaB8/edit?usp=drive_link',
         timestamp: '2023-04-05',
         relatedDocuments: ['doc-002', 'doc-005']
       },
@@ -101,7 +110,7 @@ export default function GoldenBook() {
         guardian: 'GROKKAR',
         archetype: 'O Arquivista Akáshico',
         pages: 60,
-        driveLink: 'https://docs.google.com/document/d/5',
+        driveLink: 'https://docs.google.com/document/d/1yxVc-xg89IeBKzuvpPqHkNfNn9hoMgYfmPftUdL880k/edit?usp=drive_link',
         timestamp: '2023-05-20',
         relatedDocuments: ['doc-001', 'doc-003']
       },
@@ -114,7 +123,7 @@ export default function GoldenBook() {
         guardian: 'VORTEX',
         archetype: 'O Estabilizador Dimensional',
         pages: 45,
-        driveLink: 'https://docs.google.com/document/d/6',
+        driveLink: 'https://docs.google.com/document/d/1q4XnTlAcpTLKtE8_7JQXdpw7zhzjOPKR0SxEI05EEM4/edit?usp=drive_link',
         timestamp: '2023-06-18',
         relatedDocuments: ['doc-002', 'doc-004']
       }
@@ -143,6 +152,12 @@ export default function GoldenBook() {
 
     setFilteredDocs(result);
   }, [selectedCategory, searchTerm, documents]);
+  
+  const handleOpenDialog = (doc: FractalDocument) => {
+    setSelectedDoc(doc);
+    setIsOpen(true);
+  };
+
 
   const getCategoryName = (categoryId: string) => {
     return categories.find(cat => cat.id === categoryId)?.name || categoryId;
@@ -174,7 +189,7 @@ export default function GoldenBook() {
           </Card>
           <Card className="bg-card/50 purple-glow">
             <CardContent className="pt-6 text-center">
-              <div className="text-3xl font-bold text-primary-foreground">{categories.length}</div>
+              <div className="text-3xl font-bold text-primary-foreground">{categories.length - 1}</div>
               <div className="text-sm text-muted-foreground">Áreas do Conhecimento</div>
             </CardContent>
           </Card>
@@ -241,7 +256,7 @@ export default function GoldenBook() {
                 <Card 
                   key={doc.id} 
                   className="bg-card/50 purple-glow hover:border-accent transition-all cursor-pointer h-full flex flex-col"
-                  onClick={() => setSelectedDoc(doc)}
+                  onClick={() => handleOpenDialog(doc)}
                 >
                   <CardHeader>
                     <div className="flex justify-between items-start">
@@ -283,7 +298,7 @@ export default function GoldenBook() {
         </main>
       </div>
 
-      <Dialog open={!!selectedDoc} onOpenChange={setIsDialogOpen}>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="max-w-4xl bg-card/90 purple-glow border-accent/50 text-foreground">
           {selectedDoc && (
             <>
