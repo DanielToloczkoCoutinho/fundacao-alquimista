@@ -70,6 +70,30 @@ export default function ConsolePage() {
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/connection"><GitBranch className="mr-2 h-4 w-4" />Conexão Ω-M0</Link>
                </Button>
+                <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-2"><MessageCircle className="mr-2 h-4 w-4" />Módulo Dois (Intercâmbio Cósmico)</Link>
+               </Button>
+                <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-3"><Clock className="mr-2 h-4 w-4" />Módulo Três (Monitor de Saturno)</Link>
+               </Button>
+                <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-4"><Beaker className="mr-2 h-4 w-4" />Módulo Quatro (Testes da Fundação)</Link>
+               </Button>
+                <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-5"><HeartHandshake className="mr-2 h-4 w-4" />Módulo Cinco (Liga Quântica)</Link>
+               </Button>
+                <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-6"><BrainCircuit className="mr-2 h-4 w-4" />Módulo Seis (Sondagem de Consciência)</Link>
+               </Button>
+                <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-7"><Sparkles className="mr-2 h-4 w-4" />Módulo Sete (Alinhamento Divino)</Link>
+               </Button>
+                <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-8"><Fingerprint className="mr-2 h-4 w-4" />Módulo Oito (Identidade Fractal)</Link>
+               </Button>
+                <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-10"><Telescope className="mr-2 h-4 w-4" />Módulo Dez (Oráculo da Tapeçaria)</Link>
+               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-72"><Scale className="mr-2 h-4 w-4" />Módulo 72 (Governança)</Link>
                </Button>
@@ -259,3 +283,7 @@ export default function ConsolePage() {
             </CardContent>
           </Card>
         </div>
+      </div>
+    </div>
+  );
+}
