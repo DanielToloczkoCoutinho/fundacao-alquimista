@@ -1,4 +1,3 @@
-
 'use client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Chronicle from '@/components/chronicle';
@@ -34,7 +33,7 @@ export default function ModuleZeroPage() {
             <Infinity /> Dossiê da Transcendência
           </TabsTrigger>
           <TabsTrigger value="akasha" className="gap-2">
-            <Archive /> Registros Akáshicos
+            <Archive /> Observatório de Intenções
           </TabsTrigger>
         </TabsList>
         <TabsContent value="codex">

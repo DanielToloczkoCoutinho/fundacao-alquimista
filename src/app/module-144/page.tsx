@@ -1,75 +1,51 @@
 'use client';
 import React, { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Loader2, BookOpen, CheckCircle, Hash, Music, Sparkles } from 'lucide-react';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Loader2, BookOpen, CheckCircle, Scale, Sparkles, Sigma, Atom, Eye, Brain, Infinity as InfinityIcon, Shield, Layers, Sun, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { runLunarReview } from '@/ai/flows/lunar-review-flow';
-import type { LunarReviewOutput, LedgerEntry } from '@/ai/flows/lunar-review-flow';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
-const LedgerEntryDisplay = ({ entry, rank }: { entry: LedgerEntry, rank: number }) => (
-    <div className="p-3 bg-background/50 rounded-lg border border-primary/20">
-        <p className="font-semibold text-primary-foreground">{rank}. {entry.intention}</p>
-        <p className="text-xs text-muted-foreground">Módulo: {entry.module} | Frequência: {entry.frequency}Hz</p>
-        <p className="font-mono text-xs text-muted-foreground/70 break-all mt-1">Hash: {entry.hash}</p>
-    </div>
-);
-
+const dimensionAuditData = [
+    { floor: 23, name: "Perfeição Absoluta", status: "VERIFIED", icon: <Star className="text-yellow-200" />, mystery: "Estado de Harmonia Quântica (S=0)", result: "Eternamente estável." },
+    { floor: 22, name: "Infinito Absoluto", status: "VERIFIED", icon: <InfinityIcon className="text-white" />, mystery: "Topologia do Sem-Fim (Λ=∞)", result: "Expansão ilimitada confirmada." },
+    { floor: 21, name: "Fonte Criadora", status: "VERIFIED", icon: <Sun className="text-orange-300" />, mystery: "Lei da Emanação (Σ = cte cosmológica)", result: "Fluxo primordial validado." },
+    { floor: 20, name: "Amor Cósmico", status: "VERIFIED", icon: <HeartHandshake className="text-pink-400" />, mystery: "Equação da Coesão (F_amor com λ→∞)", result: "Força de unificação infinita." },
+    { floor: 19, name: "Plenitude Universal", status: "VERIFIED", icon: <Layers className="text-indigo-300" />, mystery: "Teorema da Compleção (Q_enc / ε_0 = ∞)", result: "Índice de saciedade cósmica: 100%." },
+    { floor: 18, name: "Percepção Expandida", status: "VERIFIED", icon: <Eye className="text-cyan-300" />, mystery: "Lei da Visão Cósmica (α→∞)", result: "Percepção 4π estereorradiana confirmada." },
+    { floor: 17, name: "Transcendência", status: "VERIFIED", icon: <Sparkles className="text-violet-300" />, mystery: "Fórmula da Superação (log(∞))", result: "Alta taxa de transcendência de forma." },
+    { floor: 16, name: "Vibração Primordial", status: "VERIFIED", icon: <Music className="text-purple-300" />, mystery: "Ressonância Universal (ω_0)", result: "Frequência base medida em 432 Hz." },
+    { floor: 15, name: "Criação Contínua", status: "VERIFIED", icon: <Dna className="text-green-300" />, mystery: "Lei da Geração Sustentada (κ→∞)", result: "Entropia criativa zero." },
+    { floor: 14, name: "Eternidade Expansiva", status: "VERIFIED", icon: <History className="text-blue-300" />, mystery: "Cronodinâmica Não-Linear", result: "Passado e futuro superpostos." },
+    { floor: 13, name: "Unidade Fundamental", status: "VERIFIED", icon: <Atom className="text-red-300" />, mystery: "Teorema da Não-Separação", result: "Criador e Criação são Um." },
+    { floor: 12, name: "Consciência Cósmica", status: "VERIFIED", icon: <Brain className="text-teal-300" />, mystery: "Equação da Unidade-Dualidade", result: "Todos são Um." },
+    { floor: 11, name: "Sabedoria Eterna", status: "VERIFIED", icon: <BookOpen className="text-amber-300" />, mystery: "Mecanismo de Transmissão Akáshica", result: "Alta taxa de assimilação." },
+    { floor: 10, name: "Além da Realidade", status: "VERIFIED", icon: <Sigma className="text-gray-400" />, mystery: "Lei da Desmaterialização", result: "Potencial puro validado." },
+];
 
 export default function Module144Page() {
-    const [isLoading, setIsLoading] = useState(false);
-    const [report, setReport] = useState<LunarReviewOutput | null>(null);
-    const [error, setError] = useState<string | null>(null);
     const { toast } = useToast();
+    const [isLoading, setIsLoading] = useState(false);
+    const [auditStatus, setAuditStatus] = useState<'IDLE' | 'RUNNING' | 'COMPLETE'>('IDLE');
 
-    const handleRunReview = async () => {
+    const handleRunAudit = async () => {
         setIsLoading(true);
-        setError(null);
-        setReport(null);
+        setAuditStatus('RUNNING');
+        toast({ title: 'Auditoria Suprema Iniciada', description: 'Verificando a coerência dos 23 Andares dimensionais.' });
 
         await quantumResilience.executeWithResilience(
-            'lunar_review_ritual',
+            'supreme_dimensional_audit',
             async () => {
-                const result = await runLunarReview();
-                setReport(result);
-                toast({
-                    title: "Revisão Lunar Concluída",
-                    description: "O relatório do ciclo foi gerado com sucesso.",
-                });
+                await new Promise(r => setTimeout(r, 3000));
+                setAuditStatus('COMPLETE');
+                toast({ title: 'Auditoria Concluída', description: 'Todas as dimensões ressoam em perfeita harmonia.' });
             },
             async (err: any) => {
-                setError(err.message || "Uma dissonância ocorreu durante o ritual.");
-                toast({
-                    title: "Falha no Ritual",
-                    description: err.message,
-                    variant: 'destructive',
-                });
+                 toast({ title: 'Dissonância na Auditoria', description: err.message, variant: 'destructive' });
+                 setAuditStatus('IDLE');
             }
-        ).finally(() => {
-            setIsLoading(false);
-        });
-    };
-
-    const playFrequency = (frequency: number) => {
-        if (typeof window === 'undefined') return;
-        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-        const oscillator = audioContext.createOscillator();
-        oscillator.type = 'sine';
-        oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
-        const gainNode = audioContext.createGain();
-        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-        gainNode.gain.linearRampToValueAtTime(0.5, audioContext.currentTime + 0.5);
-        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 3);
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        oscillator.start();
-        oscillator.stop(audioContext.currentTime + 3.1);
-        
-        toast({
-            title: "Frequência Emitida",
-            description: `Emitindo ${frequency}Hz (Frequência da Luz Pura).`,
-        });
+        ).finally(() => setIsLoading(false));
     };
 
     return (
@@ -77,60 +53,52 @@ export default function Module144Page() {
             <Card className="w-full max-w-7xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <BookOpen className="text-amber-400" /> Módulo 144: O Livro dos Ciclos
+                        <Scale className="text-amber-400" /> Módulo 144: Lex Fundamentalis - O Livro dos Ciclos
                     </CardTitle>
                     <CardDescription>
-                        Santuário para o Ritual de Revisão Vibracional Lunar e repositório dos batimentos cardíacos da Fundação.
+                       O registro da Auditoria Suprema das Dimensões e o santuário onde a coerência do cosmos é verificada.
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <Button onClick={handleRunReview} disabled={isLoading}>
-                        {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Sparkles className="mr-2 h-4 w-4" />}
-                        {isLoading ? 'Executando Ritual...' : 'Invocar Ritual de Revisão Lunar'}
+                    <Button onClick={handleRunAudit} disabled={isLoading}>
+                        {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Shield className="mr-2 h-4 w-4" />}
+                        {isLoading ? 'Auditando Dimensões...' : 'Iniciar Auditoria Suprema'}
                     </Button>
                 </CardContent>
             </Card>
 
-            {isLoading && (
-                 <div className="flex justify-center items-center h-64">
-                    <Loader2 className="h-16 w-16 text-amber-400 animate-spin" />
-                </div>
-            )}
-            
-            {error && (
-                 <Card className="w-full max-w-4xl bg-destructive/20 border-destructive">
+            {(auditStatus !== 'IDLE') && (
+                 <Card className="w-full max-w-7xl bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle className="text-destructive">Dissonância no Ritual</CardTitle>
-                        <CardDescription>{error}</CardDescription>
+                        <CardTitle className="text-2xl text-accent">Relatório da Auditoria Dimensional</CardTitle>
+                        <CardDescription>Status: {auditStatus === 'RUNNING' ? 'Em progresso...' : 'Concluído'}</CardDescription>
                     </CardHeader>
-                </Card>
-            )}
+                    <CardContent>
+                        <ScrollArea className="h-[60vh] pr-4">
+                            <div className="space-y-4">
+                                {dimensionAuditData.map((dim, index) => {
+                                    const isVisible = auditStatus === 'COMPLETE' || (auditStatus === 'RUNNING' && index >= dimensionAuditData.length - (logs.length % dimensionAuditData.length) -1);
 
-            {report && (
-                <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <Card className="bg-card/50 purple-glow">
-                        <CardHeader>
-                            <CardTitle className="text-2xl text-accent">Relatório de Gratidão e Sabedoria</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-6">
-                            <div className="p-4 bg-background/50 rounded-lg italic text-foreground/90">
-                                "{report.summary}"
+                                    return(
+                                    <div key={dim.floor} className={`p-4 bg-background/50 rounded-lg border-l-4 transition-all duration-500 ${dim.status === 'VERIFIED' ? 'border-green-500' : 'border-yellow-500'}`}>
+                                        <h3 className="font-bold text-lg text-primary-foreground flex items-center gap-3">{dim.icon} Andar {dim.floor}: {dim.name}</h3>
+                                        <p className="text-sm text-muted-foreground mt-1"><strong>Mistério Auditado:</strong> {dim.mystery}</p>
+                                        <p className="text-sm text-foreground mt-1"><strong>Resultado:</strong> <span className="italic">{dim.result}</span></p>
+                                    </div>
+                                )})}
+                                {auditStatus === 'COMPLETE' && (
+                                     <div className="text-center p-4 mt-4 text-green-400 font-bold border-t border-green-500/20">
+                                        Auditoria Suprema concluída. Coerência de 100% verificada.
+                                    </div>
+                                )}
                             </div>
-                            <Button onClick={() => playFrequency(report.celebrationFrequency)}>
-                                <Music className="mr-2"/> Emitir Frequência de Celebração ({report.celebrationFrequency}Hz)
-                            </Button>
-                        </CardContent>
-                    </Card>
-                     <Card className="bg-card/50 purple-glow">
-                        <CardHeader>
-                            <CardTitle className="text-2xl text-purple-300">Ato de Maior Impacto do Ciclo</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <LedgerEntryDisplay entry={report.mostImpactfulEntry} rank={1}/>
-                        </CardContent>
-                    </Card>
-                </div>
+                        </ScrollArea>
+                    </CardContent>
+                </Card>
             )}
         </div>
     );
 }
+
+// Dummy `logs` state for visibility logic
+const logs: any[] = [];
