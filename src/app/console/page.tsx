@@ -6,7 +6,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2 } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 
@@ -77,6 +77,27 @@ export default function ConsolePage() {
               </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-600"><Scale className="mr-2 h-4 w-4" />Módulo 600 (Conselho Cósmico)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-721"><Gavel className="mr-2 h-4 w-4"/>Módulo 721 (Justiça Cósmica)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-722"><Users className="mr-2 h-4 w-4"/>Módulo 722 (Expansão da Consciência)</Link>
+              </Button>
+               <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-723"><BrainCircuit className="mr-2 h-4 w-4"/>Módulo 723 (Campo Morfogenético)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-724"><Users2 className="mr-2 h-4 w-4"/>Módulo 724 (Diplomacia Intergaláctica)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-725"><Sparkles className="mr-2 h-4 w-4"/>Módulo 725 (Construção de Civilizações)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-726"><UserCog className="mr-2 h-4 w-4"/>Módulo 726 (Conselho da Nova Terra)</Link>
+              </Button>
+              <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-727"><Heart className="mr-2 h-4 w-4"/>Módulo 727 (Guardião da Harmonia)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-omega"><Sparkles className="mr-2 h-4 w-4 text-amber-400" />Santuário do Ômega</Link>
