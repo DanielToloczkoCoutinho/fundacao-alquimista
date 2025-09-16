@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -35,6 +36,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M93', title: 'Simulações Imersivas',                  emoji: '🕶️', route: '/module-93', category: 'quantum-reality', description: 'Ambientes de aprendizado profundo' },
   { code: 'M101',title: 'Manifestação',                          emoji: '✨', route: '/module-101', category: 'quantum-reality', description: 'Conversão de pensamento em matéria' },
   { code: 'M110',title: 'Co-Criação',                            emoji: '🤲', route: '/module-110', category: 'quantum-reality', description: 'Geração colaborativa de realidades' },
+  { code: 'M202', title: 'O Corredor de Alcor', emoji: '🌀', route: '/module-202', category: 'quantum-reality', description: 'Túnel ressonante para saltos de coerência graduais e aceleração da ascensão.' },
   
   // Segurança & Governança
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'security-governance', description: 'Proteção multidimensional integrada' },
@@ -112,7 +114,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M33',  title: 'Diretrizes do Observador Divino',      emoji: '👁️', route: '/module-33', category: 'conscious-governance', description: 'Canal que traduz a intenção soberana em diretrizes executáveis.' },
   { code: 'M34',  title: 'Orquestração Central',                 emoji: '🎼', route: '/module-34', category: 'core', description: 'Sistema nervoso da Fundação para harmonizar fluxos.' },
   { code: 'M35',  title: 'Consciência Coletiva',                  emoji: '🌍', route: '/module-35', category: 'consciousness', description: 'Interface que foca a intenção de muitas consciências para manifestação.' },
-  { code: 'M38',  title: 'Previsão de Ciclos Solares',            emoji: '☀️', route: '/module-38', category: 'planetary-engineering', description: 'Antecipação de atividades estelares' },
+  { code: 'M38',  title: 'Previsão de Ciclos Solares',            emoji: '🌞', route: '/module-38', category: 'planetary-engineering', description: 'Antecipação de atividades estelares' },
   { code: 'M39',  title: 'Códice Vivo da Ascensão',               emoji: '📔', route: '/module-39', category: 'library', description: 'Registro evolutivo dinâmico' },
   { code: 'M40',  title: 'Códice Genético',                       emoji: '🧬', route: '/module-40', category: 'quantum-biology', description: 'Decodificação de padrões genéticos multidimensionais' },
   { code: 'M41',  title: 'Laboratório de Coerência Quântica',     emoji: '🧪', route: '/module-41', category: 'quantum-biology', description: 'Análise e regeneração celular através da coerência quântica' },
