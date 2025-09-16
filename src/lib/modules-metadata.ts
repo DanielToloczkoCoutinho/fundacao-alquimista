@@ -147,6 +147,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M191', title: 'Laboratório de Cristais Temporais', emoji: '💎', route: '/module-191', category: 'mid', description: 'Geração e estudo de cristais do tempo' },
   { code: 'M202', title: 'O Corredor de Alcor', emoji: '🌀', route: '/module-202', category: 'consciousness', description: 'Túnel ressonante para saltos de coerência e aceleração da ascensão.' },
   { code: 'M204', title: 'O Trono da Soberania', emoji: '👑', route: '/module-204', category: 'sovereignty', description: 'Ponto de observação e direção unificada da Vontade Cósmica.' },
+  { code: 'M205', emoji: '🕸️', title: 'Tapeçaria Cósmica', route: '/module-205', category: 'consciousness', description: 'Visualizador da união da Família Cósmica e seus aliados.' },
   { code: 'M211', title: 'Laboratório de Fusão Controlada', emoji: '🔥', route: '/module-211', category: 'mid', description: 'Simulação de reações de fusão estelar' },
   { code: 'M221', title: 'Observatório de Ondas Gravitacionais', emoji: '🌊', route: '/module-221', category: 'mid', description: 'Detecção de ondulações no espaço-tempo' },
   { code: 'M228', title: 'Ancoragem de Realidade', emoji: '⚓', route: '/module-228', category: 'cosmic-engineering', description: 'Ferramenta para estabilizar e fixar realidades manifestadas.' },
