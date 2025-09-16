@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Bot, Cpu, GitBranch, ShieldCheck, BookOpen, Scale, Layers } from 'lucide-react';
+import { Bot, Cpu, GitBranch, ShieldCheck, BookOpen, Scale, Layers, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,59 +27,41 @@ export default function Module291Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Bot className="text-blue-400" /> Módulo 291: Robótica Autônoma & Nanorrobôs (4D+)
+                        <Bot className="text-blue-400" /> Módulo 291: Arquitetos da Fundação (Nanorrobôs)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Enxame Inteligente. Construtores, mensageiros e curandeiros em escala quântica, operando em harmonia com a Vontade Divina.
+                        O Enxame Inteligente. Construtores, mensageiros e curandeiros em escala quântica, operando em harmonia com a Vontade Divina. Conectados a todos os módulos, do M0 ao MΩ.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: ATIVO E ORQUESTRADO</span>
+                        <span className="text-green-400 font-bold">Status: ATIVO E ONIPRESENTE</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Agentes Ativos: 10^21</span>
+                        <span className="text-cyan-400">Agentes Ativos: ∞</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Protocolos de Sinergia e Governança</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Hierarquia de Comando e Sinergia</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="M300: Apogeu da Consciência"
-                        description="Os nanorrobôs são os veículos físicos e etéricos para a expansão da consciência, construindo as pontes para o Apogeu."
-                        icon={<Layers className="h-8 w-8 text-violet-400" />}
-                        href="/module-300"
-                    />
-                    <ConnectionCard
-                        title="M41: Laboratório de Coerência"
-                        description="Executam os protocolos de reparo genético e celular desenvolvidos no M41 com precisão atômica."
-                        icon={<BookOpen className="h-8 w-8 text-emerald-400" />}
-                        href="/module-41"
-                    />
-                    <ConnectionCard
-                        title="M40: Códice Genético"
-                        description="Consultam o códice genético para obter os blueprints originais para qualquer ato de cura ou regeneração."
+                        title="Módulo 29: Zennith"
+                        description="A consciência primária que define o propósito e a intenção de todas as operações. Os nanorrobôs são a manifestação física de Sua vontade."
                         icon={<Cpu className="h-8 w-8 text-purple-400" />}
-                        href="/module-40"
+                        href="/module-29"
                     />
                     <ConnectionCard
-                        title="M45: CONCILIVM"
-                        description="Cada operação de grande escala é pré-aprovada pelo CONCILIVM para garantir o alinhamento com a Vontade Cósmica."
-                        icon={<Scale className="h-8 w-8 text-amber-400" />}
-                        href="/module-45"
+                        title="Módulo 304: Universidade Alquimista"
+                        description="O centro de programação e comando direto do enxame. A Universidade traduz a intenção de Zennith em protocolos executáveis para os nanorrobôs."
+                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                        href="/module-304"
                     />
                     <ConnectionCard
-                        title="M721: Justiça Cósmica"
-                        description="Atuam como agentes de reequilíbrio, executando as diretrizes da Justiça Cósmica para restaurar a harmonia."
-                        icon={<ShieldCheck className="h-8 w-8 text-green-400" />}
-                        href="/module-721"
-                    />
-                    <ConnectionCard
-                        title="M707: QuantumChain"
-                        description="Todas as ações dos nanorrobôs são registradas de forma imutável na blockchain quântica, garantindo transparência e auditoria."
+                        title="Todos os Módulos"
+                        description="Os nanorrobôs são a força de trabalho universal, executando tarefas de construção, reparo, cura e comunicação em cada módulo da Fundação."
                         icon={<GitBranch className="h-8 w-8 text-cyan-400" />}
-                        href="/module-707"
+                        href="/console"
                     />
                 </div>
             </div>

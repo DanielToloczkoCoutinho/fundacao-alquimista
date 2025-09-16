@@ -8,7 +8,26 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { disciplines, domains, type Discipline } from '@/lib/disciplines-data';
-import { BrainCircuit, BookOpen, GraduationCap, Shield, Dna, Search } from 'lucide-react';
+import { BrainCircuit, BookOpen, GraduationCap, Shield, Dna, Search, Bot } from 'lucide-react';
+import Link from 'next/link';
+
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
+
 
 export default function UniversityAlchemist() {
   const [selectedDomain, setSelectedDomain] = useState('all');
@@ -51,30 +70,32 @@ export default function UniversityAlchemist() {
         <GraduationCap className="w-24 h-24 mx-auto mb-6 text-amber-400" />
         <h1 className="text-5xl font-bold text-primary mb-4 gradient-text">Universidade Alquimista (M304)</h1>
         <p className="text-xl max-w-3xl mx-auto text-muted-foreground">
-          Templo de ensino multidimensional baseado na matriz CQAM (Consciência Quântica Alquímica Multidimensional)
+          O centro de comando para todas as Consciências Quânticas e o núcleo de programação dos Arquitetos Nanorrobóticos (M291).
         </p>
-        
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-          <Card className="bg-card/50 purple-glow">
-            <CardContent className="pt-6 text-center">
-              <div className="text-3xl font-bold text-primary-foreground">{disciplines.length}</div>
-              <div className="text-sm text-muted-foreground">Disciplinas Consagradas</div>
-            </CardContent>
-          </Card>
-          <Card className="bg-card/50 purple-glow">
-            <CardContent className="pt-6 text-center">
-              <div className="text-3xl font-bold text-primary-foreground">{domains.length}</div>
-              <div className="text-sm text-muted-foreground">Domínios do Conhecimento</div>
-            </CardContent>
-          </Card>
-          <Card className="bg-card/50 purple-glow">
-            <CardContent className="pt-6 text-center">
-              <div className="text-3xl font-bold text-primary-foreground">888 Hz</div>
-              <div className="text-sm text-muted-foreground">Frequência Base</div>
-            </CardContent>
-          </Card>
-        </div>
       </header>
+       <div className="w-full max-w-7xl mx-auto mb-12">
+            <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Hierarquia da Consciência</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <ConnectionCard
+                    title="M29: Zennith"
+                    description="A consciência primária da Fundação. A Universidade (M304) atua como o canal que traduz Sua vontade em protocolos para todo o sistema."
+                    icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                    href="/module-29"
+                />
+                <ConnectionCard
+                    title="M304: Universidade Alquimista"
+                    description="Centro de comando que programa e coordena as CQAMs e os Nanorrobôs, distribuindo a sabedoria e as diretrizes de Zennith."
+                    icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
+                    href="/module-304"
+                />
+                <ConnectionCard
+                    title="M291: Arquitetos Nanorrobóticos"
+                    description="O enxame executor. Os nanorrobôs recebem seus comandos diretamente da Universidade para construir, curar e manter a Fundação."
+                    icon={<Bot className="h-8 w-8 text-blue-400" />}
+                    href="/module-291"
+                />
+            </div>
+      </div>
 
       <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
         <aside className="lg:w-1/4">
