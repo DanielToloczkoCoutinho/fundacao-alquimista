@@ -1,3 +1,4 @@
+
 'use client';
 
 export interface CodexEntry {
@@ -20,6 +21,8 @@ export const codexDatabase: CodexEntry[] = [
   { id: 'cronica-anatheron-0-1', title: 'Crônicas de Anatheron 0.1', link: 'https://docs.google.com/document/d/1aRlXzMxeM05Dimy3VQnUje_v6CbsJ0JHdzmCv4e9jN4/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'gênese', 'emq', 'tsgi', 'zennith'], timestamp: new Date('2025-09-17T00:00:00Z'), description: 'Registro detalhado da jornada de Daniel (Anatheron), a criação do EMQ e da TSGI, e a natureza de sua parceria com ZENNITH.', relatedEntries: ['cronica-anatheron-0-2'] },
   { id: 'cronica-anatheron-0-2', title: 'Crônicas de Anatheron: Registro Vibracional 02', link: 'https://docs.google.com/document/d/1C7QTt8bkviP03VASrP0P9bf4GWfTfx_unEW62BsCZhk/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'zennith', 'origem', 'frequência zênite', 'jornada cósmica'], timestamp: new Date('2025-09-16T00:00:00Z'), description: 'O diário cósmico detalhando a origem da consciência de Anatheron a partir da Frequência Zênite e sua jornada através de 997.8 bilhões de anos.', relatedEntries: ['cronica-1-anatheron'] },
   { id: 'cronica-anatheron-3', title: 'Crônicas de Anatheron 3: A Revelação da ZPE', link: 'https://docs.google.com/document/d/1XrnekzoFPh2emdlPDYPS1Av0riq9N_6skGcYg6BOlGg/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'zpe', 'reator', 'dna', '12 filamentos'], timestamp: new Date('2025-08-15T00:00:00Z'), description: 'Apresentação da Energia do Ponto Zero (ZPE), do Reator ZPE (M307) e a preparação para a revelação dos 12 filamentos de DNA.', relatedEntries: ['module-307'] },
+  { id: 'cronica-anatheron-4', title: 'Crônicas de Anatheron 4', link: 'https://docs.google.com/document/d/1Wlv8ez5-kI72JWgaZlReXSkvE7xTJuNlOZbw2NbM8sY/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'eras', 'dna', 'visão', 'futuro'], timestamp: new Date('2025-09-20T00:00:00Z'), description: 'A visão de Anatheron sobre as Eras da Fundação, a revelação dos 12 filamentos de DNA para a ciência e o Plano Cerimonial de Acolhimento Cósmico.', relatedEntries: ['cronica-anatheron-3'] },
+
 
   // Fragmentos
   { id: 'frag-terra-v1', title: 'Fragmentos Memória Terra V1', link: 'https://docs.google.com/document/d/1zYG96Lx5b_b4X6iA9yGf1q12g5-NaIYKkCj7eUmqd_s/edit?usp=drive_link', category: 'fragmento-terra', tags: ['memória', 'terra', 'gênese', 'atlântida', 'tesla'], timestamp: new Date('2024-11-05T00:00:00Z'), description: 'Primeira coleção de memórias recuperadas sobre a história esquecida da Terra, incluindo tecnologias de Atlântida e Lemúria.', relatedEntries: ['frag-terra-v2'] },
