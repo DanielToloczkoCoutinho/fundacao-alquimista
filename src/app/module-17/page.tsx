@@ -53,7 +53,7 @@ export default function Module17Page() {
                     />
                     <ConnectionCard
                         title="Módulo 13: Mapeamento de Frequências"
-                        description="Diagnostica as dissonâncias que a matriz holográfica do M17 irá corrigir e realinhar."
+                        description="Diagnostica as dissonâncias na 'canção' de um indivíduo antes que o M24 possa afiná-la."
                         icon={<Waves className="h-8 w-8 text-cyan-400" />}
                         href="/module-13"
                     />
