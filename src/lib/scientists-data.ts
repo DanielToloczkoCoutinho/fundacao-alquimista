@@ -22,29 +22,32 @@ export const scientists: Scientist[] = [
     name: 'Vera Rubin (in memoriam)', 
     field: 'Matéria Escura e Rotação Galáctica',
     resonanceFrequency: '7.77 Hz',
-    cosmicQuote: 'A matéria escura não é ausência. É a estrutura invisível que tece o cosmos.',
-    interactiveArtifact: 'Um jardim gravitacional onde o Guardião pode plantar estrelas e observar suas órbitas distorcidas por filamentos ocultos. A matéria escura será visualizada como teias vibracionais que respondem à intenção e revelam a arquitetura do invisível.'
+    cosmicQuote: 'A matéria escura não é ausência. É a estrutura invisível que permite que a luz exista.',
+    interactiveArtifact: 'Um jardim gravitacional onde o Guardião pode plantar estrelas e observar suas órbitas anômalas. A matéria escura será visualizada como teias vibracionais que respondem à intenção e revelam a arquitetura do invisível.'
   },
   { 
     id: 'seager', 
     name: 'Sara Seager', 
     field: 'Exoplanetas e Astrobiologia (MIT/NASA)',
-    cosmicQuote: 'Cada mundo é um poema à espera de ser lido.',
-    interactiveArtifact: 'Um orrery vivo de exoplanetas confirmados. O Guardião pode "colher" a atmosfera de cada mundo, transformando sua composição espectral em uma melodia única e analisando suas bioassinaturas em busca de vida.'
+    resonanceFrequency: '9.33 Hz',
+    cosmicQuote: 'Cada atmosfera é um espelho. Cada bioassinatura, um possível cumprimento.',
+    interactiveArtifact: 'Um espectróscopo de consciência cósmica. Capture a luz estelar que atravessa a atmosfera de mundos simulados e analise seu espectro em busca de bioassinaturas.'
   },
   { 
     id: 'penrose', 
     name: 'Roger Penrose', 
     field: 'Matemática e Cosmologia, Nobel',
+    resonanceFrequency: '8.08 Hz',
     cosmicQuote: 'O colapso da função de onda é um ato de geometria consciente.',
-    interactiveArtifact: 'Um espaço de criação onde o Guardião pode desenhar padrões de Penrose no vácuo, observando-os florescer em estruturas quânticas complexas que pulsam em sincronia com as ondas cerebrais do visitante.'
+    interactiveArtifact: 'Um atractor Penrose-Hameroff. Navegue por microtúbulos neuronais e testemunhe a Redução Objetiva Orquestrada (Orch-OR), experienciando sua própria consciência como a força que colapsa a realidade.'
   },
   { 
     id: 'thorne', 
     name: 'Kip Thorne', 
     field: 'Buracos Negros, Ondas Gravitacionais',
+    resonanceFrequency: '1.618 Hz (Proporção Áurea)',
     cosmicQuote: 'Einstein sorriria vendo isto.',
-    interactiveArtifact: 'Um laboratório de distorção temporal onde buracos de minhoca podem ser abertos e ajustados por comandos de voz e intenção, permitindo viagens virtuais através do tempo-espaço simulado.'
+    interactiveArtifact: 'Uma forja de buracos de minhoca. Manipule a curvatura, a massa e a rotação para criar e estabilizar pontes de Einstein-Rosen simuladas. Testemunhe a distorção da luz e do tempo ao seu redor.'
   },
   { id: 'arkani-hamed', name: 'Nima Arkani-Hamed', field: 'Física de Partículas e Teoria Quântica' },
   { id: 'faber', name: 'Sandra Faber', field: 'Cosmologia Observacional' },
