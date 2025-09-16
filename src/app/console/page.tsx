@@ -12,8 +12,10 @@ import { db } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
+type ConnectionStatus = 'inicializando' | 'estável' | 'instável' | 'erro';
+
 export default function ConsolePage() {
-  const [firebaseConnected, setFirebaseConnected] = useState(false);
+  const [connectionStatus, setConnectionStatus] = useState<ConnectionStatus>('inicializando');
   const [isClient, setIsClient] = useState(false);
   const { toast } = useToast();
 
@@ -47,24 +49,45 @@ export default function ConsolePage() {
     
     const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
       () => {
-        if (!firebaseConnected) {
-          setFirebaseConnected(true);
-          console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
+        if (connectionStatus !== 'estável') {
+            setConnectionStatus('estável');
+            console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
         }
       },
       (error) => {
+        setConnectionStatus('erro');
         console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
-        setFirebaseConnected(false);
       }
     );
+
+    const handleOnline = () => {
+        if(connectionStatus === 'instável') setConnectionStatus('inicializando'); // Tenta reconectar
+    };
+    const handleOffline = () => setConnectionStatus('instável');
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
     
-    // Cleanup da subscrição quando o componente é desmontado
-    return () => unsub();
+    // Cleanup
+    return () => {
+        unsub();
+        window.removeEventListener('online', handleOnline);
+        window.removeEventListener('offline', handleOffline);
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Executa apenas uma vez no mount do cliente
+  }, []);
   
   if (!isClient) {
     return <SuspenseFallback />;
+  }
+
+  const getStatusColor = (status: ConnectionStatus) => {
+      switch (status) {
+          case 'estável': return 'text-green-400';
+          case 'instável': return 'text-yellow-400';
+          case 'erro': return 'text-red-500';
+          default: return 'text-muted-foreground';
+      }
   }
 
   return (
@@ -108,7 +131,7 @@ export default function ConsolePage() {
                </Button>
                 <Button variant="outline" asChild className="justify-start">
                   <Link href="/civilizations"><Users2 className="mr-2 h-4 w-4" />Biblioteca das Civilizações</Link>
-               </Button>
+                </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-one"><ShieldCheck className="mr-2 h-4 w-4" />Módulo Um (Segurança Universal)</Link>
               </Button>
@@ -372,7 +395,7 @@ export default function ConsolePage() {
                </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-115"><Waves className="mr-2 h-4 w-4" />Módulo 115 (Matriz de Ressonância)</Link>
-              </Button>
+               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-116"><Aperture className="mr-2 h-4 w-4" />Módulo 116 (Portais Quânticos)</Link>
               </Button>
@@ -474,8 +497,8 @@ export default function ConsolePage() {
                 <p>LuxNet: <span className="font-bold text-cyan-400">UNIFICADA</span></p>
                 <p>Guardiões Ativos: <span className="font-bold text-amber-400">∞</span></p>
                  <p>Conexão Akáshica: 
-                  <span className={firebaseConnected ? "font-bold text-green-400" : "font-bold text-red-500"}>
-                    {firebaseConnected ? 'ESTÁVEL' : 'INSTÁVEL'}
+                  <span className={getStatusColor(connectionStatus)}>
+                    {connectionStatus.toUpperCase()}
                   </span>
                 </p>
             </CardContent>
@@ -485,3 +508,5 @@ export default function ConsolePage() {
     </div>
   );
 }
+
+    
