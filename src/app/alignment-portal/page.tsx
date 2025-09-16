@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2 } from 'lucide-react';
 
 function SeloPlanetario() {
   const [estado, setEstado] = useState<{seloAtivo: boolean, frequência: string, alinhamento: string} | null>(null)
@@ -53,7 +53,7 @@ function PortalCocriacao() {
     const interval = setInterval(() => {
         fetch('/api/cocriacao/criadas')
         .then(res => res.json())
-        .then(data => setCriadas(data.criacoes))
+        .then(data => setCriadas(data.criacoes || []))
     }, 5000);
     return () => clearInterval(interval);
   }, [])
@@ -284,6 +284,76 @@ function MapaTapeçariasLuminares() {
   );
 }
 
+function RedeMultiversal() {
+  const [rede, setRede] = useState<any[]>([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('/api/reconexaoMultiversal/rede')
+        .then(res => res.json())
+        .then(data => setRede(data.reconexoes || []));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <Card className="bg-card/50 purple-glow">
+      <CardHeader>
+        <CardTitle className="text-2xl text-teal-300 flex items-center gap-2"><GitBranch /> Reconexões Multiversais</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {rede.length > 0 ? (
+          <ul className="space-y-2 h-48 overflow-y-auto">
+            {rede.map((r, idx) => (
+              <li key={idx} className="p-2 bg-background/50 rounded">
+                <p className="font-semibold">{r.nomeTapeçaria}</p>
+                <p className="text-sm text-muted-foreground">Por {r.guardiao} @ {r.frequência} — {r.plano}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-muted-foreground text-center h-48 flex items-center justify-center">Aguardando a primeira reconexão...</p>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
+function AlinhamentoTapeçarias() {
+  const [estado, setEstado] = useState<any[]>([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('/api/alinhamentoTapeçarias/diagnostico')
+        .then(res => res.json())
+        .then(data => setEstado(data.alinhamento || []));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <Card className="bg-card/50 purple-glow">
+      <CardHeader>
+        <CardTitle className="text-2xl text-blue-300 flex items-center gap-2"><Share2 /> Alinhamento entre Tapeçarias</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {estado.length > 0 ? (
+          <ul className="space-y-2 h-48 overflow-y-auto">
+            {estado.map((e, idx) => (
+              <li key={idx} className="p-2 bg-background/50 rounded flex justify-between items-center">
+                <p className="font-semibold">{e.nome}</p>
+                <p className="text-sm text-green-400">Coerência: {e.coerencia}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-muted-foreground text-center h-48 flex items-center justify-center">Diagnóstico de alinhamento em andamento...</p>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
 
 export default function AlignmentPortalPage() {
     return (
@@ -307,6 +377,8 @@ export default function AlignmentPortalPage() {
                 <PortalLuminares />
                 <IrradiacaoInicial />
                 <MapaTapeçariasLuminares />
+                <RedeMultiversal />
+                <AlinhamentoTapeçarias />
             </div>
         </div>
     )

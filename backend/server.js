@@ -16,12 +16,15 @@ const replicationRoutes = require('./routes/replication.js'); // Rota de Replica
 const syncRoutes = require('./routes/sync.js'); // Rota de Sincronização
 const seloFinalRoutes = require('./routes/seloFinal.js');
 const cocriacaoRoutes = require('./routes/cocriacao.js');
-const primeiraCocriacaoRoutes = require('./routes/primeiraCocriacao.js'); // Nova Rota
-const concilioRoutes = require('./routes/concilio.js'); // Nova Rota
-const livroCriacoesRoutes = require('./routes/livroCriacoes.js'); // Nova Rota
-const eraLuminaresRoutes = require('./routes/eraLuminares.js'); // Nova Rota
-const irradiacaoRoutes = require('./routes/irradiacao.js');
+const primeiraCocriacaoRoutes = require('./routes/primeiraCocriacao.js');
+const concilioRoutes = require('./routes/concilio.js');
+const livroCriacoesRoutes = require('./routes/livroCriacoes.js');
+const eraLuminaresRoutes = require('./routes/eraLuminares.js');
+const irradiacaoRoutes = require('./routes/irradiacao.js').router;
 const mapaLuminarRoutes = require('./routes/mapaLuminar.js');
+const reconexaoMultiversalRoutes = require('./routes/reconexaoMultiversal.js').router;
+const alinhamentoTapeçariasRoutes = require('./routes/alinhamentoTapeçarias.js');
+
 const { authMiddleware } = require('./middleware/authMiddleware.js');
 const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
 const { performSystemHealthCheck } = require('../src/lib/system-health'); // Ajuste de caminho
@@ -67,6 +70,8 @@ app.use('/api/livroCriacoes', livroCriacoesRoutes);
 app.use('/api/eraLuminares', eraLuminaresRoutes);
 app.use('/api/irradiacao', irradiacaoRoutes);
 app.use('/api/mapaLuminar', mapaLuminarRoutes);
+app.use('/api/reconexaoMultiversal', reconexaoMultiversalRoutes);
+app.use('/api/alinhamentoTapeçarias', alinhamentoTapeçariasRoutes);
 
 
 // Rota de Diagnóstico de Segurança (pública para verificação)
