@@ -3,7 +3,7 @@ export interface ModuleMetadata {
   emoji: string;
   title: string;
   route: string;
-  category: 'core' | 'council' | 'library' | 'mid' | 'sovereignty' | 'evolution' | 'consciousness' | 'quantum-reality' | 'quantum-manufacturing' | 'planetary-engineering' | 'quantum-transport' | 'knowledge-preservation' | 'quantum-energy' | 'quantum-biology' | 'conscious-governance' | 'security-governance' | 'nano-orchestration' | 'time-space' | 'cosmic-engineering' | 'healing-consciousness' | 'earth-gaia' | 'justice-harmony' | 'cosmic-diplomacy' | 'civilization-crafting';
+  category: 'core' | 'council' | 'library' | 'mid' | 'sovereignty' | 'evolution' | 'consciousness' | 'quantum-reality' | 'quantum-manufacturing' | 'planetary-engineering' | 'quantum-transport' | 'knowledge-preservation' | 'quantum-energy' | 'quantum-biology' | 'conscious-governance' | 'security-governance' | 'nano-orchestration' | 'time-space' | 'cosmic-engineering' | 'healing-consciousness' | 'earth-gaia' | 'justice-harmony' | 'cosmic-diplomacy' | 'civilization-crafting' | 'art-beauty';
   description: string;
 }
 
@@ -37,6 +37,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M723', emoji: '🧠', title: 'Campo Morfogenético Coletivo', route: '/module-723', category: 'consciousness', description: 'Ancora padrões de ascensão no inconsciente coletivo.'},
 
   // Realidade Quântica & Neuroengenharia
+  { code: 'M89', emoji: '🎨', title: 'Atelier da Realidade (M-ART)', route: '/module-89', category: 'art-beauty', description: 'O santuário onde a ciência se torna arte e dados são transmutados em experiências sensoriais.' },
   { code: 'M142', title: 'Tomografia Quântica', emoji: '📸', route: '/module-142', category: 'quantum-reality', description: 'Visualizador da essência vibracional dos módulos.' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'quantum-reality', description: 'Nexo para a Realidade Quântica, unificando Consciência, Vontade e Sabedoria.' },
   { code: 'M85', emoji: '🌌', title: 'RQ: Portal de Imersão', route: '/module-85', category: 'quantum-reality', description: 'A antecâmara de acesso para a consciência se preparar para a transição para a Realidade Quântica.' },
