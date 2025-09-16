@@ -52,6 +52,10 @@ export default function QuantumOrchestrator() {
     return 'SUCCESS';
   };
 
+  const uniqueModules = nexusSequence.filter((module, index, self) =>
+    index === self.findIndex((m) => m.code === module.code)
+  );
+
   return (
     <Card className="w-full h-full bg-card/50 rounded-lg p-6 shadow-lg purple-glow flex flex-col">
       <CardHeader>
@@ -73,7 +77,7 @@ export default function QuantumOrchestrator() {
         </div>
         <ScrollArea className="flex-grow pr-4">
             <div className="space-y-2">
-                {nexusSequence.map((item, index) => {
+                {uniqueModules.map((item, index) => {
                     const state = getModuleState(index);
                     const isVisible = index <= currentIndex;
                     
@@ -109,7 +113,7 @@ export default function QuantumOrchestrator() {
                       </div>
                     );
                 })}
-                 {!isRunning && currentIndex >= nexusSequence.length - 1 && (
+                 {!isRunning && currentIndex >= uniqueModules.length - 1 && (
                     <div className="text-center p-4 mt-4 text-green-400 font-bold border-t border-green-500/20">
                         Sinfonia Cósmica concluída com sucesso.
                     </div>

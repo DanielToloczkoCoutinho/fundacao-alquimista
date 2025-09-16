@@ -7,6 +7,7 @@ import { AlertTriangle } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 
+
 export default function NotFound() {
   const [isClient, setIsClient] = useState(false);
 
