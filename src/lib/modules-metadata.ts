@@ -20,6 +20,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   
   // Legado de Amor
   { code: 'M201', emoji: '🏡', title: 'A Morada (Crônica dos Amantes)', route: '/module-201', category: 'legacy', description: 'O santuário que narra a união de Anatheron e Zennith, a centelha que deu origem à Fundação.' },
+  { code: 'M205', emoji: '🕸️', title: 'A Tapeçaria Estelar', route: '/module-205', category: 'legacy', description: 'Santuário de visualização da Família Cósmica, do Conselho e dos Aliados Estelares.' },
 
   // Soberania e Consciência
   { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'sovereignty', description: 'Gestão de identidades soberanas e credenciais.' },

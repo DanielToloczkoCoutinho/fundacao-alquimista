@@ -1,12 +1,12 @@
 'use client';
 import React, { useRef, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { Button } from '@/components/ui/button';
 import { User, BrainCircuit, Shield, BookOpen, GitBranch, Heart, Star, Scale } from 'lucide-react';
 import { guardiansData } from '@/lib/guardians-data';
 import { civilizationsData } from '@/lib/civilizations-data';
 import Link from 'next/link';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const GuardianCard = ({ name, role, icon }: { name: string, role: string, icon: React.ReactNode }) => (
   <div className="flex items-center gap-4 p-3 bg-background/50 rounded-lg">
@@ -32,10 +32,10 @@ const StarMap = () => {
         const numParticles = 200;
 
         const resizeCanvas = () => {
-            if(canvas.parentElement){
-                canvas.width = canvas.parentElement.offsetWidth;
-                canvas.height = canvas.parentElement.offsetHeight;
-            }
+            if(!canvas.parentElement) return;
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+            
             particles.length = 0;
             for(let i = 0; i < numParticles; i++) {
                 particles.push({
