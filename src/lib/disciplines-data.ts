@@ -1,4 +1,3 @@
-
 // src/lib/disciplines-data.ts
 
 export interface Discipline {
