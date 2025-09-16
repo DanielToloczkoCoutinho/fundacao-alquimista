@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna } from 'lucide-react';
 
 function SeloPlanetario() {
   const [estado, setEstado] = useState<{seloAtivo: boolean, frequência: string, alinhamento: string} | null>(null)
@@ -424,6 +424,41 @@ function OraculoExpansoes() {
   );
 }
 
+function FusaoTapeçarias() {
+  const [fusoes, setFusoes] = useState<any[]>([])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('/api/fusaoTapeçarias/registro')
+        .then(res => res.json())
+        .then(data => setFusoes(data.fusoes || []))
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [])
+
+  return (
+    <Card className="bg-card/50 purple-glow">
+      <CardHeader>
+        <CardTitle className="text-2xl text-red-300 flex items-center gap-2"><Dna /> Fusões entre Tapeçarias</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {fusoes.length > 0 ? (
+          <ul className="space-y-2 h-48 overflow-y-auto">
+            {fusoes.map((f, idx) => (
+              <li key={idx} className="p-2 bg-background/50 rounded">
+                <p className="font-semibold">{f.origemA} + {f.origemB} → {f.novaEntidade}</p>
+                <p className="text-sm text-muted-foreground">Guardiões: {f.guardioes.join(', ')} — Intenção: {f.intençãoCombinada}</p>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-muted-foreground text-center h-48 flex items-center justify-center">Aguardando a primeira fusão...</p>
+        )}
+      </CardContent>
+    </Card>
+  )
+}
+
 
 export default function AlignmentPortalPage() {
     return (
@@ -451,6 +486,7 @@ export default function AlignmentPortalPage() {
                 <AlinhamentoTapeçarias />
                 <ConcilioPlanetario />
                 <OraculoExpansoes />
+                <FusaoTapeçarias />
             </div>
         </div>
     )
