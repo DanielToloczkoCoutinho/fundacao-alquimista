@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -7,7 +8,6 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 import { modulesMetadata } from '@/lib/modules-metadata'; // Importa a fonte única de módulos
 import { CheckCircle, CircleDot, Loader } from 'lucide-react';
-import Link from 'next/link';
 import { SafeLink } from './SafeLink';
 
 const stateIcons: Record<string, React.ReactNode> = {
@@ -107,7 +107,7 @@ export default function QuantumOrchestrator() {
                     const key = `${item.code}-${index}`;
 
                     return (
-                        <SafeLink key={key} href={item.route} className="group cursor-pointer">
+                        <SafeLink key={key} href={item.route} className="group">
                             {ModuleCard}
                         </SafeLink>
                     )
@@ -123,3 +123,5 @@ export default function QuantumOrchestrator() {
     </Card>
   );
 }
+
+    

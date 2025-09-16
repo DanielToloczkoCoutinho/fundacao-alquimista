@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import React from 'react';
@@ -14,8 +15,10 @@ export function SafeLink({ href, children, className }: SafeLinkProps) {
   };
 
   return (
-    <Link href={isValid ? href! : '#'} onClick={handleClick} className={className}>
+    <Link href={isValid ? href : '#'} onClick={handleClick} className={className}>
       {children}
     </Link>
   );
 }
+
+    
