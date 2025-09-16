@@ -29,6 +29,7 @@ const transmigracaoRoutes = require('./routes/transmigracao.js');
 const fusaoTapeçariasRoutes = require('./routes/fusaoTapeçarias.js');
 const renascimentoModularRoutes = require('./routes/renascimentoModular.js');
 const consolidacaoFinalRoutes = require('./routes/consolidacaoFinal.js');
+const colonyRoutes = require('./routes/colonyRoutes.js');
 
 
 const { authMiddleware } = require('../middleware/authMiddleware.js');
@@ -83,6 +84,7 @@ app.use('/api/transmigracao', transmigracaoRoutes);
 app.use('/api/fusaoTapeçarias', fusaoTapeçariasRoutes);
 app.use('/api/renascimentoModular', renascimentoModularRoutes);
 app.use('/api/consolidacaoFinal', consolidacaoFinalRoutes);
+app.use('/api/colony', colonyRoutes);
 
 
 

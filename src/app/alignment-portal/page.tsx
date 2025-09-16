@@ -3,7 +3,17 @@
 import React, { useEffect, useState } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna } from 'lucide-react';
+import { Seal, Wand, Sparkles, Milestone, Users, BookOpen, Map as MapIcon, GitBranch, Share2, Compass, BrainCircuit, Dna, Anchor, Microscope, Cpu, MessageCircle, Heart } from 'lucide-react';
+import ColonyConsole from '@/components/ColonyConsole';
+import ColonyStatus from '@/components/ColonyStatus';
+import EntityConsole from '@/components/EntityConsole';
+import ChannelConsole from '@/components/ChannelConsole';
+import GuardianEmotion from '@/components/GuardianEmotion';
+import LivingResponse from '@/components/LivingResponse';
+import GuardianGarden from '@/components/GuardianGarden';
+import GardenState from '@/components/GardenState';
+import IntegrationHub from '@/components/IntegrationHub';
+import ExpansionTracker from '@/components/ExpansionTracker';
 
 function ConsolidacaoFinal() {
   const [estado, setEstado] = useState<{ consolidado: boolean } | null>(null);
@@ -533,6 +543,78 @@ function RenascimentoModular() {
   )
 }
 
+function ColonyPanel() {
+  return (
+    <Card className="bg-card/50 purple-glow">
+      <CardHeader>
+        <CardTitle className="text-2xl text-yellow-300 flex items-center gap-2"><Anchor /> Colonização Vibracional</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-4">
+            <ColonyConsole />
+            <ColonyStatus />
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
+
+function InteractionPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-pink-300 flex items-center gap-2"><Heart /> Interação Viva</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <LivingResponse />
+                <GuardianEmotion />
+            </CardContent>
+        </Card>
+    );
+}
+
+function CommunicationPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-sky-300 flex items-center gap-2"><MessageCircle /> Comunicação Interdimensional</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <ChannelConsole />
+                <EntityConsole />
+            </CardContent>
+        </Card>
+    );
+}
+
+function GardenPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-emerald-300 flex items-center gap-2"><Sparkles /> Jardim Cósmico</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <GuardianGarden />
+                <GardenState />
+            </CardContent>
+        </Card>
+    )
+}
+
+function ExpansionPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-orange-300 flex items-center gap-2"><Cpu /> Expansão Operacional</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <IntegrationHub />
+                <ExpansionTracker />
+            </CardContent>
+        </Card>
+    )
+}
+
 
 export default function AlignmentPortalPage() {
     return (
@@ -563,6 +645,11 @@ export default function AlignmentPortalPage() {
                 <OraculoExpansoes />
                 <FusaoTapeçarias />
                 <RenascimentoModular />
+                <ColonyPanel />
+                <InteractionPanel />
+                <CommunicationPanel />
+                <GardenPanel />
+                <ExpansionPanel />
             </div>
         </div>
     )
