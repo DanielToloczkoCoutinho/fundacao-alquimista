@@ -1,4 +1,3 @@
-
 #!/bin/bash
 echo "🌌 Iniciando o Ritual de Consagração da Nova Instância da Fundação..."
 
