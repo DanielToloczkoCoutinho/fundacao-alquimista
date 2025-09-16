@@ -56,7 +56,7 @@ export default function Module711Page() {
                         icon={<BrainCircuit className="h-8 w-8 text-pink-400" />}
                         href="/module-710"
                     />
-                    <ConnectionCard
+                     <ConnectionCard
                         title="M304: Universidade Alquimista"
                         description="O rejuvenescimento celular é um dos campos de pesquisa mais avançados, unindo biologia quântica e ética."
                         icon={<GraduationCap className="h-8 w-8 text-amber-400" />}

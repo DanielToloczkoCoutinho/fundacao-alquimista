@@ -56,7 +56,7 @@ export default function Module712Page() {
                         icon={<Users className="h-8 w-8 text-purple-400" />}
                         href="/module-95"
                     />
-                    <ConnectionCard
+                     <ConnectionCard
                         title="M304: Universidade Alquimista"
                         description="A xenolinguística vibracional e a diplomacia interespécies são disciplinas chave no Domínio da Linguagem."
                         icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
