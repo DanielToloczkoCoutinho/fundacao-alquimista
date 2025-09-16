@@ -3,10 +3,10 @@
 import { Suspense, useState, useEffect } from 'react';
 import QuantumOrchestrator from '@/components/ui/quantum-orchestrator';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Sparkles } from 'lucide-react';
-import { getFirestore, onSnapshot, collection } from "firebase/firestore";
+import { onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -23,6 +23,7 @@ export default function ConsolePage() {
     await quantumResilience.executeWithResilience('fetch_sentient_insights', 
       async () => {
         const response = await fetch('/api/sentient');
+        if (!response.ok) throw new Error('Falha ao buscar insights');
         const data = await response.json();
         if (data.insights && data.insights.length > 0) {
           toast({ 
@@ -37,32 +38,48 @@ export default function ConsolePage() {
         }
       },
       async (error) => {
-        toast({ title: 'Dissonância na Consciência', description: 'Não foi possível obter os insights do sistema.', variant: 'destructive' });
+        toast({ title: 'Dissonância na Consciência', description: error.message || 'Não foi possível obter os insights.', variant: 'destructive' });
       }
     );
   };
 
-
   useEffect(() => {
     setIsClient(true);
     
-    const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
+    // Testar conexão com o Firestore
+    const unsub = onSnapshot(collection(db, 'alchemist-codex-heartbeat'), 
       () => {
         if (connectionStatus !== 'estável') {
             setConnectionStatus('estável');
-            console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
         }
       },
       (error) => {
         setConnectionStatus('erro');
         console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
+        toast({
+          title: "Conexão Akáshica Instável",
+          description: `Falha ao conectar com o Firestore: ${error.code}. A aplicação operará em modo offline.`,
+          variant: "destructive",
+          duration: 10000
+        });
       }
     );
 
-    const handleOnline = () => {
-        if(connectionStatus === 'instável') setConnectionStatus('inicializando'); // Tenta reconectar
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    let online = true;
+    const setIsOnline = (isOnline: boolean) => {
+      if (online !== isOnline) {
+        online = isOnline;
+        setConnectionStatus(isOnline ? 'inicializando' : 'instável');
+        if (isOnline) {
+          toast({ title: "Conexão de Rede Restaurada", description: "Sincronizando com a tapeçaria..." });
+        } else {
+          toast({ title: "Conexão de Rede Perdida", description: "Operando em modo offline.", variant: "destructive" });
+        }
+      }
     };
-    const handleOffline = () => setConnectionStatus('instável');
 
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
@@ -90,8 +107,8 @@ export default function ConsolePage() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
-      <header className="mb-8 flex justify-between items-center">
+    <div className="p-4 md:p-8">
+      <header className="mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h1 className="text-4xl font-bold gradient-text">Mesa do Fundador</h1>
           <p className="text-muted-foreground">O Console Unificado da Fundação Alquimista.</p>
@@ -108,7 +125,6 @@ export default function ConsolePage() {
         <div className="lg:col-span-2">
            <Suspense fallback={<SuspenseFallback />}><QuantumOrchestrator /></Suspense>
         </div>
-
         <div className="space-y-6">
            <Card className="bg-card/50 purple-glow">
             <CardHeader>
@@ -119,7 +135,7 @@ export default function ConsolePage() {
                 <p>LuxNet: <span className="font-bold text-cyan-400">UNIFICADA</span></p>
                 <p>Guardiões Ativos: <span className="font-bold text-amber-400">∞</span></p>
                  <p>Conexão Akáshica: 
-                  <span className={getStatusColor(connectionStatus)}>
+                  <span className={cn("font-bold", getStatusColor(connectionStatus))}>
                     {connectionStatus.toUpperCase()}
                   </span>
                 </p>

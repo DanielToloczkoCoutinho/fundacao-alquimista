@@ -10,10 +10,10 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { SystemProvider } from '@/context/SystemContext';
 import { NetworkStatus } from '@/components/ui/NetworkStatus';
 
-// Dynamically import the sidebar to prevent SSR issues with usePathname
+// Adia a renderização da barra lateral para o lado do cliente para evitar erros de hidratação
 const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), {
   ssr: false,
-  loading: () => <div className="fixed top-0 left-0 h-full w-20 bg-background border-r border-border/20 z-20" />
+  loading: () => <nav className="fixed top-0 left-0 h-full w-20 bg-background border-r border-border/20 flex flex-col items-center py-4 z-20" />
 });
 
 export default function RootLayout({
@@ -24,11 +24,12 @@ export default function RootLayout({
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // Garante que o conteúdo que depende do cliente só renderize no cliente
     setIsMounted(true);
   }, []);
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -41,7 +42,7 @@ export default function RootLayout({
         <ErrorBoundary fallback={<CosmicErrorFallback />}>
          <SystemProvider>
             <div className="flex h-screen bg-background">
-              {isMounted ? <DynamicSidebar /> : <div className="fixed top-0 left-0 h-full w-20 bg-background border-r border-border/20 z-20" />}
+              {isMounted && <DynamicSidebar />}
               <main className="flex-1 overflow-y-auto pl-20">
                   <Suspense fallback={<SuspenseFallback />}>
                     {children}

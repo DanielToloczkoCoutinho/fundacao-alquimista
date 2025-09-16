@@ -1,7 +1,7 @@
 'use client';
 
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { initializeFirestore, getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
+import { initializeFirestore, getFirestore, enableIndexedDbPersistence, connectFirestoreEmulator } from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -14,19 +14,26 @@ const firebaseConfig = {
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
+// Use initializeFirestore para forçar long-polling e resolver problemas de conexão
 const db = initializeFirestore(app, {
   experimentalForceLongPolling: true,
   useFetchStreams: false,
 });
 
 if (typeof window !== 'undefined') {
-    enableIndexedDbPersistence(db).catch((err) => {
-        if (err.code == 'failed-precondition') {
-            console.warn('Persistência já ativada em outra aba. A base de dados local será compartilhada.');
-        } else if (err.code == 'unimplemented') {
-            console.warn('Navegador não suporta persistência offline do Firestore.');
-        }
-    });
+  // Conectar ao emulador se estiver em desenvolvimento (opcional, mas recomendado)
+  if (process.env.NODE_ENV === 'development' && process.env.NEXT_PUBLIC_USE_EMULATORS === 'true') {
+     connectFirestoreEmulator(db, 'localhost', 8080);
+     console.log("Conectado ao Emulador Firestore.");
+  }
+
+  enableIndexedDbPersistence(db).catch((err) => {
+      if (err.code === 'failed-precondition') {
+          console.warn('Persistência do Firestore já ativada em outra aba. A base de dados local será compartilhada.');
+      } else if (err.code === 'unimplemented') {
+          console.warn('Navegador não suporta persistência offline do Firestore.');
+      }
+  });
 }
 
 export { app, db };
