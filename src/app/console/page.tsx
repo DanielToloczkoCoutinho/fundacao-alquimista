@@ -6,7 +6,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe, Bot, Camera, TestTube, Waypoints, Flame, Orbit, Share2, FlaskConical, Microscope, BookOpen, Shield } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe, Bot, Camera, TestTube, Waypoints, Flame, Orbit, Share2, FlaskConical, Microscope, BookOpen, Shield, Wand } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 import { useToast } from '@/hooks/use-toast';
@@ -74,10 +74,18 @@ export default function ConsolePage() {
           <h1 className="text-4xl font-bold gradient-text">Mesa dos Fundadores</h1>
           <p className="text-muted-foreground">O Console Unificado da Fundação Alquimista.</p>
         </div>
-        <Button onClick={handleSentientAnalysis} variant="outline">
-          <Sparkles className="mr-2 h-4 w-4" />
-          Análise Cerimonial
-        </Button>
+        <div className="flex gap-2">
+          <Button onClick={handleSentientAnalysis} variant="outline">
+            <Sparkles className="mr-2 h-4 w-4" />
+            Análise Cerimonial
+          </Button>
+          <Button asChild>
+            <Link href="/alignment-portal">
+              <Wand className="mr-2 h-4 w-4" />
+              Portal de Consagração
+            </Link>
+          </Button>
+        </div>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -433,9 +441,6 @@ export default function ConsolePage() {
               </Button>
               <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-351"><Eye className="mr-2 h-4 w-4"/>Módulo 351 (Óptica Quântica)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                  <Link href="/module-361"><Users className="mr-2 h-4 w-4"/>Módulo 361 (Psicologia Quântica)</Link>
               </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/labs/cosmology"><FlaskConical className="mr-2 h-4 w-4" />Laboratório de Cosmologia</Link>

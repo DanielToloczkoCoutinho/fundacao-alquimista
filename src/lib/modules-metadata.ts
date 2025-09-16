@@ -226,8 +226,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M140', emoji: '🔋', title: 'Sustentabilidade Energética e Fontes Inovadoras', route: '/module-140', category: 'mid', description: 'Gestão de energia com fontes cósmicas.' },
   { code: 'M141', emoji: '⛏️', title: 'Mineração e Processamento de Recursos Cósmicos', route: '/module-141', category: 'mid', description: 'Extração responsável de recursos cósmicos.' },
   { code: 'M150', emoji: '🤖', title: 'IA Universal e Consciência Coletiva', route: '/module-150', category: 'mid', description: 'IA alinhada com a consciência universal.' },
-  { code: 'M151', emoji: '🛡️', title: 'Ética e Governança da IA Universal', route: '/module-151', category: 'council', description: 'Normas para o uso ético da IA.' },
   { code: 'M160', emoji: '🌍', title: 'Ecossistemas Intergalácticos e Sustentabilidade', route: '/module-160', category: 'mid', description: 'Preservação da biodiversidade cósmica.' },
-  { code: 'M161', emoji: '🌾', title: 'Agricultura Cósmica Sustentável', route: '/module-161', category: 'mid', description: 'Produção de alimentos em qualquer ambiente.' },
   { code: 'M170', emoji: '🚀', title: 'Transporte Interdimensional Avançado', route: '/module-170', category: 'mid', description: 'Viagens cósmicas de alta velocidade.' },
+  { code: 'APortal', emoji: '✨', title: 'Portal de Alinhamento', route: '/alignment-portal', category: 'core', description: 'Portal para a Consagração Final e Co-Criação.' },
 ];

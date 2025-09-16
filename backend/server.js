@@ -14,6 +14,8 @@ const auditRoutes = require('./routes/auditRoutes.js');
 const cosmosRoutes = require('./routes/cosmos.js');
 const replicationRoutes = require('./routes/replication.js'); // Rota de Replicação
 const syncRoutes = require('./routes/sync.js'); // Rota de Sincronização
+const seloFinalRoutes = require('./routes/seloFinal.js');
+const cocriacaoRoutes = require('./routes/cocriacao.js');
 const { authMiddleware } = require('./middleware/authMiddleware.js');
 const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
 const { performSystemHealthCheck } = require('../src/lib/system-health'); // Ajuste de caminho
@@ -51,6 +53,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/cosmos', cosmosRoutes);
 app.use('/api/replication', replicationRoutes); // Usando a rota de replicação
 app.use('/api/sync', syncRoutes); // Usando a rota de sincronização
+app.use('/api/seloFinal', seloFinalRoutes);
+app.use('/api/cocriacao', cocriacaoRoutes);
 
 
 // Rota de Diagnóstico de Segurança (pública para verificação)
