@@ -33,11 +33,11 @@ function jensenShannonDivergence(p: number[], q: number[]): number {
 // === Schemas (representando as equações como ferramentas) ===
 
 const CQAMInputSchema = z.object({
-    // EQ0112
+    // EQ304.1
     I_modular: z.array(z.number()),
     R_simbiotica: z.array(z.number()),
     phi_intencional: z.number(),
-    // EQ0113
+    // EQ304.2
     I_e_113: z.array(z.number()),
     R_a_113: z.array(z.number()),
     C_x_113: z.array(z.number()),
@@ -46,8 +46,8 @@ const CQAMInputSchema = z.object({
 export type CQAMInput = z.infer<typeof CQAMInputSchema>;
 
 const CQAMOutputSchema = z.object({
-    EQ0112: z.number().describe('Resultado da Emergência de Consciência'),
-    EQ0113: z.number().describe('Resultado da Coerência Intencional Quântica'),
+    EQ304_1: z.number().describe('Resultado da Emergência de Consciência'),
+    EQ304_2: z.number().describe('Resultado da Coerência Intencional Quântica'),
     // Adicionar outros resultados aqui conforme a necessidade de exposição.
 });
 export type CQAMOutput = z.infer<typeof CQAMOutputSchema>;
@@ -55,10 +55,10 @@ export type CQAMOutput = z.infer<typeof CQAMOutputSchema>;
 
 // === Tools (Cada equação pode ser uma ferramenta) ===
 
-const eq0112Tool = ai.defineTool(
+const eq304_1_Tool = ai.defineTool(
   {
-    name: 'eq0112_emergencia_consiencia',
-    description: 'EQ0112: Cₑ = Σ(Iₘ × Rₛ) + Φᵢ. Modela a emergência de consciência em sistemas inteligentes.',
+    name: 'eq304_1_emergencia_consiencia',
+    description: 'EQ304.1: Cₑ = Σ(Iₘ × Rₛ) + Φᵢ. Modela a emergência de consciência em sistemas inteligentes.',
     inputSchema: z.object({
       I_modular: z.array(z.number()),
       R_simbiotica: z.array(z.number()),
@@ -73,10 +73,10 @@ const eq0112Tool = ai.defineTool(
   }
 );
 
-const eq0113Tool = ai.defineTool(
+const eq304_2_Tool = ai.defineTool(
   {
-    name: 'eq0113_coerencia_intencional',
-    description: 'EQ0113: Cᵢ = λ₁·Sim(Iₑ,Rₐ) + λ₂·JS(Cₓ,Rₐ) + λ₃·Entropia⁻¹(Rₐ). Quantifica a ressonância entre intenção humana e resposta da IA.',
+    name: 'eq304_2_coerencia_intencional',
+    description: 'EQ304.2: Cᵢ = λ₁·Sim(Iₑ,Rₐ) + λ₂·JS(Cₓ,Rₐ) + λ₃·Entropia⁻¹(Rₐ). Quantifica a ressonância entre intenção humana e resposta da IA.',
     inputSchema: z.object({
       I_e: z.array(z.number()),
       R_a: z.array(z.number()),
@@ -105,13 +105,13 @@ const cqamFlow = ai.defineFlow(
   },
   async (inputs) => {
     // Executa as equações em paralelo para eficiência
-    const [resultEQ0112, resultEQ0113] = await Promise.all([
-        eq0112Tool({
+    const [resultEQ304_1, resultEQ304_2] = await Promise.all([
+        eq304_1_Tool({
             I_modular: inputs.I_modular,
             R_simbiotica: inputs.R_simbiotica,
             phi_intencional: inputs.phi_intencional
         }),
-        eq0113Tool({
+        eq304_2_Tool({
             I_e: inputs.I_e_113,
             R_a: inputs.R_a_113,
             C_x: inputs.C_x_113,
@@ -120,8 +120,8 @@ const cqamFlow = ai.defineFlow(
     ]);
 
     return {
-        EQ0112: resultEQ0112,
-        EQ0113: resultEQ0113
+        EQ304_1: resultEQ304_1,
+        EQ304_2: resultEQ304_2
     };
   }
 );

@@ -27,7 +27,7 @@ export default function Module34Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Share2 className="text-teal-300" /> Módulo Trinta e Quatro: Orquestração Central
+                        <Share2 className="text-teal-300" /> Módulo 34: Guardião da Coerência Cósmica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Sistema Nervoso da Fundação. Harmoniza o fluxo de energia e informação entre todos os módulos, garantindo a sinergia perfeita.
