@@ -1,4 +1,3 @@
-// /app/lib/foundation-integrator.ts
 'use server';
 
 // Importações de todos os registros vibracionais
