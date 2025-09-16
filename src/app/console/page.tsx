@@ -105,7 +105,7 @@ export default function ConsolePage() {
                </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-600"><Scale className="mr-2 h-4 w-4" />Módulo 600 (Conselho Cósmico)</Link>
-               </Button>
+              </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-721"><Gavel className="mr-2 h-4 w-4"/>Módulo 721 (Justiça Cósmica)</Link>
               </Button>
