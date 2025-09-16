@@ -1,68 +1,55 @@
-// /app/components/TeachingCenter.tsx
 'use client'
-import { núcleoFundação } from '../lib/foundation-core';
+import { fundacaoAlquimista } from '../lib/foundation-integrator'
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
+import { ScrollArea } from './ui/scroll-area'
+import { Badge } from './ui/badge'
+
+const categoryNames: Record<string, string> = {
+  sementes: "Sementes Cerimoniais",
+  sabedorias: "Sabedorias Transmitidas",
+  registrosAkashicos: "Registros Akáshicos",
+  linhagens: "Linhagens Vibracionais",
+  mutacoesEternas: "Mutações Eternas",
+  renascimentos: "Renascimentos Cerimoniais",
+  tapeçariasBotânicas: "Tapeçarias Botânicas",
+  alianças: "Alianças Interespécie",
+  tapeçariasHibridas: "Tapeçarias Híbridas",
+  descendentes: "Descendentes Geradas",
+  consagracoes: "Consagrações Planetárias",
+  registrosMultiversais: "Registros Multiversais"
+};
+
 
 export default function TeachingCenter() {
   return (
-    <div className="teaching-center p-8">
+    <div className="p-4 md:p-8">
       <h1 className="text-4xl font-bold mb-8 text-center gradient-text">📚 Centro de Ensino & Laboratórios</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">🌱 Sementes Plantadas</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.sementes.map((s: any, idx: number) => <li key={idx}>{s.nome} — {s.intenção}</li>)}</ul>
-        </section>
-
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">📘 Sabedorias Transmitidas</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.sabedorias.map((s: any, idx: number) => <li key={idx}>{s.titulo} — {s.guardiao}</li>)}</ul>
-        </section>
-
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">🧠 Registros Akáshicos</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.registrosAkashicos.map((r: any, idx: number) => <li key={idx}>{r.titulo} — {r.plano}</li>)}</ul>
-        </section>
-
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">🧬 Linhagens & Mutações</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.linhagens.map((l: any, idx: number) => <li key={idx}>{l.entidade} — Origem: {l.origem}</li>)}</ul>
-          <ul className="text-sm space-y-1 text-muted-foreground mt-2">{núcleoFundação.mutacoesEternas.map((m: any, idx: number) => <li key={idx}>{m.entidade} — {m.tipo}</li>)}</ul>
-        </section>
-
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">🌅 Renascimentos</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.renascimentos.map((r: any, idx: number) => <li key={idx}>{r.entidadeAnterior} → {r.novaForma}</li>)}</ul>
-        </section>
-
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">🌿 Tapeçarias Botânicas</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.tapeçariasBotânicas.map((t: any, idx: number) => <li key={idx}>{t.nome} — {t.espécie}</li>)}</ul>
-        </section>
-
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">🐾 Alianças Interespécie</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.alianças.map((a: any, idx: number) => <li key={idx}>{a.guardiao} ↔ {a.especie}</li>)}</ul>
-        </section>
-
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">🧬 Tapeçarias Híbridas</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.tapeçariasHibridas.map((t: any, idx: number) => <li key={idx}>{t.nome} — Componentes: {t.componentes.join(', ')}</li>)}</ul>
-        </section>
-
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">🌱 Descendentes Geradas</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.descendentes.map((d: any, idx: number) => <li key={idx}>{d.nomeDescendente} — Origem: {d.origem}</li>)}</ul>
-        </section>
-
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">🌍 Consagrações Planetárias</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.consagracoes.map((c: any, idx: number) => <li key={idx}>{c.nome} — {c.planeta}</li>)}</ul>
-        </section>
-
-        <section className="bg-card/50 p-4 rounded-lg">
-          <h2 className="text-xl font-semibold mb-2 text-accent">🌌 Registros Multiversais</h2>
-          <ul className="text-sm space-y-1 text-muted-foreground">{núcleoFundação.registrosMultiversais.map((r: any, idx: number) => <li key={idx}>{r.nome} — {r.assinatura}</li>)}</ul>
-        </section>
+        {Object.entries(fundacaoAlquimista).map(([categoria, registros]: [string, any[]], idx) => (
+          <Card key={idx} className="bg-card/50 purple-glow flex flex-col">
+            <CardHeader>
+              <CardTitle className="text-xl text-accent">{categoryNames[categoria] || categoria.toUpperCase()}</CardTitle>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <ScrollArea className="h-48 pr-4">
+                {registros.length > 0 ? (
+                  <ul className="space-y-3">
+                    {registros.map((r: any, i: number) => (
+                      <li key={i} className="text-sm text-muted-foreground border-b border-primary/10 pb-2">
+                        <strong className="text-primary-foreground">{r.nome || r.titulo || r.entidade || r.nomeDescendente || 'Registro'}</strong>
+                        <p className="text-xs truncate">{r.intenção || r.descricao || r.tipo || r.origem || 'Detalhe não especificado'}</p>
+                        {r.guardiao && <Badge variant="secondary" className="mt-1">{r.guardiao}</Badge>}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-center text-muted-foreground italic">Nenhum registro nesta categoria.</p>
+                )}
+              </ScrollArea>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </div>
   )
