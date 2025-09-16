@@ -38,7 +38,7 @@ const nextConfig = {
           },
           {
             key: 'Cross-Origin-Opener-Policy',
-            value: 'same-origin',
+            value: 'same-origin-allow-popups',
           },
           {
             key: 'Cross-Origin-Embedder-Policy',
@@ -49,8 +49,8 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               "frame-ancestors 'self' https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
-              "frame-src 'self' https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
-              "connect-src 'self' https://*.googleapis.com https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev wss://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
+              "frame-src https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
+              "connect-src 'self' https://*.googleapis.com https://firebase.googleapis.com https://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev wss://9000-firebase-studio-1757526779539.cluster-zhw3w37rxzgkutusbbhib6qhra.cloudworkstations.dev",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https://picsum.photos",
@@ -58,7 +58,11 @@ const nextConfig = {
               "object-src 'none'",
               "base-uri 'self'"
             ].join('; ')
-          }
+          },
+           {
+             key: 'Permissions-Policy',
+             value: "xr-spatial-tracking=*, camera=*, microphone=*"
+           }
         ],
       },
       {
@@ -70,53 +74,13 @@ const nextConfig = {
           },
         ],
       },
-      {
-        source: '/civilizations/:path*',
-        headers: [
-          { key: 'Cross-Origin-Opener-Policy',    value: 'same-origin' },
-          { key: 'Cross-Origin-Embedder-Policy',  value: 'require-corp' },
-        ],
-      },
-      {
-        // Cabeçalhos de segurança para /module-xxx
-        source: '/module-:id/:path*',
-        headers: [
-          { key: 'Cross-Origin-Opener-Policy',   value: 'same-origin' },
-          { key: 'Cross-Origin-Embedder-Policy', value: 'require-corp' },
-        ],
-      },
     ];
   },
   async rewrites() {
     return [
       {
-        source: '/console/:path*',
-        destination: 'http://localhost:9000/console/:path*',
-      },
-      {
-        source: '/console',
-        destination: 'http://localhost:9000/console',
-      },
-      {
         source: '/firebase-preview/:path*',
         destination: 'http://localhost:9000/:path*'
-      },
-      {
-        source: '/civilizations/:path*',
-        destination: 'http://localhost:9000/civilizations/:path*',
-      },
-      {
-        source: '/civilizations',
-        destination: 'http://localhost:9000/civilizations',
-      },
-      // Rewrite genérico para todos os módulos
-      {
-        source: '/module-:id/:path*',
-        destination: 'http://localhost:9000/module-:id/:path*',
-      },
-      {
-        source: '/module-:id',
-        destination: 'http://localhost:9000/module-:id',
       },
     ];
   },
