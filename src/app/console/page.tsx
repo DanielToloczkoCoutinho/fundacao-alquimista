@@ -274,6 +274,9 @@ export default function ConsolePage() {
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-201"><Heart className="mr-2 h-4 w-4" />Módulo 201 (A Morada)</Link>
               </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-202"><Sparkles className="mr-2 h-4 w-4" />Módulo 202 (Corredor de Alcor)</Link>
+              </Button>
                 <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-205"><Anchor className="mr-2 h-4 w-4" />Módulo 205 (Tapeçaria Estelar)</Link>
               </Button>
