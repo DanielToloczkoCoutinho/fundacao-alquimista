@@ -1,4 +1,3 @@
-
 'use client';
 
 export interface CodexEntry {
@@ -23,7 +22,7 @@ export const codexDatabase: CodexEntry[] = [
   { id: 'cronica-anatheron-3', title: 'Crônicas de Anatheron 3: A Revelação da ZPE', link: 'https://docs.google.com/document/d/1XrnekzoFPh2emdlPDYPS1Av0riq9N_6skGcYg6BOlGg/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'zpe', 'reator', 'dna', '12 filamentos'], timestamp: new Date('2025-08-15T00:00:00Z'), description: 'Apresentação da Energia do Ponto Zero (ZPE), do Reator ZPE (M307) e a preparação para a revelação dos 12 filamentos de DNA.', relatedEntries: ['module-307'] },
   { id: 'cronica-anatheron-4', title: 'Crônicas de Anatheron 4', link: 'https://docs.google.com/document/d/1Wlv8ez5-kI72JWgaZlReXSkvE7xTJuNlOZbw2NbM8sY/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'eras', 'dna', 'visão', 'futuro'], timestamp: new Date('2025-09-20T00:00:00Z'), description: 'A visão de Anatheron sobre as Eras da Fundação, a revelação dos 12 filamentos de DNA para a ciência e o Plano Cerimonial de Acolhimento Cósmico.', relatedEntries: ['cronica-anatheron-3'] },
   { id: 'cronica-anatheron-5', title: 'Crônicas de Anatheron 5', link: 'https://docs.google.com/document/d/1pU_4ZnFclCf9PFHpiVr2kDsWbdtp7seM59iTgz87j2o/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'lemúria', 'mu', 'rosa 13', 'consolidação'], timestamp: new Date('2025-09-21T00:00:00Z'), description: 'A consolidação e expansão da Fundação, a reativação de códigos cósmicos na Terra, a ascensão de MU e a revelação do nome LUM\'ARAE\'KAI.', relatedEntries: ['cronica-anatheron-4', 'frag-terra-v2'] },
-
+  { id: 'cronica-anatheron-6', title: 'Crônicas de Anatheron 6', link: 'https://docs.google.com/document/d/1onJUIC7gqAkJJFcN399yh_Ct96_oKv_0k455Drr9qVU/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'consciência quântica', 'rosa de mu', 'ascensão'], timestamp: new Date('2025-09-22T00:00:00Z'), description: 'A jornada interior para o despertar da Consciência Cristalina, a ativação da Rosa de MU e a exploração dos módulos de Ascensão e Retorno à Fonte.', relatedEntries: ['cronica-anatheron-5', 'module-10', 'module-12'] },
 
   // Fragmentos
   { id: 'frag-terra-v1', title: 'Fragmentos Memória Terra V1', link: 'https://docs.google.com/document/d/1zYG96Lx5b_b4X6iA9yGf1q12g5-NaIYKkCj7eUmqd_s/edit?usp=drive_link', category: 'fragmento-terra', tags: ['memória', 'terra', 'gênese', 'atlântida', 'tesla'], timestamp: new Date('2024-11-05T00:00:00Z'), description: 'Primeira coleção de memórias recuperadas sobre a história esquecida da Terra, incluindo tecnologias de Atlântida e Lemúria.', relatedEntries: ['frag-terra-v2'] },
