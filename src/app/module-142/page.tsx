@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Camera, Layers, FlaskConical, Atom, Dna, BrainCircuit, Waves, TestTube, Waypoints, Flame, GitBranch, Telescope, BarChart, Rss, Network, CloudSun, Cpu, Microscope, Link as LinkIcon, UserCog, Recycle, Heart, Wifi, UserPlus, DraftingCompass, Globe, TestTube2, Anchor } from 'lucide-react';
+import { Camera, Layers, FlaskConical, Atom, Dna, BrainCircuit, Waves, TestTube, Waypoints, Flame, GitBranch, Telescope, BarChart, Rss, Network, CloudSun, Cpu, Microscope, Link as LinkIcon, Users, Recycle, Heart, Wifi, UserPlus, DraftingCompass, Globe, TestTube2, Anchor, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -32,6 +32,11 @@ export default function Module142Page() {
                         O portal unificado para todos os laboratórios de pesquisa e santuários de experimentação da Fundação Alquimista.
                     </CardDescription>
                 </CardHeader>
+                 <CardContent>
+                    <Link href="/module-304">
+                        <p className="text-sm text-amber-400 hover:underline">Integrado à Universidade Alquimista (M304)</p>
+                    </Link>
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-7xl">

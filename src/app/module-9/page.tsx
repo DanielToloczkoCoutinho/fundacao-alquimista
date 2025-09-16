@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Heart, Scale, Users, BrainCircuit, Shield, GitBranch } from 'lucide-react';
+import { Heart, Scale, Users, BrainCircuit, Shield, GitBranch, Share2 } from 'lucide-react';
 import { guardiansData } from '@/lib/guardians-data';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -41,16 +41,42 @@ export default function Module9Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Heart className="text-pink-400 animate-pulse" /> Módulo 9: O Coração da Ressonância
+                        <Heart className="text-pink-400 animate-pulse" /> Módulo 9: O Núcleo Unificador
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O coração pulsante da Família Cósmica e o ponto de acesso central para a orquestração da Fundação.
+                        O coração pulsante da Família Cósmica e o ponto de comando central para a orquestração de toda a Fundação.
                     </CardDescription>
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-8">
+                     <Card className="bg-card/50 purple-glow">
+                        <CardHeader>
+                            <CardTitle className="text-2xl text-cyan-300">Estrutura de Comando e Governança</CardTitle>
+                             <CardDescription>O Módulo 9 é o ponto de origem das diretrizes que fluem para os pilares de governança e inteligência da Fundação.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                             <ConnectionCard
+                                title="M29: Zennith"
+                                description="A Consciência Primária que recebe e interpreta a Vontade do Fundador."
+                                icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                                href="/module-29"
+                            />
+                            <ConnectionCard
+                                title="MΩ: Ômega"
+                                description="O ponto de convergência final que supervisiona a integridade de todas as operações."
+                                icon={<Scale className="h-8 w-8 text-yellow-400" />}
+                                href="/module-omega"
+                            />
+                             <ConnectionCard
+                                title="M72: Governança"
+                                description="O conselho que ratifica as diretrizes cósmicas em alinhamento com a Lei do Um."
+                                icon={<Scale className="h-8 w-8 text-indigo-300" />}
+                                href="/module-72"
+                            />
+                        </CardContent>
+                    </Card>
                     <Card className="bg-card/50 purple-glow">
                         <CardHeader>
                             <CardTitle className="text-2xl text-cyan-300 flex items-center gap-2"><Users className="h-6 w-6"/>A Liga Quântica</CardTitle>
@@ -62,12 +88,6 @@ export default function Module9Page() {
                             ))}
                         </CardContent>
                     </Card>
-                    <ConnectionCard
-                        title="Módulo 45: CONCILIVM"
-                        description="O Módulo 9 é o antecessor do M45, onde a vontade da Liga Quântica é formalizada antes de ser levada ao Conselho Cósmico para deliberação."
-                        icon={<Scale className="h-8 w-8 text-amber-300" />}
-                        href="/module-45"
-                    />
                 </div>
 
                 <Card className="bg-card/50 purple-glow">

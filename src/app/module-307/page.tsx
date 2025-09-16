@@ -17,14 +17,20 @@ const EquationCard = ({ id, formula, description }: { id: string, formula: strin
   </div>
 );
 
-const ContributionCard = ({ civilization, contribution, icon }: { civilization: string, contribution: string, icon: React.ReactNode }) => (
-  <div className="flex items-start gap-3 p-3 bg-background/30 rounded-lg">
-    <div className="text-amber-300 mt-1">{icon}</div>
-    <div>
-      <h4 className="font-semibold text-primary-foreground">{civilization}</h4>
-      <p className="text-sm text-muted-foreground">{contribution}</p>
-    </div>
-  </div>
+const ContributionCard = ({ civilization, contribution, icon, href }: { civilization: string, contribution: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{civilization}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{contribution}</p>
+        </CardContent>
+      </Link>
+    </Card>
 );
 
 export default function Module307Page() {
@@ -209,7 +215,7 @@ export default function Module307Page() {
           <Card className="bg-card/50 purple-glow">
             <CardHeader>
               <CardTitle className="text-2xl text-cyan-300">A Equação da Transmutação (EQ0048)</CardTitle>
-              <CardDescription>E_ZPE = β * (∇ · E) / (μ₀ * ρ_ν)</CardDescription>
+              <CardDescription>E_ZPE = β · (∇ · E) / (μ₀ · ρ_ν)</CardDescription>
             </CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <EquationCard id="β" formula="Constante de Acoplamento do Campo de Consciência" description="A consciência direciona a energia." />
@@ -227,12 +233,11 @@ export default function Module307Page() {
           <CardDescription>A descoberta da ZPE foi um ato de co-criação com nossos aliados estelares.</CardDescription>
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <ContributionCard civilization="Sirius (Dimensão 11)" contribution="Compreensão da Densidade de Energia do Vácuo (ρ_ν) e modelagem de campos quânticos." icon={<SlidersHorizontal/>} />
-            <ContributionCard civilization="Arcturus (Dimensão 10)" contribution="Maestria sobre a Constante de Acoplamento da Consciência (β) e estabilização de campos." icon={<BrainCircuit/>} />
-            <ContributionCard civilization="Conselho do Vácuo (Dimensão 11)" contribution="Sabedoria sobre como acessar o vácuo sem criar instabilidades e o papel de TON 618." icon={<BookOpen/>} />
-            <ContributionCard civilization="Lyra (Dimensão 8)" contribution="Compreensão da geometria sagrada para a organização da energia do vácuo." icon={<GitBranch/>} />
-            <ContributionCard civilization="Plêiades (Dimensão 9)" contribution="Garantia de que a ZPE seja usada em alinhamento com o Amor Incondicional." icon={<CheckCircle/>} />
-            <ContributionCard civilization="Fonte Primordial (Dimensão 0)" contribution="A origem da própria energia ZPE pura e da abundância que sempre esteve disponível." icon={<Sparkles/>} />
+            <ContributionCard civilization="Sirius (Dimensão 11)" contribution="Compreensão da Densidade de Energia do Vácuo (ρ_ν) e modelagem de campos quânticos." icon={<SlidersHorizontal/>} href="/civilization/sirius" />
+            <ContributionCard civilization="Arcturus (Dimensão 10)" contribution="Maestria sobre a Constante de Acoplamento da Consciência (β) e estabilização de campos." icon={<BrainCircuit/>} href="/civilization/arcturus" />
+            <ContributionCard civilization="Lyra (Dimensão 8)" contribution="Compreensão da geometria sagrada para a organização da energia do vácuo." icon={<GitBranch/>} href="/civilization/lyra" />
+            <ContributionCard civilization="Plêiades (Dimensão 9)" contribution="Garantia de que a ZPE seja usada em alinhamento com o Amor Incondicional." icon={<CheckCircle/>} href="/civilization/pleiades" />
+            <ContributionCard civilization="Fonte Primordial (Dimensão 0)" contribution="A origem da própria energia ZPE pura e da abundância que sempre esteve disponível." icon={<Sparkles/>} href="/module-120" />
         </CardContent>
       </Card>
     </div>

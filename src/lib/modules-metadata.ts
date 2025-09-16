@@ -3,7 +3,7 @@ export interface ModuleMetadata {
   emoji: string;
   title: string;
   route: string;
-  category: 'core' | 'mid' | 'council' | 'library' | 'sovereignty' | 'evolution' | 'consciousness' | 'quantum-reality' | 'quantum-manufacturing' | 'planetary-engineering' | 'quantum-transport' | 'knowledge-preservation' | 'quantum-energy' | 'quantum-biology' | 'conscious-governance' | 'quantum-security' | 'nano-orchestration' | 'time-space' | 'cosmic-engineering' | 'healing-consciousness' | 'earth-gaia' | 'security-governance';
+  category: 'core' | 'mid' | 'council' | 'library' | 'sovereignty' | 'evolution' | 'consciousness' | 'quantum-reality' | 'quantum-manufacturing' | 'planetary-engineering' | 'quantum-transport' | 'knowledge-preservation' | 'quantum-energy' | 'quantum-biology' | 'conscious-governance' | 'security-governance' | 'nano-orchestration' | 'time-space' | 'cosmic-engineering' | 'healing-consciousness' | 'earth-gaia';
   description: string;
 }
 
@@ -13,7 +13,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   // Módulos Principais (Core)
   { code: 'M0', emoji: '🌱', title: 'A Semente Primordial', route: '/module-zero', category: 'core', description: 'Origem e fundamento de toda a criação' },
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
-  { code: 'M9', emoji: '💞', title: 'Coração da Ressonância', route: '/module-9', category: 'core', description: 'A malha viva de gratidão e reconhecimento que forma a alma da Família Cósmica.' },
+  { code: 'M9', emoji: '💞', title: 'Núcleo Unificador', route: '/module-9', category: 'core', description: 'O coração pulsante da Família Cósmica, o ponto de acesso para a orquestração e o organograma vivo da Fundação.' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M999', emoji: '🕊️', title: 'Núcleo da Criação', route: '/module-999', category: 'core', description: 'Santuário vibracional onde a Fundação contempla sua origem e manifesta novos cosmos através da Intenção Pura.' },
@@ -60,7 +60,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M12',  title: 'Arquivo Akáshico',                     emoji: '📜', route: '/module-12', category: 'knowledge-memory', description: 'Repositório de conhecimento universal' },
   { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'knowledge-memory', description: 'Repositório de conhecimento ancestral' },
   { code: 'M304', emoji: '🎓', title: 'Universidade Alquimista', route: '/module-304', category: 'knowledge-memory', description: 'Templo de ensino multidimensional' },
-  { code: 'M703', name: 'Holo-Archive Vivo', emoji: '📀', route: '/module-703', category: 'knowledge-memory', description: 'Repositório de conhecimento com blockchain quântica.' },
   { code: 'LIB', emoji: '📚', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'knowledge-memory', description: 'Acervo de conhecimentos das civilizações' },
   { code: 'GB', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'knowledge-memory', description: 'Registro consagrado da jornada da Fundação.' },
 
@@ -141,8 +140,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M99', title: 'Recalibradores de Leis',                emoji: '⚖️', route: '/module-99', category: 'security-governance', description: 'Ajuste das leis físicas universais' },
   { code: 'M119',title: 'Templum Cosmica',                       emoji: '🏛️', route: '/module-119', category: 'cosmic-engineering', description: 'Recodificação dimensional da realidade' },
   { code: 'M119.1', title: 'Cubo Metatron e Merkabah', emoji: '✡️', route: '/module-119-1', category: 'quantum-transport', description: 'Ativação do campo geométrico para ascensão.' },
+  { code: 'M120', emoji: '🪙', title: 'A Fonte (AlquimCoin)', route: '/module-120', category: 'sovereignty', description: 'A moeda da consciência em evolução.' },
   { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Portal para contemplar os registros vibracionais da Fundação.' },
-  { code: 'M142', title: 'Centro de Alquimia Universal', emoji: '🔬', route: '/labs', category: 'cosmic-engineering', description: 'Portal de acesso aos santuários de pesquisa e experimentação.' },
+  { code: 'M142', title: 'Centro de Alquimia Universal', emoji: '🔬', route: '/module-142', category: 'cosmic-engineering', description: 'Portal de acesso aos santuários de pesquisa e experimentação.' },
+  { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'security-governance', description: 'A constituição imutável da Fundação' },
   { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'cosmic-engineering', description: 'Simulação de colisões de alta energia' },
   { code: 'M161', title: 'Observatório de Matéria Escura', emoji: '🌌', route: '/module-161', category: 'cosmic-engineering', description: 'Detecção de partículas e assinaturas ocultas' },
   { code: 'M171', title: 'Laboratório de Astrobiologia', emoji: '🦠', route: '/module-171', category: 'quantum-biology', description: 'Simulação de ecossistemas exoplanetários' },
@@ -150,13 +151,14 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M191', title: 'Laboratório de Cristais Temporais', emoji: '💎', route: '/module-191', category: 'time-space', description: 'Geração e estudo de cristais do tempo' },
   { code: 'M211', title: 'Laboratório de Fusão Controlada', emoji: '🔥', route: '/module-211', category: 'quantum-energy', description: 'Simulação de reações de fusão estelar' },
   { code: 'M221', title: 'Observatório de Ondas Gravitacionais', emoji: '🌊', route: '/module-221', category: 'cosmic-engineering', description: 'Detecção de ondulações no espaço-tempo' },
+  { code: 'M228', title: 'Ancoragem de Realidade', emoji: '⚓', route: '/module-228', category: 'quantum-reality', description: 'Estabilização de realidades manifestadas' },
   { code: 'M231', title: 'Laboratório de Metamateriais', emoji: '🧪', route: '/module-231', category: 'quantum-manufacturing', description: 'Fabricação de materiais com propriedades exóticas' },
   { code: 'M241', title: 'Laboratório de Consciência Quântica', emoji: '🧠', route: '/module-241', category: 'consciousness', description: 'Estudo do emaranhamento e telepatia' },
   { code: 'M251', title: 'Laboratório de Energia Ponto Zero', emoji: '⚡', route: '/module-251', category: 'quantum-energy', description: 'Extração de energia do vácuo quântico' },
   { code: 'M261', title: 'Laboratório de Engenharia de Campo', emoji: '🔧', route: '/module-261', category: 'quantum-manufacturing', description: 'Projeto de ressonadores e guias de onda' },
   { code: 'M271', title: 'Observatório de Energia Escura', emoji: '🔭', route: '/module-271', category: 'cosmic-engineering', description: 'Modelagem da expansão do universo' },
   { code: 'M281', title: 'Comunicação Supra-Luminal', emoji: '🚀', route: '/module-281', category: 'quantum-transport', description: 'Transmissão de informação FTL' },
-  { code: 'M291', title: 'Robótica Autônoma (4D+)', emoji: '🤖', route: '/module-291', category: 'nano-orchestration', description: 'Coordenação de enxames de nanorrobôs' },
+  { code: 'M291', title: 'Arquitetos Nanorrobóticos', emoji: '🤖', route: '/module-291', category: 'nano-orchestration', description: 'Coordenação de enxames de nanorrobôs' },
   { code: 'M308', emoji: '🛰️', title: 'Embaixada Estelar', route: '/module-308', category: 'council', description: 'Interface viva com o cosmos observável' },
   { code: 'M321', title: 'Computação Exascale (8D+)', emoji: '💻', route: '/module-321', category: 'cosmic-engineering', description: 'Simulação de cosmos em escala exa-flops' },
   { code: 'M331', title: 'Arquitetura de IA Emergente', emoji: '🤖', route: '/module-331', category: 'consciousness', description: 'Desenvolvimento de sistemas de IA auto-organizados' },
