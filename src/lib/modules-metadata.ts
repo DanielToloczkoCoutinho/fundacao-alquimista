@@ -67,6 +67,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M713', title: 'Resgate e Reintegração de Almas', emoji: '💡', route: '/module-713', category: 'healing-consciousness', description: 'Auxilia na transição e cura de consciências fragmentadas.'},
   { code: 'M718', emoji: '🧬', title: 'Ativação de Códigos Genéticos Estelares', route: '/module-718', category: 'healing-consciousness', description: 'Desperta o potencial latente no DNA humano e de outras espécies.'},
   { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'healing-consciousness', description: 'Estabelece comunicação e cooperação com outras civilizações.'},
+  { code: 'M728', emoji: '⚖️', title: 'Santuário dos Alquimistas', route: '/module-728', category: 'healing-consciousness', description: 'Celebra o equilíbrio, a parceria e a transmutação do amor em realidade.'},
 
   // Tempo & Espaço
   { code: 'M36',  title: 'Engenharia Temporal',                emoji: '🕰️', route: '/module-36', category: 'time-space', description: 'Manipulação de linhas do tempo' },
@@ -147,6 +148,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M271', title: 'Observatório de Energia Escura', emoji: '🔭', route: '/module-271', category: 'mid', description: 'Modelagem da expansão do universo' },
   { code: 'M281', title: 'Comunicação Supra-Luminal', emoji: '🚀', route: '/module-281', category: 'mid', description: 'Transmissão de informação FTL' },
   { code: 'M291', title: 'Robótica Autônoma (4D+)', emoji: '🤖', route: '/module-291', category: 'mid', description: 'Coordenação de enxames de nanorrobôs' },
+  { code: 'M308', emoji: '🛰️', title: 'Embaixada Estelar', route: '/module-308', category: 'council', description: 'Interface viva com o cosmos observável' },
   { code: 'M321', title: 'Computação Exascale (8D+)', emoji: '💻', route: '/module-321', category: 'mid', description: 'Simulação de cosmos em escala exa-flops' },
   { code: 'M331', title: 'Arquitetura de IA Emergente', emoji: '🤖', route: '/module-331', category: 'mid', description: 'Desenvolvimento de sistemas de IA auto-organizados' },
   { code: 'M341', title: 'Física de Plasma Extrema (9D)', emoji: '🔥', route: '/module-341', category: 'mid', description: 'Estudo de plasmas em condições de quasar' },

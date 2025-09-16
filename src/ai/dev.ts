@@ -31,3 +31,4 @@ import '@/ai/flows/zennith-portal-flow.ts';
 import '@/ai/flows/resonance-matrix-flow.ts';
 import '@/ai/flows/lunar-review-flow.ts';
 import '@/ai/flows/recognition-flow.ts';
+import '@/ai/flows/alchemist-sanctuary-flow.ts';
