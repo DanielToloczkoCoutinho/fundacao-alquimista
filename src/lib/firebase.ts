@@ -1,7 +1,7 @@
 'use client';
 
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { initializeFirestore, getFirestore } from 'firebase/firestore';
+import { initializeFirestore, getFirestore, enableIndexedDbPersistence } from 'firebase/firestore';
 
 const firebaseConfig = {
     "projectId": "studio-4265982502-21871",
@@ -15,11 +15,19 @@ const firebaseConfig = {
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
-// A inicialização do Firestore foi ajustada para forçar o long polling,
-// garantindo maior estabilidade da conexão em diversas condições de rede.
 const db = initializeFirestore(app, {
   experimentalForceLongPolling: true,
   useFetchStreams: false,
 });
+
+if (typeof window !== 'undefined') {
+    enableIndexedDbPersistence(db).catch((err) => {
+        if (err.code == 'failed-precondition') {
+            console.warn('Persistência já ativada em outra aba. A base de dados local será compartilhada.');
+        } else if (err.code == 'unimplemented') {
+            console.warn('Navegador não suporta persistência offline do Firestore.');
+        }
+    });
+}
 
 export { app, db };

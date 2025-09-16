@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 import { useState, useEffect } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { SystemProvider } from '@/context/SystemContext';
+import { NetworkStatus } from '@/components/ui/NetworkStatus';
 
 
 // Dynamically import the sidebar to prevent SSR issues with usePathname
@@ -54,6 +55,7 @@ export default function RootLayout({
                   </main>
               </div>
             )}
+            <NetworkStatus />
             <Toaster />
           </SystemProvider>
         </ErrorBoundary>
