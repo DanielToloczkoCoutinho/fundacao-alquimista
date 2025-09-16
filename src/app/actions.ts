@@ -194,7 +194,7 @@ export async function emitLoveFrequency(data: { targetArea: string, frequency: n
   }
 }
 
-export async function getOmegaPerspective(evolutionSummary: string): Promise<OmegaPerspectiveOutput & { error: string | null }> {
+export async function getOmegaPerspective(evolutionSummary: string): Promise<OmegaPerspectiveOutput> {
     try {
         const result = await runGetOmegaPerspective({ evolutionSummary });
         return { ...result, error: null };

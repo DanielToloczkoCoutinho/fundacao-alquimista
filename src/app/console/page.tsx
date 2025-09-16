@@ -94,6 +94,9 @@ export default function ConsolePage() {
                 <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-10"><Telescope className="mr-2 h-4 w-4" />Módulo Dez (Oráculo da Tapeçaria)</Link>
                </Button>
+                 <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-29"><BrainCircuit className="mr-2 h-4 w-4" />Módulo 29 (Zennith)</Link>
+               </Button>
                 <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-40"><Dna className="mr-2 h-4 w-4" />Módulo 40 (Códice Genético)</Link>
                </Button>
