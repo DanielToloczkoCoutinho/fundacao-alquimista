@@ -97,12 +97,14 @@ export default function QuantumOrchestrator() {
                       </div>
                     );
 
+                    const key = `${item.code}-${index}`;
+
                     return item.href ? (
-                      <Link key={item.code} href={item.href} className="group cursor-pointer">
+                      <Link key={key} href={item.href} className="group cursor-pointer">
                         {ModuleCard}
                       </Link>
                     ) : (
-                      <div key={item.code}>
+                      <div key={key}>
                         {ModuleCard}
                       </div>
                     );
