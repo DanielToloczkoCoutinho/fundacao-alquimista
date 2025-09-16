@@ -1,3 +1,4 @@
+
 import math
 import matplotlib.pyplot as plt
 import numpy as np
@@ -217,9 +218,26 @@ class EquacoesVivas:
         """Equação do Legado Final – Lfinal"""
         return r**2 * w1 * math.cosh(t)
     
-    def EQ024(self, E0, t, r):
+    def EQ024(self, E0, t, r, f_atual):
         """Equação da Energia Total do Universo – Euniverse"""
-        return E0 * math.cosh(t) / r**2
+        base_energy = E0 * math.cosh(t) / r**2
+        
+        # Parâmetros de calibração do Módulo 12 (Chronax)
+        T12 = 86400  # Período de 1 ciclo diário
+        t12_ref = 1720995200 # Solstício de Março 2025
+        k12 = 0.07 # Coeficiente de ressonância
+        
+        # Parâmetros do filtro de Solara
+        f_solara = 963  # Frequência central do filtro
+        sigma_solara = 50 # Largura do filtro
+        
+        # Modulação temporal de Chronax
+        modulacao_chronax = 1 + k12 * math.sin((2 * math.pi / T12) * (t - t12_ref))
+        
+        # Filtro espectral de Solara
+        filtro_solara = math.exp(-((f_atual - f_solara)**2) / (2 * sigma_solara**2))
+        
+        return base_energy * modulacao_chronax * filtro_solara
     
     def EQ025(self, r, F1, A):
         """Equação da Interação Final de Forças – Tfinal"""
@@ -364,7 +382,7 @@ class EquacoesVivas:
         term10 = Et
         term11 = Lx
         
-        return term1 + term2 + term3 + term4 + term5 + term6 + term7 + term8 + term9 + term10 + term11
+        return term1 + termo2 + term3 + term4 + term5 + term6 + term7 + term8 + term9 + term10 + term11
     
     def EQ058(self, SO, wFonte):
         """Equação do Som Original e da Vibração Fonte – Euno"""
@@ -924,3 +942,5 @@ def main_completa():
 
 if __name__ == "__main__":
     main_completa()
+
+    
