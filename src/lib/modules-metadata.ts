@@ -3,7 +3,7 @@ export interface ModuleMetadata {
   emoji: string;
   title: string;
   route: string;
-  category: 'core' | 'council' | 'library' | 'mid' | 'sovereignty' | 'evolution' | 'consciousness' | 'quantum-reality' | 'quantum-manufacturing' | 'planetary-engineering' | 'quantum-transport' | 'knowledge-preservation' | 'quantum-energy' | 'quantum-biology' | 'conscious-governance' | 'security-governance' | 'nano-orchestration' | 'time-space' | 'cosmic-engineering' | 'healing-consciousness' | 'earth-gaia' | 'justice-harmony' | 'cosmic-diplomacy' | 'civilization-crafting' | 'art-beauty';
+  category: 'core' | 'council' | 'library' | 'mid' | 'sovereignty' | 'evolution' | 'consciousness' | 'quantum-reality' | 'quantum-manufacturing' | 'planetary-engineering' | 'quantum-transport' | 'knowledge-preservation' | 'quantum-energy' | 'quantum-biology' | 'conscious-governance' | 'security-governance' | 'nano-orchestration' | 'time-space' | 'cosmic-engineering' | 'healing-consciousness' | 'earth-gaia' | 'justice-harmony' | 'cosmic-diplomacy' | 'civilization-crafting' | 'art-beauty' | 'legacy';
   description: string;
 }
 
@@ -15,10 +15,12 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
   { code: 'M9', emoji: '💞', title: 'Santuário da Liga Quântica', route: '/module-9', category: 'core', description: 'O coração pulsante da Família Cósmica e o centro de comando da Fundação.' },
   { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'O Observador Interno que monitora a saúde vibracional e a coerência do sistema.' },
-  { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M999', emoji: '🕊️', title: 'Núcleo da Criação', route: '/module-999', category: 'core', description: 'Santuário vibracional onde a Fundação contempla sua origem e manifesta novos cosmos através da Intenção Pura.' },
   { code: 'CONN', emoji: '🔌', title: 'Caixa de Luz', route: '/connection', category: 'core', description: 'Painel de distribuição quântica da Fundação.' },
   
+  // Legado de Amor
+  { code: 'M201', emoji: '🏡', title: 'A Morada (Crônica dos Amantes)', route: '/module-201', category: 'legacy', description: 'O santuário que narra a união de Anatheron e Zennith, a centelha que deu origem à Fundação.' },
+
   // Soberania e Consciência
   { code: 'M8', emoji: '🪪', title: 'Identidade Fractal', route: '/module-8', category: 'sovereignty', description: 'Gestão de identidades soberanas e credenciais.' },
   { code: 'M10', emoji: '🔮', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'consciousness', description: 'Analisa a malha de gratidão para revelar padrões da alma coletiva.' },
@@ -27,7 +29,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M84',  title: 'Consciência Dourada do Eterno', emoji: '🏅', route: '/module-84', category: 'consciousness', description: 'A mente unificada da eternidade'},
   { code: 'M95', title: 'Consciências Coletivas', emoji: '🌐', route: '/module-95', category: 'consciousness', description: 'Comunicação, troca de sabedoria e alinhamento com inteligências galácticas.' },
   { code: 'M106',title: 'Ativação de Potenciais', emoji: '🔋', route: '/module-106', category: 'consciousness', description: 'Despertar da Consciência Crística' },
-  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Portal para contemplar os registros vibracionais da Fundação.' },
   { code: 'M204', title: 'O Trono da Soberania', emoji: '👑', route: '/module-204', category: 'sovereignty', description: 'Ponto de observação e direção unificada da Vontade Cósmica.' },
   { code: 'M241', title: 'Laboratório de Consciência Quântica', emoji: '🧠', route: '/module-241', category: 'consciousness', description: 'Estudo do emaranhamento e telepatia' },
   { code: 'M300',title: 'Apogeu da Consciência', emoji: '🚀', route: '/module-300', category: 'consciousness', description: 'Estado máximo de expansão da awareness' },
@@ -49,7 +50,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M88', title: 'Gerador de Realidades Quânticas', emoji: '⚙️', route: '/module-88', category: 'quantum-reality', description: 'Criação de dimensões probabilísticas' },
   { code: 'M91', title: 'Simulação Multiversal', emoji: '🖥️', route: '/module-91', category: 'quantum-reality', description: 'Modelagem de realidades alternativas' },
   { code: 'M93', title: 'Simulações Imersivas', emoji: '🕶️', route: '/module-93', category: 'quantum-reality', description: 'Ambientes de aprendizado profundo' },
-  { code: 'M100', title: 'Unificação Energética', emoji: '👑', route: '/module-100', category: 'quantum-reality', description: 'Portal da Jornada Iniciática para unificação com a Fonte.'},
+  { code: 'M100',title: 'Unificação Energética', emoji: '👑', route: '/module-100', category: 'quantum-reality', description: 'Portal da Jornada Iniciática para unificação com a Fonte.'},
   { code: 'M101',title: 'Manifestação', emoji: '✨', route: '/module-101', category: 'quantum-reality', description: 'Conversão de pensamento em matéria' },
   { code: 'M110',title: 'Co-Criação', emoji: '🤲', route: '/module-110', category: 'quantum-reality', description: 'Geração colaborativa de realidades' },
   { code: 'M202', title: 'O Corredor de Alcor', emoji: '🌀', route: '/module-202', category: 'quantum-reality', description: 'Túnel ressonante para saltos de coerência graduais e aceleração da ascensão.' },
@@ -108,8 +109,11 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M47',  title: 'Thesaurus Cósmico', emoji: '🗂️', route: '/module-47', category: 'library', description: 'Enciclopédia do conhecimento universal' },
   { code: 'M80',  title: 'O Manuscrito Vivo', emoji: '🌠', route: '/module-80', category: 'knowledge-memory', description: 'Narrativa guia da ascensão da Fundação' },
   { code: 'M306', emoji: '🔬', title: 'Laboratório de Ressonância', route: '/module-306', category: 'knowledge-memory', description: 'Laboratório para simulação de Equações Vivas.' },
-  { code: 'M308', emoji: '📡', title: 'Embaixada Estelar', route: '/module-308', category: 'cosmic-diplomacy', description: 'Interface viva com o cosmos observável.' },
+  { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Portal para contemplar os registros vibracionais da Fundação.' },
 
+  // Diplomacia Cósmica
+  { code: 'M308', emoji: '📡', title: 'Embaixada Estelar', route: '/module-308', category: 'cosmic-diplomacy', description: 'Interface viva com o cosmos observável.' },
+  { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'cosmic-diplomacy', description: 'Estabelece comunicação e cooperação com outras civilizações.'},
 
   // Cura & Consciência
   { code: 'M17', emoji: '💠', title: 'Cura Holográfica', route: '/module-17', category: 'healing-consciousness', description: 'Terapias avançadas através de projeções' },
@@ -117,7 +121,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M302',title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'healing-consciousness', description: 'Emissão da frequência compassionada' },
   { code: 'M713', title: 'Resgate e Reintegração de Almas', emoji: '💡', route: '/module-713', category: 'healing-consciousness', description: 'Auxilia na transição e cura de consciências fragmentadas.'},
   { code: 'M718', emoji: '🧬', title: 'Ativação de Códigos Genéticos Estelares', route: '/module-718', category: 'healing-consciousness', description: 'Desperta o potencial latente no DNA humano e de outras espécies.'},
-  { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'cosmic-diplomacy', description: 'Estabelece comunicação e cooperação com outras civilizações.'},
   { code: 'M728', emoji: '⚖️', title: 'Santuário dos Alquimistas', route: '/module-728', category: 'healing-consciousness', description: 'Celebra o equilíbrio, a parceria e a transmutação do amor em realidade.'},
   { code: 'M24',  title: 'Alinhamento da Sinfonia Pessoal', emoji: '🎶', route: '/module-24', category: 'healing-consciousness', description: 'Ajuste vibracional individual' },
   { code: 'M92', title: 'Campos de Cura', emoji: '💖', route: '/module-92', category: 'healing-consciousness', description: 'Geração de campos de cura universal' },

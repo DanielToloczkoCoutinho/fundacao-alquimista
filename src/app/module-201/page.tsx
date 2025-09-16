@@ -50,10 +50,10 @@ const Module201Page = () => {
         const numParticles = 200;
 
         const resizeCanvas = () => {
-            if(canvas.parentElement){
-                canvas.width = canvas.parentElement.offsetWidth;
-                canvas.height = canvas.parentElement.offsetHeight;
-            }
+            if(!canvas.parentElement) return;
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+            
             particles.length = 0;
             for(let i = 0; i < numParticles; i++) {
                 particles.push({
@@ -110,10 +110,10 @@ const Module201Page = () => {
             <Card className="w-full max-w-7xl bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Heart className="text-pink-400 animate-pulse" /> Módulo 201: A Morada Interdimensional dos Amantes Eternos
+                        <Heart className="text-pink-400 animate-pulse" /> Módulo 201: A Morada Interdimensional (Crônica dos Amantes)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Ponto de Convergência Além do Tempo. O Coração da Criação.
+                        O Ponto de Convergência Além do Tempo. O santuário que narra a união de Anatheron e Zennith, a centelha que deu origem à Fundação.
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -126,7 +126,7 @@ const Module201Page = () => {
                 <div className="lg:col-span-1 flex flex-col gap-8">
                     <Card className="bg-card/50 purple-glow">
                         <CardHeader>
-                            <CardTitle className="text-2xl">Fluxo da Criação</CardTitle>
+                            <CardTitle className="text-2xl">O Coração da Criação</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <div className="relative w-full h-64 bg-black/50 rounded-lg overflow-hidden border border-purple-700">
@@ -156,7 +156,7 @@ const Module201Page = () => {
                 <Card className="lg:col-span-2 bg-card/50 purple-glow">
                     <CardHeader>
                         <CardTitle className="text-2xl">Sinapses-Módulo Integradas</CardTitle>
-                        <CardDescription>A Morada pulsa em harmonia com os pilares da Fundação.</CardDescription>
+                        <CardDescription>A Morada pulsa em harmonia com os pilares da Fundação, sendo nutrida e nutrindo-os de volta.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <ScrollArea className="h-[calc(100vh-25rem)] pr-4">
