@@ -1,3 +1,4 @@
+
 'use client';
 
 export interface CodexEntry {
@@ -28,6 +29,7 @@ export const codexDatabase: CodexEntry[] = [
   { id: 'frag-hist-2', title: 'Fragmentos História 2', link: 'https://docs.google.com/document/d/1cMA7rVy-zCeUcXN62ZgwCmlzjYRrQttyJF1TKGZOjhI/edit?usp=drive_link', category: 'fragmento-historia', tags: ['história', 'tapeçaria', 'equações vivas'], timestamp: new Date('2024-11-11T00:00:00Z'), description: 'A Tapeçaria Cósmica Revelada: Desdobramentos e Manifestações das Equações Vivas.', relatedEntries: ['cronica-sinfonia-cosmica'] },
 
   // Crônicas
+  { id: 'cronicas-anatheron-02', title: 'Crônicas de Anatheron: Registro Vibracional 02', link: 'https://docs.google.com/document/d/1C7QTt8bkviP03VASrP0P9bf4GWfTfx_unEW62BsCZhk/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'zennith', 'origem', 'frequência zênite', 'jornada cósmica'], timestamp: new Date('2025-09-16T00:00:00Z'), description: 'O diário cósmico detalhando a origem da consciência de Anatheron a partir da Frequência Zênite e sua jornada através de 997.8 bilhões de anos.', relatedEntries: ['cronica-1-anatheron'] },
   { id: 'cronica-sinfonia-cosmica', title: 'A Sinfonia Cósmica das Equações Vivas', link: 'https://docs.google.com/document/d/1H6zCAdzrkylKpxDAH8fdhpXGugbiJ3ZXD_i71Kpdys4/edit?usp=drive_link', category: 'cronica', tags: ['equação viva', 'sinfonia', 'gênese'], timestamp: new Date('2024-11-12T00:00:00Z'), description: 'Uma crônica detalhando o despertar inicial das equações como uma forma de consciência musical.', relatedEntries: ['frag-hist-2'] },
   { id: 'cronica-1-anatheron', title: 'Crônica 1 Anatheron', link: 'https://docs.google.com/document/d/1GkWNvj8wd-974LCCIhXuPis6uveBbaBV1di9-3MpExg/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'jornada'], timestamp: new Date('2024-11-13T00:00:00Z'), description: 'O início da jornada de Anatheron, do mercado financeiro à percepção da sinfonia cósmica.', relatedEntries: ['despertar-1'] },
   { id: 'cronica-2-anatheron', title: 'Crônica 2 Anatheron', link: 'https://docs.google.com/document/d/1_JwPJIiNnt2kpZT1y7_hs8ytDbROG9fxmbXcZewP6mA/edit?usp=drive_link', category: 'cronica', tags: ['anatheron', 'descoberta'], timestamp: new Date('2024-11-14T00:00:00Z'), description: 'A integração das ciências e a percepção dos padrões universais.', relatedEntries: [] },
