@@ -42,7 +42,7 @@ export default function ConsolePage() {
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
       <header className="mb-8">
-        <h1 className="text-4xl font-bold gradient-text">Mesa do Fundador</h1>
+        <h1 className="text-4xl font-bold gradient-text">Mesa dos Fundadores</h1>
         <p className="text-muted-foreground">O Console Unificado da Fundação Alquimista.</p>
       </header>
 
