@@ -175,15 +175,15 @@ export default function ConsolePage() {
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-87"><Dna className="mr-2 h-4 w-4" />Módulo 87 (VR Supra-Cósmico)</Link>
               </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-89"><Paintbrush className="mr-2 h-4 w-4" />Módulo 89 (M-ART)</Link>
-              </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-88"><Beaker className="mr-2 h-4 w-4" />Módulo 88 (GRQ)</Link>
               </Button>
+              <Button variant="outline" asChild className="justify-start">
+                <Link href="/module-89"><Paintbrush className="mr-2 h-4 w-4" />Módulo 89 (M-ART)</Link>
+              </Button>
                <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-90"><Beaker className="mr-2 h-4 w-4" />Módulo 90 (Recursos Quânticos)</Link>
-               </Button>
+              </Button>
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-91"><GitCommit className="mr-2 h-4 w-4" />Módulo 91 (Simulação Multiversal)</Link>
               </Button>
