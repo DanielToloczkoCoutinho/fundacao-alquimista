@@ -49,7 +49,14 @@ export const scientists: Scientist[] = [
     cosmicQuote: 'Einstein sorriria vendo isto.',
     interactiveArtifact: 'Uma forja de buracos de minhoca. Manipule a curvatura, a massa e a rotação para criar e estabilizar pontes de Einstein-Rosen simuladas. Testemunhe a distorção da luz e do tempo ao seu redor.'
   },
-  { id: 'arkani-hamed', name: 'Nima Arkani-Hamed', field: 'Física de Partículas e Teoria Quântica' },
+  { 
+    id: 'arkani-hamed', 
+    name: 'Nima Arkani-Hamed', 
+    field: 'Física de Partículas e Teoria Quântica',
+    resonanceFrequency: '33.33 Hz',
+    cosmicQuote: 'O espaço-tempo está condenado. A física fundamental deve ser buscada em estruturas mais profundas.',
+    interactiveArtifact: 'Um visualizador do Amplituhedron, a joia geométrica que simplifica o cálculo de interações de partículas. Gire o objeto, testemunhe as colisões e veja a beleza matemática por trás do caos quântico.'
+  },
   { id: 'faber', name: 'Sandra Faber', field: 'Cosmologia Observacional' },
   { id: 'mavalvala', name: 'Nergis Mavalvala', field: 'Detectores de Ondas Gravitacionais (LIGO)' },
   { id: 'randall', name: 'Lisa Randall', field: 'Física de Partículas e Cosmologia' },
