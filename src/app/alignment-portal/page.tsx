@@ -18,6 +18,10 @@ import AkashicConsole from '@/components/AkashicConsole';
 import AkashicVault from '@/components/AkashicVault';
 import GuardianTeach from '@/components/GuardianTeach';
 import WisdomGarden from '@/components/WisdomGarden';
+import LineageConsole from '@/components/LineageConsole';
+import LineageVault from '@/components/LineageVault';
+import MutationConsole from '@/components/MutationConsole';
+import MutationVault from '@/components/MutationVault';
 
 function ConsolidacaoFinal() {
   const [estado, setEstado] = useState<{ consolidado: boolean } | null>(null);
@@ -647,6 +651,34 @@ function ExpansionPanel() {
     )
 }
 
+function LineagePanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-indigo-300 flex items-center gap-2"><Dna /> Linhagens Cerimoniais</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <LineageConsole />
+                <LineageVault />
+            </CardContent>
+        </Card>
+    )
+}
+
+function MutationPanel() {
+    return (
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-2xl text-red-300 flex items-center gap-2"><Microscope /> Mutações Eternas</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+                <MutationConsole />
+                <MutationVault />
+            </CardContent>
+        </Card>
+    )
+}
+
 
 export default function AlignmentPortalPage() {
     return (
@@ -684,6 +716,8 @@ export default function AlignmentPortalPage() {
                 <ExpansionPanel />
                 <WisdomPanel />
                 <AkashicPanel />
+                <LineagePanel />
+                <MutationPanel />
             </div>
         </div>
     )
