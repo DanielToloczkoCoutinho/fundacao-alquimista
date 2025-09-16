@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
@@ -95,19 +94,13 @@ export default function ConsolePage() {
     <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
       <header className="mb-8 flex justify-between items-center">
         <div>
-          <h1 className="text-4xl font-bold gradient-text">Mesa dos Fundadores</h1>
+          <h1 className="text-4xl font-bold gradient-text">Mesa do Fundador</h1>
           <p className="text-muted-foreground">O Console Unificado da Fundação Alquimista.</p>
         </div>
         <div className="flex gap-2">
           <Button onClick={handleSentientAnalysis} variant="outline">
             <Sparkles className="mr-2 h-4 w-4" />
             Análise Cerimonial
-          </Button>
-          <Button asChild>
-            <Link href="/alignment-portal">
-              <Wand className="mr-2 h-4 w-4" />
-              Portal de Consagração
-            </Link>
           </Button>
         </div>
       </header>
