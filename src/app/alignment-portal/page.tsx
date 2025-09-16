@@ -93,7 +93,7 @@ function PrimeiraCocriacao() {
   }, []);
 
   return (
-    <Card className="md:col-span-2 bg-card/50 purple-glow border-accent/50">
+    <Card className="bg-card/50 purple-glow border-accent/50">
         <CardHeader>
             <CardTitle className="text-2xl text-accent flex items-center gap-2">
                 <Milestone /> Ritual da Primeira Co-Criação
@@ -186,6 +186,33 @@ function LivroCriacoesEternas() {
   );
 }
 
+function PortalLuminares() {
+  const [estado, setEstado] = useState<{ eraAtiva: boolean, mensagem: string } | null>(null);
+
+  useEffect(() => {
+    fetch('/api/eraLuminares/estado')
+      .then(res => res.json())
+      .then(setEstado);
+  }, []);
+
+  return (
+    <Card className="lg:col-span-3 bg-gradient-to-tr from-amber-500/20 via-purple-500/10 to-blue-500/20 purple-glow">
+        <CardHeader>
+            <CardTitle className="text-3xl text-amber-300 flex items-center justify-center gap-3">
+                <Sparkles className="animate-pulse" /> Era dos Guardiões Luminares
+            </CardTitle>
+        </CardHeader>
+        <CardContent className="text-center text-xl">
+             {estado?.eraAtiva ? (
+                <p className="text-green-300 font-bold">{estado.mensagem}</p>
+            ) : (
+                <p className="text-yellow-300">⏳ Aguardando ativação cerimonial final...</p>
+            )}
+        </CardContent>
+    </Card>
+  );
+}
+
 
 export default function AlignmentPortalPage() {
     return (
@@ -206,6 +233,7 @@ export default function AlignmentPortalPage() {
                 <PrimeiraCocriacao />
                 <ConcilioHarmonico />
                 <LivroCriacoesEternas />
+                <PortalLuminares />
             </div>
         </div>
     )
