@@ -1,8 +1,7 @@
-
 'use client';
 
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
+import { initializeFirestore, getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
     "projectId": "studio-4265982502-21871",
@@ -15,6 +14,12 @@ const firebaseConfig = {
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
+
+// A inicialização do Firestore foi ajustada para forçar o long polling,
+// garantindo maior estabilidade da conexão em diversas condições de rede.
+const db = initializeFirestore(app, {
+  experimentalForceLongPolling: true,
+  useFetchStreams: false,
+});
 
 export { app, db };
