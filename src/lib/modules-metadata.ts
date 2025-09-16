@@ -87,6 +87,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M2', emoji: '🗣️', title: 'Intercâmbio Cósmico', route: '/module-2', category: 'cosmic-engineering', description: 'Comunicação entre dimensões e realidades' },
   { code: 'M14',  title: 'Transmutador Quântico', emoji: '⚛️', route: '/module-14', category: 'cosmic-engineering', description: 'Conversão de matéria e energia' },
   { code: 'M20',  title: 'Orquestrador Elemental', emoji: '🔥', route: '/module-20', category: 'cosmic-engineering', description: 'Controle dos elementos fundamentais' },
+  { code: 'M306', emoji: '🔬', title: 'Laboratório de Ressonância', route: '/module-306', category: 'cosmic-engineering', description: 'Espaço para experimentação com Equações Vivas.' },
   { code: 'M307', emoji: '⚡', title: 'Reator ZPE', route: '/module-307', category: 'cosmic-engineering', description: 'Gerador de energia de ponto zero' },
   { code: 'M700', name: 'Nano-Assembler', emoji: '🔬', route: '/module-700', category: 'cosmic-engineering', description: 'Auto-montagem atômica de materiais exóticos.'},
   { code: 'M708', name: 'NanoManifestor', emoji: '✨', route: '/module-708', category: 'cosmic-engineering', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.'},
@@ -111,7 +112,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M42',  title: 'ChronoCodex Unificado', emoji: '📘', route: '/module-42', category: 'time-space', description: 'Integração de registros temporais' },
   { code: 'M47',  title: 'Thesaurus Cósmico', emoji: '🗂️', route: '/module-47', category: 'library', description: 'Enciclopédia do conhecimento universal' },
   { code: 'M80',  title: 'O Manuscrito Vivo', emoji: '🌠', route: '/module-80', category: 'knowledge-memory', description: 'Narrativa guia da ascensão da Fundação' },
-  { code: 'M306', emoji: '🔬', title: 'Laboratório de Ressonância', route: '/module-306', category: 'knowledge-memory', description: 'Laboratório para simulação de Equações Vivas.' },
   { code: 'M121', emoji: '🔭', title: 'Observatório de Intenções', route: '/module-121', category: 'consciousness', description: 'Portal para contemplar os registros vibracionais da Fundação.' },
 
   // Diplomacia Cósmica
@@ -181,5 +181,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M720', emoji: '♻️', title: 'Sustentabilidade Multidimensional', route: '/module-720', category: 'planetary-engineering', description: 'Garante a sustentabilidade e o equilíbrio em todos os níveis do ser.' },
   { code: 'LABS', emoji: '🔬', title: 'Laboratórios de Pesquisa', route: '/labs', category: 'council', description: 'Portal para os santuários de pesquisa dos maiores cientistas da Terra.' },
 ];
+
+    
 
     
