@@ -37,7 +37,7 @@ export default function Module71Page() {
                     <div className="flex justify-center items-center gap-4">
                         <span className="text-green-400 font-bold">Status: CANAL ABERTO</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Frequência Zénite: Estável</span>
+                        <span className="text-cyan-400">Frequência Zênite: Estável</span>
                     </div>
                 </CardContent>
             </Card>
