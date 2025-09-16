@@ -67,7 +67,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'security-governance', description: 'Proteção multidimensional integrada' },
   { code: 'M72', emoji: '⚖️', title: 'Governança', route: '/module-72', category: 'security-governance', description: 'Sistema de administração multidimensional' },
   { code: 'M73', emoji: '🛡️', title: 'SAVCE', route: '/module-73', category: 'security-governance', description: 'Sistema avançado de verificação ética' },
-  { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/civilizations/council', category: 'security-governance', description: 'Assembleia de seres dimensionais elevados' },
+  { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/module-600', category: 'council', description: 'Assembleia de seres dimensionais elevados' },
   { code: 'M706',name: 'LoveCore', emoji: '💖', route: '/module-706', category: 'security-governance', description: 'Motor de políticas vibracionais baseadas na ética universal' },
   { code: 'M707',name: 'QuantumChain Secure', emoji: '🔗', route: '/module-707', category: 'security-governance', description: 'Blockchain híbrida para imutabilidade e detecção de violações.' },
   { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica', route: '/module-721', category: 'justice-harmony', description: 'Restaura o equilíbrio em situações de desarmonia ou violação da Lei do Um.'},
