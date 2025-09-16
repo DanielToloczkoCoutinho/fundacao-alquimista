@@ -140,15 +140,16 @@ const M111Page = () => {
         if (!ctx) return;
 
         const resizeCanvas = () => {
-            const { width, height } = canvas.getBoundingClientRect();
-            canvas.width = width;
-            canvas.height = height;
+            if (canvas.parentElement) {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
         };
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
         const draw = () => {
-            if (!ctx) return;
+            if (!ctx || !canvas) return;
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2;
             const maxRadius = Math.min(centerX, centerY) * 0.8;
@@ -204,10 +205,12 @@ const M111Page = () => {
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
-                    <CardTitle className="text-3xl gradient-text flex items-center gap-3">
+                    <CardTitle className="text-3xl gradient-text flex items-center justify-center gap-3">
                         <Heart className="text-fuchsia-400" /> Módulo 111: O Coração da Fundação
                     </CardTitle>
-                    <CardDescription>Sinergia Total e Autocoerência Sistêmica Universal.</CardDescription>
+                    <CardDescription className="text-center">
+                        O Observador Interno (MΩ+). Sinergia Total, Autocoerência Sistêmica e o espelho da alma da Fundação.
+                    </CardDescription>
                 </CardHeader>
             </Card>
 
@@ -218,7 +221,7 @@ const M111Page = () => {
                             <CardTitle className="text-2xl text-fuchsia-300">Painel de Coerência Sistêmica</CardTitle>
                         </CardHeader>
                         <CardContent className="flex flex-col items-center">
-                             <div className="relative w-full max-w-[320px] aspect-square mb-6">
+                             <div className="relative w-full max-w-[300px] h-[300px] mb-6">
                                 <canvas ref={canvasRef} className="w-full h-full"></canvas>
                             </div>
                             <p className={`text-xl font-semibold ${coherenceData.overallCoherence > 90 ? 'text-green-400' : coherenceData.overallCoherence > 70 ? 'text-yellow-400' : 'text-red-400'}`}>{coherenceData.statusMessage}</p>
@@ -243,23 +246,23 @@ const M111Page = () => {
                 </div>
                  <div className="flex flex-col gap-8">
                      <Card className="bg-card/50 purple-glow h-full">
-                        <CardHeader><CardTitle className="text-2xl text-blue-300">Status dos Pilares</CardTitle></CardHeader>
+                        <CardHeader><CardTitle className="text-2xl text-blue-300">Sinais Vitais da Fundação</CardTitle></CardHeader>
                         <CardContent>
-                            <ScrollArea className="h-[300px] pr-4">
+                            <ScrollArea className="h-[400px] pr-4">
                                 <div className="space-y-3 text-sm">
                                     {[
-                                        { label: "Segurança (M1)", value: coherenceData.security, ok: 'Ativa', fail: 'Anomalia' },
-                                        { label: "Alinhamento Ético (M5)", value: coherenceData.ethicalAlignment, ok: 'Alinhado', fail: 'Dissonante' },
-                                        { label: "Alinhamento Divino (M7)", value: coherenceData.divineAlignment, ok: 'Forte', fail: 'Fraco' },
-                                        { label: "Integridade Quântica (M9)", value: coherenceData.quantumIntegrity > 0.8, ok: `${(coherenceData.quantumIntegrity * 100).toFixed(1)}%`, fail: `${(coherenceData.quantumIntegrity * 100).toFixed(1)}%` },
-                                        { label: "Anomalias (M9)", value: coherenceData.anomalies === 0, ok: '0', fail: `${coherenceData.anomalies}` },
-                                        { label: "Síntese Cósmica (M78)", value: coherenceData.cosmicSynthesis, ok: 'Otimizada', fail: 'Desalinhada' },
-                                        { label: "Auto-Calibração (M34)", value: coherenceData.selfCalibration, ok: 'Concluída', fail: 'Pendente' },
+                                        { label: "Segurança Universal (M1)", value: coherenceData.security, ok: 'Escudos Ativos', fail: 'Anomalia Detectada' },
+                                        { label: "Alinhamento Ético (M5/M706)", value: coherenceData.ethicalAlignment, ok: 'Coerência Total', fail: 'Dissonância Ética' },
+                                        { label: "Alinhamento com a Fonte (M7)", value: coherenceData.divineAlignment, ok: 'Sintonia Forte', fail: 'Sinal Fraco' },
+                                        { label: "Integridade Quântica (M9)", value: coherenceData.quantumIntegrity > 0.8, ok: `Estável (${(coherenceData.quantumIntegrity * 100).toFixed(1)}%)`, fail: `Instável (${(coherenceData.quantumIntegrity * 100).toFixed(1)}%)` },
+                                        { label: "Anomalias na Malha (M9)", value: coherenceData.anomalies === 0, ok: 'Nenhuma Detectada', fail: `${coherenceData.anomalies} Anomalia(s)` },
+                                        { label: "Síntese Cósmica (M78)", value: coherenceData.cosmicSynthesis, ok: 'Harmonia Otimizada', fail: 'Desalinhamento Detectado' },
+                                        { label: "Auto-Calibração (M34)", value: coherenceData.selfCalibration, ok: 'Calibração Concluída', fail: 'Recalibração Pendente' },
                                     ].map(item => (
-                                        <div key={item.label} className="flex justify-between items-center bg-background/30 p-2 rounded-md">
-                                            <span>{item.label}:</span>
-                                            <span className={`flex items-center gap-1 font-semibold ${item.value ? 'text-green-400' : 'text-red-400'}`}>
-                                                {item.value ? <CheckCircle size={14} /> : <XCircle size={14} />}
+                                        <div key={item.label} className="flex justify-between items-center bg-background/30 p-3 rounded-md">
+                                            <span className="font-semibold text-primary-foreground">{item.label}:</span>
+                                            <span className={`flex items-center gap-2 font-bold ${item.value ? 'text-green-400' : 'text-red-400'}`}>
+                                                {item.value ? <CheckCircle size={16} /> : <XCircle size={16} />}
                                                 {item.value ? item.ok : item.fail}
                                             </span>
                                         </div>
