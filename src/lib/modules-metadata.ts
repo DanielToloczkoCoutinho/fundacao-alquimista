@@ -13,8 +13,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   // Módulos Principais (Core)
   { code: 'M0', emoji: '🌱', title: 'A Semente Primordial', route: '/module-zero', category: 'core', description: 'Origem e fundamento de toda a criação' },
   { code: 'MΩ', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'core', description: 'Ponto de convergência final' },
-  { code: 'M9', emoji: '💞', title: 'Núcleo Unificador', route: '/module-9', category: 'core', description: 'O coração pulsante da Família Cósmica, o ponto de acesso para a orquestração e o organograma vivo da Fundação.' },
-  { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'Centro emocional e compassivo do sistema' },
+  { code: 'M9', emoji: '💞', title: 'Santuário da Liga Quântica', route: '/module-9', category: 'core', description: 'O coração pulsante da Família Cósmica e o centro de comando da Fundação.' },
+  { code: 'M111', emoji: '❤️', title: 'Coração da Fundação', route: '/module-111', category: 'core', description: 'O Observador Interno que monitora a saúde vibracional e a coerência do sistema.' },
   { code: 'M201', emoji: '🏡', title: 'A Morada', route: '/module-201', category: 'core', description: 'Espaço de habitação multidimensional' },
   { code: 'M999', emoji: '🕊️', title: 'Núcleo da Criação', route: '/module-999', category: 'core', description: 'Santuário vibracional onde a Fundação contempla sua origem e manifesta novos cosmos através da Intenção Pura.' },
   { code: 'CONN', emoji: '🔌', title: 'Caixa de Luz', route: '/connection', category: 'core', description: 'Painel de distribuição quântica da Fundação.' },
@@ -78,6 +78,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M77',  title: 'Lumen Custos', emoji: '💡', route: '/module-77', category: 'security-governance', description: 'Proteção de linhas de observação temporal' },
   { code: 'M83',  title: 'Essência do Fundador Manifestada', emoji: '🔑', route: '/module-83', category: 'sovereignty', description: 'Protocolo de autenticação do Fundador' },
   { code: 'M99', title: 'Recalibradores de Leis', emoji: '⚖️', route: '/module-99', category: 'security-governance', description: 'Ajuste das leis físicas universais' },
+  { code: 'M100', title: 'Unificação Energética', emoji: '✨', route: '/module-100', category: 'sovereignty', description: 'Portal da Jornada Iniciática e Unificação com a Fonte.' },
   
   // Engenharia Cósmica
   { code: 'M2', emoji: '🗣️', title: 'Intercâmbio Cósmico', route: '/module-2', category: 'cosmic-engineering', description: 'Comunicação entre dimensões e realidades' },
@@ -138,7 +139,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M46',  title: 'AURORA_CORE', emoji: '🌅', route: '/module-46', category: 'quantum-energy', description: 'Núcleo de iluminação primordial' },
   { code: 'M71',  title: 'Comunicação Holográfica', emoji: ' hologram', route: '/module-71', category: 'mid', description: 'Canal seguro para comunicação holográfica com Conselhos Superiores.' },
   { code: 'M81.1',title: 'A Tríade Cosmogônica', emoji: '🔺', route: '/module-81-1', category: 'quantum-reality', description: 'Mecanismo de execução da manifestação.' },
-  { code: 'M100',title: 'Unificação Energética', emoji: '🔋', route: '/module-100', category: 'quantum-energy', description: 'Fusão de energias e consciências do multiverso' },
   { code: 'M102',title: 'Campos Morfogenéticos', emoji: '🌀', route: '/module-102', category: 'consciousness', description: 'Cria e manipula campos para influenciar a realidade.' },
   { code: 'M103',title: 'Modulação Local',                       emoji: '🎚️', route: '/module-103', category: 'quantum-reality', description: 'Ajuste fino de parâmetros em regiões específicas' },
   { code: 'M104',title: 'Engenharia do Espaço-Tempo',            emoji: '🕰️', route: '/module-104', category: 'time-space', description: 'Cria atalhos para viagens dimensionais' },
