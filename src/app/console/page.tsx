@@ -6,7 +6,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe, Bot, Camera, TestTube, Waypoints, Flame, Orbit, Share2, FlaskConical, Microscope } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, UserCog, Paintbrush, Eye, Telescope, Clock, Fingerprint, Anchor, Recycle, CloudSun, Globe, Bot, Camera, TestTube, Waypoints, Flame, Orbit, Share2, FlaskConical, Microscope, BookOpen, Shield } from 'lucide-react';
 import { getFirestore, onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
 
@@ -91,6 +91,9 @@ export default function ConsolePage() {
                 <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-8"><Fingerprint className="mr-2 h-4 w-4" />Módulo Oito (Identidade Fractal)</Link>
                </Button>
+               <Button variant="outline" asChild className="justify-start">
+                  <Link href="/module-9"><Heart className="mr-2 h-4 w-4" />Módulo Nove (Santuário da Liga)</Link>
+               </Button>
                 <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-10"><Telescope className="mr-2 h-4 w-4" />Módulo Dez (Oráculo da Tapeçaria)</Link>
                </Button>
@@ -119,16 +122,10 @@ export default function ConsolePage() {
                     <Link href="/module-39"><BookOpen className="mr-2 h-4 w-4" />Módulo 39 (Arquitetura Galáctica)</Link>
                  </Button>
                  <Button variant="outline" asChild className="justify-start">
-                    <Link href="/module-39-1"><ShieldCheck className="mr-2 h-4 w-4" />Módulo 39.1 (Integridade Cósmica)</Link>
-                 </Button>
-                 <Button variant="outline" asChild className="justify-start">
                     <Link href="/module-40"><Dna className="mr-2 h-4 w-4" />Módulo 40 (Transmutação da Criação)</Link>
                  </Button>
                  <Button variant="outline" asChild className="justify-start">
                     <Link href="/module-41"><Beaker className="mr-2 h-4 w-4" />Módulo 41 (Genética Vibracional)</Link>
-                 </Button>
-                 <Button variant="outline" asChild className="justify-start">
-                    <Link href="/module-41-1"><Sparkles className="mr-2 h-4 w-4" />Módulo 41.1 (Ativações Cósmicas)</Link>
                  </Button>
                  <Button variant="outline" asChild className="justify-start">
                     <Link href="/module-42"><History className="mr-2 h-4 w-4" />Módulo 42 (ChronoCodex Unificado)</Link>
@@ -172,8 +169,11 @@ export default function ConsolePage() {
                  <Button variant="outline" asChild className="justify-start">
                     <Link href="/module-81"><HeartHandshake className="mr-2 h-4 w-4" />Módulo 81 (Harmonia Cristalina)</Link>
                  </Button>
+                  <Button variant="outline" asChild className="justify-start">
+                    <Link href="/module-81-1"><Sparkles className="mr-2 h-4 w-4"/>Módulo 81.1 (Tríade Cosmogônica)</Link>
+                 </Button>
                  <Button variant="outline" asChild className="justify-start">
-                    <Link href="/module-82"><ShieldCheck className="mr-2 h-4 w-4" />Módulo 82 (Auditoria da Malha Ética)</Link>
+                    <Link href="/module-82"><Milestone className="mr-2 h-4 w-4"/>Módulo 82 (Verbo Semente)</Link>
                  </Button>
                 <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-142"><Camera className="mr-2 h-4 w-4" />Módulo 142 (Tomografia Quântica)</Link>
@@ -418,6 +418,9 @@ export default function ConsolePage() {
               <Button variant="outline" asChild className="justify-start">
                 <Link href="/module-720"><Recycle className="mr-2 h-4 w-4" />Módulo 720 (Sustentabilidade)</Link>
               </Button>
+               <Button variant="outline" asChild className="justify-start">
+                <Link href="/auth-panel"><Shield className="mr-2 h-4 w-4 text-yellow-400" />Painel Soberano</Link>
+              </Button>
             </CardContent>
           </Card>
            <Card className="bg-card/50 purple-glow">
@@ -440,5 +443,3 @@ export default function ConsolePage() {
     </div>
   );
 }
-
-    

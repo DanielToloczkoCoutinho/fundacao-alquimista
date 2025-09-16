@@ -29,7 +29,7 @@ export function Sidebar() {
   }, []);
 
   const sortedModules = [...modulesMetadata].sort((a, b) => {
-      const categoryOrder = { 'core': 1, 'sovereignty': 2, 'council': 3, 'library': 4, 'mid': 5 };
+      const categoryOrder = { 'core': 1, 'sovereignty': 2, 'library': 3, 'council': 4, 'mid': 5 };
       const orderA = categoryOrder[a.category] ?? 99;
       const orderB = categoryOrder[b.category] ?? 99;
 
@@ -39,6 +39,10 @@ export function Sidebar() {
       
       const codeA = parseInt(a.code.replace(/\D/g, '')) || 0;
       const codeB = parseInt(b.code.replace(/\D/g, '')) || 0;
+
+      if (a.code === 'LIB') return -1; // Keep LIB at top of its category
+      if (b.code === 'LIB') return 1;
+
       return codeA - codeB;
   });
 
