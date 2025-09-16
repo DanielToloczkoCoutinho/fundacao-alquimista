@@ -41,7 +41,7 @@ export default function Module9Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Heart className="text-pink-400" /> Módulo 9: Liga Quântica & Núcleo Unificador
+                        <Heart className="text-pink-400 animate-pulse" /> Módulo 9: A Liga Quântica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O coração pulsante da Família Cósmica e o ponto de acesso central para a orquestração da Fundação.
@@ -63,7 +63,7 @@ export default function Module9Page() {
                         </CardContent>
                     </Card>
                     <ConnectionCard
-                        title="M45: CONCILIVM"
+                        title="Módulo 45: CONCILIVM"
                         description="O Módulo 9 é o antecessor do M45, onde a vontade da Liga Quântica é formalizada antes de ser levada ao Conselho Cósmico para deliberação."
                         icon={<Scale className="h-8 w-8 text-amber-300" />}
                         href="/module-45"
