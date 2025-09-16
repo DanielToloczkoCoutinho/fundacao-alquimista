@@ -164,4 +164,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M714', emoji: '🌍', title: 'Comunicação Telúrica', route: '/module-714', category: 'earth-gaia', description: 'Permite a comunicação e a harmonização com as redes energéticas da Terra.' },
   { code: 'M717', emoji: '🚪', title: 'Criação de Realidades Liminares', route: '/module-717', category: 'quantum-reality', description: 'Manifesta realidades intermediárias para cura, aprendizado ou passagem entre dimensões.' },
   { code: 'M720', emoji: '♻️', title: 'Sustentabilidade Multidimensional', route: '/module-720', category: 'security-governance', description: 'Garante o equilíbrio em todos os níveis do ser (físico, emocional, espiritual) e da realidade.' },
+  { code: 'M725', emoji: '🏙️', title: 'Construção de Novas Civilizações', route: '/module-725', category: 'cosmic-engineering', description: 'Auxilia na criação e desenvolvimento de novas sociedades.' },
 ];
