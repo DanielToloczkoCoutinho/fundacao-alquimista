@@ -7,8 +7,9 @@ import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/ca
 
 // Mapeamento de códigos de módulo para seus componentes dinâmicos
 const moduleComponents: { [key: string]: React.ComponentType<any> } = {
-  'M0': dynamic(() => import('@/app/module-zero/page'), { ssr: false, loading: () => <SuspenseFallback /> }),
+  'M0': dynamic(() => import('@/components/modules/module-0'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M1': dynamic(() => import('@/components/modules/module-1'), { ssr: false, loading: () => <SuspenseFallback /> }),
+  'M2': dynamic(() => import('@/components/modules/module-2'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M-OMEGA': dynamic(() => import('@/components/modules/module-omega'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M72': dynamic(() => import('@/components/modules/module-72'), { ssr: false, loading: () => <SuspenseFallback /> }),
   // Adicione outros módulos aqui conforme são criados
