@@ -1,11 +1,10 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Lock, Fingerprint, Archive, Shield, Users, Bot, Link as LinkIcon, Stethoscope } from 'lucide-react';
+import { Loader2, Lock, Fingerprint, Archive, Shield, Users, Bot, Link as LinkIcon, Stethoscope, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -134,6 +133,7 @@ export default function GuardiaoDeSeloPage() {
                         <ConnectionCard title="M9: Nexus Central" description="Operações de selagem são de alta importância e monitoradas pelo Nexus para garantir a integridade da Fundação." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
                         <ConnectionCard title="Diagnóstico Universal" description="A saúde da Blockchain Alquimista e a integridade dos selos são pontos vitais no diagnóstico geral do sistema." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
                         <ConnectionCard title="M12: Arquivo Akáshico" description="O M231 é o notário do M12, selando seus registros para garantir que a história cósmica seja inviolável." icon={<Archive className="h-6 w-6 text-yellow-300"/>} href="/module-12"/>
+                        <ConnectionCard title="Módulo 304" description="A criptografia quântica e a teoria de blockchain são disciplinas avançadas na Universidade, fundamentando o M231." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
                     </div>
                 </div>
             </div>

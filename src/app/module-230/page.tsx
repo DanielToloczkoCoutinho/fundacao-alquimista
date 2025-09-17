@@ -1,10 +1,9 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
-import { Loader2, Zap, Waves, AlertTriangle, Bot, Link as LinkIcon, Stethoscope } from 'lucide-react';
+import { Loader2, Zap, Waves, AlertTriangle, Bot, Link as LinkIcon, Stethoscope, GraduationCap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { resonanceTone } from '@/lib/audio-utils';
@@ -122,6 +121,7 @@ export default function EspelhoDeAscensaoPage() {
                          <ConnectionCard title="M9: Nexus Central" description="A ativação do espelho é uma operação de alta energia que é monitorada e orquestrada pelo Nexus Central para garantir a estabilidade sistêmica." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
                          <ConnectionCard title="Diagnóstico Universal" description="A saúde do Espelho de Ascensão e sua coerência vibracional são vitais para o diagnóstico da capacidade de manifestação da Fundação." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
                          <ConnectionCard title="Módulo 404: Resolução de Paradoxo" description="Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia, garantindo a estabilidade causal." icon={<AlertTriangle className="h-6 w-6 text-yellow-400" />} href="/module-404"/>
+                         <ConnectionCard title="Módulo 304" description="A física das frequências de ascensão e a visualização fractal são campos de estudo e aplicação na Universidade." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
                     </div>
                 </div>
             </div>

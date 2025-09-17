@@ -1,10 +1,9 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Loader2, Recycle, AlertTriangle, Waves, Zap, Bot, Link as LinkIcon, Stethoscope } from 'lucide-react';
+import { Loader2, Recycle, AlertTriangle, Waves, Zap, Bot, Link as LinkIcon, Stethoscope, GraduationCap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { Progress } from '@/components/ui/progress';
@@ -130,6 +129,7 @@ export default function PortalDeTransmutacaoPage() {
                         <ConnectionCard title="M9: Nexus Central" description="A transmutação de energias de larga escala é uma operação crítica supervisionada pelo Nexus para manter a estabilidade da Fundação." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
                         <ConnectionCard title="Diagnóstico Universal" description="A eficácia e a saúde do Portal de Transmutação são monitoradas continuamente, pois ele atua como o sistema de filtragem da Fundação." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
                         <ConnectionCard title="Módulo 404: Resolução de Paradoxo" description="Identifica e isola a dissonância ou o paradoxo a ser transmutado, entregando-o de forma segura ao Portal." icon={<AlertTriangle className="h-6 w-6 text-yellow-400" />} href="/module-404"/>
+                        <ConnectionCard title="Módulo 304" description="As leis da transmutação energética e da alquimia vibracional são parte do currículo avançado da Universidade Alquimista." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
                     </div>
                 </div>
             </div>

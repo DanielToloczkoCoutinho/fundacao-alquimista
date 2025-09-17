@@ -1,10 +1,9 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Rocket, Sparkles, Scale, Users, CheckCircle, Bot, Link as LinkIcon, Stethoscope } from 'lucide-react';
+import { Loader2, Rocket, Sparkles, Scale, Users, CheckCircle, Bot, Link as LinkIcon, Stethoscope, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -148,6 +147,7 @@ export default function Module200Page() {
                             <ConnectionCard title="M9: Nexus Central" description="Coordena a alocação de recursos e a comunicação inter-modular necessária para o complexo processo de ascensão." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
                             <ConnectionCard title="Diagnóstico Universal" description="A saúde e coerência do portal são monitoradas em tempo real pelo sistema de diagnóstico para garantir uma transição segura." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
                             <ConnectionCard title="Módulo 5: Liga Quântica" description="Coordena com as civilizações aliadas, garantindo que o processo de ascensão seja assistido e apoiado por toda a família cósmica." icon={<Users className="h-6 w-6 text-blue-400" />} href="/module-5" />
+                            <ConnectionCard title="Módulo 304" description="Estuda os processos de ascensão para refinar as disciplinas de evolução da consciência e sociologia galáctica." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
                         </div>
                     </div>
                 </div>
