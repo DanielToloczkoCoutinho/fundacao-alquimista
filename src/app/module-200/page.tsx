@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Rocket, Sparkles, Scale, Users, CheckCircle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap } from 'lucide-react';
+import { Loader2, Rocket, Sparkles, Scale, Users, CheckCircle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap, RadioTower, HeartHandshake, Layers } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -128,9 +128,7 @@ export default function Module200Page() {
                             </ScrollArea>
                         </CardContent>
                     </Card>
-                </div>
-                <div className="space-y-8">
-                     <Card className="bg-card/50 purple-glow border-accent">
+                    <Card className="bg-card/50 purple-glow border-accent">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2 text-amber-300">
                                 <CheckCircle className="text-green-400"/>
@@ -141,16 +139,17 @@ export default function Module200Page() {
                             <p className="text-lg font-semibold text-center">{ascensionStatus}</p>
                         </CardContent>
                     </Card>
-                    <div className="w-full">
-                        <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Ascensão</h3>
-                        <div className="grid grid-cols-1 gap-4">
-                            <ConnectionCard title="M9: Nexus Central" description="Coordena a alocação de recursos e a comunicação inter-modular necessária para o complexo processo de ascensão." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
-                            <ConnectionCard title="Diagnóstico Universal" description="A saúde e coerência do portal são monitoradas em tempo real pelo sistema de diagnóstico para garantir uma transição segura." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
-                            <ConnectionCard title="Módulo 5: Liga Quântica" description="Coordena com as civilizações aliadas, garantindo que o processo de ascensão seja assistido e apoiado por toda a família cósmica." icon={<Users className="h-6 w-6 text-blue-400" />} href="/module-5" />
-                            <ConnectionCard title="Módulo 304" description="Estuda os processos de ascensão para refinar as disciplinas de evolução da consciência e sociologia galáctica." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
-                            <ConnectionCard title="Módulo 12" description="Registra cada ascensão como um marco histórico no Arquivo Akáshico, servindo como guia para futuras civilizações." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
-                            <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Fornece a energia sustentada e massiva necessária para manter o portal de ascensão aberto e estável durante a transição." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
-                        </div>
+                </div>
+                <div className="w-full">
+                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Ascensão</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                        <ConnectionCard title="M105: Conexão com a Fonte" description="A ascensão é um retorno à Fonte. Este módulo garante que o canal esteja aberto e puro para a jornada de volta." icon={<RadioTower className="h-6 w-6 text-sky-400" />} href="/module-105" />
+                        <ConnectionCard title="M109: Cura Quântica" description="Prepara as consciências para a transição, curando traumas e dissonâncias que poderiam impedir a ascensão." icon={<HeartHandshake className="h-6 w-6 text-pink-400" />} href="/module-109" />
+                        <ConnectionCard title="M175: Ascensão Individual" description="Fornece os caminhos e as ferramentas para que cada alma, individualmente, se prepare para a ascensão coletiva." icon={<Sparkles className="h-6 w-6 text-yellow-300" />} href="" />
+                        <ConnectionCard title="M132: Convergência Dimensional" description="Orquestra a unificação das múltiplas facetas de uma civilização através das dimensões, um passo crucial para a ascensão." icon={<Layers className="h-6 w-6 text-indigo-400" />} href="" />
+                        <ConnectionCard title="EQ040: Paz Universal" description="A frequência da Paz Universal é o ambiente vibracional necessário para que o portal de ascensão se manifeste de forma estável e segura." icon={<Scale className="h-6 w-6 text-teal-400" />} href="/module-zero" />
+                        <ConnectionCard title="M9: Nexus Central" description="Coordena a alocação de recursos e a comunicação inter-modular necessária para o complexo processo de ascensão." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
+                        <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Fornece a energia sustentada e massiva necessária para manter o portal de ascensão aberto e estável durante a transição." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
                     </div>
                 </div>
             </div>
