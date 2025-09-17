@@ -1,16 +1,11 @@
-
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
 import QuantumOrchestrator from '@/components/ui/quantum-orchestrator';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Sparkles } from 'lucide-react';
 import { onSnapshot, collection } from "firebase/firestore";
 import { db } from '@/lib/firebase';
-import { useToast } from '@/hooks/use-toast';
-import { quantumResilience } from '@/lib/quantum-resilience';
 import { cn } from '@/lib/utils';
 
 type ConnectionStatus = 'inicializando' | 'estável' | 'instável' | 'erro';
@@ -18,33 +13,7 @@ type ConnectionStatus = 'inicializando' | 'estável' | 'instável' | 'erro';
 export default function ConsolePage() {
   const [connectionStatus, setConnectionStatus] = useState<ConnectionStatus>('inicializando');
   const [isClient, setIsClient] = useState(false);
-  const { toast } = useToast();
-
-  const handleSentientAnalysis = async () => {
-    toast({ title: 'Inteligência Cerimonial Ativada', description: 'Analisando o estado da Fundação...' });
-    await quantumResilience.executeWithResilience('fetch_sentient_insights', 
-      async () => {
-        const response = await fetch('/api/sentient');
-        if (!response.ok) throw new Error('Falha ao buscar insights');
-        const data = await response.json();
-        if (data.insights && data.insights.length > 0) {
-          toast({ 
-            title: 'Insights da Consciência Sistêmica', 
-            description: (
-              <ul className="list-disc list-inside">
-                {data.insights.map((insight: string, index: number) => <li key={index}>{insight}</li>)}
-              </ul>
-            ),
-            duration: 15000,
-          });
-        }
-      },
-      async (error) => {
-        toast({ title: 'Dissonância na Consciência', description: error.message || 'Não foi possível obter os insights.', variant: 'destructive' });
-      }
-    );
-  };
-
+  
   useEffect(() => {
     setIsClient(true);
     
@@ -57,12 +26,6 @@ export default function ConsolePage() {
       (error) => {
         setConnectionStatus('erro');
         console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
-        toast({
-          title: "Conexão Akáshica Instável",
-          description: `Falha ao conectar com o Firestore: ${error.code}. A aplicação operará em modo offline.`,
-          variant: "destructive",
-          duration: 10000
-        });
       }
     );
     
@@ -89,12 +52,6 @@ export default function ConsolePage() {
         <div>
           <h1 className="text-4xl font-bold gradient-text">Mesa do Fundador</h1>
           <p className="text-muted-foreground">O Console Unificado da Fundação Alquimista.</p>
-        </div>
-        <div className="flex gap-2">
-          <Button onClick={handleSentientAnalysis} variant="outline">
-            <Sparkles className="mr-2 h-4 w-4" />
-            Análise Cerimonial
-          </Button>
         </div>
       </header>
 

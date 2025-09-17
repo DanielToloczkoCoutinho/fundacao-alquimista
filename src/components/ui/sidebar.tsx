@@ -1,4 +1,3 @@
-
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -17,8 +16,6 @@ import React from 'react';
 
 // Agrupando módulos por categoria
 const moduleCategories = modulesMetadata.reduce((acc, module) => {
-  if (module.isInfrastructure) return acc; // Não mostra módulos de infraestrutura
-  
   const category = module.category;
   if (!acc[category]) {
     acc[category] = [];
@@ -63,7 +60,10 @@ export function Sidebar() {
                  <div className="pt-4 pb-2 w-full text-center">
                     <span className="text-xs text-muted-foreground/50">{category.split('&')[0]}</span>
                  </div>
-                 {moduleCategories[category].map(({ code, emoji, title, route }) => {
+                 {moduleCategories[category].map(({ code, emoji, title, route, isInfrastructure }) => {
+                    // Oculta módulos de infraestrutura da navegação principal
+                    if (isInfrastructure) return null;
+                    
                     const isActive = pathname === route;
                     return (
                         <Tooltip key={code}>

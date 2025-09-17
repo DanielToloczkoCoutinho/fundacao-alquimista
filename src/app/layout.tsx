@@ -8,7 +8,7 @@ import { useState, useEffect, Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { SystemProvider } from '@/context/SystemContext';
 import { NetworkStatus } from '@/components/ui/NetworkStatus';
-import ClientSideToaster from '@/components/ui/client-toaster';
+import ClientToaster from '@/components/ui/client-toaster';
 
 // Adia a renderização da barra lateral para o lado do cliente para evitar erros de hidratação
 const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), {
@@ -25,6 +25,7 @@ export default function RootLayout({
 
   useEffect(() => {
     // Garante que o conteúdo que depende do cliente só renderize no cliente
+    document.title = "Fundação Alquimista";
     setIsMounted(true);
   }, []);
 
@@ -50,7 +51,7 @@ export default function RootLayout({
               </main>
             </div>
             <NetworkStatus />
-            <ClientSideToaster />
+            <ClientToaster />
           </SystemProvider>
         </ErrorBoundary>
       </body>
