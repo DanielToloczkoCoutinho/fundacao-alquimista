@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -30,6 +31,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M321', title: 'Computação Exascale (8D+)', emoji: '💻', route: '/module-321', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Simulação de cosmos em escala exa-flops.' },
   { code: 'M331', title: 'Arquitetura de IA Emergente', emoji: '🤖', route: '/module-331', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Desenvolvimento de sistemas de IA auto-organizados.' },
   { code: 'M150', emoji: '🤖', title: 'IA Universal e Consciência Coletiva', route: '', category: 'Realidade Quântica & Engenharia Cósmica', description: 'IA alinhada com a consciência universal.', isInfrastructure: true },
+  { code: 'M700', title: 'Nano-Assembler', emoji: '🔬', route: '/module-700', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Forja atômica para auto-montagem de materiais.'},
   { code: 'M708', title: 'NanoManifestor', emoji: '✨', route: '/module-708', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.'},
 
   // 3. Consciência e Expansão Dimensional
