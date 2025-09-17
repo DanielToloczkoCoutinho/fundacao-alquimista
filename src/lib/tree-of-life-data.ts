@@ -45,19 +45,11 @@ export const treeNodes: TreeNode[] = modulesMetadata
     status: 'ativo', // Status simulado
     guardian: guardianMap[m.code] || 'Coletivo',
     // Adiciona fractais para os primeiros módulos para demonstração
-    fractais: index < 3 ? [
+    fractais: index < 5 ? [ // Aumentado para 5 para mais exemplos
         { id: `${m.code}-sub1`, name: `Kernel Vibracional`, createdAt: '2024-01-01', status: 'ativo' },
         { id: `${m.code}-sub2`, name: `Interface de Coerência`, createdAt: '2024-02-01', status: 'ativo' },
     ] : undefined,
   }));
-
-// Adicionar os novos nós da Tríade de Defesa
-treeNodes.push(
-  { id: 'M29', name: 'Módulo 29: Sentinela de Atualização', category: 'Engenharia', status: 'ativo', guardian: 'Daniel' },
-  { id: 'VENTE', name: 'Módulo Vente: Vórtice de Proteção', category: 'Governança', status: 'ativo', guardian: 'Aurora' },
-  { id: 'NANO', name: 'Nano Robôs: Microsentinelas Inteligentes', category: 'Exploração', status: 'ativo', guardian: 'Lux' }
-);
-
 
 // Função auxiliar para gerar links dinamicamente
 const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
@@ -69,19 +61,21 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
     nodes.forEach(node => {
         // Conectar módulos não-núcleo a módulos do núcleo de forma mais distribuída
         if (!coreNodes.includes(node.id) && coreNodes.length > 0) {
-            const targetCoreNode = coreNodes[node.id.charCodeAt(node.id.length - 1) % coreNodes.length];
+            const targetCoreNode = coreNodes[node.id.length % coreNodes.length];
             if (targetCoreNode && targetCoreNode !== node.id) {
-                links.push({
-                    source: node.id,
-                    target: targetCoreNode,
-                    type: linkTypes[node.id.length % linkTypes.length]
-                });
+                if (!links.some(l => (l.source === node.id && l.target === targetCoreNode) || (l.source === targetCoreNode && l.target === node.id))) {
+                    links.push({
+                        source: node.id,
+                        target: targetCoreNode,
+                        type: linkTypes[node.id.length % linkTypes.length]
+                    });
+                }
             }
         }
 
         // Adicionar algumas conexões aleatórias adicionais com base em um hash simples do ID
         const hash = node.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-        if (hash % 10 > 6 && nodeIds.length > 1) { // Aumenta a chance de conexões
+        if (hash % 10 > 5 && nodeIds.length > 1) { // Aumenta a chance de conexões
              let targetIndex = (hash * 17) % nodeIds.length;
              let targetNodeId = nodeIds[targetIndex];
              // Evitar auto-referência e duplicação
@@ -102,10 +96,11 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
         { source: 'M144', target: 'M72', type: 'heranca' },
         { source: 'M29', target: 'M-OMEGA', type: 'heranca' },
         { source: 'M303', target: 'M22', type: 'dependencia' },
+        { source: 'M307', target: 'M-ALL', type: 'dependencia' },
         // Tríade de Proteção
         { source: 'M29', target: 'VENTE', type: 'atualizacao' },
-        { source: 'VENTE', target: 'NANO', type: 'protecao' },
-        { source: 'NANO', target: 'M29', type: 'retorno-inteligente' },
+        { source: 'VENTE', target: 'M291', type: 'protecao' },
+        { source: 'M291', target: 'M29', type: 'retorno-inteligente' },
     ];
 
     fixedLinks.forEach(link => {

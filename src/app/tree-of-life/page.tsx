@@ -8,7 +8,7 @@ import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { treeNodes as initialTreeNodes, treeLinks as initialTreeLinks, type TreeNode, type TreeLink, type SubModule } from '@/lib/tree-of-life-data';
+import { treeNodes as initialTreeNodes, treeLinks as initialTreeLinks, type TreeNode, type TreeLink } from '@/lib/tree-of-life-data';
 
 // Paleta Vibracional Expandida
 export const categoryColors: Record<string, string> = {
