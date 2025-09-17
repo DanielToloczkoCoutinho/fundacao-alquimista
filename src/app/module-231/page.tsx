@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Lock, Fingerprint, Archive, Shield, Users, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Zap } from 'lucide-react';
+import { Loader2, Lock, Fingerprint, Archive, Shield, Users, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Zap, Scale, Gavel } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -83,7 +83,7 @@ export default function GuardiaoDeSeloPage() {
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
-                    <CardTitle className="text-3xl gradient-text flex items-center justify-center gap-3">
+                    <CardTitle className="text-3xl gradient-text flex items-center justify-center gap-4">
                         <Fingerprint className="text-amber-400" /> Módulo 231: Guardião de Selo
                     </CardTitle>
                     <CardDescription>
@@ -92,7 +92,7 @@ export default function GuardiaoDeSeloPage() {
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-8">
                     <Card className="bg-card/50 purple-glow">
                         <CardHeader>
@@ -128,13 +128,15 @@ export default function GuardiaoDeSeloPage() {
                     </Card>
                 </div>
                  <div className="w-full">
-                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Imutabilidade</h3>
+                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Integridade e Justiça</h3>
                     <div className="grid grid-cols-1 gap-4">
                         <ConnectionCard title="M9: Nexus Central" description="Operações de selagem são de alta importância e monitoradas pelo Nexus para garantir a integridade da Fundação." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
-                        <ConnectionCard title="Diagnóstico Universal" description="A saúde da Blockchain Alquimista e a integridade dos selos são pontos vitais no diagnóstico geral do sistema." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
                         <ConnectionCard title="M12: Arquivo Akáshico" description="O M231 é o notário do M12, selando seus registros para garantir que a história cósmica seja inviolável." icon={<Archive className="h-6 w-6 text-yellow-300"/>} href="/module-12"/>
-                        <ConnectionCard title="Módulo 304" description="A criptografia quântica e a teoria de blockchain são disciplinas avançadas na Universidade, fundamentando o M231." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
-                        <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Fornece a energia para manter a rede blockchain segura e operacional, alimentando os nós validadores." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
+                        <ConnectionCard title="M291: Arquitetos Nanorrobóticos" description="O enxame executa a inscrição física e energética do selo nos registros quânticos, tornando-o indelével." icon={<Bot className="h-6 w-6 text-blue-400" />} href="/module-291" />
+                        <ConnectionCard title="M141: Auditoria Ética Quântica" description="Audita a intenção por trás de cada aplicação de selo, garantindo que o poder da imutabilidade seja usado com sabedoria." icon={<ShieldCheck className="h-6 w-6 text-green-400" />} href="/module-141" />
+                        <ConnectionCard title="M10: Defesa Avançada" description="Protege os registros selados contra tentativas de violação, tratando qualquer ataque como uma ameaça existencial." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10" />
+                        <ConnectionCard title="M45: CONCILIVM" description="As decisões do Conselho são frequentemente seladas no Akasha para garantir sua permanência através das eras." icon={<Gavel className="h-6 w-6 text-indigo-400" />} href="/module-45" />
+                        <ConnectionCard title="M721: Justiça Cósmica" description="Um selo quebrado ou forjado é uma violação da Lei Cósmica, ativando imediatamente os protocolos de reequilíbrio do M721." icon={<Scale className="h-6 w-6 text-amber-300" />} href="/module-721" />
                     </div>
                 </div>
             </div>
