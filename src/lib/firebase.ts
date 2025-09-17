@@ -1,7 +1,7 @@
 'use client';
 
 import { initializeApp, getApps, getApp } from 'firebase/app';
-import { initializeFirestore, getFirestore, enableIndexedDbPersistence, connectFirestoreEmulator } from 'firebase/firestore';
+import { getFirestore, enableIndexedDbPersistence, connectFirestoreEmulator } from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,12 +13,7 @@ const firebaseConfig = {
 };
 
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-
-// Use initializeFirestore para forçar long-polling e resolver problemas de conexão
-const db = initializeFirestore(app, {
-  experimentalForceLongPolling: true,
-  useFetchStreams: false,
-});
+const db = getFirestore(app);
 
 if (typeof window !== 'undefined') {
   // Conectar ao emulador se estiver em desenvolvimento (opcional, mas recomendado)
