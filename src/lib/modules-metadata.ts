@@ -83,3 +83,4 @@ export const treeLinks: TreeLink[] = modulesMetadata.flatMap(mod => {
     if (!mod.connections) return [];
     return mod.connections.map(conn => ({ ...conn, source: mod.code, label: conn.type }));
 });
+
