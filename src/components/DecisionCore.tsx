@@ -120,7 +120,7 @@ export default function DecisionCore() {
             </Button>
 
             <div className="bg-black/30 p-4 rounded-lg">
-                <h4 className="text-lg font-bold mb-2 text-muted-foreground">Logs de Decisão</h4>
+                <h4 className="text-lg font-bold mb-2 text-muted-foreground">Memória da Fundação (Logs)</h4>
                 <ScrollArea className="h-48">
                     <ul className="text-sm space-y-1 font-mono">
                     {logs.map((entry, idx) => (
