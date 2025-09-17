@@ -6,7 +6,7 @@ import { scientists, Scientist } from '@/lib/scientists-data';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowLeft, Beaker, BrainCircuit, Dna, FlaskConical, GitBranch, Sparkles, TestTube, Waves } from 'lucide-react';
+import { ArrowLeft, Beaker, BrainCircuit, Dna, FlaskConical, GitBranch, Sparkles, BookOpen } from 'lucide-react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Badge } from '@/components/ui/badge';
 
@@ -134,13 +134,13 @@ export default function ScientistLabPage() {
                     <Link href="/module-91"><GitBranch className="mr-2"/> Simulação Multiversal</Link>
                  </Button>
                   <Button variant="outline" asChild className="w-full justify-start">
-                    <Link href="/module-151"><TestTube className="mr-2"/> Colisor de Partículas</Link>
+                    <Link href="/module-151"><Beaker className="mr-2"/> Colisor de Partículas</Link>
                  </Button>
                  <Button variant="outline" asChild className="w-full justify-start">
                     <Link href="/module-171"><Dna className="mr-2"/> Laboratório de Astrobiologia</Link>
                  </Button>
                  <Button variant="outline" asChild className="w-full justify-start">
-                    <Link href="/module-221"><Waves className="mr-2"/> Ondas Gravitacionais</Link>
+                    <Link href="/module-221"><Beaker className="mr-2"/> Ondas Gravitacionais</Link>
                  </Button>
                  <Button variant="outline" asChild className="w-full justify-start">
                     <Link href="/module-241"><BrainCircuit className="mr-2"/> Consciência Quântica</Link>
