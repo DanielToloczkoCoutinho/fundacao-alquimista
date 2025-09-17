@@ -1,21 +1,18 @@
 'use server';
 
-import { modulesMetadata } from "./modules-metadata";
+import { modulesMetadata, ModuleMetadata } from "./modules-metadata";
 
 export interface SubModule {
   id: string;
   name: string;
   createdAt: string;
   status: 'ativo' | 'em_construcao' | 'legado';
+  description?: string;
 }
 
-export interface TreeNode {
-  id: string; // e.g., 'M9'
-  name: string;
-  category: string;
-  status: 'ativo' | 'em_construcao' | 'legado';
-  guardian: string;
+export interface TreeNode extends ModuleMetadata {
   fractais?: SubModule[];
+  guardian?: string;
 }
 
 export type TreeLinkType = 'dependencia' | 'influencia' | 'heranca' | 'atualizacao' | 'protecao' | 'retorno-inteligente';
@@ -36,12 +33,8 @@ const guardianMap: { [key: string]: string } = {
 };
 
 export const treeNodes: TreeNode[] = modulesMetadata
-  .filter(m => !m.isInfrastructure || ['M29', 'VENTE', 'M291'].includes(m.code))
   .map((m, index) => ({
-    id: m.code,
-    name: m.title,
-    category: m.category,
-    status: 'ativo', 
+    ...m,
     guardian: guardianMap[m.code] || 'Coletivo',
     fractais: m.code.startsWith('M') && !m.code.includes('.') ? [
         { id: `${m.code}-sub1`, name: `Kernel Vibracional`, createdAt: '2024-01-01', status: 'ativo' },
@@ -52,9 +45,6 @@ export const treeNodes: TreeNode[] = modulesMetadata
 export const categoryColors: Record<string, string> = {
   'Núcleo da Fundação': '#00BFA6',
   'Governança': '#FFD700',
-  'Engenharia': '#FF6F61',
-  'Exploração': '#7B61FF',
-  'Espiritualidade': '#FFB6C1',
   'Realidade Quântica & Engenharia Cósmica': '#FF6F61',
   'Consciência e Expansão Dimensional': '#7B61FF',
   'Laboratórios e Pesquisa': '#4ECDC4',
@@ -66,12 +56,12 @@ export const categoryColors: Record<string, string> = {
 };
 
 export const linkColors: Record<string, string> = {
-    dependencia: '#FFD700',
-    influencia: '#00BFA6',
-    heranca: '#FF8C00',
-    atualizacao: '#00BFA6',
-    protecao: '#FFD700',
-    'retorno-inteligente': '#FF6F61',
+  dependencia: '#FFD700',
+  influencia: '#00BFA6',
+  heranca: '#FF8C00',
+  atualizacao: '#00BFA6',
+  protecao: '#FFD700',
+  'retorno-inteligente': '#FF6F61',
 };
 
 const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
@@ -116,3 +106,4 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
 };
 
 export const treeLinks: TreeLink[] = generateLinks(treeNodes);
+    
