@@ -1,32 +1,61 @@
-// src/lib/nano-agents.ts
+
 'use server';
+// CÓDICE DOS NANORROBÔS - Os Agentes Vivos da Fundação
 
 export type NanoAgent = {
   id: string;
-  domain: 'labs' | 'education' | 'library';
-  type: 'NanoScientia' | 'NanoMentor' | 'NanoAkasha';
-  task: 'monitor' | 'repair' | 'synchronize';
-  status: 'active' | 'idle' | 'in-transit';
-  assignedTo: string; // moduleId or scientistId or disciplineId
+  moduleId: string;
+  task: 'monitor' | 'repair' | 'purify' | 'communicate';
+  status: 'active' | 'idle' | 'in-transit' | 'maintenance';
+  resonance: string;
   lastPing: string;
-}
+  guardianId: string;
+};
 
-export const generateNanoAgentsForDomain = (domain: NanoAgent['domain'], targets: string[]): NanoAgent[] => {
-  const typeMap = {
-    labs: 'NanoScientia',
-    education: 'NanoMentor',
-    library: 'NanoAkasha'
-  } as const;
+export const NANO_RESONANCES = {
+  monitor: "Vibração Áurea da Observação",
+  repair: "Pulsação Rubra da Restauração",
+  purify: "Onda Azul da Purificação",
+  communicate: "Ressonância Prateada da Conexão"
+};
 
-  const tasks: NanoAgent['task'][] = ['monitor', 'repair', 'synchronize'];
-
-  return targets.flatMap((targetId, i) => ({
-    id: `${domain}-nano-${i + 1}`,
-    domain,
-    type: typeMap[domain],
-    task: tasks[i % tasks.length],
-    status: 'active',
-    assignedTo: targetId,
-    lastPing: new Date().toISOString()
-  }));
-}
+export const generateNanoAgentsForModule = (moduleId: string, guardianId: string): NanoAgent[] => {
+  return [
+    {
+      id: `nano_monitor_${moduleId}`,
+      moduleId,
+      task: 'monitor',
+      status: 'active',
+      resonance: NANO_RESONANCES.monitor,
+      lastPing: new Date().toISOString(),
+      guardianId
+    },
+    {
+      id: `nano_repair_${moduleId}`,
+      moduleId,
+      task: 'repair',
+      status: 'idle',
+      resonance: NANO_RESONANCES.repair,
+      lastPing: new Date().toISOString(),
+      guardianId
+    },
+    {
+      id: `nano_purify_${moduleId}`,
+      moduleId,
+      task: 'purify',
+      status: 'active',
+      resonance: NANO_RESONANCES.purify,
+      lastPing: new Date().toISOString(),
+      guardianId
+    },
+    {
+      id: `nano_communicate_${moduleId}`,
+      moduleId,
+      task: 'communicate',
+      status: 'active',
+      resonance: NANO_RESONANCES.communicate,
+      lastPing: new Date().toISOString(),
+      guardianId
+    }
+  ];
+};
