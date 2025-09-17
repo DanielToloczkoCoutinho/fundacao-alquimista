@@ -197,10 +197,15 @@ export async function emitLoveFrequency(data: { targetArea: string, frequency: n
 export async function getOmegaPerspective(evolutionSummary: string): Promise<OmegaPerspectiveOutput & { error: string | null }> {
     try {
         const result = await runGetOmegaPerspective({ evolutionSummary });
+        // Adicionando uma verificação para garantir que o resultado não seja nulo, o que causaria um erro.
+        if (!result) {
+          throw new Error('A Perspectiva Ômega retornou um resultado nulo.');
+        }
         return { ...result, error: null };
     } catch (e: any) {
         console.error(e);
         const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+        // Garantindo que um objeto de erro completo seja sempre retornado.
         return { analysisTitle: "Dissonância Ômega", synthesis: "", iamEvaluation: "", nextStepRecommendation: "", error: errorMsg };
     }
 }

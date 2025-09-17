@@ -50,7 +50,7 @@ const ModuleOmegaPage = () => {
         if (result.error) {
           throw new Error(result.error);
         }
-        setPerspective(result as Perspective);
+        setPerspective(result);
       },
       async (error: any) => {
         setMessage(`Dissonância na Perspectiva Ômega: ${error.message}`);
@@ -221,4 +221,3 @@ const ModuleOmegaPage = () => {
     </div>
   );
 };
-export default ModuleOmegaPage;

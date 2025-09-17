@@ -78,8 +78,9 @@ const M111Page = () => {
             setCoherenceData({ ...newCoherenceData, overallCoherence, statusMessage });
             addLog("M111: Dados de coerência sistêmica atualizados com sucesso.");
         } catch (error: any) {
-            setMessage(`Erro ao atualizar dados: ${'error' in error ? error.error : error.message}`);
-            addLog(`ERRO: ${'error' in error ? error.error : error.message}`);
+            const errorMessage = error.message || 'Ocorreu um erro desconhecido.';
+            setMessage(`Erro ao atualizar dados: ${errorMessage}`);
+            addLog(`ERRO: ${errorMessage}`);
         } finally {
             setIsLoading(false);
         }
@@ -117,8 +118,9 @@ const M111Page = () => {
             setSimulationResult("Simulação concluída. O sistema se auto-organizou e recalibrou com sucesso.");
             addLog("M111: Simulação concluída com sucesso.");
         } catch(error: any) {
-            setMessage(`Erro na simulação: ${'error' in error ? error.error : error.message}`);
-            addLog(`ERRO na simulação: ${'error' in error ? error.error : error.message}`);
+            const errorMessage = error.message || 'Ocorreu um erro desconhecido.';
+            setMessage(`Erro na simulação: ${errorMessage}`);
+            addLog(`ERRO na simulação: ${errorMessage}`);
         } finally {
             setIsLoading(false);
         }
