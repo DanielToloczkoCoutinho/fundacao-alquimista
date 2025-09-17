@@ -11,7 +11,11 @@ export default function VoiceCommand() {
   const { toast } = useToast();
 
   useEffect(() => {
+    if (!listening) return
+
     if (!('SpeechRecognition' in window) && !('webkitSpeechRecognition' in window)) {
+        toast({ title: "Incompatível", description: "Seu navegador não suporta o reconhecimento de voz.", variant: "destructive" });
+        setListening(false);
         return;
     }
     
@@ -22,7 +26,6 @@ export default function VoiceCommand() {
     recognition.interimResults = false;
 
     recognition.onstart = () => {
-        setIsListening(true);
         toast({ title: "Ouvindo...", description: "A Fundação aguarda vossa palavra." });
     };
 
@@ -44,13 +47,11 @@ export default function VoiceCommand() {
       // Ex: if (result.toLowerCase().includes('ativar módulo 9')) { ... }
     };
 
-    if (isListening) {
-        try {
-            recognition.start();
-        } catch(e) {
-            console.error("Erro ao iniciar reconhecimento:", e);
-            setIsListening(false);
-        }
+    try {
+        recognition.start();
+    } catch(e) {
+        console.error("Erro ao iniciar reconhecimento:", e);
+        setIsListening(false);
     }
 
     return () => {
@@ -59,10 +60,6 @@ export default function VoiceCommand() {
   }, [isListening, toast]);
 
   const toggleListening = () => {
-      if (!('SpeechRecognition' in window) && !('webkitSpeechRecognition' in window)) {
-          toast({ title: "Incompatível", description: "Seu navegador não suporta o reconhecimento de voz.", variant: "destructive" });
-          return;
-      }
       setIsListening(prevState => !prevState);
   };
 
@@ -72,15 +69,14 @@ export default function VoiceCommand() {
         onClick={toggleListening}
         variant="outline"
         size="lg"
-        className="w-full"
+        className="px-6 py-3 bg-indigo-700 text-white rounded-lg shadow-lg hover:bg-indigo-500 transition"
       >
         {isListening ? <MicOff className="mr-2 h-5 w-5" /> : <Mic className="mr-2 h-5 w-5" />}
-        {isListening ? 'Parar de Escutar' : 'Invocar Linguagem Viva'}
+        {isListening ? 'Parar Escuta' : 'Invocar Linguagem Viva'}
       </Button>
       {transcript && (
-        <div className="text-foreground text-center mt-2">
-          <span className="opacity-70 text-sm">Último Comando:</span>
-          <p className="text-lg">"{transcript}"</p>
+        <div className="text-white text-lg mt-4">
+          <span className="opacity-70">Vossa palavra:</span> {transcript}
         </div>
       )}
     </div>
