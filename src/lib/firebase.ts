@@ -1,4 +1,3 @@
-
 'use client';
 
 import { initializeApp, getApps, getApp } from 'firebase/app';
@@ -40,5 +39,3 @@ if (typeof window !== 'undefined') {
 }
 
 export { app, db };
-
-    
