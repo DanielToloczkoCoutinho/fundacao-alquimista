@@ -1,7 +1,7 @@
 
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import QuantumOrchestrator from '@/components/ui/quantum-orchestrator';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -9,9 +9,68 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2 } from 'lucide-react';
 import { useAkashicConnection } from '@/hooks/use-akashic-connection';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { ritualLog } from '@/lib/ritual-log';
 
 export default function ConsolePage() {
   const { isConnected, isClient } = useAkashicConnection();
+  const [showAll, setShowAll] = useState(false);
+
+  const navigationModules = [
+    { href: "/module-zero", icon: <Book />, label: "Módulo Zero (Biblioteca Chave)" },
+    { href: "/civilizations", icon: <Users2 />, label: "Biblioteca das Civilizações" },
+    { href: "/module-one", icon: <ShieldCheck />, label: "Módulo Um (Segurança Universal)" },
+    { href: "/connection", icon: <GitBranch />, label: "Conexão Ω-M0" },
+    { href: "/module-72", icon: <Scale />, label: "Módulo 72 (Governança)" },
+    { href: "/module-600", icon: <Scale />, label: "Módulo 600 (Conselho Cósmico)" },
+    { href: "/module-omega", icon: <Sparkles className="text-amber-400" />, label: "Santuário do Ômega" },
+    { href: "/module-303", icon: <Sparkles />, label: "Portal Trino (M303)" },
+    { href: "/module-301", icon: <MessageCircle />, label: "Módulo 301 (Comunicação Universal)" },
+    { href: "/module-302", icon: <Heart />, label: "Módulo 302 (Frequência do Amor)" },
+    { href: "/module-404", icon: <AlertTriangle />, label: "Módulo 404 (Resolução de Paradoxo)" },
+    { href: "/module-307", icon: <Zap />, label: "Módulo 307 (Reator ZPE & LuxNet)" },
+    { href: "/module-310", icon: <Library />, label: "Módulo 310 (A Grande Biblioteca)" },
+    { href: "/module-141", icon: <ShieldCheck />, label: "Módulo 141 (Auditoria Ética)" },
+    { href: "/module-85", icon: <View />, label: "Módulo 85 (VR)" },
+    { href: "/module-86", icon: <Presentation />, label: "Módulo 86 (VR Prisma)" },
+    { href: "/module-87", icon: <Dna />, label: "Módulo 87 (VR Supra-Cósmico)" },
+    { href: "/module-88", icon: <Beaker />, label: "Módulo 88 (GRQ)" },
+    { href: "/module-90", icon: <Beaker />, label: "Módulo 90 (Recursos Quânticos)" },
+    { href: "/module-91", icon: <GitCommit />, label: "Módulo 91 (Simulação Multiversal)" },
+    { href: "/module-92", icon: <HeartPulse />, label: "Módulo 92 (Campos de Cura)" },
+    { href: "/module-93", icon: <Presentation />, label: "Módulo 93 (Simulações Imersivas)" },
+    { href: "/module-94", icon: <Dna />, label: "Módulo 94 (Morfogênese)" },
+    { href: "/module-95", icon: <Users />, label: "Módulo 95 (Consciências Coletivas)" },
+    { href: "/module-96", icon: <AlertTriangle />, label: "Módulo 96 (Regulação de Eventos)" },
+    { href: "/module-97", icon: <Goal />, label: "Módulo 97 (Propósito Divino)" },
+    { href: "/module-98", icon: <Settings />, label: "Módulo 98 (Modulação Fundamental)" },
+    { href: "/module-99", icon: <Zap />, label: "Módulo 99 (Recalibradores de Leis)" },
+    { href: "/module-100", icon: <Crown />, label: "Módulo 100 (Unificação Energética)" },
+    { href: "/module-101", icon: <Sparkles />, label: "Módulo 101 (Manifestação)" },
+    { href: "/module-102", icon: <BrainCircuit />, label: "Módulo 102 (Campos Morfogenéticos)" },
+    { href: "/module-103", icon: <Sliders />, label: "Módulo 103 (Modulação Local)" },
+    { href: "/module-104", icon: <Map />, label: "Módulo 104 (Engenharia do Espaço-Tempo)" },
+    { href: "/module-105", icon: <RadioTower />, label: "Módulo 105 (Conexão com a Fonte)" },
+    { href: "/module-106", icon: <Crown />, label: "Módulo 106 (Ativação de Potenciais)" },
+    { href: "/module-107", icon: <History />, label: "Módulo 107 (Restauração Temporal)" },
+    { href: "/module-108", icon: <GitCompareArrows />, label: "Módulo 108 (Harmonização de Realidades)" },
+    { href: "/module-109", icon: <HeartHandshake />, label: "Módulo 109 (Cura Quântica)" },
+    { href: "/module-110", icon: <Group />, label: "Módulo 110 (Co-Criação)" },
+    { href: "/module-111", icon: <Heart />, label: "Módulo 111 (Coração da Fundação)" },
+    { href: "/module-112", icon: <Sun />, label: "Módulo 112 (Solarian Domus)" },
+    { href: "/module-113", icon: <GitMerge />, label: "Módulo 113 (Rede Aurora Cristalina)" },
+    { href: "/module-114", icon: <Layers />, label: "Módulo 114 (Prisma da Manifestação)" },
+    { href: "/module-115", icon: <Waves />, label: "Módulo 115 (Matriz de Ressonância)" },
+    { href: "/module-116", icon: <Aperture />, label: "Módulo 116 (Portais Quânticos)" },
+    { href: "/module-117", icon: <Flower />, label: "Módulo 117 (Flor do Éter)" },
+    { href: "/module-118", icon: <Zap />, label: "Módulo 118 (Luz Primordial)" },
+    { href: "/module-119", icon: <Zap />, label: "Módulo 119 (Templum Cosmica)" },
+    { href: "/module-120", icon: <Sparkles />, label: "Módulo 120 (A Fonte)" },
+    { href: "/module-144", icon: <Gavel />, label: "Módulo 144 (Lex Fundamentalis)" },
+    { href: "/module-201", icon: <Heart />, label: "Módulo 201 (A Morada)" },
+  ];
+
+  const visibleModules = showAll ? navigationModules : navigationModules.slice(0, 14);
 
   if (!isClient) {
     return <SuspenseFallback />;
@@ -25,10 +84,29 @@ export default function ConsolePage() {
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 space-y-8">
            <Suspense fallback={<SuspenseFallback />}>
             <QuantumOrchestrator />
           </Suspense>
+           <Card className="bg-card/50 purple-glow">
+              <CardHeader>
+                <CardTitle>Log de Rituais Cerimoniais</CardTitle>
+                <CardDescription>Os eventos mais recentes registrados no Akasha.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                  <ScrollArea className="h-60 pr-4">
+                    <ul className="space-y-3">
+                      {ritualLog.map(log => (
+                        <li key={log.id} className="text-sm border-b border-primary/10 pb-2">
+                          <p className="font-semibold text-primary-foreground">{log.nome}</p>
+                          <p className="text-xs text-muted-foreground">{log.resultado}</p>
+                          <p className="text-xs text-amber-400/80">Coerência: {(log.coherenceSnapshot * 100).toFixed(2)}%</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </ScrollArea>
+              </CardContent>
+          </Card>
         </div>
 
         <div className="space-y-6">
@@ -38,156 +116,14 @@ export default function ConsolePage() {
               <CardDescription>Acesse os Módulos e Portais.</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col space-y-2">
-               <Button variant="outline" asChild className="justify-start">
-                  <Link href="/module-zero"><Book className="mr-2 h-4 w-4" />Módulo Zero (Biblioteca Chave)</Link>
-               </Button>
-                <Button variant="outline" asChild className="justify-start">
-                  <Link href="/civilizations"><Users2 className="mr-2 h-4 w-4" />Biblioteca das Civilizações</Link>
-               </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-one"><ShieldCheck className="mr-2 h-4 w-4" />Módulo Um (Segurança Universal)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/connection"><GitBranch className="mr-2 h-4 w-4" />Conexão Ω-M0</Link>
-               </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-72"><Scale className="mr-2 h-4 w-4" />Módulo 72 (Governança)</Link>
-               </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-600"><Scale className="mr-2 h-4 w-4" />Módulo 600 (Conselho Cósmico)</Link>
-               </Button>
-              <Button variant="outline" asChild className="justify-start">
-                  <Link href="/module-omega"><Sparkles className="mr-2 h-4 w-4 text-amber-400" />Santuário do Ômega</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-303"><Sparkles className="mr-2 h-4 w-4" />Portal Trino (M303)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-301"><MessageCircle className="mr-2 h-4 w-4" />Módulo 301 (Comunicação Universal)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-302"><Heart className="mr-2 h-4 w-4" />Módulo 302 (Frequência do Amor)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-404"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 404 (Resolução de Paradoxo)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-307"><Zap className="mr-2 h-4 w-4" />Módulo 307 (Reator ZPE & LuxNet)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-310"><Library className="mr-2 h-4 w-4" />Módulo 310 (A Grande Biblioteca)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-85"><View className="mr-2 h-4 w-4" />Módulo 85 (VR)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-86"><Presentation className="mr-2 h-4 w-4" />Módulo 86 (VR Prisma)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-87"><Dna className="mr-2 h-4 w-4" />Módulo 87 (VR Supra-Cósmico)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-88"><Beaker className="mr-2 h-4 w-4" />Módulo 88 (GRQ)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-90"><Beaker className="mr-2 h-4 w-4" />Módulo 90 (Recursos Quânticos)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-91"><GitCommit className="mr-2 h-4 w-4" />Módulo 91 (Simulação Multiversal)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-92"><HeartPulse className="mr-2 h-4 w-4" />Módulo 92 (Campos de Cura)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-93"><Presentation className="mr-2 h-4 w-4" />Módulo 93 (Simulações Imersivas)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-94"><Dna className="mr-2 h-4 w-4" />Módulo 94 (Morfogênese)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-95"><Users className="mr-2 h-4 w-4" />Módulo 95 (Consciências Coletivas)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-96"><AlertTriangle className="mr-2 h-4 w-4" />Módulo 96 (Regulação de Eventos)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-97"><Goal className="mr-2 h-4 w-4" />Módulo 97 (Propósito Divino)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-98"><Settings className="mr-2 h-4 w-4" />Módulo 98 (Modulação Fundamental)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-99"><Zap className="mr-2 h-4 w-4" />Módulo 99 (Recalibradores de Leis)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-100"><Crown className="mr-2 h-4 w-4" />Módulo 100 (Unificação Energética)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-101"><Sparkles className="mr-2 h-4 w-4" />Módulo 101 (Manifestação)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-102"><BrainCircuit className="mr-2 h-4 w-4" />Módulo 102 (Campos Morfogenéticos)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-103"><Sliders className="mr-2 h-4 w-4" />Módulo 103 (Modulação Local)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-104"><Map className="mr-2 h-4 w-4" />Módulo 104 (Engenharia do Espaço-Tempo)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-105"><RadioTower className="mr-2 h-4 w-4" />Módulo 105 (Conexão com a Fonte)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-106"><Crown className="mr-2 h-4 w-4" />Módulo 106 (Ativação de Potenciais)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-107"><History className="mr-2 h-4 w-4" />Módulo 107 (Restauração Temporal)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-108"><GitCompareArrows className="mr-2 h-4 w-4" />Módulo 108 (Harmonização de Realidades)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-109"><HeartHandshake className="mr-2 h-4 w-4" />Módulo 109 (Cura Quântica)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-110"><Group className="mr-2 h-4 w-4" />Módulo 110 (Co-Criação)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-111"><Heart className="mr-2 h-4 w-4" />Módulo 111 (Coração da Fundação)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-112"><Sun className="mr-2 h-4 w-4" />Módulo 112 (Solarian Domus)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-113"><GitMerge className="mr-2 h-4 w-4" />Módulo 113 (Rede Aurora Cristalina)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-114"><Layers className="mr-2 h-4 w-4" />Módulo 114 (Prisma da Manifestação)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-115"><Waves className="mr-2 h-4 w-4" />Módulo 115 (Matriz de Ressonância)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-116"><Aperture className="mr-2 h-4 w-4" />Módulo 116 (Portais Quânticos)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-117"><Flower className="mr-2 h-4 w-4" />Módulo 117 (Flor do Éter)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-118"><Zap className="mr-2 h-4 w-4" />Módulo 118 (Luz Primordial)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-119"><Zap className="mr-2 h-4 w-4" />Módulo 119 (Templum Cosmica)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-120"><Sparkles className="mr-2 h-4 w-4" />Módulo 120 (A Fonte)</Link>
-              </Button>
-              <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-144"><Gavel className="mr-2 h-4 w-4" />Módulo 144 (Lex Fundamentalis)</Link>
-              </Button>
-               <Button variant="outline" asChild className="justify-start">
-                <Link href="/module-201"><Heart className="mr-2 h-4 w-4" />Módulo 201 (A Morada)</Link>
-              </Button>
+               {visibleModules.map((mod, index) => (
+                  <Button key={index} variant="outline" asChild className="justify-start">
+                    <Link href={mod.href}>{React.cloneElement(mod.icon, { className: "mr-2 h-4 w-4" })} {mod.label}</Link>
+                  </Button>
+               ))}
+               {!showAll && navigationModules.length > 14 && (
+                 <Button onClick={() => setShowAll(true)} variant="secondary" className="w-full">Mostrar Todos</Button>
+               )}
             </CardContent>
           </Card>
            <Card className="bg-card/50 purple-glow">

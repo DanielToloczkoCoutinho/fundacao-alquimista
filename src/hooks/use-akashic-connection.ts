@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -11,8 +12,9 @@ export function useAkashicConnection() {
   useEffect(() => {
     setIsClient(true);
     
-    // Usamos uma coleção de metadados que pode não existir, apenas para ouvir o estado da conexão.
-    const unsub = onSnapshot(collection(db, 'alchemist-codex-heartbeat'), 
+    // Ouve uma coleção que é atualizada pelo log de rituais.
+    // Isso garante que estamos ouvindo uma coleção que tem atividade.
+    const unsub = onSnapshot(collection(db, 'ritual_log'), 
       () => {
         if (!isConnected) {
           setIsConnected(true);
@@ -25,8 +27,21 @@ export function useAkashicConnection() {
       }
     );
     
-    // Cleanup da subscrição quando o componente é desmontado
-    return () => unsub();
+    // Fallback: usa uma coleção que pode não existir, apenas para o estado de conexão
+    const heartbeatUnsub = onSnapshot(collection(db, 'alchemist-codex-heartbeat'),
+      () => {
+        if (!isConnected) setIsConnected(true);
+      },
+      (error) => {
+        if (isConnected) setIsConnected(false);
+      }
+    );
+    
+    // Cleanup das subscrições
+    return () => {
+      unsub();
+      heartbeatUnsub();
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
