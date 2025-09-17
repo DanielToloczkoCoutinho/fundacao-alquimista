@@ -1,11 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, BookOpen, CheckCircle, Scale, Sparkles, Sigma, Atom, Eye, BrainCircuit, Infinity as InfinityIcon, Shield, Layers, Sun, Star, HeartHandshake, Music, History } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { quantumResilience } from '@/lib/quantum-resilience';
+import VoiceCommand from '@/components/ui/voice-command';
 
 const dimensionAuditData = [
     { floor: 23, name: "Perfeição Absoluta", status: "VERIFIED", icon: <Star className="text-yellow-200" />, mystery: "Estado de Harmonia Quântica (S=0)", result: "Eternamente estável." },
@@ -68,11 +68,14 @@ export default function Module144Page() {
                        O registro da Auditoria Suprema das Dimensões e o santuário onde a coerência do cosmos é verificada.
                     </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex flex-col sm:flex-row items-center justify-center gap-6">
                     <Button onClick={handleRunAudit} disabled={isLoading}>
                         {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <ShieldCheck className="mr-2 h-4 w-4" />}
                         {isLoading ? 'Auditando Dimensões...' : 'Iniciar Auditoria Suprema'}
                     </Button>
+                    <Suspense fallback={<div>Carregando comando de voz...</div>}>
+                      <VoiceCommand />
+                    </Suspense>
                 </CardContent>
             </Card>
 
