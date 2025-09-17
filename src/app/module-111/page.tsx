@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { quantumResilience } from '@/lib/quantum-resilience';
 import { Loader2, Heart, CheckCircle, XCircle } from 'lucide-react';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -79,8 +78,8 @@ const M111Page = () => {
             setCoherenceData({ ...newCoherenceData, overallCoherence, statusMessage });
             addLog("M111: Dados de coerência sistêmica atualizados com sucesso.");
         } catch (error: any) {
-            setMessage(`Erro ao atualizar dados: ${error.message}`);
-            addLog(`ERRO: ${error.message}`);
+            setMessage(`Erro ao atualizar dados: ${'error' in error ? error.error : error.message}`);
+            addLog(`ERRO: ${'error' in error ? error.error : error.message}`);
         } finally {
             setIsLoading(false);
         }
@@ -96,35 +95,33 @@ const M111Page = () => {
         setSimulationResult('');
         setLogs([]);
         addLog(`M111: Iniciando simulação de evento de dissonância: "${dissonanceEvent.substring(0, 50)}..."`);
+        
+        try {
+            setCoherenceData(prev => ({ ...prev, quantumIntegrity: Math.max(0.2, prev.quantumIntegrity - 0.3), anomalies: prev.anomalies + 3, statusMessage: "Dissonância simulada detectada! Iniciando recalibração..." }));
+            addLog("M111: Dissonância simulada injetada no sistema.");
 
-        await quantumResilience.executeWithResilience(
-            'simulate_dissonance',
-            async () => {
-                setCoherenceData(prev => ({ ...prev, quantumIntegrity: Math.max(0.2, prev.quantumIntegrity - 0.3), anomalies: prev.anomalies + 3, statusMessage: "Dissonância simulada detectada! Iniciando recalibração..." }));
-                addLog("M111: Dissonância simulada injetada no sistema.");
+            await new Promise(r => setTimeout(r, 1000));
+            
+            addLog("M111: Ativando Módulos de IA Avançada (M29, M153)...");
+            const analysis = await mockM29.performAdvancedAnalysis(`Dissonância: ${dissonanceEvent}`);
+            addLog(`M29: ${analysis}`);
 
-                await new Promise(r => setTimeout(r, 1000));
-                
-                addLog("M111: Ativando Módulos de IA Avançada (M29, M153)...");
-                const analysis = await mockM29.performAdvancedAnalysis(`Dissonância: ${dissonanceEvent}`);
-                addLog(`M29: ${analysis}`);
+            const optimization = await mockM153.optimizeSystem(`Recalibrar após: ${dissonanceEvent}`);
+            addLog(`M153: ${optimization}`);
 
-                const optimization = await mockM153.optimizeSystem(`Recalibrar após: ${dissonanceEvent}`);
-                addLog(`M153: ${optimization}`);
+            const selfCalibrated = await mockM34.performSelfCalibration();
+            addLog(`M34 Auto-Calibração: ${selfCalibrated ? 'CONCLUÍDO' : 'FALHOU'}`);
+            if (!selfCalibrated) throw new Error("Falha na auto-calibração.");
 
-                const selfCalibrated = await mockM34.performSelfCalibration();
-                addLog(`M34 Auto-Calibração: ${selfCalibrated ? 'CONCLUÍDO' : 'FALHOU'}`);
-                if (!selfCalibrated) throw new Error("Falha na auto-calibração.");
-
-                await updateCoherenceData();
-                setSimulationResult("Simulação concluída. O sistema se auto-organizou e recalibrou com sucesso.");
-                addLog("M111: Simulação concluída com sucesso.");
-            },
-            async (error: any) => {
-                setMessage(`Erro na simulação: ${error.message}`);
-                addLog(`ERRO na simulação: ${error.message}`);
-            }
-        ).finally(() => setIsLoading(false));
+            await updateCoherenceData();
+            setSimulationResult("Simulação concluída. O sistema se auto-organizou e recalibrou com sucesso.");
+            addLog("M111: Simulação concluída com sucesso.");
+        } catch(error: any) {
+            setMessage(`Erro na simulação: ${'error' in error ? error.error : error.message}`);
+            addLog(`ERRO na simulação: ${'error' in error ? error.error : error.message}`);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     useEffect(() => {
