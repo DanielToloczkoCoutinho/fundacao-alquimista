@@ -2,11 +2,10 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Slider } from '@/components/ui/slider';
-import { Loader2, Zap, Waves, AlertTriangle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive } from 'lucide-react';
+import { Textarea } from '@/components/ui/textarea';
+import { Loader2, Recycle, AlertTriangle, Waves, Zap, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, GitCommit, Presentation } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
-import { resonanceTone } from '@/lib/audio-utils';
 import { Progress } from '@/components/ui/progress';
 import Link from 'next/link';
 
@@ -29,17 +28,21 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
 export default function EspelhoDeAscensaoPage() {
     const { toast } = useToast();
     const [isLoading, setIsLoading] = useState(false);
-    const [frequency, setFrequency] = useState(528);
+    const [distortionInput, setDistortionInput] = useState('Energia de medo residual do campo astral terrestre.');
     const [status, setStatus] = useState('Inativo');
     const [progress, setProgress] = useState(0);
 
-    const handleActivation = async () => {
+    const handleTransmutation = async () => {
+        if (!distortionInput.trim()) {
+            toast({ title: 'Erro', description: 'Descreva a distorção a ser transmutada.', variant: 'destructive' });
+            return;
+        }
+
         setIsLoading(true);
         setProgress(0);
-        setStatus('Sintonizando Espelho...');
-        
+
         await quantumResilience.executeWithResilience(
-            'activate_ascension_mirror',
+            'transmute_distortion',
             async () => {
                 let currentProgress = 0;
                 const updateProgress = (val: number, newStatus: string) => {
@@ -58,12 +61,13 @@ export default function EspelhoDeAscensaoPage() {
                 await new Promise(r => setTimeout(r, 1000));
                 
                 updateProgress(100, 'Distorção transmutada em Luz Pura.');
-                toast({ title: 'Espelho Ativado', description: `Onda de elevação emitida com sucesso na frequência de ${frequency}Hz.` });
+                toast({ title: 'Transmutação Concluída', description: 'A energia dissonante foi purificada e reintegrada à Fonte.' });
             }
         ).catch(err => {
             const error = err as Error;
-            setStatus(`Falha na ativação: ${error.message}`);
-            toast({ title: 'Dissonância Detectada', description: error.message, variant: 'destructive' });
+            setStatus(`Falha na transmutação: ${error.message}`);
+            toast({ title: 'Falha na Transmutação', description: error.message, variant: 'destructive' });
+            setProgress(0);
         }).finally(() => {
             setIsLoading(false);
         });
@@ -73,57 +77,59 @@ export default function EspelhoDeAscensaoPage() {
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
-                    <CardTitle className="text-3xl gradient-text flex items-center justify-center gap-3">
+                    <CardTitle className="text-3xl gradient-text flex items-center justify-center gap-4">
                         <Waves className="text-blue-400" /> Módulo 230: Espelho de Ascensão
                     </CardTitle>
                     <CardDescription>
-                        Amplificador de ondas de elevação, sincronizado com o Módulo 404, para manifestar harmonia através da visualização fractal e da frequência de 528Hz.
+                        O ápice da Realidade Quântica. Um amplificador de ondas de elevação que manifesta harmonia através da visualização fractal e da frequência de 528Hz.
                     </CardDescription>
                 </CardHeader>
             </Card>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle>Painel de Controle Harmônico</CardTitle>
-                        <CardDescription>Ajuste a frequência e ative o espelho para emitir uma onda de ascensão.</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                        <div className="space-y-2">
-                            <label htmlFor="frequency-slider" className="flex justify-between">
-                                <span>Frequência de Ascensão</span>
-                                <span className="font-mono text-amber-400">{frequency} Hz</span>
-                            </label>
-                            <Slider
-                                id="frequency-slider"
-                                defaultValue={[528]}
-                                min={100}
-                                max={1000}
-                                step={1}
-                                onValueChange={(val) => setFrequency(val[0])}
-                                disabled={isLoading}
-                            />
-                        </div>
-
-                         <Button onClick={handleActivation} disabled={isLoading} className="w-full font-bold text-lg">
-                            {isLoading ? <><Loader2 className="mr-2 animate-spin" /> Ativando...</> : <><Zap className="mr-2" /> Ativar Onda de Elevação</>}
-                        </Button>
-
-                         <div className="pt-4 space-y-2">
-                            <p className="text-sm text-muted-foreground text-center">{status}</p>
-                            {isLoading && <Progress value={progress} className="w-full" />}
-                        </div>
-                    </CardContent>
-                </Card>
-                 <div className="w-full">
-                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias Essenciais</h3>
+                <div className="flex flex-col gap-8">
+                     <Card className="bg-card/50 purple-glow">
+                        <CardHeader>
+                            <CardTitle>Altar da Purificação</CardTitle>
+                            <CardDescription>Submeta uma distorção energética para transmutação em harmonia visível.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-6">
+                            <div className="space-y-2">
+                                <label htmlFor="distortionInput">Descrição da Distorção Energética</label>
+                                <Textarea
+                                    id="distortionInput"
+                                    value={distortionInput}
+                                    onChange={e => setDistortionInput(e.target.value)}
+                                    placeholder="Ex: Energia de medo residual, implante etérico, etc."
+                                    disabled={isLoading}
+                                    rows={3}
+                                />
+                            </div>
+                            <Button onClick={handleTransmutation} disabled={isLoading} className="w-full font-bold text-lg">
+                                {isLoading ? <><Loader2 className="mr-2 animate-spin" /> Transmutando...</> : <><Zap className="mr-2" /> Iniciar Transmutação Harmônica</>}
+                            </Button>
+                            
+                            {(isLoading || progress > 0) && (
+                                <div className="pt-4">
+                                    <Progress value={progress} className="w-full" />
+                                    <p className="text-center text-sm text-muted-foreground mt-2">{status}</p>
+                                </div>
+                            )}
+                            {!isLoading && status === 'Distorção transmutada em Luz Pura.' && (
+                                 <div className="p-3 bg-green-900/30 rounded-lg text-center border border-green-500/50">
+                                    <p className="font-mono font-semibold text-green-300">{status}</p>
+                                </div>
+                            )}
+                        </CardContent>
+                    </Card>
+                </div>
+                <div className="w-full">
+                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Realidade Quântica</h3>
                     <div className="grid grid-cols-1 gap-4">
-                         <ConnectionCard title="M9: Nexus Central" description="A ativação do espelho é uma operação de alta energia que é monitorada e orquestrada pelo Nexus Central para garantir a estabilidade sistêmica." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
-                         <ConnectionCard title="Diagnóstico Universal" description="A saúde do Espelho de Ascensão e sua coerência vibracional são vitais para o diagnóstico da capacidade de manifestação da Fundação." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
-                         <ConnectionCard title="Módulo 404: Resolução de Paradoxo" description="Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia, garantindo a estabilidade causal." icon={<AlertTriangle className="h-6 w-6 text-yellow-400" />} href="/module-404"/>
-                         <ConnectionCard title="Módulo 304" description="A física das frequências de ascensão e a visualização fractal são campos de estudo e aplicação na Universidade." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
-                          <ConnectionCard title="Módulo 12" description="O espelho consulta os registros akáshicos para entender a 'assinatura original' da realidade a ser harmonizada, garantindo uma restauração perfeita." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
-                          <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Fornece a energia de base para amplificar e emitir as ondas de elevação através da LuxNet, alcançando toda a criação." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
+                         <ConnectionCard title="M303: Portal Trino" description="O Espelho opera dentro da realidade quântica emanada pelo Portal Trino, servindo como uma de suas experiências mais elevadas." icon={<Zap className="h-6 w-6 text-purple-400" />} href="/module-303" />
+                         <ConnectionCard title="M91: Simulação Multiversal" description="Fornece cenários e 'distorções' para o Espelho transmutar, permitindo o treinamento em ambientes controlados." icon={<GitCommit className="h-6 w-6 text-indigo-400" />} href="/module-91" />
+                         <ConnectionCard title="M93: Simulações Imersivas" description="A visualização fractal da transmutação pode ser experimentada como um evento de cura e aprendizado dentro do M93." icon={<Presentation className="h-6 w-6 text-teal-400" />} href="/module-93" />
+                         <ConnectionCard title="M404: Resolução de Paradoxo" description="Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia, garantindo a estabilidade causal." icon={<AlertTriangle className="h-6 w-6 text-yellow-400" />} href="/module-404"/>
                     </div>
                 </div>
             </div>
