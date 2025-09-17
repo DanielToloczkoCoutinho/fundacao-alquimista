@@ -3,10 +3,10 @@ import { modulesMetadata } from '@/lib/modules-metadata';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Heart, Link as LinkIcon, Scale } from 'lucide-react';
 import React from 'react';
-import { Progress } from '../ui/progress';
-import { GuardianCard, HarmonyMetric } from '../ui/module-9-cards'; // Componentes extraídos
+import { Progress } from '@/components/ui/progress';
+import { GuardianCard, HarmonyMetric } from '@/components/ui/module-9-cards'; // Componentes extraídos
 import { GUARDIANS } from '@/lib/guardians-data';
-import { SafeLink } from '../ui/SafeLink';
+import { SafeLink } from '@/components/ui/SafeLink';
 
 export default function Module9Page() {
   const [harmonyReport, setHarmonyReport] = React.useState({
