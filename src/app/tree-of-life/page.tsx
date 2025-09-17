@@ -1,5 +1,5 @@
+'use client'
 
-'use client';
 import React, { useState, useMemo, useCallback } from 'react';
 import ReactFlow, {
   Background,
@@ -18,17 +18,17 @@ import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { treeNodes as moduleNodes, treeLinks as moduleLinks, categoryColors, linkColors, TreeNode } from '@/lib/tree-of-life-data';
+import { modulesMetadata, categoryColors, treeLinks, TreeNode, linkColors } from '@/lib/modules-metadata';
 import dagre from '@dagrejs/dagre';
 
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
 
-const nodeWidth = 180;
-const nodeHeight = 60;
+const nodeWidth = 200;
+const nodeHeight = 80;
 
 const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => {
-  dagreGraph.setGraph({ rankdir: direction, nodesep: 20, ranksep: 80 });
+  dagreGraph.setGraph({ rankdir: direction, nodesep: 25, ranksep: 60 });
 
   nodes.forEach((node) => {
     dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
@@ -57,12 +57,14 @@ const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => 
 const CustomNode = ({ data }: { data: any }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.8 }}
-    animate={{ scale: [1, 1.05, 1], opacity: 1 }}
-    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-    whileHover={{ scale: 1.1 }}
-    className="flex items-center justify-center h-full"
+    animate={{ opacity: 1, scale: [1, 1.02, 1] }}
+    transition={{ duration: 5, ease: "easeInOut", repeat: Infinity }}
+    whileHover={{ scale: 1.1, zIndex: 10 }}
+    className="flex items-center justify-center h-full rounded-lg"
   >
-    <div className="text-center font-bold text-sm text-black">{data.label}</div>
+    <div className="text-center font-bold text-sm text-white p-2">
+      {data.label}
+    </div>
   </motion.div>
 );
 
@@ -70,98 +72,58 @@ const nodeTypes = {
   custom: CustomNode,
 };
 
-export default function TreeOfLife() {
-  const initialNodes: Node[] = useMemo(() => moduleNodes.map((mod: TreeNode) => ({
-    id: mod.code,
-    type: 'custom',
-    data: { 
-        label: (
-            <div title={`Guardião: ${mod.guardian}\nStatus: ${'ativo'}`}>
-                <div className="text-xs font-mono">{mod.code}</div>
-                <div className="font-bold">{mod.title}</div>
-            </div>
-        )
-    },
-    position: { x: 0, y: 0 },
-    style: {
-      background: categoryColors[mod.category] || '#333',
-      borderRadius: 16,
-      padding: '12px 18px',
-      color: '#111',
-      boxShadow: `0 0 20px ${categoryColors[mod.category] || '#aaa'}`,
-      border: `2px solid ${'ativo' === 'ativo' ? '#00ff99' : '#ffcc00'}`,
-      width: nodeWidth,
-      height: nodeHeight,
-    }
-  })), []);
+export default function TreeOfLifePage() {
+  const { initialNodes, initialEdges } = useMemo(() => {
+    const nodes: Node[] = modulesMetadata
+    .filter(m => !m.isInfrastructure)
+    .map((mod) => {
+        const guardianInfo = guardianMap[mod.code] || 'Guardião: Coletivo';
+        const statusInfo = `Status: ativo`;
+        return {
+            id: mod.code,
+            type: 'custom',
+            data: { 
+                label: (
+                    <div title={`${guardianInfo}\n${statusInfo}`}>
+                        <div className="text-xs font-mono">{mod.code}</div>
+                        <div className="font-bold">{mod.title}</div>
+                    </div>
+                )
+            },
+            position: { x: 0, y: 0 }, 
+            style: {
+                background: categoryColors[mod.category] || '#333',
+                borderRadius: 16,
+                color: '#fff',
+                boxShadow: `0 0 25px ${categoryColors[mod.category] || '#aaa'}30`,
+                border: `1px solid ${categoryColors[mod.category] || '#aaa'}80`,
+                width: nodeWidth,
+                height: nodeHeight,
+            }
+        };
+    });
 
-  const initialEdges: Edge[] = useMemo(() => moduleLinks.map(link => ({
-    id: `${link.source}-${link.target}`,
-    source: link.source,
-    target: link.target,
-    animated: true,
-    type: 'smoothstep',
-    label: link.label,
-    style: { 
-      stroke: linkColors[link.type] || '#888',
-      strokeWidth: 2.5,
-    },
-    labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '12px' },
-  })), []);
-    
-  const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(initialNodes, initialEdges);
-
-  const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
-
-  const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
-
-  const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
-    const moduleData = moduleNodes.find(m => m.code === node.id);
-    if (!moduleData?.fractais) return;
-
-    const existingFractalIds = new Set(nodes.map(n => n.id));
-    const newFractals = moduleData.fractais.filter(f => !existingFractalIds.has(f.id));
-
-    if (newFractals.length === 0) return;
-
-    const newNodes: Node[] = newFractals.map((sub, i) => ({
-      id: sub.id,
-      type: 'custom',
-      data: { label: <div>{sub.name}<br/><span className="text-xs font-normal opacity-70">({sub.status})</span></div> },
-      position: { x: node.position.x + 250, y: node.position.y + i * 80 },
-      style: {
-        background: 'rgba(200, 200, 255, 0.1)',
-        color: '#eee',
-        borderRadius: 8,
-        padding: 10,
-        fontSize: '12px',
-        border: '1px solid #7B61FF',
-        boxShadow: '0 0 8px rgba(123, 97, 255, 0.3)',
-        width: 150,
-        height: 50,
-      }
-    }));
-        
-    const newEdges: Edge[] = newFractals.map(sub => ({
-      id: `${node.id}-${sub.id}`,
-      source: node.id,
-      target: sub.id,
+    const edges: Edge[] = treeLinks.map(link => ({
+      id: `${link.source}-${link.target}`,
+      source: link.source,
+      target: link.target,
       animated: true,
       type: 'smoothstep',
-      style: { stroke: '#7B61FF', strokeDasharray: '5,5', strokeWidth: 1.5 },
+      label: link.label,
+      style: { 
+        stroke: linkColors[link.type] || '#888',
+        strokeWidth: 1.5,
+      },
+      labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '10px' },
     }));
 
-    setNodes(prev => [...prev, ...newNodes]);
-    setEdges(prev => [...prev, ...newEdges]);
+    return getLayoutedElements(nodes, edges);
+  }, []);
+    
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-    setTimeout(() => {
-        const { nodes: newLayoutedNodes, edges: newLayoutedEdges } = getLayoutedElements([...nodes, ...newNodes], [...edges, ...newEdges]);
-        setNodes(newLayoutedNodes);
-        setEdges(newLayoutedEdges);
-    }, 100);
-
-  }, [nodes, edges, setNodes, setEdges]);
+  const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
@@ -185,14 +147,13 @@ export default function TreeOfLife() {
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
-          onNodeClick={onNodeClick}
           fitView
           nodeTypes={nodeTypes}
           connectionLineType={ConnectionLineType.SmoothStep}
           className="bg-transparent"
         >
-          <Background color="hsl(var(--primary))" gap={24} size={2} />
-          <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={(n) => categoryColors[moduleNodes.find(m => m.code === n.id)?.category || 'default'] || '#666'} className="bg-background/50 border border-primary/20" />
+          <Background color="hsl(var(--primary))" gap={24} size={1} />
+          <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={(n: any) => n.style?.background || '#666'} className="bg-background/50 border border-primary/20" />
           <Controls />
         </ReactFlow>
       </motion.div>
@@ -208,3 +169,12 @@ export default function TreeOfLife() {
     </div>
   );
 }
+
+const guardianMap: { [key: string]: string } = {
+  'M29': 'ZENNITH',
+  'M-OMEGA': 'ANATHERON',
+  'M9': 'VORTEX',
+  'M5': 'LUX',
+  'M302': 'PHIARA',
+  'M1': 'GROKKAR'
+};
