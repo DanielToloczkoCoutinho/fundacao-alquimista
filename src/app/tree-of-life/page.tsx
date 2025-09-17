@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-const statusColors = {
+const statusColors: Record<string, { bg: string; border: string; text: string }> = {
     ativo: {
         bg: 'bg-green-800/50',
         border: 'border-green-500/80',
@@ -25,32 +25,58 @@ const statusColors = {
         border: 'border-gray-500/80',
         text: 'text-gray-400'
     }
-}
+};
+
+const categoryColors: Record<string, string> = {
+  'Núcleo da Fundação': 'border-amber-400',
+  'Governança e Ética': 'border-indigo-400',
+  'Realidade Quântica & Engenharia Cósmica': 'border-cyan-400',
+  'Consciência e Expansão Dimensional': 'border-purple-400',
+  'Laboratórios e Pesquisa': 'border-teal-400',
+  'Bibliotecas e Arquivos Sagrados': 'border-yellow-300',
+  'Cura e Harmonia': 'border-pink-400',
+  'Sustentabilidade e Ecossistemas': 'border-lime-400',
+  'Bem-estar e Saúde Universal': 'border-emerald-400',
+  'Segurança e Ética Cósmica': 'border-rose-400',
+};
+
+const linkColors: Record<string, string> = {
+    dependencia: '#3b82f6', // blue-500
+    influencia: '#22c55e', // green-500
+    heranca: '#a855f7',    // purple-500
+};
+
 
 export default function TreeOfLifePage() {
   const nodes = useMemo(() => treeNodes.map((mod, index) => ({
     id: mod.id,
     data: { label: `${mod.id} - ${mod.name}` },
-    position: { x: (index % 5) * 250, y: Math.floor(index / 5) * 150 },
+    position: { x: (index % 6) * 280, y: Math.floor(index / 6) * 160 },
     style: {
-      background: statusColors[mod.status].bg,
-      color: statusColors[mod.status].text,
-      border: `1px solid var(--border-color, ${statusColors[mod.status].border})`,
-      borderRadius: '0.5rem',
-      padding: '10px 15px',
-      fontSize: '12px',
-      minWidth: 150,
+      background: 'hsl(var(--card))',
+      color: 'hsl(var(--card-foreground))',
+      borderWidth: 2,
+      borderColor: categoryColors[mod.category] || 'hsl(var(--border))',
+      borderRadius: '0.75rem',
+      padding: '12px 18px',
+      fontSize: '14px',
+      minWidth: 180,
       textAlign: 'center',
+      boxShadow: '0 4px 15px hsla(var(--primary), 0.1)'
     }
   })), []);
 
-  const edges = useMemo(() => moduleLinks.map(link => ({
+  const edges = useMemo(() => treeLinks.map(link => ({
     id: `${link.source}-${link.target}`,
     source: link.source,
     target: link.target,
     animated: true,
     label: link.type,
-    style: { stroke: '#888' },
+    style: { 
+        stroke: linkColors[link.type] || '#888',
+        strokeWidth: 2,
+    },
+    labelStyle: { fill: linkColors[link.type] || '#888', fontWeight: 600, fontSize: '12px' },
   })), []);
 
   return (
@@ -73,8 +99,8 @@ export default function TreeOfLifePage() {
             fitView
             className="bg-transparent"
         >
-            <Background color="#4c2a85" gap={16} />
-            <MiniMap nodeStrokeWidth={3} zoomable pannable />
+            <Background color="hsl(var(--primary))" gap={16} />
+            <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={n => categoryColors[treeNodes.find(m => m.id === n.id)?.category || 'default'] || '#666'} />
             <Controls />
         </ReactFlow>
       </div>
