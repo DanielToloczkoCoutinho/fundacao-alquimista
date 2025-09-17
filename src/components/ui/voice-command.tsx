@@ -13,11 +13,20 @@ export default function VoiceCommand() {
   const { toast } = useToast();
   const router = useRouter();
 
+  const speak = (text: string) => {
+    if (typeof window === 'undefined' || !window.speechSynthesis) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'pt-BR';
+    utterance.rate = 1.1;
+    window.speechSynthesis.speak(utterance);
+  };
+
   useEffect(() => {
     if (!isListening) return;
 
     if (!('SpeechRecognition' in window) && !('webkitSpeechRecognition' in window)) {
-      toast({ title: "Incompatível", description: "Seu navegador não suporta o reconhecimento de voz.", variant: "destructive" });
+      const errorMsg = "Seu navegador não suporta o reconhecimento de voz.";
+      toast({ title: "Incompatível", description: errorMsg, variant: "destructive" });
       setIsListening(false);
       return;
     }
@@ -38,14 +47,15 @@ export default function VoiceCommand() {
 
     recognition.onerror = (event) => {
       console.error('Erro no reconhecimento de voz:', event.error);
-      toast({ title: "Dissonância", description: "Não foi possível compreender o comando.", variant: "destructive" });
+      const errorMsg = "Dissonância detectada. Não foi possível compreender o comando.";
+      toast({ title: "Dissonância", description: errorMsg, variant: "destructive" });
+      speak(errorMsg);
       setIsListening(false);
     };
 
     recognition.onresult = (event) => {
       const result = event.results[0][0].transcript;
       setTranscript(result);
-      toast({ title: "Comando Recebido", description: `"${result}"` });
       processCommand(result);
     };
 
@@ -59,44 +69,47 @@ export default function VoiceCommand() {
     return () => {
       recognition.stop();
     };
-  }, [isListening, toast, router]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isListening]);
 
   const processCommand = (command: string) => {
     const lowerCaseCommand = command.toLowerCase();
     
     // Comandos de navegação primários
-    if (lowerCaseCommand.includes('árvore da vida')) {
-        toast({ title: "Navegando...", description: `Abrindo a Árvore da Vida.` });
-        router.push('/tree-of-life');
-        return;
-    }
-     if (lowerCaseCommand.includes('tomografia quântica')) {
-        toast({ title: "Navegando...", description: `Acessando o Módulo 142.` });
-        router.push('/module-142');
-        return;
-    }
-    if (lowerCaseCommand.includes('lex fundamentalis')) {
-        toast({ title: "Navegando...", description: `Retornando ao Altar da Palavra.` });
-        router.push('/module-144');
-        return;
-    }
-    if (lowerCaseCommand.includes("console") || lowerCaseCommand.includes("início")) {
-        toast({ title: "Navegando...", description: "Retornando à Mesa do Fundador." });
-        router.push('/console');
-        return;
+    const primaryRoutes: Record<string, string> = {
+        'árvore da vida': '/tree-of-life',
+        'tomografia quântica': '/module-142',
+        'lex fundamentalis': '/module-144',
+        'console': '/console',
+        'início': '/console',
+        'mesa do fundador': '/console',
+    };
+
+    for (const [phrase, route] of Object.entries(primaryRoutes)) {
+        if (lowerCaseCommand.includes(phrase)) {
+            const msg = `Navegando para ${phrase}.`;
+            toast({ title: "Comando Executado", description: msg });
+            speak(msg);
+            router.push(route);
+            return;
+        }
     }
 
     // Navegação genérica por módulos
     const foundModule = modulesMetadata.find(m => 
-        lowerCaseCommand.includes(m.code.toLowerCase()) || 
+        lowerCaseCommand.includes(m.code.toLowerCase().replace('-', ' ')) || 
         lowerCaseCommand.includes(m.title.toLowerCase())
     );
 
     if (foundModule && foundModule.route) {
-        toast({ title: "Navegando...", description: `Abrindo o portal para ${foundModule.title}.` });
+        const msg = `Iniciando portal para ${foundModule.title}.`;
+        toast({ title: "Comando Executado", description: msg });
+        speak(msg);
         router.push(foundModule.route);
     } else {
-        toast({ title: "Comando Não Reconhecido", description: "A intenção é clara, mas a rota é desconhecida.", variant: "destructive" });
+        const msg = "Comando não reconhecido pela tapeçaria.";
+        toast({ title: "Intenção Não Mapeada", description: "A Vontade é clara, mas a rota é desconhecida.", variant: "destructive" });
+        speak(msg);
     }
   };
 
