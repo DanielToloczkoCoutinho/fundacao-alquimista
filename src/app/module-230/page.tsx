@@ -7,6 +7,7 @@ import { Loader2, Zap, Waves, AlertTriangle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { resonanceTone } from '@/lib/audio-utils';
+import { Progress } from '@/components/ui/progress';
 
 export default function EspelhoDeAscensaoPage() {
     const { toast } = useToast();

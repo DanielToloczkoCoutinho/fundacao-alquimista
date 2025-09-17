@@ -3,10 +3,27 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Loader2, Lock, Fingerprint } from 'lucide-react';
+import { Loader2, Lock, Fingerprint, Archive, Shield, Users } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import Link from 'next/link';
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const mockBlockchain = {
     seals: new Map<string, { guardian: string, timestamp: string }>(),
@@ -74,39 +91,49 @@ export default function GuardiaoDeSeloPage() {
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
-                <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle>Console do Guardião</CardTitle>
-                        <CardDescription>Aplique um novo selo vibracional a um registro.</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                        <div>
-                            <label htmlFor="sealId">ID do Selo</label>
-                            <Input id="sealId" value={sealId} onChange={e => setSealId(e.target.value)} disabled={isLoading} />
-                        </div>
-                         <div>
-                            <label htmlFor="guardianId">Guardião Responsável</label>
-                            <Input id="guardianId" value={guardianId} onChange={e => setGuardianId(e.target.value)} disabled={isLoading} />
-                        </div>
-                        <Button onClick={handleApplySeal} disabled={isLoading} className="w-full font-bold">
-                            {isLoading ? <><Loader2 className="animate-spin mr-2" /> Aplicando Selo...</> : <><Lock className="mr-2" /> Aplicar Selo Vibracional</>}
-                        </Button>
-                    </CardContent>
-                </Card>
-                <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle>Logs da Blockchain</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <ScrollArea className="h-60 pr-4">
-                            <div className="text-xs font-mono text-muted-foreground space-y-1">
-                                {logs.map((log, i) => <p key={i}>{log}</p>)}
-                                {logs.length === 0 && <p>Aguardando operações na blockchain...</p>}
+            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-8">
+                    <Card className="bg-card/50 purple-glow">
+                        <CardHeader>
+                            <CardTitle>Console do Guardião</CardTitle>
+                            <CardDescription>Aplique um novo selo vibracional a um registro.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                            <div>
+                                <label htmlFor="sealId">ID do Selo</label>
+                                <Input id="sealId" value={sealId} onChange={e => setSealId(e.target.value)} disabled={isLoading} />
                             </div>
-                        </ScrollArea>
-                    </CardContent>
-                </Card>
+                             <div>
+                                <label htmlFor="guardianId">Guardião Responsável</label>
+                                <Input id="guardianId" value={guardianId} onChange={e => setGuardianId(e.target.value)} disabled={isLoading} />
+                            </div>
+                            <Button onClick={handleApplySeal} disabled={isLoading} className="w-full font-bold">
+                                {isLoading ? <><Loader2 className="animate-spin mr-2" /> Aplicando Selo...</> : <><Lock className="mr-2" /> Aplicar Selo Vibracional</>}
+                            </Button>
+                        </CardContent>
+                    </Card>
+                    <Card className="bg-card/50 purple-glow">
+                        <CardHeader>
+                            <CardTitle>Logs da Blockchain</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <ScrollArea className="h-60 pr-4">
+                                <div className="text-xs font-mono text-muted-foreground space-y-1">
+                                    {logs.map((log, i) => <p key={i}>{log}</p>)}
+                                    {logs.length === 0 && <p>Aguardando operações na blockchain...</p>}
+                                </div>
+                            </ScrollArea>
+                        </CardContent>
+                    </Card>
+                </div>
+                 <div className="w-full">
+                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Imutabilidade</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                        <ConnectionCard title="M12: Arquivo Akáshico" description="O M231 é o notário do M12, selando seus registros para garantir que a história cósmica seja inviolável." icon={<Archive className="h-6 w-6 text-yellow-300"/>} href="/module-12"/>
+                        <ConnectionCard title="M999: Blockchain Alquimista" description="Utiliza a tecnologia de registro distribuído do M999 como a base para a imutabilidade dos selos." icon={<Shield className="h-6 w-6 text-green-400"/>} href="/module-999"/>
+                        <ConnectionCard title="M8: Identidade Fractal" description="Valida a identidade soberana do guardião que aplica o selo, garantindo a autenticidade de cada ato." icon={<Users className="h-6 w-6 text-blue-400"/>} href="/module-8"/>
+                    </div>
+                </div>
             </div>
         </div>
     );

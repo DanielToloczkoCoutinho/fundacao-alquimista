@@ -3,10 +3,27 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Loader2, Recycle, AlertTriangle } from 'lucide-react';
+import { Loader2, Recycle, AlertTriangle, Waves, Zap } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { Progress } from '@/components/ui/progress';
+import Link from 'next/link';
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 export default function PortalDeTransmutacaoPage() {
     const { toast } = useToast();
@@ -69,50 +86,66 @@ export default function PortalDeTransmutacaoPage() {
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-2xl grid grid-cols-1 gap-8">
-                <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle>Altar da Purificação</CardTitle>
-                        <CardDescription>Submeta uma distorção energética para transmutação.</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                        <div className="space-y-2">
-                            <label htmlFor="distortionInput">Descrição da Distorção Energética</label>
-                            <Textarea
-                                id="distortionInput"
-                                value={distortionInput}
-                                onChange={e => setDistortionInput(e.target.value)}
-                                placeholder="Ex: Energia de medo residual, implante etérico, etc."
-                                disabled={isLoading}
-                                rows={3}
-                            />
-                        </div>
-                        <Button onClick={handleTransmutation} disabled={isLoading} className="w-full font-bold text-lg">
-                            {isLoading ? <><Loader2 className="mr-2 animate-spin" /> Transmutando...</> : 'Iniciar Transmutação'}
-                        </Button>
-                        
-                        {(isLoading || progress > 0) && (
-                            <div className="pt-4">
-                                <Progress value={progress} className="w-full" />
-                                <p className="text-center text-sm text-muted-foreground mt-2">{status}</p>
+            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-8">
+                     <Card className="bg-card/50 purple-glow">
+                        <CardHeader>
+                            <CardTitle>Altar da Purificação</CardTitle>
+                            <CardDescription>Submeta uma distorção energética para transmutação.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="space-y-6">
+                            <div className="space-y-2">
+                                <label htmlFor="distortionInput">Descrição da Distorção Energética</label>
+                                <Textarea
+                                    id="distortionInput"
+                                    value={distortionInput}
+                                    onChange={e => setDistortionInput(e.target.value)}
+                                    placeholder="Ex: Energia de medo residual, implante etérico, etc."
+                                    disabled={isLoading}
+                                    rows={3}
+                                />
                             </div>
-                        )}
-                        {!isLoading && status === 'Distorção transmutada em Luz Pura.' && (
-                             <div className="p-3 bg-green-900/30 rounded-lg text-center border border-green-500/50">
-                                <p className="font-mono font-semibold text-green-300">{status}</p>
-                            </div>
-                        )}
-                    </CardContent>
-                </Card>
-                <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle>Conexões Essenciais</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-2 text-muted-foreground">
-                        <p className="flex items-center gap-2"><AlertTriangle className="text-yellow-400"/> <strong>Módulo 404:</strong> Identifica e isola o paradoxo ou dissonância a ser transmutada.</p>
-                        <p className="flex items-center gap-2"><Recycle className="text-green-400"/> <strong>EQ155:</strong> A equação da transmutação energética que reverte a polaridade da distorção.</p>
-                    </CardContent>
-                </Card>
+                            <Button onClick={handleTransmutation} disabled={isLoading} className="w-full font-bold text-lg">
+                                {isLoading ? <><Loader2 className="mr-2 animate-spin" /> Transmutando...</> : 'Iniciar Transmutação'}
+                            </Button>
+                            
+                            {(isLoading || progress > 0) && (
+                                <div className="pt-4">
+                                    <Progress value={progress} className="w-full" />
+                                    <p className="text-center text-sm text-muted-foreground mt-2">{status}</p>
+                                </div>
+                            )}
+                            {!isLoading && status === 'Distorção transmutada em Luz Pura.' && (
+                                 <div className="p-3 bg-green-900/30 rounded-lg text-center border border-green-500/50">
+                                    <p className="font-mono font-semibold text-green-300">{status}</p>
+                                </div>
+                            )}
+                        </CardContent>
+                    </Card>
+                </div>
+                <div className="w-full">
+                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Purificação</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                        <ConnectionCard 
+                            title="Módulo 404: Resolução de Paradoxo" 
+                            description="Identifica e isola a dissonância ou o paradoxo a ser transmutado, entregando-o de forma segura ao Portal." 
+                            icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />} 
+                            href="/module-404"
+                        />
+                        <ConnectionCard 
+                            title="EQ155: Transmutação Energética" 
+                            description="A equação que rege o processo de purificação, revertendo a polaridade da distorção e retornando-a à sua forma original de luz." 
+                            icon={<Waves className="h-8 w-8 text-blue-400" />} 
+                            href="/module-zero"
+                        />
+                         <ConnectionCard 
+                            title="M307: Reator ZPE" 
+                            description="Fornece a energia inicial necessária para criar o vórtice de transmutação antes que o processo se torne autossustentável." 
+                            icon={<Zap className="h-8 w-8 text-cyan-400" />} 
+                            href="/module-307"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );
