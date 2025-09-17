@@ -66,4 +66,8 @@ export default function Module88Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Visualizar o Mapa de Roteamento Cósmico
+                 <Button variant="secondary" size="lg">Visualizar o Mapa de Roteamento</Button>
+            </div>
+        </div>
+    );
+}

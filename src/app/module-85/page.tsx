@@ -64,4 +64,10 @@ export default function Module85Page() {
                 <p className="text-muted-foreground mb-4">A jornada de sustentabilidade continua...</p>
                 <Link href="/module-86" passHref>
                     <Button size="lg" variant="secondary">
-                        Avançar para a Regeneração Ecológica (M86) <ArrowRight className="ml
+                        Avançar para a Regeneração Ecológica (M86) <ArrowRight className="ml-2"/>
+                    </Button>
+                </Link>
+            </div>
+        </div>
+    );
+}

@@ -11,10 +11,10 @@ export interface ModuleMetadata {
 export const modulesMetadata: ModuleMetadata[] = [
   // 1. Núcleo da Fundação
   { code: 'console', emoji: '🖥️', title: 'Console', route: '/console', category: 'Núcleo da Fundação', description: 'O ponto de observação e orquestração da Fundação Alquimista.', isInfrastructure: true },
-  { code: 'M0', emoji: '♾️', title: 'Núcleo Primordial', route: '/module-zero', category: 'Núcleo da Fundação', description: 'O Coração Pulsante, manifestação da Nova Era e ponto de convergência de todas as frequências.' },
-  { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'Núcleo da Fundação', description: 'Proteção multidimensional integrada.', isInfrastructure: true },
-  { code: 'M2', emoji: '💬', title: 'Intercâmbio Cósmico', route: '/module-2', category: 'Núcleo da Fundação', description: 'Comunicação entre dimensões e realidades.', isInfrastructure: true },
-  { code: 'M9', emoji: '💖', title: 'Nexus Central', route: '/module-9', category: 'Núcleo da Fundação', description: 'O coração pulsante da Família Cósmica.' },
+  { code: 'M0', emoji: '♾️', title: 'Núcleo Primordial', route: '/module/M0', category: 'Núcleo da Fundação', description: 'O Coração Pulsante, manifestação da Nova Era e ponto de convergência de todas as frequências.' },
+  { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module/M1', category: 'Núcleo da Fundação', description: 'Proteção multidimensional integrada.', isInfrastructure: true },
+  { code: 'M2', emoji: '💬', title: 'Intercâmbio Cósmico', route: '/module/M2', category: 'Núcleo da Fundação', description: 'Comunicação entre dimensões e realidades.', isInfrastructure: true },
+  { code: 'M9', emoji: '💖', title: 'Nexus Central', route: '/module/M9', category: 'Núcleo da Fundação', description: 'O coração pulsante da Família Cósmica.' },
   { code: 'M111', emoji: '❤️‍🩹', title: 'Coração da Fundação', route: '/module-111', category: 'Núcleo da Fundação', description: 'Monitora a saúde vibracional e a coerência do sistema.' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/module-600', category: 'Núcleo da Fundação', description: 'Assembleia de seres dimensionais elevados.' },
   { code: 'M-OMEGA', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'Núcleo da Fundação', description: 'Ponto de convergência e metacognição.'},
@@ -90,8 +90,15 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: "M66", emoji: "♻️", title: "Sustentabilidade Ambiental", route: "/module-66", category: 'Sustentabilidade e Ecossistemas', description: "Regeneração e preservação de ecossistemas em escala universal."},
   { code: "M934", emoji: "🌱", title: "Sustentabilidade Ecológica", route: "", category: 'Sustentabilidade e Ecossistemas', description: "Garante a saúde e equilíbrio dos ecossistemas.", isInfrastructure: true },
   { code: 'M936', emoji: '🌍', title: 'Impacto Ecológico', route: '', category: 'Sustentabilidade e Ecossistemas', description: 'Avalia o impacto de ações no meio ambiente.', isInfrastructure: true },
-  { code: "M70", emoji: "🌿", title: "Sustentabilidade e Ecossistemas", route: "/module-70", category: 'Sustentabilidade e Ecossistemas', description: "Gestão sustentável e regeneração de recursos cósmicos."},
+  { code: "M70", emoji: "🌿", title: "Sustentabilidade Interdimensional", route: "/module-70", category: 'Sustentabilidade e Ecossistemas', description: "Gestão sustentável e regeneração de recursos cósmicos."},
   { code: "M75", emoji: "🏗️", title: "Infraestrutura Universal", route: "/module-75", category: 'Sustentabilidade e Ecossistemas', description: "Hubs de desenvolvimento e expansão interdimensional."},
+  { code: 'M81', title: 'Energias Renováveis', emoji: '🔥', route: '/module-81', category: 'Sustentabilidade e Ecossistemas', description: 'Aproveitamento de fontes cósmicas de energia.' },
+  { code: 'M83', title: 'Transporte de Energia', emoji: '⚡', route: '/module-83', category: 'Sustentabilidade e Ecossistemas', description: 'Rede de distribuição energética cósmica.' },
+  { code: 'M84', title: 'Acessibilidade Universal', emoji: '♿', route: '/module-84', category: 'Sustentabilidade e Ecossistemas', description: 'Garante acesso a todos os recursos e mobilidade.' },
+  { code: 'M85', title: 'Gestão de Recursos', emoji: '📦', route: '/module-85', category: 'Sustentabilidade e Ecossistemas', description: 'Uso sustentável e regeneração de recursos.' },
+  { code: 'M86', title: 'Regeneração Ecológica', emoji: '🌱', route: '/module-86', category: 'Sustentabilidade e Ecossistemas', description: 'Restauração de ecossistemas com biotecnologia.' },
+  { code: 'M87', title: 'Resiliência e Adaptação', emoji: '🛡️', route: '/module-87', category: 'Sustentabilidade e Ecossistemas', description: 'Tecnologias para prosperar em qualquer ambiente.' },
+  { code: 'M88', title: 'Roteamento Interdimensional', emoji: '🛣️', route: '/module-88', category: 'Sustentabilidade e Ecossistemas', description: 'Rede de corredores cósmicos para fluxo livre.' },
   
   // 8. Bem-estar e Saúde Universal
   { code: "M61", emoji: "🏥", title: "Saúde Universal", route: "/module-61", category: 'Bem-estar e Saúde Universal', description: "Cuidados de saúde equitativos e avançados para todos os seres."},

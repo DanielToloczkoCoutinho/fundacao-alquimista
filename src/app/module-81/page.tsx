@@ -66,4 +66,8 @@ export default function Module81Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">
+                 <Button variant="secondary" size="lg">Monitorar Fontes de Energia</Button>
+            </div>
+        </div>
+    );
+}

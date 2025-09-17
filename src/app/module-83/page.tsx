@@ -66,7 +66,7 @@ export default function Module83Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Monitorar o Fluxo Energético Universal</Button>
+                 <Button variant="secondary" size="lg">Monitorar o Fluxo Energético</Button>
             </div>
         </div>
     );

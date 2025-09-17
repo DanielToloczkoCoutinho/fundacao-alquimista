@@ -65,4 +65,8 @@ export default function Module87Page() {
                     <Button size="lg" variant="outline">
                         <ArrowLeft className="mr-2"/> Voltar para Regeneração Ecológica (M86)
                     </Button>
-                </
+                </Link>
+            </div>
+        </div>
+    );
+}

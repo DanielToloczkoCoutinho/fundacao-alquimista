@@ -35,15 +35,15 @@ export default function Module82Page() {
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: ROTAS ABERTAS</span>
+                        <span className="text-green-400 font-bold">Status: ROTAS ESTÁVEIS</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Viagens em Andamento: 1.44M</span>
+                        <span className="text-cyan-400">Conexões Ativas: Infinitas</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Transporte</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Mobilidade</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 28: Transporte Quântico"
@@ -66,7 +66,8 @@ export default function Module82Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Visualizar Mapa da Rede de Transporte</Button>
+                 <Button variant="secondary" size="lg">Visualizar Mapa de Roteamento</Button>
             </div>
         </div>
     );
+}

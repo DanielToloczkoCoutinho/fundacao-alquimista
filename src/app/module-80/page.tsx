@@ -66,4 +66,8 @@ export default function Module80Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">
+                 <Button variant="secondary" size="lg">Visualizar a Rede Ecológica</Button>
+            </div>
+        </div>
+    );
+}
