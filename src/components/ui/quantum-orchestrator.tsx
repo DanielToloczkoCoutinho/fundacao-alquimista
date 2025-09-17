@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, CheckCircle, CircleDot, Play } from 'lucide-react';
-import { getOrchestrationSequence, OrchestrationModule } from '@/ai/flows/nexus-orchestrator';
+import { getOrchestrationSequence, type OrchestrationModule } from '@/ai/flows/nexus-orchestrator';
 import { cn } from '@/lib/utils';
 
 type LogEntry = {
@@ -29,14 +29,18 @@ export default function QuantumOrchestrator() {
   useEffect(() => {
     setIsClient(true);
     async function loadSequence() {
-      const modules = await getOrchestrationSequence();
-      const logs = modules.map(m => ({
-        id: m.id,
-        name: m.name,
-        status: 'pending',
-        module: m
-      }));
-      setSequence(logs);
+      try {
+        const modules = await getOrchestrationSequence();
+        const logs = modules.map(m => ({
+          id: m.id,
+          name: m.name,
+          status: 'pending' as const,
+          module: m
+        }));
+        setSequence(logs);
+      } catch (error) {
+        console.error("Falha ao carregar a sequência de orquestração:", error);
+      }
     }
     loadSequence();
   }, []);
@@ -45,10 +49,11 @@ export default function QuantumOrchestrator() {
     if (isSequenceRunning) return;
     setIsSequenceRunning(true);
     
+    // Reset sequence status to pending
     setSequence(prev => prev.map(p => ({ ...p, status: 'pending' })));
 
-    const modules = await getOrchestrationSequence();
-    for (let i = 0; i < modules.length; i++) {
+    // Sequentially activate modules
+    for (let i = 0; i < sequence.length; i++) {
       setSequence(prev =>
         prev.map((entry, idx) =>
           idx === i ? { ...entry, status: 'active' } : entry
@@ -64,11 +69,13 @@ export default function QuantumOrchestrator() {
       );
     }
     
+    // Mark all as completed once done
     setSequence(prev => prev.map(p => ({...p, status: 'completed'})));
     setIsSequenceRunning(false);
   };
 
   if (!isClient) {
+    // Render a placeholder or null on the server
     return null;
   }
 
@@ -89,9 +96,9 @@ export default function QuantumOrchestrator() {
         </Button>
         <ScrollArea className="h-96 flex-grow pr-4">
             <div className="space-y-2">
-                {sequence.map((log, index) => (
+                {sequence.map((log) => (
                     <div 
-                        key={index} 
+                        key={log.id} 
                         className={cn(
                             "rounded-lg p-3 border-l-4 transition-all duration-500 flex items-start gap-3",
                             statusConfig[log.status].color
@@ -102,7 +109,9 @@ export default function QuantumOrchestrator() {
                             <span className="font-mono text-xs text-muted-foreground">
                                 {log.module.id}
                             </span>
-                            <p className={cn("text-sm text-foreground/90", log.status === 'active' && 'font-bold')}>{log.name}</p>
+                            <p className={cn("text-sm text-foreground/90", log.status === 'active' && 'font-bold text-blue-300')}>
+                                {log.name}
+                            </p>
                         </div>
                     </div>
                 ))}
@@ -117,3 +126,5 @@ export default function QuantumOrchestrator() {
     </Card>
   );
 }
+
+    
