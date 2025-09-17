@@ -1499,7 +1499,8 @@ export async function startNexusSequence() {
 }
     
     
-export const moduleNames: Record<string, string> = {
+export async function getModuleNames(): Promise<Record<string, string>> {
+  return {
     NEXUS_CENTRAL: "Nexus Central (M9)",
     SEGURANCA_QUANTICA: "Segurança Quântica (M1)",
     NANOMANIFESTADOR: "Nanomanifestador (M2)",
@@ -1606,3 +1607,4 @@ export const moduleNames: Record<string, string> = {
     LEX_FUNDAMENTALIS: 'Módulo 144: Lex Fundamentalis',
     A_FONTE: 'Módulo 120: A Fonte',
 };
+}

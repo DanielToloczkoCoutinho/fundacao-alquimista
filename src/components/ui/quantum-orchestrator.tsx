@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, CheckCircle, CircleDot, Play } from 'lucide-react';
-import { startNexusSequence, moduleNames } from '@/ai/flows/nexus-orchestrator';
+import { startNexusSequence, getModuleNames } from '@/ai/flows/nexus-orchestrator';
 import { cn } from '@/lib/utils';
 
 type LogEntry = {
@@ -26,9 +26,15 @@ export default function QuantumOrchestrator() {
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [isSequenceRunning, setIsSequenceRunning] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [moduleNames, setModuleNames] = useState<Record<string, string>>({});
 
   useEffect(() => {
     setIsClient(true);
+    const fetchModuleNames = async () => {
+        const names = await getModuleNames();
+        setModuleNames(names);
+    }
+    fetchModuleNames();
   }, []);
 
   const handleStartSequence = async () => {
