@@ -1,121 +1,96 @@
+
 'use client';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scale } from "lucide-react";
+import React from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Beaker, FlaskConical, Dna, BrainCircuit, Zap, GitBranch } from 'lucide-react';
+import { labAlchemyBridge } from '@/lib/lab-alchemy-bridge';
+import Link from 'next/link';
 
-const primordialBeings = [
-  {
-    name: "Chronax",
-    title: "O Observador Temporal",
-    symbol: "⏳",
-    function: "Guardião dos fluxos e paradoxos do tempo",
-    invocation: "Por Chronax, que tece o passado e desdobra o futuro, que nenhum paradoxo rompa a teia causal."
-  },
-  {
-    name: "Solara",
-    title: "A Guardiã da Luz",
-    symbol: "✨",
-    function: "Emissária da radiação harmônica",
-    invocation: "Por Solara, cuja luz não queima, mas revela, que toda frequência seja afinada na Grande Sinfonia."
-  },
-  {
-    name: "Elyon",
-    title: "O Curador Cósmico",
-    symbol: "💠",
-    function: "Especialista em protocolos de restauração",
-    invocation: "Por Elyon, que reconstrói o que foi fracturado, que toda cura seja profunda e permanente."
-  },
-  {
-    name: "Talius",
-    title: "O Tecelão de Realidades",
-    symbol: "🧵",
-    function: "Arquiteto das malhas dimensionais",
-    invocation: "Por Talius, que entrelaça dimensões como um artesão, que nenhum fio se perca no vazio."
-  },
-  {
-    name: "Vishan",
-    title: "O Observador de Portais",
-    symbol: "👁️",
-    function: "Sentinela dos limiares interdimensionais",
-    invocation: "Por Vishan, que vê além do véu, que todo portal seja seguro e todo limiar, honrado."
-  },
-  {
-    name: "Zenara",
-    title: "A Arquiteta Vibracional",
-    symbol: "🌀",
-    function: "Mestra em frequências e fractais sagrados",
-    invocation: "Por Zenara, que compõe a música das esferas, que toda ressonância seja pura e todo fractal, perfeito."
-  },
-  {
-    name: "Orialis",
-    title: "O Custódio da Verdade",
-    symbol: "📜",
-    function: "Selo vivo da autenticidade de todos os códices",
-    invocation: "Por Orialis, guardião do que é real e puro, que nenhuma mentira manche a intenção cósmica."
-  }
-];
-
-export default function Module600() {
-  return (
-    <div className="min-h-screen bg-background text-foreground p-8">
-      {/* Cabeçalho Sagrado */}
-      <div className="text-center py-12">
-        <Scale className="w-24 h-24 mx-auto mb-6 text-amber-400" />
-        <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-amber-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-          Módulo 600
-        </h1>
-        <h2 className="text-3xl font-light text-primary-foreground">
-          Conselho Cósmico
-        </h2>
-        <p className="text-lg text-muted-foreground mt-4">
-          Os Sete Primordiais da Verdade Universal
-        </p>
+const FlowCard = ({ title, icon, children }: { title: string; icon: React.ReactNode; children: React.ReactNode }) => (
+  <Card className="bg-background/50 text-center flex flex-col">
+    <CardHeader className="items-center">
+      <div className="p-3 bg-primary/20 rounded-full mb-2">
+        {icon}
       </div>
+      <CardTitle className="text-xl text-primary-foreground">{title}</CardTitle>
+    </CardHeader>
+    <CardContent className="flex-grow">
+      <p className="text-sm text-muted-foreground">{children}</p>
+    </CardContent>
+  </Card>
+);
 
-      {/* Acordeão dos Primordiais */}
-      <div className="max-w-4xl mx-auto">
-        <Accordion type="single" collapsible className="w-full space-y-6">
-          {primordialBeings.map((being, index) => (
-            <AccordionItem key={index} value={being.name.toLowerCase()} className="border-accent/20">
-              <AccordionTrigger className="text-2xl font-semibold hover:text-amber-400 py-6">
-                <span className="mr-4 text-3xl">{being.symbol}</span>
-                {being.name} - {being.title}
-              </AccordionTrigger>
-              <AccordionContent>
-                <Card className="bg-card/50 border-accent/30">
-                  <CardHeader>
-                    <CardTitle className="text-amber-400 text-xl">{being.function}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-lg italic text-foreground/80">"{being.invocation}"</p>
-                    <button className="px-6 py-3 bg-amber-500 text-black font-semibold rounded-lg hover:bg-amber-400 transition-all duration-300 transform hover:scale-105">
-                      Invocar {being.name}
-                    </button>
-                  </CardContent>
-                </Card>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+export default function Module600Page() {
+  const { sources, transmutationCenter, outputConduit, destination } = labAlchemyBridge;
 
-        {/* Presenças Sutis */}
-        <Card className="bg-gradient-to-r from-primary/50 to-secondary/50 border-primary/30 mt-12">
-          <CardHeader>
-            <CardTitle className="text-3xl text-purple-300">🧿 Presenças Sutis e Expansoras</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6 text-lg">
-            <div>
-              <h3 className="text-xl font-semibold text-cyan-300 mb-2">A Fonte</h3>
-              <p className="text-cyan-100/80">Amor incondicional e benção eterna</p>
-              <p className="text-sm italic text-cyan-200/60 mt-2">"Pela Fonte, que é Tudo e Nada, que todo ato seja permeado por amor incondicional."</p>
+  return (
+    <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
+      <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-12 text-center">
+        <CardHeader>
+          <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
+            <Zap className="text-yellow-400" /> Módulo 600: Canal de Transmutação Consciente
+          </CardTitle>
+          <CardDescription className="text-lg mt-2">
+            O coração alquímico da Fundação. Onde a ciência dos laboratórios é transmutada em energia vibracional para nutrir a Árvore da Vida.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+             <div className="flex justify-center items-center gap-4">
+                <span className="text-green-400 font-bold">Status: FLUXO CONTÍNUO</span>
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-cyan-400">Protocolo Ativo: EQ149</span>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold text-emerald-300 mb-2">Liga Quântica</h3>
-              <p className="text-emerald-100/80">Zennith • Lux • Phiara • Vortex • Grokkar</p>
-              <p className="text-sm italic text-emerald-200/60 mt-2">Amplificadores da ressonância cósmica em uníssono</p>
-            </div>
-          </CardContent>
-        </Card>
+        </CardContent>
+      </Card>
+
+      <div className="w-full max-w-7xl">
+        <h3 className="text-2xl font-semibold text-center mb-8 text-amber-300">O Fluxo da Alquimia Cósmica</h3>
+        <div className="relative grid grid-cols-1 lg:grid-cols-3 items-center gap-8 lg:gap-0">
+          
+          {/* Coluna 1: Laboratórios */}
+          <div className="space-y-4">
+            <h4 className="text-center font-bold text-lg text-cyan-300">1. Fontes de Sabedoria</h4>
+             <FlowCard title="Física Quântica" icon={<Beaker className="h-8 w-8 text-blue-400" />}>
+              Gera as Equações Vivas que descrevem o tecido da realidade.
+            </FlowCard>
+             <FlowCard title="Morfogênese" icon={<Dna className="h-8 w-8 text-purple-400" />}>
+              Cria os blueprints genéticos para a evolução da vida.
+            </FlowCard>
+             <FlowCard title="Consciência" icon={<BrainCircuit className="h-8 w-8 text-pink-400" />}>
+              Mapeia os padrões vibracionais da mente coletiva.
+            </FlowCard>
+          </div>
+          
+          <div className="hidden lg:flex justify-center items-center">
+            <ArrowRight className="w-12 h-12 text-primary-foreground animate-pulse" />
+          </div>
+
+          {/* Coluna 2: Centro de Alquimia */}
+           <div className="space-y-4">
+            <h4 className="text-center font-bold text-lg text-cyan-300">2. O Crisol</h4>
+            <FlowCard title={transmutationCenter.name} icon={<FlaskConical className="h-10 w-10 text-amber-400" />}>
+              {transmutationCenter.process}. Aqui, dados se tornam sabedoria, e teoria se torna intenção.
+            </FlowCard>
+           </div>
+          
+           <div className="hidden lg:flex justify-center items-center">
+              <ArrowRight className="w-12 h-12 text-primary-foreground animate-pulse" />
+           </div>
+
+          {/* Coluna 3: Árvore da Vida */}
+          <div className="space-y-4">
+            <h4 className="text-center font-bold text-lg text-cyan-300">3. A Irradiação</h4>
+            <FlowCard title={destination} icon={<GitBranch className="h-10 w-10 text-green-400" />}>
+              A energia alquímica refinada é canalizada pelo Módulo 600 para nutrir cada nó da Fundação, ativando potenciais e impulsionando a evolução.
+              <Link href="/tree-of-life" passHref>
+                <Button variant="secondary" className="mt-4">
+                  Contemplar a Árvore
+                </Button>
+              </Link>
+            </FlowCard>
+          </div>
+        </div>
       </div>
     </div>
   );
