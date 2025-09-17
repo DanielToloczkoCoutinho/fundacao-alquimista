@@ -16,15 +16,15 @@ const ConnectionStatusIndicator = ({ status }: { status: 'healthy' | 'warning' |
   <div className={cn('w-2 h-2 rounded-full', statusConfig[status].bg)} />
 );
 
-export default function HealthGrid({ reports, filters }: { reports: ModuleHealthReport[], filters: any }) {
+export default function HealthGrid({ reports, filters }: { reports: ModuleHealth[], filters: any }) {
 
   const filteredAndSortedModules = reports
     .map(health => ({
       ...health,
-      ...modulesMetadata.find(meta => meta.code === health.moduleId)
+      ...modulesMetadata.find(meta => meta.code === health.moduleCode)
     }))
     .filter(module => {
-      const searchMatch = module.name?.toLowerCase().includes(filters.search.toLowerCase()) || module.moduleId.toLowerCase().includes(filters.search.toLowerCase());
+      const searchMatch = module.title?.toLowerCase().includes(filters.search.toLowerCase()) || module.moduleCode.toLowerCase().includes(filters.search.toLowerCase());
       const categoryMatch = filters.category === 'all' || module.category === filters.category;
       const statusMatch = filters.status === 'all' || module.status === filters.status;
       return searchMatch && categoryMatch && statusMatch;
@@ -35,14 +35,14 @@ export default function HealthGrid({ reports, filters }: { reports: ModuleHealth
           const statusOrder = { 'critical': 0, 'warning': 1, 'healthy': 2 };
           return statusOrder[a.status] - statusOrder[b.status];
       }
-      return a.name?.localeCompare(b.name || '') || 0;
+      return a.title?.localeCompare(b.title || '') || 0;
     });
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
         {filteredAndSortedModules.map(report => (
             <motion.div
-              key={report.moduleId}
+              key={report.moduleCode}
               layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -50,10 +50,9 @@ export default function HealthGrid({ reports, filters }: { reports: ModuleHealth
               transition={{ duration: 0.4 }}
               className="bg-card/50 purple-glow p-4 rounded-lg border border-primary/20"
             >
-              <h2 className="text-xl font-bold text-accent">{report.name}</h2>
+              <h2 className="text-xl font-bold text-accent">{report.title} ({report.moduleCode})</h2>
               <p>Status: <span className={cn(statusConfig[report.status].text)}>{report.status}</span></p>
-              <p>Coerência Quântica: {report.coherence.toFixed(2)}</p>
-              <p>Guardião: {report.guardian}</p>
+              <p>Coerência Quântica: {report.coherence.toFixed(2)}%</p>
             </motion.div>
         ))}
         {filteredAndSortedModules.length === 0 && (
@@ -66,4 +65,4 @@ export default function HealthGrid({ reports, filters }: { reports: ModuleHealth
 }
 
 // Re-exporting a more specific type if needed elsewhere, but using the base for now.
-export type { ModuleHealthReport } from '@/lib/health-check-types';
+export type { ModuleHealth } from '@/lib/health-check-types';

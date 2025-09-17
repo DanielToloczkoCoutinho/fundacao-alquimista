@@ -10,7 +10,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -76,10 +76,10 @@ export function Sidebar() {
          <Link href="/alignment-portal" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
-              <span className="text-2xl"><Wand className="h-8 w-8 text-violet-400" /></span>
+              <span className="text-2xl"><Atom className="h-8 w-8 text-violet-400" /></span>
             </TooltipTrigger>
              <TooltipContent side="right">
-                <p>Portal de Alinhamento</p>
+                <p>Observatório Vivo</p>
               </TooltipContent>
           </Tooltip>
         </Link>

@@ -40,7 +40,7 @@ export default function DiagnosticPanel() {
         <div className="w-full max-w-7xl mx-auto">
             <HealthFilters filters={filters} onFilterChange={setFilters} />
             <AnimatePresence>
-                <HealthGrid modules={healthData?.modules || []} filters={filters} />
+                <HealthGrid reports={healthData?.modules || []} filters={filters} />
             </AnimatePresence>
         </div>
     );

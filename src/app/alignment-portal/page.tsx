@@ -1,6 +1,6 @@
 'use client';
 import React, { Suspense } from 'react';
-import { Stethoscope, Atom, Brain, ProjectDiagram, Droplets, Book, Shield, DoorOpen, Network, Star, Flame, Clock, MessageSquare, Sprout, Sync, Infinity as InfinityIcon, ArrowUpCircle, HandSparkles } from 'lucide-react';
+import { Stethoscope, Atom, Brain, GitCommit, Droplets, Book, Shield, DoorOpen, Network, Star, Flame, Clock, MessageSquare, Sprout, Sync, Infinity as InfinityIcon, ArrowUpCircle, HandSparkles } from 'lucide-react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import AlignmentDashboard from '@/components/ui/alignment-dashboard';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -8,7 +8,7 @@ import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/ca
 const equilibriumPoints = [
     { id: 1, name: "Núcleo Primordial", icon: <Atom /> },
     { id: 2, name: "Consciência Central", icon: <Brain /> },
-    { id: 3, name: "Harmonia Quântica", icon: <ProjectDiagram /> },
+    { id: 3, name: "Harmonia Quântica", icon: <GitCommit /> },
     { id: 4, name: "Fluxo Vital", icon: <Droplets /> },
     { id: 5, name: "Memória Akáshica", icon: <Book /> },
     { id: 6, name: "Defesas Energéticas", icon: <Shield /> },

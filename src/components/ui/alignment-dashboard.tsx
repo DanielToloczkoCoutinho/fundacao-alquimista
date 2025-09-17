@@ -7,6 +7,8 @@ import SuspenseFallback from './suspense-fallback';
 import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend, ChartData } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
 import { cn } from '@/lib/utils';
+import { Atom, Brain, Droplets, Book, Shield, DoorOpen, Network, Star, Flame, Clock, MessageSquare, Sprout, Sync, Infinity as InfinityIcon, ArrowUpCircle, HandSparkles, GitCommit } from 'lucide-react';
+
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
@@ -16,19 +18,17 @@ const CosmicNetworkVisualization = dynamic(() => import('./cosmic-network-visual
 });
 
 const EquilibriumPointGrid = ({ points }: { points: any[] }) => (
-    <div className="health-grid mt-6">
-        <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300 col-span-full"><i className="fas fa-network-wired"></i> Malha de Interconexões - 17 Pontos de Equilíbrio</h3>
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-6">
+        <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300 col-span-full">Malha de Interconexões - 17 Pontos de Equilíbrio</h3>
         {points.map(point => (
             <div key={point.id} className={cn(
-                'grid-item p-4 rounded-lg text-center transition-all duration-300',
+                'p-4 rounded-lg text-center transition-all duration-300',
                 'bg-card/30 border border-primary/20 hover:border-accent hover:transform hover:-translate-y-1'
             )}>
-                <div className="item-icon text-3xl mb-2 text-gold">{point.icon}</div>
-                <h4 className="item-name text-sm font-semibold text-accent mb-2">{point.name}</h4>
-                <div className="progress-container h-1.5 bg-black/20 rounded-full overflow-hidden my-2">
-                    <div className="progress-bar bg-green-500 h-full rounded-full" style={{ width: `${point.value}%` }}></div>
-                </div>
-                <span className="item-status text-xs font-bold text-green-400">{point.value.toFixed(1)}%</span>
+                <div className="text-3xl mb-2 text-gold mx-auto w-fit">{point.icon}</div>
+                <h4 className="text-sm font-semibold text-accent mb-2">{point.name}</h4>
+                <Progress value={point.value} className="h-1.5" />
+                <span className="text-xs font-bold text-green-400 mt-2 block">{point.value.toFixed(1)}%</span>
             </div>
         ))}
     </div>
@@ -40,9 +40,7 @@ const MetricCard = ({ title, value, unit, progress }: { title: string, value: st
         <div className="metric-value text-xl font-bold text-gold">
             {value} <span className="text-xs text-muted-foreground">{unit}</span>
         </div>
-        <div className="progress-container h-1 bg-black/20 rounded-full mt-2">
-            <div className="progress-bar bg-green-500 h-full rounded-full" style={{ width: `${progress}%` }}></div>
-        </div>
+        <Progress value={progress} className="h-1 bg-black/20 mt-2" />
     </div>
 );
 

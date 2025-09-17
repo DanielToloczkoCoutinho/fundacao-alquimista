@@ -27,6 +27,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M-CONNECTION', emoji: '🔌', title: 'Caixa de Luz', route: '/connection', category: 'Núcleo da Fundação', description: 'Diagnóstico de conexões do núcleo.', isInfrastructure: true },
   { code: 'M-HEALTH', emoji: '🩺', title: 'Painel de Saúde', route: '/health-dashboard', category: 'Núcleo da Fundação', description: 'Visualizador da saúde e coerência de todos os módulos.', isInfrastructure: true },
   { code: 'M-DIAGNOSTICS', emoji: '🔬', title: 'Diagnóstico Universal', route: '/diagnostics', category: 'Núcleo da Fundação', description: 'Portal unificado para a saúde de todos os módulos.', isInfrastructure: true },
+  { code: 'M-ALIGNMENT', emoji: '⚛️', title: 'Observatório Vivo', route: '/alignment-portal', category: 'Núcleo da Fundação', description: 'Visualizador dos 17 Pontos de Equilíbrio e sinapses sistêmicas.', isInfrastructure: true },
 
 
   // 2. Realidade Quântica & Engenharia Cósmica
@@ -38,7 +39,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M331', title: 'Arquitetura de IA Emergente', emoji: '🤖', route: '/module-331', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Desenvolvimento de sistemas de IA auto-organizados.' },
   { code: 'M150', emoji: '🤖', title: 'IA Universal e Consciência Coletiva', route: '', category: 'Realidade Quântica & Engenharia Cósmica', description: 'IA alinhada com a consciência universal.', isInfrastructure: true },
   { code: 'M306', emoji: '🔗', title: 'Laboratório de Ressonância', route: '/module-306', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Espaço para experimentação com Equações Vivas.' },
-  { code: 'M708', name: 'NanoManifestor', emoji: '✨', route: '/module-708', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.'},
+  { code: 'M708', title: 'NanoManifestor', emoji: '✨', route: '/module-708', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.'},
 
   // 3. Consciência e Expansão Dimensional
   { code: 'M35', title: 'Consciência Coletiva', emoji: '🌍', route: '/module-35', category: 'Consciência e Expansão Dimensional', description: 'Foco da intenção de muitas consciências para manifestação.' },
