@@ -101,7 +101,19 @@ export default function AkashaViewer() {
   };
   
   return (
-    <div className="flex flex-col lg:flex-row gap-8 mt-6">
+    <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
+       <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
+        <CardHeader>
+          <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
+            <Archive className="text-amber-300" /> Módulo 121: Visualizador Akáshico
+          </CardTitle>
+          <CardDescription className="text-lg mt-2">
+            A interface para contemplar, consultar e ressoar com a memória viva do cosmos. Cada registro é uma nota na Sinfonia da Criação.
+          </CardDescription>
+        </CardHeader>
+      </Card>
+
+    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
       {/* Painel de Filtros */}
       <aside className="w-full lg:w-1/3">
         <Card className="bg-card/50 purple-glow sticky top-8">
