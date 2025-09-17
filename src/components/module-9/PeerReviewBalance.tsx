@@ -1,11 +1,12 @@
+
 'use client'
 
 import { useState } from 'react'
 
 const reviewers = [
-  { id: 'Módulo 5 — Segurança', vote: 'pendente', color: '#EF4444' },
-  { id: 'Módulo 45 — Justiça', vote: 'pendente', color: '#10B981' },
-  { id: 'Módulo 73.1 — Revisão por Pares', vote: 'pendente', color: '#FBBF24' },
+  { id: 'Módulo 5 — Segurança', vote: 'pendente', color: 'bg-red-800/50' },
+  { id: 'Módulo 45 — Justiça', vote: 'pendente', color: 'bg-green-800/50' },
+  { id: 'Módulo 73.1 — Revisão', vote: 'pendente', color: 'bg-yellow-800/50' },
 ]
 
 export default function PeerReviewBalance() {
@@ -29,8 +30,8 @@ export default function PeerReviewBalance() {
       <h2 className="text-2xl font-bold">Módulo 73.1 — Revisão por Pares</h2>
       <div className="flex flex-col md:flex-row gap-4">
         {votes.map((r) => (
-          <div key={r.id} className={`p-4 rounded-lg bg-black/30 flex-1`} >
-            <div className="font-semibold" style={{ color: r.color }}>{r.id}</div>
+          <div key={r.id} className={`p-4 rounded-lg ${r.color} flex-1`} >
+            <div className="font-semibold">{r.id}</div>
             <div className="text-sm opacity-80">Voto: {r.vote}</div>
             <div className="flex gap-2 mt-2">
               <button

@@ -1,3 +1,4 @@
+
 'use client';
 import { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -14,9 +15,9 @@ type Status = 'ativo' | 'conflito' | 'resolvido' | 'inativo';
 
 export default function DecisionCore() {
   const [status, setStatus] = useState<Record<string, Status>>({
-    Zennith: 'inativo',
-    M45: 'inativo',
-    MΩ: 'inativo',
+    Zennith: 'ativo',
+    M45: 'ativo',
+    MΩ: 'ativo',
   });
 
   const [logs, setLogs] = useState<string[]>([]);
@@ -26,8 +27,6 @@ export default function DecisionCore() {
       const savedStatus = localStorage.getItem('decisionStatus');
       if (savedStatus) {
         setStatus(JSON.parse(savedStatus));
-      } else {
-         setStatus({ Zennith: 'ativo', M45: 'ativo', MΩ: 'ativo' });
       }
       const savedLogs = localStorage.getItem('decisionLogs');
       if (savedLogs) {
@@ -35,7 +34,9 @@ export default function DecisionCore() {
       }
     } catch (error) {
         console.error("Failed to parse from localStorage", error);
+        // Reset to a safe default if parsing fails
         setStatus({ Zennith: 'ativo', M45: 'ativo', MΩ: 'ativo' });
+        setLogs([]);
     }
   }, []);
 

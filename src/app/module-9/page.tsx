@@ -1,4 +1,6 @@
+
 'use client';
+
 import { modulesMetadata } from '@/lib/modules-metadata';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Heart, Link as LinkIcon, Scale } from 'lucide-react';
@@ -59,9 +61,9 @@ export default function Module9Page() {
                     <p className="text-6xl font-bold text-green-400 animate-pulse">{harmonyReport.overallHarmony.toFixed(2)}%</p>
                 </div>
                 <div className="lg:col-span-3 space-y-4">
-                    <HarmonyMetric title="Coerência da Liga Quântica" value={harmonyReport.leagueCoherence} icon={<Heart />} color="pink-500" />
-                    <HarmonyMetric title="Saúde da Rede de Módulos" value={harmonyReport.moduleNetworkHealth} icon={<LinkIcon />} color="blue-500" />
-                    <HarmonyMetric title="Alinhamento com a Vontade Divina" value={harmonyReport.divineWillAlignment} icon={<Scale />} color="amber-500" />
+                    <HarmonyMetric title="Coerência da Liga Quântica" value={harmonyReport.leagueCoherence} icon={<Heart />} color="bg-pink-500" />
+                    <HarmonyMetric title="Saúde da Rede de Módulos" value={harmonyReport.moduleNetworkHealth} icon={<LinkIcon />} color="bg-blue-500" />
+                    <HarmonyMetric title="Alinhamento com a Vontade Divina" value={harmonyReport.divineWillAlignment} icon={<Scale />} color="bg-amber-500" />
                 </div>
             </CardContent>
         </Card>
@@ -71,7 +73,7 @@ export default function Module9Page() {
             {modulesMetadata
                 .filter(module => !module.isInfrastructure)
                 .map(({ code, title, route, emoji }) => (
-                <SafeLink key={code} href={route}>
+                <SafeLink key={code} href={route || ''}>
                     <Card className="bg-card/50 purple-glow hover:border-accent hover:scale-105 transition-transform cursor-pointer h-full flex flex-col justify-between">
                         <CardHeader>
                         <div className="flex flex-col items-center text-center">
