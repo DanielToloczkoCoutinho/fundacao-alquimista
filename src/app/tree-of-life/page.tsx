@@ -7,44 +7,43 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
 const categoryColors: Record<string, string> = {
-  'Núcleo da Fundação': 'hsla(var(--accent), 0.8)',
-  'Governança e Ética': 'hsla(260, 80%, 70%, 0.8)',
-  'Realidade Quântica & Engenharia Cósmica': 'hsla(180, 80%, 70%, 0.8)',
-  'Consciência e Expansão Dimensional': 'hsla(280, 80%, 70%, 0.8)',
-  'Laboratórios e Pesquisa': 'hsla(160, 80%, 70%, 0.8)',
-  'Bibliotecas e Arquivos Sagrados': 'hsla(45, 80%, 70%, 0.8)',
-  'Cura e Harmonia': 'hsla(340, 80%, 70%, 0.8)',
-  'Sustentabilidade e Ecossistemas': 'hsla(100, 80%, 70%, 0.8)',
-  'Bem-estar e Saúde Universal': 'hsla(140, 80%, 70%, 0.8)',
-  'Segurança e Ética Cósmica': 'hsla(0, 80%, 70%, 0.8)',
+  'Núcleo da Fundação': '#00BFA6', // Verde Água
+  'Governança e Ética': '#FFD700', // Ouro
+  'Realidade Quântica & Engenharia Cósmica': '#FF6F61', // Coral
+  'Consciência e Expansão Dimensional': '#7B61FF', // Violeta
+  'Laboratórios e Pesquisa': '#4ECDC4', // Turquesa
+  'Bibliotecas e Arquivos Sagrados': '#FFE66D', // Amarelo Claro
+  'Cura e Harmonia': '#FFB6C1', // Rosa
+  'Sustentabilidade e Ecossistemas': '#6BFF6B', // Verde Limão
+  'Bem-estar e Saúde Universal': '#6BFFB5', // Verde Menta
+  'Segurança e Ética Cósmica': '#FF6B6B', // Vermelho Claro
 };
 
 const linkColors: Record<string, string> = {
-    dependencia: '#3b82f6', // blue-500
-    influencia: '#22c55e', // green-500
-    heranca: '#a855f7',    // purple-500
+    dependencia: '#FFD700', // Ouro
+    influencia: '#00BFA6',   // Verde Água
+    heranca: '#FF6F61',      // Coral
 };
 
 export default function TreeOfLifePage() {
   const nodes: Node[] = useMemo(() => treeNodes.map((mod) => ({
     id: mod.id,
-    data: { label: `${mod.id} - ${mod.name}` },
-    position: { x: Math.random() * 1200, y: Math.random() * 800 },
+    data: { label: mod.name },
+    position: { x: Math.random() * 1800, y: Math.random() * 1200 },
     style: {
-      background: 'hsl(var(--card))',
-      color: 'hsl(var(--foreground))',
-      borderWidth: 2,
-      borderColor: categoryColors[mod.category] || 'hsl(var(--border))',
-      borderRadius: '0.75rem',
-      padding: '10px 15px',
+      background: categoryColors[mod.category] || '#ccc',
+      borderRadius: 16,
+      padding: 12,
+      fontWeight: 'bold',
+      color: '#111',
+      boxShadow: `0 0 20px ${categoryColors[mod.category] || '#aaa'}`,
+      border: `2px solid ${mod.status === 'ativo' ? '#00ff99' : '#ffcc00'}`,
       fontSize: '12px',
-      minWidth: 160,
+      minWidth: 150,
       textAlign: 'center',
-      boxShadow: `0 0 15px ${categoryColors[mod.category] || 'hsl(var(--border))'}`,
     }
   })), []);
 
@@ -57,7 +56,7 @@ export default function TreeOfLifePage() {
     label: link.type,
     style: { 
         stroke: linkColors[link.type] || '#888',
-        strokeWidth: 2,
+        strokeWidth: 2.5,
     },
     labelStyle: { fill: linkColors[link.type] || '#888', fontWeight: 600, fontSize: '12px' },
   })), []);
@@ -99,7 +98,7 @@ export default function TreeOfLifePage() {
                 nodeStrokeWidth={3} 
                 zoomable 
                 pannable 
-                nodeColor={n => categoryColors[treeNodes.find(m => m.id === n.id)?.category || 'default'] || '#666'}
+                nodeColor={(n) => categoryColors[treeNodes.find(m => m.id === n.id)?.category || 'default'] || '#666'}
                 className="bg-background/50 border border-primary/20"
             />
             <Controls />
