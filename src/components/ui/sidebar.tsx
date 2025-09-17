@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Tree } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2 } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -57,7 +57,7 @@ export function Sidebar() {
          <Link href="/tree-of-life" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
-              <span className="text-2xl"><Tree className="h-8 w-8 text-teal-400" /></span>
+              <span className="text-2xl"><GitBranch className="h-8 w-8 text-teal-400" /></span>
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Árvore da Vida</p>
@@ -124,6 +124,16 @@ export function Sidebar() {
               </TooltipContent>
           </Tooltip>
         </Link>
+        <Link href="/civilizations" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Users2 className="h-8 w-8 text-cyan-300" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Biblioteca das Civilizações</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
         <ScrollArea className="w-full">
           <div className="flex flex-col items-center space-y-2">
             {orderedCategories.map(category => (
@@ -167,3 +177,5 @@ export function Sidebar() {
     </TooltipProvider>
   );
 }
+
+    

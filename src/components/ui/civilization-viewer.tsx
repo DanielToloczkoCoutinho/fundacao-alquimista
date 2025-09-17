@@ -87,3 +87,5 @@ export default function CivilizationViewer({ civilization }: { civilization: Civ
     </Card>
   );
 }
+
+    

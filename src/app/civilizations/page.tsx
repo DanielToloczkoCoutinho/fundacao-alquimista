@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -87,7 +88,7 @@ export default function CivilizationsPage() {
                     title="M2: Intercâmbio Cósmico"
                     description="O tradutor universal que decodifica as linguagens vibracionais, permitindo o diálogo entre todas as civilizações."
                     icon={<Languages className="h-8 w-8 text-cyan-400" />}
-                    href="/module-2"
+                    href="/module/M2"
                 />
                 <ConnectionCard
                     title="M5: Liga Quântica"
@@ -142,3 +143,5 @@ export default function CivilizationsPage() {
     </div>
   );
 }
+
+    
