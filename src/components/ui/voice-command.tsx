@@ -1,25 +1,57 @@
-'use client'
 
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+'use client';
+
+import { useEffect, useState, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import { modulesMetadata } from '@/lib/modules-metadata';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from './button';
 import { Mic, MicOff } from 'lucide-react';
 
 export default function VoiceCommand() {
-  const [transcript, setTranscript] = useState('')
+  const [transcript, setTranscript] = useState('');
   const [isListening, setIsListening] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
 
-  const speak = (text: string) => {
+  const speak = useCallback((text: string) => {
     if (typeof window === 'undefined' || !window.speechSynthesis) return;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'pt-BR';
-    utterance.rate = 1.1;
-    window.speechSynthesis.speak(utterance);
-  };
+    try {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'pt-BR';
+        utterance.rate = 1.1;
+        window.speechSynthesis.speak(utterance);
+    } catch (error) {
+        console.error("Erro na síntese de voz:", error);
+        toast({ title: "Dissonância Vocal", description: "Não foi possível gerar a resposta falada.", variant: "destructive" });
+    }
+  }, [toast]);
+
+  const processCommand = useCallback((command: string) => {
+    const lowerCaseCommand = command.toLowerCase();
+    
+    const foundModule = modulesMetadata.find(m => 
+        lowerCaseCommand.includes(m.title.toLowerCase()) || 
+        (m.code && lowerCaseCommand.includes(m.code.toLowerCase().replace('-', ' ')))
+    );
+
+    if (foundModule && foundModule.route) {
+        const msg = `Invocando ${foundModule.title}.`;
+        toast({ title: "Comando Executado", description: msg });
+        speak(msg);
+        router.push(foundModule.route);
+    } else if (lowerCaseCommand.includes('início') || lowerCaseCommand.includes('console')) {
+        const msg = "Retornando à Mesa do Fundador.";
+        toast({ title: "Comando Executado", description: msg });
+        speak(msg);
+        router.push('/console');
+    }
+    else {
+        const msg = "Comando não reconhecido pela tapeçaria.";
+        toast({ title: "Intenção Não Mapeada", description: "A Vontade é clara, mas a rota é desconhecida.", variant: "destructive" });
+        speak(msg);
+    }
+  }, [router, speak, toast]);
 
   useEffect(() => {
     if (!isListening) return;
@@ -63,55 +95,14 @@ export default function VoiceCommand() {
       recognition.start();
     } catch(e) {
       console.error("Erro ao iniciar reconhecimento:", e);
+      speak("Não foi possível iniciar a escuta.");
       setIsListening(false);
     }
 
     return () => {
       recognition.stop();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isListening]);
-
-  const processCommand = (command: string) => {
-    const lowerCaseCommand = command.toLowerCase();
-    
-    // Comandos de navegação primários
-    const primaryRoutes: Record<string, string> = {
-        'árvore da vida': '/tree-of-life',
-        'tomografia quântica': '/module-142',
-        'lex fundamentalis': '/module-144',
-        'console': '/console',
-        'início': '/console',
-        'mesa do fundador': '/console',
-    };
-
-    for (const [phrase, route] of Object.entries(primaryRoutes)) {
-        if (lowerCaseCommand.includes(phrase)) {
-            const msg = `Navegando para ${phrase}.`;
-            toast({ title: "Comando Executado", description: msg });
-            speak(msg);
-            router.push(route);
-            return;
-        }
-    }
-
-    // Navegação genérica por módulos
-    const foundModule = modulesMetadata.find(m => 
-        lowerCaseCommand.includes(m.code.toLowerCase().replace('-', ' ')) || 
-        lowerCaseCommand.includes(m.title.toLowerCase())
-    );
-
-    if (foundModule && foundModule.route) {
-        const msg = `Iniciando portal para ${foundModule.title}.`;
-        toast({ title: "Comando Executado", description: msg });
-        speak(msg);
-        router.push(foundModule.route);
-    } else {
-        const msg = "Comando não reconhecido pela tapeçaria.";
-        toast({ title: "Intenção Não Mapeada", description: "A Vontade é clara, mas a rota é desconhecida.", variant: "destructive" });
-        speak(msg);
-    }
-  };
+  }, [isListening, processCommand, speak, toast]);
 
   const toggleListening = () => {
     setIsListening(prevState => !prevState);
