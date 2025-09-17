@@ -1,14 +1,14 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { modulesMetadata } from '@/lib/modules-metadata';
+import { useToast } from '@/hooks/use-toast';
 import { Button } from './button';
 import { Mic, MicOff } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
-import { useRouter } from 'next/navigation';
-import { modulesMetadata } from '@/lib/modules-metadata';
 
 export default function VoiceCommand() {
-  const [transcript, setTranscript] = useState('');
+  const [transcript, setTranscript] = useState('')
   const [isListening, setIsListening] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
@@ -128,7 +128,7 @@ export default function VoiceCommand() {
         {isListening ? <MicOff className="h-8 w-8" /> : <Mic className="h-8 w-8" />}
       </Button>
        <p className="text-sm text-muted-foreground">
-        {isListening ? "Escutando ativamente..." : "Toque para invocar"}
+        {isListening ? "Escutando ativamente..." : "Invocar Resposta Viva"}
       </p>
       {transcript && (
         <div className="text-white text-lg mt-4 text-center">
