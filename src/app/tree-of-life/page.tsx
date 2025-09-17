@@ -62,6 +62,19 @@ const nodeTypes = {
   custom: CustomNode,
 };
 
+const getEdgeStyle = (sourceStatus: string) => {
+  switch (sourceStatus) {
+    case 'ativo':
+      return { stroke: '#00FFAA', strokeWidth: 3, animation: 'pulse 2s infinite' };
+    case 'latente':
+      return { stroke: '#8888FF', strokeWidth: 1.5, animation: 'pulse 4s infinite' };
+    case 'em construção':
+      return { stroke: '#FBBF24', strokeWidth: 2, animation: 'pulse 1.5s infinite' };
+    default:
+      return { stroke: '#CCCCCC', strokeWidth: 1 };
+  }
+};
+
 export default function TreeOfLifePage() {
   const { initialNodes, initialEdges } = useMemo(() => {
     const nodes: Node[] = modulesMetadata
@@ -72,25 +85,27 @@ export default function TreeOfLifePage() {
         data: { 
             label: mod.title,
             status: mod.status,
+            color: mod.color,
+            emoji: mod.emoji,
         },
         position: { x: 0, y: 0 }, 
     }));
 
-    const edges: Edge[] = modulesMetadata.flatMap(mod => {
-      const sourceModule = modulesMetadata.find(m => m.code === mod.code);
-      return (mod.connections || []).map(conn => ({
+    const edges: Edge[] = modulesMetadata.flatMap(sourceModule => {
+      if (!sourceModule.connections) return [];
+      return sourceModule.connections.map(conn => {
+        const edgeStyle = getEdgeStyle(sourceModule.status);
+        return {
             id: `${conn.source}-${conn.target}`,
             source: conn.source,
             target: conn.target,
-            animated: sourceModule?.status === 'ativo', // A animação agora depende do status do módulo de origem
+            animated: sourceModule.status === 'ativo',
             type: 'smoothstep',
             label: conn.label,
-            style: { 
-                stroke: linkColors[conn.type] || '#888',
-                strokeWidth: 2,
-            },
+            style: edgeStyle,
             labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '10px' },
-        }))
+        }
+      })
     });
 
     return getLayoutedElements(nodes, edges);
@@ -103,6 +118,16 @@ export default function TreeOfLifePage() {
 
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
+       <style jsx global>{`
+        @keyframes pulse {
+          0%, 100% {
+            stroke-dashoffset: 0;
+          }
+          50% {
+            stroke-dashoffset: 20;
+          }
+        }
+      `}</style>
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
         <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
           <CardHeader>
