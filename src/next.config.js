@@ -2,10 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  transpilePackages: ['three', '@react-three/drei', '@react-three/xr'],
   experimental: {
     scrollRestoration: true,
     webVitalsAttribution: ['CLS','LCP','FID'],
-    transpilePackages: ['three', '@react-three/drei', '@react-three/xr'],
   },
   typescript: {
     ignoreBuildErrors: true,
