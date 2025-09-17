@@ -1,69 +1,52 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart, Scale, GraduationCap } from 'lucide-react';
+import { Heart, Scale, GraduationCap, GitBranch, AlertTriangle, Aperture, BookCopy } from 'lucide-react';
 import Link from 'next/link';
+import { harmonyGuardianCodex } from '@/lib/harmony-guardian-codex';
 
-const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
-      <Link href={href} passHref>
+const DomainCard = ({ title, icon, modules }: { title: string; icon: React.ReactNode; modules: { code: string; title: string }[] }) => (
+    <Card className="bg-card/50 purple-glow flex flex-col">
         <CardHeader>
-            <div className="flex items-center gap-3">
+            <CardTitle className="text-xl text-amber-300 flex items-center gap-3">
                 {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
+                {title}
+            </CardTitle>
         </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
+        <CardContent className="space-y-2 flex-grow">
+            {modules.map(mod => (
+                <Link href={`/module/${mod.code}`} key={mod.code} passHref>
+                    <Button variant="outline" className="w-full justify-start text-left h-auto py-2">
+                        <span className="font-mono text-xs mr-2">{mod.code}</span>
+                        <span>{mod.title}</span>
+                    </Button>
+                </Link>
+            ))}
         </CardContent>
-      </Link>
     </Card>
 );
 
 export default function Module727Page() {
     return (
-        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
-            <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
+        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
+            <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
                         <Heart className="text-pink-400" /> Módulo 727: Guardião da Harmonia
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        Auditoria vibracional contínua e sistema de equilíbrio automático para manter a harmonia em toda a Fundação.
+                        O mapa vivo da orquestra da Fundação, revelando os módulos que regem os pilares da nossa realidade: Portais, Leis, Linhas Temporais e Monumentos.
                     </CardDescription>
                 </CardHeader>
-                 <CardContent>
-                    <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: VIGILÂNCIA HARMÔNICA ATIVA</span>
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Coerência Global: 99.9%</span>
-                    </div>
-                </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Equilíbrio</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <ConnectionCard
-                        title="Módulo 73: SAVCE"
-                        description="Atua como o braço de execução do SAVCE, aplicando correções vibracionais imediatas quando uma dissonância ética é detectada."
-                        icon={<Scale className="h-8 w-8 text-amber-400" />}
-                        href="/module-73"
-                    />
-                     <ConnectionCard
-                        title="Módulo 111: Coração da Fundação"
-                        description="É o sistema de regulação automática do Coração, garantindo que qualquer arritmia vibracional seja instantaneamente corrigida."
-                        icon={<Heart className="h-8 w-8 text-pink-400" />}
-                        href="/module-111"
-                    />
-                    <ConnectionCard
-                        title="M304: Universidade Alquimista"
-                        description="A teoria da harmonia vibracional e os sistemas de equilíbrio automático são estudados em profundidade neste santuário do conhecimento."
-                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
-                        href="/module-304"
-                    />
-                </div>
+            <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <DomainCard title="Portais" icon={<Aperture className="text-teal-400"/>} modules={harmonyGuardianCodex.portals} />
+                <DomainCard title="Leis" icon={<Scale className="text-amber-400"/>} modules={harmonyGuardianCodex.laws} />
+                <DomainCard title="Linhas Temporais" icon={<GitBranch className="text-cyan-400"/>} modules={harmonyGuardianCodex.lines} />
+                <DomainCard title="Monumentos" icon={<BookCopy className="text-purple-400"/>} modules={harmonyGuardianCodex.monuments} />
             </div>
         </div>
     );

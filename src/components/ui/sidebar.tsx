@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -36,6 +36,7 @@ const orderedCategories = [
   'Sustentabilidade e Ecossistemas',
   'Bem-estar e Saúde Universal',
   'Segurança e Ética Cósmica',
+  'Governança',
 ].filter(cat => moduleCategories[cat]); // Filtra para mostrar apenas categorias que têm módulos visíveis
 
 export function Sidebar() {
@@ -151,6 +152,16 @@ export function Sidebar() {
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Afinagem Cósmica</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
+        <Link href="/module-727" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Heart className="h-8 w-8 text-pink-400" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Guardião da Harmonia</p>
               </TooltipContent>
           </Tooltip>
         </Link>
