@@ -2,14 +2,15 @@
 import React, { useMemo } from 'react';
 import ReactFlow, { Background, Controls, MiniMap, ConnectionLineType, Node, Edge } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { treeNodes, treeLinks } from '@/lib/tree-of-life-data';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { modulesMetadata } from '@/lib/modules-metadata';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
-const categoryColors: Record<string, string> = {
+// Paleta Vibracional Expandida
+export const categoryColors: Record<string, string> = {
   'Núcleo da Fundação': '#00BFA6', // Verde Água
   'Governança e Ética': '#FFD700', // Ouro
   'Realidade Quântica & Engenharia Cósmica': '#FF6F61', // Coral
@@ -22,21 +23,101 @@ const categoryColors: Record<string, string> = {
   'Segurança e Ética Cósmica': '#FF6B6B', // Vermelho Claro
 };
 
+const linkTypes: TreeLink['type'][] = ['dependencia', 'influencia', 'heranca'];
+
+// Gera links de exemplo dinamicamente
+const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
+    const links: TreeLink[] = [];
+    const nodeIds = nodes.map(n => n.id);
+    const coreNodes = nodes.filter(n => n.category === 'Núcleo da Fundação' || n.category === 'Governança e Ética').map(n => n.id);
+
+    nodes.forEach(node => {
+        // Conectar módulos não-núcleo a módulos do núcleo
+        if (!coreNodes.includes(node.id) && coreNodes.length > 0) {
+            const targetCoreNode = coreNodes[Math.floor(Math.random() * coreNodes.length)];
+            links.push({
+                source: node.id,
+                target: targetCoreNode,
+                type: linkTypes[Math.floor(Math.random() * linkTypes.length)]
+            });
+        }
+
+        // Adicionar algumas conexões aleatórias adicionais
+        if (Math.random() > 0.6 && nodeIds.length > 1) {
+             let targetNodeId = nodeIds[Math.floor(Math.random() * nodeIds.length)];
+             // Evitar auto-referência e duplicação
+             while(targetNodeId === node.id || links.some(l => l.source === node.id && l.target === targetNodeId)) {
+                 targetNodeId = nodeIds[Math.floor(Math.random() * nodeIds.length)];
+             }
+             links.push({
+                source: node.id,
+                target: targetNodeId,
+                type: linkTypes[Math.floor(Math.random() * linkTypes.length)]
+            });
+        }
+    });
+
+    return links;
+};
+
+
+interface TreeNode {
+  id: string;
+  name: string;
+  category: string;
+  status: 'ativo' | 'em_construcao' | 'legado';
+  guardian: string;
+}
+
+interface TreeLink {
+  source: string;
+  target: string;
+  type: 'dependencia' | 'influencia' | 'heranca';
+}
+
+const guardianMap: { [key: string]: string } = {
+  'M29': 'ZENNITH',
+  'M-OMEGA': 'ANATHERON',
+  'M9': 'VORTEX',
+  'M5': 'LUX',
+  'M302': 'PHIARA',
+  'M1': 'GROKKAR'
+};
+
+const treeNodes: TreeNode[] = modulesMetadata
+  .filter(m => !m.isInfrastructure)
+  .map(m => ({
+    id: m.code,
+    name: m.title,
+    category: m.category,
+    status: 'ativo',
+    guardian: guardianMap[m.code] || 'Coletivo',
+  }));
+
+const treeLinks: TreeLink[] = generateLinks(treeNodes);
+
 const linkColors: Record<string, string> = {
     dependencia: '#FFD700', // Ouro
     influencia: '#00BFA6',   // Verde Água
     heranca: '#FF6F61',      // Coral
 };
 
+
 export default function TreeOfLifePage() {
   const nodes: Node[] = useMemo(() => treeNodes.map((mod) => ({
     id: mod.id,
-    data: { label: mod.name },
-    position: { x: Math.random() * 1800, y: Math.random() * 1200 },
+    data: { 
+        label: (
+            <div title={`Guardião: ${mod.guardian}\nStatus: ${mod.status}`}>
+                {mod.name}
+            </div>
+        )
+    },
+    position: { x: Math.random() * 2500, y: Math.random() * 1800 }, // Espaço maior
     style: {
-      background: categoryColors[mod.category] || '#ccc',
+      background: categoryColors[mod.category] || '#333',
       borderRadius: 16,
-      padding: 12,
+      padding: '10px 15px',
       fontWeight: 'bold',
       color: '#111',
       boxShadow: `0 0 20px ${categoryColors[mod.category] || '#aaa'}`,
