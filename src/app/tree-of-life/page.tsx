@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import ReactFlow, { Background, Controls, MiniMap, Node, Edge, addEdge, ConnectionLineType, useNodesState, useEdgesState } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -7,20 +7,47 @@ import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { treeNodes, treeLinks, categoryColors, linkColors, TreeNode } from '@/lib/tree-of-life-data';
+import { treeNodes as moduleNodes, treeLinks as moduleLinks, categoryColors, linkColors, TreeNode } from '@/lib/tree-of-life-data';
+import dagre from '@dagrejs/dagre';
 
-const CustomNode = ({ data }: { data: { label: React.ReactNode } }) => {
-    return <>{data.label}</>;
+const dagreGraph = new dagre.graphlib.Graph();
+dagreGraph.setDefaultEdgeLabel(() => ({}));
+
+const nodeWidth = 172;
+const nodeHeight = 50;
+
+const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => {
+  dagreGraph.setGraph({ rankdir: direction });
+
+  nodes.forEach((node) => {
+    dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
+  });
+
+  edges.forEach((edge) => {
+    dagreGraph.setEdge(edge.source, edge.target);
+  });
+
+  dagre.layout(dagreGraph);
+
+  nodes.forEach((node) => {
+    const nodeWithPosition = dagreGraph.node(node.id);
+    node.targetPosition = 'top';
+    node.sourcePosition = 'bottom';
+    node.position = {
+      x: nodeWithPosition.x - nodeWidth / 2,
+      y: nodeWithPosition.y - nodeHeight / 2,
+    };
+
+    return node;
+  });
+
+  return { nodes, edges };
 };
 
-const nodeTypes = {
-    custom: CustomNode,
-};
 
 export default function TreeOfLife() {
-    const initialNodes: Node[] = useMemo(() => treeNodes.map((mod) => ({
+    const initialNodes: Node[] = useMemo(() => moduleNodes.map((mod) => ({
         id: mod.id,
-        type: 'custom',
         data: { 
             label: (
                 <div title={`Guardião: ${mod.guardian}\nStatus: ${mod.status}`}>
@@ -28,7 +55,7 @@ export default function TreeOfLife() {
                 </div>
             )
         },
-        position: { x: Math.random() * 2500, y: Math.random() * 1800 },
+        position: { x: 0, y: 0 }, // Position will be set by Dagre
         style: {
             background: categoryColors[mod.category] || '#333',
             borderRadius: 16,
@@ -38,12 +65,12 @@ export default function TreeOfLife() {
             boxShadow: `0 0 20px ${categoryColors[mod.category] || '#aaa'}`,
             border: `2px solid ${mod.status === 'ativo' ? '#00ff99' : '#ffcc00'}`,
             fontSize: '14px',
-            minWidth: 150,
+            minWidth: nodeWidth,
             textAlign: 'center',
         }
     })), []);
 
-    const initialEdges: Edge[] = useMemo(() => treeLinks.map(link => ({
+    const initialEdges: Edge[] = useMemo(() => moduleLinks.map(link => ({
         id: `${link.source}-${link.target}`,
         source: link.source,
         target: link.target,
@@ -56,14 +83,19 @@ export default function TreeOfLife() {
         },
         labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '12px' },
     })), []);
+    
+    const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
+        initialNodes,
+        initialEdges
+    );
 
-    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+    const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
+    const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
 
     const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
     const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
-        const moduleData = treeNodes.find(m => m.id === node.id);
+        const moduleData = moduleNodes.find(m => m.id === node.id);
         if (!moduleData?.fractais) return;
 
         const existingFractalIds = new Set(nodes.map(n => n.id));
@@ -73,7 +105,6 @@ export default function TreeOfLife() {
 
         const newNodes: Node[] = newFractals.map((sub, i) => ({
             id: sub.id,
-            type: 'custom',
             data: { label: <div>{sub.name} ({sub.status})</div> },
             position: { x: node.position.x + 250, y: node.position.y + i * 80 },
             style: {
@@ -132,7 +163,6 @@ export default function TreeOfLife() {
                     onConnect={onConnect}
                     onNodeClick={onNodeClick}
                     fitView
-                    nodeTypes={nodeTypes}
                     connectionLineType={ConnectionLineType.SmoothStep}
                     className="bg-transparent"
                 >
@@ -141,7 +171,7 @@ export default function TreeOfLife() {
                         nodeStrokeWidth={3} 
                         zoomable 
                         pannable 
-                        nodeColor={(n) => categoryColors[treeNodes.find(m => m.id === n.id)?.category || 'default'] || '#666'}
+                        nodeColor={(n) => categoryColors[moduleNodes.find(m => m.id === n.id)?.category || 'default'] || '#666'}
                         className="bg-background/50 border border-primary/20"
                     />
                     <Controls />
@@ -164,3 +194,4 @@ export default function TreeOfLife() {
         </div>
     );
 }
+    
