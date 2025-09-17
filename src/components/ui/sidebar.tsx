@@ -10,7 +10,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Cpu, Brain } from 'lucide-react';
+import { BookHeart, Brain, Home, Wand } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -46,7 +46,7 @@ export function Sidebar() {
         <Link href="/console" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
-              <span className="text-2xl"><BookHeart className="h-8 w-8 text-primary" /></span>
+              <span className="text-2xl"><Home className="h-8 w-8 text-primary" /></span>
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Mesa do Fundador</p>
@@ -60,6 +60,16 @@ export function Sidebar() {
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Colmeia Quântica</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
+         <Link href="/alignment-portal" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Wand className="h-8 w-8 text-violet-400" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Portal de Alinhamento</p>
               </TooltipContent>
           </Tooltip>
         </Link>

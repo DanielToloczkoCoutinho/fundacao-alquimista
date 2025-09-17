@@ -1,15 +1,12 @@
-
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Loader2, Sparkles, Feather, Music, HeartHandshake } from 'lucide-react';
+import { Sparkles, Feather, Music, HeartHandshake, Link as LinkIcon, Wand } from 'lucide-react';
 import { originCodex } from '@/lib/origin-codex';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { useToast } from '@/hooks/use-toast';
+import Link from 'next/link';
 
 const AltarOfIntention = () => {
   const [intention, setIntention] = useState('Paz Universal e Ascensão Coletiva');
@@ -99,46 +96,29 @@ const AltarOfIntention = () => {
         <CardTitle className="text-2xl gradient-text flex items-center gap-3">
           <Feather className="text-amber-400" /> Altar da Intenção Pura
         </CardTitle>
-        <CardDescription>Inscreva sua intenção, vibre sua frequência e observe a manifestação.</CardDescription>
+        <CardDescription>O santuário onde a Vontade Soberana se torna a semente da próxima realidade.</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-6">
-        <div className="space-y-2">
-          <Label htmlFor="intention">Nova Intenção</Label>
-          <Textarea
-            id="intention"
-            value={intention}
-            onChange={e => setIntention(e.target.value)}
-            placeholder="Descreva a realidade que deseja criar..."
-            className="min-h-[100px]"
-            disabled={isLoading}
-          />
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="frequency">Frequência de Manifestação (Hz)</Label>
-          <Input
-            id="frequency"
-            type="number"
-            value={frequency}
-            onChange={e => setFrequency(Number(e.target.value))}
-            disabled={isLoading}
-          />
-        </div>
-        <Button onClick={handleManifest} disabled={isLoading} className="w-full font-bold text-lg">
-          {isLoading ? <Loader2 className="animate-spin mr-2" /> : <Sparkles className="mr-2" />}
-          Invocar Manifestação
-        </Button>
-
-        {manifestation && (
-          <div className="mt-6 p-4 bg-background/50 rounded-lg border border-primary/20">
-            <h4 className="font-semibold text-primary-foreground mb-2">Eco da Manifestação:</h4>
-            <div className="relative h-24">
+      <CardContent className="flex flex-col h-full">
+         <div className="flex-grow space-y-4">
+             <p className="text-muted-foreground">Aqui, a Vontade do Fundador é diretamente tecida no tecido da existência. Cada palavra, cada frequência, é um comando para o cosmos.</p>
+            <Link href="/alignment-portal" passHref>
+                <Button className="w-full font-bold text-lg" variant="secondary">
+                    <Wand className="mr-2"/>
+                    Acessar Portal de Alinhamento Universal
+                </Button>
+            </Link>
+         </div>
+         <div className="mt-6 pt-4 border-t border-primary/20">
+            <h4 className="font-semibold text-primary-foreground mb-2">Eco da Última Manifestação:</h4>
+            <div className="relative h-24 bg-background/50 rounded-lg overflow-hidden">
                 <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
                 <div className="absolute inset-0 flex items-center justify-center p-4">
-                    <p className="italic text-center text-foreground">{manifestation}</p>
+                    <p className="italic text-center text-foreground text-sm">
+                        {manifestation || 'O Altar aguarda uma nova intenção...'}
+                    </p>
                 </div>
             </div>
-          </div>
-        )}
+         </div>
       </CardContent>
     </Card>
   );
@@ -172,7 +152,7 @@ export default function Module999Page() {
             <ul className="space-y-4">
               {originCodex.map(principle => (
                 <li key={principle.id} className="flex items-start gap-4">
-                  <span className="text-2xl mt-1">{principle.icon}</span>
+                  <span className="text-2xl mt-1">{principle.icon || '📜'}</span>
                   <div>
                     <h4 className="font-semibold text-primary-foreground">{principle.name}</h4>
                     <p className="text-sm text-muted-foreground">{principle.description}</p>
