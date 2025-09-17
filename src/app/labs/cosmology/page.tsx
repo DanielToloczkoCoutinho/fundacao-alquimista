@@ -20,7 +20,7 @@ export default function CosmologyLab() {
       <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
         <CardHeader>
           <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-            <FlaskConical className="text-cyan-400" /> Laboratório de Cosmologia Alquímica
+            <FlaskConical className="text-cyan-400" /> Códice das Equações Eternas
           </CardTitle>
           <CardDescription className="text-lg mt-2">
             Um santuário para a exploração e validação das equações que tecem a realidade.

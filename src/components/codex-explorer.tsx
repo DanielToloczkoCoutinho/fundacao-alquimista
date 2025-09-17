@@ -10,6 +10,8 @@ import { livingEquationsCodex as codexDatabase, type LivingEquation } from '@/li
 import { ExternalLink, Search } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { BlockMath } from 'react-katex';
+import 'katex/dist/katex.min.css';
+
 
 interface Section {
   id: string;
@@ -82,7 +84,7 @@ export default function CodexExplorer() {
                     {section.equations.map((eq: LivingEquation) => (
                       <div key={eq.id} className="p-4 bg-background/30 rounded-lg border border-primary/20">
                         <h4 className="font-semibold text-primary-foreground">{eq.id}: {eq.name}</h4>
-                        <div className="my-2 text-cyan-300 text-sm">
+                        <div className="my-2 text-cyan-300 text-sm overflow-x-auto">
                            <BlockMath math={eq.formula} />
                         </div>
                         <p className="text-sm text-muted-foreground">{eq.summary}</p>
