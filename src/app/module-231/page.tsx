@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Lock, Fingerprint, Archive, Shield, Users, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Zap, Scale, Gavel } from 'lucide-react';
+import { Loader2, Lock, Fingerprint, Archive, Shield, Users, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Zap, Scale, Gavel, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
