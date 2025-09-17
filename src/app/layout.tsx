@@ -7,8 +7,7 @@ import dynamic from 'next/dynamic';
 import { useState, useEffect, Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { SystemProvider } from '@/context/SystemContext';
-import { NetworkStatus } from '@/components/ui/NetworkStatus';
-import ClientToaster from '@/components/ui/client-toaster';
+import { Toaster } from "@/components/ui/toaster"
 
 // Adia a renderização da barra lateral para o lado do cliente para evitar erros de hidratação
 const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), {
@@ -50,8 +49,7 @@ export default function RootLayout({
                   </Suspense>
               </main>
             </div>
-            <NetworkStatus />
-            <ClientToaster />
+            <Toaster />
           </SystemProvider>
         </ErrorBoundary>
       </body>
