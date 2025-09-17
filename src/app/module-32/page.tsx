@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GitCommit, GitCompareArrows, ShieldCheck, Layers } from 'lucide-react';
+import { GitCommit, GitCompareArrows, ShieldCheck, Layers, Rocket, Eye } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -45,17 +45,17 @@ export default function Module32Page() {
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Intervenção Causal</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <ConnectionCard
-                        title="Módulo 91: Simulação Multiversal"
-                        description="O M91 simula os 'e se'. O M32 fornece o portal para visitar e observar esses cenários de forma controlada."
-                        icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
-                        href="/module-91"
+                     <ConnectionCard
+                        title="Módulo 21: Navegação Interdimensional"
+                        description="Calcula a rota segura para alcançar a realidade paralela que o M32 visa acessar."
+                        icon={<Rocket className="h-8 w-8 text-orange-400" />}
+                        href="/module-21"
                     />
                     <ConnectionCard
-                        title="Módulo 108: Harmonização de Realidades"
-                        description="Para harmonizar duas realidades, o M108 utiliza a ponte segura e estável criada pelo M32."
-                        icon={<GitCompareArrows className="h-8 w-8 text-cyan-400" />}
-                        href="/module-108"
+                        title="Módulo 26: Supervisão de Travessias"
+                        description="Autoriza e monitora a viagem, garantindo que os protocolos de não-interferência sejam seguidos."
+                        icon={<Eye className="h-8 w-8 text-cyan-400" />}
+                        href="/module-26"
                     />
                     <ConnectionCard
                         title="Módulo 73: SAVCE"
