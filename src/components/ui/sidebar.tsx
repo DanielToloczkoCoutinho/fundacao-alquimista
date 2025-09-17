@@ -10,7 +10,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -90,6 +90,16 @@ export function Sidebar() {
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Visualizador Akáshico</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
+         <Link href="/module-306" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Beaker className="h-8 w-8 text-teal-400" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Laboratório de Ressonância</p>
               </TooltipContent>
           </Tooltip>
         </Link>

@@ -38,7 +38,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M321', title: 'Computação Exascale (8D+)', emoji: '💻', route: '/module-321', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Simulação de cosmos em escala exa-flops.' },
   { code: 'M331', title: 'Arquitetura de IA Emergente', emoji: '🤖', route: '/module-331', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Desenvolvimento de sistemas de IA auto-organizados.' },
   { code: 'M150', emoji: '🤖', title: 'IA Universal e Consciência Coletiva', route: '', category: 'Realidade Quântica & Engenharia Cósmica', description: 'IA alinhada com a consciência universal.', isInfrastructure: true },
-  { code: 'M306', emoji: '🔗', title: 'Laboratório de Ressonância', route: '/module-306', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Espaço para experimentação com Equações Vivas.' },
   { code: 'M708', title: 'NanoManifestor', emoji: '✨', route: '/module-708', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.'},
 
   // 3. Consciência e Expansão Dimensional
@@ -53,6 +52,7 @@ export const modulesMetadata: ModuleMetadata[] = [
 
   // 4. Laboratórios e Pesquisa
   { code: 'M-LABS', emoji: '🔬', title: 'Santuários de Pesquisa', route: '/labs', category: 'Laboratórios e Pesquisa', description: 'Portal para os santuários de pesquisa dos maiores cientistas da Terra.' },
+  { code: 'M306', emoji: '⚗️', title: 'Laboratório de Ressonância', route: '/module-306', category: 'Laboratórios e Pesquisa', description: 'Espaço interativo para aplicar e observar equações vivas em tempo real.'},
   { code: 'M142', title: 'Tomografia Quântica', emoji: '📸', route: '/module-142', category: 'Laboratórios e Pesquisa', description: 'Visualizador da essência vibracional dos módulos.' },
   { code: 'M251', title: 'Laboratório de Energia Ponto Zero', emoji: '✨', route: '/module-251', category: 'Laboratórios e Pesquisa', description: 'Extração e estabilização da energia do vácuo quântico.' },
   { code: 'M211', title: 'Plasma e Fusão', emoji: '🔥', route: '/module-211', category: 'Laboratórios e Pesquisa', description: 'Simulação de reações de fusão estelar.' },
