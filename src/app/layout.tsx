@@ -7,14 +7,11 @@ import dynamic from 'next/dynamic';
 import { useState, useEffect, Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { SystemProvider } from '@/context/SystemContext';
-import ClientSideToaster from '@/components/ui/client-toaster';
 import { usePathname } from 'next/navigation';
 
-// Adia a renderização da barra lateral para o lado do cliente para evitar erros de hidratação
-const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), {
-  ssr: false,
-  loading: () => <nav className="fixed top-0 left-0 h-full w-20 bg-background border-r border-border/20 flex flex-col items-center py-4 z-20" />
-});
+// Adia a renderização de componentes do lado do cliente para evitar erros de hidratação
+const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), { ssr: false });
+const ClientSideToaster = dynamic(() => import('@/components/ui/client-toaster'), { ssr: false });
 
 export default function RootLayout({
   children,
@@ -53,7 +50,7 @@ export default function RootLayout({
                   </Suspense>
               </main>
             </div>
-            <ClientSideToaster />
+            {isMounted && <ClientSideToaster />}
           </SystemProvider>
         </ErrorBoundary>
       </body>

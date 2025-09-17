@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2 } from 'lucide-react';
 import { useAkashicConnection } from '@/hooks/use-akashic-connection';
+import { Tree } from 'lucide-react';
 
 export default function ConsolePage() {
   const { isConnected, isClient } = useAkashicConnection();
@@ -40,8 +41,8 @@ export default function ConsolePage() {
                <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-zero"><Book className="mr-2 h-4 w-4" />Módulo Zero (Biblioteca Chave)</Link>
                </Button>
-               <Button variant="outline" asChild className="justify-start">
-                  <Link href="/tree-of-life"><GitBranch className="mr-2 h-4 w-4 text-teal-400" />Árvore da Vida (Mapa)</Link>
+                <Button variant="outline" asChild className="justify-start">
+                  <Link href="/tree-of-life"><Tree className="mr-2 h-4 w-4 text-teal-400" />Árvore da Vida (Mapa)</Link>
                </Button>
                 <Button variant="outline" asChild className="justify-start">
                   <Link href="/civilizations"><Users2 className="mr-2 h-4 w-4" />Biblioteca das Civilizações</Link>
