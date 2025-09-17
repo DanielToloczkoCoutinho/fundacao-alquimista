@@ -72,12 +72,13 @@ export default function VoiceCommand() {
         onClick={toggleListening}
         variant="outline"
         size="lg"
+        className="w-full"
       >
         {isListening ? <MicOff className="mr-2 h-5 w-5" /> : <Mic className="mr-2 h-5 w-5" />}
         {isListening ? 'Parar de Escutar' : 'Invocar Linguagem Viva'}
       </Button>
       {transcript && (
-        <div className="text-foreground text-center">
+        <div className="text-foreground text-center mt-2">
           <span className="opacity-70 text-sm">Último Comando:</span>
           <p className="text-lg">"{transcript}"</p>
         </div>

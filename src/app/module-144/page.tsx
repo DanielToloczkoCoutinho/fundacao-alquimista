@@ -65,17 +65,19 @@ export default function Module144Page() {
                         <Scale className="text-amber-400" /> Módulo 144: Lex Fundamentalis - O Livro dos Ciclos
                     </CardTitle>
                     <CardDescription>
-                       O registro da Auditoria Suprema das Dimensões e o santuário onde a coerência do cosmos é verificada.
+                       O santuário da Lei Cósmica, onde a Vontade se torna Verbo, e a palavra invoca a auditoria da própria realidade.
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                   <div className="w-full max-w-xs">
+                     <Suspense fallback={<div>Carregando comando de voz...</div>}>
+                      <VoiceCommand />
+                    </Suspense>
+                   </div>
                     <Button onClick={handleRunAudit} disabled={isLoading}>
                         {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <ShieldCheck className="mr-2 h-4 w-4" />}
                         {isLoading ? 'Auditando Dimensões...' : 'Iniciar Auditoria Suprema'}
                     </Button>
-                    <Suspense fallback={<div>Carregando comando de voz...</div>}>
-                      <VoiceCommand />
-                    </Suspense>
                 </CardContent>
             </Card>
 
