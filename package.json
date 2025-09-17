@@ -7,7 +7,7 @@
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
     "genkit:watch": "genkit start -- tsx --watch srcai/dev.ts",
     "build": "next build",
-    "start": "next start",
+    "start": "npm run dev",
     "start:test": "next start -p 3000",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
