@@ -6,8 +6,8 @@ import { Box } from '@react-three/drei';
 function Jewel() {
   return (
     <Interactive>
-        <Box args={[0.1, 0.1, 0.1]}>
-             <meshStandardMaterial color="hotpink" />
+        <Box args={[0.3, 0.3, 0.3]} position={[0, 0, -0.5]}>
+             <meshStandardMaterial color="violet" />
         </Box>
     </Interactive>
   );

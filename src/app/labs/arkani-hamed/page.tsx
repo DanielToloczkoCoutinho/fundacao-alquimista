@@ -5,7 +5,13 @@ import Link from 'next/link';
 import { ArrowLeft, Gem } from 'lucide-react';
 import { Suspense } from "react";
 import SuspenseFallback from "@/components/ui/suspense-fallback";
-import AmplituhedronVisualizer from "./components/AmplituhedronVisualizer";
+import dynamic from "next/dynamic";
+
+const AmplituhedronVisualizer = dynamic(() => import('./components/AmplituhedronVisualizer'), {
+  ssr: false,
+  loading: () => <SuspenseFallback />,
+});
+
 
 export default function AmplituhedronPortal() {
   return (

@@ -38,10 +38,10 @@ const nextConfig = {
               "default-src 'self'",
               `frame-ancestors 'self' ${firebaseStudioOrigin} ${vercelPreviewOrigin}`,
               `frame-src 'self' ${firebaseStudioOrigin} ${vercelPreviewOrigin}`,
-              `connect-src *`, // Alterado para permitir qualquer conexão
+              `connect-src *`,
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "img-src * data: blob:", // Alterado para permitir qualquer imagem
+              "img-src * data: blob:",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               "object-src 'none'",
               "base-uri 'self'"
