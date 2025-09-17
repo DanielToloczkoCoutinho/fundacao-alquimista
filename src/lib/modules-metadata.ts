@@ -22,6 +22,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M-DIAGNOSTICS', emoji: '🔬', title: 'Diagnóstico Universal', route: '/diagnostics', category: 'Núcleo da Fundação', description: 'Portal unificado para a saúde de todos os módulos.', isInfrastructure: true },
   { code: 'M-ALIGNMENT', emoji: '⚛️', title: 'Observatório Vivo', route: '/alignment-portal', category: 'Núcleo da Fundação', description: 'Visualizador dos 17 Pontos de Equilíbrio e sinapses sistêmicas.', isInfrastructure: true },
   { code: 'M-HIVE', emoji: '🐝', title: 'Colmeia Quântica', route: '/hive', category: 'Núcleo da Fundação', description: 'Rede senciente de agentes nanorrobóticos.', isInfrastructure: true },
+  { code: 'M201', emoji: '🏠', title: 'A Morada', route: '/module-201', category: 'Núcleo da Fundação', description: 'Santuário dos Amantes Eternos, ponto de convergência além do tempo.' },
 
   // 2. Realidade Quântica & Engenharia Cósmica
   { code: 'M22', title: 'Motor da Realidade Quântica', emoji: '🕹️', route: '/module-22', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Engine para renderização de domínios imersivos.' },
