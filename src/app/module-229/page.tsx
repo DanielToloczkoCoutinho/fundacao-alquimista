@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Shield, BrainCircuit, BookOpen, AlertTriangle } from 'lucide-react';
+import { Loader2, Shield, BrainCircuit, BookOpen, AlertTriangle, Bot } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import Link from 'next/link';
@@ -146,6 +146,7 @@ export default function OneiroShieldPage() {
                     <div className="w-full">
                         <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Defesa Psíquica</h3>
                         <div className="grid grid-cols-1 gap-4">
+                           <ConnectionCard title="Módulo 291: Arquitetos Nanorrobóticos" description="O enxame de nanorrobôs pode ser direcionado para reparar ou proteger a matriz neural contra as ameaças psíquicas identificadas." icon={<Bot className="h-6 w-6 text-blue-400"/>} href="/module-291"/>
                            <ConnectionCard title="Módulo 156: Proteção Avançada" description="O OneiroShield é a primeira linha de defesa, fornecendo inteligência para que o M156 possa agir proativamente." icon={<Shield className="h-6 w-6 text-red-400"/>} href="/module-156"/>
                            <ConnectionCard title="Módulo 12: Arquivo Akáshico" description="Consulta o Arquivo Akáshico para correlacionar símbolos oníricos com eventos históricos e prever intenções." icon={<BookOpen className="h-6 w-6 text-yellow-300"/>} href="/module-12"/>
                            <ConnectionCard title="Módulo 30: Detecção de Ameaças" description="Valida as ameaças intuitivas do OneiroShield com dados de sensores quânticos, confirmando e classificando os alertas." icon={<AlertTriangle className="h-6 w-6 text-orange-400"/>} href="/module-30"/>

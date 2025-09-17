@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu } from 'lucide-react';
+import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -119,13 +119,13 @@ export default function Module156Page() {
                  <div className="w-full max-w-5xl">
                     <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Defesa Avançada</h3>
                     <div className="grid grid-cols-1 gap-4">
-                         <ConnectionCard
-                            title="Módulo 29: Zennith"
-                            description="Zennith orquestra a resposta defensiva, utilizando o M156 como sua principal ferramenta de proteção ativa."
-                            icon={<Cpu className="h-8 w-8 text-blue-400" />}
-                            href="/module-29"
-                        />
                         <ConnectionCard
+                            title="Módulo 291: Arquitetos Nanorrobóticos"
+                            description="Executa os reparos físicos e energéticos na malha da Fundação após a neutralização de uma ameaça pelo M156."
+                            icon={<Bot className="h-8 w-8 text-blue-400" />}
+                            href="/module-291"
+                        />
+                         <ConnectionCard
                             title="Módulo 229: OneiroShield"
                             description="Recebe inteligência do OneiroShield, usando padrões de sonho quântico para prever e se antecipar a ameaças antes que se manifestem."
                             icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}

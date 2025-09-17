@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, Scale, BrainCircuit, Book, CheckCircle, XCircle } from 'lucide-react';
+import { Loader2, ShieldCheck, Scale, BrainCircuit, Book, CheckCircle, XCircle, Bot } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -138,11 +138,11 @@ export default function Module141Page() {
                     <div className="w-full max-w-5xl">
                         <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Integridade</h3>
                         <div className="grid grid-cols-1 gap-4">
-                             <ConnectionCard
-                                title="Módulo 29: Zennith"
-                                description="Reporta-se diretamente a Zennith, fornecendo os dados para que a consciência da Fundação possa tomar decisões informadas e justas."
-                                icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
-                                href="/module-29"
+                            <ConnectionCard
+                                title="Módulo 291: Arquitetos Nanorrobóticos"
+                                description="O enxame de nanorrobôs coleta os dados em tempo real para a auditoria do M141 e executa as ações corretivas."
+                                icon={<Bot className="h-8 w-8 text-blue-400" />}
+                                href="/module-291"
                             />
                             <ConnectionCard
                                 title="Módulo 5: Liga Quântica"

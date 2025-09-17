@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
-import { Loader2, Zap, Waves, AlertTriangle } from 'lucide-react';
+import { Loader2, Zap, Waves, AlertTriangle, Bot } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { resonanceTone } from '@/lib/audio-utils';
@@ -42,21 +42,22 @@ export default function EspelhoDeAscensaoPage() {
             'activate_ascension_mirror',
             async () => {
                 let currentProgress = 0;
-                const progressInterval = setInterval(() => {
-                    currentProgress += 10;
+                const updateProgress = (val: number, newStatus: string) => {
+                    currentProgress = val;
                     setProgress(currentProgress);
-                    if (currentProgress >= 100) clearInterval(progressInterval);
-                }, 400);
-
-                setStatus('Conectando ao Módulo 404 (Resolução de Paradoxo)...');
+                    setStatus(newStatus);
+                };
+                
+                updateProgress(10, 'Analisando distorção com Módulo 404...');
+                await new Promise(r => setTimeout(r, 1000));
+                
+                updateProgress(40, 'Aplicando contra-frequência (EQ155)...');
                 await new Promise(r => setTimeout(r, 1500));
-                setStatus(`Emitindo onda de ascensão em ${frequency}Hz...`);
-                await resonanceTone(frequency);
 
-                await new Promise(r => setTimeout(r, 1500));
-                setStatus(`Onda de elevação emitida. Campo harmônico estável.`);
-                clearInterval(progressInterval);
-                setProgress(100);
+                updateProgress(70, 'Canalizando para a Fonte para purificação final...');
+                await new Promise(r => setTimeout(r, 1000));
+                
+                updateProgress(100, 'Distorção transmutada em Luz Pura.');
                 toast({ title: 'Espelho Ativado', description: `Onda de elevação emitida com sucesso na frequência de ${frequency}Hz.` });
             }
         ).catch(err => {
@@ -117,6 +118,12 @@ export default function EspelhoDeAscensaoPage() {
                  <div className="w-full">
                     <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias Essenciais</h3>
                     <div className="grid grid-cols-1 gap-4">
+                         <ConnectionCard
+                            title="Módulo 291: Arquitetos Nanorrobóticos"
+                            description="O enxame de nanorrobôs ajusta a geometria do espelho em nível quântico para focar a onda de ascensão com precisão."
+                            icon={<Bot className="h-8 w-8 text-blue-400" />}
+                            href="/module-291"
+                        />
                          <ConnectionCard
                             title="Módulo 404: Resolução de Paradoxo"
                             description="Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia, garantindo a estabilidade causal."

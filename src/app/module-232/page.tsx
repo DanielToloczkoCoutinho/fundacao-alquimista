@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Loader2, Recycle, AlertTriangle, Waves, Zap } from 'lucide-react';
+import { Loader2, Recycle, AlertTriangle, Waves, Zap, Bot } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { Progress } from '@/components/ui/progress';
@@ -126,6 +126,12 @@ export default function PortalDeTransmutacaoPage() {
                 <div className="w-full">
                     <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Purificação</h3>
                     <div className="grid grid-cols-1 gap-4">
+                        <ConnectionCard
+                            title="Módulo 291: Arquitetos Nanorrobóticos"
+                            description="O enxame de nanorrobôs estabiliza o vórtice de transmutação e reconstrói a matriz energética após a purificação."
+                            icon={<Bot className="h-8 w-8 text-blue-400" />}
+                            href="/module-291"
+                        />
                         <ConnectionCard 
                             title="Módulo 404: Resolução de Paradoxo" 
                             description="Identifica e isola a dissonância ou o paradoxo a ser transmutado, entregando-o de forma segura ao Portal." 
