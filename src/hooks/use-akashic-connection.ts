@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -11,7 +12,8 @@ export function useAkashicConnection() {
   useEffect(() => {
     setIsClient(true);
     
-    const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
+    // Usamos uma coleção de metadados que pode não existir, apenas para ouvir o estado da conexão.
+    const unsub = onSnapshot(collection(db, 'alchemist-codex-heartbeat'), 
       () => {
         if (!isConnected) {
           setIsConnected(true);
@@ -31,3 +33,5 @@ export function useAkashicConnection() {
 
   return { isConnected, isClient };
 }
+
+    
