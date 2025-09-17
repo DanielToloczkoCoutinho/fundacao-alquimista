@@ -1,3 +1,4 @@
+
 'use server';
 
 export interface RitualStep {
@@ -78,3 +79,5 @@ export const ritualLog: RitualLogEntry[] = [
     coherenceSnapshot: 0.9998
   }
 ];
+
+    
