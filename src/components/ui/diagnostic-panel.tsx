@@ -1,8 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { modulesMetadata, ModuleMetadata } from '@/lib/modules-metadata';
-import { useSystem } from '@/context/SystemContext';
+import { AnimatePresence } from 'framer-motion';
 import SuspenseFallback from './suspense-fallback';
 import HealthFilters from '../health/HealthFilters';
 import HealthGrid from '../health/HealthGrid';
@@ -10,7 +8,6 @@ import { HealthCheckService } from '@/lib/health-check.service';
 import { HealthCheckResult } from '@/lib/health-types';
 
 export default function DiagnosticPanel() {
-    const system = useSystem();
     const [healthData, setHealthData] = useState<HealthCheckResult | null>(null);
     const [loading, setLoading] = useState(true);
     const [filters, setFilters] = useState({ search: '', category: 'all', status: 'all', sortBy: 'name' });
@@ -35,7 +32,7 @@ export default function DiagnosticPanel() {
     }, [healthData]);
 
 
-    if (!system || loading) {
+    if (loading && !healthData) {
         return <SuspenseFallback />;
     }
 

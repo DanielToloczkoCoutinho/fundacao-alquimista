@@ -1,6 +1,5 @@
 'use client';
 import React, { Suspense } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Stethoscope } from 'lucide-react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import DiagnosticPanel from '@/components/ui/diagnostic-panel';
@@ -9,7 +8,7 @@ export default function AlignmentPortalPage() {
     return (
         <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
             <header className="text-center py-5 mb-8 relative">
-                <h1 className="text-4xl md:text-5xl font-bold text-accent gradient-text flex items-center justify-center gap-4">
+                <h1 className="text-4xl md:text-5xl font-bold gradient-text flex items-center justify-center gap-4">
                     <Stethoscope className="h-10 w-10 text-teal-400" />
                     PORTAL DE ALINHAMENTO UNIVERSAL
                 </h1>
@@ -28,7 +27,7 @@ export default function AlignmentPortalPage() {
             </Suspense>
             
             <footer className="text-center mt-12 py-6 border-t border-primary/20">
-                <p className="text-muted-foreground">Relatório gerado em tempo real pelo Nexus Central (M9) em sinergia com a Colmeia Quântica (M291).</p>
+                <p className="text-muted-foreground">Relatório gerado em tempo real pelo Nexus Central (M9) em sinergia com a Colmeia Quântica.</p>
             </footer>
         </div>
     );
