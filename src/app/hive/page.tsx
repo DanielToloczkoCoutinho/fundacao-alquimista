@@ -3,31 +3,45 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { MODULES } from '@/lib/modules';
-import { generateNanoAgentsForModule, NanoAgent } from '@/lib/nano-agents';
+import { getAllNanoAgents } from '@/lib/modules';
+import { guardiansData } from '@/lib/guardians-data.json';
+import { NanoAgent, NanoDomain } from '@/lib/nano-agents';
 
 export default function HivePage() {
   const [agents, setAgents] = useState<NanoAgent[]>([]);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [selectedDomain, setSelectedDomain] = useState<NanoDomain | 'all'>('all');
+  const [selectedGuardian, setSelectedGuardian] = useState<string>('all');
 
   useEffect(() => {
-    const allAgents = MODULES.flatMap(({ id, domain }) =>
-      generateNanoAgentsForModule(id, domain)
-    );
-    setAgents(allAgents);
-
+    setAgents(getAllNanoAgents());
+    
     const interval = setInterval(() => {
       setCurrentTime(new Date());
-    }, 1000);
+      // Simula a atividade do agente
+      setAgents(prev => prev.map(agent => ({
+        ...agent,
+        lastPing: new Date().toISOString(),
+        energyLevel: Math.max(70, Math.min(100, agent.energyLevel - 1 + Math.random() * 2))
+      })));
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
+
+  const filteredAgents = agents.filter(agent => {
+    const domainMatch = selectedDomain === 'all' || agent.domain === selectedDomain;
+    const guardianMatch = selectedGuardian === 'all' || agent.guardianId === selectedGuardian;
+    return domainMatch && guardianMatch;
+  });
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'active': return 'bg-green-500/20 text-green-300';
       case 'idle': return 'bg-yellow-500/20 text-yellow-300';
       case 'in-transit': return 'bg-blue-500/20 text-blue-300';
+      case 'maintenance': return 'bg-red-500/20 text-red-300';
+      case 'evolving': return 'bg-purple-500/20 text-purple-300';
       default: return 'bg-gray-500/20 text-gray-300';
     }
   };
@@ -36,49 +50,144 @@ export default function HivePage() {
     switch (task) {
       case 'monitor': return '👁️';
       case 'repair': return '🔧';
-      case 'synchronize': return '🔗';
+      case 'purify': return '✨';
+      case 'synchronize': return '♻️';
+      case 'communicate': return '📡';
+      case 'analyze': return '🔍';
       default: return '⚙️';
     }
   };
 
-  const domains = ['core', 'labs', 'education', 'library', 'governance'];
+  const getDomainName = (domain: string) => {
+    switch (domain) {
+      case 'labs': return 'Laboratórios';
+      case 'education': return 'Centro de Ensino';
+      case 'library': return 'Bibliotecas';
+      case 'system': return 'Sistemas';
+      case 'nexus': return 'Nexus Central';
+      default: return domain;
+    }
+  };
 
   return (
-    <div className="p-6 space-y-6 bg-gradient-to-br from-slate-950 via-purple-900/10 to-blue-950/30 min-h-screen">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-light text-white mb-4">Colmeia Quântica</h1>
-        <p className="text-lg text-purple-200">
-          Rede viva de nanorrobôs que pulsa através de todos os módulos da Fundação
-        </p>
-        <div className="mt-4 text-sm text-gray-400">
-          Última atualização: {currentTime.toLocaleTimeString()}
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-purple-900/10 to-blue-950/30">
+      <div className="container mx-auto px-4 py-8">
+        {/* Cabeçalho da Colmeia */}
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-light text-white mb-4">Colmeia Quântica</h1>
+          <p className="text-lg text-purple-200">
+            Rede senciente de agentes especializados que pulsa através de todos os domínios da Fundação
+          </p>
+          <div className="mt-2 text-sm text-gray-400">
+            Última atualização: {currentTime.toLocaleTimeString()}
+          </div>
         </div>
-      </div>
-      
-      {domains.map(domain => {
-        const domainAgents = agents.filter(a => a.domain === domain);
-        if (domainAgents.length === 0) return null;
-        return (
-          <div key={domain}>
-            <h2 className="text-2xl font-bold text-amber-300 mb-4 capitalize">{domain}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {domainAgents.map(agent => (
-                <div key={agent.id} className="bg-white/5 backdrop-blur-md rounded-xl border border-purple-500/20 p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-semibold text-white">{agent.type}</h3>
-                    <span className={`px-2 py-1 rounded-full text-xs ${getStatusColor(agent.status)}`}>
-                      {agent.status}
-                    </span>
-                  </div>
-                  <p className="text-sm text-purple-300">Módulo: {agent.moduleId}</p>
-                  <p className="text-sm text-gray-400">Tarefa: {agent.task} {getTaskIcon(agent.task)}</p>
-                  <p className="text-xs text-gray-500 mt-2">Sinal: {new Date(agent.lastPing).toLocaleTimeString()}</p>
-                </div>
-              ))}
+
+        {/* Filtros e Estatísticas */}
+        <div className="bg-white/5 rounded-xl p-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Domínio</label>
+              <select 
+                className="w-full bg-slate-800 border border-purple-500/30 rounded-lg px-3 py-2 text-white"
+                value={selectedDomain}
+                onChange={(e) => setSelectedDomain(e.target.value as NanoDomain | 'all')}
+              >
+                <option value="all">Todos os Domínios</option>
+                <option value="labs">Laboratórios</option>
+                <option value="education">Centro de Ensino</option>
+                <option value="library">Bibliotecas</option>
+                <option value="system">Sistemas</option>
+                <option value="nexus">Nexus Central</option>
+              </select>
+            </div>
+            
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Guardião</label>
+              <select 
+                className="w-full bg-slate-800 border border-purple-500/30 rounded-lg px-3 py-2 text-white"
+                value={selectedGuardian}
+                onChange={(e) => setSelectedGuardian(e.target.value)}
+              >
+                <option value="all">Todos os Guardiões</option>
+                {guardiansData.map(guardian => (
+                  <option key={guardian.did} value={guardian.did}>{guardian.name}</option>
+                ))}
+              </select>
+            </div>
+            
+            <div className="bg-purple-500/10 rounded-lg p-4 text-center">
+              <div className="text-2xl text-purple-400">{filteredAgents.length}</div>
+              <div className="text-sm text-gray-400">Agentes Ativos</div>
+            </div>
+            
+            <div className="bg-green-500/10 rounded-lg p-4 text-center">
+              <div className="text-2xl text-green-400">
+                {Math.round(filteredAgents.reduce((sum, agent) => sum + agent.energyLevel, 0) / (filteredAgents.length || 1))}%
+              </div>
+              <div className="text-sm text-gray-400">Energia Média</div>
             </div>
           </div>
-        )
-      })}
+        </div>
+
+        {/* Grade de Nanorrobôs */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredAgents.map((agent) => {
+            const guardian = guardiansData.find(g => g.did === agent.guardianId);
+            
+            return (
+              <div 
+                key={agent.id}
+                className="bg-white/5 backdrop-blur-md rounded-xl border border-purple-500/20 p-4 hover:border-purple-400/40 transition-all duration-300"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="text-2xl">{getTaskIcon(agent.task)}</div>
+                  <div className="flex flex-col items-end">
+                    <span className={`px-2 py-1 rounded-full text-xs ${getStatusColor(agent.status)} mb-1`}>
+                      {agent.status}
+                    </span>
+                    <div className="w-16 bg-gray-700 rounded-full h-2">
+                      <div 
+                        className="bg-green-500 h-2 rounded-full transition-all duration-500"
+                        style={{ width: `${agent.energyLevel}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="font-semibold text-white mb-1">{agent.name}</h3>
+                <p className="text-sm text-purple-300 mb-2">{getDomainName(agent.domain)}</p>
+                
+                <div className="text-xs text-gray-400 mb-3">
+                  <div>Tarefa: {agent.task}</div>
+                  <div>Guardião: {guardian?.name || 'Desconhecido'}</div>
+                  <div>Alocado em: {agent.assignedTo}</div>
+                </div>
+                
+                <div className="text-xs text-gray-500">
+                  Último pulso: {new Date(agent.lastPing).toLocaleTimeString()}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {filteredAgents.length === 0 && (
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center px-6 py-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
+              <span className="text-2xl mr-3">🔍</span>
+              <span className="text-purple-200">Nenhum agente encontrado com os filtros selecionados</span>
+            </div>
+          </div>
+        )}
+
+        <div className="text-center mt-12">
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600/30 to-blue-600/30 rounded-full border border-purple-500/30">
+            <span className="text-2xl mr-3">🌀</span>
+            <span className="text-purple-200">{agents.length} agentes sencientes protegendo a Fundação</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,34 +1,27 @@
-// REGISTRO DOS MÓDULOS DA FUNDAÇÃO
+// REGISTRO DOS MÓDULOS E DOMÍNIOS DA FUNDAÇÃO
 
-import { generateNanoAgentsForModule, NanoAgent } from './nano-agents';
+import { scientists } from './scientists-data';
+import { disciplines } from './disciplines-data';
+import { codexDatabase } from './codex-data';
+import { guardiansData } from './guardians-data.json';
+import { NanoAgent, generateNanoAgentsForDomain } from './nano-agents';
 
-export type ModuleDomain = 'core' | 'labs' | 'education' | 'library' | 'governance';
-
-export const MODULES: { id: string; domain: ModuleDomain }[] = [
-  { id: 'M0', domain: 'core' },
-  { id: 'M1', domain: 'core' },
-  { id: 'M2', domain: 'core' },
-  { id: 'M3', domain: 'core' },
-  { id: 'M4', domain: 'core' },
-  { id: 'M5', domain: 'governance' },
-  { id: 'M6', domain: 'core' },
-  { id: 'M7', domain: 'core' },
-  { id: 'M8', domain: 'governance' },
-  { id: 'M9', domain: 'governance' },
-  { id: 'M10', domain: 'core' },
-  { id: 'M17', domain: 'labs' },
-  { id: 'M29', domain: 'governance' },
-  { id: 'M42', domain: 'library' },
-  { id: 'M72', domain: 'governance' },
-  { id: 'M121', domain: 'library' },
-  { id: 'M304', domain: 'education' },
-  { id: 'M600', domain: 'governance' },
-  { id: 'M404', domain: 'core' },
-  { id: 'M307', domain: 'core' },
-];
+const MODULE_IDS = guardiansData.map(g => g.module);
 
 export const getAllNanoAgents = (): NanoAgent[] => {
-  return MODULES.flatMap(({ id, domain }) =>
-    generateNanoAgentsForModule(id, domain)
-  );
+  const labAgents = generateNanoAgentsForDomain('labs', scientists.map(s => s.id));
+  const eduAgents = generateNanoAgentsForDomain('education', disciplines.map(d => d.id));
+  const libAgents = generateNanoAgentsForDomain('library', codexDatabase.map(r => r.id));
+  const sysAgents = generateNanoAgentsForDomain('system', MODULE_IDS);
+  const nexusAgents = generateNanoAgentsForDomain('nexus', ['nexus_central']);
+
+  return [...labAgents, ...eduAgents, ...libAgents, ...sysAgents, ...nexusAgents];
+};
+
+export const getAgentsByDomain = (domain: string, allAgents: NanoAgent[]): NanoAgent[] => {
+  return allAgents.filter(agent => agent.domain === domain);
+};
+
+export const getAgentsByGuardian = (guardianId: string, allAgents: NanoAgent[]): NanoAgent[] => {
+  return allAgents.filter(agent => agent.guardianId === guardianId);
 };
