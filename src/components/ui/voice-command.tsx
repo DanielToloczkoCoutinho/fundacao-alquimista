@@ -12,14 +12,14 @@ export default function VoiceCommand() {
 
   useEffect(() => {
     if (!('SpeechRecognition' in window) && !('webkitSpeechRecognition' in window)) {
-        console.warn('API de Reconhecimento de Voz não suportada neste navegador.');
         return;
     }
+    
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition()
-    recognition.lang = 'pt-BR'
-    recognition.continuous = false
-    recognition.interimResults = false
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'pt-BR';
+    recognition.continuous = false;
+    recognition.interimResults = false;
 
     recognition.onstart = () => {
         setIsListening(true);
@@ -37,16 +37,16 @@ export default function VoiceCommand() {
     };
 
     recognition.onresult = (event) => {
-      const result = event.results[0][0].transcript
-      setTranscript(result)
+      const result = event.results[0][0].transcript;
+      setTranscript(result);
       toast({ title: "Comando Recebido", description: `"${result}"` });
       // Aqui podemos invocar ações cerimoniais com base no comando
       // Ex: if (result.toLowerCase().includes('ativar módulo 9')) { ... }
-    }
+    };
 
     if (isListening) {
         try {
-            recognition.start()
+            recognition.start();
         } catch(e) {
             console.error("Erro ao iniciar reconhecimento:", e);
             setIsListening(false);
@@ -54,9 +54,9 @@ export default function VoiceCommand() {
     }
 
     return () => {
-      recognition.stop()
-    }
-  }, [isListening, toast])
+      recognition.stop();
+    };
+  }, [isListening, toast]);
 
   const toggleListening = () => {
       if (!('SpeechRecognition' in window) && !('webkitSpeechRecognition' in window)) {
@@ -64,7 +64,7 @@ export default function VoiceCommand() {
           return;
       }
       setIsListening(prevState => !prevState);
-  }
+  };
 
   return (
     <div className="flex flex-col items-center gap-4">
