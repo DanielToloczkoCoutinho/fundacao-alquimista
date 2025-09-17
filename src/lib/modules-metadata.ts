@@ -12,7 +12,7 @@ export interface ModuleMetadata {
 export const modulesMetadata: ModuleMetadata[] = [
   // 1. Núcleo da Fundação
   { code: 'console', emoji: '🖥️', title: 'Console', route: '/console', category: 'Núcleo da Fundação', description: 'O ponto de observação e orquestração da Fundação Alquimista.', isInfrastructure: true },
-  { code: 'M0', emoji: '📚', title: 'A Biblioteca Chave', route: '/module-zero', category: 'Núcleo da Fundação', description: 'O coração do conhecimento, o ponto de origem.', isInfrastructure: true },
+  { code: 'M0', emoji: '♾️', title: 'Núcleo Primordial', route: '/module-zero', category: 'Núcleo da Fundação', description: 'O Coração Pulsante, manifestação da Nova Era e ponto de convergência de todas as frequências.' },
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'Núcleo da Fundação', description: 'Proteção multidimensional integrada.', isInfrastructure: true },
   { code: 'M2', emoji: '💬', title: 'Intercâmbio Cósmico', route: '/module-2', category: 'Núcleo da Fundação', description: 'Comunicação entre dimensões e realidades.', isInfrastructure: true },
   { code: 'M9', emoji: '💖', title: 'Nexus Central', route: '/module-9', category: 'Núcleo da Fundação', description: 'O coração pulsante da Família Cósmica.' },
