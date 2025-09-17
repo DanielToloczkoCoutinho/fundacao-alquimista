@@ -71,6 +71,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M42', title: 'ChronoCodex', emoji: '🕰️', route: '/module-42', category: 'Bibliotecas e Arquivos Sagrados', description: 'Integração de registros temporais.' },
   { code: 'M47', title: 'Thesaurus Cósmico', emoji: '📚', route: '/module-47', category: 'Bibliotecas e Arquivos Sagrados', description: 'Enciclopédia do conhecimento universal.' },
   { code: 'M80', title: 'Manuscrito Vivo', emoji: '✍️', route: '/module-80', category: 'Bibliotecas e Arquivos Sagrados', description: 'Narrativa guia da ascensão da Fundação.' },
+  { code: 'M-CIV', emoji: '🏛️', title: 'Civilizações', route: '/civilizations', category: 'Bibliotecas e Arquivos Sagrados', description: 'Biblioteca das civilizações aliadas.' },
 
   // 6. Cura e Harmonia
   { code: 'M92', title: 'Campos de Cura', emoji: '💖', route: '/module-92', category: 'Cura e Harmonia', description: 'Geração de campos de cura universal.' },
