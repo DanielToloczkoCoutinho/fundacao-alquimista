@@ -12,6 +12,7 @@ const moduleComponents: { [key: string]: React.ComponentType<any> } = {
   'M2': dynamic(() => import('@/components/modules/module-2'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M-OMEGA': dynamic(() => import('@/components/modules/module-omega'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M72': dynamic(() => import('@/components/modules/module-72'), { ssr: false, loading: () => <SuspenseFallback /> }),
+  'M9': dynamic(() => import('@/components/modules/module-9'), { ssr: false, loading: () => <SuspenseFallback /> }),
   // Adicione outros módulos aqui conforme são criados
 };
 
@@ -23,9 +24,10 @@ export default function ModulePage() {
   if (code.toLowerCase() === 'module-one') code = 'M1';
   if (code.toLowerCase() === 'module-zero') code = 'M0';
   if (code.toLowerCase() === 'module-omega') code = 'M-OMEGA';
+  if (code.toLowerCase() === 'module-9') code = 'M9';
   
   // Encontra o componente correspondente ao código
-  const ModuleComponent = moduleComponents[code];
+  const ModuleComponent = moduleComponents[code.toUpperCase()];
 
   if (!ModuleComponent) {
     // Se o componente não estiver mapeado, exibe uma mensagem de "não encontrado" estilizada.
