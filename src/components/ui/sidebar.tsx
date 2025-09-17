@@ -10,7 +10,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Wand } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -60,6 +60,16 @@ export function Sidebar() {
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Colmeia Quântica</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
+         <Link href="/diagnostics" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Stethoscope className="h-8 w-8 text-teal-400" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Diagnóstico Universal</p>
               </TooltipContent>
           </Tooltip>
         </Link>

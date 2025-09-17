@@ -11,10 +11,10 @@ export interface ModuleMetadata {
 export const modulesMetadata: ModuleMetadata[] = [
   // 1. Núcleo da Fundação
   { code: 'console', emoji: '🖥️', title: 'Console', route: '/console', category: 'Núcleo da Fundação', description: 'O ponto de observação e orquestração da Fundação Alquimista.', isInfrastructure: true },
-  { code: 'M0', emoji: '📚', title: 'A Biblioteca Chave', route: '/module/M0', category: 'Núcleo da Fundação', description: 'O coração do conhecimento, o ponto de origem.', isInfrastructure: true },
-  { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module/M1', category: 'Núcleo da Fundação', description: 'Proteção multidimensional integrada.', isInfrastructure: true },
+  { code: 'M0', emoji: '📚', title: 'A Biblioteca Chave', route: '/module-zero', category: 'Núcleo da Fundação', description: 'O coração do conhecimento, o ponto de origem.', isInfrastructure: true },
+  { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'Núcleo da Fundação', description: 'Proteção multidimensional integrada.', isInfrastructure: true },
   { code: 'M2', emoji: '💬', title: 'Intercâmbio Cósmico', route: '/module-2', category: 'Núcleo da Fundação', description: 'Comunicação entre dimensões e realidades.', isInfrastructure: true },
-  { code: 'M9', emoji: '💖', title: 'Nexus Central', route: '/module/M9', category: 'Núcleo da Fundação', description: 'O coração pulsante da Família Cósmica.' },
+  { code: 'M9', emoji: '💖', title: 'Nexus Central', route: '/module-9', category: 'Núcleo da Fundação', description: 'O coração pulsante da Família Cósmica.' },
   { code: 'M111', emoji: '❤️‍🩹', title: 'Coração da Fundação', route: '/module-111', category: 'Núcleo da Fundação', description: 'Monitora a saúde vibracional e a coerência do sistema.' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/module-600', category: 'Núcleo da Fundação', description: 'Assembleia de seres dimensionais elevados.' },
   { code: 'M-OMEGA', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'Núcleo da Fundação', description: 'Ponto de convergência e metacognição.'},
@@ -25,9 +25,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'Núcleo da Fundação', description: 'A constituição imutável da Fundação.' },
   { code: 'M-CONNECTION', emoji: '🔌', title: 'Caixa de Luz', route: '/connection', category: 'Núcleo da Fundação', description: 'Diagnóstico de conexões do núcleo.', isInfrastructure: true },
   { code: 'M-HEALTH', emoji: '🩺', title: 'Painel de Saúde', route: '/health-dashboard', category: 'Núcleo da Fundação', description: 'Visualizador da saúde e coerência de todos os módulos.', isInfrastructure: true },
+  { code: 'M-DIAGNOSTICS', emoji: '🔬', title: 'Diagnóstico Universal', route: '/diagnostics', category: 'Núcleo da Fundação', description: 'Portal unificado para a saúde de todos os módulos.', isInfrastructure: true },
 
 
-  // 2. Realidade Quântica e Engenharia Cósmica
+  // 2. Realidade Quântica & Engenharia Cósmica
   { code: 'M22', title: 'Motor da Realidade Quântica', emoji: '🕹️', route: '/module-22', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Engine para renderização de domínios imersivos.' },
   { code: 'M88', title: 'Gerador de Realidades Quânticas', emoji: '⚙️', route: '/module-88', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Criação de dimensões probabilísticas.' },
   { code: 'M104', title: 'Engenharia do Espaço-Tempo', emoji: '🕰️', route: '/module-104', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Cria atalhos para viagens dimensionais.' },
