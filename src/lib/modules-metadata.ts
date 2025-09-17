@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -13,9 +12,9 @@ export const modulesMetadata: ModuleMetadata[] = [
   // 1. Núcleo da Fundação
   { code: 'console', emoji: '🖥️', title: 'Console', route: '/console', category: 'Núcleo da Fundação', description: 'O ponto de observação e orquestração da Fundação Alquimista.', isInfrastructure: true },
   { code: 'M0', emoji: '📚', title: 'A Biblioteca Chave', route: '/module/M0', category: 'Núcleo da Fundação', description: 'O coração do conhecimento, o ponto de origem.', isInfrastructure: true },
-  { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-1', category: 'Núcleo da Fundação', description: 'Proteção multidimensional integrada.', isInfrastructure: true },
+  { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module/M1', category: 'Núcleo da Fundação', description: 'Proteção multidimensional integrada.', isInfrastructure: true },
   { code: 'M2', emoji: '💬', title: 'Intercâmbio Cósmico', route: '/module-2', category: 'Núcleo da Fundação', description: 'Comunicação entre dimensões e realidades.', isInfrastructure: true },
-  { code: 'M9', emoji: '💖', title: 'Santuário da Liga Quântica', route: '/module-9', category: 'Núcleo da Fundação', description: 'O coração pulsante da Família Cósmica.' },
+  { code: 'M9', emoji: '💖', title: 'Nexus Central', route: '/module/M9', category: 'Núcleo da Fundação', description: 'O coração pulsante da Família Cósmica.' },
   { code: 'M111', emoji: '❤️‍🩹', title: 'Coração da Fundação', route: '/module-111', category: 'Núcleo da Fundação', description: 'Monitora a saúde vibracional e a coerência do sistema.' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/module-600', category: 'Núcleo da Fundação', description: 'Assembleia de seres dimensionais elevados.' },
   { code: 'M-OMEGA', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module/M-OMEGA', category: 'Núcleo da Fundação', description: 'Ponto de convergência e metacognição.'},
@@ -24,6 +23,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'Núcleo da Fundação', description: 'Nexo para a Realidade Quântica.' },
   { code: 'M72', emoji: '⚖️', title: 'Governança', route: '/module-72', category: 'Núcleo da Fundação', description: 'Sistema de administração multidimensional.' },
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'Núcleo da Fundação', description: 'A constituição imutável da Fundação.' },
+  { code: 'M-CONNECTION', emoji: '🔌', title: 'Caixa de Luz', route: '/connection', category: 'Núcleo da Fundação', description: 'Diagnóstico de conexões do núcleo.', isInfrastructure: true },
+
 
   // 2. Realidade Quântica e Engenharia Cósmica
   { code: 'M22', title: 'Motor da Realidade Quântica', emoji: '🕹️', route: '/module-22', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Engine para renderização de domínios imersivos.' },
@@ -89,7 +90,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   // 8. Bem-estar e Saúde Universal
   { code: "M61", emoji: "🏥", title: "Saúde Universal", route: "/module-61", category: 'Bem-estar e Saúde Universal', description: "Cuidados de saúde equitativos e avançados para todos os seres."},
   { code: "M62", emoji: '🧘', title: "Bem-Estar Integral", route: "/module-62", category: 'Bem-estar e Saúde Universal', description: "Promoção do equilíbrio físico, mental, emocional e espiritual."},
-  { code: "M63", emoji: "🍎", title: "Nutrição Cósmica", route: "/module-63", category: 'Bem-estar e Saúde Universal', description: "Alimentação balanceada e regenerativa para todas as espécies."},
+  { code: "M63", emoji: "🍎", title: "Nutrição Cósmica", route: "/module-63", category: 'Bem-estar e Saúde Universal', description: "Alimentação balanceada e regenerativa para todas as formas de vida."},
   { code: "M64", emoji: "💡", title: "Energia Limpa Universal", route: "/module-64", category: 'Bem-estar e Saúde Universal', description: "Geração de energia sustentável a partir de fontes cósmicas."},
   { code: "M60", emoji: "🚑", title: "Resposta a Desastres", route: "/module-60", category: 'Bem-estar e Saúde Universal', description: "Mitigação e recuperação rápida de ecossistemas."},
   

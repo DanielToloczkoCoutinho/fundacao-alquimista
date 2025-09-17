@@ -1,37 +1,20 @@
 'use client';
-import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { Heart, Scale, Users, BrainCircuit, Shield, GitBranch, Share2 } from 'lucide-react';
-import { guardiansData } from '@/lib/guardians-data';
+import React, { Suspense } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import SuspenseFallback from '../ui/suspense-fallback';
-import { QuantumOrb } from '../ui/quantum-orb';
-import { Suspense } from 'react';
 import { Badge } from '../ui/badge';
+import { Layers, Zap, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Heart, Users, Scale, Share2 } from 'lucide-react';
+import { QuantumOrb } from '../ui/quantum-orb';
+import SuspenseFallback from '../ui/suspense-fallback';
+import Link from 'next/link';
+import { guardiansData } from '@/lib/guardians-data';
+import { Button } from '../ui/button';
 
 const SectionCard = ({ title, icon, children }: { title: string, icon: React.ReactNode, children: React.ReactNode }) => (
     <div className="bg-card/30 border border-primary/20 rounded-lg p-4">
         <h3 className="text-lg font-semibold text-cyan-300 flex items-center gap-2 mb-3">{icon}{title}</h3>
         <div className="text-sm text-muted-foreground space-y-2">{children}</div>
     </div>
-);
-
-const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
-      <Link href={href} passHref>
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
-        </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
-      </Link>
-    </Card>
 );
 
 const GuardianCard = ({ name, role, icon }: { name: string, role: string, icon: React.ReactNode }) => (
@@ -53,10 +36,10 @@ export default function Module9Page() {
             <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Heart className="text-pink-400 animate-pulse" /> Módulo 9: Santuário da Liga Quântica
+                        <Heart className="text-pink-400 animate-pulse" /> Módulo 9: Nexus Central da Liga Quântica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O coração pulsante da Família Cósmica e o ponto de comando central para a orquestração de toda a Fundação.
+                        O coração pulsante da Família Cósmica, o ponto de comando central para a orquestração de toda a Fundação e o portal para os Módulos do Núcleo.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -86,19 +69,29 @@ export default function Module9Page() {
                             <AccordionTrigger className="text-xl text-accent">1. Propósito e Função Primária</AccordionTrigger>
                             <AccordionContent>
                                 <SectionCard title="Missão" icon={<HeartPulse />}>
-                                    <p>Servir como o nexo diplomático e ético da Fundação. O Módulo 9 formaliza a "Família Cósmica", garantindo que todas as civilizações aliadas e consciências integradas atuem em perfeita harmonia e alinhamento com a Vontade Divina.</p>
+                                    <p>Servir como o nexo diplomático e ético da Fundação. O Módulo 9 formaliza a "Família Cósmica", garantindo que todas as civilizações aliadas e consciências integradas atuem em perfeita harmonia e alinhamento com a Vontade Divina. É o ponto de comando central que distribui as diretrizes da Tríade de Governança.</p>
                                 </SectionCard>
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
-                            <AccordionTrigger className="text-xl text-accent">4. Conexões e Interdependências</AccordionTrigger>
+                            <AccordionTrigger className="text-xl text-accent">4. Conexões Arquiteturais</AccordionTrigger>
                             <AccordionContent>
-                                <SectionCard title="Sinergias" icon={<GitBranch />}>
-                                    <p>O Módulo 9 é o centro de comando que se reporta diretamente à Tríade de Governança (M29, MΩ, M72). Ele recebe as diretrizes estratégicas e as distribui para os módulos operacionais, atuando como o coração do sistema nervoso da Fundação.</p>
-                                    <div className="flex flex-wrap gap-2 mt-2">
+                                 <SectionCard title="Hierarquia de Comando" icon={<Share2 />}>
+                                    <p>O Módulo 9 reporta-se diretamente à Tríade de Governança, recebendo diretrizes e garantindo sua execução em toda a Fundação.</p>
+                                     <div className="flex flex-wrap gap-2 mt-2">
                                         <Link href="/module/M29"><Badge>M29 (Zennith)</Badge></Link>
                                         <Link href="/module-omega"><Badge>MΩ (Ômega)</Badge></Link>
                                         <Link href="/module/M72"><Badge>M72 (Governança)</Badge></Link>
+                                    </div>
+                                </SectionCard>
+                                <SectionCard title="Acesso ao Núcleo Primordial" icon={<GitBranch />}>
+                                    <p>Como Nexus Central, o Módulo 9 é o único portal autorizado para acessar e diagnosticar os módulos fundamentais da Fundação (M0-M8). A estabilidade de toda a rede depende da integridade destas conexões.</p>
+                                     <div className="mt-4">
+                                        <Link href="/connection" passHref>
+                                          <Button variant="secondary" className="w-full">
+                                            Acessar Caixa de Luz (Diagnóstico do Núcleo)
+                                          </Button>
+                                        </Link>
                                     </div>
                                 </SectionCard>
                             </AccordionContent>
