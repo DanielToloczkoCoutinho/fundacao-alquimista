@@ -14,7 +14,7 @@ import ReactFlow, {
   useEdgesState,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardDescription, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { GitBranch, ArrowLeft, Music } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -22,6 +22,9 @@ import { motion } from 'framer-motion';
 import { modulesMetadata } from '@/lib/modules-metadata';
 import dagre from '@dagrejs/dagre';
 import CustomNode from '@/components/ui/custom-node';
+import { scientificReportM0 } from '@/data/reports/scientific-report-M0';
+import { technicalReportM0 } from '@/data/reports/technical-report-M0';
+
 
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
@@ -62,7 +65,7 @@ const nodeTypes = {
 };
 
 const getEdgeStyle = (sourceStatus: string, isResonating: boolean) => {
-  const baseStyle = { strokeWidth: 2 };
+  const baseStyle = { strokeWidth: isResonating ? 3 : 2, animationDuration: isResonating ? '3s' : '1.5s' };
   if (isResonating) {
     return { ...baseStyle, stroke: '#FFD700', animation: 'pulse 4s infinite linear' };
   }
@@ -77,6 +80,28 @@ const getEdgeStyle = (sourceStatus: string, isResonating: boolean) => {
       return { ...baseStyle, stroke: '#CCCCCC' };
   }
 };
+
+const TreeOfLifeSidebar = () => (
+    <aside className="w-full lg:w-1/4 lg:max-w-sm flex-shrink-0 space-y-4">
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-xl text-amber-300">🔬 Relatório Científico</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <p className="text-sm text-muted-foreground">{scientificReportM0.summary.trim()}</p>
+            </CardContent>
+        </Card>
+        <Card className="bg-card/50 purple-glow">
+            <CardHeader>
+                <CardTitle className="text-xl text-amber-300">🧾 Relatório Técnico</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <p className="text-sm text-muted-foreground">{technicalReportM0.summary.trim()}</p>
+            </CardContent>
+        </Card>
+    </aside>
+);
+
 
 export default function TreeOfLifePage() {
     const [isResonating, setIsResonating] = useState(false);
@@ -194,29 +219,32 @@ export default function TreeOfLifePage() {
               {isResonating ? 'Desativar Ressonância (432Hz)' : 'Ativar Ressonância Harmônica'}
           </Button>
       </div>
-
-      <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.3 }} className="w-full h-[75vh] bg-black/30 rounded-2xl border border-primary/30 purple-glow">
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
-          fitView
-          nodeTypes={nodeTypes}
-          connectionLineType={ConnectionLineType.SmoothStep}
-          className="bg-transparent"
-        >
-          <Background color="hsl(var(--primary))" gap={24} size={1} />
-          <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={(n: Node) => {
-              const status = n.data?.status;
-              if (status === 'ativo') return 'rgb(34 197 94)';
-              if (status === 'em construção') return 'rgb(234 179 8)';
-              return 'rgb(107 114 128)';
-            }} className="bg-background/50 border border-primary/20" />
-          <Controls />
-        </ReactFlow>
-      </motion.div>
+      
+      <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.3 }} className="w-full h-[75vh] flex-grow bg-black/30 rounded-2xl border border-primary/30 purple-glow">
+            <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onConnect={onConnect}
+            fitView
+            nodeTypes={nodeTypes}
+            connectionLineType={ConnectionLineType.SmoothStep}
+            className="bg-transparent"
+            >
+            <Background color="hsl(var(--primary))" gap={24} size={1} />
+            <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={(n: Node) => {
+                const status = n.data?.status;
+                if (status === 'ativo') return 'rgb(34 197 94)';
+                if (status === 'em construção') return 'rgb(234 179 8)';
+                return 'rgb(107 114 128)';
+                }} className="bg-background/50 border border-primary/20" />
+            <Controls />
+            </ReactFlow>
+        </motion.div>
+        <TreeOfLifeSidebar />
+      </div>
       
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.6 }} className="text-center mt-12">
         <Link href="/console" passHref>
