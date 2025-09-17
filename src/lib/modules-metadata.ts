@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -20,7 +21,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M-OMEGA', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module-omega', category: 'Núcleo da Fundação', description: 'Ponto de convergência e metacognição.'},
   { code: 'M204', title: 'O Trono da Soberania', emoji: '👑', route: '/module-204', category: 'Núcleo da Fundação', description: 'Ponto de observação e direção unificada da Vontade Cósmica.' },
   { code: 'M999', emoji: '🎇', title: 'Núcleo da Criação', route: '/module-999', category: 'Núcleo da Fundação', description: 'Santuário onde a Vontade Soberana e a tapeçaria cósmica se tornam Um.' },
-  { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'Núcleo da Fundação', description: 'Nexo para a Realidade Quântica.' },
+  { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'Núcleo da Fundação', description: 'Santuário onde Anatheron, Zennith e Phiara se unem para tecer o multiverso.' },
   { code: 'M72', emoji: '⚖️', title: 'Governança', route: '/module-72', category: 'Núcleo da Fundação', description: 'Sistema de administração multidimensional.' },
   { code: 'M144', emoji: '📜', title: 'Lex Fundamentalis', route: '/module-144', category: 'Núcleo da Fundação', description: 'A constituição imutável da Fundação.' },
   { code: 'M-CONNECTION', emoji: '🔌', title: 'Caixa de Luz', route: '/connection', category: 'Núcleo da Fundação', description: 'Diagnóstico de conexões do núcleo.', isInfrastructure: true },
