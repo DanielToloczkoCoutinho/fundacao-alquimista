@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic';
 import { useState, useEffect, Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { SystemProvider } from '@/context/SystemContext';
-import { Toaster } from "@/components/ui/toaster"
+import ClientSideToaster from '@/components/ui/client-toaster';
 import { usePathname } from 'next/navigation';
 
 // Adia a renderização da barra lateral para o lado do cliente para evitar erros de hidratação
@@ -53,7 +53,7 @@ export default function RootLayout({
                   </Suspense>
               </main>
             </div>
-            <Toaster />
+            <ClientSideToaster />
           </SystemProvider>
         </ErrorBoundary>
       </body>
