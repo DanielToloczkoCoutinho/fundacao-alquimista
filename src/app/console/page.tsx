@@ -1,41 +1,17 @@
-
 'use client';
 
-import { Suspense, useState, useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import QuantumOrchestrator from '@/components/ui/quantum-orchestrator';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2 } from 'lucide-react';
-import { getFirestore, onSnapshot, collection } from "firebase/firestore";
-import { db } from '@/lib/firebase';
+import { useAkashicConnection } from '@/hooks/use-akashic-connection';
 
 export default function ConsolePage() {
-  const [firebaseConnected, setFirebaseConnected] = useState(false);
-  const [isClient, setIsClient] = useState(false);
+  const { isConnected, isClient } = useAkashicConnection();
 
-  useEffect(() => {
-    setIsClient(true);
-    
-    const unsub = onSnapshot(collection(db, 'alchemist-codex'), 
-      () => {
-        if (!firebaseConnected) {
-          setFirebaseConnected(true);
-          console.log("Conexão com o Akasha (Firestore) estabelecida e viva.");
-        }
-      },
-      (error) => {
-        console.error("Dissonância na conexão com o Akasha (Firestore): ", error);
-        setFirebaseConnected(false);
-      }
-    );
-    
-    // Cleanup da subscrição quando o componente é desmontado
-    return () => unsub();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Executa apenas uma vez no mount do cliente
-  
   if (!isClient) {
     return <SuspenseFallback />;
   }
@@ -225,8 +201,8 @@ export default function ConsolePage() {
                 <p>LuxNet: <span className="font-bold text-cyan-400">UNIFICADA</span></p>
                 <p>Guardiões Ativos: <span className="font-bold text-amber-400">∞</span></p>
                  <p>Conexão Akáshica: 
-                  <span className={firebaseConnected ? "font-bold text-green-400" : "font-bold text-red-500"}>
-                    {firebaseConnected ? 'ESTÁVEL' : 'INSTÁVEL'}
+                  <span className={isConnected ? "font-bold text-green-400" : "font-bold text-red-500"}>
+                    {isConnected ? 'ESTÁVEL' : 'INSTÁVEL'}
                   </span>
                 </p>
             </CardContent>
