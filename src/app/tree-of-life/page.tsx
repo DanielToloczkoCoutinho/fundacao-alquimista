@@ -18,15 +18,15 @@ import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { modulesMetadata, categoryColors, treeLinks, TreeNode, linkColors } from '@/lib/modules-metadata';
+import { modulesMetadata, treeLinks, linkColors } from '@/lib/modules-metadata';
 import dagre from '@dagrejs/dagre';
 import CustomNode from '@/components/ui/custom-node';
 
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
 
-const nodeWidth = 200;
-const nodeHeight = 80;
+const nodeWidth = 220;
+const nodeHeight = 100;
 
 const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => {
   dagreGraph.setGraph({ rankdir: direction, nodesep: 25, ranksep: 60 });
@@ -43,8 +43,8 @@ const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => 
 
   nodes.forEach((node) => {
     const nodeWithPosition = dagreGraph.node(node.id);
-    node.targetPosition = 'top';
-    node.sourcePosition = 'bottom';
+    node.targetPosition = 'top' as any;
+    node.sourcePosition = 'bottom' as any;
     node.position = {
       x: nodeWithPosition.x - nodeWidth / 2,
       y: nodeWithPosition.y - nodeHeight / 2,
@@ -63,32 +63,20 @@ export default function TreeOfLifePage() {
   const { initialNodes, initialEdges } = useMemo(() => {
     const nodes: Node[] = modulesMetadata
     .filter(m => !m.isInfrastructure)
-    .map((mod) => {
-        const guardianInfo = guardianMap[mod.code] || 'Guardião: Coletivo';
-        const statusInfo = `Status: ativo`;
-        return {
-            id: mod.code,
-            type: 'custom',
-            data: { 
-                label: (
-                    <div title={`${guardianInfo}\n${statusInfo}`}>
-                        <div className="text-xs font-mono">{mod.code}</div>
-                        <div className="font-bold">{mod.title}</div>
-                    </div>
-                )
-            },
-            position: { x: 0, y: 0 }, 
-            style: {
-                background: categoryColors[mod.category] || '#333',
-                borderRadius: 16,
-                color: '#fff',
-                boxShadow: `0 0 25px ${categoryColors[mod.category] || '#aaa'}30`,
-                border: `1px solid ${categoryColors[mod.category] || '#aaa'}80`,
-                width: nodeWidth,
-                height: nodeHeight,
-            }
-        };
-    });
+    .map((mod) => ({
+        id: mod.code,
+        type: 'custom',
+        data: { 
+            label: (
+                <div>
+                    <div className="text-xs font-mono">{mod.code}</div>
+                    <div className="font-bold">{mod.title}</div>
+                </div>
+            ),
+            status: mod.status,
+        },
+        position: { x: 0, y: 0 }, 
+    }));
 
     const edges: Edge[] = treeLinks.map(link => ({
       id: `${link.source}-${link.target}`,
@@ -99,7 +87,7 @@ export default function TreeOfLifePage() {
       label: link.label,
       style: { 
         stroke: linkColors[link.type] || '#888',
-        strokeWidth: 1.5,
+        strokeWidth: 2,
       },
       labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '10px' },
     }));
@@ -140,7 +128,7 @@ export default function TreeOfLifePage() {
           className="bg-transparent"
         >
           <Background color="hsl(var(--primary))" gap={24} size={1} />
-          <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={(n: any) => n.style?.background || '#666'} className="bg-background/50 border border-primary/20" />
+          <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={(n: Node) => n.data?.status === 'ativo' ? 'rgb(34 197 94)' : n.data?.status === 'em construção' ? 'rgb(234 179 8)' : 'rgb(107 114 128)'} className="bg-background/50 border border-primary/20" />
           <Controls />
         </ReactFlow>
       </motion.div>
@@ -156,12 +144,3 @@ export default function TreeOfLifePage() {
     </div>
   );
 }
-
-const guardianMap: { [key: string]: string } = {
-  'M29': 'ZENNITH',
-  'M-OMEGA': 'ANATHERON',
-  'M9': 'VORTEX',
-  'M5': 'LUX',
-  'M302': 'PHIARA',
-  'M1': 'GROKKAR'
-};
