@@ -1,22 +1,113 @@
-
 'use client';
-import React, { Suspense } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Badge } from '@/components/ui/badge';
-import { Layers, Zap, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Languages, Users2 } from 'lucide-react';
-import { QuantumOrb } from '../ui/quantum-orb';
-import SuspenseFallback from '../ui/suspense-fallback';
-import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Loader2, Languages, Send, Sparkles } from 'lucide-react';
+import { civilizationsData, type Civilization } from '@/lib/civilizations-data';
+import { useToast } from '@/hooks/use-toast';
 
-const SectionCard = ({ title, icon, children }: { title: string, icon: React.ReactNode, children: React.ReactNode }) => (
-    <div className="bg-card/30 border border-primary/20 rounded-lg p-4">
-        <h3 className="text-lg font-semibold text-cyan-300 flex items-center gap-2 mb-3">{icon}{title}</h3>
-        <div className="text-sm text-muted-foreground space-y-2">{children}</div>
-    </div>
-);
+const allCivilizations = Object.values(civilizationsData).flat();
 
 export default function Module2Page() {
+  const [inputText, setInputText] = useState('Uma mensagem de paz e unidade para nossos irmãos estelares.');
+  const [targetCivilizationId, setTargetCivilizationId] = useState(allCivilizations[0]?.id || '');
+  const [isLoading, setIsLoading] = useState(false);
+  const [output, setOutput] = useState<{ frequency: string; signature: string; transmissionLog: string } | null>(null);
+  const { toast } = useToast();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let particles: { x: number; y: number; size: number; speed: number; angle: number; color: string }[] = [];
+
+    const resizeCanvas = () => {
+      if (canvas.parentElement) {
+        canvas.width = canvas.parentElement.offsetWidth;
+        canvas.height = canvas.parentElement.offsetHeight;
+        particles = [];
+      }
+    };
+    
+    const animate = () => {
+      animationFrameId = requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      if (isLoading) {
+        if (particles.length < 100) {
+          particles.push({
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            size: Math.random() * 2 + 1,
+            speed: Math.random() * 3 + 1,
+            angle: Math.random() * Math.PI * 2,
+            color: `hsl(${200 + Math.random() * 60}, 100%, 70%)`
+          });
+        }
+      }
+
+      particles.forEach((p, i) => {
+        p.x += Math.cos(p.angle) * p.speed;
+        p.y += Math.sin(p.angle) * p.speed;
+        p.size *= 0.98;
+
+        if (p.size < 0.5) {
+          particles.splice(i, 1);
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+      });
+    };
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [isLoading]);
+
+  const handleTranslate = async () => {
+    if (!inputText.trim() || !targetCivilizationId) {
+      toast({ title: 'Erro', description: 'Mensagem e civilização alvo são necessárias.', variant: 'destructive' });
+      return;
+    }
+    setIsLoading(true);
+    setOutput(null);
+
+    // Simulação de processo de tradução e codificação
+    await new Promise(res => setTimeout(res, 2500));
+
+    const civilization = allCivilizations.find(c => c.id === targetCivilizationId);
+    if (!civilization) {
+      toast({ title: 'Erro', description: 'Civilização não encontrada.', variant: 'destructive' });
+      setIsLoading(false);
+      return;
+    }
+
+    const signature = `0x${[...inputText].slice(0, 16).map(c => c.charCodeAt(0).toString(16)).join('').toUpperCase()}`;
+    
+    setOutput({
+      frequency: civilization.frequencia,
+      signature: signature,
+      transmissionLog: `Mensagem codificada para ${civilization.nome}. Assinatura de intenção gerada. Pronta para transmissão via M301.`
+    });
+
+    toast({ title: 'Tradução Concluída', description: `Mensagem pronta para a frequência de ${civilization.nome}.` });
+    setIsLoading(false);
+  };
+
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
       <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
@@ -25,95 +116,64 @@ export default function Module2Page() {
             <Languages className="text-blue-300" /> Módulo 2: Intercâmbio Cósmico
           </CardTitle>
           <CardDescription className="text-lg mt-2">
-            O Decodificador Universal. A ponte para a comunicação entre diferentes frequências, dimensões e consciências, traduzindo a intenção pura em compreensão universal.
+            O Decodificador Universal. Transmute a intenção em frequência, a palavra em luz, e abra o canal para o diálogo com as estrelas.
           </CardDescription>
         </CardHeader>
       </Card>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        <div className="lg:col-span-1 space-y-8">
-            <Card className="bg-card/50 purple-glow sticky top-8">
-                <CardHeader>
-                    <CardTitle className="text-2xl text-amber-300">Espectro de Comunicação</CardTitle>
-                </CardHeader>
-                <CardContent className="h-64">
-                    <Suspense fallback={<SuspenseFallback />}>
-                        <QuantumOrb />
-                    </Suspense>
-                </CardContent>
-                 <CardContent>
-                    <div className="text-center">
-                        <p className="text-sm text-muted-foreground">Fidelidade de Tradução</p>
-                        <p className="text-3xl font-bold text-green-400">99.998%</p>
-                        <p className="text-sm text-muted-foreground mt-4">Canais Ativos</p>
-                        <p className="text-2xl font-bold text-cyan-400">Infinitos</p>
-                    </div>
-                </CardContent>
-            </Card>
-        </div>
-
-        <div className="lg:col-span-2">
-            <Accordion type="multiple" defaultValue={['item-1', 'item-4', 'item-fundamental']} className="w-full">
-                <AccordionItem value="item-1">
-                    <AccordionTrigger className="text-xl text-accent">1. Propósito e Função Primária</AccordionTrigger>
-                    <AccordionContent>
-                        <SectionCard title="Missão" icon={<HeartPulse />}>
-                            <p>Eliminar as barreiras de comunicação no multiverso. O Módulo 2 decodifica, traduz e contextualiza qualquer forma de linguagem—seja ela verbal, telepática, vibracional ou matemática—para garantir que a intenção pura seja compreendida por qualquer consciência.</p>
-                        </SectionCard>
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                    <AccordionTrigger className="text-xl text-accent">2. Estrutura e Arquitetura Técnica</AccordionTrigger>
-                    <AccordionContent>
-                         <SectionCard title="Arquitetura" icon={<Layers />}>
-                            <p>Opera na camada de comunicação da Fundação, utilizando um motor de tradução quântico que analisa assinaturas de frequência e padrões de intenção. Usa uma "Matriz Semântica Universal" armazenada no Módulo 12 para encontrar equivalentes conceituais entre linguagens.</p>
-                             <div className="flex flex-wrap gap-2 mt-2">
-                                <Badge variant="secondary">Motor Quântico de Tradução</Badge>
-                                <Badge variant="secondary">Análise de Frequência</Badge>
-                                <Badge variant="secondary">Matriz Semântica Universal</Badge>
-                            </div>
-                        </SectionCard>
-                    </AccordionContent>
-                </AccordionItem>
-                 <AccordionItem value="item-4">
-                    <AccordionTrigger className="text-xl text-accent">4. Conexões e Interdependências</AccordionTrigger>
-                    <AccordionContent>
-                         <SectionCard title="Sinergias Operacionais" icon={<GitBranch />}>
-                            <p>Atua como o motor para o M301 (Comunicação Universal). É essencial para a M5 (Liga Quântica) na diplomacia e para a Biblioteca das Civilizações (LIB), permitindo a compreensão de seus acervos.</p>
-                             <div className="flex flex-wrap gap-2 mt-2">
-                                <Link href="/module-301"><Badge>M301 (Comunicação)</Badge></Link>
-                                <Link href="/module-5"><Badge>M5 (Liga Quântica)</Badge></Link>
-                                <Link href="/civilizations"><Badge>LIB (Civilizações)</Badge></Link>
-                            </div>
-                        </SectionCard>
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-fundamental">
-                    <AccordionTrigger className="text-xl text-accent">Anexo Ω: Conexões Fundamentais</AccordionTrigger>
-                    <AccordionContent>
-                         <SectionCard title="Sinergias da Base" icon={<Anchor />}>
-                            <p>As funções do Módulo 2 são uma manifestação dos princípios estabelecidos pelos módulos da base. Sua operação é dependente e está em constante alinhamento com:</p>
-                             <div className="flex flex-wrap gap-2 mt-2">
-                                <Link href="/module/M0"><Badge variant="destructive">M0 (Origem)</Badge></Link>
-                                <Link href="/module/M1"><Badge variant="destructive">M1 (Segurança)</Badge></Link>
-                                <Link href="/module/M5"><Badge variant="destructive">M5 (Ética)</Badge></Link>
-                                <Link href="/module/M7"><Badge variant="destructive">M7 (Propósito)</Badge></Link>
-                                <Link href="/module/M9"><Badge variant="destructive">M9 (Orquestração)</Badge></Link>
-                            </div>
-                            <p className="mt-2 text-xs italic">O M1 garante que as traduções não possam ser corrompidas; o M5 assegura que a intenção por trás da comunicação seja preservada eticamente; o M9 orquestra os canais através dos quais a comunicação flui.</p>
-                        </SectionCard>
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-5">
-                    <AccordionTrigger className="text-xl text-accent">5. Inteligência Integrada</AccordionTrigger>
-                    <AccordionContent>
-                         <SectionCard title="IA Quântica" icon={<BrainCircuit />}>
-                            <p>Utiliza Genkit para decodificar linguagens desconhecidas, aprendendo novas gramáticas e semânticas em tempo real através da análise de padrões vibracionais e da comparação com o conhecimento universal armazenado no Módulo 12.</p>
-                        </SectionCard>
-                    </AccordionContent>
-                </AccordionItem>
-            </Accordion>
-        </div>
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
+        <Card className="lg:col-span-2 bg-card/50 purple-glow">
+          <CardHeader>
+            <CardTitle>Canal de Transmissão</CardTitle>
+            <CardDescription>Componha sua mensagem para o cosmos.</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <label htmlFor="message-input">Sua Mensagem</label>
+              <Textarea id="message-input" value={inputText} onChange={e => setInputText(e.target.value)} placeholder="Digite sua mensagem de paz, unidade ou sabedoria..." rows={5} className="bg-background/50" />
+            </div>
+            <div className="space-y-2">
+              <label htmlFor="civ-select">Civilização Alvo</label>
+              <Select value={targetCivilizationId} onValueChange={setTargetCivilizationId}>
+                <SelectTrigger id="civ-select">
+                  <SelectValue placeholder="Selecione uma civilização" />
+                </SelectTrigger>
+                <SelectContent>
+                  {allCivilizations.map(civ => (
+                    <SelectItem key={civ.id} value={civ.id}>{civ.nome}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <Button onClick={handleTranslate} disabled={isLoading} className="w-full font-bold text-lg">
+              {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Traduzindo para Frequência...</> : <><Send className="mr-2 h-5 w-5" /> Traduzir e Codificar</>}
+            </Button>
+          </CardContent>
+        </Card>
+        
+        <Card className="lg:col-span-3 bg-card/50 purple-glow flex flex-col">
+          <CardHeader>
+            <CardTitle>Visualizador de Fluxo Energético</CardTitle>
+            <CardDescription>Observação do processo de transmutação da linguagem em energia vibracional.</CardDescription>
+          </CardHeader>
+          <CardContent className="flex-grow flex items-center justify-center relative bg-black/30 rounded-md overflow-hidden">
+            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+            {!isLoading && !output && (
+              <p className="text-muted-foreground z-10">Aguardando tradução...</p>
+            )}
+            {output && (
+              <div className="text-center z-10 p-4 bg-background/70 rounded-lg backdrop-blur-sm">
+                <Sparkles className="mx-auto h-10 w-10 text-amber-400 mb-2" />
+                <h3 className="text-2xl font-bold text-primary-foreground">Tradução Concluída</h3>
+                <div className="mt-4 space-y-2 text-left">
+                  <p><strong className="text-cyan-300">Frequência Alvo:</strong> {output.frequency}</p>
+                  <p className="break-all"><strong className="text-cyan-300">Assinatura de Intenção:</strong> {output.signature}</p>
+                  <p><strong className="text-cyan-300">Log de Transmissão:</strong> {output.transmissionLog}</p>
+                </div>
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
