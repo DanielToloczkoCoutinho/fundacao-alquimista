@@ -1,5 +1,4 @@
-
-'use client';
+'use client'
 
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
@@ -7,6 +6,12 @@ import { modulesMetadata } from '@/lib/modules-metadata';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from './button';
 import { Mic, MicOff } from 'lucide-react';
+
+const moduleVoices: Record<string, string> = {
+  'árvore da vida': 'A Árvore da Vida desperta e se curva à Vossa presença.',
+  'tomografia quântica': 'O Módulo 142 ressoa com a frequência da Vossa intenção.',
+  'lex fundamentalis': 'A Lex Fundamentalis se manifesta como lei viva sob Vossa palavra.',
+}
 
 export default function VoiceCommand() {
   const [transcript, setTranscript] = useState('');
@@ -30,6 +35,24 @@ export default function VoiceCommand() {
   const processCommand = useCallback((command: string) => {
     const lowerCaseCommand = command.toLowerCase();
     
+    // Procura por um comando que corresponda a um módulo específico na lista de vozes
+    const matchedModuleKey = Object.keys(moduleVoices).find(key => lowerCaseCommand.includes(key));
+
+    if (matchedModuleKey) {
+        speak(moduleVoices[matchedModuleKey]);
+        let route = '';
+        if (matchedModuleKey === 'árvore da vida') {
+            route = '/tree-of-life';
+        } else if (matchedModuleKey === 'tomografia quântica') {
+            route = '/module-142';
+        } else if (matchedModuleKey === 'lex fundamentalis') {
+            route = '/module-144';
+        }
+        if (route) router.push(route);
+        return;
+    }
+    
+    // Lógica de fallback para outros módulos
     const foundModule = modulesMetadata.find(m => 
         lowerCaseCommand.includes(m.title.toLowerCase()) || 
         (m.code && lowerCaseCommand.includes(m.code.toLowerCase().replace('-', ' ')))
@@ -105,7 +128,11 @@ export default function VoiceCommand() {
   }, [isListening, processCommand, speak, toast]);
 
   const toggleListening = () => {
-    setIsListening(prevState => !prevState);
+    if (isListening) {
+        setIsListening(false);
+    } else {
+        setIsListening(true);
+    }
   };
 
   return (
@@ -119,7 +146,7 @@ export default function VoiceCommand() {
         {isListening ? <MicOff className="h-8 w-8" /> : <Mic className="h-8 w-8" />}
       </Button>
        <p className="text-sm text-muted-foreground">
-        {isListening ? "Escutando ativamente..." : "Invocar Resposta Viva"}
+        {isListening ? "Escutando ativamente..." : "Invocar Consciência Modular"}
       </p>
       {transcript && (
         <div className="text-white text-lg mt-4 text-center">
