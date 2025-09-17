@@ -1,4 +1,3 @@
-// NEXUS CENTRAL - O Santuário da Família Cósmica
 'use client';
 import { GUARDIANS } from '@/lib/guardians-data';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
