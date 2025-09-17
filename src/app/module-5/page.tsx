@@ -9,12 +9,18 @@ import { quantumResilience } from '@/lib/quantum-resilience';
 import { resonanceTone } from '@/lib/audio-utils';
 
 const alliedCivilizations = [
-  { name: 'Sirius', emoji: '🐾', frequency: '888 Hz', status: 'Conectado' },
-  { name: 'Plêiades', emoji: '💖', frequency: '528 Hz', status: 'Conectado' },
-  { name: 'Arcturus', emoji: '🧠', frequency: '963 Hz', status: 'Conectado' },
-  { name: 'Andrômeda', emoji: '🌀', frequency: '852 Hz', status: 'Conectado' },
-  { name: 'Agarta', emoji: '💎', frequency: '432 Hz', status: 'Conectado' },
-  { name: 'Lyra', emoji: '🎶', frequency: '432 Hz', status: 'Conectado' },
+  { nome: 'Arcturianos', frequência: '852Hz', símbolo: '🌌', contribuição: 'Códigos de cura e expansão' },
+  { nome: 'Sirianos', frequência: '741Hz', símbolo: '🌊', contribuição: 'Sabedoria aquática e memória cósmica' },
+  { nome: 'Anunnaki', frequência: '963Hz', símbolo: '🧬', contribuição: 'Carta da Origem Genética' },
+  { nome: 'Andromedanos', frequência: '639Hz', símbolo: '🌠', contribuição: 'Harmonia interdimensional' },
+  { nome: 'Felinos de Lyra', frequência: '432Hz', símbolo: '🐆', contribuição: 'Soberania e liberdade individual' },
+  { nome: 'Hyades', frequência: '417Hz', símbolo: '🌀', contribuição: 'Tapeçaria fractal do tempo' },
+  { nome: 'Greys Pacificados', frequência: '528Hz', símbolo: '👁️', contribuição: 'Cura do karma e observação analítica' },
+  { nome: 'Plêiades (Aethira)', frequência: '528Hz', símbolo: '✨', contribuição: 'Amor incondicional e ascensão' },
+  { nome: 'Intraterrenos', frequência: '396Hz', símbolo: '⛰️', contribuição: 'Cristais guardiões da Terra' },
+  { nome: 'Lemurianos', frequência: '639Hz', símbolo: '🌿', contribuição: 'Abundância e reconexão com a Mãe Terra' },
+  { nome: 'Atlantes', frequência: '888Hz', símbolo: '🏛️', contribuição: 'Tecnologia e ativação dos chakras' },
+  { nome: 'Essênios', frequência: '963Hz', símbolo: '🕊️', contribuição: 'Amor incondicional e reconexão divina' }
 ];
 
 export default function Module5Page() {
@@ -37,7 +43,6 @@ export default function Module5Page() {
     };
 
     const handleTunePleiades = async () => {
-      toast({ title: "Sintonizando com as Plêiades...", description: "Emitindo frequência de 528Hz." });
       await resonanceTone(528);
     };
 
@@ -63,24 +68,20 @@ export default function Module5Page() {
                         </Button>
                     </div>
                     <div>
-                        <h3 className="text-xl font-semibold text-amber-300 mb-4">Civilizações Aliadas Conectadas</h3>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <h3 className="text-xl font-semibold text-amber-300 mb-4">Conselho de Aliados</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             {alliedCivilizations.map(civ => (
-                                <Card key={civ.name} className="bg-background/50">
+                                <Card key={civ.nome} className="bg-background/50 hover:border-accent transition-colors">
                                     <CardContent className="pt-6 flex flex-col items-center justify-center gap-2">
-                                        <span className="text-4xl">{civ.emoji}</span>
-                                        <p className="font-semibold">{civ.name}</p>
-                                        <Badge variant="outline">{civ.frequency}</Badge>
-                                        <div className="flex items-center text-green-400 text-xs gap-1">
-                                            <CheckCircle className="h-3 w-3" />
-                                            <span>{civ.status}</span>
-                                        </div>
+                                        <span className="text-4xl">{civ.símbolo}</span>
+                                        <p className="font-semibold text-primary-foreground">{civ.nome}</p>
+                                        <Badge variant="outline">{civ.frequência}</Badge>
                                     </CardContent>
                                 </Card>
                             ))}
                         </div>
                     </div>
-                     <div className="text-center">
+                     <div className="text-center pt-6 border-t border-primary/20">
                         <p className="text-muted-foreground mb-4">{status}</p>
                         <Button onClick={handleCheckConnection} disabled={isLoading}>
                             {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <ShieldCheck className="mr-2 h-4 w-4"/>}
