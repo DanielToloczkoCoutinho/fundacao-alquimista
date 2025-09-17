@@ -18,13 +18,14 @@ export interface TreeNode {
   fractais?: SubModule[];
 }
 
+export type TreeLinkType = 'dependencia' | 'influencia' | 'heranca' | 'atualizacao' | 'protecao' | 'retorno-inteligente';
+
 export interface TreeLink {
   source: string; // ID of source node
   target: string; // ID of target node
-  type: 'dependencia' | 'influencia' | 'heranca' | 'atualizacao' | 'protecao' | 'retorno-inteligente';
+  type: TreeLinkType;
 }
 
-// Mapeamento de guardiões para simplificação
 const guardianMap: { [key: string]: string } = {
   'M29': 'ZENNITH',
   'M-OMEGA': 'ANATHERON',
@@ -34,52 +35,49 @@ const guardianMap: { [key: string]: string } = {
   'M1': 'GROKKAR'
 };
 
-// Gerar nós a partir dos metadados existentes, adicionando fractais de exemplo
 export const treeNodes: TreeNode[] = modulesMetadata
-  .filter(m => !m.isInfrastructure)
+  .filter(m => !m.isInfrastructure || ['M29', 'VENTE', 'M291'].includes(m.code))
   .map((m, index) => ({
     id: m.code,
     name: m.title,
     category: m.category,
-    status: 'ativo', // Status simulado
+    status: 'ativo', 
     guardian: guardianMap[m.code] || 'Coletivo',
-    fractais: index < 5 ? [
+    fractais: m.code.startsWith('M') && !m.code.includes('.') ? [
         { id: `${m.code}-sub1`, name: `Kernel Vibracional`, createdAt: '2024-01-01', status: 'ativo' },
         { id: `${m.code}-sub2`, name: `Interface de Coerência`, createdAt: '2024-02-01', status: 'ativo' },
     ] : undefined,
   }));
 
 export const categoryColors: Record<string, string> = {
-  'Núcleo da Fundação': '#00BFA6', // Verde Água
-  'Governança e Ética': '#FFD700', // Ouro
-  'Realidade Quântica & Engenharia Cósmica': '#FF6F61', // Coral
-  'Consciência e Expansão Dimensional': '#7B61FF', // Violeta
-  'Laboratórios e Pesquisa': '#4ECDC4', // Turquesa
-  'Bibliotecas e Arquivos Sagrados': '#FFE66D', // Amarelo Claro
-  'Cura e Harmonia': '#FFB6C1', // Rosa
-  'Sustentabilidade e Ecossistemas': '#6BFF6B', // Verde Limão
-  'Bem-estar e Saúde Universal': '#6BFFB5', // Verde Menta
-  'Segurança e Ética Cósmica': '#FF6B6B', // Vermelho Claro,
-  'Engenharia': '#FF6F61',
+  'Núcleo da Fundação': '#00BFA6',
   'Governança': '#FFD700',
+  'Engenharia': '#FF6F61',
   'Exploração': '#7B61FF',
-  'Espiritualidade': '#FFB6C1'
+  'Espiritualidade': '#FFB6C1',
+  'Realidade Quântica & Engenharia Cósmica': '#FF6F61',
+  'Consciência e Expansão Dimensional': '#7B61FF',
+  'Laboratórios e Pesquisa': '#4ECDC4',
+  'Bibliotecas e Arquivos Sagrados': '#FFE66D',
+  'Cura e Harmonia': '#FFB6C1',
+  'Sustentabilidade e Ecossistemas': '#6BFF6B',
+  'Bem-estar e Saúde Universal': '#6BFFB5',
+  'Segurança e Ética Cósmica': '#FF6B6B',
 };
 
 export const linkColors: Record<string, string> = {
     dependencia: '#FFD700',
     influencia: '#00BFA6',
-    heranca: '#FF6F61',
-    atualizacao: '#4ECDC4',
-    protecao: '#FF6B6B',
-    'retorno-inteligente': '#7B61FF',
+    heranca: '#FF8C00',
+    atualizacao: '#00BFA6',
+    protecao: '#FFD700',
+    'retorno-inteligente': '#FF6F61',
 };
 
-// Função auxiliar para gerar links dinamicamente
 const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
     const links: TreeLink[] = [];
     const nodeIds = nodes.map(n => n.id);
-    const coreNodes = nodes.filter(n => n.category === 'Núcleo da Fundação' || n.category === 'Governança e Ética').map(n => n.id);
+    const coreNodes = nodes.filter(n => n.category === 'Núcleo da Fundação' || n.category === 'Governança').map(n => n.id);
     const linkTypes: TreeLink['type'][] = ['dependencia', 'influencia', 'heranca'];
 
     nodes.forEach(node => {
@@ -94,19 +92,6 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
                     });
                 }
             }
-        }
-
-        const hash = node.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-        if (hash % 10 > 5 && nodeIds.length > 1) {
-             let targetIndex = (hash * 17) % nodeIds.length;
-             let targetNodeId = nodeIds[targetIndex];
-             if (targetNodeId !== node.id && !links.some(l => (l.source === node.id && l.target === targetNodeId) || (l.source === targetNodeId && l.target === node.id))) {
-                 links.push({
-                    source: node.id,
-                    target: targetNodeId,
-                    type: linkTypes[(hash % 3)]
-                });
-             }
         }
     });
 
@@ -130,6 +115,4 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
     return links;
 };
 
-// Gerar links dinamicamente
 export const treeLinks: TreeLink[] = generateLinks(treeNodes);
-    

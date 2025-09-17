@@ -1,14 +1,13 @@
 'use client';
-import React, { useMemo, useState, useCallback } from 'react';
-import ReactFlow, { Background, Controls, MiniMap, ConnectionLineType, Node, Edge, addEdge, OnConnect, useNodesState, useEdgesState } from 'reactflow';
+import React, { useState, useMemo, useCallback } from 'react';
+import ReactFlow, { Background, Controls, MiniMap, Node, Edge, addEdge, ConnectionLineType, useNodesState, useEdgesState } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { treeNodes as initialTreeNodes, treeLinks as initialTreeLinks, type TreeNode, type TreeLink } from '@/lib/tree-of-life-data';
-import { categoryColors, linkColors } from '@/lib/tree-of-life-data';
+import { treeNodes, treeLinks, categoryColors, linkColors, TreeNode } from '@/lib/tree-of-life-data';
 
 const CustomNode = ({ data }: { data: { label: React.ReactNode } }) => {
     return <>{data.label}</>;
@@ -18,8 +17,8 @@ const nodeTypes = {
     custom: CustomNode,
 };
 
-export default function TreeOfLifePage() {
-    const initialNodes: Node[] = useMemo(() => initialTreeNodes.map((mod) => ({
+export default function TreeOfLife() {
+    const initialNodes: Node[] = useMemo(() => treeNodes.map((mod) => ({
         id: mod.id,
         type: 'custom',
         data: { 
@@ -44,7 +43,7 @@ export default function TreeOfLifePage() {
         }
     })), []);
 
-    const initialEdges: Edge[] = useMemo(() => initialTreeLinks.map(link => ({
+    const initialEdges: Edge[] = useMemo(() => treeLinks.map(link => ({
         id: `${link.source}-${link.target}`,
         source: link.source,
         target: link.target,
@@ -55,16 +54,16 @@ export default function TreeOfLifePage() {
             stroke: linkColors[link.type] || '#888',
             strokeWidth: 2.5,
         },
-        labelStyle: { fill: linkColors[link.type] || '#888', fontWeight: 600, fontSize: '12px' },
+        labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '12px' },
     })), []);
 
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-    const onConnect: OnConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
+    const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
-    const onNodeClick = (_: React.MouseEvent, node: Node) => {
-        const moduleData = initialTreeNodes.find(m => m.id === node.id);
+    const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
+        const moduleData = treeNodes.find(m => m.id === node.id);
         if (!moduleData?.fractais) return;
 
         const existingFractalIds = new Set(nodes.map(n => n.id));
@@ -98,7 +97,7 @@ export default function TreeOfLifePage() {
 
         setNodes(prev => [...prev, ...newNodes]);
         setEdges(prev => [...prev, ...newEdges]);
-    };
+    }, [nodes, setNodes, setEdges]);
 
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
@@ -123,7 +122,7 @@ export default function TreeOfLifePage() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
-                className="w-full max-w-7xl mx-auto h-[70vh] bg-black/30 rounded-2xl border border-primary/30 purple-glow"
+                className="w-full h-[75vh] bg-black/30 rounded-2xl border border-primary/30 purple-glow"
             >
                 <ReactFlow
                     nodes={nodes}
@@ -142,7 +141,7 @@ export default function TreeOfLifePage() {
                         nodeStrokeWidth={3} 
                         zoomable 
                         pannable 
-                        nodeColor={(n) => categoryColors[initialTreeNodes.find(m => m.id === n.id)?.category || 'default'] || '#666'}
+                        nodeColor={(n) => categoryColors[treeNodes.find(m => m.id === n.id)?.category || 'default'] || '#666'}
                         className="bg-background/50 border border-primary/20"
                     />
                     <Controls />
@@ -165,4 +164,3 @@ export default function TreeOfLifePage() {
         </div>
     );
 }
-    
