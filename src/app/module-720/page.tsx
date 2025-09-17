@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Recycle, Heart, Dna, GraduationCap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Recycle, Heart, Dna, GraduationCap, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -57,10 +58,10 @@ export default function Module720Page() {
                         href="/module-16"
                     />
                      <ConnectionCard
-                        title="M304: Universidade Alquimista"
-                        description="A sustentabilidade multidimensional é um princípio central ensinado em todas as disciplinas da Universidade."
-                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
-                        href="/module-304"
+                        title="Módulo 81: Energias Renováveis"
+                        description="A sustentabilidade universal depende diretamente das fontes de energia limpa e infinita gerenciadas pelo M81."
+                        icon={<Zap className="h-8 w-8 text-yellow-400" />}
+                        href="/module-81"
                     />
                 </div>
             </div>
