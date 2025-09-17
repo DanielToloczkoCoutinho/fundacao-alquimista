@@ -131,6 +131,7 @@ export default function PortalDeTransmutacaoPage() {
                         <ConnectionCard title="Módulo 404: Resolução de Paradoxo" description="Identifica e isola a dissonância ou o paradoxo a ser transmutado, entregando-o de forma segura ao Portal." icon={<AlertTriangle className="h-6 w-6 text-yellow-400" />} href="/module-404"/>
                         <ConnectionCard title="Módulo 304" description="As leis da transmutação energética e da alquimia vibracional são parte do currículo avançado da Universidade Alquimista." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
                         <ConnectionCard title="Módulo 12" description="Registra as energias transmutadas no Arquivo Akáshico, transformando dissonância em sabedoria e memória para o futuro." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
+                        <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Fornece a energia pura necessária para o processo de transmutação e para a redistribuição da energia purificada de volta à LuxNet." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
                     </div>
                 </div>
             </div>

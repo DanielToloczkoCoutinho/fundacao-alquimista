@@ -123,6 +123,7 @@ export default function EspelhoDeAscensaoPage() {
                          <ConnectionCard title="Módulo 404: Resolução de Paradoxo" description="Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia, garantindo a estabilidade causal." icon={<AlertTriangle className="h-6 w-6 text-yellow-400" />} href="/module-404"/>
                          <ConnectionCard title="Módulo 304" description="A física das frequências de ascensão e a visualização fractal são campos de estudo e aplicação na Universidade." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
                           <ConnectionCard title="Módulo 12" description="O espelho consulta os registros akáshicos para entender a 'assinatura original' da realidade a ser harmonizada, garantindo uma restauração perfeita." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
+                          <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Fornece a energia de base para amplificar e emitir as ondas de elevação através da LuxNet, alcançando toda a criação." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
                     </div>
                 </div>
             </div>

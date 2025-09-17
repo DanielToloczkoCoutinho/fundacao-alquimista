@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, Scale, BrainCircuit, Book, CheckCircle, XCircle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive } from 'lucide-react';
+import { Loader2, ShieldCheck, Scale, BrainCircuit, Book, CheckCircle, XCircle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -143,6 +143,7 @@ export default function Module141Page() {
                             <ConnectionCard title="Módulo 291" description="O enxame de nanorrobôs coleta os dados em tempo real para a auditoria do M141 e executa as ações corretivas." icon={<Bot className="h-6 w-6 text-blue-400"/>} href="/module-291"/>
                             <ConnectionCard title="Módulo 304" description="A Universidade Alquimista estuda os relatórios de auditoria para refinar continuamente as disciplinas de ética e governança." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
                             <ConnectionCard title="Módulo 12" description="Audita o Arquivo Akáshico para garantir a integridade dos registros históricos, prevenindo a corrupção da memória cósmica." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
+                            <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Garante que toda a energia do Reator seja utilizada sob os mais estritos princípios éticos, validando cada fluxo na LuxNet." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
                         </div>
                     </div>
                 </div>
