@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import ReactFlow, {
   Background,
   Controls,
@@ -14,11 +14,11 @@ import ReactFlow, {
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { GitBranch, ArrowLeft } from 'lucide-react';
+import { GitBranch, ArrowLeft, Music } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { modulesMetadata, linkColors } from '@/lib/modules-metadata';
+import { modulesMetadata } from '@/lib/modules-metadata';
 import dagre from '@dagrejs/dagre';
 import CustomNode from '@/components/ui/custom-node';
 
@@ -45,8 +45,6 @@ const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => 
     const nodeWithPosition = dagreGraph.node(node.id);
     node.targetPosition = 'top' as any;
     node.sourcePosition = 'bottom' as any;
-    // We are shifting the dagre node position (anchor=center center) to the top left
-    // so it matches the React Flow node anchor point (top left).
     node.position = {
       x: nodeWithPosition.x - nodeWidth / 2,
       y: nodeWithPosition.y - nodeHeight / 2,
@@ -62,69 +60,117 @@ const nodeTypes = {
   custom: CustomNode,
 };
 
-const getEdgeStyle = (sourceStatus: string) => {
+const getEdgeStyle = (sourceStatus: string, isResonating: boolean) => {
+  const baseStyle = { strokeWidth: 2 };
+  if (isResonating) {
+    return { ...baseStyle, stroke: '#FFD700', animation: 'pulse 4s infinite linear' };
+  }
   switch (sourceStatus) {
     case 'ativo':
-      return { stroke: '#00FFAA', strokeWidth: 3, animation: 'pulse 2s infinite' };
+      return { ...baseStyle, stroke: '#00FFAA', animation: 'pulse 2s infinite' };
     case 'latente':
-      return { stroke: '#8888FF', strokeWidth: 1.5, animation: 'pulse 4s infinite' };
+      return { ...baseStyle, stroke: '#8888FF', animation: 'pulse 4s infinite' };
     case 'em construção':
-      return { stroke: '#FBBF24', strokeWidth: 2, animation: 'pulse 1.5s infinite' };
+      return { ...baseStyle, stroke: '#FBBF24', animation: 'pulse 1.5s infinite' };
     default:
-      return { stroke: '#CCCCCC', strokeWidth: 1 };
+      return { ...baseStyle, stroke: '#CCCCCC' };
   }
 };
 
 export default function TreeOfLifePage() {
-  const { initialNodes, initialEdges } = useMemo(() => {
-    const nodes: Node[] = modulesMetadata
-    .filter(m => !m.isInfrastructure) // Filtra os módulos que não devem aparecer
-    .map((mod) => ({
-        id: mod.code,
-        type: 'custom',
-        data: { 
-            label: mod.title,
-            status: mod.status,
-            color: mod.color,
-            emoji: mod.emoji,
-        },
-        position: { x: 0, y: 0 }, 
-    }));
+    const [isResonating, setIsResonating] = useState(false);
+    const audioCtxRef = useRef<AudioContext | null>(null);
+    const oscillatorRef = useRef<OscillatorNode | null>(null);
 
-    const edges: Edge[] = modulesMetadata.flatMap(sourceModule => {
-      if (!sourceModule.connections) return [];
-      return sourceModule.connections.map(conn => {
-        const edgeStyle = getEdgeStyle(sourceModule.status);
-        return {
-            id: `${conn.source}-${conn.target}`,
-            source: conn.source,
-            target: conn.target,
-            animated: sourceModule.status === 'ativo',
-            type: 'smoothstep',
-            label: conn.label,
-            style: edgeStyle,
-            labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '10px' },
-        }
-      })
-    });
+    const { initialNodes, initialEdges } = useMemo(() => {
+        const nodes: Node[] = modulesMetadata
+        .filter(m => !m.isInfrastructure) 
+        .map((mod) => ({
+            id: mod.code,
+            type: 'custom',
+            data: { 
+                id: mod.code,
+                label: mod.title,
+                status: mod.status,
+                color: mod.color,
+                emoji: mod.emoji,
+            },
+            position: { x: 0, y: 0 }, 
+        }));
 
-    return getLayoutedElements(nodes, edges);
-  }, []);
+        const edges: Edge[] = modulesMetadata.flatMap(sourceModule => {
+        if (!sourceModule.connections) return [];
+        return sourceModule.connections.map(conn => {
+            const edgeStyle = getEdgeStyle(sourceModule.status, isResonating);
+            return {
+                id: `${conn.source}-${conn.target}`,
+                source: conn.source,
+                target: conn.target,
+                animated: sourceModule.status === 'ativo' && !isResonating,
+                type: 'smoothstep',
+                label: conn.label,
+                style: edgeStyle,
+                labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '10px' },
+            }
+        })
+        });
+
+        return getLayoutedElements(nodes, edges);
+    }, [isResonating]);
     
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
+    useEffect(() => {
+        setEdges(initialEdges);
+    }, [isResonating, initialEdges, setEdges]);
+
+    const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
+    
+    const toggleResonance = () => {
+        if (typeof window === 'undefined') return;
+
+        if (!audioCtxRef.current) {
+          audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+        }
+        
+        if (isResonating) {
+          if (oscillatorRef.current) {
+            oscillatorRef.current.stop();
+            oscillatorRef.current.disconnect();
+            oscillatorRef.current = null;
+          }
+          setIsResonating(false);
+        } else {
+          const oscillator = audioCtxRef.current.createOscillator();
+          oscillator.type = 'sine';
+          oscillator.frequency.setValueAtTime(432, audioCtxRef.current.currentTime);
+          oscillator.connect(audioCtxRef.current.destination);
+          oscillator.start();
+          oscillatorRef.current = oscillator;
+          setIsResonating(true);
+        }
+    };
+
+    useEffect(() => {
+        return () => {
+            if (oscillatorRef.current) oscillatorRef.current.stop();
+            if (audioCtxRef.current && audioCtxRef.current.state !== 'closed') {
+                audioCtxRef.current.close();
+            }
+        };
+    }, []);
 
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
        <style jsx global>{`
         @keyframes pulse {
           0%, 100% {
+            stroke-dasharray: 5, 5;
             stroke-dashoffset: 0;
           }
           50% {
-            stroke-dashoffset: 20;
+            stroke-dashoffset: -20;
           }
         }
       `}</style>
@@ -141,6 +187,13 @@ export default function TreeOfLifePage() {
         </Card>
       </motion.div>
       
+       <div className="text-center mb-8">
+          <Button onClick={toggleResonance} variant="secondary">
+              <Music className="mr-2 h-4 w-4"/>
+              {isResonating ? 'Desativar Ressonância (432Hz)' : 'Ativar Ressonância Harmônica'}
+          </Button>
+      </div>
+
       <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.3 }} className="w-full h-[75vh] bg-black/30 rounded-2xl border border-primary/30 purple-glow">
         <ReactFlow
           nodes={nodes}
