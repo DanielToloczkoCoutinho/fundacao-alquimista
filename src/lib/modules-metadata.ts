@@ -53,6 +53,12 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M231', title: 'Metamateriais', emoji: '🧱', route: '/module-231', category: 'Laboratórios e Pesquisa', description: 'Fabricação de materiais com propriedades exóticas.' },
   { code: 'M261', title: 'Engenharia de Campo', emoji: '⚡', route: '/module-261', category: 'Laboratórios e Pesquisa', description: 'Projeto de ressonadores e guias de onda.' },
   { code: 'M281', title: 'Comunicação Supra-Luminal', emoji: '📡', route: '/module-281', category: 'Laboratórios e Pesquisa', description: 'Transmissão de informação FTL.' },
+  { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'Laboratórios e Pesquisa', description: 'Simula colisões de alta energia.' },
+  { code: 'M171', title: 'Laboratório de Astrobiologia', emoji: '👽', route: '/module-171', category: 'Laboratórios e Pesquisa', description: 'Simula atmosferas e bioassinaturas exoplanetárias.' },
+  { code: 'M181', title: 'Interface Bio-Cibernética', emoji: '🧠', route: '/module-181', category: 'Laboratórios e Pesquisa', description: 'Conecta consciência biológica a redes quânticas.' },
+  { code: 'M191', title: 'Cristais Temporais', emoji: '💎', route: '/module-191', category: 'Laboratórios e Pesquisa', description: 'Gera cristais para manipulação do tempo.' },
+  { code: 'M341', title: 'Física de Plasma Extrema', emoji: '🔥', route: '/module-341', category: 'Laboratórios e Pesquisa', description: 'Estudo de plasmas em condições de quasar.' },
+  { code: 'M351', title: 'Meta-materiais & Óptica', emoji: '👁️', route: '/module-351', category: 'Laboratórios e Pesquisa', description: 'Criação de lentes quânticas para manipulação da luz.' },
 
   // 5. Bibliotecas e Arquivos Sagrados
   { code: 'GB', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'Bibliotecas e Arquivos Sagrados', description: 'Registro consagrado da jornada da Fundação e seus documentos fractais.' },
@@ -98,6 +104,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: "M63", emoji: "🍎", title: "Nutrição Cósmica", route: "/module-63", category: 'Bem-estar e Saúde Universal', description: "Alimentação balanceada e regenerativa para todas as formas de vida."},
   { code: "M64", emoji: "💡", title: "Energia Limpa Universal", route: "/module-64", category: 'Bem-estar e Saúde Universal', description: "Geração de energia sustentável a partir de fontes cósmicas."},
   { code: "M60", emoji: "🚑", title: "Resposta a Desastres", route: "/module-60", category: 'Bem-estar e Saúde Universal', description: "Mitigação e recuperação rápida de ecossistemas."},
+  { code: "M41", emoji: "🧬", title: "Laboratório de Coerência Quântica", route: "/module-41", category: 'Bem-estar e Saúde Universal', description: "Análise e regeneração celular através da coerência quântica."},
   
   // 9. Segurança e Ética Cósmica
   { code: 'M30', title: 'Detecção de Ameaças', emoji: '🚨', route: '/module-30', category: 'Segurança e Ética Cósmica', description: 'Radar cósmico para ameaças e dissonâncias.' },
