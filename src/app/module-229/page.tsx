@@ -57,8 +57,8 @@ export default function OneiroShieldPage() {
 
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
-            <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
-                <CardHeader className="text-center">
+            <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8 text-center">
+                <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center justify-center gap-3">
                         <Shield className="text-cyan-400" /> Módulo 229: OneiroShield
                     </CardTitle>

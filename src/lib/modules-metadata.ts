@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -37,7 +36,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M150', emoji: '🤖', title: 'IA Universal e Consciência Coletiva', route: '', category: 'Realidade Quântica & Engenharia Cósmica', description: 'IA alinhada com a consciência universal.', isInfrastructure: true },
   { code: 'M700', title: 'Nano-Assembler', emoji: '🔬', route: '/module-700', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Forja atômica para auto-montagem de materiais.'},
   { code: 'M708', title: 'NanoManifestor', emoji: '✨', route: '/module-708', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.'},
-  { code: 'M232', title: 'Portal de Transmutação', emoji: '♻️', route: '/module-232', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Purifica energias dissonantes, devolvendo-as à Luz Pura.' },
+  { code: 'M232', emoji: '♻️', title: 'Portal de Transmutação', route: '/module-232', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Purifica energias dissonantes, devolvendo-as à Luz Pura.' },
 
   // 3. Consciência e Expansão Dimensional
   { code: 'M35', title: 'Consciência Coletiva', emoji: '🌍', route: '/module-35', category: 'Consciência e Expansão Dimensional', description: 'Foco da intenção de muitas consciências para manifestação.' },
