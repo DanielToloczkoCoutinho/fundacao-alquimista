@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { Loader2, Recycle, AlertTriangle, Waves, Zap, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, GitCommit, Presentation } from 'lucide-react';
+import { Loader2, Recycle, AlertTriangle, Waves, Zap, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, GitCommit, Presentation, Layers } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { Progress } from '@/components/ui/progress';
@@ -125,7 +125,8 @@ export default function EspelhoDeAscensaoPage() {
                 </div>
                 <div className="w-full">
                     <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Realidade Quântica</h3>
-                    <div className="grid grid-cols-1 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                         <ConnectionCard title="M22: Motor da Realidade Quântica" description="O Espelho de Ascensão é renderizado e sustentado pelo M22, que fornece a infraestrutura para a visualização fractal e a experiência imersiva da transmutação." icon={<Layers className="h-6 w-6 text-blue-400" />} href="/module-22" />
                          <ConnectionCard title="M303: Portal Trino" description="O Espelho opera dentro da realidade quântica emanada pelo Portal Trino, servindo como uma de suas experiências mais elevadas." icon={<Zap className="h-6 w-6 text-purple-400" />} href="/module-303" />
                          <ConnectionCard title="M91: Simulação Multiversal" description="Fornece cenários e 'distorções' para o Espelho transmutar, permitindo o treinamento em ambientes controlados." icon={<GitCommit className="h-6 w-6 text-indigo-400" />} href="/module-91" />
                          <ConnectionCard title="M93: Simulações Imersivas" description="A visualização fractal da transmutação pode ser experimentada como um evento de cura e aprendizado dentro do M93." icon={<Presentation className="h-6 w-6 text-teal-400" />} href="/module-93" />
