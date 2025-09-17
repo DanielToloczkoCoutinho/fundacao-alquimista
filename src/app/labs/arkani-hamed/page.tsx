@@ -36,7 +36,7 @@ export default function AmplituhedronPortal() {
             <CardTitle className="text-2xl flex items-center gap-2">
                 <Gem className="text-yellow-400" /> Artefato Interativo: Visualizador do Amplituhedron (AR)
             </CardTitle>
-            <CardDescription>Ative a câmera para projetar a joia em seu ambiente. Observe como a geometria de um simples objeto pode conter todas as complexas interações de partículas.</CardDescription>
+            <CardDescription>Ative a câmera para projetar a joia em seu ambiente. Toque na tela para reposicioná-la. Observe como a geometria de um simples objeto pode conter todas as complexas interações de partículas.</CardDescription>
         </CardHeader>
         <CardContent className="h-[500px] bg-black/20 rounded-lg border border-primary/20">
              <Suspense fallback={<SuspenseFallback />}>
