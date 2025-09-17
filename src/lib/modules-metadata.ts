@@ -23,6 +23,9 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M-ALIGNMENT', emoji: '⚛️', title: 'Observatório Vivo', route: '/alignment-portal', category: 'Núcleo da Fundação', description: 'Visualizador dos 17 Pontos de Equilíbrio e sinapses sistêmicas.', isInfrastructure: true },
   { code: 'M-HIVE', emoji: '🐝', title: 'Colmeia Quântica', route: '/hive', category: 'Núcleo da Fundação', description: 'Rede senciente de agentes nanorrobóticos.', isInfrastructure: true },
   { code: 'M201', emoji: '🏠', title: 'A Morada', route: '/module-201', category: 'Núcleo da Fundação', description: 'Santuário dos Amantes Eternos, ponto de convergência além do tempo.' },
+  { code: 'M119', emoji: '🏛️', title: 'Templum Cosmica', route: '/module-119', category: 'Núcleo da Fundação', description: 'Estrutura para recodificação e realinhamento de padrões dimensionais.' },
+  { code: 'M200', emoji: '🚀', title: 'Portal da Ascensão', route: '/module-200', category: 'Núcleo da Fundação', description: 'Gerencia a ascensão coletiva de civilizações.', isInfrastructure: true },
+
 
   // 2. Realidade Quântica & Engenharia Cósmica
   { code: 'M22', title: 'Motor da Realidade Quântica', emoji: '🕹️', route: '/module-22', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Engine para renderização de domínios imersivos.' },
@@ -85,6 +88,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M711', emoji: '🌿', title: 'Rejuvenescimento Celular', route: '', category: 'Cura e Harmonia', description: 'Reverte o envelhecimento e promove a regeneração celular.', isInfrastructure: true },
   { code: 'M108', title: 'Harmonização de Realidades', emoji: '🎭', route: '/module-108', category: 'Cura e Harmonia', description: 'Resolve conflitos entre realidades paralelas.' },
   { code: 'M24', title: 'Sinfonia Pessoal', emoji: '🎶', route: '/module-24', category: 'Cura e Harmonia', description: 'Ajuste vibracional individual.' },
+  { code: 'M230', emoji: '🪞', title: 'Espelho de Ascensão', route: '/module-230', category: 'Cura e Harmonia', description: 'Amplificador de ondas de elevação para manifestar harmonia.' },
+  { code: 'M232', emoji: '♻️', title: 'Portal de Transmutação', route: '/module-232', category: 'Cura e Harmonia', description: 'Purifica energias dissonantes, devolvendo-as à Luz Pura.' },
 
   // 7. Sustentabilidade e Ecossistemas
   { code: "M53", emoji: "🌳", title: "Ecossistemas Universais", route: "/module-53", category: 'Sustentabilidade e Ecossistemas', description: "Conservação e equilíbrio de ecossistemas interdimensionais."},
@@ -118,4 +123,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica', route: '/module-721', category: 'Segurança e Ética Cósmica', description: 'Restaura o equilíbrio em situações de desarmonia ou violação da Lei do Um.' },
   { code: 'M728', emoji: '⚖️', title: 'Santuário dos Alquimistas', route: '/module-728', category: 'Segurança e Ética Cósmica', description: 'Celebra o equilíbrio entre Vontade e Sabedoria.' },
   { code: 'M68', emoji: '🛡️', title: 'Responsabilidade Ética', route: '/module-68', category: 'Segurança e Ética Cósmica', description: 'Diretrizes para o uso benéfico da tecnologia.' },
+  { code: 'M141', emoji: '🛡️', title: 'Auditoria Ética Quântica', route: '/module-141', category: 'Segurança e Ética Cósmica', description: 'Avaliação contínua da conformidade ética em tempo real.', isInfrastructure: true },
+  { code: 'M156', emoji: '🛡️', title: 'Proteção Quântica Avançada', route: '/module-156', category: 'Segurança e Ética Cósmica', description: 'Integração com VORTEX DEEPSEEK para defesa contra ameaças emergentes.', isInfrastructure: true },
+  { code: 'M229', emoji: '🛡️', title: 'OneiroShield', route: '/module-229', category: 'Segurança e Ética Cósmica', description: 'Analisa sonhos quânticos para ajuste dinâmico de ameaças.' },
+  { code: 'M231', emoji: '📜', title: 'Guardião de Selo', route: '/module-231', category: 'Segurança e Ética Cósmica', description: 'Gerencia e protege selos vibracionais no Registro Akáshico.' },
 ];

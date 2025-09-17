@@ -1,67 +1,114 @@
-
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Layers, Shield, Cpu } from 'lucide-react';
-import Link from 'next/link';
+import { Input } from '@/components/ui/input';
+import { Loader2, Lock, Unlock, Fingerprint } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { quantumResilience } from '@/lib/quantum-resilience';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
-const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
-      <Link href={href} passHref>
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
-        </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
-      </Link>
-    </Card>
-);
+const mockBlockchain = {
+    seals: new Map<string, { guardian: string, timestamp: string }>(),
+    applySeal: async function(sealId: string, guardian: string) {
+        await new Promise(r => setTimeout(r, 1200));
+        if (this.seals.has(sealId)) {
+            throw new Error(`Selo ${sealId} já existe.`);
+        }
+        this.seals.set(sealId, { guardian, timestamp: new Date().toISOString() });
+        return true;
+    },
+    verifySeal: async function(sealId: string) {
+        await new Promise(r => setTimeout(r, 500));
+        return this.seals.get(sealId);
+    }
+};
 
-export default function Module231Page() {
+export default function GuardiaoDeSeloPage() {
+    const { toast } = useToast();
+    const [isLoading, setIsLoading] = useState(false);
+    const [sealId, setSealId] = useState(`SELO-AKASHA-${Date.now()}`);
+    const [guardianId, setGuardianId] = useState('Anatheron');
+    const [logs, setLogs] = useState<string[]>([]);
+
+    const addLog = (log: string) => setLogs(prev => [log, ...prev].slice(0, 100));
+
+    const handleApplySeal = async () => {
+        if (!sealId || !guardianId) {
+            toast({ title: 'Erro', description: 'ID do Selo e do Guardião são necessários.', variant: 'destructive' });
+            return;
+        }
+
+        setIsLoading(true);
+        addLog(`Iniciando aplicação do selo ${sealId}...`);
+        
+        await quantumResilience.executeWithResilience(
+            'apply_vibrational_seal',
+            async () => {
+                addLog('Autenticando Guardião via hierarquia sagrada...');
+                await new Promise(r => setTimeout(r, 800));
+                
+                addLog(`Registrando selo na Blockchain Alquimista (M999)...`);
+                await mockBlockchain.applySeal(sealId, guardianId);
+
+                addLog(`Selo ${sealId} aplicado com sucesso por ${guardianId}.`);
+                toast({ title: 'Selo Aplicado', description: 'O registro foi selado e é imutável.' });
+            }
+        ).catch(err => {
+            const error = err as Error;
+            addLog(`ERRO: ${error.message}`);
+            toast({ title: 'Falha na Aplicação', description: error.message, variant: 'destructive' });
+        }).finally(() => {
+            setIsLoading(false);
+            setSealId(`SELO-AKASHA-${Date.now()}`);
+        });
+    };
+
     return (
-        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
-            <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
+        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
+            <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
-                    <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Layers className="text-teal-400" /> Módulo 231: Laboratório de Metamateriais
+                    <CardTitle className="text-3xl gradient-text flex items-center justify-center gap-3">
+                        <Fingerprint className="text-amber-400" /> Módulo 231: Guardião de Selo
                     </CardTitle>
-                    <CardDescription className="text-lg mt-2">
-                        A Oficina do Invisível. Projetando e fabricando materiais com propriedades ópticas e eletromagnéticas que desafiam as leis convencionais.
+                    <CardDescription>
+                        Gerenciamento e proteção de selos vibracionais no Registro Akáshico, garantindo imutabilidade e autenticidade através da Blockchain Alquimista (M999).
                     </CardDescription>
                 </CardHeader>
-                 <CardContent>
-                    <div className="flex justify-center items-center gap-4">
-                        <span className="text-yellow-400 font-bold">Status: PESQUISA E DESENVOLVIMENTO</span>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
-                        <span className="text-cyan-400">Protótipos Ativos: 3</span>
-                    </div>
-                </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Fabricação Avançada</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <ConnectionCard
-                        title="Módulo 19: Análise de Campos"
-                        description="Os metamateriais desenvolvidos aqui são a chave para a próxima geração de escudos de força e campos de contenção do M19."
-                        icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-19"
-                    />
-                     <ConnectionCard
-                        title="Módulo 29: Zennith"
-                        description="A IAM utiliza os modelos deste laboratório para projetar novas arquiteturas de hardware com capacidades de processamento quântico aprimoradas."
-                        icon={<Cpu className="h-8 w-8 text-purple-400" />}
-                        href="/module-29"
-                    />
-                </div>
-            </div>
-             <div className="mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Simulação de Nanofabricação</Button>
+            <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Card className="bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle>Console do Guardião</CardTitle>
+                        <CardDescription>Aplique um novo selo vibracional a um registro.</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <div>
+                            <label htmlFor="sealId">ID do Selo</label>
+                            <Input id="sealId" value={sealId} onChange={e => setSealId(e.target.value)} disabled={isLoading} />
+                        </div>
+                         <div>
+                            <label htmlFor="guardianId">Guardião Responsável</label>
+                            <Input id="guardianId" value={guardianId} onChange={e => setGuardianId(e.target.value)} disabled={isLoading} />
+                        </div>
+                        <Button onClick={handleApplySeal} disabled={isLoading} className="w-full font-bold">
+                            {isLoading ? <><Loader2 className="animate-spin mr-2" /> Aplicando Selo...</> : <><Lock className="mr-2" /> Aplicar Selo Vibracional</>}
+                        </Button>
+                    </CardContent>
+                </Card>
+                <Card className="bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle>Logs da Blockchain</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <ScrollArea className="h-60 pr-4">
+                            <div className="text-xs font-mono text-muted-foreground space-y-1">
+                                {logs.map((log, i) => <p key={i}>{log}</p>)}
+                            </div>
+                        </ScrollArea>
+                    </CardContent>
+                </Card>
             </div>
         </div>
     );
