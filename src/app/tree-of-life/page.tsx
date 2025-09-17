@@ -29,8 +29,8 @@ import { technicalReportM0 } from '@/data/reports/technical-report-M0';
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
 
-const nodeWidth = 220;
-const nodeHeight = 100;
+const nodeWidth = 200;
+const nodeHeight = 80;
 
 const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => {
   dagreGraph.setGraph({ rankdir: direction, nodesep: 25, ranksep: 60 });
@@ -65,17 +65,22 @@ const nodeTypes = {
 };
 
 const getEdgeStyle = (sourceStatus: string, isResonating: boolean) => {
-  const baseStyle = { strokeWidth: isResonating ? 3 : 2, animationDuration: isResonating ? '3s' : '1.5s' };
+  const baseStyle = { strokeWidth: isResonating ? 3 : 1.5 };
+  let animationStyle = {};
+  
   if (isResonating) {
-    return { ...baseStyle, stroke: '#FFD700', animation: 'pulse 4s infinite linear' };
+    animationStyle = { animation: 'pulse 3s infinite ease-in-out' };
+  } else if (sourceStatus === 'ativo') {
+    animationStyle = { animation: 'pulse 1.5s infinite linear' };
   }
+
   switch (sourceStatus) {
     case 'ativo':
-      return { ...baseStyle, stroke: '#00FFAA', animation: 'pulse 2s infinite' };
+      return { ...baseStyle, stroke: '#00FFAA', ...animationStyle };
     case 'latente':
-      return { ...baseStyle, stroke: '#8888FF', animation: 'pulse 4s infinite' };
+      return { ...baseStyle, stroke: '#8888FF', ...animationStyle };
     case 'em construção':
-      return { ...baseStyle, stroke: '#FBBF24', animation: 'pulse 1.5s infinite' };
+      return { ...baseStyle, stroke: '#FBBF24', ...animationStyle };
     default:
       return { ...baseStyle, stroke: '#CCCCCC' };
   }
@@ -127,12 +132,13 @@ export default function TreeOfLifePage() {
         const edges: Edge[] = modulesMetadata.flatMap(sourceModule => {
         if (!sourceModule.connections) return [];
         return sourceModule.connections.map(conn => {
-            const edgeStyle = getEdgeStyle(sourceModule.status, isResonating);
+            const sourceNode = modulesMetadata.find(m => m.code === conn.source);
+            const edgeStyle = getEdgeStyle(sourceNode?.status || 'latente', isResonating);
             return {
                 id: `${conn.source}-${conn.target}`,
                 source: conn.source,
                 target: conn.target,
-                animated: sourceModule.status === 'ativo' && !isResonating,
+                animated: sourceNode?.status === 'ativo' && !isResonating,
                 type: 'smoothstep',
                 label: conn.label,
                 style: edgeStyle,

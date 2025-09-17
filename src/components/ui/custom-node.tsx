@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import React, { memo } from 'react';
 import { Handle, Position } from 'reactflow';
 import { cn } from '@/lib/utils';
-import { Badge } from './badge';
 import { modulesMetadata } from '@/lib/modules-metadata';
 
 
