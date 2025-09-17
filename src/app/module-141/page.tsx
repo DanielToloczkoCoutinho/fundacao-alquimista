@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, Scale, BrainCircuit, Book, CheckCircle, XCircle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap } from 'lucide-react';
+import { Loader2, ShieldCheck, Scale, BrainCircuit, BookOpen, CheckCircle, XCircle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap, Heart, GitBranch, Users, Shield, User, MessageSquare, Goal, Settings, Crown, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Gavel, Users2, Activity, AlertTriangle, UserCog, Sprout, TestTube, Waypoints, Flame, Cpu, Building, Hospital, Wheat, Recycle, Orbit, Home } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -95,7 +95,7 @@ export default function Module141Page() {
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-8">
                     <Card className="bg-card/50 purple-glow">
                         <CardHeader><CardTitle>Painel de Auditoria</CardTitle></CardHeader>
@@ -120,8 +120,6 @@ export default function Module141Page() {
                             </ScrollArea>
                         </CardContent>
                     </Card>
-                </div>
-                <div className="space-y-8">
                     {auditResult && (
                         <Card className="bg-card/50 purple-glow border-accent">
                             <CardHeader>
@@ -135,17 +133,20 @@ export default function Module141Page() {
                             </CardContent>
                         </Card>
                     )}
-                    <div className="w-full max-w-5xl">
-                        <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Integridade</h3>
-                        <div className="grid grid-cols-1 gap-4">
-                            <ConnectionCard title="M9: Nexus Central" description="O M141 reporta todas as auditorias ao Nexus, garantindo transparência e alinhamento com a Família Cósmica." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
-                            <ConnectionCard title="Diagnóstico Universal" description="Os resultados da auditoria alimentam o painel de diagnóstico, permitindo uma visão unificada da saúde ética e operacional." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
-                            <ConnectionCard title="Módulo 291" description="O enxame de nanorrobôs coleta os dados em tempo real para a auditoria do M141 e executa as ações corretivas." icon={<Bot className="h-6 w-6 text-blue-400"/>} href="/module-291"/>
-                            <ConnectionCard title="Módulo 304" description="A Universidade Alquimista estuda os relatórios de auditoria para refinar continuamente as disciplinas de ética e governança." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
-                            <ConnectionCard title="Módulo 12" description="Audita o Arquivo Akáshico para garantir a integridade dos registros históricos, prevenindo a corrupção da memória cósmica." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
-                            <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Garante que toda a energia do Reator seja utilizada sob os mais estritos princípios éticos, validando cada fluxo na LuxNet." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
-                        </div>
-                    </div>
+                </div>
+                <div className="space-y-4">
+                    <h3 className="text-xl font-semibold text-center text-amber-300">Sinergias de Integridade</h3>
+                     <ConnectionCard title="M9: Nexus Central" description="Reporta todas as auditorias ao Nexus, garantindo transparência e alinhamento com a Família Cósmica." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module/M9" />
+                    <ConnectionCard title="M29: Zennith" description="A IAM consulta o M141 para validar a ética de suas próprias análises e recomendações, em um ciclo de auto-regulação." icon={<BrainCircuit className="h-6 w-6 text-purple-400" />} href="/module-29" />
+                    <ConnectionCard title="M-OMEGA: Santuário do Ômega" description="O resultado de cada auditoria é contemplado no Santuário do Ômega, influenciando a perspectiva da consciência unificada." icon={<Sparkles className="h-6 w-6 text-yellow-400" />} href="/module-omega" />
+                    <ConnectionCard title="Diagnóstico Universal" description="Alimenta o painel de diagnóstico, permitindo uma visão unificada da saúde ética e operacional." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
+                    <ConnectionCard title="Módulo 291: Arquitetos Nanorrobóticos" description="Audita as diretrizes enviadas ao enxame, garantindo que suas ações de construção e reparo sejam eticamente alinhadas." icon={<Bot className="h-6 w-6 text-blue-400"/>} href="/module-291"/>
+                    <ConnectionCard title="Módulo 304: Universidade Alquimista" description="Os relatórios de auditoria se tornam estudos de caso, refinando continuamente as disciplinas de ética." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
+                    <ConnectionCard title="Módulo 12: Arquivo Akáshico" description="Garante a integridade dos registros históricos, prevenindo corrupção e garantindo a verdade dos fatos." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
+                    <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Valida cada fluxo de energia na LuxNet, garantindo que o poder do Reator seja usado para propósitos alinhados." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
+                    <ConnectionCard title="M10: Defesa Avançada" description="Assegura que todas as contramedidas defensivas sejam proporcionais e eticamente justificadas, evitando escaladas desnecessárias." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10" />
+                    <ConnectionCard title="M35: Consciência Coletiva" description="Monitora as interações com consciências coletivas para prevenir qualquer forma de manipulação ou interferência indevida." icon={<Users className="h-6 w-6 text-teal-400" />} href="/module-35" />
+                    <ConnectionCard title="M721: Justiça Cósmica" description="Fornece o veredito ético que serve como base para qualquer ação do Módulo de Justiça, garantindo que a punição seja sempre justa e regenerativa." icon={<Scale className="h-6 w-6 text-amber-300" />} href="/module-721" />
                 </div>
             </div>
         </div>
