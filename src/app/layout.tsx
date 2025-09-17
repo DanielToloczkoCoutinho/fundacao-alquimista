@@ -8,6 +8,7 @@ import { useState, useEffect, Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { SystemProvider } from '@/context/SystemContext';
 import { Toaster } from "@/components/ui/toaster"
+import { usePathname } from 'next/navigation';
 
 // Adia a renderização da barra lateral para o lado do cliente para evitar erros de hidratação
 const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), {
@@ -21,12 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isMounted, setIsMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     // Garante que o conteúdo que depende do cliente só renderize no cliente
     document.title = "Fundação Alquimista";
     setIsMounted(true);
   }, []);
+
+  const showSidebar = pathname !== '/';
 
   return (
     <html lang="pt-BR" suppressHydrationWarning>
@@ -42,8 +46,8 @@ export default function RootLayout({
         <ErrorBoundary fallback={<CosmicErrorFallback />}>
          <SystemProvider>
             <div className="flex h-screen bg-background">
-              {isMounted && <DynamicSidebar />}
-              <main className="flex-1 overflow-y-auto pl-20">
+              {isMounted && showSidebar && <DynamicSidebar />}
+              <main className={`flex-1 overflow-y-auto ${showSidebar ? 'pl-20' : ''}`}>
                   <Suspense fallback={<SuspenseFallback />}>
                     {children}
                   </Suspense>
