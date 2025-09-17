@@ -11,7 +11,7 @@ import { usePathname } from 'next/navigation';
 
 // Adia a renderização de componentes do lado do cliente para evitar erros de hidratação
 const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), { ssr: false });
-const ClientSideToaster = dynamic(() => import('@/components/ui/client-toaster'), { ssr: false });
+const ClientToaster = dynamic(() => import('@/components/ui/client-toaster'), { ssr: false });
 
 export default function RootLayout({
   children,
@@ -50,7 +50,7 @@ export default function RootLayout({
                   </Suspense>
               </main>
             </div>
-            {isMounted && <ClientSideToaster />}
+            {isMounted && <ClientToaster />}
           </SystemProvider>
         </ErrorBoundary>
       </body>
