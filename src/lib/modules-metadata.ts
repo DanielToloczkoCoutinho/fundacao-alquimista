@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -9,6 +10,15 @@ export interface ModuleMetadata {
   connections?: TreeLink[];
   color?: string;
   status: 'ativo' | 'em construção' | 'latente';
+}
+
+export type TreeLinkType = 'dependencia' | 'influencia' | 'heranca' | 'atualizacao' | 'protecao' | 'retorno-inteligente';
+
+export interface TreeLink {
+  source: string;
+  target: string;
+  type: TreeLinkType;
+  label: string;
 }
 
 export const modulesMetadata: ModuleMetadata[] = [
@@ -59,50 +69,13 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M22', title: 'Motor da Realidade Quântica', emoji: '🕹️', route: '/module-22', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Engine para renderização de domínios imersivos.', connections: [{source: 'M22', target:'M303', type: 'dependencia', label: 'renderiza'}, {source: 'M22', target:'M91', type: 'influencia', label: 'executa'}], color: '#FF6F61', status: 'ativo' },
 ];
 
-export const categoryColors: Record<string, string> = {
-  'Núcleo da Fundação': '#00BFA6',
-  'Governança': '#FFD700',
-  'Realidade Quântica & Engenharia Cósmica': '#FF6F61',
-  'Consciência e Expansão Dimensional': '#7B61FF',
-  'Laboratórios e Pesquisa': '#4ECDC4',
-  'Bibliotecas e Arquivos Sagrados': '#FFE66D',
-  'Cura e Harmonia': '#FFB6C1',
-  'Sustentabilidade e Ecossistemas': '#6BFF6B',
-  'Bem-estar e Saúde Universal': '#6BFFB5',
-  'Segurança e Ética Cósmica': '#FF6B6B',
-  'default': '#999'
-};
-
 export const linkColors: Record<string, string> = {
+  dependencia: '#4F46E5', // Indigo
+  influencia: '#10B981', // Emerald
+  heranca: '#F59E0B', // Amber
   atualizacao: '#00BFA6',
   protecao: '#FFD700',
   'retorno-inteligente': '#FF6F61',
-  dependencia: '#FF8C00',
-  influencia: '#8A2BE2',
-  heranca: '#FF4500'
 };
 
-export type TreeLinkType = 'dependencia' | 'influencia' | 'heranca' | 'atualizacao' | 'protecao' | 'retorno-inteligente';
-
-export interface TreeLink {
-  source: string;
-  target: string;
-  type: TreeLinkType;
-  label: string;
-}
-
-export const treeLinks: TreeLink[] = modulesMetadata.flatMap(m => m.connections || []);
-
-
-export interface SubModule {
-  id: string;
-  name: string;
-  createdAt: string;
-  status: 'ativo' | 'em_construcao' | 'legado';
-  description?: string;
-}
-
-export interface TreeNode extends ModuleMetadata {
-  fractais?: SubModule[];
-  guardian?: string;
-}
+    

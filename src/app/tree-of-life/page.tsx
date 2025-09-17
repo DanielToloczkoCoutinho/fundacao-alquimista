@@ -1,3 +1,4 @@
+
 'use client'
 
 import React, { useState, useMemo, useCallback } from 'react';
@@ -45,10 +46,13 @@ const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => 
     const nodeWithPosition = dagreGraph.node(node.id);
     node.targetPosition = 'top' as any;
     node.sourcePosition = 'bottom' as any;
+    // We are shifting the dagre node position (anchor=center center) to the top left
+    // so it matches the React Flow node anchor point (top left).
     node.position = {
       x: nodeWithPosition.x - nodeWidth / 2,
       y: nodeWithPosition.y - nodeHeight / 2,
     };
+
     return node;
   });
 
@@ -62,35 +66,32 @@ const nodeTypes = {
 export default function TreeOfLifePage() {
   const { initialNodes, initialEdges } = useMemo(() => {
     const nodes: Node[] = modulesMetadata
-    .filter(m => !m.isInfrastructure)
+    .filter(m => !m.isInfrastructure) // Filtra os módulos que não devem aparecer
     .map((mod) => ({
         id: mod.code,
         type: 'custom',
         data: { 
-            label: (
-                <div>
-                    <div className="text-xs font-mono">{mod.code}</div>
-                    <div className="font-bold">{mod.title}</div>
-                </div>
-            ),
+            label: mod.title,
             status: mod.status,
         },
         position: { x: 0, y: 0 }, 
     }));
 
-    const edges: Edge[] = treeLinks.map(link => ({
-      id: `${link.source}-${link.target}`,
-      source: link.source,
-      target: link.target,
-      animated: true,
-      type: 'smoothstep',
-      label: link.label,
-      style: { 
-        stroke: linkColors[link.type] || '#888',
-        strokeWidth: 2,
-      },
-      labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '10px' },
-    }));
+    const edges: Edge[] = modulesMetadata.flatMap(mod => 
+        (mod.connections || []).map(conn => ({
+            id: `${conn.source}-${conn.target}`,
+            source: conn.source,
+            target: conn.target,
+            animated: true,
+            type: 'smoothstep',
+            label: conn.label,
+            style: { 
+                stroke: linkColors[conn.type] || '#888',
+                strokeWidth: 2,
+            },
+            labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '10px' },
+        }))
+    );
 
     return getLayoutedElements(nodes, edges);
   }, []);
@@ -128,7 +129,12 @@ export default function TreeOfLifePage() {
           className="bg-transparent"
         >
           <Background color="hsl(var(--primary))" gap={24} size={1} />
-          <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={(n: Node) => n.data?.status === 'ativo' ? 'rgb(34 197 94)' : n.data?.status === 'em construção' ? 'rgb(234 179 8)' : 'rgb(107 114 128)'} className="bg-background/50 border border-primary/20" />
+          <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={(n: Node) => {
+              const status = n.data?.status;
+              if (status === 'ativo') return 'rgb(34 197 94)';
+              if (status === 'em construção') return 'rgb(234 179 8)';
+              return 'rgb(107 114 128)';
+            }} className="bg-background/50 border border-primary/20" />
           <Controls />
         </ReactFlow>
       </motion.div>
@@ -144,3 +150,5 @@ export default function TreeOfLifePage() {
     </div>
   );
 }
+
+    
