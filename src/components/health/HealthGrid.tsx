@@ -40,7 +40,7 @@ export default function HealthGrid({ modules, filters }: { modules: ModuleHealth
     });
 
   return (
-    <ScrollArea className="flex-1 pr-2">
+    <div className="flex-1 pr-2">
         <AnimatePresence>
             <motion.div layout className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
                 {filteredAndSortedModules.map(module => (
@@ -94,6 +94,6 @@ export default function HealthGrid({ modules, filters }: { modules: ModuleHealth
                 <p>Nenhum módulo corresponde aos filtros selecionados.</p>
             </div>
         )}
-    </ScrollArea>
+    </div>
   );
 }

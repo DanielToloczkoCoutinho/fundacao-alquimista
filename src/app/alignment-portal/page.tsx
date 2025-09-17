@@ -1,16 +1,18 @@
-
 'use client';
-import React from 'react';
-import { DashboardCards } from '@/components/ui/dashboard-cards';
-import { ModuleGrid } from '@/components/ui/module-grid';
-import { SacredReport } from '@/components/ui/sacred-report';
-import { Button } from '@/components/ui/button';
+import React, { Suspense } from 'react';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Stethoscope } from 'lucide-react';
+import SuspenseFallback from '@/components/ui/suspense-fallback';
+import DiagnosticPanel from '@/components/ui/diagnostic-panel';
 
 export default function AlignmentPortalPage() {
     return (
         <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
             <header className="text-center py-5 mb-8 relative">
-                <h1 className="text-4xl md:text-5xl font-bold text-accent gradient-text">PORTAL DE ALINHAMENTO UNIVERSAL</h1>
+                <h1 className="text-4xl md:text-5xl font-bold text-accent gradient-text flex items-center justify-center gap-4">
+                    <Stethoscope className="h-10 w-10 text-teal-400" />
+                    PORTAL DE ALINHAMENTO UNIVERSAL
+                </h1>
                 <p className="text-lg text-muted-foreground mt-2">Relatório Completo do Status da Fundação</p>
                 <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-green-900/50 text-green-300 border border-green-500/50 rounded-full text-sm">
                     <span className="relative flex h-3 w-3">
@@ -21,15 +23,12 @@ export default function AlignmentPortalPage() {
                 </div>
             </header>
             
-            <DashboardCards />
-            
-            <h2 className="text-3xl font-bold text-center mt-12 mb-8 gradient-text">Módulos da Fundação</h2>
-            <ModuleGrid />
-
-            <SacredReport />
+            <Suspense fallback={<SuspenseFallback />}>
+                <DiagnosticPanel />
+            </Suspense>
             
             <footer className="text-center mt-12 py-6 border-t border-primary/20">
-                <p className="text-muted-foreground">Relatório gerado em tempo real pelo Nexus Central (Módulo 9)</p>
+                <p className="text-muted-foreground">Relatório gerado em tempo real pelo Nexus Central (M9) em sinergia com a Colmeia Quântica (M291).</p>
             </footer>
         </div>
     );
