@@ -1,10 +1,12 @@
 'use client';
 
-import { HealthReport } from '@/lib/health-check-types';
+import type { HealthReport } from '@/lib/health-check-types';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './card';
 import { Progress } from './progress';
 import { Badge } from './badge';
 import { CheckCircle, GitBranch, HeartPulse, Settings, ShieldCheck, XCircle } from 'lucide-react';
+import { Label } from './label';
+import { cn } from '@/lib/utils';
 
 const StatusIndicator = ({ status }: { status: HealthReport['status'] }) => {
   const config = {
@@ -16,7 +18,7 @@ const StatusIndicator = ({ status }: { status: HealthReport['status'] }) => {
   const current = config[status];
   return (
     <div className="flex items-center gap-2">
-      <div className={`w-3 h-3 rounded-full ${current.color} animate-pulse`} />
+      <div className={cn('w-3 h-3 rounded-full', current.color)} />
       <span className={`font-semibold ${current.textColor}`}>{current.text}</span>
     </div>
   );
@@ -48,7 +50,7 @@ export default function ModuleHealthReport({ report }: { report: HealthReport })
             {report.connections.map(conn => (
                 <div key={conn.moduleId} className="flex justify-between items-center text-sm p-2 bg-background/30 rounded-md">
                     <span>{conn.moduleId}: {conn.description}</span>
-                    <Badge variant={conn.status === 'CONECTADO' ? 'default' : 'destructive'} className="bg-green-800/50 text-green-300 border-green-500/50">
+                    <Badge variant={conn.status === 'CONECTADO' ? 'default' : 'destructive'} className={cn(conn.status === 'CONECTADO' ? 'bg-green-800/50 text-green-300 border-green-500/50' : 'bg-red-800/50 text-red-300 border-red-500/50')}>
                         {conn.status === 'CONECTADO' ? <CheckCircle className="mr-1 h-3 w-3"/> : <XCircle className="mr-1 h-3 w-3"/>}
                         {conn.status}
                     </Badge>

@@ -25,7 +25,7 @@ import '@/ai/flows/love-frequency-flow.ts';
 import '@/ai/flows/omega-perspective-flow.ts';
 import '@/ai/flows/cosmic-education-flow.ts';
 import '@/ai/flows/cqam-flow.ts';
-import '@/ai-flows/elysium-flow.ts';
+import '@/ai/flows/elysium-flow.ts';
 import '@/ai/flows/guardians-mobilization-flow.ts';
 import '@/ai/flows/zennith-portal-flow.ts';
 import '@/ai/flows/resonance-matrix-flow.ts';
