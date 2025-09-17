@@ -103,6 +103,16 @@ export function Sidebar() {
               </TooltipContent>
           </Tooltip>
         </Link>
+        <Link href="/module-72" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Scale className="h-8 w-8 text-indigo-300" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Governança</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
         <ScrollArea className="w-full">
           <div className="flex flex-col items-center space-y-2">
             {orderedCategories.map(category => (
