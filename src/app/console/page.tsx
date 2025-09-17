@@ -64,6 +64,9 @@ export default function ConsolePage() {
                <Button variant="outline" asChild className="justify-start">
                   <Link href="/module-zero"><Book className="mr-2 h-4 w-4" />Módulo Zero (Biblioteca Chave)</Link>
                </Button>
+               <Button variant="outline" asChild className="justify-start">
+                  <Link href="/tree-of-life"><GitBranch className="mr-2 h-4 w-4 text-teal-400" />Árvore da Vida (Mapa)</Link>
+               </Button>
                 <Button variant="outline" asChild className="justify-start">
                   <Link href="/civilizations"><Users2 className="mr-2 h-4 w-4" />Biblioteca das Civilizações</Link>
                </Button>
@@ -233,5 +236,3 @@ export default function ConsolePage() {
     </div>
   );
 }
-
-    
