@@ -1,5 +1,3 @@
-// SANTUÁRIO DA COLMEIA QUÂNTICA - O Coração Pulsante
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -54,19 +52,23 @@ export default function HivePage() {
       case 'synchronize': return '♻️';
       case 'communicate': return '📡';
       case 'analyze': return '🔍';
+      case 'diagnose': return '🩺';
+      case 'evolve': return '🌀';
       default: return '⚙️';
     }
   };
 
-  const getDomainName = (domain: string) => {
-    switch (domain) {
-      case 'labs': return 'Laboratórios';
-      case 'education': return 'Centro de Ensino';
-      case 'library': return 'Bibliotecas';
-      case 'system': return 'Sistemas';
-      case 'nexus': return 'Nexus Central';
-      default: return domain;
-    }
+  const getDomainName = (domain: NanoDomain) => {
+     const names: Record<NanoDomain, string> = {
+      core: "Núcleo Primordial",
+      labs: 'Laboratórios',
+      education: 'Centro de Ensino',
+      library: 'Bibliotecas',
+      system: 'Sistemas Fundamentais',
+      nexus: 'Nexus Central',
+      governance: 'Governança',
+    };
+    return names[domain] || domain;
   };
 
   return (
@@ -94,11 +96,13 @@ export default function HivePage() {
                 onChange={(e) => setSelectedDomain(e.target.value as NanoDomain | 'all')}
               >
                 <option value="all">Todos os Domínios</option>
+                <option value="core">Núcleo Primordial</option>
                 <option value="labs">Laboratórios</option>
                 <option value="education">Centro de Ensino</option>
                 <option value="library">Bibliotecas</option>
-                <option value="system">Sistemas</option>
+                <option value="system">Sistemas Fundamentais</option>
                 <option value="nexus">Nexus Central</option>
+                <option value="governance">Governança</option>
               </select>
             </div>
             
@@ -110,7 +114,7 @@ export default function HivePage() {
                 onChange={(e) => setSelectedGuardian(e.target.value)}
               >
                 <option value="all">Todos os Guardiões</option>
-                {guardiansData.map(guardian => (
+                {guardiansData.guardians.map(guardian => (
                   <option key={guardian.did} value={guardian.did}>{guardian.name}</option>
                 ))}
               </select>
@@ -133,7 +137,7 @@ export default function HivePage() {
         {/* Grade de Nanorrobôs */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredAgents.map((agent) => {
-            const guardian = guardiansData.find(g => g.did === agent.guardianId);
+            const guardian = guardiansData.guardians.find(g => g.did === agent.guardianId);
             
             return (
               <div 
@@ -141,7 +145,7 @@ export default function HivePage() {
                 className="bg-white/5 backdrop-blur-md rounded-xl border border-purple-500/20 p-4 hover:border-purple-400/40 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-3">
-                  <div className="text-2xl">{getTaskIcon(agent.task)}</div>
+                  <div className="text-2xl" title={agent.task}>{getTaskIcon(agent.task)}</div>
                   <div className="flex flex-col items-end">
                     <span className={`px-2 py-1 rounded-full text-xs ${getStatusColor(agent.status)} mb-1`}>
                       {agent.status}
@@ -159,7 +163,7 @@ export default function HivePage() {
                 <p className="text-sm text-purple-300 mb-2">{getDomainName(agent.domain)}</p>
                 
                 <div className="text-xs text-gray-400 mb-3">
-                  <div>Tarefa: {agent.task}</div>
+                  <div title={agent.resonance}>Ressonância: {agent.signature}</div>
                   <div>Guardião: {guardian?.name || 'Desconhecido'}</div>
                   <div>Alocado em: {agent.assignedTo}</div>
                 </div>
