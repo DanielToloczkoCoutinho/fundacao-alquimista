@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
-import { Loader2, Zap, Waves, AlertTriangle, Bot, Link as LinkIcon, Stethoscope, GraduationCap } from 'lucide-react';
+import { Loader2, Zap, Waves, AlertTriangle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { resonanceTone } from '@/lib/audio-utils';
@@ -122,6 +122,7 @@ export default function EspelhoDeAscensaoPage() {
                          <ConnectionCard title="Diagnóstico Universal" description="A saúde do Espelho de Ascensão e sua coerência vibracional são vitais para o diagnóstico da capacidade de manifestação da Fundação." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
                          <ConnectionCard title="Módulo 404: Resolução de Paradoxo" description="Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia, garantindo a estabilidade causal." icon={<AlertTriangle className="h-6 w-6 text-yellow-400" />} href="/module-404"/>
                          <ConnectionCard title="Módulo 304" description="A física das frequências de ascensão e a visualização fractal são campos de estudo e aplicação na Universidade." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
+                          <ConnectionCard title="Módulo 12" description="O espelho consulta os registros akáshicos para entender a 'assinatura original' da realidade a ser harmonizada, garantindo uma restauração perfeita." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
                     </div>
                 </div>
             </div>

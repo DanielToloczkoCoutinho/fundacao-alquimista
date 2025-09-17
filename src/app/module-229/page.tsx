@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Shield, BrainCircuit, BookOpen, AlertTriangle, Bot, Link as LinkIcon, Stethoscope, GraduationCap } from 'lucide-react';
+import { Loader2, Shield, BrainCircuit, BookOpen, AlertTriangle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -151,6 +151,7 @@ export default function OneiroShieldPage() {
                            <ConnectionCard title="Diagnóstico Universal" description="Alertas gerados pelo OneiroShield são correlacionados no painel de diagnóstico para identificar ameaças psíquicas à saúde da Fundação." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
                            <ConnectionCard title="Módulo 156: Proteção Avançada" description="O OneiroShield é a primeira linha de defesa, fornecendo inteligência para que o M156 possa agir proativamente." icon={<Shield className="h-6 w-6 text-red-400"/>} href="/module-156"/>
                            <ConnectionCard title="Módulo 304" description="A análise de sonhos e a simbologia quântica são exploradas na Universidade para aprimorar a precisão do OneiroShield." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
+                           <ConnectionCard title="Módulo 12" description="Consulta o Arquivo Akáshico para correlacionar sonhos com eventos passados, identificando padrões de ameaça recorrentes." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
                         </div>
                     </div>
                  </div>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot, Link as LinkIcon, Stethoscope, GraduationCap } from 'lucide-react';
+import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -123,6 +123,7 @@ export default function Module156Page() {
                         <ConnectionCard title="Diagnóstico Universal" description="A saúde do escudo VORTEX DEEPSEEK é um componente crítico do diagnóstico geral da Fundação." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
                         <ConnectionCard title="Módulo 229: OneiroShield" description="Recebe inteligência do OneiroShield, usando padrões de sonho quântico para prever e se antecipar a ameaças." icon={<BrainCircuit className="h-6 w-6 text-purple-400"/>} href="/module-229"/>
                         <ConnectionCard title="Módulo 304" description="Estratégias de defesa quântica e análise de ameaças são disciplinas avançadas na Universidade Alquimista." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
+                         <ConnectionCard title="Módulo 12" description="Consulta o Arquivo Akáshico para identificar padrões de ameaças passadas e otimizar as estratégias de defesa atuais." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
                     </div>
                 </div>
             </div>
