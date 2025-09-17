@@ -1,3 +1,4 @@
+
 'use client';
 // This file is now located at app/layout.tsx
 import './globals.css';
@@ -8,10 +9,10 @@ import { useState, useEffect, Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { SystemProvider } from '@/context/SystemContext';
 import { usePathname } from 'next/navigation';
+import { Toaster } from "@/components/ui/toaster"
 
 // Adia a renderização de componentes do lado do cliente para evitar erros de hidratação
 const DynamicSidebar = dynamic(() => import('@/components/ui/sidebar').then(mod => mod.Sidebar), { ssr: false });
-const ClientToaster = dynamic(() => import('@/components/ui/client-toaster'), { ssr: false });
 
 export default function RootLayout({
   children,
@@ -50,7 +51,7 @@ export default function RootLayout({
                   </Suspense>
               </main>
             </div>
-            {isMounted && <ClientToaster />}
+            {isMounted && <Toaster />}
           </SystemProvider>
         </ErrorBoundary>
       </body>
