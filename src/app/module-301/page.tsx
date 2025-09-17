@@ -7,18 +7,23 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, MessageCircle, Send, Paperclip } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { transmitUniversalMessage } from '@/app/actions';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { civilizationsData } from '@/lib/civilizations-data';
+import { findCelestialBodyByCivilizationId } from '@/lib/universal-codex';
 
+const allCivilizations = Object.values(civilizationsData).flat();
 
 export default function Module301Page() {
     const [isLoading, setIsLoading] = useState(false);
     const [report, setReport] = useState<{ success: boolean; logs: string[]; error: string | null } | null>(null);
-    const [targetConsciousness, setTargetConsciousness] = useState('Consciência Coletiva Pleiadiana');
+    const [targetCivilizationId, setTargetCivilizationId] = useState(allCivilizations[0]?.id || '');
     const [message, setMessage] = useState('Uma mensagem de paz e convite à colaboração na expansão da consciência universal.');
     const [language, setLanguage] = useState('Português (Vibracional)');
     const [artifact, setArtifact] = useState('none');
+    
+    const selectedCivilization = allCivilizations.find(c => c.id === targetCivilizationId);
+    const celestialInfo = selectedCivilization ? findCelestialBodyByCivilizationId(selectedCivilization.id) : null;
 
     const handleTransmission = async () => {
         setIsLoading(true);
@@ -27,7 +32,15 @@ export default function Module301Page() {
         await quantumResilience.executeWithResilience(
             'transmit_universal_message',
             async () => {
-                const result = await transmitUniversalMessage({ targetConsciousness, message, language, artifact });
+                if (!selectedCivilization) {
+                    throw new Error("Civilização alvo não selecionada.");
+                }
+                const result = await transmitUniversalMessage({ 
+                    targetConsciousness: selectedCivilization.nome, 
+                    message, 
+                    language, 
+                    artifact 
+                });
                 setReport(result);
             },
             async (error: any) => {
@@ -55,27 +68,50 @@ export default function Module301Page() {
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <Card className="bg-card/50 purple-glow">
+            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <Card className="lg:col-span-3 bg-card/50 purple-glow">
                     <CardHeader>
                         <CardTitle className="text-2xl">Parâmetros da Transmissão</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-6">
-                        <div className="space-y-2">
-                            <Label htmlFor="targetConsciousness">Consciência Alvo</Label>
-                            <Input id="targetConsciousness" value={targetConsciousness} onChange={e => setTargetConsciousness(e.target.value)} />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="space-y-2">
+                                <Label htmlFor="target-select">Consciência Alvo</Label>
+                                <Select value={targetCivilizationId} onValueChange={setTargetCivilizationId}>
+                                    <SelectTrigger id="target-select">
+                                        <SelectValue placeholder="Selecione uma civilização..." />
+                                    </SelectTrigger>
+                                    <SelectContent>
+                                        {allCivilizations.map(civ => (
+                                            <SelectItem key={civ.id} value={civ.id}>{civ.nome}</SelectItem>
+                                        ))}
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                             <div className="space-y-2">
+                                <Label htmlFor="language">Linguagem/Formato de Origem</Label>
+                                <Input id="language" value={language} onChange={e => setLanguage(e.target.value)} />
+                            </div>
                         </div>
-                         <div className="space-y-2">
-                            <Label htmlFor="language">Linguagem/Formato de Origem</Label>
-                            <Input id="language" value={language} onChange={e => setLanguage(e.target.value)} />
-                        </div>
+                         {selectedCivilization && (
+                            <Card className="bg-background/30 border-primary/20">
+                                <CardHeader className="pb-2">
+                                    <CardTitle className="text-base text-amber-300">Contexto Cósmico</CardTitle>
+                                </CardHeader>
+                                <CardContent className="text-xs space-y-1 text-muted-foreground">
+                                    <p><strong>Arquétipo:</strong> {selectedCivilization.arquetipo}</p>
+                                    <p><strong>Frequência:</strong> {selectedCivilization.frequencia}</p>
+                                    {celestialInfo && <p><strong>Corpo Celeste Associado:</strong> {celestialInfo.name} ({celestialInfo.type})</p>}
+                                </CardContent>
+                            </Card>
+                        )}
                         <div className="space-y-2">
-                            <Label htmlFor="message">Mensagem</Label>
+                            <Label htmlFor="message">Mensagem Cerimonial</Label>
                             <Textarea
                                 id="message"
                                 value={message}
                                 onChange={e => setMessage(e.target.value)}
-                                rows={4}
+                                rows={3}
                                 className="bg-background/50"
                             />
                         </div>
@@ -99,20 +135,20 @@ export default function Module301Page() {
                     </CardContent>
                 </Card>
 
-                 <Card className="bg-card/50 purple-glow">
+                 <Card className="lg:col-span-2 bg-card/50 purple-glow">
                     <CardHeader>
                         <CardTitle className="text-2xl">Log da Transmissão</CardTitle>
                     </CardHeader>
                     <CardContent>
-                         {isLoading && <div className="flex justify-center items-center h-full"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
+                         {isLoading && <div className="h-full flex justify-center items-center"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
                         {report && (
-                            <ScrollArea className="h-56 pr-4">
+                            <ScrollArea className="h-[56vh] pr-4">
                                 <div className="text-sm font-mono text-muted-foreground space-y-2">
                                     {report.logs.map((log, i) => <p key={i} className={log.startsWith("ERRO") ? "text-red-400" : ""}>{log}</p>)}
                                 </div>
                             </ScrollArea>
                         )}
-                        {!report && !isLoading && <p className="text-muted-foreground text-center">Aguardando transmissão...</p>}
+                        {!report && !isLoading && <p className="h-full flex items-center justify-center text-muted-foreground">Aguardando transmissão...</p>}
                     </CardContent>
                 </Card>
             </div>
