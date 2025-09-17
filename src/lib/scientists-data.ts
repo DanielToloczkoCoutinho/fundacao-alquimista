@@ -148,3 +148,5 @@ export const scientists: Scientist[] = [
   { id: 'schmidt', name: 'Brian Schmidt', field: 'Cosmologia e Energia Escura, Nobel' },
   { id: 'rejzner', name: 'Katarzyna Rejzner', field: 'Física Matemática e Cosmologia Quântica' },
 ];
+
+    

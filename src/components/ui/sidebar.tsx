@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -10,7 +11,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -103,13 +104,13 @@ export function Sidebar() {
               </TooltipContent>
           </Tooltip>
         </Link>
-         <Link href="/module-306" className="mb-4">
+         <Link href="/labs" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
-              <span className="text-2xl"><Beaker className="h-8 w-8 text-teal-400" /></span>
+              <span className="text-2xl"><FlaskConical className="h-8 w-8 text-teal-400" /></span>
             </TooltipTrigger>
              <TooltipContent side="right">
-                <p>Laboratório de Ressonância</p>
+                <p>Santuários de Pesquisa</p>
               </TooltipContent>
           </Tooltip>
         </Link>
