@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, Tree } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -54,13 +54,13 @@ export function Sidebar() {
               </TooltipContent>
           </Tooltip>
         </Link>
-         <Link href="/hive" className="mb-4">
+         <Link href="/tree-of-life" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
-              <span className="text-2xl"><Brain className="h-8 w-8 text-cyan-400" /></span>
+              <span className="text-2xl"><Tree className="h-8 w-8 text-teal-400" /></span>
             </TooltipTrigger>
              <TooltipContent side="right">
-                <p>Colmeia Quântica</p>
+                <p>Árvore da Vida</p>
               </TooltipContent>
           </Tooltip>
         </Link>
