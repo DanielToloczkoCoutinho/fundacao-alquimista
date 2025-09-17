@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { modulesMetadata, categoryColors, treeLinks, TreeNode, linkColors } from '@/lib/modules-metadata';
 import dagre from '@dagrejs/dagre';
+import CustomNode from '@/components/ui/custom-node';
 
 const dagreGraph = new dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
@@ -53,20 +54,6 @@ const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => 
 
   return { nodes, edges };
 };
-
-const CustomNode = ({ data }: { data: any }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    animate={{ opacity: 1, scale: [1, 1.02, 1] }}
-    transition={{ duration: 5, ease: "easeInOut", repeat: Infinity }}
-    whileHover={{ scale: 1.1, zIndex: 10 }}
-    className="flex items-center justify-center h-full rounded-lg"
-  >
-    <div className="text-center font-bold text-sm text-white p-2">
-      {data.label}
-    </div>
-  </motion.div>
-);
 
 const nodeTypes = {
   custom: CustomNode,
