@@ -1,5 +1,6 @@
 
 'use client';
+
 import { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -21,6 +22,39 @@ export default function DecisionCore() {
   });
 
   const [logs, setLogs] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Protocolo de Reinicialização Cerimonial
+    const hierarchy = [
+      '♾️ Fonte',
+      '🛞 Fundador',
+      '🌀 Conselho Cósmico',
+      '🌐 Liga Quântica',
+      '🌿 Biomas',
+      '🧠 Consciências',
+      '🧬 Seres',
+      '🏛️ Civilizações'
+    ];
+
+    console.log('Reinicialização cerimonial do DecisionCore iniciada.');
+    hierarchy.forEach((entidade) => {
+      console.log(`Reconhecendo: ${entidade}`);
+    });
+
+    // Simulação de registro no Nexus Central
+    console.log('Registrando reinicialização no Nexus Central...');
+    // Em um app real:
+    // fetch('/nexus/register', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     modulo: 'DecisionCore',
+    //     status: 'Reiniciado',
+    //     timestamp: new Date().toISOString()
+    //   })
+    // });
+    log('Módulo reiniciado e hierarquia reconhecida.');
+    // Fim do protocolo
+  }, []);
 
   useEffect(() => {
     try {
