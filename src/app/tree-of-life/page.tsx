@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useMemo, useCallback } from 'react';
 import ReactFlow, {
@@ -17,7 +18,7 @@ import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { treeNodes as moduleNodes, treeLinks as moduleLinks, categoryColors, linkColors } from '@/lib/tree-of-life-data';
+import { treeNodes as moduleNodes, treeLinks as moduleLinks, categoryColors, linkColors, TreeNode } from '@/lib/tree-of-life-data';
 import dagre from '@dagrejs/dagre';
 
 const dagreGraph = new dagre.graphlib.Graph();
@@ -56,12 +57,12 @@ const getLayoutedElements = (nodes: Node[], edges: Edge[], direction = 'TB') => 
 const CustomNode = ({ data }: { data: any }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.8 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.5 }}
-    whileHover={{ scale: 1.05 }}
+    animate={{ scale: [1, 1.05, 1], opacity: 1 }}
+    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+    whileHover={{ scale: 1.1 }}
     className="flex items-center justify-center h-full"
   >
-    <div className="text-center font-bold text-sm">{data.label}</div>
+    <div className="text-center font-bold text-sm text-black">{data.label}</div>
   </motion.div>
 );
 
@@ -70,8 +71,8 @@ const nodeTypes = {
 };
 
 export default function TreeOfLife() {
-  const initialNodes: Node[] = useMemo(() => moduleNodes.map((mod) => ({
-    id: mod.id,
+  const initialNodes: Node[] = useMemo(() => moduleNodes.map((mod: TreeNode) => ({
+    id: mod.code,
     type: 'custom',
     data: { 
         label: (
@@ -100,9 +101,9 @@ export default function TreeOfLife() {
     target: link.target,
     animated: true,
     type: 'smoothstep',
-    label: link.tipo,
+    label: link.label,
     style: { 
-      stroke: linkColors[link.tipo] || '#888',
+      stroke: linkColors[link.type] || '#888',
       strokeWidth: 2.5,
     },
     labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '12px' },
@@ -116,7 +117,7 @@ export default function TreeOfLife() {
   const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
   const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
-    const moduleData = moduleNodes.find(m => m.id === node.id);
+    const moduleData = moduleNodes.find(m => m.code === node.id);
     if (!moduleData?.fractais) return;
 
     const existingFractalIds = new Set(nodes.map(n => n.id));
@@ -191,7 +192,7 @@ export default function TreeOfLife() {
           className="bg-transparent"
         >
           <Background color="hsl(var(--primary))" gap={24} size={2} />
-          <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={(n) => categoryColors[moduleNodes.find(m => m.id === n.id)?.category || 'default'] || '#666'} className="bg-background/50 border border-primary/20" />
+          <MiniMap nodeStrokeWidth={3} zoomable pannable nodeColor={(n) => categoryColors[moduleNodes.find(m => m.code === n.id)?.category || 'default'] || '#666'} className="bg-background/50 border border-primary/20" />
           <Controls />
         </ReactFlow>
       </motion.div>
@@ -207,4 +208,3 @@ export default function TreeOfLife() {
     </div>
   );
 }
-    

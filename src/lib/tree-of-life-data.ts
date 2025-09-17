@@ -1,6 +1,7 @@
+
 'use server';
 
-import { modulesMetadata, ModuleMetadata } from "./modules-metadata";
+import { modulesMetadata } from "./modules-metadata";
 
 export interface SubModule {
   id: string;
@@ -10,6 +11,7 @@ export interface SubModule {
   description?: string;
 }
 
+// A interface TreeNode agora é exportada e herda de ModuleMetadata, incluindo a propriedade opcional de fractais.
 export interface TreeNode extends ModuleMetadata {
   fractais?: SubModule[];
   guardian?: string;
@@ -21,6 +23,7 @@ export interface TreeLink {
   source: string; // ID of source node
   target: string; // ID of target node
   type: TreeLinkType;
+  label: string;
 }
 
 const guardianMap: { [key: string]: string } = {
@@ -53,32 +56,35 @@ export const categoryColors: Record<string, string> = {
   'Sustentabilidade e Ecossistemas': '#6BFF6B',
   'Bem-estar e Saúde Universal': '#6BFFB5',
   'Segurança e Ética Cósmica': '#FF6B6B',
+  'default': '#999'
 };
 
 export const linkColors: Record<string, string> = {
-  dependencia: '#FFD700',
-  influencia: '#00BFA6',
-  heranca: '#FF8C00',
   atualizacao: '#00BFA6',
   protecao: '#FFD700',
   'retorno-inteligente': '#FF6F61',
+  dependencia: '#FF8C00',
+  influencia: '#8A2BE2',
+  heranca: '#FF4500'
 };
 
 const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
     const links: TreeLink[] = [];
     const nodeIds = nodes.map(n => n.id);
     const coreNodes = nodes.filter(n => n.category === 'Núcleo da Fundação' || n.category === 'Governança').map(n => n.id);
-    const linkTypes: TreeLink['type'][] = ['dependencia', 'influencia', 'heranca'];
+    const linkTypes: TreeLinkType[] = ['dependencia', 'influencia', 'heranca'];
 
     nodes.forEach(node => {
         if (!coreNodes.includes(node.id) && coreNodes.length > 0) {
             const targetCoreNode = coreNodes[node.id.length % coreNodes.length];
             if (targetCoreNode && targetCoreNode !== node.id) {
                 if (!links.some(l => (l.source === node.id && l.target === targetCoreNode) || (l.source === targetCoreNode && l.target === node.id))) {
+                    const type = linkTypes[node.id.length % linkTypes.length];
                     links.push({
                         source: node.id,
                         target: targetCoreNode,
-                        type: linkTypes[node.id.length % linkTypes.length]
+                        type: type,
+                        label: type,
                     });
                 }
             }
@@ -86,19 +92,21 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
     });
 
     const fixedLinks: TreeLink[] = [
-        { source: 'M-OMEGA', target: 'M9', type: 'influencia' },
-        { source: 'M9', target: 'M1', type: 'dependencia' },
-        { source: 'M144', target: 'M72', type: 'heranca' },
-        { source: 'M29', target: 'M-OMEGA', type: 'heranca' },
-        { source: 'M303', target: 'M22', type: 'dependencia' },
-        { source: 'M29', target: 'VENTE', type: 'atualizacao' },
-        { source: 'VENTE', target: 'M291', type: 'protecao' },
-        { source: 'M291', target: 'M29', type: 'retorno-inteligente' },
+        { source: 'M-OMEGA', target: 'M9', type: 'influencia', label: 'influencia' },
+        { source: 'M9', target: 'M1', type: 'dependencia', label: 'dependencia' },
+        { source: 'M144', target: 'M72', type: 'heranca', label: 'heranca' },
+        { source: 'M29', target: 'M-OMEGA', type: 'heranca', label: 'heranca' },
+        { source: 'M303', target: 'M22', type: 'dependencia', label: 'dependencia' },
+        { source: 'M29', target: 'VENTE', type: 'atualizacao', label: 'atualizacao' },
+        { source: 'VENTE', target: 'M291', type: 'protecao', label: 'protecao' },
+        { source: 'M291', target: 'M29', type: 'retorno-inteligente', label: 'retorno-inteligente' },
     ];
 
     fixedLinks.forEach(link => {
-        if (!links.some(l => (l.source === link.source && l.target === link.target) || (l.source === link.target && l.target === link.source))) {
-            links.push(link);
+        if (nodeIds.includes(link.source) && nodeIds.includes(link.target)) {
+            if (!links.some(l => (l.source === link.source && l.target === link.target) || (l.source === link.target && l.target === link.source))) {
+                links.push(link);
+            }
         }
     });
 
@@ -106,4 +114,3 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
 };
 
 export const treeLinks: TreeLink[] = generateLinks(treeNodes);
-    
