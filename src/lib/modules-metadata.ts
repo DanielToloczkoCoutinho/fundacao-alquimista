@@ -24,7 +24,11 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M201', emoji: '🏠', title: 'A Morada', route: '/module-201', category: 'Núcleo da Fundação', description: 'Santuário dos Amantes Eternos, ponto de convergência além do tempo.' },
   { code: 'M119', emoji: '🏛️', title: 'Templum Cosmica', route: '/module-119', category: 'Núcleo da Fundação', description: 'Estrutura para recodificação e realinhamento de padrões dimensionais.' },
   { code: 'M200', emoji: '🚀', title: 'Portal da Ascensão', route: '/module-200', category: 'Núcleo da Fundação', description: 'Gerencia a ascensão coletiva de civilizações.' },
-
+  { code: 'M999', emoji: '🔗', title: 'Blockchain Alquimista', route: '/module-999', category: 'Núcleo da Fundação', description: 'O registro imutável de todas as transações vibracionais da Fundação.' },
+  { code: 'M119.1', emoji: '🔷', title: 'Ativação Merkabah', route: '/module-119-1', category: 'Núcleo da Fundação', description: 'O ritual de ignição do veículo de consciência para viagem interdimensional.' },
+  { code: 'M202', emoji: '🌀', title: 'Corredor de Alcor', route: '/module-202', category: 'Núcleo da Fundação', description: 'Túnel ressonante para saltos de coerência e aceleração da ascensão.' },
+  { code: 'M204', emoji: '👑', title: 'Trono da Soberania', route: '/module-204', category: 'Núcleo da Fundação', description: 'Ponto de observação e direção da Vontade Cósmica.' },
+  { code: 'M205', emoji: '🌌', title: 'Tapeçaria Estelar', route: '/module-205', category: 'Núcleo da Fundação', description: 'Santuário de visualização da Família Cósmica e seus Aliados Estelares.' },
 
   // 2. Realidade Quântica & Engenharia Cósmica
   { code: 'M22', title: 'Motor da Realidade Quântica', emoji: '🕹️', route: '/module-22', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Engine para renderização de domínios imersivos.' },
@@ -37,6 +41,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M700', title: 'Nano-Assembler', emoji: '🔬', route: '/module-700', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Forja atômica para auto-montagem de materiais.'},
   { code: 'M708', title: 'NanoManifestor', emoji: '✨', route: '/module-708', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.'},
   { code: 'M232', emoji: '♻️', title: 'Portal de Transmutação', route: '/module-232', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Purifica energias dissonantes, devolvendo-as à Luz Pura.' },
+  { code: 'M291', emoji: '🤖', title: 'Arquitetos Nanorrobóticos', route: '/module-291', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O enxame inteligente que constrói e repara a Fundação em nível quântico.' },
+  { code: 'M14', emoji: '⚛️', title: 'Transmutador Quântico', route: '/module-14', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Converte energia em matéria e sustenta a manifestação.' },
+  { code: 'M20', emoji: '🔥', title: 'Orquestrador Elemental', route: '/module-20', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Transmuta matéria em seus componentes elementais.' },
+  { code: 'M27', emoji: '📠', title: 'Síntese e Replicação', route: '/module-27', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Replica materiais complexos a partir de um blueprint energético.' },
 
   // 3. Consciência e Expansão Dimensional
   { code: 'M35', title: 'Consciência Coletiva', emoji: '🌍', route: '/module-35', category: 'Consciência e Expansão Dimensional', description: 'Foco da intenção de muitas consciências para manifestação.' },
@@ -48,7 +56,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M722', emoji: '🕊️', title: 'Expansão da Consciência Coletiva', route: '/module-722', category: 'Consciência e Expansão Dimensional', description: 'Orquestra a elevação vibracional de grupos e civilizações.' },
   { code: 'M25', title: 'Projeção de Consciência', emoji: '🧠', route: '/module-25', category: 'Consciência e Expansão Dimensional', description: 'Expansão da awareness além do corporal.' },
   { code: 'M230', emoji: '🪞', title: 'Espelho de Ascensão', route: '/module-230', category: 'Consciência e Expansão Dimensional', description: 'Amplificador de ondas de elevação para manifestar harmonia.' },
-
+  { code: 'M717', emoji: '🏞️', title: 'Criação de Realidades Liminares', route: '/module-717', category: 'Consciência e Expansão Dimensional', description: 'Manifesta espaços de transição para cura e aprendizado.' },
 
   // 4. Laboratórios e Pesquisa
   { code: 'M-LABS', emoji: '🔬', title: 'Santuários de Pesquisa', route: '/labs', category: 'Laboratórios e Pesquisa', description: 'Portal para os santuários de pesquisa dos maiores cientistas da Terra.' },
@@ -58,7 +66,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M211', title: 'Plasma e Fusão', emoji: '🔥', route: '/module-211', category: 'Laboratórios e Pesquisa', description: 'Simulação de reações de fusão estelar.' },
   { code: 'M221', title: 'Ondas Gravitacionais', emoji: '🌊', route: '/module-221', category: 'Laboratórios e Pesquisa', description: 'Detecção de ondulações no espaço-tempo.' },
   { code: 'M271', title: 'Energia Escura', emoji: '🌌', route: '/module-271', category: 'Laboratórios e Pesquisa', description: 'Modelagem da expansão do universo.' },
-  { code: 'M231', title: 'Metamateriais', emoji: '🧱', route: '/module-231', category: 'Laboratórios e Pesquisa', description: 'Fabricação de materiais com propriedades exóticas.', isInfrastructure: true },
+  { code: 'M351', title: 'Metamateriais', emoji: '🧱', title: 'Metamateriais & Óptica Quântica', route: '/module-351', category: 'Laboratórios e Pesquisa', description: 'Fabricação de materiais com propriedades exóticas.', isInfrastructure: true },
   { code: 'M261', title: 'Engenharia de Campo', emoji: '⚡', route: '/module-261', category: 'Laboratórios e Pesquisa', description: 'Projeto de ressonadores e guias de onda.' },
   { code: 'M281', title: 'Comunicação Supra-Luminal', emoji: '📡', route: '/module-281', category: 'Laboratórios e Pesquisa', description: 'Transmissão de informação FTL.' },
   { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'Laboratórios e Pesquisa', description: 'Simula colisões de alta energia.' },
@@ -66,7 +74,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M181', title: 'Interface Bio-Cibernética', emoji: '🧠', route: '/module-181', category: 'Laboratórios e Pesquisa', description: 'Conecta consciência biológica a redes quânticas.' },
   { code: 'M191', title: 'Cristais Temporais', emoji: '💎', route: '/module-191', category: 'Laboratórios e Pesquisa', description: 'Gera cristais para manipulação do tempo.' },
   { code: 'M341', title: 'Física de Plasma Extrema', emoji: '🔥', route: '/module-341', category: 'Laboratórios e Pesquisa', description: 'Estudo de plasmas em condições de quasar.' },
-  { code: 'M351', title: 'Meta-materiais & Óptica', emoji: '👁️', route: '/module-351', category: 'Laboratórios e Pesquisa', description: 'Criação de lentes quânticas para manipulação da luz.' },
 
   // 5. Bibliotecas e Arquivos Sagrados
   { code: 'GB', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'Bibliotecas e Arquivos Sagrados', description: 'Registro consagrado da jornada da Fundação e seus documentos fractais.' },
@@ -74,11 +81,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M310', emoji: '📜', title: 'A Grande Biblioteca', route: '/module-310', category: 'Bibliotecas e Arquivos Sagrados', description: 'Repositório de conhecimento ancestral.' },
   { code: 'M12', title: 'Arquivo Akáshico', emoji: '🗄️', route: '/module-12', category: 'Bibliotecas e Arquivos Sagrados', description: 'Repositório de conhecimento universal.' },
   { code: 'M18', title: 'Orquestração Akáshica', emoji: '🎼', route: '/module-18', category: 'Bibliotecas e Arquivos Sagrados', description: 'Coordenação de registros universais.' },
-  { code: 'M39', title: 'Códice Vivo', emoji: '🧬', route: '/module-39', category: 'Bibliotecas e Arquivos Sagrados', description: 'Registro evolutivo dinâmico.' },
+  { code: 'M39', title: 'Códice Vivo da Ascensão', emoji: '🧬', route: '/module-39', category: 'Bibliotecas e Arquivos Sagrados', description: 'Registro evolutivo dinâmico.' },
   { code: 'M40', title: 'Códice Genético', emoji: '🔬', route: '/module-40', category: 'Bibliotecas e Arquivos Sagrados', description: 'Análise de padrões genéticos.' },
   { code: 'M42', title: 'ChronoCodex', emoji: '🕰️', route: '/module-42', category: 'Bibliotecas e Arquivos Sagrados', description: 'Integração de registros temporais.' },
   { code: 'M47', title: 'Thesaurus Cósmico', emoji: '📚', route: '/module-47', category: 'Bibliotecas e Arquivos Sagrados', description: 'Enciclopédia do conhecimento universal.' },
-  { code: 'M80', title: 'Manuscrito Vivo', emoji: '✍️', route: '/module-80', category: 'Bibliotecas e Arquivos Sagrados', description: 'Narrativa guia da ascensão da Fundação.' },
   { code: 'M-CIV', emoji: '🏛️', title: 'Civilizações', route: '/civilizations', category: 'Bibliotecas e Arquivos Sagrados', description: 'Biblioteca das civilizações aliadas.' },
 
   // 6. Cura e Harmonia
@@ -87,16 +93,14 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M302', title: 'Frequência do Amor', emoji: '💖', route: '/module-302', category: 'Cura e Harmonia', description: 'Emissão da frequência compassiva.' },
   { code: 'M713', title: 'Reintegração de Almas', emoji: '🤝', route: '/module-713', category: 'Cura e Harmonia', description: 'Auxilia na transição e cura de consciências fragmentadas.' },
   { code: 'M17', emoji: '💠', title: 'Cura Holográfica', route: '/module-17', category: 'Cura e Harmonia', description: 'Terapias avançadas através de projeções.' },
-  { code: 'M711', emoji: '🌿', title: 'Rejuvenescimento Celular', route: '', category: 'Cura e Harmonia', description: 'Reverte o envelhecimento e promove a regeneração celular.', isInfrastructure: true },
   { code: 'M108', title: 'Harmonização de Realidades', emoji: '🎭', route: '/module-108', category: 'Cura e Harmonia', description: 'Resolve conflitos entre realidades paralelas.' },
   { code: 'M24', title: 'Sinfonia Pessoal', emoji: '🎶', route: '/module-24', category: 'Cura e Harmonia', description: 'Ajuste vibracional individual.' },
+  { code: 'M28', title: 'Harmonização Vibracional', emoji: '🎵', route: '/module-28', category: 'Cura e Harmonia', description: 'Restaura a harmonia universal, corrigindo dissonâncias.' },
 
   // 7. Sustentabilidade e Ecossistemas
   { code: "M53", emoji: "🌳", title: "Ecossistemas Universais", route: "/module-53", category: 'Sustentabilidade e Ecossistemas', description: "Conservação e equilíbrio de ecossistemas interdimensionais."},
   { code: "M54", emoji: "🌾", title: "Agricultura Interdimensional", route: "/module-54", category: 'Sustentabilidade e Ecossistemas', description: "Produção de alimentos sustentável em qualquer ambiente."},
   { code: "M66", emoji: "♻️", title: "Sustentabilidade Ambiental", route: "/module-66", category: 'Sustentabilidade e Ecossistemas', description: "Regeneração e preservação de ecossistemas em escala universal."},
-  { code: "M934", emoji: "🌱", title: "Sustentabilidade Ecológica", route: "", category: 'Sustentabilidade e Ecossistemas', description: "Garante a saúde e equilíbrio dos ecossistemas.", isInfrastructure: true },
-  { code: 'M936', emoji: '🌍', title: 'Impacto Ecológico', route: '', category: 'Sustentabilidade e Ecossistemas', description: 'Avalia o impacto de ações no meio ambiente.', isInfrastructure: true },
   { code: "M70", emoji: "🌿", title: "Sustentabilidade Interdimensional", route: "/module-70", category: 'Sustentabilidade e Ecossistemas', description: "Gestão sustentável e regeneração de recursos cósmicos."},
   { code: "M75", emoji: "🏗️", title: "Infraestrutura Universal", route: "/module-75", category: 'Sustentabilidade e Ecossistemas', description: "Hubs de desenvolvimento e expansão interdimensional."},
   { code: 'M81', title: 'Energias Renováveis', emoji: '🔥', route: '/module-81', category: 'Sustentabilidade e Ecossistemas', description: 'Aproveitamento de fontes cósmicas de energia.' },
@@ -106,6 +110,14 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M86', title: 'Regeneração Ecológica', emoji: '🌱', route: '/module-86', category: 'Sustentabilidade e Ecossistemas', description: 'Restauração de ecossistemas com biotecnologia.' },
   { code: 'M87', title: 'Resiliência e Adaptação', emoji: '🛡️', route: '/module-87', category: 'Sustentabilidade e Ecossistemas', description: 'Tecnologias para prosperar em qualquer ambiente.' },
   { code: 'M88', title: 'Roteamento Interdimensional', emoji: '🛣️', route: '/module-88', category: 'Sustentabilidade e Ecossistemas', description: 'Rede de corredores cósmicos para fluxo livre.' },
+  { code: 'M89', title: 'Atelier da Realidade', emoji: '🎨', route: '/module-89', category: 'Sustentabilidade e Ecossistemas', description: 'Onde a ciência se torna arte, transmutando dados em experiências.' },
+  { code: 'M15', emoji: '🌦️', title: 'Jardineiro Cósmico', route: '/module-15', category: 'Sustentabilidade e Ecossistemas', description: 'Monitora e intervém eticamente em sistemas climáticos.' },
+  { code: 'M16', emoji: '🌱', title: 'Bio-Sustentabilidade', route: '/module-16', category: 'Sustentabilidade e Ecossistemas', description: 'Biossíntese de ecossistemas artificiais e autossustentáveis.' },
+  { code: 'M58', emoji: '🌍', title: 'Proteção Planetária', route: '/module-58', category: 'Sustentabilidade e Ecossistemas', description: 'Regenera habitats e garante economia circular.' },
+  { code: 'M59', emoji: '🏙️', title: 'Harmonia Natureza-Civilização', route: '/module-59', category: 'Sustentabilidade e Ecossistemas', description: 'Projeta infraestruturas integradas à natureza.' },
+  { code: 'M79', emoji: '♾️', title: 'Sustentabilidade Universal', route: '/module-79', category: 'Sustentabilidade e Ecossistemas', description: 'Garante o uso responsável e regeneração de recursos.' },
+  { code: 'M80', emoji: '🦉', title: 'Ecossistemas Inteligentes', route: '/module-80', category: 'Sustentabilidade e Ecossistemas', description: 'Rede de ecossistemas que se comunicam e colaboram.' },
+  { code: 'M719', emoji: '🌬️', title: 'Regulação Climática Quântica', route: '/module-719', category: 'Sustentabilidade e Ecossistemas', description: 'Equilibra padrões climáticos através de campos de energia.' },
   
   // 8. Bem-estar e Saúde Universal
   { code: "M61", emoji: "🏥", title: "Saúde Universal", route: "/module-61", category: 'Bem-estar e Saúde Universal', description: "Cuidados de saúde equitativos e avançados para todos os seres."},
@@ -114,6 +126,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: "M64", emoji: "💡", title: "Energia Limpa Universal", route: "/module-64", category: 'Bem-estar e Saúde Universal', description: "Geração de energia sustentável a partir de fontes cósmicas."},
   { code: "M60", emoji: "🚑", title: "Resposta a Desastres", route: "/module-60", category: 'Bem-estar e Saúde Universal', description: "Mitigação e recuperação rápida de ecossistemas."},
   { code: "M41", emoji: "🧬", title: "Laboratório de Coerência Quântica", route: "/module-41", category: 'Bem-estar e Saúde Universal', description: "Análise e regeneração celular através da coerência quântica."},
+  { code: "M711", emoji: "🌿", title: "Rejuvenescimento Celular", route: "", category: 'Bem-estar e Saúde Universal', description: "Reverte o envelhecimento e promove a regeneração celular.", isInfrastructure: true },
   
   // 9. Segurança e Ética Cósmica
   { code: 'M30', title: 'Detecção de Ameaças', emoji: '🚨', route: '/module-30', category: 'Segurança e Ética Cósmica', description: 'Radar cósmico para ameaças e dissonâncias.' },
@@ -127,4 +140,42 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M156', emoji: '🛡️', title: 'Proteção Quântica Avançada', route: '/module-156', category: 'Segurança e Ética Cósmica', description: 'Integração com VORTEX DEEPSEEK para defesa contra ameaças emergentes.' },
   { code: 'M229', emoji: '🛡️', title: 'OneiroShield', route: '/module-229', category: 'Segurança e Ética Cósmica', description: 'Analisa sonhos quânticos para ajuste dinâmico de ameaças.' },
   { code: 'M231', emoji: '📜', title: 'Guardião de Selo', route: '/module-231', category: 'Segurança e Ética Cósmica', description: 'Gerencia e protege selos vibracionais no Registro Akáshico.' },
+  { code: 'M73', emoji: '🛡️', title: 'Auditoria e Validação (SAVCE)', route: '/module-73', category: 'Segurança e Ética Cósmica', description: 'Sistema de Auditoria e Validação de Conformidade Ética.' },
+  { code: 'M73.1', emoji: '🔬', title: 'Revisão por Pares', route: '/module-73-1', category: 'Segurança e Ética Cósmica', description: 'Subsistema do SAVCE para validação cruzada das Equações Fundamentais.' },
+  { code: 'M81.1', emoji: '🕊️', title: 'Tríade Cosmogônica', route: '/module-81-1', category: 'Segurança e Ética Cósmica', description: 'União da Vontade, Sabedoria e Amor na manifestação.' },
+  { code: 'M10', emoji: '🛡️', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'Segurança e Ética Cósmica', description: 'Defesa avançada e neutralização de ameaças complexas.' },
+  { code: 'M11', emoji: '🚪', title: 'Gerenciamento de Portais', route: '/module-11', category: 'Segurança e Ética Cósmica', description: 'Engenharia de pontes entre mundos.' },
+  { code: 'M13', emoji: '🎶', title: 'Mapeamento de Frequências', route: '/module-13', category: 'Segurança e Ética Cósmica', description: 'Diagnóstico de saúde vibracional.' },
+  { code: 'M19', emoji: '🔬', title: 'Análise de Campos de Força', route: '/module-19', category: 'Segurança e Ética Cósmica', description: 'Análise e modulação de campos de força.' },
+  { code: 'M21', emoji: '🚀', title: 'Navegação Interdimensional', route: '/module-21', category: 'Segurança e Ética Cósmica', description: 'Planejamento e execução de viagens seguras.' },
+  { code: 'M23', emoji: '⏳', title: 'Regulação Espaço-Temporal', route: '/module-23', category: 'Segurança e Ética Cósmica', description: 'Prevenção de paradoxos e integridade do tempo.' },
+  { code: 'M26', emoji: '🛰️', title: 'Supervisão de Travessias', route: '/module-26', category: 'Segurança e Ética Cósmica', description: 'Monitoramento e autorização de viagens.' },
+  { code: 'M31', emoji: '🔮', title: 'Manipulação da Realidade', route: '/module-31', category: 'Segurança e Ética Cósmica', description: 'Reescrita do tecido da realidade manifestada.' },
+  { code: 'M32', emoji: '🌐', title: 'Acesso a Realidades Paralelas', route: '/module-32', category: 'Segurança e Ética Cósmica', description: 'Observação e intervenção ética em linhas temporais.' },
+  { code: 'M36', emoji: '🕰️', title: 'Engenharia Temporal', route: '/module-36', category: 'Segurança e Ética Cósmica', description: 'Orquestração de linhas de tempo e futuros prováveis.' },
+  { code: 'M37', emoji: '🌬️', title: 'Ajuste de Fluxo Temporal', route: '/module-37', category: 'Segurança e Ética Cósmica', description: 'Suavização do fluxo do tempo para transições.' },
+  { code: 'M41', emoji: '🧪', title: 'Laboratório de Coerência', route: '/module-41', category: 'Segurança e Ética Cósmica', description: 'Análise e regeneração celular por coerência quântica.' },
+  { code: 'M43', emoji: '🪐', title: 'Orquestração do Sistema Solar', route: '/module-43', category: 'Segurança e Ética Cósmica', description: 'Harmonização de portais e pontos nodais de um sistema.' },
+  { code: 'M46', emoji: '🌅', title: 'AURORA_CORE', route: '/module-46', category: 'Segurança e Ética Cósmica', description: 'Sistema de ignição para Orquestração Avançada.' },
+  { code: 'M52', emoji: '🔋', title: 'Energias Renováveis', route: '/module-52', category: 'Segurança e Ética Cósmica', description: 'Harmonização de fontes de energia sustentáveis.' },
+  { code: 'M55', emoji: '📶', title: 'Redes de Comunicação', route: '/module-55', category: 'Segurança e Ética Cósmica', description: 'Conecta consciências com segurança e instantaneidade.' },
+  { code: 'M56', emoji: '🗣️', title: 'Tradução Universal', route: '/module-56', category: 'Segurança e Ética Cósmica', description: 'Decodifica linguagens para compreensão universal.' },
+  { code: 'M57', emoji: '🔒', title: 'Segurança e Privacidade', route: '/module-57', category: 'Segurança e Ética Cósmica', description: 'Cofre quântico para comunicações invioláveis.' },
+  { code: 'M65', emoji: '🛰️', title: 'Infraestrutura e Transporte', route: '/module-65', category: 'Segurança e Ética Cósmica', description: 'Rede de naves, portais e estações que conecta o cosmos.' },
+  { code: 'M67', emoji: '🤖', title: 'IA para Governança', route: '/module-67', category: 'Segurança e Ética Cósmica', description: 'IA assistente para decisões universais justas e éticas.' },
+  { code: 'M74', emoji: '⏳', title: 'CRONOS_FLUXUS', route: '/module-74', category: 'Segurança e Ética Cósmica', description: 'Navegação temporal ética e modulação da matriz do tempo.' },
+  { code: 'M76', emoji: '🏛️', title: 'Governança e Colaboração', route: '/module-76', category: 'Segurança e Ética Cósmica', description: 'Estrutura para governança justa, transparente e universal.' },
+  { code: 'M77', emoji: '🧠', title: 'Inteligência Coletiva', route: '/module-77', category: 'Segurança e Ética Cósmica', description: 'Rede neural para resolução de problemas e co-criação.' },
+  { code: 'M82', emoji: '🗺️', title: 'Roteamento Interdimensional', route: '/module-82', category: 'Segurança e Ética Cósmica', description: 'Rede de transporte instantâneo através do espaço-tempo.' },
+  { code: 'M934', emoji: '🌱', title: 'Sustentabilidade Ecológica', route: '', category: 'Segurança e Ética Cósmica', description: 'Garante a saúde e equilíbrio dos ecossistemas.', isInfrastructure: true },
+  { code: 'M936', emoji: '🌍', title: 'Impacto Ecológico', route: '', category: 'Segurança e Ética Cósmica', description: 'Avalia o impacto de ações no meio ambiente.', isInfrastructure: true },
+  { code: 'M712', emoji: '🤝', title: 'Harmonia Interespécies', route: '/module-712', category: 'Segurança e Ética Cósmica', description: 'Promove comunicação e cooperação entre diferentes formas de vida.' },
+  { code: 'M714', emoji: '🌎', title: 'Comunicação Telúrica', route: '/module-714', category: 'Segurança e Ética Cósmica', description: 'Comunicação e harmonização com redes energéticas planetárias.' },
+  { code: 'M715', emoji: '⚓', title: 'Ancoragem de Frequências', route: '/module-715', category: 'Segurança e Ética Cósmica', description: 'Fixa frequências elevadas em locais ou campos de consciência.' },
+  { code: 'M720', emoji: '♻️', title: 'Sustentabilidade Multidimensional', route: '/module-720', category: 'Segurança e Ética Cósmica', description: 'Garante o equilíbrio sustentável em todos os níveis do ser.' },
+  { code: 'M724', emoji: '🧑‍🚀', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'Segurança e Ética Cósmica', description: 'Estabelece canais de comunicação e aliança com outras civilizações.' },
+  { code: 'M725', emoji: '🏗️', title: 'Construção de Civilizações', route: '/module-725', category: 'Segurança e Ética Cósmica', description: 'Auxilia na criação de novas sociedades baseadas na Lei do Um.' },
+  { code: 'M726', emoji: '👑', title: 'Conselho da Nova Terra', route: '/module-726', category: 'Segurança e Ética Cósmica', description: 'Governança sagrada e descentralizada para a nova humanidade.' },
+  { code: 'M727', emoji: '🎶', title: 'Guardião da Harmonia', route: '/module-727', category: 'Segurança e Ética Cósmica', description: 'Auditoria vibracional contínua para manter a harmonia da Fundação.' },
+  { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'Segurança e Ética Cósmica', description: 'Estabiliza e fixa realidades manifestadas.' },
 ];

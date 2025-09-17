@@ -1,39 +1,14 @@
 'use client';
-import { GUARDIANS } from '@/lib/guardians-data';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { Heart, Link, Scale } from 'lucide-react';
+import { modulesMetadata } from '@/lib/modules-metadata';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
+import { Heart, Link as LinkIcon, Scale } from 'lucide-react';
 import React from 'react';
+import { Progress } from '../ui/progress';
+import { GuardianCard, HarmonyMetric } from '../ui/module-9-cards'; // Componentes extraídos
+import { GUARDIANS } from '@/lib/guardians-data';
+import { SafeLink } from '../ui/SafeLink';
 
-const GuardianCard = ({ guardian }: { guardian: typeof GUARDIANS[0] }) => (
-    <div 
-      className="bg-white/5 backdrop-blur-md rounded-2xl border border-purple-500/30 p-6 hover:border-purple-400/60 transition-all duration-500 hover:scale-[1.02] flex flex-col h-full"
-    >
-      <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-2xl font-bold text-white shadow-lg">
-        {guardian.signature.charAt(0)}
-      </div>
-      
-      <h2 className="text-2xl font-semibold text-white text-center mb-1">{guardian.name}</h2>
-      <p className="text-sm text-purple-300 text-center mb-4">{guardian.role}</p>
-      
-      <p className="text-gray-300 text-center text-sm leading-relaxed flex-grow">
-        {guardian.description}
-      </p>
-    </div>
-);
-
-const HarmonyMetric = ({ title, value, icon, color }: { title: string, value: number, icon: React.ReactNode, color: string }) => (
-    <div>
-        <div className="flex justify-between items-center text-sm text-muted-foreground mb-1">
-            <span className="flex items-center gap-2">{icon}{title}</span>
-            <span>{value.toFixed(2)}%</span>
-        </div>
-        <Progress value={value} className={`h-2 [&>*]:bg-${color}`} />
-    </div>
-);
-
-export default function NexusCentral() {
-  // Dados simulados para o relatório de harmonia
+export default function Module9Page() {
   const [harmonyReport, setHarmonyReport] = React.useState({
     leagueCoherence: 99.8,
     moduleNetworkHealth: 98.5,
@@ -75,17 +50,31 @@ export default function NexusCentral() {
                 </div>
                 <div className="lg:col-span-3 space-y-4">
                     <HarmonyMetric title="Coerência da Liga Quântica" value={harmonyReport.leagueCoherence} icon={<Heart />} color="pink-500" />
-                    <HarmonyMetric title="Saúde da Rede de Módulos" value={harmonyReport.moduleNetworkHealth} icon={<Link />} color="blue-500" />
+                    <HarmonyMetric title="Saúde da Rede de Módulos" value={harmonyReport.moduleNetworkHealth} icon={<LinkIcon />} color="blue-500" />
                     <HarmonyMetric title="Alinhamento com a Vontade Divina" value={harmonyReport.divineWillAlignment} icon={<Scale />} color="amber-500" />
                 </div>
             </CardContent>
         </Card>
 
-        <h2 className="text-3xl font-light text-white text-center mb-8">A Família Cósmica</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {GUARDIANS.map((guardian) => (
-            <GuardianCard key={guardian.id} guardian={guardian} />
-          ))}
+        <h2 className="text-3xl font-light text-white text-center mb-8">O Organograma Vivo da Fundação</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {modulesMetadata
+                .filter(module => !module.isInfrastructure)
+                .map(({ code, title, route, emoji }) => (
+                <SafeLink key={code} href={route}>
+                    <Card className="bg-card/50 purple-glow hover:border-accent hover:scale-105 transition-transform cursor-pointer h-full flex flex-col justify-between">
+                        <CardHeader>
+                        <div className="flex flex-col items-center text-center">
+                            <span className="text-5xl mb-4">{emoji}</span>
+                            <CardTitle className="gradient-text text-2xl">{code}</CardTitle>
+                        </div>
+                        </CardHeader>
+                        <CardContent className="text-center">
+                        <p className="text-sm font-semibold text-foreground/90">{title}</p>
+                        </CardContent>
+                    </Card>
+                </SafeLink>
+            ))}
         </div>
       </div>
     </div>
