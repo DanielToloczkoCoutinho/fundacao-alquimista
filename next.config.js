@@ -17,8 +17,6 @@ const nextConfig = {
   compress: true,
   generateEtags: false,
   async headers() {
-    // Configurações de segurança para permitir a renderização no iframe do Firebase Studio
-    // e garantir a conectividade com as APIs necessárias.
     const firebaseStudioOrigin = 'https://*.cloudworkstations.dev';
     const localDevOrigin = 'http://localhost:*';
     const vercelPreviewOrigin = 'https://*.vercel.app';
@@ -33,24 +31,32 @@ const nextConfig = {
           },
           {
             key: 'X-Frame-Options',
-            value: 'ALLOW-FROM https://*.cloudworkstations.dev' // Obsoleto, mas bom para navegadores antigos
+            value: 'ALLOW-FROM https://*.cloudworkstations.dev'
           },
           {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              `frame-ancestors 'self' ${firebaseStudioOrigin} ${vercelPreviewOrigin}`, // Permite ser embutido pelo Studio
+              `frame-ancestors 'self' ${firebaseStudioOrigin} ${vercelPreviewOrigin}`,
               `frame-src 'self' ${firebaseStudioOrigin} ${vercelPreviewOrigin}`,
-              // Permite conexões com Firebase, Vercel e desenvolvimento local
               `connect-src 'self' wss://*.firebaseio.com https://*.googleapis.com https://firebase.googleapis.com https://firebaseinstallations.googleapis.com https://fcmtoken.googleapis.com ${firebaseStudioOrigin} ${vercelPreviewOrigin} ws://localhost:*`,
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https://picsum.photos https://*.googleusercontent.com",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // 'unsafe-eval' é necessário para dev mode com algumas libs
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               "object-src 'none'",
               "base-uri 'self'"
             ].join('; ')
-          }
+          },
+          // Headers para WebXR
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin',
+          },
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'require-corp',
+          },
         ],
       },
     ];
