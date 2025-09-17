@@ -50,6 +50,11 @@
     font-family: 'Literata', serif;
     font-weight: bold;
   }
+  .golden-gradient {
+    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 @layer utilities {
