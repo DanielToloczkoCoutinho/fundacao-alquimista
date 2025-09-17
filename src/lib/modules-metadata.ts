@@ -27,6 +27,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M-HEALTH', emoji: '🩺', title: 'Painel de Saúde', route: '/health-dashboard', category: 'Núcleo da Fundação', description: 'Visualizador da saúde e coerência de todos os módulos.', isInfrastructure: true },
   { code: 'M-DIAGNOSTICS', emoji: '🔬', title: 'Diagnóstico Universal', route: '/diagnostics', category: 'Núcleo da Fundação', description: 'Portal unificado para a saúde de todos os módulos.', isInfrastructure: true },
   { code: 'M-ALIGNMENT', emoji: '⚛️', title: 'Observatório Vivo', route: '/alignment-portal', category: 'Núcleo da Fundação', description: 'Visualizador dos 17 Pontos de Equilíbrio e sinapses sistêmicas.', isInfrastructure: true },
+  { code: 'M-HIVE', emoji: '🐝', title: 'Colmeia Quântica', route: '/hive', category: 'Núcleo da Fundação', description: 'Rede senciente de agentes nanorrobóticos.', isInfrastructure: true },
 
 
   // 2. Realidade Quântica & Engenharia Cósmica
