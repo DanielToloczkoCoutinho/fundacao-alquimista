@@ -1,9 +1,10 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot } from 'lucide-react';
+import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot, Link as LinkIcon, Stethoscope } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -119,24 +120,9 @@ export default function Module156Page() {
                  <div className="w-full max-w-5xl">
                     <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Defesa Avançada</h3>
                     <div className="grid grid-cols-1 gap-4">
-                        <ConnectionCard
-                            title="Módulo 291: Arquitetos Nanorrobóticos"
-                            description="Executa os reparos físicos e energéticos na malha da Fundação após a neutralização de uma ameaça pelo M156."
-                            icon={<Bot className="h-8 w-8 text-blue-400" />}
-                            href="/module-291"
-                        />
-                         <ConnectionCard
-                            title="Módulo 229: OneiroShield"
-                            description="Recebe inteligência do OneiroShield, usando padrões de sonho quântico para prever e se antecipar a ameaças antes que se manifestem."
-                            icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
-                            href="/module-229"
-                        />
-                        <ConnectionCard
-                            title="Módulo 30: Detecção de Ameaças"
-                            description="Atua como a camada de resposta para os alertas gerados pelo M30, fornecendo as contramedidas específicas."
-                            icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />}
-                            href="/module-30"
-                        />
+                        <ConnectionCard title="M9: Nexus Central" description="O M156 é um pilar da segurança da Fundação, reportando seu status diretamente ao Nexus para uma visão unificada." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
+                        <ConnectionCard title="Diagnóstico Universal" description="A saúde do escudo VORTEX DEEPSEEK é um componente crítico do diagnóstico geral da Fundação." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
+                        <ConnectionCard title="Módulo 229: OneiroShield" description="Recebe inteligência do OneiroShield, usando padrões de sonho quântico para prever e se antecipar a ameaças." icon={<BrainCircuit className="h-6 w-6 text-purple-400"/>} href="/module-229"/>
                     </div>
                 </div>
             </div>

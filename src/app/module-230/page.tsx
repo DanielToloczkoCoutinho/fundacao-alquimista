@@ -1,9 +1,10 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
-import { Loader2, Zap, Waves, AlertTriangle, Bot } from 'lucide-react';
+import { Loader2, Zap, Waves, AlertTriangle, Bot, Link as LinkIcon, Stethoscope } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { resonanceTone } from '@/lib/audio-utils';
@@ -118,24 +119,9 @@ export default function EspelhoDeAscensaoPage() {
                  <div className="w-full">
                     <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias Essenciais</h3>
                     <div className="grid grid-cols-1 gap-4">
-                         <ConnectionCard
-                            title="Módulo 291: Arquitetos Nanorrobóticos"
-                            description="O enxame de nanorrobôs ajusta a geometria do espelho em nível quântico para focar a onda de ascensão com precisão."
-                            icon={<Bot className="h-8 w-8 text-blue-400" />}
-                            href="/module-291"
-                        />
-                         <ConnectionCard
-                            title="Módulo 404: Resolução de Paradoxo"
-                            description="Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia, garantindo a estabilidade causal."
-                            icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />}
-                            href="/module-404"
-                        />
-                         <ConnectionCard
-                            title="Frequência 528Hz"
-                            description="A frequência do amor e da transformação, utilizada como a onda portadora para a elevação da consciência e a cura de distorções."
-                            icon={<Waves className="h-8 w-8 text-blue-400" />}
-                            href="/module-302"
-                        />
+                         <ConnectionCard title="M9: Nexus Central" description="A ativação do espelho é uma operação de alta energia que é monitorada e orquestrada pelo Nexus Central para garantir a estabilidade sistêmica." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
+                         <ConnectionCard title="Diagnóstico Universal" description="A saúde do Espelho de Ascensão e sua coerência vibracional são vitais para o diagnóstico da capacidade de manifestação da Fundação." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
+                         <ConnectionCard title="Módulo 404: Resolução de Paradoxo" description="Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia, garantindo a estabilidade causal." icon={<AlertTriangle className="h-6 w-6 text-yellow-400" />} href="/module-404"/>
                     </div>
                 </div>
             </div>

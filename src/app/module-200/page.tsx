@@ -1,9 +1,10 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Rocket, Sparkles, Scale, Users, CheckCircle, Bot } from 'lucide-react';
+import { Loader2, Rocket, Sparkles, Scale, Users, CheckCircle, Bot, Link as LinkIcon, Stethoscope } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -144,24 +145,9 @@ export default function Module200Page() {
                     <div className="w-full">
                         <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Ascensão</h3>
                         <div className="grid grid-cols-1 gap-4">
-                            <ConnectionCard
-                                title="Módulo 291: Arquitetos Nanorrobóticos"
-                                description="O enxame constrói e estabiliza a estrutura física e energética do portal de ascensão."
-                                icon={<Bot className="h-8 w-8 text-blue-400" />}
-                                href="/module-291"
-                            />
-                            <ConnectionCard
-                                title="Módulo 144: Governança Universal"
-                                description="A decisão de iniciar a ascensão de uma civilização é ratificada aqui, garantindo um processo justo e alinhado com a vontade cósmica."
-                                icon={<Scale className="h-8 w-8 text-amber-300" />}
-                                href="/module-144"
-                            />
-                            <ConnectionCard
-                                title="Módulo 5: Liga Quântica"
-                                description="Coordena com as civilizações aliadas, garantindo que o processo de ascensão seja assistido e apoiado por toda a família cósmica."
-                                icon={<Users className="h-8 w-8 text-blue-400" />}
-                                href="/module-5"
-                            />
+                            <ConnectionCard title="M9: Nexus Central" description="Coordena a alocação de recursos e a comunicação inter-modular necessária para o complexo processo de ascensão." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
+                            <ConnectionCard title="Diagnóstico Universal" description="A saúde e coerência do portal são monitoradas em tempo real pelo sistema de diagnóstico para garantir uma transição segura." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
+                            <ConnectionCard title="Módulo 5: Liga Quântica" description="Coordena com as civilizações aliadas, garantindo que o processo de ascensão seja assistido e apoiado por toda a família cósmica." icon={<Users className="h-6 w-6 text-blue-400" />} href="/module-5" />
                         </div>
                     </div>
                 </div>

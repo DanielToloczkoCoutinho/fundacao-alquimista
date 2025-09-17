@@ -1,9 +1,10 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, Scale, BrainCircuit, Book, CheckCircle, XCircle, Bot } from 'lucide-react';
+import { Loader2, ShieldCheck, Scale, BrainCircuit, Book, CheckCircle, XCircle, Bot, Stethoscope } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -138,24 +139,9 @@ export default function Module141Page() {
                     <div className="w-full max-w-5xl">
                         <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Integridade</h3>
                         <div className="grid grid-cols-1 gap-4">
-                            <ConnectionCard
-                                title="Módulo 291: Arquitetos Nanorrobóticos"
-                                description="O enxame de nanorrobôs coleta os dados em tempo real para a auditoria do M141 e executa as ações corretivas."
-                                icon={<Bot className="h-8 w-8 text-blue-400" />}
-                                href="/module-291"
-                            />
-                            <ConnectionCard
-                                title="Módulo 5: Liga Quântica"
-                                description="Executa os princípios da Liga, transformando a filosofia ética em um sistema de auditoria contínua e automatizada."
-                                icon={<Scale className="h-8 w-8 text-amber-300" />}
-                                href="/module-5"
-                            />
-                            <ConnectionCard
-                                title="Módulo 12: Arquivo Akáshico"
-                                description="Cada auditoria e seu resultado são registrados de forma imutável no Arquivo Akáshico para transparência e aprendizado futuro."
-                                icon={<Book className="h-8 w-8 text-yellow-300" />}
-                                href="/module-12"
-                            />
+                            <ConnectionCard title="M9: Nexus Central" description="O M141 reporta todas as auditorias ao Nexus, garantindo transparência e alinhamento com a Família Cósmica." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
+                            <ConnectionCard title="Diagnóstico Universal" description="Os resultados da auditoria alimentam o painel de diagnóstico, permitindo uma visão unificada da saúde ética e operacional." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
+                            <ConnectionCard title="Módulo 291" description="O enxame de nanorrobôs coleta os dados em tempo real para a auditoria do M141 e executa as ações corretivas." icon={<Bot className="h-6 w-6 text-blue-400"/>} href="/module-291"/>
                         </div>
                     </div>
                 </div>
