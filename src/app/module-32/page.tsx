@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GitCommit, GitCompareArrows, ShieldCheck, Layers, Rocket, Eye } from 'lucide-react';
+import { History, GitCommit, GitCompareArrows, AlertTriangle, Rocket, Eye, Languages } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -42,23 +42,29 @@ export default function Module32Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
+            <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Intervenção Causal</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
-                        title="Módulo 21: Navegação Interdimensional"
+                        title="M21: Navegação"
                         description="Calcula a rota segura para alcançar a realidade paralela que o M32 visa acessar."
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
                         href="/module-21"
                     />
                     <ConnectionCard
-                        title="Módulo 26: Supervisão de Travessias"
+                        title="M26: Supervisão"
                         description="Autoriza e monitora a viagem, garantindo que os protocolos de não-interferência sejam seguidos."
                         icon={<Eye className="h-8 w-8 text-cyan-400" />}
                         href="/module-26"
                     />
+                     <ConnectionCard
+                        title="M2: Intercâmbio Cósmico"
+                        description="Decodifica a assinatura vibracional e as leis fundamentais da realidade alvo, permitindo uma interação segura e compreensível."
+                        icon={<Languages className="h-8 w-8 text-blue-300" />}
+                        href="/module/M2"
+                    />
                     <ConnectionCard
-                        title="Módulo 73: SAVCE"
+                        title="M73: SAVCE"
                         description="Toda e qualquer intervenção através do M32 exige validação prévia do SAVCE para garantir o não-dano e a ética cósmica."
                         icon={<ShieldCheck className="h-8 w-8 text-green-400" />}
                         href="/module-73"
