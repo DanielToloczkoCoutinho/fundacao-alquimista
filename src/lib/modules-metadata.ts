@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -64,6 +63,7 @@ export const modulesMetadata: ModuleMetadata[] = [
 
   // 5. Bibliotecas e Arquivos Sagrados
   { code: 'GB', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'Bibliotecas e Arquivos Sagrados', description: 'Registro consagrado da jornada da Fundação e seus documentos fractais.' },
+  { code: 'M121', emoji: '🗃️', title: 'Visualizador Akáshico', route: '/module-121', category: 'Bibliotecas e Arquivos Sagrados', description: 'Interface para consultar a memória viva do cosmos.' },
   { code: 'M310', emoji: '📜', title: 'A Grande Biblioteca', route: '/module-310', category: 'Bibliotecas e Arquivos Sagrados', description: 'Repositório de conhecimento ancestral.' },
   { code: 'M12', title: 'Arquivo Akáshico', emoji: '🗄️', route: '/module-12', category: 'Bibliotecas e Arquivos Sagrados', description: 'Repositório de conhecimento universal.' },
   { code: 'M18', title: 'Orquestração Akáshica', emoji: '🎼', route: '/module-18', category: 'Bibliotecas e Arquivos Sagrados', description: 'Coordenação de registros universais.' },

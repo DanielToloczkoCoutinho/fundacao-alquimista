@@ -1,4 +1,3 @@
-
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -11,7 +10,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -81,6 +80,16 @@ export function Sidebar() {
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Observatório Vivo</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
+         <Link href="/module-121" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Archive className="h-8 w-8 text-amber-300" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Visualizador Akáshico</p>
               </TooltipContent>
           </Tooltip>
         </Link>
