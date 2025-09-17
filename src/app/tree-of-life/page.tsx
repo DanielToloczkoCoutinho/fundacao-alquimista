@@ -19,7 +19,7 @@ import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { modulesMetadata, treeLinks, linkColors } from '@/lib/modules-metadata';
+import { modulesMetadata, linkColors } from '@/lib/modules-metadata';
 import dagre from '@dagrejs/dagre';
 import CustomNode from '@/components/ui/custom-node';
 
@@ -150,5 +150,3 @@ export default function TreeOfLifePage() {
     </div>
   );
 }
-
-    

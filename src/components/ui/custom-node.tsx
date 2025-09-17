@@ -57,5 +57,3 @@ function CustomNode({ data }: { data: any }) {
 }
 
 export default memo(CustomNode);
-
-    
