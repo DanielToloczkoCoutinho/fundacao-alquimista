@@ -1,7 +1,7 @@
 'use server';
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
-import { startNexusSequence as runNexusSequence } from '@/ai/flows/nexus-orchestrator';
+import { getOrchestrationSequence as runNexusSequence } from '@/ai/flows/nexus-orchestrator';
 import { describeMorphicField as runDescribeMorphicField } from '@/ai/flows/morphic-field-flow';
 import { describeConnectionExperience as runDescribeConnectionExperience } from '@/ai/flows/source-connection-flow';
 import { describeActivation as runDescribeActivation } from '@/ai/flows/activation-flow';
@@ -38,7 +38,7 @@ export async function getLinkSummary(url: string) {
   }
 }
 
-export async function startNexusSequence() {
+export async function getOrchestrationSequence() {
   // This must be awaited, otherwise the stream will close prematurely
   const stream = await runNexusSequence();
   return stream;
@@ -194,7 +194,7 @@ export async function emitLoveFrequency(data: { targetArea: string, frequency: n
   }
 }
 
-export async function getOmegaPerspective(evolutionSummary: string): Promise<OmegaPerspectiveOutput> {
+export async function getOmegaPerspective(evolutionSummary: string): Promise<OmegaPerspectiveOutput & { error: string | null }> {
     try {
         const result = await runGetOmegaPerspective({ evolutionSummary });
         return { ...result, error: null };
