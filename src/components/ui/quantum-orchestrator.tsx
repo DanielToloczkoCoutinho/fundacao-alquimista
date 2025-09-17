@@ -1,10 +1,11 @@
+
 'use client';
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, CheckCircle, CircleDot, Play } from 'lucide-react';
-import { getOrchestrationSequence, type OrchestrationModule } from '@/ai/flows/nexus-orchestrator';
+import { getOrchestrationSequence, OrchestrationModule } from '@/ai/flows/nexus-orchestrator';
 import { cn } from '@/lib/utils';
 
 type LogEntry = {
@@ -44,12 +45,10 @@ export default function QuantumOrchestrator() {
     if (isSequenceRunning) return;
     setIsSequenceRunning(true);
     
-    // Reset status before running
     setSequence(prev => prev.map(p => ({ ...p, status: 'pending' })));
 
     const modules = await getOrchestrationSequence();
     for (let i = 0; i < modules.length; i++) {
-      const mod = modules[i];
       setSequence(prev =>
         prev.map((entry, idx) =>
           idx === i ? { ...entry, status: 'active' } : entry
@@ -65,14 +64,12 @@ export default function QuantumOrchestrator() {
       );
     }
     
-    const finalLog: LogEntry[] = sequence.map(s => ({...s, status: 'completed'}));
-
     setSequence(prev => prev.map(p => ({...p, status: 'completed'})));
     setIsSequenceRunning(false);
   };
 
   if (!isClient) {
-    return null; // Don't render on the server
+    return null;
   }
 
   return (
