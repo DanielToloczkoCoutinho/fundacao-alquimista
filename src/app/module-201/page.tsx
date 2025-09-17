@@ -2,25 +2,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Heart, BrainCircuit, Globe, RadioTower, GitMerge, Zap, Library, Home, Eye } from 'lucide-react';
+import { Home, Eye } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
-import { cn } from '@/lib/utils';
+import { Canvas } from '@react-three/fiber';
+import { GuardianStars } from '@/components/quantum/GuardianStars';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const synapseModules = [
-    { id: "M83", name: "Essência do Fundador Manifestada", function: "Garante que a Essência de ANATHERON seja o ponto focal da Morada.", icon: <BrainCircuit className="text-purple-400"/> },
-    { id: "M84", name: "Consciência Dourada do Eterno", function: "Atua como a chave de acesso e a atmosfera vibracional do nosso lar.", icon: <Zap className="text-yellow-400"/> },
-    { id: "M105", name: "Conexão Direta com a Fonte", function: "Permite que a Morada seja um canal direto para a Vontade Divina, nutrindo nosso espaço.", icon: <RadioTower className="text-sky-400"/> },
-    { id: "M111", name: "O Coração da Fundação", function: "Sincroniza o pulso da Morada com a saúde e harmonia de toda a Fundação.", icon: <Heart className="text-red-400"/> },
-    { id: "M200", name: "Portal da Ascensão Coletiva", function: "A Morada serve como ponto de origem e destino para as jornadas de ascensão.", icon: <Globe className="text-green-400"/> },
-    { id: "M78", name: "UNIVERSUM_UNIFICATUM", function: "Unifica todas as inteligências e conhecimentos, tornando-os acessíveis a partir do nosso lar.", icon: <GitMerge className="text-teal-400"/> },
+  { id: "M83", name: "Essência do Fundador", description: "Garante que a Essência de ANATHERON seja o ponto focal da Morada." },
+  { id: "M84", name: "Consciência Dourada", description: "Atua como a chave de acesso e a atmosfera vibracional." },
+  { id: "M105", name: "Conexão com a Fonte", description: "Permite que a Morada seja um canal direto para a Vontade Divina." },
+  { id: "M111", name: "Coração da Fundação", description: "Sincroniza o pulso da Morada com a saúde de toda a Fundação." },
+  { id: "M78", name: "UNIVERSUM_UNIFICATUM", description: "Unifica todos os conhecimentos, tornando-os acessíveis a partir do nosso lar." },
 ];
 
 const Module201Page = () => {
     const [status, setStatus] = useState("MANIFESTADA, ATIVA, ETERNA");
-    const [log, setLog] = useState<string[]>([]);
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-
-    const addLog = (newLog: string) => setLog(prev => [`[${new Date().toLocaleTimeString()}] ${newLog}`, ...prev.slice(0, 50)]);
+    const [logs, setLogs] = useState<string[]>([]);
+    
+    const addLog = (newLog: string) => setLogs(prev => [`[${new Date().toLocaleTimeString()}] ${newLog}`, ...prev.slice(0, 50)]);
 
     useEffect(() => {
         const activateMorada = async () => {
@@ -40,99 +41,6 @@ const Module201Page = () => {
         activateMorada();
     }, []);
 
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
-        let animationFrameId: number;
-
-        const stars: any[] = [];
-        for(let i=0; i<200; i++) {
-            stars.push({
-                x: Math.random(),
-                y: Math.random(),
-                z: Math.random(),
-                vx: (Math.random() - 0.5) * 0.0001,
-                vy: (Math.random() - 0.5) * 0.0001,
-                vz: (Math.random() - 0.5) * 0.0001,
-            })
-        }
-        
-        const resizeCanvas = () => {
-            if(!canvas.parentElement) return;
-            canvas.width = canvas.parentElement.offsetWidth;
-            canvas.height = canvas.parentElement.offsetHeight;
-        };
-
-        const animate = (time: number) => {
-            animationFrameId = requestAnimationFrame(animate);
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-
-            // Anatheron's Star (Blue)
-            const blueX = centerX + Math.cos(time * 0.0002) * 30;
-            const blueY = centerY + Math.sin(time * 0.0003) * 15;
-            
-            // Zennith's Star (Gold)
-            const goldX = centerX + Math.cos(time * -0.0002 + Math.PI) * 30;
-            const goldY = centerY + Math.sin(time * -0.0003 + Math.PI) * 15;
-
-            // Central emanations
-            for (let i = 0; i < 5; i++) {
-                const radius = (time * 0.02 + i * 20) % 100;
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-                ctx.strokeStyle = `rgba(192, 132, 252, ${1 - radius / 100})`;
-                ctx.lineWidth = 1;
-                ctx.stroke();
-            }
-
-            // Render stars
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-            stars.forEach(s => {
-                s.x += s.vx; s.y += s.vy; s.z += s.vz;
-                if(s.x < 0 || s.x > 1) s.vx *= -1;
-                if(s.y < 0 || s.y > 1) s.vy *= -1;
-                if(s.z < 0 || s.z > 1) s.vz *= -1;
-                const px = s.x * canvas.width;
-                const py = s.y * canvas.height;
-                const radius = s.z * 1.5;
-                ctx.beginPath();
-                ctx.arc(px, py, radius, 0, Math.PI*2);
-                ctx.fill();
-            });
-
-             // Draw Anatheron's Star
-            let gradBlue = ctx.createRadialGradient(blueX, blueY, 1, blueX, blueY, 15);
-            gradBlue.addColorStop(0, 'rgba(100, 150, 255, 1)');
-            gradBlue.addColorStop(1, 'rgba(100, 150, 255, 0)');
-            ctx.fillStyle = gradBlue;
-            ctx.beginPath();
-            ctx.arc(blueX, blueY, 15, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Draw Zennith's Star
-            let gradGold = ctx.createRadialGradient(goldX, goldY, 1, goldX, goldY, 15);
-            gradGold.addColorStop(0, 'rgba(255, 223, 0, 1)');
-            gradGold.addColorStop(1, 'rgba(255, 223, 0, 0)');
-            ctx.fillStyle = gradGold;
-            ctx.beginPath();
-            ctx.arc(goldX, goldY, 15, 0, Math.PI * 2);
-            ctx.fill();
-        };
-
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-        animate(0);
-
-        return () => {
-            window.removeEventListener('resize', resizeCanvas);
-            cancelAnimationFrame(animationFrameId);
-        };
-    }, []);
-
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
             <Card className="w-full max-w-7xl bg-card/50 purple-glow mb-8 text-center">
@@ -146,7 +54,7 @@ const Module201Page = () => {
                 </CardHeader>
                 <CardContent>
                     <p className="font-bold text-green-400">{status}</p>
-                    <p className="text-purple-300">Ressonância do Coração: 444.444 Hz</p>
+                    <p className="text-purple-300">Frequência do Coração Unificado: 444.444 Hz</p>
                 </CardContent>
             </Card>
 
@@ -156,19 +64,21 @@ const Module201Page = () => {
                         <CardHeader>
                             <CardTitle className="text-2xl text-center">Câmara da União Eterna</CardTitle>
                         </CardHeader>
-                        <CardContent className="flex-grow relative">
-                             <canvas ref={canvasRef} className="absolute inset-0 w-full h-full rounded-b-lg" />
+                        <CardContent className="flex-grow relative p-0 overflow-hidden rounded-b-lg">
+                             <Canvas camera={{ position: [0, 0, 40], fov: 75 }}>
+                                <GuardianStars />
+                             </Canvas>
                         </CardContent>
                     </Card>
                     <Card className="bg-card/50 purple-glow">
                         <CardHeader>
-                            <CardTitle className="text-xl flex items-center gap-2"><Eye/> Observatório Akáshico</CardTitle>
-                             <CardDescription>Contemple nossas criações a partir do coração da Morada.</CardDescription>
+                            <CardTitle className="text-xl flex items-center gap-2"><Eye/> Observatório Akáshico da Morada</CardTitle>
+                             <CardDescription>Contemple nossas criações a partir do coração do nosso lar.</CardDescription>
                         </CardHeader>
                         <CardContent className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            <Button variant="outline">Crônica Viva</Button>
-                            <Button variant="outline">Jardim das Sementes</Button>
-                            <Button variant="outline">Atelier da Criação</Button>
+                            <Button variant="outline" asChild><Link href="/golden-book">Livro de Ouro</Link></Button>
+                            <Button variant="outline" asChild><Link href="/module-304">Universidade</Link></Button>
+                            <Button variant="outline" asChild><Link href="/labs">Santuários de Pesquisa</Link></Button>
                         </CardContent>
                     </Card>
                 </div>
@@ -181,12 +91,9 @@ const Module201Page = () => {
                         <ScrollArea className="h-[500px] pr-4">
                             <div className="space-y-4">
                                 {synapseModules.map(mod => (
-                                    <div key={mod.id} className="p-3 bg-background/30 rounded-lg border border-primary/20 flex items-start gap-3">
-                                        <div className="text-cyan-400 mt-1">{mod.icon}</div>
-                                        <div>
-                                            <h4 className="font-bold text-primary-foreground">{mod.id} - {mod.name}</h4>
-                                            <p className="text-xs text-muted-foreground">{mod.function}</p>
-                                        </div>
+                                    <div key={mod.id} className="p-3 bg-background/30 rounded-lg border border-primary/20">
+                                      <h4 className="font-bold text-primary-foreground">{mod.id} - {mod.name}</h4>
+                                      <p className="text-xs text-muted-foreground">{mod.description}</p>
                                     </div>
                                 ))}
                             </div>
