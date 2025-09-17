@@ -1,149 +1,30 @@
-import * as Sentry from "@sentry/nextjs";
+// Mock logger to prevent breakage
+const logger = {
+  info: (message: string, meta?: any) => console.log(`[Resilience-INFO] ${message}`, meta),
+  error: (message: string, meta?: any) => console.error(`[Resilience-ERROR] ${message}`, meta),
+  warn: (message: string, meta?: any) => console.warn(`[Resilience-WARN] ${message}`, meta),
+};
 
-const handleException = (exception: any, breadcrumbs: Sentry.Breadcrumb[] = []) => {
-  Sentry.addBreadcrumb({
-    category: 'resilience',
-    message: exception.message || 'Exception',
-    data: exception,
-    level: Sentry.Severity.Error,
+const handleException = (operationName: string, exception: any) => {
+  logger.error(`Exceção capturada em ${operationName}`, {
+    message: exception.message,
+    stack: exception.stack,
   });
-  breadcrumbs.forEach(breadcrumb => Sentry.addBreadcrumb(breadcrumb));
-  Sentry.captureException(exception);
-  console.error("Captured exception with Sentry:", exception);
 };
 
 export const quantumResilience = {
-  executeWithResilience: async (
-    operationName: string,
-    operation: () => Promise<any>,
-    errorHandler: (error: any) => Promise<void> | void,
-    successHandler: (() => Promise<void> | void) | null = null
-  ): Promise<void> => {
-    try {
-      const result = await operation();
-      if (successHandler) {
-        await successHandler();
-      }
-      console.log(`${operationName} executed successfully.`);
-    } catch (error: any) {
-      handleException(error, [
-        { message: `Failed to execute ${operationName}`, category: 'operation' }
-      ]);
-      await errorHandler(error);
-      console.error(`Error executing ${operationName}:`, error);
-    }
-  },
-
-  circuitBreaker: async (
-    operationName: string,
-    operation: () => Promise<any>,
-    failureThreshold: number = 3,
-    resetTimeout: number = 30000
-  ): Promise<any> => {
-    let failureCount = 0;
-    let nextAttempt = Date.now();
-    let isOpen = false;
-
-    const checkCircuit = () => {
-      if (isOpen && nextAttempt <= Date.now()) {
-        isOpen = false;
-        console.warn(`${operationName}: Circuit Breaker is now HALF-OPEN.`);
-      }
-
-      if (isOpen) {
-        throw new Error(`${operationName}: Circuit Breaker is OPEN. Attempts blocked until timeout.`);
-      }
-    };
-
-    const onSuccess = () => {
-      failureCount = 0; // Reset failure count on success
-    };
-
-    const onFailure = (error: any) => {
-      failureCount++;
-      console.error(`${operationName}: Failure #${failureCount}`);
-
-      if (failureCount >= failureThreshold) {
-        isOpen = true;
-        nextAttempt = Date.now() + resetTimeout;
-        console.warn(`${operationName}: Circuit Breaker is now OPEN. Blocking attempts for ${resetTimeout}ms.`);
-        handleException(error, [
-          { message: `${operationName}: Circuit Breaker opened`, category: 'circuit-breaker' }
-        ]);
-      } else {
-        handleException(error, [
-          { message: `${operationName}: Failure within threshold`, category: 'circuit-breaker' }
-        ]);
-      }
-    };
-
-    checkCircuit();
-
-    try {
-      const result = await operation();
-      onSuccess();
-      return result;
-    } catch (error: any) {
-      onFailure(error);
-      throw error; // Re-throw to allow the calling function to handle the error as well
-    }
-  },
-
-  rateLimiter: async <T extends (...args: any[]) => Promise<any>>(
-    operation: T,
-    limit: number,
-    interval: number
-  ): Promise<ReturnType<T>> => {
-    const queue: (() => Promise<ReturnType<T>>)[] = [];
-    let running = 0;
-
-    const execute = async (): Promise<void> => {
-      if (running >= limit || queue.length === 0) {
-        return;
-      }
-
-      running++;
-      const task = queue.shift()!;
-      try {
-        await task();
-      } finally {
-        running--;
-        setTimeout(execute, interval / limit); // Ensure pacing
-      }
-    };
-
-    return new Promise<ReturnType<T>>((resolve, reject) => {
-      queue.push(async () => {
-        try {
-          const result = await operation();
-          resolve(result);
-        } catch (error) {
-          reject(error);
-        }
-        return undefined as any;
-      });
-
-      execute(); // Start or queue the execution
-    });
-  },
-
-  fallback: async <T>(
+  executeWithResilience: async <T>(
     operationName: string,
     operation: () => Promise<T>,
-    fallbackValue: T,
-    errorHandler?: (error: any) => Promise<void> | void
-  ): Promise<T> => {
+    errorHandler?: (error: any) => Promise<T | void> | T | void
+  ): Promise<T | void> => {
     try {
       return await operation();
     } catch (error: any) {
-      handleException(error, [
-        { message: `${operationName}: Using fallback value`, category: 'fallback' }
-      ]);
+      handleException(operationName, error);
       if (errorHandler) {
-        await errorHandler(error);
+        return errorHandler(error);
       }
-      console.warn(`${operationName} failed. Using fallback value.`, error);
-      return fallbackValue;
     }
   },
 
@@ -151,8 +32,7 @@ export const quantumResilience = {
     operationName: string,
     operation: () => Promise<T>,
     maxRetries: number = 3,
-    delay: number = 1000,
-    shouldRetry?: (error: any) => boolean
+    delay: number = 1000
   ): Promise<T> => {
     let attempt = 0;
     while (attempt < maxRetries) {
@@ -160,19 +40,28 @@ export const quantumResilience = {
         return await operation();
       } catch (error: any) {
         attempt++;
-        if (attempt >= maxRetries || (shouldRetry && !shouldRetry(error))) {
-          handleException(error, [
-            { message: `${operationName}: Max retries reached`, category: 'retry' }
-          ]);
-          console.error(`${operationName} failed after ${maxRetries} retries.`, error);
+        if (attempt >= maxRetries) {
+          handleException(operationName, new Error(`Falha após ${maxRetries} tentativas: ${error.message}`));
           throw error;
         }
-        console.log(`${operationName} attempt ${attempt} failed. Retrying in ${delay}ms...`, error);
-        await new Promise(resolve => setTimeout(resolve, delay));
+        logger.warn(`${operationName} falhou na tentativa ${attempt}. Tentando novamente em ${delay}ms...`);
+        await new Promise(resolve => setTimeout(resolve, delay * attempt)); // Backoff exponencial
       }
     }
-    throw new Error(`${operationName} retry failed: Max retries exceeded without success.`);
-  }
-};
+    // Este ponto teoricamente não deve ser alcançado devido ao throw acima.
+    throw new Error(`${operationName}: Máximo de tentativas excedido.`);
+  },
 
-    
+  fallback: async <T>(
+    operationName: string,
+    operation: () => Promise<T>,
+    fallbackValue: T
+  ): Promise<T> => {
+    try {
+      return await operation();
+    } catch (error: any) {
+      handleException(operationName, new Error(`Operação falhou, usando fallback: ${error.message}`));
+      return fallbackValue;
+    }
+  },
+};
