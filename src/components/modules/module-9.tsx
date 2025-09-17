@@ -1,9 +1,10 @@
+
 'use client';
 import React, { Suspense } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '../ui/badge';
-import { Layers, Zap, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Heart, Users, Scale, Share2 } from 'lucide-react';
+import { Layers, Zap, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Heart, Users, Scale, Share2, Shield } from 'lucide-react';
 import { QuantumOrb } from '../ui/quantum-orb';
 import SuspenseFallback from '../ui/suspense-fallback';
 import Link from 'next/link';
