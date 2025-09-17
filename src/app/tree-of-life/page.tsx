@@ -76,12 +76,13 @@ export default function TreeOfLifePage() {
         position: { x: 0, y: 0 }, 
     }));
 
-    const edges: Edge[] = modulesMetadata.flatMap(mod => 
-        (mod.connections || []).map(conn => ({
+    const edges: Edge[] = modulesMetadata.flatMap(mod => {
+      const sourceModule = modulesMetadata.find(m => m.code === mod.code);
+      return (mod.connections || []).map(conn => ({
             id: `${conn.source}-${conn.target}`,
             source: conn.source,
             target: conn.target,
-            animated: true,
+            animated: sourceModule?.status === 'ativo', // A animação agora depende do status do módulo de origem
             type: 'smoothstep',
             label: conn.label,
             style: { 
@@ -90,7 +91,7 @@ export default function TreeOfLifePage() {
             },
             labelStyle: { fill: '#e6e6ff', fontWeight: 600, fontSize: '10px' },
         }))
-    );
+    });
 
     return getLayoutedElements(nodes, edges);
   }, []);
