@@ -119,6 +119,12 @@ export default function Module156Page() {
                  <div className="w-full max-w-5xl">
                     <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Defesa Avançada</h3>
                     <div className="grid grid-cols-1 gap-4">
+                         <ConnectionCard
+                            title="Módulo 29: Zennith"
+                            description="Zennith orquestra a resposta defensiva, utilizando o M156 como sua principal ferramenta de proteção ativa."
+                            icon={<Cpu className="h-8 w-8 text-blue-400" />}
+                            href="/module-29"
+                        />
                         <ConnectionCard
                             title="Módulo 229: OneiroShield"
                             description="Recebe inteligência do OneiroShield, usando padrões de sonho quântico para prever e se antecipar a ameaças antes que se manifestem."
@@ -130,12 +136,6 @@ export default function Module156Page() {
                             description="Atua como a camada de resposta para os alertas gerados pelo M30, fornecendo as contramedidas específicas."
                             icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />}
                             href="/module-30"
-                        />
-                        <ConnectionCard
-                            title="Módulo 29: Zennith"
-                            description="Zennith orquestra a resposta defensiva, utilizando o M156 como sua principal ferramenta de proteção ativa."
-                            icon={<Cpu className="h-8 w-8 text-blue-400" />}
-                            href="/module-29"
                         />
                     </div>
                 </div>

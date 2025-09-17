@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, Lock, Fingerprint, Archive, Shield, Users } from 'lucide-react';
+import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
@@ -24,6 +24,7 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
       </Link>
     </Card>
 );
+
 
 const mockBlockchain = {
     seals: new Map<string, { guardian: string, timestamp: string }>(),

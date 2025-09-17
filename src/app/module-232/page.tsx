@@ -139,7 +139,7 @@ export default function PortalDeTransmutacaoPage() {
                             href="/module-zero"
                         />
                          <ConnectionCard 
-                            title="M307: Reator ZPE" 
+                            title="Módulo 307: Reator ZPE" 
                             description="Fornece a energia inicial necessária para criar o vórtice de transmutação antes que o processo se torne autossustentável." 
                             icon={<Zap className="h-8 w-8 text-cyan-400" />} 
                             href="/module-307"

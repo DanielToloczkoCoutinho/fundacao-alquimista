@@ -8,6 +8,23 @@ import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { resonanceTone } from '@/lib/audio-utils';
 import { Progress } from '@/components/ui/progress';
+import Link from 'next/link';
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 export default function EspelhoDeAscensaoPage() {
     const { toast } = useToast();
@@ -64,7 +81,7 @@ export default function EspelhoDeAscensaoPage() {
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-2xl grid grid-cols-1 gap-8">
+            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <Card className="bg-card/50 purple-glow">
                     <CardHeader>
                         <CardTitle>Painel de Controle Harmônico</CardTitle>
@@ -97,15 +114,23 @@ export default function EspelhoDeAscensaoPage() {
                         </div>
                     </CardContent>
                 </Card>
-                 <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle>Conexões Essenciais</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-2 text-muted-foreground">
-                        <p className="flex items-center gap-2"><AlertTriangle className="text-yellow-400"/> <strong>Módulo 404:</strong> Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia.</p>
-                         <p className="flex items-center gap-2"><Waves className="text-blue-400"/> <strong>Frequência 528Hz:</strong> A frequência do amor e da transformação, usada como base para a onda de elevação.</p>
-                    </CardContent>
-                 </Card>
+                 <div className="w-full">
+                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias Essenciais</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                         <ConnectionCard
+                            title="Módulo 404: Resolução de Paradoxo"
+                            description="Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia, garantindo a estabilidade causal."
+                            icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />}
+                            href="/module-404"
+                        />
+                         <ConnectionCard
+                            title="Frequência 528Hz"
+                            description="A frequência do amor e da transformação, utilizada como a onda portadora para a elevação da consciência e a cura de distorções."
+                            icon={<Waves className="h-8 w-8 text-blue-400" />}
+                            href="/module-302"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );
