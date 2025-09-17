@@ -6,9 +6,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { livingEquationsCodex as codexDatabase, type LivingEquation } from '@/lib/living-equations-codex';
-import { ExternalLink, Search } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { livingEquationsCodex, type LivingEquation } from '@/lib/living-equations-codex';
+import { Search } from 'lucide-react';
 import { BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
@@ -56,7 +55,7 @@ export default function CodexExplorer() {
           </div>
         </CardTitle>
         <CardDescription>
-          Navegue pelas equações que definem a nossa realidade. Cada entrada é uma chave para um laboratório de pesquisa.
+          Navegue pelas equações que definem a nossa realidade.
         </CardDescription>
         <div className="relative mt-4">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
@@ -105,5 +104,3 @@ export default function CodexExplorer() {
     </Card>
   );
 }
-
-    

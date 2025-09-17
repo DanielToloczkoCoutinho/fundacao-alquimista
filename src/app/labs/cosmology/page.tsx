@@ -1,19 +1,20 @@
+
 'use client';
 import React, { lazy, Suspense } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
-import { ArrowLeft, Sigma, FlaskConical } from 'lucide-react';
+import { ArrowLeft, FlaskConical, Sigma } from 'lucide-react';
 import SuspenseFallback from "@/components/ui/suspense-fallback";
 import { livingEquationsCodex } from '@/lib/living-equations-codex';
+import 'katex/dist/katex.min.css';
 
 const EquationRenderer = lazy(() => import('@/components/ui/EquationRenderer'));
 
 export default function CosmologyLab() {
-  // Filtra equações relevantes para cosmologia, por exemplo, módulos de alto nível
   const cosmologyEquations = livingEquationsCodex.filter(eq => 
     ['32', '34', '36', '38', '39', '42', '43'].includes(eq.module)
-  ).slice(0, 5); // Limita para a demo
+  );
 
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
@@ -28,9 +29,9 @@ export default function CosmologyLab() {
         </CardHeader>
       </Card>
       
-      <div className="w-full max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         {cosmologyEquations.map(eq => (
-          <Card key={eq.id} className="bg-card/50 purple-glow mb-6">
+          <Card key={eq.id} className="bg-card/50 purple-glow">
             <CardHeader>
               <CardTitle className="text-2xl text-amber-300 flex items-center gap-2">
                   <Sigma /> {eq.id}: {eq.name}
