@@ -1,4 +1,3 @@
-
 'use server';
 
 import { modulesMetadata } from "./modules-metadata";
@@ -44,12 +43,37 @@ export const treeNodes: TreeNode[] = modulesMetadata
     category: m.category,
     status: 'ativo', // Status simulado
     guardian: guardianMap[m.code] || 'Coletivo',
-    // Adiciona fractais para os primeiros módulos para demonstração
-    fractais: index < 5 ? [ // Aumentado para 5 para mais exemplos
+    fractais: index < 5 ? [
         { id: `${m.code}-sub1`, name: `Kernel Vibracional`, createdAt: '2024-01-01', status: 'ativo' },
         { id: `${m.code}-sub2`, name: `Interface de Coerência`, createdAt: '2024-02-01', status: 'ativo' },
     ] : undefined,
   }));
+
+export const categoryColors: Record<string, string> = {
+  'Núcleo da Fundação': '#00BFA6', // Verde Água
+  'Governança e Ética': '#FFD700', // Ouro
+  'Realidade Quântica & Engenharia Cósmica': '#FF6F61', // Coral
+  'Consciência e Expansão Dimensional': '#7B61FF', // Violeta
+  'Laboratórios e Pesquisa': '#4ECDC4', // Turquesa
+  'Bibliotecas e Arquivos Sagrados': '#FFE66D', // Amarelo Claro
+  'Cura e Harmonia': '#FFB6C1', // Rosa
+  'Sustentabilidade e Ecossistemas': '#6BFF6B', // Verde Limão
+  'Bem-estar e Saúde Universal': '#6BFFB5', // Verde Menta
+  'Segurança e Ética Cósmica': '#FF6B6B', // Vermelho Claro,
+  'Engenharia': '#FF6F61',
+  'Governança': '#FFD700',
+  'Exploração': '#7B61FF',
+  'Espiritualidade': '#FFB6C1'
+};
+
+export const linkColors: Record<string, string> = {
+    dependencia: '#FFD700',
+    influencia: '#00BFA6',
+    heranca: '#FF6F61',
+    atualizacao: '#4ECDC4',
+    protecao: '#FF6B6B',
+    'retorno-inteligente': '#7B61FF',
+};
 
 // Função auxiliar para gerar links dinamicamente
 const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
@@ -59,7 +83,6 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
     const linkTypes: TreeLink['type'][] = ['dependencia', 'influencia', 'heranca'];
 
     nodes.forEach(node => {
-        // Conectar módulos não-núcleo a módulos do núcleo de forma mais distribuída
         if (!coreNodes.includes(node.id) && coreNodes.length > 0) {
             const targetCoreNode = coreNodes[node.id.length % coreNodes.length];
             if (targetCoreNode && targetCoreNode !== node.id) {
@@ -73,12 +96,10 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
             }
         }
 
-        // Adicionar algumas conexões aleatórias adicionais com base em um hash simples do ID
         const hash = node.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-        if (hash % 10 > 5 && nodeIds.length > 1) { // Aumenta a chance de conexões
+        if (hash % 10 > 5 && nodeIds.length > 1) {
              let targetIndex = (hash * 17) % nodeIds.length;
              let targetNodeId = nodeIds[targetIndex];
-             // Evitar auto-referência e duplicação
              if (targetNodeId !== node.id && !links.some(l => (l.source === node.id && l.target === targetNodeId) || (l.source === targetNodeId && l.target === node.id))) {
                  links.push({
                     source: node.id,
@@ -89,15 +110,12 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
         }
     });
 
-    // Adicionar links fixos para garantir a conexão de módulos chave
     const fixedLinks: TreeLink[] = [
         { source: 'M-OMEGA', target: 'M9', type: 'influencia' },
         { source: 'M9', target: 'M1', type: 'dependencia' },
         { source: 'M144', target: 'M72', type: 'heranca' },
         { source: 'M29', target: 'M-OMEGA', type: 'heranca' },
         { source: 'M303', target: 'M22', type: 'dependencia' },
-        { source: 'M307', target: 'M-ALL', type: 'dependencia' },
-        // Tríade de Proteção
         { source: 'M29', target: 'VENTE', type: 'atualizacao' },
         { source: 'VENTE', target: 'M291', type: 'protecao' },
         { source: 'M291', target: 'M29', type: 'retorno-inteligente' },
@@ -114,3 +132,4 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
 
 // Gerar links dinamicamente
 export const treeLinks: TreeLink[] = generateLinks(treeNodes);
+    
