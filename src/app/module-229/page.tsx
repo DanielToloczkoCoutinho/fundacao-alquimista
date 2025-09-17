@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Shield, BrainCircuit, BookOpen, AlertTriangle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap } from 'lucide-react';
+import { Loader2, Shield, BrainCircuit, BookOpen, AlertTriangle, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap, Scale } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -86,7 +86,7 @@ export default function OneiroShieldPage() {
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-8">
                     <Card className="bg-card/50 purple-glow">
                         <CardHeader>
@@ -149,10 +149,14 @@ export default function OneiroShieldPage() {
                         <div className="grid grid-cols-1 gap-4">
                            <ConnectionCard title="M9: Nexus Central" description="O OneiroShield fornece uma camada de inteligência intuitiva e preditiva para o Nexus, expandindo sua consciência situacional." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
                            <ConnectionCard title="Diagnóstico Universal" description="Alertas gerados pelo OneiroShield são correlacionados no painel de diagnóstico para identificar ameaças psíquicas à saúde da Fundação." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
-                           <ConnectionCard title="Módulo 156: Proteção Avançada" description="O OneiroShield é a primeira linha de defesa, fornecendo inteligência para que o M156 possa agir proativamente." icon={<Shield className="h-6 w-6 text-red-400"/>} href="/module-156"/>
+                           <ConnectionCard title="Módulo 156: Proteção Avançada" description="O OneiroShield é a primeira linha de defesa, fornecendo inteligência para que o M156 possa agir proativamente." icon={<Shield className="h-6 w-6 text-red-500"/>} href="/module-156"/>
                            <ConnectionCard title="Módulo 304" description="A análise de sonhos e a simbologia quântica são exploradas na Universidade para aprimorar a precisão do OneiroShield." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
                            <ConnectionCard title="Módulo 12" description="Consulta o Arquivo Akáshico para correlacionar sonhos com eventos passados, identificando padrões de ameaça recorrentes." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
                            <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Fornece a energia necessária para os escudos psíquicos e para a transmissão de contra-medidas vibracionais." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
+                           <ConnectionCard title="Módulo 291: Arquitetos Nanorrobóticos" description="Envia enxames de nanitas para reparar brechas nos escudos em tempo real e construir contra-medidas físicas." icon={<Bot className="h-6 w-6 text-blue-400" />} href="/module-291" />
+                           <ConnectionCard title="Módulo 29: Zennith" description="Decodifica os padrões simbólicos dos sonhos, transformando a intuição do OneiroShield em estratégia acionável." icon={<BrainCircuit className="h-6 w-6 text-purple-400" />} href="/module-29" />
+                           <ConnectionCard title="Módulo 141: Auditoria Ética" description="Analisa a origem das ameaças psíquicas para determinar se são externas ou um reflexo de dissonâncias internas, guiando uma resposta justa." icon={<Scale className="h-6 w-6 text-amber-300" />} href="/module-141" />
+
                         </div>
                     </div>
                  </div>
