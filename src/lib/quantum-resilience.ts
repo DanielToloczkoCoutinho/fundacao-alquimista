@@ -1,4 +1,4 @@
-{// Mock logger to prevent breakage
+// Mock logger to prevent breakage
 const logger = {
   info: (message: string, meta?: any) => console.log(`[Resilience-INFO] ${message}`, meta),
   error: (message: string, meta?: any) => console.error(`[Resilience-ERROR] ${message}`, meta),
@@ -65,3 +65,5 @@ export const quantumResilience = {
     }
   },
 };
+
+    
