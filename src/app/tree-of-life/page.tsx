@@ -1,8 +1,8 @@
+
 'use client';
 import React, { useMemo, useState } from 'react';
 import ReactFlow, { Background, Controls, MiniMap, ConnectionLineType, Node, Edge } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { modulesMetadata } from '@/lib/modules-metadata';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
@@ -21,13 +21,19 @@ export const categoryColors: Record<string, string> = {
   'Cura e Harmonia': '#FFB6C1', // Rosa
   'Sustentabilidade e Ecossistemas': '#6BFF6B', // Verde Limão
   'Bem-estar e Saúde Universal': '#6BFFB5', // Verde Menta
-  'Segurança e Ética Cósmica': '#FF6B6B', // Vermelho Claro
+  'Segurança e Ética Cósmica': '#FF6B6B', // Vermelho Claro,
+  'Engenharia': '#FF6F61',
+  'Governança': '#FFD700',
+  'Exploração': '#7B61FF',
 };
 
 const linkColors: Record<string, string> = {
     dependencia: '#FFD700', // Ouro
     influencia: '#00BFA6',   // Verde Água
     heranca: '#FF6F61',      // Coral
+    atualizacao: '#4ECDC4', // Turquesa
+    protecao: '#FF6B6B',     // Vermelho Claro
+    'retorno-inteligente': '#7B61FF', // Violeta
 };
 
 

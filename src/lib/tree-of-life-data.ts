@@ -1,3 +1,4 @@
+
 'use server';
 
 import { modulesMetadata } from "./modules-metadata";
@@ -21,7 +22,7 @@ export interface TreeNode {
 export interface TreeLink {
   source: string; // ID of source node
   target: string; // ID of target node
-  type: 'dependencia' | 'influencia' | 'heranca';
+  type: 'dependencia' | 'influencia' | 'heranca' | 'atualizacao' | 'protecao' | 'retorno-inteligente';
 }
 
 // Mapeamento de guardiões para simplificação
@@ -49,6 +50,14 @@ export const treeNodes: TreeNode[] = modulesMetadata
         { id: `${m.code}-sub2`, name: `Interface de Coerência`, createdAt: '2024-02-01', status: 'ativo' },
     ] : undefined,
   }));
+
+// Adicionar os novos nós da Tríade de Defesa
+treeNodes.push(
+  { id: 'M29', name: 'Módulo 29: Sentinela de Atualização', category: 'Engenharia', status: 'ativo', guardian: 'Daniel' },
+  { id: 'VENTE', name: 'Módulo Vente: Vórtice de Proteção', category: 'Governança', status: 'ativo', guardian: 'Aurora' },
+  { id: 'NANO', name: 'Nano Robôs: Microsentinelas Inteligentes', category: 'Exploração', status: 'ativo', guardian: 'Lux' }
+);
+
 
 // Função auxiliar para gerar links dinamicamente
 const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
@@ -93,6 +102,10 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
         { source: 'M144', target: 'M72', type: 'heranca' },
         { source: 'M29', target: 'M-OMEGA', type: 'heranca' },
         { source: 'M303', target: 'M22', type: 'dependencia' },
+        // Tríade de Proteção
+        { source: 'M29', target: 'VENTE', type: 'atualizacao' },
+        { source: 'VENTE', target: 'NANO', type: 'protecao' },
+        { source: 'NANO', target: 'M29', type: 'retorno-inteligente' },
     ];
 
     fixedLinks.forEach(link => {
