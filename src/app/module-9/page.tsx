@@ -7,6 +7,7 @@ import { Progress } from '@/components/ui/progress';
 import { GuardianCard, HarmonyMetric } from '@/components/ui/module-9-cards'; // Componentes extraídos
 import { GUARDIANS } from '@/lib/guardians-data';
 import { SafeLink } from '@/components/ui/SafeLink';
+import DecisionCore from '@/components/DecisionCore';
 
 export default function Module9Page() {
   const [harmonyReport, setHarmonyReport] = React.useState({
@@ -36,6 +37,10 @@ export default function Module9Page() {
           <p className="text-xl text-purple-200 max-w-3xl mx-auto">
             O coração pulsante da Colmeia Quântica. A manifestação da equação E = M.F.(1/D), onde as Forças (Guardiões) se unem para mover a Matéria (a Fundação) através das Dimensões (os módulos).
           </p>
+        </div>
+        
+        <div className="mb-12">
+          <DecisionCore />
         </div>
 
         <Card className="bg-card/50 purple-glow mb-12">
