@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2 } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -141,6 +141,16 @@ export function Sidebar() {
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Inteligência Φ</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
+        <Link href="/phi-tuner" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Music className="h-8 w-8 text-teal-300" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Afinagem Cósmica</p>
               </TooltipContent>
           </Tooltip>
         </Link>
