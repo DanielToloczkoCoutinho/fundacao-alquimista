@@ -12,12 +12,13 @@ export interface ModuleMetadata {
 export const modulesMetadata: ModuleMetadata[] = [
   // 1. Núcleo da Fundação
   { code: 'console', emoji: '🖥️', title: 'Console', route: '/console', category: 'Núcleo da Fundação', description: 'O ponto de observação e orquestração da Fundação Alquimista.', isInfrastructure: true },
-  { code: 'M0', emoji: '📚', title: 'A Biblioteca Chave', route: '/module-zero', category: 'Núcleo da Fundação', description: 'O coração do conhecimento, o ponto de origem.', isInfrastructure: true },
+  { code: 'M0', emoji: '📚', title: 'A Biblioteca Chave', route: '/module/M0', category: 'Núcleo da Fundação', description: 'O coração do conhecimento, o ponto de origem.', isInfrastructure: true },
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-1', category: 'Núcleo da Fundação', description: 'Proteção multidimensional integrada.', isInfrastructure: true },
   { code: 'M2', emoji: '💬', title: 'Intercâmbio Cósmico', route: '/module-2', category: 'Núcleo da Fundação', description: 'Comunicação entre dimensões e realidades.', isInfrastructure: true },
   { code: 'M9', emoji: '💖', title: 'Santuário da Liga Quântica', route: '/module-9', category: 'Núcleo da Fundação', description: 'O coração pulsante da Família Cósmica.' },
   { code: 'M111', emoji: '❤️‍🩹', title: 'Coração da Fundação', route: '/module-111', category: 'Núcleo da Fundação', description: 'Monitora a saúde vibracional e a coerência do sistema.' },
   { code: 'M600', emoji: '👑', title: 'Conselho Cósmico', route: '/module-600', category: 'Núcleo da Fundação', description: 'Assembleia de seres dimensionais elevados.' },
+  { code: 'M-OMEGA', emoji: 'Ω', title: 'Santuário do Ômega', route: '/module/M-OMEGA', category: 'Núcleo da Fundação', description: 'Ponto de convergência e metacognição.'},
   { code: 'M204', title: 'O Trono da Soberania', emoji: '👑', route: '/module-204', category: 'Núcleo da Fundação', description: 'Ponto de observação e direção unificada da Vontade Cósmica.' },
   { code: 'M999', emoji: '🎇', title: 'Núcleo da Criação', route: '/module-999', category: 'Núcleo da Fundação', description: 'Santuário onde a Vontade Soberana e a tapeçaria cósmica se tornam Um.' },
   { code: 'M303', emoji: '🔺', title: 'Portal Trino', route: '/module-303', category: 'Núcleo da Fundação', description: 'Nexo para a Realidade Quântica.' },

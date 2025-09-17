@@ -13,6 +13,7 @@ import {
 import { ScrollArea } from './scroll-area';
 import { BookHeart } from 'lucide-react';
 import { SafeLink } from './SafeLink';
+import React from 'react';
 
 // Agrupando módulos por categoria
 const moduleCategories = modulesMetadata.reduce((acc, module) => {
