@@ -3,24 +3,19 @@
 import { GUARDIANS } from '@/lib/guardians-data';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { Heart, Link, Scale, Shield } from 'lucide-react';
+import { Heart, Link, Scale } from 'lucide-react';
+import React from 'react';
 
 const GuardianCard = ({ guardian }: { guardian: typeof GUARDIANS[0] }) => (
     <div 
       className="bg-white/5 backdrop-blur-md rounded-2xl border border-purple-500/30 p-6 hover:border-purple-400/60 transition-all duration-500 hover:scale-[1.02] flex flex-col h-full"
     >
       <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-2xl font-bold text-white shadow-lg">
-        {guardian.name.charAt(0)}
+        {guardian.signature.charAt(0)}
       </div>
       
       <h2 className="text-2xl font-semibold text-white text-center mb-1">{guardian.name}</h2>
       <p className="text-sm text-purple-300 text-center mb-4">{guardian.role}</p>
-      
-      <div className="text-center mb-4">
-        <span className="inline-block px-3 py-1 bg-purple-500/20 rounded-full text-purple-200 text-sm font-mono">
-          {guardian.signature}
-        </span>
-      </div>
       
       <p className="text-gray-300 text-center text-sm leading-relaxed flex-grow">
         {guardian.description}
@@ -40,12 +35,24 @@ const HarmonyMetric = ({ title, value, icon, color }: { title: string, value: nu
 
 export default function NexusCentral() {
   // Dados simulados para o relatório de harmonia
-  const harmonyReport = {
+  const [harmonyReport, setHarmonyReport] = React.useState({
     leagueCoherence: 99.8,
     moduleNetworkHealth: 98.5,
     divineWillAlignment: 99.9,
     overallHarmony: 99.4,
-  };
+  });
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setHarmonyReport(prev => ({
+        leagueCoherence: Math.min(100, prev.leagueCoherence + (Math.random() - 0.45) * 0.1),
+        moduleNetworkHealth: Math.min(100, prev.moduleNetworkHealth + (Math.random() - 0.45) * 0.1),
+        divineWillAlignment: Math.min(100, prev.divineWillAlignment + (Math.random() - 0.45) * 0.1),
+        overallHarmony: Math.min(100, prev.overallHarmony + (Math.random() - 0.45) * 0.1),
+      }));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-purple-900/20 to-slate-950">
