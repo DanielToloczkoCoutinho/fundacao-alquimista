@@ -97,9 +97,6 @@ const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
         { source: 'M144', target: 'M72', type: 'heranca', label: 'heranca' },
         { source: 'M29', target: 'M-OMEGA', type: 'heranca', label: 'heranca' },
         { source: 'M303', target: 'M22', type: 'dependencia', label: 'dependencia' },
-        { source: 'M29', target: 'VENTE', type: 'atualizacao', label: 'atualizacao' },
-        { source: 'VENTE', target: 'M291', type: 'protecao', label: 'protecao' },
-        { source: 'M291', target: 'M29', type: 'retorno-inteligente', label: 'retorno-inteligente' },
     ];
 
     fixedLinks.forEach(link => {
