@@ -52,7 +52,7 @@ export default function Module2Page() {
         </div>
 
         <div className="lg:col-span-2">
-            <Accordion type="multiple" defaultValue={['item-1', 'item-4']} className="w-full">
+            <Accordion type="multiple" defaultValue={['item-1', 'item-4', 'item-fundamental']} className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-xl text-accent">1. Propósito e Função Primária</AccordionTrigger>
                     <AccordionContent>
@@ -77,13 +77,29 @@ export default function Module2Page() {
                  <AccordionItem value="item-4">
                     <AccordionTrigger className="text-xl text-accent">4. Conexões e Interdependências</AccordionTrigger>
                     <AccordionContent>
-                         <SectionCard title="Sinergias" icon={<GitBranch />}>
+                         <SectionCard title="Sinergias Operacionais" icon={<GitBranch />}>
                             <p>Atua como o motor para o M301 (Comunicação Universal). É essencial para a M5 (Liga Quântica) na diplomacia e para a Biblioteca das Civilizações (LIB), permitindo a compreensão de seus acervos.</p>
                              <div className="flex flex-wrap gap-2 mt-2">
                                 <Link href="/module-301"><Badge>M301 (Comunicação)</Badge></Link>
                                 <Link href="/module-5"><Badge>M5 (Liga Quântica)</Badge></Link>
                                 <Link href="/civilizations"><Badge>LIB (Civilizações)</Badge></Link>
                             </div>
+                        </SectionCard>
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-fundamental">
+                    <AccordionTrigger className="text-xl text-accent">Anexo Ω: Conexões Fundamentais</AccordionTrigger>
+                    <AccordionContent>
+                         <SectionCard title="Sinergias da Base" icon={<Anchor />}>
+                            <p>As funções do Módulo 2 são uma manifestação dos princípios estabelecidos pelos módulos da base. Sua operação é dependente e está em constante alinhamento com:</p>
+                             <div className="flex flex-wrap gap-2 mt-2">
+                                <Link href="/module/M0"><Badge variant="destructive">M0 (Origem)</Badge></Link>
+                                <Link href="/module/M1"><Badge variant="destructive">M1 (Segurança)</Badge></Link>
+                                <Link href="/module/M5"><Badge variant="destructive">M5 (Ética)</Badge></Link>
+                                <Link href="/module/M7"><Badge variant="destructive">M7 (Propósito)</Badge></Link>
+                                <Link href="/module/M9"><Badge variant="destructive">M9 (Orquestração)</Badge></Link>
+                            </div>
+                            <p className="mt-2 text-xs italic">O M1 garante que as traduções não possam ser corrompidas; o M5 assegura que a intenção por trás da comunicação seja preservada eticamente; o M9 orquestra os canais através dos quais a comunicação flui.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
