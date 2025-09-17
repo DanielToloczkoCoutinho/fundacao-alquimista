@@ -1,3 +1,4 @@
+
 'use client';
 
 import type { HealthReport } from '@/lib/health-check-types';

@@ -1,4 +1,5 @@
-// src/lib/health-check-types.ts
+
+'use server';
 
 export type ModuleStatus = 'OPERACIONAL' | 'DEGRADADO' | 'EM_ALERTA' | 'OFFLINE';
 

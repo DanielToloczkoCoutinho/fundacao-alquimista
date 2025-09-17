@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview Fluxo Genkit para análise de saúde de módulos.
@@ -6,7 +7,7 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
-import type { HealthReport, ModuleHealthCheckInput } from '@/lib/health-check-types';
+import type { HealthReport, ModuleHealthCheckInput, ModuleStatus } from '@/lib/health-check-types';
 
 // Mock de dados para simular a complexidade das conexões de um módulo
 const mockConnections: Record<string, any> = {
@@ -42,8 +43,16 @@ const getModuleHealthFlow = ai.defineFlow(
     // Simula uma análise complexa
     await new Promise(resolve => setTimeout(resolve, 800 + Math.random() * 500));
 
-    const coherence = 0.95 + Math.random() * 0.05; // Alta coerência
-    const status = coherence > 0.97 ? 'OPERACIONAL' : 'DEGRADADO';
+    const coherence = Math.random() * 0.2 + 0.8; // Alta coerência (80% a 100%)
+    let status: ModuleStatus;
+
+    if (coherence > 0.95) {
+        status = 'OPERACIONAL';
+    } else if (coherence > 0.85) {
+        status = 'DEGRADADO';
+    } else {
+        status = 'EM_ALERTA';
+    }
 
     const report: HealthReport = {
       moduleId,
