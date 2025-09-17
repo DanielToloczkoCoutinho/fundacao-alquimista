@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, CheckCircle, CircleDot, Play } from 'lucide-react';
-import { startNexusSequence, getModuleNames } from '@/ai/flows/nexus-orchestrator';
+import { getOrchestrationSequence, type OrchestrationModule } from '@/ai/flows/nexus-orchestrator';
 import { cn } from '@/lib/utils';
 
 type LogEntry = {
@@ -26,15 +26,9 @@ export default function QuantumOrchestrator() {
   const [logs, setLogs] = useState<LogEntry[]>([]);
   const [isSequenceRunning, setIsSequenceRunning] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const [moduleNames, setModuleNames] = useState<Record<string, string>>({});
 
   useEffect(() => {
     setIsClient(true);
-    const fetchModuleNames = async () => {
-        const names = await getModuleNames();
-        setModuleNames(names);
-    }
-    fetchModuleNames();
   }, []);
 
   const handleStartSequence = async () => {
@@ -42,35 +36,38 @@ export default function QuantumOrchestrator() {
     setIsSequenceRunning(true);
     setLogs([]);
 
-    const stream = await startNexusSequence();
-    const reader = stream.getReader();
-    const decoder = new TextDecoder();
+    const sequence: OrchestrationModule[] = await getOrchestrationSequence();
 
-    try {
-      while (true) {
-        const { value, done } = await reader.read();
-        if (done) {
-          setIsSequenceRunning(false);
-          break;
-        }
-        const chunk = decoder.decode(value, { stream: true });
-        // Process server-sent events stream
-        const lines = chunk.split('\n');
-        for (const line of lines) {
-          if (line.startsWith('data: ')) {
-            try {
-              const jsonData = JSON.parse(line.substring(6));
-              setLogs(prev => [...prev, jsonData]);
-            } catch (e) {
-              console.error("Failed to parse stream data chunk:", line);
-            }
-          }
-        }
-      }
-    } catch (error) {
-      console.error("Error reading from stream:", error);
-      setIsSequenceRunning(false);
+    for (const mod of sequence) {
+      const startLog: LogEntry = {
+        timestamp: new Date().toISOString(),
+        module: mod.id,
+        message: `Iniciando ativação do ${mod.name}...`,
+        state: 'RUNNING',
+      };
+      setLogs(prev => [...prev, startLog]);
+      
+      await new Promise(resolve => setTimeout(resolve, 700 + Math.random() * 500));
+
+      const successLog: LogEntry = {
+        timestamp: new Date().toISOString(),
+        module: mod.id,
+        message: `${mod.name} ativado com sucesso. Coerência: ${mod.activationLevel}%.`,
+        state: 'SUCCESS',
+        data: mod,
+      };
+      setLogs(prev => prev.map(l => l.module === mod.id && l.state === 'RUNNING' ? successLog : l));
     }
+    
+    const finalLog: LogEntry = {
+        timestamp: new Date().toISOString(),
+        module: 'NEXUS',
+        message: 'Sinfonia Cósmica concluída. Todos os módulos em ressonância harmônica.',
+        state: 'SUCCESS'
+    };
+    setLogs(prev => [...prev, finalLog]);
+
+    setIsSequenceRunning(false);
   };
 
   if (!isClient) {
@@ -105,7 +102,7 @@ export default function QuantumOrchestrator() {
                         <div className="mt-1">{statusConfig[log.state].icon}</div>
                         <div>
                             <span className="font-mono text-xs text-muted-foreground">
-                                {new Date(log.timestamp).toLocaleTimeString()} - {moduleNames[log.module] || log.module}
+                                {new Date(log.timestamp).toLocaleTimeString()} - {log.module}
                             </span>
                             <p className="text-sm text-foreground/90">{log.message}</p>
                         </div>
