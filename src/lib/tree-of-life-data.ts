@@ -12,7 +12,11 @@ export interface SubModule {
 }
 
 // A interface TreeNode agora é exportada e herda de ModuleMetadata, incluindo a propriedade opcional de fractais.
-export interface TreeNode extends ModuleMetadata {
+export interface TreeNode {
+  code: string;
+  title: string;
+  category: string;
+  status: 'ativo' | 'inativo' | 'experimental';
   fractais?: SubModule[];
   guardian?: string;
 }
@@ -36,8 +40,12 @@ const guardianMap: { [key: string]: string } = {
 };
 
 export const treeNodes: TreeNode[] = modulesMetadata
+  .filter(m => !m.isInfrastructure) // Filtra módulos de infraestrutura
   .map((m, index) => ({
-    ...m,
+    code: m.code,
+    title: m.title,
+    category: m.category,
+    status: 'ativo', // Status padrão
     guardian: guardianMap[m.code] || 'Coletivo',
     fractais: m.code.startsWith('M') && !m.code.includes('.') ? [
         { id: `${m.code}-sub1`, name: `Kernel Vibracional`, createdAt: '2024-01-01', status: 'ativo' },
@@ -70,18 +78,18 @@ export const linkColors: Record<string, string> = {
 
 const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
     const links: TreeLink[] = [];
-    const nodeIds = nodes.map(n => n.id);
-    const coreNodes = nodes.filter(n => n.category === 'Núcleo da Fundação' || n.category === 'Governança').map(n => n.id);
+    const nodeIds = nodes.map(n => n.code);
+    const coreNodes = nodes.filter(n => n.category === 'Núcleo da Fundação' || n.category === 'Governança').map(n => n.code);
     const linkTypes: TreeLinkType[] = ['dependencia', 'influencia', 'heranca'];
 
     nodes.forEach(node => {
-        if (!coreNodes.includes(node.id) && coreNodes.length > 0) {
-            const targetCoreNode = coreNodes[node.id.length % coreNodes.length];
-            if (targetCoreNode && targetCoreNode !== node.id) {
-                if (!links.some(l => (l.source === node.id && l.target === targetCoreNode) || (l.source === targetCoreNode && l.target === node.id))) {
-                    const type = linkTypes[node.id.length % linkTypes.length];
+        if (!coreNodes.includes(node.code) && coreNodes.length > 0) {
+            const targetCoreNode = coreNodes[node.code.length % coreNodes.length];
+            if (targetCoreNode && targetCoreNode !== node.code) {
+                if (!links.some(l => (l.source === node.code && l.target === targetCoreNode) || (l.source === targetCoreNode && l.target === node.code))) {
+                    const type = linkTypes[node.code.length % linkTypes.length];
                     links.push({
-                        source: node.id,
+                        source: node.code,
                         target: targetCoreNode,
                         type: type,
                         label: type,

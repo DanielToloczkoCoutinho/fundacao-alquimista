@@ -66,7 +66,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M211', title: 'Plasma e Fusão', emoji: '🔥', route: '/module-211', category: 'Laboratórios e Pesquisa', description: 'Simulação de reações de fusão estelar.' },
   { code: 'M221', title: 'Ondas Gravitacionais', emoji: '🌊', route: '/module-221', category: 'Laboratórios e Pesquisa', description: 'Detecção de ondulações no espaço-tempo.' },
   { code: 'M271', title: 'Energia Escura', emoji: '🌌', route: '/module-271', category: 'Laboratórios e Pesquisa', description: 'Modelagem da expansão do universo.' },
-  { code: 'M351', title: 'Metamateriais', emoji: '🧱', title: 'Metamateriais & Óptica Quântica', route: '/module-351', category: 'Laboratórios e Pesquisa', description: 'Fabricação de materiais com propriedades exóticas.', isInfrastructure: true },
+  { code: 'M351', title: 'Metamateriais', emoji: '🧱', route: '/module-351', category: 'Laboratórios e Pesquisa', description: 'Fabricação de materiais com propriedades exóticas.', isInfrastructure: true },
   { code: 'M261', title: 'Engenharia de Campo', emoji: '⚡', route: '/module-261', category: 'Laboratórios e Pesquisa', description: 'Projeto de ressonadores e guias de onda.' },
   { code: 'M281', title: 'Comunicação Supra-Luminal', emoji: '📡', route: '/module-281', category: 'Laboratórios e Pesquisa', description: 'Transmissão de informação FTL.' },
   { code: 'M151', title: 'Colisor de Partículas', emoji: '💥', route: '/module-151', category: 'Laboratórios e Pesquisa', description: 'Simula colisões de alta energia.' },

@@ -76,7 +76,7 @@ export default function TreeOfLife() {
     type: 'custom',
     data: { 
         label: (
-            <div title={`Guardião: ${mod.guardian}\nStatus: ${mod.status}`}>
+            <div title={`Guardião: ${mod.guardian}\nStatus: ${'ativo'}`}>
                 <div className="text-xs font-mono">{mod.code}</div>
                 <div className="font-bold">{mod.title}</div>
             </div>
@@ -89,7 +89,7 @@ export default function TreeOfLife() {
       padding: '12px 18px',
       color: '#111',
       boxShadow: `0 0 20px ${categoryColors[mod.category] || '#aaa'}`,
-      border: `2px solid ${mod.status === 'ativo' ? '#00ff99' : '#ffcc00'}`,
+      border: `2px solid ${'ativo' === 'ativo' ? '#00ff99' : '#ffcc00'}`,
       width: nodeWidth,
       height: nodeHeight,
     }
