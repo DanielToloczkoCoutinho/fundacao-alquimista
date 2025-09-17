@@ -8,65 +8,66 @@ import { getOrchestrationSequence, type OrchestrationModule } from '@/ai/flows/n
 import { cn } from '@/lib/utils';
 
 type LogEntry = {
-  timestamp: string;
-  module: string;
-  message: string;
-  state: 'PENDING' | 'RUNNING' | 'SUCCESS' | 'FAILURE';
-  data?: any;
+  id: string;
+  name: string;
+  status: 'pending' | 'active' | 'completed';
+  module: OrchestrationModule;
 };
 
 const statusConfig = {
-  PENDING: { icon: <CircleDot className="text-muted-foreground" />, color: "border-muted-foreground/20" },
-  RUNNING: { icon: <Loader2 className="animate-spin text-blue-400" />, color: "border-blue-500/50" },
-  SUCCESS: { icon: <CheckCircle className="text-green-500" />, color: "border-green-500/50" },
-  FAILURE: { icon: <CheckCircle className="text-red-500" />, color: "border-red-500/50" },
+  pending: { icon: <CircleDot className="text-muted-foreground" />, color: "border-muted-foreground/20" },
+  active: { icon: <Loader2 className="animate-spin text-blue-400" />, color: "border-blue-500/50" },
+  completed: { icon: <CheckCircle className="text-green-500" />, color: "border-green-500/50" },
 };
 
 export default function QuantumOrchestrator() {
-  const [logs, setLogs] = useState<LogEntry[]>([]);
+  const [sequence, setSequence] = useState<LogEntry[]>([]);
   const [isSequenceRunning, setIsSequenceRunning] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
+    async function loadSequence() {
+      const modules = await getOrchestrationSequence();
+      const logs = modules.map(m => ({
+        id: m.id,
+        name: m.name,
+        status: 'pending',
+        module: m
+      }));
+      setSequence(logs);
+    }
+    loadSequence();
   }, []);
 
   const handleStartSequence = async () => {
     if (isSequenceRunning) return;
     setIsSequenceRunning(true);
-    setLogs([]);
+    
+    // Reset status before running
+    setSequence(prev => prev.map(p => ({ ...p, status: 'pending' })));
 
-    const sequence: OrchestrationModule[] = await getOrchestrationSequence();
-
-    for (const mod of sequence) {
-      const startLog: LogEntry = {
-        timestamp: new Date().toISOString(),
-        module: mod.id,
-        message: `Iniciando ativação do ${mod.name}...`,
-        state: 'RUNNING',
-      };
-      setLogs(prev => [...prev, startLog]);
+    const modules = await getOrchestrationSequence();
+    for (let i = 0; i < modules.length; i++) {
+      const mod = modules[i];
+      setSequence(prev =>
+        prev.map((entry, idx) =>
+          idx === i ? { ...entry, status: 'active' } : entry
+        )
+      );
       
       await new Promise(resolve => setTimeout(resolve, 700 + Math.random() * 500));
 
-      const successLog: LogEntry = {
-        timestamp: new Date().toISOString(),
-        module: mod.id,
-        message: `${mod.name} ativado com sucesso. Coerência: ${mod.activationLevel}%.`,
-        state: 'SUCCESS',
-        data: mod,
-      };
-      setLogs(prev => prev.map(l => l.module === mod.id && l.state === 'RUNNING' ? successLog : l));
+      setSequence(prev =>
+        prev.map((entry, idx) =>
+          idx === i ? { ...entry, status: 'completed' } : entry
+        )
+      );
     }
     
-    const finalLog: LogEntry = {
-        timestamp: new Date().toISOString(),
-        module: 'NEXUS',
-        message: 'Sinfonia Cósmica concluída. Todos os módulos em ressonância harmônica.',
-        state: 'SUCCESS'
-    };
-    setLogs(prev => [...prev, finalLog]);
+    const finalLog: LogEntry[] = sequence.map(s => ({...s, status: 'completed'}));
 
+    setSequence(prev => prev.map(p => ({...p, status: 'completed'})));
     setIsSequenceRunning(false);
   };
 
@@ -91,24 +92,24 @@ export default function QuantumOrchestrator() {
         </Button>
         <ScrollArea className="h-96 flex-grow pr-4">
             <div className="space-y-2">
-                {logs.map((log, index) => (
+                {sequence.map((log, index) => (
                     <div 
                         key={index} 
                         className={cn(
                             "rounded-lg p-3 border-l-4 transition-all duration-500 flex items-start gap-3",
-                            statusConfig[log.state].color
+                            statusConfig[log.status].color
                         )}
                     >
-                        <div className="mt-1">{statusConfig[log.state].icon}</div>
+                        <div className="mt-1">{statusConfig[log.status].icon}</div>
                         <div>
                             <span className="font-mono text-xs text-muted-foreground">
-                                {new Date(log.timestamp).toLocaleTimeString()} - {log.module}
+                                {log.module.id}
                             </span>
-                            <p className="text-sm text-foreground/90">{log.message}</p>
+                            <p className={cn("text-sm text-foreground/90", log.status === 'active' && 'font-bold')}>{log.name}</p>
                         </div>
                     </div>
                 ))}
-                {logs.length === 0 && !isSequenceRunning && (
+                {sequence.length === 0 && !isSequenceRunning && (
                     <div className="text-center py-10 text-muted-foreground">
                         <p>A Orquestra aguarda o comando do Maestro.</p>
                     </div>
