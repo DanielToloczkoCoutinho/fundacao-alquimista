@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Loader2, Lock, Unlock, Fingerprint } from 'lucide-react';
+import { Loader2, Lock, Fingerprint } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -16,12 +16,8 @@ const mockBlockchain = {
             throw new Error(`Selo ${sealId} já existe.`);
         }
         this.seals.set(sealId, { guardian, timestamp: new Date().toISOString() });
-        return true;
+        return { success: true, hash: `0x${Array(64).fill(0).map(() => Math.floor(Math.random() * 16).toString(16)).join('')}`};
     },
-    verifySeal: async function(sealId: string) {
-        await new Promise(r => setTimeout(r, 500));
-        return this.seals.get(sealId);
-    }
 };
 
 export default function GuardiaoDeSeloPage() {
@@ -45,13 +41,14 @@ export default function GuardiaoDeSeloPage() {
         await quantumResilience.executeWithResilience(
             'apply_vibrational_seal',
             async () => {
-                addLog('Autenticando Guardião via hierarquia sagrada...');
+                addLog('Autenticando Guardião via hierarquia sagrada (M8)...');
                 await new Promise(r => setTimeout(r, 800));
+                addLog('Guardião autenticado. Conectando à Blockchain Alquimista (M999)...');
                 
-                addLog(`Registrando selo na Blockchain Alquimista (M999)...`);
-                await mockBlockchain.applySeal(sealId, guardianId);
+                const result = await mockBlockchain.applySeal(sealId, guardianId);
 
-                addLog(`Selo ${sealId} aplicado com sucesso por ${guardianId}.`);
+                addLog(`Hash do Bloco: ${result.hash.substring(0,20)}...`);
+                addLog(`Selo ${sealId} aplicado com sucesso por ${guardianId}. Registro agora é imutável.`);
                 toast({ title: 'Selo Aplicado', description: 'O registro foi selado e é imutável.' });
             }
         ).catch(err => {
@@ -105,6 +102,7 @@ export default function GuardiaoDeSeloPage() {
                         <ScrollArea className="h-60 pr-4">
                             <div className="text-xs font-mono text-muted-foreground space-y-1">
                                 {logs.map((log, i) => <p key={i}>{log}</p>)}
+                                {logs.length === 0 && <p>Aguardando operações na blockchain...</p>}
                             </div>
                         </ScrollArea>
                     </CardContent>

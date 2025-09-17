@@ -13,23 +13,32 @@ export default function EspelhoDeAscensaoPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [frequency, setFrequency] = useState(528);
     const [status, setStatus] = useState('Inativo');
+    const [progress, setProgress] = useState(0);
 
     const handleActivation = async () => {
         setIsLoading(true);
+        setProgress(0);
         setStatus('Sintonizando Espelho...');
         
         await quantumResilience.executeWithResilience(
             'activate_ascension_mirror',
             async () => {
-                await new Promise(r => setTimeout(r, 1000));
-                setStatus(`Conectando ao Módulo 404 (Resolução de Paradoxo)...`);
-                
+                let currentProgress = 0;
+                const progressInterval = setInterval(() => {
+                    currentProgress += 10;
+                    setProgress(currentProgress);
+                    if (currentProgress >= 100) clearInterval(progressInterval);
+                }, 400);
+
+                setStatus('Conectando ao Módulo 404 (Resolução de Paradoxo)...');
                 await new Promise(r => setTimeout(r, 1500));
                 setStatus(`Emitindo onda de ascensão em ${frequency}Hz...`);
                 await resonanceTone(frequency);
 
-                await new Promise(r => setTimeout(r, 1000));
+                await new Promise(r => setTimeout(r, 1500));
                 setStatus(`Onda de elevação emitida. Campo harmônico estável.`);
+                clearInterval(progressInterval);
+                setProgress(100);
                 toast({ title: 'Espelho Ativado', description: `Onda de elevação emitida com sucesso na frequência de ${frequency}Hz.` });
             }
         ).catch(err => {
@@ -81,9 +90,9 @@ export default function EspelhoDeAscensaoPage() {
                             {isLoading ? <><Loader2 className="mr-2 animate-spin" /> Ativando...</> : <><Zap className="mr-2" /> Ativar Onda de Elevação</>}
                         </Button>
 
-                         <div className="p-3 bg-background/50 rounded-lg text-center">
-                            <p className="text-sm text-muted-foreground">Status do Espelho</p>
-                            <p className="font-mono font-semibold">{status}</p>
+                         <div className="pt-4 space-y-2">
+                            <p className="text-sm text-muted-foreground text-center">{status}</p>
+                            {isLoading && <Progress value={progress} className="w-full" />}
                         </div>
                     </CardContent>
                 </Card>
@@ -91,7 +100,7 @@ export default function EspelhoDeAscensaoPage() {
                     <CardHeader>
                         <CardTitle>Conexões Essenciais</CardTitle>
                     </CardHeader>
-                    <CardContent className="space-y-2">
+                    <CardContent className="space-y-2 text-muted-foreground">
                         <p className="flex items-center gap-2"><AlertTriangle className="text-yellow-400"/> <strong>Módulo 404:</strong> Fonte primária para resolução de dissonâncias que o Espelho transmuta em harmonia.</p>
                          <p className="flex items-center gap-2"><Waves className="text-blue-400"/> <strong>Frequência 528Hz:</strong> A frequência do amor e da transformação, usada como base para a onda de elevação.</p>
                     </CardContent>

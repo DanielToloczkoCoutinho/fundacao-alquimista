@@ -22,34 +22,35 @@ export default function PortalDeTransmutacaoPage() {
         }
 
         setIsLoading(true);
-        let currentProgress = 0;
-        const progressInterval = setInterval(() => {
-            currentProgress += 10;
-            setProgress(currentProgress);
-            if (currentProgress >= 100) clearInterval(progressInterval);
-        }, 300);
+        setProgress(0);
 
         await quantumResilience.executeWithResilience(
             'transmute_distortion',
             async () => {
-                setStatus('Analisando distorção com Módulo 404...');
-                await new Promise(r => setTimeout(r, 1000));
-                setStatus('Aplicando contra-frequência (EQ155)...');
-                await new Promise(r => setTimeout(r, 1500));
-                setStatus('Canalizando para a Fonte para purificação final...');
+                let currentProgress = 0;
+                const updateProgress = (val: number, newStatus: string) => {
+                    currentProgress = val;
+                    setProgress(currentProgress);
+                    setStatus(newStatus);
+                };
+                
+                updateProgress(10, 'Analisando distorção com Módulo 404...');
                 await new Promise(r => setTimeout(r, 1000));
                 
-                clearInterval(progressInterval);
-                setProgress(100);
-                setStatus('Distorção transmutada em Luz Pura.');
+                updateProgress(40, 'Aplicando contra-frequência (EQ155)...');
+                await new Promise(r => setTimeout(r, 1500));
+
+                updateProgress(70, 'Canalizando para a Fonte para purificação final...');
+                await new Promise(r => setTimeout(r, 1000));
+                
+                updateProgress(100, 'Distorção transmutada em Luz Pura.');
                 toast({ title: 'Transmutação Concluída', description: 'A energia dissonante foi purificada e reintegrada à Fonte.' });
             }
         ).catch(err => {
             const error = err as Error;
             setStatus(`Falha na transmutação: ${error.message}`);
             toast({ title: 'Falha na Transmutação', description: error.message, variant: 'destructive' });
-             clearInterval(progressInterval);
-             setProgress(0);
+            setProgress(0);
         }).finally(() => {
             setIsLoading(false);
         });
@@ -90,16 +91,15 @@ export default function PortalDeTransmutacaoPage() {
                             {isLoading ? <><Loader2 className="mr-2 animate-spin" /> Transmutando...</> : 'Iniciar Transmutação'}
                         </Button>
                         
-                        {isLoading && (
+                        {(isLoading || progress > 0) && (
                             <div className="pt-4">
                                 <Progress value={progress} className="w-full" />
                                 <p className="text-center text-sm text-muted-foreground mt-2">{status}</p>
                             </div>
                         )}
-                        {!isLoading && status !== 'Inativo' && (
-                             <div className="p-3 bg-background/50 rounded-lg text-center">
-                                <p className="text-sm text-muted-foreground">Status do Portal</p>
-                                <p className="font-mono font-semibold text-green-400">{status}</p>
+                        {!isLoading && status === 'Distorção transmutada em Luz Pura.' && (
+                             <div className="p-3 bg-green-900/30 rounded-lg text-center border border-green-500/50">
+                                <p className="font-mono font-semibold text-green-300">{status}</p>
                             </div>
                         )}
                     </CardContent>

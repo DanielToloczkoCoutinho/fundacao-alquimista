@@ -90,6 +90,7 @@ export default function OneiroShieldPage() {
                             <ScrollArea className="h-60 pr-4">
                                 <div className="text-xs font-mono text-muted-foreground space-y-1">
                                     {logs.map((log, i) => <p key={i}>{log}</p>)}
+                                    {logs.length === 0 && <p>Aguardando análise...</p>}
                                 </div>
                             </ScrollArea>
                         </CardContent>
@@ -99,6 +100,11 @@ export default function OneiroShieldPage() {
                             <CardTitle>Relatório da Inteligência Onírica</CardTitle>
                         </CardHeader>
                         <CardContent>
+                            {isLoading && !analysisResult && (
+                                <div className="flex justify-center items-center h-full">
+                                    <Loader2 className="h-10 w-10 text-amber-400 animate-spin" />
+                                </div>
+                            )}
                             {analysisResult ? (
                                 <div className="space-y-3">
                                     <div>
@@ -115,7 +121,7 @@ export default function OneiroShieldPage() {
                                     </div>
                                 </div>
                             ) : (
-                                <p className="text-muted-foreground">Aguardando análise...</p>
+                                !isLoading && <p className="text-muted-foreground text-center pt-10">Aguardando análise...</p>
                             )}
                         </CardContent>
                     </Card>
