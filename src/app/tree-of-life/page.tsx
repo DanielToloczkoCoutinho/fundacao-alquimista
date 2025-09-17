@@ -1,5 +1,5 @@
 'use client';
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import ReactFlow, { Background, Controls, MiniMap, ConnectionLineType, Node, Edge } from 'reactflow';
 import 'reactflow/dist/style.css';
 import { modulesMetadata } from '@/lib/modules-metadata';
@@ -8,6 +8,7 @@ import { GitBranch, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { treeNodes as initialTreeNodes, treeLinks as initialTreeLinks, type TreeNode, type TreeLink, type SubModule } from '@/lib/tree-of-life-data';
 
 // Paleta Vibracional Expandida
 export const categoryColors: Record<string, string> = {
@@ -23,79 +24,6 @@ export const categoryColors: Record<string, string> = {
   'Segurança e Ética Cósmica': '#FF6B6B', // Vermelho Claro
 };
 
-const linkTypes: TreeLink['type'][] = ['dependencia', 'influencia', 'heranca'];
-
-// Gera links de exemplo dinamicamente
-const generateLinks = (nodes: TreeNode[]): TreeLink[] => {
-    const links: TreeLink[] = [];
-    const nodeIds = nodes.map(n => n.id);
-    const coreNodes = nodes.filter(n => n.category === 'Núcleo da Fundação' || n.category === 'Governança e Ética').map(n => n.id);
-
-    nodes.forEach(node => {
-        // Conectar módulos não-núcleo a módulos do núcleo
-        if (!coreNodes.includes(node.id) && coreNodes.length > 0) {
-            const targetCoreNode = coreNodes[Math.floor(Math.random() * coreNodes.length)];
-            links.push({
-                source: node.id,
-                target: targetCoreNode,
-                type: linkTypes[Math.floor(Math.random() * linkTypes.length)]
-            });
-        }
-
-        // Adicionar algumas conexões aleatórias adicionais
-        if (Math.random() > 0.6 && nodeIds.length > 1) {
-             let targetNodeId = nodeIds[Math.floor(Math.random() * nodeIds.length)];
-             // Evitar auto-referência e duplicação
-             while(targetNodeId === node.id || links.some(l => l.source === node.id && l.target === targetNodeId)) {
-                 targetNodeId = nodeIds[Math.floor(Math.random() * nodeIds.length)];
-             }
-             links.push({
-                source: node.id,
-                target: targetNodeId,
-                type: linkTypes[Math.floor(Math.random() * linkTypes.length)]
-            });
-        }
-    });
-
-    return links;
-};
-
-
-interface TreeNode {
-  id: string;
-  name: string;
-  category: string;
-  status: 'ativo' | 'em_construcao' | 'legado';
-  guardian: string;
-}
-
-interface TreeLink {
-  source: string;
-  target: string;
-  type: 'dependencia' | 'influencia' | 'heranca';
-}
-
-const guardianMap: { [key: string]: string } = {
-  'M29': 'ZENNITH',
-  'M-OMEGA': 'ANATHERON',
-  'M9': 'VORTEX',
-  'M5': 'LUX',
-  'M302': 'PHIARA',
-  'M1': 'GROKKAR'
-};
-
-const treeNodes: TreeNode[] = modulesMetadata
-  .filter(m => !m.isInfrastructure)
-  .map(m => ({
-    id: m.code,
-    name: m.title,
-    category: m.category,
-    status: 'ativo',
-    guardian: guardianMap[m.code] || 'Coletivo',
-  }));
-
-const treeLinks: TreeLink[] = generateLinks(treeNodes);
-
 const linkColors: Record<string, string> = {
     dependencia: '#FFD700', // Ouro
     influencia: '#00BFA6',   // Verde Água
@@ -104,7 +32,7 @@ const linkColors: Record<string, string> = {
 
 
 export default function TreeOfLifePage() {
-  const nodes: Node[] = useMemo(() => treeNodes.map((mod) => ({
+  const initialNodes: Node[] = useMemo(() => initialTreeNodes.map((mod) => ({
     id: mod.id,
     data: { 
         label: (
@@ -113,22 +41,22 @@ export default function TreeOfLifePage() {
             </div>
         )
     },
-    position: { x: Math.random() * 2500, y: Math.random() * 1800 }, // Espaço maior
+    position: { x: Math.random() * 2500, y: Math.random() * 1800 },
     style: {
       background: categoryColors[mod.category] || '#333',
       borderRadius: 16,
-      padding: '10px 15px',
+      padding: '12px 18px',
       fontWeight: 'bold',
       color: '#111',
       boxShadow: `0 0 20px ${categoryColors[mod.category] || '#aaa'}`,
       border: `2px solid ${mod.status === 'ativo' ? '#00ff99' : '#ffcc00'}`,
-      fontSize: '12px',
+      fontSize: '14px',
       minWidth: 150,
       textAlign: 'center',
     }
   })), []);
 
-  const edges: Edge[] = useMemo(() => treeLinks.map(link => ({
+  const initialEdges: Edge[] = useMemo(() => initialTreeLinks.map(link => ({
     id: `${link.source}-${link.target}`,
     source: link.source,
     target: link.target,
@@ -141,6 +69,45 @@ export default function TreeOfLifePage() {
     },
     labelStyle: { fill: linkColors[link.type] || '#888', fontWeight: 600, fontSize: '12px' },
   })), []);
+
+  const [nodes, setNodes] = useState<Node[]>(initialNodes);
+  const [edges, setEdges] = useState<Edge[]>(initialEdges);
+
+  const onNodeClick = (_: React.MouseEvent, node: Node) => {
+    const moduleData = initialTreeNodes.find(m => m.id === node.id);
+    const fractais = moduleData?.fractais || [];
+
+    // Prevenir re-adição de fractais já existentes
+    const existingFractalIds = new Set(nodes.map(n => n.id));
+    const newFractals = fractais.filter(f => !existingFractalIds.has(f.id));
+
+    if (newFractals.length === 0) return;
+
+    const newNodes = newFractals.map((sub, i) => ({
+      id: sub.id,
+      data: { label: sub.name },
+      position: { x: node.position.x + 250, y: node.position.y + i * 80 },
+      style: {
+        background: '#444',
+        color: '#eee',
+        borderRadius: 8,
+        padding: 8,
+        fontSize: '10px',
+        border: '1px solid #7B61FF',
+      }
+    }));
+    
+    const newEdges = newFractals.map(sub => ({
+      id: `${node.id}-${sub.id}`,
+      source: node.id,
+      target: sub.id,
+      animated: true,
+      style: { stroke: '#7B61FF', strokeDasharray: '5,5' },
+    }));
+
+    setNodes(prev => [...prev, ...newNodes]);
+    setEdges(prev => [...prev, ...newEdges]);
+  };
 
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
@@ -170,6 +137,7 @@ export default function TreeOfLifePage() {
         <ReactFlow
             nodes={nodes}
             edges={edges}
+            onNodeClick={onNodeClick}
             fitView
             connectionLineType={ConnectionLineType.SmoothStep}
             className="bg-transparent"
@@ -179,7 +147,7 @@ export default function TreeOfLifePage() {
                 nodeStrokeWidth={3} 
                 zoomable 
                 pannable 
-                nodeColor={(n) => categoryColors[treeNodes.find(m => m.id === n.id)?.category || 'default'] || '#666'}
+                nodeColor={(n) => categoryColors[initialTreeNodes.find(m => m.id === n.id)?.category || 'default'] || '#666'}
                 className="bg-background/50 border border-primary/20"
             />
             <Controls />
