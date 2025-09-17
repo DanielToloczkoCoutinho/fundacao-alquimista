@@ -14,27 +14,33 @@ import { ScrollArea } from './scroll-area';
 import { BookHeart } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 
+// Agrupando módulos por categoria
+const moduleCategories = modulesMetadata.reduce((acc, module) => {
+  if (module.isInfrastructure) return acc; // Não mostra módulos de infraestrutura
+  
+  const category = module.category;
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  acc[category].push(module);
+  return acc;
+}, {} as Record<string, ModuleMetadata[]>);
+
+// Ordenando as categorias
+const orderedCategories = [
+  'Núcleo da Fundação',
+  'Bibliotecas e Arquivos Sagrados',
+  'Realidade Quântica & Engenharia Cósmica',
+  'Consciência e Expansão Dimensional',
+  'Laboratórios e Pesquisa',
+  'Cura e Harmonia',
+  'Sustentabilidade e Ecossistemas',
+  'Bem-estar e Saúde Universal',
+  'Segurança e Ética Cósmica',
+].filter(cat => moduleCategories[cat]); // Filtra para mostrar apenas categorias que têm módulos visíveis
+
 export function Sidebar() {
   const pathname = usePathname();
-
-  const sortedModules = [...modulesMetadata].sort((a, b) => {
-    const categoryOrder = { 'core': 1, 'sovereignty': 2, 'library': 3, 'council': 4, 'mid': 5 };
-    const orderA = categoryOrder[a.category] ?? 99;
-    const orderB = categoryOrder[b.category] ?? 99;
-
-    if (orderA !== orderB) {
-      return orderA - orderB;
-    }
-    
-    const codeAIsNum = !isNaN(parseInt(a.code.replace(/\D/g, '')));
-    const codeBIsNum = !isNaN(parseInt(b.code.replace(/\D/g, '')));
-
-    if(codeAIsNum && codeBIsNum) {
-      return parseInt(a.code.replace(/\D/g, '')) - parseInt(b.code.replace(/\D/g, ''));
-    }
-    
-    return a.code.localeCompare(b.code);
-  });
 
   return (
     <TooltipProvider delayDuration={0}>
@@ -51,36 +57,41 @@ export function Sidebar() {
         </Link>
         <ScrollArea className="w-full">
           <div className="flex flex-col items-center space-y-2">
-            {sortedModules.map(({ code, emoji, title, route }) => {
-              const isActive = pathname === route;
-
-              return (
-              <Tooltip key={code}>
-                <TooltipTrigger asChild>
-                  <SafeLink
-                    href={route}
-                    className={cn(
-                      'flex flex-col items-center p-2 rounded-lg transition-colors w-16',
-                      isActive
-                        ? 'bg-accent text-accent-foreground'
-                        : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground',
-                      !route && 'opacity-50 cursor-not-allowed'
-                    )}
-                  >
-                    <div className="text-2xl">{emoji}</div>
-                    <span className="text-xs font-mono">{code}</span>
-                  </SafeLink>
-                </TooltipTrigger>
-                <TooltipContent side="right">
-                  <p>{title}</p>
-                </TooltipContent>
-              </Tooltip>
-            )})}
+            {orderedCategories.map(category => (
+              <React.Fragment key={category}>
+                 <div className="pt-4 pb-2 w-full text-center">
+                    <span className="text-xs text-muted-foreground/50">{category.split('&')[0]}</span>
+                 </div>
+                 {moduleCategories[category].map(({ code, emoji, title, route }) => {
+                    const isActive = pathname === route;
+                    return (
+                        <Tooltip key={code}>
+                            <TooltipTrigger asChild>
+                            <SafeLink
+                                href={route}
+                                className={cn(
+                                'flex flex-col items-center p-2 rounded-lg transition-colors w-16',
+                                isActive
+                                    ? 'bg-accent text-accent-foreground'
+                                    : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground',
+                                !route && 'opacity-50 cursor-not-allowed'
+                                )}
+                            >
+                                <div className="text-2xl">{emoji}</div>
+                                <span className="text-xs font-mono">{code.replace('M-','')}</span>
+                            </SafeLink>
+                            </TooltipTrigger>
+                            <TooltipContent side="right">
+                            <p>{title}</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    )
+                 })}
+              </React.Fragment>
+            ))}
           </div>
         </ScrollArea>
       </nav>
     </TooltipProvider>
   );
 }
-
-    

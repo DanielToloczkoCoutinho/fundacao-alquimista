@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root, .dark {
-    /* Primary: Deep Violet, Background: Dark Violet, Accent: Golden Yellow */
+    color-scheme: dark;
     --background: 259 55% 10%; /* Darker violet for dark mode */
     --foreground: 255 100% 94%;
 
