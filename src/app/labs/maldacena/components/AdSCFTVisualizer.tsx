@@ -1,3 +1,4 @@
+
 'use client';
 // Placeholder for Juan Maldacena's interactive artifact.
 // This component will evolve into an immersive WebXR experience
