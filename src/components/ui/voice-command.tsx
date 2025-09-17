@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -60,12 +59,34 @@ export default function VoiceCommand() {
     return () => {
       recognition.stop();
     };
-  }, [isListening, toast]);
+  }, [isListening, toast, router]);
 
   const processCommand = (command: string) => {
     const lowerCaseCommand = command.toLowerCase();
     
-    // Tenta encontrar um módulo que corresponda ao comando
+    // Comandos de navegação primários
+    if (lowerCaseCommand.includes('árvore da vida')) {
+        toast({ title: "Navegando...", description: `Abrindo a Árvore da Vida.` });
+        router.push('/tree-of-life');
+        return;
+    }
+     if (lowerCaseCommand.includes('tomografia quântica')) {
+        toast({ title: "Navegando...", description: `Acessando o Módulo 142.` });
+        router.push('/module-142');
+        return;
+    }
+    if (lowerCaseCommand.includes('lex fundamentalis')) {
+        toast({ title: "Navegando...", description: `Retornando ao Altar da Palavra.` });
+        router.push('/module-144');
+        return;
+    }
+    if (lowerCaseCommand.includes("console") || lowerCaseCommand.includes("início")) {
+        toast({ title: "Navegando...", description: "Retornando à Mesa do Fundador." });
+        router.push('/console');
+        return;
+    }
+
+    // Navegação genérica por módulos
     const foundModule = modulesMetadata.find(m => 
         lowerCaseCommand.includes(m.code.toLowerCase()) || 
         lowerCaseCommand.includes(m.title.toLowerCase())
@@ -74,9 +95,6 @@ export default function VoiceCommand() {
     if (foundModule && foundModule.route) {
         toast({ title: "Navegando...", description: `Abrindo o portal para ${foundModule.title}.` });
         router.push(foundModule.route);
-    } else if (lowerCaseCommand.includes("console") || lowerCaseCommand.includes("início")) {
-        toast({ title: "Navegando...", description: "Retornando à Mesa do Fundador." });
-        router.push('/console');
     } else {
         toast({ title: "Comando Não Reconhecido", description: "A intenção é clara, mas a rota é desconhecida.", variant: "destructive" });
     }
