@@ -134,6 +134,16 @@ export function Sidebar() {
               </TooltipContent>
           </Tooltip>
         </Link>
+        <Link href="/phi-intelligence" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Wand className="h-8 w-8 text-purple-400" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Inteligência Φ</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
         <ScrollArea className="w-full">
           <div className="flex flex-col items-center space-y-2">
             {orderedCategories.map(category => (
