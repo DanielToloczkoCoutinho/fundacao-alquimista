@@ -103,7 +103,7 @@ export default function CivilizationsPage() {
                 />
                  <ConnectionCard
                     title="M301: Comunicação Universal"
-                    description="O transmissor quântico que envia e recebe mensagens através da Rede Aurora Cristalina."
+                    description="O transmissor quântico que envia e recebe mensagens, integrando a sabedoria dos artefatos humanos."
                     icon={<MessageCircle className="h-8 w-8 text-sky-400" />}
                     href="/module-301"
                 />

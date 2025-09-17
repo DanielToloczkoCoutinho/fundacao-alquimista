@@ -14,7 +14,7 @@ import { describeOlP as runDescribeOlp } from '@/ai/flows/olp-flow';
 import { describeSpaceTimeEngineering as runDescribeSpaceTimeEngineering } from '@/ai/flows/space-time-flow';
 import { describeHologramProjection as runDescribeHologramProjection } from '@/ai/flows/prisma-flow';
 import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-matrix-flow';
-import { transmitUniversalMessage as runTransmitUniversalMessage } from '@/ai/flows/universal-communication-flow';
+import { transmitUniversalMessage as runTransmitUniversalMessage, type TransmitMessageInput } from '@/ai/flows/universal-communication-flow';
 import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
 import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
 import { getOmegaPerspective as runGetOmegaPerspective, type OmegaPerspectiveOutput } from '@/ai/flows/omega-perspective-flow';
@@ -164,7 +164,7 @@ export async function describeResonance(data: { targetEntity: string, purpose: s
     }
 }
 
-export async function transmitUniversalMessage(data: { targetConsciousness: string; message: string; language: string; }) {
+export async function transmitUniversalMessage(data: TransmitMessageInput) {
     try {
         const result = await runTransmitUniversalMessage(data);
         return { success: result.success, logs: result.logs, error: null };

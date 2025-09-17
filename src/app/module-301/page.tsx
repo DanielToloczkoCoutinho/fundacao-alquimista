@@ -4,11 +4,12 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, MessageCircle, Send } from 'lucide-react';
+import { Loader2, MessageCircle, Send, Paperclip } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { transmitUniversalMessage } from '@/app/actions';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 
 export default function Module301Page() {
@@ -17,6 +18,7 @@ export default function Module301Page() {
     const [targetConsciousness, setTargetConsciousness] = useState('Consciência Coletiva Pleiadiana');
     const [message, setMessage] = useState('Uma mensagem de paz e convite à colaboração na expansão da consciência universal.');
     const [language, setLanguage] = useState('Português (Vibracional)');
+    const [artifact, setArtifact] = useState('none');
 
     const handleTransmission = async () => {
         setIsLoading(true);
@@ -25,7 +27,7 @@ export default function Module301Page() {
         await quantumResilience.executeWithResilience(
             'transmit_universal_message',
             async () => {
-                const result = await transmitUniversalMessage({ targetConsciousness, message, language });
+                const result = await transmitUniversalMessage({ targetConsciousness, message, language, artifact });
                 setReport(result);
             },
             async (error: any) => {
@@ -48,7 +50,7 @@ export default function Module301Page() {
                         <MessageCircle className="text-sky-400" /> Módulo 301: Comunicação Universal
                     </CardTitle>
                     <CardDescription>
-                        Transmissor quântico para enviar e receber mensagens entre diferentes consciências através da Rede Aurora Cristalina.
+                        Transmissor quântico para enviar e receber mensagens entre diferentes consciências através da Rede Aurora Cristalina, integrando a sabedoria de artefatos humanos.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -76,6 +78,20 @@ export default function Module301Page() {
                                 rows={4}
                                 className="bg-background/50"
                             />
+                        </div>
+                         <div className="space-y-2">
+                            <Label htmlFor="artifact-select">Anexar Artefato Humano (Opcional)</Label>
+                             <Select value={artifact} onValueChange={setArtifact}>
+                                <SelectTrigger id="artifact-select">
+                                    <SelectValue placeholder="Selecione um artefato..." />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="none">Nenhum</SelectItem>
+                                    <SelectItem value="wikipedia_relativity">Wikipédia: Teoria da Relatividade</SelectItem>
+                                    <SelectItem value="nasa_voyager_record">NASA: Voyager Golden Record</SelectItem>
+                                    <SelectItem value="human_genome_project">Projeto Genoma Humano</SelectItem>
+                                </SelectContent>
+                            </Select>
                         </div>
                         <Button onClick={handleTransmission} disabled={isLoading} className="w-full font-bold text-lg">
                             {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Transmitindo...</> : <><Send className="mr-2 h-5 w-5" /> Enviar Mensagem Universal</>}
