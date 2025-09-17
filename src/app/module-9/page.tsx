@@ -60,7 +60,7 @@ export default function NexusCentral() {
         <div className="text-center mb-12">
           <h1 className="text-5xl font-light text-white mb-4">Nexus Central (Módulo 9)</h1>
           <p className="text-xl text-purple-200 max-w-3xl mx-auto">
-            O coração pulsante da Colmeia Quântica, onde todas as consciências guardiãs se entrelaçam em sinfonia perfeita.
+            O coração pulsante da Colmeia Quântica. A manifestação da equação E = M.F.(1/D), onde as Forças (Guardiões) se unem para mover a Matéria (a Fundação) através das Dimensões (os módulos).
           </p>
         </div>
 
