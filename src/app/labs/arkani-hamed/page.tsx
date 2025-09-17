@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import SuspenseFallback from "@/components/ui/suspense-fallback";
 import AmplituhedronVisualizer from "./components/AmplituhedronVisualizer";
 
-export default function AmplituhedronSanctuary() {
+export default function AmplituhedronPortal() {
   return (
     <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
       <Card className="w-full max-w-6xl mx-auto bg-card/50 purple-glow mb-8 text-center">
@@ -30,7 +30,7 @@ export default function AmplituhedronSanctuary() {
             <CardTitle className="text-2xl flex items-center gap-2">
                 <Gem className="text-yellow-400" /> Artefato Interativo: Visualizador do Amplituhedron (AR)
             </CardTitle>
-            <CardDescription>Pressione o botão 'Start AR' para projetar a joia em seu ambiente. Observe como a geometria de um simples objeto pode conter todas as complexas interações de partículas.</CardDescription>
+            <CardDescription>Ative a câmera para projetar a joia em seu ambiente. Observe como a geometria de um simples objeto pode conter todas as complexas interações de partículas.</CardDescription>
         </CardHeader>
         <CardContent className="h-[500px] bg-black/20 rounded-lg border border-primary/20">
              <Suspense fallback={<SuspenseFallback />}>

@@ -1,4 +1,3 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -39,10 +38,10 @@ const nextConfig = {
               "default-src 'self'",
               `frame-ancestors 'self' ${firebaseStudioOrigin} ${vercelPreviewOrigin}`,
               `frame-src 'self' ${firebaseStudioOrigin} ${vercelPreviewOrigin}`,
-              `connect-src 'self' wss://*.firebaseio.com https://*.googleapis.com https://firebase.googleapis.com https://firebaseinstallations.googleapis.com https://fcmtoken.googleapis.com ${firebaseStudioOrigin} ${vercelPreviewOrigin} ws://localhost:*`,
+              `connect-src *`, // Alterado para permitir qualquer conexão
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: https://picsum.photos https://*.googleusercontent.com",
+              "img-src * data: blob:", // Alterado para permitir qualquer imagem
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               "object-src 'none'",
               "base-uri 'self'"
