@@ -8,6 +8,10 @@ import { GuardianCard, HarmonyMetric } from '@/components/ui/module-9-cards'; //
 import { GUARDIANS } from '@/lib/guardians-data';
 import { SafeLink } from '@/components/ui/SafeLink';
 import DecisionCore from '@/components/DecisionCore';
+import dynamic from 'next/dynamic';
+
+const PeerReviewBalance = dynamic(() => import('@/components/module-9/PeerReviewBalance'), { ssr: false });
+
 
 export default function Module9Page() {
   const [harmonyReport, setHarmonyReport] = React.useState({
@@ -39,8 +43,9 @@ export default function Module9Page() {
           </p>
         </div>
         
-        <div className="mb-12">
+        <div className="mb-12 flex flex-col gap-6">
           <DecisionCore />
+          <PeerReviewBalance />
         </div>
 
         <Card className="bg-card/50 purple-glow mb-12">
