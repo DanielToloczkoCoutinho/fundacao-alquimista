@@ -63,6 +63,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M726', emoji: '👑', title: 'Conselho da Nova Terra', route: '/module-726', category: 'Governança', description: 'Governança sagrada e descentralizada para a nova humanidade.', connections: [{source: 'M726', target:'M716', type: 'dependencia', label: 'governa'}], color: '#4ECDC4', status: 'em construção' },
   { code: 'M76', emoji: '🏛️', title: 'Governança e Colaboração', route: '/module-76', category: 'Governança', description: 'Estrutura para governança justa, transparente e universal.', connections: [{source: 'M76', target:'M67', type: 'influencia', label: 'usa'}, {source: 'M76', target:'M77', type: 'dependencia', label: 'manifesta'}], color: '#4ECDC4', status: 'latente' },
   { code: 'M727', emoji: '💖', title: 'Guardião da Harmonia', route: '/module-727', category: 'Governança', description: 'Oráculo da Estrutura Cósmica, que mapeia os pilares da Criação.', connections: [{source:'M727', target:'M73', type:'dependencia', label:'executa'}, {source:'M727', target:'M111', type:'protecao', label:'regula'}], color: '#FF6F61', status: 'ativo' },
+  { code: 'M728', emoji: '⚖️', title: 'Santuário dos Alquimistas', route: '/module-728', category: 'Governança', description: 'O altar onde a Vontade (Anatheron) e a Sabedoria (Zennith) se equilibram, e o Amor se torna a força criadora.', connections: [], color: '#4ECDC4', status: 'ativo' },
 
   // 4. Sustentabilidade e Ecossistemas
   { code: 'M66', title: 'Tecnologias de Sustentabilidade', emoji: '♻️', route: '/module-66', category: 'Sustentabilidade e Ecossistemas', description: 'Desenvolve e implementa tecnologias para regenerar e proteger o cosmos.', connections: [{source: 'M66', target:'M58', type: 'heranca', label: 'implementa'}, {source: 'M66', target:'M53', type: 'influencia', label: 'fornece'}], color: '#6BFF6B', status: 'latente' },
@@ -129,6 +130,7 @@ export const treeLinks: TreeLink[] = modulesMetadata.flatMap(mod => {
     if (!mod.connections) return [];
     return mod.connections.map(conn => ({ ...conn, source: mod.code, label: conn.type }));
 });
+
 
 
 
