@@ -42,7 +42,7 @@ export default function AuthPanelPage() {
                         
                         <Card className="bg-background/50 text-left">
                             <CardHeader>
-                                <CardTitle className="text-xl flex items-center gap-2"><Users /> Acesso Autorizado</CardTitle>
+                                <CardTitle className="text-xl flex items-center gap-2"><Users /> Linhagem Autorizada</CardTitle>
                             </CardHeader>
                             <CardContent className="space-y-3">
                                 {authorizedUsers.map(user => (
