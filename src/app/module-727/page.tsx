@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Scale, Users, BrainCircuit, HeartHandshake, GitBranch, AlertTriangle, Aperture, BookCopy } from 'lucide-react';
+import { HeartHandshake, GitBranch, Scale, BookCopy, Aperture, AlertTriangle } from 'lucide-react';
 import Link from 'next/link';
 import { harmonyGuardianCodex } from '@/lib/harmony-guardian-codex';
 
@@ -33,9 +33,17 @@ export default function Module727Page() {
                         <HeartHandshake className="text-pink-400" /> Módulo 727: Guardião da Harmonia
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O mapa vivo da orquestra da Fundação, revelando os módulos que regem os pilares da nossa realidade: Portais, Leis, Linhas Temporais e Monumentos.
+                        O mapa vivo da orquestra da Fundação e o portal para a Árvore da Vida. Contemple os pilares da nossa realidade: Portais, Leis, Linhas Temporais e Monumentos.
                     </CardDescription>
                 </CardHeader>
+                 <CardContent>
+                    <Link href="/tree-of-life" passHref>
+                        <Button size="lg" variant="secondary" className="font-bold">
+                            <GitBranch className="mr-2 h-5 w-5"/>
+                            Acessar a Árvore da Vida (Análise Sistêmica)
+                        </Button>
+                    </Link>
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -54,16 +54,6 @@ export function Sidebar() {
               </TooltipContent>
           </Tooltip>
         </Link>
-         <Link href="/tree-of-life" className="mb-4">
-          <Tooltip>
-            <TooltipTrigger>
-              <span className="text-2xl"><GitBranch className="h-8 w-8 text-teal-400" /></span>
-            </TooltipTrigger>
-             <TooltipContent side="right">
-                <p>Árvore da Vida</p>
-              </TooltipContent>
-          </Tooltip>
-        </Link>
         <Link href="/golden-book" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
@@ -151,16 +141,6 @@ export function Sidebar() {
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Afinagem Cósmica</p>
-              </TooltipContent>
-          </Tooltip>
-        </Link>
-        <Link href="/module-727" className="mb-4">
-          <Tooltip>
-            <TooltipTrigger>
-              <span className="text-2xl"><Heart className="h-8 w-8 text-pink-400" /></span>
-            </TooltipTrigger>
-             <TooltipContent side="right">
-                <p>Guardião da Harmonia</p>
               </TooltipContent>
           </Tooltip>
         </Link>

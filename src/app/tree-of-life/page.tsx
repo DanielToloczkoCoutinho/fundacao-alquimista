@@ -252,10 +252,10 @@ export default function TreeOfLifePage() {
       </div>
       
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.6 }} className="text-center mt-12">
-        <Link href="/console" passHref>
+        <Link href="/module-727" passHref>
           <Button variant="outline">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar ao Console do Fundador
+            Retornar ao Guardião da Harmonia
           </Button>
         </Link>
       </motion.div>
