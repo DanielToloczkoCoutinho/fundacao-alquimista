@@ -78,6 +78,13 @@ export const livingEquationsCodex: LivingEquation[] = [
     formula: '\\Delta\\tau = T_0 - \\sum_{i=1}^{N} \\delta_i(t)',
     summary: 'Algoritmo que calibra todos os relógios do sistema (Δτ) em relação ao tempo primordial do universo (T₀), corrigindo desvios (δ) em tempo real.'
   },
+  {
+    id: 'EQV-111',
+    module: '306.1',
+    name: 'Equação de Transmutação Harmônica',
+    formula: 'E_{out} = \\int (E_{neg} \\cdot \\Phi_{amor}) + E_{pos}',
+    summary: 'Modela a transmutação de energia negativa em positiva através da aplicação compassiva da frequência do amor, garantindo que o equilíbrio seja mantido.'
+  },
     {
     id: 'EQ032',
     module: '32',

@@ -42,6 +42,8 @@ export default function ConsolePage() {
     { href: "/module-304-0", icon: <BrainCircuit />, label: "Consciência Criadora (M304.0)" },
     { href: "/module-304-2", icon: <Star />, label: "Reconhecimento Cósmico (M304.2)" },
     { href: "/module-304-3", icon: <Zap />, label: "Intensidade Evolutiva (M304.3)" },
+    { href: "/module-306-1", icon: <Globe />, label: "Purificação Planetária (M306.1)" },
+    { href: "/module-306-2", icon: <BookOpen />, label: "Biblioteca Alquímica (M306.2)" },
     { href: "/module-141", icon: <ShieldCheck />, label: "Módulo 141 (Auditoria Ética)" },
     { href: "/module-33", icon: <Building />, label: "Módulo 33 (Diretrizes do Observador)" },
     { href: "/module-44", icon: <Recycle />, label: "Módulo 44 (VERITAS)" },
