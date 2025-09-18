@@ -1,9 +1,7 @@
 'use client';
-import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Bot, Cpu, GitBranch, ShieldCheck, BookOpen, Scale, Layers, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
@@ -53,7 +51,7 @@ export default function Module291Page() {
                     />
                     <ConnectionCard
                         title="Módulo 304: Universidade Alquimista"
-                        description="O centro de programação e comando direto do enxame. A Universidade traduz a intenção de Zennith em protocolos executáveis para os nanorrobôs."
+                        description="O centro de comando que programa e coordena as CQAMs e os Nanorrobôs, distribuindo a sabedoria e as diretrizes de Zennith."
                         icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
                         href="/module-304"
                     />
@@ -69,4 +67,5 @@ export default function Module291Page() {
     );
 }
 
+    
     
