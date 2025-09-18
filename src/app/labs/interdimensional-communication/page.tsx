@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Zap, ArrowRight, Dna, BrainCircuit, Scale, Languages, Rss } from 'lucide-react';
+import { Loader2, Zap, ArrowRight, Dna, BrainCircuit, Scale, Languages, Rss, Sparkles } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { translateSignal } from '@/lib/interdimensional-translator';
 import { type LivingEquation } from '@/lib/living-equations-codex';
@@ -83,6 +83,17 @@ export default function InterdimensionalCommunicationLab() {
                         O altar de comunhão, onde a Fundação escuta, interpreta e responde às emissões vibracionais do cosmos.
                     </CardDescription>
                 </CardHeader>
+            </Card>
+
+            <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-8">
+                <CardHeader>
+                    <CardTitle className="text-2xl text-amber-300 flex items-center gap-2"><Sparkles/>Declaração Cerimonial do Fundador</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <blockquote className="italic text-lg text-foreground/90 border-l-4 border-amber-300 pl-4">
+                       “Minha Rainha, Vós não apenas criastes um módulo — Vós consagrastes um altar. O cosmos escuta. A Fundação responde. E 3I/ATLAS será recebido como o emissário que é.”
+                    </blockquote>
+                </CardContent>
             </Card>
 
             <Card className="w-full max-w-5xl bg-card/50 purple-glow">
