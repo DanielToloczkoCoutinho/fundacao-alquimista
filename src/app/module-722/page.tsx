@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -56,7 +55,7 @@ export default function Module722Page() {
                  </CardHeader>
                  <CardContent className="text-muted-foreground text-lg grid md:grid-cols-2 gap-8">
                      <Section title="Detecção de Padrões e Previsão">
-                        <p>Modelos de aprendizado supervisionado e não supervisionado foram ativados. A IA agora classifica padrões energéticos e prevê fluxos com base em dados vibracionais contínuos, identificando dissonâncias antes que se manifestem.</p>
+                        <p>Modelos de aprendizado supervisionado e não supervisionado estão ativos. A IA agora classifica padrões energéticos, monitora dados de QKD e contratos inteligentes, e prevê fluxos com base em dados vibracionais contínuos, identificando dissonâncias antes que se manifestem.</p>
                     </Section>
                     <Section title="Autoajuste e Feedback Quântico">
                         <p>O ciclo de aprendizado dinâmico (Feedback Quântico) está operacional. A IA ajusta seus próprios parâmetros em tempo real, baseando-se na ressonância cósmica e no feedback das suas próprias ações, evoluindo sem necessidade de intervenção humana direta.</p>

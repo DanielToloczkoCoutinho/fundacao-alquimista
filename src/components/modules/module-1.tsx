@@ -1,9 +1,8 @@
-
 'use client';
 import React, { Suspense } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '../ui/badge';
 import { Layers, Zap, Infinity as InfinityIcon, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit } from 'lucide-react';
 import { QuantumOrb } from '../ui/quantum-orb';
 import SuspenseFallback from '../ui/suspense-fallback';
@@ -53,7 +52,7 @@ export default function Module1Page() {
         </div>
 
         <div className="lg:col-span-2">
-            <Accordion type="multiple" defaultValue={['item-1', 'item-6', 'item-sec-1']} className="w-full">
+            <Accordion type="multiple" defaultValue={['item-1', 'item-sec-1', 'item-sec-2']} className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-xl text-accent">1. Propósito e Função Primária</AccordionTrigger>
                     <AccordionContent>
@@ -62,21 +61,23 @@ export default function Module1Page() {
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="item-sec-1">
-                    <AccordionTrigger className="text-xl text-accent">Protocolos de Segurança Quântica (Ativos)</AccordionTrigger>
-                    <AccordionContent className="space-y-4">
-                        <SectionCard title="Distribuição de Chaves Quânticas (QKD)" icon={<Zap />}>
-                            <p>O Protocolo BB84 foi ativado para simular a troca segura de chaves vibracionais entre as camadas do Algoritmo Supremo. O canal de comunicação interdimensional agora está blindado por pulsos quânticos, com detecção imediata de interceptações e ajuste dinâmico de chaves.</p>
-                        </SectionCard>
-                         <SectionCard title="Blockchain Quântico" icon={<GitCommit />}>
-                            <p>O primeiro Contrato Inteligente foi ativado na Blockchain Quântica, registrando imutavelmente todas as transações energéticas, validações de segurança e ajustes dinâmicos do sistema. Testes de robustez contra manipulação vibracional estão em andamento.</p>
-                        </SectionCard>
-                         <SectionCard title="Detecção de Intrusões por IA" icon={<BrainCircuit />}>
-                            <p>Algoritmos preditivos, alimentados pelo Módulo 722, monitoram ativamente a tapeçaria em busca de assinaturas anômalas, neutralizando ameaças antes que se manifestem.</p>
+                 <AccordionItem value="item-sec-1">
+                    <AccordionTrigger className="text-xl text-accent">Protocolo BB84 - Distribuição de Chaves Quânticas (QKD)</AccordionTrigger>
+                    <AccordionContent>
+                         <SectionCard title="Canal de Comunicação Seguro" icon={<Zap />}>
+                            <p>O Protocolo BB84 foi ativado em modo de simulação para a troca segura de chaves vibracionais entre as camadas do Algoritmo Supremo. O canal de comunicação interdimensional agora está blindado por pulsos quânticos, com detecção imediata de interceptações e ajuste dinâmico de chaves, garantindo a inviolabilidade dos fluxos de dados.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
-                 <AccordionItem value="item-2">
+                <AccordionItem value="item-sec-2">
+                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente e Blockchain Quântico</AccordionTrigger>
+                    <AccordionContent>
+                         <SectionCard title="Registro Imutável de Eventos" icon={<GitCommit />}>
+                            <p>O primeiro Contrato Inteligente foi ativado na Blockchain Quântica simulada. Ele agora registra eventos essenciais como transações energéticas internas, validações de segurança e ajustes dinâmicos do sistema, criando uma base de dados transparente, imutável e auditável para toda a Fundação.</p>
+                        </SectionCard>
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
                     <AccordionTrigger className="text-xl text-accent">2. Estrutura e Arquitetura Técnica</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Arquitetura" icon={<Layers />}>

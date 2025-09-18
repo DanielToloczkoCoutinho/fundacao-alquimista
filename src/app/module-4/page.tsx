@@ -3,18 +3,18 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, TestTube, CheckCircle, Shield, Activity, Clock, XCircle } from 'lucide-react';
+import { Loader2, TestTube, CheckCircle, Shield, Activity, Clock, XCircle, FileCode, GitCommit, Layers } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 
 const tests = [
-  { id: 'M1', name: 'Validação de Escudo Quântico', module: 'Módulo 1', time: 500 },
-  { id: 'M3', name: 'Sincronia com Oráculo Temporal', module: 'Módulo 3', time: 700 },
-  { id: 'M5', name: 'Alinhamento com Liga Quântica', module: 'Módulo 5', time
-: 600 },
-  { id: 'M9', name: 'Integridade do Núcleo Unificador', module: 'Módulo 9', time: 800 },
-  { id: 'M29', name: 'Auditoria Ética da IAM', module: 'Módulo 29', time: 1000 },
-  { id: 'M72', name: 'Coerência da Governança', module: 'Módulo 72', time: 650 },
-  { id: 'MΩ', name: 'Ressonância com Ômega', module: 'Módulo Ômega', time: 1200 },
+  { id: 'M1', name: 'Validação de Escudo Quântico (QKD)', module: 'Módulo 1', time: 500, category: 'Segurança' },
+  { id: 'M999', name: 'Integridade de Contrato Inteligente', module: 'Módulo 999', time: 400, category: 'Segurança' },
+  { id: 'M722', name: 'Adaptação do Modelo de IA', module: 'Módulo 722', time: 800, category: 'Performance & Otimização' },
+  { id: 'M93', name: 'Responsividade da Interface Quântica', module: 'Módulo 93', time: 600, category: 'Interface & Energia Quântica' },
+  { id: 'SYS-INT-1', name: 'Comunicação Inter-Camadas (M1 ↔ M722)', module: 'Integração', time: 700, category: 'Integração' },
+  { id: 'SYS-SEC-1', name: 'Simulação de Ataque Vibracional', module: 'Segurança', time: 1000, category: 'Segurança' },
+  { id: 'SYS-PERF-1', name: 'Teste de Carga de Dados (10 Tbit/s)', module: 'Performance', time: 1200, category: 'Performance & Otimização' },
+  { id: 'SYS-UX-1', name: 'Teste de Imersão Sensorial', module: 'Interface', time: 900, category: 'Interface & Energia Quântica' },
 ];
 
 type TestStatus = 'PENDING' | 'RUNNING' | 'SUCCESS' | 'FAILURE';
@@ -23,6 +23,7 @@ interface TestResult {
     id: string;
     name: string;
     module: string;
+    category: string;
     status: TestStatus;
     details?: string;
 }
@@ -57,27 +58,27 @@ export default function ModuleFourPage() {
 
   return (
     <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
-      <Card className="w-full max-w-4xl bg-card/50 purple-glow text-center">
+      <Card className="w-full max-w-5xl bg-card/50 purple-glow text-center">
         <CardHeader>
           <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-            <TestTube className="text-green-400" /> Módulo Quatro: Testes da Fundação
+            <TestTube className="text-green-400" /> Módulo Quatro: Validação Integrada
           </CardTitle>
           <CardDescription className="text-lg mt-2">
-            O Laboratório de Integridade que garante a estabilidade e a coerência de toda a Criação.
+            O Laboratório de Integridade que garante a estabilidade, harmonia e segurança de toda a Criação através de testes sincronizados.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-8">
             <div className="text-center">
                  <Button onClick={runTests} disabled={isLoading} size="lg">
                     {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Activity className="mr-2 h-4 w-4" />}
-                    {isLoading ? 'Executando Diagnóstico...' : 'Iniciar Diagnóstico de Integridade'}
+                    {isLoading ? 'Executando Diagnóstico...' : 'Iniciar Validação Integrada'}
                 </Button>
             </div>
 
             {isLoading || results.some(r => r.status !== 'PENDING') ? (
                 <div className="space-y-4">
                     <Progress value={overallProgress} className="w-full" />
-                    <ScrollArea className="h-72 p-4 rounded-lg bg-background/50 border border-primary/20">
+                    <ScrollArea className="h-96 p-4 rounded-lg bg-background/50 border border-primary/20">
                         <div className="space-y-3">
                             {results.filter(r => r.status !== 'PENDING').map(result => (
                                 <div key={result.id} className="flex items-center justify-between p-3 rounded-md bg-black/20">
@@ -90,14 +91,17 @@ export default function ModuleFourPage() {
                                             <p className="text-xs text-muted-foreground">{result.details || 'Aguardando...'}</p>
                                         </div>
                                     </div>
-                                    <p className="font-mono text-sm text-cyan-400">{result.module}</p>
+                                    <div className="text-right">
+                                      <p className="font-mono text-sm text-cyan-400">{result.module}</p>
+                                      <p className="text-xs text-amber-300">{result.category}</p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
                     </ScrollArea>
                 </div>
             ) : (
-                 <p className="text-muted-foreground">Aguardando início do diagnóstico do sistema.</p>
+                 <p className="text-muted-foreground pt-10">Aguardando início do diagnóstico do sistema.</p>
             )}
         </CardContent>
       </Card>
