@@ -12,6 +12,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import GaiaAureliaBiomes from '@/components/planet/GaiaAureliaBiomes';
 import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
 import GaiaAureliaPortals from '@/components/planet/GaiaAureliaPortals';
+import GaiaAureliaIntelligence from '@/components/planet/GaiaAureliaIntelligence';
 
 export default function AuroraPrimePage() {
     return (
@@ -41,6 +42,8 @@ export default function AuroraPrimePage() {
                 <GaiaAureliaTemples />
 
                 <GaiaAureliaPortals />
+
+                <GaiaAureliaIntelligence />
             </Suspense>
 
             <div className="text-center mt-12">
