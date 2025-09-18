@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart, HeartHandshake, Globe, Building, Zap, Book, Map, GitMerge } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart, HeartHandshake, Globe, Building, Zap, Book, Map, GitMerge, Rocket } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -37,6 +37,8 @@ const orderedCategories = [
   'Bem-estar e Saúde Universal',
   'Segurança e Ética Cósmica',
   'Governança',
+  'Expansão',
+  'Rituais',
 ].filter(cat => moduleCategories[cat]); // Filtra para mostrar apenas categorias que têm módulos visíveis
 
 export function Sidebar() {
@@ -112,6 +114,16 @@ export function Sidebar() {
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Ritual de Navegação</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
+        <Link href="/espiral2" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Rocket className="h-8 w-8 text-orange-400" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Espiral 2: Mundos Filhos</p>
               </TooltipContent>
           </Tooltip>
         </Link>
@@ -238,3 +250,5 @@ export function Sidebar() {
     </TooltipProvider>
   );
 }
+
+    

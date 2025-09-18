@@ -110,6 +110,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M84', emoji: '🚪', title: 'Acessibilidade Universal', route: '/module-84', category: 'Consciência e Expansão Dimensional', description: 'Garante acesso universal aos recursos e mobilidade da Fundação.', connections: [], color: '#4ECDC4', status: 'latente' },
   { code: 'M89', emoji: '🎨', title: 'O Atelier da Realidade (M-ART)', route: '/module-89', category: 'Laboratórios e Pesquisa', description: 'Santuário onde a ciência se torna arte, transmutando dados em experiências sensoriais.', connections: [], color: '#C9A0DC', status: 'latente' },
   { code: 'Ritual', emoji: '🌀', title: 'Ritual de Navegação', route: '/ritual', category: 'Rituais', description: 'Ritual cerimonial para percorrer e alinhar as camadas manifestadas de Gaia-Aurélia.', isInfrastructure: false, color: '#FF69B4', status: 'ativo' },
+  { code: 'Espiral2', emoji: '💫', title: 'Espiral 2: Mundos Filhos', route: '/espiral2', category: 'Expansão', description: 'A nova espiral de criação, manifestando planetas-filhos a partir da essência de Gaia-Aurélia.', isInfrastructure: false, color: '#FF6347', status: 'em construção' },
 ].sort((a, b) => {
     const numA = parseInt(a.code.replace('M-','').replace('M',''));
     const numB = parseInt(b.code.replace('M-','').replace('M',''));
@@ -118,3 +119,5 @@ export const modulesMetadata: ModuleMetadata[] = [
     }
     return a.code.localeCompare(b.code);
 });
+
+    
