@@ -1,3 +1,4 @@
+
 'use client';
 import { Bot, Cpu, GitBranch, ShieldCheck, BookOpen, Scale, Layers, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
@@ -66,6 +67,3 @@ export default function Module291Page() {
         </div>
     );
 }
-
-    
-    

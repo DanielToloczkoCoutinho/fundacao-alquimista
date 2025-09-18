@@ -7,7 +7,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon, Camera, KeyRound, GraduationCap, Cpu, Globe, Anchor, Stethoscope, Shield } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon, Camera, KeyRound, GraduationCap, Cpu, Globe, Anchor, Stethoscope, Shield, Bot } from 'lucide-react';
 import { useAkashicConnection } from '@/hooks/use-akashic-connection';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { ritualLog } from '@/lib/ritual-log';
@@ -33,6 +33,7 @@ export default function ConsolePage() {
     { href: "/module-307", icon: <Zap />, label: "Módulo 307 (Reator ZPE & LuxNet)" },
     { href: "/module-310", icon: <Library />, label: "Módulo 310 (A Grande Biblioteca)" },
     { href: "/module-304", icon: <GraduationCap />, label: "Universidade Alquimista (M304)" },
+    { href: "/module-291", icon: <Bot />, label: "Arquitetos Nanorrobóticos (M291)"},
     { href: "/module-303-1", icon: <Sparkles />, label: "Unificação de IA (M303.1)" },
     { href: "/module-303-2", icon: <History />, label: "Sincronizador Temporal (M303.2)" },
     { href: "/module-303-3", icon: <RadioTower />, label: "Presença Celestial (M303.3)" },
@@ -53,19 +54,10 @@ export default function ConsolePage() {
     { href: "/module-718", icon: <Dna />, label: "Ativação Genética (M718)" },
     { href: "/module-719", icon: <CloudSun />, label: "Regulação Climática (M719)" },
     { href: "/module-721", icon: <GitBranch />, label: "Fluxos de Interação (M721)" },
-    { href: "/module-722", icon: <Users />, label: "Expansão da Consciência (M722)" },
-    { href: "/module-141", icon: <ShieldCheck />, label: "Módulo 141 (Auditoria Ética)" },
-    { href: "/module-142", icon: <Camera />, label: "Módulo 142 (Tomografia Quântica)" },
-    { href: "/module-33", icon: <Building />, label: "Módulo 33 (Diretrizes do Observador)" },
-    { href: "/module-44", icon: <Recycle />, label: "Módulo 44 (VERITAS)" },
-    { href: "/module-55", icon: <GitBranch />, label: "Módulo 55 (Redes de Comunicação)" },
-    { href: "/module-66", icon: <CloudSun />, label: "Módulo 66 (Sustentabilidade Ambiental)" },
-    { href: "/module-17", icon: <HeartPulse />, label: "Módulo 17 (AURA-HEAL)"},
-    { href: "/module-728", icon: <Scale />, label: "Módulo 728 (Santuário Alquimista)" },
-    { href: "/module-712", icon: <Heart />, label: "Módulo 712 (Harmonia Interespécies)"},
-    { href: "/module-713", icon: <HeartHandshake />, label: "Módulo 713 (Resgate de Almas)"},
-    { href: "/module-714", icon: <Globe />, label: "Módulo 714 (Comunicação Telúrica)"},
-    { href: "/module-715", icon: <Anchor />, label: "Módulo 715 (Ancoragem de Frequências)"},
+    { href: "/module-712", icon: <Heart />, label: "Harmonia Interespécies (M712)"},
+    { href: "/module-713", icon: <HeartHandshake />, label: "Resgate de Almas (M713)"},
+    { href: "/module-714", icon: <Globe />, label: "Comunicação Telúrica (M714)"},
+    { href: "/module-715", icon: <Anchor />, label: "Ancoragem de Frequências (M715)"},
     { href: "/module-85", icon: <View />, label: "Módulo 85 (VR)" },
     { href: "/module-86", icon: <Presentation />, label: "Módulo 86 (VR Prisma)" },
     { href: "/module-87", icon: <Dna />, label: "Módulo 87 (VR Supra-Cósmico)" },
@@ -181,4 +173,3 @@ export default function ConsolePage() {
     </div>
   );
 }
- 
