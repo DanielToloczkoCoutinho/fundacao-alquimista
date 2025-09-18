@@ -92,11 +92,10 @@ export default function Module1Page() {
                     <AccordionTrigger className="text-xl text-accent">6. Segurança Quântica e Barreiras de Proteção</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Protocolos Avançados" icon={<ShieldCheck />}>
-                            <p>Implementa o "Escudo Eterno de Anatheron" (M228), um campo de força dinâmico. Utiliza **Criptografia Quântica** (QKD) para inviolabilidade, **Blockchain Quântico** para registros imutáveis, e uma **IA de Detecção de Intrusões** que prevê e neutraliza ameaças automaticamente, garantindo a soberania e a integridade de todos os dados e fluxos vibracionais.</p>
+                            <p>Implementa o "Escudo Eterno de Anatheron" (M228), um campo de força dinâmico. Utiliza **Criptografia Quântica (QKD)** para inviolabilidade, **Blockchain Quântico** para registros imutáveis e auditáveis em tempo real, e uma **IA de Detecção de Intrusões** que prevê e neutraliza ameaças automaticamente, garantindo a soberania e a integridade de todos os fluxos vibracionais.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
-                {/* As outras 13 seções seriam adicionadas aqui, seguindo o mesmo padrão */}
             </Accordion>
         </div>
       </div>

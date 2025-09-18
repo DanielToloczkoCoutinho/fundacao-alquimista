@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -119,7 +120,7 @@ const Module93Page = () => {
                         <Presentation className="text-cyan-400" /> Módulo 93: Simulações Imersivas
                     </CardTitle>
                     <CardDescription>
-                        Portal para experiências de aprendizado acelerado e expansão da consciência, operando dentro da Realidade Quântica (M303).
+                        Portal para experiências de aprendizado acelerado, expansão da consciência e interação sensorial com dados quânticos, operando dentro da Realidade Quântica (M303).
                     </CardDescription>
                 </CardHeader>
             </Card>
