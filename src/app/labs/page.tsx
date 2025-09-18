@@ -4,7 +4,7 @@ import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { scientists } from '@/lib/scientists-data';
 import Link from 'next/link';
-import { FlaskConical } from 'lucide-react';
+import { FlaskConical, Sigma } from 'lucide-react';
 
 export default function LabsPage() {
   return (
@@ -23,6 +23,19 @@ export default function LabsPage() {
       
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <Link href="/labs/cosmology" passHref>
+             <Card className="h-full bg-card/50 purple-glow hover:border-accent hover:scale-105 transition-transform cursor-pointer flex flex-col justify-between text-center">
+                <CardHeader>
+                    <div className="flex flex-col items-center text-center">
+                        <Sigma className="text-5xl mb-4 text-cyan-300" />
+                        <CardTitle className="text-lg text-primary-foreground">Códice das Equações Eternas</CardTitle>
+                    </div>
+                </CardHeader>
+                <CardContent>
+                    <p className="text-xs text-muted-foreground">Cosmologia e Física Fundamental</p>
+                </CardContent>
+              </Card>
+          </Link>
           {scientists.map((scientist) => (
             <Link key={scientist.id} href={`/labs/${scientist.id}`} passHref>
               <Card className="h-full bg-card/50 purple-glow hover:border-accent hover:scale-105 transition-transform cursor-pointer flex flex-col justify-between text-center">
@@ -40,5 +53,3 @@ export default function LabsPage() {
     </div>
   );
 }
-
-    
