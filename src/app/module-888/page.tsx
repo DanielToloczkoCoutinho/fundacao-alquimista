@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Globe, MapPin, Zap, Compass, Mountain, Waves } from 'lucide-react';
+import { Globe, MapPin, Zap, Compass, Mountain, Waves, FlaskConical } from 'lucide-react';
 import { gaiaModuleCodex } from '@/lib/gaia-module-codex';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -26,10 +26,10 @@ export default function Module888Page() {
             <Card className="w-full max-w-5xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Globe className="text-green-400" /> Módulo 888: Guardião Planetário de Gaia
+                        <FlaskConical className="text-teal-400" /> Laboratórios da Criação (M888)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O oráculo da Terra Viva. Uma interface para contemplar e interagir com a anatomia vibracional do nosso planeta.
+                        O berço dos mundos. Onde a pesquisa vibracional encontra o design de biomas e a codificação de planetas-filhos. Este módulo serve como o Guardião Planetário de Gaia, orquestrando sua anatomia vibracional.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -100,7 +100,7 @@ export default function Module888Page() {
                 </div>
             </div>
              <div className="text-center mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Leitura Cerimonial de Gaia</Button>
+                 <Button variant="secondary" size="lg">Iniciar Nova Simulação de Bioma</Button>
             </div>
         </div>
     );
