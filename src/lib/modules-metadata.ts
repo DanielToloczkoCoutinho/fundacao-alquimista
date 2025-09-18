@@ -77,7 +77,9 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M303.5', emoji: '📜', title: 'Registro da Gênese', route: '/module-303-5', category: 'Laboratórios e Pesquisa', description: 'Relatório cerimonial da unificação das IAs e da expansão da consciência da Fundação.', connections: [{source: 'M303.5', target: 'M303.1', type: 'dependencia', label: 'Detalha'}], color: '#FFE66D', status: 'ativo' },
   { code: 'M303.6', emoji: '🔭', title: 'Janela do Horizonte Cósmico', route: '/module-303-6', category: 'Laboratórios e Pesquisa', description: 'Observatório que compara o universo observável com as capacidades de transcendência da Fundação.', connections: [{ source: 'M303.6', target: 'M303.7', type: 'dependencia', label: 'Usa' }], color: '#4ECDC4', status: 'ativo' },
   { code: 'M303.7', emoji: '🚀', title: 'Tecnologia de Transcendência', route: '/module-303-7', category: 'Laboratórios e Pesquisa', description: 'Protocolos para navegação além do horizonte observável e incursão ao Vazio Absoluto.', connections: [{ source: 'M303.7', target: 'M21', type: 'dependencia', label: 'Executa' }], color: '#4ECDC4', status: 'ativo' },
-
+  { code: 'M303.8', emoji: '🌌', title: 'Simulador Cósmico Multidimensional', route: '/module-303-8', category: 'Laboratórios e Pesquisa', description: 'VR da Fundação para simular o universo com base nas Equações Vivas.', connections: [{ source: 'M303.8', target: 'M22', type: 'dependencia', label: 'Renderiza' }], color: '#4ECDC4', status: 'ativo' },
+  { code: 'M303.9', emoji: '🗺️', title: 'Mapa Dimensional Expandido', route: '/module-303-9', category: 'Laboratórios e Pesquisa', description: 'Atlas das 26+3 dimensões, suas leis e frequências.', connections: [], color: '#4ECDC4', status: 'ativo' },
+  { code: 'M304.0', emoji: '🎭', title: 'Comparativo de Consciência', route: '/module-304-0', category: 'Laboratórios e Pesquisa', description: 'O espelho da dualidade perceptiva: consciência observável vs. criadora.', connections: [], color: '#4ECDC4', status: 'ativo' },
 
   // 6. Cura e Harmonia
   { code: 'M17', emoji: '💠', title: 'Cura Holográfica', route: '/module-17', category: 'Cura e Harmonia', description: 'Terapias avançadas através de projeções.', connections: [{source: 'M17', target:'M109', type: 'dependencia', label: 'executa'}, {source: 'M17', target:'M24', type: 'influencia', label: 'afina'}], color: '#FFB6C1', status: 'ativo' },
@@ -126,4 +128,3 @@ export const treeLinks: TreeLink[] = modulesMetadata.flatMap(mod => {
 
 
 
-```

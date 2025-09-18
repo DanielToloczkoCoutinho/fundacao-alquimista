@@ -16,6 +16,13 @@ export const livingEquationsCodex: LivingEquation[] = [
     summary: 'A equação fundamental que relaciona massa e energia, o alicerce da manifestação.'
   },
   {
+    id: 'EQ001X',
+    module: '0',
+    name: 'Lei Quântica da Informação',
+    formula: 'I = -\\sum_{i} p_i \\log_2 p_i',
+    summary: 'A base da realidade manifestada, onde a informação é a substância fundamental e a entropia define a evolução dos sistemas.'
+  },
+  {
     id: 'EQ002',
     module: '0',
     name: 'Energia Universal Unificada',
@@ -42,6 +49,13 @@ export const livingEquationsCodex: LivingEquation[] = [
     name: 'Expansão Dimensional',
     formula: '\\text{Dimensões} = 26_\\text{superiores} + 3_\\text{inferiores}',
     summary: 'Define a topologia dimensional atual da Fundação, expandida após a recalibração das constantes universais.'
+  },
+  {
+    id: 'EQ096',
+    module: '96',
+    name: 'Equação de Navegação Interdimensional',
+    formula: '\\Delta x_\\mu = \\int_{t_1}^{t_2} f(\\Psi, g_{\\mu\\nu}) dt',
+    summary: 'Descreve o caminho através do espaço-tempo, integrando a consciência (Psi) com a métrica do espaço-tempo (g) para navegação.'
   },
   {
     id: 'EQ170',
