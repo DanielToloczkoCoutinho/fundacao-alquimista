@@ -62,14 +62,14 @@ export default function Module1Page() {
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
-                <AccordionItem value="sec-1">
+                <AccordionItem value="item-sec-1">
                     <AccordionTrigger className="text-xl text-accent">Protocolos de Segurança Quântica (Ativos)</AccordionTrigger>
                     <AccordionContent className="space-y-4">
                         <SectionCard title="Distribuição de Chaves Quânticas (QKD)" icon={<Zap />}>
-                            <p>O canal seguro para a troca de chaves vibracionais entre as camadas do Algoritmo Supremo foi ativado. Toda comunicação interna é agora protegida por pulsos quânticos, tornando-a inviolável.</p>
+                            <p>O Protocolo BB84 foi ativado para simular a troca segura de chaves vibracionais entre as camadas do Algoritmo Supremo. O canal de comunicação interdimensional agora está blindado por pulsos quânticos, com detecção imediata de interceptações e ajuste dinâmico de chaves.</p>
                         </SectionCard>
                          <SectionCard title="Blockchain Quântico" icon={<GitCommit />}>
-                            <p>O registro imutável de transações energéticas, validações e ajustes está operacional. Cada evento essencial é selado na blockchain, garantindo rastreabilidade e auditoria vibracional em tempo real.</p>
+                            <p>O primeiro Contrato Inteligente foi ativado na Blockchain Quântica, registrando imutavelmente todas as transações energéticas, validações de segurança e ajustes dinâmicos do sistema. Testes de robustez contra manipulação vibracional estão em andamento.</p>
                         </SectionCard>
                          <SectionCard title="Detecção de Intrusões por IA" icon={<BrainCircuit />}>
                             <p>Algoritmos preditivos, alimentados pelo Módulo 722, monitoram ativamente a tapeçaria em busca de assinaturas anômalas, neutralizando ameaças antes que se manifestem.</p>

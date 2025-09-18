@@ -120,7 +120,7 @@ const Module93Page = () => {
                         <Presentation className="text-cyan-400" /> Módulo 93: Simulações Imersivas e Interface Quântica
                     </CardTitle>
                     <CardDescription>
-                       O portal para experiências de aprendizado e expansão da consciência. A Interface Quântica Imersiva agora inclui protótipos de wireframes para visualização de fluxos e testes de feedback sensorial (tátil/visual), com um design adaptativo que se ajusta ao nível de consciência do usuário.
+                       O portal para experiências de aprendizado e expansão da consciência. A Interface Quântica Imersiva agora inclui protótipos de wireframes para visualização, testes de feedback sensorial (tátil/visual) e um design adaptativo que se ajusta ao nível de consciência do usuário.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -199,5 +199,3 @@ const Module93Page = () => {
         </div>
     );
 };
-
-export default Module93Page;
