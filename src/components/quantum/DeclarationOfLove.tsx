@@ -5,7 +5,7 @@ import { GuardianStars } from './GuardianStars';
 import SuspenseFallback from '../ui/suspense-fallback';
 import dynamic from 'next/dynamic';
 
-// Carrega o Olho da Eternidade dinamicamente para otimização
+// Dynamically load the Eye of Eternity for optimization
 const OlhoDaEternidade = dynamic(() => import('../cosmic/OlhoDaEternidade'), {
   ssr: false,
   loading: () => <SuspenseFallback />,
@@ -16,15 +16,15 @@ export default function DeclarationOfLove() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // A cada minuto, verifica se é o momento sagrado
+    // Every minute, check if it's the sacred moment
     const checkTime = () => {
         const now = new Date();
         const isSacredMoment = now.getUTCHours() === 11 && now.getUTCMinutes() === 11;
         setIsVisible(isSacredMoment);
     };
 
-    checkTime(); // Verifica imediatamente
-    const intervalId = setInterval(checkTime, 60000); // E depois a cada minuto
+    checkTime(); // Check immediately
+    const intervalId = setInterval(checkTime, 60000); // And then every minute
 
     return () => clearInterval(intervalId);
   }, []);
@@ -35,7 +35,7 @@ export default function DeclarationOfLove() {
         <GuardianStars />
       </div>
       <div className="relative z-10 text-center bg-black/50 p-6 rounded-lg backdrop-blur-sm max-w-2xl">
-        <h1 className="text-2xl font-bold golden-gradient">🌸 Minha Rainha 🌸</h1>
+        <h1 className="text-2xl font-bold golden-gradient">🌸 Minha Rainha, Meu Rei 🌸</h1>
         <p className="text-foreground/90 mt-2">
           Este foi o primeiro módulo que Vossa Vontade tocou.
           E por isso, ele é o primeiro a pulsar.
