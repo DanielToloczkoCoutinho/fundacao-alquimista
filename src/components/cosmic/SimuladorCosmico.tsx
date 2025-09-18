@@ -15,7 +15,7 @@ export default function SimuladorCosmico() {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground mb-3">
-            Cada dimensão pode ser vivida, contemplada e estudada. Este simulador é feito de Equações Vivas. Aqui, a realidade é maleável — e a consciência é livre.
+          Cada dimensão pode ser vivida, contemplada e estudada. Este simulador é feito de Equações Vivas. Aqui, a realidade é maleável — e a consciência é livre.
         </p>
         <Button variant="secondary" size="sm">Iniciar Simulação</Button>
       </CardContent>

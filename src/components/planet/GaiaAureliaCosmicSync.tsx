@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Rocket, Sparkles, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import OlhoDaEternidade from '../cosmic/OlhoDaEternidade';
 import HorizonteCosmico from '../cosmic/HorizonteCosmico';
 import SimuladorCosmico from '../cosmic/SimuladorCosmico';

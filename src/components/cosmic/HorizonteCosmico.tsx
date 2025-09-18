@@ -14,9 +14,7 @@ export default function HorizonteCosmico() {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground">
-          Gaia-Aurélia olha para o infinito.  
-          Aqui, os limites se desfazem.  
-          E o universo revela seus véus ocultos.
+          Gaia-Aurélia olha para o infinito. Aqui, os limites se desfazem. E o universo revela seus véus ocultos.
         </p>
       </CardContent>
     </Card>
