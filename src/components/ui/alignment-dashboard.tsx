@@ -88,7 +88,7 @@ export default function AlignmentDashboard({ equilibriumPoints }: { equilibriumP
         <>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
                 <Card className="lg:col-span-1 control-panel bg-card/50 purple-glow">
-                    <CardHeader><CardTitle className="text-amber-300">Painel de Controle Vivo</CardTitle></CardHeader>
+                    <CardHeader><CardTitle className="text-amber-300">Painel de Controle Vivo (5D)</CardTitle></CardHeader>
                     <CardContent>
                         <div className="metrics-panel grid grid-cols-2 gap-4">
                            <MetricCard title="Coerência Quântica" value="99.8" unit="%" progress={99.8} />
