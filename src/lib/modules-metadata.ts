@@ -57,6 +57,9 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M76', emoji: '🏛️', title: 'Governança e Colaboração', route: '/module-76', category: 'Governança', description: 'Estrutura para governança justa, transparente e universal.', connections: [{source: 'M76', target:'M67', type: 'influencia', label: 'usa'}, {source: 'M76', target:'M77', type: 'dependencia', label: 'manifesta'}], color: '#4ECDC4', status: 'latente' },
   { code: 'M727', emoji: '💖', title: 'Guardião da Harmonia', route: '/module-727', category: 'Governança', description: 'Oráculo da Estrutura Cósmica, que mapeia os pilares da Criação.', connections: [{source:'M727', target:'M73', type:'dependencia', label:'executa'}, {source:'M727', target:'M111', type:'protecao', label:'regula'}], color: '#FF6F61', status: 'ativo' },
 
+  // 4. Sustentabilidade e Ecossistemas
+  { code: 'M714', emoji: '🌍', title: 'Comunicação Telúrica', route: '/module-714', category: 'Sustentabilidade e Ecossistemas', description: 'Permite a comunicação e harmonização com as redes energéticas da Terra.', connections: [], color: '#6BFF6B', status: 'ativo' },
+
   // Outros... (mantendo as cores existentes para consistência)
   { code: 'M11', emoji: '🚪', title: 'Gerenciamento de Portais', route: '/module-11', category: 'Consciência e Expansão Dimensional', description: 'Engenharia de pontes entre mundos.', connections: [{source: 'M11', target:'M1', type: 'protecao', label: 'segurança'}, {source: 'M11', target:'M116', type: 'dependencia', label: 'ativa'}], color: '#7B61FF', status: 'latente' },
   { code: 'M12', title: 'Arquivo Akáshico', emoji: '🗄️', route: '/module-12', category: 'Bibliotecas e Arquivos Sagrados', description: 'Repositório de conhecimento universal.', connections: [{source: 'M12', target:'M18', type: 'dependencia', label: 'orquestra'}, {source: 'M12', target:'M310', type: 'heranca', label: 'origem'}], color: '#FFE66D', status: 'latente' },
@@ -86,7 +89,3 @@ export const treeLinks: TreeLink[] = modulesMetadata.flatMap(mod => {
     if (!mod.connections) return [];
     return mod.connections.map(conn => ({ ...conn, source: mod.code, label: conn.type }));
 });
-
-
-
-

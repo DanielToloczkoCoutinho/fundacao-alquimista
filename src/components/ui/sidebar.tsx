@@ -158,7 +158,7 @@ export function Sidebar() {
         <Link href="/module-727" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
-              <span className="text-2xl"><HeartHandshake className="h-8 w-8 text-pink-400" /></span>
+              <span className="text-2xl"><Heart className="h-8 w-8 text-pink-400" /></span>
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Guardião da Harmonia</p>
@@ -208,5 +208,3 @@ export function Sidebar() {
     </TooltipProvider>
   );
 }
-
-    

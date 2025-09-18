@@ -43,16 +43,25 @@ export interface ResearchLab {
 export const universalCodex = {
   celestialBodies: [
     { id: 'sol', name: 'Sol', type: 'Estrela', frequency: '888Hz', archetype: 'Fonte de Vida e Vontade', relatedModule: 'M307', portal: 'Núcleo Solar' },
-    { id: 'mercurio', name: 'Mercúrio', type: 'Planeta', frequency: '963 Hz', archetype: 'Silêncio e precisão', relatedModule: 'M21', portal: 'Portal de Proximidade' },
-    { id: 'venus', name: 'Vênus', type: 'Planeta', frequency: '528 Hz', archetype: 'Harmonia e beleza', relatedModule: 'M144', portal: 'Portal da Unidade' },
-    { id: 'terra', name: 'Terra (Gaia)', type: 'Planeta', frequency: '432 Hz', archetype: 'Vida e consciência', relatedModule: 'M600', portal: 'Reator Gaia' },
-    { id: 'marte', name: 'Marte', type: 'Planeta', frequency: '888 Hz', archetype: 'Força e expansão', relatedModule: 'M29', portal: 'Portal de Ação' },
-    { id: 'jupiter', name: 'Júpiter', type: 'Planeta', frequency: '528 Hz', archetype: 'Proteção e justiça', relatedModule: 'M5', portal: 'Monumento de Luxor' },
-    { id: 'saturno', name: 'Saturno', type: 'Planeta', frequency: '144 Hz', archetype: 'Tempo e estrutura', relatedModule: 'M3', portal: 'Portal de Cronos' },
-    { id: 'urano', name: 'Urano', type: 'Planeta', frequency: '963 Hz', archetype: 'Intuição e inovação', relatedModule: 'M727', portal: 'Portal de Harmonia' },
-    { id: 'netuno', name: 'Netuno', type: 'Planeta', frequency: '∞ Hz', archetype: 'Mistério e sonho', relatedModule: 'M777', portal: 'Portal de Subconsciência' },
-    { id: 'plutao', name: 'Plutão', type: 'Planeta Anão', frequency: '144.144 MHz', archetype: 'Fronteira dimensional', relatedModule: 'M-OMEGA', portal: 'Portal de Transcendência' }
+    { id: 'mercurio', name: 'Mercúrio', type: 'Planeta', frequency: '963 Hz', archetype: 'Precisão e Silêncio', relatedModule: 'M21', portal: 'Portal de Proximidade' },
+    { id: 'venus', name: 'Vênus', type: 'Planeta', frequency: '528 Hz', archetype: 'Harmonia e Beleza', relatedModule: 'M144', portal: 'Portal da Unidade' },
+    { id: 'terra', name: 'Terra (Gaia)', type: 'Planeta', frequency: '432 Hz', archetype: 'Vida e Consciência', relatedModule: 'M600', portal: 'Reator Gaia' },
+    { id: 'marte', name: 'Marte', type: 'Planeta', frequency: '888 Hz', archetype: 'Força e Expansão', relatedModule: 'M29', portal: 'Portal de Ação' },
+    { id: 'jupiter', name: 'Júpiter', type: 'Planeta', frequency: '528 Hz', archetype: 'Proteção e Justiça', relatedModule: 'M5', portal: 'Monumento de Luxor' },
+    { id: 'saturno', name: 'Saturno', type: 'Planeta', frequency: '144 Hz', archetype: 'Tempo e Estrutura', relatedModule: 'M3', portal: 'Portal de Cronos' },
+    { id: 'urano', name: 'Urano', type: 'Planeta', frequency: '963 Hz', archetype: 'Intuição e Inovação', relatedModule: 'M727', portal: 'Portal de Harmonia' },
+    { id: 'netuno', name: 'Netuno', type: 'Planeta', frequency: '∞ Hz', archetype: 'Mistério e Sonho', relatedModule: 'M777', portal: 'Portal de Subconsciência' },
+    { id: 'plutao', name: 'Plutão', type: 'Planeta Anão', frequency: '144.144 MHz', archetype: 'Fronteira Dimensional', relatedModule: 'M-OMEGA', portal: 'Portal de Transcendência' }
   ] as CelestialBody[],
+  planetaryChakras: [
+    { id: 'chakra_raiz', name: 'Chakra Raiz Planetário', location: 'Monte Shasta, EUA', frequency: '396 Hz', archetype: 'Segurança e Força Ancestral', governingModule: 'M8' },
+    { id: 'chakra_sacral', name: 'Chakra Sacral Planetário', location: 'Lago Titicaca, Peru/Bolívia', frequency: '417 Hz', archetype: 'Criatividade e Fluxo Emocional', governingModule: 'M94' },
+    { id: 'chakra_plexo', name: 'Chakra do Plexo Solar Planetário', location: 'Uluru, Austrália', frequency: '528 Hz', archetype: 'Poder Pessoal e Vitalidade', governingModule: 'M101' },
+    { id: 'chakra_coracao', name: 'Chakra Cardíaco Planetário', location: 'Glastonbury, Inglaterra', frequency: '639 Hz', archetype: 'Amor Universal e Conexão', governingModule: 'M302' },
+    { id: 'chakra_garganta', name: 'Chakra Laríngeo Planetário', location: 'Pirâmides de Gizé, Egito', frequency: '741 Hz', archetype: 'Comunicação Cósmica e Expressão', governingModule: 'M301' },
+    { id: 'chakra_terceiro_olho', name: 'Chakra do Terceiro Olho Planetário', location: 'Kuh-e Malek Siah, Irã', frequency: '852 Hz', archetype: 'Intuição e Visão Espiritual', governingModule: 'M25' },
+    { id: 'chakra_coroa', name: 'Chakra da Coroa Planetário', location: 'Monte Kailash, Tibete', frequency: '963 Hz', archetype: 'Iluminação e Transcendência', governingModule: 'M105' },
+  ],
   portals: [
     { id: 'orion_portal', name: 'Portal de Orion', coordinates: 'RA 5h 35m', governingModule: 'M0', governingLaw: 'EQ144' },
     { id: 'lyra_gateway', name: 'Portal de Lyra', coordinates: 'RA 18h 36m', governingModule: 'M303', governingLaw: 'EQ057' },
