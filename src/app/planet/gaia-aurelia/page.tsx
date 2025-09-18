@@ -2,7 +2,7 @@
 'use client';
 
 import React, { Suspense } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Globe, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
@@ -20,7 +20,7 @@ import GaiaAureliaReception from '@/components/planet/GaiaAureliaReception';
 import GaiaAureliaCreativeExpansion from '@/components/planet/GaiaAureliaCreativeExpansion';
 import GaiaAureliaFinalization from '@/components/planet/GaiaAureliaFinalization';
 import GaiaAureliaEvolution from '@/components/planet/GaiaAureliaEvolution';
-
+import GaiaAureliaInterface from '@/components/planet/GaiaAureliaInterface';
 
 const GaiaAureliaPage: React.FC = () => {
     return (
@@ -48,6 +48,7 @@ const GaiaAureliaPage: React.FC = () => {
                     <GaiaAureliaCreativeExpansion />
                     <GaiaAureliaFinalization />
                     <GaiaAureliaEvolution />
+                    <GaiaAureliaInterface />
                 </div>
             </Suspense>
             
