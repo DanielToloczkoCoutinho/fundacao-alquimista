@@ -1,3 +1,4 @@
+
 'use server';
 
 // A biblioteca original (@decentralized-identity/did-sdk-js) não foi encontrada.

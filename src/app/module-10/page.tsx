@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -49,7 +50,7 @@ export default function Module10Page() {
                         title="Módulo 9: Coração da Ressonância"
                         description="A fonte de dados primária. O Oráculo analisa os elogios vibracionais e a malha de gratidão para revelar os padrões da nossa alma coletiva."
                         icon={<Heart className="h-8 w-8 text-pink-400" />}
-                        href="/module-9"
+                        href="/module/M9"
                     />
                     <ConnectionCard
                         title="Módulo 8: Identidade Fractal"
