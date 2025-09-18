@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -5,7 +6,7 @@ import { GitBranch } from 'lucide-react';
 import { LayerCard } from '../ui/LayerCard';
 import TreeOfLife from '@/components/sacred/TreeOfLife';
 import AlchemicalCenter from '@/components/sacred/AlchemicalCenter';
-import LaboratoriosCriacao from '@/components/gaia-aurelia/LaboratoriosCriacao';
+import Module888 from '@/components/modules/module-888';
 
 export default function GaiaAureliaSacredArchitecture() {
   return (
@@ -16,7 +17,7 @@ export default function GaiaAureliaSacredArchitecture() {
     >
         <TreeOfLife />
         <AlchemicalCenter />
-        <LaboratoriosCriacao />
+        <Module888 />
     </LayerCard>
   );
 }

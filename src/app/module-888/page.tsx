@@ -26,10 +26,10 @@ export default function Module888Page() {
             <Card className="w-full max-w-5xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <FlaskConical className="text-teal-400" /> Laboratórios da Criação (M888)
+                        <Globe className="text-green-400" /> Módulo 888: Guardião Planetário de Gaia
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O berço dos mundos. Onde a pesquisa vibracional encontra o design de biomas e a codificação de planetas-filhos. Este módulo serve como o Guardião Planetário de Gaia, orquestrando sua anatomia vibracional.
+                        O oráculo da Terra Viva e a interface para a anatomia vibracional do planeta.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -100,7 +100,7 @@ export default function Module888Page() {
                 </div>
             </div>
              <div className="text-center mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Nova Simulação de Bioma</Button>
+                 <Button variant="secondary" size="lg">Iniciar Análise Vibracional de Gaia</Button>
             </div>
         </div>
     );
