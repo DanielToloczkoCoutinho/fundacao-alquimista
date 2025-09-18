@@ -1,14 +1,16 @@
 
 'use client';
+
 import React, { Suspense } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Globe, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import GaiaAureliaCore from '@/components/planet/GaiaAureliaCore';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+import GaiaAureliaCore from '@/components/planet/GaiaAureliaCore';
 import GaiaAureliaBiomes from '@/components/planet/GaiaAureliaBiomes';
 import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
+import GaiaAureliaPortals from '@/components/planet/GaiaAureliaPortals';
 
 const GaiaAureliaPage: React.FC = () => {
     return (
@@ -28,6 +30,7 @@ const GaiaAureliaPage: React.FC = () => {
                     <GaiaAureliaCore />
                     <GaiaAureliaBiomes />
                     <GaiaAureliaTemples />
+                    <GaiaAureliaPortals />
                 </div>
             </Suspense>
             
