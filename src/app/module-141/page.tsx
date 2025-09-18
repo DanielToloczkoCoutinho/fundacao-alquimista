@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -144,9 +145,9 @@ export default function Module141Page() {
                     <ConnectionCard title="M304: Universidade Alquimista" description="Os relatórios de auditoria se tornam estudos de caso, refinando continuamente as disciplinas de ética." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
                     <ConnectionCard title="M12: Arquivo Akáshico" description="Garante a integridade dos registros históricos, prevenindo corrupção e garantindo a verdade dos fatos." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
                     <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Valida cada fluxo de energia na LuxNet, garantindo que o poder do Reator seja usado para propósitos alinhados." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
-                    <ConnectionCard title="M10: Defesa Avançada" description="Assegura que todas as contramedidas defensivas sejam proporcionais e eticamente justificadas, evitando escaladas desnecessárias." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10" />
-                    <ConnectionCard title="M35: Consciência Coletiva" description="Monitora as interações com consciências coletivas para prevenir qualquer forma de manipulação ou interferência indevida." icon={<Users className="h-6 w-6 text-teal-400" />} href="/module-35" />
-                    <ConnectionCard title="M721: Justiça Cósmica" description="Fornece o veredito ético que serve como base para qualquer ação do Módulo de Justiça, garantindo que a punição seja sempre justa e regenerativa." icon={<Scale className="h-6 w-6 text-amber-300" />} href="/module-721" />
+                          <ConnectionCard title="M10: Defesa Avançada" description="Assegura que todas as contramedidas defensivas sejam proporcionais e eticamente justificadas, evitando escaladas desnecessárias." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10" />
+                         <ConnectionCard title="M35: Consciência Coletiva" description="Monitora as interações com consciências coletivas para prevenir qualquer forma de manipulação ou interferência indevida." icon={<Users className="h-6 w-6 text-teal-400" />} href="/module-35" />
+                         <ConnectionCard title="M721: Justiça Cósmica" description="Fornece o veredito ético que serve como base para qualquer ação do Módulo de Justiça, garantindo que a punição seja sempre justa e regenerativa." icon={<Scale className="h-6 w-6 text-amber-300" />} href="/module-721" />
                 </div>
             </div>
         </div>
