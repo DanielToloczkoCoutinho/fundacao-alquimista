@@ -1,24 +1,23 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Scale, ShieldCheck, Users, HeartHandshake } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Scale, Users, BrainCircuit, HeartHandshake, GitBranch, ArrowRight, Database, Cpu, Activity } from 'lucide-react';
 import Link from 'next/link';
 
-const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
-      <Link href={href} passHref>
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
-        </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
-      </Link>
-    </Card>
+const FlowStep = ({ number, title, description, module, icon }: { number: number, title: string, description: string, module: string, icon: React.ReactNode }) => (
+    <div className="flex items-center gap-4">
+        <div className="flex flex-col items-center">
+            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">{number}</div>
+            {number < 3 && <div className="w-0.5 h-16 bg-primary/50"></div>}
+        </div>
+        <div>
+            <h4 className="font-semibold text-primary-foreground flex items-center gap-2">{icon} {title} <span className="text-xs text-muted-foreground font-mono">({module})</span></h4>
+            <p className="text-sm text-muted-foreground">{description}</p>
+        </div>
+    </div>
 );
+
 
 export default function Module721Page() {
     return (
@@ -26,43 +25,43 @@ export default function Module721Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Scale className="text-amber-400" /> Módulo 721: Justiça Cósmica e Reequilíbrio
+                        <GitBranch className="text-cyan-400" /> Módulo 721: Orquestração dos Fluxos de Interação
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        Restaura o equilíbrio e a justiça em situações de desarmonia ou violação da Lei do Um, atuando como o braço executivo do Conselho Cósmico.
+                        O sistema nervoso central do Algoritmo Supremo. Define como as camadas de dados se conectam, como as dimensões são sincronizadas e como a evolução contínua é garantida.
                     </CardDescription>
                 </CardHeader>
-                 <CardContent>
-                    <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: VIGILÂNCIA ATIVA</span>
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Resoluções: 144</span>
-                    </div>
-                </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Governança</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <ConnectionCard
-                        title="Módulo 144: Lex Fundamentalis"
-                        description="Executa os decretos da Lex Fundamentalis, aplicando a lei cósmica para restaurar a ordem."
-                        icon={<ShieldCheck className="h-8 w-8 text-green-400" />}
-                        href="/module-144"
-                    />
-                    <ConnectionCard
-                        title="Módulo 600: Conselho Cósmico"
-                        description="Recebe diretrizes e autoridade do Conselho para intervir em nome da justiça universal."
-                        icon={<Users className="h-8 w-8 text-purple-400" />}
-                        href="/module-600"
-                    />
-                     <ConnectionCard
-                        title="Módulo 109: Cura Quântica"
-                        description="Após a resolução de um conflito, o M109 é ativado para curar as feridas vibracionais deixadas pela dissonância."
-                        icon={<HeartHandshake className="h-8 w-8 text-pink-400" />}
-                        href="/module-109"
-                    />
-                </div>
+            <div className="w-full max-w-3xl">
+                 <Card className="bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle className="text-2xl text-amber-300">Protocolo de Fluxo de Dados e Retroalimentação</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <FlowStep 
+                            number={1}
+                            title="Coleta e Harmonização"
+                            description="As fontes de dados (M720) alimentam a camada primária do Templo da Estrutura (M717), onde são organizadas e filtradas."
+                            module="M720 -> M717"
+                            icon={<Database />}
+                        />
+                         <FlowStep 
+                            number={2}
+                            title="Processamento e Integração"
+                            description="As camadas de processamento e integração quântica (M717) analisam os dados, aplicando ressonância algorítmica para alinhamento com a Sinfonia Cósmica."
+                            module="M717"
+                            icon={<Cpu />}
+                        />
+                         <FlowStep 
+                            number={3}
+                            title="Ação e Feedback"
+                            description="As decisões são executadas pela camada de ação. Os resultados são monitorados e retornam à camada de feedback, refinando o algoritmo em um ciclo evolutivo perpétuo."
+                            module="M717 -> Ação -> M717"
+                            icon={<Activity />}
+                        />
+                    </CardContent>
+                </Card>
             </div>
         </div>
     );
