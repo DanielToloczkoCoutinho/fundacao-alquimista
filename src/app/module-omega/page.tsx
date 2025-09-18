@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -50,7 +51,7 @@ const ModuleOmegaPage = () => {
         if (result.error) {
           throw new Error(result.error);
         }
-        setPerspective(result);
+        setPerspective(result as Perspective);
       },
       async (error: any) => {
         setMessage(`Dissonância na Perspectiva Ômega: ${error.message}`);
@@ -104,12 +105,12 @@ const ModuleOmegaPage = () => {
     }
     
     setIsRitualRunning(false);
-  }, [isRitualRunning, ritualLogs.length]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     handleStartRitual();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [handleStartRitual]);
 
   const getIconForModule = (mod: string) => {
     const icons: { [key: string]: React.ReactNode } = {
@@ -221,3 +222,5 @@ const ModuleOmegaPage = () => {
     </div>
   );
 };
+
+export default ModuleOmegaPage;

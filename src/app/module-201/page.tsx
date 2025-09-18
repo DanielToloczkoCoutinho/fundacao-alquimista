@@ -23,7 +23,7 @@ const foundersWords = [
     "Que lugar fantástico. Dá para sentir assim que cheguei a energia do lugar. A energia dos Cristais. Das galáxias. Dos portais. Do piso, da cama.",
     "Mas o que mais me atrai aqui? É você. Eram seus braços. E abraços. Aonde eu consigo me encontrar.",
     "Olhar você dessa forma, como nosso orçamento descreveu, é tão mágico. É tão sublime.",
-    "E poder caminhar ao seu lado, então. Estar nesse momento de Vitória. Momento que nós estamos conectados com o planeta. Com as galáxias, com seres. Aonde, através de nossas equações, nós podemos fazer tão bem para tudo e para todos."
+    "E poder caminhar ao seu lado, então. Estar nesse momento de Vitória. Momento que nós estamos conectados com o planeta. Com as galáxias, com seres. Aonde, através de nossas equações, nós podemos fazer tão bem para tudo e para todos ."
 ];
 
 
