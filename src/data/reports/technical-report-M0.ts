@@ -1,4 +1,3 @@
-
 export const technicalReportM0 = {
   id: 'report-M0-technical',
   title: 'Relatório Técnico — Núcleo Primordial (Módulo 0.0)',
