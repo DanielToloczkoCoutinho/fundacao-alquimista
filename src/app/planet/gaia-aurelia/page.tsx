@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { Suspense } from 'react';
@@ -22,6 +21,7 @@ import GaiaAureliaFinalization from '@/components/planet/GaiaAureliaFinalization
 import GaiaAureliaEvolution from '@/components/planet/GaiaAureliaEvolution';
 import GaiaAureliaInterface from '@/components/planet/GaiaAureliaInterface';
 import GaiaAureliaTime from '@/components/planet/GaiaAureliaTime';
+import GaiaAureliaHarmony from '@/components/planet/GaiaAureliaHarmony';
 
 const GaiaAureliaPage: React.FC = () => {
     return (
@@ -51,6 +51,7 @@ const GaiaAureliaPage: React.FC = () => {
                     <GaiaAureliaEvolution />
                     <GaiaAureliaInterface />
                     <GaiaAureliaTime />
+                    <GaiaAureliaHarmony />
                 </div>
             </Suspense>
             
