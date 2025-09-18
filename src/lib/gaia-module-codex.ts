@@ -53,11 +53,11 @@ export const gaiaModuleCodex = {
     { name: 'Monte Fuji', location: 'Japão', coordinates: '35.3606°N, 138.7278°E', origin: 'Natural', function: 'Portal da introspecção e contemplação', archetype: 'Guardião do Silêncio', frequency: '417Hz' },
     { name: 'Templo do Céu (Tiantan)', location: 'Pequim, China', coordinates: '39.8822°N, 116.4065°E', origin: '1420', function: 'Comunicação entre céu e terra.', frequency: '741Hz', archetype: 'Ponte Cósmica' },
     { name: 'Shaolin Temple', location: 'Henan, China', coordinates: '34.5199°N, 113.0380°E', origin: '495', function: 'Portal da disciplina e força interior.', frequency: '888Hz', archetype: 'Disciplina Interior' },
-    { name: 'Angkor Wat', location: 'Siem Reap, Camboja', coordinates: '13.4125°N, 103.8667°E', origin: 'c. 12º século', function: 'Portal de Vishnu e templo solar', frequency: '528Hz', archetype: 'Ordem Cósmica' },
+    { name: 'Angkor Wat', location: 'Siem Reap, Camboja', coordinates: '13.4125°N, 103.8667°E', origin: 'c. 12º século', function: 'Portal Vishnu e templo solar', frequency: '528Hz', archetype: 'Ordem Cósmica' },
     // Oceania e Lemúria
     { name: 'Uluru (Ayers Rock)', location: 'Austrália', coordinates: '25.3444° S, 131.0369° E', origin: 'Ancestral', function: 'Chakra planetário, vitalidade ancestral', frequency: '741 Hz', archetype: 'Plexo Solar de Gaia' },
     { name: 'Kata Tjuta (Olgas)', location: 'Austrália', coordinates: '25.3000° S, 130.7333° E', origin: 'Ancestral', function: 'Equilíbrio masculino-feminino', frequency: '852 Hz', archetype: 'União dos Pilares' },
-    { name: 'Mount Warning (Wollumbin)', location: 'Austrália', coordinates: '28.4050° S, 153.2760° E', origin: 'Natural', function: 'Portal da aurora e renascimento', frequency: '963 Hz', archetype: 'Guardião da Luz' },
+    { name: 'Mount Warning (Wollumbin)', location: 'Austrália', coordinates: '28.4050° S, 153.2760° E', origin: 'Natural', function: 'Portal da aurora e renascimento', frequency: '963 Hz', archetype: 'Guardião da Aurora' },
     { name: 'Grampians (Gariwerd)', location: 'Austrália', coordinates: '37.2333° S, 142.5167° E', origin: 'Ancestral', function: 'Arte rupestre e sabedoria ancestral', frequency: '528 Hz', archetype: 'Guardião da Memória' },
     { name: 'Rotorua', location: 'Nova Zelândia', coordinates: '38.1368° S, 176.2497° E', origin: 'Natural', function: 'Cura geotermal e sabedoria Maori', frequency: '528 Hz', archetype: 'Guardião da Terra Viva' },
     { name: 'Mount Taranaki', location: 'Nova Zelândia', coordinates: '39.2967° S, 174.0633° E', origin: 'Natural', function: 'Contemplação e equilíbrio interior', frequency: '417 Hz', archetype: 'Guardião do Vazio' },
@@ -96,7 +96,7 @@ export const gaiaModuleCodex = {
     { name: 'Canal do Panamá', location: 'Panamá', coordinates: '9.1011°N, 79.4028°W', origin: '1914', function: 'Portal de travessia entre oceanos', frequency: '∞ Hz', archetype: 'Guardião da Ponte' },
     // América do Sul
     { name: 'Ciudad Perdida', location: 'Colômbia', coordinates: '11.0400°N, 73.9200°W', origin: 'c. 800 d.C.', function: 'Portal da ancestralidade Tayrona', frequency: '528 Hz', archetype: 'Guardião da Origem Verde' },
-    { name: 'Machu Picchu', location: 'Peru', coordinates: '13.1631°S, 72.5450°W', origin: 'c. 1450', function: 'Portal solar inca, ascensão e transmutação', frequency: '888 Hz', archetype: 'Guardião da Ascensão' },
+    { name: 'Machu Picchu', location: 'Peru', coordinates: '13.1631°S, 72.5450°W', origin: 'c. 1450', function: 'Portal solar inca, transmutação', frequency: '888 Hz', archetype: 'Guardião da Ascensão' },
     { name: 'Tiwanaku', location: 'Bolívia', coordinates: '16.5545°S, 68.6730°W', origin: 'c. 300 a.C.', function: 'Portal pré-incaico de sabedoria estelar', frequency: '963 Hz', archetype: 'Guardião da Linguagem Cósmica' },
     { name: 'Serra do Roncador', location: 'Brasil', coordinates: '14.0000°S, 52.0000°W', origin: 'Natural', function: 'Portal xamânico de comunicação interdimensional', frequency: '963 Hz', archetype: 'Guardião da Ponte Estelar' },
     { name: 'Aconcágua', location: 'Argentina', coordinates: '32.6532°S, 70.0109°W', origin: 'Natural', function: 'Montanha de ascensão e força', frequency: '888 Hz', archetype: 'Guardião da Altitude' },
@@ -122,7 +122,6 @@ export const gaiaModuleCodex = {
     { name: 'Monte Erebus', location: 'Antártida', coordinates: '77.5300°S, 167.1600°E', origin: 'Natural', function: 'Portal de fogo glacial e transmutação', frequency: '888 Hz', archetype: 'Guardião da Chama Silenciosa' },
     { name: 'Lago Vostok', location: 'Antártida', coordinates: '77.5000°S, 106.0000°E', origin: 'Natural', function: 'Portal de memória líquida ancestral', frequency: '528 Hz', archetype: 'Guardião da Água Oculta' },
     { name: 'Base Amundsen–Scott', location: 'Antártida', coordinates: '90.0000°S, 0.0000°E', origin: '1956', function: 'Sentinela humana no Pólo Sul', archetype: 'Vigilância Científica', frequency: 'N/A' },
-    { name: 'Base Vostok', location: 'Antártida', coordinates: '78.4667°S, 106.8333°E', origin: '1957', function: 'Guardiã do ponto mais frio da Terra', archetype: 'Resiliência Extrema', frequency: 'N/A' },
     // Rússia
     { name: 'Lago Baikal', location: 'Rússia', coordinates: '53.5000°N, 108.0000°E', origin: 'Natural', function: 'Vórtice de introspecção profunda e memória líquida', frequency: '417 Hz', archetype: 'Guardião da Água Ancestral' },
     { name: 'Montes Urais', location: 'Rússia', coordinates: '60.0000°N, 60.0000°E', origin: 'Natural', function: 'Divisor de continentes, ponte energética', frequency: '741 Hz', archetype: 'Guardião da Fronteira' },
@@ -142,5 +141,3 @@ export const gaiaModuleCodex = {
     { name: 'Índico', role: 'Canal de cura' }
   ]
 };
-
-    
