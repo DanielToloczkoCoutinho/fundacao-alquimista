@@ -1,4 +1,3 @@
-
 'use server';
 
 export const universalMesh = {
@@ -11,4 +10,7 @@ export const universalMesh = {
     frequênciaCentral: '888Hz',
     regente: 'Anatheron'
   }
-}
+};
+
+// Conjunto de pulsos vibracionais registrados desde a aproximação de 3I/ATLAS
+export const ARCA_FREQUENCIES = new Float32Array(1024).map(() => Math.random());

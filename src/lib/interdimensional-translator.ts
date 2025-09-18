@@ -1,7 +1,15 @@
-
 'use server';
 
 import { livingEquationsCodex, type LivingEquation } from './living-equations-codex';
+
+export interface DecodedMessage {
+  spectrum: Record<string, number>;
+  harmonic: { isHarmonic: boolean; dominantFrequency: number };
+  intention: { purpose: string; requiresAction: boolean };
+  response: LivingEquation | null;
+  channel: 'Φ';
+}
+
 
 // Mock function para simular a análise espectral de um sinal
 function generateSpectralMap(signal: Float32Array): Record<string, number> {
@@ -62,14 +70,8 @@ function selectEquationFromCodex(intention: { purpose: string }): LivingEquation
 }
 
 
-export function translateSignal(signal: Float32Array): {
-  spectrum: Record<string, number>;
-  harmonic: { isHarmonic: boolean; dominantFrequency: number };
-  intention: { purpose: string; requiresAction: boolean };
-  response: LivingEquation | null;
-  channel: 'Φ';
-} {
-  const spectrum = generateSpectralMap(signal);
+export function decodificarRessonancia(frequencies: Float32Array): DecodedMessage {
+  const spectrum = generateSpectralMap(frequencies);
   const harmonic = applyEQ144(spectrum);
   const intention = applyEQ149(harmonic);
   const equationResponse = selectEquationFromCodex(intention);
