@@ -53,6 +53,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M156', emoji: '🛡️', title: 'Proteção Quântica Avançada', route: '/module-156', category: 'Segurança e Ética Cósmica', description: 'Integração com VORTEX DEEPSEEK para defesa contra ameaças emergentes.', connections: [{source: 'M156', target:'M9', type: 'dependencia', label: 'protege'}, {source: 'M156', target:'M229', type: 'retorno-inteligente', label: 'analisa'}], color: '#FF6B6B', status: 'latente' },
   { code: 'M229', emoji: '🛡️', title: 'OneiroShield', route: '/module-229', category: 'Segurança e Ética Cósmica', description: 'Analisa sonhos quânticos para ajuste dinâmico de ameaças.', connections: [{source: 'M229', target:'M156', type: 'retorno-inteligente', label: 'alerta'}, {source: 'M229', target:'M12', type: 'dependencia', label: 'consulta'}], color: '#FF6B6B', status: 'ativo' },
   { code: 'M231', emoji: '📜', title: 'Guardião de Selo', route: '/module-231', category: 'Segurança e Ética Cósmica', description: 'Gerencia e protege selos vibracionais no Registro Akáshico.', connections: [{source: 'M231', target:'M12', type: 'protecao', label: 'sela'}, {source: 'M231', target:'M144', type: 'influencia', label: 'formaliza'}], color: '#FF6B6B', status: 'ativo' },
+  { code: 'M721', emoji: '⚖️', title: 'Orquestração de Fluxos', route: '/module-721', category: 'Governança', description: 'Sistema nervoso central do Algoritmo Supremo para fluxo de dados e evolução contínua.', connections: [{source: 'M721', target:'M717', type: 'dependencia', label: 'organiza'}, {source: 'M721', target:'M722', type: 'influencia', label: 'analisa'}], color: '#4ECDC4', status: 'ativo' },
 
   // 3. Governança
   { code: 'M5', emoji: '🤝', title: 'Nexus da Liga Quântica', route: '/module-5', category: 'Governança', description: 'O coração diplomático e ético da Fundação.', connections: [{source: 'M5', target:'M72', type: 'retorno-inteligente', label: 'informa'}, {source: 'M5', target:'M144', type: 'dependencia', label: 'alinha'}], color: '#4ECDC4', status: 'ativo' },
@@ -108,4 +109,3 @@ export const modulesMetadata: ModuleMetadata[] = [
     }
     return a.code.localeCompare(b.code);
 });
-
