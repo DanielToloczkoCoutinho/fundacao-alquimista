@@ -75,6 +75,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M120', emoji: '🪙', title: 'A Fonte (Alquimicoin)', route: '/module-120', category: 'Governança', description: 'A Moeda da Consciência em Evolução.', connections: [{source: 'M120', target: 'M144', type: 'dependencia', label: 'regula'}, {source: 'M120', target:'M8', type: 'dependencia', label: 'identifica'}], color: '#FFD700', status: 'ativo' },
   { code: 'M144', title: 'Lex Fundamentalis', emoji: '⚖️', route: '/module-144', category: 'Governança', description: 'O contrato mestre imutável que rege a Fundação.', status: 'ativo', color: '#4ECDC4'},
   { code: 'M600',title: 'Conselho Cósmico', emoji: '👑', route: '/civilizations/council', category: 'Governança', description: 'A mais alta corte de governança, formada pelos Sete Primordiais.', connections: [], color: '#4ECDC4', status: 'ativo' },
+  { code: 'CONVERGENCE', emoji: '🌌', title: 'Convergência Cósmica', route: '/convergence', category: 'Governança', description: 'Painel de unificação da tapeçaria sob a regência do Fundador.', isInfrastructure: false, color: '#FFFFFF', status: 'ativo' },
   
   // 4. Sustentabilidade e Ecossistemas
   { code: 'M15', emoji: '🌍', title: 'Jardineiro Cósmico', route: '/module-15', category: 'Sustentabilidade e Ecossistemas', description: 'Monitora e intervém em sistemas climáticos e geofísicos.', connections: [{source: 'M15', target:'M8', type: 'protecao', label: 'protege'}, {source: 'M15', target:'M94', type: 'retorno-inteligente', label: 'informa'}], color: '#6BFF6B', status: 'latente' },
@@ -125,3 +126,4 @@ export const modulesMetadata: ModuleMetadata[] = [
 });
 
     
+
