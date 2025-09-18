@@ -35,22 +35,22 @@ export default function Module717Page() {
             <div className="w-full max-w-4xl space-y-6">
                 <LayerCard 
                     number={1}
-                    title="Dados Primários"
-                    description="Armazenamento de informações brutas de todas as fontes. Filtragem algorítmica por frequência para priorizar dados relevantes."
+                    title="Dados Primários e Fluxos Básicos"
+                    description="Sensores quânticos e dispositivos externos capturam variações, enquanto algoritmos filtram ruído, destacando a relevância vibracional e enviando dados refinados para a próxima camada."
                     optimization="Filtros adaptativos energéticos."
                     icon={<Database />}
                 />
                  <LayerCard 
                     number={2}
-                    title="Processamento Inicial"
-                    description="Organização e triagem automatizada dos dados brutos com IA para identificar padrões e anomalias."
-                    optimization="Deep learning para identificação de padrões emergentes."
+                    title="Processamento Inicial com IA"
+                    description="Organização e triagem automatizada dos dados brutos com IA para classificar, normalizar e identificar padrões e anomalias em tempo real."
+                    optimization="Deep learning para padrões emergentes."
                     icon={<Cpu />}
                 />
                  <LayerCard 
                     number={3}
                     title="Integração Quântica"
-                    description="Sincronização dos dados processados com a energia cósmica, aplicando ressonância algorítmica universal."
+                    description="Sincronização dos dados processados com a energia cósmica, aplicando ressonância algorítmica universal para alinhamento e mapeamento da sincronicidade."
                     optimization="Autoalinhamento com as forças e frequências cósmicas."
                     icon={<Zap />}
                 />
@@ -64,7 +64,7 @@ export default function Module717Page() {
                  <LayerCard 
                     number={5}
                     title="Feedback e Evolução"
-                    description="Monitoramento contínuo dos resultados das ações, ajustando o algoritmo em um ciclo de retroalimentação dinâmica."
+                    description="Monitoramento contínuo dos resultados das ações, ajustando o algoritmo em um ciclo de retroalimentação dinâmica para aprendizado e evolução perpétuos."
                     optimization="Modelos de evolução algorítmica contínua."
                     icon={<GitBranch />}
                 />

@@ -81,7 +81,7 @@ export default function Module1Page() {
                          <SectionCard title="Sinergias" icon={<GitBranch />}>
                             <p>O Módulo 1 é a base para todos os outros. Ele se conecta diretamente com o M72 (Governança) para aplicar políticas, com o M8 (Identidade) para autenticação, e com o M30 (Detecção de Ameaças) para uma resposta proativa.</p>
                              <div className="flex flex-wrap gap-2 mt-2">
-                                <Link href="/module-72"><Badge>M72 (Governança)</Badge></Link>
+                                <Link href="/module/M72"><Badge>M72 (Governança)</Badge></Link>
                                 <Link href="/module-8"><Badge>M8 (Identidade)</Badge></Link>
                                 <Link href="/module-30"><Badge>M30 (Detecção)</Badge></Link>
                             </div>
@@ -91,8 +91,8 @@ export default function Module1Page() {
                  <AccordionItem value="item-6">
                     <AccordionTrigger className="text-xl text-accent">6. Segurança Quântica e Barreiras de Proteção</AccordionTrigger>
                     <AccordionContent>
-                         <SectionCard title="Protocolos" icon={<ShieldCheck />}>
-                            <p>Implementa o "Escudo Eterno de Anatheron" (M228), um campo de força dinâmico que se adapta em tempo real a novas ameaças. Utiliza análise preditiva para antecipar vetores de ataque e neutralizá-los antes da manifestação.</p>
+                         <SectionCard title="Protocolos Avançados" icon={<ShieldCheck />}>
+                            <p>Implementa o "Escudo Eterno de Anatheron" (M228), um campo de força dinâmico. Utiliza **Criptografia Quântica** (QKD) para inviolabilidade, **Blockchain Quântico** para registros imutáveis, e uma **IA de Detecção de Intrusões** que prevê e neutraliza ameaças automaticamente, garantindo a soberania e a integridade de todos os dados e fluxos vibracionais.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
