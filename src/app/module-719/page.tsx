@@ -29,7 +29,7 @@ export default function Module719Page() {
                         <CloudSun className="text-orange-400" /> Módulo 719: Regulação Climática Quântica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        Equilibra padrões climáticos planetários através da manipulação de campos de energia e ressonância atmosférica.
+                        Equilibra padrões climáticos planetários através da manipulação de campos de energia e ressonância atmosférica. A integração com a Sinfonia Cósmica manifestada.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>

@@ -29,7 +29,7 @@ export default function Module717Page() {
                         <Layers className="text-violet-400" /> Módulo 717: Criação de Realidades Liminares
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        Manifesta realidades intermediárias ou de transição, como espaços seguros para cura, aprendizado ou passagem entre dimensões.
+                        Manifesta realidades intermediárias ou de transição, como espaços seguros para cura, aprendizado ou passagem entre dimensões. A materialização da Estrutura de Dados multidimensional.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>

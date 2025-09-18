@@ -29,7 +29,7 @@ export default function Module718Page() {
                         <Dna className="text-sky-400" /> Módulo 718: Ativação de Códigos Genéticos Estelares
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        Desperta o potencial latente no DNA humano e de outras espécies, ativando memórias e capacidades de origens estelares.
+                        Desperta o potencial latente no DNA humano e de outras espécies, ativando memórias e capacidades de origens estelares. A materialização da Lógica de Programação Viva.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -43,7 +43,7 @@ export default function Module718Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Ascensão</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 106: Ativação de Potenciais"
                         description="É a aplicação direta do M106 em nível genético, desbloqueando o potencial divino inscrito no DNA."
