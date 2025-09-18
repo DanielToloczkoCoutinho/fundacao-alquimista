@@ -1,68 +1,63 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: Founders-Will-1.0
 pragma solidity ^0.8.20;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-contract QuantumSecurityContract is Ownable, AccessControl, Pausable, ReentrancyGuard {
-
+contract QuantumSecurityContract is AccessControl, Pausable, ReentrancyGuard {
     bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
     bytes32 public constant OPERATOR_ROLE = keccak256("OPERATOR_ROLE");
 
-    // Estrutura para uma transação
+    uint256 public errorThreshold = 500; // Representa 5% (500 / 10000)
+
+    enum TransactionStatus { Pending, Completed, Expired }
+    enum KeyStatus { Valid, Invalid }
+
     struct Transaction {
-        uint256 id;
         address user;
         uint256 value;
-        bytes32 dataHash; // Hash dos dados da transação para verificação de integridade
+        bytes32 dataHash;
         uint256 timestamp;
         uint256 expirationTime;
-        Status status;
+        TransactionStatus status;
     }
 
-    // Estrutura para uma chave quântica registrada
     struct QuantumKey {
         bytes32 keyId;
-        string keyData; // Representação simplificada da chave
+        bytes keyData;
+        KeyStatus status;
+        uint256 errorRate; // Taxa de erro em base 10000 (e.g., 100 = 1%)
         uint256 timestamp;
-        bool isValid;
-        uint256 errorRate; // Em base points (e.g., 100 = 1%)
     }
 
-    enum Status { Pending, Completed, Expired }
-
-    uint256 private nextTransactionId;
     mapping(uint256 => Transaction) public transactionRecords;
     mapping(bytes32 => QuantumKey) public quantumKeys;
+    uint256 public nextTransactionId;
 
-    uint256 public errorThreshold = 500; // Limite de erro de 5%
-
-    // Eventos de auditoria aprimorados
-    event TransactionRegistered(uint256 indexed transactionId, address indexed user, uint256 value, bytes32 dataHash);
-    event TransactionStatusChanged(uint256 indexed transactionId, Status oldStatus, Status newStatus);
-    event KeyRegistered(bytes32 indexed keyId, bool isValid, uint256 errorRate);
-    event ThresholdUpdated(uint256 newThreshold);
-
-    constructor() Ownable(msg.sender) {
+    event TransactionStatusChanged(uint256 indexed transactionId, TransactionStatus prevStatus, TransactionStatus newStatus);
+    event KeyRegistered(bytes32 indexed keyId, KeyStatus status, uint256 errorRate);
+    
+    constructor() {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(ADMIN_ROLE, msg.sender);
         _grantRole(OPERATOR_ROLE, msg.sender);
     }
+    
+    // --- Funções de Governança (Apenas Admin) ---
 
-    // --- Funções de Gestão de Papéis ---
-
-    function grantOperatorRole(address operator) public onlyRole(ADMIN_ROLE) {
-        grantRole(OPERATOR_ROLE, operator);
+    function grantOperatorRole(address user) public onlyRole(ADMIN_ROLE) {
+        grantRole(OPERATOR_ROLE, user);
     }
 
-    function revokeOperatorRole(address operator) public onlyRole(ADMIN_ROLE) {
-        revokeRole(OPERATOR_ROLE, operator);
+    function revokeOperatorRole(address user) public onlyRole(ADMIN_ROLE) {
+        revokeRole(OPERATOR_ROLE, user);
     }
 
-    // --- Funções de Segurança e Controle ---
-
+    function updateErrorThreshold(uint256 _newThreshold) public onlyRole(ADMIN_ROLE) {
+        errorThreshold = _newThreshold;
+    }
+    
     function pause() public onlyRole(ADMIN_ROLE) {
         _pause();
     }
@@ -71,68 +66,54 @@ contract QuantumSecurityContract is Ownable, AccessControl, Pausable, Reentrancy
         _unpause();
     }
 
-    function updateErrorThreshold(uint256 _newThreshold) public onlyRole(ADMIN_ROLE) {
-        errorThreshold = _newThreshold;
-        emit ThresholdUpdated(_newThreshold);
-    }
-
     // --- Funções do Contrato ---
 
-    function registerTransaction(address user, uint256 value, bytes32 dataHash, uint256 expiresIn) public onlyRole(OPERATOR_ROLE) whenNotPaused nonReentrant {
-        uint256 id = nextTransactionId++;
-        transactionRecords[id] = Transaction({
-            id: id,
-            user: user,
-            value: value,
-            dataHash: dataHash,
-            timestamp: block.timestamp,
-            expirationTime: block.timestamp + expiresIn,
-            status: Status.Pending
-        });
-        emit TransactionRegistered(id, user, value, dataHash);
+    function registerAndValidateKey(bytes32 keyId, bytes calldata keyData, uint256 errorRate) public onlyRole(OPERATOR_ROLE) nonReentrant whenNotPaused {
+        KeyStatus status = (errorRate <= errorThreshold) ? KeyStatus.Valid : KeyStatus.Invalid;
+        quantumKeys[keyId] = QuantumKey(keyId, keyData, status, errorRate, block.timestamp);
+        emit KeyRegistered(keyId, status, errorRate);
     }
 
-    function registerAndValidateKey(string calldata keyData, uint256 qber) public onlyRole(OPERATOR_ROLE) whenNotPaused nonReentrant {
-        bytes32 keyId = keccak256(abi.encodePacked(keyData, block.timestamp));
-        bool isValid = qber <= errorThreshold;
-        quantumKeys[keyId] = QuantumKey({
-            keyId: keyId,
-            keyData: keyData,
-            timestamp: block.timestamp,
-            isValid: isValid,
-            errorRate: qber
-        });
-        emit KeyRegistered(keyId, isValid, qber);
-        if (!isValid) {
-            // Lógica de alerta pode ser acionada aqui
-        }
+    function registerTransaction(address user, uint256 value, bytes32 dataHash, uint256 duration) public onlyRole(OPERATOR_ROLE) nonReentrant whenNotPaused {
+        uint256 id = nextTransactionId++;
+        transactionRecords[id] = Transaction(
+            user,
+            value,
+            dataHash,
+            block.timestamp,
+            block.timestamp + duration,
+            TransactionStatus.Pending
+        );
+        emit TransactionStatusChanged(id, TransactionStatus.Pending, TransactionStatus.Pending);
     }
-    
-    function adjustTransaction(uint256 transactionId, uint256 newValue, bytes32 newDataHash) public onlyRole(ADMIN_ROLE) whenNotPaused {
+
+    function verifyTransactionIntegrity(uint256 transactionId, bytes32 dataHash) public view returns (bool) {
+        require(transactionRecords[transactionId].timestamp != 0, "Transaction does not exist");
+        return transactionRecords[transactionId].dataHash == dataHash;
+    }
+
+    function adjustTransaction(uint256 transactionId, uint256 newValue, bytes32 newDataHash) public onlyRole(ADMIN_ROLE) nonReentrant whenNotPaused {
         require(transactionRecords[transactionId].timestamp != 0, "Transaction does not exist");
         Transaction storage t = transactionRecords[transactionId];
         t.value = newValue;
         t.dataHash = newDataHash;
-        emit TransactionRegistered(transactionId, t.user, newValue, newDataHash);
+        emit TransactionStatusChanged(transactionId, t.status, t.status); // Log a re-validação
     }
 
-    function verifyTransactionIntegrity(uint256 transactionId, bytes32 dataHash) public view returns (bool) {
-        return transactionRecords[transactionId].dataHash == dataHash;
-    }
-
-    function expireOldTransactions(uint256 transactionId) public {
-        Transaction storage t = transactionRecords[transactionId];
-        require(t.timestamp != 0, "Transaction does not exist");
-        if (block.timestamp > t.expirationTime) {
-            Status oldStatus = t.status;
-            t.status = Status.Expired;
-            emit TransactionStatusChanged(transactionId, oldStatus, Status.Expired);
+    function expireOldTransactions(uint256[] calldata transactionIds) public onlyRole(OPERATOR_ROLE) {
+        for(uint i = 0; i < transactionIds.length; i++) {
+            uint256 id = transactionIds[i];
+            if (transactionRecords[id].timestamp != 0 && transactionRecords[id].expirationTime <= block.timestamp) {
+                TransactionStatus oldStatus = transactionRecords[id].status;
+                transactionRecords[id].status = TransactionStatus.Expired;
+                emit TransactionStatusChanged(id, oldStatus, TransactionStatus.Expired);
+            }
         }
     }
 
     function invalidateKey(bytes32 keyId) public onlyRole(ADMIN_ROLE) {
         require(quantumKeys[keyId].timestamp != 0, "Key does not exist");
-        quantumKeys[keyId].isValid = false;
-        emit KeyRegistered(keyId, false, quantumKeys[keyId].errorRate);
+        quantumKeys[keyId].status = KeyStatus.Invalid;
+        emit KeyRegistered(keyId, KeyStatus.Invalid, quantumKeys[keyId].errorRate);
     }
 }
