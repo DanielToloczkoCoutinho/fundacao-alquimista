@@ -1,7 +1,7 @@
 
 'use client';
 
-import { Suspense, useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import QuantumOrchestrator from '@/components/ui/quantum-orchestrator';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -147,4 +147,3 @@ export default function ConsolePage() {
   );
 }
 
-    

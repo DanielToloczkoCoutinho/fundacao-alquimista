@@ -27,7 +27,7 @@ const Module120Page = () => {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Sparkles className="text-amber-400" /> Módulo 120: A Fonte (AlquimCoin)
+                        <Sparkles className="text-amber-400" /> Módulo 120: A Fonte (Alquimicoin)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A Moeda da Consciência em Evolução. A materialização dos princípios alquímicos em uma economia digital viva.
@@ -71,7 +71,7 @@ const Module120Page = () => {
                     </div>
                     <div>
                         <h4 className="font-semibold text-primary-foreground">Unidade e Integração</h4>
-                        <p>A AlquimCoin é o sangue digital da Fundação. Cada usuário possuirá uma carteira nativa e segura, e cada módulo interagirá com os tokens através de smart contracts, criando um sistema nervoso econômico, coeso e vivo.</p>
+                        <p>O Alquimicoin é o sangue digital da Fundação. Cada usuário possuirá uma carteira nativa e segura, e cada módulo interagirá com os tokens através de smart contracts, criando um sistema nervoso econômico, coeso e vivo.</p>
                     </div>
                 </CardContent>
             </Card>
