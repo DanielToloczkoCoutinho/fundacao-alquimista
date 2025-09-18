@@ -22,8 +22,8 @@ export const gaiaModuleCodex = {
   ],
   monuments: [
     // Portais Globais
-    { name: 'Antártida - Portal do Silêncio', location: 'Antártida', function: 'Recalibração dimensional e pureza vibracional.', frequency: '174 Hz', archetype: 'Ponto Zero' },
-    { name: 'Pólo Norte Ártico - Portal do Éter', location: 'Ártico', function: 'Dissolução dimensional e acesso ao plano infinito.', frequency: '∞ Hz', archetype: 'Limiar do Vazio' },
+    { name: 'Antártida - Portal do Silêncio', location: 'Antártida', coordinates: '90.0000° S, 0.0000° E', function: 'Recalibração dimensional e pureza vibracional.', frequency: '174 Hz', archetype: 'Ponto Zero' },
+    { name: 'Pólo Norte Ártico - Portal do Éter', location: 'Ártico', coordinates: '90.0000° N, 0.0000° E', function: 'Dissolução dimensional e acesso ao plano infinito.', frequency: '∞ Hz', archetype: 'Limiar do Vazio' },
 
     // Oceania e Lemúria
     { name: 'Uluru (Ayers Rock)', location: 'Austrália', coordinates: '25.3444° S, 131.0369° E', function: 'Portal de vitalidade, força ancestral e conexão com o Dreamtime.', frequency: '741 Hz', archetype: 'Plexo Solar de Gaia' },
@@ -102,6 +102,21 @@ export const gaiaModuleCodex = {
     { name: 'Chichen Itzá', location: 'México', coordinates: '20.6843°N, 88.5678°W', function: 'Alinhamento cósmico e sabedoria Maia.', frequency: '528 Hz', archetype: 'Guardião do Tempo' },
     { name: 'Monte Tlaloc', location: 'México', coordinates: '19.4000°N, 98.8000°W', function: 'Portal de chuva e fertilidade.', frequency: '639 Hz', archetype: 'Guardião da Água Celeste' },
     { name: 'Palenque', location: 'México', coordinates: '17.4849°N, 92.0453°W', function: 'Templo da inscrição e memória estelar.', frequency: '963 Hz', archetype: 'Guardião da Linguagem Cósmica' },
+    
+    // América Central
+    { name: 'Tikal', location: 'Guatemala', coordinates: '17.2220°N, 89.6237°W', function: 'Portal de observação estelar e tempo cíclico.', frequency: '963 Hz', archetype: 'Guardião do Calendário Cósmico' },
+    { name: 'El Mirador', location: 'Guatemala', coordinates: '17.7633°N, 89.9033°W', function: 'Pirâmide da Criação Maia.', frequency: '888 Hz', archetype: 'Guardião da Origem' },
+    { name: 'Quiriguá', location: 'Guatemala', coordinates: '15.2694°N, 89.0389°W', function: 'Estelas vibracionais e geometrias vivas.', frequency: '528 Hz', archetype: 'Guardião da Linguagem' },
+    { name: 'Copán', location: 'Honduras', coordinates: '14.8401°N, 89.1572°W', function: 'Portal da escultura viva e sabedoria Maia.', frequency: '639 Hz', archetype: 'Guardião da Forma' },
+    { name: 'Cueva del Gigante', location: 'Honduras', coordinates: '14.0000°N, 88.0000°W', function: 'Portal subterrâneo de introspecção.', frequency: '417 Hz', archetype: 'Guardião do Submundo' },
+    { name: 'Tazumal', location: 'El Salvador', coordinates: '13.7033°N, 89.6700°W', function: 'Portal de transmutação e ritual ancestral.', frequency: '741 Hz', archetype: 'Guardião da Chama' },
+    { name: 'Joya de Cerén', location: 'El Salvador', coordinates: '13.8333°N, 89.3667°W', function: 'Pompeia Maia, preservação vibracional.', frequency: '528 Hz', archetype: 'Guardião da Memória Cotidiana' },
+    { name: 'Ilha de Ometepe', location: 'Nicarágua', coordinates: '11.5333°N, 85.5833°W', function: 'Portal entre dois vulcões, dualidade cósmica.', frequency: '∞ Hz', archetype: 'Guardião do Equilíbrio' },
+    { name: 'Granada', location: 'Nicarágua', coordinates: '11.9333°N, 85.9500°W', function: 'Centro colonial vibracional.', frequency: '417 Hz', archetype: 'Guardião da Transição' },
+    { name: 'Esferas de Diquís', location: 'Costa Rica', coordinates: '8.9500°N, 83.7333°W', function: 'Geometria perfeita, portal de harmonia.', frequency: '528 Hz', archetype: 'Guardião da Forma Pura' },
+    { name: 'Monteverde Cloud Forest', location: 'Costa Rica', coordinates: '10.3000°N, 84.8167°W', function: 'Portal da névoa e contemplação.', frequency: '639 Hz', archetype: 'Guardião da Respiração' },
+    { name: 'Canal do Panamá', location: 'Panamá', coordinates: '9.1011°N, 79.4028°W', function: 'Portal de travessia entre oceanos.', frequency: '∞ Hz', archetype: 'Guardião da Ponte' },
+    { name: 'Parque Nacional Darién', location: 'Panamá', coordinates: '7.8000°N, 77.7000°W', function: 'Vórtice de biodiversidade e silêncio.', frequency: '528 Hz', archetype: 'Guardião da Selva' },
   ],
   layers: [
     { name: 'Núcleo Interno', function: 'Pulso magnético e alquimia gravitacional' },
@@ -115,6 +130,5 @@ export const gaiaModuleCodex = {
     { name: 'Índico', role: 'Vórtice de cura e regeneração' }
   ]
 };
-
 
     
