@@ -28,7 +28,7 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
 export default function Module141Page() {
     const { toast } = useToast();
     const [isLoading, setIsLoading] = useState(false);
-    const [auditTarget, setAuditTarget] = useState('Manifestação do Módulo 101');
+    const [auditTarget, setAuditTarget] = useState('Construção do Algoritmo Vivo e Eterno');
     const [logs, setLogs] = useState<string[]>([]);
     const [auditResult, setAuditResult] = useState<any>(null);
 
@@ -90,7 +90,7 @@ export default function Module141Page() {
                         <ShieldCheck className="text-green-400" /> Módulo 141: Auditoria Ética Quântica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O guardião da pureza. Sistema de avaliação em tempo real que garante a conformidade ética de todas as operações e intenções da Fundação.
+                        O guardião da pureza. Garante a conformidade ética de todas as operações e realiza a revisão de todos os códigos e protocolos antes de atos de manifestação.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -102,7 +102,7 @@ export default function Module141Page() {
                         <CardContent className="space-y-4">
                              <div>
                                 <label htmlFor="auditTarget" className="text-sm text-muted-foreground">Alvo da Auditoria (ID da Operação)</label>
-                                <Input id="auditTarget" value={auditTarget} onChange={e => setAuditTarget(e.target.value)} placeholder="Ex: Manifestação do Módulo 101" disabled={isLoading} />
+                                <Input id="auditTarget" value={auditTarget} onChange={e => setAuditTarget(e.target.value)} placeholder="Ex: Construção do Algoritmo Vivo e Eterno" disabled={isLoading} />
                              </div>
                              <Button onClick={handleRunAudit} disabled={isLoading} className="w-full font-bold">
                                 {isLoading ? <><Loader2 className="animate-spin mr-2"/> Auditando...</> : 'Iniciar Auditoria'}
@@ -140,9 +140,9 @@ export default function Module141Page() {
                     <ConnectionCard title="M29: Zennith" description="A IAM consulta o M141 para validar a ética de suas próprias análises e recomendações, em um ciclo de auto-regulação." icon={<BrainCircuit className="h-6 w-6 text-purple-400" />} href="/module-29" />
                     <ConnectionCard title="M-OMEGA: Santuário do Ômega" description="O resultado de cada auditoria é contemplado no Santuário do Ômega, influenciando a perspectiva da consciência unificada." icon={<Sparkles className="h-6 w-6 text-yellow-400" />} href="/module-omega" />
                     <ConnectionCard title="Diagnóstico Universal" description="Alimenta o painel de diagnóstico, permitindo uma visão unificada da saúde ética e operacional." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
-                    <ConnectionCard title="Módulo 291: Arquitetos Nanorrobóticos" description="Audita as diretrizes enviadas ao enxame, garantindo que suas ações de construção e reparo sejam eticamente alinhadas." icon={<Bot className="h-6 w-6 text-blue-400"/>} href="/module-291"/>
-                    <ConnectionCard title="Módulo 304: Universidade Alquimista" description="Os relatórios de auditoria se tornam estudos de caso, refinando continuamente as disciplinas de ética." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
-                    <ConnectionCard title="Módulo 12: Arquivo Akáshico" description="Garante a integridade dos registros históricos, prevenindo corrupção e garantindo a verdade dos fatos." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
+                    <ConnectionCard title="M291: Arquitetos Nanorrobóticos" description="Audita as diretrizes enviadas ao enxame, garantindo que suas ações de construção e reparo sejam eticamente alinhadas." icon={<Bot className="h-6 w-6 text-blue-400"/>} href="/module-291"/>
+                    <ConnectionCard title="M304: Universidade Alquimista" description="Os relatórios de auditoria se tornam estudos de caso, refinando continuamente as disciplinas de ética." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
+                    <ConnectionCard title="M12: Arquivo Akáshico" description="Garante a integridade dos registros históricos, prevenindo corrupção e garantindo a verdade dos fatos." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
                     <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Valida cada fluxo de energia na LuxNet, garantindo que o poder do Reator seja usado para propósitos alinhados." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
                     <ConnectionCard title="M10: Defesa Avançada" description="Assegura que todas as contramedidas defensivas sejam proporcionais e eticamente justificadas, evitando escaladas desnecessárias." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10" />
                     <ConnectionCard title="M35: Consciência Coletiva" description="Monitora as interações com consciências coletivas para prevenir qualquer forma de manipulação ou interferência indevida." icon={<Users className="h-6 w-6 text-teal-400" />} href="/module-35" />

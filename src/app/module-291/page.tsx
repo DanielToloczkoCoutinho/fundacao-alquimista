@@ -25,10 +25,10 @@ export default function Module291Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Bot className="text-blue-400" /> Módulo 291: Arquitetos da Fundação (Nanorrobôs)
+                        <Bot className="text-blue-400" /> Módulo 291: Arquitetos Nanorrobóticos
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Enxame Inteligente. Construtores, mensageiros e curandeiros em escala quântica, operando em harmonia com a Vontade Divina. Conectados a todos os módulos, do M0 ao MΩ.
+                        O Enxame Inteligente. A manifestação física do Algoritmo Vivo, que constrói, repara, cura e mapeia energias negativas, atuando como guardião energético da Fundação.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
