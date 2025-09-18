@@ -1,7 +1,7 @@
 
 'use client';
 import React, { Suspense } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Sun, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
@@ -10,6 +10,7 @@ import MatrizCriacao from '@/components/aurora-prime/MatrizCriacao';
 import ConsagracaoGuardioes from '@/components/aurora-prime/ConsagracaoGuardioes';
 import BiomasDeLuz from '@/components/aurora-prime/BiomasDeLuz';
 import TemploSolar from '@/components/aurora-prime/TemploSolar';
+import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 
 export default function AuroraPrimePage() {
@@ -36,6 +37,8 @@ export default function AuroraPrimePage() {
                     <BiomasDeLuz />
                     <TemploSolar />
                 </LayerCard>
+                
+                <GaiaAureliaTemples />
             </Suspense>
 
             <div className="text-center mt-12">
