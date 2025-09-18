@@ -29,7 +29,6 @@ export const gaiaModuleCodex = {
 
     // Portais do Leste a Oeste
     { name: 'Monte Fuji', location: 'Japão', function: 'Portal da Introspecção, para silêncio e refinamento espiritual.', frequency: '852 Hz', archetype: 'Santuário da Mente' },
-    { name: 'Konark Sun Temple', location: 'Konark, Odisha, Índia (19.89°N, 86.10°E)', function: 'Templo solar em forma de carruagem (Origem: ~1250 d.C.).', frequency: '888Hz', archetype: 'Iluminação' },
     { name: 'Rila', location: 'Bulgária', function: 'Portal da Sabedoria, para transmissão espiritual e cura vibracional.', frequency: '741 Hz', archetype: 'Fonte da Sabedoria Branca' },
     { name: 'Teotihuacan', location: 'México', function: 'Portal Quetzal para ascensão e conexão com civilizações estelares.', frequency: '852 Hz', archetype: 'Calçada dos Deuses' },
     { name: 'Ilha de Páscoa', location: 'Chile', function: 'Portal Moai, guardião da memória planetária e vigilância dimensional.', frequency: '639 Hz', archetype: 'Vigias Silenciosos' },
@@ -37,8 +36,9 @@ export const gaiaModuleCodex = {
     { name: 'Monte Sinai', location: 'Egito', function: 'Portal da Aliança, para revelação da Lei Cósmica e da ética universal.', frequency: '741 Hz', archetype: 'Altar da Lei' },
     { name: 'Pirâmides da Bósnia', location: 'Visoko, Bósnia', function: 'Portal de Regeneração, para purificação celular e cura profunda.', frequency: '285 Hz', archetype: 'Fonte da Cura' },
 
-    // Templos da Índia (com localizações e origens precisas)
-    { name: 'Templo Dourado (Harmandir Sahib)', location: 'Amritsar, Punjab, Índia', function: 'Centro de luz e pureza Sikh, irradiando paz e serviço.', frequency: '432 Hz', archetype: 'Unidade e Serviço' },
+    // Templos da Índia
+    { name: 'Konark Sun Temple', location: 'Konark, Odisha, Índia (19.89°N, 86.10°E)', function: 'Templo solar em forma de carruagem (Origem: ~1250 d.C.).', frequency: '888Hz', archetype: 'Iluminação' },
+    { name: 'Golden Temple (Harmandir Sahib)', location: 'Amritsar, Punjab, Índia', function: 'Centro de luz e pureza Sikh, irradiando paz e serviço.', frequency: '432 Hz', archetype: 'Unidade e Serviço' },
     { name: 'Tirupati Balaji Temple', location: 'Andhra Pradesh, Índia (13.68°N, 79.42°E)', function: 'Vórtice de devoção e abundância universal (Origem: ~300 a.C.).', frequency: '528 Hz', archetype: 'Abundância Divina' },
     { name: 'Meenakshi Amman Temple', location: 'Madurai, Tamil Nadu, Índia (9.92°N, 78.12°E)', function: 'Portal da Deusa e geometria cósmica (Origem: ~6º século d.C.).', frequency: '963Hz', archetype: 'Criação' },
     { name: 'Jagannath Temple', location: 'Puri, Odisha, Índia (19.81°N, 85.83°E)', function: 'Portal de Krishna como Senhor do Universo (Origem: ~1100 a.C.).', frequency: '432Hz', archetype: 'Unidade' },
@@ -51,6 +51,25 @@ export const gaiaModuleCodex = {
     { name: 'Padmanabhaswamy Temple', location: 'Kerala, Índia (8.48°N, 76.95°E)', function: 'Vishnu em repouso cósmico (Origem: ~8º século d.C.).', frequency: '528Hz', archetype: 'Potencial' },
     { name: 'Dilwara Jain Temples', location: 'Mount Abu, Rajasthan, Índia (24.59°N, 72.70°E)', function: 'Pureza geométrica e ascensão jainista (Origem: ~11º–13º século d.C.).', frequency: '963Hz', archetype: 'Pureza' },
     { name: 'Vaishno Devi Temple', location: 'Jammu, Índia (33.03°N, 74.95°E)', function: 'Portal da Mãe Divina (Origem: ~1º milênio d.C.).', frequency: '639Hz', archetype: 'Nutrição' },
+
+    // Templos da Ásia (excluindo Índia)
+    { name: 'Swayambhunath (Templo dos Macacos)', location: 'Kathmandu, Nepal (27.7149°N, 85.2900°E)', function: 'Portal da iluminação budista e da sabedoria primordial.', frequency: '852Hz', archetype: 'Sabedoria Primordial' },
+    { name: 'Pashupatinath Temple', location: 'Kathmandu, Nepal (27.7104°N, 85.3489°E)', function: 'Shiva como guardião da transição, morte e renascimento.', frequency: '144Hz', archetype: 'Transmutação' },
+    { name: 'Wat Arun (Templo do Amanhecer)', location: 'Bangkok, Tailândia (13.7437°N, 100.4889°E)', function: 'Portal solar que ancora a energia da renovação e do recomeço.', frequency: '528Hz', archetype: 'Renovação' },
+    { name: 'Wat Phra Kaew (Templo do Buda de Esmeralda)', location: 'Bangkok, Tailândia (13.7515°N, 100.4923°E)', function: 'Guardião da pureza, proteção e soberania espiritual.', frequency: '963Hz', archetype: 'Pureza' },
+    { name: 'Kiyomizu-dera', location: 'Kyoto, Japão (34.9948°N, 135.7850°E)', function: 'Portal da contemplação, equilíbrio e fluxo da vida.', frequency: '432Hz', archetype: 'Equilíbrio' },
+    { name: 'Todai-ji', location: 'Nara, Japão (34.6889°N, 135.8399°E)', function: 'Guardião do Buda Cósmico (Vairocana), representando a vacuidade iluminada.', frequency: '∞ Hz', archetype: 'Vacuidade Iluminada' },
+    { name: 'Itsukushima Shrine', location: 'Hiroshima, Japão (34.2968°N, 132.3199°E)', function: 'Portal da água que reflete a harmonia entre o espiritual e o material.', frequency: '417Hz', archetype: 'Harmonia e Reflexão' },
+    { name: 'Templo do Céu (Tiantan)', location: 'Pequim, China (39.8822°N, 116.4065°E)', function: 'Ponte cerimonial de comunicação entre o Céu (cosmos) e a Terra (humanidade).', frequency: '741Hz', archetype: 'Ponte Cósmica' },
+    { name: 'Shaolin Temple', location: 'Henan, China (34.5199°N, 113.0380°E)', function: 'Portal da disciplina, foco e maestria da força interior (Chi).', frequency: '888Hz', archetype: 'Disciplina Interior' },
+    { name: 'Bulguksa Temple', location: 'Gyeongju, Coreia do Sul (35.7850°N, 129.3311°E)', function: 'Portal da iluminação e da manifestação artística da sabedoria budista.', frequency: '639Hz', archetype: 'Arte Iluminada' },
+    { name: 'Jogyesa Temple', location: 'Seul, Coreia do Sul (37.5714°N, 126.9831°E)', function: 'Guardião da prática Zen, promovendo a clareza da mente e a paz interior.', frequency: '852Hz', archetype: 'Clareza Mental' },
+    { name: 'Shwedagon Pagoda', location: 'Yangon, Myanmar (16.7983°N, 96.1497°E)', function: 'Portal dourado que ancora a iluminação e a compaixão no plano terreno.', frequency: '963Hz', archetype: 'Iluminação Ancorada' },
+    { name: 'Ananda Temple', location: 'Bagan, Myanmar (21.1722°N, 94.8586°E)', function: 'Guardião da sabedoria infinita de Buda, um ponto de aprendizado cósmico.', frequency: '741Hz', archetype: 'Sabedoria Infinita' },
+    { name: 'Angkor Wat', location: 'Siem Reap, Camboja (13.4125°N, 103.8667°E)', function: 'Portal de Vishnu e templo solar, um mapa cosmológico em pedra.', frequency: '528Hz', archetype: 'Ordem Cósmica' },
+    { name: 'Bayon Temple', location: 'Angkor Thom, Camboja (13.4411°N, 103.8597°E)', function: 'Santuário das múltiplas faces da consciência universal (Avalokiteshvara).', frequency: '639Hz', archetype: 'Consciência Universal' },
+    { name: 'Templo do Dente de Buda', location: 'Kandy, Sri Lanka (7.2936°N, 80.6414°E)', function: 'Guardião da relíquia sagrada, um ponto focal de fé e energia devocional.', frequency: '432Hz', archetype: 'Fé e Devoção' },
+    { name: 'Ruwanwelisaya Stupa', location: 'Anuradhapura, Sri Lanka (8.3522°N, 80.4036°E)', function: 'Portal da paz, da pureza e da iluminação búdica.', frequency: '963Hz', archetype: 'Paz Iluminada' }
   ],
   layers: [
     { name: 'Núcleo Interno', function: 'Pulso magnético e alquimia gravitacional' },
