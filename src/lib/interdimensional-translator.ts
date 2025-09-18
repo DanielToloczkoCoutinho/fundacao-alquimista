@@ -1,3 +1,4 @@
+
 'use server';
 
 import { livingEquationsCodex, type LivingEquation } from './living-equations-codex';

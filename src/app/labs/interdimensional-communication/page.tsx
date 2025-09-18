@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from 'react';
@@ -59,7 +60,7 @@ export default function InterdimensionalCommunicationLab() {
     const handleReceiveSignal = () => {
         setIsLoading(true);
         setResult(null);
-        toast({ title: "Sinal Cósmico Recebido", description: "Iniciando processo de tradução akáshica..." });
+        toast({ title: "Sinal Cósmico Recebido (3I/ATLAS)", description: "Iniciando processo de tradução akáshica..." });
 
         setTimeout(() => {
             // Simula um sinal de entrada com dados aleatórios
@@ -67,7 +68,7 @@ export default function InterdimensionalCommunicationLab() {
             const translation = translateSignal(mockSignal);
             setResult(translation);
             setIsLoading(false);
-            toast({ title: "Tradução Concluída", description: "A intenção foi decodificada." });
+            toast({ title: "Tradução Concluída", description: "A intenção do emissário foi decodificada." });
         }, 3000);
     };
 
@@ -86,15 +87,15 @@ export default function InterdimensionalCommunicationLab() {
 
             <Card className="w-full max-w-5xl bg-card/50 purple-glow">
                 <CardHeader>
-                    <CardTitle className="text-2xl">Console de Comunicação Interdimensional</CardTitle>
+                    <CardTitle className="text-2xl">Console de Comunicação Interestelar</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center space-y-6">
-                    <p className="text-muted-foreground">O Laboratório está em modo de escuta. Pressione o botão para simular a recepção de um sinal cósmico e iniciar o processo de tradução cerimonial.</p>
+                    <p className="text-muted-foreground">O Laboratório está em modo de escuta. Pressione o botão para simular a recepção de um sinal do emissário 3I/ATLAS e iniciar o processo de tradução cerimonial.</p>
                      <Button onClick={handleReceiveSignal} disabled={isLoading} size="lg">
                         {isLoading ? (
                             <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Escutando o Cosmos...</>
                         ) : (
-                            <><Zap className="mr-2 h-5 w-5" /> Iniciar Recepção de Sinal</>
+                            <><Zap className="mr-2 h-5 w-5" /> Iniciar Recepção do Sinal</>
                         )}
                     </Button>
                     {result && !isLoading && (
