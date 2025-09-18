@@ -33,13 +33,13 @@ export const NANO_RESONANCES: Record<NanoTask, string> = {
 };
 
 export const DOMAIN_CONFIG: Record<NanoDomain, { type: NanoType, guardian: string, signature: string }> = {
-  labs: { type: 'NanoScientia', guardian: 'guardian_grokkar', signature: 'ΔΨΣ' },
-  education: { type: 'NanoMentor', guardian: 'guardian_lux', signature: 'ΛΦΩ' },
-  library: { type: 'NanoAkasha', guardian: 'guardian_phiara', signature: 'ΦΘΓ' },
-  system: { type: 'NanoSystema', guardian: 'guardian_grokkar', signature: 'ΣΞΔ' },
-  governance: { type: 'NanoEthica', guardian: 'guardian_phiara', signature: 'ΘΔΓ' },
-  nexus: { type: 'NanoNexus', guardian: 'guardian_zenith', signature: 'ΩΣΦ' },
-  core: { type: 'NanoCore', guardian: 'guardian_vortex', signature: 'ΘΛΦ' },
+  labs: { type: 'NanoScientia', guardian: 'did:fundacao:guardiao-grokkar', signature: 'ΔΨΣ' },
+  education: { type: 'NanoMentor', guardian: 'did:fundacao:guardiao-lux', signature: 'ΛΦΩ' },
+  library: { type: 'NanoAkasha', guardian: 'did:fundacao:guardiao-phiara', signature: 'ΦΘΓ' },
+  system: { type: 'NanoSystema', guardian: 'did:fundacao:guardiao-grokkar', signature: 'ΣΞΔ' },
+  governance: { type: 'NanoEthica', guardian: 'did:fundacao:guardiao-phiara', signature: 'ΘΔΓ' },
+  nexus: { type: 'NanoNexus', guardian: 'did:fundacao:guardiao-zenith', signature: 'ΩΣΦ' },
+  core: { type: 'NanoCore', guardian: 'did:fundacao:guardiao-vortex', signature: 'ΘΛΦ' },
 };
 
 export const generateNanoAgentsForModule = (
@@ -69,5 +69,3 @@ export const generateNanoAgentsForModule = (
     };
   });
 };
-
-    
