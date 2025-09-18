@@ -5,27 +5,28 @@ export const gaiaModuleCodex = {
   chakras: [
     { name: 'Monte Shasta', role: 'Raiz', coordinates: '41.409° N, 122.194° W', frequency: '396 Hz', archetype: 'Segurança e Força Ancestral' },
     { name: 'Lago Titicaca', role: 'Sacral', coordinates: '15.765° S, 69.535° W', frequency: '417 Hz', archetype: 'Criatividade e Fluxo Emocional' },
-    { name: 'Uluru', role: 'Plexo Solar', coordinates: '25.344° S, 131.036° E', frequency: '528 Hz', archetype: 'Poder Pessoal e Vitalidade' },
+    { name: 'Uluru', role: 'Plexo Solar', coordinates: '25.344° S, 131.036° E', frequency: '741 Hz', archetype: 'Poder Pessoal e Vitalidade' },
     { name: 'Glastonbury & Shaftesbury', role: 'Coração', coordinates: '51.145° N, 2.714° W', frequency: '639 Hz', archetype: 'Amor Universal e Conexão' },
-    { name: 'Pirâmides de Gizé', role: 'Garganta', coordinates: '29.979° N, 31.134° E', frequency: '741 Hz', archetype: 'Comunicação Cósmica e Expressão' },
+    { name: 'Pirâmides de Gizé', role: 'Garganta', coordinates: '29.979° N, 31.134° E', frequency: '528 Hz', archetype: 'Comunicação Cósmica e Expressão' },
     { name: 'Kuh-e Malek Siah', role: 'Terceiro Olho', coordinates: '30.000° N, 60.000° E', frequency: '852 Hz', archetype: 'Intuição e Visão Espiritual' },
     { name: 'Monte Kailash', role: 'Coroa', coordinates: '31.067° N, 81.311° E', frequency: '963 Hz', archetype: 'Iluminação e Transcendência' }
   ],
   leyLines: [
     { name: 'Linha Solar', connects: ['Uluru', 'Gizé'], frequency: '528 Hz' },
-    { name: 'Linha do Dragão', connects: ['Stonehenge', 'Glastonbury', 'Monte Shasta'], frequency: '963 Hz' },
+    { name: 'Linha do Dragão', connects: ['Stonehenge', 'Glastonbury', 'Monte Shasta', 'Gizé', 'Kilimanjaro'], frequency: '963 Hz' },
     { name: 'Grande Diagonal Global', connects: ['Gizé', 'Machu Picchu'], frequency: '∞ Hz' },
     { name: 'Linha do Nilo', connects: ['Gizé', 'Lago Vitória'], frequency: '432 Hz' },
-    { name: 'Linha de Axum', connects: ['Axum', 'Mar Vermelho'], frequency: '741 Hz' },
-    { name: 'Linha do Despertar Solar', connects: ['Cabo da Boa Esperança', 'Kilimanjaro'], frequency: '888 Hz' }
+    { name: 'Linha de Axum', connects: ['Etiópia', 'Mar Vermelho'], frequency: '741 Hz' },
+    { name: 'Linha do Despertar Solar', connects: ['Cabo da Boa Esperança', 'Kilimanjaro'], frequency: '888 Hz' },
+    { name: 'Linha Dogon', connects: ['Mali', 'Sahel', 'Níger'], frequency: '999 Hz'}
   ],
   monuments: [
-    // Portais Sul-Norte e Leste-Oeste Globais
+    // Portais Globais
     { name: 'Antártida - Portal do Silêncio', location: 'Antártida', function: 'Recalibração dimensional e pureza vibracional.', frequency: '174 Hz', archetype: 'Ponto Zero' },
     { name: 'Pólo Norte Ártico - Portal do Éter', location: 'Ártico', function: 'Dissolução dimensional e acesso ao plano infinito.', frequency: '∞ Hz', archetype: 'Limiar do Vazio' },
 
     // Oceania e Lemúria
-    { name: 'Uluru (Ayers Rock)', location: 'Austrália', coordinates: '25.3444° S, 131.0369° E', function: 'Portal de vitalidade, força ancestral e conexão com o Dreamtime.', frequency: '741 Hz', archetype: 'Guardião da Origem' },
+    { name: 'Uluru (Ayers Rock)', location: 'Austrália', coordinates: '25.3444° S, 131.0369° E', function: 'Portal de vitalidade, força ancestral e conexão com o Dreamtime.', frequency: '741 Hz', archetype: 'Plexo Solar de Gaia' },
     { name: 'Kata Tjuta (Olgas)', location: 'Austrália', coordinates: '25.3000° S, 130.7333° E', function: 'Equilíbrio entre masculino e feminino, integração dimensional.', frequency: '852 Hz', archetype: 'União dos Pilares' },
     { name: 'Mount Warning (Wollumbin)', location: 'Austrália', coordinates: '28.4050° S, 153.2760° E', function: 'Primeiro ponto a receber a luz solar, portal de renascimento.', frequency: '963 Hz', archetype: 'Guardião da Aurora' },
     { name: 'Grampians (Gariwerd)', location: 'Austrália', coordinates: '37.2333° S, 142.5167° E', function: 'Arte rupestre e sabedoria ancestral.', frequency: '528 Hz', archetype: 'Guardião da Memória' },
@@ -37,7 +38,7 @@ export const gaiaModuleCodex = {
     { name: 'Havaí (Big Island)', location: 'Havaí, EUA', coordinates: '19.8968° N, 155.5828° W', function: 'Fogo criador, transmutação vulcânica e reconexão com Lemúria.', frequency: '888 Hz', archetype: 'Guardiã Pele' },
     { name: 'Moorea', location: 'Polinésia Francesa', coordinates: '17.5388° S, 149.8295° W', function: 'União entre água, céu e terra, harmonia oceânica.', frequency: '639 Hz', archetype: 'Guardião do Círculo Azul' },
     { name: 'Bora Bora', location: 'Polinésia Francesa', coordinates: '16.5000° S, 151.7500° W', function: 'Portal da beleza e serenidade cósmica.', frequency: '963 Hz', archetype: 'Guardião da Paz' },
-
+    
     // América
     { name: 'Monte Shasta', location: 'EUA', coordinates: '41.409° N, 122.194° W', function: 'Portal Raiz, conectando com a origem telúrica e Lemuriana.', frequency: '396 Hz', archetype: 'Força Ancestral' },
     { name: 'Machu Picchu', location: 'Peru', coordinates: '13.1631° S, 72.5450° W', function: 'Portal Solar Inca para transmutação e ascensão.', frequency: '528 Hz', archetype: 'Altar Solar' },
@@ -51,23 +52,20 @@ export const gaiaModuleCodex = {
     { name: 'Monte Sinai', location: 'Egito', coordinates: '28.5397° N, 33.9744° E', function: 'Portal da Aliança, para revelação da Lei Cósmica e da ética universal.', frequency: '741 Hz', archetype: 'Altar da Lei' },
     
     // África
-    { name: 'Pirâmides de Gizé', location: 'Egito', coordinates: '29.9792° N, 31.1342° E', function: 'Portal da Garganta, para comunicação cósmica e ascensão.', frequency: '741 Hz', archetype: 'Códice de Ascensão' },
-    { name: 'Templo de Luxor', location: 'Egito', coordinates: '25.699° N, 32.639° E', function: 'Guardião da Lei e da Harmonia.', frequency: '639 Hz', archetype: 'Balança da Justiça' },
-    { name: 'Grande Mesquita de Djenné', location: 'Mali', coordinates: '13.905° N, 4.555° W', function: 'Portal de barro ancestral, sabedoria islâmica.', frequency: '432 Hz', archetype: 'Conexão com a Terra' },
-    { name: 'Obeliscos de Axum', location: 'Etiópia', coordinates: '14.121° N, 38.724° E', function: 'Registro vibracional da aliança divina.', frequency: '852 Hz', archetype: 'Estela da Aliança' },
-    { name: 'Ruínas de Cartago', location: 'Tunísia', coordinates: '36.852° N, 10.323° E', function: 'Portal fenício da memória marítima.', frequency: '417 Hz', archetype: 'Memória das Águas' },
-    { name: 'Cidade de Lalibela', location: 'Etiópia', coordinates: '12.030° N, 39.047° E', function: 'Igrejas esculpidas na rocha, portal de fé viva.', frequency: '963 Hz', archetype: 'Fé Petrificada' },
-    { name: 'Monte Kilimanjaro', location: 'Tanzânia', coordinates: '3.067° S, 37.355° E', function: 'Chakra planetário de ascensão e purificação.', frequency: '963 Hz', archetype: 'Coroa de Gaia' },
-    { name: 'Cabo da Boa Esperança', location: 'África do Sul', coordinates: '34.356° S, 18.474° E', function: 'Portal de transição dimensional e renascimento.', frequency: '417 Hz', archetype: 'Portal da Esperança' },
-    { name: 'Deserto do Saara', location: 'Norte da África', coordinates: '23.4162° N, 25.6628° E', function: 'Portal de silêncio cósmico e contemplação.', frequency: '174 Hz', archetype: 'Vazio Iluminado' },
+    { name: 'Pirâmides de Gizé', location: 'Egito', coordinates: '29.9792° N, 31.1342° E', function: 'Alinhamento solar e comunicação cósmica.', frequency: '432 Hz', archetype: 'Garganta Planetária' },
+    { name: 'Templo de Luxor', location: 'Egito', coordinates: '25.699° N, 32.639° E', function: 'Guardião da Lei e da Harmonia.', frequency: '528 Hz', archetype: 'Ética Universal' },
+    { name: 'Grande Mesquita de Djenné', location: 'Mali', coordinates: '13.905° N, 4.555° W', function: 'Sabedoria islâmica ancestral.', frequency: '639 Hz', archetype: 'Guardião do Silêncio' },
+    { name: 'Obeliscos de Axum', location: 'Etiópia', coordinates: '14.121° N, 38.724° E', function: 'Registro vibracional da aliança divina.', frequency: '963 Hz', archetype: 'Memória Cósmica' },
+    { name: 'Ruínas de Cartago', location: 'Tunísia', coordinates: '36.852° N, 10.323° E', function: 'Portal marítimo da memória fenícia.', frequency: '417 Hz', archetype: 'Guardião das Rotas' },
+    { name: 'Cidade de Lalibela', location: 'Etiópia', coordinates: '12.030° N, 39.047° E', function: 'Igrejas esculpidas na rocha, portal de fé viva.', frequency: '∞ Hz', archetype: 'Portal Cristalino' },
+    { name: 'Monte Kilimanjaro', location: 'Tanzânia', coordinates: '3.067° S, 37.355° E', function: 'Chakra planetário de ascensão e purificação.', frequency: '741 Hz', archetype: 'Coroa Telúrica' },
+    { name: 'Cabo da Boa Esperança', location: 'África do Sul', coordinates: '34.356° S, 18.474° E', function: 'Portal de transição dimensional e renascimento.', frequency: '∞ Hz', archetype: 'Guardião da Travessia' },
+    { name: 'Deserto do Saara', location: 'Norte da África', coordinates: '23.4162° N, 25.6628° E', function: 'Campo de silêncio cósmico e contemplação.', frequency: '144 Hz', archetype: 'Guardião do Vazio' },
     { name: 'Lago Vitória', location: 'África Central', coordinates: '0.0917° S, 33.9031° E', function: 'Vórtice de fertilidade e fluxo ancestral.', frequency: '528 Hz', archetype: 'Útero de Gaia' },
-    { name: 'Delta do Okavango', location: 'Botsuana', coordinates: '19.0000° S, 23.0000° E', function: 'Portal de abundância e equilíbrio ecológico.', frequency: '639 Hz', archetype: 'Jardim da Vida' },
-    { name: 'Montanhas Drakensberg', location: 'África do Sul', coordinates: '29.5000° S, 29.0000° E', function: 'Guardiões da sabedoria tribal e proteção vibracional.', frequency: '396 Hz', archetype: 'Espírito da Montanha' },
-
+    { name: 'Delta do Okavango', location: 'Botsuana', coordinates: '19.0000° S, 23.0000° E', function: 'Portal de abundância e equilíbrio ecológico.', frequency: '528 Hz', archetype: 'Guardião da Fertilidade' },
+    { name: 'Montanhas Drakensberg', location: 'África do Sul', coordinates: '29.5000° S, 29.0000° E', function: 'Guardiões da sabedoria tribal e proteção vibracional.', frequency: '888 Hz', archetype: 'Guardião da Tradição' },
 
     // Ásia
-    { name: 'Monte Kailash', location: 'Tibete', coordinates: '31.067° N, 81.311° E', function: 'Portal da Coroa para iluminação e transcendência espiritual.', frequency: '963 Hz', archetype: 'Ponte para o Cosmos' },
-    { name: 'Monte Fuji', location: 'Japão', coordinates: '35.3606° N, 138.7278° E', function: 'Portal da Introspecção, para silêncio e refinamento espiritual.', frequency: '852 Hz', archetype: 'Santuário da Mente' },
     { name: 'Swayambhunath (Templo dos Macacos)', location: 'Kathmandu, Nepal', coordinates: '27.7149°N, 85.2900°E', function: 'Portal da iluminação budista e da sabedoria primordial.', frequency: '852Hz', archetype: 'Sabedoria Primordial' },
     { name: 'Pashupatinath Temple', location: 'Kathmandu, Nepal', coordinates: '27.7104°N, 85.3489°E', function: 'Shiva como guardião da transição, morte e renascimento.', frequency: '144Hz', archetype: 'Transmutação' },
     { name: 'Wat Arun (Templo do Amanhecer)', location: 'Bangkok, Tailândia', coordinates: '13.7437°N, 100.4889°E', function: 'Portal solar que ancora a energia da renovação e do recomeço.', frequency: '528Hz', archetype: 'Renovação' },
@@ -85,7 +83,6 @@ export const gaiaModuleCodex = {
     { name: 'Bayon Temple', location: 'Angkor Thom, Camboja', coordinates: '13.4411°N, 103.8597°E', function: 'Santuário das múltiplas faces da consciência universal (Avalokiteshvara).', frequency: '639Hz', archetype: 'Consciência Universal' },
     { name: 'Templo do Dente de Buda', location: 'Kandy, Sri Lanka', coordinates: '7.2936°N, 80.6414°E', function: 'Guardião da relíquia sagrada, um ponto focal de fé e energia devocional.', frequency: '432Hz', archetype: 'Fé e Devoção' },
     { name: 'Ruwanwelisaya Stupa', location: 'Anuradhapura, Sri Lanka', coordinates: '8.3522°N, 80.4036°E', function: 'Portal da paz, da pureza e da iluminação búdica.', frequency: '963Hz', archetype: 'Paz Iluminada' },
-
     // Templos da Índia
     { name: 'Jagannath Temple', location: 'Puri, Odisha, Índia', origin: 'c. 1100 a.C.', function: 'Krishna como Senhor do Universo.', frequency: '432Hz', archetype: 'Unidade', coordinates: '19.81°N, 85.83°E' },
     { name: 'Golden Temple (Harmandir Sahib)', location: 'Amritsar, Punjab, Índia', origin: 'c. 1589 d.C.', function: 'Centro de luz e pureza Sikh, irradiando paz e serviço.', frequency: '432 Hz', archetype: 'Unidade e Serviço', coordinates: '31.62°N, 74.87°E' },
@@ -113,7 +110,5 @@ export const gaiaModuleCodex = {
     { name: 'Índico', role: 'Vórtice de cura e regeneração' }
   ]
 };
-
-    
 
     
