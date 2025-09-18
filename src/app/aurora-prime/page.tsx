@@ -8,11 +8,10 @@ import Link from 'next/link';
 import { LayerCard } from '@/components/ui/LayerCard';
 import MatrizCriacao from '@/components/aurora-prime/MatrizCriacao';
 import ConsagracaoGuardioes from '@/components/aurora-prime/ConsagracaoGuardioes';
-import BiomasDeLuz from '@/components/aurora-prime/biomes/BiomasDeLuz';
-import TemploSolar from '@/components/aurora-prime/TemploSolar';
-import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import GaiaAureliaBiomes from '@/components/planet/GaiaAureliaBiomes';
+import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
+import GaiaAureliaPortals from '@/components/planet/GaiaAureliaPortals';
 
 export default function AuroraPrimePage() {
     return (
@@ -40,6 +39,8 @@ export default function AuroraPrimePage() {
                 <GaiaAureliaBiomes />
                 
                 <GaiaAureliaTemples />
+
+                <GaiaAureliaPortals />
             </Suspense>
 
             <div className="text-center mt-12">
