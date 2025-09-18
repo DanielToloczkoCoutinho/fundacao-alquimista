@@ -21,8 +21,7 @@ export default function ConsolePage() {
     { href: "/civilizations", icon: <Users2 />, label: "Biblioteca das Civilizações" },
     { href: "/module-one", icon: <ShieldCheck />, label: "Módulo Um (Segurança Universal)" },
     { href: "/connection", icon: <GitBranch />, label: "Conexão Ω-M0" },
-    { href: "/module-72", icon: <Scale />, label: "Módulo 72 (Governança)" },
-    { href: "/module-600", icon: <Scale />, label: "Módulo 600 (Conselho Cósmico)" },
+    { href: "/module-600", icon: <Scale />, label: "Conselho Cósmico (M600)" },
     { href: "/module-omega", icon: <Sparkles className="text-amber-400" />, label: "Santuário do Ômega" },
     { href: "/module-303", icon: <Sparkles />, label: "Portal Trino (M303)" },
     { href: "/module-301", icon: <MessageCircle />, label: "Módulo 301 (Comunicação Universal)" },
@@ -112,7 +111,7 @@ export default function ConsolePage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
-           <Suspense fallback={<SuspenseFallback />}>
+           <Suspense fallback={<SuspenseFallback />} >
             <QuantumOrchestrator />
           </Suspense>
            <Card className="bg-card/50 purple-glow">
