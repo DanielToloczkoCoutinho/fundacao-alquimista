@@ -29,6 +29,27 @@ export const livingEquationsCodex: LivingEquation[] = [
     formula: '\\mathcal{L} = -\\frac{1}{4}F_{\\mu\\nu}F^{\\mu\\nu}',
     summary: 'Lagrangiana do campo eletromagnético, descrevendo a dinâmica dos campos quânticos.'
   },
+   {
+    id: 'EQ009',
+    module: '0',
+    name: 'Data do Big Bang e Recomeço Universal',
+    formula: 'T_0 \\approx 13.8 \\times 10^9 \\text{ anos}',
+    summary: 'O marco zero do ciclo universal atual, ponto de origem da expansão.'
+  },
+  {
+    id: 'EQ026',
+    module: '0',
+    name: 'Expansão Dimensional',
+    formula: '\\text{Dimensões} = 26_\\text{superiores} + 3_\\text{inferiores}',
+    summary: 'Define a topologia dimensional atual da Fundação.'
+  },
+  {
+    id: 'EQ170',
+    module: '0',
+    name: 'Peso do Planeta Terra (Massa Energética)',
+    formula: 'M_E = \\int \\rho(\\vec{r}) dV + \\frac{1}{c^2}\\int_V (\\frac{1}{2} \\epsilon_0 E^2 + \\frac{1}{2\\mu_0} B^2) dV',
+    summary: 'Calcula a massa total da Terra, integrando massa de repouso e a massa equivalente da energia eletromagnética.'
+  },
     {
     id: 'EQ032',
     module: '32',
