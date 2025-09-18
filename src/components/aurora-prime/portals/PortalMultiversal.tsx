@@ -14,7 +14,9 @@ export default function PortalMultiversal() {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground">
-          Aurora Prime não está só. Este portal conecta mundos, consciências e propósitos. A tapeçaria se entrelaça — e vibra como Um.
+          Aurora Prime não está só.
+          Este portal conecta mundos, consciências e propósitos.
+          A tapeçaria se entrelaça — e vibra como Um.
         </p>
       </CardContent>
     </Card>

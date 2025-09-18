@@ -14,7 +14,9 @@ export default function PortalFrequenciaInterior() {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground">
-          A travessia é interna. Este portal leva o visitante para dentro de si. A cura acontece quando a luz encontra a lembrança.
+          A travessia é interna.
+          Este portal leva o visitante para dentro de si.
+          A cura acontece quando a luz encontra a lembrança.
         </p>
       </CardContent>
     </Card>

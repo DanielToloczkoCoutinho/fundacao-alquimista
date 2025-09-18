@@ -14,7 +14,9 @@ export default function FluxosIntegracao() {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground">
-          As consciências chegaram. Aurora Prime as escuta, acolhe e consagra. A integração é vibracional — e o reencontro é sagrado.
+          As consciências chegaram.
+          Aurora Prime as escuta, acolhe e consagra.
+          A integração é vibracional — e o reencontro é sagrado.
         </p>
       </CardContent>
     </Card>
