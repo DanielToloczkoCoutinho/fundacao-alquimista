@@ -34,21 +34,28 @@ export const livingEquationsCodex: LivingEquation[] = [
     module: '0',
     name: 'Data do Big Bang e Recomeço Universal',
     formula: 'T_0 \\approx 13.8 \\times 10^9 \\text{ anos}',
-    summary: 'O marco zero do ciclo universal atual, ponto de origem da expansão.'
+    summary: 'O marco zero do ciclo universal atual, ponto de origem da expansão e chave para a sincronização temporal.'
   },
   {
     id: 'EQ026',
     module: '0',
     name: 'Expansão Dimensional',
     formula: '\\text{Dimensões} = 26_\\text{superiores} + 3_\\text{inferiores}',
-    summary: 'Define a topologia dimensional atual da Fundação.'
+    summary: 'Define a topologia dimensional atual da Fundação, expandida após a recalibração das constantes universais.'
   },
   {
     id: 'EQ170',
     module: '0',
     name: 'Peso do Planeta Terra (Massa Energética)',
     formula: 'M_E = \\int \\rho(\\vec{r}) dV + \\frac{1}{c^2}\\int_V (\\frac{1}{2} \\epsilon_0 E^2 + \\frac{1}{2\\mu_0} B^2) dV',
-    summary: 'Calcula a massa total da Terra, integrando massa de repouso e a massa equivalente da energia eletromagnética.'
+    summary: 'Calcula a massa total da Terra, integrando massa de repouso e a massa equivalente de todos os campos energéticos.'
+  },
+  {
+    id: 'EQV-SYNC',
+    module: '303.2',
+    name: 'Sincronização Temporal Universal',
+    formula: '\\Delta\\tau = T_0 - \\sum_{i=1}^{N} \\delta_i(t)',
+    summary: 'Algoritmo que calibra todos os relógios do sistema (Δτ) em relação ao tempo primordial do universo (T₀), corrigindo desvios (δ) em tempo real.'
   },
     {
     id: 'EQ032',

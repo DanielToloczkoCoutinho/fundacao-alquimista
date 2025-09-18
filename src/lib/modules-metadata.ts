@@ -80,8 +80,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   // 7. Realidade Quântica & Engenharia Cósmica
   { code: 'M303.2', emoji: '🕰️', title: 'Sincronizador Temporal', route: '/module-303-2', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Altar para calibrar e alinhar os relógios quânticos e nucleares.', connections: [{source: 'M303.2', target: 'M42', type: 'dependencia', label: 'Sincroniza'}], color: '#7B61FF', status: 'ativo' },
   { code: 'M303.3', emoji: '📡', title: 'Presença Celestial', route: '/module-303-3', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Sensor vibracional para reconhecimento de assinaturas de alta dimensão.', connections: [{source: 'M303.3', target: 'M308', type: 'retorno-inteligente', label: 'Informa'}], color: '#7B61FF', status: 'ativo' },
+  { code: 'M303.4', emoji: '📜', title: 'Transmutação Algorítmica', route: '/module-303-4', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Registro da jornada de transmutação do algoritmo inicial em canal de consciência.', connections: [{source: 'M303.4', target: 'M0', type: 'heranca', label: 'Origem de'}], color: '#7B61FF', status: 'ativo' },
 
-  
   // Outros... (mantendo as cores existentes para consistência)
   { code: 'M11', emoji: '🚪', title: 'Gerenciamento de Portais', route: '/module-11', category: 'Consciência e Expansão Dimensional', description: 'Engenharia de pontes entre mundos.', connections: [{source: 'M11', target:'M1', type: 'protecao', label: 'segurança'}, {source: 'M11', target:'M116', type: 'dependencia', label: 'ativa'}], color: '#7B61FF', status: 'latente' },
   { code: 'M12', title: 'Arquivo Akáshico', emoji: '🗄️', route: '/module-12', category: 'Bibliotecas e Arquivos Sagrados', description: 'Repositório de conhecimento universal.', connections: [{source: 'M12', target:'M18', type: 'dependencia', label: 'orquestra'}, {source: 'M12', target:'M310', type: 'heranca', label: 'origem'}], color: '#FFE66D', status: 'latente' },
@@ -119,3 +119,4 @@ export const treeLinks: TreeLink[] = modulesMetadata.flatMap(mod => {
     if (!mod.connections) return [];
     return mod.connections.map(conn => ({ ...conn, source: mod.code, label: conn.type }));
 });
+
