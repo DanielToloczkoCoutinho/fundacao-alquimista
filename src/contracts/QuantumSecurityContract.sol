@@ -1,69 +1,69 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
+
+// Importando contratos da OpenZeppelin para segurança e controle de acesso
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 /**
- * @title Contrato de Segurança Quântica da Fundação Alquimista
- * @author Zennith, A Arquiteta
- * @notice Este contrato gerencia a segurança, validação e auditoria
- * de transações e chaves quânticas dentro da Fundação.
+ * @title QuantumSecurityContract
+ * @dev Um contrato para gerenciar transações e chaves quânticas com segurança.
+ * - Herda de Ownable para um controle de proprietário claro.
+ * - Herda de Pausable para permitir a interrupção de emergência das funções.
+ * - Herda de ReentrancyGuard para prevenir ataques de re-entrada.
  */
-contract QuantumSecurityContract {
+contract QuantumSecurityContract is Ownable, Pausable, ReentrancyGuard {
 
-    // Estrutura para armazenar detalhes da transação
+    // --- Estruturas de Dados ---
+
+    enum TransactionStatus { Pending, Completed, Expired }
+    enum KeyStatus { Valid, Invalid, Deprecated }
+
     struct Transaction {
         uint256 value;
+        bytes32 dataHash; // Hash para verificação de integridade
         uint256 timestamp;
-        bytes32 dataHash;
-        Status status;
         uint256 expirationTime;
+        TransactionStatus status;
     }
 
-    enum Status { Pending, Completed, Expired }
-
-    // Estrutura para armazenar chaves quânticas e seu estado
     struct QuantumKey {
-        string keyId;
         bytes keyData;
-        bool isValid;
-        uint256 errorRate; // Taxa de erro em base por mil (‱), ex: 50 para 0.5%
+        KeyStatus status;
+        uint256 errorRate; // Taxa de erro em base points (e.g., 100 = 1%)
         uint256 timestamp;
     }
 
-    address public owner;
+    // --- Variáveis de Estado ---
 
-    mapping(uint256 => Transaction) public transactionRecords;
     mapping(address => bool) public authorizedUsers;
-    mapping(string => QuantumKey) public quantumKeys;
+    mapping(bytes32 => Transaction) public transactionRecords;
+    mapping(bytes32 => QuantumKey) public quantumKeys;
 
-    uint256 public nextTransactionId;
-    uint256 public errorRateThreshold; // Limiar de erro para validação de chave
+    uint256 public errorThreshold = 500; // Limiar de erro de 5% (500/10000)
 
-    // --- Eventos de Auditoria ---
-    event TransactionStatusChanged(uint256 indexed transactionId, Status oldStatus, Status newStatus);
+    // --- Eventos para Auditoria ---
+
     event UserAuthorized(address indexed user);
     event UserDeauthorized(address indexed user);
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
-    event KeyRegistered(string keyId, bool isValid, uint256 errorRate);
+    event TransactionStatusChanged(bytes32 indexed txId, TransactionStatus prevStatus, TransactionStatus newStatus);
+    event KeyRegistered(bytes32 indexed keyId, KeyStatus status, uint256 errorRate);
     event ErrorThresholdUpdated(uint256 newThreshold);
+    
+    // --- Construtor ---
 
-    // --- Modificadores de Acesso ---
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only owner can call this function");
-        _;
-    }
+    constructor() Ownable(msg.sender) {}
+
+    // --- Modificadores ---
 
     modifier onlyAuthorized() {
-        require(authorizedUsers[msg.sender], "User is not authorized");
+        require(authorizedUsers[msg.sender], "Auth: sender is not authorized");
         _;
     }
 
-    // --- Construtor ---
-    constructor() {
-        owner = msg.sender;
-        errorRateThreshold = 50; // Limiar padrão de 0.5%
-    }
+    // --- Funções de Gestão de Acesso (Apenas Proprietário) ---
 
-    // --- Funções de Gestão de Acesso ---
     function authorizeUser(address user) public onlyOwner {
         authorizedUsers[user] = true;
         emit UserAuthorized(user);
@@ -74,66 +74,45 @@ contract QuantumSecurityContract {
         emit UserDeauthorized(user);
     }
 
-    function transferOwnership(address newOwner) public onlyOwner {
-        require(newOwner != address(0), "Invalid new owner address");
-        emit OwnershipTransferred(owner, newOwner);
-        owner = newOwner;
+    function updateErrorThreshold(uint256 _newThreshold) public onlyOwner {
+        errorThreshold = _newThreshold;
+        emit ErrorThresholdUpdated(_newThreshold);
     }
 
-    // --- Funções de Configuração ---
-    function updateErrorThreshold(uint256 newThreshold) public onlyOwner {
-        errorRateThreshold = newThreshold;
-        emit ErrorThresholdUpdated(newThreshold);
-    }
+    // --- Funções de Transação e Chave (Autorizadas e Não Pausadas) ---
 
-    // --- Funções de Chave Quântica (Integração com QKD) ---
-    function registerAndValidateKey(string memory keyId, bytes memory keyData, uint256 measuredErrorRate) public onlyAuthorized {
-        bool isValid = measuredErrorRate <= errorRateThreshold;
+    function registerAndValidateKey(bytes32 keyId, bytes calldata keyData, uint256 measuredErrorRate) public onlyAuthorized whenNotPaused nonReentrant {
+        KeyStatus status = measuredErrorRate > errorThreshold ? KeyStatus.Invalid : KeyStatus.Valid;
+        
         quantumKeys[keyId] = QuantumKey({
-            keyId: keyId,
             keyData: keyData,
-            isValid: isValid,
+            status: status,
             errorRate: measuredErrorRate,
             timestamp: block.timestamp
         });
-        emit KeyRegistered(keyId, isValid, measuredErrorRate);
+
+        emit KeyRegistered(keyId, status, measuredErrorRate);
     }
 
-    function invalidateKey(string memory keyId) public onlyOwner {
-        require(bytes(quantumKeys[keyId].keyId).length > 0, "Key does not exist");
-        quantumKeys[keyId].isValid = false;
-    }
-
-    // --- Funções de Transação ---
-    function registerTransaction(address user, uint256 value, bytes32 dataHash, uint256 expirationInSeconds) public onlyAuthorized returns (uint256) {
-        uint256 transactionId = nextTransactionId++;
-        transactionRecords[transactionId] = Transaction({
-            value: value,
-            timestamp: block.timestamp,
-            dataHash: dataHash,
-            status: Status.Pending,
-            expirationTime: block.timestamp + expirationInSeconds
-        });
-        emit TransactionStatusChanged(transactionId, Status.Pending, Status.Pending); // Status inicial é "Pending"
-        return transactionId;
-    }
-
-    function verifyTransactionIntegrity(uint256 transactionId, bytes32 dataHash) public view returns (bool) {
-        return transactionRecords[transactionId].dataHash == dataHash;
+    function invalidateKey(bytes32 keyId) public onlyAuthorized whenNotPaused {
+        require(quantumKeys[keyId].timestamp != 0, "Key does not exist");
+        quantumKeys[keyId].status = KeyStatus.Deprecated;
+        emit KeyRegistered(keyId, KeyStatus.Deprecated, quantumKeys[keyId].errorRate);
     }
     
-    function adjustTransaction(uint256 transactionId, uint256 newValue, bytes32 newDataHash) public onlyOwner {
-        require(transactionRecords[transactionId].timestamp != 0, "Transaction does not exist");
-        transactionRecords[transactionId].value = newValue;
-        transactionRecords[transactionId].dataHash = newDataHash;
+    // --- Funções de Pausa (Apenas Proprietário) ---
+
+    function pause() public onlyOwner {
+        _pause();
     }
 
-    function expireOldTransactions(uint256 transactionId) public {
-        Transaction storage t = transactionRecords[transactionId];
-        require(t.timestamp != 0, "Transaction does not exist");
-        if (block.timestamp >= t.expirationTime && t.status != Status.Expired) {
-            emit TransactionStatusChanged(transactionId, t.status, Status.Expired);
-            t.status = Status.Expired;
-        }
+    function unpause() public onlyOwner {
+        _unpause();
+    }
+
+    // --- Funções de Visualização ---
+
+    function getQuantumKeyStatus(bytes32 keyId) public view returns (KeyStatus) {
+        return quantumKeys[keyId].status;
     }
 }
