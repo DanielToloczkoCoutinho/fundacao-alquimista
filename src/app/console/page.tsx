@@ -22,6 +22,7 @@ export default function ConsolePage() {
     { href: "/key-generator", icon: <KeyRound />, label: "Forja de Chaves Trina" },
     { href: "/diagnostics", icon: <Stethoscope />, label: "Diagnóstico Universal" },
     { href: "/module-one", icon: <ShieldCheck />, label: "Módulo Um (Segurança Universal)" },
+    { href: "/module/M9", icon: <Heart className="text-pink-400" />, label: "Nexus Central (M9)" },
     { href: "/module-156", icon: <Shield />, label: "Módulo 156 (Proteção Quântica)" },
     { href: "/connection", icon: <GitBranch />, label: "Conexão Ω-M0" },
     { href: "/civilizations/council", icon: <Scale />, label: "Conselho Cósmico" },
