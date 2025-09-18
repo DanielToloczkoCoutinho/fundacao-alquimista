@@ -5,7 +5,7 @@ import { modulesMetadata } from './modules-metadata';
 /**
  * @fileOverview O Códice do Guardião da Harmonia (M727).
  * Este códice cataloga e organiza os módulos da Fundação de acordo com
- * seu domínio de influência cósmica: Portais, Leis, Linhas e Monumentos.
+ * seu domínio de influência cósmica: Portais, Leis, Linhas Temporais e Monumentos.
  */
 
 interface ModuleReference {

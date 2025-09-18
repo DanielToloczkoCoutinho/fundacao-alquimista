@@ -1,10 +1,7 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Scale, Users, BrainCircuit, HeartHandshake, GitBranch, ArrowRight, Database, Cpu, Activity, Zap, ShieldCheck } from 'lucide-react';
-import Link from 'next/link';
+import { GitBranch, Database, Cpu, Activity, Zap, ShieldCheck } from 'lucide-react';
 
 const FlowStep = ({ number, title, description, module, icon }: { number: number, title: string, description: string, module: string, icon: React.ReactNode }) => (
     <div className="flex items-start gap-4">

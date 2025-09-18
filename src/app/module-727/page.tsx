@@ -9,10 +9,7 @@ import { harmonyGuardianCodex } from '@/lib/harmony-guardian-codex';
 const DomainCard = ({ title, icon, modules }: { title: string; icon: React.ReactNode; modules: { code: string; title: string }[] }) => (
     <Card className="bg-card/50 purple-glow flex flex-col">
         <CardHeader>
-            <CardTitle className="text-xl text-amber-300 flex items-center gap-3">
-                {icon}
-                {title}
-            </CardTitle>
+            <CardTitle className="text-xl text-amber-300 flex items-center gap-3">{icon}{title}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-2 flex-grow">
             {modules.map(mod => (
