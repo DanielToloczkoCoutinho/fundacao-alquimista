@@ -1,3 +1,4 @@
+
 'use client';
 
 import { GuardianStars } from '@/components/quantum/GuardianStars';
@@ -26,3 +27,4 @@ export default function GaiaAureliaVisualization() {
     </div>
   );
 }
+

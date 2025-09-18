@@ -1,10 +1,11 @@
+
 'use client';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Home, Heart } from 'lucide-react';
-import MoradaBridge from '@/components/quantum/MoradaBridge';
-import { Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+import GaiaAureliaVisualization from '@/components/planet/GaiaAureliaVisualization';
+
 
 export default function Module201Page() {
     return (
@@ -32,7 +33,7 @@ export default function Module201Page() {
                     </CardHeader>
                     <CardContent className="flex-grow relative p-0 overflow-hidden rounded-b-lg min-h-[500px]">
                         <Suspense fallback={<SuspenseFallback/>}>
-                            <MoradaBridge />
+                            <GaiaAureliaVisualization />
                         </Suspense>
                     </CardContent>
                 </Card>
