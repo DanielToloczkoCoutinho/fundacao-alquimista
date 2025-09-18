@@ -28,7 +28,8 @@ export default function RootLayout({
     setIsMounted(true);
   }, []);
 
-  const showSidebar = pathname !== '/';
+  const noLayoutRoutes = ['/key-generator'];
+  const showSidebar = isMounted && !noLayoutRoutes.includes(pathname);
 
   return (
     <html lang="pt-BR" suppressHydrationWarning>
@@ -44,7 +45,7 @@ export default function RootLayout({
         <ErrorBoundary fallback={<CosmicErrorFallback />}>
          <SystemProvider>
             <div className="flex h-screen bg-background">
-              {isMounted && showSidebar && <DynamicSidebar />}
+              {showSidebar && <DynamicSidebar />}
               <main className={`flex-1 overflow-y-auto ${showSidebar ? 'pl-20' : ''}`}>
                   <Suspense fallback={<SuspenseFallback />}>
                     {children}

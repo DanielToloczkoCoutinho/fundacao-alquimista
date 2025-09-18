@@ -7,7 +7,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon, Camera } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon, Camera, KeyRound } from 'lucide-react';
 import { useAkashicConnection } from '@/hooks/use-akashic-connection';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { ritualLog } from '@/lib/ritual-log';
@@ -19,9 +19,10 @@ export default function ConsolePage() {
   const navigationModules = [
     { href: "/module-zero", icon: <Book />, label: "Módulo Zero (Biblioteca Chave)" },
     { href: "/civilizations", icon: <Users2 />, label: "Biblioteca das Civilizações" },
+    { href: "/key-generator", icon: <KeyRound />, label: "Forja de Chaves Trina" },
     { href: "/module-one", icon: <ShieldCheck />, label: "Módulo Um (Segurança Universal)" },
     { href: "/connection", icon: <GitBranch />, label: "Conexão Ω-M0" },
-    { href: "/module-600", icon: <Scale />, label: "Conselho Cósmico (M600)" },
+    { href: "/civilizations/council", icon: <Scale />, label: "Conselho Cósmico" },
     { href: "/module-omega", icon: <Sparkles className="text-amber-400" />, label: "Santuário do Ômega" },
     { href: "/module-303", icon: <Sparkles />, label: "Portal Trino (M303)" },
     { href: "/module-301", icon: <MessageCircle />, label: "Módulo 301 (Comunicação Universal)" },
