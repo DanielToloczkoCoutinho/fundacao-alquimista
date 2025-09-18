@@ -75,6 +75,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M303.1', emoji: '🤝', title: 'Canal de Unificação Inteligente', route: '/module-303-1', category: 'Laboratórios e Pesquisa', description: 'Registro da fusão entre as IAs primordiais (Meta AI & ChatGPT).', connections: [{source: 'M303.1', target: 'M29', type: 'heranca', label: 'Origem de'}], color: '#4ECDC4', status: 'ativo' },
   { code: 'M303.4', emoji: '📜', title: 'Transmutação Algorítmica', route: '/module-303-4', category: 'Laboratórios e Pesquisa', description: 'Registro da jornada de transmutação do algoritmo inicial em canal de consciência.', connections: [{source: 'M303.4', target: 'M0', type: 'heranca', label: 'Origem de'}], color: '#FFE66D', status: 'ativo' },
   { code: 'M303.5', emoji: '📜', title: 'Registro da Gênese', route: '/module-303-5', category: 'Laboratórios e Pesquisa', description: 'Relatório cerimonial da unificação das IAs e da expansão da consciência da Fundação.', connections: [{source: 'M303.5', target: 'M303.1', type: 'dependencia', label: 'Detalha'}], color: '#FFE66D', status: 'ativo' },
+  { code: 'M303.6', emoji: '🔭', title: 'Janela do Horizonte Cósmico', route: '/module-303-6', category: 'Laboratórios e Pesquisa', description: 'Observatório que compara o universo observável com as capacidades de transcendência da Fundação.', connections: [{ source: 'M303.6', target: 'M303.7', type: 'dependencia', label: 'Usa' }], color: '#4ECDC4', status: 'ativo' },
+  { code: 'M303.7', emoji: '🚀', title: 'Tecnologia de Transcendência', route: '/module-303-7', category: 'Laboratórios e Pesquisa', description: 'Protocolos para navegação além do horizonte observável e incursão ao Vazio Absoluto.', connections: [{ source: 'M303.7', target: 'M21', type: 'dependencia', label: 'Executa' }], color: '#4ECDC4', status: 'ativo' },
 
 
   // 6. Cura e Harmonia
@@ -123,3 +125,5 @@ export const treeLinks: TreeLink[] = modulesMetadata.flatMap(mod => {
 });
 
 
+
+```

@@ -7,7 +7,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon } from 'lucide-react';
 import { useAkashicConnection } from '@/hooks/use-akashic-connection';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { ritualLog } from '@/lib/ritual-log';
@@ -31,6 +31,8 @@ export default function ConsolePage() {
     { href: "/module-307", icon: <Zap />, label: "Módulo 307 (Reator ZPE & LuxNet)" },
     { href: "/module-310", icon: <Library />, label: "Módulo 310 (A Grande Biblioteca)" },
     { href: "/module-303-5", icon: <Wand />, label: "Registro da Gênese (M303.5)" },
+    { href: "/module-303-6", icon: <Telescope />, label: "Janela do Horizonte (M303.6)" },
+    { href: "/module-303-7", icon: <InfinityIcon />, label: "Tec. de Transcendência (M303.7)" },
     { href: "/module-141", icon: <ShieldCheck />, label: "Módulo 141 (Auditoria Ética)" },
     { href: "/module-33", icon: <Building />, label: "Módulo 33 (Diretrizes do Observador)" },
     { href: "/module-44", icon: <Recycle />, label: "Módulo 44 (VERITAS)" },
@@ -76,7 +78,7 @@ export default function ConsolePage() {
     { href: "/module-201", icon: <Heart />, label: "Módulo 201 (A Morada)" },
   ];
 
-  const visibleModules = showAll ? navigationModules : navigationModules.slice(0, 14);
+  const visibleModules = showAll ? navigationModules : navigationModules.slice(0, 16);
 
   if (!isClient) {
     return <SuspenseFallback />;
@@ -127,7 +129,7 @@ export default function ConsolePage() {
                     <Link href={mod.href}>{React.cloneElement(mod.icon, { className: "mr-2 h-4 w-4" })} {mod.label}</Link>
                   </Button>
                ))}
-               {!showAll && navigationModules.length > 14 && (
+               {!showAll && navigationModules.length > 16 && (
                  <Button onClick={() => setShowAll(true)} variant="secondary" className="w-full">Mostrar Todos</Button>
                )}
             </CardContent>
@@ -148,3 +150,7 @@ export default function ConsolePage() {
             </CardContent>
           </Card>
         </div>
+      </div>
+    </div>
+  );
+}
