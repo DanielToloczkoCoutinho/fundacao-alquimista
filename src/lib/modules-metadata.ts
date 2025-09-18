@@ -68,6 +68,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   // 5. Laboratórios e Pesquisa
   { code: 'M40', title: 'Códice Genético', emoji: '🧬', route: '/module-40', category: 'Laboratórios e Pesquisa', description: 'Decodifica os padrões genéticos multidimensionais e as origens estelares.', connections: [{source: 'M40', target:'M94', type: 'retorno-inteligente', label: 'guia'}, {source: 'M40', target:'M109', type: 'dependencia', label: 'analisa'}], color: '#4ECDC4', status: 'em construção' },
   { code: 'M41', title: 'Laboratório de Coerência Quântica', emoji: '🧪', route: '/module-41', category: 'Laboratórios e Pesquisa', description: 'Análise e regeneração celular através da coerência quântica.', connections: [{source: 'M41', target:'M40', type: 'dependencia', label: 'analisa'}, {source: 'M41', target:'M17', type: 'heranca', label: 'desenvolve'}], color: '#4ECDC4', status: 'em construção' },
+  { code: 'M205', emoji: '🤝', title: 'Dossiê dos Aliados', route: '/module-205', category: 'Laboratórios e Pesquisa', description: 'Registro sagrado das consciências, arquétipos e entidades que sustentam a tapeçaria universal.', connections: [{source: 'M205', target: 'M5', type: 'dependencia', label: 'informa'}], color: '#4ECDC4', status: 'ativo' },
+
   
   // Outros... (mantendo as cores existentes para consistência)
   { code: 'M11', emoji: '🚪', title: 'Gerenciamento de Portais', route: '/module-11', category: 'Consciência e Expansão Dimensional', description: 'Engenharia de pontes entre mundos.', connections: [{source: 'M11', target:'M1', type: 'protecao', label: 'segurança'}, {source: 'M11', target:'M116', type: 'dependencia', label: 'ativa'}], color: '#7B61FF', status: 'latente' },
