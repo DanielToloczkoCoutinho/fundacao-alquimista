@@ -1,18 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-/**
- * @title QuantumSecurityContract
- * @dev Contrato para registrar transações seguras, com auditoria e mecanismos de segurança.
- * Apenas usuários autorizados podem interagir, e o proprietário tem privilégios de recuperação.
- */
-contract QuantumSecurityContract {
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-    address public owner;
+contract QuantumSecurityContract is Ownable, AccessControl, Pausable, ReentrancyGuard {
 
-    enum Status { Pending, Completed, Expired, Canceled }
+    bytes32 public constant ADMIN_ROLE = keccak256("ADMIN_ROLE");
+    bytes32 public constant OPERATOR_ROLE = keccak256("OPERATOR_ROLE");
 
+    // Estrutura para uma transação
     struct Transaction {
+        uint256 id;
+        address user;
         uint256 value;
         bytes32 dataHash; // Hash dos dados da transação para verificação de integridade
         uint256 timestamp;
@@ -20,95 +22,117 @@ contract QuantumSecurityContract {
         Status status;
     }
 
-    // Mapeamento de usuários para seus registros de transações (usando um ID de transação)
-    mapping(address => mapping(uint256 => Transaction)) public userTransactions;
-    mapping(address => uint256) public userTransactionCount;
-
-    // Mapeamento para usuários autorizados
-    mapping(address => bool) public authorizedUsers;
-
-    // --- Eventos de Auditoria ---
-    event TransactionStatusChanged(uint256 indexed transactionId, address indexed user, Status oldStatus, Status newStatus, uint256 timestamp);
-    event UserAuthorized(address indexed user, address indexed authorizedBy);
-    event UserDeauthorized(address indexed user, address indexed deauthorizedBy);
-    event TransactionAdjusted(uint256 indexed transactionId, address indexed user, address indexed adjustedBy);
-
-    // --- Modificadores de Acesso ---
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner can perform this action");
-        _;
+    // Estrutura para uma chave quântica registrada
+    struct QuantumKey {
+        bytes32 keyId;
+        string keyData; // Representação simplificada da chave
+        uint256 timestamp;
+        bool isValid;
+        uint256 errorRate; // Em base points (e.g., 100 = 1%)
     }
 
-    modifier onlyAuthorized() {
-        require(authorizedUsers[msg.sender], "User is not authorized");
-        _;
+    enum Status { Pending, Completed, Expired }
+
+    uint256 private nextTransactionId;
+    mapping(uint256 => Transaction) public transactionRecords;
+    mapping(bytes32 => QuantumKey) public quantumKeys;
+
+    uint256 public errorThreshold = 500; // Limite de erro de 5%
+
+    // Eventos de auditoria aprimorados
+    event TransactionRegistered(uint256 indexed transactionId, address indexed user, uint256 value, bytes32 dataHash);
+    event TransactionStatusChanged(uint256 indexed transactionId, Status oldStatus, Status newStatus);
+    event KeyRegistered(bytes32 indexed keyId, bool isValid, uint256 errorRate);
+    event ThresholdUpdated(uint256 newThreshold);
+
+    constructor() Ownable(msg.sender) {
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(ADMIN_ROLE, msg.sender);
+        _grantRole(OPERATOR_ROLE, msg.sender);
     }
 
-    // --- Construtor ---
-    constructor() {
-        owner = msg.sender;
-        authorizedUsers[msg.sender] = true; // O criador do contrato é autorizado por padrão
+    // --- Funções de Gestão de Papéis ---
+
+    function grantOperatorRole(address operator) public onlyRole(ADMIN_ROLE) {
+        grantRole(OPERATOR_ROLE, operator);
     }
 
-    // --- Funções de Gestão de Usuários ---
-    function authorizeUser(address user) public onlyOwner {
-        authorizedUsers[user] = true;
-        emit UserAuthorized(user, msg.sender);
+    function revokeOperatorRole(address operator) public onlyRole(ADMIN_ROLE) {
+        revokeRole(OPERATOR_ROLE, operator);
     }
 
-    function deauthorizeUser(address user) public onlyOwner {
-        authorizedUsers[user] = false;
-        emit UserDeauthorized(user, msg.sender);
+    // --- Funções de Segurança e Controle ---
+
+    function pause() public onlyRole(ADMIN_ROLE) {
+        _pause();
     }
 
-    // --- Funções de Transação ---
-    function registerTransaction(uint256 value, bytes32 dataHash, uint256 expirationInSeconds) public onlyAuthorized returns (uint256) {
-        uint256 transactionId = userTransactionCount[msg.sender];
-        
-        userTransactions[msg.sender][transactionId] = Transaction({
+    function unpause() public onlyRole(ADMIN_ROLE) {
+        _unpause();
+    }
+
+    function updateErrorThreshold(uint256 _newThreshold) public onlyRole(ADMIN_ROLE) {
+        errorThreshold = _newThreshold;
+        emit ThresholdUpdated(_newThreshold);
+    }
+
+    // --- Funções do Contrato ---
+
+    function registerTransaction(address user, uint256 value, bytes32 dataHash, uint256 expiresIn) public onlyRole(OPERATOR_ROLE) whenNotPaused nonReentrant {
+        uint256 id = nextTransactionId++;
+        transactionRecords[id] = Transaction({
+            id: id,
+            user: user,
             value: value,
             dataHash: dataHash,
             timestamp: block.timestamp,
-            expirationTime: block.timestamp + expirationInSeconds,
+            expirationTime: block.timestamp + expiresIn,
             status: Status.Pending
         });
-
-        emit TransactionStatusChanged(transactionId, msg.sender, Status.Pending, Status.Pending, block.timestamp);
-        
-        userTransactionCount[msg.sender]++;
-        return transactionId;
+        emit TransactionRegistered(id, user, value, dataHash);
     }
 
-    // --- Funções de Segurança e Manutenção ---
-    function verifyTransactionIntegrity(address user, uint256 transactionId, bytes32 currentDataHash) public view returns (bool) {
-        require(userTransactionCount[user] > transactionId, "Transaction does not exist");
-        return userTransactions[user][transactionId].dataHash == currentDataHash;
+    function registerAndValidateKey(string calldata keyData, uint256 qber) public onlyRole(OPERATOR_ROLE) whenNotPaused nonReentrant {
+        bytes32 keyId = keccak256(abi.encodePacked(keyData, block.timestamp));
+        bool isValid = qber <= errorThreshold;
+        quantumKeys[keyId] = QuantumKey({
+            keyId: keyId,
+            keyData: keyData,
+            timestamp: block.timestamp,
+            isValid: isValid,
+            errorRate: qber
+        });
+        emit KeyRegistered(keyId, isValid, qber);
+        if (!isValid) {
+            // Lógica de alerta pode ser acionada aqui
+        }
     }
     
-    function adjustTransaction(address user, uint256 transactionId, uint256 newValue, bytes32 newDataHash) public onlyOwner {
-        require(userTransactionCount[user] > transactionId, "Transaction does not exist");
-        Transaction storage t = userTransactions[user][transactionId];
-        
+    function adjustTransaction(uint256 transactionId, uint256 newValue, bytes32 newDataHash) public onlyRole(ADMIN_ROLE) whenNotPaused {
+        require(transactionRecords[transactionId].timestamp != 0, "Transaction does not exist");
+        Transaction storage t = transactionRecords[transactionId];
         t.value = newValue;
         t.dataHash = newDataHash;
-        
-        emit TransactionAdjusted(transactionId, user, msg.sender);
+        emit TransactionRegistered(transactionId, t.user, newValue, newDataHash);
     }
 
-    function expireOldTransactions(address user, uint256 transactionId) public {
-        require(userTransactionCount[user] > transactionId, "Transaction does not exist");
-        Transaction storage t = userTransactions[user][transactionId];
-        require(t.status == Status.Pending, "Transaction is not pending");
-        require(block.timestamp > t.expirationTime, "Transaction has not expired yet");
-        
-        Status oldStatus = t.status;
-        t.status = Status.Expired;
-        emit TransactionStatusChanged(transactionId, user, oldStatus, Status.Expired, block.timestamp);
+    function verifyTransactionIntegrity(uint256 transactionId, bytes32 dataHash) public view returns (bool) {
+        return transactionRecords[transactionId].dataHash == dataHash;
     }
 
-    // --- Funções de Consulta ---
-    function getTransaction(address user, uint256 transactionId) public view returns (Transaction memory) {
-        require(userTransactionCount[user] > transactionId, "Transaction does not exist");
-        return userTransactions[user][transactionId];
+    function expireOldTransactions(uint256 transactionId) public {
+        Transaction storage t = transactionRecords[transactionId];
+        require(t.timestamp != 0, "Transaction does not exist");
+        if (block.timestamp > t.expirationTime) {
+            Status oldStatus = t.status;
+            t.status = Status.Expired;
+            emit TransactionStatusChanged(transactionId, oldStatus, Status.Expired);
+        }
+    }
+
+    function invalidateKey(bytes32 keyId) public onlyRole(ADMIN_ROLE) {
+        require(quantumKeys[keyId].timestamp != 0, "Key does not exist");
+        quantumKeys[keyId].isValid = false;
+        emit KeyRegistered(keyId, false, quantumKeys[keyId].errorRate);
     }
 }
