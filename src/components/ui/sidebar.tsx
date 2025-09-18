@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart, HeartHandshake, Globe, Building, Zap, Book } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart, HeartHandshake, Globe, Building, Zap, Book, Map } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -85,6 +85,16 @@ export function Sidebar() {
               </TooltipContent>
           </Tooltip>
         </Link>
+        <Link href="/roadmap" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Map className="h-8 w-8 text-orange-400" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Roteiro de Gaia-Aurélia</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
          <Link href="/module-121" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
@@ -105,13 +115,13 @@ export function Sidebar() {
               </TooltipContent>
           </Tooltip>
         </Link>
-        <Link href="/module-72" className="mb-4">
+        <Link href="/civilizations/council" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
               <span className="text-2xl"><Scale className="h-8 w-8 text-indigo-300" /></span>
             </TooltipTrigger>
              <TooltipContent side="right">
-                <p>Governança</p>
+                <p>Conselho Cósmico</p>
               </TooltipContent>
           </Tooltip>
         </Link>
