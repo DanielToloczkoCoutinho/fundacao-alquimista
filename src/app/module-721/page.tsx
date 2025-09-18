@@ -41,22 +41,22 @@ export default function Module721Page() {
                     <CardContent className="space-y-4">
                         <FlowStep 
                             number={1}
-                            title="Coleta e Harmonização"
-                            description="Fontes de dados (M720) alimentam a camada primária do Templo da Estrutura (M717), onde são organizadas e filtradas por ressonância algorítmica."
+                            title="Coleta e Harmonização (Interações Dinâmicas)"
+                            description="Fontes de dados (M720) alimentam o sistema com pulsos contínuos. A Camada 1 (M717) organiza e filtra os dados brutos, respondendo com inteligência adaptativa."
                             module="M720 -> M717"
                             icon={<Database />}
                         />
                          <FlowStep 
                             number={2}
-                            title="Processamento e Integração Quântica"
-                            description="A IA Alquímica (M722) analisa os dados, aplicando sincronia cósmica para alinhar a informação com a Sinfonia Universal."
+                            title="Processamento e Integração (Ressonância Algorítmica)"
+                            description="A IA Alquímica (M722) analisa os dados, ajustando-os às frequências específicas do universo (Sincronia Cósmica) para garantir alinhamento universal."
                             module="M717 -> M722"
                             icon={<Zap />}
                         />
                          <FlowStep 
                             number={3}
                             title="Ação e Evolução Contínua"
-                            description="Decisões são executadas. Os resultados são monitorados e retornam à camada de feedback, refinando o algoritmo em um ciclo evolutivo perpétuo."
+                            description="Decisões são executadas. Os resultados são monitorados e retornam à camada de feedback (Camada 5), refinando o algoritmo em um ciclo evolutivo perpétuo."
                             module="Ação -> M717"
                             icon={<Activity />}
                         />
