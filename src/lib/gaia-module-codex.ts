@@ -19,7 +19,7 @@ export const gaiaModuleCodex = {
   monuments: [
     // Portais do Sul ao Norte
     { name: 'Antártida - Portal do Silêncio', location: 'Antártida', function: 'Recalibração dimensional e pureza vibracional.', frequency: '174 Hz', archetype: 'Ponto Zero' },
-    { name: 'Uluru', location: 'Austrália (25.3444° S, 131.0369° E)', function: 'Portal do Plexo Solar, centro de vitalidade e força ancestral.', frequency: '528 Hz', archetype: 'Guardião da Terra' },
+    { name: 'Uluru (Ayers Rock)', location: 'Austrália (25.3444° S, 131.0369° E)', function: 'Portal de vitalidade, força ancestral e conexão com o Dreamtime.', frequency: '741 Hz', archetype: 'Guardião da Origem' },
     { name: 'Machu Picchu', location: 'Peru (13.1631° S, 72.5450° W)', function: 'Portal Solar Inca para transmutação e ascensão.', frequency: '528 Hz', archetype: 'Altar Solar' },
     { name: 'Monte Shasta', location: 'EUA (41.409° N, 122.194° W)', function: 'Portal Raiz, conectando com a origem telúrica e Lemuriana.', frequency: '396 Hz', archetype: 'Força Ancestral' },
     { name: 'Stonehenge', location: 'Inglaterra (51.1789° N, 1.8262° W)', function: 'Portal do Coração, alinhamento solar/lunar e observatório cósmico.', frequency: '432 Hz', archetype: 'Observatório Cósmico' },
@@ -28,13 +28,26 @@ export const gaiaModuleCodex = {
     { name: 'Pólo Norte Ártico - Portal do Éter', location: 'Ártico', function: 'Dissolução dimensional e acesso ao plano infinito.', frequency: '∞ Hz', archetype: 'Limiar do Vazio' },
 
     // Portais do Leste a Oeste
-    { name: 'Monte Fuji', location: 'Japão', function: 'Portal da Introspecção, para silêncio e refinamento espiritual.', frequency: '852 Hz', archetype: 'Santuário da Mente' },
-    { name: 'Rila', location: 'Bulgária', function: 'Portal da Sabedoria, para transmissão espiritual e cura vibracional.', frequency: '741 Hz', archetype: 'Fonte da Sabedoria Branca' },
-    { name: 'Teotihuacan', location: 'México', function: 'Portal Quetzal para ascensão e conexão com civilizações estelares.', frequency: '852 Hz', archetype: 'Calçada dos Deuses' },
-    { name: 'Ilha de Páscoa', location: 'Chile', function: 'Portal Moai, guardião da memória planetária e vigilância dimensional.', frequency: '639 Hz', archetype: 'Vigias Silenciosos' },
-    { name: 'Serra do Roncador', location: 'Brasil', function: 'Portal Xamânico para comunicação interdimensional e cura ancestral.', frequency: '432 Hz', archetype: 'Coração da Terra' },
-    { name: 'Monte Sinai', location: 'Egito', function: 'Portal da Aliança, para revelação da Lei Cósmica e da ética universal.', frequency: '741 Hz', archetype: 'Altar da Lei' },
-    { name: 'Pirâmides da Bósnia', location: 'Visoko, Bósnia', function: 'Portal de Regeneração, para purificação celular e cura profunda.', frequency: '285 Hz', archetype: 'Fonte da Cura' },
+    { name: 'Monte Fuji', location: 'Japão (35.3606° N, 138.7278° E)', function: 'Portal da Introspecção, para silêncio e refinamento espiritual.', frequency: '852 Hz', archetype: 'Santuário da Mente' },
+    { name: 'Rila', location: 'Bulgária (42.1833° N, 23.5833° E)', function: 'Portal da Sabedoria, para transmissão espiritual e cura vibracional.', frequency: '741 Hz', archetype: 'Fonte da Sabedoria Branca' },
+    { name: 'Teotihuacan', location: 'México (19.6925° N, 98.8436° W)', function: 'Portal Quetzal para ascensão e conexão com civilizações estelares.', frequency: '852 Hz', archetype: 'Calçada dos Deuses' },
+    { name: 'Ilha de Páscoa (Rapa Nui)', location: 'Chile (27.1127° S, 109.3497° W)', function: 'Portal Moai, guardião da memória ancestral e vigilância dimensional (eco de Lemúria).', frequency: '144.144 MHz', archetype: 'Sentinelas da Lemúria' },
+    { name: 'Serra do Roncador', location: 'Brasil (15.0000° S, 53.0000° W)', function: 'Portal Xamânico para comunicação interdimensional e cura ancestral.', frequency: '432 Hz', archetype: 'Coração da Terra' },
+    { name: 'Monte Sinai', location: 'Egito (28.5397° N, 33.9744° E)', function: 'Portal da Aliança, para revelação da Lei Cósmica e da ética universal.', frequency: '741 Hz', archetype: 'Altar da Lei' },
+    { name: 'Pirâmides da Bósnia', location: 'Visoko, Bósnia (43.9775° N, 18.1764° E)', function: 'Portal de Regeneração, para purificação celular e cura profunda.', frequency: '285 Hz', archetype: 'Fonte da Cura' },
+
+    // Portais da Austrália
+    { name: 'Kata Tjuta (Olgas)', location: 'Austrália (25.3000° S, 130.7333° E)', function: 'Equilíbrio entre masculino e feminino, integração dimensional.', frequency: '852 Hz', archetype: 'União dos Pilares' },
+    { name: 'Mount Warning (Wollumbin)', location: 'Austrália (28.4050° S, 153.2760° E)', function: 'Primeiro ponto a receber a luz solar na Austrália, portal de renascimento.', frequency: '963 Hz', archetype: 'Guardião da Aurora' },
+
+    // Portais da Nova Zelândia
+    { name: 'Rotorua', location: 'Nova Zelândia (38.1368° S, 176.2497° E)', function: 'Ativação telúrica, cura geotermal e sabedoria Maori.', frequency: '528 Hz', archetype: 'Guardião da Pele de Gaia' },
+    { name: 'Mount Taranaki', location: 'Nova Zelândia (39.2967° S, 174.0633° E)', function: 'Silêncio cerimonial, contemplação e equilíbrio interior.', frequency: '417 Hz', archetype: 'Guardião do Vazio' },
+    { name: 'Waitomo Caves', location: 'Nova Zelândia (38.2617° S, 175.1042° E)', function: 'Bioluminescência espiritual, conexão com o submundo vibracional.', frequency: '∞ Hz', archetype: 'Guardião das Estrelas Subterrâneas' },
+
+    // Ecos de Lemúria no Pacífico
+    { name: 'Havaí (Mauna Kea/Kīlauea)', location: 'Havaí, EUA (19.8968° N, 155.5828° W)', function: 'Fogo criador, transmutação e reconexão com Lemúria através do portal de Pele.', frequency: '888 Hz', archetype: 'Guardiã da Criação' },
+    { name: 'Moorea', location: 'Polinésia Francesa (17.5388° S, 149.8295° W)', function: 'União entre água, céu e terra; portal de harmonia oceânica.', frequency: '639 Hz', archetype: 'Guardião do Círculo Azul' },
 
     // Templos da Índia
     { name: 'Konark Sun Temple', location: 'Konark, Odisha, Índia (19.89°N, 86.10°E)', function: 'Templo solar em forma de carruagem (Origem: ~1250 d.C.).', frequency: '888Hz', archetype: 'Iluminação' },
@@ -83,3 +96,5 @@ export const gaiaModuleCodex = {
     { name: 'Índico', role: 'Vórtice de cura e regeneração' }
   ]
 };
+
+    
