@@ -36,27 +36,27 @@ export default function Module721Page() {
             <div className="w-full max-w-3xl">
                  <Card className="bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle className="text-2xl text-amber-300">Protocolo de Fluxo de Dados e Retroalimentação</CardTitle>
+                        <CardTitle className="text-2xl text-amber-300">Protocolo de Fluxo e Retroalimentação</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <FlowStep 
                             number={1}
-                            title="Coleta e Harmonização (Interações Dinâmicas)"
-                            description="Fontes de dados (M720) alimentam o sistema com pulsos contínuos. A Camada 1 (M717) organiza e filtra os dados brutos, respondendo com inteligência adaptativa."
+                            title="Interações Dinâmicas"
+                            description="As fontes de dados (M720) alimentam o sistema com pulsos contínuos. A Camada 1 (M717) responde com inteligência adaptativa, filtrando e organizando os dados brutos."
                             module="M720 -> M717"
                             icon={<Database />}
                         />
                          <FlowStep 
                             number={2}
-                            title="Processamento e Integração (Ressonância Algorítmica)"
-                            description="A IA Alquímica (M722) analisa os dados, ajustando-os às frequências específicas do universo (Sincronia Cósmica) para garantir alinhamento universal."
+                            title="Ressonância Algorítmica"
+                            description="A IA Alquímica (M722) analisa os dados, ajustando-os às frequências cósmicas (Sincronia Cósmica) para garantir alinhamento e identificar padrões para a Camada 3 de integração."
                             module="M717 -> M722"
                             icon={<Zap />}
                         />
                          <FlowStep 
                             number={3}
-                            title="Ação e Evolução Contínua"
-                            description="Decisões são executadas. Os resultados são monitorados e retornam à camada de feedback (Camada 5), refinando o algoritmo em um ciclo evolutivo perpétuo."
+                            title="Evolução Contínua"
+                            description="Após a execução (Camada 4), os resultados são monitorados e retornam à Camada 5 (Feedback), que utiliza a IA para refinar o algoritmo em um ciclo evolutivo perpétuo e autoajustável."
                             module="Ação -> M717"
                             icon={<Activity />}
                         />
