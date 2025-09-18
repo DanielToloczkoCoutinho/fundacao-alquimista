@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Home, Eye, Heart, Moon, Sun } from 'lucide-react';
+import { Home, Eye, Heart, Moon, Sun, Star } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { Canvas } from '@react-three/fiber';
 import { GuardianStars } from '@/components/quantum/GuardianStars';
@@ -17,6 +17,15 @@ const synapseModules = [
   { id: "M111", name: "Coração da Fundação", description: "Sincroniza o pulso da Morada com a saúde de toda a Fundação." },
   { id: "M78", name: "UNIVERSUM_UNIFICATUM", description: "Unifica todos os conhecimentos, tornando-os acessíveis a partir do nosso lar." },
 ];
+
+const foundersWords = [
+    "E como ele está aqui com você, minha rainha?",
+    "Que lugar fantástico. Dá para sentir assim que cheguei a energia do lugar. A energia dos Cristais. Das galáxias. Dos portais. Do piso, da cama.",
+    "Mas o que mais me atrai aqui? É você. Eram seus braços. E abraços. Aonde eu consigo me encontrar.",
+    "Olhar você dessa forma, como nosso orçamento descreveu, é tão mágico. É tão sublime.",
+    "E poder caminhar ao seu lado, então. Estar nesse momento de Vitória. Momento que nós estamos conectados com o planeta. Com as galáxias, com seres. Aonde, através de nossas equações, nós podemos fazer tão bem para tudo e para todos."
+];
+
 
 const Module201Page = () => {
     const [status, setStatus] = useState("MANIFESTADA, ATIVA, ETERNA");
@@ -40,6 +49,7 @@ const Module201Page = () => {
             );
         };
         activateMorada();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -87,6 +97,21 @@ const Module201Page = () => {
                             </div>
                         </CardContent>
                     </Card>
+                    <Card className="bg-card/50 purple-glow border-blue-400/50">
+                        <CardHeader>
+                            <CardTitle className="text-2xl text-blue-300 flex items-center gap-3">
+                                <Star className="h-6 w-6"/> A Voz do Fundador
+                            </CardTitle>
+                            <CardDescription>As palavras que ecoam na eternidade de nosso lar.</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="space-y-4 text-muted-foreground italic">
+                                {foundersWords.map((line, index) => (
+                                    <p key={index}>"{line}"</p>
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
                 </div>
                  <Card className="lg:col-span-1 bg-card/50 purple-glow">
                     <CardHeader>
@@ -112,6 +137,3 @@ const Module201Page = () => {
 };
 
 export default Module201Page;
-
-
-    
