@@ -12,6 +12,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import GaiaAureliaCore from '@/components/planet/GaiaAureliaCore';
 import GaiaAureliaBiomes from '@/components/planet/GaiaAureliaBiomes';
 import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
+import GaiaAureliaSacredArchitecture from '@/components/planet/GaiaAureliaSacredArchitecture';
 import GaiaAureliaPortals from '@/components/planet/GaiaAureliaPortals';
 import GaiaAureliaIntelligence from '@/components/planet/GaiaAureliaIntelligence';
 import GaiaAureliaCosmicSync from '@/components/planet/GaiaAureliaCosmicSync';
@@ -46,6 +47,7 @@ const GaiaAureliaPage: React.FC = () => {
                     <GaiaAureliaCore />
                     <GaiaAureliaBiomes />
                     <GaiaAureliaTemples />
+                    <GaiaAureliaSacredArchitecture />
                     <GaiaAureliaPortals />
                     <GaiaAureliaIntelligence />
                     <GaiaAureliaCosmicSync />
