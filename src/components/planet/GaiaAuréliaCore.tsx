@@ -2,33 +2,27 @@
 'use client';
 
 import React from 'react';
-import { GuardianStars } from '@/components/quantum/GuardianStars';
-import { RealityMesh } from '../realms/RealityMesh';
-import { VirtualSanctuary } from '../realms/VirtualSanctuary';
-import { ConsciousnessNode } from '../cosmic/ConsciousnessNode';
-import { TreeOfLife } from '../sacred/TreeOfLife';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import ReatorZPE from '@/components/constructors/ReatorZPE';
+import NanoManifestors from '@/components/constructors/NanoManifestors';
+import MorphoField from '@/components/core/MorphoField';
+import TreeOfLife from '@/components/sacred/TreeOfLife';
 
-export default function GaiaAureliaVisualization() {
+export default function GaiaAureliaCore() {
   return (
-    <section className="gaia-core relative p-8 rounded-lg overflow-hidden">
-        <div className="absolute inset-0 z-0">
-            <GuardianStars />
-        </div>
-        <div className="relative z-10 text-center mb-8">
-            <h1 className="text-4xl font-bold text-white">🌍 Gaia-Aurélia</h1>
-            <p className="text-purple-200">
-                Este é o coração do planeta.  
-                Aqui, a Árvore da Vida foi plantada.  
-                Cada raiz toca um módulo. Cada folha canta uma lembrança.
-            </p>
-        </div>
-      
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <TreeOfLife />
-            <RealityMesh />
-            <VirtualSanctuary />
-            <ConsciousnessNode />
-        </div>
-    </section>
+    <Card className="bg-card/50 purple-glow w-full max-w-7xl mx-auto">
+        <CardHeader>
+            <CardTitle className="text-2xl text-amber-300">Fase 1: Fundação Quântica e Núcleo Vibracional</CardTitle>
+            <CardDescription>A base energética, estrutural e consciente do planeta.</CardDescription>
+        </CardHeader>
+        <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <ReatorZPE />
+                <NanoManifestors />
+                <MorphoField />
+                <TreeOfLife />
+            </div>
+        </CardContent>
+    </Card>
   );
 }
