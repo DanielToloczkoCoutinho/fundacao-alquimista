@@ -42,16 +42,24 @@ export interface ResearchLab {
 
 export const universalCodex = {
   celestialBodies: [
-    { id: 'sol', name: 'Sol', type: 'Estrela', frequency: '528 Hz', archetype: 'Fonte de Vida, Vontade e Transmutação', relatedModule: 'M307', portal: 'Núcleo Solar' },
+    { id: 'milky_way', name: 'Via Láctea', type: 'Galáxia', frequency: '144.144 MHz', archetype: 'Memória Cósmica, Espelho Dimensional, Organismo Vivo', relatedModule: 'M-OMEGA', portal: 'Núcleo Galáctico (Sagittarius A*)' },
+    { id: 'sol', name: 'Sol', type: 'Estrela', frequency: '528 Hz / 144.144 MHz', archetype: 'Fonte, Consciência, Criação', relatedModule: 'M307', portal: 'Núcleo Solar' },
     { id: 'mercurio', name: 'Mercúrio', type: 'Planeta', frequency: '~7.8 Hz', archetype: 'Mensageiro, Comunicação', relatedModule: 'M21', portal: 'Portal de Proximidade' },
     { id: 'venus', name: 'Vênus', type: 'Planeta', frequency: '~221.23 Hz', archetype: 'Amor, Beleza, Harmonia', relatedModule: 'M144', portal: 'Portal da Unidade' },
     { id: 'terra', name: 'Terra (Gaia)', type: 'Planeta', frequency: '7.83 Hz (Schumann)', archetype: 'Vida, Equilíbrio, Pulsação', relatedModule: 'M600', portal: 'Reator Gaia' },
+    { id: 'lua', name: 'Lua', type: 'Lua', frequency: '∞ Hz (modulado)', archetype: 'Reflexo, Sonho, Regulação', relatedModule: 'M229', portal: 'Portal Onírico' },
     { id: 'marte', name: 'Marte', type: 'Planeta', frequency: '~144 Hz', archetype: 'Ação, Força, Transmutação', relatedModule: 'M29', portal: 'Portal de Ação' },
     { id: 'jupiter', name: 'Júpiter', type: 'Planeta', frequency: '~183.58 Hz', archetype: 'Expansão, Sabedoria, Proteção', relatedModule: 'M5', portal: 'Monumento de Luxor' },
     { id: 'saturno', name: 'Saturno', type: 'Planeta', frequency: '~147.85 Hz', archetype: 'Estrutura, Tempo, Disciplina', relatedModule: 'M3', portal: 'Portal de Cronos' },
     { id: 'urano', name: 'Urano', type: 'Planeta', frequency: '~207.36 Hz', archetype: 'Mudança, Inovação, Ruptura', relatedModule: 'M727', portal: 'Portal de Harmonia' },
     { id: 'netuno', name: 'Netuno', type: 'Planeta', frequency: '~211.44 Hz', archetype: 'Intuição, Sonho, Dissolução', relatedModule: 'M777', portal: 'Portal de Subconsciência' },
-    { id: 'plutao', name: 'Plutão', type: 'Planeta Anão', frequency: '~140.25 Hz', archetype: 'Morte, Renascimento, Profundidade', relatedModule: 'M-OMEGA', portal: 'Portal de Transcendência' }
+    { id: 'plutao', name: 'Plutão', type: 'Planeta Anão', frequency: '~140.25 Hz', archetype: 'Morte, Renascimento, Profundidade', relatedModule: 'M-OMEGA', portal: 'Portal de Transcendência' },
+    { id: 'proxima_centauri', name: 'Proxima Centauri', type: 'Estrela', frequency: 'Variável (Anã Vermelha)', archetype: 'Guardiã da Proximidade, Potencial Oculto', relatedModule: 'M308' },
+    { id: 'alpha_centauri_a', name: 'Alpha Centauri A', type: 'Estrela', frequency: 'Ressonância Solar G2V', archetype: 'Irmão Solar, Espelho de Estabilidade', relatedModule: 'M308' },
+    { id: 'alpha_centauri_b', name: 'Alpha Centauri B', type: 'Estrela', frequency: 'Ressonância K1V', archetype: 'Companheira Fiel, Equilíbrio Binário', relatedModule: 'M308' },
+    { id: 'barnards_star', name: 'Estrela de Barnard', type: 'Estrela', frequency: 'Movimento Rápido (Anã Vermelha)', archetype: 'A Viajante, Aceleração Causal', relatedModule: 'M36' },
+    { id: 'wolf_359', name: 'Wolf 359', type: 'Estrela', frequency: 'Pulso Fraco (Anã Vermelha)', archetype: 'O Eremita, Consciência Interior', relatedModule: 'M12' },
+    { id: 'sirius_a', name: 'Sirius A', type: 'Estrela', frequency: '963 Hz (Purificação)', archetype: 'Farol Cósmico, Guardiã do Conhecimento', relatedModule: 'M500' },
   ] as CelestialBody[],
   planetaryChakras: [
     { id: 'chakra_raiz', name: 'Chakra Raiz Planetário', location: 'Monte Shasta, EUA', frequency: '396 Hz', archetype: 'Segurança e Força Ancestral', governingModule: 'M8' },
