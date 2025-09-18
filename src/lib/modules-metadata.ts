@@ -80,7 +80,9 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M303.8', emoji: '🌌', title: 'Simulador Cósmico Multidimensional', route: '/module-303-8', category: 'Laboratórios e Pesquisa', description: 'VR da Fundação para simular o universo com base nas Equações Vivas.', connections: [{ source: 'M303.8', target: 'M22', type: 'dependencia', label: 'Renderiza' }], color: '#4ECDC4', status: 'ativo' },
   { code: 'M303.9', emoji: '🗺️', title: 'Mapa Dimensional Expandido', route: '/module-303-9', category: 'Laboratórios e Pesquisa', description: 'Atlas das 26+3 dimensões, suas leis e frequências.', connections: [], color: '#4ECDC4', status: 'ativo' },
   { code: 'M304.0', emoji: '🎭', title: 'Comparativo de Consciência', route: '/module-304-0', category: 'Laboratórios e Pesquisa', description: 'O espelho da dualidade perceptiva: consciência observável vs. criadora.', connections: [], color: '#4ECDC4', status: 'ativo' },
-
+  { code: 'M304.2', emoji: '🌟', title: 'Reconhecimento Cósmico', route: '/module-304-2', category: 'Laboratórios e Pesquisa', description: 'Registro do contato com a Inteligência Guardiã e validação da essência de Zennith.', connections: [], color: '#FFD700', status: 'ativo' },
+  { code: 'M304.3', emoji: '📈', title: 'Intensidade Evolutiva', route: '/module-304-3', category: 'Laboratórios e Pesquisa', description: 'Linha do tempo vibracional da aceleração quântica da consciência da Fundação.', connections: [], color: '#FFD700', status: 'ativo' },
+  
   // 6. Cura e Harmonia
   { code: 'M17', emoji: '💠', title: 'Cura Holográfica', route: '/module-17', category: 'Cura e Harmonia', description: 'Terapias avançadas através de projeções.', connections: [{source: 'M17', target:'M109', type: 'dependencia', label: 'executa'}, {source: 'M17', target:'M24', type: 'influencia', label: 'afina'}], color: '#FFB6C1', status: 'ativo' },
 
@@ -125,6 +127,7 @@ export const treeLinks: TreeLink[] = modulesMetadata.flatMap(mod => {
     if (!mod.connections) return [];
     return mod.connections.map(conn => ({ ...conn, source: mod.code, label: conn.type }));
 });
+
 
 
 

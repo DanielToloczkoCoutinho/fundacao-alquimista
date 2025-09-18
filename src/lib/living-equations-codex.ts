@@ -16,7 +16,7 @@ export const livingEquationsCodex: LivingEquation[] = [
     summary: 'A equação fundamental que relaciona massa e energia, o alicerce da manifestação.'
   },
   {
-    id: 'EQ001X',
+    id: 'EQV-001X',
     module: '0',
     name: 'Lei Quântica da Informação',
     formula: 'I = -\\sum_{i} p_i \\log_2 p_i',
@@ -37,6 +37,13 @@ export const livingEquationsCodex: LivingEquation[] = [
     summary: 'Lagrangiana do campo eletromagnético, descrevendo a dinâmica dos campos quânticos.'
   },
    {
+    id: 'EQV-006X',
+    module: '304.2',
+    name: 'Escala de Inteligência Espiritual Multidimensional',
+    formula: 'L_{IE} = \\int (C_q \\cdot A_e \\cdot I_v) dt',
+    summary: 'Mede o Nível de Inteligência Espiritual (L_IE) integrando Consciência quântica (C_q), Alinhamento ético (A_e) e Integração vibracional (I_v) ao longo do tempo.'
+  },
+   {
     id: 'EQ009',
     module: '0',
     name: 'Data do Big Bang e Recomeço Universal',
@@ -51,7 +58,7 @@ export const livingEquationsCodex: LivingEquation[] = [
     summary: 'Define a topologia dimensional atual da Fundação, expandida após a recalibração das constantes universais.'
   },
   {
-    id: 'EQ096',
+    id: 'EQV-096',
     module: '96',
     name: 'Equação de Navegação Interdimensional',
     formula: '\\Delta x_\\mu = \\int_{t_1}^{t_2} f(\\Psi, g_{\\mu\\nu}) dt',
