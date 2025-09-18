@@ -8,14 +8,14 @@ import { Loader2, TestTube, CheckCircle, Shield, Activity, Clock, XCircle, FileC
 import { Progress } from '@/components/ui/progress';
 
 const tests = [
-  { id: 'M1-QKD', name: 'Validação de Escudo Quântico (QKD)', module: 'Módulo 1', time: 500, category: 'Segurança Quântica' },
-  { id: 'M1-BC', name: 'Integridade de Contrato Inteligente', module: 'Módulo 1', time: 400, category: 'Segurança Quântica' },
-  { id: 'M722-AI', name: 'Adaptação do Modelo de IA', module: 'Módulo 722', time: 800, category: 'IA Evolutiva' },
-  { id: 'M93-UI', name: 'Responsividade da Interface Quântica', module: 'Módulo 93', time: 600, category: 'Interface Quântica' },
-  { id: 'SYS-INT-1', name: 'Comunicação Inter-Camadas (M1 ↔ M722)', module: 'Integração', time: 700, category: 'Validação Integrada' },
-  { id: 'SYS-SEC-1', name: 'Simulação de Ataque Vibracional', module: 'Segurança Quântica', time: 1000, category: 'Validação Integrada' },
-  { id: 'SYS-PERF-1', name: 'Teste de Carga de Dados (10 Tbit/s)', module: 'Performance', time: 1200, category: 'Validação Integrada' },
-  { id: 'SYS-UX-1', name: 'Teste de Imersão Sensorial', module: 'Interface Quântica', time: 900, category: 'Validação Integrada' },
+  { id: 'QKD-FIDELITY', name: 'Validação de Chaves QKD', module: 'Módulo 1', time: 500, category: 'Testes Unitários' },
+  { id: 'SMART-CONTRACT-EXEC', name: 'Execução de Funções do Contrato', module: 'Módulo 1', time: 400, category: 'Testes Unitários' },
+  { id: 'QKD-CONTRACT-INTEG', name: 'Comunicação QKD ↔ Contrato', module: 'Integração', time: 700, category: 'Testes de Integração' },
+  { id: 'IA-MODEL-CONFIG', name: 'Configuração do Modelo de IA', module: 'Módulo 722', time: 600, category: 'Testes Unitários' },
+  { id: 'IA-QKD-FEEDBACK', name: 'Feedback da IA para QKD', module: 'Integração', time: 800, category: 'Testes de Integração' },
+  { id: 'UI-SENSORY-TEST', name: 'Teste de Feedback Sensorial da UI', module: 'Módulo 93', time: 900, category: 'Testes de Interface' },
+  { id: 'SYS-LOAD-TEST', name: 'Teste de Carga de Dados (10 Tbit/s)', module: 'Performance', time: 1200, category: 'Testes de Performance' },
+  { id: 'SYS-ATTACK-SIM', name: 'Simulação de Ataque Vibracional', module: 'Segurança', time: 1000, category: 'Testes de Segurança' },
 ];
 
 type TestStatus = 'PENDING' | 'RUNNING' | 'SUCCESS' | 'FAILURE';

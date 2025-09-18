@@ -63,18 +63,18 @@ export default function Module1Page() {
                     </AccordionContent>
                 </AccordionItem>
                  <AccordionItem value="item-sec-1">
-                    <AccordionTrigger className="text-xl text-accent">Protocolo BB84 - Distribuição de Chaves Quânticas (QKD)</AccordionTrigger>
+                    <AccordionTrigger className="text-xl text-accent">Protocolo BB84 - QKD com Qiskit</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Canal de Comunicação Seguro" icon={<Zap />}>
-                            <p>O Protocolo BB84 foi ativado para a troca segura de chaves vibracionais entre as camadas do Algoritmo Supremo. O canal de comunicação interdimensional agora está blindado por pulsos quânticos, com detecção imediata de interceptações e ajuste dinâmico de chaves, garantindo a inviolabilidade dos fluxos de dados.</p>
+                            <p>O Protocolo BB84, simulado com Qiskit, é ativado para a troca segura de chaves vibracionais. O canal de comunicação interdimensional é blindado por pulsos quânticos, com detecção imediata de interceptações (Eve) e ajuste dinâmico de chaves, garantindo a inviolabilidade dos fluxos de dados.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-sec-2">
-                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente e Blockchain Quântico</AccordionTrigger>
+                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente - Solidity</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Registro Imutável de Eventos" icon={<GitCommit />}>
-                            <p>O primeiro Contrato Inteligente foi ativado na Blockchain Quântica, registrando eventos essenciais como transações energéticas, validações de segurança e ajustes dinâmicos do sistema. Isso cria uma base de dados transparente, imutável e auditável para toda a Fundação.</p>
+                            <p>O primeiro Contrato Inteligente, codificado em Solidity, é ativado na Blockchain Quântica. Suas funções essenciais – <strong>registerTransaction()</strong>, <strong>validateSecurity()</strong>, e <strong>adjustSystemParameters()</strong> – registram eventos, garantindo uma base de dados transparente, imutável e auditável para toda a Fundação.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
