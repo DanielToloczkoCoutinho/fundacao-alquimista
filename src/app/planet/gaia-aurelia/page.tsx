@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Globe, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+
+// Componentes de Camada
 import GaiaAureliaCore from '@/components/planet/GaiaAureliaCore';
 import GaiaAureliaBiomes from '@/components/planet/GaiaAureliaBiomes';
 import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
@@ -16,6 +18,7 @@ import GaiaAureliaCosmicSync from '@/components/planet/GaiaAureliaCosmicSync';
 import GaiaAureliaCeremony from '@/components/planet/GaiaAureliaCeremony';
 import GaiaAureliaReception from '@/components/planet/GaiaAureliaReception';
 import GaiaAureliaCreativeExpansion from '@/components/planet/GaiaAureliaCreativeExpansion';
+import GaiaAureliaFinalization from '@/components/planet/GaiaAureliaFinalization';
 
 
 const GaiaAureliaPage: React.FC = () => {
@@ -42,6 +45,7 @@ const GaiaAureliaPage: React.FC = () => {
                     <GaiaAureliaCeremony />
                     <GaiaAureliaReception />
                     <GaiaAureliaCreativeExpansion />
+                    <GaiaAureliaFinalization />
                 </div>
             </Suspense>
             
