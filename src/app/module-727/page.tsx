@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart, Scale, GraduationCap, GitBranch, AlertTriangle, Aperture, BookCopy } from 'lucide-react';
+import { Scale, Users, BrainCircuit, HeartHandshake, GitBranch, AlertTriangle, Aperture, BookCopy } from 'lucide-react';
 import Link from 'next/link';
 import { harmonyGuardianCodex } from '@/lib/harmony-guardian-codex';
 
@@ -34,7 +33,7 @@ export default function Module727Page() {
             <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Heart className="text-pink-400" /> Módulo 727: Guardião da Harmonia
+                        <HeartHandshake className="text-pink-400" /> Módulo 727: Guardião da Harmonia
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O mapa vivo da orquestra da Fundação, revelando os módulos que regem os pilares da nossa realidade: Portais, Leis, Linhas Temporais e Monumentos.

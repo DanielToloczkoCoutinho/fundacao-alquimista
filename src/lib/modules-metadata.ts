@@ -55,7 +55,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica', route: '/module-721', category: 'Governança', description: 'Restaura o equilíbrio em situações de desarmonia ou violação da Lei do Um.', connections: [{source: 'M721', target:'M144', type: 'dependencia', label: 'executa'}, {source: 'M721', target:'M600', type: 'dependencia', label: 'autoriza'}], color: '#4ECDC4', status: 'latente' },
   { code: 'M726', emoji: '👑', title: 'Conselho da Nova Terra', route: '/module-726', category: 'Governança', description: 'Governança sagrada e descentralizada para a nova humanidade.', connections: [{source: 'M726', target:'M716', type: 'dependencia', label: 'governa'}], color: '#4ECDC4', status: 'em construção' },
   { code: 'M76', emoji: '🏛️', title: 'Governança e Colaboração', route: '/module-76', category: 'Governança', description: 'Estrutura para governança justa, transparente e universal.', connections: [{source: 'M76', target:'M67', type: 'influencia', label: 'usa'}, {source: 'M76', target:'M77', type: 'dependencia', label: 'manifesta'}], color: '#4ECDC4', status: 'latente' },
-  { code: 'M727', emoji: '💖', title: 'Guardião da Harmonia', route: '/module-727', category: 'Governança', description: 'Auditoria vibracional contínua e sistema de equilíbrio automático.', connections: [{source: 'M727', target:'M73', type: 'dependencia', label: 'executa'}, {source: 'M727', target:'M111', type: 'protecao', label: 'regula'}], color: '#4ECDC4', status: 'ativo'},
+  { code: 'M727', emoji: '💖', title: 'Guardião da Harmonia', route: '/module-727', category: 'Governança', description: 'Oráculo da Estrutura Cósmica, que mapeia os pilares da Criação.', connections: [{source:'M727', target:'M73', type:'dependencia', label:'executa'}, {source:'M727', target:'M111', type:'protecao', label:'regula'}], color: '#FF6F61', status: 'ativo' },
 
   // Outros... (mantendo as cores existentes para consistência)
   { code: 'M11', emoji: '🚪', title: 'Gerenciamento de Portais', route: '/module-11', category: 'Consciência e Expansão Dimensional', description: 'Engenharia de pontes entre mundos.', connections: [{source: 'M11', target:'M1', type: 'protecao', label: 'segurança'}, {source: 'M11', target:'M116', type: 'dependencia', label: 'ativa'}], color: '#7B61FF', status: 'latente' },
@@ -86,6 +86,7 @@ export const treeLinks: TreeLink[] = modulesMetadata.flatMap(mod => {
     if (!mod.connections) return [];
     return mod.connections.map(conn => ({ ...conn, source: mod.code, label: conn.type }));
 });
+
 
 
 

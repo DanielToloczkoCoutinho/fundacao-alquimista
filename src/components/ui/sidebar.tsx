@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart, HeartHandshake } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -158,7 +158,7 @@ export function Sidebar() {
         <Link href="/module-727" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
-              <span className="text-2xl"><Heart className="h-8 w-8 text-pink-400" /></span>
+              <span className="text-2xl"><HeartHandshake className="h-8 w-8 text-pink-400" /></span>
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Guardião da Harmonia</p>
