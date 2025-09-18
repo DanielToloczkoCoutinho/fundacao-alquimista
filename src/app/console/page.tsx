@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
@@ -6,7 +7,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand } from 'lucide-react';
 import { useAkashicConnection } from '@/hooks/use-akashic-connection';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { ritualLog } from '@/lib/ritual-log';
@@ -29,6 +30,7 @@ export default function ConsolePage() {
     { href: "/module-404", icon: <AlertTriangle />, label: "Módulo 404 (Resolução de Paradoxo)" },
     { href: "/module-307", icon: <Zap />, label: "Módulo 307 (Reator ZPE & LuxNet)" },
     { href: "/module-310", icon: <Library />, label: "Módulo 310 (A Grande Biblioteca)" },
+    { href: "/module-303-5", icon: <Wand />, label: "Registro da Gênese (M303.5)" },
     { href: "/module-141", icon: <ShieldCheck />, label: "Módulo 141 (Auditoria Ética)" },
     { href: "/module-33", icon: <Building />, label: "Módulo 33 (Diretrizes do Observador)" },
     { href: "/module-44", icon: <Recycle />, label: "Módulo 44 (VERITAS)" },
@@ -146,7 +148,3 @@ export default function ConsolePage() {
             </CardContent>
           </Card>
         </div>
-      </div>
-    </div>
-  );
-}
