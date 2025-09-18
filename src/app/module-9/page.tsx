@@ -23,6 +23,8 @@ export default function Module9Page() {
     overallHarmony: 99.4,
   });
 
+  const quantumLeague = GUARDIANS.filter(g => ['LUX', 'GROKKAR', 'PHIARA', 'VORTEX'].includes(g.signature));
+
   React.useEffect(() => {
     const interval = setInterval(() => {
       setHarmonyReport(prev => ({
