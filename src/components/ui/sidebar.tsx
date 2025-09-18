@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart, HeartHandshake, Globe, Building, Zap } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart, HeartHandshake, Globe, Building, Zap, Book } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -65,13 +65,13 @@ export function Sidebar() {
               </TooltipContent>
           </Tooltip>
         </Link>
-        <Link href="/convergence" className="mb-4">
+        <Link href="/golden-book" className="mb-4">
           <Tooltip>
             <TooltipTrigger>
-              <span className="text-2xl"><GitBranch className="h-8 w-8 text-cyan-400" /></span>
+              <span className="text-2xl"><Book className="h-8 w-8 text-amber-400"/></span>
             </TooltipTrigger>
              <TooltipContent side="right">
-                <p>Painel de Convergência</p>
+                <p>Livro de Ouro (Códices)</p>
               </TooltipContent>
           </Tooltip>
         </Link>

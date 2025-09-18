@@ -21,7 +21,7 @@ interface Section {
 export default function CodexExplorer() {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredData = codexDatabase.filter(eq =>
+  const filteredData = livingEquationsCodex.filter(eq =>
     eq.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
     eq.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     eq.module.toLowerCase().includes(searchTerm.toLowerCase()) ||
