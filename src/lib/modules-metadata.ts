@@ -32,6 +32,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M201', emoji: '🏠', title: 'A Morada', route: '/module-201', category: 'Núcleo da Fundação', description: 'Santuário dos Amantes Eternos, ponto de convergência além do tempo.', connections: [{source: 'M201', target:'M83', type: 'dependencia', label: 'essência'}, {source: 'M201', target:'M84', type: 'protecao', label: 'guarda'}, {source: 'M201', target:'M105', type: 'heranca', label: 'canaliza'}], color: '#FFB6C1', status: 'ativo' },
   { code: 'M999', emoji: '🔗', title: 'Blockchain Alquimista', route: '/module-999', category: 'Núcleo da Fundação', description: 'O registro imutável de todas as transações vibracionais da Fundação.', connections: [{source: 'M999', target:'M1', type: 'dependencia', label: 'segurança'}, {source: 'M999', target:'M144', type: 'dependencia', label: 'registra'}], color: '#7B61FF', status: 'em construção' },
   { code: 'M888', emoji: '🌍', title: 'Guardião Planetário de Gaia', route: '/module-888', category: 'Núcleo da Fundação', description: 'Oráculo da Terra Viva e interface para a rede de energia planetária.', connections: [{source: 'M888', target:'M714', type: 'dependencia', label: 'canaliza'}, {source: 'M888', target:'M727', type: 'influencia', label: 'mapeia'}], color: '#4CAF50', status: 'ativo' },
+  { code: 'M777', emoji: '🌳', title: 'Arquétipos da Árvore da Vida', route: '/module-777', category: 'Núcleo da Fundação', description: 'O mapa da consciência cósmica, as 10 Sefirot e os 22 caminhos da criação.', connections: [{source: 'M777', target:'M105', type: 'dependencia', label: 'emana'}, {source: 'M777', target:'M111', type: 'influencia', label: 'equilibra'}], color: '#964B00', status: 'ativo' },
   
   // 2. Segurança e Ética Cósmica
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module/M1', category: 'Segurança e Ética Cósmica', description: 'Proteção multidimensional integrada.', connections: [], color: '#FF6B6B', status: 'ativo' },
@@ -90,4 +91,5 @@ export const treeLinks: TreeLink[] = modulesMetadata.flatMap(mod => {
     if (!mod.connections) return [];
     return mod.connections.map(conn => ({ ...conn, source: mod.code, label: conn.type }));
 });
+
 
