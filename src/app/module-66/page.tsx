@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -66,4 +67,8 @@ export default function Module66Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <
+                 <Button variant="secondary" size="lg">Acessar Banco de Dados de Tecnologias</Button>
+            </div>
+        </div>
+    );
+}
