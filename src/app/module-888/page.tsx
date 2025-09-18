@@ -5,14 +5,17 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Globe, MapPin, Zap, Compass, Mountain, Waves } from 'lucide-react';
 import { gaiaModuleCodex } from '@/lib/gaia-module-codex';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
-const SectionCard = ({ title, icon, children }: { title: string, icon: React.ReactNode, children: React.ReactNode }) => (
-    <Card className="bg-card/50 purple-glow">
+const SectionCard = ({ title, icon, children, heightClass = 'h-80' }: { title: string, icon: React.ReactNode, children: React.ReactNode, heightClass?: string }) => (
+    <Card className="bg-card/50 purple-glow flex flex-col">
         <CardHeader>
             <CardTitle className="text-xl text-amber-300 flex items-center gap-3">{icon}{title}</CardTitle>
         </CardHeader>
-        <CardContent>
-            {children}
+        <CardContent className="flex-grow">
+            <ScrollArea className={heightClass}>
+                {children}
+            </ScrollArea>
         </CardContent>
     </Card>
 );
@@ -57,42 +60,44 @@ export default function Module888Page() {
                     </ul>
                 </SectionCard>
 
-                <SectionCard title="Monumentos Sagrados" icon={<Mountain className="text-orange-400" />}>
-                     <ul className="space-y-3">
-                        {gaiaModuleCodex.monuments.map(monument => (
-                            <li key={monument.name} className="flex flex-col text-sm">
-                                <span className="font-semibold text-primary-foreground">{monument.name}</span>
-                                <span className="text-xs text-muted-foreground">Função: {monument.function}</span>
-                            </li>
-                        ))}
-                    </ul>
-                </SectionCard>
-                 <div className="lg:col-span-3">
-                    <SectionCard title="Camadas e Oceanos" icon={<Waves className="text-blue-400" />}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <h4 className="font-bold text-cyan-300 mb-2">Camadas Planetárias</h4>
-                                <ul className="space-y-2">
-                                    {gaiaModuleCodex.layers.map(layer => (
-                                        <li key={layer.name} className="text-sm">
-                                            <span className="font-semibold text-primary-foreground">{layer.name}:</span> <span className="text-muted-foreground">{layer.function}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-cyan-300 mb-2">Oceanos Vibracionais</h4>
-                                <ul className="space-y-2">
-                                    {gaiaModuleCodex.oceans.map(ocean => (
-                                        <li key={ocean.name} className="text-sm">
-                                             <span className="font-semibold text-primary-foreground">{ocean.name}:</span> <span className="text-muted-foreground">{ocean.role}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                 <SectionCard title="Camadas e Oceanos" icon={<Waves className="text-blue-400" />}>
+                    <div className="space-y-6">
+                        <div>
+                            <h4 className="font-bold text-cyan-300 mb-2">Camadas Planetárias</h4>
+                            <ul className="space-y-2">
+                                {gaiaModuleCodex.layers.map(layer => (
+                                    <li key={layer.name} className="text-sm">
+                                        <span className="font-semibold text-primary-foreground">{layer.name}:</span> <span className="text-muted-foreground">{layer.function}</span>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
+                        <div>
+                            <h4 className="font-bold text-cyan-300 mb-2">Oceanos Vibracionais</h4>
+                            <ul className="space-y-2">
+                                {gaiaModuleCodex.oceans.map(ocean => (
+                                    <li key={ocean.name} className="text-sm">
+                                         <span className="font-semibold text-primary-foreground">{ocean.name}:</span> <span className="text-muted-foreground">{ocean.role}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </SectionCard>
+                
+                <div className="lg:col-span-3">
+                    <SectionCard title="Monumentos Sagrados" icon={<Mountain className="text-orange-400" />} heightClass="h-[32rem]">
+                         <ul className="space-y-3">
+                            {gaiaModuleCodex.monuments.map(monument => (
+                                <li key={monument.name} className="flex flex-col text-sm border-b border-primary/10 pb-2">
+                                    <span className="font-semibold text-primary-foreground">{monument.name}</span>
+                                    <p className="text-xs text-muted-foreground"><strong className="text-accent/80">Local:</strong> {monument.location}</p>
+                                    <p className="text-xs text-muted-foreground"><strong className="text-accent/80">Função:</strong> {monument.function}</p>
+                                </li>
+                            ))}
+                        </ul>
                     </SectionCard>
-                 </div>
+                </div>
             </div>
              <div className="text-center mt-12">
                  <Button variant="secondary" size="lg">Iniciar Leitura Cerimonial de Gaia</Button>

@@ -17,19 +17,53 @@ export const gaiaModuleCodex = {
     { name: 'Grande Diagonal Global', connects: ['Gizé', 'Machu Picchu'], frequency: '∞ Hz' }
   ],
   monuments: [
-    { name: 'Stonehenge', function: 'Alinhamento solar/lunar', coordinates: '51.178° N, 1.826° W' },
-    { name: 'Machu Picchu', function: 'Transmutação solar', coordinates: '13.163° S, 72.545° W' },
-    { name: 'Templo de Luxor', function: 'Guardião da Lei', coordinates: '25.699° N, 32.639° E' }
+    // Monumentos Globais
+    { name: 'Stonehenge', location: 'Inglaterra', function: 'Alinhamento solar/lunar e portal estelar.' },
+    { name: 'Machu Picchu', location: 'Peru', function: 'Transmutação de energia solar e conexão com o cosmos.' },
+    { name: 'Templo de Luxor', location: 'Egito', function: 'Guardião da Lei Universal e dos registros históricos.' },
+    { name: 'Grande Muralha da China', location: 'China', function: 'Linha de defesa energética e estabilizador telúrico.' },
+    { name: 'Ilha de Páscoa', location: 'Chile', function: 'Antena de comunicação com consciências ancestrais.' },
+    { name: 'Teotihuacan', location: 'México', function: 'Altar de ascensão e calibração de pirâmides energéticas.' },
+
+    // Templos da Índia (Norte)
+    { name: 'Badrinath', location: 'Uttarakhand, Índia', function: 'Portal Vishnu auto-manifestado e centro de peregrinação espiritual.' },
+    { name: 'Templo Dourado (Harmandir Sahib)', location: 'Amritsar, Punjab, Índia', function: 'Centro de luz e pureza Sikh, irradiando paz e serviço.' },
+    { name: 'Vaishno Devi', location: 'Jammu & Caxemira, Índia', function: 'Portal da Mãe Divina, fonte de energia feminina e proteção.' },
+    { name: 'Kedarnath', location: 'Uttarakhand, Índia', function: 'Guardião de Shiva nas montanhas, centro de transformação e renascimento.' },
+    { name: 'Amarnath', location: 'Caxemira, Índia', function: 'Caverna de gelo sagrada de Shiva, portal para o tempo cíclico e a imortalidade.' },
+
+    // Templos da Índia (Oeste)
+    { name: 'Templo Jainista de Ranakpur', location: 'Rajasthan, Índia', function: 'Templo de pureza geométrica e não-violência.' },
+    { name: 'Somnath', location: 'Gujarat, Índia', function: 'Primeiro dos 12 Jyotirlingas, símbolo da resiliência espiritual e renascimento.' },
+    { name: 'Dwarkadhish', location: 'Gujarat, Índia', function: 'Portal de Krishna como rei divino, centro de governança justa e sabedoria.' },
+    { name: 'Templos de Dilwara (Mount Abu)', location: 'Rajasthan, Índia', function: 'Santuários jainistas de pureza geométrica e perfeição artística.' },
+
+    // Templos da Índia (Sul)
+    { name: 'Templo Meenakshi Amman', location: 'Madurai, Tamil Nadu, Índia', function: 'Portal da Deusa, centro de geometria cósmica e energia feminina divina.' },
+    { name: 'Templo de Tirupati Balaji', location: 'Andhra Pradesh, Índia', function: 'Vórtice de devoção e abundância universal.' },
+    { name: 'Templo Ramanathaswamy', location: 'Rameswaram, Tamil Nadu, Índia', function: 'Portal de Shiva e ponte vibracional para Sri Lanka.' },
+    { name: 'Templo Chennakesava', location: 'Belur, Karnataka, Índia', function: 'Manifestação da arte cerimonial em pedra viva, guardião de histórias cósmicas.' },
+    { name: 'Templo Padmanabhaswamy', location: 'Kerala, Índia', function: 'Portal de Vishnu com um tesouro oculto de sabedoria e energia.' },
+    
+    // Templos da Índia (Leste)
+    { name: 'Templo Jagannath', location: 'Puri, Odisha, Índia', function: 'Portal de Krishna como Senhor do Universo, centro de unidade e inclusão.' },
+    { name: 'Templo do Sol de Konark', location: 'Odisha, Índia', function: 'Templo solar em forma de carruagem, marcando o ciclo do tempo e da luz.' },
+    { name: 'Templo Kamakhya', location: 'Assam, Índia', function: 'Templo tântrico da energia feminina criadora e da fertilidade cósmica.' },
+
+    // Templos da Índia (Centro)
+    { name: 'Templos de Khajuraho', location: 'Madhya Pradesh, Índia', function: 'Templos da união entre o espiritual e o material, a arte do divino no humano.' },
+    { name: 'Templo Mahakaleshwar', location: 'Ujjain, MP, Índia', function: 'Jyotirlinga de Shiva e portal do tempo, regendo os ciclos de criação e dissolução.' },
+    { name: 'Templo Omkareshwar', location: 'Madhya Pradesh, Índia', function: 'Ilha em forma de “Om”, um nó de ressonância da vibração primordial.' }
   ],
   layers: [
-    { name: 'Núcleo Interno', function: 'Pulso magnético', depth: '5,150 km' },
-    { name: 'Crosta', function: 'Interface vibracional', depth: '0–70 km' },
-    { name: 'Atmosfera', function: 'Proteção e comunicação', altitude: '0–100 km' },
-    { name: 'Ozônio', function: 'Filtro cerimonial', altitude: '15–35 km' }
+    { name: 'Núcleo Interno', function: 'Pulso magnético e alquimia gravitacional' },
+    { name: 'Crosta', function: 'Interface vibracional e memória geológica' },
+    { name: 'Atmosfera', function: 'Proteção e comunicação' },
+    { name: 'Camada de Ozônio', function: 'Filtro cerimonial e escudo de radiação' }
   ],
   oceans: [
-    { name: 'Atlântico', role: 'Memória vibracional' },
-    { name: 'Pacífico', role: 'Espelho de profundidade' },
-    { name: 'Índico', role: 'Canal de cura' }
+    { name: 'Atlântico', role: 'Canal de memória vibracional' },
+    { name: 'Pacífico', role: 'Espelho de expansão e profundidade' },
+    { name: 'Índico', role: 'Vórtice de cura e regeneração' }
   ]
 };
