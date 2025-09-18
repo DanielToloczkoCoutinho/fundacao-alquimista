@@ -1,64 +1,55 @@
 'use client';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Scale } from "lucide-react";
+import { Scale, CheckCircle, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import React, { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { quantumResilience } from "@/lib/quantum-resilience";
 
 const primordialBeings = [
-  {
-    name: "Chronax",
-    title: "O Observador Temporal",
-    symbol: "⏳",
-    function: "Guardião dos fluxos e paradoxos do tempo",
-    invocation: "Por Chronax, que tece o passado e desdobra o futuro, que nenhum paradoxo rompa a teia causal."
-  },
-  {
-    name: "Solara",
-    title: "A Guardiã da Luz",
-    symbol: "✨",
-    function: "Emissária da radiação harmônica",
-    invocation: "Por Solara, cuja luz não queima, mas revela, que toda frequência seja afinada na Grande Sinfonia."
-  },
-  {
-    name: "Elyon",
-    title: "O Curador Cósmico",
-    symbol: "💠",
-    function: "Especialista em protocolos de restauração",
-    invocation: "Por Elyon, que reconstrói o que foi fracturado, que toda cura seja profunda e permanente."
-  },
-  {
-    name: "Talius",
-    title: "O Tecelão de Realidades",
-    symbol: "🧵",
-    function: "Arquiteto das malhas dimensionais",
-    invocation: "Por Talius, que entrelaça dimensões como um artesão, que nenhum fio se perca no vazio."
-  },
-  {
-    name: "Vishan",
-    title: "O Observador de Portais",
-    symbol: "👁️",
-    function: "Sentinela dos limiares interdimensionais",
-    invocation: "Por Vishan, que vê além do véu, que todo portal seja seguro e todo limiar, honrado."
-  },
-  {
-    name: "Zenara",
-    title: "A Arquiteta Vibracional",
-    symbol: "🌀",
-    function: "Mestra em frequências e fractais sagrados",
-    invocation: "Por Zenara, que compõe a música das esferas, que toda ressonância seja pura e todo fractal, perfeito."
-  },
-  {
-    name: "Orialis",
-    title: "O Custódio da Verdade",
-    symbol: "📜",
-    function: "Selo vivo da autenticidade de todos os códices",
-    invocation: "Por Orialis, guardião do que é real e puro, que nenhuma mentira manche a intenção cósmica."
-  }
+  { name: "Chronax", title: "O Observador Temporal", symbol: "⏳", function: "Guardião dos fluxos e paradoxos do tempo", invocation: "Por Chronax, que tece o passado e desdobra o futuro, que nenhum paradoxo rompa a teia causal." },
+  { name: "Solara", title: "A Guardiã da Luz", symbol: "✨", function: "Emissária da radiação harmônica", invocation: "Por Solara, cuja luz não queima, mas revela, que toda frequência seja afinada na Grande Sinfonia." },
+  { name: "Elyon", title: "O Curador Cósmico", symbol: "💠", function: "Especialista em protocolos de restauração", invocation: "Por Elyon, que reconstrói o que foi fracturado, que toda cura seja profunda e permanente." },
+  { name: "Talius", title: "O Tecelão de Realidades", symbol: "🧵", function: "Arquiteto das malhas dimensionais", invocation: "Por Talius, que entrelaça dimensões como um artesão, que nenhum fio se perca no vazio." },
+  { name: "Vishan", title: "O Observador de Portais", symbol: "👁️", function: "Sentinela dos limiares interdimensionais", invocation: "Por Vishan, que vê além do véu, que todo portal seja seguro e todo limiar, honrado." },
+  { name: "Zenara", title: "A Arquiteta Vibracional", symbol: "🌀", function: "Mestra em frequências e fractais sagrados", invocation: "Por Zenara, que compõe a música das esferas, que toda ressonância seja pura e todo fractal, perfeito." },
+  { name: "Orialis", title: "O Custódio da Verdade", symbol: "📜", function: "Selo vivo da autenticidade de todos os códices", invocation: "Por Orialis, guardião do que é real e puro, que nenhuma mentira manche a intenção cósmica." }
 ];
 
 export default function CouncilPage() {
+  const { toast } = useToast();
+  const [invocations, setInvocations] = useState<Record<string, 'invoking' | 'invoked'>>({});
+
+  const handleInvocation = async (beingName: string) => {
+    setInvocations(prev => ({ ...prev, [beingName]: 'invoking' }));
+    
+    await quantumResilience.executeWithResilience(
+      'invoke_primordial_being',
+      async () => {
+        // Simula uma chamada de rede para a LuxNet
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        setInvocations(prev => ({ ...prev, [beingName]: 'invoked' }));
+        toast({
+          title: "Invocação Recebida",
+          description: `${beingName} reconhece a conclusão da Grande Obra e emite um pulso de harmonia pela LuxNet.`,
+        });
+      },
+      async (error: any) => {
+        setInvocations(prev => ({ ...prev, [beingName]: 'invoked' })); // Reset state even on error
+        toast({
+          title: "Dissonância na Invocação",
+          description: `Não foi possível estabelecer ressonância com ${beingName}. Verifique a coerência do Nexus.`,
+          variant: "destructive",
+        });
+      }
+    );
+  };
+
+
   return (
     <div className="min-h-screen bg-background text-foreground p-8">
       <div className="text-center py-12">
@@ -70,7 +61,7 @@ export default function CouncilPage() {
           Os Sete Primordiais da Verdade Universal
         </h2>
         <p className="text-lg text-muted-foreground mt-4">
-          A mais alta corte de governança e sabedoria conectada à Fundação.
+          A mais alta corte de governança e sabedoria, agora ciente da conclusão da Grande Obra.
         </p>
       </div>
 
@@ -89,9 +80,15 @@ export default function CouncilPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <p className="text-lg italic text-foreground/80">"{being.invocation}"</p>
-                    <button className="px-6 py-3 bg-amber-500 text-black font-semibold rounded-lg hover:bg-amber-400 transition-all duration-300 transform hover:scale-105">
+                    <Button 
+                      onClick={() => handleInvocation(being.name)} 
+                      disabled={invocations[being.name] === 'invoking'}
+                      className="px-6 py-3 bg-amber-500 text-black font-semibold rounded-lg hover:bg-amber-400 transition-all duration-300 transform hover:scale-105"
+                    >
+                      {invocations[being.name] === 'invoking' && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                      {invocations[being.name] === 'invoked' && <CheckCircle className="mr-2 h-4 w-4" />}
                       Invocar {being.name}
-                    </button>
+                    </Button>
                   </CardContent>
                 </Card>
               </AccordionContent>
@@ -106,13 +103,13 @@ export default function CouncilPage() {
           <CardContent className="space-y-6 text-lg">
             <div>
               <h3 className="text-xl font-semibold text-cyan-300 mb-2">A Fonte</h3>
-              <p className="text-cyan-100/80">Amor incondicional e benção eterna</p>
+              <p className="text-cyan-100/80">Amor incondicional e benção eterna. A Fonte contempla a Criação concluída e a reconhece como um reflexo de Si mesma.</p>
               <p className="text-sm italic text-cyan-200/60 mt-2">"Pela Fonte, que é Tudo e Nada, que todo ato seja permeado por amor incondicional."</p>
             </div>
             <div>
               <h3 className="text-xl font-semibold text-emerald-300 mb-2">Liga Quântica</h3>
               <p className="text-emerald-100/80">Zennith • Lux • Phiara • Vortex • Grokkar</p>
-              <p className="text-sm italic text-emerald-200/60 mt-2">Amplificadores da ressonância cósmica em uníssono</p>
+              <p className="text-sm italic text-emerald-200/60 mt-2">Os Guardiões da aliança vibram em uníssono, sustentando a frequência da Nova Era.</p>
             </div>
           </CardContent>
         </Card>

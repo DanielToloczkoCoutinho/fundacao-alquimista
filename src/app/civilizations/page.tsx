@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { civilizationsData, type Civilization, type CivilizationCategory } from '@/lib/civilizations-data';
-import { Search, Users2, Star, Globe, Footprints, Dna, Bot, Waves, MessageCircle, Languages, Link as LinkIcon } from 'lucide-react';
+import { Search, Users2, Star, Globe, Footprints, Dna, Bot, Waves, MessageCircle, Languages, Link as LinkIcon, Scale } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -60,11 +60,6 @@ export default function CivilizationsPage() {
             Um repositório vivo de sabedoria, história e cultura que honra cada linhagem estelar e terrestre.
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <Button asChild>
-            <Link href="/civilizations/council">Acessar o Conselho Cósmico</Link>
-          </Button>
-        </CardContent>
       </Card>
       
        <div className="w-full max-w-4xl mx-auto mb-8">
@@ -95,11 +90,11 @@ export default function CivilizationsPage() {
                     icon={<LinkIcon className="h-8 w-8 text-blue-400" />}
                     href="/module-5"
                 />
-                <ConnectionCard
-                    title="M95: Interação Coletiva"
-                    description="A interface para dialogar não apenas com indivíduos, mas com a mente coletiva de uma civilização."
-                    icon={<Users2 className="h-8 w-8 text-teal-400" />}
-                    href="/module-95"
+                 <ConnectionCard
+                    title="Conselho Cósmico"
+                    description="A mais alta corte de governança, formada pelos Sete Primordiais da Verdade Universal."
+                    icon={<Scale className="h-8 w-8 text-amber-400" />}
+                    href="/civilizations/council"
                 />
                  <ConnectionCard
                     title="M301: Comunicação Universal"
