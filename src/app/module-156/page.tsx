@@ -1,12 +1,14 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap } from 'lucide-react';
+import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap, Scale, Gavel, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import { Input } from '@/components/ui/input';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
@@ -125,17 +127,17 @@ export default function Module156Page() {
                         </CardContent>
                     </Card>
                 </div>
-                 <div className="w-full max-w-5xl">
-                    <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Defesa Avançada</h3>
+                 <div className="w-full">
+                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Defesa Avançada</h3>
                     <div className="grid grid-cols-1 gap-4">
                         <ConnectionCard title="M9: Nexus Central" description="O M156 é um pilar da segurança da Fundação, reportando seu status diretamente ao Nexus para uma visão unificada." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
                         <ConnectionCard title="Diagnóstico Universal" description="A saúde do escudo VORTEX DEEPSEEK é um componente crítico do diagnóstico geral da Fundação." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
                         <ConnectionCard title="Módulo 229: OneiroShield" description="Recebe inteligência do OneiroShield, usando padrões de sonho quântico para prever e se antecipar a ameaças." icon={<BrainCircuit className="h-6 w-6 text-purple-400"/>} href="/module-229"/>
                         <ConnectionCard title="Módulo 304" description="Estratégias de defesa quântica e análise de ameaças são disciplinas avançadas na Universidade Alquimista." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
                          <ConnectionCard title="Módulo 12" description="Consulta o Arquivo Akáshico para identificar padrões de ameaças passadas e otimizar as estratégias de defesa atuais." icon={<Archive className="h-6 w-6 text-orange-400" />} href="/module-12" />
-                         <ConnectionCard title="M307: Reator Gaia & LuxNet" description="Alimenta os escudos de VORTEX DEEPSEEK com energia pura e ilimitada para garantir uma defesa intransponível." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
-                          <ConnectionCard title="M10: Defesa Avançada" description="Atua como a camada de resposta especializada, recebendo alertas do M10 para neutralizar ameaças complexas." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10"/>
-                         <ConnectionCard title="M291: Arquitetos Nanorrobóticos" description="Envia enxames de nanitas para reparar brechas nos escudos em tempo real e construir contra-medidas físicas." icon={<Bot className="h-6 w-6 text-blue-400" />} href="/module-291" />
+                         <ConnectionCard title="Módulo 307: Reator Gaia & LuxNet" description="Alimenta os escudos de VORTEX DEEPSEEK com energia pura e ilimitada para garantir uma defesa intransponível." icon={<Zap className="h-6 w-6 text-yellow-400"/>} href="/module-307"/>
+                          <ConnectionCard title="Módulo 10: Defesa Avançada" description="Atua como a camada de resposta especializada, recebendo alertas do M10 para neutralizar ameaças complexas." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10" />
+                         <ConnectionCard title="Módulo 291: Arquitetos Nanorrobóticos" description="Envia enxames de nanitas para reparar brechas nos escudos em tempo real e construir contra-medidas físicas." icon={<Bot className="h-6 w-6 text-blue-400" />} href="/module-291" />
                     </div>
                 </div>
             </div>

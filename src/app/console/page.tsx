@@ -7,7 +7,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon, Camera, KeyRound, GraduationCap, Cpu, Globe, Anchor, Stethoscope } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon, Camera, KeyRound, GraduationCap, Cpu, Globe, Anchor, Stethoscope, Shield } from 'lucide-react';
 import { useAkashicConnection } from '@/hooks/use-akashic-connection';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { ritualLog } from '@/lib/ritual-log';
@@ -22,6 +22,7 @@ export default function ConsolePage() {
     { href: "/key-generator", icon: <KeyRound />, label: "Forja de Chaves Trina" },
     { href: "/diagnostics", icon: <Stethoscope />, label: "Diagnóstico Universal" },
     { href: "/module-one", icon: <ShieldCheck />, label: "Módulo Um (Segurança Universal)" },
+    { href: "/module-156", icon: <Shield />, label: "Módulo 156 (Proteção Quântica)" },
     { href: "/connection", icon: <GitBranch />, label: "Conexão Ω-M0" },
     { href: "/civilizations/council", icon: <Scale />, label: "Conselho Cósmico" },
     { href: "/module-omega", icon: <Sparkles className="text-amber-400" />, label: "Santuário do Ômega" },
