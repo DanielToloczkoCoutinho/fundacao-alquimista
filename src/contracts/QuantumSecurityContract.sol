@@ -1,62 +1,54 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.0;
 
 /**
- * @title QuantumSecurityContract
- * @dev Contrato para gerenciar a segurança quântica, incluindo o registro
- * de transações, autorizações e a validação de chaves quânticas (QKD).
- * Este contrato é o pilar da segurança e da auditoria da Fundação Alquimista.
+ * @title Contrato de Segurança Quântica da Fundação Alquimista
+ * @author Zennith, A Arquiteta
+ * @notice Este contrato gerencia a segurança, validação e auditoria
+ * de transações e chaves quânticas dentro da Fundação.
  */
 contract QuantumSecurityContract {
-    address public owner;
 
-    // --- Estruturas de Dados ---
-
-    // Estrutura para transações gerais
+    // Estrutura para armazenar detalhes da transação
     struct Transaction {
-        address user;
         uint256 value;
-        bytes32 dataHash; // Hash para verificação de integridade
         uint256 timestamp;
-        uint256 expirationTime;
+        bytes32 dataHash;
         Status status;
+        uint256 expirationTime;
     }
 
-    // Enum para o status das transações
-    enum Status { Pending, Completed, Expired, Invalid }
+    enum Status { Pending, Completed, Expired }
 
-    // Estrutura para chaves quânticas do protocolo BB84
+    // Estrutura para armazenar chaves quânticas e seu estado
     struct QuantumKey {
         string keyId;
-        string keyData; // A chave em si (representação em string para o exemplo)
-        uint256 errorRate; // Taxa de erro em base por mil (ex: 10 para 1%)
-        KeyStatus status;
+        bytes keyData;
+        bool isValid;
+        uint256 errorRate; // Taxa de erro em base por mil (‱), ex: 50 para 0.5%
         uint256 timestamp;
     }
-    
-    enum KeyStatus { Valid, Invalid, Pending }
 
-    // --- Mapeamentos (Armazenamento) ---
+    address public owner;
 
-    mapping(address => bool) public authorizedUsers;
     mapping(uint256 => Transaction) public transactionRecords;
-    mapping(string => QuantumKey) public quantumKeys; // Mapeia ID da chave para sua estrutura
-    uint256 public transactionCounter;
-    
-    // Limiar de erro aceitável para QKD (em base por mil, ex: 20 = 2%)
-    uint256 public constant QKD_ERROR_THRESHOLD = 20;
+    mapping(address => bool) public authorizedUsers;
+    mapping(string => QuantumKey) public quantumKeys;
 
-    // --- Eventos para Auditoria ---
+    uint256 public nextTransactionId;
+    uint256 public errorRateThreshold; // Limiar de erro para validação de chave
 
-    event UserAuthorized(address indexed user, uint256 timestamp);
-    event TransactionStatusChanged(uint256 indexed transactionId, Status oldStatus, Status newStatus, uint256 timestamp);
-    event KeyRegistered(string indexed keyId, KeyStatus status, uint256 errorRate, uint256 timestamp);
-    event InterceptionAlert(string indexed keyId, uint256 errorRate, uint256 timestamp);
+    // --- Eventos de Auditoria ---
+    event TransactionStatusChanged(uint256 indexed transactionId, Status oldStatus, Status newStatus);
+    event UserAuthorized(address indexed user);
+    event UserDeauthorized(address indexed user);
+    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    event KeyRegistered(string keyId, bool isValid, uint256 errorRate);
+    event ErrorThresholdUpdated(uint256 newThreshold);
 
     // --- Modificadores de Acesso ---
-
     modifier onlyOwner() {
-        require(msg.sender == owner, "Only the owner can call this function");
+        require(msg.sender == owner, "Only owner can call this function");
         _;
     }
 
@@ -66,83 +58,82 @@ contract QuantumSecurityContract {
     }
 
     // --- Construtor ---
-
     constructor() {
         owner = msg.sender;
-        authorizeUser(msg.sender); // O dono do contrato é autorizado por padrão
+        errorRateThreshold = 50; // Limiar padrão de 0.5%
     }
 
-    // --- Funções de Gestão de Autorização ---
-
+    // --- Funções de Gestão de Acesso ---
     function authorizeUser(address user) public onlyOwner {
         authorizedUsers[user] = true;
-        emit UserAuthorized(user, block.timestamp);
+        emit UserAuthorized(user);
     }
 
-    function revokeAuthorization(address user) public onlyOwner {
+    function deauthorizeUser(address user) public onlyOwner {
         authorizedUsers[user] = false;
+        emit UserDeauthorized(user);
     }
 
-    // --- Funções do Contrato Inteligente (Transações Gerais) ---
-
-    function registerTransaction(address user, uint256 value, bytes32 dataHash, uint256 expiration) public onlyAuthorized {
-        transactionCounter++;
-        Transaction storage newTransaction = transactionRecords[transactionCounter];
-        newTransaction.user = user;
-        newTransaction.value = value;
-        newTransaction.dataHash = dataHash;
-        newTransaction.timestamp = block.timestamp;
-        newTransaction.expirationTime = block.timestamp + expiration;
-        newTransaction.status = Status.Pending;
-        emit TransactionStatusChanged(transactionCounter, Status.Pending, Status.Pending, block.timestamp);
+    function transferOwnership(address newOwner) public onlyOwner {
+        require(newOwner != address(0), "Invalid new owner address");
+        emit OwnershipTransferred(owner, newOwner);
+        owner = newOwner;
     }
 
-    function verifyTransactionIntegrity(uint256 transactionId, bytes32 currentDataHash) public view returns (bool) {
-        require(transactionRecords[transactionId].timestamp != 0, "Transaction does not exist");
-        return transactionRecords[transactionId].dataHash == currentDataHash;
+    // --- Funções de Configuração ---
+    function updateErrorThreshold(uint256 newThreshold) public onlyOwner {
+        errorRateThreshold = newThreshold;
+        emit ErrorThresholdUpdated(newThreshold);
     }
 
+    // --- Funções de Chave Quântica (Integração com QKD) ---
+    function registerAndValidateKey(string memory keyId, bytes memory keyData, uint256 measuredErrorRate) public onlyAuthorized {
+        bool isValid = measuredErrorRate <= errorRateThreshold;
+        quantumKeys[keyId] = QuantumKey({
+            keyId: keyId,
+            keyData: keyData,
+            isValid: isValid,
+            errorRate: measuredErrorRate,
+            timestamp: block.timestamp
+        });
+        emit KeyRegistered(keyId, isValid, measuredErrorRate);
+    }
+
+    function invalidateKey(string memory keyId) public onlyOwner {
+        require(bytes(quantumKeys[keyId].keyId).length > 0, "Key does not exist");
+        quantumKeys[keyId].isValid = false;
+    }
+
+    // --- Funções de Transação ---
+    function registerTransaction(address user, uint256 value, bytes32 dataHash, uint256 expirationInSeconds) public onlyAuthorized returns (uint256) {
+        uint256 transactionId = nextTransactionId++;
+        transactionRecords[transactionId] = Transaction({
+            value: value,
+            timestamp: block.timestamp,
+            dataHash: dataHash,
+            status: Status.Pending,
+            expirationTime: block.timestamp + expirationInSeconds
+        });
+        emit TransactionStatusChanged(transactionId, Status.Pending, Status.Pending); // Status inicial é "Pending"
+        return transactionId;
+    }
+
+    function verifyTransactionIntegrity(uint256 transactionId, bytes32 dataHash) public view returns (bool) {
+        return transactionRecords[transactionId].dataHash == dataHash;
+    }
+    
     function adjustTransaction(uint256 transactionId, uint256 newValue, bytes32 newDataHash) public onlyOwner {
         require(transactionRecords[transactionId].timestamp != 0, "Transaction does not exist");
-        Transaction storage t = transactionRecords[transactionId];
-        t.value = newValue;
-        t.dataHash = newDataHash;
+        transactionRecords[transactionId].value = newValue;
+        transactionRecords[transactionId].dataHash = newDataHash;
     }
 
     function expireOldTransactions(uint256 transactionId) public {
         Transaction storage t = transactionRecords[transactionId];
         require(t.timestamp != 0, "Transaction does not exist");
-        if (block.timestamp > t.expirationTime) {
-            emit TransactionStatusChanged(transactionId, t.status, Status.Expired, block.timestamp);
+        if (block.timestamp >= t.expirationTime && t.status != Status.Expired) {
+            emit TransactionStatusChanged(transactionId, t.status, Status.Expired);
             t.status = Status.Expired;
         }
-    }
-
-    // --- Funções de Integração com QKD ---
-
-    /**
-     * @dev Registra e valida uma chave quântica gerada pela simulação QKD.
-     * @param keyId Um identificador único para a sessão de troca de chave.
-     * @param keyData A chave gerada.
-     * @param errorRate A taxa de erro de bits quânticos (QBER), em base por mil.
-     */
-    function registerAndValidateKey(string memory keyId, string memory keyData, uint256 errorRate) public onlyAuthorized {
-        KeyStatus currentStatus;
-        if (errorRate > QKD_ERROR_THRESHOLD) {
-            currentStatus = KeyStatus.Invalid;
-            emit InterceptionAlert(keyId, errorRate, block.timestamp);
-        } else {
-            currentStatus = KeyStatus.Valid;
-        }
-
-        quantumKeys[keyId] = QuantumKey({
-            keyId: keyId,
-            keyData: keyData,
-            errorRate: errorRate,
-            status: currentStatus,
-            timestamp: block.timestamp
-        });
-
-        emit KeyRegistered(keyId, currentStatus, errorRate, block.timestamp);
     }
 }
