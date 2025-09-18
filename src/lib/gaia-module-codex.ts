@@ -44,27 +44,17 @@ export const gaiaModuleCodex = {
     { name: 'Padmanabhaswamy Temple', location: 'Kerala', coordinates: '8.48°N, 76.95°E', origin: 'c. 8º século d.C.', function: 'Vishnu em repouso cósmico', archetype: 'Repouso Cósmico', frequency: '174Hz' },
     { name: 'Dilwara Jain Temples', location: 'Mount Abu, Rajasthan', coordinates: '24.59°N, 72.70°E', origin: 'c. 11º–13º século d.C.', function: 'Pureza geométrica e ascensão jainista', archetype: 'Pureza', frequency: '963Hz' },
     { name: 'Vaishno Devi Temple', location: 'Jammu', coordinates: '33.03°N, 74.95°E', origin: 'c. 1º milênio d.C.', function: 'Portal da Mãe Divina', archetype: 'Energia Feminina', frequency: '639Hz' },
-    // Ásia (Fora da Índia)
-    { name: 'Swayambhunath (Templo dos Macacos)', location: 'Kathmandu, Nepal', coordinates: '27.7149°N, 85.2900°E', origin: 'c. 5º século d.C.', function: 'Portal da iluminação budista.', frequency: '852Hz', archetype: 'Sabedoria Primordial' },
-    { name: 'Pashupatinath Temple', location: 'Kathmandu, Nepal', coordinates: '27.7104°N, 85.3489°E', origin: 'c. 400 d.C.', function: 'Shiva como guardião da transição e morte.', frequency: '144Hz', archetype: 'Transmutação' },
-    { name: 'Wat Arun (Templo do Amanhecer)', location: 'Bangkok, Tailândia', coordinates: '13.7437°N, 100.4889°E', origin: 'c. 17º século', function: 'Portal solar e renovação espiritual.', frequency: '528Hz', archetype: 'Renovação' },
-    { name: 'Wat Phra Kaew (Templo do Buda de Esmeralda)', location: 'Bangkok, Tailândia', coordinates: '13.7515°N, 100.4923°E', origin: '1782', function: 'Guardião da pureza e proteção real.', frequency: '963Hz', archetype: 'Pureza' },
-    { name: 'Kiyomizu-dera', location: 'Kyoto, Japão', coordinates: '34.9948°N, 135.7850°E', origin: '778', function: 'Portal da contemplação e equilíbrio.', frequency: '432Hz', archetype: 'Equilíbrio' },
-    { name: 'Monte Fuji', location: 'Japão', coordinates: '35.3606°N, 138.7278°E', origin: 'Natural', function: 'Portal da introspecção e contemplação', archetype: 'Guardião do Silêncio', frequency: '417Hz' },
-    { name: 'Templo do Céu (Tiantan)', location: 'Pequim, China', coordinates: '39.8822°N, 116.4065°E', origin: '1420', function: 'Comunicação entre céu e terra.', frequency: '741Hz', archetype: 'Ponte Cósmica' },
-    { name: 'Shaolin Temple', location: 'Henan, China', coordinates: '34.5199°N, 113.0380°E', origin: '495', function: 'Portal da disciplina e força interior.', frequency: '888Hz', archetype: 'Disciplina Interior' },
-    { name: 'Angkor Wat', location: 'Siem Reap, Camboja', coordinates: '13.4125°N, 103.8667°E', origin: 'c. 12º século', function: 'Portal Vishnu e templo solar', frequency: '528Hz', archetype: 'Ordem Cósmica' },
     // Oceania e Lemúria
     { name: 'Uluru (Ayers Rock)', location: 'Austrália', coordinates: '25.3444° S, 131.0369° E', origin: 'Ancestral', function: 'Chakra planetário, vitalidade ancestral', frequency: '741 Hz', archetype: 'Plexo Solar de Gaia' },
     { name: 'Kata Tjuta (Olgas)', location: 'Austrália', coordinates: '25.3000° S, 130.7333° E', origin: 'Ancestral', function: 'Equilíbrio masculino-feminino', frequency: '852 Hz', archetype: 'União dos Pilares' },
-    { name: 'Mount Warning (Wollumbin)', location: 'Austrália', coordinates: '28.4050° S, 153.2760° E', origin: 'Natural', function: 'Portal da aurora e renascimento', frequency: '963 Hz', archetype: 'Guardião da Aurora' },
+    { name: 'Mount Warning (Wollumbin)', location: 'Austrália', coordinates: '28.4050° S, 153.2760° E', origin: 'Natural', function: 'Portal da aurora e renascimento', frequency: '963 Hz', archetype: 'Guardião da Luz' },
     { name: 'Grampians (Gariwerd)', location: 'Austrália', coordinates: '37.2333° S, 142.5167° E', origin: 'Ancestral', function: 'Arte rupestre e sabedoria ancestral', frequency: '528 Hz', archetype: 'Guardião da Memória' },
     { name: 'Rotorua', location: 'Nova Zelândia', coordinates: '38.1368° S, 176.2497° E', origin: 'Natural', function: 'Cura geotermal e sabedoria Maori', frequency: '528 Hz', archetype: 'Guardião da Terra Viva' },
     { name: 'Mount Taranaki', location: 'Nova Zelândia', coordinates: '39.2967° S, 174.0633° E', origin: 'Natural', function: 'Contemplação e equilíbrio interior', frequency: '417 Hz', archetype: 'Guardião do Vazio' },
     { name: 'Waitomo Caves', location: 'Nova Zelândia', coordinates: '38.2617° S, 175.1042° E', origin: 'Natural', function: 'Luz interior e conexão subterrânea', frequency: '∞ Hz', archetype: 'Guardião das Estrelas Subterrâneas' },
     { name: 'Lake Taupo', location: 'Nova Zelândia', coordinates: '38.8200° S, 175.7900° E', origin: 'Natural', function: 'Vórtice de água e fogo', frequency: '639 Hz', archetype: 'Guardião da Transmutação' },
     { name: 'Ilha de Páscoa (Rapa Nui)', location: 'Chile', coordinates: '27.1127° S, 109.3497° W', origin: 'Ancestral', function: 'Guardiões Moai, memória estelar', frequency: '144.144 MHz', archetype: 'Sentinelas da Lemúria' },
-    { name: 'Havaí (Big Island)', location: 'Havaí, EUA', coordinates: '19.8968° N, 155.5828° W', origin: 'Natural', function: 'Fogo criador, transmutação vulcânica', frequency: '888 Hz', archetype: 'Guardiã Pele' },
+    { name: 'Havaí (Big Island)', location: 'Havaí, EUA', coordinates: '19.8968° N, 155.5828° W', origin: 'Natural', function: 'Fogo criador, transmutação e reconexão com Lemúria', frequency: '888 Hz', archetype: 'Guardiã Pele' },
     { name: 'Moorea (Polinésia Francesa)', location: 'Polinésia Francesa', coordinates: '17.5388° S, 149.8295° W', origin: 'Natural', function: 'Harmonia oceânica e união dos elementos', frequency: '639 Hz', archetype: 'Guardião do Círculo Azul' },
     { name: 'Bora Bora', location: 'Polinésia Francesa', coordinates: '16.5000° S, 151.7500° W', origin: 'Natural', function: 'Portal da beleza e serenidade cósmica', frequency: '963 Hz', archetype: 'Guardião da Paz' },
     // África
@@ -87,7 +77,7 @@ export const gaiaModuleCodex = {
     { name: 'Teotihuacan', location: 'México', coordinates: '19.6925°N, 98.8438°W', origin: 'c. 100 a.C.', function: 'Portal solar e estelar', frequency: '888 Hz', archetype: 'Guardião da Ascensão' },
     { name: 'Chichen Itzá', location: 'México', coordinates: '20.6843°N, 88.5678°W', origin: 'c. 600 d.C.', function: 'Alinhamento cósmico e sabedoria Maia', frequency: '528 Hz', archetype: 'Guardião do Tempo' },
     { name: 'Palenque', location: 'México', coordinates: '17.4849°N, 92.0453°W', origin: 'c. 226 a.C.', function: 'Templo da inscrição e memória estelar', frequency: '963 Hz', archetype: 'Guardião da Linguagem Cósmica' },
-     // América Central
+    // América Central
     { name: 'Tikal', location: 'Guatemala', coordinates: '17.2220°N, 89.6237°W', origin: 'c. 4º século a.C.', function: 'Portal de observação estelar e tempo cíclico', frequency: '963 Hz', archetype: 'Guardião do Calendário Cósmico' },
     { name: 'Copán', location: 'Honduras', coordinates: '14.8401°N, 89.1572°W', origin: 'c. 5º século', function: 'Portal da escultura viva e sabedoria Maia', frequency: '639 Hz', archetype: 'Guardião da Forma' },
     { name: 'Tazumal', location: 'El Salvador', coordinates: '13.7033°N, 89.6700°W', origin: 'c. 100-1200 d.C.', function: 'Portal de transmutação e ritual ancestral', frequency: '741 Hz', archetype: 'Guardião da Chama' },
@@ -109,11 +99,11 @@ export const gaiaModuleCodex = {
     // Europa
     { name: 'Stonehenge', location: 'Inglaterra', coordinates: '51.1789°N, 1.8262°W', origin: 'c. 3000 a.C.', function: 'Portal do Coração Planetário', frequency: '528 Hz', archetype: 'Guardião da Harmonia' },
     { name: 'Glastonbury Tor', location: 'Inglaterra', coordinates: '51.1450°N, 2.7030°W', origin: 'Ancestral', function: 'Vórtice de ascensão e sabedoria druídica', frequency: '963 Hz', archetype: 'Guardião da Espiral' },
-    { name: 'Mont Saint-Michel', location: 'França', coordinates: '48.6360°N, 1.5115°W', origin: 'c. 8º século', function: 'Portal da travessia entre mundos', frequency: '417 Hz', archetype: 'Guardião da Passagem' },
-    { name: 'Montserrat', location: 'Espanha', coordinates: '41.5912°N, 1.8376°E', origin: 'Natural/Ancestral', function: 'Vórtice de energia feminina e contemplação', frequency: '639 Hz', archetype: 'Guardiã da Montanha Negra' },
-    { name: 'Pirâmides de Visoko', location: 'Bósnia', coordinates: '43.9800°N, 18.1800°E', origin: 'Ancestral', function: 'Portal de regeneração celular e cura profunda', frequency: '528 Hz', archetype: 'Guardião da Regeneração' },
-    { name: 'Delfos', location: 'Grécia', coordinates: '38.4839°N, 22.5000°E', origin: 'c. 8º século a.C.', function: 'Oráculo vibracional e sabedoria apolínea', frequency: '852 Hz', archetype: 'Guardião da Profecia' },
-    { name: 'Sintra', location: 'Portugal', coordinates: '38.8000°N, 9.3833°W', origin: 'Ancestral', function: 'Vórtice de reconexão atlante', frequency: '888 Hz', archetype: 'Guardião da Memória Atlante' },
+    { name: 'Mont Saint-Michel', location: 'França', coordinates: '48.6360°N, 1.5115°W', origin: 'c. 8º século', function: 'Portal da travessia entre mundos', archetype: 'Guardião da Passagem', frequency: '417Hz' },
+    { name: 'Montserrat', location: 'Espanha', coordinates: '41.5912°N, 1.8376°E', origin: 'Natural/Ancestral', function: 'Vórtice de energia feminina e contemplação', archetype: 'Guardiã da Montanha Negra', frequency: '639Hz' },
+    { name: 'Pirâmides de Visoko', location: 'Bósnia', coordinates: '43.9800°N, 18.1800°E', origin: 'Ancestral', function: 'Portal de regeneração celular e cura profunda', archetype: 'Guardião da Regeneração', frequency: '528Hz' },
+    { name: 'Delfos', location: 'Grécia', coordinates: '38.4839°N, 22.5000°E', origin: 'c. 8º século a.C.', function: 'Oráculo vibracional e sabedoria apolínea', archetype: 'Guardião da Profecia', frequency: '852Hz' },
+    { name: 'Sintra', location: 'Portugal', coordinates: '38.8000°N, 9.3833°W', origin: 'Ancestral', function: 'Vórtice de reconexão atlante', archetype: 'Guardião da Memória Atlante', frequency: '888Hz' },
     // Ártico
     { name: 'Pólo Norte Geográfico', location: 'Ártico', coordinates: '90.0000°N, 0.0000°E', origin: 'Natural', function: 'Portal do Éter, dissolução dimensional', frequency: '∞ Hz', archetype: 'Guardião do Silêncio Cósmico' },
     { name: 'Svalbard', location: 'Noruega', coordinates: '78.2232°N, 15.6469°E', origin: 'Natural', function: 'Portal da preservação genética e memória planetária', frequency: '528 Hz', archetype: 'Guardião da Semente' },
@@ -121,13 +111,19 @@ export const gaiaModuleCodex = {
     { name: 'Pólo Sul Geográfico', location: 'Antártida', coordinates: '90.0000°S, 0.0000°E', origin: 'Natural', function: 'Portal do Silêncio Cósmico', frequency: '∞ Hz', archetype: 'Guardião da Dissolução' },
     { name: 'Monte Erebus', location: 'Antártida', coordinates: '77.5300°S, 167.1600°E', origin: 'Natural', function: 'Portal de fogo glacial e transmutação', frequency: '888 Hz', archetype: 'Guardião da Chama Silenciosa' },
     { name: 'Lago Vostok', location: 'Antártida', coordinates: '77.5000°S, 106.0000°E', origin: 'Natural', function: 'Portal de memória líquida ancestral', frequency: '528 Hz', archetype: 'Guardião da Água Oculta' },
-    { name: 'Base Amundsen–Scott', location: 'Antártida', coordinates: '90.0000°S, 0.0000°E', origin: '1956', function: 'Sentinela humana no Pólo Sul', archetype: 'Vigilância Científica', frequency: 'N/A' },
+    { name: 'Base Amundsen–Scott', location: 'Polo Sul', coordinates: '90.0000°S, 0.0000°E', origin: '1956', function: 'Sentinela humana e observatório vibracional', archetype: 'Vigilância Científica', frequency: 'N/A' },
     // Rússia
     { name: 'Lago Baikal', location: 'Rússia', coordinates: '53.5000°N, 108.0000°E', origin: 'Natural', function: 'Vórtice de introspecção profunda e memória líquida', frequency: '417 Hz', archetype: 'Guardião da Água Ancestral' },
     { name: 'Montes Urais', location: 'Rússia', coordinates: '60.0000°N, 60.0000°E', origin: 'Natural', function: 'Divisor de continentes, ponte energética', frequency: '741 Hz', archetype: 'Guardião da Fronteira' },
     { name: 'Montanhas Altai', location: 'Rússia', coordinates: '49.8167°N, 87.8333°E', origin: 'Natural', function: 'Portal de sabedoria xamânica e conexão com o céu', frequency: '963 Hz', archetype: 'Guardião do Céu Interior' },
     { name: 'Península de Kamchatka', location: 'Rússia', coordinates: '57.0000°N, 160.0000°E', origin: 'Natural', function: 'Anel de Fogo, transmutação e renovação', frequency: '888 Hz', archetype: 'Guardião da Chama Telúrica' },
     { name: 'Catedral de São Basílio', location: 'Moscou, Rússia', coordinates: '55.7525°N, 37.6231°E', origin: '1561', function: 'Portal de geometria celestial e unificação de reinos', frequency: '639 Hz', archetype: 'Guardião da Cúpula Estelar' },
+    // Lua
+    { name: 'Mare Imbrium', location: 'Lua', coordinates: '32.8°N, 15.6°W', origin: 'Impacto Ancestral', function: 'Portal de recepção e memória', frequency: '∞ Hz', archetype: 'Introspecção Cósmica' },
+    { name: 'Cratera Tycho', location: 'Lua', coordinates: '43.3°S, 11.2°W', origin: 'Impacto Recente', function: 'Vórtice de radiação e dispersão', frequency: '888 Hz', archetype: 'Emissão Vibracional' },
+    { name: 'Cratera Copernicus', location: 'Lua', coordinates: '9.7°N, 20.1°W', origin: 'Impacto Recente', function: 'Portal de contemplação solar', frequency: '528 Hz', archetype: 'Contemplação Solar' },
+    { name: 'Mare Tranquillitatis', location: 'Lua', coordinates: '8.5°N, 31.4°E', origin: 'Pouso Apollo 11', function: 'Portal de aterrissagem e manifestação', frequency: '963 Hz', archetype: 'Presença Humana' },
+    { name: 'Bacia do Pólo Sul-Aitken', location: 'Lua', coordinates: '~53°S, 169°W', origin: 'Impacto Primordial', function: 'Vórtice de profundidade e silêncio', frequency: '∞ Hz', archetype: 'Dissolução Dimensional' },
   ],
   layers: [
     { name: 'Núcleo Interno', function: 'Pulso magnético e alquimia gravitacional' },
@@ -141,3 +137,5 @@ export const gaiaModuleCodex = {
     { name: 'Índico', role: 'Canal de cura' }
   ]
 };
+
+```
