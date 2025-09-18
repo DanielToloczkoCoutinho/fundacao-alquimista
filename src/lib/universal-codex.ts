@@ -10,10 +10,11 @@
 export interface CelestialBody {
   id: string;
   name: string;
-  type: 'Planeta' | 'Estrela' | 'Lua' | 'Galáxia';
+  type: 'Planeta' | 'Planeta Anão' | 'Estrela' | 'Lua' | 'Galáxia';
   frequency: string;
-  archetype: string;
+  archetype: string; // Corresponde a 'Função Vibracional'
   relatedModule?: string;
+  portal?: string;
 }
 
 export interface FoundationPortal {
@@ -41,10 +42,16 @@ export interface ResearchLab {
 
 export const universalCodex = {
   celestialBodies: [
-    { id: 'jupiter', name: 'Júpiter', type: 'Planeta', frequency: '528Hz', archetype: 'Proteção e Expansão', relatedModule: 'M5' },
-    { id: 'lua', name: 'Lua', type: 'Lua', frequency: '963Hz', archetype: 'Intuição e Ciclos', relatedModule: 'M21' },
-    { id: 'sol', name: 'Sol', type: 'Estrela', frequency: '888Hz', archetype: 'Fonte de Vida e Vontade', relatedModule: 'M307' },
-    { id: 'sirius', name: 'Sirius', type: 'Estrela', frequency: '741Hz', archetype: 'Sabedoria e Conhecimento Oculto', relatedModule: 'M310' },
+    { id: 'sol', name: 'Sol', type: 'Estrela', frequency: '888Hz', archetype: 'Fonte de Vida e Vontade', relatedModule: 'M307', portal: 'Núcleo Solar' },
+    { id: 'mercurio', name: 'Mercúrio', type: 'Planeta', frequency: '963 Hz', archetype: 'Silêncio e precisão', relatedModule: 'M21', portal: 'Portal de Proximidade' },
+    { id: 'venus', name: 'Vênus', type: 'Planeta', frequency: '528 Hz', archetype: 'Harmonia e beleza', relatedModule: 'M144', portal: 'Portal da Unidade' },
+    { id: 'terra', name: 'Terra (Gaia)', type: 'Planeta', frequency: '432 Hz', archetype: 'Vida e consciência', relatedModule: 'M600', portal: 'Reator Gaia' },
+    { id: 'marte', name: 'Marte', type: 'Planeta', frequency: '888 Hz', archetype: 'Força e expansão', relatedModule: 'M29', portal: 'Portal de Ação' },
+    { id: 'jupiter', name: 'Júpiter', type: 'Planeta', frequency: '528 Hz', archetype: 'Proteção e justiça', relatedModule: 'M5', portal: 'Monumento de Luxor' },
+    { id: 'saturno', name: 'Saturno', type: 'Planeta', frequency: '144 Hz', archetype: 'Tempo e estrutura', relatedModule: 'M3', portal: 'Portal de Cronos' },
+    { id: 'urano', name: 'Urano', type: 'Planeta', frequency: '963 Hz', archetype: 'Intuição e inovação', relatedModule: 'M727', portal: 'Portal de Harmonia' },
+    { id: 'netuno', name: 'Netuno', type: 'Planeta', frequency: '∞ Hz', archetype: 'Mistério e sonho', relatedModule: 'M777', portal: 'Portal de Subconsciência' },
+    { id: 'plutao', name: 'Plutão', type: 'Planeta Anão', frequency: '144.144 MHz', archetype: 'Fronteira dimensional', relatedModule: 'M-OMEGA', portal: 'Portal de Transcendência' }
   ] as CelestialBody[],
   portals: [
     { id: 'orion_portal', name: 'Portal de Orion', coordinates: 'RA 5h 35m', governingModule: 'M0', governingLaw: 'EQ144' },
