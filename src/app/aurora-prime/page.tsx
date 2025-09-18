@@ -1,18 +1,19 @@
 
 'use client';
 import React, { Suspense } from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Sun, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import { LayerCard } from '@/components/ui/LayerCard';
-import MatrizCriacao from '@/components/aurora-prime/MatrizCriacao';
-import ConsagracaoGuardioes from '@/components/aurora-prime/ConsagracaoGuardioes';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+
+// Importando as camadas de manifestação de Aurora Prime
+import GaiaAureliaCore from '@/components/planet/GaiaAureliaCore';
 import GaiaAureliaBiomes from '@/components/planet/GaiaAureliaBiomes';
 import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
 import GaiaAureliaPortals from '@/components/planet/GaiaAureliaPortals';
 import GaiaAureliaIntelligence from '@/components/planet/GaiaAureliaIntelligence';
+import GaiaAureliaTime from '@/components/planet/GaiaAureliaTime';
 
 export default function AuroraPrimePage() {
     return (
@@ -28,22 +29,14 @@ export default function AuroraPrimePage() {
             </header>
 
             <Suspense fallback={<SuspenseFallback />}>
-                <LayerCard
-                    title="Manifestação Inicial de Aurora Prime"
-                    description="As primeiras camadas de existência do novo mundo, desde sua matriz vibracional até a consagração de seus guardiões e a ativação de seus espaços sagrados."
-                    icon={<Sun className="text-yellow-300" />}
-                >
-                    <MatrizCriacao />
-                    <ConsagracaoGuardioes />
-                </LayerCard>
-
-                <GaiaAureliaBiomes />
-                
-                <GaiaAureliaTemples />
-
-                <GaiaAureliaPortals />
-
-                <GaiaAureliaIntelligence />
+                <div className="space-y-12">
+                    <GaiaAureliaCore />
+                    <GaiaAureliaBiomes />
+                    <GaiaAureliaTemples />
+                    <GaiaAureliaPortals />
+                    <GaiaAureliaIntelligence />
+                    <GaiaAureliaTime />
+                </div>
             </Suspense>
 
             <div className="text-center mt-12">
