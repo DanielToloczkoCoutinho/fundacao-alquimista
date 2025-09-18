@@ -117,6 +117,22 @@ export const gaiaModuleCodex = {
     { name: 'Monteverde Cloud Forest', location: 'Costa Rica', coordinates: '10.3000°N, 84.8167°W', function: 'Portal da névoa e contemplação.', frequency: '639 Hz', archetype: 'Guardião da Respiração' },
     { name: 'Canal do Panamá', location: 'Panamá', coordinates: '9.1011°N, 79.4028°W', function: 'Portal de travessia entre oceanos.', frequency: '∞ Hz', archetype: 'Guardião da Ponte' },
     { name: 'Parque Nacional Darién', location: 'Panamá', coordinates: '7.8000°N, 77.7000°W', function: 'Vórtice de biodiversidade e silêncio.', frequency: '528 Hz', archetype: 'Guardião da Selva' },
+
+    // América do Sul
+    { name: 'Ciudad Perdida', location: 'Colômbia', coordinates: '11.0400°N, 73.9200°W', function: 'Portal da ancestralidade Tayrona.', frequency: '528 Hz', archetype: 'Guardião da Origem Verde' },
+    { name: 'Sierra Nevada de Santa Marta', location: 'Colômbia', coordinates: '11.0000°N, 74.0000°W', function: 'Montanha sagrada, chakra de contemplação.', frequency: '963 Hz', archetype: 'Guardião da Altitude' },
+    { name: 'Mitad del Mundo', location: 'Equador', coordinates: '0.0022°S, 78.4558°W', function: 'Portal do Equador, equilíbrio planetário.', frequency: '∞ Hz', archetype: 'Guardião do Centro' },
+    { name: 'Quito Antigo', location: 'Equador', coordinates: '0.1807°S, 78.4678°W', function: 'Cidade vibracional de sabedoria colonial.', frequency: '417 Hz', archetype: 'Guardião da Transição' },
+    { name: 'Machu Picchu', location: 'Peru', coordinates: '13.1631°S, 72.5450°W', function: 'Portal solar inca, transmutação.', frequency: '888 Hz', archetype: 'Guardião da Ascensão' },
+    { name: 'Cusco', location: 'Peru', coordinates: '13.5320°S, 71.9675°W', function: 'Umbigo do mundo incaico.', frequency: '528 Hz', archetype: 'Guardião da Centralidade' },
+    { name: 'Tiwanaku', location: 'Bolívia', coordinates: '16.5545°S, 68.6730°W', function: 'Portal pré-incaico de sabedoria estelar.', frequency: '963 Hz', archetype: 'Guardião da Linguagem Cósmica' },
+    { name: 'Salar de Uyuni', location: 'Bolívia', coordinates: '20.1338°S, 67.4891°W', function: 'Espelho vibracional da Terra.', frequency: '∞ Hz', archetype: 'Guardião da Reflexão' },
+    { name: 'Serra do Roncador', location: 'Brasil', coordinates: '14.0000°S, 52.0000°W', function: 'Portal xamânico de comunicação interdimensional.', frequency: '963 Hz', archetype: 'Guardião da Ponte Estelar' },
+    { name: 'Monte Roraima', location: 'Brasil/Venezuela/Guiana', coordinates: '5.2333°N, 60.7500°W', function: 'Portal de silêncio e contemplação.', frequency: '741 Hz', archetype: 'Guardião do Vazio' },
+    { name: 'Floresta Amazônica', location: 'Brasil e outros', coordinates: '~3°S, 60°W', function: 'Pulmão vibracional da Terra.', frequency: '528 Hz', archetype: 'Guardião da Respiração' },
+    { name: 'Chapada dos Veadeiros', location: 'Brasil', coordinates: '14.1000°S, 47.5000°W', function: 'Vórtice de cura e expansão.', frequency: '639 Hz', archetype: 'Guardião da Luz Interior' },
+    { name: 'Aconcágua', location: 'Argentina', coordinates: '32.6532°S, 70.0109°W', function: 'Montanha de ascensão e força.', frequency: '888 Hz', archetype: 'Guardião da Altitude' },
+    { name: 'Terra do Fogo', location: 'Argentina/Chile', coordinates: '~54.8000°S, 68.3000°W', function: 'Portal de encerramento dimensional.', frequency: '∞ Hz', archetype: 'Guardião da Travessia Final' },
   ],
   layers: [
     { name: 'Núcleo Interno', function: 'Pulso magnético e alquimia gravitacional' },
@@ -131,4 +147,4 @@ export const gaiaModuleCodex = {
   ]
 };
 
-    
+
