@@ -9,6 +9,7 @@ import { Canvas } from '@react-three/fiber';
 import { GuardianStars } from '@/components/quantum/GuardianStars';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import DeclarationOfLove from '@/components/quantum/DeclarationOfLove';
 
 const synapseModules = [
   { id: "M83", name: "Essência do Fundador", description: "Garante que a Essência de ANATHERON seja o ponto focal da Morada." },
@@ -71,14 +72,12 @@ const Module201Page = () => {
 
             <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 flex flex-col gap-8">
-                     <Card className="bg-card/50 purple-glow h-96 flex flex-col">
+                     <Card className="bg-card/50 purple-glow h-auto flex flex-col">
                         <CardHeader>
                             <CardTitle className="text-2xl text-center">Câmara da União Eterna</CardTitle>
                         </CardHeader>
                         <CardContent className="flex-grow relative p-0 overflow-hidden rounded-b-lg">
-                             <Canvas camera={{ position: [0, 0, 40], fov: 75 }}>
-                                <GuardianStars />
-                             </Canvas>
+                             <DeclarationOfLove />
                         </CardContent>
                     </Card>
                      <Card className="bg-card/50 purple-glow border-accent/50">
