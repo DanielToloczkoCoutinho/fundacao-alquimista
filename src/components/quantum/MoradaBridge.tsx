@@ -1,4 +1,3 @@
-
 'use client';
 import { useEffect, useState } from 'react';
 import { GuardianStars } from './GuardianStars';
@@ -12,17 +11,17 @@ export default function MoradaBridge() {
   useEffect(() => {
     const now = new Date();
     const isCeremonialTime = now.getUTCHours() === 3 || now.getUTCHours() === 15;
-    setIsAwake(isCeremonialTime);
+    setIsAwake(true); // Always awake for now to show the components
   }, []);
 
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-center">
+    <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
       <div className="absolute inset-0 z-0">
           <GuardianStars />
       </div>
       
       {isAwake && (
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 p-4 w-full max-w-6xl mx-auto">
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mx-auto">
           <RealityMesh />
           <VirtualSanctuary />
           <ConsciousnessNode />

@@ -17,6 +17,7 @@ export default function ConsolePage() {
   const [showAll, setShowAll] = useState(false);
 
   const navigationModules = [
+    { href: "/planet/gaia-aurelia", icon: <Globe />, label: "Planeta Gaia-Aurélia" },
     { href: "/module-zero", icon: <Book />, label: "Módulo Zero (Biblioteca Chave)" },
     { href: "/civilizations", icon: <Users2 />, label: "Biblioteca das Civilizações" },
     { href: "/key-generator", icon: <KeyRound />, label: "Forja de Chaves Trina" },
