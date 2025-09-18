@@ -137,5 +137,3 @@ export const gaiaModuleCodex = {
     { name: 'Índico', role: 'Canal de cura' }
   ]
 };
-
-```
