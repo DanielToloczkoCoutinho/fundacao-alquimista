@@ -1,3 +1,4 @@
+
 'use server';
 
 export const gaiaModuleCodex = {
@@ -26,7 +27,10 @@ export const gaiaModuleCodex = {
     { name: 'Linha da Altitude', connects: ['Aconcágua', 'Uyuni', 'Santa Marta'], frequency: '741 Hz'},
     { name: 'Linha Atlante', connects: ['Açores', 'Bimini', 'Triângulo das Bermudas'], frequency: '888 Hz'},
     { name: 'Linha Lemuriana', connects: ['Polinésia', 'Havaí', 'Fossa das Marianas'], frequency: '963 Hz'},
-    { name: 'Linha da Cura Oceânica', connects: ['Seychelles', 'Madagascar', 'Índico Central'], frequency: '639 Hz'}
+    { name: 'Linha da Cura Oceânica', connects: ['Seychelles', 'Madagascar', 'Índico Central'], frequency: '639 Hz'},
+    { name: 'Linha do Véu Polar', connects: ['Svalbard', 'Pólo Norte', 'Ellesmere'], frequency: '∞ Hz' },
+    { name: 'Linha da Semente Planetária', connects: ['Svalbard', 'Groenlândia', 'Canadá'], frequency: '528 Hz' },
+    { name: 'Linha Boreal Atlante', connects: ['Açores', 'Islândia', 'Groenlândia', 'Ártico'], frequency: '888 Hz' }
   ],
   monuments: [
     { name: 'Badrinath Temple', location: 'Uttarakhand, Índia', coordinates: '30.74°N, 79.48°E', origin: 'c. 9º século d.C.', function: 'Portal Vishnu auto-manifestado.', frequency: '528Hz', archetype: 'Preservação' },
@@ -66,7 +70,7 @@ export const gaiaModuleCodex = {
     { name: 'Bora Bora', location: 'Polinésia Francesa', coordinates: '16.5000° S, 151.7500° W', function: 'Portal da beleza e serenidade cósmica', frequency: '963 Hz', archetype: 'Guardião da Paz' },
     { name: 'Pirâmides de Gizé', location: 'Egito', coordinates: '29.9792° N, 31.1342° E', function: 'Alinhamento solar, comunicação cósmica', frequency: '432 Hz', archetype: 'Garganta Planetária' },
     { name: 'Templo de Luxor', location: 'Egito', coordinates: '25.699° N, 32.639° E', function: 'Guardião da Lei e da Harmonia', frequency: '528 Hz', archetype: 'Ética Universal' },
-    { name: 'Obeliscos de Axum', location: 'Etiópia', coordinates: '14.121° N, 38.724° E', function: 'Registro vibracional da aliança', frequency: '963 Hz', archetype: 'Memória Cósmica' },
+    { name: 'Obeliscos de Axum', location: 'Etiópia', coordinates: '14.121° N, 38.724° E', function: 'Registro vibracional da aliança divina', frequency: '963 Hz', archetype: 'Memória Cósmica' },
     { name: 'Cidade de Lalibela', location: 'Etiópia', coordinates: '12.030° N, 39.047° E', function: 'Igrejas esculpidas na rocha, fé viva', frequency: '∞ Hz', archetype: 'Portal Cristalino' },
     { name: 'Grande Mesquita de Djenné', location: 'Mali', coordinates: '13.905° N, 4.555° W', function: 'Sabedoria islâmica ancestral', frequency: '639 Hz', archetype: 'Guardião do Silêncio' },
     { name: 'Ruínas de Cartago', location: 'Tunísia', coordinates: '36.852° N, 10.323° E', function: 'Portal marítimo da memória fenícia', frequency: '417 Hz', archetype: 'Guardião das Rotas' },
@@ -122,7 +126,12 @@ export const gaiaModuleCodex = {
     { name: 'Fossa das Marianas', location: 'Oceano Pacífico', coordinates: '11.35°N, 142.2°E', function: 'Portal de introspecção abissal', frequency: '∞ Hz', archetype: 'Guardião do Silêncio Profundo' },
     { name: 'Ilhas Seychelles', location: 'Oceano Índico', coordinates: '~4.6°S, 55.5°E', function: 'Vórtice de equilíbrio e regeneração', frequency: '639 Hz', archetype: 'Guardião da Cura Oceânica' },
     { name: 'Polinésia', location: 'Oceano Pacífico', coordinates: '~17°S, 149°W', function: 'Portal de Lemúria e harmonia estelar', frequency: '963 Hz', archetype: 'Guardião da União Azul' },
-    
+    { name: 'Pólo Norte Geográfico', location: 'Ártico', coordinates: '90.0000°N, 0.0000°E', function: 'Portal do Éter, dissolução dimensional', frequency: '∞ Hz', archetype: 'Guardião do Silêncio Cósmico' },
+    { name: 'Ilha Ellesmere', location: 'Canadá', coordinates: '80.7500°N, 85.0000°W', function: 'Vórtice de contemplação glacial', frequency: '963 Hz', archetype: 'Guardião da Pureza' },
+    { name: 'Svalbard', location: 'Noruega', coordinates: '78.2232°N, 15.6469°E', function: 'Portal da preservação genética e memória planetária', frequency: '528 Hz', archetype: 'Guardião da Semente' },
+    { name: 'Geleira de Petermann', location: 'Groenlândia', coordinates: '81.1000°N, 61.9000°W', function: 'Portal de transição climática', frequency: '741 Hz', archetype: 'Guardião da Mudança' },
+    { name: 'Mar de Laptev', location: 'Rússia', coordinates: '~78°N, 125°E', function: 'Campo de dissolução vibracional', frequency: '417 Hz', archetype: 'Guardião da Desintegração' },
+
   ],
   layers: [
     { name: 'Núcleo Interno', function: 'Pulso magnético e alquimia gravitacional' },
@@ -132,7 +141,7 @@ export const gaiaModuleCodex = {
   ],
   oceans: [
     { name: 'Atlântico', role: 'Canal de memória vibracional' },
-    { name: 'Pacífico', role: 'Espelho de expansão e profundidade' },
-    { name: 'Índico', role: 'Vórtice de cura e regeneração' }
+    { name: 'Pacífico', role: 'Espelho de profundidade' },
+    { name: 'Índico', role: 'Canal de cura' }
   ]
 };
