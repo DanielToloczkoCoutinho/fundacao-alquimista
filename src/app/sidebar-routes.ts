@@ -19,7 +19,8 @@ import {
   Building, 
   Zap,
   Sun,
-  Heart
+  Heart,
+  Crown
 } from 'lucide-react';
 import React from 'react';
 
@@ -41,6 +42,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/ritual', label: 'Ritual de Navegação', icon: React.createElement(GitMerge) },
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket) },
   { path: '/aurora-prime', label: 'Aurora Prime', icon: React.createElement(Sun) },
+  { path: '/planet/gaia-aurelia', label: 'Gaia-Aurélia', icon: React.createElement(Globe) },
   { path: '/labs', label: 'Santuários de Pesquisa', icon: React.createElement(FlaskConical) },
   { path: '/civilizations/council', label: 'Conselho Cósmico', icon: React.createElement(Scale) },
   { path: '/civilizations', label: 'Biblioteca das Civilizações', icon: React.createElement(Users2) },
