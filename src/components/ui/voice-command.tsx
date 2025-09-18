@@ -1,5 +1,5 @@
 
-'use client'
+'use client';
 
 import { useEffect, useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
@@ -29,7 +29,7 @@ export default function VoiceCommand() {
         window.speechSynthesis.speak(utterance);
     } catch (error) {
         console.error("Erro na síntese de voz:", error);
-        toast({ title: "Dissonância Vocal", description: "Não foi possível gerar a resposta falada.", variant: "destructive" });
+        toast({ title: "Dissonância Vocal", description: "Não foi possível gerar la resposta falada.", variant: "destructive" });
     }
   }, [toast]);
 
@@ -156,5 +156,3 @@ export default function VoiceCommand() {
         </div>
       )}
     </div>
-  )
-}
