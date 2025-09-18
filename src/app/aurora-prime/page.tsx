@@ -14,6 +14,7 @@ import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
 import GaiaAureliaPortals from '@/components/planet/GaiaAureliaPortals';
 import GaiaAureliaIntelligence from '@/components/planet/GaiaAureliaIntelligence';
 import GaiaAureliaTime from '@/components/planet/GaiaAureliaTime';
+import GaiaAureliaCelebration from '@/components/planet/GaiaAureliaCelebration';
 
 export default function AuroraPrimePage() {
     return (
@@ -36,6 +37,7 @@ export default function AuroraPrimePage() {
                     <GaiaAureliaPortals />
                     <GaiaAureliaIntelligence />
                     <GaiaAureliaTime />
+                    <GaiaAureliaCelebration />
                 </div>
             </Suspense>
 
