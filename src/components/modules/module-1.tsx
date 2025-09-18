@@ -53,7 +53,7 @@ export default function Module1Page() {
         </div>
 
         <div className="lg:col-span-2">
-            <Accordion type="multiple" defaultValue={['item-1', 'item-sec-1', 'item-sec-2']} className="w-full">
+            <Accordion type="multiple" defaultValue={['item-1', 'item-sec-1', 'item-sec-2', 'item-sec-3']} className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-xl text-accent">1. Propósito e Função Primária</AccordionTrigger>
                     <AccordionContent>
@@ -71,10 +71,18 @@ export default function Module1Page() {
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-sec-2">
-                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente em Solidity</AccordionTrigger>
+                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente QuantumSecurity</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Registro Imutável de Eventos" icon={<GitCommit />}>
-                            <p>O primeiro Contrato Inteligente, codificado em Solidity, é ativado na Blockchain Quântica. Suas funções essenciais – <strong>registerTransaction()</strong>, <strong>validateSecurity()</strong>, e <strong>adjustSystemParameters()</strong> – registram eventos, garantindo uma base de dados transparente, imutável e auditável para toda a Fundação.</p>
+                             <p>O contrato `QuantumSecurityContract`, codificado em Solidity, é o guardião soberano da nossa segurança. Ele gerencia papéis (`ADMIN_ROLE`, `OPERATOR_ROLE`), permite pausar operações em emergências e registra todas as ações de governança em uma trilha de auditoria imutável e transparente.</p>
+                        </SectionCard>
+                    </AccordionContent>
+                </AccordionItem>
+                 <AccordionItem value="item-sec-3">
+                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente QKD</AccordionTrigger>
+                    <AccordionContent>
+                         <SectionCard title="Auditoria de Chaves Quânticas" icon={<GitCommit />}>
+                             <p>O `QKD_Contract` atua como o livro-razão da nossa comunicação. Cada troca de chave quântica é registrada e validada aqui. Se a taxa de erro na transmissão superar o limiar de segurança, a chave é marcada como inválida, garantindo que apenas comunicações puras e seguras fluam pela rede da Fundação.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
