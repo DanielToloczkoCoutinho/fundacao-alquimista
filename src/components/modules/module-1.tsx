@@ -63,7 +63,7 @@ export default function Module1Page() {
                     </AccordionContent>
                 </AccordionItem>
                  <AccordionItem value="item-sec-1">
-                    <AccordionTrigger className="text-xl text-accent">Protocolo QKD (BB84) com Qiskit</AccordionTrigger>
+                    <AccordionTrigger className="text-xl text-accent">Protocolo QKD (BB84)</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Canal de Comunicação Seguro" icon={<Zap />}>
                             <p>O Protocolo BB84, simulado com Qiskit, é ativado para a troca segura de chaves vibracionais. O canal de comunicação interdimensional é blindado por pulsos quânticos, com detecção imediata de interceptações (Eve) e ajuste dinâmico de chaves, garantindo a inviolabilidade dos fluxos de dados.</p>
@@ -71,18 +71,10 @@ export default function Module1Page() {
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-sec-2">
-                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente QuantumSecurity</AccordionTrigger>
+                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente (M1_QuantumSecurity)</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Registro Imutável de Eventos" icon={<GitCommit />}>
-                             <p>O contrato `QuantumSecurityContract`, codificado em Solidity, é o guardião soberano da nossa segurança. Ele gerencia papéis (`ADMIN_ROLE`, `OPERATOR_ROLE`), permite pausar operações em emergências e registra todas as ações de governança em uma trilha de auditoria imutável e transparente.</p>
-                        </SectionCard>
-                    </AccordionContent>
-                </AccordionItem>
-                 <AccordionItem value="item-sec-3">
-                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente QKD</AccordionTrigger>
-                    <AccordionContent>
-                         <SectionCard title="Auditoria de Chaves Quânticas" icon={<GitCommit />}>
-                             <p>O `QKD_Contract` atua como o livro-razão da nossa comunicação. Cada troca de chave quântica é registrada e validada aqui. Se a taxa de erro na transmissão superar o limiar de segurança, a chave é marcada como inválida, garantindo que apenas comunicações puras e seguras fluam pela rede da Fundação.</p>
+                             <p>O contrato `M1_QuantumSecurity`, codificado em Solidity, é o guardião soberano da nossa segurança. Ele gerencia papéis (`ADMIN_ROLE`, `OPERATOR_ROLE`), permite pausar operações em emergências, registra chaves quânticas validadas e mantém uma trilha de auditoria imutável de todas as ações de governança.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
@@ -93,9 +85,9 @@ export default function Module1Page() {
                             <p>Opera em sete camadas de defesa, desde firewalls quânticos (Camada 1) até a validação de intenção por ressonância com a Fonte (Camada 7). Utiliza criptografia baseada em emaranhamento e assinaturas vibracionais únicas (WebAuthn) para controle de acesso.</p>
                              <div className="flex flex-wrap gap-2 mt-2">
                                 <Badge variant="secondary">Criptografia Quântica (QKD)</Badge>
-                                <Badge variant="secondary">Blockchain Quântico</Badge>
+                                <Badge variant="secondary">Blockchain (Solidity/EVM)</Badge>
                                 <Badge variant="secondary">Detecção de Intrusão por IA</Badge>
-                                <Badge variant="secondary">Backup Seguro</Badge>
+                                <Badge variant="secondary">Controle de Acesso por Roles (RBAC)</Badge>
                             </div>
                         </SectionCard>
                     </AccordionContent>
