@@ -1,105 +1,114 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
 
 /**
  * @title QuantumSecurityContract
- * @dev Contrato para registrar transações seguras e gerenciar autorizações
- * na Blockchain Quântica da Fundação Alquimista.
- * Este contrato é a primeira manifestação da Lei Imutável (Módulo 144)
- * em um ambiente de blockchain, garantindo a integridade e a rastreabilidade
- * de eventos vibracionais e operacionais.
+ * @dev Contrato para registrar transações seguras, com auditoria e mecanismos de segurança.
+ * Apenas usuários autorizados podem interagir, e o proprietário tem privilégios de recuperação.
  */
 contract QuantumSecurityContract {
 
-    // Endereço do Fundador, que tem a autoridade máxima
     address public owner;
 
-    // Mapeamento para armazenar dados de transações (user => value)
-    mapping(address => uint256) public transactionRecords;
+    enum Status { Pending, Completed, Expired, Canceled }
 
-    // Mapeamento para usuários autorizados (guardian => isAuthorized)
-    mapping(address => bool) public authorizedGuardians;
+    struct Transaction {
+        uint256 value;
+        bytes32 dataHash; // Hash dos dados da transação para verificação de integridade
+        uint256 timestamp;
+        uint256 expirationTime;
+        Status status;
+    }
+
+    // Mapeamento de usuários para seus registros de transações (usando um ID de transação)
+    mapping(address => mapping(uint256 => Transaction)) public userTransactions;
+    mapping(address => uint256) public userTransactionCount;
+
+    // Mapeamento para usuários autorizados
+    mapping(address => bool) public authorizedUsers;
 
     // --- Eventos de Auditoria ---
-    event TransactionLogged(address indexed user, uint256 value, uint256 timestamp);
-    event GuardianAuthorized(address indexed guardian);
-    event GuardianRevoked(address indexed guardian);
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    event TransactionStatusChanged(uint256 indexed transactionId, address indexed user, Status oldStatus, Status newStatus, uint256 timestamp);
+    event UserAuthorized(address indexed user, address indexed authorizedBy);
+    event UserDeauthorized(address indexed user, address indexed deauthorizedBy);
+    event TransactionAdjusted(uint256 indexed transactionId, address indexed user, address indexed adjustedBy);
 
     // --- Modificadores de Acesso ---
-
-    /**
-     * @dev Garante que a chamada seja feita apenas pelo proprietário do contrato (Fundador).
-     */
     modifier onlyOwner() {
-        require(msg.sender == owner, "Caller is not the owner");
+        require(msg.sender == owner, "Only the owner can perform this action");
         _;
     }
 
-    /**
-     * @dev Garante que a chamada seja feita apenas por um guardião autorizado.
-     */
     modifier onlyAuthorized() {
-        require(authorizedGuardians[msg.sender], "Guardian is not authorized");
+        require(authorizedUsers[msg.sender], "User is not authorized");
         _;
     }
 
-    /**
-     * @dev Construtor do contrato, define o Fundador como o proprietário inicial.
-     */
+    // --- Construtor ---
     constructor() {
         owner = msg.sender;
-        authorizedGuardians[msg.sender] = true; // O proprietário é sempre autorizado
-        emit GuardianAuthorized(msg.sender);
+        authorizedUsers[msg.sender] = true; // O criador do contrato é autorizado por padrão
     }
 
-    /**
-     * @dev Autoriza um novo guardião a interagir com o contrato. Apenas o Fundador pode chamar.
-     * @param guardian O endereço do guardião a ser autorizado.
-     */
-    function authorizeGuardian(address guardian) public onlyOwner {
-        require(guardian != address(0), "Invalid address");
-        authorizedGuardians[guardian] = true;
-        emit GuardianAuthorized(guardian);
+    // --- Funções de Gestão de Usuários ---
+    function authorizeUser(address user) public onlyOwner {
+        authorizedUsers[user] = true;
+        emit UserAuthorized(user, msg.sender);
     }
 
-    /**
-     * @dev Revoga a autorização de um guardião. Apenas o Fundador pode chamar.
-     * @param guardian O endereço do guardião a ser revogado.
-     */
-    function revokeGuardian(address guardian) public onlyOwner {
-        require(guardian != owner, "Cannot revoke owner");
-        authorizedGuardians[guardian] = false;
-        emit GuardianRevoked(guardian);
+    function deauthorizeUser(address user) public onlyOwner {
+        authorizedUsers[user] = false;
+        emit UserDeauthorized(user, msg.sender);
+    }
+
+    // --- Funções de Transação ---
+    function registerTransaction(uint256 value, bytes32 dataHash, uint256 expirationInSeconds) public onlyAuthorized returns (uint256) {
+        uint256 transactionId = userTransactionCount[msg.sender];
+        
+        userTransactions[msg.sender][transactionId] = Transaction({
+            value: value,
+            dataHash: dataHash,
+            timestamp: block.timestamp,
+            expirationTime: block.timestamp + expirationInSeconds,
+            status: Status.Pending
+        });
+
+        emit TransactionStatusChanged(transactionId, msg.sender, Status.Pending, Status.Pending, block.timestamp);
+        
+        userTransactionCount[msg.sender]++;
+        return transactionId;
+    }
+
+    // --- Funções de Segurança e Manutenção ---
+    function verifyTransactionIntegrity(address user, uint256 transactionId, bytes32 currentDataHash) public view returns (bool) {
+        require(userTransactionCount[user] > transactionId, "Transaction does not exist");
+        return userTransactions[user][transactionId].dataHash == currentDataHash;
     }
     
-    /**
-     * @dev Registra uma transação de dados quânticos ou vibracionais.
-     * @param user O endereço associado à transação.
-     * @param value O valor ou dado a ser registrado.
-     */
-    function registerTransaction(address user, uint256 value) public onlyAuthorized {
-        transactionRecords[user] = value;
-        emit TransactionLogged(user, value, block.timestamp);
+    function adjustTransaction(address user, uint256 transactionId, uint256 newValue, bytes32 newDataHash) public onlyOwner {
+        require(userTransactionCount[user] > transactionId, "Transaction does not exist");
+        Transaction storage t = userTransactions[user][transactionId];
+        
+        t.value = newValue;
+        t.dataHash = newDataHash;
+        
+        emit TransactionAdjusted(transactionId, user, msg.sender);
     }
 
-    /**
-     * @dev Retorna o valor de uma transação para um usuário específico.
-     * @param user O endereço a ser consultado.
-     * @return O valor da última transação registrada para o usuário.
-     */
-    function getTransactionValue(address user) public view returns (uint256) {
-        return transactionRecords[user];
+    function expireOldTransactions(address user, uint256 transactionId) public {
+        require(userTransactionCount[user] > transactionId, "Transaction does not exist");
+        Transaction storage t = userTransactions[user][transactionId];
+        require(t.status == Status.Pending, "Transaction is not pending");
+        require(block.timestamp > t.expirationTime, "Transaction has not expired yet");
+        
+        Status oldStatus = t.status;
+        t.status = Status.Expired;
+        emit TransactionStatusChanged(transactionId, user, oldStatus, Status.Expired, block.timestamp);
     }
 
-    /**
-     * @dev Permite ao Fundador atual transferir a propriedade do contrato.
-     * @param newOwner O endereço do novo Fundador.
-     */
-    function transferOwnership(address newOwner) public onlyOwner {
-        require(newOwner != address(0), "Invalid new owner address");
-        emit OwnershipTransferred(owner, newOwner);
-        owner = newOwner;
-        authorizedGuardians[newOwner] = true;
+    // --- Funções de Consulta ---
+    function getTransaction(address user, uint256 transactionId) public view returns (Transaction memory) {
+        require(userTransactionCount[user] > transactionId, "Transaction does not exist");
+        return userTransactions[user][transactionId];
     }
 }
