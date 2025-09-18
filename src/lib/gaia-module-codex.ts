@@ -39,10 +39,19 @@ export const gaiaModuleCodex = {
     { name: 'Moorea', location: 'Polinésia Francesa', coordinates: '17.5388° S, 149.8295° W', function: 'União entre água, céu e terra, harmonia oceânica.', frequency: '639 Hz', archetype: 'Guardião do Círculo Azul' },
     { name: 'Bora Bora', location: 'Polinésia Francesa', coordinates: '16.5000° S, 151.7500° W', function: 'Portal da beleza e serenidade cósmica.', frequency: '963 Hz', archetype: 'Guardião da Paz' },
     
-    // América
-    { name: 'Monte Shasta', location: 'EUA', coordinates: '41.409° N, 122.194° W', function: 'Portal Raiz, conectando com a origem telúrica e Lemuriana.', frequency: '396 Hz', archetype: 'Força Ancestral' },
+    // América do Norte
+    { name: 'Monte Shasta', location: 'Califórnia, EUA', coordinates: '41.409° N, 122.194° W', function: 'Portal Raiz de Gaia, conectando com Telos e a memória Lemuriana.', frequency: '396 Hz', archetype: 'Força Ancestral' },
+    { name: 'Teotihuacan', location: 'México', coordinates: '19.6925° N, 98.8436° W', function: 'Portal de ascensão e conexão estelar, alinhado com as Plêiades.', frequency: '852 Hz', archetype: 'Calçada dos Deuses' },
+    { name: 'Cahokia Mounds', location: 'Illinois, EUA', coordinates: '38.6558° N, 90.0621° W', function: 'Centro cerimonial de alinhamento solar e poder terreno.', frequency: '741 Hz', archetype: 'Coração da Tartaruga' },
+    { name: 'Serpent Mound', location: 'Ohio, EUA', coordinates: '39.0242° N, 83.4308° W', function: 'Alinhamento celestial e portal de sabedoria serpentina (kundalini).', frequency: '432 Hz', archetype: 'Serpente da Sabedoria' },
+    { name: 'Chichen Itzá', location: 'Yucatán, México', coordinates: '20.6830° N, 88.5686° W', function: 'Observatório cósmico maia e portal de conhecimento estelar.', frequency: '528 Hz', archetype: 'Castelo de Kukulcán' },
+    { name: 'Grand Canyon', location: 'Arizona, EUA', coordinates: '36.1069° N, 112.1129° W', function: 'Registro geológico do tempo profundo e biblioteca akáshica da Terra.', frequency: '174 Hz', archetype: 'A Memória da Terra' },
+    { name: 'Yellowstone Caldera', location: 'Wyoming, EUA', coordinates: '44.4280° N, 110.5885° W', function: 'Vórtice de transmutação e poder geotermal bruto.', frequency: '417 Hz', archetype: 'Caldeirão da Criação' },
+    { name: 'Lago Tahoe', location: 'Califórnia/Nevada, EUA', coordinates: '39.0968° N, 120.0324° W', function: 'Portal de pureza cristalina e cura emocional.', frequency: '639 Hz', archetype: 'O Coração de Cristal' },
+    { name: 'Monte Denali', location: 'Alasca, EUA', coordinates: '63.0692° N, 151.0070° W', function: 'Portal do silêncio primordial e conexão com o éter cósmico.', frequency: '∞ Hz', archetype: 'O Grande Silêncio' },
+    
+    // América do Sul
     { name: 'Machu Picchu', location: 'Peru', coordinates: '13.1631° S, 72.5450° W', function: 'Portal Solar Inca para transmutação e ascensão.', frequency: '528 Hz', archetype: 'Altar Solar' },
-    { name: 'Teotihuacan', location: 'México', coordinates: '19.6925° N, 98.8436° W', function: 'Portal Quetzal para ascensão e conexão com civilizações estelares.', frequency: '852 Hz', archetype: 'Calçada dos Deuses' },
     { name: 'Serra do Roncador', location: 'Brasil', coordinates: '15.0000° S, 53.0000° W', function: 'Portal Xamânico para comunicação interdimensional e cura ancestral.', frequency: '432 Hz', archetype: 'Coração da Terra' },
 
     // Europa e Oriente Médio
@@ -110,5 +119,3 @@ export const gaiaModuleCodex = {
     { name: 'Índico', role: 'Vórtice de cura e regeneração' }
   ]
 };
-
-    
