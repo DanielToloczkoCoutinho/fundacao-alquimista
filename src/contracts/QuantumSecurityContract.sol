@@ -1,151 +1,148 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
 
 /**
  * @title QuantumSecurityContract
- * @dev Contrato para registrar transações de dados quânticos com segurança,
- * auditoria e mecanismos de verificação aprimorados.
- * Apenas usuários autorizados podem registrar transações, e apenas o
- * proprietário do contrato (Fundador) pode ajustar transações ou autorizar novos usuários.
+ * @dev Contrato para gerenciar a segurança quântica, incluindo o registro
+ * de transações, autorizações e a validação de chaves quânticas (QKD).
+ * Este contrato é o pilar da segurança e da auditoria da Fundação Alquimista.
  */
 contract QuantumSecurityContract {
-
-    // --- State Variables ---
-
     address public owner;
 
-    enum TransactionStatus { Pending, Completed, Expired }
+    // --- Estruturas de Dados ---
 
+    // Estrutura para transações gerais
     struct Transaction {
+        address user;
         uint256 value;
+        bytes32 dataHash; // Hash para verificação de integridade
         uint256 timestamp;
         uint256 expirationTime;
-        bytes32 dataHash; // Hash para verificação de integridade dos dados
-        TransactionStatus status;
-        bool exists;
+        Status status;
     }
 
-    mapping(address => Transaction) public transactionRecords;
+    // Enum para o status das transações
+    enum Status { Pending, Completed, Expired, Invalid }
+
+    // Estrutura para chaves quânticas do protocolo BB84
+    struct QuantumKey {
+        string keyId;
+        string keyData; // A chave em si (representação em string para o exemplo)
+        uint256 errorRate; // Taxa de erro em base por mil (ex: 10 para 1%)
+        KeyStatus status;
+        uint256 timestamp;
+    }
+    
+    enum KeyStatus { Valid, Invalid, Pending }
+
+    // --- Mapeamentos (Armazenamento) ---
+
     mapping(address => bool) public authorizedUsers;
+    mapping(uint256 => Transaction) public transactionRecords;
+    mapping(string => QuantumKey) public quantumKeys; // Mapeia ID da chave para sua estrutura
+    uint256 public transactionCounter;
+    
+    // Limiar de erro aceitável para QKD (em base por mil, ex: 20 = 2%)
+    uint256 public constant QKD_ERROR_THRESHOLD = 20;
 
-    // --- Events ---
+    // --- Eventos para Auditoria ---
 
-    event TransactionRegistered(address indexed user, uint256 value, bytes32 dataHash, uint256 expiration);
-    event TransactionAdjusted(address indexed user, uint256 newValue, bytes32 newDataHash);
-    event TransactionCompleted(address indexed user);
-    event UserAuthorized(address indexed user);
-    event UserDeauthorized(address indexed user);
+    event UserAuthorized(address indexed user, uint256 timestamp);
+    event TransactionStatusChanged(uint256 indexed transactionId, Status oldStatus, Status newStatus, uint256 timestamp);
+    event KeyRegistered(string indexed keyId, KeyStatus status, uint256 errorRate, uint256 timestamp);
+    event InterceptionAlert(string indexed keyId, uint256 errorRate, uint256 timestamp);
 
-    // --- Modifiers ---
-
-    modifier onlyAuthorized() {
-        require(authorizedUsers[msg.sender], "QuantumSecurity: User not authorized");
-        _;
-    }
+    // --- Modificadores de Acesso ---
 
     modifier onlyOwner() {
-        require(msg.sender == owner, "QuantumSecurity: Caller is not the owner");
+        require(msg.sender == owner, "Only the owner can call this function");
         _;
     }
 
-    // --- Constructor ---
+    modifier onlyAuthorized() {
+        require(authorizedUsers[msg.sender], "User is not authorized");
+        _;
+    }
+
+    // --- Construtor ---
 
     constructor() {
         owner = msg.sender;
-        authorizedUsers[msg.sender] = true; // O proprietário é autorizado por padrão
-        emit UserAuthorized(msg.sender);
+        authorizeUser(msg.sender); // O dono do contrato é autorizado por padrão
     }
 
-    // --- Functions ---
+    // --- Funções de Gestão de Autorização ---
 
-    /**
-     * @dev Autoriza um novo usuário a registrar transações.
-     * @param user O endereço do usuário a ser autorizado.
-     */
     function authorizeUser(address user) public onlyOwner {
-        require(user != address(0), "QuantumSecurity: Invalid user address");
         authorizedUsers[user] = true;
-        emit UserAuthorized(user);
+        emit UserAuthorized(user, block.timestamp);
     }
 
-    /**
-     * @dev Remove a autorização de um usuário.
-     * @param user O endereço do usuário a ser desautorizado.
-     */
-    function deauthorizeUser(address user) public onlyOwner {
-        require(user != owner, "QuantumSecurity: Cannot deauthorize owner");
+    function revokeAuthorization(address user) public onlyOwner {
         authorizedUsers[user] = false;
-        emit UserDeauthorized(user);
     }
 
-    /**
-     * @dev Registra uma nova transação com expiração e hash de integridade.
-     * @param user O endereço do usuário associado à transação.
-     * @param value O valor numérico da transação.
-     * @param dataHash O hash SHA-256 dos dados da transação para verificação de integridade.
-     * @param validityDurationInSeconds A duração em segundos pela qual a transação é válida.
-     */
-    function registerTransaction(address user, uint256 value, bytes32 dataHash, uint256 validityDurationInSeconds) public onlyAuthorized {
-        uint256 expirationTimestamp = block.timestamp + validityDurationInSeconds;
-        transactionRecords[user] = Transaction({
-            value: value,
-            timestamp: block.timestamp,
-            expirationTime: expirationTimestamp,
-            dataHash: dataHash,
-            status: TransactionStatus.Pending,
-            exists: true
-        });
-        emit TransactionRegistered(user, value, dataHash, expirationTimestamp);
+    // --- Funções do Contrato Inteligente (Transações Gerais) ---
+
+    function registerTransaction(address user, uint256 value, bytes32 dataHash, uint256 expiration) public onlyAuthorized {
+        transactionCounter++;
+        Transaction storage newTransaction = transactionRecords[transactionCounter];
+        newTransaction.user = user;
+        newTransaction.value = value;
+        newTransaction.dataHash = dataHash;
+        newTransaction.timestamp = block.timestamp;
+        newTransaction.expirationTime = block.timestamp + expiration;
+        newTransaction.status = Status.Pending;
+        emit TransactionStatusChanged(transactionCounter, Status.Pending, Status.Pending, block.timestamp);
     }
 
-    /**
-     * @dev Permite que um usuário autorizado marque sua transação como concluída antes da expiração.
-     */
-    function completeTransaction() public onlyAuthorized {
-        Transaction storage trx = transactionRecords[msg.sender];
-        require(trx.exists, "QuantumSecurity: No transaction found for this user");
-        require(block.timestamp < trx.expirationTime, "QuantumSecurity: Transaction has expired");
-        require(trx.status == TransactionStatus.Pending, "QuantumSecurity: Transaction not pending");
-
-        trx.status = TransactionStatus.Completed;
-        emit TransactionCompleted(msg.sender);
+    function verifyTransactionIntegrity(uint256 transactionId, bytes32 currentDataHash) public view returns (bool) {
+        require(transactionRecords[transactionId].timestamp != 0, "Transaction does not exist");
+        return transactionRecords[transactionId].dataHash == currentDataHash;
     }
 
-    /**
-     * @dev Verifica a integridade de uma transação comparando o hash.
-     * @param user O usuário cuja transação será verificada.
-     * @param dataHash O hash dos dados atuais para comparação.
-     * @return bool True se o hash corresponder, false caso contrário.
-     */
-    function verifyTransactionIntegrity(address user, bytes32 dataHash) public view returns (bool) {
-        return transactionRecords[user].exists && transactionRecords[user].dataHash == dataHash;
+    function adjustTransaction(uint256 transactionId, uint256 newValue, bytes32 newDataHash) public onlyOwner {
+        require(transactionRecords[transactionId].timestamp != 0, "Transaction does not exist");
+        Transaction storage t = transactionRecords[transactionId];
+        t.value = newValue;
+        t.dataHash = newDataHash;
     }
 
-    /**
-     * @dev Função de recuperação para o proprietário ajustar uma transação.
-     * @param user O usuário cuja transação será ajustada.
-     * @param newValue O novo valor da transação.
-     * @param newDataHash O novo hash de integridade dos dados.
-     */
-    function adjustTransaction(address user, uint256 newValue, bytes32 newDataHash) public onlyOwner {
-        require(transactionRecords[user].exists, "QuantumSecurity: No transaction found to adjust");
-        transactionRecords[user].value = newValue;
-        transactionRecords[user].dataHash = newDataHash;
-        emit TransactionAdjusted(user, newValue, newDataHash);
-    }
-
-    /**
-     * @dev Obtém os detalhes de uma transação de um usuário.
-     * @param user O endereço do usuário.
-     * @return A estrutura completa da transação.
-     */
-    function getTransaction(address user) public view returns (Transaction memory) {
-        Transaction storage trx = transactionRecords[user];
-        if (block.timestamp >= trx.expirationTime && trx.status == TransactionStatus.Pending) {
-             Transaction memory expiredTrx = trx;
-             expiredTrx.status = TransactionStatus.Expired;
-             return expiredTrx;
+    function expireOldTransactions(uint256 transactionId) public {
+        Transaction storage t = transactionRecords[transactionId];
+        require(t.timestamp != 0, "Transaction does not exist");
+        if (block.timestamp > t.expirationTime) {
+            emit TransactionStatusChanged(transactionId, t.status, Status.Expired, block.timestamp);
+            t.status = Status.Expired;
         }
-        return trx;
+    }
+
+    // --- Funções de Integração com QKD ---
+
+    /**
+     * @dev Registra e valida uma chave quântica gerada pela simulação QKD.
+     * @param keyId Um identificador único para a sessão de troca de chave.
+     * @param keyData A chave gerada.
+     * @param errorRate A taxa de erro de bits quânticos (QBER), em base por mil.
+     */
+    function registerAndValidateKey(string memory keyId, string memory keyData, uint256 errorRate) public onlyAuthorized {
+        KeyStatus currentStatus;
+        if (errorRate > QKD_ERROR_THRESHOLD) {
+            currentStatus = KeyStatus.Invalid;
+            emit InterceptionAlert(keyId, errorRate, block.timestamp);
+        } else {
+            currentStatus = KeyStatus.Valid;
+        }
+
+        quantumKeys[keyId] = QuantumKey({
+            keyId: keyId,
+            keyData: keyData,
+            errorRate: errorRate,
+            status: currentStatus,
+            timestamp: block.timestamp
+        });
+
+        emit KeyRegistered(keyId, currentStatus, errorRate, block.timestamp);
     }
 }
