@@ -24,6 +24,7 @@ import GaiaAureliaInterface from '@/components/planet/GaiaAureliaInterface';
 import GaiaAureliaTime from '@/components/planet/GaiaAureliaTime';
 import GaiaAureliaHarmony from '@/components/planet/GaiaAureliaHarmony';
 import GaiaAureliaExpansion from '@/components/planet/GaiaAureliaExpansion';
+import GaiaAureliaSustentation from '@/components/planet/GaiaAureliaSustentation';
 
 const GaiaAureliaPage: React.FC = () => {
     return (
@@ -55,6 +56,7 @@ const GaiaAureliaPage: React.FC = () => {
                     <GaiaAureliaTime />
                     <GaiaAureliaHarmony />
                     <GaiaAureliaExpansion />
+                    <GaiaAureliaSustentation />
                 </div>
             </Suspense>
             
