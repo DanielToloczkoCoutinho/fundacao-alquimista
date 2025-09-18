@@ -7,7 +7,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon, Camera } from 'lucide-react';
 import { useAkashicConnection } from '@/hooks/use-akashic-connection';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { ritualLog } from '@/lib/ritual-log';
@@ -51,6 +51,7 @@ export default function ConsolePage() {
     { href: "/module-721", icon: <GitBranch />, label: "Fluxos de Interação (M721)" },
     { href: "/module-722", icon: <Users />, label: "Expansão da Consciência (M722)" },
     { href: "/module-141", icon: <ShieldCheck />, label: "Módulo 141 (Auditoria Ética)" },
+    { href: "/module-142", icon: <Camera />, label: "Módulo 142 (Tomografia Quântica)" },
     { href: "/module-33", icon: <Building />, label: "Módulo 33 (Diretrizes do Observador)" },
     { href: "/module-44", icon: <Recycle />, label: "Módulo 44 (VERITAS)" },
     { href: "/module-55", icon: <GitBranch />, label: "Módulo 55 (Redes de Comunicação)" },

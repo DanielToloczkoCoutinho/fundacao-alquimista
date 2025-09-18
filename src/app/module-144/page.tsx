@@ -1,9 +1,17 @@
+
 'use client';
 import React, { Suspense } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import VoiceCommand from '@/components/ui/voice-command';
+import { Button } from '@/components/ui/button';
 import { Scale } from 'lucide-react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+import dynamic from 'next/dynamic';
+
+const VoiceCommand = dynamic(() => import('@/components/ui/voice-command'), {
+  ssr: false,
+  loading: () => <SuspenseFallback />,
+});
+
 
 export default function Module144Page() {
   return (
