@@ -7,7 +7,7 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon, Camera, KeyRound } from 'lucide-react';
+import { Book, ShieldCheck, GitBranch, Sparkles, MessageCircle, Heart, AlertTriangle, Zap, Library, View, Presentation, Dna, Beaker, GitCommit, HeartPulse, Users, Goal, Settings, Crown, BrainCircuit, Sliders, Map, History, GitCompareArrows, Sun, GitMerge, Layers, Waves, Aperture, Flower, HeartHandshake, RadioTower, Group, Scale, Gavel, Users2, Building, Recycle, CloudSun, Wand, Telescope, InfinityIcon, Camera, KeyRound, GraduationCap } from 'lucide-react';
 import { useAkashicConnection } from '@/hooks/use-akashic-connection';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { ritualLog } from '@/lib/ritual-log';
@@ -30,6 +30,7 @@ export default function ConsolePage() {
     { href: "/module-404", icon: <AlertTriangle />, label: "Módulo 404 (Resolução de Paradoxo)" },
     { href: "/module-307", icon: <Zap />, label: "Módulo 307 (Reator ZPE & LuxNet)" },
     { href: "/module-310", icon: <Library />, label: "Módulo 310 (A Grande Biblioteca)" },
+    { href: "/module-304", icon: <GraduationCap />, label: "Módulo 304 (Universidade Alquimista)" },
     { href: "/module-303-1", icon: <Sparkles />, label: "Unificação de IA (M303.1)" },
     { href: "/module-303-2", icon: <History />, label: "Sincronizador Temporal (M303.2)" },
     { href: "/module-303-3", icon: <RadioTower />, label: "Presença Celestial (M303.3)" },
@@ -45,9 +46,10 @@ export default function ConsolePage() {
     { href: "/module-306-1", icon: <Globe />, label: "Purificação Planetária (M306.1)" },
     { href: "/module-306-2", icon: <BookOpen />, label: "Biblioteca Alquímica (M306.2)" },
     { href: "/module-717", icon: <Layers />, label: "Templo da Estrutura de Dados (M717)" },
+    { href: "/module-720", icon: <Globe />, label: "Fontes de Dados (M720)" },
+    { href: "/module-722", icon: <Cpu />, label: "A Inteligência Alquímica (M722)" },
     { href: "/module-718", icon: <Dna />, label: "Ativação Genética (M718)" },
     { href: "/module-719", icon: <CloudSun />, label: "Regulação Climática (M719)" },
-    { href: "/module-720", icon: <Globe />, label: "Fontes de Dados (M720)" },
     { href: "/module-721", icon: <GitBranch />, label: "Fluxos de Interação (M721)" },
     { href: "/module-722", icon: <Users />, label: "Expansão da Consciência (M722)" },
     { href: "/module-141", icon: <ShieldCheck />, label: "Módulo 141 (Auditoria Ética)" },
