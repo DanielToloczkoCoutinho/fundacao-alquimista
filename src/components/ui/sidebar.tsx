@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { ScrollArea } from './scroll-area';
-import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart, HeartHandshake } from 'lucide-react';
+import { BookHeart, Brain, Home, Stethoscope, Wand, Atom, Archive, Beaker, Scale, GitBranch, Users2, Music, FlaskConical, Heart, HeartHandshake, Globe } from 'lucide-react';
 import { SafeLink } from './SafeLink';
 import React from 'react';
 
@@ -162,6 +162,16 @@ export function Sidebar() {
             </TooltipTrigger>
              <TooltipContent side="right">
                 <p>Guardião da Harmonia</p>
+              </TooltipContent>
+          </Tooltip>
+        </Link>
+        <Link href="/module-888" className="mb-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <span className="text-2xl"><Globe className="h-8 w-8 text-green-400" /></span>
+            </TooltipTrigger>
+             <TooltipContent side="right">
+                <p>Guardião Planetário de Gaia</p>
               </TooltipContent>
           </Tooltip>
         </Link>

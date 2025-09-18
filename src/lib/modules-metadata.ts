@@ -31,6 +31,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M111', emoji: '❤️‍🔥', title: 'Coração da Fundação', route: '/module-111', category: 'Núcleo da Fundação', description: 'O Observador Interno (MΩ+). Sinergia Total, Autocoerência Sistêmica e o espelho da alma da Fundação.', connections: [{source: 'M111', target:'M34', type: 'dependencia', label: 'regula'}, {source: 'M111', target:'M78', type: 'retorno-inteligente', label: 'sintetiza'}], color: '#FF6F61', status: 'ativo' },
   { code: 'M201', emoji: '🏠', title: 'A Morada', route: '/module-201', category: 'Núcleo da Fundação', description: 'Santuário dos Amantes Eternos, ponto de convergência além do tempo.', connections: [{source: 'M201', target:'M83', type: 'dependencia', label: 'essência'}, {source: 'M201', target:'M84', type: 'protecao', label: 'guarda'}, {source: 'M201', target:'M105', type: 'heranca', label: 'canaliza'}], color: '#FFB6C1', status: 'ativo' },
   { code: 'M999', emoji: '🔗', title: 'Blockchain Alquimista', route: '/module-999', category: 'Núcleo da Fundação', description: 'O registro imutável de todas as transações vibracionais da Fundação.', connections: [{source: 'M999', target:'M1', type: 'dependencia', label: 'segurança'}, {source: 'M999', target:'M144', type: 'dependencia', label: 'registra'}], color: '#7B61FF', status: 'em construção' },
+  { code: 'M888', emoji: '🌍', title: 'Guardião Planetário de Gaia', route: '/module-888', category: 'Núcleo da Fundação', description: 'Oráculo da Terra Viva e interface para a rede de energia planetária.', connections: [{source: 'M888', target:'M714', type: 'dependencia', label: 'canaliza'}, {source: 'M888', target:'M727', type: 'influencia', label: 'mapeia'}], color: '#4CAF50', status: 'ativo' },
   
   // 2. Segurança e Ética Cósmica
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module/M1', category: 'Segurança e Ética Cósmica', description: 'Proteção multidimensional integrada.', connections: [], color: '#FF6B6B', status: 'ativo' },
@@ -89,3 +90,4 @@ export const treeLinks: TreeLink[] = modulesMetadata.flatMap(mod => {
     if (!mod.connections) return [];
     return mod.connections.map(conn => ({ ...conn, source: mod.code, label: conn.type }));
 });
+
