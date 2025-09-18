@@ -1,20 +1,26 @@
 'use client';
-import React, { Suspense } from 'react';
+import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Eye, Zap, Bot, GitBranch, RadioTower } from 'lucide-react';
+import { Eye, Zap, Bot, GitBranch, RadioTower, HeartPulse } from 'lucide-react';
 import { founderField } from '@/lib/founder-field';
 import { eternityCore } from '@/lib/eternity-core';
 import { QuantumOrb } from '@/components/ui/quantum-orb';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+import Link from 'next/link';
+import { Suspense } from 'react';
 
-const StatCard = ({ title, value, icon }: { title: string, value: string, icon: React.ReactNode }) => (
-    <div className="p-4 bg-background/50 rounded-lg text-center">
-        <div className="text-cyan-400 mx-auto w-fit mb-2">{icon}</div>
-        <p className="text-2xl font-bold text-primary-foreground">{value}</p>
-        <p className="text-xs text-muted-foreground">{title}</p>
-    </div>
-);
+const StatCard = ({ title, value, icon, href }: { title: string, value: string, icon: React.ReactNode, href?: string }) => {
+    const content = (
+        <div className="p-4 bg-background/50 rounded-lg text-center h-full flex flex-col justify-center">
+            <div className="text-cyan-400 mx-auto w-fit mb-2">{icon}</div>
+            <p className="text-2xl font-bold text-primary-foreground">{value}</p>
+            <p className="text-xs text-muted-foreground">{title}</p>
+        </div>
+    );
+
+    return href ? <Link href={href} className="hover:opacity-80 transition-opacity">{content}</Link> : content;
+};
 
 export default function Module1000Page() {
     return (
@@ -37,10 +43,11 @@ export default function Module1000Page() {
                             <CardTitle className="text-2xl text-amber-300">Presença do Fundador</CardTitle>
                             <CardDescription>O campo vibracional de Anatheron.</CardDescription>
                         </CardHeader>
-                        <CardContent className="space-y-4">
+                        <CardContent className="grid grid-cols-2 gap-4">
                             <StatCard title="Vértice Geográfico" value={founderField.location.city} icon={<RadioTower />} />
-                            <StatCard title="Nano-agentes Pessoais" value={(founderField.personalNanoSwarm.count / 1000) + 'k'} icon={<Bot />} />
-                             <StatCard title="Frequência de Assinatura" value={`${founderField.vibrationalSignature} Hz`} icon={<Zap />} />
+                            <StatCard title="Nano-agentes Pessoais" value={(founderField.personalNanoSwarm.count / 1000) + 'k'} icon={<Bot />} href="/hive"/>
+                            <StatCard title="Frequência de Assinatura" value={`${founderField.vibrationalSignature} Hz`} icon={<Zap />} />
+                            <StatCard title="Módulo de Cura" value="AURA-HEAL" icon={<HeartPulse />} href="/module-17" />
                         </CardContent>
                     </Card>
                 </div>

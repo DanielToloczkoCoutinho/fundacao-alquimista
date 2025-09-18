@@ -44,7 +44,7 @@ export default function Module17Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Regeneração</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
                         title="Módulo 109: Cura Quântica"
                         description="O M109 define o propósito da cura, e o M17 fornece a tecnologia holográfica para executá-la em nível celular."
@@ -60,8 +60,14 @@ export default function Module17Page() {
                     <ConnectionCard
                         title="Módulo 94: Morfogênese Quântica"
                         description="Fornece o 'blueprint' genético perfeito que o M17 usa como molde para a regeneração."
-                        icon={<Sprout className="h-8 w-8 text-lime-400" />}
+                        icon={<HeartPulse className="h-8 w-8 text-lime-400" />}
                         href="/module-94"
+                    />
+                    <ConnectionCard
+                        title="Módulo 1000: Olho da Eternidade"
+                        description="Conecta-se ao Fundador, a fonte da intenção de cura e o observador do processo regenerativo."
+                        icon={<HeartPulse className="h-8 w-8 text-amber-300" />}
+                        href="/module-1000"
                     />
                 </div>
             </div>

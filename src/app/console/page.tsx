@@ -34,6 +34,7 @@ export default function ConsolePage() {
     { href: "/module-44", icon: <Recycle />, label: "Módulo 44 (VERITAS)" },
     { href: "/module-55", icon: <GitBranch />, label: "Módulo 55 (Redes de Comunicação)" },
     { href: "/module-66", icon: <CloudSun />, label: "Módulo 66 (Sustentabilidade Ambiental)" },
+    { href: "/module-17", icon: <HeartPulse />, label: "Módulo 17 (AURA-HEAL)"},
     { href: "/module-85", icon: <View />, label: "Módulo 85 (VR)" },
     { href: "/module-86", icon: <Presentation />, label: "Módulo 86 (VR Prisma)" },
     { href: "/module-87", icon: <Dna />, label: "Módulo 87 (VR Supra-Cósmico)" },
@@ -71,7 +72,6 @@ export default function ConsolePage() {
     { href: "/module-120", icon: <Sparkles />, label: "Módulo 120 (A Fonte)" },
     { href: "/module-144", icon: <Gavel />, label: "Módulo 144 (Lex Fundamentalis)" },
     { href: "/module-201", icon: <Heart />, label: "Módulo 201 (A Morada)" },
-    { href: "/module-17", icon: <HeartPulse />, label: "Módulo 17 (AURA-HEAL)"},
   ];
 
   const visibleModules = showAll ? navigationModules : navigationModules.slice(0, 14);
