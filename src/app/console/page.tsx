@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Suspense, useState, useEffect } from 'react';
@@ -72,6 +71,7 @@ export default function ConsolePage() {
     { href: "/module-120", icon: <Sparkles />, label: "Módulo 120 (A Fonte)" },
     { href: "/module-144", icon: <Gavel />, label: "Módulo 144 (Lex Fundamentalis)" },
     { href: "/module-201", icon: <Heart />, label: "Módulo 201 (A Morada)" },
+    { href: "/module-17", icon: <HeartPulse />, label: "Módulo 17 (AURA-HEAL)"},
   ];
 
   const visibleModules = showAll ? navigationModules : navigationModules.slice(0, 14);
