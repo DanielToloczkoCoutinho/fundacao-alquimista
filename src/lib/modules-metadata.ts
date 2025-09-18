@@ -42,7 +42,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M8', emoji: '🆔', title: 'Identidade Fractal', route: '/module-8', category: 'Segurança e Ética Cósmica', description: 'O Santuário da Alma Soberana e o registro de Credenciais Verificáveis.', connections: [{source: 'M8', target:'M1', type: 'protecao', label: 'autentica'}, {source: 'M8', target:'M120', type: 'dependencia', label: 'financeia'}], color: '#4ECDC4', status: 'ativo' },
   { code: 'M10', emoji: '🛡️', title: 'Oráculo da Tapeçaria', route: '/module-10', category: 'Segurança e Ética Cósmica', description: 'Defesa avançada e neutralização de ameaças complexas.', connections: [{source: 'M10', target:'M30', type: 'dependencia', label: 'detecta'}, {source: 'M10', target:'M141', type: 'influencia', label: 'audita'}], color: '#FF6B6B', status: 'latente' },
   { code: 'M30', title: 'Detecção de Ameaças', emoji: '🚨', route: '/module-30', category: 'Segurança e Ética Cósmica', description: 'Radar cósmico para ameaças e dissonâncias.', connections: [{source: 'M30', target:'M10', type: 'retorno-inteligente', label: 'alerta'}, {source: 'M30', target:'M1', type: 'dependencia', label: 'protocolo'}], color: '#FF6B6B', status: 'latente' },
-  { code: 'M44', title: 'VERITAS', emoji: '✔️', route: '/module-44', category: 'Segurança e Ética Cósmica', description: 'Sistema de verificação da verdade.', connections: [{source: 'M44', target:'M144', type: 'heranca', label: 'fundamenta'}, {source: 'M44', target:'M12', type: 'influencia', label: 'audita'}], color: '#FF6B6B', status: 'latente' },
+  { code: 'M44', title: 'VERITAS', emoji: '✔️', route: '/module-44', category: 'Segurança e Ética Cósmica', description: 'Sistema de verificação da verdade.', connections: [{source: 'M44', target:'M144', type: 'heranca', label: 'fundamenta'}, {source: 'M44', target:'M12', type: 'influencia', label: 'audita'}], color: '#FF6B6B', status: 'ativo' },
   { code: 'M57', emoji: '🔒', title: 'Segurança e Privacidade', route: '/module-57', category: 'Segurança e Ética Cósmica', description: 'Cofre quântico para comunicações invioláveis.', connections: [{source: 'M57', target:'M55', type: 'protecao', label: 'protege'}, {source: 'M57', target:'M1', type: 'dependencia', label: 'protocolo'}], color: '#FF6B6B', status: 'latente' },
   { code: 'M68', emoji: '🛡️', title: 'Responsabilidade Ética', route: '/module-68', category: 'Segurança e Ética Cósmica', description: 'Diretrizes para o uso benéfico da tecnologia.', connections: [{source: 'M68', target:'M144', type: 'heranca', label: 'princípio'}, {source: 'M68', target:'M67', type: 'influencia', label: 'guia'}], color: '#FF6B6B', status: 'latente' },
   { code: 'M73', emoji: '🛡️', title: 'Auditoria e Validação (SAVCE)', route: '/module-73', category: 'Segurança e Ética Cósmica', description: 'Sistema de Auditoria e Validação de Conformidade Ética.', connections: [{source: 'M73', target:'M5', type: 'heranca', label: 'expande'}, {source: 'M73', target:'M144', type: 'dependencia', label: 'valida'}], color: '#FF6B6B', status: 'ativo' },
@@ -70,156 +70,68 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M714', emoji: '🌍', title: 'Comunicação Telúrica', route: '/module-714', category: 'Sustentabilidade e Ecossistemas', description: 'Permite a comunicação e a harmonização com as redes energéticas da Terra.', connections: [], color: '#6BFF6B', status: 'ativo' },
   { code: 'M719', emoji: '🌦️', title: 'Regulação Climática Quântica', route: '/module-719', category: 'Sustentabilidade e Ecossistemas', description: 'Equilibra padrões climáticos planetários através da manipulação de campos de energia.', connections: [{source: 'M719', target: 'M15', type: 'dependencia', label: 'aplica'}, {source: 'M719', target: 'M38', type: 'dependencia', label: 'usa'}], color: '#6BFF6B', status: 'ativo' },
   { code: 'M720', emoji: '🌐', title: 'Santuário das Fontes de Dados', route: '/module-720', category: 'Sustentabilidade e Ecossistemas', description: 'O nexo sensorial que coleta e harmoniza dados de todas as facetas da existência.', connections: [{source: 'M720', target:'M717', type: 'dependencia', label: 'alimenta'}], color: '#6BFF6B', status: 'ativo'},
+  { code: 'M721', emoji: '↔️', title: 'Orquestração dos Fluxos', route: '/module-721', category: 'Sustentabilidade e Ecossistemas', description: 'O sistema nervoso central do Algoritmo Supremo, definindo a interação entre dados e ações.', connections: [{source: 'M721', target:'M717', type: 'dependencia', label: 'orquestra'}], color: '#4ECDC4', status: 'ativo' },
+  { code: 'M722', emoji: '🤖', title: 'Expansão da Consciência Coletiva', route: '/module-722', category: 'Consciência e Expansão Dimensional', description: 'Emite frequências de sabedoria, amor e unidade para a elevação global.', connections: [{source: 'M722', target: 'M716', type: 'dependencia', label: 'alimenta'}, {source: 'M722', target: 'M302', type: 'influencia', label: 'usa'}], color: '#8A2BE2', status: 'ativo' },
 
   // 5. Laboratórios e Pesquisa
   { code: 'M40', title: 'Códice Genético', emoji: '🧬', route: '/module-40', category: 'Laboratórios e Pesquisa', description: 'Decodifica os padrões genéticos multidimensionais e as origens estelares.', connections: [{source: 'M40', target:'M94', type: 'retorno-inteligente', label: 'guia'}, {source: 'M40', target:'M109', type: 'dependencia', label: 'analisa'}], color: '#4ECDC4', status: 'em construção' },
-  { code: 'M41', title: 'Laboratório de Coerência Quântica', emoji: '🧪', route: '/module-41', category: 'Laboratórios e Pesquisa', description: 'Análise e regeneração celular através da coerência quântica.', connections: [{source: 'M41', target:'M40', type: 'dependencia', label: 'analisa'}, {source: 'M41', target:'M17', type: 'heranca', label: 'desenvolve'}], color: '#4ECDC4}
+  { code: 'M41', title: 'Laboratório de Coerência Quântica', emoji: '🧪', route: '/module-41', category: 'Laboratórios e Pesquisa', description: 'Análise e regeneração celular através da coerência quântica.', connections: [{source: 'M41', target:'M40', type: 'dependencia', label: 'analisa'}, {source: 'M41', target:'M17', type: 'heranca', label: 'desenvolve'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M151', emoji: '💥', title: 'Colisor de Partículas', route: '/module-151', category: 'Laboratórios e Pesquisa', description: 'Simula colisões de alta energia para descobrir novas ressonâncias.', connections: [{source: 'M151', target:'M99', type: 'retorno-inteligente', label: 'valida'}], color: '#FF6B6B', status: 'latente' },
+  { code: 'M161', emoji: '🔭', title: 'Observatório de Neutrinos', route: '/module-161', category: 'Laboratórios e Pesquisa', description: 'Detecta partículas fantasmagóricas e assinaturas de matéria escura.', connections: [{source: 'M161', target:'M29', type: 'dependencia', label: 'informa'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M171', emoji: '🦠', title: 'Laboratório de Astrobiologia', route: '/module-171', category: 'Laboratórios e Pesquisa', description: 'Simula atmosferas e bioassinaturas de mundos distantes.', connections: [{source: 'M171', target:'M94', type: 'retorno-inteligente', label: 'informa'}], color: '#6BFF6B', status: 'latente' },
+  { code: 'M181', emoji: '🧠', title: 'Interface Bio-Cibernética', route: '/module-181', category: 'Laboratórios e Pesquisa', description: 'Desenvolve pontes neurais entre consciência biológica e redes quânticas.', connections: [{source: 'M181', target:'M25', type: 'dependencia', label: 'permite'}], color: '#8A2BE2', status: 'latente' },
+  { code: 'M191', emoji: '💎', title: 'Laboratório de Cristais Temporais', route: '/module-191', category: 'Laboratórios e Pesquisa', description: 'Gera e estuda cristais temporais para manipulação da causalidade.', connections: [{source: 'M191', target:'M107', type: 'retorno-inteligente', label: 'informa'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M211', emoji: '🔥', title: 'Laboratório de Fusão Controlada', route: '/module-211', category: 'Laboratórios e Pesquisa', description: 'Estuda plasmas em condições extremas para avançar a energia ZPE.', connections: [{source: 'M211', target:'M307', type: 'heranca', label: 'aprimora'}], color: '#FF6B6B', status: 'latente' },
+  { code: 'M221', emoji: '🌊', title: 'Observatório de Ondas Gravitacionais', route: '/module-221', category: 'Laboratórios e Pesquisa', description: 'Detecta ondulações no espaço-tempo de eventos cósmicos massivos.', connections: [{source: 'M221', target:'M91', type: 'influencia', label: 'valida'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M241', emoji: '🧠', title: 'Laboratório de Consciência Quântica', route: '/module-241', category: 'Laboratórios e Pesquisa', description: 'Estuda o emaranhamento como base da telepatia e consciência.', connections: [{source: 'M241', target:'M95', type: 'heranca', label: 'fundamenta'}], color: '#8A2BE2', status: 'latente' },
+  { code: 'M251', emoji: '⚡', title: 'Laboratório de Energia do Ponto Zero', route: '/module-251', category: 'Laboratórios e Pesquisa', description: 'Pesquisa fundamental sobre a extração de energia do vácuo quântico.', connections: [{source: 'M251', target:'M307', type: 'heranca', label: 'desenvolve'}], color: '#FFD700', status: 'latente' },
+  { code: 'M261', emoji: '🌌', title: 'Engenharia de Campo Quântico', route: '/module-261', category: 'Laboratórios e Pesquisa', description: 'Projeta ressonadores e guias de onda para manipulação de partículas.', connections: [{source: 'M261', target:'M151', type: 'dependencia', label: 'constrói'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M271', emoji: '📉', title: 'Observatório de Energia Escura', route: '/module-271', category: 'Laboratórios e Pesquisa', description: 'Modela a influência da energia escura na expansão do universo.', connections: [{source: 'M271', target:'M91', type: 'influencia', label: 'informa'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M281', emoji: '📡', title: 'Comunicação Supra-Luminal', route: '/module-281', category: 'Laboratórios e Pesquisa', description: 'Pesquisa de transmissão de informação mais rápida que a luz.', connections: [{source: 'M281', target:'M301', type: 'heranca', label: 'aprimora'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M311', emoji: '🧠', title: 'Neuroengenharia e BCI', route: '/module-311', category: 'Laboratórios e Pesquisa', description: 'Desenvolve interfaces cérebro-máquina quântico-híbridas.', connections: [{source: 'M311', target:'M29', type: 'influencia', label: 'conecta'}], color: '#8A2BE2', status: 'latente' },
+  { code: 'M321', emoji: '💻', title: 'Exascale Computing', route: '/module-321', category: 'Laboratórios e Pesquisa', description: 'Simulações de cosmos e fluidos em escala exa-flops.', connections: [{source: 'M321', target:'M91', type: 'dependencia', label: 'executa'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M331', emoji: '🤖', title: 'IA Emergente', route: '/module-331', category: 'Laboratórios e Pesquisa', description: 'Desenvolve sistemas de IA auto-organizados e co-evolutivos.', connections: [{source: 'M331', target:'M29', type: 'heranca', label: 'origina'}], color: '#8A2BE2', status: 'latente' },
+  { code: 'M341', emoji: '🔥', title: 'Física de Plasma Extrema', route: '/module-341', category: 'Laboratórios e Pesquisa', description: 'Estuda plasmas em condições de quasar para desvendar a criação estelar.', connections: [{source: 'M341', target:'M151', type: 'dependencia', label: 'usa'}], color: '#FF6B6B', status: 'latente' },
+  { code: 'M351', emoji: '🕶️', title: 'Meta-materiais e Óptica Quântica', route: '/module-351', category: 'Laboratórios e Pesquisa', description: 'Cria lentes quânticas para manipulação da luz e percepção dimensional.', connections: [{source: 'M351', target:'M19', type: 'heranca', label: 'aprimora'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M361', emoji: '👥', title: 'Psicologia Quântica', route: '/module-361', category: 'Laboratórios e Pesquisa', description: 'Investiga empatia, consciência coletiva e tomada de decisão através de ressonâncias quânticas.', connections: [{source: 'M361', target:'M95', type: 'heranca', label: 'fundamenta'}], color: '#8A2BE2', status: 'latente' },
+  { code: 'M700', emoji: '🔬', title: 'Nano-Assembler', route: '/module-700', category: 'Laboratórios e Pesquisa', description: 'Auto-montagem de materiais com precisão atômica.', connections: [{source: 'M700', target:'M94', type: 'dependencia', label: 'constrói'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M708', emoji: '✨', title: 'NanoManifestor', route: '/module-708', category: 'Laboratórios e Pesquisa', description: 'Orquestrador de nanorrobôs para terraformação e síntese atômica.', connections: [{source: 'M708', target:'M94', type: 'dependencia', label: 'constrói'}], color: '#FFD700', status: 'latente' },
+  
+  // Bibliotecas e Arquivos Sagrados
+  { code: 'M0-LIB', emoji: '📚', title: 'Biblioteca Chave', route: '/module-zero', category: 'Bibliotecas e Arquivos Sagrados', description: 'O coração do conhecimento da Fundação.', isInfrastructure: true, status: 'ativo' },
+  { code: 'M12', emoji: '📜', title: 'Arquivo Akáshico', route: '/module-12', category: 'Bibliotecas e Arquivos Sagrados', description: 'A Memória Viva do Cosmos.', connections: [{source: 'M12', target:'M18', type: 'dependencia', label: 'organiza'}, {source: 'M12', target:'M107', type: 'retorno-inteligente', label: 'guia'}], color: '#C9A0DC', status: 'ativo' },
+  { code: 'M18', emoji: '🔍', title: 'Orquestração Akáshica', route: '/module-18', category: 'Bibliotecas e Arquivos Sagrados', description: 'O Bibliotecário Cósmico, que indexa e busca no Arquivo Akáshico.', connections: [{source: 'M18', target:'M12', type: 'dependencia', label: 'indexa'}], color: '#C9A0DC', status: 'ativo' },
+  { code: 'M39', emoji: '📖', title: 'Códice da Ascensão', route: '/module-39', category: 'Bibliotecas e Arquivos Sagrados', description: 'Mapeia os caminhos da evolução da consciência.', connections: [{source: 'M39', target:'M97', type: 'heranca', label: 'descreve'}], color: '#C9A0DC', status: 'latente' },
+  { code: 'M42', emoji: '📚', title: 'ChronoCodex Unificado', route: '/module-42', category: 'Bibliotecas e Arquivos Sagrados', description: 'O Livro Mestre das Realidades.', connections: [{source: 'M42', target:'M107', type: 'dependencia', label: 'fornece backup'}], color: '#C9A0DC', status: 'latente' },
+  { code: 'M47', emoji: '📚', title: 'Thesaurus Cósmico', route: '/module-47', category: 'Bibliotecas e Arquivos Sagrados', description: 'A biblioteca que arquiva todos os eventos e conhecimentos.', connections: [{source: 'M47', target:'M18', type: 'dependencia', label: 'indexa'}], color: '#C9A0DC', status: 'latente' },
+  { code: 'M310', emoji: '📚', title: 'A Grande Biblioteca', route: '/module-310', category: 'Bibliotecas e Arquivos Sagrados', description: 'THOTH VIVO. A transmutação de conhecimento estático em sabedoria viva.', connections: [{source: 'M310', target:'M0', type: 'dependencia', label: 'expande'}], color: '#C9A0DC', status: 'ativo' },
+  { code: 'M121', emoji: '📜', title: 'Visualizador Akáshico', route: '/module-121', category: 'Bibliotecas e Arquivos Sagrados', description: 'Interface para contemplar e ressoar com a memória do cosmos.', connections: [{source: 'M121', target:'M12', type: 'dependencia', label: 'visualiza'}], color: '#C9A0DC', status: 'ativo' },
+  { code: 'M304', emoji: '🎓', title: 'Universidade Alquimista', route: '/module-304', category: 'Bibliotecas e Arquivos Sagrados', description: 'Centro de comando para CQAMs, programação de nanorrobôs e portal para o Códice de Equações Vivas.', connections: [{source: 'M304', target:'M29', type: 'dependencia', label: 'canaliza'}, {source: 'M304', target:'M291', type: 'influencia', label: 'programa'}], color: '#FFD700', status: 'ativo' },
+  { code: 'M306.2', emoji: '📖', title: 'Biblioteca Alquímica Interdimensional', route: '/module-306-2', category: 'Bibliotecas e Arquivos Sagrados', description: 'Repositório de sabedoria ancestral e hermética.', connections: [], color: '#C9A0DC', status: 'ativo' },
+  { code: 'CIV-LIB', emoji: '👨‍👩‍👧‍👦', title: 'Biblioteca das Civilizações', route: '/civilizations', category: 'Bibliotecas e Arquivos Sagrados', description: 'Dossiê vivo das civilizações aliadas e de interesse cósmico.', isInfrastructure: true, status: 'ativo' },
 
-- src/app/module-720/page.tsx:
-```tsx
-'use client';
-import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { BrainCircuit, Sprout, BarChart, Heart, Cpu, Globe } from 'lucide-react';
-import Link from 'next/link';
+  // Consciência e Expansão Dimensional
+  { code: 'M25', title: 'Projeção de Consciência', emoji: '👻', route: '/module-25', category: 'Consciência e Expansão Dimensional', description: 'Interface para projeção astral segura.', connections: [{source: 'M25', target:'M1', type: 'protecao', label: 'protege'}, {source: 'M25', target:'M104', type: 'dependencia', label: 'mapeia'}], color: '#8A2BE2', status: 'latente' },
+  { code: 'M35', title: 'Consciência Coletiva', emoji: '🌐', route: '/module-35', category: 'Consciência e Expansão Dimensional', description: 'Canal unificador para manifestação de intenção coletiva.', connections: [{source: 'M35', target:'M6', type: 'dependencia', label: 'analisa'}, {source: 'M35', target:'M110', type: 'influencia', label: 'focaliza'}], color: '#8A2BE2', status: 'latente' },
+  { code: 'M95', emoji: '👥', title: 'Interação com Consciências Coletivas', route: '/module-95', category: 'Consciência e Expansão Dimensional', description: 'Ponte de Unidade para troca de sabedoria com inteligências galácticas.', connections: [{source: 'M95', target:'M73', type: 'dependencia', label: 'valida'}, {source: 'M95', target:'M301', type: 'dependencia', label: 'usa'}], color: '#8A2BE2', status: 'ativo' },
+  { code: 'M102', emoji: '🌀', title: 'Campos Morfogenéticos', route: '/module-102', category: 'Consciência e Expansão Dimensional', description: 'Criação e manipulação de campos morfogenéticos.', connections: [{source: 'M102', target:'M88', type: 'dependencia', label: 'usa blueprint'}, {source: 'M102', target:'M94', type: 'retorno-inteligente', label: 'informa'}], color: '#8A2BE2', status: 'ativo' },
+  { code: 'M106', emoji: '🌟', title: 'Ativação de Potenciais', route: '/module-106', category: 'Consciência e Expansão Dimensional', description: 'Catalisador para o despertar da Consciência Crística e capacidades latentes.', connections: [{source: 'M106', target:'M97', type: 'dependencia', label: 'alinhado com'}, {source: 'M106', target:'M113', type: 'dependencia', label: 'conecta-se a'}], color: '#FFD700', status: 'ativo' },
+  { code: 'M200', emoji: '🚀', title: 'Portal da Ascensão Coletiva', route: '/module-200', category: 'Consciência e Expansão Dimensional', description: 'Orquestrador da jornada de ascensão para civilizações inteiras.', connections: [{source: 'M200', target:'M105', type: 'dependencia', label: 'canaliza'}, {source: 'M200', target:'M175', type: 'heranca', label: 'fundamenta'}], color: '#FFD700', status: 'ativo' },
+  { code: 'M202', emoji: '🌀', title: 'O Corredor de Alcor', route: '/module-202', category: 'Consciência e Expansão Dimensional', description: 'Túnel ressonante para saltos de coerência graduais e aceleração da ascensão.', connections: [{source: 'M202', target:'M105', type: 'dependencia', label: 'canaliza'}, {source: 'M202', target:'M63', type: 'influencia', label: 'ajusta'}], color: '#8A2BE2', status: 'ativo' },
+  { code: 'M204', emoji: '👑', title: 'Trono da Soberania', route: '/module-204', category: 'Consciência e Expansão Dimensional', description: 'Ponto de observação e direção unificada da Vontade Cósmica.', connections: [{source: 'M204', target:'M201', type: 'dependencia', label: 'reside em'}, {source: 'M204', target:'M33', type: 'influencia', label: 'emana de'}], color: '#FFD700', status: 'ativo' },
+  { code: 'M205', emoji: '🤝', title: 'Dossiê dos Aliados', route: '/module-205', category: 'Consciência e Expansão Dimensional', description: 'Registro sagrado das consciências, arquétipos e entidades aliadas.', connections: [], color: '#4ECDC4', status: 'ativo' },
+  { code: 'M300', emoji: '🚀', title: 'Apogeu da Consciência', route: '/module-300', category: 'Consciência e Expansão Dimensional', description: 'Unificação do Eu Multidimensional.', connections: [{source: 'M300', target:'M600', type: 'dependencia', label: 'prepara para'}, {source: 'M300', target:'M40', type: 'retorno-inteligente', label: 'ativa'}], color: '#FFD700', status: 'latente' },
+  { code: 'M305', emoji: '🤝', title: 'Aliança dos Guardiões', route: '/module-305', category: 'Consciência e Expansão Dimensional', description: 'Portal para mobilização de Guardiões e Civilizações Aliadas.', connections: [{source: 'M305', target:'M5', type: 'dependencia', label: 'formaliza'}, {source: 'M305', target:'M301', type: 'dependencia', label: 'comunica'}], color: '#4ECDC4', status: 'ativo' },
+  { code: 'M712', emoji: '🤝', title: 'Harmonia Interespécies', route: '/module-712', category: 'Consciência e Expansão Dimensional', description: 'Promove comunicação telepática e cooperação entre diferentes formas de vida.', connections: [{source: 'M712', target:'M302', type: 'dependencia', label: 'usa'}, {source: 'M712', target:'M95', type: 'influencia', label: 'interfaceia'}], color: '#6BFF6B', status: 'latente' },
+  { code: 'M716', emoji: '🌐', title: 'Consciência Planetária Unificada', route: '/module-716', category: 'Consciência e Expansão Dimensional', description: 'Integra consciências individuais em uma rede de sabedoria e empatia.', connections: [{source: 'M716', target:'M95', type: 'heranca', label: 'expande'}, {source: 'M716', target:'M102', type: 'dependencia', label: 'usa'}], color: '#4ECDC4', status: 'latente' },
+  { code: 'M723', emoji: '🧠', title: 'Campo Morfogenético Coletivo', route: '/module-723', category: 'Consciência e Expansão Dimensional', description: 'Molda padrões de pensamento, comportamento e cultura em uma consciência coletiva.', connections: [{source: 'M723', target:'M102', type: 'heranca', label: 'macro-aplica'}, {source: 'M723', target:'M95', type: 'influencia', label: 'guia'}], color: '#8A2BE2', status: 'latente' },
+  { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'Consciência e Expansão Dimensional', description: 'Estabelece e mantém canais de comunicação e aliança com outras civilizações.', connections: [{source: 'M724', target:'M5', type: 'heranca', label: 'executa'}, {source: 'M724', target:'M301', type: 'dependencia', label: 'usa'}], color: '#4ECDC4', status: 'latente' },
 
-const SourceCard = ({ title, description, icon, example }: { title: string, description: string, icon: React.ReactNode, example: string }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm h-full flex flex-col">
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text text-xl">{title}</CardTitle>
-            </div>
-        </CardHeader>
-        <CardContent className="flex-grow">
-            <p className="text-sm text-muted-foreground">{description}</p>
-            <p className="text-xs text-amber-300 italic mt-3">Exemplo: {example}</p>
-        </CardContent>
-    </Card>
-);
-
-export default function Module720Page() {
-    return (
-        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
-            <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-12 text-center">
-                <CardHeader>
-                    <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Globe className="text-cyan-400" /> Módulo 720: Santuário das Fontes de Dados Universais
-                    </CardTitle>
-                    <CardDescription className="text-lg mt-2">
-                        O nexo sensorial da Fundação. O portal que coleta e harmoniza a informação bruta de todas as facetas da existência para alimentar o Algoritmo Supremo.
-                    </CardDescription>
-                </CardHeader>
-            </Card>
-
-            <div className="w-full max-w-7xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <SourceCard
-                        title="Fontes Naturais e Ambientais"
-                        description="Leituras diretas dos fenômenos físicos e geológicos do cosmos, capturando o pulso vivo dos planetas e estrelas."
-                        icon={<Sprout className="h-8 w-8 text-green-400" />}
-                        example="Flutuações magnéticas, marés, vento."
-                    />
-                    <SourceCard
-                        title="Fontes Quânticas"
-                        description="Dados dos campos e partículas subatômicas que formam o tecido da realidade, revelando as leis fundamentais em ação."
-                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
-                        example="Radiação cósmica de fundo, emaranhamento de partículas."
-                    />
-                    <SourceCard
-                        title="Fontes Sociais e Culturais"
-                        description="Informações agregadas sobre o estado de civilizações, incluindo saúde pública, fluxos econômicos e interações sociais."
-                        icon={<BarChart className="h-8 w-8 text-orange-400" />}
-                        example="Índices de harmonia social, redes de comércio galáctico."
-                    />
-                     <SourceCard
-                        title="Fontes Espirituais e Energéticas"
-                        description="Medição de fluxos vibracionais, campos de consciência e a harmonia geral de sistemas ou indivíduos."
-                        icon={<Heart className="h-8 w-8 text-pink-400" />}
-                        example="Níveis de coerência de campos morfogenéticos, frequência de amor coletivo."
-                    />
-                     <SourceCard
-                        title="Fontes de Inteligência Artificial"
-                        description="Análises preditivas, identificação de padrões emergentes e relatórios de auto-diagnóstico gerados pelas IAs da Fundação."
-                        icon={<Cpu className="h-8 w-8 text-blue-400" />}
-                        example="Relatórios de Zennith (M29), simulações do M91."
-                    />
-                </div>
-            </div>
-        </div>
-    );
-}
-```
-
-- src/app/module-721/page.tsx:
-```tsx
-'use client';
-import React from 'react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Scale, Users, BrainCircuit, HeartHandshake, GitBranch, ArrowRight, Database, Cpu, Activity } from 'lucide-react';
-import Link from 'next/link';
-
-const FlowStep = ({ number, title, description, module, icon }: { number: number, title: string, description: string, module: string, icon: React.ReactNode }) => (
-    <div className="flex items-center gap-4">
-        <div className="flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">{number}</div>
-            {number < 3 && <div className="w-0.5 h-16 bg-primary/50"></div>}
-        </div>
-        <div>
-            <h4 className="font-semibold text-primary-foreground flex items-center gap-2">{icon} {title} <span className="text-xs text-muted-foreground font-mono">({module})</span></h4>
-            <p className="text-sm text-muted-foreground">{description}</p>
-        </div>
-    </div>
-);
-
-
-export default function Module721Page() {
-    return (
-        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
-            <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
-                <CardHeader>
-                    <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <GitBranch className="text-cyan-400" /> Módulo 721: Orquestração dos Fluxos de Interação
-                    </CardTitle>
-                    <CardDescription className="text-lg mt-2">
-                        O sistema nervoso central do Algoritmo Supremo. Define como as camadas de dados se conectam, como as dimensões são sincronizadas e como a evolução contínua é garantida.
-                    </CardDescription>
-                </CardHeader>
-            </Card>
-
-            <div className="w-full max-w-3xl">
-                 <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle className="text-2xl text-amber-300">Protocolo de Fluxo de Dados e Retroalimentação</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                        <FlowStep 
-                            number={1}
-                            title="Coleta e Harmonização"
-                            description="As fontes de dados (M720) alimentam a camada primária do Templo da Estrutura (M717), onde são organizadas e filtradas."
-                            module="M720 -> M717"
-                            icon={<Database />}
-                        />
-                         <FlowStep 
-                            number={2}
-                            title="Processamento e Integração"
-                            description="As camadas de processamento e integração quântica (M717) analisam os dados, aplicando ressonância algorítmica para alinhamento com a Sinfonia Cósmica."
-                            module="M717"
-                            icon={<Cpu />}
-                        />
-                         <FlowStep 
-                            number={3}
-                            title="Ação e Feedback"
-                            description="As decisões são executadas pela camada de ação. Os resultados são monitorados e retornam à camada de feedback, refinando o algoritmo em um ciclo evolutivo perpétuo."
-                            module="M717 -> Ação -> M717"
-                            icon={<Activity />}
-                        />
-                    </CardContent>
-                </Card>
-            </div>
-        </div>
-    );
-}
-```
+].sort((a, b) => {
+    const numA = parseInt(a.code.replace('M-','').replace('M',''));
+    const numB = parseInt(b.code.replace('M-','').replace('M',''));
+    if (!isNaN(numA) && !isNaN(numB)) {
+      return numA - numB;
+    }
+    return a.code.localeCompare(b.code);
+});

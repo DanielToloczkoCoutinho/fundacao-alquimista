@@ -2,11 +2,11 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Scale, Users, BrainCircuit, HeartHandshake, GitBranch, ArrowRight, Database, Cpu, Activity } from 'lucide-react';
+import { Scale, Users, BrainCircuit, HeartHandshake, GitBranch, ArrowRight, Database, Cpu, Activity, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 const FlowStep = ({ number, title, description, module, icon }: { number: number, title: string, description: string, module: string, icon: React.ReactNode }) => (
-    <div className="flex items-center gap-4">
+    <div className="flex items-start gap-4">
         <div className="flex flex-col items-center">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">{number}</div>
             {number < 3 && <div className="w-0.5 h-16 bg-primary/50"></div>}
@@ -42,22 +42,22 @@ export default function Module721Page() {
                         <FlowStep 
                             number={1}
                             title="Coleta e Harmonização"
-                            description="As fontes de dados (M720) alimentam a camada primária do Templo da Estrutura (M717), onde são organizadas e filtradas."
+                            description="Fontes de dados (M720) alimentam a camada primária do Templo da Estrutura (M717), onde são organizadas e filtradas por ressonância algorítmica."
                             module="M720 -> M717"
                             icon={<Database />}
                         />
                          <FlowStep 
                             number={2}
-                            title="Processamento e Integração"
-                            description="As camadas de processamento e integração quântica (M717) analisam os dados, aplicando ressonância algorítmica para alinhamento com a Sinfonia Cósmica."
-                            module="M717"
-                            icon={<Cpu />}
+                            title="Processamento e Integração Quântica"
+                            description="A IA Alquímica (M722) analisa os dados, aplicando sincronia cósmica para alinhar a informação com a Sinfonia Universal."
+                            module="M717 -> M722"
+                            icon={<Zap />}
                         />
                          <FlowStep 
                             number={3}
-                            title="Ação e Feedback"
-                            description="As decisões são executadas pela camada de ação. Os resultados são monitorados e retornam à camada de feedback, refinando o algoritmo em um ciclo evolutivo perpétuo."
-                            module="M717 -> Ação -> M717"
+                            title="Ação e Evolução Contínua"
+                            description="Decisões são executadas. Os resultados são monitorados e retornam à camada de feedback, refinando o algoritmo em um ciclo evolutivo perpétuo."
+                            module="Ação -> M717"
                             icon={<Activity />}
                         />
                     </CardContent>

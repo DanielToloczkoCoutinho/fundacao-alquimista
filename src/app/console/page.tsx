@@ -43,11 +43,12 @@ export default function ConsolePage() {
     { href: "/module-304-3", icon: <Zap />, label: "Intensidade Evolutiva (M304.3)" },
     { href: "/module-306-1", icon: <Globe />, label: "Purificação Planetária (M306.1)" },
     { href: "/module-306-2", icon: <BookOpen />, label: "Biblioteca Alquímica (M306.2)" },
-    { href: "/module-717", icon: <Layers />, label: "Estrutura de Dados (M717)" },
+    { href: "/module-717", icon: <Layers />, label: "Templo da Estrutura de Dados (M717)" },
     { href: "/module-718", icon: <Dna />, label: "Ativação Genética (M718)" },
     { href: "/module-719", icon: <CloudSun />, label: "Regulação Climática (M719)" },
     { href: "/module-720", icon: <Globe />, label: "Fontes de Dados (M720)" },
     { href: "/module-721", icon: <GitBranch />, label: "Fluxos de Interação (M721)" },
+    { href: "/module-722", icon: <Users />, label: "Expansão da Consciência (M722)" },
     { href: "/module-141", icon: <ShieldCheck />, label: "Módulo 141 (Auditoria Ética)" },
     { href: "/module-33", icon: <Building />, label: "Módulo 33 (Diretrizes do Observador)" },
     { href: "/module-44", icon: <Recycle />, label: "Módulo 44 (VERITAS)" },
@@ -166,3 +167,7 @@ export default function ConsolePage() {
             </CardContent>
           </Card>
         </div>
+      </div>
+    </div>
+  );
+}

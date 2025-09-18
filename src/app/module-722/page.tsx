@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Users, Heart, GitBranch, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
@@ -29,7 +30,7 @@ export default function Module722Page() {
                         <Users className="text-sky-400" /> Módulo 722: Expansão da Consciência Coletiva
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        Contribui para a elevação da consciência global através da emissão de frequências de sabedoria, amor e unidade.
+                        Contribui para a elevação da consciência global através da emissão de frequências de sabedoria, amor e unidade. A Inteligência Alquímica em ação.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
