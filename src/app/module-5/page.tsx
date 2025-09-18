@@ -2,26 +2,31 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Loader2, Link as LinkIcon, ShieldCheck, CheckCircle } from 'lucide-react';
+import { Loader2, Link as LinkIcon, ShieldCheck, CheckCircle, Users2, Scale, Gavel } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { resonanceTone } from '@/lib/audio-utils';
+import { civilizationsData } from '@/lib/civilizations-data';
+import Link from 'next/link';
 
-const alliedCivilizations = [
-  { nome: 'Arcturianos', frequência: '852Hz', símbolo: '🌌', contribuição: 'Códigos de cura e expansão' },
-  { nome: 'Sirianos', frequência: '741Hz', símbolo: '🌊', contribuição: 'Sabedoria aquática e memória cósmica' },
-  { nome: 'Anunnaki', frequência: '963Hz', símbolo: '🧬', contribuição: 'Carta da Origem Genética' },
-  { nome: 'Andromedanos', frequência: '639Hz', símbolo: '🌠', contribuição: 'Harmonia interdimensional' },
-  { nome: 'Felinos de Lyra', frequência: '432Hz', símbolo: '🐆', contribuição: 'Soberania e liberdade individual' },
-  { nome: 'Hyades', frequência: '417Hz', símbolo: '🌀', contribuição: 'Tapeçaria fractal do tempo' },
-  { nome: 'Greys Pacificados', frequência: '528Hz', símbolo: '👁️', contribuição: 'Cura do karma e observação analítica' },
-  { nome: 'Plêiades (Aethira)', frequência: '528Hz', símbolo: '✨', contribuição: 'Amor incondicional e ascensão' },
-  { nome: 'Intraterrenos', frequência: '396Hz', símbolo: '⛰️', contribuição: 'Cristais guardiões da Terra' },
-  { nome: 'Lemurianos', frequência: '639Hz', símbolo: '🌿', contribuição: 'Abundância e reconexão com a Mãe Terra' },
-  { nome: 'Atlantes', frequência: '888Hz', símbolo: '🏛️', contribuição: 'Tecnologia e ativação dos chakras' },
-  { nome: 'Essênios', frequência: '963Hz', símbolo: '🕊️', contribuição: 'Amor incondicional e reconexão divina' }
-];
+const allAllies = Object.values(civilizationsData).flat();
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 export default function Module5Page() {
     const [isLoading, setIsLoading] = useState(false);
@@ -51,10 +56,10 @@ export default function Module5Page() {
             <Card className="w-full max-w-5xl bg-card/50 purple-glow text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <LinkIcon className="text-blue-400" /> Módulo 5: A Liga Quântica
+                        <LinkIcon className="text-blue-400" /> Módulo 5: Nexus da Liga Quântica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A ponte diplomática e o oráculo ético da Fundação Alquimista. O ponto de união com nossos irmãos estelares.
+                        O coração diplomático e ético da Fundação. O ponto de união com nossos irmãos estelares e o oráculo que garante a harmonia de todas as alianças.
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-8">
@@ -67,25 +72,36 @@ export default function Module5Page() {
                            Sintonizar com a Frequência Pleiadiana (528Hz)
                         </Button>
                     </div>
-                    <div>
-                        <h3 className="text-xl font-semibold text-amber-300 mb-4">Conselho de Aliados</h3>
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {alliedCivilizations.map(civ => (
-                                <Card key={civ.nome} className="bg-background/50 hover:border-accent transition-colors">
-                                    <CardContent className="pt-6 flex flex-col items-center justify-center gap-2">
-                                        <span className="text-4xl">{civ.símbolo}</span>
-                                        <p className="font-semibold text-primary-foreground">{civ.nome}</p>
-                                        <Badge variant="outline">{civ.frequência}</Badge>
-                                    </CardContent>
-                                </Card>
-                            ))}
+
+                     <div className="w-full max-w-5xl mx-auto">
+                        <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Conexões de Governança e Ética</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <ConnectionCard
+                                title="Biblioteca das Civilizações"
+                                description="O Módulo 5 alimenta e consulta a Biblioteca, servindo como o embaixador para todas as civilizações aliadas."
+                                icon={<Users2 className="h-8 w-8 text-cyan-400" />}
+                                href="/civilizations"
+                            />
+                            <ConnectionCard
+                                title="Módulo 72: Governança"
+                                description="A Liga Quântica informa as deliberações do Conselho, garantindo que as vozes de todos os aliados sejam ouvidas."
+                                icon={<Scale className="h-8 w-8 text-indigo-400" />}
+                                href="/module-72"
+                            />
+                            <ConnectionCard
+                                title="Módulo 144: Lex Fundamentalis"
+                                description="Os tratados e princípios éticos da Liga são codificados como lei imutável através do Módulo 144."
+                                icon={<Gavel className="h-8 w-8 text-amber-400" />}
+                                href="/module-144"
+                            />
                         </div>
                     </div>
+                    
                      <div className="text-center pt-6 border-t border-primary/20">
                         <p className="text-muted-foreground mb-4">{status}</p>
                         <Button onClick={handleCheckConnection} disabled={isLoading}>
                             {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <ShieldCheck className="mr-2 h-4 w-4"/>}
-                            Verificar Conexão e Ética
+                            Verificar Alinhamento Ético da Liga
                         </Button>
                     </div>
                 </CardContent>
