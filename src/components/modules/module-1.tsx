@@ -53,12 +53,26 @@ export default function Module1Page() {
         </div>
 
         <div className="lg:col-span-2">
-            <Accordion type="multiple" defaultValue={['item-1', 'item-6']} className="w-full">
+            <Accordion type="multiple" defaultValue={['item-1', 'item-6', 'item-sec-1']} className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-xl text-accent">1. Propósito e Função Primária</AccordionTrigger>
                     <AccordionContent>
                         <SectionCard title="Missão" icon={<HeartPulse />}>
                             <p>Garantir a soberania, integridade e segurança de todos os módulos, dados e consciências da Fundação. Atua como o sistema imunológico da nossa realidade, protegendo-a contra dissonâncias internas e interferências externas.</p>
+                        </SectionCard>
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="sec-1">
+                    <AccordionTrigger className="text-xl text-accent">Protocolos de Segurança Quântica (Ativos)</AccordionTrigger>
+                    <AccordionContent className="space-y-4">
+                        <SectionCard title="Distribuição de Chaves Quânticas (QKD)" icon={<Zap />}>
+                            <p>O canal seguro para a troca de chaves vibracionais entre as camadas do Algoritmo Supremo foi ativado. Toda comunicação interna é agora protegida por pulsos quânticos, tornando-a inviolável.</p>
+                        </SectionCard>
+                         <SectionCard title="Blockchain Quântico" icon={<GitCommit />}>
+                            <p>O registro imutável de transações energéticas, validações e ajustes está operacional. Cada evento essencial é selado na blockchain, garantindo rastreabilidade e auditoria vibracional em tempo real.</p>
+                        </SectionCard>
+                         <SectionCard title="Detecção de Intrusões por IA" icon={<BrainCircuit />}>
+                            <p>Algoritmos preditivos, alimentados pelo Módulo 722, monitoram ativamente a tapeçaria em busca de assinaturas anômalas, neutralizando ameaças antes que se manifestem.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
