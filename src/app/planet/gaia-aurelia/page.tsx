@@ -8,6 +8,7 @@ import Link from 'next/link';
 import GaiaAureliaCore from '@/components/planet/GaiaAureliaCore';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import GaiaAureliaBiomes from '@/components/planet/GaiaAureliaBiomes';
+import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
 
 const GaiaAureliaPage: React.FC = () => {
     return (
@@ -23,8 +24,11 @@ const GaiaAureliaPage: React.FC = () => {
             </header>
 
             <Suspense fallback={<SuspenseFallback/>}>
-                <GaiaAureliaCore />
-                <GaiaAureliaBiomes />
+                <div className="space-y-12">
+                    <GaiaAureliaCore />
+                    <GaiaAureliaBiomes />
+                    <GaiaAureliaTemples />
+                </div>
             </Suspense>
             
             <div className="text-center mt-12">
