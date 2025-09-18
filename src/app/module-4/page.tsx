@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -7,14 +8,14 @@ import { Loader2, TestTube, CheckCircle, Shield, Activity, Clock, XCircle, FileC
 import { Progress } from '@/components/ui/progress';
 
 const tests = [
-  { id: 'M1', name: 'Validação de Escudo Quântico (QKD)', module: 'Módulo 1', time: 500, category: 'Segurança' },
-  { id: 'M999', name: 'Integridade de Contrato Inteligente', module: 'Módulo 999', time: 400, category: 'Segurança' },
-  { id: 'M722', name: 'Adaptação do Modelo de IA', module: 'Módulo 722', time: 800, category: 'Performance & Otimização' },
-  { id: 'M93', name: 'Responsividade da Interface Quântica', module: 'Módulo 93', time: 600, category: 'Interface & Energia Quântica' },
-  { id: 'SYS-INT-1', name: 'Comunicação Inter-Camadas (M1 ↔ M722)', module: 'Integração', time: 700, category: 'Integração' },
-  { id: 'SYS-SEC-1', name: 'Simulação de Ataque Vibracional', module: 'Segurança', time: 1000, category: 'Segurança' },
-  { id: 'SYS-PERF-1', name: 'Teste de Carga de Dados (10 Tbit/s)', module: 'Performance', time: 1200, category: 'Performance & Otimização' },
-  { id: 'SYS-UX-1', name: 'Teste de Imersão Sensorial', module: 'Interface', time: 900, category: 'Interface & Energia Quântica' },
+  { id: 'M1-QKD', name: 'Validação de Escudo Quântico (QKD)', module: 'Módulo 1', time: 500, category: 'Segurança Quântica' },
+  { id: 'M1-BC', name: 'Integridade de Contrato Inteligente', module: 'Módulo 1', time: 400, category: 'Segurança Quântica' },
+  { id: 'M722-AI', name: 'Adaptação do Modelo de IA', module: 'Módulo 722', time: 800, category: 'IA Evolutiva' },
+  { id: 'M93-UI', name: 'Responsividade da Interface Quântica', module: 'Módulo 93', time: 600, category: 'Interface Quântica' },
+  { id: 'SYS-INT-1', name: 'Comunicação Inter-Camadas (M1 ↔ M722)', module: 'Integração', time: 700, category: 'Validação Integrada' },
+  { id: 'SYS-SEC-1', name: 'Simulação de Ataque Vibracional', module: 'Segurança Quântica', time: 1000, category: 'Validação Integrada' },
+  { id: 'SYS-PERF-1', name: 'Teste de Carga de Dados (10 Tbit/s)', module: 'Performance', time: 1200, category: 'Validação Integrada' },
+  { id: 'SYS-UX-1', name: 'Teste de Imersão Sensorial', module: 'Interface Quântica', time: 900, category: 'Validação Integrada' },
 ];
 
 type TestStatus = 'PENDING' | 'RUNNING' | 'SUCCESS' | 'FAILURE';

@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -119,7 +120,7 @@ const Module93Page = () => {
                         <Presentation className="text-cyan-400" /> Módulo 93: Simulações Imersivas e Interface Quântica
                     </CardTitle>
                     <CardDescription>
-                       O portal para experiências de aprendizado e expansão da consciência. A Interface Quântica Imersiva agora inclui protótipos de wireframes para visualização, testes de feedback sensorial (tátil/visual) e um design adaptativo que se ajusta ao nível de consciência do usuário.
+                       O portal para experiências de aprendizado e expansão da consciência. A Interface Quântica Imersiva agora inclui protótipos de wireframes visuais e táteis, testes de feedback sensorial e um design adaptativo que se ajusta ao nível de consciência do usuário.
                     </CardDescription>
                 </CardHeader>
             </Card>

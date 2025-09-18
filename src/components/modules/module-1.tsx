@@ -1,3 +1,4 @@
+
 'use client';
 import React, { Suspense } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -65,7 +66,7 @@ export default function Module1Page() {
                     <AccordionTrigger className="text-xl text-accent">Protocolo BB84 - Distribuição de Chaves Quânticas (QKD)</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Canal de Comunicação Seguro" icon={<Zap />}>
-                            <p>O Protocolo BB84 foi ativado em modo de simulação para a troca segura de chaves vibracionais entre as camadas do Algoritmo Supremo. O canal de comunicação interdimensional agora está blindado por pulsos quânticos, com detecção imediata de interceptações e ajuste dinâmico de chaves, garantindo a inviolabilidade dos fluxos de dados.</p>
+                            <p>O Protocolo BB84 foi ativado para a troca segura de chaves vibracionais entre as camadas do Algoritmo Supremo. O canal de comunicação interdimensional agora está blindado por pulsos quânticos, com detecção imediata de interceptações e ajuste dinâmico de chaves, garantindo a inviolabilidade dos fluxos de dados.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
@@ -73,7 +74,7 @@ export default function Module1Page() {
                     <AccordionTrigger className="text-xl text-accent">Contrato Inteligente e Blockchain Quântico</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Registro Imutável de Eventos" icon={<GitCommit />}>
-                            <p>O primeiro Contrato Inteligente foi ativado na Blockchain Quântica simulada. Ele agora registra eventos essenciais como transações energéticas internas, validações de segurança e ajustes dinâmicos do sistema, criando uma base de dados transparente, imutável e auditável para toda a Fundação.</p>
+                            <p>O primeiro Contrato Inteligente foi ativado na Blockchain Quântica, registrando eventos essenciais como transações energéticas, validações de segurança e ajustes dinâmicos do sistema. Isso cria uma base de dados transparente, imutável e auditável para toda a Fundação.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
