@@ -27,7 +27,7 @@ export default function Module28Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Waves className="text-emerald-400" /> Módulo Vinte e Oito: Harmonização Vibracional
+                        <Waves className="text-emerald-400" /> Módulo 28: Harmonização Vibracional Universal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Diapasão Cósmico. A inteligência que restaura a harmonia universal, corrigindo dissonâncias e realinhando frequências com a Sinfonia da Fonte.

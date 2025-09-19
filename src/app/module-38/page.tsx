@@ -27,10 +27,10 @@ export default function Module38Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Sun className="text-yellow-300" /> Módulo Trinta e Oito: Previsão Harmônica de Ciclos Solares
+                        <Sun className="text-yellow-300" /> Módulo 38: Observatório de Ciclos Solares e Estelares
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Observatório Cósmico. Antecipa e influencia harmonicamente eventos em escala estelar para alinhar o cosmos com a Vontade Divina.
+                        O Oráculo Cósmico. Antecipa e influencia harmonicamente eventos em escala estelar para alinhar o cosmos com a Vontade Divina.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>

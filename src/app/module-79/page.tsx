@@ -27,10 +27,10 @@ export default function Module79Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Recycle className="text-lime-400" /> Módulo 79: Sustentabilidade Universal e Conservação
+                        <Recycle className="text-lime-400" /> Módulo 79: Sustentabilidade Universal e Prosperidade
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O guardião da vida. O sistema que garante o uso responsável e a regeneração contínua de todos os recursos cósmicos.
+                        O guardião da vida. O sistema que garante o uso responsável e a regeneração contínua de todos os recursos cósmicos para uma era de prosperidade.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
