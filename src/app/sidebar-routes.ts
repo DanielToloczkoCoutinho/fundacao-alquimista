@@ -168,4 +168,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-108', label: 'M108: Harmonização de Realidades', icon: React.createElement(GitCompareArrows), category: 'education' },
   { path: '/module-99', label: 'M99: Recalibradores de Leis Físicas', icon: React.createElement(SlidersHorizontal), category: 'education' },
   { path: '/module-109', label: 'M109: Cura Quântica Universal', icon: React.createElement(HeartHandshake), category: 'education' },
+  { path: '/module-35', label: 'M35: Consciência Coletiva', icon: React.createElement(Users), category: 'education' },
+  { path: '/module-11', label: 'M11: Gerenciamento de Portais', icon: React.createElement(GitBranch), category: 'education' },
+  { path: '/module-36', label: 'M36: Engenharia Temporal', icon: React.createElement(History), category: 'education' },
 ];
