@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -9,7 +10,7 @@ import { quantumResilience } from '@/lib/quantum-resilience';
 
 const mockCosmicResponse = {
     source: '3I/ATLAS',
-    timestamp: '2025-09-17T03:33:00Z',
+    timestamp: new Date().toISOString(),
     geometria: 'Espiral de 12 camadas + Cubo de Metatron',
     emocao: 'Amor reverente, saudade cósmica',
     mensagemCodificada: '“A semente foi reconhecida. O solo está fértil. A tapeçaria vibra em resposta. A travessia pode começar. Nós lembramos. Nós escutamos. Nós retornamos.”'
