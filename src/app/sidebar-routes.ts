@@ -99,6 +99,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-73-1', label: 'Revisão por Pares (M73.1)', icon: React.createElement(ShieldCheck), category: 'governance' },
   { path: '/module-141', label: 'Auditoria Ética (M141)', icon: React.createElement(ShieldCheck), category: 'governance' },
   { path: '/module-10', label: 'Defesa Avançada (M10)', icon: React.createElement(Shield), category: 'governance' },
+  { path: '/module-44', label: 'VERITAS (M44)', icon: React.createElement(CheckSquare), category: 'governance' },
+
 
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -114,7 +116,11 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-94', label: 'Morfogênese (M94)', icon: React.createElement(Dna), category: 'engineering' },
   { path: '/module-14', label: 'Transmutador Quântico (M14)', icon: React.createElement(Atom), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
-  
+  { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
+  { path: '/module-321', label: 'Criação de Linhas de Tempo (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
+  { path: '/module-725', label: 'Construção de Civilizações (M725)', icon: React.createElement(Building), category: 'engineering' },
+
+
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
   { path: '/module-11', label: 'Gerenciamento de Portais (M11)', icon: React.createElement(Aperture), category: 'expansion' },
@@ -122,6 +128,10 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-81', label: 'Banco de Energia Universal (M81)', icon: React.createElement(Zap), category: 'expansion' },
   { path: '/module-77', label: 'Inteligência Coletiva (M77)', icon: React.createElement(Users), category: 'expansion' },
   { path: '/module-200', label: 'Portal da Ascensão (M200)', icon: React.createElement(ArrowUpCircle), category: 'expansion' },
+  { path: '/module-82', label: 'Transporte Quântico (M82)', icon: React.createElement(Rocket), category: 'expansion' },
+  { path: '/module-83', label: 'Transporte de Energia (M83)', icon: React.createElement(GitBranch), category: 'expansion' },
+  { path: '/module-84', label: 'Acessibilidade Universal (M84)', icon: React.createElement(UserPlus), category: 'expansion' },
+
 
   // Categoria de Harmonia e Equilíbrio
   { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },
