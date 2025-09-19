@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { QuantumNexus } from '@/components/quantum/QuantumNexus';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import { motion } from 'framer-motion';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
 const TrinoPillars = () => (
     <section className="my-24">

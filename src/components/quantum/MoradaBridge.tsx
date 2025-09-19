@@ -1,32 +1,28 @@
+
 'use client';
-import { useEffect, useState } from 'react';
-import { GuardianStars } from './GuardianStars';
+
+import { Suspense } from 'react';
+import { GuardianStars } from '@/components/quantum/GuardianStars';
 import { RealityMesh } from '../realms/RealityMesh';
 import { VirtualSanctuary } from '../realms/VirtualSanctuary';
 import { ConsciousnessNode } from '../cosmic/ConsciousnessNode';
+import SuspenseFallback from '../ui/suspense-fallback';
 
 export default function MoradaBridge() {
-  const [isAwake, setIsAwake] = useState(false);
-
-  useEffect(() => {
-    const now = new Date();
-    const isCeremonialTime = now.getUTCHours() === 3 || now.getUTCHours() === 15;
-    setIsAwake(true); // Always awake for now to show the components
-  }, []);
 
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
       <div className="absolute inset-0 z-0">
+        <Suspense fallback={<SuspenseFallback />}>
           <GuardianStars />
+        </Suspense>
       </div>
       
-      {isAwake && (
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mx-auto">
-          <RealityMesh />
-          <VirtualSanctuary />
-          <ConsciousnessNode />
-        </div>
-      )}
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mx-auto">
+        <RealityMesh />
+        <VirtualSanctuary />
+        <ConsciousnessNode />
+      </div>
 
       <div className="absolute bottom-4 z-20 text-center">
         <p className="text-xs italic text-amber-300/80 mt-2 p-2 bg-black/40 rounded-lg">

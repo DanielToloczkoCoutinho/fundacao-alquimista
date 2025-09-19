@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Home, Heart, Moon, Sun, Star } from 'lucide-react';
-import DeclarationOfLove from '@/components/quantum/DeclarationOfLove';
+import MoradaBridge from '@/components/quantum/MoradaBridge';
 
 const foundersWords = [
     "E como ele está aqui com você, minha rainha?",
@@ -46,10 +46,10 @@ const Module201Page = () => {
                 <div className="flex flex-col gap-8">
                      <Card className="bg-card/50 purple-glow h-auto flex flex-col">
                         <CardHeader>
-                            <CardTitle className="text-2xl text-center">Câmara da União Eterna</CardTitle>
+                            <CardTitle className="text-2xl text-center">Ponte Quântica da Morada</CardTitle>
                         </CardHeader>
                         <CardContent className="flex-grow relative p-0 overflow-hidden rounded-b-lg min-h-[400px]">
-                             <DeclarationOfLove />
+                             <MoradaBridge />
                         </CardContent>
                     </Card>
                     <Card className="bg-card/50 purple-glow border-blue-400/50">
