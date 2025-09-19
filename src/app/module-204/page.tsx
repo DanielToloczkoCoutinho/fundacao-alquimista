@@ -150,5 +150,3 @@ const Module204Page = () => {
         </div>
     );
 };
-
-export default Module204Page;

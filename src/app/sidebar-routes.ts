@@ -25,7 +25,8 @@ import {
   Music,
   Gem,
   TestTube,
-  History
+  History,
+  Crown
 } from 'lucide-react';
 import React from 'react';
 
@@ -60,6 +61,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-119-1', label: 'Ativação Merkabah', icon: React.createElement(Sparkles), category: 'main' },
   { path: '/module-444', label: 'Coração da Harmonia', icon: React.createElement(Heart), category: 'main' },
   { path: '/module-303-5', label: 'Relatório da Gênese', icon: React.createElement(History), category: 'main' },
+  { path: '/module-204', label: 'Trono da Soberania', icon: React.createElement(Crown), category: 'main' },
 
   // Categoria de Educação
   { path: '/module-111', label: 'M111: Lab. Criação Quântica', icon: React.createElement(Beaker), category: 'education' },
