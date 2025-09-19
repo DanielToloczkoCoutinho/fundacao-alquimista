@@ -46,11 +46,6 @@ export const executeEquation = functions
         result = flowRate; // Placeholder linear
         break;
       }
-      case 'EQ001': { // Energia Universal
-        const { m = 1, c = 299792458 } = parameters;
-        result = m * Math.pow(c, 2);
-        break;
-      }
       // Outros casos (EQ159…EQ164) podem ser adicionados aqui
       default:
         throw new functions.https.HttpsError(
