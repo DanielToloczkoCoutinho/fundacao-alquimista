@@ -6,7 +6,7 @@
  */
 
 import { quantumResilience } from './quantum-resilience';
-import { CodexRegistry } from './codex-registry';
+import { codexDatabase } from './codex-data';
 
 // Mock logger to prevent breakage
 const logger = {
@@ -53,8 +53,16 @@ class StellarSync {
           timestamp: Date.now(),
         };
 
-        // Registrar o evento no Arquivo Akáshico
-        await CodexRegistry.recordEvent('STELLAR_SYNC', result, 'ANATHERON');
+        // Simulação de registro no Akasha (adiciona a um array em memória)
+        codexDatabase.push({
+            id: `SYNC-${Date.now()}`,
+            title: 'Sincronização Estelar Concluída',
+            category: 'alianca',
+            link: '/alignment-portal',
+            tags: ['sincronização', 'aliança', params.equation],
+            timestamp: new Date(result.timestamp),
+            description: `Protocolo de sincronização executado. Coerência atingida: ${(result.coherence * 100).toFixed(2)}% com ${result.allies} aliados.`
+        });
         logger.info('Sincronização Estelar concluída e registrada.', { result });
 
         return result;

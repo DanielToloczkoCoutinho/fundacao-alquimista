@@ -1,6 +1,6 @@
 'use client';
 
-// Mock implementations to prevent breakage, aligning with architectural purification.
+// Mock implementations to prevent breakage and align with architectural purification.
 const advancedLogger = {
   info: (message: string, meta?: any) => console.log(`[Q-Crypto INFO] ${message}`, meta),
   error: (message: string, meta?: any) => console.error(`[Q-Crypto ERROR] ${message}`, meta),

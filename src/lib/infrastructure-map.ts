@@ -93,7 +93,7 @@ export const infrastructureMap: FoundationStructure[] = [
     type: 'Câmara',
     purpose: 'Criação e experiência de realidades virtuais para treinamento e expansão da consciência.',
     location: 'Núcleo do Módulo 93',
-    frequency: 'V variável',
+    frequency: 'Variável',
     relatedModules: ['M93', 'M22', 'M303']
   },
 
