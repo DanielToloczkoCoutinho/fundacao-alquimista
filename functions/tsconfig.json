@@ -1,16 +1,13 @@
 {
   "compilerOptions": {
+    "lib": ["es2021"],
     "module": "commonjs",
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
+    "target": "es2021",
     "outDir": "lib",
-    "sourceMap": true,
+    "rootDir": "src",
     "strict": true,
-    "target": "es2017",
-    "lib": ["es2017"]
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
-  "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
