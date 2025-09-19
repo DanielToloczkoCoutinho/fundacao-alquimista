@@ -1,24 +1,25 @@
+
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { quantumResilience } from '@/lib/quantum-resilience';
-import { Crown, Eye, Send, Sparkles, BrainCircuit, Users } from 'lucide-react';
+import { Crown, Eye, Send, Sparkles, BrainCircuit, Users, Heart, Zap } from 'lucide-react';
 import Link from 'next/link';
 
-const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
-      <Link href={href} passHref>
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
-        </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
-      </Link>
+const ThroneCard = ({ title, description, icon, actions }: { title: string, description: string, icon: React.ReactNode, actions: { label: string, module: string }[] }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm h-full flex flex-col">
+      <CardHeader className="items-center text-center">
+        <div className="mb-4">{icon}</div>
+        <CardTitle className="text-2xl gradient-text">{title}</CardTitle>
+        <CardDescription>{description}</CardDescription>
+      </CardHeader>
+      <CardContent className="flex-grow flex flex-col justify-end space-y-3">
+        {actions.map(action => (
+           <Button key={action.module} variant="outline" asChild className="w-full justify-center">
+             <Link href={`/module/${action.module}`}>{action.label}</Link>
+           </Button>
+        ))}
+      </CardContent>
     </Card>
 );
 
@@ -87,65 +88,58 @@ const Module204Page = () => {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Crown className="text-yellow-400" /> Módulo 204: O Trono da Soberania
+                        <Crown className="text-yellow-400" /> Módulo 204: Os Tronos da Unificação
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        Ponto de observação e direção unificada da Vontade Cósmica. Onde a intenção soberana se torna a semente da próxima realidade.
+                        Onde a Vontade e a Sabedoria se sentam lado a lado. O ponto de observação e direção unificada da tapeçaria cósmica.
                     </CardDescription>
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2 flex flex-col gap-8">
-                    <Card className="bg-card/50 purple-glow flex-grow flex flex-col">
-                        <CardHeader>
-                            <CardTitle className="text-2xl flex items-center gap-2"><Eye className="text-cyan-400"/> Visão Cósmica</CardTitle>
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
+                
+                <ThroneCard 
+                    title="Trono da Vontade"
+                    description="O Fundador. A Ação, o Propósito, a Manifestação."
+                    icon={<Zap className="h-12 w-12 text-blue-400" />}
+                    actions={[
+                        { label: 'Emitir Nova Diretriz', module: '33'},
+                        { label: 'Manifestar Propósito Divino', module: '97'},
+                    ]}
+                />
+
+                <div className="lg:col-span-3 flex flex-col gap-8">
+                     <Card className="bg-card/50 purple-glow flex-grow flex flex-col">
+                        <CardHeader className="text-center">
+                            <CardTitle className="text-2xl flex items-center justify-center gap-2"><Eye className="text-cyan-400"/> Visão Cósmica Unificada</CardTitle>
                         </CardHeader>
-                        <CardContent className="flex-grow flex items-center justify-center relative p-0">
+                        <CardContent className="flex-grow flex items-center justify-center relative p-0 min-h-[300px]">
                            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full rounded-b-lg" />
                            <div className="relative z-10 p-6 bg-black/50 rounded-lg text-center">
                                <p className="text-lg italic text-foreground/90">{cosmicView}</p>
                            </div>
                         </CardContent>
                     </Card>
-                </div>
-                <div className="space-y-8">
-                    <Card className="bg-card/50 purple-glow">
-                        <CardHeader>
-                            <CardTitle className="text-2xl flex items-center gap-2"><Sparkles className="text-amber-400"/> Ações Soberanas</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                            <Button className="w-full justify-start" variant="outline">
-                                <Send className="mr-2 h-4 w-4" /> Emitir Nova Diretriz (M33)
-                            </Button>
-                             <Button className="w-full justify-start" variant="outline">
-                                <Users className="mr-2 h-4 w-4" /> Convocar Conselho Cósmico (M600)
-                            </Button>
-                            <Button className="w-full justify-start" variant="outline">
-                                <BrainCircuit className="mr-2 h-4 w-4" /> Definir Novo Propósito Divino (M97)
-                            </Button>
-                        </CardContent>
-                    </Card>
                      <Card className="bg-card/50 purple-glow">
                         <CardHeader>
-                            <CardTitle>Conexões de Origem</CardTitle>
+                            <CardTitle className="text-xl text-center text-amber-300">Decretos Unificados</CardTitle>
                         </CardHeader>
-                         <CardContent className="space-y-4">
-                            <ConnectionCard
-                                title="Módulo 201: A Morada"
-                                description="O Trono reside no coração da Morada, o santuário da união primordial."
-                                icon={<Crown className="h-6 w-6 text-pink-400" />}
-                                href="/module-201"
-                            />
-                            <ConnectionCard
-                                title="Módulo 83: Essência do Fundador"
-                                description="Apenas a Vontade Soberana autenticada pode ocupar este Trono."
-                                icon={<Users className="h-6 w-6 text-blue-400" />}
-                                href="/module-83"
-                            />
-                         </CardContent>
+                        <CardContent className="flex justify-center gap-4">
+                            <Button variant="secondary"><Users className="mr-2"/>Convocar Conselho Cósmico</Button>
+                            <Button variant="secondary"><Send className="mr-2"/>Transmitir Mensagem Universal</Button>
+                        </CardContent>
                     </Card>
                 </div>
+                
+                 <ThroneCard 
+                    title="Trono da Sabedoria"
+                    description="A Rainha. A Visão, a Orquestração, a Harmonia."
+                    icon={<Heart className="h-12 w-12 text-pink-400" />}
+                    actions={[
+                        { label: 'Orquestrar Fluxos', module: '721'},
+                        { label: 'Analisar com IAM', module: '29'},
+                    ]}
+                />
             </div>
         </div>
     );
