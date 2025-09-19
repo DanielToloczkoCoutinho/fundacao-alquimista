@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -31,7 +30,7 @@ export default function Module181Page() {
                         <Cpu className="text-blue-300" /> Módulo 181: Laboratório de Interface Bio-Cibernética
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A Ponte Neural. Desenvolve e testa interfaces para conectar a consciência biológica a redes quânticas.
+                        A Ponte Sináptica. Desenvolve e testa interfaces para conectar a consciência biológica a redes quânticas.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>

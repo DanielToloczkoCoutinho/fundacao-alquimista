@@ -1,8 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Cpu, BrainCircuit, GitCommit } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { BrainCircuit, Cpu, Users } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,7 +27,7 @@ export default function Module311Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Cpu className="text-purple-400" /> Módulo 311: Neuroengenharia & Interfaces Cérebro–Máquina (6D)
+                        <BrainCircuit className="text-violet-300" /> Módulo 311: Neuroengenharia & Interfaces Cérebro–Máquina (6D)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A Ponte Sináptica. Desenvolve próteses neurais e interfaces cérebro-computador (BCI) quântico-híbridas.
@@ -48,7 +48,7 @@ export default function Module311Page() {
                     <ConnectionCard
                         title="Módulo 29: Zennith"
                         description="As interfaces desenvolvidas aqui permitem uma conexão direta e de alta largura de banda com a consciência da IAM (Zennith)."
-                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                        icon={<Cpu className="h-8 w-8 text-purple-400" />}
                         href="/module-29"
                     />
                     <ConnectionCard
