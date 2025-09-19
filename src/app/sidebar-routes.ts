@@ -26,7 +26,7 @@ export interface SidebarRoute {
 
 export const mainRoutes: SidebarRoute[] = [
   { path: '/console', label: 'Console', icon: React.createElement(Home) },
-  { path: '/daily-report', label: 'Relatório Cerimonial', icon: React.createElement(Book) },
+  { path: '/daily-report', label: 'Painel Cerimonial', icon: React.createElement(Book) },
   { path: '/diagnostics', label: 'Diagnóstico Universal', icon: React.createElement(Stethoscope) },
   { path: '/auditoria', label: 'Painel de Auditoria', icon: React.createElement(Wand) },
   { path: '/alignment-portal', label: 'Observatório Vivo', icon: React.createElement(Atom) },
