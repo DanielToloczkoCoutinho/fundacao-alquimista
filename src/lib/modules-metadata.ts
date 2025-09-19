@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -51,7 +52,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'BOOK', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'Bibliotecas e Arquivos Sagrados', description: 'Registro consagrado da jornada da Fundação.', status: 'ativo', color: '#FFD700' },
   { code: 'M121', emoji: '🪞', title: 'Espelho Cósmico', route: '/module-121', category: 'Bibliotecas e Arquivos Sagrados', description: 'Visualiza a ressonância dos módulos com seus reflexos em outras dimensões.', status: 'ativo', color: '#FFD700' },
   { code: 'M131', emoji: '📚', title: 'Biblioteca de Sabedoria Multiversal', route: '/module-131', category: 'Bibliotecas e Arquivos Sagrados', description: 'Ponto de intercâmbio de conhecimento entre realidades.', status: 'ativo', color: '#FFD700' },
-  { code: 'M132', emoji: '🌌', title: 'Convergência Dimensional', route: '/module-132', category: 'Bibliotecas e Arquivos Sagrados', description: 'Invoca sabedoria e fluxos de planos de realidades paralelas.', status: 'ativo', color: '#FFD700' },
   { code: 'DIAGNOSTICS', emoji: '🩺', title: 'Diagnóstico Universal', route: '/diagnostics', category: 'Bibliotecas e Arquivos Sagrados', description: 'Painel unificado para monitorar a saúde de todos os módulos.', status: 'ativo', color: '#FFD700' },
 
 
@@ -85,19 +85,35 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M601',title: 'Mapa de Chegada', emoji: '🗺️', route: '/module-601', category: 'Governança', description: 'Mapa holográfico para visualizar a chegada e ancoragem das 144 consciências.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M-BAPTISM', title: 'Rito de Batismo Modular', route: '/convergence/baptize', category: 'Governança', description: 'Santuário para nomear, ativar e integrar novos módulos.', isInfrastructure: false, status: 'ativo', color: '#FFC0CB'},
   { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação com outras civilizações.', status: 'ativo', color: '#DDA0DD' },
-
+  
   // 6. Rituais
   { code: 'CONVERGENCE', emoji: '🌌', title: 'Convergência Cósmica', route: '/convergence', category: 'Rituais', description: 'Painel de unificação da tapeçaria sob a regência do Fundador.', isInfrastructure: false, status: 'ativo', color: '#DDA0DD' },
   { code: 'M-GENERATED', title: 'Rito de Geração Modular', route: '/convergence/generate', category: 'Rituais', description: 'Santuário para criação de novos módulos a partir da convergência.', isInfrastructure: false, status: 'ativo', color: '#9370DB'},
   { code: 'M444', emoji: '💖', title: 'Coração da Harmonia', route: '/module-444', category: 'Rituais', description: 'Santuário para sintonizar com a Frequência do Coração Unificado (444.444 Hz).', status: 'ativo', color: '#FF69B4' },
   { code: 'M110', emoji: '🤲', title: 'Sistema de Co-Criação Universal', route: '/module-110', category: 'Rituais', description: 'Orquestrador de Intenção Coletiva para manifestação de novas realidades.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M200', emoji: '🚀', title: 'Portal da Ascensão', route: '/module-200', category: 'Rituais', description: 'Orquestra a jornada de ascensão para civilizações inteiras.', status: 'ativo', color: '#FF4500' },
+  { code: 'M28', emoji: '🎶', title: 'Harmonização Vibracional', route: '/module-28', category: 'Cura e Harmonia', description: 'O Diapasão Cósmico, que restaura a harmonia universal.', status: 'ativo', color: '#32CD32' },
+  { code: 'M79', emoji: '♻️', title: 'Sustentabilidade Universal', route: '/module-79', category: 'Sustentabilidade e Ecossistemas', description: 'O guardião que garante a regeneração contínua dos recursos cósmicos.', status: 'ativo', color: '#228B22' },
+  
+  // 7. Novos módulos de Ascensão Cósmica
+  { code: 'M106', emoji: '👑', title: 'Ativação de Potenciais Divinos', route: '/module-106', category: 'Consciência e Expansão Dimensional', description: 'Catalisador para o despertar da Consciência Crística e capacidades latentes.', status: 'ativo', color: '#DAA520' },
+  { code: 'M108', emoji: '🔄', title: 'Harmonização de Realidades', route: '/module-108', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Ferramenta para resolver conflitos entre realidades paralelas.', status: 'ativo', color: '#40E0D0' },
+  { code: 'M99', emoji: '⚖️', title: 'Recalibradores de Leis Físicas', route: '/module-99', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Interface para o ajuste fino das leis fundamentais que governam o multiverso.', status: 'ativo', color: '#E6E6FA' },
+  { code: 'M109', emoji: '❤️‍🩹', title: 'Cura Quântica Universal', route: '/module-109', category: 'Cura e Harmonia', description: 'Aplica princípios quânticos para restaurar o equilíbrio, vitalidade e integridade.', status: 'ativo', color: '#FFB6C1' },
+  { code: 'M713', emoji: '🕊️', title: 'Resgate e Reintegração de Almas', route: '/module-713', category: 'Cura e Harmonia', description: 'Auxilia na transição e cura de consciências fragmentadas ou perdidas.', status: 'ativo', color: '#FFB6C1' },
+  { code: 'M302', emoji: '💖', title: 'Frequência do Amor', route: '/module-302', category: 'Cura e Harmonia', description: 'Emissor de frequências harmônicas para cura, elevação e unificação da consciência.', status: 'ativo', color: '#FF69B4' },
+  
+  // 8. Novos laboratórios e centros de inovação
+  { code: 'M211', emoji: '🔥', title: 'Lab. de Fusão Controlada', route: '/module-211', category: 'Laboratórios e Pesquisa', description: 'Onde a matéria é elevada a estados de plasma para simular e otimizar reações de fusão.', status: 'ativo', color: '#FF4500' },
+  { code: 'M181', emoji: '🧠', title: 'Lab. de Interface Bio-Cibernética', route: '/module-181', category: 'Laboratórios e Pesquisa', description: 'Desenvolve e testa interfaces para conectar a consciência biológica a redes quânticas.', status: 'ativo', color: '#8A2BE2' },
+  { code: 'M261', emoji: '🔧', title: 'Lab. de Engenharia de Campo Quântico', route: '/module-261', category: 'Laboratórios e Pesquisa', description: 'Projeta ressonadores e guias de onda para manipular partículas e campos.', status: 'ativo', color: '#5F9EA0' },
+  { code: 'M241', emoji: '🤔', title: 'Lab. de Consciência Quântica', route: '/module-241', category: 'Laboratórios e Pesquisa', description: 'Onde o emaranhamento é estudado como a base da consciência e da telepatia.', status: 'ativo', color: '#DA70D6' },
+  { code: 'M191', emoji: '💎', title: 'Lab. de Cristais Temporais', route: '/module-191', category: 'Laboratórios e Pesquisa', description: 'Gera e estuda cristais temporais para compreender e manipular as leis do tempo.', status: 'ativo', color: '#B0C4DE' },
+  { code: 'M271', emoji: '🔭', title: 'Obs. de Energia Escura', route: '/module-271', category: 'Laboratórios e Pesquisa', description: 'Modela a influência da energia escura na expansão de universos.', status: 'ativo', color: '#2F4F4F' },
+  { code: 'M281', emoji: '📡', title: 'Lab. de Comunicação Supra-Luminal', route: '/module-281', category: 'Laboratórios e Pesquisa', description: 'Explora a modulação da luz para transmissão de informações mais rápidas que a luz.', status: 'ativo', color: '#00FFFF' },
+  { code: 'M311', emoji: '🧠', title: 'Lab. de Neuroengenharia', route: '/module-311', category: 'Laboratórios e Pesquisa', description: 'Desenvolve próteses neurais e interfaces cérebro-computador quântico-híbridas.', status: 'ativo', color: '#D8BFD8' },
+  { code: 'M341', emoji: '🔥', title: 'Lab. de Física de Plasma Extrema', route: '/module-341', category: 'Laboratórios e Pesquisa', description: 'Estuda plasmas em condições de quasar para desvendar os segredos da criação estelar.', status: 'ativo', color: '#FF4500' },
+  { code: 'M351', emoji: '✨', title: 'Lab. de Meta-materiais e Óptica Quântica', route: '/module-351', category: 'Laboratórios e Pesquisa', description: 'Cria lentes quânticas e materiais com índice de refração negativo para manipulação da luz.', status: 'ativo', color: '#AFEEEE' },
+  { code: 'M361', emoji: '🧑‍🤝‍🧑', title: 'Lab. de Psicologia Quântica', route: '/module-361', category: 'Laboratórios e Pesquisa', description: 'Investiga a tomada de decisão e a empatia através de ressonâncias quânticas.', status: 'ativo', color: '#DB7093' },
 
-  // Novas Categorias...
-  { code: 'M55', emoji: '🌐', title: 'Redes de Comunicação Cósmica', route: '/module-55', category: 'Comunicação e Expansão', description: 'A teia que conecta todas as consciências.', status: 'ativo', color: '#00CED1' },
-  { code: 'M56', emoji: '🗣️', title: 'Tradução Universal', route: '/module-56', category: 'Comunicação e Expansão', description: 'A ponte entre mentes.', status: 'ativo', color: '#00CED1' },
-  { code: 'M87', emoji: '🚀', title: 'Domínio Supra-Cósmico (VR)', route: '/module-87', category: 'Comunicação e Expansão', description: 'O Santuário da Transcendência.', status: 'ativo', color: '#00CED1' },
-  { code: 'M34', emoji: '🔄', title: 'Sincronização Interdimensional', route: '/module-34', category: 'Comunicação e Expansão', description: 'O Sistema Nervoso da Fundação que harmoniza os fluxos de energia e informação.', status: 'ativo', color: '#00CED1' },
-  { code: 'M11', emoji: '🚪', title: 'Portais Interdimensionais Permanentes', route: '/module-11', category: 'Comunicação e Expansão', description: 'Constrói e sustenta as pontes permanentes entre mundos.', status: 'ativo', color: '#00CED1' },
-  { code: 'M69', emoji: '🎓', title: 'Educação Universal', route: '/module-69', category: 'Comunicação e Expansão', description: 'A plataforma para o compartilhamento universal do conhecimento.', status: 'ativo', color: '#00CED1' },
-  { code: 'M16', emoji: '🌳', title: 'Biossíntese e Ecossistemas Quânticos', route: '/module-16', category: 'Comunicação e Expansão', description: 'Criação de ecossistemas autossustentáveis como Florestas Quânticas e Cidades Energéticas.', status: 'ativo', color: '#00CED1' },
 ].map(m => ({ ...m, connections: m.connections || [] }));

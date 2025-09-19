@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -37,10 +38,10 @@ export default function Module727Page() {
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
-                    <Link href="/tree-of-life" passHref>
+                    <Link href="/alignment-portal" passHref>
                         <Button size="lg" variant="secondary" className="font-bold">
                             <GitBranch className="mr-2 h-5 w-5"/>
-                            Acessar a Árvore da Vida (Análise Sistêmica)
+                            Acessar o Observatório Vivo
                         </Button>
                     </Link>
                 </CardContent>

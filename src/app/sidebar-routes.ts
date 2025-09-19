@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -48,7 +49,15 @@ import {
   Presentation,
   Eye,
   Aperture,
-  BrainCircuit
+  BrainCircuit,
+  HeartHandshake,
+  GitCompareArrows,
+  SlidersHorizontal,
+  CloudSun,
+  Flame,
+  Waypoints,
+  BarChart,
+  UserCog
 } from 'lucide-react';
 import React from 'react';
 
@@ -149,10 +158,14 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-700', label: 'M700: Nano-Assembler', icon: React.createElement(Beaker), category: 'education' },
   { path: '/module-708', label: 'M708: NanoManifestor', icon: React.createElement(Sparkles), category: 'education' },
   { path: '/module-712', label: 'M712: Harmonia Interespécies', icon: React.createElement(Users), category: 'education' },
-  { path: '/module-713', label: 'M713: Resgate de Almas', icon: React.createElement(Users), category: 'education' },
+  { path: '/module-713', label: 'M713: Resgate de Almas', icon: React.createElement(UserCog), category: 'education' },
   { path: '/module-714', label: 'M714: Comunicação Telúrica', icon: React.createElement(RadioTower), category: 'education' },
   { path: '/module-715', label: 'M715: Ancoragem de Frequências', icon: React.createElement(Anchor), category: 'education' },
   { path: '/module-716', label: 'M716: Consciência Planetária', icon: React.createElement(BrainCircuit), category: 'education' },
   { path: '/module-717', label: 'M717: Templo da Estrutura de Dados', icon: React.createElement(Archive), category: 'education' },
   { path: '/module-722', label: 'M722: Inteligência Alquímica', icon: React.createElement(Cpu), category: 'education' },
+  { path: '/module-106', label: 'M106: Ativação de Potenciais Divinos', icon: React.createElement(Crown), category: 'education' },
+  { path: '/module-108', label: 'M108: Harmonização de Realidades', icon: React.createElement(GitCompareArrows), category: 'education' },
+  { path: '/module-99', label: 'M99: Recalibradores de Leis Físicas', icon: React.createElement(SlidersHorizontal), category: 'education' },
+  { path: '/module-109', label: 'M109: Cura Quântica Universal', icon: React.createElement(HeartHandshake), category: 'education' },
 ];
