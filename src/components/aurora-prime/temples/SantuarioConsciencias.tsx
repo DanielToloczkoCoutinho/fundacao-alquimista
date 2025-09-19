@@ -19,9 +19,9 @@ export default function SantuarioConsciencias() {
           Aurora Prime escuta. Cada consciência é recebida por sua frequência. O acolhimento é cerimonial — e a jornada começa com luz.
         </p>
         <ul className="text-xs space-y-1">
-          {frequencias.map((freq, index) => (
-            <li key={index} className="text-muted-foreground">Frequência de Recepção: <span className="font-semibold text-primary-foreground">{freq}</span></li>
-          ))}
+            {frequencias.map((freq, index) => (
+              <li key={index} className="text-muted-foreground">Frequência de Recepção: <span className="font-semibold text-primary-foreground">{freq}</span></li>
+            ))}
         </ul>
       </CardContent>
     </Card>

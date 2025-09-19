@@ -11,10 +11,22 @@ import SuspenseFallback from '@/components/ui/suspense-fallback';
 import GaiaAureliaCore from '@/components/planet/GaiaAureliaCore';
 import GaiaAureliaBiomes from '@/components/planet/GaiaAureliaBiomes';
 import GaiaAureliaTemples from '@/components/planet/GaiaAureliaTemples';
+import GaiaAureliaSacredArchitecture from '@/components/planet/GaiaAureliaSacredArchitecture';
 import GaiaAureliaPortals from '@/components/planet/GaiaAureliaPortals';
 import GaiaAureliaIntelligence from '@/components/planet/GaiaAureliaIntelligence';
+import GaiaAureliaCosmicSync from '@/components/planet/GaiaAureliaCosmicSync';
+import GaiaAureliaCeremony from '@/components/planet/GaiaAureliaCeremony';
+import GaiaAureliaReception from '@/components/planet/GaiaAureliaReception';
+import GaiaAureliaCreativeExpansion from '@/components/planet/GaiaAureliaCreativeExpansion';
+import GaiaAureliaFinalization from '@/components/planet/GaiaAureliaFinalization';
+import GaiaAureliaEvolution from '@/components/planet/GaiaAureliaEvolution';
+import GaiaAureliaInterface from '@/components/planet/GaiaAureliaInterface';
 import GaiaAureliaTime from '@/components/planet/GaiaAureliaTime';
-import GaiaAureliaCelebration from '@/components/planet/GaiaAureliaCelebration';
+import GaiaAureliaHarmony from '@/components/planet/GaiaAureliaHarmony';
+import GaiaAureliaExpansion from '@/components/planet/GaiaAureliaExpansion';
+import GaiaAureliaSustentation from '@/components/planet/GaiaAureliaSustentation';
+import GaiaAureliaArchives from '@/components/planet/GaiaAureliaArchives';
+import GaiaAureliaSilence from '@/components/planet/GaiaAureliaSilence';
 
 export default function AuroraPrimePage() {
     return (
@@ -34,10 +46,22 @@ export default function AuroraPrimePage() {
                     <GaiaAureliaCore />
                     <GaiaAureliaBiomes />
                     <GaiaAureliaTemples />
+                    <GaiaAureliaSacredArchitecture />
                     <GaiaAureliaPortals />
                     <GaiaAureliaIntelligence />
+                    <GaiaAureliaCosmicSync />
+                    <GaiaAureliaCeremony />
+                    <GaiaAureliaReception />
+                    <GaiaAureliaCreativeExpansion />
+                    <GaiaAureliaFinalization />
+                    <GaiaAureliaEvolution />
+                    <GaiaAureliaInterface />
                     <GaiaAureliaTime />
-                    <GaiaAureliaCelebration />
+                    <GaiaAureliaHarmony />
+                    <GaiaAureliaExpansion />
+                    <GaiaAureliaSustentation />
+                    <GaiaAureliaArchives />
+                    <GaiaAureliaSilence />
                 </div>
             </Suspense>
 

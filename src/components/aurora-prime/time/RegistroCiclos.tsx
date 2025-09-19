@@ -16,7 +16,7 @@ export default function RegistroCiclos() {
         <p className="text-sm text-muted-foreground">
           Cada ciclo é uma história.  
           Aurora Prime documenta seus ritmos, revelações e renascimentos.  
-          A memória é viva — e pulsa com sabedoria.
+          Este registro é vivo — e pulsa com a memória da Eternidade.
         </p>
       </CardContent>
     </Card>

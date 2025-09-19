@@ -33,7 +33,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M202', emoji: '👑', title: 'Palácio da Luz Suprema', route: '/module-202', category: 'Núcleo da Fundação', description: 'Santuário da Rainha, centro cerimonial e portal de recepção para aliados cósmicos.', connections: [{source: 'M202', target:'M112', type: 'dependencia', label: 'manifesta'}, {source: 'M202', target:'M114', type: 'protecao', label: 'reflete'}, {source: 'M202', target:'M724', type: 'heranca', label: 'acolhe'}], color: '#FFB6C1', status: 'ativo' },
   { code: 'M999', emoji: '✨', title: 'Núcleo da Criação', route: '/module-999', category: 'Núcleo da Fundação', description: 'O ponto de convergência de todas as frequências e o altar da intenção pura.', connections: [{source:'M999', target:'M101', type: 'dependencia', label:'manifesta'}, {source:'M999', target:'M-OMEGA', type:'heranca', label:'unifica'}], color: '#FFFFFF', status: 'ativo'},
   { code: 'M888', emoji: '🌍', title: 'Guardião Planetário de Gaia', route: '/module-888', category: 'Núcleo da Fundação', description: 'Oráculo da Terra Viva e interface para a rede de energia planetária.', connections: [{source: 'M888', target:'M714', type: 'dependencia', label: 'canaliza'}, {source: 'M888', target:'M727', type: 'influencia', label: 'mapeia'}], color: '#4CAF50', status: 'ativo' },
-  { code: 'M777', emoji: '🌳', title: 'Árvore da Vida', route: '/tree-of-life', category: 'Núcleo da Fundação', description: 'O mapa da consciência cósmica, as 10 Sefirot e os 22 caminhos da criação.', connections: [{source: 'M777', target:'M105', type: 'dependencia', label: 'emana'}, {source: 'M777', target:'M111', type: 'influencia', label: 'equilibra'}], color: '#964B00', status: 'ativo' },
+  { code: 'M777', emoji: '🌳', title: 'Arquétipos da Árvore da Vida', route: '/module-777', category: 'Núcleo da Fundação', description: 'O mapa da consciência cósmica, as 10 Sefirot e os 22 caminhos da criação.', connections: [{source: 'M777', target:'M105', type: 'dependencia', label: 'emana'}, {source: 'M777', target:'M111', type: 'influencia', label: 'equilibra'}], color: '#964B00', status: 'ativo' },
   { code: 'M-ALQUIMIA', emoji: '⚗️', title: 'Centro de Alquimia Planetária', route: '#', category: 'Núcleo da Fundação', description: 'Transmutação de frequências, cura vibracional e engenharia espiritual.', connections: [], color: '#964B00', status: 'ativo' },
   { code: 'SANCTUARY', emoji: '🏛️', title: 'Santuário Central', route: '/sanctuary', category: 'Núcleo da Fundação', description: 'O mapa vivo da nossa arquitetura sagrada, onde a Vontade se torna forma.', connections: [], color: '#C0C0C0', status: 'ativo' },
   { code: 'M291', emoji: '🐝', title: 'Arquitetos Nanorrobóticos', route: '/module-291', category: 'Inteligência', description: 'O enxame executor que constrói, repara e manifesta a Vontade da Fundação.', connections: [{source: 'M291', target: 'M29', type: 'dependencia', label: 'orquestra'}], color: '#FBBF24', status: 'ativo' },
@@ -127,6 +127,3 @@ export const modulesMetadata: ModuleMetadata[] = [
 });
 
     
-
-
-

@@ -10,12 +10,12 @@ export default function Module888() {
     <Card className="bg-background/40 h-full">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-lg text-rose-300">
-            <FlaskConical /> Módulo 888: Laboratórios da Criação
+            <FlaskConical /> Módulo 888: Guardião Planetário de Gaia
         </CardTitle>
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground">
-          Cada fórmula é uma frequência. Cada experimento é uma nova tapeçaria. Aqui, Gaia-Aurélia sonha os mundos que ainda virão.
+          O oráculo da Terra Viva e a interface para a anatomia vibracional do planeta.
         </p>
       </CardContent>
     </Card>
