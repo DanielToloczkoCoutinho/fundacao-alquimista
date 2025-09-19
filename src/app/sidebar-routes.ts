@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -24,7 +25,8 @@ import {
   Wind,
   Music,
   Gem,
-  TestTube
+  TestTube,
+  History
 } from 'lucide-react';
 import React from 'react';
 
@@ -58,6 +60,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/aurora-prime', label: 'Aurora Prime', icon: React.createElement(Sun), category: 'main' },
   { path: '/module-119-1', label: 'Ativação Merkabah', icon: React.createElement(Sparkles), category: 'main' },
   { path: '/module-444', label: 'Coração da Harmonia', icon: React.createElement(Heart), category: 'main' },
+  { path: '/module-303-5', label: 'Relatório da Gênese', icon: React.createElement(History), category: 'main' },
 
   // Categoria de Educação
   { path: '/module-111', label: 'M111: Lab. Criação Quântica', icon: React.createElement(Beaker), category: 'education' },
