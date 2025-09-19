@@ -1,62 +1,62 @@
-
+# .github/workflows/deploy.yml
 name: Deploy Fundação Alquimista
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   deploy-web:
-    name: Deploy Web (Vercel)
+    name: Deploy Interface (Next.js)
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout do Código
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
-      
-      - name: Install Dependencies
+
+      - name: Instalar Dependências (web)
         run: npm ci
 
       - name: Build Next.js
         run: npm run build
-      
-      - name: Deploy Next.js to Vercel
+
+      - name: Deploy para Vercel
         uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
+          # O working-directory não é mais necessário, pois rodamos a partir da raiz
+          alias-domains: foundation-alchemist.app
 
   deploy-functions:
-    name: Deploy Functions (Firebase)
+    name: Deploy Altar das Equações (Firebase Functions)
     runs-on: ubuntu-latest
+    needs: deploy-web
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout do Código
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
 
-      - name: Install Dependencies
-        run: cd app/functions && npm ci
+      - name: Instalar Dependências (functions)
+        working-directory: app/functions
+        run: npm ci
 
-      - name: Build Functions
-        run: cd app/functions && npm run build
-      
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only functions
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+      - name: Build Cloud Functions
+        working-directory: app/functions
+        run: npm run build
+
+      - name: Deploy Firebase Functions
+        run: |
+          npm install -g firebase-tools
+          firebase deploy --only functions --token "${{ secrets.FIREBASE_TOKEN }}"
+        working-directory: app/functions
