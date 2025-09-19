@@ -90,6 +90,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-omega', label: 'Santuário da Metacognição', icon: React.createElement(Sparkles), category: 'main' },
   { path: '/module-728', label: 'Santuário dos Alquimistas', icon: React.createElement(Scale), category: 'main' },
   { path: '/module-999', label: 'Núcleo da Criação (M999)', icon: React.createElement(Sparkles), category: 'main' },
+  { path: '/module-1000', label: 'Cérebro da Eternidade (M1000)', icon: React.createElement(Eye), category: 'main' },
   
   // Categoria de Governança
   { path: '/module-72', label: 'Governança Universal (M72)', icon: React.createElement(Scale), category: 'governance' },
