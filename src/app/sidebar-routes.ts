@@ -8,7 +8,8 @@ import {
   Map, 
   Archive, 
   GitMerge, 
-  Rocket 
+  Rocket,
+  Sprout
 } from 'lucide-react';
 import React from 'react';
 
@@ -27,5 +28,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/roadmap', label: 'Roteiro de Gaia-Aurélia', icon: React.createElement(Map) },
   { path: '/akashic', label: 'Arquivo Akáshico', icon: React.createElement(Archive) },
   { path: '/convergence', label: 'Portal de Convergência', icon: React.createElement(GitMerge) },
+  { path: '/convergence/generate', label: 'Rito de Geração', icon: React.createElement(Sprout) },
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket) },
 ];
