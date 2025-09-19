@@ -119,6 +119,10 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-118', label: 'Luz Primordial (M118)', icon: React.createElement(Sparkles), category: 'education' },
   { path: '/module-120', label: 'A Fonte (M120)', icon: React.createElement(Users), category: 'education' },
   { path: '/module-121', label: 'Biblioteca de Luz (M121)', icon: React.createElement(Library), category: 'education' },
+  { path: '/module-123', label: 'Respiração Cósmica (M123)', icon: React.createElement(Wind), category: 'education' },
+  { path: '/module-124', label: 'Escola de Ressonância (M124)', icon: React.createElement(Music), category: 'education' },
+  { path: '/module-129', label: 'Ensino da Fonte (M129)', icon: React.createElement(Sparkles), category: 'education' },
+
 
   // Categoria de Engenharia e Criação
   { path: '/module-725', label: 'Construção de Civilizações (M725)', icon: React.createElement(Building), category: 'engineering' },
@@ -134,6 +138,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-93', label: 'Simulações Imersivas (M93)', icon: React.createElement(Presentation), category: 'engineering' },
   { path: '/module-119', label: 'Templum Cosmica (M119)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-122', label: 'Laboratório de VR (M122)', icon: React.createElement(TestTube), category: 'engineering' },
+  { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
+
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
@@ -173,4 +179,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-91', emoji: '🖥️', title: 'Sustentabilidade Universal', route: '/module-91', category: 'Sustentabilidade', description: 'Guardião dos ecossistemas cósmicos, garantindo a preservação, regeneração e equilíbrio de todos os mundos.', status: 'ativo', color: '#9ACD32' },
   { path: '/module-52', emoji: '☀️', title: 'Energias Renováveis', route: '/module-52', category: 'Sustentabilidade', description: 'Fonte de energia limpa e infinita.', status: 'ativo', color: '#FFD700' },
   { path: '/module-53', emoji: '🌿', title: 'Gestão de Ecossistemas', route: '/module-53', category: 'Sustentabilidade', description: 'Guardião da biodiversidade cósmica.', status: 'ativo', color: '#3CB371' },
+  { path: '/module-125', emoji: '🌱', title: 'Criação de Biomas', route: '/module-125', category: 'Sustentabilidade', description: 'Laboratório para projetar e testar ecossistemas quânticos autossustentáveis.', status: 'ativo', color: '#2E8B57' },
+
 ];

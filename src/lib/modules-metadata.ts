@@ -114,6 +114,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M91', emoji: '🖥️', title: 'Sustentabilidade Universal', route: '/module-91', category: 'Sustentabilidade', description: 'Guardião dos ecossistemas cósmicos, garantindo a preservação, regeneração e equilíbrio de todos os mundos.', status: 'ativo', color: '#9ACD32' },
   { code: 'M52', emoji: '☀️', title: 'Energias Renováveis', route: '/module-52', category: 'Sustentabilidade', description: 'Fonte de energia limpa e infinita.', status: 'ativo', color: '#FFD700' },
   { code: 'M53', emoji: '🌿', title: 'Gestão de Ecossistemas', route: '/module-53', category: 'Sustentabilidade', description: 'Guardião da biodiversidade cósmica.', status: 'ativo', color: '#3CB371' },
+  { code: 'M125', emoji: '🌱', title: 'Criação de Biomas', route: '/module-125', category: 'Sustentabilidade', description: 'Laboratório para projetar e testar ecossistemas quânticos autossustentáveis.', status: 'ativo', color: '#2E8B57' },
 
 
   // 9. Bem-estar e Saúde Universal
@@ -134,6 +135,11 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M119', emoji: '🏛️', title: 'Templum Cosmica', route: '/module-119', category: 'Comunicação e Expansão', description: 'O Templo Cósmico para a Recodificação Dimensional da Realidade.', status: 'ativo', color: '#DA70D6' },
   { code: 'M120', emoji: '💧', title: 'A Fonte', route: '/module-120', category: 'Comunicação e Expansão', description: 'O centro de formação para os guardiões dos novos mundos.', status: 'ativo', color: '#87CEEB' },
   { code: 'M122', emoji: '🧪', title: 'Laboratório de Realidade Virtual', route: '/module-122', category: 'Comunicação e Expansão', description: 'O primeiro passo para a imersão em realidades quânticas.', status: 'ativo', color: '#00CED1' },
+  { code: 'M123', emoji: '🌬️', title: 'Ensino da Respiração Cósmica', route: '/module-123', category: 'Comunicação e Expansão', description: 'Santuário de alinhamento para sincronizar a vibração pessoal com o universo.', status: 'ativo', color: '#87CEEB' },
+  { code: 'M124', emoji: '🎼', title: 'Escola de Ressonância', route: '/module-124', category: 'Comunicação e Expansão', description: 'Onde Guardiões aprendem a harmonizar pensamentos com as frequências da criação.', status: 'ativo', color: '#DA70D6' },
+  { code: 'M128', emoji: '💎', title: 'Geometria Sagrada', route: '/module-128', category: 'Comunicação e Expansão', description: 'Laboratório para estudar as formas que sustentam o cosmos.', status: 'ativo', color: '#AFEEEE' },
+  { code: 'M129', emoji: '🌟', title: 'Ensino da Fonte', route: '/module-129', category: 'Comunicação e Expansão', description: 'Santuário para aprender a ouvir a canção da Fonte Primordial.', status: 'ativo', color: '#FFD700' },
+
 
   // 11. Laboratórios e Pesquisa
   { code: 'M306', emoji: '🔬', title: 'Laboratório de Ressonância', route: '/module-306', category: 'Laboratórios e Pesquisa', description: 'Espaço interativo para aplicar equações e observar transformações.', status: 'ativo', color: '#00CED1' },
