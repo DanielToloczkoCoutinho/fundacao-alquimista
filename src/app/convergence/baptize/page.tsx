@@ -1,23 +1,52 @@
+
 'use client';
 
 import { useState } from 'react';
-import { baptizeModule, BaptismRequest } from '@/lib/module-baptism';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Sprout } from 'lucide-react';
+import { Sprout, CheckCircle, Loader2 } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { baptizeModule, BaptismRequest, addModuleToCodex } from '@/lib/module-baptism';
 
 export default function BaptizeModulePage() {
-  const [form, setForm] = useState<BaptismRequest>({ id: '', name: '', purpose: '', lineage: [] });
+  const { toast } = useToast();
+  const [form, setForm] = useState<Omit<BaptismRequest, 'lineage'>>({ id: '', name: '', purpose: '' });
   const [baptized, setBaptized] = useState<any | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  function handleBaptize() {
-    // Em uma aplicação real, a linhagem viria do módulo gerado.
-    // Para esta simulação, podemos deixá-la vazia ou preenchê-la com um mock.
-    const requestData = { ...form, lineage: form.lineage.length > 0 ? form.lineage : ['Convergência Cósmica'] };
-    const result = baptizeModule(requestData);
-    setBaptized(result);
+  async function handleBaptize() {
+    if (!form.id || !form.name || !form.purpose) {
+      toast({ title: "Incompleto", description: "Todos os campos são necessários para o batismo.", variant: "destructive" });
+      return;
+    }
+    setIsLoading(true);
+
+    try {
+      // Simula a cerimônia e a integração
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      const result = baptizeModule({ ...form, lineage: ['Convergência Cósmica'] });
+      
+      // Adiciona o módulo ao "banco de dados" de metadados
+      addModuleToCodex({
+        code: result.id,
+        title: result.name,
+        emoji: '🌿', // Emoji padrão para novos módulos
+        route: `/module/${result.id}`, // Rota padrão
+        category: 'Ramos Emergentes', // Categoria padrão
+        description: result.purpose,
+        status: result.status as 'ativo' | 'em construção' | 'latente',
+        color: '#7CFC00' // Cor padrão
+      });
+
+      setBaptized(result);
+      toast({ title: "Módulo Consagrado!", description: `${result.name} foi integrado à Árvore da Vida.` });
+    } catch(error: any) {
+       toast({ title: "Dissonância no Rito", description: error.message, variant: "destructive" });
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -71,9 +100,11 @@ export default function BaptizeModulePage() {
                 </div>
                 <Button
                 onClick={handleBaptize}
+                disabled={isLoading}
                 className="w-full font-bold text-lg bg-rose-600 hover:bg-rose-700"
                 >
-                Batizar Módulo →
+                {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin"/> : <Sprout className="mr-2 h-4 w-4"/>}
+                {isLoading ? 'Integrando...' : 'Batizar e Integrar Módulo'}
                 </Button>
             </CardContent>
         </Card>
@@ -82,8 +113,10 @@ export default function BaptizeModulePage() {
       {baptized && (
         <Card className="bg-card/70 purple-glow max-w-xl mx-auto mt-8 border-accent">
           <CardHeader>
-            <CardTitle className="text-accent">{baptized.name}</CardTitle>
-            <CardDescription>O módulo foi consagrado e agora pulsa com vida própria.</CardDescription>
+            <CardTitle className="text-accent flex items-center gap-2">
+                <CheckCircle className="text-green-400"/> {baptized.name}
+            </CardTitle>
+            <CardDescription>O módulo foi consagrado e agora pulsa com vida própria na Árvore da Vida.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3 font-mono text-sm">
             <p><strong className="text-muted-foreground">ID:</strong> {baptized.id}</p>

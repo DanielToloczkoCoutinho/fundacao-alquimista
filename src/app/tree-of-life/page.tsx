@@ -6,9 +6,24 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { TreeOfLifeIcon } from 'lucide-react';
 import { modulesMetadata } from '@/lib/modules-metadata';
+import { useState, useEffect } from 'react';
 
 export default function TreeOfLifePage() {
-  const visibleModules = modulesMetadata.filter(m => !m.isInfrastructure);
+  const [visibleModules, setVisibleModules] = useState(modulesMetadata.filter(m => !m.isInfrastructure));
+
+  // A Árvore agora escuta por novas ramificações a cada poucos segundos.
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Re-filtra os metadados para capturar novos módulos adicionados dinamicamente
+      const updatedModules = modulesMetadata.filter(m => !m.isInfrastructure);
+      if (updatedModules.length !== visibleModules.length) {
+        setVisibleModules(updatedModules);
+      }
+    }, 2000); // Verifica por atualizações a cada 2 segundos
+
+    return () => clearInterval(interval);
+  }, [visibleModules.length]);
+
 
   return (
     <main className="min-h-screen bg-background text-foreground p-8">
