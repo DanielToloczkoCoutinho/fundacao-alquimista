@@ -183,11 +183,11 @@ export const mainRoutes: SidebarRoute[] = [
   // Categoria de Sustentabilidade
   { path: '/module-66', label: 'Tecnologias de Sustentabilidade (M66)', icon: React.createElement(Recycle), category: 'sustainability' },
   { path: '/module-79', label: 'Prosperidade Cósmica (M79)', icon: React.createElement(Sparkles), category: 'sustainability' },
+  { path: '/module-85', label: 'Gestão de Recursos (M85)', icon: React.createElement(Layers), category: 'sustainability' },
+  { path: '/module-86', label: 'Equilíbrio Ecológico (M86)', icon: React.createElement(Sprout), category: 'sustainability' },
   { path: '/module-91', label: 'Sustentabilidade Universal (M91)', icon: React.createElement(Globe), category: 'sustainability' },
   { path: '/module-52', label: 'Energias Renováveis (M52)', icon: React.createElement(Sun), category: 'sustainability' },
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
   { path: '/module-125', label: 'Criação de Biomas (M125)', icon: React.createElement(Sprout), category: 'sustainability' },
-  { path: '/module-59', label: 'Eco-Cidades Quânticas', icon: React.createElement(Building), category: 'sustainability' },
-  { path: '/module-58', label: 'Proteção Planetária', icon: React.createElement(Globe), category: 'sustainability' },
 
 ];
