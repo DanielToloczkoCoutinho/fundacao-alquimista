@@ -139,7 +139,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-94', label: 'Morfogênese (M94)', icon: React.createElement(Dna), category: 'engineering' },
   { path: '/module-14', label: 'Transmutador Quântico (M14)', icon: React.createElement(Atom), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
-  { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
+  { path: '/module-88', label: 'Gerador de Realidades (M88)', icon: React.createElement(Milestone), category: 'engineering' },
   { path: '/module-321', label: 'Criação de Linhas de Tempo (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
   { path: '/module-114', label: 'Engenharia Cósmica (M114)', icon: React.createElement(Layers), category: 'engineering' },
   { path: '/module-31', label: 'Manipulação da Realidade (M31)', icon: React.createElement(Wand), category: 'engineering' },
@@ -183,8 +183,7 @@ export const mainRoutes: SidebarRoute[] = [
   // Categoria de Sustentabilidade
   { path: '/module-66', label: 'Tecnologias de Sustentabilidade (M66)', icon: React.createElement(Recycle), category: 'sustainability' },
   { path: '/module-79', label: 'Prosperidade Cósmica (M79)', icon: React.createElement(Sparkles), category: 'sustainability' },
-  { path: '/module-85', label: 'Gestão de Recursos (M85)', icon: React.createElement(Layers), category: 'sustainability' },
-  { path: '/module-86', label: 'Equilíbrio Ecológico (M86)', icon: React.createElement(Sprout), category: 'sustainability' },
+  { path: '/module-86', label: 'Equilíbrio Ecológico e Regeneração', route: '/module-86', category: 'Sustentabilidade', description: 'Restaura a saúde dos ecossistemas.', status: 'ativo', color: '#2E8B57' },
   { path: '/module-91', label: 'Sustentabilidade Universal (M91)', icon: React.createElement(Globe), category: 'sustainability' },
   { path: '/module-52', label: 'Energias Renováveis (M52)', icon: React.createElement(Sun), category: 'sustainability' },
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
