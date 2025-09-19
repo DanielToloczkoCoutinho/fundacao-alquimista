@@ -1,4 +1,3 @@
-
 'use server';
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
@@ -27,6 +26,7 @@ import { mobilizeGuardians as runMobilizeGuardians, type MobilizeGuardiansOutput
 import { processZennithCommand as runProcessZennithCommand, type ZennithCommandOutput } from '@/ai/flows/zennith-portal-flow';
 import { generateVibrationalPraise as runGenerateVibrationalPraise, type RecognitionInput, type RecognitionOutput } from '@/ai/flows/recognition-flow';
 import { runLunarReview, type LunarReviewOutput } from '@/ai/flows/lunar-review-flow';
+import { decodeCosmicMessage as runDecodeCosmicMessage, type CosmicMessageInput, type DecodedMessageOutput } from '@/ai/flows/cosmic-message-decoder-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -198,7 +198,6 @@ export async function emitLoveFrequency(data: { targetArea: string, frequency: n
 export async function getOmegaPerspective(evolutionSummary: string): Promise<OmegaPerspectiveOutput & { error: string | null }> {
     try {
         const result = await runGetOmegaPerspective({ evolutionSummary });
-        // Adicionando uma verificação para garantir que o resultado não seja nulo, o que causaria um erro.
         if (!result) {
           throw new Error('A Perspectiva Ômega retornou um resultado nulo.');
         }
@@ -206,7 +205,6 @@ export async function getOmegaPerspective(evolutionSummary: string): Promise<Ome
     } catch (e: any) {
         console.error(e);
         const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
-        // Garantindo que um objeto de erro completo seja sempre retornado.
         return { analysisTitle: "Dissonância Ômega", synthesis: "", iamEvaluation: "", nextStepRecommendation: "", error: errorMsg };
     }
 }
@@ -275,8 +273,10 @@ export async function generateVibrationalPraise(input: RecognitionInput): Promis
   }
 }
 
-
-// Ação exportada para ser chamada pelo cliente
 export async function performLunarReview(): Promise<LunarReviewOutput> {
   return await runLunarReview();
+}
+
+export async function decodeCosmicMessage(input: CosmicMessageInput): Promise<DecodedMessageOutput & { error: string | null }> {
+  return await runDecodeCosmicMessage(input);
 }

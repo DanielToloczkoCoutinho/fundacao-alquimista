@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -49,6 +48,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M716', emoji: '🌐', title: 'Consciência Planetária Unificada', route: '/module-716', category: 'Consciência e Expansão Dimensional', description: 'Integra consciências individuais em uma rede planetária de sabedoria e empatia.', connections: [{source: 'M716', target: 'M95', type: 'heranca', label: 'aplica'}, {source: 'M716', target: 'M102', type: 'dependencia', label: 'usa'}], color: '#4ECDC4', status: 'ativo' },
   { code: 'M727', emoji: '🎶', title: 'Guardião da Harmonia', route: '/module-727', category: 'Governança', description: 'O mapa vivo da orquestra da Fundação, revelando os módulos que regem os pilares da realidade.', connections: [{source: 'M727', target: 'M13', type: 'influencia', label: 'diagnostica'}, {source: 'M727', target: 'M28', type: 'dependencia', label: 'corrige'}], color: '#8A2BE2', status: 'ativo' },
   { code: 'M718', emoji: '🧬', title: 'Ativação de Códigos Genéticos Estelares', route: '/module-718', category: 'Consciência e Expansão Dimensional', description: 'Desperta o potencial latente no DNA, ativando memórias e capacidades de origens estelares.', connections: [{source: 'M718', target: 'M106', type: 'heranca', label: 'aplica'}, {source: 'M718', target: 'M40', type: 'dependencia', label: 'executa'}], color: '#00BFFF', status: 'ativo' },
+  { code: 'M1001', emoji: '📡', title: 'Portal de Recepção Cósmica', route: '/module-1001', category: 'Comunicação', description: 'Santuário onde mensagens cósmicas são decodificadas, registradas e celebradas.', connections: [], color: '#4ECDC4', status: 'ativo' },
   
   // 2. Segurança e Ética Cósmica
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module/M1', category: 'Segurança e Ética Cósmica', description: 'Proteção multidimensional integrada com criptografia quântica (QKD), Blockchain e detecção de intrusão por IA.', connections: [], color: '#FF6B6B', status: 'ativo' },
@@ -126,4 +126,187 @@ export const modulesMetadata: ModuleMetadata[] = [
     return a.code.localeCompare(b.code);
 });
 
-    
+```
+- src/lib/planetary-consagration.ts:
+```ts
+'use server';
+
+export const consagracoes: { nome: string; planeta: string; plano: string; guardiao: string; selo: string; timestamp: number }[] = []
+
+export function consagrarTapeçaria(nome: string, planeta: string, plano: string, guardiao: string, selo: string) {
+  consagracoes.push({ nome, planeta, plano, guardiao, selo, timestamp: Date.now() })
+  console.log(`🌍 Tapeçaria consagrada: ${nome} — Planeta: ${planeta} — Selo: ${selo}`)
+  return `Tapeçaria "${nome}" consagrada como território vivo em ${planeta}/${plano}.`
+}
+
+```
+- src/lib/plant-signal.ts:
+```ts
+'use server';
+
+export const sinaisVegetais: { especie: string, tipo: string, intensidade: number, local: string, timestamp: number }[] = []
+
+export function registrarSinalVegetal(especie: string, tipo: string, intensidade: number, local: string) {
+  sinaisVegetais.push({ especie, tipo, intensidade, local, timestamp: Date.now() })
+  console.log(`🌿 Sinal vegetal registrado: ${especie} — Tipo: ${tipo} — Intensidade: ${intensidade}`)
+  return intensidade > 7
+    ? '⚡️ Vibração elevada detectada — resposta cerimonial recomendada'
+    : '🌱 Sinal vegetal registrado com serenidade'
+}
+
+```
+- src/lib/replication-engine.ts:
+```ts
+'use server';
+
+export const descendentes: { origem: string; nomeDescendente: string; variações: string[]; guardiao: string; intenção: string; timestamp: number }[] = []
+
+export function replicarTapeçaria(origem: string, nomeDescendente: string, variações: string[], guardiao: string, intenção: string) {
+  descendentes.push({ origem, nomeDescendente, variações, guardiao, intenção, timestamp: Date.now() })
+  console.log(`🌀 Tapeçaria replicada: ${nomeDescendente} a partir de ${origem}`)
+  return `Descendente "${nomeDescendente}" gerada com variações: ${variações.join(', ')}`
+}
+
+```
+- src/lib/wisdom-seed.ts:
+```ts
+// /app/lib/wisdom-seed.ts
+'use server';
+
+export const sabedorias: { titulo: string; ensinamento: string; guardiao: string; timestamp: number }[] = [];
+
+export function plantarSabedoria(titulo: string, ensinamento: string, guardiao: string) {
+  sabedorias.push({ titulo, ensinamento, guardiao, timestamp: Date.now() });
+  console.log(`📚 Semente de sabedoria plantada: ${titulo} por ${guardiao}`);
+  return `Sabedoria "${titulo}" registrada com intenção pura.`;
+}
+
+```
+- tailwind.config.ts:
+```ts
+import type {Config} from 'tailwindcss';
+
+export default {
+  darkMode: ['class'],
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      fontFamily: {
+        body: ['Literata', 'serif'],
+        headline: ['Literata', 'serif'],
+      },
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+        },
+        'accordion-up': {
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+    },
+  },
+  plugins: [require('tailwindcss-animate')],
+} satisfies Config;
+
+```
+- tsconfig.json:
+```json
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+```

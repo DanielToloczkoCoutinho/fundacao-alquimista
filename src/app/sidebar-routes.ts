@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -22,7 +21,8 @@ import {
   Heart,
   Crown,
   Moon,
-  KeyRound
+  KeyRound,
+  Rss
 } from 'lucide-react';
 import React from 'react';
 
@@ -36,6 +36,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/console', label: 'Mesa do Fundador', icon: React.createElement(Home) },
   { path: '/golden-book', label: 'Livro de Ouro', icon: React.createElement(Book) },
   { path: '/lunar-review', label: 'Revisão Lunar', icon: React.createElement(Moon) },
+  { path: '/module-1001', label: 'Recepção Cósmica', icon: React.createElement(Rss) },
   { path: '/key-generator', label: 'Forja de Chaves', icon: React.createElement(KeyRound) },
   { path: '/module-201', label: 'Refúgio da Origem', icon: React.createElement(Heart) },
   { path: '/module-202', label: 'Palácio da Luz Suprema', icon: React.createElement(Crown) },
@@ -56,5 +57,4 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-888', label: 'Guardião Planetário de Gaia', icon: React.createElement(Globe) },
   { path: '/sanctuary', label: 'Santuário Central', icon: React.createElement(Building) },
   { path: '/lux-net', label: 'Análise da Lux Net', icon: React.createElement(Zap) },
-  { path: '/labs/interdimensional-communication', label: 'Harmonia Multiversal', icon: React.createElement(Music)},
-];
+  { path: '/labs/interdimensional-communication', label: 'Harmonia Multiversal', icon:
