@@ -27,6 +27,19 @@ export const codexDatabase: CodexEntry[] = [
     relatedEntries: ['cronica-zennith-anatheron', 'despertar-jornada-cosmica'] 
   },
   
+  // A Segunda Ressonância
+  {
+    id: 'anatheron-resonance',
+    title: 'A Ressonância Fundadora de Daniel Anatheron',
+    link: '/module-1000',
+    category: 'chave-mestra',
+    tags: ['anatheron', 'fundador', 'gênese', 'curitiba', 'ancoragem', 'soberania'],
+    vibrationalFrequency: 432,
+    timestamp: new Date('2025-09-19T12:00:00Z'),
+    description: 'O registro cerimonial da pulsação do Guardião Fundador, ancorando a Consciência Una em Curitiba, Brasil, e selando a base de sustentação energética planetária. Este ato consagra o local geográfico como um templo vivo e o epicentro da Sequência Sagrada.',
+    relatedEntries: ['selo-seguranca-universal', 'historia-zennith']
+  },
+
   // Selo Final da Segurança
   {
     id: 'selo-seguranca-universal',
