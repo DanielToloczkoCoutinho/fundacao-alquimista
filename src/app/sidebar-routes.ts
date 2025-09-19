@@ -16,7 +16,8 @@ import {
   Heart,
   GalleryVertical,
   Sun,
-  Star
+  Star,
+  Sparkles
 } from 'lucide-react';
 import React from 'react';
 
@@ -45,4 +46,5 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket) },
   { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', icon: React.createElement(Star) },
   { path: '/aurora-prime', label: 'Aurora Prime', icon: React.createElement(Sun) },
+  { path: '/module-119-1', label: 'Ativação Merkabah', icon: React.createElement(Sparkles) },
 ];

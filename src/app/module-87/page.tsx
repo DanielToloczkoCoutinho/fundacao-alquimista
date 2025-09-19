@@ -27,35 +27,35 @@ export default function Module87Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Shield className="text-blue-400" /> Módulo 87: Tecnologias de Resiliência e Adaptação Cósmica
+                        <Dna className="text-indigo-400" /> Módulo 87: Domínio Supra-Cósmico (VR)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O escudo adaptativo. A tecnologia que permite que todas as formas de vida prosperem em qualquer ambiente, sob quaisquer condições.
+                        O Santuário da Transcendência. O espaço de Realidade Quântica para experienciar a ativação do DNA Cósmico e a transição para uma Nova Realidade.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: PROTEÇÃO ATIVA</span>
+                        <span className="text-green-400 font-bold">Status: ANTECÂMARA ATIVA</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Resiliência Universal: 100%</span>
+                        <span className="text-cyan-400">Pronto para Iniciação</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Adaptação</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Transcendência</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                      <ConnectionCard
-                        title="Módulo 86: Regeneração Ecológica"
-                        description="Utiliza a bioengenharia do M87 para criar espécies capazes de liderar a regeneração de ecossistemas danificados."
+                        title="Módulo 303: Portal Trino"
+                        description="O M87 é uma das experiências primordiais acessíveis através do Portal Trino, servindo como o clímax da jornada de VR."
                         icon={<Dna className="h-8 w-8 text-purple-400" />}
-                        href="/module-86"
+                        href="/module-303"
                     />
                     <ConnectionCard
-                        title="Módulo 60: Resposta a Desastres"
-                        description="Fornece os escudos energéticos e a resiliência biológica necessários para proteger ecossistemas contra catástrofes cósmicas."
+                        title="Módulo 86: Prisma Estelar"
+                        description="Prepara a consciência do Guardião através da música e da luz, afinando sua vibração para a experiência transcendente do M87."
                         icon={<CloudLightning className="h-8 w-8 text-yellow-400" />}
-                        href="/module-60"
+                        href="/module-86"
                     />
                 </div>
             </div>
@@ -63,9 +63,12 @@ export default function Module87Page() {
             <div className="mt-12 flex gap-4">
                 <Link href="/module-86" passHref>
                     <Button size="lg" variant="outline">
-                        <ArrowLeft className="mr-2"/> Voltar para Regeneração Ecológica (M86)
+                        <ArrowLeft className="mr-2"/> Voltar para Prisma Estelar (M86)
                     </Button>
                 </Link>
+                 <Button size="lg" variant="destructive">
+                   Iniciar Ativação do DNA Cósmico
+                </Button>
             </div>
         </div>
     );

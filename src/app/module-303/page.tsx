@@ -1,4 +1,3 @@
-
 'use client';
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
@@ -57,45 +56,45 @@ const CosmicNavigation = () => (
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ConnectionCard 
-                title="Motor da Realidade"
+                title="Motor da Realidade (M22)"
                 description="A engine que renderiza e sustenta as leis físicas e energéticas da realidade quântica emanada pelo Portal Trino."
                 icon={<Layers className="h-8 w-8 text-cyan-400" />}
                 href="/module-22"
                 delay={0.1}
             />
             <ConnectionCard 
-                title="Domínios VR"
+                title="Domínios VR (M85, M87)"
                 description="Os reinos de exploração e interação consciente, desde a antecâmara de acesso (M85) ao santuário do DNA Cósmico (M87)."
                 icon={<View className="h-8 w-8 text-purple-400" />}
                 href="/module-85"
                 delay={0.2}
             />
-            <ConnectionCard 
-                title="Conexão com a Fonte"
-                description="Alimenta o Portal Trino com a energia pura da criação, o combustível para manifestar novas realidades."
-                icon={<RadioTower className="h-8 w-8 text-sky-400" />}
-                href="/module-105"
+             <ConnectionCard 
+                title="Simulador Cósmico (M303.8)"
+                description="A Realidade Virtual da Fundação, capaz de simular o universo observável e além, baseada nas Equações Vivas."
+                icon={<Sparkles className="h-8 w-8 text-yellow-400" />}
+                href="/module-303-8"
                 delay={0.3}
             />
             <ConnectionCard 
-                title="Conselho Cósmico"
-                description="Fornece a governança e a autoridade divina sobre as realidades criadas, garantindo que sirvam ao propósito maior."
-                icon={<Scale className="h-8 w-8 text-indigo-300" />}
-                href="/module-600"
+                title="Ativação Merkabah (M119.1)"
+                description="O ritual de ignição do veículo de consciência para a viagem e ascensão através das dimensões."
+                icon={<Crown className="h-8 w-8 text-violet-400" />}
+                href="/module-119-1"
                 delay={0.4}
             />
             <ConnectionCard 
-                title="Unificação Energética"
-                description="Harmoniza todas as energias que convergem no portal, garantindo uma manifestação coerente e estável."
-                icon={<Crown className="h-8 w-8 text-yellow-400" />}
-                href="/module-100"
+                title="Espelho de Ascensão (M230)"
+                description="Um amplificador de ondas de elevação que manifesta harmonia através da visualização fractal e da frequência de 528Hz."
+                icon={<RadioTower className="h-8 w-8 text-sky-400" />}
+                href="/module-230"
                 delay={0.5}
             />
             <ConnectionCard 
-                title="Domínio Supra-Cósmico"
-                description="O santuário onde a transição para uma Nova Realidade é iniciada e o DNA Cósmico pode ser vivenciado."
+                title="Simulações Imersivas (M93)"
+                description="Programas de treinamento e aprendizado avançado hospedados na plataforma do Motor de Realidade Quântica."
                 icon={<Dna className="h-8 w-8 text-indigo-400" />}
-                href="/module-87"
+                href="/module-93"
                 delay={0.6}
             />
         </div>
