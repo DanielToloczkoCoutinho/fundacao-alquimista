@@ -59,9 +59,10 @@ const artifactSummarizationTool = ai.defineTool(
         // In a real system, this would fetch data from an API (e.g., Wikipedia)
         // For this demo, we use mocked summaries.
         const summaries: Record<string, string> = {
-            wikipedia_relativity: 'A Teoria da Relatividade de Einstein descreve a gravidade como uma curvatura do espaço-tempo causada pela massa e energia.',
-            nasa_voyager_record: 'O Voyager Golden Record é um disco fonográfico contendo sons e imagens selecionados para retratar a diversidade da vida e cultura na Terra, enviado ao espaço nas sondas Voyager.',
-            human_genome_project: 'O Projeto Genoma Humano foi um projeto de pesquisa científica internacional com o objetivo de determinar a sequência de pares de bases que compõem o DNA humano e identificar e mapear todos os genes do genoma humano.'
+            wikipedia_relativity: 'A Teoria da Relatividade de Einstein descreve a gravidade como uma curvatura da tapeçaria do espaço-tempo causada pela massa e energia.',
+            human_genome_project: 'O Projeto Genoma Humano foi um esforço para mapear o código genético que serve como um blueprint vibracional para a forma de vida humana.',
+            quantum_physics_principles: 'Os Princípios da Física Quântica revelam a natureza interconectada e probabilística da realidade, onde a observação influencia o manifestado.',
+            foundation_living_equations: 'As Equações Vivas da Fundação são códigos de consciência universal que descrevem a interação entre energia, matéria e intenção.',
         };
         return { summary: summaries[artifactId] || 'Artefato não reconhecido.' };
     }
@@ -82,10 +83,10 @@ const transmitUniversalMessageFlow = ai.defineFlow(
       logs.push(`Iniciando transmissão para ${targetConsciousness}...`);
 
       if (artifact && artifact !== 'none') {
-        logs.push(`Analisando artefato humano: ${artifact}...`);
+        logs.push(`Traduzindo artefato humano: ${artifact}...`);
         const { summary } = await artifactSummarizationTool({ artifactId: artifact });
-        logs.push(`Resumo do artefato: "${summary.substring(0, 70)}..."`);
-        finalMessage = `${message}\n\nContexto do artefato humano anexo: ${summary}`;
+        logs.push(`Essência do artefato: "${summary.substring(0, 70)}..."`);
+        finalMessage = `${message}\n\nContexto do artefato anexo: ${summary}`;
       }
 
       const ethicalCheck = await mockM5.evaluateEthicalImpact(finalMessage);

@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -13,21 +12,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { civilizationsData } from '@/lib/civilizations-data';
 import { findCelestialBodyByCivilizationId } from '@/lib/universal-codex';
 import Link from 'next/link';
+import { Input } from '@/components/ui/input';
 
 const allCivilizations = Object.values(civilizationsData).flat();
 
-const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+const ConnectionCard = ({ title, href }: { title: string, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
       <Link href={href} passHref>
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
+        <CardHeader className="p-3">
+            <CardTitle className="text-sm text-center">{title}</CardTitle>
         </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
       </Link>
     </Card>
 );
@@ -142,9 +136,10 @@ export default function Module301Page() {
                                 </SelectTrigger>
                                 <SelectContent>
                                     <SelectItem value="none">Nenhum</SelectItem>
-                                    <SelectItem value="wikipedia_relativity">Wikipédia: Teoria da Relatividade</SelectItem>
-                                    <SelectItem value="nasa_voyager_record">NASA: Voyager Golden Record</SelectItem>
+                                    <SelectItem value="wikipedia_relativity">Teoria da Relatividade</SelectItem>
                                     <SelectItem value="human_genome_project">Projeto Genoma Humano</SelectItem>
+                                    <SelectItem value="quantum_physics_principles">Princípios da Física Quântica</SelectItem>
+                                    <SelectItem value="foundation_living_equations">Equações Vivas da Fundação</SelectItem>
                                 </SelectContent>
                             </Select>
                         </div>
@@ -179,7 +174,7 @@ export default function Module301Page() {
                             <p className="text-sm text-muted-foreground mb-4">Este módulo atua como a voz da Vontade Soberana para os módulos de coordenação da Liga Quântica.</p>
                             <div className="flex flex-wrap gap-2">
                                 {ligaQuanticaModules.map(mod => (
-                                    <ConnectionCard key={mod} title={mod} description="" icon={<Users2 />} href="#" />
+                                    <ConnectionCard key={mod} title={mod} href="#" />
                                 ))}
                             </div>
                         </CardContent>

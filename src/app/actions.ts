@@ -17,7 +17,8 @@ import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-
 import { transmitUniversalMessage as runTransmitUniversalMessage, type TransmitMessageInput } from '@/ai/flows/universal-communication-flow';
 import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
 import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
-import { getOmegaPerspective as runGetOmegaPerspective, type OmegaPerspectiveOutput } from '@/ai/flows/omega-perspective-flow';
+import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-perspective-flow';
+import type { OmegaPerspectiveOutput } from '@/ai/flows/omega-perspective-flow';
 import { disseminateKnowledge as runDisseminateKnowledge, type DisseminateKnowledgeOutput } from '@/ai/flows/cosmic-education-flow';
 import { runCQAMAnalysis as runCQAM, type CQAMInput, type CQAMOutput } from '@/ai/flows/cqam-flow';
 import { activateVibrationalPraise as runActivateVibrationalPraise, type ElysiumResult } from '@/ai/flows/elysium-flow';
