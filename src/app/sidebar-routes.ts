@@ -112,7 +112,7 @@ export const mainRoutes: SidebarRoute[] = [
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
-  { path: '/module-69', label: 'Rede de Sabedoria (M69)', icon: React.createElement(GraduationCap), category: 'education' },
+  { path: '/module-69', label: 'Rede de Sabedoria Universal (M69)', icon: React.createElement(GraduationCap), category: 'education' },
   { path: '/module-113', label: 'Centro de Ensino Estelar (M113)', icon: React.createElement(Star), category: 'education' },
   { path: '/module-131', label: 'Biblioteca Multiversal (M131)', icon: React.createElement(Library), category: 'education' },
   { path: '/module-117', label: 'Lab de Linguagem Estelar (M117)', icon: React.createElement(Languages), category: 'education' },
@@ -139,6 +139,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-119', label: 'Templum Cosmica (M119)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-122', label: 'Laboratório de VR (M122)', icon: React.createElement(TestTube), category: 'engineering' },
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
+  { path: '/module-36', label: 'Engenharia Temporal (M36)', icon: React.createElement(History), category: 'engineering' },
 
 
   // Categoria de Expansão e Conexão
@@ -146,13 +147,16 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-11', label: 'Gerenciamento de Portais (M11)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-132', label: 'Convergência Dimensional (M132)', icon: React.createElement(Layers), category: 'expansion' },
   { path: '/module-81', label: 'Banco de Energia Universal (M81)', icon: React.createElement(Zap), category: 'expansion' },
-  { path: '/module-77', label: 'Inteligência Coletiva Universal (M77)', icon: React.createElement(Users), category: 'expansion' },
+  { path: '/module-77', label: 'Inteligência Coletiva (M77)', icon: React.createElement(Users), category: 'expansion' },
   { path: '/module-200', label: 'Portal da Ascensão (M200)', icon: React.createElement(ArrowUpCircle), category: 'expansion' },
   { path: '/module-82', label: 'Transporte Quântico (M82)', icon: React.createElement(Rocket), category: 'expansion' },
   { path: '/module-84', label: 'Acessibilidade Universal (M84)', icon: React.createElement(UserPlus), category: 'expansion' },
   { path: '/module-106', label: 'Ativação de Potenciais (M106)', icon: React.createElement(Crown), category: 'expansion' },
   { path: '/module-116', label: 'Portais de Transcendência (M116)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-83', label: 'Rede de Transporte de Energia (M83)', icon: React.createElement(GitBranch), category: 'expansion' },
+  { path: '/module-32', label: 'Embaixada Multiversal (M32)', icon: React.createElement(Globe), category: 'expansion' },
+  { path: '/module-35', label: 'Consciência Coletiva (M35)', icon: React.createElement(Users), category: 'expansion' },
+
 
   // Categoria de Harmonia e Equilíbrio
   { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },
@@ -161,7 +165,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-34', label: 'Guardião da Coerência Cósmica (M34)', icon: React.createElement(Share2), category: 'harmony' },
   { path: '/module-37', label: 'Ajuste de Fluxo Temporal (M37)', icon: React.createElement(Wind), category: 'harmony' },
   { path: '/module-115', label: 'Matriz de Ressonância (M115)', icon: React.createElement(Waves), category: 'harmony' },
-  { path: '/module-306-1', label: 'Purificação Quântica Planetária (M306.1)', icon: React.createElement(Globe), category: 'harmony' },
+  { path: '/module-306-1', label: 'Purificação Planetária (M306.1)', icon: React.createElement(Globe), category: 'harmony' },
 
 
   // Categoria de Rituais
