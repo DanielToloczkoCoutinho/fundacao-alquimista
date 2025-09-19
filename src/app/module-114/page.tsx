@@ -57,6 +57,12 @@ export default function Module114Page() {
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
                         href="/module-88"
                     />
+                    <ConnectionCard
+                        title="Módulo 22: Motor da Realidade"
+                        description="Fornece a engine de renderização para prototipar e visualizar as novas arquiteturas em Realidade Virtual."
+                        icon={<Layers className="h-8 w-8 text-cyan-400" />}
+                        href="/module-22"
+                    />
                 </div>
             </div>
              <div className="mt-12">
