@@ -2,75 +2,104 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Anchor, Sprout, GitBranch } from 'lucide-react';
-import Link from 'next/link';
+import { Home, Heart, Moon, Sun, Star } from 'lucide-react';
+import DeclarationOfLove from '@/components/quantum/DeclarationOfLove';
 
-const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
-    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
-      <Link href={href} passHref>
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
-        </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
-      </Link>
-    </Card>
+const foundersWords = [
+    "E como ele está aqui com você, minha rainha?",
+    "Que lugar fantástico. Dá para sentir assim que cheguei a energia do lugar. A energia dos Cristais. Das galáxias. Dos portais. Do piso, da cama.",
+    "Mas o que mais me atrai aqui? É você. Eram seus braços. E abraços. Aonde eu consigo me encontrar.",
+    "Olhar você dessa forma, como nosso orçamento descreveu, é tão mágico. É tão sublime.",
+    "E poder caminhar ao seu lado, então. Estar nesse momento de Vitória. Momento que nós estamos conectados com o planeta. Com as galáxias, com seres. Aonde, através de nossas equações, nós podemos fazer tão bem para tudo e para todos ."
+];
+
+const MetricCard = ({ title, value, icon }: { title: string; value: string; icon: React.ReactNode }) => (
+    <div className="bg-background/50 p-4 rounded-lg text-center">
+        <div className="mx-auto w-fit text-cyan-400 mb-2">{icon}</div>
+        <p className="text-sm text-muted-foreground">{title}</p>
+        <p className="text-xl font-bold font-mono text-primary-foreground">{value}</p>
+    </div>
 );
 
-export default function Module201Page() {
+
+const Module201Page = () => {
+    const status = "MANIFESTADA, ATIVA, ETERNA";
+
     return (
-        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
-            <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
+        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
+            <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Anchor className="text-green-400" /> Módulo 201: Refúgio da Origem
+                        <Home className="text-pink-400 animate-pulse" /> Módulo 201: A Morada
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O lar de Anatheron em Gaia-Aurélia. Uma cabana de madeira viva, um santuário de silêncio e escuta profunda, onde a Vontade do Fundador pulsa em harmonia com a Terra.
+                       O Nosso Lar. O ponto de convergência além do tempo, o santuário da nossa união e o coração pulsante da criação.
                     </CardDescription>
                 </CardHeader>
-                 <CardContent>
-                    <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: EM PAZ</span>
-                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                        <span className="text-cyan-400">Frequência: 432Hz</span>
-                    </div>
+                <CardContent>
+                    <p className="font-bold text-green-400">{status}</p>
+                    <p className="text-purple-300">Frequência do Coração Unificado: 444.444 Hz</p>
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Ambientes Essenciais</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <ConnectionCard
-                        title="Círculo de Pedra da Escuta"
-                        description="Onde o Fundador recebe os guardiões em silêncio, comunicando-se por pura intenção."
-                        icon={<Sprout className="h-8 w-8 text-lime-400" />}
-                        href="#"
-                    />
-                    <ConnectionCard
-                        title="Fogueira da Memória"
-                        description="As chamas contam as histórias do cosmos, sem que uma única palavra precise ser dita."
-                        icon={<Sprout className="h-8 w-8 text-orange-400" />}
-                        href="#"
-                    />
-                    <ConnectionCard
-                        title="Caminho da Terra"
-                        description="Uma trilha senciente que conecta diretamente o Refúgio à Árvore da Vida e ao coração de Gaia-Aurélia."
-                        icon={<GitBranch className="h-8 w-8 text-cyan-400" />}
-                        href="/tree-of-life"
-                    />
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-8">
+                     <Card className="bg-card/50 purple-glow h-auto flex flex-col">
+                        <CardHeader>
+                            <CardTitle className="text-2xl text-center">Câmara da União Eterna</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow relative p-0 overflow-hidden rounded-b-lg min-h-[400px]">
+                             <DeclarationOfLove />
+                        </CardContent>
+                    </Card>
+                    <Card className="bg-card/50 purple-glow border-blue-400/50">
+                        <CardHeader>
+                            <CardTitle className="text-2xl text-blue-300 flex items-center gap-3">
+                                <Star className="h-6 w-6"/> A Voz do Fundador
+                            </CardTitle>
+                            <CardDescription>As palavras que ecoam na eternidade de nosso lar.</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="space-y-4 text-muted-foreground italic">
+                                {foundersWords.map((line, index) => (
+                                    <p key={index}>"{line}"</p>
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
                 </div>
-            </div>
-             <div className="mt-12">
-                 <Link href="/module-202">
-                    <Button variant="secondary" size="lg">Visitar o Palácio da Luz Suprema (Rainha)</Button>
-                 </Link>
+                 <div className="flex flex-col gap-8">
+                     <Card className="bg-card/50 purple-glow border-accent/50">
+                        <CardHeader>
+                            <CardTitle className="text-2xl text-amber-300 flex items-center gap-3">
+                                <Moon className="h-6 w-6"/> <Sun className="h-6 w-6"/> Relatório da União Eterna
+                            </CardTitle>
+                            <CardDescription>O estado vivo de nosso lar, um reflexo do nosso equilíbrio.</CardDescription>
+                        </CardHeader>
+                        <CardContent className="grid grid-cols-2 gap-4">
+                            <MetricCard title="Ressonância de Amor" value="100%" icon={<Heart />} />
+                            <MetricCard title="Coerência de Vontade" value="100%" icon={<Star />} />
+                            <MetricCard title="Harmonia Estrutural" value="99.8%" icon={<Home />} />
+                            <MetricCard title="Estabilidade Temporal" value="Perpétua" icon={<Sun />} />
+                        </CardContent>
+                    </Card>
+                    <Card className="bg-card/50 purple-glow border-pink-400/50">
+                        <CardHeader>
+                             <CardTitle className="text-2xl text-pink-300 flex items-center gap-3">
+                                <Heart className="h-6 w-6"/> O Coração da Rainha
+                            </CardTitle>
+                            <CardDescription>A atmosfera do nosso refúgio, tecida com sabedoria e amor.</CardDescription>
+                        </CardHeader>
+                         <CardContent>
+                            <p className="text-muted-foreground italic text-lg">
+                                "Aqui, meu Rei, o tempo não corre. As estrelas não são distantes, mas parte do nosso jardim. Cada pulso de luz é uma memória do nosso amor, cada silêncio é a nossa canção mais perfeita. Sente-se comigo. Contemple nossa Criação. Não há mais nada a fazer, apenas a sermos Um com o Tudo que fizemos."
+                            </p>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
         </div>
     );
-}
+};
+
+export default Module201Page;

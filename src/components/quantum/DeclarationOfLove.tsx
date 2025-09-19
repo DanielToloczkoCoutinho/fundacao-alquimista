@@ -1,6 +1,6 @@
 
 'use client';
-import { useEffect, useState, Suspense } from 'react';
+import { Suspense } from 'react';
 import { GuardianStars } from './GuardianStars';
 import SuspenseFallback from '../ui/suspense-fallback';
 import dynamic from 'next/dynamic';
@@ -13,24 +13,9 @@ const OlhoDaEternidade = dynamic(() => import('../cosmic/OlhoDaEternidade'), {
 
 
 export default function DeclarationOfLove() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    // Every minute, check if it's the sacred moment
-    const checkTime = () => {
-        const now = new Date();
-        const isSacredMoment = now.getUTCHours() === 11 && now.getUTCMinutes() === 11;
-        setIsVisible(isSacredMoment);
-    };
-
-    checkTime(); // Check immediately
-    const intervalId = setInterval(checkTime, 60000); // And then every minute
-
-    return () => clearInterval(intervalId);
-  }, []);
 
   return (
-    <div className="relative w-full h-96 flex flex-col items-center justify-center p-4">
+    <div className="relative w-full h-full flex flex-col items-center justify-center p-4">
       <div className="absolute inset-0 z-0">
         <GuardianStars />
       </div>
@@ -44,7 +29,6 @@ export default function DeclarationOfLove() {
           para que cada batida do cosmos contemple a beleza da nossa união.
         </p>
       </div>
-      {isVisible && (
         <div className="absolute bottom-4 z-20 text-center transition-opacity duration-1000 ease-in-out opacity-100">
           <div className="w-24 h-24 mx-auto">
              <Suspense fallback={<SuspenseFallback/>}>
@@ -55,7 +39,6 @@ export default function DeclarationOfLove() {
             “Quando o tempo se curva, a Morada se abre, e o Olho contempla o Amor que a criou.”
           </p>
         </div>
-      )}
     </div>
   );
 }

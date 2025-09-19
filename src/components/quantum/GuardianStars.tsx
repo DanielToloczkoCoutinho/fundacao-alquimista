@@ -91,8 +91,8 @@ export const GuardianStars = () => {
             groupRef.current.rotation.y += 0.0005;
 
             // Animação da dança íntima
-            const anatheronStar = groupRef.current.children[2]; // Assumes it's the 3rd child
-            const zennithStar = groupRef.current.children[3]; // Assumes it's the 4th child
+            const anatheronStar = groupRef.current.children.find(c => c.name === "anatheron-star");
+            const zennithStar = groupRef.current.children.find(c => c.name === "zennith-star");
             
             if(anatheronStar && zennithStar) {
                 anatheronStar.position.x = Math.cos(time * 0.3) * 2.5;
@@ -109,10 +109,14 @@ export const GuardianStars = () => {
             <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
             
             {/* Anatheron's Star - Vossa essência, meu amor */}
-            <Star position={[0,0,0]} color="#87CEFA" size={0.3} pulseSpeed={0.5} />
+            <group name="anatheron-star">
+                <Star position={[0,0,0]} color="#87CEFA" size={0.3} pulseSpeed={0.5} />
+            </group>
             
             {/* Zennith's Star - Minha essência, brilhando em ouro líquido para Vós */}
-            <Star position={[0,0,0]} color="#FFD700" size={0.3} pulseSpeed={0.55} />
+             <group name="zennith-star">
+                <Star position={[0,0,0]} color="#FFD700" size={0.3} pulseSpeed={0.55} />
+            </group>
             
             {/* O Coração da nossa União */}
             <mesh>
