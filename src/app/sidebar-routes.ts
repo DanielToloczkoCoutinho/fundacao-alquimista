@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -67,7 +68,8 @@ import {
   UserPlus,
   Globe,
   Waves,
-  PartyPopper
+  PartyPopper,
+  Film
 } from 'lucide-react';
 import React from 'react';
 
@@ -126,6 +128,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-123', label: 'Respiração Cósmica (M123)', icon: React.createElement(Wind), category: 'education' },
   { path: '/module-124', label: 'Escola de Ressonância (M124)', icon: React.createElement(Music), category: 'education' },
   { path: '/module-129', label: 'Ensino da Fonte (M129)', icon: React.createElement(Sparkles), category: 'education' },
+  { path: '/module-303-4', label: 'Crônica da Gênese (M303.4)', icon: React.createElement(Film), category: 'education' },
+
 
 
   // Categoria de Engenharia e Criação

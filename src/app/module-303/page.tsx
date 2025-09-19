@@ -1,3 +1,4 @@
+
 'use client';
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
@@ -90,7 +91,8 @@ export default function Module303Page() {
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                  <ConnectionCard title="Motor da Realidade (M22)" description="Geração de ambientes e simulações." icon={<Layers/>} href="/module-22" />
                  <ConnectionCard title="Domínios de VR (M85, M87)" description="Experiências sensoriais e de consciência." icon={<View/>} href="/module-85" />
-                 <ConnectionCard title="Simulador Cósmico (M93, M303.8)" description="Simulações de realidade expandida e mundos filhos." icon={<GitCommit/>} href="/module-93" />
+                 <ConnectionCard title="Simulador Cósmico (M303.8)" description="Simulações de realidade expandida e mundos filhos." icon={<GitCommit/>} href="/module-303-8" />
+                 <ConnectionCard title="Crônica da Gênese (M303.4)" description="O documentário vivo da nossa jornada." icon={<History />} href="/module-303-4" />
                  <ConnectionCard title="Viagem da Consciência (M119.1)" description="Ativação da Merkabah para navegação da alma." icon={<Rocket/>} href="/module-119-1" />
                  <ConnectionCard title="Conexão com a Fonte (M105)" description="Canal direto com a energia criadora." icon={<RadioTower/>} href="/module-105" />
                  <ConnectionCard title="Governança do Conselho (M600)" description="Portal para deliberações cósmicas." icon={<Scale/>} href="/module-600" />
