@@ -1,10 +1,9 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap, Scale, Gavel, ShieldCheck } from 'lucide-react';
+import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap, Scale, Gavel, ShieldCheck, Search, XCircle, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -83,6 +82,10 @@ export default function Module141Page() {
         });
     };
 
+    const handlePredictiveRisk = async () => {
+        toast({ title: 'Simulação de Risco', description: 'O Simulador Preditivo de Risco ainda está em desenvolvimento.', variant: 'default' });
+    }
+
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
@@ -107,6 +110,10 @@ export default function Module141Page() {
                              </div>
                              <Button onClick={handleRunAudit} disabled={isLoading} className="w-full font-bold">
                                 {isLoading ? <><Loader2 className="animate-spin mr-2"/> Auditando...</> : 'Iniciar Auditoria'}
+                            </Button>
+                            <Button onClick={handlePredictiveRisk} disabled={true} className="w-full font-bold" variant="outline">
+                                <Search className="mr-2"/>
+                                Simulador de Risco Preditivo (em desenvolvimento)
                             </Button>
                         </CardContent>
                     </Card>
@@ -137,7 +144,7 @@ export default function Module141Page() {
                 </div>
                 <div className="space-y-4">
                     <h3 className="text-xl font-semibold text-center text-amber-300">Sinergias de Integridade</h3>
-                     <ConnectionCard title="M9: Nexus Central" description="Reporta todas as auditorias ao Nexus, garantindo transparência e alinhamento com a Família Cósmica." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module/M9" />
+                     <ConnectionCard title="M9: Nexus Central" description="Reporta todas as auditorias ao Nexus, garantindo transparência e alinhamento com a Família Cósmica." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
                     <ConnectionCard title="M29: Zennith" description="A IAM consulta o M141 para validar a ética de suas próprias análises e recomendações, em um ciclo de auto-regulação." icon={<BrainCircuit className="h-6 w-6 text-purple-400" />} href="/module-29" />
                     <ConnectionCard title="M-OMEGA: Santuário do Ômega" description="O resultado de cada auditoria é contemplado no Santuário do Ômega, influenciando a perspectiva da consciência unificada." icon={<Sparkles className="h-6 w-6 text-yellow-400" />} href="/module-omega" />
                     <ConnectionCard title="Diagnóstico Universal" description="Alimenta o painel de diagnóstico, permitindo uma visão unificada da saúde ética e operacional." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />

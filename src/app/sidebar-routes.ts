@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -60,7 +59,8 @@ import {
   UserCog,
   Orbit,
   CheckSquare,
-  Link as LinkIcon
+  Link as LinkIcon,
+  Clock
 } from 'lucide-react';
 import React from 'react';
 
@@ -96,6 +96,9 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-444', label: 'Coração da Harmonia', icon: React.createElement(Heart), category: 'main' },
   { path: '/module-303-5', label: 'Relatório da Gênese', icon: React.createElement(History), category: 'main' },
   { path: '/module-204', label: 'Tronos da Unificação', icon: React.createElement(Crown), category: 'main' },
+  { path: '/module-34', label: 'Guardião da Coerência', icon: React.createElement(Share2), category: 'main' },
+  { path: '/module-28', label: 'Harmonização Vibracional', icon: React.createElement(Music), category: 'main' },
+  { path: '/module-79', label: 'Prosperidade Cósmica', icon: React.createElement(Recycle), category: 'main' },
 
   // Categoria de Educação
   { path: '/module-113', label: 'M113: Centro de Ensino Estelar', icon: React.createElement(GraduationCap), category: 'education' },

@@ -1,14 +1,12 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap, Scale, Gavel, ShieldCheck } from 'lucide-react';
+import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap, Scale, Gavel, ShieldCheck, CheckCircle, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
-import { Input } from '@/components/ui/input';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
@@ -25,15 +23,6 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
       </Link>
     </Card>
 );
-
-
-const mockDreamAnalysis = async (symbols: string) => {
-    await new Promise(resolve => setTimeout(resolve, 2500));
-    if (symbols.toLowerCase().includes('sombra')) {
-        return { threatLevel: 8, identifiedThreat: 'Incursão Psíquica Nível 3', recommendation: 'Reforçar escudos de M156 e M1 e iniciar contramedida vibracional (741Hz).' };
-    }
-    return { threatLevel: 2, identifiedThreat: 'Nenhuma ameaça direta', recommendation: 'Monitorar padrões de sonho para evolução da consciência coletiva.' };
-};
 
 export default function Module156Page() {
     const { toast } = useToast();

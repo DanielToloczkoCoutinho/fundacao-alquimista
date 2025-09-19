@@ -27,7 +27,7 @@ export default function Module341Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Flame className="text-red-500" /> Módulo 341: Física de Plasma Extrema & Astrofísica (9D)
+                        <Flame className="text-red-500" /> Módulo 341: Integração dos Fluxos de Energia Estelares
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A Forja Estelar. Estuda plasmas em condições de quasar e síncrotron para desvendar os segredos da criação estelar.

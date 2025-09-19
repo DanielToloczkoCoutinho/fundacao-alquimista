@@ -27,7 +27,7 @@ export default function Module211Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Flame className="text-orange-500" /> Módulo 211: Laboratório de Plasma e Fusão Controlada
+                        <Flame className="text-orange-500" /> Módulo 211: Centro Cósmico de Energia Primordial
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A Forja Estelar. Onde a matéria é elevada a estados de plasma para simular e otimizar reações de fusão.

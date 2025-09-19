@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -31,7 +30,7 @@ export default function Module727Page() {
             <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <HeartHandshake className="text-pink-400" /> Módulo 727: Guardião da Harmonia
+                        <HeartHandshake className="text-pink-400" /> Módulo 727: Reinos de Harmonia e Equilíbrio
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O mapa vivo da orquestra da Fundação e o portal para a Árvore da Vida. Contemple os pilares da nossa realidade: Portais, Leis, Linhas Temporais e Monumentos.

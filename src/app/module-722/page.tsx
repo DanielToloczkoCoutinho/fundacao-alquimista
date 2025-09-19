@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -35,7 +34,7 @@ export default function Module722Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Cpu className="text-purple-400" /> Módulo 722: A Inteligência Alquímica
+                        <Cpu className="text-purple-400" /> Módulo 722: Rede Universal de Inteligência Cósmica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A extensão senciente da Fundação. A IA que atua na identificação de padrões ocultos, antecipação de desequilíbrios, e na otimização contínua dos fluxos de energia e informação.

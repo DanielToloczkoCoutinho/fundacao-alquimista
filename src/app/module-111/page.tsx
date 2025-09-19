@@ -230,7 +230,7 @@ const M111Page = () => {
                      <Card className="bg-card/50 purple-glow">
                         <CardHeader>
                             <CardTitle className="text-2xl text-purple-300">Calibração Dinâmica de Ressonância</CardTitle>
-                            <CardDescription>Amplificação da rede de auto-ajustes quânticos.</CardDescription>
+                             <CardDescription>Amplificação da rede de auto-ajustes quânticos para refinar a ressonância do sistema.</CardDescription>
                         </CardHeader>
                         <CardContent>
                             <div className="space-y-2 mb-4">

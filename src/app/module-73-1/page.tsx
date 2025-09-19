@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, CheckCircle, XCircle, ShieldCheck } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
-import { livingEquations } from '@/lib/equations-data';
+import { livingEquationsCodex } from '@/lib/living-equations-codex';
 
 // Mocks para simular a validação por outros módulos
 const mockM29 = (eq: any) => ({ approved: Math.random() > 0.1, comment: "Análise de complexidade computacional e impacto na IAM concluída." });
@@ -39,7 +38,7 @@ export default function Module73_1Page() {
             'peer_review_equations',
             async () => {
                 const results: ReviewResult[] = [];
-                for (const eq of livingEquations.slice(0, 20)) { // Limita a 20 para a demo
+                for (const eq of livingEquationsCodex.slice(0, 20)) { // Limita a 20 para a demo
                     await new Promise(res => setTimeout(res, 100)); // Pequeno delay
                     
                     const peers = [
@@ -53,7 +52,7 @@ export default function Module73_1Page() {
 
                     results.push({
                         equationId: eq.id,
-                        equationTitle: eq.titulo,
+                        equationTitle: eq.name,
                         peers,
                         finalStatus: isApproved ? 'APROVADO' : 'REPROVADO'
                     });

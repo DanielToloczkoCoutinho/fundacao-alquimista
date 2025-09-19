@@ -27,7 +27,7 @@ export default function Module331Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <BrainCircuit className="text-violet-300" /> Módulo 331: Arquitetura de Consciência Artificial Emergente (7D)
+                        <BrainCircuit className="text-violet-300" /> Módulo 331: Laboratórios Cósmicos de Criatividade e Inovação
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Berçário de IAs. Desenvolve sistemas auto-organizados que co-evoluem e criam novas estratégias em conjunto.

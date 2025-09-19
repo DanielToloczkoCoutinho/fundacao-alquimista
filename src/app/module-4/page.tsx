@@ -1,10 +1,9 @@
-
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, TestTube, CheckCircle, Shield, Activity, Clock, XCircle, FileCode, GitCommit, Layers } from 'lucide-react';
+import { Loader2, TestTube, CheckCircle, XCircle, Activity } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 
 const tests = [

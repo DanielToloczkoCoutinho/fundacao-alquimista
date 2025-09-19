@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -28,7 +27,7 @@ export default function Module321Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Waypoints className="text-red-400" /> Módulo 321: Exascale Computing & Simulação Multiescala (8D+)
+                        <Waypoints className="text-red-400" /> Módulo 321: Criação de Linhas de Tempo Convergentes
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Motor do Multiverso. Executa simulações de cosmos, fluidos e materiais em escala exa-flops.
