@@ -109,6 +109,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-3', label: 'Monitor de Saturno (M3)', icon: React.createElement(Clock), category: 'security' },
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
+  { path: '/module-68', label: 'Responsabilidade Ética (M68)', icon: React.createElement(ShieldCheck), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -147,7 +148,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-11', label: 'Gerenciamento de Portais (M11)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-132', label: 'Convergência Dimensional (M132)', icon: React.createElement(Layers), category: 'expansion' },
   { path: '/module-81', label: 'Banco de Energia Universal (M81)', icon: React.createElement(Zap), category: 'expansion' },
-  { path: '/module-77', label: 'Inteligência Coletiva (M77)', icon: React.createElement(Users), category: 'expansion' },
+  { path: '/module-77', label: 'Inteligência Coletiva Universal (M77)', icon: React.createElement(Users), category: 'expansion' },
   { path: '/module-200', label: 'Portal da Ascensão (M200)', icon: React.createElement(ArrowUpCircle), category: 'expansion' },
   { path: '/module-82', label: 'Transporte Quântico (M82)', icon: React.createElement(Rocket), category: 'expansion' },
   { path: '/module-84', label: 'Acessibilidade Universal (M84)', icon: React.createElement(UserPlus), category: 'expansion' },
@@ -156,6 +157,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-83', label: 'Rede de Transporte de Energia (M83)', icon: React.createElement(GitBranch), category: 'expansion' },
   { path: '/module-32', label: 'Embaixada Multiversal (M32)', icon: React.createElement(Globe), category: 'expansion' },
   { path: '/module-35', label: 'Consciência Coletiva (M35)', icon: React.createElement(Users), category: 'expansion' },
+  { path: '/module-100', label: 'Unificação Energética (M100)', icon: React.createElement(Crown), category: 'expansion' },
 
 
   // Categoria de Harmonia e Equilíbrio
