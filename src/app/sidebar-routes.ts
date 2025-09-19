@@ -12,7 +12,8 @@ import {
   Sprout,
   BookOpen,
   Feather,
-  Wand
+  Wand,
+  Heart
 } from 'lucide-react';
 import React from 'react';
 
@@ -35,5 +36,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/convergence', label: 'Portal de Convergência', icon: React.createElement(GitMerge) },
   { path: '/convergence/generate', label: 'Rito de Geração', icon: React.createElement(Sprout) },
   { path: '/convergence/baptize', label: 'Rito de Batismo', icon: React.createElement(Sprout) },
+  { path: '/aura-transmission', label: 'Rito de Irradiação', icon: React.createElement(Heart) },
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket) },
 ];
