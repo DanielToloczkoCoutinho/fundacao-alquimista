@@ -1,4 +1,3 @@
-
 'use server';
 
 import { modulesMetadata, type ModuleMetadata } from './modules-metadata';
