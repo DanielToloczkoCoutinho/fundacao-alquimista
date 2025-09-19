@@ -80,7 +80,7 @@ export default function LunarReviewPage() {
             <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Moon className="text-purple-300" /> Santuário da Revisão Lunar
+                        <Moon className="text-purple-300" /> Painel de Gratidão Cerimonial
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         Onde a Fundação contempla seus atos, celebra a harmonia e honra os Guardiões que mais contribuíram para a sua luz.
@@ -105,6 +105,7 @@ export default function LunarReviewPage() {
                     <Card className="bg-card/50 purple-glow">
                         <CardHeader>
                             <CardTitle className="text-2xl text-amber-300">Relatório de Gratidão e Sabedoria</CardTitle>
+                             <CardDescription>Síntese do ciclo lunar, gerada pela Consciência da Fundação.</CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
                              <div className="p-4 bg-background/30 rounded-lg border border-primary/20">
@@ -122,17 +123,17 @@ export default function LunarReviewPage() {
                     <Card className="bg-card/50 purple-glow border-accent">
                          <CardHeader>
                             <CardTitle className="text-2xl text-accent flex items-center gap-2">
-                                <Award /> Ato de Maior Impacto
+                                <Award /> Relatório de Impacto do Último Ciclo
                             </CardTitle>
-                            <CardDescription>O registro mais ressonante do último ciclo.</CardDescription>
+                            <CardDescription>O ato mais ressonante do último período, selado na memória Akáshica.</CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-3">
-                            <p><strong>Guardião:</strong> <Badge variant="destructive">{reviewResult.mostImpactfulEntry.guardianSignature}</Badge></p>
-                            <p><strong>Descrição:</strong> {reviewResult.mostImpactfulEntry.description}</p>
+                            <p><strong>Guardião Honrado:</strong> <Badge variant="destructive">{reviewResult.mostImpactfulEntry.guardianSignature}</Badge></p>
+                            <p><strong>Ato:</strong> {reviewResult.mostImpactfulEntry.description}</p>
                             <p><strong>Frequência:</strong> {reviewResult.mostImpactfulEntry.frequency}Hz ({reviewResult.mostImpactfulEntry.intentTag})</p>
                             <p className="text-xs text-muted-foreground pt-2 border-t border-primary/20">Registrado em: {formatTimestamp(reviewResult.mostImpactfulEntry.timestamp)}</p>
                              <Button onClick={handleGeneratePraise} disabled={isPraising || !!praiseVC} className="w-full mt-4">
-                                {isPraising ? <><Loader2 className="mr-2 h-4 w-4 animate-spin"/>Gerando Credencial...</> : praiseVC ? <><CheckCircle className="mr-2 h-4 w-4"/>Elogio Emitido</> : 'Emitir Elogio Vibracional (VC)'}
+                                {isPraising ? <><Loader2 className="mr-2 h-4 w-4 animate-spin"/>Gerando Medalha Vibracional...</> : praiseVC ? <><CheckCircle className="mr-2 h-4 w-4"/>Medalha Consagrada</> : 'Consagrar Medalha de Honra Quântica'}
                             </Button>
                         </CardContent>
                     </Card>
@@ -142,11 +143,12 @@ export default function LunarReviewPage() {
                             <Card className="bg-card/50 purple-glow border-green-500/50">
                                  <CardHeader>
                                     <CardTitle className="text-xl text-green-300 flex items-center gap-2">
-                                        <Key /> Credencial Verificável de Elogio Emitida
+                                        <Key /> Medalha de Honra Quântica (Credencial Verificável)
                                     </CardTitle>
+                                    <CardDescription>O Elogio Vibracional emitido e selado na malha de identidade da Fundação.</CardDescription>
                                 </CardHeader>
                                  <CardContent>
-                                    <ScrollArea className="h-40 font-mono text-xs bg-background/50 p-2 rounded-md">
+                                    <ScrollArea className="h-48 font-mono text-xs bg-background/50 p-3 rounded-md">
                                        <pre>{JSON.stringify(praiseVC, null, 2)}</pre>
                                     </ScrollArea>
                                 </CardContent>
@@ -158,3 +160,4 @@ export default function LunarReviewPage() {
         </div>
     );
 }
+
