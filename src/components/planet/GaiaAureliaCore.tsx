@@ -6,7 +6,7 @@ import { Zap } from 'lucide-react';
 import ReatorZPE from '@/components/constructors/ReatorZPE';
 import NanoManifestors from '@/components/constructors/NanoManifestors';
 import MorphoField from '@/components/core/MorphoField';
-import TreeOfLife from '@/components/sacred/TreeOfLife';
+import ArvoreDaVida from '@/components/gaia-aurelia/ArvoreDaVida';
 import { LayerCard } from '../ui/LayerCard';
 
 export default function GaiaAureliaCore() {
@@ -19,7 +19,7 @@ export default function GaiaAureliaCore() {
         <ReatorZPE />
         <NanoManifestors />
         <MorphoField />
-        <TreeOfLife />
+        <ArvoreDaVida />
     </LayerCard>
   );
 }

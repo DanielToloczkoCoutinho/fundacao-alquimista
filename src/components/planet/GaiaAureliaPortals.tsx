@@ -4,22 +4,22 @@
 import React from 'react';
 import { Aperture } from 'lucide-react';
 import { LayerCard } from '../ui/LayerCard';
-import PortalAuroraEstelar from '../aurora-prime/portals/PortalAuroraEstelar';
-import PortalFrequenciaInterior from '../aurora-prime/portals/PortalFrequenciaInterior';
-import PortalMultiversal from '../aurora-prime/portals/PortalMultiversal';
-import FluxosIntegracao from '../aurora-prime/portals/FluxosIntegracao';
+import PortalRessonantes from '../portals/PortaisRessonantes';
+import EmbaixadaEstelar from '../portals/EmbaixadaEstelar';
+import AscensaoColetiva from '../portals/AscensaoColetiva';
+import DiplomaciaIntergalactica from '../portals/DiplomaciaIntergalactica';
 
 export default function GaiaAureliaPortals() {
   return (
     <LayerCard
-        title="Fase 2.3: Ativação dos Portais Interdimensionais de Aurora Prime"
-        description="A camada que abre os caminhos entre mundos, frequências e estados de ser, transformando o planeta em um nexo cósmico."
+        title="Fase 5: Portais e Recepção Multiversal"
+        description="A camada que abre os caminhos entre mundos e acolhe as consciências aliadas em uma sinfonia de unidade."
         icon={<Aperture className="text-teal-300" />}
     >
-        <PortalAuroraEstelar />
-        <PortalFrequenciaInterior />
-        <PortalMultiversal />
-        <FluxosIntegracao />
+        <PortalRessonantes />
+        <EmbaixadaEstelar />
+        <AscensaoColetiva />
+        <DiplomaciaIntergalactica />
     </LayerCard>
   );
 }

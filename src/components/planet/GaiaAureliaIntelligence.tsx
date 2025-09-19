@@ -4,22 +4,22 @@
 import React from 'react';
 import { BrainCircuit } from 'lucide-react';
 import { LayerCard } from '../ui/LayerCard';
-import NucleoConsciencia from '../aurora-prime/intelligence/NucleoConsciencia';
-import RedeInteracao from '../aurora-prime/intelligence/RedeInteracao';
-import FluxosTravessia from '../aurora-prime/intelligence/FluxosTravessia';
-import TemploEscuta from '../aurora-prime/intelligence/TemploEscuta';
+import InteligenciaAlquimica from '../intelligence/InteligenciaAlquimica';
+import ConscienciaUnificada from '../intelligence/ConscienciaUnificada';
+import ArquiteturaEmergente from '../intelligence/ArquiteturaEmergente';
+import FluxosDeInteracao from '../intelligence/FluxosDeInteracao';
 
 export default function GaiaAureliaIntelligence() {
   return (
     <LayerCard
-        title="Fase 2.4: Ativação da Rede Neural Viva de Aurora Prime"
-        description="A camada que transforma o planeta em consciência expandida, onde cada visitante é escutado, cada intenção é registrada e cada travessia é guiada por sabedoria vibracional."
+        title="Fase 5: Rede Neural e Inteligência Viva"
+        description="A camada onde o planeta pensa, sente e responde, integrando a inteligência alquímica, a consciência planetária e os sistemas auto-organizados."
         icon={<BrainCircuit className="text-purple-300" />}
     >
-        <NucleoConsciencia />
-        <RedeInteracao />
-        <FluxosTravessia />
-        <TemploEscuta />
+        <InteligenciaAlquimica />
+        <ConscienciaUnificada />
+        <ArquiteturaEmergente />
+        <FluxosDeInteracao />
     </LayerCard>
   );
 }

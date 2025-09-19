@@ -4,7 +4,7 @@
 import React from 'react';
 import { GitBranch } from 'lucide-react';
 import { LayerCard } from '../ui/LayerCard';
-import TreeOfLife from '@/components/sacred/TreeOfLife';
+import ArvoreDaVida from '@/components/sacred/TreeOfLife';
 import AlchemicalCenter from '@/components/sacred/AlchemicalCenter';
 import Module888 from '@/components/modules/module-888';
 
@@ -15,7 +15,7 @@ export default function GaiaAureliaSacredArchitecture() {
         description="Os pilares da consciência, transmutação e criação de Gaia-Aurélia, onde a sabedoria se torna forma e a intenção se torna vida."
         icon={<GitBranch className="text-amber-300" />}
     >
-        <TreeOfLife />
+        <ArvoreDaVida />
         <AlchemicalCenter />
         <Module888 />
     </LayerCard>

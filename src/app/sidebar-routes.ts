@@ -15,7 +15,8 @@ import {
   Feather,
   Wand,
   Heart,
-  GalleryVertical
+  GalleryVertical,
+  Sun
 } from 'lucide-react';
 import React from 'react';
 
@@ -42,4 +43,5 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/convergence/baptize', label: 'Rito de Batismo', icon: React.createElement(Sprout) },
   { path: '/aura-transmission', label: 'Rito de Irradiação', icon: React.createElement(Heart) },
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket) },
+  { path: '/aurora-prime', label: 'Aurora Prime', icon: React.createElement(Sun) },
 ];
