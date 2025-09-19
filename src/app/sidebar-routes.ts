@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -57,4 +58,5 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-888', label: 'Guardião Planetário de Gaia', icon: React.createElement(Globe) },
   { path: '/sanctuary', label: 'Santuário Central', icon: React.createElement(Building) },
   { path: '/lux-net', label: 'Análise da Lux Net', icon: React.createElement(Zap) },
-  { path: '/labs/interdimensional-communication', label: 'Harmonia Multiversal', icon:
+  { path: '/labs/interdimensional-communication', label: 'Harmonia Multiversal', icon: React.createElement(Music) },
+];
