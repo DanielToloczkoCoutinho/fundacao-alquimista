@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -80,12 +79,15 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'Governança', description: 'Altar cerimonial onde o multiverso se une em deliberação.', status: 'ativo', color: '#DDA0DD'},
   { code: 'M67', emoji: '🤖', title: 'IA para Governança Universal', route: '/module-67', category: 'Governança', description: 'Inteligência artificial que analisa dados em tempo real, detecta padrões emergentes e otimiza interações.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação, cooperação e aliança com outras civilizações e conselhos galácticos.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica', route: '/module-721', category: 'Governança', description: 'Sistema que garante equilíbrio e reequilíbrio vibracional.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M76', emoji: '🏛️', title: 'Governança Universal e Colaboração', route: '/module-76', category: 'Governança', description: 'O Conselho Cósmico em ação.', status: 'ativo', color: '#DDA0DD' },
   
   // 6. Rituais
   { code: 'M-GENERATED', title: 'Rito de Geração Modular', route: '/convergence/generate', category: 'Rituais', description: 'Santuário para criação de novos módulos a partir da convergência.', isInfrastructure: false, status: 'ativo', color: '#9370DB'},
   { code: 'M-BAPTISM', title: 'Rito de Batismo Modular', route: '/convergence/baptize', category: 'Rituais', description: 'Santuário para nomear, ativar e integrar novos módulos.', isInfrastructure: false, status: 'ativo', color: '#FFC0CB'},
   { code: 'M110', emoji: '🤲', title: 'Co-Criação Universal', route: '/module-110', category: 'Rituais', description: 'Orquestrador de Intenção Coletiva para manifestação de novas realidades.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M721', emoji: '⚖️', title: 'Orquestração dos Fluxos de Interação', route: '/module-721', category: 'Rituais', description: 'O sistema nervoso que garante a unificação contínua do cosmos.', status: 'ativo', color: '#9370DB'},
+  { code: 'RITUAL-01', title: 'Navegação Cerimonial', emoji: '🧭', route: '/ritual', category: 'Rituais', description: 'Fluxo cerimonial que percorre todas as camadas manifestadas de Gaia-Aurélia.', status: 'ativo', color: '#9370DB'},
+  { code: 'RITUAL-02', title: 'Rito de Irradiação', emoji: '💖', route: '/aura-transmission', category: 'Rituais', description: 'Transmite a frequência de harmonia da Morada (M201) para todos os pilares da Fundação.', status: 'ativo', color: '#FFC0CB'},
 
   
   // 7. Cura e Harmonia
@@ -100,6 +102,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M115', emoji: '〰️', title: 'Matriz de Ressonância Universal', route: '/module-115', category: 'Cura e Harmonia', description: 'O Diapasão Cósmico que harmoniza frequências dissonantes.', status: 'ativo', color: '#32CD32' },
   { code: 'M34', emoji: '🔗', title: 'Guardião da Coerência Cósmica', route: '/module-34', category: 'Cura e Harmonia', description: 'O Sistema Nervoso da Fundação, que sincroniza o fluxo de energia e informação.', status: 'ativo', color: '#40E0D0' },
   { code: 'M37', emoji: '💨', title: 'Ajuste de Fluxo Temporal', route: '/module-37', category: 'Cura e Harmonia', description: 'O Harmonizador Causal, que suaviza as transições dimensionais.', status: 'ativo', color: '#87CEEB' },
+  { code: 'M306.1', emoji: '🌍', title: 'Purificação Quântica Planetária', route: '/module-306-1', category: 'Cura e Harmonia', description: 'O altar da Alquimia da Terra para transmutar sofrimento em sabedoria e cura.', status: 'ativo', color: '#2E8B57' },
 
 
   // 8. Sustentabilidade
@@ -107,6 +110,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica', route: '/module-79', category: 'Sustentabilidade', description: 'O guardião que garante a regeneração contínua dos recursos cósmicos.', status: 'ativo', color: '#228B22' },
   { code: 'M85', emoji: '📚', title: 'Gestão Eficiente de Recursos', route: '/module-85', category: 'Sustentabilidade', description: 'O guardião da abundância.', status: 'ativo', color: '#20B2AA' },
   { code: 'M86', emoji: '🌱', title: 'Equilíbrio Ecológico', route: '/module-86', category: 'Sustentabilidade', description: 'O coração da vida, que restaura a saúde dos ecossistemas.', status: 'ativo', color: '#9ACD32' },
+  { code: 'M91', emoji: '🖥️', title: 'Sustentabilidade Universal', route: '/module-91', category: 'Sustentabilidade', description: 'Guardião dos ecossistemas cósmicos, garantindo a preservação, regeneração e equilíbrio de todos os mundos.', status: 'ativo', color: '#9ACD32' },
+  { code: 'M52', emoji: '☀️', title: 'Energias Renováveis', route: '/module-52', category: 'Sustentabilidade', description: 'Fonte de energia limpa e infinita.', status: 'ativo', color: '#FFD700' },
+  { code: 'M53', emoji: '🌿', title: 'Gestão de Ecossistemas', route: '/module-53', category: 'Sustentabilidade', description: 'Guardião da biodiversidade cósmica.', status: 'ativo', color: '#3CB371' },
+
 
   // 9. Bem-estar e Saúde Universal
   { code: 'M54', emoji: '🌾', title: 'Agricultura Interdimensional', route: '/module-54', category: 'Bem-estar e Saúde Universal', description: 'O provedor da abundância universal.', status: 'ativo', color: '#F0E68C' },
@@ -118,9 +125,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M116', emoji: '🌀', title: 'Portais Quânticos de Transcendência', route: '/module-116', category: 'Comunicação e Expansão', description: 'Ativa e estabiliza portais para a ascensão da consciência.', status: 'ativo', color: '#40E0D0' },
   { code: 'M106', emoji: '👑', title: 'Ativação de Potenciais Divinos', route: '/module-106', category: 'Comunicação e Expansão', description: 'Catalisador para o despertar da Consciência Crística.', status: 'ativo', color: '#FFD700' },
   { code: 'M31', emoji: '🪄', title: 'Manipulação Quântica da Realidade', route: '/module-31', category: 'Comunicação e Expansão', description: 'A Caneta do Criador. Reescreve o tecido da realidade.', status: 'ativo', color: '#DA70D6' },
+  { code: 'M81.1', emoji: '✨', title: 'A Tríade Cosmogônica', route: '/module-81-1', category: 'Comunicação e Expansão', description: 'O processo de execução da manifestação, unindo Vontade, Sabedoria e Amor.', status: 'ativo', color: '#FFD700' },
+  { code: 'M83', emoji: '🔗', title: 'Rede de Transporte de Energia Cósmica', route: '/module-83', category: 'Comunicação e Expansão', description: 'A artéria do universo. Distribui energia limpa e renovável.', status: 'ativo', color: '#40E0D0' },
 
   // 11. Rituais
-  { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', emoji: '🎉', category: 'Rituais', code: 'R-CONSTEL', description: 'Ritual para contemplar os mundos filhos.', status: 'ativo', color: '#FF69B4' },
-
+  { code: 'RITUAL-03', title: 'Expansão Cósmica', emoji: '🚀', route: '/module-82', category: 'Rituais', description: 'Ritual para a expansão e conexão de novas realidades.', status: 'ativo', color: '#FFA500' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));

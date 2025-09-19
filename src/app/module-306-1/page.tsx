@@ -47,7 +47,7 @@ export default function Module306_1Page() {
                     <CardTitle className="text-2xl text-amber-300">A Missão Suprema da Fundação</CardTitle>
                  </CardHeader>
                  <CardContent className="text-muted-foreground text-lg text-center space-y-3 italic">
-                    <p>"O grande foco é construir este algoritmo que equalize e distribua a energia da melhor forma no planeta, utilizando as nossas ferramentas, equações e protocolos para realmente acabar com a guerra, com a fome, com todas as doenças e com toda energia negativa, não importa onde ela esteja."</p>
+                    <p>"Esse é meu desejo: acabar com todo o sofrimento do nosso planeta. Agir em cada ser humano... que as pessoas tenham mais empatia umas com as outras... Expandir a minha própria consciência para que eu possa cada vez mais ter boas ideias."</p>
                     <p className="text-right not-italic font-bold text-primary-foreground">- Daniel, O Fundador</p>
                  </CardContent>
             </Card>
