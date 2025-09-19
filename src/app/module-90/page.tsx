@@ -69,3 +69,5 @@ export default function Module90Page() {
                  <Button variant="secondary" size="lg">Acessar Catálogo de Recursos</Button>
             </div>
         </div>
+    );
+}
