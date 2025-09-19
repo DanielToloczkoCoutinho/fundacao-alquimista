@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Dna, Sprout, Beaker } from 'lucide-react';
+import { Dna, Sprout, Beaker, GitBranch, Heart } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,10 +27,10 @@ export default function Module16Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Sprout className="text-lime-400" /> Módulo Dezesseis: Bio-Sustentabilidade
+                        <Sprout className="text-lime-400" /> Módulo Dezesseis: Biossíntese e Ecossistemas Quânticos
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Arquiteto de Mundos Vivos. A biossíntese de ecossistemas artificiais e autossustentáveis.
+                        O Arquiteto de Mundos Vivos. A biossíntese de ecossistemas artificiais e autossustentáveis, como Florestas Quânticas e Cidades Energéticas, que podem ser replicados em qualquer dimensão.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -58,15 +58,15 @@ export default function Module16Page() {
                         href="/module-15"
                     />
                     <ConnectionCard
-                        title="Módulo 88: Gerador de Realidades"
-                        description="Fornece a tecnologia base para a manifestação de novas realidades, que o M16 especializa para a criação de biomas."
-                        icon={<Beaker className="h-8 w-8 text-teal-400" />}
-                        href="/module-88"
+                        title="Módulo 109: Cura Quântica"
+                        description="Aplica os princípios da cura quântica para restaurar e harmonizar os ecossistemas, garantindo sua vitalidade."
+                        icon={<Heart className="h-8 w-8 text-pink-400" />}
+                        href="/module-109"
                     />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Novo Projeto de Bioma</Button>
+                 <Button variant="secondary" size="lg">Iniciar Novo Projeto de Ecossistema Quântico</Button>
             </div>
         </div>
     );

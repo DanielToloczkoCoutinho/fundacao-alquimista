@@ -27,10 +27,10 @@ export default function Module59Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Building className="text-teal-400" /> Módulo 59: Harmonia entre Natureza e Civilizações
+                        <Building className="text-teal-400" /> Módulo 59: Eco-Cidades Quânticas
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O arquiteto da coexistência. Projetando infraestruturas e sociedades que se integram perfeitamente aos ecossistemas naturais.
+                        O arquiteto da coexistência. Projetando infraestruturas e sociedades que se integram perfeitamente aos ecossistemas naturais, servindo como laboratórios vivos para novas formas de vida.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>

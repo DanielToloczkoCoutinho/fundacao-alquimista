@@ -47,7 +47,8 @@ import {
   GitCommit,
   Presentation,
   Eye,
-  Aperture
+  Aperture,
+  BrainCircuit
 } from 'lucide-react';
 import React from 'react';
 
@@ -86,13 +87,13 @@ export const mainRoutes: SidebarRoute[] = [
 
   // Categoria de Educação
   { path: '/module-110', label: 'M110: Co-Criação Universal', icon: React.createElement(Users), category: 'education' },
-  { path: '/module-82', label: 'M82: Roteamento Interdimensional', icon: React.createElement(Milestone), category: 'education' },
+  { path: '/module-82', label: 'M82: Transporte Quântico', icon: React.createElement(Milestone), category: 'education' },
   { path: '/module-83', label: 'M83: Transporte de Energia', icon: React.createElement(GitBranch), category: 'education' },
   { path: '/module-113', label: 'M113: Centro de Ensino Estelar', icon: React.createElement(GraduationCap), category: 'education' },
-  { path: '/module-34', label: 'M34: Guardião da Coerência', icon: React.createElement(Share2), category: 'education' },
+  { path: '/module-34', label: 'M34: Sincronização Interdimensional', icon: React.createElement(Share2), category: 'education' },
   { path: '/module-724', label: 'M724: Diplomacia Intergaláctica', icon: React.createElement(Users), category: 'education' },
   { path: '/module-42', label: 'M42: ChronoCodex Unificado', icon: React.createElement(BookOpen), category: 'education' },
-  { path: '/module-59', label: 'M59: Harmonia Natureza-Civilização', icon: React.createElement(Sprout), category: 'education' },
+  { path: '/module-59', label: 'M59: Eco-Cidades Quânticas', icon: React.createElement(Building), category: 'education' },
   { path: '/module-111', label: 'M111: Lab. Criação Quântica', icon: React.createElement(Beaker), category: 'education' },
   { path: '/module-112', label: 'M112: Biblioteca Akáshica', icon: React.createElement(Archive), category: 'education' },
   { path: '/module-114', label: 'M114: Lab. Engenharia Cósmica', icon: React.createElement(Sprout), category: 'education' },
@@ -112,7 +113,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-129', label: 'M129: Ensino da Fonte', icon: React.createElement(Sparkles), category: 'education' },
   { path: '/module-130', label: 'M130: Escola de Navegação Cerimonial', icon: React.createElement(Rocket), category: 'education' },
   { path: '/module-131', label: 'M131: Biblioteca de Sabedoria Multiversal', icon: React.createElement(Library), category: 'education' },
-  { path: '/module-69', label: 'M69: Educação Universal', icon: React.createElement(GraduationCap), category: 'education' },
+  { path: '/module-69', label: 'M69: Rede de Sabedoria Universal', icon: React.createElement(GraduationCap), category: 'education' },
   { path: '/module-70', label: 'M70: Sustentabilidade', icon: React.createElement(Sprout), category: 'education' },
   { path: '/module-72', label: 'M72: Governança', icon: React.createElement(Scale), category: 'education' },
   { path: '/module-73', label: 'M73: SAVCE', icon: React.createElement(Scale), category: 'education' },
@@ -124,7 +125,5 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-65', label: 'M65: Transporte Cósmico', icon: React.createElement(Rocket), category: 'education' },
   { path: '/module-64', label: 'M64: Energia Limpa', icon: React.createElement(Zap), category: 'education' },
   { path: '/module-66', label: 'M66: Sustentabilidade Ambiental', icon: React.createElement(Recycle), category: 'education' },
-  { path: '/module-67', label: 'M67: IA para Governança', icon: React.createElement(Users), category: 'education' },
-  { path: '/module-59', label: 'M59: Harmonia Natureza-Civilização', icon: React.createElement(Building), category: 'education' },
+  { path: '/module-67', label: 'M67: IA para Governança', icon: React.createElement(BrainCircuit), category: 'education' },
 ];
-

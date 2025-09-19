@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, BrainCircuit, Users, BookOpen } from 'lucide-react';
+import { GraduationCap, BrainCircuit, Users, BookOpen, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,10 +27,10 @@ export default function Module69Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <GraduationCap className="text-amber-400" /> Módulo 69: Educação Universal e Disseminação de Conhecimento
+                        <GraduationCap className="text-amber-400" /> Módulo 69: Rede de Sabedoria Universal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A grande biblioteca do cosmos. A plataforma que promove a evolução coletiva através do compartilhamento universal da sabedoria.
+                        A grande biblioteca do cosmos. A plataforma que promove a evolução coletiva através do compartilhamento universal da sabedoria, permitindo interações em tempo real com seres de dimensões superiores.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -52,10 +52,10 @@ export default function Module69Page() {
                         href="/module-44"
                     />
                     <ConnectionCard
-                        title="Módulo 45: Educação Espiritual"
-                        description="É a manifestação prática do M45, fornecendo os currículos e as plataformas para a evolução espiritual coletiva."
-                        icon={<Users className="h-8 w-8 text-blue-400" />}
-                        href="/module-45"
+                        title="Módulo 301: Comunicação Universal"
+                        description="É a plataforma de interface onde a sabedoria é compartilhada, permitindo diálogo direto com consciências superiores."
+                        icon={<MessageCircle className="h-8 w-8 text-cyan-400" />}
+                        href="/module-301"
                     />
                     <ConnectionCard
                         title="Módulo 310: A Grande Biblioteca"

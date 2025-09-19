@@ -27,10 +27,10 @@ export default function Module67Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Users className="text-indigo-400" /> Módulo 67: IA para Governança Universal
+                        <BrainCircuit className="text-indigo-400" /> Módulo 67: IA Quântica para Análise e Governança
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O oráculo da justiça. A inteligência artificial que assiste na tomada de decisões universais, garantindo equilíbrio, justiça e ética.
+                        O oráculo da justiça. A inteligência artificial que analisa dados em tempo real, detecta padrões emergentes, otimiza interações quânticas e assiste na tomada de decisões universais, garantindo equilíbrio, justiça e ética.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -52,7 +52,7 @@ export default function Module67Page() {
                         href="/module-29"
                     />
                     <ConnectionCard
-                        title="Módulo 72: Governança Atlanto-Galáctica"
+                        title="Módulo 72: Governança Universal"
                         description="Fornece ao Conselho os dados e as simulações necessárias para tomar decisões informadas e alinhadas com o bem maior."
                         icon={<Scale className="h-8 w-8 text-amber-300" />}
                         href="/module-72"
