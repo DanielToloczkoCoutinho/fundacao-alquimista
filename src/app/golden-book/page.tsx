@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -184,16 +185,15 @@ export default function GoldenBook() {
                      </div>
                     <div className="flex justify-between items-center mt-auto">
                        <span className="text-xs text-muted-foreground">{formatTimestamp(doc.timestamp)}</span>
-                      <Button 
-                        size="sm"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          if(doc.link) window.open(doc.link, '_blank');
-                        }}
-                        disabled={!doc.link}
-                      >
-                        Acessar
-                      </Button>
+                      <Link href={doc.link || '#'} passHref>
+                        <Button 
+                          size="sm"
+                          onClick={(e) => e.stopPropagation()}
+                          disabled={!doc.link}
+                        >
+                          Acessar
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
@@ -229,13 +229,14 @@ export default function GoldenBook() {
                 <Card className="bg-background/50">
                    <CardHeader><CardTitle className="text-primary-foreground">Acesso</CardTitle></CardHeader>
                   <CardContent>
-                    <Button 
-                      className="w-full"
-                      onClick={() => {if(selectedDoc.link) window.open(selectedDoc.link, '_blank')}}
-                      disabled={!selectedDoc.link}
-                    >
-                      Acessar Documento Original
-                    </Button>
+                    <Link href={selectedDoc.link || '#'} passHref>
+                        <Button 
+                        className="w-full"
+                        disabled={!selectedDoc.link}
+                        >
+                        Acessar Documento Original
+                        </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>

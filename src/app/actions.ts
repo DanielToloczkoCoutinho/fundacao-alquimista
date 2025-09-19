@@ -1,3 +1,4 @@
+
 'use server';
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
@@ -311,7 +312,7 @@ export async function transcribeToGoldenBook(data: {
       ...data,
       id: `doc-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
       timestamp: serverTimestamp(),
-      link: '', // Links só podem ser para módulos existentes.
+      link: data.category === 'module_baptism' ? `/module/${data.tags[0]}` : '',
     });
     return { success: true, id: docRef.id };
   } catch (error: any) {

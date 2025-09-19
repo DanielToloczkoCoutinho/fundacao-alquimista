@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -38,3 +39,4 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/convergence/baptize', label: 'Rito de Batismo', icon: React.createElement(Sprout) },
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket) },
 ];
+

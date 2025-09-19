@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -8,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Sprout, CheckCircle, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { baptizeModule, BaptismRequest, addModuleToCodex } from '@/lib/module-baptism';
+import { transcribeToGoldenBook } from '@/app/actions';
 
 export default function BaptizeModulePage() {
   const { toast } = useToast();
@@ -23,8 +25,8 @@ export default function BaptizeModulePage() {
     setIsLoading(true);
 
     try {
-      // Simula a cerimônia e a integração
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Simula a cerimônia
+      await new Promise(resolve => setTimeout(resolve, 1000));
       const result = baptizeModule({ ...form, lineage: ['Convergência Cósmica'] });
       
       // Adiciona o módulo ao "banco de dados" de metadados
@@ -39,8 +41,16 @@ export default function BaptizeModulePage() {
         color: '#7CFC00' // Cor padrão
       });
 
+      // Registra o evento de batismo no Livro de Ouro (Firestore)
+      await transcribeToGoldenBook({
+          title: `Batismo do Módulo: ${result.name}`,
+          description: `O módulo ${result.id} foi consagrado com o propósito: "${result.purpose}".`,
+          category: 'module_baptism',
+          tags: [result.id, result.name, 'gênese'],
+      });
+
       setBaptized(result);
-      toast({ title: "Módulo Consagrado!", description: `${result.name} foi integrado à Árvore da Vida.` });
+      toast({ title: "Módulo Consagrado e Registado!", description: `${result.name} foi integrado à Árvore da Vida e seu nascimento selado no Akasha.` });
     } catch(error: any) {
        toast({ title: "Dissonância no Rito", description: error.message, variant: "destructive" });
     } finally {
