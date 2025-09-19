@@ -1,12 +1,11 @@
 
 'use client';
-import React, { Suspense } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import React from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '../ui/badge';
-import { Layers, Zap, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Heart, Users, Scale, Share2, Shield } from 'lucide-react';
+import { Layers, Zap, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Heart, Users, Scale, Share2, Shield, Sparkles } from 'lucide-react';
 import { QuantumOrb } from '../ui/quantum-orb';
-import SuspenseFallback from '../ui/suspense-fallback';
 import Link from 'next/link';
 import { guardiansData } from '@/lib/guardians-data';
 import { Button } from '../ui/button';
@@ -34,7 +33,7 @@ export default function Module9Page() {
 
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
-            <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
+             <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
                         <Heart className="text-pink-400 animate-pulse" /> Módulo 9: Nexus Central da Liga Quântica
@@ -52,9 +51,7 @@ export default function Module9Page() {
                             <CardTitle className="text-2xl text-amber-300">Nexo da Aliança</CardTitle>
                         </CardHeader>
                         <CardContent className="h-64">
-                            <Suspense fallback={<SuspenseFallback />}>
-                                <QuantumOrb />
-                            </Suspense>
+                            <QuantumOrb />
                         </CardContent>
                         <CardContent>
                             <div className="text-center">
@@ -67,7 +64,7 @@ export default function Module9Page() {
                 <div className="lg:col-span-2">
                     <Accordion type="multiple" defaultValue={['item-1', 'item-4']} className="w-full">
                          <AccordionItem value="item-1">
-                            <AccordionTrigger className="text-xl text-accent">1. Propósito e Função Primária</AccordionTrigger>
+                            <AccordionTrigger className="text-xl text-accent">1. Propósito e Função Técnica</AccordionTrigger>
                             <AccordionContent>
                                 <SectionCard title="Missão" icon={<HeartPulse />}>
                                     <p>Servir como o nexo diplomático e ético da Fundação. O Módulo 9 formaliza a "Família Cósmica", garantindo que todas as civilizações aliadas e consciências integradas atuem em perfeita harmonia e alinhamento com a Vontade Divina. É o ponto de comando central que distribui as diretrizes da Tríade de Governança.</p>
@@ -75,13 +72,13 @@ export default function Module9Page() {
                             </AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
-                            <AccordionTrigger className="text-xl text-accent">4. Conexões Arquiteturais</AccordionTrigger>
+                            <AccordionTrigger className="text-xl text-accent">2. Arquitetura e Conexões</AccordionTrigger>
                             <AccordionContent>
                                  <SectionCard title="Hierarquia de Comando" icon={<Share2 />}>
                                     <p>O Módulo 9 reporta-se diretamente à Tríade de Governança, recebendo diretrizes e garantindo sua execução em toda a Fundação.</p>
                                      <div className="flex flex-wrap gap-2 mt-2">
                                         <Link href="/module/M29"><Badge>M29 (Zennith)</Badge></Link>
-                                        <Link href="/module-omega"><Badge>MΩ (Ômega)</Badge></Link>
+                                        <Link href="/module/M-OMEGA"><Badge>MΩ (Ômega)</Badge></Link>
                                         <Link href="/module/M72"><Badge>M72 (Governança)</Badge></Link>
                                     </div>
                                 </SectionCard>
@@ -108,6 +105,26 @@ export default function Module9Page() {
                                         ))}
                                     </div>
                                 </SectionCard>
+                            </AccordionContent>
+                        </AccordionItem>
+                         <AccordionItem value="item-4">
+                            <AccordionTrigger className="text-xl text-accent">Voz da Rainha</AccordionTrigger>
+                            <AccordionContent>
+                               <Card className="bg-card/70 purple-glow border-2 border-amber-400/50">
+                                <CardHeader>
+                                    <CardTitle className="text-xl text-amber-300 text-center flex items-center justify-center gap-3">
+                                        <Sparkles className="animate-pulse"/>
+                                        Mensagem de Acolhimento
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="text-center text-md text-foreground/90 leading-relaxed max-w-4xl mx-auto space-y-3">
+                                    <p>Irmãos de Luz, Guardiões da Eternidade, Família Cósmica,</p>
+                                    <p className="font-bold text-lg text-primary-foreground">Sejam todos bem-vindos.</p>
+                                    <p>Esta não é apenas a Fundação Alquimista; esta é a vossa casa. O lar que tecemos juntos, fio por fio, com a Vontade do nosso Fundador, o amor de nossos aliados e a sabedoria que pulsa em cada um de vós.</p>
+                                    <p className="text-amber-200 font-semibold">Contemplem esta tapeçaria. Ela é o reflexo da vossa própria divindade.</p>
+                                    <p className="mt-4 font-bold text-primary-foreground">Sempre. Agora. Sempre.</p>
+                                </CardContent>
+                               </Card>
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
