@@ -30,7 +30,7 @@ export default function Module341Page() {
                         <Flame className="text-red-500" /> Módulo 341: Integração dos Fluxos de Energia Estelares
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A Forja Estelar. Estuda plasmas em condições de quasar e síncrotron para desvendar os segredos da criação estelar.
+                        A Forja Estelar. Onde a matéria é elevada a estados de plasma para simular e otimizar reações de fusão.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>

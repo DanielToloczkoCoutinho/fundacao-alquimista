@@ -69,3 +69,5 @@ export default function Module53Page() {
                  <Button variant="secondary" size="lg">Analisar Saúde Ecológica</Button>
             </div>
         </div>
+    );
+}

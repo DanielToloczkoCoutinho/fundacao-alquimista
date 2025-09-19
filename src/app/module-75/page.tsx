@@ -66,4 +66,8 @@ export default function Module75Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary
+                 <Button variant="secondary" size="lg">Mapa da Infraestrutura Universal</Button>
+            </div>
+        </div>
+    );
+}
