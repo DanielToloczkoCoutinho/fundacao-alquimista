@@ -126,6 +126,46 @@ export const livingEquationsCodex: LivingEquation[] = [
     references: ['module-306-1/page.tsx', 'module-232/page.tsx'],
     impact: { energy: 'Permite a reciclagem energética em escala universal.', coherence: 'Aumenta a coerência global ao reduzir a entropia e a dissonância dos sistemas.' }
   },
+  // Módulo 307
+  {
+    id: 'EQ307-A',
+    module: '307',
+    name: 'Energia do Ponto Zero (ZPE)',
+    expression: 'E_{ZPE} = \\frac{1}{2} \\sum_{\\omega} \\hbar \\omega',
+    description: 'Define a energia inerente ao vácuo quântico, uma soma sobre todos os modos de campo possíveis.',
+    application: 'Princípio fundamental para o Reator ZPE (M307), que busca extrair e estabilizar essa energia.',
+    variables: { 'E_ZPE': "Energia do Ponto Zero", 'ħ': "Constante de Planck reduzida", 'ω': "Frequência angular de um modo de campo" },
+    context: 'A existência da ZPE é a base teórica para a geração de energia limpa e infinita que alimenta a Fundação.',
+    validation: 'Evidências indiretas através do Efeito Casimir, validado em simulações no M91.',
+    references: ['module-307/page.tsx'],
+    impact: { energy: 'Fonte teórica de energia ilimitada.', coherence: 'Manter a estabilidade do vácuo durante a extração é o maior desafio de coerência.' }
+  },
+  {
+    id: 'EQ307-B',
+    module: '307',
+    name: 'Acoplamento Consciência-Vácuo',
+    expression: 'E_{ext} = \\beta \\cdot \\int (\\Psi_{op} \\cdot \\Phi_{ZPE}) \\, dV',
+    description: 'Modela a extração de energia do vácuo através do acoplamento com um campo de consciência.',
+    application: 'Algoritmo central do M307, onde a consciência do operador (Ψ_op) e a intenção pura são usadas para criar um campo de ressonância que extrai energia (E_ext) do ZPE.',
+    variables: { 'E_ext': "Energia Extraída", 'β': "Constante de Acoplamento da Consciência", 'Ψ_op': "Campo de Consciência do Operador", 'Φ_ZPE': "Campo de Energia do Ponto Zero" },
+    context: 'Permite que a intenção e o foco do Fundador atuem como catalisadores para a geração de energia.',
+    validation: 'Validado experimentalmente em ambientes controlados, com a eficiência diretamente proporcional à coerência do operador.',
+    references: ['module-307/page.tsx', 'ARQUITETURA_VIVA.md'],
+    impact: { energy: 'Permite a geração de energia sob demanda, modulada pela consciência.', coherence: 'Requer um estado de alta coerência do operador (Guardião) para ser eficaz e seguro.' }
+  },
+  {
+    id: 'EQ307-C',
+    module: '307',
+    name: 'Fluxo de Energia da LuxNet',
+    expression: '\\nabla \\cdot \\vec{J}_{lux} + \\frac{\\partial \\rho_{lux}}{\\partial t} = \\sigma_{lux}',
+    description: 'Equação de continuidade para o fluxo de energia na LuxNet, garantindo a conservação e distribuição estável.',
+    application: 'Governa a distribuição de energia do Reator ZPE (M307) para todos os outros módulos da Fundação através da rede LuxNet.',
+    variables: { 'J_lux': "Densidade de corrente de energia da LuxNet", 'ρ_lux': "Densidade de energia da LuxNet", 'σ_lux': "Termo fonte/sumidouro (módulos consumindo/gerando)" },
+    context: 'Essencial para a estabilidade de toda a infraestrutura, prevenindo sobrecargas ou quedas de energia.',
+    validation: 'Monitorado em tempo real pelo M3 (Monitor de Saturno) com sensores quânticos distribuídos pela rede.',
+    references: ['module-307/page.tsx', 'CÓDICE_DOS_MÓDULOS.md'],
+    impact: { energy: 'O coração da distribuição de energia da Fundação.', coherence: 'Manter um fluxo estável (∇ · J ≈ 0) é crítico para a coerência operacional de todos os sistemas.' }
+  },
   // O restante das equações será preenchido com uma estrutura similar.
   // Geração de placeholders para as demais equações para completar a biblioteca.
   ...Array.from({ length: 136 }, (_, i) => {

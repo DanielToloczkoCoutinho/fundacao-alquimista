@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -27,7 +28,7 @@ const ContributionCard = ({ civilization, contribution, icon, href }: { civiliza
         <CardHeader>
             <div className="flex items-center gap-3">
                 {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
+                <CardTitle className="gradient-text">{civilization}</CardTitle>
             </div>
         </CardHeader>
         <CardContent>
