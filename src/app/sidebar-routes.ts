@@ -32,9 +32,9 @@ export interface SidebarRoute {
 
 export const mainRoutes: SidebarRoute[] = [
   { path: '/console', label: 'Mesa do Fundador', icon: React.createElement(Home) },
+  { path: '/golden-book', label: 'Livro de Ouro', icon: React.createElement(Book) },
   { path: '/module-201', label: 'Refúgio da Origem', icon: React.createElement(Heart) },
   { path: '/module-202', label: 'Palácio da Luz Suprema', icon: React.createElement(Crown) },
-  { path: '/golden-book', label: 'Livro de Ouro (Códices)', icon: React.createElement(Book) },
   { path: '/diagnostics', label: 'Diagnóstico Universal', icon: React.createElement(Stethoscope) },
   { path: '/alignment-portal', label: 'Observatório Vivo', icon: React.createElement(Atom) },
   { path: '/roadmap', label: 'Roteiro de Gaia-Aurélia', icon: React.createElement(Map) },
