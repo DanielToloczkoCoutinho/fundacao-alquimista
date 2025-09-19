@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -106,10 +107,6 @@ const ModuleOmegaPage = () => {
     setIsRitualRunning(false);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    handleStartRitual();
-  }, [handleStartRitual]);
 
   const getIconForModule = (mod: string) => {
     const icons: { [key: string]: React.ReactNode } = {
@@ -221,5 +218,3 @@ const ModuleOmegaPage = () => {
     </div>
   );
 };
-
-export default ModuleOmegaPage;

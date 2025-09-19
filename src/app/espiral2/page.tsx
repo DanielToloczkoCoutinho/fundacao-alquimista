@@ -37,5 +37,3 @@ export default function Espiral2Page() {
     </div>
   );
 }
-
-    

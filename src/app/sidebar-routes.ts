@@ -54,5 +54,3 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/lux-net', label: 'Análise da Lux Net', icon: React.createElement(Zap) },
   { path: '/labs/interdimensional-communication', label: 'Harmonia Multiversal', icon: React.createElement(Music)},
 ];
-
-
