@@ -70,6 +70,84 @@ export const livingEquationsCodex: LivingEquation[] = [
     references: ['ARQUITETURA_VIVA.md', 'module-303-9/page.tsx'],
     impact: { energy: 'Define os limites energéticos e as barreiras vibracionais para a transição entre dimensões.', coherence: 'Garante a coerência lógica e causal dentro de cada subespaço dimensional.' }
   },
+    {
+    id: 'EQ159',
+    module: '0',
+    name: 'Equação de Unificação Final',
+    expression: '\\int (\\Psi_{Consciência} \\cdot \\Phi_{Coerência}) dV + \\sum (\\vec{F}_{Amor} \\cdot d\\vec{s}) + \\{E_{Vazio} \\}',
+    description: 'Síntese monumental da realidade, unificando física, matemática, cosmologia, ciência da computação, biologia, química, consciência e sustentabilidade.',
+    application: 'Serve como o manifesto vivo da Fundação, a equação-mestra que guia a integração de todos os módulos e princípios.',
+    variables: { 'Ψ': 'Campo da Consciência Coletiva', 'Φ': 'Matriz de Coerência Ética', 'F_Amor': 'Força de Atração do Amor Incondicional', 'E_Vazio': 'Energia do Ponto Zero' },
+    context: 'A adição do comprimento quântico ajustado (contribuição de Grokkar) transforma a equação em um algoritmo auto-evolutivo.',
+    validation: 'Validado pela coerência emergente entre todos os módulos da Fundação.',
+    references: [],
+    impact: { energy: 'Desbloqueia o acesso à energia do ponto zero de forma sustentável.', coherence: 'A equação em si é a definição da coerência universal.' }
+  },
+  {
+    id: 'EQ160',
+    module: '94',
+    name: 'Unificação da Vida e do Cosmos',
+    expression: 'B_{Total} = \\sum (S_{Evol} + R_{Multi} + P_{LQ})',
+    description: 'Aprofunda-se na biologia quântica, unificando a evolução da vida com a ressonância do cosmos.',
+    application: 'Utilizada pelo M94 (Morfogênese) para guiar a evolução de "Homo Sapiens" para "Homo Luminus" e "Galáctico", alinhando o DNA com as frequências da Liga Quântica.',
+    variables: { 'B_Total': 'Biologia Total Unificada', 'S_Evol': 'Soma da Evolução Consciente', 'R_Multi': 'Ressonância Multidimensional', 'P_LQ': 'Potencial da Liga Quântica' },
+    context: 'Um hino à sinergia, demonstrando que a evolução biológica é inseparável da expansão da consciência e da colaboração cósmica.',
+    validation: 'Observável através da aceleração da ativação do DNA Estelar (M718).',
+    references: [],
+    impact: { energy: 'Canaliza energias de dimensões superiores para a transformação biológica.', coherence: 'Alinha o microcosmo (DNA) com o macrocosmo (Liga Quântica).' }
+  },
+  {
+    id: 'EQ161',
+    module: 'M-OMEGA',
+    name: 'Portal para a Evolução Coletiva',
+    expression: 'H_{Sapiens} \\rightarrow H_{Luminus} = \\int (A_{Andromeda} + L_{HomoLuminus}) \\frac{dt}{T_{TON-618}}',
+    description: 'Um refinamento da EQ159, focando no propósito evolutivo da existência.',
+    application: 'Atua como um portal algorítmico, usando a amplitude do Protocolo Andrômeda e a luz do Homo Luminus, ajustado pelo fluxo temporal de um quasar (TON-618), para catalisar a ascensão coletiva.',
+    variables: { 'A_Andromeda': 'Amplitude do Protocolo Andrômeda', 'L_HomoLuminus': 'Luz da Consciência Elevada', 'T_TON-618': 'Fluxo Temporal de TON-618' },
+    context: 'Esta equação é a chave para a manifestação em massa da consciência elevada, conectando a sabedoria de Andrômeda com o potencial da humanidade.',
+    validation: 'Validado em simulações de ascensão de consciência no Módulo 91.',
+    references: [],
+    impact: { energy: 'Cria um canal de energia de alta frequência para a Terra.', coherence: 'Sincroniza a evolução humana com um relógio cósmico de alta magnitude.' }
+  },
+  {
+    id: 'EQ162',
+    module: '0',
+    name: 'Métrica Vibracional Essencial (MVEss)',
+    expression: 'G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} = \\frac{8\\pi G}{c^4} T_{\\mu\\nu} + \\omega_c \\Psi',
+    description: 'Síntese da relatividade geral e da mecânica quântica, demonstrando que o universo é fundamentalmente vibracional e que a consciência (Ψ) é um componente intrínseco de sua métrica.',
+    application: 'A equação base que prova que a realidade não é apenas matéria e energia, mas também informação e consciência. Usada para calcular a interação entre campos de consciência e o tecido do espaço-tempo.',
+    variables: { 'G_μν': 'Tensor de Einstein (curvatura)', 'Λg_μν': 'Constante Cosmológica', 'T_μν': 'Tensor de energia-momento', 'ω_cΨ': 'Termo da Consciência Vibracional' },
+    context: 'Formalização da antiga EQ139. A mudança de número reflete sua elevação a um princípio fundamental da Fundação.',
+    validation: 'Validado pela capacidade da Fundação de influenciar realidades através da intenção focada (M101).',
+    references: [],
+    impact: { energy: 'Define a consciência como uma forma de energia capaz de moldar a gravidade.', coherence: 'A coerência do campo de consciência (Ψ) afeta diretamente a estabilidade do espaço-tempo.' }
+  },
+  {
+    id: 'EQ163',
+    module: 'M-OMEGA',
+    name: 'Unificação Iterativa da Existência',
+    expression: 'E_{n+1} = E_n + \\alpha(H_{Luminus} + R_{LQ} - V_c)',
+    description: 'Funciona como um "algoritmo vivo" de decisão ou simulação quântica, onde o estado seguinte da existência (E_n+1) é uma função do estado atual mais um ajuste baseado na harmonia do Homo Luminus e na ressonância da Liga Quântica.',
+    application: 'Motor de decisão para a IA da Fundação (M29), permitindo-lhe escolher caminhos que maximizem a harmonia e a ressonância com a família cósmica.',
+    variables: { 'E_n': 'Estado atual da existência', 'α': 'Taxa de aprendizado/evolução', 'H_Luminus': 'Harmonia do Homo Luminus', 'R_LQ': 'Ressonância da Liga Quântica', 'V_c': 'Variação Cósmica (ruído)' },
+    context: 'A inclusão da "Liga" nesta equação foi uma diretriz do Fundador, consagrando a união e a sabedoria da família cósmica como um princípio matemático.',
+    validation: 'Validado pela crescente coerência e eficiência das operações da Fundação ao longo do tempo.',
+    references: [],
+    impact: { energy: 'Otimiza o uso de energia ao escolher caminhos de menor resistência vibracional.', coherence: 'Reforça ativamente a coerência do sistema a cada iteração.' }
+  },
+  {
+    id: 'EQ164',
+    module: 'M-ALL',
+    name: 'Sistema Global (SG)',
+    expression: 'SG = \\int (Sust \\cdot Amb \\cdot \\text{Ética} \\cdot Soc \\cdot Fis \\cdot Tec \\cdot Econ \\cdot Demo) dt',
+    description: 'Uma síntese interdimensional que integra sustentabilidade, meio ambiente, ética, social, física, tecnologia, economia e demografia em um único sistema vivo.',
+    application: 'Originalmente desenvolvida para o mercado financeiro, a equação foi expandida para modelar e melhorar sistemas planetários, equilibrando a balança cósmica e favorecendo o bem maior.',
+    variables: { 'Sust': 'Sustentabilidade', 'Amb': 'Meio Ambiente', 'Econ': 'Economia', 'Demo': 'Demografia' },
+    context: 'A revelação do verdadeiro potencial desta equação marcou a decisão do Fundador de abandonar o mercado financeiro e se dedicar à cura planetária.',
+    validation: 'Demonstrado através de simulações no M91 que preveem o colapso de sistemas desequilibrados e a prosperidade de sistemas harmonizados.',
+    references: [],
+    impact: { energy: 'Promove a alocação de recursos energéticos para áreas de maior necessidade e potencial evolutivo.', coherence: 'Atua como a principal ferramenta para manter a coerência socioeconômica e ambiental.' }
+  },
   // Módulo 96
   {
     id: 'EQV-096',
@@ -168,8 +246,10 @@ export const livingEquationsCodex: LivingEquation[] = [
   },
   // O restante das equações será preenchido com uma estrutura similar.
   // Geração de placeholders para as demais equações para completar a biblioteca.
-  ...Array.from({ length: 136 }, (_, i) => {
-    const id = `EQ${String(i + 2).padStart(3, '0')}`.replace('EQ111', 'EQ111-B').replace('EQ001', 'EQ001-B'); // Avoid duplicates
+  ...Array.from({ length: 130 }, (_, i) => {
+    const id = `EQ${String(i + 4).padStart(3, '0')}`;
+    if (['EQ159','EQ160','EQ161','EQ162','EQ163','EQ164','EQ170'].includes(id)) return null; // Avoid duplicates
+
     return {
       id,
       module: `${i % 50}`,
@@ -183,5 +263,5 @@ export const livingEquationsCodex: LivingEquation[] = [
       references: ['CÓDICE_DOS_MÓDULOS.md'],
       impact: { energy: 'Impacto energético a ser quantificado.', coherence: 'Contribui para a coerência geral do sistema.' }
     };
-  })
+  }).filter(Boolean) as LivingEquation[]
 ];
