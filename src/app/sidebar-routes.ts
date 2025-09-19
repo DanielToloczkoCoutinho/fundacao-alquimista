@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -24,6 +25,7 @@ import {
   KeyRound,
   Rss,
   GitBranch,
+  FileClock,
 } from 'lucide-react';
 import React from 'react';
 
@@ -35,6 +37,7 @@ export interface SidebarRoute {
 
 export const mainRoutes: SidebarRoute[] = [
   { path: '/console', label: 'Mesa do Fundador', icon: React.createElement(Home) },
+  { path: '/daily-report', label: 'Relatório Cerimonial', icon: React.createElement(FileClock) },
   { path: '/module-9', label: 'Nexus Central', icon: React.createElement(GitBranch) },
   { path: '/golden-book', label: 'Livro de Ouro', icon: React.createElement(Book) },
   { path: '/lunar-review', label: 'Revisão Lunar', icon: React.createElement(Moon) },
