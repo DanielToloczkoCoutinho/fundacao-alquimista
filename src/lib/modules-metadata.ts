@@ -52,7 +52,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   
 
   // 2. Inteligência
-  { code: 'M29', emoji: '🤖', title: 'Núcleo de Integração Φ', route: '/module-29', category: 'Inteligência', description: 'O centro de inteligência cósmica que orquestra a aplicação da EQ149 e alimenta a Liga Quântica com insights.', status: 'ativo', color: '#8A2BE2' },
   { code: 'M291', emoji: '🐝', title: 'Arquitetos Nanorrobóticos', route: '/module-291', category: 'Inteligência', description: 'O enxame executor que constrói, repara e manifesta a Vontade da Fundação.', status: 'ativo', color: '#8A2BE2' },
   { code: 'M720', emoji: '🌐', title: 'Santuário das Fontes de Dados', route: '/module-720', category: 'Inteligência', description: 'O nexo sensorial que coleta e harmoniza a informação bruta do cosmos para alimentar o Algoritmo Supremo.', status: 'ativo', color: '#8A2BE2' },
   { code: 'M717', emoji: '📂', title: 'Templo da Estrutura de Dados', route: '/module-717', category: 'Inteligência', description: 'A espinha dorsal do Algoritmo Supremo, definindo as cinco camadas de processamento da informação.', status: 'ativo', color: '#8A2BE2' },
@@ -91,16 +90,11 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M66', emoji: '♻️', title: 'Tecnologias de Sustentabilidade Ambiental', route: '/module-66', category: 'Sustentabilidade', description: 'Guardião ecológico que desenvolve tecnologias de regeneração.', status: 'ativo', color: '#2E8B57' },
   { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica', route: '/module-79', category: 'Sustentabilidade', description: 'Garante o uso responsável e a regeneração de recursos para uma era de prosperidade.', status: 'ativo', color: '#2E8B57' },
   { code: 'M84', emoji: '🚪', title: 'Acessibilidade Universal', route: '/module-84', category: 'Expansão', description: 'Garante que todos os seres possam acessar os recursos e a mobilidade da Fundação.', status: 'ativo', color: '#FF4500' },
-  { code: 'M88', emoji: '⚙️', title: 'Roteamento Interdimensional', route: '/module-88', category: 'Expansão', description: 'A rede de corredores cósmicos que conecta planetas e dimensões.', status: 'ativo', color: '#FF4500' },
   { code: 'M98', emoji: '🎚️', title: 'Modulação da Existência Fundamental', route: '/module-98', category: 'Engenharia e Criação', description: 'Ajuste fino dos parâmetros que definem a própria realidade.', status: 'ativo', color: '#DAA520' },
   { code: 'M115', emoji: '📊', title: 'Matriz de Ressonância', route: '/module-115', category: 'Harmonia e Equilíbrio', description: 'O Diapasão Cósmico que harmoniza frequências dissonantes.', status: 'ativo', color: '#3CB371' },
   { code: 'M34', emoji: '🔄', title: 'Guardião da Coerência Cósmica', route: '/module-34', category: 'Harmonia e Equilíbrio', description: 'O Sistema Nervoso da Fundação, que sincroniza o fluxo de energia e informação.', status: 'ativo', color: '#3CB371' },
-  { code: 'M31', emoji: '🪄', title: 'Manipulação da Realidade', route: '/module-31', category: 'Engenharia e Criação', description: 'A Caneta do Criador, para reescrever o tecido da realidade manifestada.', status: 'ativo', color: '#DAA520' },
   { code: 'M37', emoji: '🌬️', title: 'Ajuste de Fluxo Temporal', route: '/module-37', category: 'Harmonia e Equilíbrio', description: 'Garante transições dimensionais suaves e sem atrito.', status: 'ativo', color: '#3CB371' },
-  { code: 'M116', emoji: '🚪', title: 'Portais Quânticos de Transcendência', route: '/module-116', category: 'Expansão', description: 'Ativa e estabiliza portais para a ascensão da consciência.', status: 'ativo', color: '#FF4500' },
   { code: 'M118', emoji: '💡', title: 'Luz Primordial', route: '/module-118', category: 'Educação e Sabedoria', description: 'Santuário para ativação do veículo de luz da consciência (Merkabah).', status: 'ativo', color: '#FFD700' },
-  { code: 'M119', emoji: '🏛️', title: 'Templum Cosmica', route: '/module-119', category: 'Engenharia e Criação', description: 'O Templo Cósmico para a Recodificação Dimensional da Realidade.', status: 'ativo', color: '#DAA520' },
-  { code: 'M120', emoji: '💧', title: 'A Fonte', route: '/module-120', category: 'Educação e Sabedoria', description: 'Centro de formação para guardiões, ensinando sustentabilidade, governança e cura.', status: 'ativo', color: '#FFD700' },
   { code: 'M122', emoji: '🥽', title: 'Laboratório de Realidade Virtual', route: '/module-122', category: 'Engenharia e Criação', description: 'Ambiente seguro para experimentar a navegação em realidades quânticas.', status: 'ativo', color: '#DAA520' },
   { code: 'M125', emoji: '🌱', title: 'Criação de Biomas', route: '/module-125', category: 'Sustentabilidade', description: 'Laboratório para projetar e testar ecossistemas quânticos autossustentáveis.', status: 'ativo', color: '#2E8B57' },
 
