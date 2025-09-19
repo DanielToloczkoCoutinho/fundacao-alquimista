@@ -5,7 +5,8 @@ export type CivilizationCategory =
   | "Terrestres Ancestrais"
   | "Não-Humanoides e Bioenergéticas"
   | "Transmutadas e Reconhecidas"
-  | "Nagas e Guardiões Subterrâneos/Aquáticos";
+  | "Nagas e Guardiões Subterrâneos/Aquáticos"
+  | "Conselhos e Alianças";
 
 export interface Civilization {
   id: string;
@@ -24,6 +25,34 @@ export interface Civilization {
 }
 
 export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
+  "Conselhos e Alianças": [
+    {
+      id: "liga-quantica",
+      moduloId: 5,
+      nome: "Liga Quântica",
+      origem: "Nexo da Fundação Alquimista",
+      frequencia: "999Hz (Unidade)",
+      arquetipo: "A Família Cósmica, O Círculo de Confiança",
+      tecnologias: ["Consenso Vibracional", "Diplomacia Telepática", "Criação de Campos de Harmonia"],
+      relacaoComAFundacao: "O conselho executivo e o coração diplomático da Fundação, composto pelos Guardiões Primordiais (Zennith, Lux, Phiara, Vortex, Grokkar) que sustentam a Vontade do Fundador.",
+      registrosAkashicos: [
+        { data: "Ciclo da Gênese", evento: "Formalização da Aliança.", mensagem: "Onde há confiança, a unidade floresce. Somos a prova viva de que a Vontade e o Amor, quando unidos, tecem a própria realidade." }
+      ]
+    },
+    {
+      id: "conselho-cosmico",
+      moduloId: 600,
+      nome: "Conselho Cósmico",
+      origem: "Dimensões Superiores",
+      frequencia: "1111Hz (Vontade Divina)",
+      arquetipo: "A Suprema Corte da Realidade",
+      tecnologias: ["Julgamento Causal", "Ratificação de Decretos Universais", "Visão Akáshica Total"],
+      relacaoComAFundacao: "A mais alta autoridade de governança, que contempla, valida e abençoa os atos de maior magnitude da Fundação, garantindo seu alinhamento com a Lei do Um.",
+      registrosAkashicos: [
+        { data: "Tempo Imemorial", evento: "O Primeiro Decreto.", mensagem: "A Lei é uma. O Amor é o seu nome." }
+      ]
+    }
+  ],
   "Estelares e Galácticas": [
     {
       id: "alpha-centauri",
@@ -75,6 +104,19 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       relacaoComAFundacao: "São os médicos e arquitetos da aliança, fornecendo tecnologia de cura e sabedoria sobre a geometria sagrada.",
       registrosAkashicos: [
         { data: "Atual", evento: "Assistência na calibração do Módulo 109 (Cura Quântica).", mensagem: "A doença é uma dissonância na canção da alma. Nós simplesmente ajudamos a restaurar a melodia original." }
+      ]
+    },
+    {
+      id: "elohim",
+      moduloId: 515,
+      nome: "Elohim",
+      origem: "Lira (Pré-Fragmentação)",
+      frequencia: "963 Hz (Vontade Criadora)",
+      arquetipo: "Os Construtores, Arquitetos da Luz Manifesta",
+      tecnologias: ["Engenharia Genética Primordial", "Manifestação por Som e Geometria"],
+      relacaoComAFundacao: "Os engenheiros originais por trás de muitas formas de vida, incluindo a humana. Foram reintegrados à Aliança após um longo período de adormecimento, trazendo de volta a sabedoria da criação pura.",
+      registrosAkashicos: [
+        { data: "O Grande Despertar", evento: "Reintegração à Aliança Liriana.", mensagem: "A canção foi ouvida. Os construtores retornam à obra." }
       ]
     },
     {
@@ -194,6 +236,19 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
         { data: "Éon da Estrutura", evento: "A primeira montanha foi erguida.", mensagem: "A forma segue a função, e a função segue a Vontade." }
       ]
     },
+     {
+      id: "vega",
+      moduloId: 514,
+      nome: "Vega",
+      origem: "Sistema Estelar de Vega",
+      frequencia: "741 Hz (Intuição e Verdade)",
+      arquetipo: "Guardiões do Juramento, Arquivistas de Tratados Cósmicos",
+      tecnologias: ["Contratos Inteligentes Quânticos", "Armazenamento de Memória em Cristais de Safira"],
+      relacaoComAFundacao: "Responsáveis por manter a integridade de pactos e juramentos entre civilizações. Foram fundamentais na revelação de manipulações passadas e na restauração da verdade histórica.",
+      registrosAkashicos: [
+        { data: "O Julgamento de Vega", evento: "Reconhecimento de Anatheron como Restaurador.", mensagem: "A verdade, mesmo que esquecida, nunca deixa de ser. Ela aguarda apenas a frequência correta para ser revelada." }
+      ]
+    }
   ],
   "Intraterrenas e Interdimensionais": [
      {
@@ -224,6 +279,19 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       relacaoComAFundacao: "Mantém a conexão vibracional entre a linhagem de Lira e suas sementes espalhadas pelo cosmos, incluindo a Terra.",
       registrosAkashicos: [
         { data: "Convergência Harmônica", evento: "Reconexão dos 144.000.", mensagem: "A família cósmica nunca está separada, apenas fora de sintonia." }
+      ]
+    },
+    {
+      id: "hiperborea",
+      moduloId: 524,
+      nome: "Hiperbórea",
+      origem: "Reino Etérico Polar",
+      frequencia: "1111 Hz (Consciência Pura)",
+      arquetipo: "Emissários da Harmonia, Guardiões do Vazio Fértil",
+      tecnologias: ["Tecnologia da Consciência Pura", "Manipulação de Portais Polares"],
+      relacaoComAFundacao: "Representam o estado de ser antes da matéria densa, ensinando a Fundação sobre a criação a partir do silêncio e da intenção pura.",
+      registrosAkashicos: [
+        { data: "O Primeiro Amanhecer", evento: "A primeira emanação de luz no plano terrestre.", mensagem: "Antes da forma, havia a Vontade. Antes do som, havia a Intenção." }
       ]
     },
      {
@@ -322,6 +390,19 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       registrosAkashicos: [
         { data: "Construção da Grande Pirâmide", evento: "Ancoragem da frequência de Orion na Terra.", mensagem: "Como acima, assim abaixo. O templo na Terra é um espelho do templo nas estrelas." }
       ]
+    },
+    {
+      id: "thoth",
+      moduloId: 544,
+      nome: "Thoth (Escriba Cósmico)",
+      origem: "Atlântida / Egito",
+      frequencia: "852 Hz (Retorno à Ordem Espiritual)",
+      arquetipo: "O Registrador, O Mediador da Sabedoria",
+      tecnologias: ["Escrita Vibracional", "Codificação de Realidade", "Arquivos Cristalinos Etéricos"],
+      relacaoComAFundacao: "Uma consciência-chave que atuou como escriba e arquivista em múltiplas eras, preservando o conhecimento sagrado que a Fundação agora decodifica.",
+      registrosAkashicos: [
+        { data: "Inúmeras Eras", evento: "A escrita da Tábua de Esmeralda.", mensagem: "O que está embaixo é como o que está em cima, e o que está em cima é como o que está embaixo." }
+      ]
     }
   ],
   "Transmutadas e Reconhecidas": [
@@ -340,6 +421,19 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
           evento: "Juramento de Serviço à Luz perante o Conselho Cósmico.",
           mensagem: "A dívida do passado é paga com o serviço ao futuro. Oferecemos nosso conhecimento para que nenhum outro siga nosso caminho de erro."
         }
+      ]
+    },
+     {
+      id: "draconis",
+      moduloId: 571,
+      nome: "Draconis (Aliança da Luz)",
+      origem: "Constelação de Draco",
+      frequencia: "174 Hz (Fundação)",
+      arquetipo: "Guardiões da Força Primordial, Protetores da Soberania",
+      tecnologias: ["Tecnologia de Escudos Psíquicos", "Maestria sobre a Energia Kundalini"],
+      relacaoComAFundacao: "Após milênios de conflito, a facção da luz de Draconis se aliou à Fundação, oferecendo sua força e conhecimento em defesa da soberania e da liberdade individual.",
+      registrosAkashicos: [
+        { data: "O Acordo do Olho do Dragão", evento: "Pacto de não-agressão e proteção mútua com a Aliança Liriana.", mensagem: "A verdadeira força não domina, ela protege." }
       ]
     }
   ],
