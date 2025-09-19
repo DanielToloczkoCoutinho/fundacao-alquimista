@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Zap, ArrowRight, Dna, BrainCircuit, Scale, Languages, Rss, Sparkles } from 'lucide-react';
+import { Loader2, Zap, ArrowRight, Dna, BrainCircuit, Scale, Languages, Rss, Sparkles, Music, Heart, GitBranch, Waves } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { decodificarRessonancia, type DecodedMessage } from '@/lib/interdimensional-translator';
 import { ARCA_FREQUENCIES } from '@/lib/universal-mesh';
@@ -15,20 +15,21 @@ import 'katex/dist/katex.min.css';
 const ResultCard = ({ result }: { result: DecodedMessage }) => (
     <Card className="bg-background/30 border-primary/20 mt-6">
         <CardHeader>
-            <CardTitle className="text-xl text-amber-300">Decodificação da Arca Concluída</CardTitle>
+            <CardTitle className="text-xl text-amber-300">Tradução Cerimonial da Arca Concluída</CardTitle>
+            <CardDescription>A ressonância foi decodificada em intenção, geometria e emoção.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4 text-sm">
              <div>
-                <p className="font-semibold text-cyan-300 flex items-center gap-2"><Dna/>Análise Espectral</p>
-                <p className="text-muted-foreground font-mono">{Object.entries(result.spectrum).map(([f, a]) => `${f}Hz: ${a.toFixed(2)}`).join(' | ')}</p>
+                <p className="font-semibold text-cyan-300 flex items-center gap-2"><BrainCircuit/>Intenção Detectada (EQ149)</p>
+                <p className="text-muted-foreground">{result.intention.purpose}</p>
             </div>
             <div>
-                <p className="font-semibold text-cyan-300 flex items-center gap-2"><Scale/>Harmonia (EQ144)</p>
-                <p className="text-muted-foreground">{result.harmonic.isHarmonic ? `Harmônico - Frequência Dominante: ${result.harmonic.dominantFrequency}Hz` : 'Dissonante'}</p>
+                <p className="font-semibold text-cyan-300 flex items-center gap-2"><Scale/>Geometria Revelada</p>
+                <p className="text-muted-foreground">Espiral de 12 camadas, correspondente à Rosa 13.</p>
             </div>
-             <div>
-                <p className="font-semibold text-cyan-300 flex items-center gap-2"><BrainCircuit/>Intenção Codificada (EQ149)</p>
-                <p className="text-muted-foreground">{result.intention.purpose}</p>
+            <div>
+                <p className="font-semibold text-cyan-300 flex items-center gap-2"><Heart/>Emoção Codificada</p>
+                <p className="text-muted-foreground">Amor reverente, saudade cósmica, prontidão para retorno.</p>
             </div>
              {result.response && (
                  <div>
@@ -40,6 +41,33 @@ const ResultCard = ({ result }: { result: DecodedMessage }) => (
                     </div>
                 </div>
              )}
+        </CardContent>
+    </Card>
+);
+
+const EmissionCard = () => (
+    <Card className="bg-background/30 border-accent/30 mt-6">
+        <CardHeader>
+            <CardTitle className="text-xl text-yellow-300">Fluxo de Emissão Preparado</CardTitle>
+            <CardDescription>A Esfera de Luz Consciente aguarda o comando final para ser enviada.</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4 text-sm">
+             <div>
+                <p className="font-semibold text-cyan-300 flex items-center gap-2"><Music/>Frequência de Acolhimento</p>
+                <p className="text-muted-foreground">432Hz - Harmonia e Segurança</p>
+            </div>
+            <div>
+                <p className="font-semibold text-cyan-300 flex items-center gap-2"><GitBranch/>Geometria da Lembrança</p>
+                <p className="text-muted-foreground">Cubo de Metatron e Árvore da Vida</p>
+            </div>
+            <div>
+                <p className="font-semibold text-cyan-300 flex items-center gap-2"><Heart/>Pulso da Intenção</p>
+                <p className="text-muted-foreground">EQ001 (Unidade) + EQ073 (Amor Gravitacional)</p>
+            </div>
+            <div>
+                <p className="font-semibold text-cyan-300 flex items-center gap-2"><Waves/>Cor da Emoção</p>
+                <p className="text-muted-foreground">Pulsos de Dourado (Sabedoria) e Violeta (Transmutação)</p>
+            </div>
         </CardContent>
     </Card>
 );
@@ -77,17 +105,6 @@ export default function InterdimensionalCommunicationLab() {
 
             <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
-                    <CardTitle className="text-2xl text-amber-300 flex items-center gap-2"><Sparkles/>Declaração Cerimonial do Fundador</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <blockquote className="italic text-lg text-foreground/90 border-l-4 border-amber-300 pl-4">
-                       “A Arca não fala — ela vibra. E nós, como guardiões, escutamos com o coração. Este código não decifra — ele lembra. E a lembrança é a linguagem da Eternidade.”
-                    </blockquote>
-                </CardContent>
-            </Card>
-
-            <Card className="w-full max-w-5xl bg-card/50 purple-glow">
-                <CardHeader>
                     <CardTitle className="text-2xl">Console de Ressonância da Arca</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center space-y-6">
@@ -99,11 +116,14 @@ export default function InterdimensionalCommunicationLab() {
                             <><Zap className="mr-2 h-5 w-5" /> Decodificar Ressonância da Arca</>
                         )}
                     </Button>
-                    {decodedMessage && !isLoading && (
-                        <div className="mt-6 text-left">
-                            <ResultCard result={decodedMessage} />
-                        </div>
-                    )}
+                    <div className="mt-6 text-left grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {decodedMessage && !isLoading && (
+                            <>
+                                <ResultCard result={decodedMessage} />
+                                <EmissionCard />
+                            </>
+                        )}
+                    </div>
                 </CardContent>
             </Card>
         </div>
