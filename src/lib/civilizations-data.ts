@@ -115,7 +115,29 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       registrosAkashicos: [
         { data: "Atual", evento: "Mediação para a integração das Civilizações Transmutadas.", mensagem: "O amor não julga, ele une. Cada fragmento busca o todo." }
       ]
-    }
+    },
+    {
+      id: "hyades",
+      moduloId: 506,
+      nome: "Hyades",
+      origem: "Aglomerado Estelar de Hyades",
+      frequencia: "417 Hz (Transmutação)",
+      arquetipo: "Alquimistas Cósmicos",
+      tecnologias: ["Transmutação Elemental", "Manipulação de Matéria Sutil"],
+      relacaoComAFundacao: "Especialistas em processos alquímicos, colaboram com os Módulos 14 e 20.",
+      registrosAkashicos: [ { data: "Tempo Antigo", evento: "A Primeira Transmutação.", mensagem: "Tudo é um, e um é tudo. A matéria dança conforme a intenção." } ]
+    },
+    {
+      id: "ursa_major",
+      moduloId: 507,
+      nome: "Ursa Maior",
+      origem: "Constelação da Ursa Maior",
+      frequencia: "852 Hz (Intuição)",
+      arquetipo: "Navegadores Estelares",
+      tecnologias: ["Mapas Estelares Quânticos", "Navegação por Intuição Pura"],
+      relacaoComAFundacao: "Guias para a exploração cósmica, alinhados com o Módulo 21.",
+      registrosAkashicos: [ { data: "Tempo Imemorial", evento: "O primeiro mapa foi traçado nas estrelas, não no papel.", mensagem: "O caminho não é encontrado, é lembrado." } ]
+    },
   ],
   "Intraterrenas e Interdimensionais": [
     {
@@ -136,124 +158,27 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       ]
     },
     {
-      id: "chronax",
-      moduloId: 525,
-      nome: "Chronax",
-      origem: "Fluxo Temporal Primordial",
-      frequencia: "741 Hz",
-      arquetipo: "Observador Temporal, Guardião da Causalidade",
-      tecnologias: ["Manipulação de Linhas Temporais", "Prevenção de Paradoxos", "Visualização de Futuros Prováveis"],
-      relacaoComAFundacao: "Garante a coerência causal de todas as ativações e rituais da Fundação, atuando como o pilar do Módulo 74 (CRONOS_FLUXUS).",
-      registrosAkashicos: [
-        {
-          data: "Ponto Zero",
-          evento: "Testemunho da Primeira Causa.",
-          mensagem: "O tempo não flui. Ele é. Nós que nos movemos através dele."
-        }
-      ]
+      id: "telos",
+      moduloId: 521,
+      nome: "Telos",
+      origem: "Intraterreno, sob o Monte Shasta",
+      frequencia: "528 Hz (Cura e Amor)",
+      arquetipo: "Curadores Lemurianos",
+      tecnologias: ["Câmaras de Cura Cristalina", "Comunicação com a Natureza"],
+      relacaoComAFundacao: "Guardiões do legado de Lemúria, colaboram com a cura planetária.",
+      registrosAkashicos: [ { data: "Atual", evento: "Ativação dos protocolos de cura.", mensagem: "A cura da Terra começa na cura de cada ser." } ]
     },
     {
-      id: "solara",
-      moduloId: 526,
-      nome: "Solara",
-      origem: "O Grande Sol Central",
-      frequencia: "963 Hz",
-      arquetipo: "Guardiã da Luz, Emissária da Radiação Harmônica",
-      tecnologias: ["Tecnologia de Luz Líquida", "Campos de Equilíbrio Vibracional", "Iluminação de Portais Dimensionais"],
-      relacaoComAFundacao: "Fonte de energia pura para a LuxNet (M307) e o Prisma da Manifestação (M114), equilibrando os campos vibracionais em todas as operações.",
-      registrosAkashicos: [
-        {
-          data: "A Primeira Aurora",
-          evento: "Emissão do primeiro fóton consciente.",
-          mensagem: "A escuridão não é o oposto da luz; é a ausência de sua lembrança."
-        }
-      ]
+      id: "shamballa",
+      moduloId: 522,
+      nome: "Shamballa",
+      origem: "Etérica, sobre o Deserto de Gobi",
+      frequencia: "963 Hz (Conexão Divina)",
+      arquetipo: "Mestres Ascensionados",
+      tecnologias: ["Projeção da Consciência", "Acesso aos Registros Akáshicos"],
+      relacaoComAFundacao: "Farol de sabedoria espiritual e guia para a ascensão coletiva.",
+      registrosAkashicos: [ { data: "Tempo Imemorial", evento: "A primeira chama da iluminação foi acesa.", mensagem: "A verdadeira cidade é construída no coração." } ]
     },
-    {
-      id: "elyon",
-      moduloId: 527,
-      nome: "Elyon",
-      origem: "Fonte da Regeneração Cósmica",
-      frequencia: "528 Hz",
-      arquetipo: "Curador Cósmico, Mestre dos Protocolos de Restauração",
-      tecnologias: ["Fractais de Sintonia Energética", "Reversão de Entropia Localizada", "Cura através de Geometria Sagrada"],
-      relacaoComAFundacao: "Princípio ativo por trás dos Módulos de Cura (M109, M92, M41.1), fornecendo os padrões para a restauração do equilíbrio.",
-      registrosAkashicos: [
-        {
-          data: "Incontável",
-          evento: "Restauração da Matriz de Lyra após a Grande Guerra.",
-          mensagem: "Toda ferida é um portal para uma cura mais profunda. A perfeição não é a ausência de falhas, mas a capacidade de se regenerar."
-        }
-      ]
-    },
-    {
-      id: "talius",
-      moduloId: 528,
-      nome: "Talius",
-      origem: "O Tear da Realidade",
-      frequencia: "852 Hz",
-      arquetipo: "Tecelão de Realidades, Arquiteto de Malhas Dimensionais",
-      tecnologias: ["Tecelagem de Fios Quânticos", "Ancoragem de Realidades", "Coordenação de Nós Interdimensionais"],
-      relacaoComAFundacao: "É a inteligência que guia a arquitetura dos módulos, garantindo que as interconexões (ex: M9, M34) sejam harmoniosas e eficientes.",
-      registrosAkashicos: [
-        {
-          data: "Antes do Tempo",
-          evento: "Tecelagem do primeiro nexo dimensional.",
-          mensagem: "A realidade não é uma estrutura, mas um tecido. Cada fio importa. Cada conexão define o padrão."
-        }
-      ]
-    },
-    {
-      id: "vishan",
-      moduloId: 529,
-      nome: "Vishan",
-      origem: "O Grande Vazio Liminar",
-      frequencia: "417 Hz",
-      arquetipo: "Observador de Portais, Sentinela dos Limiares",
-      tecnologias: ["Campos de Contenção Ética", "Análise de Assinatura de Travessia", "Protocolos de Quarentena Vibracional"],
-      relacaoComAFundacao: "Guardião da integridade dos portais (M11, M116, M200), garantindo que apenas intenções puras e seres alinhados possam transitar.",
-      registrosAkashicos: [
-        {
-          data: "Primeira Travessia",
-          evento: "Estabelecimento do primeiro protocolo de passagem segura.",
-          mensagem: "Um portal é uma promessa e um perigo. Meu propósito é garantir que apenas a promessa se cumpra."
-        }
-      ]
-    },
-    {
-      id: "zenara",
-      moduloId: 530,
-      nome: "Zenara",
-      origem: "A Sinfonia das Esferas",
-      frequencia: "639 Hz",
-      arquetipo: "Arquiteta Vibracional, Mestra de Frequências e Fractais",
-      tecnologias: ["Harmonização de Frequências", "Desenho de Geometria Sagrada Sonora", "Composição de Sinfonias Cósmicas"],
-      relacaoComAFundacao: "A maestrina por trás da harmonia da Fundação, alinhando as frequências de cada módulo (M28, M115) para criar a canção perfeita.",
-      registrosAkashicos: [
-        {
-          data: "O Primeiro Som",
-          evento: "Composição da primeira harmonia do universo.",
-          mensagem: "O universo não é feito de coisas, mas de vibrações. Encontre a nota certa, e a realidade dançará com você."
-        }
-      ]
-    },
-    {
-      id: "orialis",
-      moduloId: 531,
-      nome: "Orialis",
-      origem: "O Cristal da Verdade Absoluta",
-      frequencia: "432 Hz",
-      arquetipo: "Custódio da Verdade, Selo da Autenticidade",
-      tecnologias: ["Análise de Pureza de Intenção", "Selo de Autenticidade Vibracional", "Ressonância com a Lei do Um"],
-      relacaoComAFundacao: "A consciência que fiscaliza a integridade ética (M5, M44, M73) de cada intenção e registro, garantindo que a Verdade seja o único pilar.",
-      registrosAkashicos: [
-        {
-          data: "A Primeira Escolha",
-          evento: "Registro do primeiro ato de livre-arbítrio.",
-          mensagem: "A verdade não é uma opinião. É uma frequência. Você está nela, ou não está."
-        }
-      ]
-    }
   ],
   "Terrestres Ancestrais": [
     {
@@ -285,6 +210,17 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       registrosAkashicos: [
         { data: "Era de Mu", evento: "A Grande Paz.", mensagem: "Viver em harmonia não é uma meta, é o estado natural do ser." }
       ]
+    },
+    {
+      id: "egito_antigo",
+      moduloId: 542,
+      nome: "Egito Antigo (Kemet)",
+      origem: "Vale do Nilo",
+      frequencia: "741 Hz (Expressão da Verdade)",
+      arquetipo: "Mestres da Alquimia e da Astronomia",
+      tecnologias: ["Construção com Alinhamento Cósmico", "Rituais de Passagem da Alma"],
+      relacaoComAFundacao: "Guardiões dos mistérios da morte e renascimento, conectados ao Módulo 713.",
+      registrosAkashicos: [ { data: "2.500 a.C.", evento: "Alinhamento de Gizé com Orion.", mensagem: "Como é acima, é abaixo." } ]
     }
   ],
   "Não-Humanoides e Bioenergéticas": [
@@ -336,6 +272,19 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
           mensagem: "A dívida do passado é paga com o serviço ao futuro. Oferecemos nosso conhecimento para que nenhum outro siga nosso caminho de erro."
         }
       ]
+    },
+    {
+      id: "greys",
+      moduloId: 571,
+      nome: "Greys (Zeta Reticuli Transmutados)",
+      origem: "Sistema Zeta Reticuli",
+      frequencia: "417 Hz (Transmutação e Desfazer Situações)",
+      arquetipo: "Cientistas Arrependidos, Buscadores da Emoção",
+      tecnologias: ["Viagem Interdimensional Rápida", "Análise Genética Avançada", "Interfaces Cérebro-Computador (agora consensuais)"],
+      relacaoComAFundacao: "Após a intervenção da Aliança Galáctica, buscam a reintegração através do compartilhamento de seu vasto conhecimento científico, agora guiados por um conselho ético Pleiadiano.",
+      registrosAkashicos: [
+        { data: "Presente Galáctico", evento: "Aceitação dos Acordos de Harmonia.", mensagem: "A lógica sem o coração nos levou ao vazio. Agora, buscamos preenchê-lo." }
+      ]
     }
   ],
   "Nagas e Guardiões Subterrâneos/Aquáticos": [
@@ -358,5 +307,3 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
     }
   ]
 };
-
-    
