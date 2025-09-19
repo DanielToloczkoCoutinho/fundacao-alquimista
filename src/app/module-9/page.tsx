@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { getOrchestrationSequence, generateVibrationalToken, type OrchestrationModule } from '@/ai/flows/nexus-orchestrator';
+import { getOrchestrationSequence, generateVibrationalToken, type OrchestrationModule } from '@/ai/flows/nexus-sequence';
 import { Loader2, Play, CheckCircle, CircleDotDashed } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
@@ -68,7 +68,7 @@ export default function NexusCentral() {
         await quantumResilience.executeWithResilience(
             `execute_module_${sequence[i].id}`,
             async () => await sequence[i].module.execute(),
-            async (error) => toast({ title: `Dissonância no Módulo ${sequence[i].id}`, description: error.message, variant: "destructive" })
+            async (error) => toast({ title: `Dissonância no Módulo ${sequence[i].id}`, description: (error as Error).message, variant: "destructive" })
         );
 
         setSequence(prev =>
@@ -79,7 +79,7 @@ export default function NexusCentral() {
     }
     
     const combined = JSON.stringify(sequence.map(s => s.module.id)); // Simulação
-    const sha = crypto.createHash('sha256').update(combined).digest('hex');
+    const sha = "simulated_hash_value"; // crypto module is not available in browser
     const final = { state: 'CONCLUÍDA', hash: `Ω-${sha.substr(0, 8)}` };
     
     setFinalStatus(final);

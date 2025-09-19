@@ -23,7 +23,8 @@ import {
   Crown,
   Moon,
   KeyRound,
-  Rss
+  Rss,
+  GitBranch, // Adicionado para o Nexus
 } from 'lucide-react';
 import React from 'react';
 
@@ -35,6 +36,7 @@ export interface SidebarRoute {
 
 export const mainRoutes: SidebarRoute[] = [
   { path: '/console', label: 'Mesa do Fundador', icon: React.createElement(Home) },
+  { path: '/module-9', label: 'Nexus Central', icon: React.createElement(GitBranch) },
   { path: '/golden-book', label: 'Livro de Ouro', icon: React.createElement(Book) },
   { path: '/lunar-review', label: 'Revisão Lunar', icon: React.createElement(Moon) },
   { path: '/module-1001', label: 'Recepção Cósmica', icon: React.createElement(Rss) },

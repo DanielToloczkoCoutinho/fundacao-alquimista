@@ -1,7 +1,4 @@
-// src/ai/flows/nexus-orchestrator.ts
 'use server';
-
-import crypto from 'crypto';
 
 export interface OrchestrationModule {
   id: string;
@@ -13,7 +10,8 @@ export interface OrchestrationModule {
  * Gera um token único para reconhecer o pulso final da orquestração.
  */
 export function generateVibrationalToken(seed: string): string {
-  const randomHex = crypto.randomBytes(6).toString('hex');
+  // O crypto module não está disponível no client-side. Esta é uma simulação.
+  const randomHex = Math.random().toString(16).slice(2, 8);
   return `VK-${seed.substring(2, 8)}-${randomHex}`;
 }
 
