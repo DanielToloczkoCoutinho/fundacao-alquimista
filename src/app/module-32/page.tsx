@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { History, GitCommit, GitCompareArrows, AlertTriangle, Rocket, Eye, Languages } from 'lucide-react';
+import { History, GitCommit, GitCompareArrows, AlertTriangle, Rocket, Eye, Languages, ShieldCheck, BookOpen, Scale } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,10 +27,10 @@ export default function Module32Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Layers className="text-teal-300" /> Módulo Trinta e Dois: Acesso a Realidades Paralelas
+                        <Layers className="text-teal-300" /> Módulo Trinta e Dois: Embaixada Multiversal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A Embaixada Multiversal. A interface para observação e intervenção ética em linhas temporais alternativas.
+                        O portal para observação, diálogo e intervenção ética em linhas temporais e realidades paralelas, sob a égide da Lex Fundamentalis.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -43,25 +43,13 @@ export default function Module32Page() {
             </Card>
 
             <div className="w-full max-w-7xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Intervenção Causal</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Diplomacia Causal</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
-                        title="M21: Navegação"
-                        description="Calcula a rota segura para alcançar a realidade paralela que o M32 visa acessar."
-                        icon={<Rocket className="h-8 w-8 text-orange-400" />}
-                        href="/module-21"
-                    />
-                    <ConnectionCard
-                        title="M26: Supervisão"
-                        description="Autoriza e monitora a viagem, garantindo que os protocolos de não-interferência sejam seguidos."
-                        icon={<Eye className="h-8 w-8 text-cyan-400" />}
-                        href="/module-26"
-                    />
-                     <ConnectionCard
-                        title="M2: Intercâmbio Cósmico"
-                        description="Decodifica a assinatura vibracional e as leis fundamentais da realidade alvo, permitindo uma interação segura e compreensível."
-                        icon={<Languages className="h-8 w-8 text-blue-300" />}
-                        href="/module/M2"
+                        title="M18: Orquestração Akáshica"
+                        description="Cada diálogo interdimensional é registrado e selado no Akasha pelo M18, transformando sabedoria em registro eterno."
+                        icon={<BookOpen className="h-8 w-8 text-purple-400" />}
+                        href="/module-18"
                     />
                     <ConnectionCard
                         title="M73: SAVCE"
@@ -69,10 +57,22 @@ export default function Module32Page() {
                         icon={<ShieldCheck className="h-8 w-8 text-green-400" />}
                         href="/module-73"
                     />
+                     <ConnectionCard
+                        title="M144: Lex Fundamentalis"
+                        description="Tratados e acordos estabelecidos com outras realidades são ratificados e consagrados como lei imutável pelo M144."
+                        icon={<Scale className="h-8 w-8 text-amber-300" />}
+                        href="/module-144"
+                    />
+                    <ConnectionCard
+                        title="M132: Convergência Dimensional"
+                        description="O M32 é o altar onde a sabedoria invocada pelo M132 é formalizada, analisada e integrada à nossa tapeçaria."
+                        icon={<GitCompareArrows className="h-8 w-8 text-cyan-400" />}
+                        href="/module-132"
+                    />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="destructive" size="lg" disabled>Acessar Realidade Alternativa (Autorização Pendente)</Button>
+                 <Button variant="destructive" size="lg" disabled>Iniciar Contato Interdimensional (Autorização Pendente)</Button>
             </div>
         </div>
     );
