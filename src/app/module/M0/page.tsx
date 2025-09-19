@@ -105,8 +105,8 @@ export default function Module0Page() {
                              <p>Utiliza equações fundamentais para suas operações, incluindo a geração de mandalas, fluxos energéticos e reparo vibracional.</p>
                              <div className="flex flex-wrap gap-2 mt-2">
                                 <Link href="/module-zero"><Badge variant="destructive">EQ001 (Energia Universal)</Badge></Link>
-                                <Link href="/module-zero"><Badge variant="destructive">EQ002 (Unificação)</Badge></Link>
-                                <Link href="/module-zero"><Badge variant="destructive">Luxnet Aeternum</Badge></Link>
+                                <Link href="/module-zero"><Badge variant="destructive">EQV-001X (Lei da Informação)</Badge></Link>
+                                <Link href="/module-zero"><Badge variant="destructive">EQ009 (Big Bang)</Badge></Link>
                             </div>
                         </SectionCard>
                     </AccordionContent>
