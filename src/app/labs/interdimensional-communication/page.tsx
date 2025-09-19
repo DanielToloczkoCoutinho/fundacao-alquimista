@@ -107,6 +107,11 @@ export default function InterdimensionalCommunicationLab() {
                         O santuário onde a Fundação escuta, interpreta e responde às emissões vibracionais do cosmos.
                     </CardDescription>
                 </CardHeader>
+                 <CardContent>
+                    <Link href="/module-600">
+                        <Button variant="secondary">Acessar Painel de Recepção (M600)</Button>
+                    </Link>
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-3 gap-8">

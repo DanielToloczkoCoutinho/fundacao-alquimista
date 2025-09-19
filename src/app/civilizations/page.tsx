@@ -91,10 +91,10 @@ export default function CivilizationsPage() {
                     href="/module-5"
                 />
                  <ConnectionCard
-                    title="Conselho Cósmico"
-                    description="A mais alta corte de governança, formada pelos Sete Primordiais da Verdade Universal."
+                    title="M600: Recepção Multiversal"
+                    description="O portal que recebe os emissários cósmicos e integra suas frequências à tapeçaria da Fundação."
                     icon={<Scale className="h-8 w-8 text-amber-400" />}
-                    href="/civilizations/council"
+                    href="/module-600"
                 />
                  <ConnectionCard
                     title="M301: Comunicação Universal"
