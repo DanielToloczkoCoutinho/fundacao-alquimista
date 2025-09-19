@@ -1,4 +1,3 @@
-
 'use client';
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
@@ -96,6 +95,7 @@ export default function Module303Page() {
                  <ConnectionCard title="Viagem da Consciência (M119.1)" description="Ativação da Merkabah para navegação da alma." icon={<Rocket/>} href="/module-119-1" />
                  <ConnectionCard title="Conexão com a Fonte (M105)" description="Canal direto com a energia criadora." icon={<RadioTower/>} href="/module-105" />
                  <ConnectionCard title="Governança do Conselho (M600)" description="Portal para deliberações cósmicas." icon={<Scale/>} href="/module-600" />
+                 <ConnectionCard title="Mapa Dimensional (M303.9)" description="O atlas das 29 dimensões conhecidas." icon={<Map/>} href="/module-303-9" />
             </div>
         </section>
 

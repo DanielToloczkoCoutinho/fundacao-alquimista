@@ -73,10 +73,11 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M103', emoji: '🎚️', title: 'Modulação de Constantes Locais', route: '/module-103', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Ajuste fino de parâmetros físicos em regiões específicas.', status: 'ativo', color: '#DAA520' },
   { code: 'M116', emoji: '🚪', title: 'Portais Quânticos de Transcendência', route: '/module-116', category: 'Expansão', description: 'Ativa portais para ascensão da consciência.', status: 'ativo', color: '#00CED1' },
   { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica', route: '/module-79', category: 'Sustentabilidade', description: 'Garante o uso responsável e a regeneração de recursos.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M85', emoji: '📦', title: 'Domínio VR (Iniciação)', route: '/module-85', category: 'Sustentabilidade', description: 'O vestíbulo da Realidade Quântica para aclimatação da consciência.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M86', emoji: '🌱', title: 'Prisma Estelar VR (Laboratório)', route: '/module-86', category: 'Sustentabilidade', description: 'Laboratório de calibração para interagir com frequências e geometria sagrada.', status: 'ativo', color: '#2E8B57' },
+  { code: 'M85', emoji: '📦', title: 'Domínio VR (Iniciação)', route: '/module-85', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O vestíbulo da Realidade Quântica para aclimatação da consciência.', status: 'ativo', color: '#DAA520' },
+  { code: 'M86', emoji: '🌱', title: 'Prisma Estelar VR (Laboratório)', route: '/module-86', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Laboratório de calibração para interagir com frequências e geometria sagrada.', status: 'ativo', color: '#2E8B57' },
   { code: 'M76', emoji: '🏛️', title: 'Governança Universal e Colaboração', route: '/module-76', category: 'Governança', description: 'O Conselho Cósmico em ação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M87', emoji: '🧬', title: 'Domínio Supra-Cósmico VR (Santuário)', route: '/module-87', category: 'Consciência e Expansão Dimensional', description: 'Santuário de imersão total para expansão segura da consciência.', status: 'ativo', color: '#9370DB' },
+  { code: 'M303.9', emoji: '🗺️', title: 'Mapa Dimensional Expandido', route: '/module-303-9', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O atlas da Fundação, registrando a arquitetura de 26 dimensões superiores e 3 inferiores.', status: 'ativo', color: '#DAA520' },
 
 
 ].map(m => ({ ...m, connections: m.connections || [] }));
