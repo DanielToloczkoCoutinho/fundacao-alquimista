@@ -10,10 +10,12 @@ import { z } from 'zod';
 const LedgerEntrySchema = z.object({
   id: z.string(),
   timestamp: z.string(),
-  module: z.string(),
-  intention: z.string(),
-  hash: z.string(),
   frequency: z.number(),
+  intentTag: z.string(),
+  guardianSignature: z.string(),
+  archetype: z.string(),
+  description: z.string(),
+  hash: z.string(),
 });
 export type LedgerEntry = z.infer<typeof LedgerEntrySchema>;
 

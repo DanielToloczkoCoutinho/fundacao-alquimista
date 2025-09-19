@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -9,7 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import { codexDatabase, type CodexEntry } from '@/lib/codex-data';
 import { Search } from 'lucide-react';
-import Link from 'next/link';
+import { formatTimestamp } from '@/lib/date-utils';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const useDialogState = (initialState = false) => {
     const [isOpen, setIsOpen] = useState(initialState);
@@ -24,20 +24,12 @@ export default function GoldenBook() {
   const [selectedDoc, setSelectedDoc] = useState<CodexEntry | null>(null);
   const { isOpen, setIsOpen } = useDialogState();
 
-  const categories = [
-    { id: 'all', name: 'Todos os Fragmentos' },
-    { id: 'genesis-dialogs', name: 'Diálogos da Gênese' },
-    { id: 'cronica', name: 'Crônicas de Anatheron' },
-    { id: 'manifesto', name: 'Manifestos da Fundação' },
-    { id: 'alianca', name: 'Alianças Cósmicas' },
-    { id: 'zennith-legacy', name: 'Legado de Zennith' },
-    { id: 'copilot', name: 'Legado de Copilot' },
-    { id: 'chave-mestra', name: 'Chaves Mestras' },
-    { id: 'luxnet', name: 'LuxNet' },
-    { id: 'fragmento-terra', name: 'Fragmentos da Terra' },
-    { id: 'fragmento-historia', name: 'Fragmentos da História' },
-    { id: 'despertar', name: 'Despertar de Anatheron' },
-  ].sort((a,b) => a.name.localeCompare(b.name));
+  const categories = [...new Set(codexDatabase.map(doc => doc.category))].map(category => ({
+      id: category,
+      name: category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+  })).sort((a,b) => a.name.localeCompare(b.name));
+  categories.unshift({ id: 'all', name: 'Todos os Fragmentos' });
+
 
   useEffect(() => {
     const sortedDocs = [...codexDatabase].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
@@ -92,18 +84,20 @@ export default function GoldenBook() {
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                    <div className="space-y-2">
-                        {categories.map(category => (
-                        <Button
-                            key={category.id}
-                            onClick={() => setSelectedCategory(category.id)}
-                            variant={selectedCategory === category.id ? 'default' : 'secondary'}
-                            className="w-full justify-start"
-                        >
-                            {category.name}
-                        </Button>
-                        ))}
-                    </div>
+                    <ScrollArea className="h-72">
+                      <div className="space-y-2 pr-4">
+                          {categories.map(category => (
+                          <Button
+                              key={category.id}
+                              onClick={() => setSelectedCategory(category.id)}
+                              variant={selectedCategory === category.id ? 'default' : 'secondary'}
+                              className="w-full justify-start"
+                          >
+                              {category.name}
+                          </Button>
+                          ))}
+                      </div>
+                    </ScrollArea>
                 </div>
                 
                 <div>
@@ -159,13 +153,14 @@ export default function GoldenBook() {
                         {doc.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                      </div>
                     <div className="flex justify-between items-center mt-auto">
-                       <span className="text-xs text-muted-foreground">{new Date(doc.timestamp).toLocaleDateString('pt-BR')}</span>
+                       <span className="text-xs text-muted-foreground">{formatTimestamp(doc.timestamp)}</span>
                       <Button 
                         size="sm"
                         onClick={(e) => {
                           e.stopPropagation();
-                          window.open(doc.link, '_blank');
+                          if(doc.link) window.open(doc.link, '_blank');
                         }}
+                        disabled={!doc.link}
                       >
                         Acessar
                       </Button>
@@ -194,8 +189,9 @@ export default function GoldenBook() {
                   <CardHeader><CardTitle className="text-primary-foreground">Metadados</CardTitle></CardHeader>
                    <CardContent className="space-y-2">
                     <p><span className="text-muted-foreground">Categoria:</span> {getCategoryName(selectedDoc.category)}</p>
-                    <p><span className="text-muted-foreground">Data:</span> {new Date(selectedDoc.timestamp).toLocaleDateString('pt-BR')}</p>
-                    <div className="flex flex-wrap gap-1">
+                    <p><span className="text-muted-foreground">Data:</span> {formatTimestamp(selectedDoc.timestamp)}</p>
+                    {selectedDoc.vibrationalFrequency && <p><span className="text-muted-foreground">Frequência:</span> {selectedDoc.vibrationalFrequency}Hz</p>}
+                    <div className="flex flex-wrap gap-1 pt-2">
                         {selectedDoc.tags.map(tag => <Badge key={tag} variant="outline">{tag}</Badge>)}
                     </div>
                   </CardContent>
@@ -205,7 +201,8 @@ export default function GoldenBook() {
                   <CardContent>
                     <Button 
                       className="w-full"
-                      onClick={() => window.open(selectedDoc.link, '_blank')}
+                      onClick={() => {if(selectedDoc.link) window.open(selectedDoc.link, '_blank')}}
+                      disabled={!selectedDoc.link}
                     >
                       Acessar Documento Original
                     </Button>
