@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { GitBranch, Database, Cpu, Activity, Zap, ShieldCheck } from 'lucide-react';
 
 const FlowStep = ({ number, title, description, module, icon }: { number: number, title: string, description: string, module: string, icon: React.ReactNode }) => (
@@ -39,8 +40,8 @@ export default function Module721Page() {
                     <CardContent className="space-y-4">
                         <FlowStep 
                             number={1}
-                            title="Interações Dinâmicas"
-                            description="Fontes de dados (M720) alimentam o sistema com pulsos contínuos. A Camada 1 (M717) responde com inteligência adaptativa, filtrando e organizando os dados brutos."
+                            title="Dados Primários e Fluxos Básicos"
+                            description="Sensores quânticos e dispositivos externos capturam variações, enquanto algoritmos filtram ruído, destacando a relevância vibracional e enviando dados refinados para a próxima camada."
                             module="M720 → M717"
                             icon={<Database />}
                         />
@@ -60,7 +61,7 @@ export default function Module721Page() {
                          />
                          <FlowStep 
                             number={4}
-                            title="Evolução Contínua"
+                            title="Feedback e Evolução"
                             description="Resultados da execução são monitorados (Camada 4) e retornam à Camada 5 (Feedback), que utiliza a IA para refinar o algoritmo em um ciclo evolutivo perpétuo."
                             module="Ação → M717"
                             icon={<Activity />}

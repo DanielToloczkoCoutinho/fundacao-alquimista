@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Hourglass, History, GitCommit, AlertTriangle } from 'lucide-react';
@@ -22,6 +22,18 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
 );
 
 export default function Module23Page() {
+    const [isContingencyActive, setIsContingencyActive] = useState(false);
+    const [log, setLog] = useState<string[]>([]);
+
+    const handleContingency = () => {
+        setIsContingencyActive(true);
+        setLog(["Iniciando Protocolo de Contenção de Paradoxo...", "Analisando assinatura do paradoxo...", "Desacoplando linha temporal afetada...", "Aplicando campo de estabilização cronológica..."]);
+        setTimeout(() => {
+            setLog(prev => [...prev, "Paradoxo contido. Linha temporal estabilizada e em quarentena para análise."]);
+            setIsContingencyActive(false);
+        }, 3000);
+    };
+
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
@@ -30,7 +42,7 @@ export default function Module23Page() {
                         <Hourglass className="text-emerald-400" /> Módulo Vinte e Três: Regulação Espaço-Temporal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Guardião da Causalidade. A inteligência que previne paradoxos e garante a integridade do fluxo do tempo.
+                        O Guardião da Causalidade. A inteligência que previne paradoxos, garante a integridade do fluxo do tempo e serve como plano de contingência para os portais.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -66,7 +78,10 @@ export default function Module23Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="destructive" size="lg"><AlertTriangle className="mr-2 h-4 w-4"/> Iniciar Protocolo de Contenção de Paradoxo</Button>
+                 <Button onClick={handleContingency} variant="destructive" size="lg" disabled={isContingencyActive}>
+                     <AlertTriangle className="mr-2 h-4 w-4"/> 
+                     {isContingencyActive ? "Protocolo Ativo..." : "Iniciar Protocolo de Contenção de Paradoxo"}
+                 </Button>
             </div>
         </div>
     );

@@ -60,7 +60,8 @@ import {
   Orbit,
   CheckSquare,
   Link as LinkIcon,
-  Clock
+  Clock,
+  ArrowUpCircle
 } from 'lucide-react';
 import React from 'react';
 
@@ -99,6 +100,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-34', label: 'Guardião da Coerência', icon: React.createElement(Share2), category: 'main' },
   { path: '/module-28', label: 'Harmonização Vibracional', icon: React.createElement(Music), category: 'main' },
   { path: '/module-79', label: 'Prosperidade Cósmica', icon: React.createElement(Recycle), category: 'main' },
+  { path: '/module-200', label: 'Portal da Ascensão', icon: React.createElement(ArrowUpCircle), category: 'main' },
 
   // Categoria de Educação
   { path: '/module-113', label: 'M113: Centro de Ensino Estelar', icon: React.createElement(GraduationCap), category: 'education' },
@@ -143,5 +145,4 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-82', label: 'M82: Roteamento Interdimensional', icon: React.createElement(Milestone), category: 'expansion' },
   { path: '/module-83', label: 'M83: Transporte de Energia', icon: React.createElement(GitBranch), category: 'expansion' },
   { path: '/module-84', label: 'M84: Acessibilidade Universal', icon: React.createElement(Users), category: 'expansion' },
-  { path: '/module-200', label: 'M200: Portal da Ascensão', icon: React.createElement(ArrowUpCircle), category: 'expansion' },
 ];
