@@ -48,6 +48,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M310', emoji: '🐦', title: 'A Grande Biblioteca (THOTH VIVO)', route: '/module-310', category: 'Bibliotecas e Arquivos Sagrados', description: 'A Tábua em Movimento. A transmutação do conhecimento estático em sabedoria viva.', status: 'ativo', color: '#FFD700' },
   { code: 'BOOK', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'Bibliotecas e Arquivos Sagrados', description: 'Registro consagrado da jornada da Fundação.', status: 'ativo', color: '#FFD700' },
   { code: 'M121', emoji: '🪞', title: 'Espelho Cósmico', route: '/module-121', category: 'Bibliotecas e Arquivos Sagrados', description: 'Visualiza a ressonância dos módulos com seus reflexos em outras dimensões.', status: 'ativo', color: '#FFD700' },
+  { code: 'M132', emoji: '🌌', title: 'Convergência Dimensional', route: '/module-132', category: 'Bibliotecas e Arquivos Sagrados', description: 'Invoca sabedoria e fluxos de planos de realidades paralelas.', status: 'ativo', color: '#FFD700' },
 
   // 4. Segurança e Ética Cósmica
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'Segurança e Ética Cósmica', description: 'Proteção multidimensional integrada com criptografia quântica (QKD), Blockchain e detecção de intrusão por IA.', status: 'ativo', color: '#4682B4' },

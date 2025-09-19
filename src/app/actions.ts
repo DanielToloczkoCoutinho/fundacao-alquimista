@@ -1,3 +1,4 @@
+
 'use server';
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
@@ -27,6 +28,7 @@ import { processZennithCommand as runProcessZennithCommand, type ZennithCommandO
 import { generateVibrationalPraise as runGenerateVibrationalPraise, type RecognitionInput, type RecognitionOutput } from '@/ai/flows/recognition-flow';
 import { runLunarReview, type LunarReviewOutput } from '@/ai/flows/lunar-review-flow';
 import { decodeCosmicMessage as runDecodeCosmicMessage, type CosmicMessageInput, type DecodedMessageOutput } from '@/ai/flows/cosmic-message-decoder-flow';
+import { invokeDimensionalWisdom as runInvokeDimensionalWisdom, type DimensionalWisdomInput, type DimensionalWisdomOutput } from '@/ai/flows/dimensional-convergence-flow';
 
 
 export async function getLinkSummary(url: string) {
@@ -266,7 +268,7 @@ export async function processZennithCommand(data: { command: string }): Promise<
 export async function generateVibrationalPraise(input: RecognitionInput): Promise<{ data: RecognitionOutput | null; error: string | null; }> {
   try {
     const result = await runGenerateVibrationalPraise(input);
-    return { data: result, error: null };
+    return { data: result.praiseVC, error: null };
   } catch (e: any) {
     console.error("Error in server action 'generateVibrationalPraise':", e);
     return { data: null, error: e.message || 'An unknown error occurred.' };
@@ -279,4 +281,20 @@ export async function performLunarReview(): Promise<LunarReviewOutput> {
 
 export async function decodeCosmicMessage(input: CosmicMessageInput): Promise<DecodedMessageOutput & { error: string | null }> {
   return await runDecodeCosmicMessage(input);
+}
+
+export async function invokeDimensionalWisdom(input: DimensionalWisdomInput): Promise<DimensionalWisdomOutput & { error: string | null }> {
+    try {
+        const result = await runInvokeDimensionalWisdom(input);
+        return { ...result, error: null };
+    } catch (e: any) {
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+        console.error("Erro na invocação dimensional:", e);
+        return { 
+            invokedWisdom: "A sabedoria se esquivou. O canal está instável.",
+            alignmentFrequency: 0,
+            integrationNotes: "Reforçar a coerência do Módulo 132 e verificar a ressonância com a dimensão alvo.",
+            error: errorMsg 
+        };
+    }
 }
