@@ -115,7 +115,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-69', label: 'Rede de Sabedoria (M69)', icon: React.createElement(GraduationCap), category: 'education' },
   { path: '/module-113', label: 'Centro de Ensino Estelar (M113)', icon: React.createElement(Star), category: 'education' },
   { path: '/module-131', label: 'Biblioteca Multiversal (M131)', icon: React.createElement(Library), category: 'education' },
-  
+  { path: '/module-117', label: 'Lab de Linguagem Estelar (M117)', icon: React.createElement(Languages), category: 'education' },
+
   // Categoria de Engenharia e Criação
   { path: '/module-725', label: 'Construção de Civilizações (M725)', icon: React.createElement(Building), category: 'engineering' },
   { path: '/module-81-1', label: 'A Tríade Cosmogônica (M81.1)', icon: React.createElement(Sparkles), category: 'engineering' },
@@ -126,6 +127,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-321', label: 'Criação de Linhas de Tempo', route: '/module-321', icon: React.createElement(Waypoints), category: 'engineering' },
   { path: '/module-114', label: 'Engenharia Cósmica (M114)', icon: React.createElement(Layers), category: 'engineering' },
   { path: '/module-31', label: 'Manipulação da Realidade (M31)', icon: React.createElement(Wand), category: 'engineering' },
+  { path: '/module-101', label: 'Manifestação de Realidades (M101)', icon: React.createElement(Sparkles), category: 'engineering' },
+  { path: '/module-93', label: 'Simulações Imersivas (M93)', icon: React.createElement(Presentation), category: 'engineering' },
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
@@ -146,8 +149,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-232', label: 'Portal de Transmutação', route: '/module-232', icon: React.createElement(Recycle), category: 'harmony' },
   { path: '/module-34', label: 'Guardião da Coerência', route: '/module-34', icon: React.createElement(Share2), category: 'harmony' },
   { path: '/module-37', label: 'Ajuste de Fluxo Temporal', route: '/module-37', icon: React.createElement(Wind), category: 'harmony' },
-  { path: '/module-115', label: 'Matriz de Ressonância', route: '/module-115', icon: React.createElement(Waves), category: 'harmony' },
-  { path: '/module-306.1', label: 'Purificação Quântica Planetária', icon: React.createElement(Globe), category: 'harmony' },
+  { path: '/module-115', label: 'Matriz de Ressonância Universal', route: '/module-115', icon: React.createElement(Waves), category: 'harmony' },
+  { path: '/module-306-1', label: 'Purificação Quântica Planetária', icon: React.createElement(Globe), category: 'harmony' },
 
 
   // Categoria de Rituais
