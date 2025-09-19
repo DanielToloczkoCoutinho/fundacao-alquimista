@@ -1,6 +1,8 @@
+
 'use client';
-import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+import SuspenseFallback from '@/components/ui/suspense-fallback';
 
 export default function Home() {
   const router = useRouter();
@@ -10,6 +12,6 @@ export default function Home() {
     router.replace('/console');
   }, [router]);
 
-  // Retorna nulo para evitar renderizar qualquer coisa que cause erro de hidratação
-  return null;
+  // Retorna um fallback de carregamento para evitar FOUC e erros de hidratação.
+  return <SuspenseFallback />;
 }
