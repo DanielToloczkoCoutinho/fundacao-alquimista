@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -84,6 +85,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M-GENERATED', title: 'Rito de Geração Modular', route: '/convergence/generate', category: 'Rituais', description: 'Santuário para criação de novos módulos a partir da convergência.', isInfrastructure: false, status: 'ativo', color: '#9370DB'},
   { code: 'M-BAPTISM', title: 'Rito de Batismo Modular', route: '/convergence/baptize', category: 'Rituais', description: 'Santuário para nomear, ativar e integrar novos módulos.', isInfrastructure: false, status: 'ativo', color: '#FFC0CB'},
   { code: 'M110', emoji: '🤲', title: 'Co-Criação Universal', route: '/module-110', category: 'Rituais', description: 'Orquestrador de Intenção Coletiva para manifestação de novas realidades.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M721', emoji: '⚖️', title: 'Orquestração dos Fluxos de Interação', route: '/module-721', category: 'Rituais', description: 'O sistema nervoso que garante a unificação contínua do cosmos.', status: 'ativo', color: '#9370DB'},
+
   
   // 7. Cura e Harmonia
   { code: 'M24', emoji: '🎶', title: 'Alinhamento da Sinfonia Pessoal', route: '/module-24', category: 'Cura e Harmonia', description: 'Afinador da Alma para alinhar a vibração pessoal com a Sinfonia Cósmica.', status: 'ativo', color: '#DA70D6' },
@@ -102,7 +105,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   // 8. Sustentabilidade
   { code: 'M66', emoji: '♻️', title: 'Tecnologias de Sustentabilidade', route: '/module-66', category: 'Sustentabilidade', description: 'Desenvolve e implementa tecnologias para regenerar o cosmos.', status: 'ativo', color: '#ADFF2F' },
   { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica', route: '/module-79', category: 'Sustentabilidade', description: 'O guardião que garante a regeneração contínua dos recursos cósmicos.', status: 'ativo', color: '#228B22' },
-  { code: 'M85', emoji: '📚', title: 'Gestão de Recursos', route: '/module-85', category: 'Sustentabilidade', description: 'O guardião da abundância.', status: 'ativo', color: '#20B2AA' },
+  { code: 'M85', emoji: '📚', title: 'Gestão Eficiente de Recursos', route: '/module-85', category: 'Sustentabilidade', description: 'O guardião da abundância.', status: 'ativo', color: '#20B2AA' },
   { code: 'M86', emoji: '🌱', title: 'Equilíbrio Ecológico', route: '/module-86', category: 'Sustentabilidade', description: 'O coração da vida, que restaura a saúde dos ecossistemas.', status: 'ativo', color: '#9ACD32' },
 
   // 9. Bem-estar e Saúde Universal
@@ -115,6 +118,9 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M116', emoji: '🌀', title: 'Portais Quânticos de Transcendência', route: '/module-116', category: 'Comunicação e Expansão', description: 'Ativa e estabiliza portais para a ascensão da consciência.', status: 'ativo', color: '#40E0D0' },
   { code: 'M106', emoji: '👑', title: 'Ativação de Potenciais Divinos', route: '/module-106', category: 'Comunicação e Expansão', description: 'Catalisador para o despertar da Consciência Crística.', status: 'ativo', color: '#FFD700' },
   { code: 'M31', emoji: '🪄', title: 'Manipulação Quântica da Realidade', route: '/module-31', category: 'Comunicação e Expansão', description: 'A Caneta do Criador. Reescreve o tecido da realidade.', status: 'ativo', color: '#DA70D6' },
+
+  // 11. Rituais
+  { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', emoji: '🎉', category: 'Rituais', code: 'R-CONSTEL', description: 'Ritual para contemplar os mundos filhos.', status: 'ativo', color: '#FF69B4' },
 
 
 ].map(m => ({ ...m, connections: m.connections || [] }));

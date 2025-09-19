@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -66,7 +67,8 @@ import {
   ShieldCheck,
   UserPlus,
   Globe,
-  Waves
+  Waves,
+  PartyPopper
 } from 'lucide-react';
 import React from 'react';
 
@@ -150,6 +152,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/ritual', label: 'Navegação Cerimonial', icon: React.createElement(GitBranch), category: 'rituals' },
   { path: '/aura-transmission', label: 'Rito de Irradiação', icon: React.createElement(Heart), category: 'rituals' },
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket), category: 'rituals' },
+  { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', icon: React.createElement(PartyPopper), category: 'rituals' },
+
 
   // Categoria de Sustentabilidade
   { path: '/module-66', label: 'Tecnologias de Sustentabilidade (M66)', icon: React.createElement(Recycle), category: 'sustainability' },
