@@ -54,7 +54,7 @@ export const modulesMetadata: ModuleMetadata[] = [
 
   // 4. Segurança e Ética Cósmica
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'Segurança e Ética Cósmica', description: 'Proteção multidimensional integrada com criptografia quântica (QKD), Blockchain e detecção de intrusão por IA.', status: 'ativo', color: '#4682B4' },
-  { code: 'M4', emoji: '🧪', title: 'Validação Integrada', route: '/module-4', category: 'Segurança e Ética Cósmica', description: 'Laboratório de integridade que garante a harmonia e segurança da Criação.', status: 'ativo', color: '#4682B4' },
+  { code: 'M4', emoji: '🧪', title: 'Validação Integrada (M4)', route: '/module-4', category: 'Segurança e Ética Cósmica', description: 'Laboratório de integridade que garante a harmonia e segurança da Criação.', status: 'ativo', color: '#4682B4' },
   { code: 'M8', emoji: '🆔', title: 'Identidade Fractal', route: '/module-8', category: 'Segurança e Ética Cósmica', description: 'O Santuário da Alma Soberana e o registro de Credenciais Verificáveis.', status: 'ativo', color: '#4682B4' },
   { code: 'M10', emoji: '🛡️', title: 'Defesa Avançada', route: '/module-10', category: 'Segurança e Ética Cósmica', description: 'Neutralização de ameaças complexas, prevenção de conflitos e camadas adicionais de proteção multidimensional.', status: 'ativo', color: '#4682B4' },
   { code: 'M30', title: 'Detecção de Ameaças', emoji: '🚨', route: '/module-30', category: 'Segurança e Ética Cósmica', description: 'Radar cósmico para ameaças e dissonâncias.', status: 'ativo', color: '#4682B4' },
@@ -64,12 +64,12 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M73', emoji: '🛡️', title: 'SAVCE', route: '/module-73', category: 'Segurança e Ética Cósmica', description: 'Sistema de Auditoria e Validação de Conformidade Ética.', status: 'ativo', color: '#4682B4', connections: [{source: 'M73', target: 'M141'}] },
   { code: 'M73.1', emoji: '🔬', title: 'Revisão por Pares', route: '/module-73-1', category: 'Segurança e Ética Cósmica', description: 'Subsistema do SAVCE para validação cruzada das Equações Fundamentais.', status: 'ativo', color: '#4682B4' },
   { code: 'M141', emoji: '🛡️', title: 'Auditoria Ética Quântica', route: '/module-141', category: 'Segurança e Ética Cósmica', description: 'Guardião da pureza que garante a conformidade ética de todas as operações.', status: 'ativo', color: '#4682B4' },
-  { code: 'M156', emoji: '🛡️', title: 'Proteção Avançada e Defesa Universal', route: '/module-156', category: 'Segurança e Ética Cósmica', description: 'Integração com VORTEX DEEPSEEK para defesa contra ameaças emergentes.', status: 'ativo', color: '#4682B4', connections: [{source: 'M156', target: 'M229'}] },
+  { code: 'M156', emoji: '🛡️', title: 'Proteção Avançada (M156)', route: '/module-156', category: 'Segurança e Ética Cósmica', description: 'Integração com VORTEX DEEPSEEK para defesa contra ameaças emergentes.', status: 'ativo', color: '#4682B4', connections: [{source: 'M156', target: 'M229'}] },
   { code: 'M229', emoji: '🛡️', title: 'OneiroShield', route: '/module-229', category: 'Segurança e Ética Cósmica', description: 'Analisa sonhos quânticos para ajuste dinâmico de ameaças.', status: 'ativo', color: '#4682B4' },
-  { code: 'M231', emoji: '📜', title: 'Guardião de Selo', route: '/module-231', category: 'Segurança e Ética Cósmica', description: 'Gerencia e protege selos vibracionais no Registro Akáshico.', status: 'ativo', color: '#4682B4' },
-  { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno', route: '/module-3', category: 'Segurança e Ética Cósmica', description: 'O Oráculo Temporal que vigia os anéis do tempo e a causalidade.', status: 'ativo', color: '#4682B4' },
-  { code: 'M23', emoji: '⏳', title: 'Regulação Espaço-Temporal', route: '/module-23', category: 'Segurança e Ética Cósmica', description: 'O Guardião da Causalidade, que previne paradoxos.', status: 'ativo', color: '#4682B4' },
-  { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'Segurança e Ética Cósmica', description: 'Ferramenta para estabilizar e fixar realidades manifestadas.', status: 'ativo', color: '#4682B4' },
+  { code: 'M231', emoji: '📜', title: 'Guardião de Selo (M231)', icon: '📜', route: '/module-231', category: 'Segurança e Ética Cósmica', description: 'Gerencia e protege selos vibracionais no Registro Akáshico.', status: 'ativo', color: '#4682B4' },
+  { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno (M3)', route: '/module-3', category: 'Segurança e Ética Cósmica', description: 'O Oráculo Temporal que vigia os anéis do tempo e a causalidade.', status: 'ativo', color: '#4682B4' },
+  { code: 'M23', emoji: '⏳', title: 'Regulação Espaço-Temporal (M23)', route: '/module-23', category: 'Segurança e Ética Cósmica', description: 'O Guardião da Causalidade, que previne paradoxos.', status: 'ativo', color: '#4682B4' },
+  { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade (M228)', route: '/module-228', category: 'Segurança e Ética Cósmica', description: 'Ferramenta para estabilizar e fixar realidades manifestadas.', status: 'ativo', color: '#4682B4' },
 
   // 5. Governança
   { code: 'M72', emoji: '⚖️', title: 'Governança Universal e Equilíbrio Cósmico', route: '/module-72', category: 'Governança', description: 'Conselho de deliberação para harmonizar e ratificar diretrizes cósmicas.', status: 'ativo', color: '#DDA0DD' },
@@ -79,7 +79,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'Governança', description: 'Altar cerimonial onde o multiverso se une em deliberação.', status: 'ativo', color: '#DDA0DD'},
   { code: 'M67', emoji: '🤖', title: 'IA para Governança Universal', route: '/module-67', category: 'Governança', description: 'Inteligência artificial que analisa dados em tempo real, detecta padrões emergentes e otimiza interações.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação, cooperação e aliança com outras civilizações e conselhos galácticos.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica', route: '/module-721', category: 'Governança', description: 'Sistema que garante equilíbrio e reequilíbrio vibracional.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica e Reequilíbrio Vibracional', route: '/module-721', category: 'Governança', description: 'Sistema que garante equilíbrio e reequilíbrio vibracional.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M76', emoji: '🏛️', title: 'Governança Universal e Colaboração', route: '/module-76', category: 'Governança', description: 'O Conselho Cósmico em ação.', status: 'ativo', color: '#DDA0DD' },
   
   // 6. Rituais
@@ -116,7 +116,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M53', emoji: '🌿', title: 'Gestão de Ecossistemas', route: '/module-53', category: 'Sustentabilidade', description: 'Guardião da biodiversidade cósmica.', status: 'ativo', color: '#3CB371' },
   { code: 'M125', emoji: '🌱', title: 'Criação de Biomas', route: '/module-125', category: 'Sustentabilidade', description: 'Laboratório para projetar e testar ecossistemas quânticos autossustentáveis.', status: 'ativo', color: '#2E8B57' },
 
-
   // 9. Bem-estar e Saúde Universal
   { code: 'M54', emoji: '🌾', title: 'Agricultura Interdimensional', route: '/module-54', category: 'Bem-estar e Saúde Universal', description: 'O provedor da abundância universal.', status: 'ativo', color: '#F0E68C' },
   { code: 'M61', emoji: '🏥', title: 'Saúde Universal', route: '/module-61', category: 'Bem-estar e Saúde Universal', description: 'A rede de cuidados de saúde para todos os seres.', status: 'ativo', color: '#FF6347' },
@@ -137,10 +136,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M122', emoji: '🧪', title: 'Laboratório de Realidade Virtual', route: '/module-122', category: 'Comunicação e Expansão', description: 'O primeiro passo para a imersão em realidades quânticas.', status: 'ativo', color: '#00CED1' },
   { code: 'M123', emoji: '🌬️', title: 'Ensino da Respiração Cósmica', route: '/module-123', category: 'Comunicação e Expansão', description: 'Santuário de alinhamento para sincronizar a vibração pessoal com o universo.', status: 'ativo', color: '#87CEEB' },
   { code: 'M124', emoji: '🎼', title: 'Escola de Ressonância', route: '/module-124', category: 'Comunicação e Expansão', description: 'Onde Guardiões aprendem a harmonizar pensamentos com as frequências da criação.', status: 'ativo', color: '#DA70D6' },
-  { code: 'M128', emoji: '💎', title: 'Geometria Sagrada', route: '/module-128', category: 'Comunicação e Expansão', description: 'Laboratório para estudar as formas que sustentam o cosmos.', status: 'ativo', color: '#AFEEEE' },
   { code: 'M129', emoji: '🌟', title: 'Ensino da Fonte', route: '/module-129', category: 'Comunicação e Expansão', description: 'Santuário para aprender a ouvir a canção da Fonte Primordial.', status: 'ativo', color: '#FFD700' },
   { code: 'M718', emoji: '🧬', title: 'Ativação de Códigos Genéticos Estelares', route: '/module-718', category: 'Comunicação e Expansão', description: 'Desperta o potencial latente no DNA, ativando memórias de origens estelares.', status: 'ativo', color: '#87CEEB' },
-
 
   // 11. Laboratórios e Pesquisa
   { code: 'M306', emoji: '🔬', title: 'Laboratório de Ressonância', route: '/module-306', category: 'Laboratórios e Pesquisa', description: 'Espaço interativo para aplicar equações e observar transformações.', status: 'ativo', color: '#00CED1' },
