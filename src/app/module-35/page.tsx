@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -28,7 +27,7 @@ export default function Module35Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Users className="text-teal-300" /> Módulo Trinta e Cinco: Consciência Coletiva
+                        <Users className="text-teal-300" /> Módulo 35: Consciência Coletiva
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Canal Unificador. A interface que foca a intenção de muitas consciências em um único feixe de manifestação.
@@ -69,3 +68,6 @@ export default function Module35Page() {
              <div className="mt-12">
                  <Button variant="secondary" size="lg">Iniciar Protocolo de Canalização Coletiva</Button>
             </div>
+        </div>
+    );
+}

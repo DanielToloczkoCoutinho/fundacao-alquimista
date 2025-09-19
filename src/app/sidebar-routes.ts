@@ -59,7 +59,8 @@ import {
   BarChart,
   UserCog,
   Orbit,
-  CheckSquare
+  CheckSquare,
+  Link as LinkIcon
 } from 'lucide-react';
 import React from 'react';
 
@@ -67,7 +68,7 @@ export interface SidebarRoute {
   path: string;
   label: string;
   icon: React.ReactNode;
-  category: 'main' | 'education' | 'governance' | 'engineering';
+  category: 'main' | 'education' | 'governance' | 'engineering' | 'expansion';
 }
 
 export const mainRoutes: SidebarRoute[] = [
@@ -105,14 +106,13 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-127', label: 'M127: Escola de Alquimia Estelar', icon: React.createElement(Sprout), category: 'education' },
   { path: '/module-129', label: 'M129: Ensino da Fonte', icon: React.createElement(Sparkles), category: 'education' },
   { path: '/module-130', label: 'M130: Escola de Navegação Cerimonial', icon: React.createElement(Rocket), category: 'education' },
-  { path: '/module-131', label: 'M131: Biblioteca de Sabedoria Multiversal', icon: React.createElement(Library), category: 'education' },
   
   // Categoria de Governança
   { path: '/module-72', label: 'M72: Governança Universal', icon: React.createElement(Scale), category: 'governance' },
   { path: '/module-73', label: 'M73: SAVCE', icon: React.createElement(Scale), category: 'governance' },
   { path: '/module-76', label: 'M76: Governança Universal', icon: React.createElement(Scale), category: 'governance' },
   { path: '/module-33', label: 'M33: Diretrizes do Observador Divino', icon: React.createElement(Eye), category: 'governance' },
-  { path: '/module-5', label: 'M5: Nexus da Liga Quântica', icon: React.createElement(Link), category: 'governance' },
+  { path: '/module-5', label: 'M5: Nexus da Liga Quântica', icon: React.createElement(LinkIcon), category: 'governance' },
   { path: '/module-67', label: 'M67: IA para Governança', icon: React.createElement(BrainCircuit), category: 'governance' },
   { path: '/module-68', label: 'M68: Responsabilidade Ética', icon: React.createElement(Shield), category: 'governance' },
   { path: '/module-724', label: 'M724: Diplomacia Intergaláctica', icon: React.createElement(Users), category: 'governance' },
@@ -122,4 +122,23 @@ export const mainRoutes: SidebarRoute[] = [
 
   // Categoria de Engenharia e Criação
   { path: '/module-14', label: 'M14: Transmutador Quântico', icon: React.createElement(Atom), category: 'engineering' },
-  { path: '
+  { path: '/module-20', label: 'M20: Transmutação Elemental', icon: React.createElement(Flame), category: 'engineering' },
+  { path: '/module-27', label: 'M27: Síntese e Replicação', icon: React.createElement(Recycle), category: 'engineering' },
+  { path: '/module-16', label: 'M16: Bio-Sustentabilidade', icon: React.createElement(Leaf), category: 'engineering' },
+  { path: '/module-59', label: 'M59: Eco-Cidades Quânticas', icon: React.createElement(Building), category: 'engineering' },
+  { path: '/module-94', label: 'M94: Morfogênese Quântica', icon: React.createElement(Dna), category: 'engineering' },
+  { path: '/module-98', label: 'M98: Modulação da Existência', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
+  { path: '/module-99', label: 'M99: Recalibradores de Leis', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
+  { path: '/module-101', label: 'M101: Manifestação de Realidades', icon: React.createElement(Wand), category: 'engineering' },
+  { path: '/module-104', label: 'M104: Engenharia do Espaço-Tempo', icon: React.createElement(Map), category: 'engineering' },
+  
+  // Categoria de Expansão
+  { path: '/module-11', label: 'M11: Gerenciamento de Portais', icon: React.createElement(Aperture), category: 'expansion' },
+  { path: '/module-21', label: 'M21: Navegação Interdimensional', icon: React.createElement(Rocket), category: 'expansion' },
+  { path: '/module-55', label: 'M55: Redes de Comunicação', icon: React.createElement(Network), category: 'expansion' },
+  { path: '/module-71', label: 'M71: Comunicação Holográfica', icon: React.createElement(RadioTower), category: 'expansion' },
+  { path: '/module-82', label: 'M82: Roteamento Interdimensional', icon: React.createElement(Milestone), category: 'expansion' },
+  { path: '/module-83', label: 'M83: Transporte de Energia', icon: React.createElement(GitBranch), category: 'expansion' },
+  { path: '/module-84', label: 'M84: Acessibilidade Universal', icon: React.createElement(Users), category: 'expansion' },
+  { path: '/module-200', label: 'M200: Portal da Ascensão', icon: React.createElement(ArrowUpCircle), category: 'expansion' },
+];
