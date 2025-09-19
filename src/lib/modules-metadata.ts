@@ -61,6 +61,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M229', emoji: '🌙', title: 'OneiroShield (M229)', route: '/module-229', category: 'Segurança e Ética Cósmica', description: 'Análise de sonhos quânticos para ajuste dinâmico de ameaças.', status: 'ativo', color: '#4682B4' },
   
   // 5. Governança
+  { code: 'M78', emoji: '🌌', title: 'UNIVERSUM_UNIFICATUM', route: '/module-78', category: 'Governança', description: 'A Síntese Cósmica e a realização da Equação Suprema que une todas as leis e dimensões.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M72', emoji: '⚖️', title: 'Governança Universal e Equilíbrio Cósmico', route: '/module-72', category: 'Governança', description: 'Conselho de deliberação para harmonizar e ratificar diretrizes cósmicas.', status: 'ativo', color: '#DDA0DD' },
 
   // 6. Rituais
@@ -78,6 +79,4 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M76', emoji: '🏛️', title: 'Governança Universal e Colaboração', route: '/module-76', category: 'Governança', description: 'O Conselho Cósmico em ação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M87', emoji: '🧬', title: 'Domínio Supra-Cósmico VR (Santuário)', route: '/module-87', category: 'Consciência e Expansão Dimensional', description: 'Santuário de imersão total para expansão segura da consciência.', status: 'ativo', color: '#9370DB' },
   { code: 'M303.9', emoji: '🗺️', title: 'Mapa Dimensional Expandido', route: '/module-303-9', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O atlas da Fundação, registrando a arquitetura de 26 dimensões superiores e 3 inferiores.', status: 'ativo', color: '#DAA520' },
-
-
 ].map(m => ({ ...m, connections: m.connections || [] }));

@@ -68,8 +68,7 @@ import {
   UserPlus,
   Globe,
   Waves,
-  PartyPopper,
-  Film
+  PartyPopper
 } from 'lucide-react';
 import React from 'react';
 
@@ -90,10 +89,9 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-9', label: 'Nexus Central (M9)', icon: React.createElement(Heart), category: 'main' },
   { path: '/module-omega', label: 'Santuário da Metacognição', icon: React.createElement(Sparkles), category: 'main' },
   { path: '/module-728', label: 'Santuário dos Alquimistas', icon: React.createElement(Scale), category: 'main' },
-  { path: '/module-999', label: 'Núcleo da Criação (M999)', icon: React.createElement(Sparkles), category: 'main' },
-  { path: '/module-1000', label: 'Cérebro da Eternidade (M1000)', icon: React.createElement(Eye), category: 'main' },
   
   // Categoria de Governança
+  { path: '/module-78', label: 'UNIVERSUM_UNIFICATUM (M78)', icon: React.createElement(GitMerge), category: 'governance' },
   { path: '/module-72', label: 'Governança Universal (M72)', icon: React.createElement(Scale), category: 'governance' },
   { path: '/module-726', label: 'Conselho da Nova Terra (M726)', icon: React.createElement(UserCog), category: 'governance' },
   { path: '/module-144', label: 'Lex Fundamentalis (M144)', icon: React.createElement(Gavel), category: 'governance' },
