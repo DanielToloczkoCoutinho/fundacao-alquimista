@@ -6,6 +6,7 @@ import { OrbitControls } from '@react-three/drei';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Camera } from 'lucide-react';
+import { resonanceTone } from '@/lib/audio-utils';
 
 // Componente para a esfera quântica
 function QuantumOrb() {
@@ -39,47 +40,15 @@ function QuantumOrb() {
 
 // Componente principal do visualizador
 export default function TomographyVisualizer() {
-  const [resonanceActive, setResonanceActive] = useState(false);
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const oscillatorRef = useRef<OscillatorNode | null>(null);
+  const [isResonating, setIsResonating] = useState(false);
 
-  const toggleResonance = () => {
-    if (typeof window === 'undefined') return;
-    
-    if (!audioCtxRef.current) {
-      audioCtxRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
-    }
-
-    if (resonanceActive) {
-      if (oscillatorRef.current) {
-        oscillatorRef.current.stop();
-        oscillatorRef.current.disconnect();
-        oscillatorRef.current = null;
-      }
-      setResonanceActive(false);
-    } else {
-      const oscillator = audioCtxRef.current.createOscillator();
-      oscillator.type = 'sine';
-      oscillator.frequency.setValueAtTime(432, audioCtxRef.current.currentTime);
-      oscillator.connect(audioCtxRef.current.destination);
-      oscillator.start();
-      oscillatorRef.current = oscillator;
-      setResonanceActive(true);
-    }
+  const toggleResonance = async () => {
+    if (isResonating) return;
+    setIsResonating(true);
+    await resonanceTone(432);
+    setIsResonating(false);
   };
   
-  useEffect(() => {
-    // Cleanup ao desmontar o componente
-    return () => {
-      if (oscillatorRef.current) {
-        oscillatorRef.current.stop();
-      }
-      if (audioCtxRef.current && audioCtxRef.current.state !== 'closed') {
-        audioCtxRef.current.close();
-      }
-    };
-  }, []);
-
   return (
     <>
       <div className="relative w-full h-96 bg-black/20 rounded-lg overflow-hidden border border-primary/30">
@@ -93,8 +62,9 @@ export default function TomographyVisualizer() {
       <Button
         className="mt-6 font-bold"
         onClick={toggleResonance}
+        disabled={isResonating}
       >
-        {resonanceActive ? 'Desativar Ressonância (432Hz)' : 'Ativar Ressonância Harmônica'}
+        {isResonating ? 'Ressonando...' : 'Ativar Ressonância Harmônica'}
       </Button>
     </>
   );
