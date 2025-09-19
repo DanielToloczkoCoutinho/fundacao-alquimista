@@ -1,20 +1,15 @@
 'use client';
 import { ModuleHealth } from '@/lib/health-types';
 import { modulesMetadata } from '@/lib/modules-metadata';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
+import { Progress } from '../ui/progress';
 
 const statusConfig = {
-  healthy: { ring: 'ring-green-500/50', bg: 'bg-green-500', text: 'text-green-300' },
-  warning: { ring: 'ring-yellow-500/50', bg: 'bg-yellow-500', text: 'text-yellow-300' },
-  critical: { ring: 'ring-red-500/50', bg: 'bg-red-500', text: 'text-red-300' },
+  healthy: { ring: 'border-green-500/50', bg: 'bg-green-900/30', text: 'text-green-300' },
+  warning: { ring: 'border-yellow-500/50', bg: 'bg-yellow-900/30', text: 'text-yellow-300' },
+  critical: { ring: 'border-red-500/50', bg: 'bg-red-900/30', text: 'text-red-400 animate-pulse' },
 };
-
-const ConnectionStatusIndicator = ({ status }: { status: 'healthy' | 'warning' | 'critical' }) => (
-  <div className={cn('w-2 h-2 rounded-full', statusConfig[status].bg)} />
-);
 
 export default function HealthGrid({ reports, filters }: { reports: ModuleHealth[], filters: any }) {
 
@@ -26,14 +21,21 @@ export default function HealthGrid({ reports, filters }: { reports: ModuleHealth
     .filter(module => {
       const searchMatch = module.title?.toLowerCase().includes(filters.search.toLowerCase()) || module.moduleCode.toLowerCase().includes(filters.search.toLowerCase());
       const categoryMatch = filters.category === 'all' || module.category === filters.category;
-      const statusMatch = filters.status === 'all' || module.status === filters.status;
+      
+      let statusFilter = filters.status;
+      if(statusFilter === 'healthy') statusFilter = 'OPERACIONAL';
+      if(statusFilter === 'warning') statusFilter = 'DEGRADADO';
+      if(statusFilter === 'critical') statusFilter = 'EM_ALERTA';
+
+      const statusMatch = statusFilter === 'all' || (module.status && module.status === statusFilter);
+
       return searchMatch && categoryMatch && statusMatch;
     })
     .sort((a, b) => {
       if (filters.sortBy === 'coherence') return b.coherence - a.coherence;
       if (filters.sortBy === 'status') {
           const statusOrder = { 'critical': 0, 'warning': 1, 'healthy': 2 };
-          return statusOrder[a.status] - statusOrder[b.status];
+          return statusOrder[a.status as keyof typeof statusOrder] - statusOrder[b.status as keyof typeof statusOrder];
       }
       return a.title?.localeCompare(b.title || '') || 0;
     });
@@ -48,11 +50,25 @@ export default function HealthGrid({ reports, filters }: { reports: ModuleHealth
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4 }}
-              className="bg-card/50 purple-glow p-4 rounded-lg border border-primary/20"
+              className={cn(
+                  "bg-card/50 purple-glow p-4 rounded-lg border-2",
+                  statusConfig[report.status as keyof typeof statusConfig]?.ring || 'border-primary/20'
+              )}
             >
-              <h2 className="text-xl font-bold text-accent">{report.title} ({report.moduleCode})</h2>
-              <p>Status: <span className={cn(statusConfig[report.status].text)}>{report.status}</span></p>
-              <p>Coerência Quântica: {report.coherence.toFixed(2)}%</p>
+              <div className="flex justify-between items-start">
+                <h2 className="text-lg font-bold text-primary-foreground">{report.title} ({report.moduleCode})</h2>
+                <span className={cn("text-xs font-bold", statusConfig[report.status as keyof typeof statusConfig]?.text)}>
+                    {report.status}
+                </span>
+              </div>
+              <p className="text-xs text-muted-foreground">{report.category}</p>
+              <div className="mt-4 space-y-2">
+                 <div className="flex justify-between items-center text-xs">
+                    <span className="text-muted-foreground">Coerência</span>
+                    <span className="font-mono">{report.coherence.toFixed(2)}%</span>
+                </div>
+                <Progress value={report.coherence} className="h-1.5" />
+              </div>
             </motion.div>
         ))}
         {filteredAndSortedModules.length === 0 && (
@@ -65,4 +81,4 @@ export default function HealthGrid({ reports, filters }: { reports: ModuleHealth
 }
 
 // Re-exporting a more specific type if needed elsewhere, but using the base for now.
-export type { ModuleHealth } from '@/lib/health-check-types';
+export type { ModuleHealth } from '@/lib/health-types';
