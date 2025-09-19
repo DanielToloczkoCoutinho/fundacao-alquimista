@@ -1,7 +1,20 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
-import styles from './gaia-resonance-observatory.module.css';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Globe } from 'lucide-react';
+
+const MetricCard = ({ title, value }: { title: string; value: React.ReactNode }) => (
+  <Card className="bg-background/50 text-center">
+    <CardHeader className="pb-2">
+      <CardDescription>{title}</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p className="text-2xl font-bold font-mono text-primary-foreground">{value}</p>
+    </CardContent>
+  </Card>
+);
 
 export default function GaiaResonanceObservatory() {
   const [zpeEnergy, setZpeEnergy] = useState(2.6e-33);
@@ -21,20 +34,21 @@ export default function GaiaResonanceObservatory() {
   }, []);
 
   return (
-    <main className={styles.observatory}>
-      <h1>Observatório de Ressonância Gaia</h1>
-      <div className={styles.panel}>
-        <div className={styles.metric}>
-          <h2>Energia ZPE</h2>
-          <p>{zpeEnergy} J</p>
-        </div>
-        <div className={styles.metric}>
-          <h2>Coerência Vibracional</h2>
-          <p>{coherence * 100}%</p>
-        </div>
+    <main className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
+       <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-8 text-center">
+          <CardHeader>
+            <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
+                <Globe className="text-cyan-400" /> Observatório de Ressonância Gaia
+            </CardTitle>
+          </CardHeader>
+        </Card>
+      
+      <div className="w-full max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <MetricCard title="Energia ZPE" value={`${zpeEnergy.toExponential(2)} J`} />
+        <MetricCard title="Coerência Vibracional" value={`${(coherence * 100).toFixed(1)}%`} />
       </div>
-      <section className={styles.graph}>
-        {/* Implementar gráfico dinâmico em próxima iteração */}
+
+      <section className="text-center text-muted-foreground italic">
         <p>Gráfico de otimização ZPE 🔄 (em desenvolvimento)</p>
       </section>
     </main>

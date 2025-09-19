@@ -1,3 +1,4 @@
+
 import * as functions from 'firebase-functions';
 import { executeEquation as runEquationFunction } from './equations/executeEquation';
 
