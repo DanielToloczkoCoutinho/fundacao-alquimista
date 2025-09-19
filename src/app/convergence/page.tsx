@@ -1,4 +1,3 @@
-
 'use client';
 
 import { universalMesh } from '@/lib/universal-mesh';
