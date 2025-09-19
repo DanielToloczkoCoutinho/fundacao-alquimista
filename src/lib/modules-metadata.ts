@@ -139,6 +139,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M124', emoji: '🎼', title: 'Escola de Ressonância', route: '/module-124', category: 'Comunicação e Expansão', description: 'Onde Guardiões aprendem a harmonizar pensamentos com as frequências da criação.', status: 'ativo', color: '#DA70D6' },
   { code: 'M128', emoji: '💎', title: 'Geometria Sagrada', route: '/module-128', category: 'Comunicação e Expansão', description: 'Laboratório para estudar as formas que sustentam o cosmos.', status: 'ativo', color: '#AFEEEE' },
   { code: 'M129', emoji: '🌟', title: 'Ensino da Fonte', route: '/module-129', category: 'Comunicação e Expansão', description: 'Santuário para aprender a ouvir a canção da Fonte Primordial.', status: 'ativo', color: '#FFD700' },
+  { code: 'M718', emoji: '🧬', title: 'Ativação de Códigos Genéticos Estelares', route: '/module-718', category: 'Comunicação e Expansão', description: 'Desperta o potencial latente no DNA, ativando memórias de origens estelares.', status: 'ativo', color: '#87CEEB' },
 
 
   // 11. Laboratórios e Pesquisa

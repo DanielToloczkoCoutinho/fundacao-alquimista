@@ -55,7 +55,7 @@ export default function Module131Page() {
                         title="Módulo 2: Intercâmbio Cósmico"
                         description="Atua como o banco de dados que o M2 consulta para traduzir não apenas linguagens, mas também conceitos e paradigmas de outras realidades."
                         icon={<BrainCircuit className="h-8 w-8 text-cyan-400" />}
-                        href="/module-2"
+                        href="/module/M2"
                     />
                     <ConnectionCard
                         title="Módulo 310: A Grande Biblioteca"

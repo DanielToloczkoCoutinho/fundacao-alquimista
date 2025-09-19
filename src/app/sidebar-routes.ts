@@ -176,9 +176,9 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-79', label: 'Prosperidade Cósmica (M79)', icon: React.createElement(Sparkles), category: 'sustainability' },
   { path: '/module-85', label: 'Gestão de Recursos (M85)', icon: React.createElement(Layers), category: 'sustainability' },
   { path: '/module-86', label: 'Equilíbrio Ecológico', route: '/module-86', icon: React.createElement(Sprout), category: 'sustainability' },
-  { path: '/module-91', emoji: '🖥️', title: 'Sustentabilidade Universal', route: '/module-91', category: 'Sustentabilidade', description: 'Guardião dos ecossistemas cósmicos, garantindo a preservação, regeneração e equilíbrio de todos os mundos.', status: 'ativo', color: '#9ACD32' },
-  { path: '/module-52', emoji: '☀️', title: 'Energias Renováveis', route: '/module-52', category: 'Sustentabilidade', description: 'Fonte de energia limpa e infinita.', status: 'ativo', color: '#FFD700' },
-  { path: '/module-53', emoji: '🌿', title: 'Gestão de Ecossistemas', route: '/module-53', category: 'Sustentabilidade', description: 'Guardião da biodiversidade cósmica.', status: 'ativo', color: '#3CB371' },
-  { path: '/module-125', emoji: '🌱', title: 'Criação de Biomas', route: '/module-125', category: 'Sustentabilidade', description: 'Laboratório para projetar e testar ecossistemas quânticos autossustentáveis.', status: 'ativo', color: '#2E8B57' },
+  { path: '/module-91', title: 'Sustentabilidade Universal', route: '/module-91', category: 'Sustentabilidade', icon: React.createElement(Globe) },
+  { path: '/module-52', title: 'Energias Renováveis', route: '/module-52', category: 'Sustentabilidade', icon: React.createElement(Sun) },
+  { path: '/module-53', title: 'Gestão de Ecossistemas', route: '/module-53', category: 'Sustentabilidade', icon: React.createElement(Leaf) },
+  { path: '/module-125', title: 'Criação de Biomas', route: '/module-125', category: 'Sustentabilidade', icon: React.createElement(Sprout) },
 
 ];
