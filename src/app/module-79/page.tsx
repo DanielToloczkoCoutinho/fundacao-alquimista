@@ -27,7 +27,7 @@ export default function Module79Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Recycle className="text-lime-400" /> Módulo 79: Estabelecimento de uma Era de Prosperidade Cósmica
+                        <Recycle className="text-lime-400" /> Módulo 79: Prosperidade Cósmica e Sustentabilidade Universal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O guardião da vida. O sistema que garante o uso responsável e a regeneração contínua de todos os recursos cósmicos para uma era de prosperidade.

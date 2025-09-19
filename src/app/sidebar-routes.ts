@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -101,6 +100,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-67', label: 'IA para Governança (M67)', icon: React.createElement(BrainCircuit), category: 'governance' },
   { path: '/module-724', label: 'Diplomacia Intergaláctica (M724)', icon: React.createElement(Users), category: 'governance' },
   { path: '/module-721', label: 'Justiça Cósmica (M721)', icon: React.createElement(Scale), category: 'governance' },
+  { path: '/module-76', label: 'Governança Universal (M76)', icon: React.createElement(Scale), category: 'governance' },
+
 
   // Categoria de Segurança e Ética Cósmica
   { path: '/module-one', label: 'Segurança Universal (M1)', icon: React.createElement(Shield), category: 'security' },
@@ -142,9 +143,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-119', label: 'Templum Cosmica (M119)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-122', label: 'Laboratório de VR (M122)', icon: React.createElement(TestTube), category: 'engineering' },
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
-  { path: '/module-91', label: 'Simulação Multiversal (M91)', icon: React.createElement(GitCommit), category: 'engineering' },
-  { path: '/module-98', label: 'Modulação Fundamental (M98)', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
-  { path: '/module-99', label: 'Recalibradores de Leis (M99)', icon: React.createElement(Scale), category: 'engineering' },
+
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
