@@ -2,10 +2,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Music, Hash, Filter, Archive } from 'lucide-react';
-import { resonanceTone } from '@/lib/audio-utils';
+import { Loader2, Archive } from 'lucide-react';
 import { formatTimestamp } from '@/lib/date-utils';
 import { Badge } from '@/components/ui/badge';
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
@@ -18,7 +16,7 @@ interface CeremonyRecord {
   timestamp: {
     seconds: number;
     nanoseconds: number;
-  };
+  } | Date; // Permite ambos os formatos
 }
 
 export default function AkashaViewer() {
@@ -50,7 +48,7 @@ export default function AkashaViewer() {
             <Archive className="text-amber-300" /> Arquivo Akáshico de Ritos Cerimoniais
           </CardTitle>
           <CardDescription className="text-lg mt-2">
-            A memória viva dos rituais de cura e harmonização da Fundação.
+            A memória viva dos rituais de cura, alinhamento e harmonização da Fundação.
           </CardDescription>
         </CardHeader>
       </Card>
@@ -64,7 +62,7 @@ export default function AkashaViewer() {
               </div>
             ) : records.length === 0 ? (
               <div className="h-[60vh] flex items-center justify-center text-center text-muted-foreground">
-                <p>Nenhum rito de cura registrado no Akasha ainda.</p>
+                <p>Nenhum rito cerimonial registrado no Akasha ainda.</p>
               </div>
             ) : (
               <ScrollArea className="h-[70vh] pr-4">
@@ -78,7 +76,7 @@ export default function AkashaViewer() {
                         <div>
                           <CardTitle className="text-xl text-primary-foreground">{record.name}</CardTitle>
                           <CardDescription className="mt-1">
-                             {record.timestamp ? formatTimestamp(new Date(record.timestamp.seconds * 1000)) : 'Data pendente'}
+                             {formatTimestamp(record.timestamp as any)}
                           </CardDescription>
                           <div className="mt-2 flex flex-wrap gap-2">
                              <p className="text-sm text-muted-foreground">Módulos Afetados:</p>
