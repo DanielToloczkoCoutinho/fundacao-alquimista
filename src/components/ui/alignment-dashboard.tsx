@@ -19,7 +19,7 @@ const CosmicNetworkVisualization = dynamic(() => import('./cosmic-network-visual
 
 const EquilibriumPointGrid = ({ points }: { points: any[] }) => (
     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-6">
-        <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300 col-span-full">Malha de Interconexões - 17 Pontos de Equilíbrio</h3>
+        <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300 col-span-full">Malha de Interconexões - Pontos de Equilíbrio</h3>
         {points.map(point => (
             <div key={point.id} className={cn(
                 'p-4 rounded-lg text-center transition-all duration-300',
@@ -107,7 +107,6 @@ export default function AlignmentDashboard({ equilibriumPoints }: { equilibriumP
                     </Suspense>
                 </Card>
             </div>
-            <EquilibriumPointGrid points={points} />
         </>
     );
 }
