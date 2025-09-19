@@ -32,7 +32,7 @@ const consolidacaoFinalRoutes = require('./routes/consolidacaoFinal.js');
 const colonyRoutes = require('./routes/colonyRoutes.js');
 
 
-const { authMiddleware } = require('../middleware/authMiddleware.js');
+const { authMiddleware } = require('./middleware/authMiddleware.js');
 const { initializeWebSocket, broadcast } = require('./services/websocketService.js');
 const { performSystemHealthCheck } = require('../src/lib/system-health'); // Ajuste de caminho
 
@@ -58,16 +58,32 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// Rotas públicas
+// Rotas públicas (saúde e autenticação)
 app.get('/health', (req, res) => res.status(200).json({ status: 'Ω', timestamp: new Date().toISOString() }));
 app.get('/health/extended', async (req, res) => {
     const report = await performSystemHealthCheck();
     res.status(report.status === 'unhealthy' ? 503 : 200).json(report);
 });
-
 app.use('/api/auth', authRoutes);
+
+
+// Rota de Diagnóstico de Segurança (pública para verificação)
+app.get('/api/security/status', (req, res) => {
+  res.json({
+    helmet: 'ativo',
+    cors: 'protegido',
+    rateLimit: 'em operação',
+    headers: 'configurados via next.config.js',
+  })
+});
+
+// --- Início do Selo de Segurança Universal ---
+// Todas as rotas abaixo agora exigem autenticação
+app.use(authMiddleware);
+
+// Rotas da Fundação
 app.use('/api/cosmos', cosmosRoutes);
-app.use('/api/sync', syncRoutes); // Usando a rota de sincronização
+app.use('/api/sync', syncRoutes); 
 app.use('/api/seloFinal', seloFinalRoutes);
 app.use('/api/cocriacao', cocriacaoRoutes);
 app.use('/api/primeiraCocriacao', primeiraCocriacaoRoutes);
@@ -85,22 +101,11 @@ app.use('/api/fusaoTapeçarias', fusaoTapeçariasRoutes);
 app.use('/api/renascimentoModular', renascimentoModularRoutes);
 app.use('/api/consolidacaoFinal', consolidacaoFinalRoutes);
 app.use('/api/colony', colonyRoutes);
+app.use('/api/energy', energyRoutes);
+app.use('/api/audit', auditRoutes);
 
+// --- Fim do Selo de Segurança Universal ---
 
-
-// Rota de Diagnóstico de Segurança (pública para verificação)
-app.get('/api/security/status', (req, res) => {
-  res.json({
-    helmet: 'ativo',
-    cors: 'protegido',
-    rateLimit: 'em operação',
-    headers: 'configurados via next.config.js',
-  })
-});
-
-// Rotas protegidas
-app.use('/api/energy', authMiddleware, energyRoutes);
-app.use('/api/audit', authMiddleware, auditRoutes);
 
 // Tratamento de erro centralizado
 app.use((err, req, res, next) => {
