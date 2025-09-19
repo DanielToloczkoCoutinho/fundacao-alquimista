@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -28,7 +27,7 @@ export default function Module43Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Orbit className="text-amber-300" /> Módulo Quarenta e Três: Orquestração do Sistema Solar
+                        <Orbit className="text-amber-300" /> Módulo 43: Orquestração do Sistema Solar
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Maestro Sistêmico. Harmoniza os portais e orquestra os pontos nodais de um sistema solar para criar uma sinfonia cósmica.
@@ -69,3 +68,6 @@ export default function Module43Page() {
              <div className="mt-12">
                  <Button variant="secondary" size="lg">Iniciar Orquestração Harmônica</Button>
             </div>
+        </div>
+    );
+}

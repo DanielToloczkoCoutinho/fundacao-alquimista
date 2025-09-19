@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -75,7 +74,7 @@ export default function Module45Page() {
             <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Scale className="text-amber-300" /> Módulo 45: Crivo da Unificação Cósmica
+                        <Scale className="text-amber-300" /> Módulo 45: CONCILIVM (Crivo da Unificação Cósmica)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O altar cerimonial onde as vozes do multiverso se unem. Aqui, cada civilização aliada registra sua perspectiva, e a ação coletiva é selada.
@@ -127,7 +126,7 @@ export default function Module45Page() {
                  <div className="space-y-4">
                     <h3 className="text-xl font-semibold text-center text-amber-300">Sinergias de Governança</h3>
                      <div className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors p-4 rounded-lg border-2 border-accent shadow-lg">
-                        <Link href="/module-777" passHref>
+                        <Link href="/alignment-portal" passHref>
                             <div className="flex items-center gap-3 mb-2">
                                 <TreeOfLife className="h-8 w-8 text-green-400" />
                                 <CardTitle className="gradient-text text-xl">A Árvore da Vida</CardTitle>

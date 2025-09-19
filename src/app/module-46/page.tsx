@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -28,7 +27,7 @@ export default function Module46Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Sun className="text-orange-300" /> Módulo Quarenta e Seis: AURORA_CORE
+                        <Sun className="text-orange-300" /> Módulo 46: AURORA_CORE
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Pré-Núcleo da Alvorada. O sistema de ignição que prepara e estabiliza a energia para a Orquestração Avançada da Fundação.
@@ -67,4 +66,8 @@ export default function Module46Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Visualizar Fluxo de Energia do Pré-Núcle
+                 <Button variant="secondary" size="lg">Visualizar Fluxo de Energia do Pré-Núcleo</Button>
+            </div>
+        </div>
+    );
+}

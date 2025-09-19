@@ -27,7 +27,7 @@ export default function Module47Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Archive className="text-orange-300" /> Módulo Quarenta e Sete: Thesaurus Cósmico
+                        <Archive className="text-orange-300" /> Módulo 47: Thesaurus Cósmico
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Curador do Infinito. A biblioteca que arquiva e organiza todos os eventos, conhecimentos e leis da Fundação.

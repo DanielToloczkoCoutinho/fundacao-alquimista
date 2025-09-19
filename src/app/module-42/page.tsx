@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -28,7 +27,7 @@ export default function Module42Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <BookCopy className="text-blue-300" /> Módulo Quarenta e Dois: ChronoCodex Unificado
+                        <BookCopy className="text-blue-300" /> Módulo 42: ChronoCodex Unificado
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Livro Mestre das Realidades. A interface que gerencia e sincroniza múltiplas linhas de tempo para garantir a harmonia multiversal.

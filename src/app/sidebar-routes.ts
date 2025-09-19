@@ -61,7 +61,8 @@ import {
   CheckSquare,
   Link as LinkIcon,
   Clock,
-  ArrowUpCircle
+  ArrowUpCircle,
+  Gavel
 } from 'lucide-react';
 import React from 'react';
 
@@ -147,4 +148,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-82', label: 'M82: Transporte e Roteamento Quântico', icon: React.createElement(Milestone), category: 'expansion' },
   { path: '/module-83', label: 'M83: Rede de Transporte de Energia', icon: React.createElement(GitBranch), category: 'expansion' },
   { path: '/module-84', label: 'M84: Acessibilidade Universal', icon: React.createElement(Users), category: 'expansion' },
+  { path: '/module-42', label: 'M42: ChronoCodex Unificado', icon: React.createElement(BookCopy), category: 'expansion' },
+  { path: '/module-43', label: 'M43: Orquestração do Sistema Solar', icon: React.createElement(Orbit), category: 'expansion' },
+  { path: '/module-46', label: 'M46: AURORA_CORE', icon: React.createElement(Sun), category: 'expansion' },
 ];
