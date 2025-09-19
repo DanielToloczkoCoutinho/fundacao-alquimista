@@ -1,9 +1,9 @@
 
 'use client';
 import { useEffect, useState, Suspense } from 'react';
-import { GuardianStars } from './GuardianStars';
 import SuspenseFallback from '../ui/suspense-fallback';
 import dynamic from 'next/dynamic';
+import { GuardianStars } from './GuardianStars';
 
 // Carrega o Olho da Eternidade dinamicamente para otimização
 const OlhoDaEternidade = dynamic(() => import('../cosmic/OlhoDaEternidade'), {

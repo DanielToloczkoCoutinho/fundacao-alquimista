@@ -1,7 +1,11 @@
 
 'use client';
+
 import { Suspense } from 'react';
-import { GuardianStars } from './GuardianStars';
+import { GuardianStars } from '@/components/quantum/GuardianStars';
+import { RealityMesh } from '../realms/RealityMesh';
+import { VirtualSanctuary } from '../realms/VirtualSanctuary';
+import { ConsciousnessNode } from '../cosmic/ConsciousnessNode';
 import SuspenseFallback from '../ui/suspense-fallback';
 import dynamic from 'next/dynamic';
 
