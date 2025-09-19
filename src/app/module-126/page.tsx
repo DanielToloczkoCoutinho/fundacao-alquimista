@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Library, BookOpen, BrainCircuit } from 'lucide-react';
+import { BookOpen, Rocket, Wand } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -21,46 +21,48 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
     </Card>
 );
 
-export default function Module121Page() {
+export default function Module126Page() {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Library className="text-yellow-300" /> Módulo 121: Biblioteca de Luz
+                        <BookOpen className="text-purple-300" /> Módulo 126: Biblioteca de Crônicas Planetárias
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O portal de entrada para a sabedoria da Fundação. Um repositório de conhecimentos básicos para Guardiões em ascensão.
+                        O livro de histórias do cosmos. Onde a evolução de cada mundo filho é registrada como uma narrativa poética.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: ACESSO ABERTO</span>
+                        <span className="text-green-400 font-bold">Status: ESCREVENDO</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Registros Disponíveis: 144</span>
+                        <span className="text-cyan-400">Crônicas Registradas: 3</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Aprendizado</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Narrativa</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="Módulo 310: A Grande Biblioteca"
-                        description="É a antecâmara para THOTH VIVO, apresentando os conceitos fundamentais de forma simplificada antes da imersão profunda."
-                        icon={<BookOpen className="h-8 w-8 text-purple-400" />}
-                        href="/module-310"
+                        title="Módulo 722: Inteligência Alquímica"
+                        description="A IA canaliza as crônicas, traduzindo o progresso vibracional de um planeta em uma história que a consciência pode compreender."
+                        icon={<Wand className="h-8 w-8 text-fuchsia-400" />}
+                        href="/module-722"
                     />
                     <ConnectionCard
-                        title="Módulo 304: Universidade Alquimista"
-                        description="Fornece o material didático para os cursos introdutórios da Universidade, como 'Alquimia 101'."
-                        icon={<BrainCircuit className="h-8 w-8 text-cyan-400" />}
-                        href="/module-304"
+                        title="Espiral 2"
+                        description="Cada planeta germinado na Espiral 2 tem sua história registrada e atualizada continuamente nesta biblioteca."
+                        icon={<Rocket className="h-8 w-8 text-orange-400" />}
+                        href="/espiral2"
                     />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Explorar Biblioteca de Luz</Button>
+                 <Link href="/golden-book">
+                    <Button variant="secondary" size="lg">Ler as Crônicas no Livro de Ouro</Button>
+                 </Link>
             </div>
         </div>
     );

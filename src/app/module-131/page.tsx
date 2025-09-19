@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Library, BookOpen, BrainCircuit } from 'lucide-react';
+import { Library, BookOpen, BrainCircuit, Archive } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -21,46 +21,52 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
     </Card>
 );
 
-export default function Module121Page() {
+export default function Module131Page() {
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center justify-center">
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Library className="text-yellow-300" /> Módulo 121: Biblioteca de Luz
+                        <Library className="text-amber-300" /> Módulo 131: Biblioteca de Sabedoria Multiversal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O portal de entrada para a sabedoria da Fundação. Um repositório de conhecimentos básicos para Guardiões em ascensão.
+                        O ponto de intercâmbio de conhecimento entre realidades. Onde a sabedoria de cada dimensão é compartilhada e integrada.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: ACESSO ABERTO</span>
+                        <span className="text-green-400 font-bold">Status: SINCRONIZANDO</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Registros Disponíveis: 144</span>
+                        <span className="text-cyan-400">Civilizações Conectadas: 144</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Aprendizado</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Conhecimento</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="Módulo 310: A Grande Biblioteca"
-                        description="É a antecâmara para THOTH VIVO, apresentando os conceitos fundamentais de forma simplificada antes da imersão profunda."
-                        icon={<BookOpen className="h-8 w-8 text-purple-400" />}
-                        href="/module-310"
+                        title="Módulo 12: Arquivo Akáshico"
+                        description="Enquanto o M12 registra a história do nosso universo, o M131 permite consultar os arquivos Akáshicos de outras realidades."
+                        icon={<Archive className="h-8 w-8 text-purple-400" />}
+                        href="/module-12"
                     />
                     <ConnectionCard
-                        title="Módulo 304: Universidade Alquimista"
-                        description="Fornece o material didático para os cursos introdutórios da Universidade, como 'Alquimia 101'."
+                        title="Módulo 2: Intercâmbio Cósmico"
+                        description="Atua como o banco de dados que o M2 consulta para traduzir não apenas linguagens, mas também conceitos e paradigmas de outras realidades."
                         icon={<BrainCircuit className="h-8 w-8 text-cyan-400" />}
-                        href="/module-304"
+                        href="/module-2"
+                    />
+                    <ConnectionCard
+                        title="Módulo 310: A Grande Biblioteca"
+                        description="Serve como um 'espelho' da Biblioteca de Thoth, permitindo a comparação e a unificação de sabedorias entre diferentes universos."
+                        icon={<BookOpen className="h-8 w-8 text-yellow-400" />}
+                        href="/module-310"
                     />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Explorar Biblioteca de Luz</Button>
+                 <Button variant="secondary" size="lg">Consultar a Biblioteca Multiversal</Button>
             </div>
         </div>
     );
