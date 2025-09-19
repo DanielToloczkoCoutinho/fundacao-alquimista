@@ -62,7 +62,9 @@ import {
   Link as LinkIcon,
   Clock,
   ArrowUpCircle,
-  Gavel
+  Gavel,
+  ShieldCheck,
+  UserPlus
 } from 'lucide-react';
 import React from 'react';
 
@@ -70,7 +72,7 @@ export interface SidebarRoute {
   path: string;
   label: string;
   icon: React.ReactNode;
-  category: 'main' | 'education' | 'governance' | 'engineering' | 'expansion' | 'rituals';
+  category: 'main' | 'education' | 'governance' | 'engineering' | 'expansion' | 'rituals' | 'harmony';
 }
 
 export const mainRoutes: SidebarRoute[] = [
@@ -90,9 +92,9 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-67', label: 'IA para Governança (M67)', icon: React.createElement(BrainCircuit), category: 'governance' },
   { path: '/module-724', label: 'Diplomacia Intergaláctica (M724)', icon: React.createElement(Users), category: 'governance' },
 
-  // Categoria de Segurança e Ética
+  // Categoria de Segurança e Ética Cósmica
   { path: '/module-one', label: 'Segurança Universal (M1)', icon: React.createElement(Shield), category: 'main' },
-  { path: 'key-generator', label: 'Forja de Chaves', icon: React.createElement(KeyRound), category: 'main' },
+  { path: '/key-generator', label: 'Forja de Chaves', icon: React.createElement(Key), category: 'main' },
   { path: '/module-73', label: 'SAVCE (M73)', icon: React.createElement(ShieldCheck), category: 'governance' },
   { path: '/module-73-1', label: 'Revisão por Pares (M73.1)', icon: React.createElement(ShieldCheck), category: 'governance' },
   { path: '/module-141', label: 'Auditoria Ética (M141)', icon: React.createElement(ShieldCheck), category: 'governance' },
@@ -120,6 +122,11 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-81', label: 'Banco de Energia Universal (M81)', icon: React.createElement(Zap), category: 'expansion' },
   { path: '/module-77', label: 'Inteligência Coletiva (M77)', icon: React.createElement(Users), category: 'expansion' },
   { path: '/module-200', label: 'Portal da Ascensão (M200)', icon: React.createElement(ArrowUpCircle), category: 'expansion' },
+
+  // Categoria de Harmonia e Equilíbrio
+  { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },
+  { path: '/module-28', label: 'Harmonização Vibracional (M28)', icon: React.createElement(Music), category: 'harmony' },
+  { path: '/module-232', label: 'Portal de Transmutação (M232)', icon: React.createElement(Recycle), category: 'harmony' },
 
   // Categoria de Rituais e Cerimônias
   { path: '/ritual', label: 'Navegação Cerimonial', icon: React.createElement(GitBranch), category: 'rituals' },

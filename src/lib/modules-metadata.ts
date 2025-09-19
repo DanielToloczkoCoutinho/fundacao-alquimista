@@ -83,6 +83,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M108', emoji: '🔄', title: 'Harmonização de Realidades', route: '/module-108', category: 'Cura e Harmonia', description: 'Ferramenta para resolver conflitos entre realidades paralelas.', status: 'ativo', color: '#40E0D0' },
   { code: 'M109', emoji: '❤️‍🩹', title: 'Cura Quântica Universal', route: '/module-109', category: 'Cura e Harmonia', description: 'Aplica princípios quânticos para restaurar o equilíbrio, vitalidade e integridade.', status: 'ativo', color: '#FFB6C1' },
   { code: 'M302', emoji: '💖', title: 'Frequência do Amor', route: '/module-302', category: 'Cura e Harmonia', description: 'Emissor de frequências harmônicas para cura, elevação e unificação da consciência.', status: 'ativo', color: '#FF69B4' },
+  { code: 'M232', emoji: '♻️', title: 'Portal de Transmutação', route: '/module-232', category: 'Cura e Harmonia', description: 'Vórtice de purificação que transmuta energias dissonantes em Luz Pura.', status: 'ativo', color: '#3CB371' },
 
   // 8. Sustentabilidade e Ecossistemas
   { code: 'M15',  emoji: '🌦️', title: 'Jardineiro Cósmico', route: '/module-15', category: 'Sustentabilidade e Ecossistemas', description: 'Monitora e intervém eticamente em sistemas climáticos e geofísicos.', status: 'ativo', color: '#20B2AA' },
