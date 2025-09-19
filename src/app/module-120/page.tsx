@@ -27,7 +27,7 @@ export default function Module120Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <GraduationCap className="text-amber-300" /> Módulo 120: Escola de Guardiões Planetários
+                        <GraduationCap className="text-amber-300" /> Módulo 120: A Fonte
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O centro de formação para os guardiões dos novos mundos, ensinando as artes da sustentabilidade, governança e cura.

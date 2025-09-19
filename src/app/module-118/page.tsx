@@ -27,7 +27,7 @@ export default function Module118Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Sparkles className="text-yellow-300" /> Módulo 118: Centro de Ensino da Merkabah
+                        <Sparkles className="text-yellow-300" /> Módulo 118: Luz Primordial
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O santuário para a ativação do veículo de luz da consciência, permitindo a navegação e ascensão interdimensional.

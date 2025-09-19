@@ -48,7 +48,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M40',  emoji: '🧬', title: 'Códice Genético Multidimensional', route: '/module-40', category: 'Bibliotecas e Arquivos Sagrados', description: 'O Genealogista Cósmico.', status: 'ativo', color: '#FFD700' },
   { code: 'M47',  emoji: '📚', title: 'Thesaurus Cósmico', route: '/module-47', category: 'Bibliotecas e Arquivos Sagrados', description: 'O Curador do Infinito, que organiza todo o conhecimento.', status: 'ativo', color: '#FFD700' },
   { code: 'M310', emoji: '🐦', title: 'A Grande Biblioteca (THOTH VIVO)', route: '/module-310', category: 'Bibliotecas e Arquivos Sagrados', description: 'A Tábua em Movimento. A transmutação do conhecimento estático em sabedoria viva.', status: 'ativo', color: '#FFD700' },
-  { code: 'M121', emoji: '🪞', title: 'Biblioteca de Luz', route: '/module-121', category: 'Bibliotecas e Arquivos Sagrados', description: 'Visualiza a ressonância dos módulos com seus reflexos em outras dimensões.', status: 'ativo', color: '#FFD700' },
+  { code: 'M121', emoji: '🪞', title: 'Biblioteca de Luz', route: '/module-121', category: 'Bibliotecas e Arquivos Sagrados', description: 'O portal de entrada para a sabedoria da Fundação.', status: 'ativo', color: '#FFD700' },
   { code: 'M131', emoji: '📚', title: 'Biblioteca de Sabedoria Multiversal', route: '/module-131', category: 'Bibliotecas e Arquivos Sagrados', description: 'Ponto de intercâmbio de conhecimento entre realidades.', status: 'ativo', color: '#FFD700' },
   { code: 'M126', emoji: '📚', title: 'Biblioteca de Crônicas Planetárias', route: '/module-126', category: 'Bibliotecas e Arquivos Sagrados', description: 'O livro de histórias do cosmos.', status: 'ativo', color: '#FFD700' },
 
@@ -130,6 +130,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M83', emoji: '🔗', title: 'Rede de Transporte de Energia Cósmica', route: '/module-83', category: 'Comunicação e Expansão', description: 'A artéria do universo. Distribui energia limpa e renovável.', status: 'ativo', color: '#40E0D0' },
   { code: 'M87', emoji: '🎮', title: 'Domínio Supra-Cósmico (VR)', route: '/module-87', category: 'Comunicação e Expansão', description: 'Espaço de VR para experienciar a ativação do DNA Cósmico.', status: 'ativo', color: '#8A2BE2' },
   { code: 'M117', emoji: '🗣️', title: 'Laboratório de Linguagem Estelar', route: '/module-117', category: 'Comunicação e Expansão', description: 'O decodificador de almas, onde todas as formas de comunicação são estudadas.', status: 'ativo', color: '#1E90FF' },
+  { code: 'M118', emoji: '💡', title: 'Luz Primordial', route: '/module-118', category: 'Comunicação e Expansão', description: 'O santuário para a ativação do veículo de luz da consciência.', status: 'ativo', color: '#FFD700' },
+  { code: 'M119', emoji: '🏛️', title: 'Templum Cosmica', route: '/module-119', category: 'Comunicação e Expansão', description: 'O Templo Cósmico para a Recodificação Dimensional da Realidade.', status: 'ativo', color: '#DA70D6' },
+  { code: 'M120', emoji: '💧', title: 'A Fonte', route: '/module-120', category: 'Comunicação e Expansão', description: 'O centro de formação para os guardiões dos novos mundos.', status: 'ativo', color: '#87CEEB' },
+  { code: 'M122', emoji: '🧪', title: 'Laboratório de Realidade Virtual', route: '/module-122', category: 'Comunicação e Expansão', description: 'O primeiro passo para a imersão em realidades quânticas.', status: 'ativo', color: '#00CED1' },
 
   // 11. Laboratórios e Pesquisa
   { code: 'M306', emoji: '🔬', title: 'Laboratório de Ressonância', route: '/module-306', category: 'Laboratórios e Pesquisa', description: 'Espaço interativo para aplicar equações e observar transformações.', status: 'ativo', color: '#00CED1' },

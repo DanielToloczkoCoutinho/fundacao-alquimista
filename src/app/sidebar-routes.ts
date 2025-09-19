@@ -116,6 +116,9 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-113', label: 'Centro de Ensino Estelar (M113)', icon: React.createElement(Star), category: 'education' },
   { path: '/module-131', label: 'Biblioteca Multiversal (M131)', icon: React.createElement(Library), category: 'education' },
   { path: '/module-117', label: 'Lab de Linguagem Estelar (M117)', icon: React.createElement(Languages), category: 'education' },
+  { path: '/module-118', label: 'Luz Primordial (M118)', icon: React.createElement(Sparkles), category: 'education' },
+  { path: '/module-120', label: 'A Fonte (M120)', icon: React.createElement(Users), category: 'education' },
+  { path: '/module-121', label: 'Biblioteca de Luz (M121)', icon: React.createElement(Library), category: 'education' },
 
   // Categoria de Engenharia e Criação
   { path: '/module-725', label: 'Construção de Civilizações (M725)', icon: React.createElement(Building), category: 'engineering' },
@@ -129,6 +132,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-31', label: 'Manipulação da Realidade (M31)', icon: React.createElement(Wand), category: 'engineering' },
   { path: '/module-101', label: 'Manifestação de Realidades (M101)', icon: React.createElement(Sparkles), category: 'engineering' },
   { path: '/module-93', label: 'Simulações Imersivas (M93)', icon: React.createElement(Presentation), category: 'engineering' },
+  { path: '/module-119', label: 'Templum Cosmica (M119)', icon: React.createElement(Gem), category: 'engineering' },
+  { path: '/module-122', label: 'Laboratório de VR (M122)', icon: React.createElement(TestTube), category: 'engineering' },
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
@@ -147,7 +152,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },
   { path: '/module-28', label: 'Harmonização Vibracional (M28)', icon: React.createElement(Music), category: 'harmony' },
   { path: '/module-232', label: 'Portal de Transmutação', route: '/module-232', icon: React.createElement(Recycle), category: 'harmony' },
-  { path: '/module-34', label: 'Guardião da Coerência', route: '/module-34', icon: React.createElement(Share2), category: 'harmony' },
+  { path: '/module-34', label: 'Guardião da Coerência Cósmica', route: '/module-34', icon: React.createElement(Share2), category: 'harmony' },
   { path: '/module-37', label: 'Ajuste de Fluxo Temporal', route: '/module-37', icon: React.createElement(Wind), category: 'harmony' },
   { path: '/module-115', label: 'Matriz de Ressonância Universal', route: '/module-115', icon: React.createElement(Waves), category: 'harmony' },
   { path: '/module-306-1', label: 'Purificação Quântica Planetária', icon: React.createElement(Globe), category: 'harmony' },
