@@ -36,7 +36,17 @@ export const executeEquation = functions
         result = 0.5 * hbar * omega;
         break;
       }
-       case 'EQ001': { // Energia Universal
+      case 'EQ307-B': { // Acoplamento Consciência-Vácuo
+        const { phi = 1, energy = 1 } = parameters;
+        result = phi * energy;
+        break;
+      }
+      case 'EQ307-C': { // Fluxo da LuxNet
+        const { flowRate = 1 } = parameters;
+        result = flowRate; // Placeholder linear
+        break;
+      }
+      case 'EQ001': { // Energia Universal
         const { m = 1, c = 299792458 } = parameters;
         result = m * Math.pow(c, 2);
         break;
