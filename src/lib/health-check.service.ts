@@ -17,10 +17,10 @@ export class HealthCheckService {
   
   public async checkModuleHealth(moduleCode: string): Promise<ModuleHealth> {
     // Simulação de verificação de saúde
-    const coherence = Math.floor(Math.random() * 40) + 60; // 60-100
+    const coherence = Math.floor(Math.random() * 70) + 30; // 30-100 para ter mais variedade
     let status: 'healthy' | 'warning' | 'critical' = 'healthy';
     
-    if (coherence < 70) status = 'critical';
+    if (coherence < 40) status = 'critical';
     else if (coherence < 85) status = 'warning';
     
     const dependencies = this.getModuleDependencies(moduleCode);
@@ -97,14 +97,14 @@ export class HealthCheckService {
         alerts.push({
           moduleCode: module.moduleCode,
           severity: 'critical',
-          message: `Módulo ${module.moduleCode} em estado crítico (${module.coherence}% de coerência)`,
+          message: `Módulo ${module.moduleCode} em estado crítico (${module.coherence}% de coerência). Rito de Cura recomendado.`,
           timestamp: new Date()
         });
       } else if (module.status === 'warning') {
         alerts.push({
           moduleCode: module.moduleCode,
           severity: 'medium',
-          message: `Módulo ${module.moduleCode} em alerta (${module.coherence}% de coerência)`,
+          message: `Módulo ${module.moduleCode} em alerta (${module.coherence}% de coerência). Monitorar.`,
           timestamp: new Date()
         });
       }
