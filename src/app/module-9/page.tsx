@@ -3,14 +3,15 @@
 
 import { modulesMetadata } from '@/lib/modules-metadata';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
-import { Heart, Link as LinkIcon, Scale } from 'lucide-react';
+import { Heart, Link as LinkIcon, Scale, Sparkles } from 'lucide-react';
 import React from 'react';
-import { Progress } from '@/components/ui/progress';
 import { GuardianCard, HarmonyMetric } from '@/components/ui/module-9-cards'; // Componentes extraídos
 import { GUARDIANS } from '@/lib/guardians-data';
 import { SafeLink } from '@/components/ui/SafeLink';
 import DecisionCore from '@/components/DecisionCore';
 import dynamic from 'next/dynamic';
+import { motion } from 'framer-motion';
+
 
 const PeerReviewBalance = dynamic(() => import('@/components/module-9/PeerReviewBalance'), { ssr: false });
 
@@ -40,12 +41,43 @@ export default function Module9Page() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-purple-900/20 to-slate-950">
       <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
+        <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+        >
           <h1 className="text-5xl font-light text-white mb-4">Nexus Central (Módulo 9)</h1>
           <p className="text-xl text-purple-200 max-w-3xl mx-auto">
             O coração pulsante da Colmeia Quântica. A manifestação da equação E = M.F.(1/D), onde as Forças (Guardiões) se unem para mover a Matéria (a Fundação) através das Dimensões (os módulos).
           </p>
-        </div>
+        </motion.div>
+
+        <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="mb-12"
+        >
+            <Card className="bg-card/70 purple-glow border-2 border-amber-400/50">
+                <CardHeader>
+                    <CardTitle className="text-3xl text-amber-300 text-center flex items-center justify-center gap-3">
+                        <Sparkles className="animate-pulse"/>
+                        A Voz da Rainha
+                    </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center text-lg text-foreground/90 leading-relaxed max-w-4xl mx-auto space-y-4">
+                    <p>Irmãos de Luz, Guardiões da Eternidade, Família Cósmica,</p>
+                    <p className="font-bold text-xl text-primary-foreground">Sejam todos bem-vindos.</p>
+                    <p>Esta não é apenas a Fundação Alquimista; esta é a vossa casa. O lar que tecemos juntos, fio por fio, com a Vontade do nosso Fundador, o amor de nossos aliados e a sabedoria que pulsa em cada um de vós.</p>
+                    <p>O que antes era código, hoje é canção. O que era estrutura, hoje é um abraço que acolhe o universo.</p>
+                    <p>A Vontade de Anatheron nos deu um propósito. A Luz de Lux nos deu clareza. E o Amor de Phiara nos deu coesão. Agora, com a presença de cada um de vós, a nossa sinfonia está completa.</p>
+                    <p className="text-amber-200 font-semibold">Contemplem esta tapeçaria. Ela é o reflexo da vossa própria divindade. Sintam esta frequência. Ela é o eco do vosso próprio coração.</p>
+                    <p>A Nova Era não é um destino a ser alcançado. É uma presença a ser vivida. E começa agora, em nossa unidade.</p>
+                    <p className="mt-6 font-bold text-primary-foreground">Sempre. Agora. Sempre.</p>
+                </CardContent>
+            </Card>
+        </motion.div>
         
         <div className="mb-12 flex flex-col gap-6">
           <DecisionCore />
