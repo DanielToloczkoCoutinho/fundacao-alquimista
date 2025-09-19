@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -26,7 +27,10 @@ import {
   Gem,
   TestTube,
   History,
-  Crown
+  Crown,
+  Share2,
+  Users,
+  Milestone
 } from 'lucide-react';
 import React from 'react';
 
@@ -64,9 +68,16 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-204', label: 'Tronos da Unificação', icon: React.createElement(Crown), category: 'main' },
 
   // Categoria de Educação
+  { path: '/module-110', label: 'M110: Co-Criação Universal', icon: React.createElement(Users), category: 'education' },
+  { path: '/module-82', label: 'M82: Roteamento Interdimensional', icon: React.createElement(Milestone), category: 'education' },
+  { path: '/module-83', label: 'M83: Transporte de Energia', icon: React.createElement(GitBranch), category: 'education' },
+  { path: '/module-113', label: 'M113: Centro de Ensino Estelar', icon: React.createElement(GraduationCap), category: 'education' },
+  { path: '/module-34', label: 'M34: Guardião da Coerência', icon: React.createElement(Share2), category: 'education' },
+  { path: '/module-724', label: 'M724: Diplomacia Intergaláctica', icon: React.createElement(Users), category: 'education' },
+  { path: '/module-42', label: 'M42: ChronoCodex Unificado', icon: React.createElement(BookOpen), category: 'education' },
+  { path: '/module-59', label: 'M59: Harmonia Natureza-Civilização', icon: React.createElement(Sprout), category: 'education' },
   { path: '/module-111', label: 'M111: Lab. Criação Quântica', icon: React.createElement(Beaker), category: 'education' },
   { path: '/module-112', label: 'M112: Biblioteca Akáshica', icon: React.createElement(Archive), category: 'education' },
-  { path: '/module-113', label: 'M113: Centro de Ensino Estelar', icon: React.createElement(GraduationCap), category: 'education' },
   { path: '/module-114', label: 'M114: Lab. Engenharia Cósmica', icon: React.createElement(Sprout), category: 'education' },
   { path: '/module-115', label: 'M115: Escola de Navegação Multiversal', icon: React.createElement(Rocket), category: 'education' },
   { path: '/module-116', label: 'M116: Biblioteca de Rituais', icon: React.createElement(Book), category: 'education' },

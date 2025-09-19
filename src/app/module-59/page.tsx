@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -66,4 +67,8 @@ export default function Module59Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant
+                 <Button variant="secondary" size="lg">Explorar Projetos de Cidades de Luz</Button>
+            </div>
+        </div>
+    );
+}

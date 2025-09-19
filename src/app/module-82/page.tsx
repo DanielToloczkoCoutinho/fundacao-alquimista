@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -30,7 +31,7 @@ export default function Module82Page() {
                         <Milestone className="text-blue-400" /> Módulo 82: Roteamento Interdimensional e Viagens Cósmicas
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A rede de transporte do infinito. O sistema que permite viagens instantâneas e seguras através do tecido do espaço-tempo.
+                        A rede de corredores cósmicos que conecta planetas, dimensões e sistemas estelares, permitindo o fluxo livre da criação.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -43,7 +44,7 @@ export default function Module82Page() {
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Mobilidade</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Conectividade</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 28: Transporte Quântico"
@@ -66,7 +67,7 @@ export default function Module82Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Visualizar Mapa de Roteamento</Button>
+                 <Button variant="secondary" size="lg">Visualizar o Mapa de Roteamento</Button>
             </div>
         </div>
     );
