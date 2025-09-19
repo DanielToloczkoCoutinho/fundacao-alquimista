@@ -66,4 +66,8 @@ export default function Module64Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <
+                 <Button variant="secondary" size="lg">Acessar Rede Energética Universal</Button>
+            </div>
+        </div>
+    );
+}

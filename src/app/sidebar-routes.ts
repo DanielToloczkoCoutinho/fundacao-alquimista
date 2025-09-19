@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -31,7 +30,24 @@ import {
   Share2,
   Users,
   Milestone,
-  Scale
+  Scale,
+  Network,
+  Lock,
+  Key,
+  Building,
+  Leaf,
+  Recycle,
+  Wheat,
+  Hospital,
+  Shield,
+  CloudLightning,
+  AlertTriangle,
+  Hourglass,
+  Layers,
+  GitCommit,
+  Presentation,
+  Eye,
+  Aperture
 } from 'lucide-react';
 import React from 'react';
 
@@ -102,4 +118,13 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-73', label: 'M73: SAVCE', icon: React.createElement(Scale), category: 'education' },
   { path: '/module-74', label: 'M74: CRONOS_FLUXUS', icon: React.createElement(History), category: 'education' },
   { path: '/module-87', label: 'M87: Domínio Supra-Cósmico (VR)', icon: React.createElement(Crown), category: 'education' },
+  { path: '/module-55', label: 'M55: Redes de Comunicação', icon: React.createElement(Network), category: 'education' },
+  { path: '/module-56', label: 'M56: Tradução Universal', icon: React.createElement(Languages), category: 'education' },
+  { path: '/module-57', label: 'M57: Segurança e Privacidade', icon: React.createElement(Lock), category: 'education' },
+  { path: '/module-65', label: 'M65: Transporte Cósmico', icon: React.createElement(Rocket), category: 'education' },
+  { path: '/module-64', label: 'M64: Energia Limpa', icon: React.createElement(Zap), category: 'education' },
+  { path: '/module-66', label: 'M66: Sustentabilidade Ambiental', icon: React.createElement(Recycle), category: 'education' },
+  { path: '/module-67', label: 'M67: IA para Governança', icon: React.createElement(Users), category: 'education' },
+  { path: '/module-59', label: 'M59: Harmonia Natureza-Civilização', icon: React.createElement(Building), category: 'education' },
 ];
+

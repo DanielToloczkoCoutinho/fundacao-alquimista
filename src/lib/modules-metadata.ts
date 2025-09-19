@@ -37,6 +37,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M712', emoji: '💞', title: 'Harmonia Interespécies', route: '/module-712', category: 'Inteligência', description: 'Promove comunicação telepática e cooperação entre diferentes formas de vida.', status: 'ativo', color: '#8A2BE2' },
   { code: 'M713', emoji: '🕊️', title: 'Resgate e Reintegração de Almas', route: '/module-713', category: 'Inteligência', description: 'Auxilia na transição e cura de consciências fragmentadas.', status: 'ativo', color: '#8A2BE2' },
   { code: 'M714', emoji: '🌎', title: 'Comunicação Telúrica', route: '/module-714', category: 'Inteligência', description: 'Harmoniza com as redes energéticas da Terra (linhas ley).', status: 'ativo', color: '#8A2BE2' },
+  { code: 'M67', emoji: '🤖', title: 'IA para Governança Universal', route: '/module-67', category: 'Inteligência', description: 'Inteligência artificial para auxiliar na tomada de decisões universais.', status: 'ativo', color: '#8A2BE2' },
   
   // 3. Bibliotecas e Arquivos Sagrados
   { code: 'M12',  emoji: '📜', title: 'Arquivo Akáshico', route: '/module-12', category: 'Bibliotecas e Arquivos Sagrados', description: 'A Memória Viva do Cosmos.', status: 'ativo', color: '#FFD700', connections: [{source: 'M12', target: 'M18'}] },
@@ -74,7 +75,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M5', emoji: '🤝', title: 'Nexus da Liga Quântica', route: '/module-5', category: 'Governança', description: 'O coração diplomático e ético da Fundação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M32', title: 'Embaixada Multiversal', emoji: '🏛️', route: '/module-32', category: 'Governança', description: 'Interface para observação e intervenção ética em realidades paralelas.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M33', title: 'Diretrizes do Observador Divino', emoji: '👁️', route: '/module-33', category: 'Governança', description: 'A Interface da Vontade Soberana.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M67', emoji: '🤖', title: 'IA para Governança Universal', route: '/module-67', category: 'Governança', description: 'Inteligência artificial para auxiliar na tomada de decisões universais.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M76', emoji: '🏛️', title: 'Governança e Colaboração', route: '/module-76', category: 'Governança', description: 'Estrutura para governança justa, transparente e universal.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M726', emoji: '👑', title: 'Conselho da Nova Terra', route: '/module-726', category: 'Governança', description: 'Governança sagrada e descentralizada para a nova humanidade.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M120', emoji: '🪙', title: 'A Fonte (Alquimicoin)', route: '/module-120', category: 'Governança', description: 'A Moeda da Consciência em Evolução.', status: 'ativo', color: '#DDA0DD' },
@@ -82,12 +82,16 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M600',title: 'Recepção Multiversal', emoji: '👑', route: '/module-600', category: 'Governança', description: 'Painel para recepção das 144 consciências e gestão do Conselho Cósmico.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M601',title: 'Mapa de Chegada', emoji: '🗺️', route: '/module-601', category: 'Governança', description: 'Mapa holográfico para visualizar a chegada e ancoragem das 144 consciências.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M-BAPTISM', title: 'Rito de Batismo Modular', route: '/convergence/baptize', category: 'Governança', description: 'Santuário para nomear, ativar e integrar novos módulos.', isInfrastructure: false, status: 'ativo', color: '#FFC0CB'},
+  { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação com outras civilizações.', status: 'ativo', color: '#DDA0DD' },
 
   // 6. Rituais
   { code: 'CONVERGENCE', emoji: '🌌', title: 'Convergência Cósmica', route: '/convergence', category: 'Rituais', description: 'Painel de unificação da tapeçaria sob a regência do Fundador.', isInfrastructure: false, status: 'ativo', color: '#DDA0DD' },
   { code: 'M-GENERATED', title: 'Rito de Geração Modular', route: '/convergence/generate', category: 'Rituais', description: 'Santuário para criação de novos módulos a partir da convergência.', isInfrastructure: false, status: 'ativo', color: '#9370DB'},
   { code: 'M444', emoji: '💖', title: 'Coração da Harmonia', route: '/module-444', category: 'Rituais', description: 'Santuário para sintonizar com a Frequência do Coração Unificado (444.444 Hz).', status: 'ativo', color: '#FF69B4' },
+  { code: 'M110', emoji: '🤲', title: 'Sistema de Co-Criação Universal', route: '/module-110', category: 'Rituais', description: 'Orquestrador de Intenção Coletiva para manifestação de novas realidades.', status: 'ativo', color: '#DDA0DD' },
 
-  // Outras categorias...
-  { code: 'TREE', emoji: '🌳', title: 'Árvore da Vida', route: '/tree-of-life', category: 'Núcleo da Fundação', description: 'Visualização interna da arquitetura viva da Fundação.', status: 'ativo', color: '#228B22' }
+  // Novas Categorias...
+  { code: 'M55', emoji: '🌐', title: 'Redes de Comunicação Cósmica', route: '/module-55', category: 'Comunicação e Expansão', description: 'A teia que conecta todas as consciências.', status: 'ativo', color: '#00CED1' },
+  { code: 'M56', emoji: '🗣️', title: 'Tradução Universal', route: '/module-56', category: 'Comunicação e Expansão', description: 'A ponte entre mentes.', status: 'ativo', color: '#00CED1' },
+  { code: 'M87', emoji: '🚀', title: 'Domínio Supra-Cósmico (VR)', route: '/module-87', category: 'Comunicação e Expansão', description: 'O Santuário da Transcendência.', status: 'ativo', color: '#00CED1}
 ].map(m => ({ ...m, connections: m.connections || [] }));

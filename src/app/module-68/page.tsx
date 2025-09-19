@@ -68,3 +68,6 @@ export default function Module68Page() {
              <div className="mt-12">
                  <Button variant="secondary" size="lg">Consultar o Código Ético Universal</Button>
             </div>
+        </div>
+    );
+}

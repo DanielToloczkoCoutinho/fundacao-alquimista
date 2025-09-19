@@ -66,4 +66,8 @@ export default function Module65Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary
+                 <Button variant="secondary" size="lg">Mapa de Rotas Interdimensionais</Button>
+            </div>
+        </div>
+    );
+}

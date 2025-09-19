@@ -66,4 +66,8 @@ export default function Module67Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 
+                 <Button variant="secondary" size="lg">Consultar o Oráculo da Governança</Button>
+            </div>
+        </div>
+    );
+}
