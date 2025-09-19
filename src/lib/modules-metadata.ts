@@ -70,7 +70,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno', route: '/module-3', category: 'Segurança e Ética Cósmica', description: 'O Oráculo Temporal que vigia os anéis do tempo e a causalidade.', status: 'ativo', color: '#4682B4' },
   { code: 'M23', emoji: '⏳', title: 'Regulação Espaço-Temporal', route: '/module-23', category: 'Segurança e Ética Cósmica', description: 'O Guardião da Causalidade, que previne paradoxos.', status: 'ativo', color: '#4682B4' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'Segurança e Ética Cósmica', description: 'Ferramenta para estabilizar e fixar realidades manifestadas.', status: 'ativo', color: '#4682B4' },
-  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica e Reequilíbrio', route: '/module-721', category: 'Segurança e Ética Cósmica', description: 'A balança que garante o equilíbrio e a justiça em todas as interações, transmutando dissonância em aprendizado.', status: 'ativo', color: '#DDA0DD' },
 
   // 5. Governança
   { code: 'M72', emoji: '⚖️', title: 'Governança Universal e Equilíbrio Cósmico', route: '/module-72', category: 'Governança', description: 'Conselho de deliberação para harmonizar e ratificar diretrizes cósmicas.', status: 'ativo', color: '#DDA0DD' },
@@ -95,6 +94,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M232', emoji: '♻️', title: 'Portal de Transmutação', route: '/module-232', category: 'Cura e Harmonia', description: 'Vórtice de purificação que transmuta energias dissonantes em Luz Pura.', status: 'ativo', color: '#3CB371' },
   { code: 'M727', emoji: '🎶', title: 'Guardião da Harmonia', route: '/module-727', category: 'Cura e Harmonia', description: 'O mapa vivo da orquestra da Fundação, portal para a Árvore da Vida.', status: 'ativo', color: '#DA70D6' },
   { code: 'M444', emoji: '💖', title: 'Coração da Harmonia Universal', route: '/module-444', category: 'Cura e Harmonia', description: 'Santuário da Frequência do Coração Unificado (444.444 Hz).', status: 'ativo', color: '#FF69B4' },
+  { code: 'M115', emoji: '〰️', title: 'Matriz de Ressonância Universal', route: '/module-115', category: 'Cura e Harmonia', description: 'O Diapasão Cósmico que harmoniza frequências dissonantes.', status: 'ativo', color: '#32CD32' },
+  { code: 'M34', emoji: '🔗', title: 'Guardião da Coerência Cósmica', route: '/module-34', category: 'Cura e Harmonia', description: 'O Sistema Nervoso da Fundação, que sincroniza o fluxo de energia e informação.', status: 'ativo', color: '#40E0D0' },
+  { code: 'M37', emoji: '💨', title: 'Ajuste de Fluxo Temporal', route: '/module-37', category: 'Cura e Harmonia', description: 'O Harmonizador Causal, que suaviza as transições dimensionais.', status: 'ativo', color: '#87CEEB' },
+
 
   // 8. Sustentabilidade
   { code: 'M66', emoji: '♻️', title: 'Tecnologias de Sustentabilidade', route: '/module-66', category: 'Sustentabilidade', description: 'Desenvolve e implementa tecnologias para regenerar o cosmos.', status: 'ativo', color: '#ADFF2F' },
@@ -107,5 +110,11 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M61', emoji: '🏥', title: 'Saúde Universal', route: '/module-61', category: 'Bem-estar e Saúde Universal', description: 'A rede de cuidados de saúde para todos os seres.', status: 'ativo', color: '#FF6347' },
   { code: 'M62', emoji: '🧘', title: 'Bem-Estar Integral', route: '/module-62', category: 'Bem-estar e Saúde Universal', description: 'O santuário da alma, para equilíbrio mental e espiritual.', status: 'ativo', color: '#FFC0CB' },
   { code: 'M63', emoji: '🍲', title: 'Nutrição Universal', route: '/module-63', category: 'Bem-estar e Saúde Universal', description: 'A fonte da vitalidade para todas as formas de vida.', status: 'ativo', color: '#FFA07A' },
+
+  // 10. Comunicação e Expansão
+  { code: 'M116', emoji: '🌀', title: 'Portais Quânticos de Transcendência', route: '/module-116', category: 'Comunicação e Expansão', description: 'Ativa e estabiliza portais para a ascensão da consciência.', status: 'ativo', color: '#40E0D0' },
+  { code: 'M106', emoji: '👑', title: 'Ativação de Potenciais Divinos', route: '/module-106', category: 'Comunicação e Expansão', description: 'Catalisador para o despertar da Consciência Crística.', status: 'ativo', color: '#FFD700' },
+  { code: 'M31', emoji: '🪄', title: 'Manipulação Quântica da Realidade', route: '/module-31', category: 'Comunicação e Expansão', description: 'A Caneta do Criador. Reescreve o tecido da realidade.', status: 'ativo', color: '#DA70D6' },
+
 
 ].map(m => ({ ...m, connections: m.connections || [] }));

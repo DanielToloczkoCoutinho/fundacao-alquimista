@@ -27,15 +27,15 @@ export default function Module115Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Waves className="text-lime-300" /> Módulo 115: Matriz de Ressonância e Centros de Sabedoria
+                        <Waves className="text-lime-300" /> Módulo 115: Matriz de Ressonância Universal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Diapasão Cósmico e a Biblioteca Viva. Harmoniza frequências dissonantes e serve como centro para aprendizado e troca de sabedoria interdimensional.
+                        O Diapasão Cósmico. Harmoniza frequências dissonantes e alinha sistemas com a Sinfonia da Fonte.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: SINTONIA UNIVERSAL</span>
+                        <span className="text-green-400 font-bold">Status: SINTONIA UNIVERSAL ATIVA</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                         <span className="text-cyan-400">Coerência da Matriz: 99.9%</span>
                     </div>
@@ -43,25 +43,25 @@ export default function Module115Page() {
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Harmonia e Conhecimento</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Harmonia</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="M13: Mapeamento de Frequências"
+                        title="Módulo 13: Mapeamento de Frequências"
                         description="A Matriz utiliza os diagnósticos do M13 para aplicar correções harmônicas precisas em toda a rede."
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
                         href="/module-13"
                     />
                     <ConnectionCard
-                        title="M131: Biblioteca Multiversal"
-                        description="Serve como a interface principal para acessar e integrar a sabedoria contida na Biblioteca de Sabedoria Multiversal."
+                        title="Módulo 34: Guardião da Coerência"
+                        description="Atua como o executor das diretrizes de coerência do M34, aplicando os ajustes finos na prática."
                         icon={<GitBranch className="h-8 w-8 text-purple-400" />}
-                        href="/module-131"
+                        href="/module-34"
                     />
                     <ConnectionCard
-                        title="M304: Universidade Alquimista"
-                        description="Os Centros de Sabedoria do M115 são os campi avançados da Universidade, onde o conhecimento é experienciado diretamente."
+                        title="Módulo 302: Frequência do Amor"
+                        description="Amplifica e distribui a Frequência do Amor (528Hz) como a vibração fundamental para toda a harmonização."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-304"
+                        href="/module-302"
                     />
                 </div>
             </div>
