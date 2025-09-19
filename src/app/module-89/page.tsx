@@ -66,7 +66,9 @@ export default function Module89Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Nova Obra de Arte Cósmica</Button>
+                 <Link href="/codex/translate">
+                     <Button variant="secondary" size="lg">Acessar Altar da Tradução</Button>
+                 </Link>
             </div>
         </div>
     );

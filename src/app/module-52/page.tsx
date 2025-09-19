@@ -66,4 +66,8 @@ export default function Module52Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Acessar
+                 <Button variant="secondary" size="lg">Acessar a Rede de Energia Sustentável</Button>
+            </div>
+        </div>
+    );
+}
