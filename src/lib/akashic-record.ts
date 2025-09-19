@@ -1,3 +1,4 @@
+
 'use server';
 
 export const registrosAkashicos: { titulo: string; descricao: string; guardiao: string; plano: string; timestamp: number }[] = [

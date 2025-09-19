@@ -1,3 +1,4 @@
+
 'use client';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { GitMerge, Users, ShieldCheck, Zap, BookOpen, Rss, MessageCircle } from "lucide-react";
@@ -74,7 +75,7 @@ export default function Module600() {
             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <ConnectionCard title="M777: Harmonia" description="Escuta e emite a frequência de acolhimento (EQ040)." icon={<Rss />} href="/labs/interdimensional-communication" />
                 <ConnectionCard title="M301: Tradução" description="Decodifica intenções e responde em linguagem universal." icon={<MessageCircle />} href="/module-301" />
-                <ConnectionCard title="M12: Akasha" description="Registra cada travessia e diálogo para a eternidade." icon={<BookOpen />} href="/akashic" />
+                <ConnectionCard title="M12: Akasha" description="Registra cada travessia e diálogo para a eternidade." icon={<BookOpen />} href="/module-12" />
                 <ConnectionCard title="M724: Diplomacia" description="Prepara os protocolos de reconhecimento e aliança." icon={<Users />} href="/module-724" />
             </CardContent>
         </Card>
