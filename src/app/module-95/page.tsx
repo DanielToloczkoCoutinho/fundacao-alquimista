@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -12,7 +13,7 @@ import { quantumResilience } from '@/lib/quantum-resilience';
 const mockM01 = { validate_signature: (hash: string) => ({ status: "validated", security_level: 0.99 }), register_event: (event: any) => ({ status: "registered" }), };
 const mockM03 = { predict_communication_receptivity: (communication_intent: string, target_consciousness_type: string) => "invasao" in communication_intent.toLowerCase() ? { predicted_receptivity_score: Math.random() * 0.25 + 0.05, confidence: 0.9 } : { predicted_receptivity_score: Math.random() * 0.3 + 0.7, confidence: 0.95 }, };
 const mockM05 = { evaluate_ethical_impact: (operation_data: any) => { const ethical_score = "invasao" in (operation_data.description || "").toLowerCase() ? Math.random() * 0.5 + 0.1 : Math.random() * 0.3 + 0.7; return { ethical_score, conformity: ethical_score >= 0.75 }; }, };
-const mockM14 = { transform_energy: (energy_type: string, quantity: number) => ({ status: "transformed", output_energy: quantity * Math.random() * 0.2 + 0.9 }), };
+const mockM14 = { transform_energy: (energy_type: string, quantity: number) => ({ status: "transformed", output_energy: quantity * (Math.random() * 0.2 + 0.9) }), };
 const mockM33 = { get_current_directives: () => ({ interaction_priority: "MAXIMIZE_UNIVERSAL_WISDOM_EXCHANGE", ethical_alignment_strictness: "ABSOLUTE_NON_INVASION" }), };
 const mockM73 = { submit_for_validation: (data_to_validate: any) => { const cosmic_score = Math.random() * 0.18 + 0.8; const ethical_conformity = data_to_validate.ethical_impact.conformity; const validation_status = cosmic_score >= 0.85 && ethical_conformity ? "APROVADO" : "REPROVADO"; return { validation_status, cosmic_score, ethical_conformity, details: "Simulação de validação SAVCE para interação com consciência coletiva." }; }, };
 const mockM88 = { generate_communication_blueprint: (purpose: string, target_type: string) => ({ blueprint_id: `COMM-BP-${Math.random().toString(36).substring(2, 10)}`, symbolic_code: `$C_{comm} = \\int \\Psi_{sender} \\cdot \\Omega_{target} \\cdot \\Phi_{truth} \\,d\\tau$`, communication_parameters: { purpose, target_type, coherence_factor: Math.random() * 0.1 + 0.9, frequency_alignment: Math.random() * 0.1 + 0.9 }, }), };
