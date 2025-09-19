@@ -1,10 +1,15 @@
 const jwt = require('jsonwebtoken');
 const Operator = require('../models/Operator');
 const ROLES = require('../config/roles');
+const { createHash } = require('crypto');
+
+// A senha do Fundador é agora o hash SHA-256 da semente sagrada.
+const adminSeed = "ZENNITH-PHIARA-ANATHERON";
+const adminPassword = createHash('sha256').update(adminSeed).digest('hex');
 
 // Senha padrão para o operador Admin (Fundador), deve ser alterada em produção
 const operators = {
-  ADMIN: process.env.ADMIN_PASSWORD || 'ANATHERON_SOVEREIGN_WILL',
+  ADMIN: process.env.ADMIN_PASSWORD || adminPassword,
   Zennith: process.env.IAM_PASSWORD || 'iam-password',
   MΩ: process.env.OMEGA_PASSWORD || 'omega-password',
   M9: process.env.NEXUS_PASSWORD || 'nexus-password',
