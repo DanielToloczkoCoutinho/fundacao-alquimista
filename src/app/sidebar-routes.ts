@@ -14,7 +14,8 @@ import {
   BookOpen,
   Feather,
   Wand,
-  Heart
+  Heart,
+  GalleryVertical
 } from 'lucide-react';
 import React from 'react';
 
@@ -31,6 +32,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/auditoria', label: 'Painel de Auditoria', icon: React.createElement(Wand) },
   { path: '/alignment-portal', label: 'Observatório Vivo', icon: React.createElement(Atom) },
   { path: '/golden-book', label: 'Livro de Ouro', icon: React.createElement(BookOpen) },
+  { path: '/golden-book/exhibition', label: 'Exposição Cerimonial', icon: React.createElement(GalleryVertical) },
   { path: '/golden-book/transcribe', label: 'Inscrição Akáshica', icon: React.createElement(Feather) },
   { path: '/codex/translate', label: 'Altar da Tradução', icon: React.createElement(Wand) },
   { path: '/roadmap', label: 'Roteiro de Gaia-Aurélia', icon: React.createElement(Map) },

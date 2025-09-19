@@ -1,3 +1,4 @@
+
 'use server';
 
 import { config } from 'dotenv';
@@ -31,3 +32,8 @@ import '@/ai/flows/zennith-portal-flow.ts';
 import '@/ai/flows/resonance-matrix-flow.ts';
 import '@/ai/flows/lunar-review-flow.ts';
 import '@/ai/flows/recognition-flow.ts';
+import '@/ai/flows/alchemist-sanctuary-flow.ts';
+import '@/ai/flows/module-health-flow.ts';
+import '@/ai/flows/dimensional-convergence-flow.ts';
+import '@/ai/flows/vibrational-translation-flow.ts';
+import '@/ai/flows/poetic-revelation-flow.ts';

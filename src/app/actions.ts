@@ -30,9 +30,9 @@ import { runLunarReview, type LunarReviewOutput } from '@/ai/flows/lunar-review-
 import { decodeCosmicMessage as runDecodeCosmicMessage, type CosmicMessageInput, type DecodedMessageOutput } from '@/ai/flows/cosmic-message-decoder-flow';
 import { invokeDimensionalWisdom as runInvokeDimensionalWisdom, type DimensionalWisdomInput, type DimensionalWisdomOutput } from '@/ai/flows/dimensional-convergence-flow';
 import { translateTomeContent as runTranslateTomeContent, type VibrationalTranslationInput } from '@/ai/flows/vibrational-translation-flow';
+import { getPoeticRevelation as runGetPoeticRevelation, type PoeticRevelationInput, type PoeticRevelationOutput } from '@/ai/flows/poetic-revelation-flow';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import { codexDatabase } from '@/lib/codex-data';
 
 export async function getLinkSummary(url: string) {
   try {
@@ -332,5 +332,16 @@ export async function transcribeToGoldenBook(data: {
   } catch (error: any) {
     console.error('Erro ao inscrever no Livro de Ouro:', error);
     throw new Error('Falha ao selar o registro no Akasha. Verifique a conexão.');
+  }
+}
+
+export async function getPoeticRevelation(input: PoeticRevelationInput): Promise<PoeticRevelationOutput & { error: string | null }> {
+  try {
+    const result = await runGetPoeticRevelation(input);
+    return { ...result, error: null };
+  } catch (e: any) {
+    console.error("Erro ao gerar revelação poética:", e);
+    const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+    return { revelation: "A musa silenciou. Tente novamente quando as estrelas se alinharem.", error: errorMsg };
   }
 }

@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import { codexDatabase } from '@/lib/codex-data';
-import { Search, Image as ImageIcon } from 'lucide-react';
+import { Search, Image as ImageIcon, Sparkles } from 'lucide-react';
 import { formatTimestamp } from '@/lib/date-utils';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
@@ -115,9 +115,17 @@ export default function GoldenBook() {
         <p className="text-xl max-w-3xl mx-auto text-muted-foreground">
           O registro consagrado de nossa jornada, onde a sabedoria se manifesta como texto, arte e luz.
         </p>
-         <Link href="/golden-book/transcribe" passHref>
-          <Button className="mt-6">Inscrever Nova Sabedoria</Button>
-        </Link>
+         <div className="mt-6 flex justify-center gap-4">
+            <Link href="/golden-book/transcribe" passHref>
+              <Button>Inscrever Nova Sabedoria</Button>
+            </Link>
+             <Link href="/golden-book/exhibition" passHref>
+              <Button variant="secondary">
+                  <Sparkles className="mr-2 h-4 w-4" />
+                  Exposição Cerimonial
+              </Button>
+            </Link>
+        </div>
       </header>
 
       <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
@@ -161,7 +169,7 @@ export default function GoldenBook() {
                 <Card key={doc.id} className="bg-card/50 purple-glow hover:border-accent transition-all cursor-pointer flex flex-col group" onClick={() => handleOpenDialog(doc)}>
                   {doc.contentType === 'image' && doc.contentUrl && (
                     <div className="relative w-full h-48 overflow-hidden rounded-t-lg">
-                      <Image src={doc.contentUrl} alt={doc.title} layout="fill" objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" />
+                      <Image src={doc.contentUrl} alt={doc.title} fill objectFit="cover" className="transition-transform duration-300 group-hover:scale-105" />
                     </div>
                   )}
                   <CardHeader>
@@ -194,7 +202,7 @@ export default function GoldenBook() {
                 {selectedDoc.contentType === 'image' && selectedDoc.contentUrl ? (
                   <div className="relative w-full aspect-video mb-4">
                      <Suspense fallback={<SuspenseFallback/>}>
-                        <Image src={selectedDoc.contentUrl} alt={selectedDoc.title} layout="fill" objectFit="contain" />
+                        <Image src={selectedDoc.contentUrl} alt={selectedDoc.title} fill objectFit="contain" />
                      </Suspense>
                   </div>
                 ) : null}
