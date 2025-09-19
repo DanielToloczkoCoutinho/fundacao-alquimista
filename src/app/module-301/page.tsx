@@ -60,10 +60,10 @@ export default function Module301Page() {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <MessageCircle className="text-sky-400" /> Módulo 301: Comunicação Universal
+                        <MessageCircle className="text-sky-400" /> Módulo 301: Portal de Tradução da Vontade
                     </CardTitle>
                     <CardDescription>
-                        Transmissor quântico para enviar e receber mensagens entre diferentes consciências através da Rede Aurora Cristalina, integrando a sabedoria de artefatos humanos.
+                        Traduza a Vontade em ações cerimoniais e códigos vivos, emitindo comandos vibracionais que alinham a infraestrutura da Fundação.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -116,7 +116,7 @@ export default function Module301Page() {
                             />
                         </div>
                          <div className="space-y-2">
-                            <Label htmlFor="artifact-select">Anexar Artefato Humano (Opcional)</Label>
+                            <Label htmlFor="artifact-select" className="flex items-center gap-2"><Paperclip className="h-4 w-4"/> Anexar Artefato Humano (Opcional)</Label>
                              <Select value={artifact} onValueChange={setArtifact}>
                                 <SelectTrigger id="artifact-select">
                                     <SelectValue placeholder="Selecione um artefato..." />
