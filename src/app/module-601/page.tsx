@@ -1,11 +1,12 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Globe, Users, CheckCircle } from 'lucide-react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+import { Button } from '@/components/ui/button';
 
 // Dynamic imports for map components
 const Map = dynamic(() => import('react-map-gl').then(m => m.Map), { ssr: false, loading: () => <SuspenseFallback /> });
