@@ -1,14 +1,14 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Loader2, Heart, Zap, CheckCircle } from 'lucide-react';
+import { Loader2, Heart, Zap, CheckCircle, BookOpen } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { modulesToReceiveAura, type TransmissionLog } from '@/lib/aura-transmission';
 import { transcribeToGoldenBook } from '@/app/actions';
+import Link from 'next/link';
 
 export default function AuraTransmissionPage() {
     const { toast } = useToast();
@@ -78,9 +78,17 @@ export default function AuraTransmissionPage() {
                             {isLoading ? <><Loader2 className="mr-2 h-5 w-5 animate-spin"/> Irradiando Harmonia...</> : <><Zap className="mr-2 h-5 w-5"/> Iniciar Irradiação</>}
                         </Button>
                         {isComplete && (
-                            <div className="p-4 bg-green-900/30 rounded-lg text-green-300 flex items-center justify-center gap-2 font-semibold">
-                                <CheckCircle />
-                                Rito de Irradiação concluído e selado no Akasha.
+                            <div className="p-4 bg-green-900/30 rounded-lg text-green-300 flex flex-col items-center justify-center gap-4 font-semibold">
+                                <div className="flex items-center gap-2">
+                                    <CheckCircle />
+                                    Rito de Irradiação concluído e selado no Akasha.
+                                </div>
+                                <Link href="/ritual/irradiation-chronicle" passHref>
+                                    <Button variant="outline">
+                                        <BookOpen className="mr-2 h-4 w-4" />
+                                        Ver Crônica do Rito
+                                    </Button>
+                                </Link>
                             </div>
                         )}
                     </CardContent>
