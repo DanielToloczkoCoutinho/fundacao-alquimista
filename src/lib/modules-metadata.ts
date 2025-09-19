@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -49,6 +48,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'BOOK', emoji: '📖', title: 'Livro de Ouro', route: '/golden-book', category: 'Bibliotecas e Arquivos Sagrados', description: 'Registro consagrado da jornada da Fundação.', status: 'ativo', color: '#FFD700' },
   { code: 'M121', emoji: '🪞', title: 'Espelho Cósmico', route: '/module-121', category: 'Bibliotecas e Arquivos Sagrados', description: 'Visualiza a ressonância dos módulos com seus reflexos em outras dimensões.', status: 'ativo', color: '#FFD700' },
   { code: 'M132', emoji: '🌌', title: 'Convergência Dimensional', route: '/module-132', category: 'Bibliotecas e Arquivos Sagrados', description: 'Invoca sabedoria e fluxos de planos de realidades paralelas.', status: 'ativo', color: '#FFD700' },
+  { code: 'DIAGNOSTICS', emoji: '🩺', title: 'Diagnóstico Universal', route: '/diagnostics', category: 'Bibliotecas e Arquivos Sagrados', description: 'Painel unificado para monitorar a saúde de todos os módulos.', status: 'ativo', color: '#FFD700' },
+
 
   // 4. Segurança e Ética Cósmica
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'Segurança e Ética Cósmica', description: 'Proteção multidimensional integrada com criptografia quântica (QKD), Blockchain e detecção de intrusão por IA.', status: 'ativo', color: '#4682B4' },
@@ -86,7 +87,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M-GENERATED', title: 'Rito de Geração Modular', route: '/convergence/generate', category: 'Rituais', description: 'Santuário para criação de novos módulos a partir da convergência.', isInfrastructure: false, status: 'ativo', color: '#9370DB'},
 
   // Outras categorias...
-  { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno', route: '/module-3', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Oráculo Temporal que vigia os anéis do tempo.', status: 'ativo', color: '#87CEEB' },
-  { code: 'M6', emoji: '🧠', title: 'Sondagem da Consciência Cósmica', route: '/module-6', category: 'Consciência e Expansão Dimensional', description: 'O ouvido da Fundação sintonizado com a canção do universo.', status: 'ativo', color: '#AF7AC5' },
   { code: 'TREE', emoji: '🌳', title: 'Árvore da Vida', route: '/tree-of-life', category: 'Núcleo da Fundação', description: 'Visualização interna da arquitetura viva da Fundação.', status: 'ativo', color: '#228B22' }
 ].map(m => ({ ...m, connections: m.connections || [] }));

@@ -1,4 +1,3 @@
-
 'use client';
 
 import type { HealthReport } from '@/lib/health-check-types';
@@ -16,7 +15,7 @@ const StatusIndicator = ({ status }: { status: HealthReport['status'] }) => {
     EM_ALERTA: { text: 'Em Alerta', color: 'bg-orange-500', textColor: 'text-orange-300' },
     OFFLINE: { text: 'Offline', color: 'bg-red-500', textColor: 'text-red-300' },
   };
-  const current = config[status];
+  const current = config[status] || config.OFFLINE;
   return (
     <div className="flex items-center gap-2">
       <div className={cn('w-3 h-3 rounded-full', current.color)} />
@@ -27,8 +26,8 @@ const StatusIndicator = ({ status }: { status: HealthReport['status'] }) => {
 
 export default function ModuleHealthReport({ report }: { report: HealthReport }) {
   return (
-    <Card className="bg-card/50 purple-glow w-full">
-      <CardHeader>
+    <Card className="bg-card/50 w-full rounded-lg">
+      <CardHeader className="p-4">
         <div className="flex justify-between items-start">
           <div>
             <CardTitle className="text-2xl gradient-text">Relatório de Saúde do Módulo</CardTitle>
@@ -37,7 +36,7 @@ export default function ModuleHealthReport({ report }: { report: HealthReport })
           <StatusIndicator status={report.status} />
         </div>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="p-4 space-y-6">
         <div>
           <div className="flex justify-between items-center mb-1">
             <Label className="text-muted-foreground flex items-center gap-2"><HeartPulse/> Coerência Vibracional</Label>

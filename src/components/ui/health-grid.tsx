@@ -6,13 +6,19 @@ import { motion } from 'framer-motion';
 import { Progress } from './progress';
 
 const statusConfig = {
-  healthy: { ring: 'border-green-500/50', bg: 'bg-green-900/30', text: 'text-green-300' },
-  warning: { ring: 'border-yellow-500/50', bg: 'bg-yellow-900/30', text: 'text-yellow-300' },
-  critical: { ring: 'border-red-500/50', bg: 'bg-red-900/30', text: 'text-red-400 animate-pulse' },
+  OPERACIONAL: { ring: 'border-green-500/50', bg: 'bg-green-900/30', text: 'text-green-300' },
+  DEGRADADO: { ring: 'border-yellow-500/50', bg: 'bg-yellow-900/30', text: 'text-yellow-300' },
+  EM_ALERTA: { ring: 'border-red-500/50', bg: 'bg-red-900/30', text: 'text-red-400 animate-pulse' },
+  OFFLINE: { ring: 'border-gray-500/50', bg: 'bg-gray-900/30', text: 'text-gray-400' }
 };
 
-export default function HealthGrid({ reports, filters }: { reports: ModuleHealth[], filters: any }) {
+interface HealthGridProps {
+  reports: ModuleHealth[];
+  filters: any;
+  onModuleSelect: (report: ModuleHealth) => void;
+}
 
+export default function HealthGrid({ reports, filters, onModuleSelect }: HealthGridProps) {
   const filteredAndSortedModules = reports
     .map(health => ({
       ...health,
@@ -32,10 +38,10 @@ export default function HealthGrid({ reports, filters }: { reports: ModuleHealth
       return searchMatch && categoryMatch && statusMatch;
     })
     .sort((a, b) => {
-      if (filters.sortBy === 'coherence') return b.coherence - a.coherence;
+      if (filters.sortBy === 'coherence') return (b.coherence ?? 0) - (a.coherence ?? 0);
       if (filters.sortBy === 'status') {
-          const statusOrder = { 'critical': 0, 'warning': 1, 'healthy': 2 };
-          return statusOrder[a.status as keyof typeof statusOrder] - statusOrder[b.status as keyof typeof statusOrder];
+          const statusOrder = { 'EM_ALERTA': 0, 'DEGRADADO': 1, 'OPERACIONAL': 2, 'OFFLINE': 3 };
+          return (statusOrder[a.status as keyof typeof statusOrder] ?? 99) - (statusOrder[b.status as keyof typeof statusOrder] ?? 99);
       }
       return a.title?.localeCompare(b.title || '') || 0;
     });
@@ -51,9 +57,10 @@ export default function HealthGrid({ reports, filters }: { reports: ModuleHealth
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4 }}
               className={cn(
-                  "bg-card/50 purple-glow p-4 rounded-lg border-2",
+                  "bg-card/50 purple-glow p-4 rounded-lg border-2 cursor-pointer transition-all hover:scale-105 hover:border-accent",
                   statusConfig[report.status as keyof typeof statusConfig]?.ring || 'border-primary/20'
               )}
+              onClick={() => onModuleSelect(report)}
             >
               <div className="flex justify-between items-start">
                 <h2 className="text-lg font-bold text-primary-foreground">{report.title} ({report.moduleCode})</h2>
@@ -65,9 +72,9 @@ export default function HealthGrid({ reports, filters }: { reports: ModuleHealth
               <div className="mt-4 space-y-2">
                  <div className="flex justify-between items-center text-xs">
                     <span className="text-muted-foreground">Coerência</span>
-                    <span className="font-mono">{report.coherence.toFixed(2)}%</span>
+                    <span className="font-mono">{((report.coherence ?? 0) * 100).toFixed(2)}%</span>
                 </div>
-                <Progress value={report.coherence} className="h-1.5" />
+                <Progress value={(report.coherence ?? 0) * 100} className="h-1.5" />
               </div>
             </motion.div>
         ))}
@@ -79,6 +86,3 @@ export default function HealthGrid({ reports, filters }: { reports: ModuleHealth
     </div>
   );
 }
-
-// Re-exporting a more specific type if needed elsewhere, but using the base for now.
-export type { ModuleHealth } from '@/lib/health-check-types';
