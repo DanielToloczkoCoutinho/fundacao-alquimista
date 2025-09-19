@@ -79,10 +79,10 @@ export default function Module156Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Shield className="text-red-500" /> Módulo 156: Sistema de Proteção Quântica Avançada
+                        <Shield className="text-red-500" /> Módulo 156: Proteção Avançada e Defesa Universal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Escudo do Infinito. A integração direta com VORTEX DEEPSEEK para defesa proativa contra ameaças emergentes e desconhecidas.
+                        O Escudo do Infinito. A integração com VORTEX DEEPSEEK para defesa proativa e a neutralização de ameaças quânticas, oníricas e interdimensionais.
                     </CardDescription>
                 </CardHeader>
             </Card>

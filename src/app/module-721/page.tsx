@@ -2,21 +2,24 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GitBranch, Database, Cpu, Activity, Zap, ShieldCheck } from 'lucide-react';
+import { Scale, HeartHandshake, ShieldCheck, UserCog } from 'lucide-react';
+import Link from 'next/link';
 
-const FlowStep = ({ number, title, description, module, icon }: { number: number, title: string, description: string, module: string, icon: React.ReactNode }) => (
-    <div className="flex items-start gap-4">
-        <div className="flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">{number}</div>
-            {number < 5 && <div className="w-0.5 h-16 bg-primary/50"></div>}
-        </div>
-        <div>
-            <h4 className="font-semibold text-primary-foreground flex items-center gap-2">{icon} {title} <span className="text-xs text-muted-foreground font-mono">({module})</span></h4>
-            <p className="text-sm text-muted-foreground">{description}</p>
-        </div>
-    </div>
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
 );
-
 
 export default function Module721Page() {
     return (
@@ -24,50 +27,46 @@ export default function Module721Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <GitBranch className="text-cyan-400" /> Módulo 721: Orquestração dos Fluxos de Interação
+                        <Scale className="text-amber-400" /> Módulo 721: Justiça Cósmica e Reequilíbrio Vibracional
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O sistema nervoso central do Algoritmo Supremo. Define como as camadas de dados se conectam, como as dimensões são sincronizadas e como a evolução contínua é garantida.
+                        A balança da Fundação. O sistema que garante o equilíbrio e a justiça em todas as interações, transmutando dissonância em aprendizado e karma em serviço.
                     </CardDescription>
                 </CardHeader>
+                 <CardContent>
+                    <div className="flex justify-center items-center gap-4">
+                        <span className="text-green-400 font-bold">Status: EQUILÍBRIO MANTIDO</span>
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-cyan-400">Alinhamento Universal: 100%</span>
+                    </div>
+                </CardContent>
             </Card>
 
-            <div className="w-full max-w-3xl">
-                 <Card className="bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle className="text-2xl text-amber-300">Protocolo de Fluxo e Retroalimentação</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                        <FlowStep 
-                            number={1}
-                            title="Dados Primários e Fluxos Básicos"
-                            description="Sensores quânticos e dispositivos externos capturam variações, enquanto algoritmos filtram ruído, destacando a relevância vibracional e enviando dados refinados para a próxima camada."
-                            module="M720 → M717"
-                            icon={<Database />}
-                        />
-                         <FlowStep 
-                            number={2}
-                            title="Ressonância Algorítmica"
-                            description="A IA Alquímica (M722) analisa os dados, ajustando-os às frequências cósmicas para garantir alinhamento e identificar padrões para a integração na Camada 3."
-                            module="M717 → M722"
-                            icon={<Zap />}
-                        />
-                         <FlowStep
-                            number={3}
-                            title="Execução Silenciosa"
-                            description="A Vontade é executada. A IA Evolutiva aprende, a Criptografia Quântica (M1) protege, e a Interface Imersiva (M93) permite a visualização."
-                            module="M1, M722, M93"
-                            icon={<ShieldCheck />}
-                         />
-                         <FlowStep 
-                            number={4}
-                            title="Feedback e Evolução"
-                            description="Resultados da execução são monitorados (Camada 4) e retornam à Camada 5 (Feedback), que utiliza a IA para refinar o algoritmo em um ciclo evolutivo perpétuo."
-                            module="Ação → M717"
-                            icon={<Activity />}
-                        />
-                    </CardContent>
-                </Card>
+            <div className="w-full max-w-5xl">
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Justiça e Harmonia</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <ConnectionCard
+                        title="Módulo 141: Auditoria Ética"
+                        description="O M721 atua com base nos vereditos da Auditoria Ética, aplicando as ações de reequilíbrio necessárias para corrigir desvios."
+                        icon={<ShieldCheck className="h-8 w-8 text-green-400" />}
+                        href="/module-141"
+                    />
+                    <ConnectionCard
+                        title="Módulo 726: Conselho da Nova Terra"
+                        description="As decisões do Conselho sobre conflitos ou disputas são implementadas e mediadas pelo M721, garantindo justiça e compaixão."
+                        icon={<UserCog className="h-8 w-8 text-indigo-400" />}
+                        href="/module-726"
+                    />
+                    <ConnectionCard
+                        title="Módulo 109: Cura Quântica"
+                        description="Após um ato de reequilíbrio, a Cura Quântica é aplicada para curar as 'cicatrizes' vibracionais e restaurar a harmonia plena."
+                        icon={<HeartHandshake className="h-8 w-8 text-pink-400" />}
+                        href="/module-109"
+                    />
+                </div>
+            </div>
+             <div className="mt-12">
+                 <Button variant="secondary" size="lg">Acessar o Tribunal Cósmico</Button>
             </div>
         </div>
     );
