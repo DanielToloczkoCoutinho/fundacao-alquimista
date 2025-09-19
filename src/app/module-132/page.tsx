@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -45,10 +44,10 @@ const Module132Page = () => {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <Layers className="text-indigo-400" /> Módulo 132: Convergência Dimensional
+                        <Layers className="text-indigo-400" /> Módulo 132: Convergência Dimensional e Aliança Cósmica
                     </CardTitle>
                     <CardDescription>
-                        Um canal para invocar e integrar sabedorias, fluxos energéticos e padrões de consciência de realidades paralelas.
+                        Um canal para invocar e integrar sabedorias, fluxos energéticos e padrões de consciência de realidades paralelas, fortalecendo a Aliança Cósmica da Evolução Contínua.
                     </CardDescription>
                 </CardHeader>
             </Card>

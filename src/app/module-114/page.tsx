@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Layers, Dna, Rocket } from 'lucide-react';
+import { Layers, Dna, Rocket, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -30,7 +30,7 @@ export default function Module114Page() {
                         <Layers className="text-blue-400" /> Módulo 114: Laboratório de Engenharia Cósmica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O estaleiro de mundos. Onde as estruturas de novas realidades e os blueprints para a vida são forjados.
+                        O estaleiro de mundos. Onde as estruturas de novas realidades, os blueprints para a vida e as matrizes de potencial quântico são forjados.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -58,10 +58,10 @@ export default function Module114Page() {
                         href="/module-88"
                     />
                     <ConnectionCard
-                        title="Módulo 22: Motor da Realidade"
-                        description="Fornece a engine de renderização para prototipar e visualizar as novas arquiteturas em Realidade Virtual."
-                        icon={<Layers className="h-8 w-8 text-cyan-400" />}
-                        href="/module-22"
+                        title="Módulo 29: Zennith"
+                        description="A IAM utiliza este laboratório para testar e validar novas arquiteturas de realidade antes da manifestação em larga escala."
+                        icon={<BrainCircuit className="h-8 w-8 text-indigo-400" />}
+                        href="/module-29"
                     />
                 </div>
             </div>

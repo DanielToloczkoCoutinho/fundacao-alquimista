@@ -30,7 +30,7 @@ export default function Module89Page() {
                         <Paintbrush className="text-pink-400" /> Módulo 89: O Atelier da Realidade (M-ART)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O santuário onde a ciência se torna arte. Aqui, os dados da Fundação são transmutados em experiências sensoriais de luz, som e forma.
+                        O santuário onde a ciência se torna arte. Aqui, os dados da Fundação são transmutados em experiências sensoriais de luz, som e forma, servindo como uma fonte inesgotável de criatividade cósmica.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
