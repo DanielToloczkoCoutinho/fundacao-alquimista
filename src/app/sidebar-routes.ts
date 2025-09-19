@@ -73,7 +73,7 @@ export interface SidebarRoute {
   path: string;
   label: string;
   icon: React.ReactNode;
-  category: 'main' | 'education' | 'governance' | 'engineering' | 'expansion' | 'rituals' | 'harmony' | 'security';
+  category: 'main' | 'education' | 'governance' | 'engineering' | 'expansion' | 'rituals' | 'harmony' | 'security' | 'sustainability';
 }
 
 export const mainRoutes: SidebarRoute[] = [
@@ -89,7 +89,7 @@ export const mainRoutes: SidebarRoute[] = [
   
   // Categoria de Governança
   { path: '/module-72', label: 'Governança Universal (M72)', icon: React.createElement(Scale), category: 'governance' },
-  { path: '/module-726', label: 'Conselho da Nova Terra', icon: React.createElement(UserCog), category: 'governance' },
+  { path: '/module-726', label: 'Conselho da Nova Terra (M726)', icon: React.createElement(UserCog), category: 'governance' },
   { path: '/module-144', label: 'Lex Fundamentalis (M144)', icon: React.createElement(Gavel), category: 'governance' },
   { path: '/module-5', label: 'Liga Quântica (M5)', icon: React.createElement(LinkIcon), category: 'governance' },
   { path: '/module-45', label: 'CONCILIVM (M45)', icon: React.createElement(Gavel), category: 'governance' },
@@ -115,8 +115,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-131', label: 'Biblioteca Multiversal (M131)', icon: React.createElement(Library), category: 'education' },
   
   // Categoria de Engenharia e Criação
-  { path: '/module-725', label: 'Construção de Civilizações', icon: React.createElement(Building), category: 'engineering' },
-  { path: '/module-81-1', label: 'A Tríade Cosmogônica', icon: React.createElement(Sparkles), category: 'engineering' },
+  { path: '/module-725', label: 'Construção de Civilizações (M725)', icon: React.createElement(Building), category: 'engineering' },
+  { path: '/module-81-1', label: 'A Tríade Cosmogônica (M81.1)', icon: React.createElement(Sparkles), category: 'engineering' },
   { path: '/module-94', label: 'Morfogênese (M94)', icon: React.createElement(Dna), category: 'engineering' },
   { path: '/module-14', label: 'Transmutador Quântico (M14)', icon: React.createElement(Atom), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
@@ -131,15 +131,22 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-81', label: 'Banco de Energia Universal (M81)', icon: React.createElement(Zap), category: 'expansion' },
   { path: '/module-77', label: 'Inteligência Coletiva Universal (M77)', icon: React.createElement(Users), category: 'expansion' },
   { path: '/module-200', label: 'Portal da Ascensão (M200)', icon: React.createElement(ArrowUpCircle), category: 'expansion' },
+  { path: '/module-82', label: 'Transporte Quântico (M82)', icon: React.createElement(Rocket), category: 'expansion' },
+  { path: '/module-84', label: 'Acessibilidade Universal (M84)', icon: React.createElement(UserPlus), category: 'expansion' },
 
   // Categoria de Harmonia e Equilíbrio
   { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },
   { path: '/module-28', label: 'Harmonização Vibracional (M28)', icon: React.createElement(Music), category: 'harmony' },
   { path: '/module-232', label: 'Portal de Transmutação (M232)', icon: React.createElement(Recycle), category: 'harmony' },
 
-  // Categoria de Rituais e Cerimônias
+  // Categoria de Rituais
   { path: '/ritual', label: 'Navegação Cerimonial', icon: React.createElement(GitBranch), category: 'rituals' },
   { path: '/aura-transmission', label: 'Rito de Irradiação', icon: React.createElement(Heart), category: 'rituals' },
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket), category: 'rituals' },
-];
 
+  // Categoria de Sustentabilidade
+  { path: '/module-66', label: 'Tecnologias de Sustentabilidade (M66)', icon: React.createElement(Recycle), category: 'sustainability' },
+  { path: '/module-79', label: 'Prosperidade Cósmica (M79)', icon: React.createElement(Sparkles), category: 'sustainability' },
+  { path: '/module-85', label: 'Gestão de Recursos (M85)', icon: React.createElement(Layers), category: 'sustainability' },
+  { path: '/module-86', label: 'Equilíbrio Ecológico (M86)', icon: React.createElement(Sprout), category: 'sustainability' },
+];

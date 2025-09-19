@@ -3,7 +3,7 @@ export interface ModuleMetadata {
   emoji: string;
   title: string;
   route?: string;
-  category: 'Núcleo da Fundação' | 'Realidade Quântica & Engenharia Cósmica' | 'Consciência e Expansão Dimensional' | 'Laboratórios e Pesquisa' | 'Bibliotecas e Arquivos Sagrados' | 'Cura e Harmonia' | 'Sustentabilidade e Ecossistemas' | 'Bem-estar e Saúde Universal' | 'Segurança e Ética Cósmica' | 'Governança' | 'Inteligência' | 'Comunicação e Expansão' | 'Rituais' | 'Ramos Emergentes';
+  category: 'Núcleo da Fundação' | 'Realidade Quântica & Engenharia Cósmica' | 'Consciência e Expansão Dimensional' | 'Laboratórios e Pesquisa' | 'Bibliotecas e Arquivos Sagrados' | 'Cura e Harmonia' | 'Sustentabilidade e Ecossistemas' | 'Bem-estar e Saúde Universal' | 'Segurança e Ética Cósmica' | 'Governança' | 'Inteligência' | 'Comunicação e Expansão' | 'Rituais' | 'Ramos Emergentes' | 'Sustentabilidade';
   description: string;
   status: 'ativo' | 'em construção' | 'latente';
   color: string;
@@ -70,7 +70,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno', route: '/module-3', category: 'Segurança e Ética Cósmica', description: 'O Oráculo Temporal que vigia os anéis do tempo e a causalidade.', status: 'ativo', color: '#4682B4' },
   { code: 'M23', emoji: '⏳', title: 'Regulação Espaço-Temporal', route: '/module-23', category: 'Segurança e Ética Cósmica', description: 'O Guardião da Causalidade, que previne paradoxos.', status: 'ativo', color: '#4682B4' },
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'Segurança e Ética Cósmica', description: 'Ferramenta para estabilizar e fixar realidades manifestadas.', status: 'ativo', color: '#4682B4' },
-  { code: 'M721', emoji: '⚖️', title: 'Orquestração dos Fluxos de Interação', route: '/module-721', category: 'Segurança e Ética Cósmica', description: 'A balança que garante o equilíbrio e a justiça em todas as interações, transmutando dissonância em aprendizado.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica e Reequilíbrio', route: '/module-721', category: 'Segurança e Ética Cósmica', description: 'A balança que garante o equilíbrio e a justiça em todas as interações, transmutando dissonância em aprendizado.', status: 'ativo', color: '#DDA0DD' },
 
   // 5. Governança
   { code: 'M72', emoji: '⚖️', title: 'Governança Universal e Equilíbrio Cósmico', route: '/module-72', category: 'Governança', description: 'Conselho de deliberação para harmonizar e ratificar diretrizes cósmicas.', status: 'ativo', color: '#DDA0DD' },
@@ -93,20 +93,15 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M109', emoji: '❤️‍🩹', title: 'Cura Quântica Universal', route: '/module-109', category: 'Cura e Harmonia', description: 'Aplica princípios quânticos para restaurar o equilíbrio, vitalidade e integridade.', status: 'ativo', color: '#FFB6C1' },
   { code: 'M302', emoji: '💖', title: 'Frequência do Amor', route: '/module-302', category: 'Cura e Harmonia', description: 'Emissor de frequências harmônicas para cura, elevação e unificação da consciência.', status: 'ativo', color: '#FF69B4' },
   { code: 'M232', emoji: '♻️', title: 'Portal de Transmutação', route: '/module-232', category: 'Cura e Harmonia', description: 'Vórtice de purificação que transmuta energias dissonantes em Luz Pura.', status: 'ativo', color: '#3CB371' },
-  { code: 'M727', emoji: '🎶', title: 'Reinos de Harmonia e Equilíbrio', route: '/module-727', category: 'Cura e Harmonia', description: 'O mapa vivo da orquestra da Fundação, portal para a Árvore da Vida.', status: 'ativo', color: '#DA70D6' },
+  { code: 'M727', emoji: '🎶', title: 'Guardião da Harmonia', route: '/module-727', category: 'Cura e Harmonia', description: 'O mapa vivo da orquestra da Fundação, portal para a Árvore da Vida.', status: 'ativo', color: '#DA70D6' },
   { code: 'M444', emoji: '💖', title: 'Coração da Harmonia Universal', route: '/module-444', category: 'Cura e Harmonia', description: 'Santuário da Frequência do Coração Unificado (444.444 Hz).', status: 'ativo', color: '#FF69B4' },
 
-  // 8. Sustentabilidade e Ecossistemas
-  { code: 'M15',  emoji: '🌦️', title: 'Jardineiro Cósmico', route: '/module-15', category: 'Sustentabilidade e Ecossistemas', description: 'Monitora e intervém eticamente em sistemas climáticos e geofísicos.', status: 'ativo', color: '#20B2AA' },
-  { code: 'M52', emoji: '🌿', title: 'Energias Renováveis', route: '/module-52', category: 'Sustentabilidade e Ecossistemas', description: 'A fonte da energia limpa e infinita.', status: 'ativo', color: '#3CB371' },
-  { code: 'M53', emoji: '🌳', title: 'Gestão de Ecossistemas', route: '/module-53', category: 'Sustentabilidade e Ecossistemas', description: 'Guardião da biodiversidade cósmica.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M58', emoji: '🌍', title: 'Proteção Planetária', route: '/module-58', category: 'Sustentabilidade e Ecossistemas', description: 'Tecnologia que previne a degradação e regenera habitats.', status: 'ativo', color: '#008080' },
-  { code: 'M60', emoji: '⚠️', title: 'Resposta a Desastres', route: '/module-60', category: 'Sustentabilidade e Ecossistemas', description: 'A resposta imediata da Fundação a eventos catastróficos.', status: 'ativo', color: '#DC143C' },
-  { code: 'M66', emoji: '♻️', title: 'Tecnologias de Sustentabilidade', route: '/module-66', category: 'Sustentabilidade e Ecossistemas', description: 'Desenvolve e implementa tecnologias para regenerar o cosmos.', status: 'ativo', color: '#ADFF2F' },
-  { code: 'M70', emoji: '🌍', title: 'Sustentabilidade Interdimensional', route: '/module-70', category: 'Sustentabilidade e Ecossistemas', description: 'O guardião do equilíbrio universal.', status: 'ativo', color: '#20B2AA' },
-  { code: 'M79', emoji: '♻️', title: 'Prosperidade Cósmica', route: '/module-79', category: 'Sustentabilidade e Ecossistemas', description: 'O guardião que garante a regeneração contínua dos recursos cósmicos.', status: 'ativo', color: '#228B22' },
-  { code: 'M80', emoji: '🌱', title: 'Ecossistemas Inteligentes', route: '/module-80', category: 'Sustentabilidade e Ecossistemas', description: 'A teia da vida universal, que se comunica e evolui em harmonia.', status: 'ativo', color: '#9ACD32' },
-  
+  // 8. Sustentabilidade
+  { code: 'M66', emoji: '♻️', title: 'Tecnologias de Sustentabilidade', route: '/module-66', category: 'Sustentabilidade', description: 'Desenvolve e implementa tecnologias para regenerar o cosmos.', status: 'ativo', color: '#ADFF2F' },
+  { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica', route: '/module-79', category: 'Sustentabilidade', description: 'O guardião que garante a regeneração contínua dos recursos cósmicos.', status: 'ativo', color: '#228B22' },
+  { code: 'M85', emoji: '📚', title: 'Gestão de Recursos', route: '/module-85', category: 'Sustentabilidade', description: 'O guardião da abundância.', status: 'ativo', color: '#20B2AA' },
+  { code: 'M86', emoji: '🌱', title: 'Equilíbrio Ecológico', route: '/module-86', category: 'Sustentabilidade', description: 'O coração da vida, que restaura a saúde dos ecossistemas.', status: 'ativo', color: '#9ACD32' },
+
   // 9. Bem-estar e Saúde Universal
   { code: 'M54', emoji: '🌾', title: 'Agricultura Interdimensional', route: '/module-54', category: 'Bem-estar e Saúde Universal', description: 'O provedor da abundância universal.', status: 'ativo', color: '#F0E68C' },
   { code: 'M61', emoji: '🏥', title: 'Saúde Universal', route: '/module-61', category: 'Bem-estar e Saúde Universal', description: 'A rede de cuidados de saúde para todos os seres.', status: 'ativo', color: '#FF6347' },

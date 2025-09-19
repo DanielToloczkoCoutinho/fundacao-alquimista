@@ -67,7 +67,7 @@ export default function Module79Page() {
             </div>
              <div className="mt-12">
                  <Button variant="secondary" size="lg">Consultar o Índice de Prosperidade Universal</Button>
-             </div>
+            </div>
         </div>
     );
 }
