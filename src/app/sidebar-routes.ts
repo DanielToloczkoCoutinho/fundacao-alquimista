@@ -114,6 +114,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
+  { path: '/module-68', label: 'Responsabilidade Ética', icon: React.createElement(ShieldCheck), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -127,7 +128,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-123', label: 'Respiração Cósmica (M123)', icon: React.createElement(Wind), category: 'education' },
   { path: '/module-124', label: 'Escola de Ressonância (M124)', icon: React.createElement(Music), category: 'education' },
   { path: '/module-129', label: 'Ensino da Fonte (M129)', icon: React.createElement(Sparkles), category: 'education' },
-  { path: '/module-303-5', label: 'Crônica da Gênese (M303.5)', icon: React.createElement(Film), category: 'education' },
+  { path: '/module-303-5', label: 'Crônica da Gênese (M303.5)', icon: React.createElement(History), category: 'education' },
 
 
 
@@ -146,6 +147,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-119', label: 'Templum Cosmica (M119)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-122', label: 'Laboratório de VR (M122)', icon: React.createElement(TestTube), category: 'engineering' },
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
+  { path: '/module-99', label: 'Recalibradores de Leis', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
 
 
   // Categoria de Expansão e Conexão
@@ -181,11 +183,11 @@ export const mainRoutes: SidebarRoute[] = [
   // Categoria de Sustentabilidade
   { path: '/module-66', label: 'Tecnologias de Sustentabilidade (M66)', icon: React.createElement(Recycle), category: 'sustainability' },
   { path: '/module-79', label: 'Prosperidade Cósmica (M79)', icon: React.createElement(Sparkles), category: 'sustainability' },
-  { path: '/module-85', label: 'Gestão de Recursos (M85)', icon: React.createElement(Layers), category: 'sustainability' },
-  { path: '/module-86', label: 'Equilíbrio Ecológico (M86)', icon: React.createElement(Sprout), category: 'sustainability' },
   { path: '/module-91', label: 'Sustentabilidade Universal (M91)', icon: React.createElement(Globe), category: 'sustainability' },
   { path: '/module-52', label: 'Energias Renováveis (M52)', icon: React.createElement(Sun), category: 'sustainability' },
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
   { path: '/module-125', label: 'Criação de Biomas (M125)', icon: React.createElement(Sprout), category: 'sustainability' },
+  { path: '/module-59', label: 'Eco-Cidades Quânticas', icon: React.createElement(Building), category: 'sustainability' },
+  { path: '/module-58', label: 'Proteção Planetária', icon: React.createElement(Globe), category: 'sustainability' },
 
 ];
