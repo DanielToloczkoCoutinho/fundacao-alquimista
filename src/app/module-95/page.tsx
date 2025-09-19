@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -6,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Users, RadioTower } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Users, RadioTower } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
