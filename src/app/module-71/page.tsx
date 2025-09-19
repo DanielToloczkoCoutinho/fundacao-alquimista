@@ -27,7 +27,7 @@ export default function Module71Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <RadioTower className="text-sky-400" /> Módulo Setenta e Um: Comunicação Holográfica Zenith
+                        <RadioTower className="text-sky-400" /> Módulo 71: Comunicação Holográfica Zenith
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O canal seguro para comunicação holográfica com Conselhos Superiores e consciências de alta dimensão.
