@@ -32,6 +32,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/alignment-portal', label: 'Observatório Vivo', icon: React.createElement(Atom) },
   { path: '/golden-book', label: 'Livro de Ouro', icon: React.createElement(BookOpen) },
   { path: '/golden-book/transcribe', label: 'Inscrição Akáshica', icon: React.createElement(Feather) },
+  { path: '/codex/translate', label: 'Altar da Tradução', icon: React.createElement(Wand) },
   { path: '/roadmap', label: 'Roteiro de Gaia-Aurélia', icon: React.createElement(Map) },
   { path: '/akashic', label: 'Arquivo de Ritos', icon: React.createElement(Archive) },
   { path: '/convergence', label: 'Portal de Convergência', icon: React.createElement(GitMerge) },

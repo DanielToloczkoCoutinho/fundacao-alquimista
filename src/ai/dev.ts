@@ -35,4 +35,4 @@ import '@/ai/flows/recognition-flow.ts';
 import '@/ai/flows/alchemist-sanctuary-flow.ts';
 import '@/ai/flows/module-health-flow.ts';
 import '@/ai/flows/dimensional-convergence-flow.ts';
-import '@/ai/
+import '@/ai/flows/vibrational-translation-flow.ts';

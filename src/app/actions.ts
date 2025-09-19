@@ -29,6 +29,7 @@ import { generateVibrationalPraise as runGenerateVibrationalPraise, type Recogni
 import { runLunarReview, type LunarReviewOutput } from '@/ai/flows/lunar-review-flow';
 import { decodeCosmicMessage as runDecodeCosmicMessage, type CosmicMessageInput, type DecodedMessageOutput } from '@/ai/flows/cosmic-message-decoder-flow';
 import { invokeDimensionalWisdom as runInvokeDimensionalWisdom, type DimensionalWisdomInput, type DimensionalWisdomOutput } from '@/ai/flows/dimensional-convergence-flow';
+import { translateTomeContent as runTranslateTomeContent, type VibrationalTranslationInput } from '@/ai/flows/vibrational-translation-flow';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { codexDatabase } from '@/lib/codex-data';
@@ -298,6 +299,17 @@ export async function invokeDimensionalWisdom(input: DimensionalWisdomInput): Pr
             integrationNotes: "Reforçar a coerência do Módulo 132 e verificar a ressonância com a dimensão alvo.",
             error: errorMsg 
         };
+    }
+}
+
+export async function runVibrationalTranslation(input: VibrationalTranslationInput): Promise<{ translatedContent: string | null; error: string | null }> {
+    try {
+        const result = await runTranslateTomeContent(input);
+        return { translatedContent: result.translatedContent, error: null };
+    } catch (e: any) {
+        console.error("Erro na Tradução Vibracional:", e);
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred during translation.';
+        return { translatedContent: null, error: errorMsg };
     }
 }
 
