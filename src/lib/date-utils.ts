@@ -1,3 +1,4 @@
+
 'use client';
 
 export function formatTimestamp(timestamp: string | number | Date): string {

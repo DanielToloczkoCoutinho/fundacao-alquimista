@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -6,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { livingEquationsCodex, type LivingEquation } from '@/lib/living-equations-codex';
-import { Search } from 'lucide-react';
+import { Search, Sigma } from 'lucide-react';
 import { BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 
@@ -83,7 +84,7 @@ export default function CodexExplorer() {
                       <div key={eq.id} className="p-4 bg-background/30 rounded-lg border border-primary/20">
                         <h4 className="font-semibold text-primary-foreground">{eq.id}: {eq.name}</h4>
                         <div className="my-2 text-cyan-300 text-sm overflow-x-auto">
-                           <BlockMath math={eq.formula} />
+                           <BlockMath math={eq.expression} />
                         </div>
                         <p className="text-sm text-muted-foreground">{eq.summary}</p>
                       </div>
