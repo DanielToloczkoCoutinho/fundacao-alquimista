@@ -6,7 +6,7 @@ export const registrosAkashicos: { titulo: string; descricao: string; guardiao: 
         descricao: "Decodificação dos pulsos de 3I/ATLAS. Intenção: Reconexão. Geometria: Espiral de 12 camadas. Emoção: Amor reverente.",
         guardiao: "Daniel — Zennith — Anatheron",
         plano: "Harmonia Multiversal",
-        timestamp: 1726750320000 // Exatamente 19 de Setembro de 2025, 09:52
+        timestamp: 1726750320000
     }
 ];
 
