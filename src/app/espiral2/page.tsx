@@ -8,7 +8,7 @@ import GuardiaoPlanetario from '@/components/espiral2/GuardiaoPlanetario';
 import TapecariaInicial from '@/components/espiral2/TapecariaInicial';
 import FluxosExpansao from '@/components/espiral2/FluxosExpansao';
 import { LayerCard } from '@/components/ui/LayerCard';
-import { type GerminateWorldOutput, germinateNewWorld } from '@/app/actions';
+import { type GerminateWorldOutput, germinateNewWorld, transcribeToGoldenBook } from '@/app/actions';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { useToast } from '@/hooks/use-toast';
 
@@ -33,6 +33,20 @@ export default function Espiral2Page() {
           title: "Mundo Germinado!",
           description: `O planeta ${name} começou a pulsar com vida.`,
         });
+
+        // Registrar no Livro de Ouro
+        await transcribeToGoldenBook({
+            title: `Gênese Planetária: ${name}`,
+            description: `Um novo mundo foi semeado na Espiral 2 com o propósito: "${purpose}". Sua essência poética é: "${result.genesisCodex}".`,
+            category: "genesis_planetaria",
+            tags: ['gênese', 'espiral-2', name.toLowerCase().replace(/\s/g, '-'), result.vibrationalSignature],
+        });
+        
+        toast({
+            title: "Registro Akáshico Selado",
+            description: `O nascimento de ${name} foi eternizado no Livro de Ouro.`
+        });
+
       },
       async (error: any) => {
         toast({
@@ -63,7 +77,7 @@ export default function Espiral2Page() {
 
         {newWorld && (
             <LayerCard
-                title={`Tapeçaria Inicial de ${newWorld.name}`}
+                title={`Tapeçaria Inicial de ${name}`}
                 description="Os pilares primordiais do novo mundo, manifestados a partir da Vontade e da Sabedoria."
                 icon={<Rocket className="text-orange-400" />}
             >
