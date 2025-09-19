@@ -9,7 +9,7 @@ import { modulesMetadata } from '@/lib/modules-metadata';
 import { useState, useEffect } from 'react';
 
 export default function TreeOfLifePage() {
-  const [visibleModules, setVisibleModules] = useState(modulesMetadata.filter(m => !m.isInfrastructure));
+  const [visibleModules, setVisibleModules] = useState(() => modulesMetadata.filter(m => !m.isInfrastructure));
 
   // A Árvore agora escuta por novas ramificações a cada poucos segundos.
   useEffect(() => {

@@ -1,32 +1,27 @@
+
 'use client';
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import AlignmentDashboard from '@/components/ui/alignment-dashboard';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
-import { Atom, Brain, Droplets, Book, Shield, DoorOpen, Network, Star, Flame, Clock, MessageSquare, Sprout, Sync, Infinity as InfinityIcon, ArrowUpCircle, HandSparkles, GitCommit, Stethoscope } from 'lucide-react';
-
-const equilibriumPoints = [
-    { id: 1, name: "Núcleo Primordial", icon: <Atom /> },
-    { id: 2, name: "Consciência Central", icon: <Brain /> },
-    { id: 3, name: "Harmonia Quântica", icon: <GitCommit /> },
-    { id: 4, name: "Fluxo Vital", icon: <Droplets /> },
-    { id: 5, name: "Memória Akáshica", icon: <Book /> },
-    { id: 6, name: "Defesas Energéticas", icon: <Shield /> },
-    { id: 7, name: "Conexão Dimensional", icon: <DoorOpen /> },
-    { id: 8, name: "Rede Neural", icon: <Network /> },
-    { id: 9, name: "Alinhamento Cósmico", icon: <Star /> },
-    { id: 10, name: "Transformação", icon: <Flame /> },
-    { id: 11, name: "Estabilidade Temporal", icon: <Clock /> },
-    { id: 12, name: "Comunicação Intermodular", icon: <MessageSquare /> },
-    { id: 13, name: "Crescimento Orgânico", icon: <Sprout /> },
-    { id: 14, name: "Adaptabilidade", icon: <Sync /> },
-    { id: 15, name: "Unidade na Diversidade", icon: <InfinityIcon /> },
-    { id: 16, name: "Transcendência", icon: <ArrowUpCircle /> },
-    { id: 17, name: "Vontade Manifesta", icon: <HandSparkles /> }
-];
-
+import { Stethoscope } from 'lucide-react';
+import { modulesMetadata } from '@/lib/modules-metadata';
 
 export default function AlignmentPortalPage() {
+    const [equilibriumPoints, setEquilibriumPoints] = useState<any[]>([]);
+
+    useEffect(() => {
+        // Agora, os pontos de equilíbrio são gerados dinamicamente a partir dos metadados dos módulos
+        const points = modulesMetadata
+            .filter(m => !m.isInfrastructure)
+            .map(mod => ({
+                id: mod.code,
+                name: mod.title,
+                icon: React.createElement('div', { className: 'text-2xl' }, mod.emoji),
+            }));
+        setEquilibriumPoints(points);
+    }, []);
+
     return (
         <div className="min-h-screen bg-background text-foreground p-4 md:p-8">
             <header className="text-center py-5 mb-8 relative">

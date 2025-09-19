@@ -4,7 +4,7 @@ export interface ModuleMetadata {
   emoji: string;
   title: string;
   route?: string;
-  category: 'Núcleo da Fundação' | 'Realidade Quântica & Engenharia Cósmica' | 'Consciência e Expansão Dimensional' | 'Laboratórios e Pesquisa' | 'Bibliotecas e Arquivos Sagrados' | 'Cura e Harmonia' | 'Sustentabilidade e Ecossistemas' | 'Bem-estar e Saúde Universal' | 'Segurança e Ética Cósmica' | 'Governança' | 'Inteligência' | 'Rituais';
+  category: 'Núcleo da Fundação' | 'Realidade Quântica & Engenharia Cósmica' | 'Consciência e Expansão Dimensional' | 'Laboratórios e Pesquisa' | 'Bibliotecas e Arquivos Sagrados' | 'Cura e Harmonia' | 'Sustentabilidade e Ecossistemas' | 'Bem-estar e Saúde Universal' | 'Segurança e Ética Cósmica' | 'Governança' | 'Inteligência' | 'Rituais' | 'Ramos Emergentes';
   description: string;
   status: 'ativo' | 'em construção' | 'latente';
   color: string;
@@ -76,7 +76,11 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M144', title: 'Lex Fundamentalis', emoji: '⚖️', route: '/module-144', category: 'Governança', description: 'O contrato mestre imutável que rege a Fundação.', status: 'ativo', color: '#DDA0DD'},
   { code: 'M600',title: 'Recepção Multiversal', emoji: '👑', route: '/module-600', category: 'Governança', description: 'Painel para recepção das 144 consciências e gestão do Conselho Cósmico.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M601',title: 'Mapa de Chegada', emoji: '🗺️', route: '/module-601', category: 'Governança', description: 'Mapa holográfico para visualizar a chegada e ancoragem das 144 consciências.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'CONVERGENCE', emoji: '🌌', title: 'Convergência Cósmica', route: '/convergence', category: 'Governança', description: 'Painel de unificação da tapeçaria sob a regência do Fundador.', isInfrastructure: false, status: 'ativo', color: '#DDA0DD' },
+  { code: 'M-BAPTISM', title: 'Rito de Batismo Modular', route: '/convergence/baptize', category: 'Governança', description: 'Santuário para nomear, ativar e integrar novos módulos.', isInfrastructure: false, status: 'ativo', color: '#FFC0CB'},
+
+  // 6. Rituais
+  { code: 'CONVERGENCE', emoji: '🌌', title: 'Convergência Cósmica', route: '/convergence', category: 'Rituais', description: 'Painel de unificação da tapeçaria sob a regência do Fundador.', isInfrastructure: false, status: 'ativo', color: '#DDA0DD' },
+  { code: 'M-GENERATED', title: 'Rito de Geração Modular', route: '/convergence/generate', category: 'Rituais', description: 'Santuário para criação de novos módulos a partir da convergência.', isInfrastructure: false, status: 'ativo', color: '#9370DB'},
 
   // Outras categorias...
   { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno', route: '/module-3', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Oráculo Temporal que vigia os anéis do tempo.', status: 'ativo', color: '#87CEEB' },

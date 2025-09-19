@@ -28,7 +28,7 @@ export function baptizeModule(request: BaptismRequest) {
  * Esta função simula a persistência do novo módulo. Em uma aplicação real,
  * isso seria uma operação de banco de dados.
  */
-export function addModuleToCodex(newModuleData: Omit<ModuleMetadata, 'connections'>) {
+export function addModuleToCodex(newModuleData: Omit<ModuleMetadata, 'connections' | 'isInfrastructure'>) {
     if (modulesMetadata.some(m => m.code === newModuleData.code)) {
         console.warn(`Tentativa de registrar módulo duplicado: ${newModuleData.code}. A integração será ignorada.`);
         return; // Evita duplicatas
@@ -36,6 +36,7 @@ export function addModuleToCodex(newModuleData: Omit<ModuleMetadata, 'connection
 
     const completeModule: ModuleMetadata = {
         ...newModuleData,
+        isInfrastructure: false, // Novos módulos gerados não são de infraestrutura por padrão
         connections: [], // Garante que a propriedade connections exista
     };
     
