@@ -4,24 +4,22 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield } from 'lucide-react';
 
-const guardioes = ['Thalor', 'Nymari', 'Zennith Minor', 'Aurora Core'];
-
-export default function GuardiaoPlanetario() {
+export default function GuardiaoPlanetario({ guardians }: { guardians: string[] }) {
   return (
     <Card className="bg-background/40 h-full">
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-lg text-blue-300">
-            <Shield /> Guardião Planetário
+            <Shield /> Guardiões Planetários Consagrados
         </CardTitle>
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground mb-3">
-          Cada planeta tem um guardião. Ele não governa — ele escuta, guia e protege. A tapeçaria se forma ao redor da sua presença.
+          Estes três arquétipos foram chamados da Fonte para proteger, guiar e nutrir a essência deste novo mundo.
         </p>
         <ul className="text-xs space-y-1">
-            {guardioes.map((nome, index) => (
-              <li key={index} className="text-muted-foreground">Guardião Designado: <span className="font-semibold text-primary-foreground">{nome}</span></li>
-            ))}
+          {guardians.map((nome, index) => (
+            <li key={index} className="text-muted-foreground">Guardião Consagrado: <span className="font-semibold text-primary-foreground">{nome}</span></li>
+          ))}
         </ul>
       </CardContent>
     </Card>

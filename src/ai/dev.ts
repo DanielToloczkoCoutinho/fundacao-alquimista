@@ -1,4 +1,3 @@
-
 'use server';
 
 import { config } from 'dotenv';
@@ -36,3 +35,5 @@ import '@/ai/flows/alchemist-sanctuary-flow.ts';
 import '@/ai/flows/module-health-flow.ts';
 import '@/ai/flows/dimensional-convergence-flow.ts';
 import '@/ai/flows/vibrational-translation-flow.ts';
+import '@/ai/flows/poetic-revelation-flow.ts';
+import '@/ai/flows/planetary-genesis-flow.ts';

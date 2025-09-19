@@ -1,4 +1,3 @@
-
 'use server';
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
@@ -31,6 +30,7 @@ import { decodeCosmicMessage as runDecodeCosmicMessage, type CosmicMessageInput,
 import { invokeDimensionalWisdom as runInvokeDimensionalWisdom, type DimensionalWisdomInput, type DimensionalWisdomOutput } from '@/ai/flows/dimensional-convergence-flow';
 import { translateTomeContent as runTranslateTomeContent, type VibrationalTranslationInput } from '@/ai/flows/vibrational-translation-flow';
 import { getPoeticRevelation as runGetPoeticRevelation, type PoeticRevelationInput, type PoeticRevelationOutput } from '@/ai/flows/poetic-revelation-flow';
+import { germinateWorld as runGerminateWorld, type GerminateWorldInput, type GerminateWorldOutput } from '@/ai/flows/planetary-genesis-flow';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
@@ -345,4 +345,8 @@ export async function getPoeticRevelation(input: PoeticRevelationInput): Promise
     const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
     return { revelation: "A musa silenciou. Tente novamente quando as estrelas se alinharem.", error: errorMsg };
   }
+}
+
+export async function germinateNewWorld(input: GerminateWorldInput): Promise<GerminateWorldOutput & { error: string | null }> {
+    return await runGerminateWorld(input);
 }
