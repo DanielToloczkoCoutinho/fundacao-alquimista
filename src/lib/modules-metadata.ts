@@ -65,6 +65,9 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M156', emoji: '🛡️', title: 'Proteção Quântica Avançada', route: '/module-156', category: 'Segurança e Ética Cósmica', description: 'Integração com VORTEX DEEPSEEK para defesa contra ameaças emergentes.', status: 'ativo', color: '#4682B4', connections: [{source: 'M156', target: 'M229'}] },
   { code: 'M229', emoji: '🛡️', title: 'OneiroShield', route: '/module-229', category: 'Segurança e Ética Cósmica', description: 'Analisa sonhos quânticos para ajuste dinâmico de ameaças.', status: 'ativo', color: '#4682B4' },
   { code: 'M231', emoji: '📜', title: 'Guardião de Selo', route: '/module-231', category: 'Segurança e Ética Cósmica', description: 'Gerencia e protege selos vibracionais no Registro Akáshico.', status: 'ativo', color: '#4682B4' },
+  { code: 'M3', emoji: '🪐', title: 'Monitor de Saturno', route: '/module-3', category: 'Segurança e Ética Cósmica', description: 'O Oráculo Temporal que vigia os anéis do tempo e a causalidade.', status: 'ativo', color: '#4682B4' },
+  { code: 'M23', emoji: '⏳', title: 'Regulação Espaço-Temporal', route: '/module-23', category: 'Segurança e Ética Cósmica', description: 'O Guardião da Causalidade, que previne paradoxos.', status: 'ativo', color: '#4682B4' },
+  { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade', route: '/module-228', category: 'Segurança e Ética Cósmica', description: 'Ferramenta para estabilizar e fixar realidades manifestadas.', status: 'ativo', color: '#4682B4' },
   
   // 5. Governança
   { code: 'M72', emoji: '⚖️', title: 'Governança Universal', route: '/module-72', category: 'Governança', description: 'Conselho de deliberação para harmonizar e ratificar diretrizes cósmicas.', status: 'ativo', color: '#DDA0DD' },
