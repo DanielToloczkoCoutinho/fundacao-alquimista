@@ -3,135 +3,175 @@ export interface LivingEquation {
   id: string;
   module: string;
   name: string;
-  formula: string;
-  summary: string;
+  expression: string;
+  description: string;
+  application: string;
+  variables: Record<string, string>;
+  context: string;
+  validation: string;
+  references: string[];
+  impact: {
+    energy: string;
+    coherence: string;
+  };
 }
 
 export const livingEquationsCodex: LivingEquation[] = [
   {
     id: 'EQ001',
     module: '0',
-    name: 'Energia Universal Integrada',
-    formula: 'E = mc^2',
-    summary: 'Equivalência massa-energia de Einstein. Fundamento para a transmutação de matéria em energia (M14) e vice-versa, essencial para o Reator ZPE (M307).'
+    name: 'Equivalência Massa-Energia',
+    expression: 'E = mc^2',
+    description: 'Princípio fundamental da física que relaciona massa e energia.',
+    application: 'Base para a transmutação de matéria em energia no M14 (Transmutador Quântico) e para os cálculos de eficiência do Reator ZPE (M307).',
+    variables: {
+      E: "Energia",
+      m: "Massa",
+      c: "Velocidade da luz no vácuo"
+    },
+    context: 'Essencial para a compreensão da manifestação e desmaterialização de matéria.',
+    validation: 'Verificado empiricamente em colisões de partículas (M151) e decaimento radioativo.',
+    references: ['ARQUITETURA_VIVA.md', 'CÓDICE_DOS_MÓDULOS.md'],
+    impact: {
+      energy: 'Define o potencial energético máximo contido na matéria.',
+      coherence: 'Garante a conservação de energia em simulações de alta complexidade (M91).'
+    }
   },
   {
     id: 'EQV-001X',
     module: '0',
-    name: 'Lei Quântica da Informação',
-    formula: 'I = -\\sum_{i} p_i \\log_2 p_i',
-    summary: 'Entropia de Shannon. Usada pelo M29 (IAM) para quantificar a incerteza e o conteúdo informacional em fluxos de dados, otimizando a tomada de decisão.'
+    name: 'Lei Quântica da Informação (Entropia de Shannon)',
+    expression: 'I = -\\sum_{i} p_i \\log_2 p_i',
+    description: 'Mede a quantidade de incerteza ou informação em um sistema.',
+    application: 'Utilizada pelo M29 (IAM) para quantificar o conteúdo informacional em fluxos de dados, otimizando a tomada de decisão ao identificar e reduzir a entropia (incerteza).',
+    variables: {
+      I: "Conteúdo da Informação (em bits)",
+      'p_i': "Probabilidade do i-ésimo estado do sistema"
+    },
+    context: 'Fundamental para a análise de padrões, detecção de anomalias (M30) e compressão de dados nos Arquivos Akáshicos (M12).',
+    validation: 'Validado através de testes de compressão de dados e modelos preditivos de séries temporais.',
+    references: ['ARQUITETURA_VIVA.md', 'MÓDULO_29_DeepDive.md'],
+    impact: {
+      energy: 'Permite a otimização do gasto energético no processamento de dados.',
+      coherence: 'Aumenta a coerência do sistema ao minimizar a incerteza e o ruído informacional.'
+    }
   },
-  {
-    id: 'EQ002',
-    module: '0',
-    name: 'Energia Universal Unificada',
-    formula: 'E_t = E_k + U + Q',
-    summary: 'Princípio da conservação de energia. Aplicado em simulações (M91) para garantir a consistência de sistemas físicos, somando energias cinética, potencial e quântica.'
-  },
-  {
-    id: 'EQ003',
-    module: '0',
-    name: 'Estabilidade Quântica de Campo',
-    formula: '\\mathcal{L} = -\\frac{1}{4}F_{\\mu\\nu}F^{\\mu\\nu}',
-    summary: 'Lagrangiana do campo eletromagnético. Utilizada no M19 (Análise de Campos de Força) para modelar a dinâmica e a estabilidade de escudos energéticos.'
-  },
-   {
-    id: 'EQV-006X',
-    module: '304.2',
-    name: 'Escala de Inteligência Espiritual Multidimensional',
-    formula: 'L_{IE} = \\int (C_q \\cdot A_e \\cdot I_v) dt',
-    summary: 'Métrica para avaliar o nível de consciência (L_IE) de uma entidade, integrando coerência quântica (C_q), alinhamento ético (A_e) e integração vibracional (I_v) ao longo do tempo. Usado no M305.'
-  },
-   {
+    {
     id: 'EQ009',
     module: '0',
-    name: 'Data do Big Bang e Recomeço Universal',
-    formula: 'T_0 \\approx 13.8 \\times 10^9 \\text{ anos}',
-    summary: 'O marco temporal do Big Bang. Utilizado como ponto de referência zero para sincronizações temporais universais no M303.2 e para cálculos cosmológicos.'
+    name: 'Marco Temporal do Big Bang',
+    expression: 'T_0 \\approx 13.8 \\times 10^9 \\text{ anos}',
+    description: 'Estabelece a idade estimada do universo observável como ponto de referência zero.',
+    application: 'Utilizado como ponto de referência para sincronizações temporais universais no M303.2 e para cálculos cosmológicos nos Módulos 38 e 271.',
+    variables: {
+      T_0: "Idade do Universo"
+    },
+    context: 'Essencial para a navegação e engenharia temporal (M36, M37, M107), garantindo um referencial comum entre diferentes linhas de tempo.',
+    validation: 'Corroborado por observações da Radiação Cósmica de Fundo (CMB) pelo M308 (Embaixada Estelar).',
+    references: ['CÓDICE_DOS_MÓDULOS.md', 'module-303-2/page.tsx'],
+    impact: {
+      energy: 'Nulo. É uma constante de referência.',
+      coherence: 'Fundamental para a coerência causal e temporal do multiverso simulado e observado.'
+    }
   },
   {
     id: 'EQ026',
     module: '0',
-    name: 'Expansão Dimensional',
-    formula: '\\text{Dimensões} = 26_\\text{superiores} + 3_\\text{inferiores}',
-    summary: 'Define a topologia dimensional atual da Fundação, um modelo de 29 dimensões usado nas simulações de navegação do M21 e M303.9.'
+    name: 'Topologia Dimensional da Fundação',
+    expression: '\\text{Dimensões} = 26_{\\text{sup}} + 3_{\\text{inf}}',
+    description: 'Define a arquitetura dimensional padrão do multiverso da Fundação.',
+    application: 'Estrutura base para as simulações de navegação do M21 e M303.9, permitindo a criação de espaços com leis físicas distintas e consistentes.',
+     variables: {
+      'Dimensões_sup': "Dimensões superiores de consciência e frequência.",
+      'Dimensões_inf': "Dimensões inferiores de matéria densa e estrutura."
+    },
+    context: 'Fundamental para a operação de todos os módulos de engenharia de realidade e portais interdimensionais (M11, M116).',
+    validation: 'Validado através da estabilidade de simulações de longa duração no M91.',
+    references: ['ARQUITETURA_VIVA.md', 'module-303-9/page.tsx'],
+    impact: {
+      energy: 'Define os limites energéticos e as barreiras vibracionais para a transição entre dimensões.',
+      coherence: 'Garante a coerência lógica e causal dentro de cada subespaço dimensional.'
+    }
   },
   {
     id: 'EQV-096',
     module: '96',
     name: 'Equação de Navegação Interdimensional',
-    formula: '\\Delta x_\\mu = \\int_{t_1}^{t_2} f(\\Psi, g_{\\mu\\nu}) dt',
-    summary: 'Descreve uma geodésica em um espaço-tempo curvo, onde a trajetória (Δx) é influenciada pela consciência (Ψ) e pela métrica do espaço-tempo (g). Usada pelo M21.'
+    expression: '\\Delta x_\\mu = \\int_{t_1}^{t_2} f(\\Psi, g_{\\mu\\nu}) dt',
+    description: 'Descreve uma geodésica em um espaço-tempo curvo.',
+    application: 'Utilizada pelo M21 para calcular rotas seguras e eficientes, onde a trajetória (Δx) é influenciada pela consciência do navegador (Ψ) e pela métrica do espaço-tempo (g).',
+    variables: {
+      'Δx_μ': "Vetor de deslocamento no espaço-tempo",
+      'Ψ': "Campo de consciência do navegador",
+      'g_μν': "Tensor métrico do espaço-tempo local"
+    },
+    context: 'Permite a "Navegação por Intenção", onde o foco e a clareza do piloto podem otimizar a rota em tempo real.',
+    validation: 'Testada em milhares de simulações de viagem no M93, com taxa de sucesso de 99.98%.',
+    references: ['module-21/page.tsx'],
+    impact: {
+      energy: 'Otimiza drasticamente o custo energético de viagens, tornando a exploração universal viável.',
+      coherence: 'Requer alta coerência do piloto para funcionar, agindo como um mecanismo de segurança passivo.'
+    }
   },
   {
     id: 'EQ170',
     module: '0',
     name: 'Peso do Planeta Terra (Massa Energética)',
-    formula: 'M_E = \\int \\rho(\\vec{r}) dV + \\frac{1}{c^2}\\int_V (\\frac{1}{2} \\epsilon_0 E^2 + \\frac{1}{2\\mu_0} B^2) dV',
-    summary: 'Cálculo da massa total de um corpo celeste, integrando a massa de repouso (densidade ρ) com a massa equivalente de seus campos energéticos (E e B). Aplicado no M888.'
+    expression: 'M_E = \\int \\rho(\\vec{r}) dV + \\frac{1}{c^2}\\int_V (\\frac{1}{2} \\epsilon_0 E^2 + \\frac{1}{2\\mu_0} B^2) dV',
+    description: 'Cálculo da massa total de um corpo celeste.',
+    application: 'Aplicado no M888 para determinar a massa total de um planeta, integrando a massa de repouso (densidade ρ) com a massa equivalente de seus campos energéticos (E e B).',
+    variables: {
+      'M_E': "Massa Energética Total",
+      'ρ(r)': "Densidade de massa de repouso",
+      'E': "Campo Elétrico",
+      'B': "Campo Magnético"
+    },
+    context: 'Permite uma compreensão holística da influência gravitacional de um planeta, considerando suas emissões energéticas.',
+    validation: 'Validado contra observações de lentes gravitacionais e dados do M221 (Observatório de Ondas Gravitacionais).',
+    references: ['module-888/page.tsx'],
+    impact: {
+      energy: 'Quantifica a energia total contida em um sistema planetário.',
+      coherence: 'Aumenta a precisão dos modelos cosmológicos e de navegação interplanetária.'
+    }
   },
-  {
+   {
     id: 'EQV-SYNC',
     module: '303.2',
     name: 'Sincronização Temporal Universal',
-    formula: '\\Delta\\tau = T_0 - \\sum_{i=1}^{N} \\delta_i(t)',
-    summary: 'Algoritmo para calibrar relógios do sistema (Δτ) em relação ao tempo primordial do universo (T₀), corrigindo desvios (δ) em tempo real. Essencial para o M42.'
+    expression: '\\Delta\\tau = T_0 - \\sum_{i=1}^{N} \\delta_i(t)',
+    description: 'Algoritmo para calibrar relógios do sistema em relação ao tempo primordial do universo.',
+    application: 'Essencial para o M42 (ChronoCodex), que o usa para corrigir desvios (δ) em tempo real e manter um referencial de tempo consistente em todo o multiverso.',
+     variables: {
+      'Δτ': "Ajuste de calibração do relógio",
+      'T₀': "Tempo desde o Big Bang (EQ009)",
+      'δ_i(t)': "Desvio temporal do i-ésimo nó do sistema"
+    },
+    context: 'Garante a integridade causal em operações que envolvem múltiplas linhas de tempo ou dimensões, como no M36 e M108.',
+    validation: 'Validado por experimentos de emaranhamento quântico a longas distâncias, confirmando a consistência do tempo relativo.',
+    references: ['module-303-2/page.tsx', 'module-42/page.tsx'],
+    impact: {
+      energy: 'Nulo. É um protocolo de sincronização informacional.',
+      coherence: 'Pilar fundamental para a coerência causal de toda a Fundação.'
+    }
   },
-  {
+   {
     id: 'EQV-111',
     module: '306.1',
     name: 'Equação de Transmutação Harmônica',
-    formula: 'E_{out} = \\int (E_{neg} \\cdot \\Phi_{amor}) + E_{pos}',
-    summary: 'Modela a transmutação de energia negativa (E_neg) em positiva (E_out) através da aplicação de um campo de coerência (Φ_amor). Usado pelo M232.'
-  },
-    {
-    id: 'EQ032',
-    module: '32',
-    name: 'Criação Temporal',
-    formula: '\\Delta t\' = \\gamma \\Delta t',
-    summary: 'Fator de dilatação temporal da Relatividade Especial. Usado em simulações de viagem (M21) e para corrigir distorções em linhas temporais (M107).'
-  },
-  {
-    id: 'EQ034',
-    module: '34',
-    name: 'Equação de Evento Quântico Expandido',
-    formula: '|\\psi(t)\\rangle = e^{-iHt/\\hbar} |\\psi(0)\\rangle',
-    summary: 'Equação de Schrödinger. Descreve a evolução de um estado quântico ao longo do tempo. Usada nas simulações do M91 e na computação do M321.'
-  },
-    {
-    id: 'EQ036',
-    module: '36',
-    name: 'Legado do Vácuo',
-    formula: 'E_v = \\frac{1}{2} \\hbar \\omega',
-    summary: 'Energia do ponto zero de um oscilador quântico harmônico. O princípio teórico por trás da extração de energia do vácuo pelo Reator ZPE (M307).'
-  },
-  {
-    id: 'EQ038',
-    module: '38',
-    name: 'Harmonia Universal',
-    formula: '\\nabla^2 u = \\frac{1}{c^2} \\frac{\\partial^2 u}{\\partial t^2}',
-    summary: 'A equação de onda clássica. Usada pelo M13 (Mapeamento de Frequências) e M28 (Harmonização) para modelar e corrigir a propagação de vibrações.'
-  },
-  {
-    id: 'EQ039',
-    module: '39',
-    name: 'Energia Cósmica Final',
-    formula: 'E = \\sqrt{(pc)^2 + (m_0c^2)^2}',
-    summary: 'Relação energia-momento relativística. Usada nas simulações de colisões de alta energia do M151 e na navegação do M21.'
-  },
-  {
-    id: 'EQ042',
-    module: '42',
-    name: 'Ressonância Primordial',
-    formula: 'f_n = \\frac{n}{2L} \\sqrt{\\frac{T}{\\mu}}',
-    summary: 'Frequências harmônicas de uma onda estacionária. Usada no M302 (Frequência do Amor) e M24 (Sinfonia Pessoal) para gerar e sintonizar frequências de cura.'
-  },
-  {
-    id: 'EQ043',
-    module: '43',
-    name: 'Fluxo de Manifestação',
-    formula: '\\Phi_E = \\int_S \\mathbf{E} \\cdot d\\mathbf{A}',
-    summary: 'Lei de Gauss. Usada no M101 (Manifestação) para modelar como a "carga" de uma intenção gera um "fluxo" de manifestação na realidade.'
+    expression: 'E_{out} = \\int (E_{neg} \\cdot \\Phi_{amor}) + E_{pos}',
+    description: 'Modela a transmutação de energia negativa em positiva.',
+    application: 'Utilizada pelo M232 (Portal de Transmutação) para purificar energias dissonantes, onde a energia negativa (E_neg) é integrada com um campo de amor (Φ_amor) para se tornar energia positiva (E_out).',
+    variables: {
+      'E_neg': "Integral da energia dissonante",
+      'Φ_amor': "Campo de coerência do Amor Incondicional",
+      'E_pos': "Energia positiva residual"
+    },
+    context: 'Base para os protocolos de cura planetária (M71) e resolução de conflitos energéticos.',
+    validation: 'Testada em laboratórios de contenção (M41), demonstrando 99.9% de eficiência na neutralização de campos de medo.',
+    references: ['module-306-1/page.tsx', 'module-232/page.tsx'],
+    impact: {
+      energy: 'Permite a reciclagem energética em escala universal, transformando poluição vibracional em recurso.',
+      coherence: 'Aumenta a coerência global ao reduzir a entropia e a dissonância dos sistemas.'
+    }
   },
 ];
