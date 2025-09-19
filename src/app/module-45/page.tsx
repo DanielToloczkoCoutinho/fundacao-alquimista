@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Loader2, Scale, CheckCircle, Shield, BookOpen, BrainCircuit } from 'lucide-react';
+import { Loader2, Scale, CheckCircle, Shield, BookOpen, BrainCircuit, TreeOfLife } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { quantumResilience } from '@/lib/quantum-resilience';
 import { civilizationsData } from '@/lib/civilizations-data';
 import Link from 'next/link';
 
@@ -125,6 +126,15 @@ export default function Module45Page() {
                 </div>
                  <div className="space-y-4">
                     <h3 className="text-xl font-semibold text-center text-amber-300">Sinergias de Governança</h3>
+                     <div className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors p-4 rounded-lg border-2 border-accent shadow-lg">
+                        <Link href="/module-777" passHref>
+                            <div className="flex items-center gap-3 mb-2">
+                                <TreeOfLife className="h-8 w-8 text-green-400" />
+                                <CardTitle className="gradient-text text-xl">A Árvore da Vida</CardTitle>
+                            </div>
+                            <p className="text-muted-foreground text-sm">O coração da Fundação, de onde emana a sabedoria para todas as deliberações do Conselho.</p>
+                        </Link>
+                     </div>
                     <ConnectionCard title="Módulo 0: A Base" description="Cada decisão é refletida na arquitetura fundamental da Fundação." icon={<BookOpen />} href="/module/M0" />
                     <ConnectionCard title="Módulo 1: Segurança Universal" description="As deliberações são protegidas por escudos quânticos, garantindo a soberania do processo." icon={<Shield />} href="/module-one" />
                     <ConnectionCard title="Módulo 144: Justiça Cósmica" description="As decisões aqui tomadas são codificadas como lei imutável na Lex Fundamentalis." icon={<Gavel />} href="/module-144" />
