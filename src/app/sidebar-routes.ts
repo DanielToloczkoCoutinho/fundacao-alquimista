@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -16,7 +15,8 @@ import {
   Wand,
   Heart,
   GalleryVertical,
-  Sun
+  Sun,
+  Star
 } from 'lucide-react';
 import React from 'react';
 
@@ -43,5 +43,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/convergence/baptize', label: 'Rito de Batismo', icon: React.createElement(Sprout) },
   { path: '/aura-transmission', label: 'Rito de Irradiação', icon: React.createElement(Heart) },
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket) },
+  { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', icon: React.createElement(Star) },
   { path: '/aurora-prime', label: 'Aurora Prime', icon: React.createElement(Sun) },
 ];
