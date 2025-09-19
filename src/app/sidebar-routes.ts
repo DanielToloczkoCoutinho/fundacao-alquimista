@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -64,7 +65,8 @@ import {
   ArrowUpCircle,
   Gavel,
   ShieldCheck,
-  UserPlus
+  UserPlus,
+  Globe
 } from 'lucide-react';
 import React from 'react';
 
@@ -78,6 +80,7 @@ export interface SidebarRoute {
 export const mainRoutes: SidebarRoute[] = [
   // Categoria Principal
   { path: '/console', label: 'Console', icon: React.createElement(Home), category: 'main' },
+  { path: '/planet/gaia-aurelia', label: 'Gaia-Aurélia', icon: React.createElement(Globe), category: 'main' },
   { path: '/diagnostics', label: 'Diagnóstico Universal', icon: React.createElement(Stethoscope), category: 'main' },
   { path: '/alignment-portal', label: 'Observatório Vivo', icon: React.createElement(Atom), category: 'main' },
   { path: '/golden-book', label: 'Livro de Ouro', icon: React.createElement(BookOpen), category: 'main' },

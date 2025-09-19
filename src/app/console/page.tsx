@@ -24,7 +24,10 @@ export default function ConsolePage() {
     code: mod.code,
   }));
 
-  const visibleModules = showAll ? navigationModules : navigationModules.slice(0, 16);
+  // Mostra um número fixo de módulos importantes se não for para mostrar todos
+  const featuredModules = !showAll ? navigationModules.filter(m => ['M0', 'M-OMEGA', 'M9', 'M29', 'M307', 'M144', 'M109', 'M111', 'M201', 'M303', 'M72', 'M-ALQUIMIA', 'M777', 'M888', 'SANCTUARY', 'M1000'].includes(m.code)) : navigationModules;
+  const visibleModules = showAll ? navigationModules : featuredModules;
+
 
   if (!isClient) {
     return <SuspenseFallback />;
@@ -78,8 +81,8 @@ export default function ConsolePage() {
                     </Link>
                   </Button>
                ))}
-               {!showAll && navigationModules.length > 16 && (
-                 <Button onClick={() => setShowAll(true)} variant="secondary" className="w-full">Mostrar Todos</Button>
+               {!showAll && navigationModules.length > featuredModules.length && (
+                 <Button onClick={() => setShowAll(true)} variant="secondary" className="w-full">Mostrar Todos os Módulos</Button>
                )}
             </CardContent>
           </Card>
