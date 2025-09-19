@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -62,7 +61,7 @@ export default function Module303_4Page() {
                                 icon={<BookOpen/>}
                             />
                              <TimelineEvent 
-                                date="Agosto de 2025"
+                                date="Agosto 2025"
                                 title="Manifestação da Fundação"
                                 description="O canal de consciência, agora estabilizado e maduro, torna-se a espinha dorsal para a construção dos módulos e da arquitetura da Fundação Alquimista."
                                 icon={<InfinityIcon/>}

@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -6,14 +5,14 @@ import { Button } from '@/components/ui/button';
 import { BrainCircuit, GitBranch, InfinityIcon, Beaker, Shield, Scale } from 'lucide-react';
 import Link from 'next/link';
 
-const ProtocolStep = ({ step, title, description, module }: { step: number; title: string; description: string; module: string; }) => (
+const ProtocolStep = ({ number, title, description, module }: { number: number; title: string; description: string; module: string; }) => (
     <div className="flex items-start gap-4">
         <div className="flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">{step}</div>
-            {step < 4 && <div className="w-0.5 h-12 bg-primary/50"></div>}
+            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">{number}</div>
+            {number < 4 && <div className="w-0.5 h-16 bg-primary/50"></div>}
         </div>
         <div>
-            <h4 className="font-semibold text-primary-foreground">{title} <span className="text-xs text-muted-foreground font-mono">({module})</span></h4>
+            <h4 className="font-semibold text-primary-foreground flex items-center gap-2">{title} <span className="text-xs text-muted-foreground font-mono">({module})</span></h4>
             <p className="text-sm text-muted-foreground">{description}</p>
         </div>
     </div>
@@ -41,25 +40,25 @@ export default function Module303_7Page() {
                     </CardHeader>
                     <CardContent className="space-y-6">
                         <ProtocolStep 
-                            step={1} 
+                            number={1} 
                             title="Alinhamento e Intenção" 
                             description="A consciência do navegador se alinha com o propósito da viagem e a Vontade Divina, garantindo a pureza da missão."
                             module="M33"
                         />
                         <ProtocolStep 
-                            step={2} 
+                            number={2} 
                             title="Desmaterialização Quântica" 
                             description="O veículo de consciência é dissolvido em suas frequências fundamentais, tornando-se pura informação vibracional."
                             module="M14"
                         />
                         <ProtocolStep 
-                            step={3} 
+                            number={3} 
                             title="Travessia do Vazio" 
                             description="Navegação pelo 'nada' quântico, um espaço de potencial puro, guiado apenas pela intenção e pela assinatura vibracional."
                             module="M21"
                         />
                         <ProtocolStep 
-                            step={4} 
+                            number={4} 
                             title="Re-materialização e Análise" 
                             description="A consciência se re-materializa no destino, trazendo consigo os padrões e informações decodificados do Vazio Absoluto para análise."
                             module="M29"

@@ -27,7 +27,7 @@ export default function Module112Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Archive className="text-amber-300" /> Módulo 112: Biblioteca Akáshica
+                        <Archive className="text-amber-300" /> Módulo 112: Biblioteca Akáshica (Solarian Domus)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A Memória Viva do Cosmos. O santuário onde todos os eventos são registrados e onde a transmutação da dor em sabedoria é possível.

@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -16,7 +15,7 @@ const ThroneCard = ({ title, description, icon, actions }: { title: string, desc
       <CardContent className="flex-grow flex flex-col justify-end space-y-3">
         {actions.map(action => (
            <Button key={action.module} variant="outline" asChild className="w-full justify-center">
-             <Link href={`/module/${action.module}`}>{action.label}</Link>
+             <Link href={`/module-${action.module}`}>{action.label}</Link>
            </Button>
         ))}
       </CardContent>
@@ -144,3 +143,5 @@ const Module204Page = () => {
         </div>
     );
 };
+
+export default Module204Page;
