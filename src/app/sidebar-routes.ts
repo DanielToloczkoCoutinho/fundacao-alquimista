@@ -29,5 +29,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/akashic', label: 'Arquivo Akáshico', icon: React.createElement(Archive) },
   { path: '/convergence', label: 'Portal de Convergência', icon: React.createElement(GitMerge) },
   { path: '/convergence/generate', label: 'Rito de Geração', icon: React.createElement(Sprout) },
+  { path: '/convergence/baptize', label: 'Rito de Batismo', icon: React.createElement(Sprout) },
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket) },
 ];
