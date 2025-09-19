@@ -12,7 +12,8 @@ import {
   Rocket,
   Sprout,
   BookOpen,
-  Feather
+  Feather,
+  Wand
 } from 'lucide-react';
 import React from 'react';
 
@@ -26,6 +27,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/console', label: 'Console', icon: React.createElement(Home) },
   { path: '/daily-report', label: 'Relatório Cerimonial', icon: React.createElement(Book) },
   { path: '/diagnostics', label: 'Diagnóstico Universal', icon: React.createElement(Stethoscope) },
+  { path: '/auditoria', label: 'Painel de Auditoria', icon: React.createElement(Wand) },
   { path: '/alignment-portal', label: 'Observatório Vivo', icon: React.createElement(Atom) },
   { path: '/tree-of-life', label: 'Árvore da Vida', icon: React.createElement(GitMerge) },
   { path: '/golden-book', label: 'Livro de Ouro', icon: React.createElement(BookOpen) },
