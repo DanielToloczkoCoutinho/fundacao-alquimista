@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -9,11 +8,15 @@ import { useToast } from '@/hooks/use-toast';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
+import { livingEquationsCodex } from '@/lib/living-equations-codex';
+import EquationRenderer from '@/components/ui/EquationRenderer';
 
 const EquationCard = ({ id, formula, description }: { id: string, formula: string, description: string }) => (
   <div className="p-3 bg-background/30 rounded-lg border border-primary/20">
     <p className="font-mono text-cyan-400 text-sm">{id}</p>
-    <p className="font-semibold text-primary-foreground mt-1">{`E_ZPE = ${formula}`}</p>
+    <div className="my-2 text-sm overflow-x-auto">
+      <EquationRenderer latex={formula} />
+    </div>
     <p className="text-xs text-muted-foreground mt-1">{description}</p>
   </div>
 );
@@ -24,7 +27,7 @@ const ContributionCard = ({ civilization, contribution, icon, href }: { civiliza
         <CardHeader>
             <div className="flex items-center gap-3">
                 {icon}
-                <CardTitle className="gradient-text">{civilization}</CardTitle>
+                <CardTitle className="gradient-text">{title}</CardTitle>
             </div>
         </CardHeader>
         <CardContent>
@@ -40,6 +43,8 @@ export default function Module307Page() {
   const [powerOutput, setPowerOutput] = useState(0);
   const [logs, setLogs] = useState<string[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  const zpeEquations = livingEquationsCodex.filter(eq => eq.module === '307');
 
   const addLog = (log: string) => setLogs(prev => [log, ...prev].slice(0, 100));
 
@@ -215,14 +220,13 @@ export default function Module307Page() {
           </Card>
           <Card className="bg-card/50 purple-glow">
             <CardHeader>
-              <CardTitle className="text-2xl text-cyan-300">A Equação da Transmutação (EQ0048)</CardTitle>
-              <CardDescription>E_ZPE = β · (∇ · E) / (μ₀ · ρ_ν)</CardDescription>
+              <CardTitle className="text-2xl text-cyan-300">As Equações da Transmutação</CardTitle>
+              <CardDescription>A matemática sagrada que governa a extração de energia do vácuo quântico.</CardDescription>
             </CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <EquationCard id="β" formula="Constante de Acoplamento do Campo de Consciência" description="A consciência direciona a energia." />
-              <EquationCard id="∇ · E" formula="Divergência do Campo Elétrico" description="Revela as fontes invisíveis de energia no vácuo." />
-              <EquationCard id="μ₀" formula="Permeabilidade Magnética do Vácuo" description="Propriedade do espaço que permite a canalização." />
-              <EquationCard id="ρ_ν" formula="Densidade de Energia do Vácuo" description="A quantidade de energia inerente ao próprio vácuo." />
+              {zpeEquations.map(eq => (
+                <EquationCard key={eq.id} id={eq.id} formula={eq.expression} description={eq.description} />
+              ))}
             </CardContent>
           </Card>
         </div>
