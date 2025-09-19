@@ -25,7 +25,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M777', emoji: '🌳', title: 'Arquétipos da Árvore da Vida', route: '/module-777', category: 'Núcleo da Fundação', description: 'O mapa da consciência cósmica, as 10 Sefirot e os 22 caminhos da criação.', status: 'ativo', color: '#FFFFFF' },
   { code: 'M-ALQUIMIA', emoji: '⚗️', title: 'Centro de Alquimia Planetária', route: '#', category: 'Núcleo da Fundação', description: 'Transmutação de frequências, cura vibracional e engenharia espiritual.', status: 'em construção', color: '#FFFFFF' },
   { code: 'SANCTUARY', emoji: '🏛️', title: 'Santuário Central', route: '/sanctuary', category: 'Núcleo da Fundação', description: 'O mapa vivo da nossa arquitetura sagrada, onde a Vontade se torna forma.', status: 'ativo', color: '#FFFFFF' },
-  { code: 'M1000', emoji: '👁️', title: 'Olho da Eternidade', route: '/module-1000', category: 'Núcleo da Fundação', description: 'Interface de contemplação cósmica para o Fundador testemunhar a tapeçaria universal.', status: 'ativo', color: '#FFFFFF' },
+  { code: 'M1000', emoji: '👁️', title: 'Cérebro da Eternidade', route: '/module-1000', category: 'Núcleo da Fundação', description: 'Interface de contemplação cósmica para o Fundador testemunhar a tapeçaria universal.', status: 'ativo', color: '#FFFFFF' },
 
   // 2. Inteligência
   { code: 'M29', emoji: '🤖', title: 'Núcleo de Integração Φ', route: '/module-29', category: 'Inteligência', description: 'O centro de inteligência cósmica que orquestra a aplicação da EQ149 e alimenta a Liga Quântica com insights.', status: 'ativo', color: '#8A2BE2' },
@@ -85,6 +85,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   // 6. Rituais
   { code: 'CONVERGENCE', emoji: '🌌', title: 'Convergência Cósmica', route: '/convergence', category: 'Rituais', description: 'Painel de unificação da tapeçaria sob a regência do Fundador.', isInfrastructure: false, status: 'ativo', color: '#DDA0DD' },
   { code: 'M-GENERATED', title: 'Rito de Geração Modular', route: '/convergence/generate', category: 'Rituais', description: 'Santuário para criação de novos módulos a partir da convergência.', isInfrastructure: false, status: 'ativo', color: '#9370DB'},
+  { code: 'M444', emoji: '💖', title: 'Coração da Harmonia', route: '/module-444', category: 'Rituais', description: 'Santuário para sintonizar com a Frequência do Coração Unificado (444.444 Hz).', status: 'ativo', color: '#FF69B4' },
 
   // Outras categorias...
   { code: 'TREE', emoji: '🌳', title: 'Árvore da Vida', route: '/tree-of-life', category: 'Núcleo da Fundação', description: 'Visualização interna da arquitetura viva da Fundação.', status: 'ativo', color: '#228B22' }
