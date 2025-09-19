@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -66,8 +67,4 @@ export default function Module46Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Visualizar Fluxo de Energia do Pré-Núcleo</Button>
-            </div>
-        </div>
-    );
-}
+                 <Button variant="secondary" size="lg">Visualizar Fluxo de Energia do Pré-Núcle

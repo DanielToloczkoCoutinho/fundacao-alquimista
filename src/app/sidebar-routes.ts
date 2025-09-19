@@ -57,7 +57,9 @@ import {
   Flame,
   Waypoints,
   BarChart,
-  UserCog
+  UserCog,
+  Orbit,
+  CheckSquare
 } from 'lucide-react';
 import React from 'react';
 
@@ -65,7 +67,7 @@ export interface SidebarRoute {
   path: string;
   label: string;
   icon: React.ReactNode;
-  category: 'main' | 'education';
+  category: 'main' | 'education' | 'governance' | 'engineering';
 }
 
 export const mainRoutes: SidebarRoute[] = [
@@ -95,80 +97,29 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-204', label: 'Tronos da Unificação', icon: React.createElement(Crown), category: 'main' },
 
   // Categoria de Educação
-  { path: '/module-110', label: 'M110: Co-Criação Universal', icon: React.createElement(Users), category: 'education' },
-  { path: '/module-82', label: 'M82: Transporte Quântico', icon: React.createElement(Milestone), category: 'education' },
-  { path: '/module-83', label: 'M83: Transporte de Energia', icon: React.createElement(GitBranch), category: 'education' },
   { path: '/module-113', label: 'M113: Centro de Ensino Estelar', icon: React.createElement(GraduationCap), category: 'education' },
-  { path: '/module-34', label: 'M34: Sincronização Interdimensional', icon: React.createElement(Share2), category: 'education' },
-  { path: '/module-724', label: 'M724: Diplomacia Intergaláctica', icon: React.createElement(Users), category: 'education' },
-  { path: '/module-42', label: 'M42: ChronoCodex Unificado', icon: React.createElement(BookOpen), category: 'education' },
-  { path: '/module-59', label: 'M59: Eco-Cidades Quânticas', icon: React.createElement(Building), category: 'education' },
-  { path: '/module-111', label: 'M111: Lab. Criação Quântica', icon: React.createElement(Beaker), category: 'education' },
-  { path: '/module-112', label: 'M112: Biblioteca Akáshica', icon: React.createElement(Archive), category: 'education' },
-  { path: '/module-114', label: 'M114: Lab. Engenharia Cósmica', icon: React.createElement(Sprout), category: 'education' },
-  { path: '/module-115', label: 'M115: Escola de Navegação Multiversal', icon: React.createElement(Rocket), category: 'education' },
-  { path: '/module-116', label: 'M116: Biblioteca de Rituais', icon: React.createElement(Book), category: 'education' },
-  { path: '/module-117', label: 'M117: Lab. Linguagem Estelar', icon: React.createElement(Sprout), category: 'education' },
-  { path: '/module-118', label: 'M118: Escola da Merkabah', icon: React.createElement(Sparkles), category: 'education' },
+  { path: '/module-69', label: 'M69: Rede de Sabedoria Universal', icon: React.createElement(GraduationCap), category: 'education' },
   { path: '/module-120', label: 'M120: Escola de Guardiões', icon: React.createElement(Shield), category: 'education' },
-  { path: '/module-121', label: 'M121: Biblioteca de Luz', icon: React.createElement(Library), category: 'education' },
-  { path: '/module-122', label: 'M122: Lab. de Realidade Virtual', icon: React.createElement(TestTube), category: 'education' },
   { path: '/module-123', label: 'M123: Ensino da Respiração Cósmica', icon: React.createElement(Wind), category: 'education' },
   { path: '/module-124', label: 'M124: Escola de Ressonância', icon: React.createElement(Music), category: 'education' },
-  { path: '/module-125', label: 'M125: Lab. de Criação de Biomas', icon: React.createElement(Sprout), category: 'education' },
-  { path: '/module-126', label: 'M126: Biblioteca de Crônicas', icon: React.createElement(BookOpen), category: 'education' },
   { path: '/module-127', label: 'M127: Escola de Alquimia Estelar', icon: React.createElement(Sprout), category: 'education' },
-  { path: '/module-128', label: 'M128: Lab. de Geometria Sagrada', icon: React.createElement(Gem), category: 'education' },
   { path: '/module-129', label: 'M129: Ensino da Fonte', icon: React.createElement(Sparkles), category: 'education' },
   { path: '/module-130', label: 'M130: Escola de Navegação Cerimonial', icon: React.createElement(Rocket), category: 'education' },
   { path: '/module-131', label: 'M131: Biblioteca de Sabedoria Multiversal', icon: React.createElement(Library), category: 'education' },
-  { path: '/module-69', label: 'M69: Educação Universal', icon: React.createElement(GraduationCap), category: 'education' },
-  { path: '/module-70', label: 'M70: Sustentabilidade', icon: React.createElement(Sprout), category: 'education' },
-  { path: '/module-72', label: 'M72: Governança', icon: React.createElement(Scale), category: 'education' },
-  { path: '/module-73', label: 'M73: SAVCE', icon: React.createElement(Scale), category: 'education' },
-  { path: '/module-74', label: 'M74: CRONOS_FLUXUS', icon: React.createElement(History), category: 'education' },
-  { path: '/module-87', label: 'M87: Domínio Supra-Cósmico (VR)', icon: React.createElement(Crown), category: 'education' },
-  { path: '/module-55', label: 'M55: Redes de Comunicação', icon: React.createElement(Network), category: 'education' },
-  { path: '/module-56', label: 'M56: Tradução Universal', icon: React.createElement(Languages), category: 'education' },
-  { path: '/module-57', label: 'M57: Segurança e Privacidade', icon: React.createElement(Lock), category: 'education' },
-  { path: '/module-65', label: 'M65: Transporte Cósmico', icon: React.createElement(Rocket), category: 'education' },
-  { path: '/module-64', label: 'M64: Energia Limpa', icon: React.createElement(Zap), category: 'education' },
-  { path: '/module-66', label: 'M66: Sustentabilidade Ambiental', icon: React.createElement(Recycle), category: 'education' },
-  { path: '/module-67', label: 'M67: IA para Governança', icon: React.createElement(BrainCircuit), category: 'education' },
-  { path: '/module-71', label: 'M71: Comunicação Holográfica', icon: React.createElement(RadioTower), category: 'education' },
-  { path: '/module-76', label: 'M76: Governança Universal', icon: React.createElement(Scale), category: 'education' },
-  { path: '/module-77', label: 'M77: Inteligência Coletiva', icon: React.createElement(Users), category: 'education' },
-  { path: '/module-200', label: 'M200: Portal da Ascensão', icon: React.createElement(Rocket), category: 'education' },
-  { path: '/module-28', label: 'M28: Harmonização Vibracional', icon: React.createElement(Music), category: 'education' },
-  { path: '/module-79', label: 'M79: Sustentabilidade Universal', icon: React.createElement(Recycle), category: 'education' },
-  { path: '/module-151', label: 'M151: Colisor de Partículas', icon: React.createElement(Atom), category: 'education' },
-  { path: '/module-181', label: 'M181: Interface Bio-Cibernética', icon: React.createElement(Cpu), category: 'education' },
-  { path: '/module-191', label: 'M191: Lab. Cristais Temporais', icon: React.createElement(Beaker), category: 'education' },
-  { path: '/module-211', label: 'M211: Lab. Fusão Controlada', icon: React.createElement(Sparkles), category: 'education' },
-  { path: '/module-241', label: 'M241: Lab. Consciência Quântica', icon: React.createElement(BrainCircuit), category: 'education' },
-  { path: '/module-251', label: 'M251: Lab. Energia Ponto Zero', icon: React.createElement(Zap), category: 'education' },
-  { path: '/module-261', label: 'M261: Lab. Engenharia de Campo', icon: React.createElement(GitBranch), category: 'education' },
-  { path: '/module-271', label: 'M271: Obs. Energia Escura', icon: React.createElement(Atom), category: 'education' },
-  { path: '/module-281', label: 'M281: Com. Supra-Luminal', icon: React.createElement(RadioTower), category: 'education' },
-  { path: '/module-311', label: 'M311: Neuroengenharia', icon: React.createElement(BrainCircuit), category: 'education' },
-  { path: '/module-331', label: 'M331: IA Emergente', icon: React.createElement(BrainCircuit), category: 'education' },
-  { path: '/module-341', label: 'M341: Física de Plasma', icon: React.createElement(Sparkles), category: 'education' },
-  { path: '/module-351', label: 'M351: Meta-materiais', icon: React.createElement(Layers), category: 'education' },
-  { path: '/module-361', label: 'M361: Psicologia Quântica', icon: React.createElement(Users), category: 'education' },
-  { path: '/module-700', label: 'M700: Nano-Assembler', icon: React.createElement(Beaker), category: 'education' },
-  { path: '/module-708', label: 'M708: NanoManifestor', icon: React.createElement(Sparkles), category: 'education' },
-  { path: '/module-712', label: 'M712: Harmonia Interespécies', icon: React.createElement(Users), category: 'education' },
-  { path: '/module-713', label: 'M713: Resgate de Almas', icon: React.createElement(UserCog), category: 'education' },
-  { path: '/module-714', label: 'M714: Comunicação Telúrica', icon: React.createElement(RadioTower), category: 'education' },
-  { path: '/module-715', label: 'M715: Ancoragem de Frequências', icon: React.createElement(Anchor), category: 'education' },
-  { path: '/module-716', label: 'M716: Consciência Planetária', icon: React.createElement(BrainCircuit), category: 'education' },
-  { path: '/module-717', label: 'M717: Templo da Estrutura de Dados', icon: React.createElement(Archive), category: 'education' },
-  { path: '/module-722', label: 'M722: Inteligência Alquímica', icon: React.createElement(Cpu), category: 'education' },
-  { path: '/module-106', label: 'M106: Ativação de Potenciais Divinos', icon: React.createElement(Crown), category: 'education' },
-  { path: '/module-108', label: 'M108: Harmonização de Realidades', icon: React.createElement(GitCompareArrows), category: 'education' },
-  { path: '/module-99', label: 'M99: Recalibradores de Leis Físicas', icon: React.createElement(SlidersHorizontal), category: 'education' },
-  { path: '/module-109', label: 'M109: Cura Quântica Universal', icon: React.createElement(HeartHandshake), category: 'education' },
-  { path: '/module-35', label: 'M35: Consciência Coletiva', icon: React.createElement(Users), category: 'education' },
-  { path: '/module-11', label: 'M11: Gerenciamento de Portais', icon: React.createElement(GitBranch), category: 'education' },
-  { path: '/module-36', label: 'M36: Engenharia Temporal', icon: React.createElement(History), category: 'education' },
-];
+  
+  // Categoria de Governança
+  { path: '/module-72', label: 'M72: Governança Universal', icon: React.createElement(Scale), category: 'governance' },
+  { path: '/module-73', label: 'M73: SAVCE', icon: React.createElement(Scale), category: 'governance' },
+  { path: '/module-76', label: 'M76: Governança Universal', icon: React.createElement(Scale), category: 'governance' },
+  { path: '/module-33', label: 'M33: Diretrizes do Observador Divino', icon: React.createElement(Eye), category: 'governance' },
+  { path: '/module-5', label: 'M5: Nexus da Liga Quântica', icon: React.createElement(Link), category: 'governance' },
+  { path: '/module-67', label: 'M67: IA para Governança', icon: React.createElement(BrainCircuit), category: 'governance' },
+  { path: '/module-68', label: 'M68: Responsabilidade Ética', icon: React.createElement(Shield), category: 'governance' },
+  { path: '/module-724', label: 'M724: Diplomacia Intergaláctica', icon: React.createElement(Users), category: 'governance' },
+  { path: '/module-726', label: 'M726: Conselho da Nova Terra', icon: React.createElement(Crown), category: 'governance' },
+  { path: '/module-44', label: 'M44: VERITAS', icon: React.createElement(CheckSquare), category: 'governance' },
+  { path: '/module-45', label: 'M45: CONCILIVM', icon: React.createElement(Gavel), category: 'governance' },
+
+  // Categoria de Engenharia e Criação
+  { path: '/module-14', label: 'M14: Transmutador Quântico', icon: React.createElement(Atom), category: 'engineering' },
+  { path: '

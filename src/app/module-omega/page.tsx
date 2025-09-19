@@ -138,7 +138,7 @@ const ModuleOmegaPage = () => {
       </Card>
       
       <div className="w-full max-w-7xl">
-        <Accordion type="multiple" defaultValue={['perspectiva', 'arquitetura']} className="w-full">
+        <Accordion type="multiple" defaultValue={['arquitetura']} className="w-full">
             <AccordionItem value="perspectiva">
                 <AccordionTrigger className="text-xl text-accent">Perspectiva Ômega</AccordionTrigger>
                 <AccordionContent>
@@ -244,7 +244,3 @@ const ModuleOmegaPage = () => {
         </Accordion>
       </div>
     </div>
-  );
-};
-
-export default ModuleOmegaPage;

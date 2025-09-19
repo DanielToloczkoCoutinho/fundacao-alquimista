@@ -67,8 +67,4 @@ export default function Module28Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Protocolo de Harmonização Universal</Button>
-            </div>
-        </div>
-    );
-}
+                 <Button variant="secondary

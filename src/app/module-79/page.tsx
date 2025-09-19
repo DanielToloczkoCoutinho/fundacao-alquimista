@@ -67,8 +67,4 @@ export default function Module79Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Acessar Painel de Gestão de Recursos</Button>
-            </div>
-        </div>
-    );
-}
+                 <Button variant="secondary

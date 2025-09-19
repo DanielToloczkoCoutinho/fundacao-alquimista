@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -68,6 +69,3 @@ export default function Module43Page() {
              <div className="mt-12">
                  <Button variant="secondary" size="lg">Iniciar Orquestração Harmônica</Button>
             </div>
-        </div>
-    );
-}
