@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { History, GitCommit, GitCompareArrows, AlertTriangle, Rocket, Eye, Languages, ShieldCheck, BookOpen, Scale } from 'lucide-react';
+import { Layers, ShieldCheck, Scale, GitCompareArrows } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -42,13 +42,26 @@ export default function Module32Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-7xl">
+            <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Diplomacia Causal</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
                         title="M18: Orquestração Akáshica"
                         description="Cada diálogo interdimensional é registrado e selado no Akasha pelo M18, transformando sabedoria em registro eterno."
-                        icon={<BookOpen className="h-8 w-8 text-purple-400" />}
+                        icon={<Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+}
                         href="/module-18"
                     />
                     <ConnectionCard
