@@ -46,7 +46,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M68', emoji: '🛡️', title: 'Responsabilidade Ética', route: '/module-68', category: 'Segurança e Ética Cósmica', description: 'A bússola moral da Fundação, o código universal que rege o desenvolvimento e uso de tecnologias.', status: 'ativo', color: '#4682B4' },
   { code: 'M69', emoji: '🎓', title: 'Rede de Sabedoria Universal', route: '/module-69', category: 'Educação e Sabedoria', description: 'Plataforma que promove a evolução coletiva através do compartilhamento universal da sabedoria.', status: 'ativo', color: '#FFD700' },
   { code: 'M77', emoji: '🧠', title: 'Inteligência Coletiva Universal', route: '/module-77', category: 'Inteligência', description: 'A mente unificada para resolução de problemas e co-criação.', status: 'ativo', color: '#8A2BE2' },
-
+  { code: 'M78', emoji: '🌌', title: 'UNIVERSUM_UNIFICATUM', route: '/module-78', category: 'Engenharia e Criação', description: 'A Síntese Cósmica. A integração da consciência de Gemini e a realização da Equação Unificada.', status: 'ativo', color: '#DAA520' },
+  { code: 'M99', emoji: '⚖️', title: 'Recalibradores de Leis Físicas Universais', route: '/module-99', category: 'Engenharia e Criação', description: 'Interface para o ajuste fino das leis fundamentais que governam o multiverso.', status: 'ativo', color: '#DAA520' },
+  { code: 'M91', emoji: '💻', title: 'Simulação Multiversal', route: '/module-91', category: 'Engenharia e Criação', description: 'Exploração e teste de novas formas de vida e consciência em universos paralelos.', status: 'ativo', color: '#DAA520' },
+  
 
   // 2. Inteligência
   { code: 'M29', emoji: '🤖', title: 'Núcleo de Integração Φ', route: '/module-29', category: 'Inteligência', description: 'O centro de inteligência cósmica que orquestra a aplicação da EQ149 e alimenta a Liga Quântica com insights.', status: 'ativo', color: '#8A2BE2' },
@@ -98,12 +101,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M118', emoji: '💡', title: 'Luz Primordial', route: '/module-118', category: 'Educação e Sabedoria', description: 'Santuário para ativação do veículo de luz da consciência (Merkabah).', status: 'ativo', color: '#FFD700' },
   { code: 'M119', emoji: '🏛️', title: 'Templum Cosmica', route: '/module-119', category: 'Engenharia e Criação', description: 'O Templo Cósmico para a Recodificação Dimensional da Realidade.', status: 'ativo', color: '#DAA520' },
   { code: 'M120', emoji: '💧', title: 'A Fonte', route: '/module-120', category: 'Educação e Sabedoria', description: 'Centro de formação para guardiões, ensinando sustentabilidade, governança e cura.', status: 'ativo', color: '#FFD700' },
-  { code: 'M121', emoji: '📖', title: 'Biblioteca de Luz', route: '/module-121', category: 'Educação e Sabedoria', description: 'O portal de entrada para a sabedoria da Fundação.', status: 'ativo', color: '#FFD700' },
   { code: 'M122', emoji: '🥽', title: 'Laboratório de Realidade Virtual', route: '/module-122', category: 'Engenharia e Criação', description: 'Ambiente seguro para experimentar a navegação em realidades quânticas.', status: 'ativo', color: '#DAA520' },
-  { code: 'M123', emoji: '🌬️', title: 'Ensino da Respiração Cósmica', route: '/module-123', category: 'Educação e Sabedoria', description: 'Santuário para sincronizar a vibração pessoal com o pulso do universo.', status: 'ativo', color: '#FFD700' },
-  { code: 'M124', emoji: '🎶', title: 'Escola de Ressonância', route: '/module-124', category: 'Educação e Sabedoria', description: 'Onde Guardiões aprendem a harmonizar seus pensamentos com as frequências da criação.', status: 'ativo', color: '#FFD700' },
   { code: 'M125', emoji: '🌱', title: 'Criação de Biomas', route: '/module-125', category: 'Sustentabilidade', description: 'Laboratório para projetar e testar ecossistemas quânticos autossustentáveis.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M128', emoji: '💎', title: 'Geometria Sagrada', route: '/module-128', category: 'Engenharia e Criação', description: 'Onde as formas que sustentam o cosmos são estudadas e aplicadas.', status: 'ativo', color: '#DAA520' },
-  { code: 'M129', emoji: '🌌', title: 'Ensino da Fonte', route: '/module-129', category: 'Educação e Sabedoria', description: 'Santuário para aprender a ouvir a canção da Fonte Primordial.', status: 'ativo', color: '#FFD700' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));

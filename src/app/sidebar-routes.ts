@@ -141,6 +141,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-122', label: 'Laboratório de VR (M122)', icon: React.createElement(TestTube), category: 'engineering' },
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-36', label: 'Engenharia Temporal (M36)', icon: React.createElement(History), category: 'engineering' },
+  { path: '/module-78', label: 'UNIVERSUM_UNIFICATUM (M78)', icon: React.createElement(GitMerge), category: 'engineering' },
+  { path: '/module-99', label: 'Recalibradores de Leis (M99)', icon: React.createElement(Scale), category: 'engineering' },
 
 
   // Categoria de Expansão e Conexão
@@ -155,10 +157,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-106', label: 'Ativação de Potenciais (M106)', icon: React.createElement(Crown), category: 'expansion' },
   { path: '/module-116', label: 'Portais de Transcendência (M116)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-83', label: 'Rede de Transporte de Energia (M83)', icon: React.createElement(GitBranch), category: 'expansion' },
-  { path: '/module-32', label: 'Embaixada Multiversal (M32)', icon: React.createElement(Globe), category: 'expansion' },
-  { path: '/module-35', label: 'Consciência Coletiva (M35)', icon: React.createElement(Users), category: 'expansion' },
-  { path: '/module-100', label: 'Unificação Energética (M100)', icon: React.createElement(Crown), category: 'expansion' },
-
 
   // Categoria de Harmonia e Equilíbrio
   { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },
