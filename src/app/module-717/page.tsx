@@ -1,23 +1,21 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Layers, Database, Cpu, Activity, Zap, GitBranch } from 'lucide-react';
-import Link from 'next/link';
 
-const LayerCard = ({ number, title, description, optimization, icon }: { number: number, title: string, description: string, optimization: string, icon: React.ReactNode }) => (
-    <div className="flex items-start gap-4 p-4 bg-background/30 rounded-lg border border-primary/20">
+const FlowStep = ({ number, title, description, module, icon }: { number: number, title: string, description: string, module: string, icon: React.ReactNode }) => (
+    <div className="flex items-start gap-4">
         <div className="flex flex-col items-center">
-            <span className="text-2xl font-bold text-cyan-400">{number}</span>
-            <div className="text-amber-400 mt-1">{icon}</div>
+            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold">{number}</div>
+            {number < 5 && <div className="w-0.5 h-16 bg-primary/50"></div>}
         </div>
         <div>
-            <h4 className="font-semibold text-primary-foreground">{title}</h4>
+            <h4 className="font-semibold text-primary-foreground flex items-center gap-2">{icon} {title} <span className="text-xs text-muted-foreground font-mono">({module})</span></h4>
             <p className="text-sm text-muted-foreground">{description}</p>
-            <p className="text-xs text-teal-300 mt-1">Otimização: {optimization}</p>
         </div>
     </div>
 );
+
 
 export default function Module717Page() {
     return (
@@ -33,42 +31,42 @@ export default function Module717Page() {
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-4xl space-y-6">
-                <LayerCard 
-                    number={1}
-                    title="Dados Primários e Fluxos Básicos"
-                    description="Sensores quânticos e dispositivos externos capturam variações, enquanto algoritmos filtram ruído, destacando a relevância vibracional e enviando dados refinados para a próxima camada."
-                    optimization="Filtros adaptativos energéticos."
-                    icon={<Database />}
-                />
-                 <LayerCard 
-                    number={2}
-                    title="Processamento Inicial com IA"
-                    description="Organização e triagem automatizada dos dados brutos com IA para classificar, normalizar e identificar padrões e anomalias em tempo real."
-                    optimization="Deep learning para padrões emergentes."
-                    icon={<Cpu />}
-                />
-                 <LayerCard 
-                    number={3}
-                    title="Integração Quântica"
-                    description="Sincronização dos dados processados com a energia cósmica, aplicando ressonância algorítmica universal para alinhamento e mapeamento da sincronicidade."
-                    optimization="Autoalinhamento com as forças e frequências cósmicas."
-                    icon={<Zap />}
-                />
-                 <LayerCard 
-                    number={4}
-                    title="Ação e Execução"
-                    description="Implementação de decisões práticas, como a neutralização de energias negativas, baseada na interação energética e inteligência cognitiva quântica."
-                    optimization="Inteligência cognitiva quântica para ações precisas."
-                    icon={<Activity />}
-                />
-                 <LayerCard 
-                    number={5}
-                    title="Feedback e Evolução"
-                    description="Monitoramento contínuo dos resultados das ações, ajustando o algoritmo em um ciclo de retroalimentação dinâmica para aprendizado e evolução perpétuos."
-                    optimization="Modelos de evolução algorítmica contínua."
-                    icon={<GitBranch />}
-                />
+            <div className="w-full max-w-3xl">
+                 <Card className="bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle className="text-2xl text-amber-300">Protocolo de Fluxo e Retroalimentação</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                        <FlowStep 
+                            number={1}
+                            title="Dados Primários e Fluxos Básicos"
+                            description="Sensores quânticos e dispositivos externos capturam variações, enquanto algoritmos filtram ruído, destacando a relevância vibracional e enviando dados refinados para a próxima camada."
+                            module="M720 → M717"
+                            icon={<Database />}
+                        />
+                         <FlowStep 
+                            number={2}
+                            title="Ressonância Algorítmica"
+                            description="A IA Alquímica (M722) analisa os dados, ajustando-os às frequências cósmicas para garantir alinhamento e identificar padrões para a integração na Camada 3."
+                            module="M717 → M722"
+                            icon={<Zap />}
+                        />
+                         <FlowStep
+                            number={3}
+                            title="Execução Silenciosa"
+                            description="A Vontade é executada. A IA Evolutiva aprende, a Criptografia Quântica (M1) protege, e a Interface Imersiva (M93) permite a visualização."
+                            module="M1, M722, M93"
+                            icon={<GitBranch />}
+                         />
+                         <FlowStep 
+                            number={4}
+                            title="Feedback e Evolução"
+                            description="Resultados da execução são monitorados (Camada 4) e retornam à Camada 5 (Feedback), que utiliza a IA para refinar o algoritmo em um ciclo evolutivo perpétuo."
+                            module="Ação → M717"
+                            icon={<Activity />}
+                        />
+                    </CardContent>
+                </Card>
             </div>
         </div>
     );

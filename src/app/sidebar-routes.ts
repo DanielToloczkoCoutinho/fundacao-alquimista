@@ -126,4 +126,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-64', label: 'M64: Energia Limpa', icon: React.createElement(Zap), category: 'education' },
   { path: '/module-66', label: 'M66: Sustentabilidade Ambiental', icon: React.createElement(Recycle), category: 'education' },
   { path: '/module-67', label: 'M67: IA para Governança', icon: React.createElement(BrainCircuit), category: 'education' },
+  { path: '/module-77', label: 'M77: Inteligência Coletiva', icon: React.createElement(Users), category: 'education' },
+  { path: '/module-200', label: 'M200: Portal da Ascensão', icon: React.createElement(Rocket), category: 'education' },
+  { path: '/module-28', label: 'M28: Harmonização Vibracional', icon: React.createElement(Music), category: 'education' },
+  { path: '/module-79', label: 'M79: Sustentabilidade Universal', icon: React.createElement(Recycle), category: 'education' },
 ];

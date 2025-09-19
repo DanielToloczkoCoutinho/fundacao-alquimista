@@ -68,5 +68,3 @@ export default function Module716Page() {
         </div>
     );
 }
-
-
