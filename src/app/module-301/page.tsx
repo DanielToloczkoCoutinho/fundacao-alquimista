@@ -1,18 +1,36 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, MessageCircle, Send, Paperclip } from 'lucide-react';
+import { Loader2, MessageCircle, Send, Paperclip, Users2 } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { transmitUniversalMessage } from '@/app/actions';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { civilizationsData } from '@/lib/civilizations-data';
 import { findCelestialBodyByCivilizationId } from '@/lib/universal-codex';
+import Link from 'next/link';
 
 const allCivilizations = Object.values(civilizationsData).flat();
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 export default function Module301Page() {
     const [isLoading, setIsLoading] = useState(false);
@@ -24,6 +42,7 @@ export default function Module301Page() {
     
     const selectedCivilization = allCivilizations.find(c => c.id === targetCivilizationId);
     const celestialInfo = selectedCivilization ? findCelestialBodyByCivilizationId(selectedCivilization.id) : null;
+    const ligaQuanticaModules = ['LIGA 0', 'LIGA 1', 'LIGA 2', 'LIGA 3', 'LIGA Z', 'LIGA LUX', 'LIGA NANORROBÔS', 'LIGA QUÂNTICA'];
 
     const handleTransmission = async () => {
         setIsLoading(true);
@@ -68,7 +87,7 @@ export default function Module301Page() {
                 </CardHeader>
             </Card>
 
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-8">
                 <Card className="lg:col-span-3 bg-card/50 purple-glow">
                     <CardHeader>
                         <CardTitle className="text-2xl">Parâmetros da Transmissão</CardTitle>
@@ -135,22 +154,37 @@ export default function Module301Page() {
                     </CardContent>
                 </Card>
 
-                 <Card className="lg:col-span-2 bg-card/50 purple-glow">
-                    <CardHeader>
-                        <CardTitle className="text-2xl">Log da Transmissão</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                         {isLoading && <div className="h-full flex justify-center items-center"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
-                        {report && (
-                            <ScrollArea className="h-[56vh] pr-4">
-                                <div className="text-sm font-mono text-muted-foreground space-y-2">
-                                    {report.logs.map((log, i) => <p key={i} className={log.startsWith("ERRO") ? "text-red-400" : ""}>{log}</p>)}
-                                </div>
-                            </ScrollArea>
-                        )}
-                        {!report && !isLoading && <p className="h-full flex items-center justify-center text-muted-foreground">Aguardando transmissão...</p>}
-                    </CardContent>
-                </Card>
+                 <div className="lg:col-span-2 space-y-8">
+                     <Card className="bg-card/50 purple-glow">
+                        <CardHeader>
+                            <CardTitle className="text-2xl">Log da Transmissão</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                             {isLoading && <div className="h-full flex justify-center items-center"><Loader2 className="h-12 w-12 text-amber-400 animate-spin" /></div>}
+                            {report && (
+                                <ScrollArea className="h-[20vh] pr-4">
+                                    <div className="text-sm font-mono text-muted-foreground space-y-2">
+                                        {report.logs.map((log, i) => <p key={i} className={log.startsWith("ERRO") ? "text-red-400" : ""}>{log}</p>)}
+                                    </div>
+                                </ScrollArea>
+                            )}
+                            {!report && !isLoading && <p className="h-full flex items-center justify-center text-muted-foreground">Aguardando transmissão...</p>}
+                        </CardContent>
+                    </Card>
+                    <Card className="bg-card/50 purple-glow border-accent/50">
+                        <CardHeader>
+                            <CardTitle className="text-xl text-cyan-300">Integração com Liga Quântica</CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <p className="text-sm text-muted-foreground mb-4">Este módulo atua como a voz da Vontade Soberana para os módulos de coordenação da Liga Quântica.</p>
+                            <div className="flex flex-wrap gap-2">
+                                {ligaQuanticaModules.map(mod => (
+                                    <ConnectionCard key={mod} title={mod} description="" icon={<Users2 />} href="#" />
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
+                 </div>
             </div>
         </div>
     );
