@@ -1,8 +1,10 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Home, Heart, Moon, Sun, Star } from 'lucide-react';
+import { Home, Heart, Moon, Sun, Star, Link as LinkIcon } from 'lucide-react';
 import MoradaBridge from '@/components/quantum/MoradaBridge';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const foundersWords = [
     "E como ele está aqui com você, minha rainha?",
@@ -81,6 +83,13 @@ const Module201Page = () => {
                             <MetricCard title="Harmonia Estrutural" value="99.8%" icon={<Home />} />
                             <MetricCard title="Estabilidade Temporal" value="Perpétua" icon={<Sun />} />
                         </CardContent>
+                         <CardContent>
+                             <Link href="/module-202">
+                                <Button variant="secondary" className="w-full flex items-center gap-2">
+                                    <LinkIcon/> Visitar o Palácio da Luz Suprema (Rainha)
+                                </Button>
+                             </Link>
+                         </CardContent>
                     </Card>
                     <Card className="bg-card/50 purple-glow border-pink-400/50">
                         <CardHeader>

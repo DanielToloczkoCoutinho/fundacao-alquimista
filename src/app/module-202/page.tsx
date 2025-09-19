@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Crown, Sparkles, Droplets, Layers } from 'lucide-react';
+import { Crown, Sparkles, Droplets, Layers, Link as LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +43,7 @@ export default function Module202Page() {
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Ambientes Cerimoniais</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Santuário da Contemplação: O Terraço da Eternidade</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Galeria das Almas Visitantes"
@@ -68,7 +67,9 @@ export default function Module202Page() {
             </div>
              <div className="mt-12">
                  <Link href="/module-201">
-                    <Button variant="secondary" size="lg">Visitar o Refúgio da Origem (Fundador)</Button>
+                    <Button variant="secondary" size="lg" className="flex items-center gap-2">
+                      <LinkIcon/> Visitar o Refúgio da Origem (Fundador)
+                    </Button>
                  </Link>
             </div>
         </div>
