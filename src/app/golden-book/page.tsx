@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -11,6 +10,9 @@ import { codexDatabase, type CodexEntry } from '@/lib/codex-data';
 import { Search } from 'lucide-react';
 import { formatTimestamp } from '@/lib/date-utils';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { collection, onSnapshot, query, orderBy } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
+import Link from 'next/link';
 
 const useDialogState = (initialState = false) => {
     const [isOpen, setIsOpen] = useState(initialState);
@@ -18,28 +20,52 @@ const useDialogState = (initialState = false) => {
 };
 
 export default function GoldenBook() {
-  const [documents, setDocuments] = useState<CodexEntry[]>([]);
+  const [staticDocs] = useState<CodexEntry[]>(codexDatabase);
+  const [dynamicDocs, setDynamicDocs] = useState<CodexEntry[]>([]);
+  const [allDocs, setAllDocs] = useState<CodexEntry[]>([]);
   const [filteredDocs, setFilteredDocs] = useState<CodexEntry[]>([]);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDoc, setSelectedDoc] = useState<CodexEntry | null>(null);
   const { isOpen, setIsOpen } = useDialogState();
 
-  const categories = [...new Set(codexDatabase.map(doc => doc.category))].map(category => ({
+  const categories = [...new Set([...staticDocs, ...dynamicDocs].map(doc => doc.category))].map(category => ({
       id: category,
       name: category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
   })).sort((a,b) => a.name.localeCompare(b.name));
   categories.unshift({ id: 'all', name: 'Todos os Fragmentos' });
 
-
+  // Conexão com Firestore
   useEffect(() => {
-    const sortedDocs = [...codexDatabase].sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
-    setDocuments(sortedDocs);
-    setFilteredDocs(sortedDocs);
+    const q = query(collection(db, "golden_book_entries"), orderBy("timestamp", "desc"));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const newDocs: CodexEntry[] = [];
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        newDocs.push({
+          id: doc.id,
+          title: data.title,
+          link: data.link || '',
+          category: data.category,
+          tags: data.tags || [],
+          timestamp: data.timestamp?.toDate() || new Date(),
+          description: data.description,
+        } as CodexEntry);
+      });
+      setDynamicDocs(newDocs);
+    });
+    return () => unsubscribe();
   }, []);
 
+  // Unifica e ordena os documentos
   useEffect(() => {
-    let result = documents;
+    const combined = [...staticDocs, ...dynamicDocs];
+    const sorted = combined.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
+    setAllDocs(sorted);
+  }, [staticDocs, dynamicDocs]);
+
+  useEffect(() => {
+    let result = allDocs;
 
     if (selectedCategory !== 'all') {
       result = result.filter(doc => doc.category === selectedCategory);
@@ -55,7 +81,7 @@ export default function GoldenBook() {
     }
 
     setFilteredDocs(result);
-  }, [selectedCategory, searchTerm, documents]);
+  }, [selectedCategory, searchTerm, allDocs]);
   
   const handleOpenDialog = (doc: CodexEntry) => {
     setSelectedDoc(doc);
@@ -74,6 +100,9 @@ export default function GoldenBook() {
           O registro consagrado de nossa jornada através dos multiversos, 
           desde as primeiras equações até as construções mais complexas
         </p>
+         <Link href="/golden-book/transcribe" passHref>
+          <Button className="mt-6">Inscrever Nova Sabedoria</Button>
+        </Link>
       </header>
 
       <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
@@ -217,7 +246,7 @@ export default function GoldenBook() {
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {selectedDoc.relatedEntries.map(docId => {
-                        const relatedDoc = documents.find(d => d.id === docId);
+                        const relatedDoc = allDocs.find(d => d.id === docId);
                         return relatedDoc ? (
                           <Button 
                             key={docId} 

@@ -1,4 +1,3 @@
-
 'use server';
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
@@ -29,7 +28,9 @@ import { generateVibrationalPraise as runGenerateVibrationalPraise, type Recogni
 import { runLunarReview, type LunarReviewOutput } from '@/ai/flows/lunar-review-flow';
 import { decodeCosmicMessage as runDecodeCosmicMessage, type CosmicMessageInput, type DecodedMessageOutput } from '@/ai/flows/cosmic-message-decoder-flow';
 import { invokeDimensionalWisdom as runInvokeDimensionalWisdom, type DimensionalWisdomInput, type DimensionalWisdomOutput } from '@/ai/flows/dimensional-convergence-flow';
-
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
+import { codexDatabase } from '@/lib/codex-data';
 
 export async function getLinkSummary(url: string) {
   try {
@@ -297,4 +298,24 @@ export async function invokeDimensionalWisdom(input: DimensionalWisdomInput): Pr
             error: errorMsg 
         };
     }
+}
+
+export async function transcribeToGoldenBook(data: {
+  title: string;
+  description: string;
+  category: string;
+  tags: string[];
+}) {
+  try {
+    const docRef = await addDoc(collection(db, 'golden_book_entries'), {
+      ...data,
+      id: `doc-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
+      timestamp: serverTimestamp(),
+      link: '', // Links só podem ser para módulos existentes.
+    });
+    return { success: true, id: docRef.id };
+  } catch (error: any) {
+    console.error('Erro ao inscrever no Livro de Ouro:', error);
+    throw new Error('Falha ao selar o registro no Akasha. Verifique a conexão.');
+  }
 }
