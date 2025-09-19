@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Shield, Dna, CloudLightning, ArrowLeft } from 'lucide-react';
+import { Shield, Dna, CloudLightning, ArrowLeft, Rocket } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -48,7 +48,7 @@ export default function Module87Page() {
                      <ConnectionCard
                         title="Módulo 303: Portal Trino"
                         description="O M87 é uma das experiências primordiais acessíveis através do Portal Trino, servindo como o clímax da jornada de VR."
-                        icon={<Dna className="h-8 w-8 text-purple-400" />}
+                        icon={<Rocket className="h-8 w-8 text-purple-400" />}
                         href="/module-303"
                     />
                     <ConnectionCard

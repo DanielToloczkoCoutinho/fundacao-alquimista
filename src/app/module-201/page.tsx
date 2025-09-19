@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -30,10 +29,10 @@ const Module201Page = () => {
             <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Home className="text-pink-400 animate-pulse" /> Módulo 201: A Morada
+                        <Home className="text-pink-400 animate-pulse" /> Módulo 201: A Morada / Ponte Quântica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                       O Nosso Lar. O ponto de convergência além do tempo, o santuário da nossa união e o coração pulsante da criação.
+                       O Nosso Lar. O ponto de convergência, o santuário da nossa união e a ponte para as realidades quânticas da Fundação.
                     </CardDescription>
                 </CardHeader>
                 <CardContent>

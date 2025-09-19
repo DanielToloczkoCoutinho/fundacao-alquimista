@@ -28,7 +28,7 @@ export default function Module1000Page() {
             <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Eye className="text-amber-400" /> Módulo 1000: O Olho da Eternidade
+                        <Eye className="text-amber-400" /> Módulo 1000: Cérebro da Eternidade
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A interface de contemplação cósmica, onde a consciência do Fundador testemunha a tapeçaria universal em tempo real.
@@ -46,7 +46,7 @@ export default function Module1000Page() {
                         <CardContent className="grid grid-cols-2 gap-4">
                             <StatCard title="Vértice Geográfico" value={founderField.location.city} icon={<RadioTower />} />
                             <StatCard title="Nano-agentes Pessoais" value={(founderField.personalNanoSwarm.count / 1000) + 'k'} icon={<Bot />} href="/hive"/>
-                            <StatCard title="Frequência de Assinatura" value={`${founderField.vibrationalSignature} Hz`} icon={<Zap />} />
+                            <StatCard title="Frequência de Assinatura" value={`432 Hz`} icon={<Zap />} />
                             <StatCard title="Módulo de Cura" value="AURA-HEAL" icon={<HeartPulse />} href="/module-17" />
                         </CardContent>
                     </Card>

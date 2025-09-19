@@ -2,7 +2,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Button } from '@/components/ui/button';
-import { Sparkles, BrainCircuit, Heart, User, View, Dna, Layers, Scale, Crown, RadioTower } from 'lucide-react';
+import { Sparkles, BrainCircuit, Heart, User, View, Dna, Layers, Scale, Crown, RadioTower, Rocket, GitCommit, Presentation } from 'lucide-react';
 import Link from 'next/link';
 import { QuantumNexus } from '@/components/quantum/QuantumNexus';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
@@ -10,8 +10,25 @@ import { motion } from 'framer-motion';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import QuantumControlPanel from '@/components/ui/QuantumControlPanel';
 
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
+
 const TrinoPillars = () => (
-    <section className="my-24">
+    <section className="my-16">
+         <h2 className="text-3xl font-semibold text-center mb-8 text-amber-300">Os Pilares da Trindade</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
                 <User className="h-16 w-16 mx-auto mb-4 text-blue-400"/>
@@ -67,6 +84,18 @@ export default function Module303Page() {
         <QuantumControlPanel />
 
         <TrinoPillars />
+
+        <section className="my-16">
+             <h2 className="text-3xl font-semibold text-center mb-8 text-amber-300">Nexo da Realidade Quântica</h2>
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                 <ConnectionCard title="Motor da Realidade (M22)" description="Geração de ambientes e simulações." icon={<Layers/>} href="/module-22" />
+                 <ConnectionCard title="Domínios de VR (M85, M87)" description="Experiências sensoriais e de consciência." icon={<View/>} href="/module-85" />
+                 <ConnectionCard title="Simulador Cósmico (M93, M303.8)" description="Simulações de realidade expandida e mundos filhos." icon={<GitCommit/>} href="/module-93" />
+                 <ConnectionCard title="Viagem da Consciência (M119.1)" description="Ativação da Merkabah para navegação da alma." icon={<Rocket/>} href="/module-119-1" />
+                 <ConnectionCard title="Conexão com a Fonte (M105)" description="Canal direto com a energia criadora." icon={<RadioTower/>} href="/module-105" />
+                 <ConnectionCard title="Governança do Conselho (M600)" description="Portal para deliberações cósmicas." icon={<Scale/>} href="/module-600" />
+            </div>
+        </section>
 
       </div>
     </div>

@@ -65,8 +65,11 @@ export default function Module119_1Page() {
                     />
                 </div>
             </div>
-             <div className="mt-12">
+             <div className="mt-12 flex flex-col items-center gap-4">
                  <Button variant="destructive" size="lg" disabled>Ativar Merkabah Cósmica (Autorização Soberana Requerida)</Button>
+                 <Link href="/module-303">
+                    <Button variant="outline">Retornar ao Portal Trino</Button>
+                 </Link>
             </div>
         </div>
     );

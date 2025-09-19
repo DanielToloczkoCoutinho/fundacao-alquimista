@@ -1,8 +1,7 @@
-
 'use client';
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Presentation } from "lucide-react";
+import { Presentation, View, GitCommit } from "lucide-react";
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from "../ui/button";
@@ -25,6 +24,8 @@ export function VirtualSanctuary() {
         <CardContent className="space-y-3">
            <Link href="/module-93" passHref><Button variant="link" className="p-0 h-auto">M93: Simulações Imersivas</Button></Link>
            <Link href="/module-303-8" passHref><Button variant="link" className="p-0 h-auto">M303.8: Simulador Cósmico</Button></Link>
+           <Link href="/module-85" passHref><Button variant="link" className="p-0 h-auto">M85: Domínio VR</Button></Link>
+           <Link href="/module-87" passHref><Button variant="link" className="p-0 h-auto">M87: VR Supra-Cósmico</Button></Link>
         </CardContent>
       </Card>
     </motion.div>

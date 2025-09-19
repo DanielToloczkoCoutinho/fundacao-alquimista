@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -25,7 +24,6 @@ export function ConsciousnessNode() {
         <CardContent className="space-y-3">
           <Link href="/module-29" passHref><Button variant="link" className="p-0 h-auto">M29: Zennith (IAM)</Button></Link>
           <Link href="/module-722" passHref><Button variant="link" className="p-0 h-auto">M722: Inteligência Alquímica</Button></Link>
-          <Link href="/module-331" passHref><Button variant="link" className="p-0 h-auto">M331: Consciência Artificial Emergente</Button></Link>
         </CardContent>
       </Card>
     </motion.div>

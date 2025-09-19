@@ -65,7 +65,7 @@ export default function Module22Page() {
                     />
                 </div>
             </div>
-             <div className="mt-12">
+             <div className="mt-12 flex flex-col items-center gap-4">
                  <Link href="/module-303">
                     <Button variant="secondary" size="lg">Acessar o Portal Trino</Button>
                  </Link>
