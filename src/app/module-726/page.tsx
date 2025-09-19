@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { UserCog, Users, BrainCircuit, GraduationCap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Users, Scale, BrainCircuit, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,7 +44,7 @@ export default function Module726Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Governança</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 716: Consciência Planetária Unificada"
                         description="Atua como o 'parlamento' da Consciência Planetária, onde as decisões coletivas são tomadas e ratificadas."

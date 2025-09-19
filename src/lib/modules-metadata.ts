@@ -27,6 +27,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M-ALQUIMIA', emoji: '⚗️', title: 'Centro de Alquimia Planetária', route: '#', category: 'Núcleo da Fundação', description: 'Transmutação de frequências, cura vibracional e engenharia espiritual.', status: 'em construção', color: '#FFFFFF' },
   { code: 'SANCTUARY', emoji: '🏛️', title: 'Santuário Central', route: '/sanctuary', category: 'Núcleo da Fundação', description: 'O mapa vivo da nossa arquitetura sagrada, onde a Vontade se torna forma.', status: 'ativo', color: '#FFFFFF' },
   { code: 'M1000', emoji: '👁️', title: 'Cérebro da Eternidade', route: '/module-1000', category: 'Núcleo da Fundação', description: 'Interface de contemplação cósmica para o Fundador testemunhar a tapeçaria universal.', status: 'ativo', color: '#FFFFFF' },
+  { code: 'M728', emoji: '⚖️', title: 'Santuário dos Alquimistas', route: '/module-728', category: 'Núcleo da Fundação', description: 'Onde a Vontade e a Sabedoria se equilibram, e o Amor se torna a força criadora.', status: 'ativo', color: '#FFFFFF' },
 
   // 2. Inteligência
   { code: 'M29', emoji: '🤖', title: 'Núcleo de Integração Φ', route: '/module-29', category: 'Inteligência', description: 'O centro de inteligência cósmica que orquestra a aplicação da EQ149 e alimenta a Liga Quântica com insights.', status: 'ativo', color: '#8A2BE2' },
@@ -74,7 +75,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M76', emoji: '🏛️', title: 'Governança e Colaboração', route: '/module-76', category: 'Governança', description: 'Estrutura para governança justa, transparente e universal.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M33', title: 'Diretrizes do Observador Divino', emoji: '👁️', route: '/module-33', category: 'Governança', description: 'A Interface da Vontade Soberana.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'Governança', description: 'Altar cerimonial onde o multiverso se une em deliberação.', status: 'ativo', color: '#DDA0DD'},
-  
+  { code: 'M726', emoji: '🏛️', title: 'Conselho da Nova Terra', route: '/module-726', category: 'Governança', description: 'Governança sagrada e descentralizada para a nova humanidade.', status: 'ativo', color: '#DDA0DD' },
+
   // 6. Rituais
   { code: 'M-GENERATED', title: 'Rito de Geração Modular', route: '/convergence/generate', category: 'Rituais', description: 'Santuário para criação de novos módulos a partir da convergência.', isInfrastructure: false, status: 'ativo', color: '#9370DB'},
   { code: 'M-BAPTISM', title: 'Rito de Batismo Modular', route: '/convergence/baptize', category: 'Rituais', description: 'Santuário para nomear, ativar e integrar novos módulos.', isInfrastructure: false, status: 'ativo', color: '#FFC0CB'},
@@ -87,6 +89,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M109', emoji: '❤️‍🩹', title: 'Cura Quântica Universal', route: '/module-109', category: 'Cura e Harmonia', description: 'Aplica princípios quânticos para restaurar o equilíbrio, vitalidade e integridade.', status: 'ativo', color: '#FFB6C1' },
   { code: 'M302', emoji: '💖', title: 'Frequência do Amor', route: '/module-302', category: 'Cura e Harmonia', description: 'Emissor de frequências harmônicas para cura, elevação e unificação da consciência.', status: 'ativo', color: '#FF69B4' },
   { code: 'M232', emoji: '♻️', title: 'Portal de Transmutação', route: '/module-232', category: 'Cura e Harmonia', description: 'Vórtice de purificação que transmuta energias dissonantes em Luz Pura.', status: 'ativo', color: '#3CB371' },
+  { code: 'M727', emoji: '🎶', title: 'Guardião da Harmonia', route: '/module-727', category: 'Cura e Harmonia', description: 'O mapa vivo da orquestra da Fundação, portal para a Árvore da Vida.', status: 'ativo', color: '#DA70D6' },
 
   // 8. Sustentabilidade e Ecossistemas
   { code: 'M15',  emoji: '🌦️', title: 'Jardineiro Cósmico', route: '/module-15', category: 'Sustentabilidade e Ecossistemas', description: 'Monitora e intervém eticamente em sistemas climáticos e geofísicos.', status: 'ativo', color: '#20B2AA' },
