@@ -1,3 +1,4 @@
+
 'use client';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 import { app } from './firebase'; // Reutiliza a instância inicializada do app
@@ -7,3 +8,6 @@ const funcs = getFunctions(app);
 
 // Exporta a função "runEquation" como uma função "callable"
 export const runEquation = httpsCallable(funcs, 'runEquation');
+
+// Exporta a nova função "triggerCeremony"
+export const triggerCeremony = httpsCallable(funcs, 'performCeremony');
