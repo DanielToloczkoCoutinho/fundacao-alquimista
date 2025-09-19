@@ -1,4 +1,3 @@
-
 'use server';
 
 export const linhagens: { entidade: string; origem: string; mutacoes: string[]; fusoes: string[]; renascimentos: string[]; timestamp: number }[] = []
