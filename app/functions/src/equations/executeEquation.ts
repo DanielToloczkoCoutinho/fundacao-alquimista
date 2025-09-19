@@ -32,7 +32,8 @@ export const executeEquation = functions
         break;
       }
       case 'EQ307-A': { // Energia do Ponto Zero (ZPE)
-        const { hbar = 1.054e-34, omega = 1e15 } = parameters;
+        const { omega = 1e15 } = parameters; // Valor padrão para omega
+        const hbar = 1.054571817e-34;
         result = 0.5 * hbar * omega;
         break;
       }

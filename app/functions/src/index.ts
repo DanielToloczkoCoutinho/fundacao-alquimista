@@ -1,11 +1,9 @@
 
 import * as functions from 'firebase-functions';
-import { executeEquation as runEquationFunction } from './equations/executeEquation';
+import { executeEquation } from './equations/executeEquation';
 
-// Exporta a função principal para ser implantada.
-export const executeEquation = runEquationFunction;
+export const runEquation = executeEquation;
 
-// Endpoint de verificação de saúde para monitoramento.
 export const healthCheck = functions.https.onRequest((req, res) => {
-  res.status(200).send('Foundation Alchemist Functions: OK');
+  res.status(200).send('Altar das Equações Vivas está ativo');
 });
