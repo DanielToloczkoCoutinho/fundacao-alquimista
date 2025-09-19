@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Loader2, Wand, Languages, Image as ImageIcon, BookText } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { runVibrationalTranslation } from '@/app/actions';
+import { runVibrationalTranslation, transcribeToGoldenBook } from '@/app/actions';
 import { codexDatabase, type CodexEntry } from '@/lib/codex-data';
 import Image from 'next/image';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
@@ -48,10 +48,22 @@ export default function VibrationalTranslationPage() {
         translationMode,
       });
 
-      if (response.error) {
-        throw new Error(response.error);
+      if (response.error || !response.translatedContent) {
+        throw new Error(response.error || 'A tradução retornou um conteúdo vazio.');
       }
-      setResult({ type: translationMode, content: response.translatedContent as string });
+      setResult({ type: translationMode, content: response.translatedContent });
+
+      // Salvar resultado no Livro de Ouro
+      await transcribeToGoldenBook({
+        title: `Tradução Vibracional: ${selectedTome} como ${translationMode}`,
+        description: translationMode === 'Imagem' ? `Uma representação visual da essência do ${selectedTome}.` : response.translatedContent.substring(0, 300) + '...',
+        category: 'traducao_vibracional',
+        tags: [selectedTome, translationMode, 'arte'],
+        contentUrl: translationMode === 'Imagem' ? response.translatedContent : null,
+        contentType: translationMode === 'Imagem' ? 'image' : 'text',
+      });
+      
+      toast({ title: "Obra de Arte Consagrada!", description: "A tradução foi selada no Livro de Ouro." });
 
     } catch (error: any) {
       toast({ title: "Dissonância na Tradução", description: error.message, variant: 'destructive' });

@@ -318,6 +318,8 @@ export async function transcribeToGoldenBook(data: {
   description: string;
   category: string;
   tags: string[];
+  contentUrl?: string | null;
+  contentType?: 'text' | 'image';
 }) {
   try {
     const docRef = await addDoc(collection(db, 'golden_book_entries'), {
