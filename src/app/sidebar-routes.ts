@@ -38,7 +38,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/diagnostics', label: 'Diagnóstico Universal', icon: React.createElement(Stethoscope) },
   { path: '/alignment-portal', label: 'Observatório Vivo', icon: React.createElement(Atom) },
   { path: '/roadmap', label: 'Roteiro de Gaia-Aurélia', icon: React.createElement(Map) },
-  { path: '/module-121', label: 'Visualizador Akáshico', icon: React.createElement(Archive) },
+  { path: '/akashic', label: 'Arquivo Akáshico', icon: React.createElement(Archive) },
   { path: '/convergence', label: 'Portal de Convergência', icon: React.createElement(GitMerge) },
   { path: '/ritual', label: 'Ritual de Navegação', icon: React.createElement(GitMerge) },
   { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket) },
@@ -52,6 +52,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-888', label: 'Guardião Planetário de Gaia', icon: React.createElement(Globe) },
   { path: '/sanctuary', label: 'Santuário Central', icon: React.createElement(Building) },
   { path: '/lux-net', label: 'Análise da Lux Net', icon: React.createElement(Zap) },
-  { path: '/akashic', label: 'Arquivo Akáshico', icon: React.createElement(Archive) },
+  { path: '/labs/interdimensional-communication', label: 'Harmonia Multiversal', icon: React.createElement(Music)},
 ];
+
 

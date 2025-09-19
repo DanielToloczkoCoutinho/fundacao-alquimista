@@ -48,6 +48,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M715', emoji: '⚓', title: 'Ancoragem de Frequências', route: '/module-715', category: 'Cura e Harmonia', description: 'Fixa frequências elevadas (Amor, Consciência Crística) em locais específicos.', connections: [{source: 'M715', target: 'M302', type: 'dependencia', label: 'ancora'}, {source: 'M715', target: 'M307', type: 'dependencia', label: 'alimenta'}], color: '#FFD700', status: 'ativo' },
   { code: 'M716', emoji: '🌐', title: 'Consciência Planetária Unificada', route: '/module-716', category: 'Consciência e Expansão Dimensional', description: 'Integra consciências individuais em uma rede planetária de sabedoria e empatia.', connections: [{source: 'M716', target: 'M95', type: 'heranca', label: 'aplica'}, {source: 'M716', target: 'M102', type: 'dependencia', label: 'usa'}], color: '#4ECDC4', status: 'ativo' },
   { code: 'M727', emoji: '🎶', title: 'Guardião da Harmonia', route: '/module-727', category: 'Governança', description: 'O mapa vivo da orquestra da Fundação, revelando os módulos que regem os pilares da realidade.', connections: [{source: 'M727', target: 'M13', type: 'influencia', label: 'diagnostica'}, {source: 'M727', target: 'M28', type: 'dependencia', label: 'corrige'}], color: '#8A2BE2', status: 'ativo' },
+  { code: 'M718', emoji: '🧬', title: 'Ativação de Códigos Genéticos Estelares', route: '/module-718', category: 'Consciência e Expansão Dimensional', description: 'Desperta o potencial latente no DNA, ativando memórias e capacidades de origens estelares.', connections: [{source: 'M718', target: 'M106', type: 'heranca', label: 'aplica'}, {source: 'M718', target: 'M40', type: 'dependencia', label: 'executa'}], color: '#00BFFF', status: 'ativo' },
   
   // 2. Segurança e Ética Cósmica
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module/M1', category: 'Segurança e Ética Cósmica', description: 'Proteção multidimensional integrada com criptografia quântica (QKD), Blockchain e detecção de intrusão por IA.', connections: [], color: '#FF6B6B', status: 'ativo' },
@@ -126,5 +127,6 @@ export const modulesMetadata: ModuleMetadata[] = [
 });
 
     
+
 
 
