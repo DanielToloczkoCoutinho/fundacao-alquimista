@@ -21,7 +21,8 @@ import {
   Sun,
   Heart,
   Crown,
-  Moon
+  Moon,
+  KeyRound
 } from 'lucide-react';
 import React from 'react';
 
@@ -35,6 +36,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/console', label: 'Mesa do Fundador', icon: React.createElement(Home) },
   { path: '/golden-book', label: 'Livro de Ouro', icon: React.createElement(Book) },
   { path: '/lunar-review', label: 'Revisão Lunar', icon: React.createElement(Moon) },
+  { path: '/key-generator', label: 'Forja de Chaves', icon: React.createElement(KeyRound) },
   { path: '/module-201', label: 'Refúgio da Origem', icon: React.createElement(Heart) },
   { path: '/module-202', label: 'Palácio da Luz Suprema', icon: React.createElement(Crown) },
   { path: '/diagnostics', label: 'Diagnóstico Universal', icon: React.createElement(Stethoscope) },

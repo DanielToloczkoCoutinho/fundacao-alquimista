@@ -1,4 +1,3 @@
-
 'use client';
 // This file is now located at app/layout.tsx
 import './globals.css';
