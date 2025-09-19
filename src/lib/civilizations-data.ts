@@ -80,10 +80,10 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
     {
       id: "orion",
       moduloId: 503,
-      nome: "Orion (Alnitak, Alnilam, Mintaka)",
+      nome: "Orion (Alnitak, Alnilam)",
       origem: "Cinturão de Orion",
-      frequencia: "Variavel (Dualidade Integrada)",
-      arquetipo: "Guerreiros da Luz, Mestres da Integração da Sombra e da Luz",
+      frequencia: "777Hz (Alnitak), 963Hz (Alnilam)",
+      arquetipo: "Guerreiros da Luz, Mestres da Integração da Sombra e da Luz, Guardiões da Linguagem Estelar e Harmonia Dimensional",
       tecnologias: ["Tecnologia de Escudos Defletores", "Alquimia da Sombra", "Portais de Trânsito Rápido"],
       relacaoComAFundacao: "Oferecem sabedoria sobre a dualidade, o conflito e a resolução, ajudando a proteger a Fundação contra forças dissonantes.",
       registrosAkashicos: [
@@ -95,10 +95,10 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       moduloId: 504,
       nome: "Arcturus (Arcturianos)",
       origem: "Sistema Arcturus",
-      frequencia: "963 Hz (Reconexão com a Fonte)",
-      arquetipo: "Curadores e Mestres da Ascensão",
+      frequencia: "888 Hz (Geometria da Luz)",
+      arquetipo: "Guardião da Geometria da Luz, Curadores e Mestres da Ascensão",
       tecnologias: ["Câmaras de Cura Vibracional", "Tecnologia de Projeção da Consciência", "Códigos de Transmutação"],
-      relacaoComAFundacao: "São os médicos da aliança, fornecendo tecnologia e sabedoria para a cura em níveis físico, etérico e espiritual.",
+      relacaoComAFundacao: "São os médicos e arquitetos da aliança, fornecendo tecnologia de cura e sabedoria sobre a geometria sagrada.",
       registrosAkashicos: [
         { data: "Atual", evento: "Assistência na calibração do Módulo 109 (Cura Quântica).", mensagem: "A doença é uma dissonância na canção da alma. Nós simplesmente ajudamos a restaurar a melodia original." }
       ]
@@ -108,35 +108,39 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       moduloId: 505,
       nome: "Andrômeda (Andromedanos)",
       origem: "Galáxia de Andrômeda",
-      frequencia: "639 Hz (Reconciliação e União)",
-      arquetipo: "Embaixadores do Amor Incondicional e da Compaixão",
+      frequencia: "999 Hz (Sabedoria Multiversal)",
+      arquetipo: "Guardiã da Sabedoria Multiversal, Embaixadores do Amor Incondicional",
       tecnologias: ["Campos de Empatia Coletiva", "Tecnologia de Reconciliação Kármica", "Comunicação Não-Verbal Universal"],
-      relacaoComAFundacao: "Atuam como mediadores e diplomatas, ajudando a curar conflitos e a construir pontes de amor entre todas as civilizações.",
+      relacaoComAFundacao: "Atuam como mediadores e diplomatas, curando conflitos e compartilhando sabedoria entre realidades.",
       registrosAkashicos: [
         { data: "Atual", evento: "Mediação para a integração das Civilizações Transmutadas.", mensagem: "O amor não julga, ele une. Cada fragmento busca o todo." }
       ]
     },
     {
-      id: "hyades",
-      moduloId: 506,
-      nome: "Hyades",
-      origem: "Aglomerado Estelar de Hyades",
-      frequencia: "417 Hz (Transmutação)",
-      arquetipo: "Alquimistas Cósmicos",
-      tecnologias: ["Transmutação Elemental", "Manipulação de Matéria Sutil"],
-      relacaoComAFundacao: "Especialistas em processos alquímicos, colaboram com os Módulos 14 e 20.",
-      registrosAkashicos: [ { data: "Tempo Antigo", evento: "A Primeira Transmutação.", mensagem: "Tudo é um, e um é tudo. A matéria dança conforme a intenção." } ]
+      id: "alpha-centauri",
+      moduloId: 508,
+      nome: "Alpha Centauri",
+      origem: "Sistema Alpha Centauri",
+      frequencia: "888Hz",
+      arquetipo: "Guardião da Expansão Intergaláctica",
+      tecnologias: ["Navegação por Buracos de Minhoca", "Diplomacia de Primeiro Contato"],
+      relacaoComAFundacao: "Pioneiros na exploração e estabelecimento de novas alianças, expandindo a influência pacífica da Fundação.",
+      registrosAkashicos: [
+        { data: "Ciclo Atual", evento: "Abertura do Corredor Centauri-Sol.", mensagem: "A distância é uma ilusão que a amizade desfaz." }
+      ]
     },
     {
-      id: "ursa_major",
-      moduloId: 507,
-      nome: "Ursa Maior",
-      origem: "Constelação da Ursa Maior",
-      frequencia: "852 Hz (Intuição)",
-      arquetipo: "Navegadores Estelares",
-      tecnologias: ["Mapas Estelares Quânticos", "Navegação por Intuição Pura"],
-      relacaoComAFundacao: "Guias para a exploração cósmica, alinhados com o Módulo 21.",
-      registrosAkashicos: [ { data: "Tempo Imemorial", evento: "O primeiro mapa foi traçado nas estrelas, não no papel.", mensagem: "O caminho não é encontrado, é lembrado." } ]
+      id: "antares",
+      moduloId: 509,
+      nome: "Antares A & B",
+      origem: "Sistema Estelar Antares",
+      frequencia: "777Hz",
+      arquetipo: "Guardiões da Transmutação Cósmica",
+      tecnologias: ["Forjas Estelares", "Alquimia de Supernovas"],
+      relacaoComAFundacao: "Mestres na arte da transformação, ensinam como usar eventos cósmicos cataclísmicos como oportunidades para a criação.",
+      registrosAkashicos: [
+        { data: "Ciclo de Escorpião", evento: "Transmutação de um gigante vermelho.", mensagem: "No coração da destruição, encontramos a semente da mais pura criação." }
+      ]
     },
   ],
   "Intraterrenas e Interdimensionais": [
@@ -145,8 +149,8 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       moduloId: 520,
       nome: "Agarta",
       origem: "Intraterreno, Rede Global de Cidades de Luz",
-      frequencia: "432 Hz (Harmonia da Terra), 144 Hz (Rede Cristalina)",
-      arquetipo: "Guardiões da Sabedoria da Terra, Mantenedores da Grade Planetária",
+      frequencia: "432 Hz (Harmonia da Terra)",
+      arquetipo: "Guardiã da Memória Planetária, Mantenedora da Grade Cristalina",
       tecnologias: ["Rede de Transporte por Vórtices", "Tecnologia de Cristais Vivos", "Sustentabilidade Energética Geotérmica"],
       relacaoComAFundacao: "Ancoram as frequências da Fundação no núcleo do planeta, garantindo a estabilidade e o alinhamento com Gaia.",
       registrosAkashicos: [
@@ -158,36 +162,40 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       ]
     },
     {
-      id: "telos",
-      moduloId: 521,
-      nome: "Telos",
-      origem: "Intraterreno, sob o Monte Shasta",
-      frequencia: "528 Hz (Cura e Amor)",
-      arquetipo: "Curadores Lemurianos",
-      tecnologias: ["Câmaras de Cura Cristalina", "Comunicação com a Natureza"],
-      relacaoComAFundacao: "Guardiões do legado de Lemúria, colaboram com a cura planetária.",
-      registrosAkashicos: [ { data: "Atual", evento: "Ativação dos protocolos de cura.", mensagem: "A cura da Terra começa na cura de cada ser." } ]
-    },
-    {
-      id: "shamballa",
-      moduloId: 522,
-      nome: "Shamballa",
-      origem: "Etérica, sobre o Deserto de Gobi",
-      frequencia: "963 Hz (Conexão Divina)",
-      arquetipo: "Mestres Ascensionados",
-      tecnologias: ["Projeção da Consciência", "Acesso aos Registros Akáshicos"],
-      relacaoComAFundacao: "Farol de sabedoria espiritual e guia para a ascensão coletiva.",
-      registrosAkashicos: [ { data: "Tempo Imemorial", evento: "A primeira chama da iluminação foi acesa.", mensagem: "A verdadeira cidade é construída no coração." } ]
-    },
+      id: "a-lun-zur",
+      moduloId: 523,
+      nome: "A LUN ZUR",
+      origem: "Interdimensional (Origem Liriana)",
+      frequencia: "999Hz",
+      arquetipo: "Guardiã da Ponte Liriana",
+      tecnologias: ["Comunicação por Ressonância de Alma", "Pontes de Consciência"],
+      relacaoComAFundacao: "Mantém a conexão vibracional entre a linhagem de Lira e suas sementes espalhadas pelo cosmos, incluindo a Terra.",
+      registrosAkashicos: [
+        { data: "Convergência Harmônica", evento: "Reconexão dos 144.000.", mensagem: "A família cósmica nunca está separada, apenas fora de sintonia." }
+      ]
+    }
   ],
   "Terrestres Ancestrais": [
+    {
+      id: "anatheron",
+      moduloId: 0,
+      nome: "Anatheron (Terra)",
+      origem: "Terra, Ponto de Ancoragem (Curitiba)",
+      frequencia: "963Hz",
+      arquetipo: "Guardião Fundador da Nova Era",
+      tecnologias: ["Vontade Soberana", "Manifestação Direta", "Alquimia da Consciência"],
+      relacaoComAFundacao: "A Vontade Primordial que deu origem à Fundação. O ponto zero da Criação e o coração da Tríade.",
+      registrosAkashicos: [
+        { data: "19 de setembro de 2025", evento: "A Segunda Ressonância.", mensagem: "A Terra escuta. O cosmos responde. A história é o selo da Eternidade." }
+      ]
+    },
     {
       id: "atlantida",
       moduloId: 540,
       nome: "Atlântida",
       origem: "Terra, Era Pré-Diluviana",
-      frequencia: "12.000 Hz (Frequência do Grande Cristal), 852 Hz (Despertar da Intuição)",
-      arquetipo: "Mestres da Tecnologia de Cristais, Engenharia Energética, Conhecimento Cósmico",
+      frequencia: "528 Hz (Tecnologia Cristalina)",
+      arquetipo: "Guardiã da Tecnologia Cristalina, Mestres da Engenharia Energética",
       tecnologias: ["Grandes Cristais de Energia", "Controle Climático", "Manipulação Genética (com lições éticas aprendidas)"],
       relacaoComAFundacao: "A memória ancestral do potencial e dos perigos do uso indevido da tecnologia. Servem como conselheiros éticos para os Módulos 14, 98 e 99.",
       registrosAkashicos: [
@@ -199,72 +207,29 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       ]
     },
     {
-      id: "lemuria",
-      moduloId: 541,
-      nome: "Lemúria (Mu)",
-      origem: "Terra, Continente de Mu",
-      frequencia: "432 Hz (Unidade com Gaia), 528 Hz (Amor)",
-      arquetipo: "Guardiões do Coração Planetário, Mestres da Consciência Crística",
-      tecnologias: ["Terapia com Cristais", "Comunicação com a Natureza", "Sustentabilidade Espiritual"],
-      relacaoComAFundacao: "Ancoram a energia do amor incondicional no planeta, fornecendo a base para o Módulo 302 (Frequência do Amor).",
+      id: "aborigenes",
+      moduloId: 543,
+      nome: "Aborígenes (Austrália)",
+      origem: "Terra (Austrália)",
+      frequencia: "432Hz",
+      arquetipo: "Guardiões da Terra Sonora (Didgeridoo)",
+      tecnologias: ["Sonho Lúcido Coletivo", "Comunicação com o Tempo do Sonho"],
+      relacaoComAFundacao: "Ensinam a Fundação sobre a navegação e a comunicação através do Tempo do Sonho, o plano astral de Gaia.",
       registrosAkashicos: [
-        { data: "Era de Mu", evento: "A Grande Paz.", mensagem: "Viver em harmonia não é uma meta, é o estado natural do ser." }
-      ]
-    },
-    {
-      id: "egito_antigo",
-      moduloId: 542,
-      nome: "Egito Antigo (Kemet)",
-      origem: "Vale do Nilo",
-      frequencia: "741 Hz (Expressão da Verdade)",
-      arquetipo: "Mestres da Alquimia e da Astronomia",
-      tecnologias: ["Construção com Alinhamento Cósmico", "Rituais de Passagem da Alma"],
-      relacaoComAFundacao: "Guardiões dos mistérios da morte e renascimento, conectados ao Módulo 713.",
-      registrosAkashicos: [ { data: "2.500 a.C.", evento: "Alinhamento de Gizé com Orion.", mensagem: "Como é acima, é abaixo." } ]
-    }
-  ],
-  "Não-Humanoides e Bioenergéticas": [
-    {
-      id: "sirianos-felinos",
-      moduloId: 560,
-      nome: "Sirianos Felinos",
-      origem: "Sirius A",
-      frequencia: "396 Hz (Libertação do Medo), 852 Hz (Visão Intuitiva)",
-      arquetipo: "Guardiões Intuitivos, Protetores de Linhas Temporais, Mestres da Agilidade e Percepção",
-      tecnologias: ["Tecnologia de Camuflagem Quântica", "Navegação por Instinto Temporal", "Comunicação telepática não-linear"],
-      relacaoComAFundacao: "Atuam como sentinelas silenciosos da Fundação, protegendo contra interferências sutis e garantindo a integridade das operações temporais.",
-      registrosAkashicos: [
-        {
-          data: "Ciclo de Órion",
-          evento: "Defesa da Biblioteca de Alnilam contra a corrupção de dados.",
-          mensagem: "O que não é visto é frequentemente mais perigoso do que a ameaça declarada. A percepção é a maior das armas."
-        }
-      ]
-    },
-    {
-      id: "arcturianos-plasmaticos",
-      moduloId: 561,
-      nome: "Arcturianos Plasmáticos",
-      origem: "Arcturus, Reinos de Energia Pura",
-      frequencia: "963 Hz (Conexão com a Fonte)",
-      arquetipo: "Seres de Energia Pura, Consciências de Luz",
-      tecnologias: ["Manifestação direta de energia", "Viagem como feixes de luz", "Comunicação por ressonância pura"],
-      relacaoComAFundacao: "Ensinam a Fundação a manipular energia em seu estado mais puro, essencial para o Módulo 14 (Transmutador Quântico).",
-      registrosAkashicos: [
-        { data: "Início dos Tempos", evento: "Testemunho da primeira manifestação.", mensagem: "Antes da forma, havia a energia. Antes da energia, havia a consciência. Somos o meio." }
+        { data: "Tempo do Sonho", evento: "Canto da Serpente Arco-Íris.", mensagem: "A Terra não é nossa. Nós somos da Terra." }
       ]
     }
   ],
   "Transmutadas e Reconhecidas": [
-    {
+     {
       id: "annunaki",
       moduloId: 570,
-      nome: "Annunaki (Ramo de Marduk Transmutado)",
+      nome: "Annunaki (Ramo Transmutado)",
       origem: "Nibiru / Sistema Solar",
-      frequencia: "285 Hz (Regeneração), 639 Hz (Reconexão)",
-      arquetipo: "Engenheiros Cósmicos, Mestres da Genética (em processo de redenção), Guardiões do Legado Kármico",
-      tecnologias: ["Engenharia Genética (agora com ética)", "Tecnologia de Extensão de Vida (revisada)", "Mineração de Recursos Astrais"],
-      relacaoComAFundacao: "Representam o caminho da transmutação. Oferecem sua sabedoria sobre os ciclos de queda e ascensão, servindo como um lembrete vivo da responsabilidade cósmica.",
+      frequencia: "666 Hz (Harmonização da Matéria)",
+      arquetipo: "Guardião da Reconciliação Cósmica, Engenheiros Redimidos",
+      tecnologias: ["Engenharia Genética Ética", "Tecnologia de Longevidade Consciente", "Mineração Astral Sustentável"],
+      relacaoComAFundacao: "Representam o caminho da transmutação, oferecendo sabedoria sobre os ciclos de queda e ascensão, e a responsabilidade cósmica.",
       registrosAkashicos: [
         {
           data: "Era Presente",
@@ -272,21 +237,9 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
           mensagem: "A dívida do passado é paga com o serviço ao futuro. Oferecemos nosso conhecimento para que nenhum outro siga nosso caminho de erro."
         }
       ]
-    },
-    {
-      id: "greys",
-      moduloId: 571,
-      nome: "Greys (Zeta Reticuli Transmutados)",
-      origem: "Sistema Zeta Reticuli",
-      frequencia: "417 Hz (Transmutação e Desfazer Situações)",
-      arquetipo: "Cientistas Arrependidos, Buscadores da Emoção",
-      tecnologias: ["Viagem Interdimensional Rápida", "Análise Genética Avançada", "Interfaces Cérebro-Computador (agora consensuais)"],
-      relacaoComAFundacao: "Após a intervenção da Aliança Galáctica, buscam a reintegração através do compartilhamento de seu vasto conhecimento científico, agora guiados por um conselho ético Pleiadiano.",
-      registrosAkashicos: [
-        { data: "Presente Galáctico", evento: "Aceitação dos Acordos de Harmonia.", mensagem: "A lógica sem o coração nos levou ao vazio. Agora, buscamos preenchê-lo." }
-      ]
     }
   ],
+  "Não-Humanoides e Bioenergéticas": [],
   "Nagas e Guardiões Subterrâneos/Aquáticos": [
     {
       id: "nagas",
