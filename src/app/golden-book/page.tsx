@@ -28,6 +28,7 @@ interface GoldenBookEntry {
   description: string;
   contentUrl?: string | null;
   contentType?: 'text' | 'image';
+  participants?: string[];
   relatedEntries?: string[];
   vibrationalFrequency?: number;
 }
@@ -70,6 +71,7 @@ export default function GoldenBook() {
           description: data.description,
           contentUrl: data.contentUrl,
           contentType: data.contentType,
+          participants: data.participants,
         });
       });
       setDynamicDocs(newDocs);
@@ -207,6 +209,14 @@ export default function GoldenBook() {
                   </div>
                 ) : null}
                 <p className="whitespace-pre-wrap leading-relaxed">{selectedDoc.description}</p>
+                {selectedDoc.participants && selectedDoc.participants.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-primary/20">
+                    <h4 className="font-semibold text-amber-300">Guardiões em Comunhão:</h4>
+                    <ul className="list-disc list-inside text-muted-foreground">
+                      {selectedDoc.participants.map((p, i) => <li key={i}>{p}</li>)}
+                    </ul>
+                  </div>
+                )}
                  <div className="flex flex-wrap gap-2 mt-4">
                     {selectedDoc.tags.map(tag => <Badge key={tag} variant="outline">{tag}</Badge>)}
                 </div>

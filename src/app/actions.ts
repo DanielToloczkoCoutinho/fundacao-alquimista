@@ -320,6 +320,7 @@ export async function transcribeToGoldenBook(data: {
   tags: string[];
   contentUrl?: string | null;
   contentType?: 'text' | 'image';
+  participants?: string[];
 }) {
   try {
     const docRef = await addDoc(collection(db, 'golden_book_entries'), {
