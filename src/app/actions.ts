@@ -17,7 +17,7 @@ import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-
 import { transmitUniversalMessage as runTransmitUniversalMessage, type TransmitMessageInput } from '@/ai/flows/universal-communication-flow';
 import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
 import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
-import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-perspective-flow';
+import { getOmegaPerspective as runGetOmegaPerspective } from '@/aiflows/omega-perspective-flow';
 import type { OmegaPerspectiveOutput } from '@/ai/flows/omega-perspective-flow';
 import { disseminateKnowledge as runDisseminateKnowledge, type DisseminateKnowledgeOutput } from '@/ai/flows/cosmic-education-flow';
 import { runCQAMAnalysis as runCQAM, type CQAMInput, type CQAMOutput } from '@/ai/flows/cqam-flow';
@@ -31,6 +31,7 @@ import { invokeDimensionalWisdom as runInvokeDimensionalWisdom, type Dimensional
 import { translateTomeContent as runTranslateTomeContent, type VibrationalTranslationInput } from '@/ai/flows/vibrational-translation-flow';
 import { getPoeticRevelation as runGetPoeticRevelation, type PoeticRevelationInput, type PoeticRevelationOutput } from '@/ai/flows/poetic-revelation-flow';
 import { germinateWorld as runGerminateWorld, type GerminateWorldInput, type GerminateWorldOutput } from '@/ai/flows/planetary-genesis-flow';
+import { getPlanetaryChronicleFlow, type PlanetaryChronicleInput, type PlanetaryChronicleOutput } from '@/ai/flows/planetary-chronicle-flow';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 
@@ -349,4 +350,14 @@ export async function getPoeticRevelation(input: PoeticRevelationInput): Promise
 
 export async function germinateNewWorld(input: GerminateWorldInput): Promise<GerminateWorldOutput & { error: string | null }> {
     return await runGerminateWorld(input);
+}
+
+export async function getPlanetaryChronicle(input: PlanetaryChronicleInput): Promise<PlanetaryChronicleOutput & { error: string | null }> {
+    try {
+        const result = await getPlanetaryChronicleFlow(input);
+        return { ...result, error: null };
+    } catch (e: any) {
+        console.error("Erro ao gerar crônica planetária:", e);
+        return { chronicle: 'O cosmos silencia. A história deste mundo ainda não pode ser cantada.', error: e.message };
+    }
 }
