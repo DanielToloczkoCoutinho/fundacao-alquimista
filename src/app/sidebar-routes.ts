@@ -24,7 +24,7 @@ import {
   Moon,
   KeyRound,
   Rss,
-  GitBranch, // Adicionado para o Nexus
+  GitBranch,
 } from 'lucide-react';
 import React from 'react';
 
