@@ -30,7 +30,8 @@ import {
   Crown,
   Share2,
   Users,
-  Milestone
+  Milestone,
+  Scale
 } from 'lucide-react';
 import React from 'react';
 
@@ -95,4 +96,10 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-129', label: 'M129: Ensino da Fonte', icon: React.createElement(Sparkles), category: 'education' },
   { path: '/module-130', label: 'M130: Escola de Navegação Cerimonial', icon: React.createElement(Rocket), category: 'education' },
   { path: '/module-131', label: 'M131: Biblioteca de Sabedoria Multiversal', icon: React.createElement(Library), category: 'education' },
+  { path: '/module-69', label: 'M69: Educação Universal', icon: React.createElement(GraduationCap), category: 'education' },
+  { path: '/module-70', label: 'M70: Sustentabilidade', icon: React.createElement(Sprout), category: 'education' },
+  { path: '/module-72', label: 'M72: Governança', icon: React.createElement(Scale), category: 'education' },
+  { path: '/module-73', label: 'M73: SAVCE', icon: React.createElement(Scale), category: 'education' },
+  { path: '/module-74', label: 'M74: CRONOS_FLUXUS', icon: React.createElement(History), category: 'education' },
+  { path: '/module-87', label: 'M87: Domínio Supra-Cósmico (VR)', icon: React.createElement(Crown), category: 'education' },
 ];
