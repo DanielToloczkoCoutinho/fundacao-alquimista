@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { BrainCircuit, Dna, GitCommit, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 

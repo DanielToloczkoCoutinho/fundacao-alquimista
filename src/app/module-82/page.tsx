@@ -46,10 +46,10 @@ export default function Module82Page() {
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Conectividade</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="Módulo 28: Transporte Quântico"
-                        description="Implementa a tecnologia de teletransporte e portais do M28 em uma infraestrutura universal robusta e escalável."
+                        title="Módulo 21: Navegação"
+                        description="O M82 fornece a infraestrutura de 'estradas' que os 'veículos' (pilotos e naves) do M21 utilizam para suas jornadas."
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
-                        href="/module-28"
+                        href="/module-21"
                     />
                     <ConnectionCard
                         title="Módulo 83: Transporte de Energia"
