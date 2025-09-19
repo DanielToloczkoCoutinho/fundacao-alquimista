@@ -70,7 +70,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM (M45)', route: '/module-45', category: 'Governança', description: 'O altar cerimonial onde as vozes do multiverso se unem para deliberação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M67', emoji: '🤖', title: 'IA para Governança (M67)', route: '/module-67', category: 'Governança', description: 'A inteligência artificial que analisa dados para auxiliar na tomada de decisões universais.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica (M724)', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação e aliança com outras civilizações.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica (M721)', route: '/module-721', category: 'Governança', description: 'O sistema que garante o equilíbrio e a justiça em todas as interações, transmutando dissonância em aprendizado.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M76', emoji: '🏛️', title: 'Governança Universal e Colaboração', route: '/module-76', category: 'Governança', description: 'A estrutura que garante uma governança justa, transparente e colaborativa para todo o universo.', status: 'ativo', color: '#DDA0DD' },
 
 
@@ -86,7 +85,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica', route: '/module-79', category: 'Sustentabilidade', description: 'Garante o uso responsável e a regeneração de recursos.', status: 'ativo', color: '#2E8B57' },
   { code: 'M85', emoji: '📦', title: 'Domínio VR (Iniciação)', route: '/module-85', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O vestíbulo da Realidade Quântica para aclimatação da consciência.', status: 'ativo', color: '#DAA520' },
   { code: 'M86', emoji: '🌱', title: 'Prisma Estelar VR (Laboratório)', route: '/module-86', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Laboratório de calibração para interagir com frequências e geometria sagrada.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M76', emoji: '🏛️', title: 'Governança Universal e Colaboração', route: '/module-76', category: 'Governança', description: 'O Conselho Cósmico em ação.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M76', emoji: '🏛️', title: 'Governança Universal e Colaboração', route: '/module-76', category: 'Governança', description: 'A estrutura que garante uma governança justa, transparente e colaborativa para todo o universo.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M87', emoji: '🧬', title: 'Domínio Supra-Cósmico VR (Santuário)', route: '/module-87', category: 'Consciência e Expansão Dimensional', description: 'Santuário de imersão total para expansão segura da consciência.', status: 'ativo', color: '#9370DB' },
   { code: 'M303.9', emoji: '🗺️', title: 'Mapa Dimensional Expandido', route: '/module-303-9', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O atlas da Fundação, registrando a arquitetura de 26 dimensões superiores e 3 inferiores.', status: 'ativo', color: '#DAA520' },
 ].map(m => ({ ...m, connections: m.connections || [] }));
