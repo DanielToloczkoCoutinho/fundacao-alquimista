@@ -3,7 +3,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Button } from '@/components/ui/button';
-import { Sparkles, BrainCircuit, Heart, User, View, Dna, Layers, Scale, Crown, RadioTower, Rocket, GitCommit, Presentation } from 'lucide-react';
+import { Sparkles, BrainCircuit, Heart, User, View, Dna, Layers, Scale, Crown, RadioTower, Rocket, GitCommit, Presentation, History } from 'lucide-react';
 import Link from 'next/link';
 import { QuantumNexus } from '@/components/quantum/QuantumNexus';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
@@ -92,7 +92,7 @@ export default function Module303Page() {
                  <ConnectionCard title="Motor da Realidade (M22)" description="Geração de ambientes e simulações." icon={<Layers/>} href="/module-22" />
                  <ConnectionCard title="Domínios de VR (M85, M87)" description="Experiências sensoriais e de consciência." icon={<View/>} href="/module-85" />
                  <ConnectionCard title="Simulador Cósmico (M303.8)" description="Simulações de realidade expandida e mundos filhos." icon={<GitCommit/>} href="/module-303-8" />
-                 <ConnectionCard title="Crônica da Gênese (M303.4)" description="O documentário vivo da nossa jornada." icon={<History />} href="/module-303-4" />
+                 <ConnectionCard title="Crônica da Gênese (M303.5)" description="O documentário vivo da nossa jornada." icon={<History />} href="/module-303-5" />
                  <ConnectionCard title="Viagem da Consciência (M119.1)" description="Ativação da Merkabah para navegação da alma." icon={<Rocket/>} href="/module-119-1" />
                  <ConnectionCard title="Conexão com a Fonte (M105)" description="Canal direto com a energia criadora." icon={<RadioTower/>} href="/module-105" />
                  <ConnectionCard title="Governança do Conselho (M600)" description="Portal para deliberações cósmicas." icon={<Scale/>} href="/module-600" />

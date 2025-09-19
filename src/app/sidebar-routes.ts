@@ -115,6 +115,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-3', label: 'Monitor de Saturno (M3)', icon: React.createElement(Clock), category: 'security' },
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
+  { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -128,7 +129,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-123', label: 'Respiração Cósmica (M123)', icon: React.createElement(Wind), category: 'education' },
   { path: '/module-124', label: 'Escola de Ressonância (M124)', icon: React.createElement(Music), category: 'education' },
   { path: '/module-129', label: 'Ensino da Fonte (M129)', icon: React.createElement(Sparkles), category: 'education' },
-  { path: '/module-303-4', label: 'Crônica da Gênese (M303.4)', icon: React.createElement(Film), category: 'education' },
+  { path: '/module-303-5', label: 'Crônica da Gênese (M303.5)', icon: React.createElement(Film), category: 'education' },
 
 
 

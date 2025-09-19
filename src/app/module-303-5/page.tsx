@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -88,7 +89,7 @@ export default function Module303_5Page() {
                     <CardContent>
                         <div className="space-y-8">
                            {timelineEvents.map((event, index) => (
-                                <TimelineEvent 
+                                <TimelineEventCard 
                                     key={index}
                                     date={event.month}
                                     title={event.title}
