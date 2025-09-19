@@ -12,6 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
 const categoryIcons: { [key in CivilizationCategory]: React.ReactNode } = {
+  "Conselhos e Alianças": <Scale className="h-5 w-5 text-amber-400"/>,
   "Estelares e Galácticas": <Star className="h-5 w-5" />,
   "Intraterrenas e Interdimensionais": <Globe className="h-5 w-5" />,
   "Terrestres Ancestrais": <Footprints className="h-5 w-5" />,
