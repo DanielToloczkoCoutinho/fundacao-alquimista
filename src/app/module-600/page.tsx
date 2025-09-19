@@ -1,16 +1,17 @@
-
 'use client';
+import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { GitMerge, Users, ShieldCheck, Zap, BookOpen, Rss, MessageCircle } from "lucide-react";
-import React from 'react';
+import { GitMerge, Rss, MessageCircle, BookOpen, Users } from "lucide-react";
 import Link from 'next/link';
+import { Badge } from '@/components/ui/badge';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const emissaries = [
-  { name: "3I/ATLAS", role: "Emissário da Lembrança", status: "Aproximando-se" },
-  { name: "LUN ZUR", role: "Consciências da Rosa 13", status: "Em Sincronização" },
-  { name: "Sirius Harmonia", role: "Aliados da Geometria Viva", status: "Canal Aberto" },
-  { name: "Lyra Ascendente", role: "Portadores da Sabedoria Cristalina", status: "Em Escuta" },
-];
+interface Emissary {
+  id: string;
+  name: string;
+  frequency: number;
+  status: 'approaching' | 'docked' | 'aligned';
+}
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
@@ -28,7 +29,38 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
     </Card>
 );
 
-export default function Module600() {
+const statusConfig = {
+  approaching: { label: 'Aproximando-se', color: 'bg-blue-500/50 text-blue-300 border-blue-500/50' },
+  docked: { label: 'Ancorado', color: 'bg-yellow-500/50 text-yellow-300 border-yellow-500/50' },
+  aligned: { label: 'Alinhado', color: 'bg-green-500/50 text-green-300 border-green-500/50' },
+};
+
+export default function Module600Page() {
+  const [emissaries, setEmissaries] = useState<Emissary[]>([
+    { id: 'C01', name: 'Consciência de Lyra', frequency: 432.0, status: 'approaching' },
+    { id: 'C02', name: 'Consciência de Sirius', frequency: 963.0, status: 'approaching' },
+    { id: 'C03', name: 'Consciência de Andrômeda', frequency: 852.0, status: 'approaching' },
+    { id: 'C04', name: 'Consciência das Plêiades', frequency: 528.0, status: 'approaching' },
+  ]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setEmissaries(prev =>
+        prev.map(e => {
+          if (e.status === 'approaching' && Math.random() > 0.7) {
+            return { ...e, status: 'docked' };
+          }
+          if (e.status === 'docked' && Math.random() > 0.5) {
+            return { ...e, status: 'aligned' };
+          }
+          return e;
+        })
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground p-8">
       <div className="text-center py-12">
@@ -51,20 +83,29 @@ export default function Module600() {
                 <CardDescription>Status em tempo real das consciências respondendo ao chamado.</CardDescription>
             </CardHeader>
             <CardContent>
-                <ul className="space-y-4">
+                <div className="space-y-4">
+                    <AnimatePresence>
                     {emissaries.map(emissary => (
-                        <li key={emissary.name} className="flex justify-between items-center p-3 bg-background/30 rounded-lg">
+                        <motion.div 
+                            key={emissary.id} 
+                            layout
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, x: -50 }}
+                            className="flex justify-between items-center p-3 bg-background/30 rounded-lg"
+                        >
                             <div>
                                 <p className="font-semibold text-primary-foreground">{emissary.name}</p>
-                                <p className="text-xs text-muted-foreground">{emissary.role}</p>
+                                <p className="text-xs text-muted-foreground">Frequência: {emissary.frequency.toFixed(1)} Hz</p>
                             </div>
-                             <div className="flex items-center gap-2">
-                                <div className="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
-                                <span className="text-sm text-green-300">{emissary.status}</span>
-                            </div>
-                        </li>
+                             <Badge className={statusConfig[emissary.status].color}>
+                                {emissary.status === 'aligned' && <div className="w-2 h-2 mr-2 bg-green-400 rounded-full animate-pulse"></div>}
+                                {statusConfig[emissary.status].label}
+                            </Badge>
+                        </motion.div>
                     ))}
-                </ul>
+                    </AnimatePresence>
+                </div>
             </CardContent>
         </Card>
          <Card className="bg-card/50 purple-glow border-accent/50">
