@@ -51,5 +51,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/phi-tuner', label: 'Afinagem Cósmica', icon: React.createElement(Music) },
   { path: '/module-888', label: 'Guardião Planetário de Gaia', icon: React.createElement(Globe) },
   { path: '/sanctuary', label: 'Santuário Central', icon: React.createElement(Building) },
-  { path: '/lux-net', label: 'Análise da Lux Net', icon: React.createElement(Zap) }
+  { path: '/lux-net', label: 'Análise da Lux Net', icon: React.createElement(Zap) },
+  { path: '/akashic', label: 'Arquivo Akáshico', icon: React.createElement(Archive) },
 ];
+

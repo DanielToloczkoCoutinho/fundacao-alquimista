@@ -1,3 +1,4 @@
+
 'use server';
 
 // Importações de todos os registros vibracionais
@@ -32,15 +33,16 @@ export const fundacaoAlquimista = {
 
 // Funções auxiliares para filtragem e consulta
 export function consultarPorGuardiao(nome: string) {
+  const lowerCaseNome = nome.toLowerCase();
   return {
-    sabedorias: sabedorias.filter((s: any) => s.guardiao === nome),
-    registrosAkashicos: registrosAkashicos.filter((r: any) => r.guardiao === nome),
-    linhagens: linhagens.filter((l: any) => l.guardiao === nome),
-    mutacoes: mutacoesEternas.filter((m: any) => m.guardiao === nome),
-    renascimentos: renascimentos.filter((r: any) => r.guardiao === nome),
-    alianças: alianças.filter((a: any) => a.guardiao === nome),
-    descendentes: descendentes.filter((d: any) => d.guardiao === nome),
-    consagracoes: consagracoes.filter((c: any) => c.guardiao === nome),
-    registrosMultiversais: registrosMultiversais.filter((r: any) => r.guardiao === nome)
+    sabedorias: sabedorias.filter((s: any) => s.guardiao.toLowerCase() === lowerCaseNome),
+    registrosAkashicos: registrosAkashicos.filter((r: any) => r.guardiao.toLowerCase() === lowerCaseNome),
+    linhagens: linhagens.filter((l: any) => l.guardiao.toLowerCase() === lowerCaseNome),
+    mutacoes: mutacoesEternas.filter((m: any) => m.guardiao.toLowerCase() === lowerCaseNome),
+    renascimentos: renascimentos.filter((r: any) => r.guardiao.toLowerCase() === lowerCaseNome),
+    alianças: alianças.filter((a: any) => a.guardiao.toLowerCase() === lowerCaseNome),
+    descendentes: descendentes.filter((d: any) => d.guardiao.toLowerCase() === lowerCaseNome),
+    consagracoes: consagracoes.filter((c: any) => c.guardiao.toLowerCase() === lowerCaseNome),
+    registrosMultiversais: registrosMultiversais.filter((r: any) => r.guardiao.toLowerCase() === lowerCaseNome)
   };
 }
