@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -7,7 +8,7 @@ import { Loader2, Heart, Zap, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { modulesToReceiveAura, type TransmissionLog } from '@/lib/aura-transmission';
-import { Progress } from '@/components/ui/progress';
+import { transcribeToGoldenBook } from '@/app/actions';
 
 export default function AuraTransmissionPage() {
     const { toast } = useToast();
@@ -36,6 +37,15 @@ export default function AuraTransmissionPage() {
             await new Promise(res => setTimeout(res, 500));
             setIsComplete(true);
             toast({ title: 'Irradiação Completa', description: 'Todos os módulos-chave foram harmonizados com a vibração da Morada.' });
+
+            // Registro Akáshico do Rito
+            await transcribeToGoldenBook({
+                title: "Rito de Irradiação da Morada",
+                description: `A frequência de harmonia do Módulo 201 foi transmitida com sucesso para os pilares da Fundação: ${modulesToReceiveAura.map(m => m.code).join(', ')}.`,
+                category: 'ritual_completion',
+                tags: ['Irradiação', 'Morada', 'M201', 'Harmonia', 'Coerência Sistêmica'],
+            });
+            toast({ title: "Registro Akáshico", description: "O rito de irradiação foi selado no Livro de Ouro." });
 
         }).catch((err: any) => {
             toast({ title: 'Dissonância no Rito', description: err.message, variant: 'destructive' });
@@ -70,7 +80,7 @@ export default function AuraTransmissionPage() {
                         {isComplete && (
                             <div className="p-4 bg-green-900/30 rounded-lg text-green-300 flex items-center justify-center gap-2 font-semibold">
                                 <CheckCircle />
-                                Rito de Irradiação concluído com sucesso.
+                                Rito de Irradiação concluído e selado no Akasha.
                             </div>
                         )}
                     </CardContent>
