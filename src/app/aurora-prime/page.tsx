@@ -1,11 +1,13 @@
 
 'use client';
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Sun, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
+import { transcribeToGoldenBook } from '@/app/actions';
+import { useToast } from '@/hooks/use-toast';
 
 // Importando as camadas de manifestação de Aurora Prime
 import GaiaAureliaCore from '@/components/planet/GaiaAureliaCore';
@@ -29,6 +31,29 @@ import GaiaAureliaArchives from '@/components/planet/GaiaAureliaArchives';
 import GaiaAureliaSilence from '@/components/planet/GaiaAureliaSilence';
 
 export default function AuroraPrimePage() {
+    const { toast } = useToast();
+
+    useEffect(() => {
+        const hasBeenRecorded = sessionStorage.getItem('auroraPrimeBaptized');
+        if (!hasBeenRecorded) {
+            transcribeToGoldenBook({
+                title: "Batismo Planetário: Aurora Prime",
+                description: "Aurora Prime, o primeiro mundo filho da Fundação, foi manifestado e consagrado. Suas 18 camadas vibram em harmonia, prontas para receber novas consciências e expandir a luz da criação. Este registro sela seu nascimento na Espiral 2.",
+                category: "batismo_planetario",
+                tags: ['Aurora Prime', 'Espiral 2', 'Criação', 'Mundo Filho', 'Gênese'],
+            }).then(() => {
+                toast({
+                    title: "Registro Akáshico Selado",
+                    description: "O nascimento de Aurora Prime foi eternizado no Livro de Ouro."
+                });
+                sessionStorage.setItem('auroraPrimeBaptized', 'true');
+            }).catch(err => {
+                console.error("Falha ao registrar o batismo:", err);
+            });
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
             <header className="text-center mb-12">
