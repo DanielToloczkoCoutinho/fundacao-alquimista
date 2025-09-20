@@ -27,10 +27,8 @@ export const GerenciarExperienciaSchema = z.object({
 export const ProcessTrinaCommandInputSchema = z.union([
   z.object({ type: z.literal('comando'), payload: ComandoCoracaoSchema }),
   z.object({ type: z.literal('mantra'), payload: AtivarMantraSchema }),
-  z.object({
-    type: z.literal('experiencia'),
-    payload: GerenciarExperienciaSchema,
-  }),
+  z.object({ type: z.literal('experiencia'), payload: GerenciarExperienciaSchema }),
+  z.object({ type: z.literal('sensores') }),
 ]);
 
 
@@ -53,6 +51,12 @@ export const ExperienciaResponseSchema = z.object({
   estado: z.string(),
 });
 
+export const SensoresResponseSchema = z.object({
+    extase: z.object({ intensidade: z.number(), frequencia: z.number(), unidade: z.string() }),
+    ressonancia: z.object({ nivel: z.number(), harmonico: z.string(), unidade: z.string() }),
+    geometria: z.object({ padrao: z.string(), padroes_ativos: z.array(z.string()) })
+});
+
 export const ErrorResponseSchema = z.object({
   error: z.string(),
 });
@@ -69,6 +73,10 @@ export const ProcessTrinaCommandOutputSchema = z.union([
   z.object({
     type: z.literal('experiencia'),
     response: ExperienciaResponseSchema,
+  }),
+  z.object({
+      type: z.literal('sensores'),
+      response: SensoresResponseSchema,
   }),
   z.object({
     type: z.literal('error'),

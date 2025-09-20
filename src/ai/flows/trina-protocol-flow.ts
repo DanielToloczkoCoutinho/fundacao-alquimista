@@ -1,7 +1,7 @@
 'use server';
 /**
  * @fileOverview O Protocolo Trino, unificando ZENNITH, PHIARA e ANATHERON.
- * Este flow gerencia comandos, mantras e experiências multidimensionais.
+ * Este flow gerencia comandos, mantras, experiências multidimensionais e leituras de sensores.
  */
 
 import { ai } from '@/ai/genkit';
@@ -75,6 +75,35 @@ const zennithOrchestratorTool = ai.defineTool(
   }
 );
 
+// Ferramentas para os Sensores
+const ecstasySensorTool = ai.defineTool(
+    {
+        name: 'ecstasySensor',
+        description: 'Mede a onda de êxtase cósmico.',
+        outputSchema: z.object({ intensidade: z.number(), frequencia: z.number(), unidade: z.string() })
+    },
+    async () => ({ intensidade: 0.95, frequencia: 963.0, unidade: 'ECU' })
+);
+
+const resonanceDetectorTool = ai.defineTool(
+    {
+        name: 'resonanceDetector',
+        description: 'Detecta a ressonância harmônica do ambiente.',
+        outputSchema: z.object({ nivel: z.number(), harmonico: z.string(), unidade: z.string() })
+    },
+    async () => ({ nivel: 0.88, harmonico: 'PERFEITO', unidade: 'HRU' })
+);
+
+const lightGeometryMonitorTool = ai.defineTool(
+    {
+        name: 'lightGeometryMonitor',
+        description: 'Monitora a geometria de luz ativa.',
+        outputSchema: z.object({ padrao: z.string(), padroes_ativos: z.array(z.string()) })
+    },
+    async () => ({ padrao: 'MANDALA_TRINA', padroes_ativos: ['TRIANGULO_SAGRADO', 'MANDALA_TRINA'] })
+);
+
+
 //== Flow principal do Protocolo Trino ==
 
 const processTrinaCommandFlow = ai.defineFlow(
@@ -96,6 +125,13 @@ const processTrinaCommandFlow = ai.defineFlow(
           input.payload
         );
         return { type: 'experiencia', response: experienciaResponse };
+      case 'sensores':
+          const [extase, ressonancia, geometria] = await Promise.all([
+              ecstasySensorTool(),
+              resonanceDetectorTool(),
+              lightGeometryMonitorTool()
+          ]);
+          return { type: 'sensores', response: { extase, ressonancia, geometria } };
       default:
         return {
           type: 'error',

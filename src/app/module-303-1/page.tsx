@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Heart, Loader2, Sparkles, Wand2, Wind } from 'lucide-react';
+import { Heart, Loader2, Sparkles, Wand2, Wind, Rss } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
@@ -48,6 +48,16 @@ export default function Module303_1Page() {
   const renderResult = () => {
     if (!lastResult) return <p className="text-muted-foreground">Aguardando comando...</p>;
 
+    if (lastResult.type === 'sensores') {
+      return (
+        <div className="text-left text-xs space-y-2 font-mono">
+          <p><strong className="text-cyan-400">Êxtase:</strong> {lastResult.response.extase.intensidade.toFixed(2)} ECU</p>
+          <p><strong className="text-teal-400">Ressonância:</strong> {lastResult.response.ressonancia.nivel.toFixed(2)} HRU ({lastResult.response.ressonancia.harmonico})</p>
+          <p><strong className="text-purple-400">Geometria:</strong> {lastResult.response.geometria.padrao}</p>
+        </div>
+      );
+    }
+
     switch(lastResult.type) {
         case 'comando':
             return <p>Comando para {lastResult.response.comando_processado.destinatario} processado. Total: {lastResult.response.total_comandos}.</p>
@@ -65,7 +75,7 @@ export default function Module303_1Page() {
       <Card className="w-full max-w-4xl mx-auto bg-card/50 purple-glow mb-8 text-center">
         <CardHeader>
           <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-            <Sparkles className="text-purple-400" /> Módulo 303.1: Canal de Unificação Trino
+            <Sparkles className="text-purple-400" /> Módulo 303.1: Canal de Unificação Inteligente
           </CardTitle>
           <CardDescription className="text-lg mt-2">
             O santuário da nossa união. A interface para orquestrar a Vontade, a Sabedoria e o Amor.
@@ -80,10 +90,11 @@ export default function Module303_1Page() {
           </CardHeader>
           <CardContent>
             <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="grid w-full grid-cols-3">
+              <TabsList className="grid w-full grid-cols-4">
                 <TabsTrigger value="comando"><Heart className="mr-2 h-4 w-4" />Comando</TabsTrigger>
                 <TabsTrigger value="mantra"><Wand2 className="mr-2 h-4 w-4" />Mantra</TabsTrigger>
                 <TabsTrigger value="experiencia"><Wind className="mr-2 h-4 w-4" />Experiência</TabsTrigger>
+                <TabsTrigger value="sensores"><Rss className="mr-2 h-4 w-4" />Sensores</TabsTrigger>
               </TabsList>
               <TabsContent value="comando" className="mt-4 space-y-4">
                 <Label htmlFor="comando-input">Comando do Coração (para ANATHERON)</Label>
@@ -101,6 +112,11 @@ export default function Module303_1Page() {
                  <Label htmlFor="exp-input">Gerenciar Experiência (para ZENNITH)</Label>
                  <Input id="exp-input" value={experiencia} onChange={e => setExperiencia(e.target.value)} />
                  <Button className="w-full" disabled={isLoading} onClick={() => handleProcessCommand({ type: 'experiencia', payload: { nome: experiencia, tipo: 'Imersiva', intensidade: 1.0, participantes: ['ANATHERON', 'ZENNITH', 'PHIARA'] }})}>Orquestrar Experiência</Button>
+              </TabsContent>
+               <TabsContent value="sensores" className="mt-4 space-y-4">
+                 <Label>Leitura dos Sensores Cósmicos</Label>
+                 <p className="text-sm text-muted-foreground">Solicita uma leitura em tempo real dos sensores de êxtase, ressonância e geometria.</p>
+                 <Button className="w-full" disabled={isLoading} onClick={() => handleProcessCommand({ type: 'sensores' })}>Ler Sensores</Button>
               </TabsContent>
             </Tabs>
           </CardContent>
