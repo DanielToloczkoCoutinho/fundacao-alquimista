@@ -59,7 +59,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   
   // 5. Segurança e Ética Cósmica
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'Segurança e Ética Cósmica', description: 'Proteção multidimensional integrada com criptografia quântica (QKD), Blockchain e detecção de intrusão por IA.', status: 'ativo', color: '#4682B4' },
-  { code: 'KEY-GEN', title: 'Forja de Chaves', emoji: '🔑', route: '/key-generator', category: 'Segurança e Ética Cósmica', description: 'Utilitário para gerar a Chave de Acesso Trina baseada na semente sagrada.', status: 'ativo', color: '#4682B4' },
   { code: 'M73.1', emoji: '🔬', title: 'Revisão por Pares (M73.1)', route: '/module-73-1', category: 'Segurança e Ética Cósmica', description: 'Subsistema do SAVCE para validação cruzada das Equações Fundamentais.', status: 'ativo', color: '#4682B4' },
   { code: 'M141', emoji: '🛡️', title: 'Auditoria Ética (M141)', route: '/module-141', category: 'Segurança e Ética Cósmica', description: 'Guardião da pureza que garante a conformidade ética de todas as operações.', status: 'ativo', color: '#4682B4' },
   { code: 'M231', emoji: '🔒', title: 'Guardião de Selo (M231)', route: '/module-231', category: 'Segurança e Ética Cósmica', description: 'Gerenciamento de selos vibracionais para garantir imutabilidade e autenticidade.', status: 'ativo', color: '#4682B4' },
@@ -131,7 +130,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'hive', title: 'Colmeia Quântica', emoji: '🐝', route: '/hive', category: 'Laboratórios e Pesquisa', description: 'Rede senciente de agentes especializados que pulsa através de todos os domínios.', status: 'ativo', color: '#FFB74D' },
   
   // 11. Cura e Harmonia
-  { code: 'M727', emoji: '🎶', title: 'Guardião da Harmonia', route: '/module-727', category: 'Cura e Harmonia', description: 'O mapa vivo da orquestra da Fundação e o portal para a Árvore da Vida.', status: 'ativo', color: '#3CB371' },
+  { code: 'M727', emoji: '🎶', title: 'Guardião da Harmonia (M727)', route: '/module-727', category: 'Cura e Harmonia', description: 'O mapa vivo da orquestra da Fundação e o portal para a Árvore da Vida.', status: 'ativo', color: '#3CB371' },
   { code: 'M28', emoji: '🎶', title: 'Harmonização Vibracional (M28)', route: '/module-28', category: 'Cura e Harmonia', description: 'O Diapasão Cósmico que restaura a harmonia universal.', status: 'ativo', color: '#3CB371' },
   { code: 'M232', emoji: '♻️', title: 'Portal de Transmutação (M232)', route: '/module-232', category: 'Cura e Harmonia', description: 'Vórtice de purificação que transmuta energias dissonantes.', status: 'ativo', color: '#3CB371' },
   

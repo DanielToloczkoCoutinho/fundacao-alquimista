@@ -53,7 +53,7 @@ export default function Module49Page() {
                     />
                     <ConnectionCard
                         title="Módulo 64: Energia Limpa"
-                        description="Alimenta a rede de transporte com energia de ponto zero, garantindo viagens de impacto ambiental nulo."
+                        description="Alimenta a rede de transporte com energia de ponto zero, garantindo viagens com impacto ambiental zero."
                         icon={<Zap className="h-8 w-8 text-yellow-400" />}
                         href="/module-64"
                     />
