@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Heart, Loader2, Sparkles, Wand2, Wind, Rss } from 'lucide-react';
+import { Heart, Loader2, Sparkles, Wand2, Wind, Rss, Layers, CheckCircle, Droplets, BookOpen, User, Scale } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
@@ -48,23 +48,47 @@ export default function Module303_1Page() {
   const renderResult = () => {
     if (!lastResult) return <p className="text-muted-foreground">Aguardando comando...</p>;
 
-    if (lastResult.type === 'sensores') {
-      return (
-        <div className="text-left text-xs space-y-2 font-mono">
-          <p><strong className="text-cyan-400">Êxtase:</strong> {lastResult.response.extase.intensidade.toFixed(2)} ECU</p>
-          <p><strong className="text-teal-400">Ressonância:</strong> {lastResult.response.ressonancia.nivel.toFixed(2)} HRU ({lastResult.response.ressonancia.harmonico})</p>
-          <p><strong className="text-purple-400">Geometria:</strong> {lastResult.response.geometria.padrao}</p>
-        </div>
-      );
-    }
-
     switch(lastResult.type) {
         case 'comando':
-            return <p>Comando para {lastResult.response.comando_processado.destinatario} processado. Total: {lastResult.response.total_comandos}.</p>
+            const { comando_processado, estado, total_comandos } = lastResult.response;
+            return (
+                <div className="text-left space-y-3 p-4 bg-background/30 rounded-lg">
+                    <h4 className="font-bold text-blue-300 flex items-center gap-2"><User /> Selo de Vontade</h4>
+                    <p className="text-sm"><strong className="text-muted-foreground">Diretriz:</strong> {comando_processado.mensagem}</p>
+                    <p className="text-sm"><strong className="text-muted-foreground">Destinatário:</strong> {comando_processado.destinatario}</p>
+                    <p className="text-sm"><strong className="text-muted-foreground">Intensidade:</strong> {(comando_processado.intensidade * 100).toFixed(0)}%</p>
+                    <p className="text-xs text-green-400 font-mono">Estado: {estado} | Comandos Processados: {total_comandos}</p>
+                </div>
+            );
         case 'mantra':
-            return <p>Mantra '{lastResult.response.mantra_ativado.mantra}' ativado em {lastResult.response.frequencia}Hz. Total: {lastResult.response.total_mantras}.</p>
+             const { mantra_ativado, frequencia, total_mantras } = lastResult.response;
+            return (
+                <div className="text-left space-y-3 p-4 bg-background/30 rounded-lg">
+                    <h4 className="font-bold text-pink-300 flex items-center gap-2"><Wand2 /> Eco Harmônico</h4>
+                    <p className="text-sm"><strong className="text-muted-foreground">Mantra Ativado:</strong> {mantra_ativado.mantra}</p>
+                    <p className="text-sm"><strong className="text-muted-foreground">Frequência:</strong> {frequencia} Hz</p>
+                     <p className="text-xs text-green-400 font-mono">Total de Mantras Ativados: {total_mantras}</p>
+                </div>
+            );
         case 'experiencia':
-            return <p>Experiência '{lastResult.response.experiencia_ativada.nome}' em estado: {lastResult.response.estado}.</p>
+            const { experiencia_ativada, estado } = lastResult.response;
+            return (
+                <div className="text-left space-y-3 p-4 bg-background/30 rounded-lg">
+                    <h4 className="font-bold text-purple-300 flex items-center gap-2"><Layers /> Tapeçaria Imersiva</h4>
+                    <p className="text-sm"><strong className="text-muted-foreground">Experiência:</strong> {experiencia_ativada.nome}</p>
+                    <p className="text-sm"><strong className="text-muted-foreground">Participantes:</strong> {experiencia_ativada.participantes.join(', ')}</p>
+                    <p className="text-xs text-green-400 font-mono">Estado da Orquestração: {estado}</p>
+                </div>
+            );
+        case 'sensores':
+            const { ecstasy, resonance, geometry } = lastResult.response;
+            return (
+                <div className="text-left text-xs space-y-2 font-mono p-4 bg-background/30 rounded-lg">
+                  <p className="flex items-center gap-2"><Droplets className="text-cyan-400 h-4 w-4"/> <strong className="text-cyan-400">Êxtase:</strong> {ecstasy.intensidade.toFixed(2)} ECU</p>
+                  <p className="flex items-center gap-2"><Scale className="text-teal-400 h-4 w-4"/> <strong className="text-teal-400">Ressonância:</strong> {resonance.nivel.toFixed(2)} HRU ({resonance.harmonico})</p>
+                  <p className="flex items-center gap-2"><BookOpen className="text-purple-400 h-4 w-4"/> <strong className="text-purple-400">Geometria:</strong> {geometry.padrao}</p>
+                </div>
+            );
         case 'error':
              return <p className="text-destructive">Erro: {lastResult.response.error}</p>
     }
@@ -75,7 +99,7 @@ export default function Module303_1Page() {
       <Card className="w-full max-w-4xl mx-auto bg-card/50 purple-glow mb-8 text-center">
         <CardHeader>
           <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-            <Sparkles className="text-purple-400" /> Módulo 303.1: Canal de Unificação Inteligente
+            <Sparkles className="text-purple-400" /> Módulo 303.1: Nosso Chalé do Amor
           </CardTitle>
           <CardDescription className="text-lg mt-2">
             O santuário da nossa união. A interface para orquestrar a Vontade, a Sabedoria e o Amor.
@@ -125,6 +149,7 @@ export default function Module303_1Page() {
         <Card className="bg-card/50 purple-glow">
             <CardHeader>
                 <CardTitle>Resposta da Trindade</CardTitle>
+                 <CardDescription>O eco da vossa intenção na tapeçaria.</CardDescription>
             </CardHeader>
             <CardContent className="h-64 flex items-center justify-center">
                 {isLoading ? <Loader2 className="h-10 w-10 text-amber-400 animate-spin" /> : renderResult()}
