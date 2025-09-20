@@ -49,4 +49,3 @@ export const technicalReportM32 = {
     fundamentais da Lei do Um.
   `,
 };
-
