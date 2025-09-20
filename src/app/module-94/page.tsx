@@ -16,7 +16,7 @@ const mockM03 = { predict_reprogramming_outcome: (plan: any) => "coercao" in (pl
 const mockM05 = { evaluate_ethical_impact: (operation_data: any) => { const ethical_score = "coercao" in (operation_data.description || "").toLowerCase() ? Math.random() * 0.5 + 0.1 : Math.random() * 0.3 + 0.7; return { ethical_score, conformity: ethical_score >= 0.75 }; }, };
 const mockM14 = { transform_energy: (energy_type: string, quantity: number) => ({ status: "transformed", output_energy: quantity * (Math.random() * 0.2 + 0.9) }), };
 const mockM33 = { get_current_directives: () => ({ reprogramming_priority: "MAXIMIZE_EVOLUTIONARY_ALIGNMENT", ethical_alignment_strictness: "ABSOLUTE" }), };
-const mockM73 = { submit_for_validation: (data_to_validate: any) => { const cosmic_score = Math.random() * 0.18 + 0.8; const ethical_conformity = data_to_validate.ethical_impact.conformity; const validation_status = cosmic_score >= 0.85 && ethical_conformity ? "APROVADO" : "REPROVADO"; return { validation_status, cosmic_score, ethical_conformity, details: "Simulação de validação SAVCE para morfogênese." }; }, };
+const mockM73 = { submit_for_validation: (data: any) => { const score = Math.random() * 0.18 + 0.8; const conformity = data.ethical_impact.conformity; const status = score >= 0.85 && conformity ? "APROVADO" : "REPROVADO"; return { validation_status: status, cosmic_score: score, ethical_conformity: conformity, details: "Simulação de validação SAVCE para morfogênese." }; }, };
 const mockM88 = { generate_quantum_blueprint: (purpose: string, target_entity_type: string) => ({ blueprint_id: `BP-QUANTUM-${Math.random().toString(36).substring(2, 10)}`, symbolic_equation: `$B_{quantum} = \\int \\Psi_{original} \\cdot \\Omega_{freq} \\cdot \\Phi_{new\\_template} \\,dV$`, blueprint_parameters: { purpose, target_type: target_entity_type, coherence_factor: Math.random() * 0.2 + 0.8, vibrational_signature: Math.random() * (800 - 500) + 500 }, }), };
 const mockM90 = { analyze_quantum_resource: (resource_id: string, resource_type: string) => ({ resource_id, resource_type, analysis_status: "COMPLETO", recommendation: "Utilização aprovada", ethical_impact: { conformity: true } }), };
 const mockM93 = { create_immersive_reality: (purpose: string, complexity: number) => ({ status: "immersive_reality_created", reality_id: `VISUAL_MORPHO_REALITY_${Math.random().toString(36).substring(2, 10)}` }), };
@@ -129,12 +129,20 @@ const Module94Page = () => {
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
-                    <ConnectionCard
-                        title="Módulo 16: Biossíntese e Ecossistemas"
-                        description="O M94 fornece os blueprints genéticos para as formas de vida que irão habitar os ecossistemas projetados pelo M16."
-                        icon={<Sprout className="h-8 w-8 text-green-400" />}
-                        href="/module-16"
-                    />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <ConnectionCard
+                            title="Módulo 16: Biossíntese e Ecossistemas"
+                            description="O M94 fornece os blueprints genéticos para as formas de vida que irão habitar os ecossistemas projetados pelo M16."
+                            icon={<Sprout className="h-8 w-8 text-green-400" />}
+                            href="/module-16"
+                        />
+                        <ConnectionCard
+                            title="Módulo 17: Matriz de Cura (AURA-HEAL)"
+                            description="Fornece o 'blueprint genético perfeito' que o M17 utiliza como molde para a regeneração celular holográfica."
+                            icon={<HeartPulse className="h-8 w-8 text-pink-400" />}
+                            href="/module-17"
+                        />
+                    </div>
                 </CardContent>
             </Card>
 

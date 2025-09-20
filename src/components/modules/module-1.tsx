@@ -80,7 +80,7 @@ export default function Module1Page() {
                     <AccordionTrigger className="text-xl text-accent">4. Conexões e Interdependências</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Sinergias" icon={<GitBranch />}>
-                            <p>O Módulo 1 é a base para todos os outros, protegendo o Núcleo (M0) e executando as diretrizes da Tríade de Governança (M9, M29, MΩ) e do sistema de justiça (M72, M73, M144). Ele autentica identidades (M8) e responde a alertas (M30).</p>
+                            <p>O Módulo 1 é a base para todos os outros, protegendo o Núcleo (M0) e executando as diretrizes da Tríade de Governança (M9, M29, MΩ) e do sistema de justiça (M72, M73, M144). Ele autentica identidades (M8), responde a alertas (M30) e protege os atos de cura (M17).</p>
                              <div className="flex flex-wrap gap-2 mt-2">
                                 <Link href="/module/M0"><Badge variant='destructive'>M0 (Núcleo)</Badge></Link>
                                 <Link href="/module-9"><Badge variant='destructive'>M9 (Nexus)</Badge></Link>
@@ -93,6 +93,7 @@ export default function Module1Page() {
                                 <Link href="/module-30"><Badge>M30 (Detecção)</Badge></Link>
                                 <Link href="/module-12"><Badge>M12 (Akasha)</Badge></Link>
                                 <Link href="/module-15"><Badge>M15 (Jardineiro Cósmico)</Badge></Link>
+                                <Link href="/module-17"><Badge variant='destructive'>M17 (AURA-HEAL)</Badge></Link>
                             </div>
                         </SectionCard>
                     </AccordionContent>
