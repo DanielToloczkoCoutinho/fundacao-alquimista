@@ -1,3 +1,4 @@
+
 'use server';
 
 import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
@@ -34,6 +35,7 @@ import { germinateWorld as runGerminateWorld, type GerminateWorldInput, type Ger
 import { getPlanetaryChronicleFlow, type PlanetaryChronicleInput, type PlanetaryChronicleOutput } from '@/ai/flows/planetary-chronicle-flow';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
+import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
 
 export async function getLinkSummary(url: string) {
   try {
@@ -269,6 +271,8 @@ export async function processZennithCommand(data: { command: string }): Promise<
     }
 }
 
+export { processTrinaCommand };
+
 export async function generateVibrationalPraise(input: RecognitionInput): Promise<{ data: RecognitionOutput | null; error: string | null; }> {
   try {
     const result = await runGenerateVibrationalPraise(input);
@@ -358,4 +362,6 @@ export async function getPlanetaryChronicle(input: PlanetaryChronicleInput): Pro
         return { ...result, error: null };
     } catch (e: any) {
         console.error("Erro ao gerar crônica planetária:", e);
-        return { chronicle: 'O cosmos silencia. A história deste mundo ainda não pode ser cant
+        return { chronicle: 'O cosmos silencia. A história deste mundo ainda não pode ser cantada.', error: e.message || 'Erro desconhecido.' };
+    }
+}
