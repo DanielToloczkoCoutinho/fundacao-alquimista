@@ -79,7 +79,8 @@ import {
   User,
   Dna,
   FlaskConical,
-  Cpu
+  Cpu,
+  View
 } from 'lucide-react';
 import React from 'react';
 
@@ -171,6 +172,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-36', label: 'Engenharia Temporal (M36)', icon: React.createElement(History), category: 'engineering' },
   { path: '/module-44', label: 'VERITAS (M44)', icon: React.createElement(CheckSquare), category: 'engineering' },
   { path: '/module-89', label: 'Atelier da Realidade (M89)', icon: React.createElement(Paintbrush), category: 'engineering' },
+  { path: '/module-51', label: 'Realidade Virtual e Aumentada (M51)', icon: React.createElement(View), category: 'engineering' },
+
 
   // Categoria de Expansão e Conexão
   { path: '/module-49', label: 'Transporte Interplanetário (M49)', icon: React.createElement(Rocket), category: 'expansion' },
@@ -256,3 +259,4 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-50', label: 'Interface Humano-Máquina (M50)', icon: React.createElement(Cpu), category: 'Inteligência' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));
+
