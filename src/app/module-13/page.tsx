@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Waves, Atom, Eye, BrainCircuit, Shield, HeartHandshake, Music } from 'lucide-react';
+import { Waves, Atom, Eye, BrainCircuit, Shield, HeartHandshake, Music, BellRing } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -61,7 +61,7 @@ export default function Module13Page() {
                     <ConnectionCard
                         title="Módulo 30: Detecção de Ameaças"
                         description="Fornece os dados brutos de assinatura energética para o M30, que os interpreta para identificar intenções hostis."
-                        icon={<Eye className="h-8 w-8 text-red-500" />}
+                        icon={<BellRing className="h-8 w-8 text-yellow-400" />}
                         href="/module-30"
                     />
                     <ConnectionCard

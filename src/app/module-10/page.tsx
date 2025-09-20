@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -49,7 +50,7 @@ export default function Module10Page() {
                         title="Módulo 1: Segurança Universal"
                         description="O Módulo 10 é o braço armado do M1, executando as contramedidas necessárias para manter a soberania da Fundação."
                         icon={<Shield className="h-8 w-8 text-cyan-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 30: Detecção de Ameaças"
