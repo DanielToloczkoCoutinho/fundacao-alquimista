@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -45,8 +44,8 @@ export default function Module82Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Conectividade</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <ConnectionCard
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <ConnectionCard
                         title="M1: Segurança"
                         description="Protege os corredores quânticos contra incursões e garante que apenas viajantes autorizados possam iniciar um salto."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
@@ -59,16 +58,10 @@ export default function Module82Page() {
                         href="/module-21"
                     />
                     <ConnectionCard
-                        title="Módulo 83: Transporte de Energia"
-                        description="Utiliza a mesma rede para transportar não apenas seres e matéria, mas também energia, de forma instantânea e sem perdas."
-                        icon={<Network className="h-8 w-8 text-teal-400" />}
-                        href="/module-83"
-                    />
-                    <ConnectionCard
-                        title="Módulo 57: Segurança"
-                        description="Cada portal e rota de transporte é protegido por criptografia quântica, garantindo que apenas viajantes autorizados possam usar a rede."
-                        icon={<Shield className="h-8 w-8 text-blue-500" />}
-                        href="/module-57"
+                        title="Módulo 49: Rede de Transporte"
+                        description="O M49 gerencia a rede de transporte em larga escala, da qual a tecnologia do M82 é a base fundamental."
+                        icon={<Network className="h-8 w-8 text-purple-400" />}
+                        href="/module-49"
                     />
                 </div>
             </div>

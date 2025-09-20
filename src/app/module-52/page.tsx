@@ -49,7 +49,7 @@ export default function Module52Page() {
                         title="M1: Segurança"
                         description="Protege a rede de energia contra sabotagem ou uso indevido, garantindo que a fonte da vida seja sempre pura."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module/M1"
+                        href="/module-one"
                     />
                     <ConnectionCard
                         title="Módulo 307: Reator ZPE"

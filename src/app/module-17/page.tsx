@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Music, HeartHandshake, Waves, HeartPulse, Shield, Eye } from 'lucide-react';
+import { Music, HeartHandshake, Waves, HeartPulse, Shield, Eye, Hospital } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -75,6 +74,12 @@ export default function Module17Page() {
                         description="Conecta-se ao Fundador, a fonte da intenção de cura e o observador do processo regenerativo."
                         icon={<Eye className="h-8 w-8 text-amber-300" />}
                         href="/module-1000"
+                    />
+                    <ConnectionCard
+                        title="Módulo 61: Saúde Universal"
+                        description="É a principal ferramenta de execução para terapias de regeneração celular, coordenada pelo sistema de saúde universal."
+                        icon={<Hospital className="h-8 w-8 text-red-400" />}
+                        href="/module-61"
                     />
                 </div>
             </div>

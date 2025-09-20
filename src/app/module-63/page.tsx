@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Wheat, Dna, Leaf, Users, Shield } from 'lucide-react';
+import { Wheat, Dna, Leaf, Users, Shield, Hospital } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -30,7 +30,7 @@ export default function Module63Page() {
                         <Wheat className="text-yellow-400" /> Módulo 63: Alimentação Cósmica e Nutrição Universal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A fonte da vitalidade. O módulo que garante nutrição balanceada e regenerativa para todas as formas de vida do universo.
+                        O provedor da abundância, garantindo segurança alimentar e nutrição para todas as civilizações do cosmos.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -72,7 +72,7 @@ export default function Module63Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Consultar o Banco de Dados Nutricional</Button>
+                 <Button variant="secondary" size="lg">Consultar o Códice Alimentar</Button>
             </div>
         </div>
     );

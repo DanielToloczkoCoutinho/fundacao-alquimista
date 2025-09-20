@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Hospital, Heart, BrainCircuit, Users, Shield } from 'lucide-react';
+import { Hospital, Heart, BrainCircuit, Users, Shield, Wheat, HeartPulse } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -45,11 +45,11 @@ export default function Module61Page() {
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Cura</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <ConnectionCard
+                     <ConnectionCard
                         title="M1: Segurança"
                         description="Protege os dados de saúde e garante que os tratamentos não possam ser adulterados, assegurando a segurança dos pacientes."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 62: Bem-Estar Integral"
@@ -64,10 +64,16 @@ export default function Module61Page() {
                         href="/module-29"
                     />
                     <ConnectionCard
-                        title="Módulo 13: Renda Universal"
-                        description="Garante que o acesso à saúde não seja um privilégio, mas um direito universal, independentemente da condição socioeconômica."
-                        icon={<Users className="h-8 w-8 text-blue-400" />}
-                        href="/module-13"
+                        title="Módulo 63: Nutrição Universal"
+                        description="Recebe os requisitos nutricionais do M61 para fornecer 'alimentos como remédio' para cura e prevenção."
+                        icon={<Wheat className="h-8 w-8 text-yellow-300" />}
+                        href="/module-63"
+                    />
+                    <ConnectionCard
+                        title="Módulo 17: AURA-HEAL"
+                        description="É a principal ferramenta de execução para terapias de regeneração celular, coordenada pelo sistema de saúde universal."
+                        icon={<HeartPulse className="h-8 w-8 text-emerald-400" />}
+                        href="/module-17"
                     />
                 </div>
             </div>

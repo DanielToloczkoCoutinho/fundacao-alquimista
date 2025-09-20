@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -50,7 +49,7 @@ export default function Module49Page() {
                         title="M1: Segurança"
                         description="Garante que a tecnologia de propulsão não crie instabilidades ou seja usada para fins não autorizados."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module/M1"
+                        href="/module-one"
                     />
                     <ConnectionCard
                         title="Módulo 82: Transporte Quântico"

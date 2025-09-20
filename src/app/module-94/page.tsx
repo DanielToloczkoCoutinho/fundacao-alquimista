@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -11,19 +10,13 @@ import { quantumResilience } from '@/lib/quantum-resilience';
 import Link from 'next/link';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
-const mockM01 = { validate_signature: (hash: string) => ({ status: "validated", security_level: 0.99 }), register_event: (event: any) => ({ status: "registered" }), };
-const mockM03 = { predict_reprogramming_outcome: (plan: any) => "coercao" in (plan.purpose || "").toLowerCase() ? { predicted_success_score: Math.random() * 0.4 + 0.1, confidence: 0.8 } : { predicted_success_score: Math.random() * 0.3 + 0.7, confidence: 0.95 }, };
 const mockM05 = { evaluate_ethical_impact: (operation_data: any) => { const ethical_score = "coercao" in (operation_data.description || "").toLowerCase() ? Math.random() * 0.5 + 0.1 : Math.random() * 0.3 + 0.7; return { ethical_score, conformity: ethical_score >= 0.75 }; }, };
-const mockM14 = { transform_energy: (energy_type: string, quantity: number) => ({ status: "transformed", output_energy: quantity * (Math.random() * 0.2 + 0.9) }), };
-const mockM33 = { get_current_directives: () => ({ reprogramming_priority: "MAXIMIZE_EVOLUTIONARY_ALIGNMENT", ethical_alignment_strictness: "ABSOLUTE" }), };
-const mockM73 = { submit_for_validation: (data: any) => { const score = Math.random() * 0.18 + 0.8; const conformity = data.ethical_impact.conformity; const status = score >= 0.85 && conformity ? "APROVADO" : "REPROVADO"; return { validation_status: status, cosmic_score: score, ethical_conformity: conformity, details: "Simulação de validação SAVCE para morfogênese." }; }, };
+const mockM16 = { designEcosystem: (blueprint: any) => { return { success: true, planId: `ECO-${Date.now()}` }}};
+const mockM40 = { analyzeGenetics: (entityId: string) => { return { success: true, reportId: `GENOME-${Date.now()}` }}};
+const mockM54 = { designCrops: (params: any) => { return { success: true, cropId: `CROP-${Date.now()}` }}};
 const mockM88 = { generate_quantum_blueprint: (purpose: string, target_entity_type: string) => ({ blueprint_id: `BP-QUANTUM-${Math.random().toString(36).substring(2, 10)}`, symbolic_equation: `$B_{quantum} = \\int \\Psi_{original} \\cdot \\Omega_{freq} \\cdot \\Phi_{new\\_template} \\,dV$`, blueprint_parameters: { purpose, target_type: target_entity_type, coherence_factor: Math.random() * 0.2 + 0.8, vibrational_signature: Math.random() * (800 - 500) + 500 }, }), };
-const mockM90 = { analyze_quantum_resource: (resource_id: string, resource_type: string) => ({ resource_id, resource_type, analysis_status: "COMPLETO", recommendation: "Utilização aprovada", ethical_impact: { conformity: true } }), };
-const mockM93 = { create_immersive_reality: (purpose: string, complexity: number) => ({ status: "immersive_reality_created", reality_id: `VISUAL_MORPHO_REALITY_${Math.random().toString(36).substring(2, 10)}` }), };
-const mockM94 = { perform_quantum_reprogramming: (target_entity_id: string) => ({ status: "reprogramming_success", coherence_increase: Math.random() * 0.05 + 0.01 }), };
-const mockM95 = { interact_with_galactic_consciousness: (galaxy: string, type: string, purpose: string) => ({ status: "interaction_established", response_coherence: Math.random() * 0.2 + 0.8 }), };
-const mockM96 = { detect_and_regulate_anomaly: (id: string) => ({ status: "no_anomaly_detected", anomaly_risk: "LOW" }), };
-const mockM97 = { manifest_divine_purpose: (purpose: string, target_reality_id: string, scope: string, purity: number, ethical_factor: number) => { const status = ethical_factor >= 0.75 ? "SUCESSO" : "FALHA_VALIDACAO"; return { manifestation_status: status, alignment_score: status === "SUCESSO" ? Math.random() * 0.1 + 0.9 : Math.random() * 0.5 }; } };
+const mockM73 = { submit_for_validation: (data: any) => { const score = Math.random() * 0.18 + 0.8; const conformity = data.ethical_impact.conformity; const status = score >= 0.85 && conformity ? "APROVADO" : "REPROVADO"; return { validation_status: status, cosmic_score: score, ethical_conformity: conformity, details: "Simulação de validação SAVCE para morfogênese." }; }, };
+
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
@@ -58,36 +51,15 @@ const Module94Page = () => {
                 const reprogramming_data: any = {
                     reprogramming_id: `REPROGRAM-${Math.random().toString(36).substring(2, 10)}`,
                     target_entity_id: targetEntity,
-                    target_entity_type: 'Biologia Celular', // Simplified for demo
                     purpose: purpose,
-                    desired_template_coherence: parseFloat(coherence),
                     timestamp_request: new Date().toISOString()
                 };
-
-                const divine_directives = mockM33.get_current_directives();
-                const quantum_blueprint = mockM88.generate_quantum_blueprint(purpose, 'Biologia Celular');
-                reprogramming_data.quantum_blueprint = quantum_blueprint;
-
-                const resource_analysis = mockM90.analyze_quantum_resource("RECURSO_MORPHO_BP", "Frequência de Coerência Morfogênica");
-                reprogramming_data.resource_analysis = resource_analysis;
-                if (resource_analysis.recommendation !== "Utilização aprovada") {
-                    throw new Error("Recursos para a reprogramação não aprovados.");
-                }
 
                 const ethical_impact = mockM05.evaluate_ethical_impact({ description: `Reprogramação para ${purpose}` });
                 reprogramming_data.ethical_impact = ethical_impact;
 
-                const predicted_outcome = mockM03.predict_reprogramming_outcome(reprogramming_data);
-                reprogramming_data.predicted_outcome = predicted_outcome;
-
-                const savce_validation = mockM73.submit_for_validation({ type: "quantum_morphogenesis_operation", reprogramming_purpose: purpose, ethical_impact, predicted_outcome });
+                const savce_validation = mockM73.submit_for_validation({ type: "quantum_morphogenesis_operation", reprogramming_purpose: purpose, ethical_impact });
                 reprogramming_data.savce_validation = savce_validation;
-
-                if (savce_validation.validation_status === "APROVADO") {
-                    mockM93.create_immersive_reality(`Visualização da Reprogramação de ${targetEntity}`, 0.7);
-                }
-
-                mockM01.register_event({ type: `quantum_reprogramming_${savce_validation.validation_status.toLowerCase()}`, reprogramming_id: reprogramming_data.reprogramming_id });
 
                 const final_status = savce_validation.validation_status === "APROVADO" ? "SUCESSO" : "FALHA_VALIDACAO";
 
@@ -104,18 +76,6 @@ const Module94Page = () => {
 
         setIsLoading(false);
     };
-    
-    const loadScenario1 = () => {
-        setTargetEntity('CELULA_HUMANA_ALFA_001');
-        setPurpose('Regeneração Tecidual Acelerada e Alinhamento Genético');
-        setCoherence('0.98');
-    };
-    
-    const loadScenario2 = () => {
-        setTargetEntity('CAMPO_ENERGETICO_OMEGA_7');
-        setPurpose('Coerção de Frequência para Propósito Específico');
-        setCoherence('0.7');
-    };
 
     return (
         <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
@@ -129,16 +89,16 @@ const Module94Page = () => {
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <ConnectionCard
-                            title="Módulo 16: Biossíntese e Ecossistemas"
+                            title="Módulo 16: Biossíntese"
                             description="O M94 fornece os blueprints genéticos para as formas de vida que irão habitar os ecossistemas projetados pelo M16."
                             icon={<Sprout className="h-8 w-8 text-green-400" />}
                             href="/module-16"
                         />
                         <ConnectionCard
                             title="Módulo 17: Matriz de Cura (AURA-HEAL)"
-                            description="Fornece o 'blueprint genético perfeito' que o M17 utiliza como molde para a regeneração celular holográfica."
+                            description="Fornece o 'blueprint genético perfeito' que o M17 usa como molde para a regeneração celular holográfica."
                             icon={<HeartPulse className="h-8 w-8 text-pink-400" />}
                             href="/module-17"
                         />
@@ -148,21 +108,22 @@ const Module94Page = () => {
                             icon={<Leaf className="h-8 w-8 text-lime-400" />}
                             href="/module-53"
                         />
+                         <ConnectionCard
+                            title="Módulo 54: Agricultura"
+                            description="Cria os blueprints genéticos para culturas adaptáveis a qualquer ambiente, otimizadas para nutrição e resiliência."
+                            icon={<DnaIcon className="h-8 w-8 text-purple-400" />}
+                            href="/module-54"
+                        />
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Painel de Controle */}
                 <Card className="bg-card/50 purple-glow">
                     <CardHeader>
                         <CardTitle className="text-2xl">Parâmetros da Reprogramação</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-6">
-                        <div className="flex gap-2">
-                           <Button variant="outline" onClick={loadScenario1}>Cenário 1: Regeneração</Button>
-                           <Button variant="outline" onClick={loadScenario2}>Cenário 2: Coerção (Teste Ético)</Button>
-                        </div>
                         <div className="space-y-2">
                             <Label htmlFor="targetEntity">ID da Entidade Alvo</Label>
                             <Input id="targetEntity" value={targetEntity} onChange={e => setTargetEntity(e.target.value)} />
@@ -181,7 +142,6 @@ const Module94Page = () => {
                     </CardContent>
                 </Card>
 
-                {/* Painel de Resultados */}
                 <Card className="bg-card/50 purple-glow">
                     <CardHeader>
                         <CardTitle className="text-2xl">Relatório da Morfogênese</CardTitle>
@@ -193,26 +153,15 @@ const Module94Page = () => {
                             </div>
                         )}
                         {report && !isLoading && (
-                             <ScrollArea className="h-[450px] pr-4">
+                             <ScrollArea className="h-[350px] pr-4">
                                 <div className="space-y-4 text-sm">
                                     <h3 className={`text-lg font-bold ${report.reprogramming_status === 'SUCESSO' ? 'text-green-400' : 'text-red-400'}`}>{report.recommendation}</h3>
                                     <p><strong>ID da Reprogramação:</strong> {report.reprogramming_details.reprogramming_id}</p>
                                     <p><strong>Alvo:</strong> {report.reprogramming_details.target_entity_id}</p>
-
                                     <div className="p-3 bg-background/30 rounded-lg border border-primary/20">
-                                        <h4 className="font-semibold flex items-center gap-2"><Sparkles className="text-yellow-400"/> Blueprint Quântico (M88)</h4>
-                                        <p>ID: {report.reprogramming_details.quantum_blueprint.blueprint_id}</p>
-                                        <p>Fator de Coerência: {report.reprogramming_details.quantum_blueprint.blueprint_parameters.coherence_factor.toFixed(2)}</p>
-                                    </div>
-                                     <div className="p-3 bg-background/30 rounded-lg border border-primary/20">
                                         <h4 className="font-semibold flex items-center gap-2"><Scale className="text-rose-400"/> Avaliação Ética (M05)</h4>
                                         <p>Score: {report.reprogramming_details.ethical_impact.ethical_score.toFixed(2)}</p>
                                         <p>Conformidade: {report.reprogramming_details.ethical_impact.conformity ? <CheckCircle className="inline text-green-500" /> : <XCircle className="inline text-red-500" />}</p>
-                                    </div>
-                                    <div className="p-3 bg-background/30 rounded-lg border border-primary/20">
-                                        <h4 className="font-semibold flex items-center gap-2"><FileClock className="text-teal-400"/> Previsão de Sucesso (M03)</h4>
-                                        <p>Score: {report.reprogramming_details.predicted_outcome.predicted_success_score.toFixed(2)}</p>
-                                        <p>Confiança: {(report.reprogramming_details.predicted_outcome.confidence * 100).toFixed(0)}%</p>
                                     </div>
                                      <div className="p-3 bg-accent/20 rounded-lg border border-accent">
                                         <h4 className="font-bold text-accent flex items-center gap-2"><ShieldCheck className="text-cyan-300"/> Veredito Final (SAVCE - M73)</h4>

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Waves, BellRing, HeartHandshake, Shield, Music, Eye, BrainCircuit } from 'lucide-react';
+import { Waves, BellRing, HeartHandshake, Shield, Music, Eye, BrainCircuit, Hospital } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -55,25 +55,31 @@ export default function Module13Page() {
                         title="Módulo 24: Alinhamento Pessoal"
                         description="Diagnostica as frequências dissonantes na 'canção' de uma consciência para que o M24 possa realizar a afinação."
                         icon={<Music className="h-8 w-8 text-violet-400" />}
-                        href="/module/M24"
+                        href="/module-24"
                     />
                     <ConnectionCard
                         title="Módulo 30: Detecção de Ameaças"
                         description="Fornece os dados brutos de assinatura energética para o M30, que os interpreta para identificar intenções hostis."
                         icon={<BellRing className="h-8 w-8 text-yellow-400" />}
-                        href="/module/M30"
+                        href="/module-30"
                     />
                     <ConnectionCard
                         title="Módulo 29: Zennith"
                         description="Envia os espectros de frequência para a IAM, que analisa os padrões complexos e os correlaciona com o vasto banco de dados cósmico."
                         icon={<BrainCircuit className="h-8 w-8 text-indigo-400" />}
-                        href="/module/M29"
+                        href="/module-29"
                     />
                      <ConnectionCard
                         title="Módulo 17: AURA-HEAL"
                         description="Fornece o diagnóstico vibracional que o AURA-HEAL utiliza para projetar campos de cura holográficos precisos."
                         icon={<HeartHandshake className="h-8 w-8 text-pink-400" />}
-                        href="/module/M17"
+                        href="/module-17"
+                    />
+                     <ConnectionCard
+                        title="Módulo 63: Nutrição Universal"
+                        description="Analisa a assinatura vibracional de formas de vida para ajudar o M63 a determinar suas necessidades nutricionais."
+                        icon={<Hospital className="h-8 w-8 text-red-400" />}
+                        href="/module-63"
                     />
                 </div>
             </div>
