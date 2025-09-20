@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Loader2, Milestone, Anchor, CheckCircle, XCircle } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 
 const mockM42 = { synchronizeTimeline: async (id: string) => true };
 const mockM98 = { modulateFundamentalExistence: async (id: string, param: string, value: number) => true };
@@ -73,7 +73,7 @@ const Module228Page = () => {
                         <Milestone className="text-orange-400" /> Módulo 228: Ancoragem de Realidade
                     </CardTitle>
                     <CardDescription>
-                        Ferramenta para estabilizar e fixar realidades manifestadas, garantindo sua permanência e coerência.
+                        Ferramenta para estabilizar e fixar realidades manifestadas, garantindo sua permanência e coerência através de backups, redundância e proteção quântica.
                     </CardDescription>
                 </CardHeader>
             </Card>
