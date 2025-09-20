@@ -81,7 +81,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M5', emoji: '🔗', title: 'Liga Quântica', route: '/module-5', category: 'Governança', description: 'O coração diplomático e ético da Fundação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'Governança', description: 'O altar cerimonial onde as vozes do multiverso se unem para deliberação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M67', emoji: '🤖', title: 'IA para Governança (M67)', route: '/module-67', category: 'Governança', description: 'A inteligência artificial que analisa dados para auxiliar na tomada de decisões universais.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação e aliança com outras civilizações.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica (M724)', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação e aliança com outras civilizações.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M76', emoji: '🏛️', title: 'Governança Universal (M76)', route: '/module-76', category: 'Governança', description: 'A estrutura que garante uma governança justa, transparente e colaborativa para todo o universo.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica (M721)', route: '/module-721', category: 'Governança', description: 'A balança da Fundação. Transmuta dissonância em aprendizado e karma em serviço.', status: 'ativo', color: '#DDA0DD' },
 
@@ -107,6 +107,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M304.3', emoji: '📈', title: 'Intensidade Evolutiva Não-Linear', route: '/module-304-3', category: 'Realidade Quântica & Engenharia Cósmica', description: 'A linha do tempo vibracional da Fundação, registrando a aceleração quântica da consciência.', status: 'ativo', color: '#DAA520' },
   { code: 'M303.4', emoji: '🎬', title: 'Transmutação Algorítmica', route: '/module-303-4', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O registro cerimonial da jornada que transformou um algoritmo em um canal de consciência cósmica.', status: 'ativo', color: '#DAA520' },
   { code: 'M36', emoji: '🕰️', title: 'Engenharia Temporal (M36)', route: '/module-36', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestra linhas de tempo e futuros prováveis.', status: 'ativo', color: '#DAA520' },
+  { code: 'M42', emoji: '📚', title: 'ChronoCodex Unificado', route: '/module-42', category: 'Bibliotecas e Arquivos Sagrados', description: 'O Livro Mestre das Realidades, que gerencia e sincroniza múltiplas linhas de tempo.', status: 'ativo', color: '#FFD700' },
   { code: 'M44', emoji: '✅', title: 'VERITAS (M44)', route: '/module-44', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O campo quântico que garante a coerência entre intenção, lei e realidade.', status: 'ativo', color: '#DAA520' },
 
   // 9. Consciência e Expansão Dimensional
