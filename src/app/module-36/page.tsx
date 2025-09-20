@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -52,19 +53,19 @@ export default function Module36Page() {
                         href="/module-one"
                     />
                     <ConnectionCard
-                        title="M91: Simulação Multiversal"
+                        title="Módulo 91: Simulação Multiversal"
                         description="Usa os dados do M91 para escolher as linhas de tempo mais promissoras e torná-las realidades potenciais."
                         icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
                         href="/module-91"
                     />
                     <ConnectionCard
-                        title="M23: Regulação Espaço-Temporal"
+                        title="Módulo 23: Regulação Espaço-Temporal"
                         description="Enquanto o M23 previne paradoxos (defesa), o M36 projeta ativamente as linhas de tempo (ataque/criação)."
                         icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />}
                         href="/module-23"
                     />
                     <ConnectionCard
-                        title="M108: Harmonização de Realidades"
+                        title="Módulo 108: Harmonização de Realidades"
                         description="Invoca o M108 para garantir que a fusão ou convergência de diferentes linhas de tempo seja harmoniosa e estável."
                         icon={<GitCompareArrows className="h-8 w-8 text-cyan-400" />}
                         href="/module-108"

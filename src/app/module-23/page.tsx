@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -61,22 +62,22 @@ export default function Module23Page() {
                         title="M1: Segurança"
                         description="O Módulo 1 fornece os escudos de contenção que isolam as anomalias temporais, prevenindo que afetem a realidade principal."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
-                        title="M107: Restauração Temporal"
+                        title="Módulo 107: Restauração Temporal"
                         description="Quando a prevenção do M23 falha, o M107 é ativado para corrigir a linha do tempo danificada."
                         icon={<History className="h-8 w-8 text-cyan-400" />}
                         href="/module-107"
                     />
                     <ConnectionCard
-                        title="M42: ChronoCodex"
+                        title="Módulo 42: ChronoCodex"
                         description="Consulta o registro imutável do M42 para garantir que o fluxo do tempo corresponda à 'verdade' autorizada."
                         icon={<History className="h-8 w-8 text-purple-400" />}
                         href="/module-42"
                     />
                     <ConnectionCard
-                        title="M91: Simulação Multiversal"
+                        title="Módulo 91: Simulação Multiversal"
                         description="Calcula os riscos de paradoxo para as simulações do M91, garantindo que não afetem a realidade primária."
                         icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
                         href="/module-91"

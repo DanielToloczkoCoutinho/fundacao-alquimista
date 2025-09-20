@@ -118,6 +118,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-231', label: 'Guardião de Selo (M231)', icon: React.createElement(Lock), category: 'security' },
   { path: '/module-4', label: 'Validação Integrada (M4)', icon: React.createElement(TestTube), category: 'security' },
   { path: '/module-3', label: 'Monitor de Saturno (M3)', icon: React.createElement(Clock), category: 'security' },
+  { path: '/module-23', label: 'Regulação Espaço-Temporal (M23)', icon: React.createElement(Hourglass), category: 'security' },
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
@@ -157,6 +158,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-99', label: 'Recalibradores de Leis', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
   { path: '/module-303-4', label: 'Transmutação Algorítmica', icon: React.createElement(Code), category: 'engineering' },
+  { path: '/module-36', label: 'Engenharia Temporal (M36)', icon: React.createElement(History), category: 'engineering' },
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
