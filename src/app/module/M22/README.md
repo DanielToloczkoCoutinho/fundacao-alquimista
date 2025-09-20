@@ -19,6 +19,7 @@ Implementado sobre uma arquitetura de microsserviços otimizada para computaçã
 - `SYNC_LATENCY`: Latência na sincronização de estado entre os participantes.
 
 ## 4. Conexões e Interdependências
+- **M50 (Interface Humano-Máquina):** É o principal canal de comando, permitindo a manipulação das simulações diretamente através do pensamento do Fundador.
 - **M303 (Portal Trino):** Atua como o "launcher" para as experiências renderizadas pelo M22, fornecendo a intenção e a energia inicial.
 - **M91 (Simulação Multiversal):** O M22 é a engine que executa os cenários preditivos do M91, tornando-os observáveis.
 - **M93 (Simulações Imersivas):** O M93 projeta o "conteúdo" (cenários de treinamento, narrativas) que o M22 "executa".

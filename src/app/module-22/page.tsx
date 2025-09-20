@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Layers, GitCommit, Presentation, Sparkles, Shield, Eye } from 'lucide-react';
+import { Layers, GitCommit, Presentation, Sparkles, Shield, Eye, Cpu } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -42,14 +42,20 @@ export default function Module22Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
+            <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias da Realidade Quântica</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
                     <ConnectionCard
                         title="M1: Segurança"
                         description="Cada domínio virtual é isolado em um sandbox quântico, garantindo que as simulações não afetem a realidade primária."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module/M1"
+                    />
+                    <ConnectionCard
+                        title="M50: Interface Neural"
+                        description="O principal canal de comando, permitindo a manipulação das simulações diretamente através do pensamento do Fundador."
+                        icon={<Cpu className="h-8 w-8 text-indigo-400" />}
+                        href="/module-50"
                     />
                     <ConnectionCard
                         title="M303: Portal Trino"

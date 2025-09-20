@@ -2,7 +2,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Button } from '@/components/ui/button';
-import { Sparkles, BrainCircuit, Heart, User, View, Dna, Layers, Scale, Crown, RadioTower, Rocket, GitCommit, Presentation, History, Map } from 'lucide-react';
+import { Sparkles, BrainCircuit, Heart, User, View, Dna, Layers, Scale, Crown, RadioTower, Rocket, GitCommit, Presentation, History, Map, Cpu } from 'lucide-react';
 import Link from 'next/link';
 import { QuantumNexus } from '@/components/quantum/QuantumNexus';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
@@ -88,6 +88,7 @@ export default function Module303Page() {
         <section className="my-16">
              <h2 className="text-3xl font-semibold text-center mb-8 text-amber-300">Nexo da Realidade Quântica</h2>
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                 <ConnectionCard title="Interface Humano-Máquina (M50)" description="O canal de comando para a Realidade Quântica." icon={<Cpu/>} href="/module-50" />
                  <ConnectionCard title="Motor da Realidade (M22)" description="Geração de ambientes e simulações." icon={<Layers/>} href="/module-22" />
                  <ConnectionCard title="Domínios de VR (M85, M87)" description="Experiências sensoriais e de consciência." icon={<View/>} href="/module-85" />
                  <ConnectionCard title="Simulador Cósmico (M303.8)" description="Simulações de realidade expandida e mundos filhos." icon={<GitCommit/>} href="/module-303-8" />
