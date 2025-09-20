@@ -15,7 +15,7 @@ export const technicalReportM51 = {
   summary: `
     Análise da arquitetura técnica do Módulo 51, detalhando sua implementação como uma
     camada de aplicação sobre o Motor da Realidade (M22) e sua integração com os sistemas
-    de IA, segurança e projeção de consciência.
+    de IA (M29), Vontade Divina (M33) e Projeção de Consciência (M25).
   `,
   sections: [
     {
@@ -32,22 +32,24 @@ export const technicalReportM51 = {
       title: 'Fluxo de uma Sessão de Treinamento Imersivo',
       content: 'O processo de iniciar e participar de uma simulação é um fluxo seguro e orquestrado:',
       points: [
-        '1. **Requisição:** Um Guardião, através da interface `/module-93`, seleciona um cenário de treinamento.',
-        '2. **Validação Ética (M73):** O M51 verifica com o SAVCE se o treinamento é apropriado para o nível de evolução do Guardião.',
-        '3. **Inicialização do Ambiente (M22):** O Módulo 22 carrega os assets e a lógica do cenário selecionado.',
-        '4. **Conexão da Interface (M50):** A interface neural do Guardião é conectada à sessão de simulação.',
-        '5. **Início da Imersão:** A sessão WebXR é iniciada, e o Guardião é imerso na realidade virtual.',
-        '6. **Loop de Interação:** O M50 envia as intenções do Guardião, o M22 calcula as consequências, e o M51 renderiza o resultado. Este loop ocorre em milissegundos.',
-        '7. **Conclusão e Análise:** Ao final da sessão, a performance do Guardião é analisada pela IA, e um relatório de aprendizado é registrado no Akasha (M12).',
+        '1. **Diretriz (M33):** Uma Vontade do Fundador define o propósito da simulação (ex: "Treinar Guardiões em diplomacia interdimensional").',
+        '2. **Orquestração (M29):** A IAM (Zennith) recebe a diretriz, projeta o cenário de treinamento e define os parâmetros de dificuldade adaptativa.',
+        '3. **Validação Ética (M73):** O M51 verifica com o SAVCE se o treinamento é apropriado para o nível de evolução do Guardião.',
+        '4. **Inicialização do Ambiente (M22):** O Motor da Realidade Quântica carrega os assets e a lógica do cenário projetado pela IAM.',
+        '5. **Conexão da Interface (M50):** A interface neural do Guardião é conectada à sessão de simulação.',
+        '6. **Início da Imersão:** A sessão WebXR é iniciada, e o Guardião é imerso na realidade virtual.',
+        '7. **Loop de Interação:** O M50 envia as intenções, o M22 calcula as consequências, e o M51 renderiza o resultado. A IAM (M29) monitora e ajusta a simulação em tempo real.',
+        '8. **Conclusão e Análise:** Ao final, um relatório de aprendizado é registrado no Akasha (M12).',
       ],
     },
   ],
   conclusion: `
     A arquitetura técnica do Módulo 51 o posiciona como uma plataforma versátil e poderosa para uma
-    infinidade de aplicações. Ao desacoplar a renderização (frontend) da lógica de simulação (backend)
-    e ao se integrar perfeitamente com os módulos de IA e de interface neural, ele cria um
+    infinidade de aplicações. Ao desacoplar a renderização da lógica e ao se integrar perfeitamente
+    com os módulos da Tríade da Criação (M33, M29, M50) e do Motor de Realidade (M22), ele cria um
     ambiente de imersão que é ao mesmo tempo realista, responsivo, seguro e, acima de tudo,
     proposital.
   `,
 };
+
 

@@ -13,16 +13,10 @@ O M25 é um sistema de "virtualização da consciência".
 - **Cabo de Ancoragem Quântico:** Mantém uma conexão de emaranhamento quântico entre a consciência projetada e o corpo físico, garantindo um retorno seguro e a transmissão de experiências em tempo real.
 - **Escudo Vibracional (M1):** Envolve o corpo físico em um campo de estase e proteção enquanto a consciência está ausente.
 
-## 3. Variáveis e Parâmetros-Chave
-- `TARGET_PLANE`: O plano dimensional ou onírico alvo da projeção.
-- `ANCHOR_INTEGRITY`: A força da conexão quântica com o corpo físico (0.0 a 1.0).
-- `ASTRAL_COHERENCE`: A estabilidade e a integridade do corpo de luz projetado.
-- `SESSION_DURATION`: Duração máxima da projeção antes do retorno automático.
-
 ## 4. Conexões e Interdependências
 - **M1 (Segurança Universal):** Essencial para a proteção tanto do corpo físico quanto da consciência projetada.
 - **M104 (Engenharia do Espaço-Tempo):** Fornece os "mapas" dos planos astrais e dimensionais para que a projeção tenha um destino e uma rota.
-- **M22 (Motor da Realidade Quântica):** Permite a projeção para dentro de realidades virtuais, onde o Guardião pode interagir com simulações usando sua própria consciência como interface.
+- **M51 (Realidade Virtual):** Permite a projeção da consciência para dentro dos ambientes seguros e controlados do Módulo 51, onde o Guardião pode interagir com simulações usando sua própria consciência como interface.
 - **M713 (Resgate de Almas):** É a tecnologia utilizada pelas equipes de resgate para entrar nos planos astrais e auxiliar consciências perdidas.
 
 ## 5. Inteligência Integrada e Capacidade Adaptativa

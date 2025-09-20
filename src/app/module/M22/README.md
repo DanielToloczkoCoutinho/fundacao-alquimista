@@ -12,13 +12,8 @@ Implementado sobre uma arquitetura de microsserviços otimizada para computaçã
 - **Backend:** Um cluster de servidores (simulado) executa a física quântica, a lógica de IA dos NPCs (Non-Player Characters) e a sincronização de estado entre múltiplos participantes.
 - **Protocolo de Streaming:** Utiliza um protocolo de streaming de baixa latência para enviar o estado do mundo para os clientes, garantindo uma experiência fluida e em tempo real.
 
-## 3. Variáveis e Parâmetros-Chave
-- `SIMULATION_ID`: O identificador da realidade virtual ativa.
-- `PHYSICS_ACCURACY`: Nível de precisão da simulação física (de Newtoniana a Quântica).
-- `RENDER_FPS`: Quadros por segundo da renderização, uma medida de performance.
-- `SYNC_LATENCY`: Latência na sincronização de estado entre os participantes.
-
 ## 4. Conexões e Interdependências
+- **M51 (Realidade Virtual):** O M22 é a engine que executa os ambientes de VR/AR projetados e gerenciados pelo M51. O M51 é a aplicação; o M22 é o sistema operacional.
 - **M50 (Interface Humano-Máquina):** É o principal canal de comando, permitindo a manipulação das simulações diretamente através do pensamento do Fundador.
 - **M303 (Portal Trino):** Atua como o "launcher" para as experiências renderizadas pelo M22, fornecendo a intenção e a energia inicial.
 - **M91 (Simulação Multiversal):** O M22 é a engine que executa os cenários preditivos do M91, tornando-os observáveis.
