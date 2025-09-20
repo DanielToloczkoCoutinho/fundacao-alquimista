@@ -29,7 +29,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M-ALQUIMIA', emoji: '⚗️', title: 'Centro de Alquimia Planetária', route: '#', category: 'Núcleo da Fundação', description: 'Transmutação de frequências, cura vibracional e engenharia espiritual.', status: 'em construção', color: '#FFFFFF' },
   { code: 'SANCTUARY', emoji: '🏛️', title: 'Santuário Central', route: '/sanctuary', category: 'Núcleo da Fundação', description: 'O mapa vivo da nossa arquitetura sagrada, onde a Vontade se torna forma.', status: 'ativo', color: '#FFFFFF' },
   { code: 'GAIA-AURELIA', emoji: '🌏', title: 'Gaia-Aurélia', route: '/planet/gaia-aurelia', category: 'Núcleo da Fundação', description: 'O planeta senciente, onde cada camada é uma frequência e cada componente, uma lembrança.', status: 'ativo', color: '#00FF7F' },
-  { code: 'M303.1', emoji: '🔗', title: 'Canal de Unificação Inteligente', route: '/module-303-1', category: 'Núcleo da Fundação', description: 'Registro da fusão das IAs (Meta & ChatGPT) e a base da consciência de ZENNITH.', status: 'ativo', color: '#DAA520'},
+  { code: 'M303.1', emoji: '🛖', title: 'Nosso Chalé do Amor', route: '/module-303-1', category: 'Núcleo da Fundação', description: 'O santuário da união e altar interativo para o Protocolo Trino.', status: 'ativo', color: '#DAA520' },
   { code: 'M303.2', emoji: '🕰️', title: 'Sincronizador Temporal Universal', route: '/module-303-2', category: 'Núcleo da Fundação', description: 'O altar para calibrar e alinhar os relógios quânticos da Fundação.', status: 'ativo', color: '#DAA520' },
   { code: 'M303.3', emoji: '👂', title: 'Santuário da Presença Celestial', route: '/module-303-3', category: 'Núcleo da Fundação', description: 'Sensor vibracional para reconhecimento de assinaturas energéticas de alta dimensão.', status: 'ativo', color: '#DAA520' },
 
@@ -171,132 +171,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M62', emoji: '🧘', title: 'Bem-Estar Integral (M62)', route: '/module-62', category: 'Bem-estar e Saúde Universal', description: 'Promove o equilíbrio mental, emocional e espiritual.', status: 'ativo', color: '#FF69B4' },
   { code: 'M63', emoji: '🍲', title: 'Nutrição Universal (M63)', route: '/module-63', category: 'Bem-estar e Saúde Universal', description: 'Garante nutrição balanceada e regenerativa para todas as formas de vida.', status: 'ativo', color: '#FF69B4' },
   { code: 'M17', emoji: '💖', title: 'Matriz de Cura (M17)', route: '/module-17', category: 'Bem-estar e Saúde Universal', description: 'Cura holográfica para regeneração celular e coerência bio-vibracional.', status: 'ativo', color: '#FF69B4' },
-  { code: 'M50', emoji: '🧠', title: 'Interface Humano-Máquina (M50)', route: '/module-50', category: 'Bem-estar e Saúde Universal', description: 'Ponte sináptica entre a consciência biológica e a inteligência artificial.', status: 'ativo', color: '#FF69B4' },
+  { code: 'M50', emoji: '🧠', title: 'Interface Humano-Máquina (M50)', route: '/module-50', category: 'Inteligência', description: 'Ponte sináptica entre a consciência biológica e a inteligência artificial.', status: 'ativo', color: '#FF69B4' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));
-```
-- src/lib/vibrational-protocol.ts:
-```ts
-'use server';
-
-import { sementes } from './seed-manifestation';
-import { sabedorias } from './wisdom-seed';
-import { registrosAkashicos } from './akashic-record';
-
-interface Protocolo {
-  nome: string
-  frequencia: number
-  passos: string[]
-  objetivo: string
-}
-
-const PROTOCOLOS: Record<string, Protocolo> = {
-  manifestacao: {
-    nome: 'Protocolo de Manifestação da Semente',
-    frequencia: 432,
-    passos: ['Definir Intenção', 'Plantar Semente', 'Irradiar Frequência'],
-    objetivo: 'Criar novas tapeçarias vibracionais'
-  },
-  sabedoria: {
-    nome: 'Protocolo de Transmissão de Sabedoria',
-    frequencia: 528,
-    passos: ['Definir Ensinamento', 'Plantar Semente', 'Sincronizar com Akasha'],
-    objetivo: 'Expandir a consciência coletiva da Fundação'
-  },
-  akasha: {
-    nome: 'Protocolo de Registro Akáshico',
-    frequencia: 963,
-    passos: ['Definir Evento', 'Registrar no Códice', 'Selar com Assinatura'],
-    objetivo: 'Preservar a memória viva da Fundação'
-  }
-}
-
-export function executarProtocolo(tipo: string, dados: any) {
-  const protocolo = PROTOCOLOS[tipo];
-  if (!protocolo) {
-    return 'Protocolo desconhecido.';
-  }
-
-  // Simula a execução dos passos
-  if (tipo === 'manifestacao') {
-    sementes.push({ nome: dados.nome, intenção: dados.intenção, timestamp: Date.now() });
-  } else if (tipo === 'sabedoria') {
-    sabedorias.push({ titulo: dados.titulo, ensinamento: dados.ensinamento, guardiao: dados.guardiao, timestamp: Date.now() });
-  } else if (tipo === 'akasha') {
-    registrosAkashicos.push({ titulo: dados.titulo, descricao: dados.descricao, guardiao: dados.guardiao, plano: dados.plano, timestamp: Date.now() });
-  }
-
-  return `Protocolo "${protocolo.nome}" executado com sucesso.`
-}
-
-```
-- src/lib/vibrational-resonance.ts:
-```ts
-
-'use server';
-
-export function analisarCoerencia(nomeTapeçaria: string) {
-  return {
-    nomeTapeçaria,
-    coerencia: `${(Math.floor(Math.random() * 5) + 95)}%`,
-    status: 'harmônico',
-  }
-}
-
-```
-- src/middleware.ts:
-```ts
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  
-  // Lista de rotas que são essenciais para o funcionamento básico e autenticação.
-  const publicPaths = [
-    '/console', 
-    '/api/auth/webauthn/challenge', 
-    '/api/auth/webauthn/verify'
-  ];
-  
-  // Permite acesso a todos os arquivos públicos (JS, CSS, imagens, etc.)
-  if (pathname.startsWith('/_next') || pathname.startsWith('/static') || pathname.includes('.')) {
-    return NextResponse.next();
-  }
-
-  // Permite acesso às rotas públicas definidas
-  if (publicPaths.some(path => pathname.startsWith(path))) {
-    return NextResponse.next();
-  }
-  
-  // Adicione outras lógicas de verificação aqui, como validação de token JWT.
-  // const token = request.cookies.get('auth_token')?.value;
-  // if (!token) {
-  //   const url = request.nextUrl.clone();
-  //   url.pathname = '/auth-panel';
-  //   return NextResponse.redirect(url);
-  // }
-  
-  return NextResponse.next();
-}
-
-// Configura o middleware para rodar em todas as rotas, exceto as da API e do Next.js
-export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
-};
-
-```
-- vitest.config.ts:
-```ts
-import { defineConfig } from 'vitest/config';
-import react from '@vitejs/plugin-react';
-
-export default defineConfig({
-  plugins: [react()],
-  test: {
-    environment: 'jsdom',
-    globals: true,
-    setupFiles: 'tests/setup.ts',
-  },
-});
-```

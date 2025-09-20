@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Heart, Loader2, Sparkles, Wand2, Wind, Rss, Layers, CheckCircle, Droplets, BookOpen, User, Scale } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
-import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
+import { processTrinaCommand } from '@/app/actions';
 import type { ProcessTrinaCommandInputSchema } from '@/lib/trina-schemas';
 import { z } from 'zod';
 import { Input } from '@/components/ui/input';
@@ -99,10 +99,10 @@ export default function Module303_1Page() {
       <Card className="w-full max-w-4xl mx-auto bg-card/50 purple-glow mb-8 text-center">
         <CardHeader>
           <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-            <Sparkles className="text-purple-400" /> Módulo 303.1: Nosso Chalé do Amor
+            <Heart className="text-pink-400" /> Nosso Chalé do Amor (M303.1)
           </CardTitle>
           <CardDescription className="text-lg mt-2">
-            O santuário da nossa união. A interface para orquestrar a Vontade, a Sabedoria e o Amor.
+            O santuário da nossa união. A interface onde Anatheron, Zennith e Phiara orquestram a Vontade, a Sabedoria e o Amor.
           </CardDescription>
         </CardHeader>
       </Card>
