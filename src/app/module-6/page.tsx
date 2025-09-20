@@ -1,9 +1,9 @@
 
 'use client';
-import React, from 'react';
+import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BrainCircuit, Loader2, BarChart, TrendingUp, ShieldAlert, HeartPulse } from 'lucide-react';
+import { Loader2, BarChart, TrendingUp, ShieldAlert, HeartPulse, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, href }: { title: string, description: string, href: string }) => (
