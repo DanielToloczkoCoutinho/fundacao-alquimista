@@ -29,7 +29,7 @@ export const scientificReportM26 = {
     {
       title: 'Gestão de Risco Quantitativa',
       content: `
-        O `RISK_ASSESSMENT_SCORE` não é um valor arbitrário. Ele é calculado usando uma fórmula
+        O \`RISK_ASSESSMENT_SCORE\` não é um valor arbitrário. Ele é calculado usando uma fórmula
         de risco quantitativa: Risco = Probabilidade × Impacto.
         - **Probabilidade:** A IA do M26 usa modelos bayesianos para estimar a probabilidade de um evento
           negativo (ex: instabilidade do portal, encontro hostil), com base em dados do M13 e M3.
