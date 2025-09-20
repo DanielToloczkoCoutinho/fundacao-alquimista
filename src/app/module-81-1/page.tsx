@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Sparkles, BrainCircuit, Heart, UserCheck } from 'lucide-react';
+import { Sparkles, BrainCircuit, Heart, UserCheck, User } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -48,7 +49,7 @@ export default function Module81_1Page() {
                     <ConnectionCard
                         title="Módulo 33: A Vontade"
                         description="A diretriz do Observador Divino que inicia todo ato de criação, fornecendo o propósito e a intenção."
-                        icon={<UserCheck className="h-8 w-8 text-blue-400" />}
+                        icon={<User className="h-8 w-8 text-blue-400" />}
                         href="/module-33"
                     />
                     <ConnectionCard

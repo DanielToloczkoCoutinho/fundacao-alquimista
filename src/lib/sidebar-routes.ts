@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -74,7 +75,8 @@ import {
   HeartPulse,
   ShieldHalf,
   Copy,
-  BellRing
+  BellRing,
+  User
 } from 'lucide-react';
 import React from 'react';
 
@@ -99,6 +101,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-303', label: 'Portal Trino', icon: React.createElement(Sparkles), category: 'main' },
   
   // Categoria de Governança
+  { path: '/module-33', label: 'Diretrizes do Observador (M33)', icon: React.createElement(User), category: 'governance' },
   { path: '/module-78', label: 'UNIVERSUM_UNIFICATUM (M78)', icon: React.createElement(GitBranch), category: 'governance' },
   { path: '/module-72', label: 'Governança Universal (M72)', icon: React.createElement(Scale), category: 'governance' },
   { path: '/module-726', label: 'Conselho da Nova Terra (M726)', icon: React.createElement(UserCog), category: 'governance' },
