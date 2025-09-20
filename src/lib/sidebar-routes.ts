@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -69,7 +70,8 @@ import {
   Waves,
   PartyPopper,
   Code,
-  Rss
+  Rss,
+  Fingerprint
 } from 'lucide-react';
 import React from 'react';
 
@@ -107,10 +109,11 @@ export const mainRoutes: SidebarRoute[] = [
 
   // Categoria de Segurança e Ética Cósmica
   { path: '/module-one', label: 'Segurança Universal (M1)', icon: React.createElement(Shield), category: 'security' },
+  { path: '/module-8', label: 'Identidade Fractal (M8)', icon: React.createElement(Fingerprint), category: 'security' },
   { path: '/key-generator', label: 'Forja de Chaves', icon: React.createElement(Key), category: 'security' },
   { path: '/module-73-1', label: 'Revisão por Pares (M73.1)', icon: React.createElement(ShieldCheck), category: 'security' },
   { path: '/module-141', label: 'Auditoria Ética (M141)', icon: React.createElement(ShieldCheck), category: 'security' },
-  { path: '/module-231', label: 'Guardião de Selo (M231)', icon: React.createElement(Fingerprint), category: 'security' },
+  { path: '/module-231', label: 'Guardião de Selo (M231)', icon: React.createElement(Lock), category: 'security' },
   { path: '/module-4', label: 'Validação Integrada (M4)', icon: React.createElement(TestTube), category: 'security' },
   { path: '/module-3', label: 'Monitor de Saturno (M3)', icon: React.createElement(Clock), category: 'security' },
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
