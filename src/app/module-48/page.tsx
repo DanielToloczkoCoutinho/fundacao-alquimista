@@ -69,3 +69,5 @@ export default function Module48Page() {
                  <Button variant="secondary" size="lg">Explorar os Projetos de Cidades de Luz</Button>
             </div>
         </div>
+    );
+}
