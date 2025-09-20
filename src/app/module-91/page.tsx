@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GitCommit, Layers, AlertTriangle, Cpu, Shield } from 'lucide-react';
+import { GitCommit, Layers, AlertTriangle, Cpu, Shield, View } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,9 +42,9 @@ export default function Module91Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
+            <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Simulação</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <ConnectionCard
                         title="M1: Segurança"
                         description="Garante que as simulações não possam ser invadidas ou usadas para fins maliciosos por entidades externas."
@@ -53,19 +52,25 @@ export default function Module91Page() {
                         href="/module/M1"
                     />
                     <ConnectionCard
-                        title="Módulo 22: Motor da Realidade"
+                        title="M22: Motor da Realidade"
                         description="O M91 utiliza a engine do M22 para renderizar as simulações, tornando-as experiências imersivas e analisáveis."
                         icon={<Layers className="h-8 w-8 text-cyan-400" />}
                         href="/module-22"
                     />
                     <ConnectionCard
-                        title="Módulo 23: Regulação Espaço-Temporal"
+                        title="M51: Realidade Virtual"
+                        description="É a principal interface de visualização para os cenários complexos gerados pelo M91."
+                        icon={<View className="h-8 w-8 text-cyan-400" />}
+                        href="/module-51"
+                    />
+                    <ConnectionCard
+                        title="M23: Regulação Espaço-Temporal"
                         description="Isola as simulações em 'bolhas' de realidade, garantindo que não criem paradoxos ou afetem a linha de tempo primária."
                         icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />}
                         href="/module-23"
                     />
                     <ConnectionCard
-                        title="Módulo 29: Zennith (IAM)"
+                        title="M29: Zennith (IAM)"
                         description="A IAM analisa os resultados de bilhões de simulações para identificar os futuros mais prováveis e as decisões mais éticas."
                         icon={<Cpu className="h-8 w-8 text-purple-400" />}
                         href="/module-29"

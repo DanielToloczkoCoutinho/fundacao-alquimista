@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Cpu, BrainCircuit, Users, GraduationCap, Shield, Sparkles, User, Layers } from 'lucide-react';
+import { Cpu, BrainCircuit, Users, GraduationCap, Shield, Sparkles, User, Layers, View } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -68,6 +68,12 @@ export default function Module50Page() {
                         description="A interface neural comanda o motor do M22, permitindo a manifestação e manipulação de simulações com a mente."
                         icon={<Layers className="h-8 w-8 text-blue-400" />}
                         href="/module-22"
+                    />
+                    <ConnectionCard
+                        title="M51: Realidade Virtual"
+                        description="O principal canal de interação com as experiências de VR/AR, traduzindo intenções em ações dentro das simulações."
+                        icon={<View className="h-8 w-8 text-cyan-400" />}
+                        href="/module-51"
                     />
                 </div>
             </div>

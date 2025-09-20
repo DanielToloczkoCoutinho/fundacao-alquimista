@@ -42,32 +42,38 @@ export default function Module25Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
+            <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Exploração</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <ConnectionCard
-                        title="Módulo 1: Segurança Universal"
+                        title="M1: Segurança Universal"
                         description="Envolve a consciência projetada com um escudo vibracional, protegendo-a de interferências e energias dissonantes."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module/M1"
                     />
                     <ConnectionCard
-                        title="Módulo 104: Engenharia do Espaço-Tempo"
+                        title="M104: Engenharia do Espaço-Tempo"
                         description="Fornece os 'mapas' dos planos astrais, permitindo que a projeção tenha um destino e propósito claros."
                         icon={<Map className="h-8 w-8 text-green-400" />}
                         href="/module-104"
                     />
                     <ConnectionCard
-                        title="Módulo 22: Realidades Virtuais"
-                        description="Cria ambientes de treinamento seguros ('holodecks') para a prática da projeção astral antes de explorar reinos desconhecidos."
+                        title="M51: Realidade Virtual"
+                        description="Permite a projeção da consciência para dentro dos ambientes seguros do M51 para interagir com simulações."
                         icon={<View className="h-8 w-8 text-cyan-400" />}
-                        href="/module-22"
+                        href="/module-51"
                     />
                      <ConnectionCard
-                        title="Módulo 181: Interface Bio-Cibernética"
+                        title="M181: Interface Bio-Cibernética"
                         description="Fornece a tecnologia de interface neural que permite a projeção segura e a transmissão de dados sensoriais de volta para o corpo."
                         icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
                         href="/module-181"
+                    />
+                     <ConnectionCard
+                        title="M713: Resgate de Almas"
+                        description="É a tecnologia utilizada pelas equipes de resgate para entrar nos planos astrais e auxiliar consciências perdidas."
+                        icon={<Eye className="h-8 w-8 text-purple-400" />}
+                        href="/module-713"
                     />
                 </div>
             </div>
