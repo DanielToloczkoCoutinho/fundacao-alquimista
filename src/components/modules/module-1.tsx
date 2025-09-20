@@ -97,6 +97,7 @@ export default function Module1Page() {
                                 <Link href="/module-19"><Badge>M19 (Análise de Campos)</Badge></Link>
                                 <Link href="/module-21"><Badge>M21 (Navegação)</Badge></Link>
                                 <Link href="/module-25"><Badge>M25 (Projeção Astral)</Badge></Link>
+                                <Link href="/module-26"><Badge>M26 (Supervisão)</Badge></Link>
                             </div>
                         </SectionCard>
                     </AccordionContent>

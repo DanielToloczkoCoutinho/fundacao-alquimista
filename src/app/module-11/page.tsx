@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Aperture, Shield, GitBranch, Map, Rocket, ShieldHalf } from 'lucide-react';
+import { Aperture, Shield, GitBranch, Map, Rocket, ShieldHalf, Eye } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,9 +43,9 @@ export default function Module11Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
+            <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Infraestrutura</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <ConnectionCard
                         title="Módulo 21: Navegação"
                         description="O M11 constrói a infraestrutura de portais que o M21 utiliza para planejar e executar viagens interdimensionais."
@@ -56,7 +56,13 @@ export default function Module11Page() {
                         title="Módulo 1: Segurança Universal"
                         description="Cada portal criado pelo M11 é imediatamente selado com os escudos do M1, garantindo a integridade da Fundação."
                         icon={<Shield className="h-8 w-8 text-cyan-400" />}
-                        href="/module-one"
+                        href="/module/M1"
+                    />
+                    <ConnectionCard
+                        title="Módulo 26: Supervisão"
+                        description="Consulta o M11 para obter o status em tempo real dos portais antes de autorizar qualquer travessia."
+                        icon={<Eye className="h-8 w-8 text-blue-400" />}
+                        href="/module-26"
                     />
                     <ConnectionCard
                         title="Módulo 130: Escola de Navegação"
