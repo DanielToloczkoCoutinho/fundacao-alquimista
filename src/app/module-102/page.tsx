@@ -1,11 +1,13 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Zap, BrainCircuit, Dna as DnaIcon } from 'lucide-react';
+import { Loader2, Zap, BrainCircuit, Dna as DnaIcon, Wand } from 'lucide-react';
 import { describeMorphicField } from '@/app/actions';
+import Link from 'next/link';
 
 // Mocks para simular a funcionalidade de outros módulos da Fundação
 const mockM88 = {
@@ -32,6 +34,22 @@ const mockM94 = {
     return true;
   },
 };
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module102Page = () => {
   const [blueprintInput, setBlueprintInput] = useState('Um campo de coerência para harmonizar o sistema solar.');
@@ -119,10 +137,20 @@ const Module102Page = () => {
           <CardDescription>
             Cria e manipula campos morfogenéticos para influenciar a forma e a estrutura da realidade.
           </CardDescription>
-          <div className="mt-2 text-sm text-muted-foreground">
+        </CardHeader>
+        <CardContent>
+            <ConnectionCard
+                title="Módulo 31: Manipulação Quântica"
+                description="O M102 projeta os campos. O M31 os ancora na realidade, manipulando as leis físicas para dar-lhes substância e permanência."
+                icon={<Wand className="h-8 w-8 text-purple-400" />}
+                href="/module-31"
+            />
+        </CardContent>
+        <CardContent>
+          <div className="mt-2 text-sm text-muted-foreground text-center">
             ID do Operador: <span className="font-mono bg-background/50 p-1 rounded">{userId}</span>
           </div>
-        </CardHeader>
+        </CardContent>
       </Card>
 
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">

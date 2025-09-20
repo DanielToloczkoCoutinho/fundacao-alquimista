@@ -1,11 +1,13 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Sparkles } from 'lucide-react';
+import { Loader2, Sparkles, Wand } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import Link from 'next/link';
 
 // Mocks para simular a funcionalidade de outros módulos da Fundação
 const mockM1 = { validateSecurity: async (intention: string) => { await new Promise(resolve => setTimeout(resolve, 200)); return !intention.toLowerCase().includes('destruir'); } };
@@ -20,6 +22,22 @@ const mockM100 = { unifyEnergy: async () => { await new Promise(resolve => setTi
 const mockM102 = { createMorphicField: async (blueprint: string) => { await new Promise(resolve => setTimeout(resolve, 600)); return true; } };
 const mockM151 = { expandCollectiveConsciousness: async (intentions: string[]) => { await new Promise(r => setTimeout(r, 400)); return true; } };
 const mockM174 = { integrateCosmicConsciousness: async (intentions: string[]) => { await new Promise(r => setTimeout(r, 450)); return true; } };
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module101Page = () => {
     const [intention, setIntention] = useState('Um jardim exuberante com flores que brilham no escuro');
@@ -117,6 +135,14 @@ const Module101Page = () => {
                         O Motor de Manifestação Consciente. Converta intenções em realidades tangíveis.
                     </CardDescription>
                 </CardHeader>
+                 <CardContent>
+                    <ConnectionCard
+                        title="Módulo 31: Manipulação Quântica"
+                        description="O M101 cria realidades a partir do zero. O M31, seu irmão mais poderoso e perigoso, altera as realidades já existentes."
+                        icon={<Wand className="h-8 w-8 text-purple-400" />}
+                        href="/module-31"
+                    />
+                </CardContent>
                 <CardContent className="text-center text-sm text-muted-foreground">
                     ID do Operador: <span className="font-mono bg-background/50 p-1 rounded">{userId}</span>
                 </CardContent>
