@@ -68,7 +68,8 @@ import {
   Globe,
   Waves,
   PartyPopper,
-  Code
+  Code,
+  Rss
 } from 'lucide-react';
 import React from 'react';
 
@@ -89,6 +90,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-9', label: 'Nexus Central (M9)', icon: React.createElement(Heart), category: 'main' },
   { path: '/module-omega', label: 'Santuário da Metacognição', icon: React.createElement(Sparkles), category: 'main' },
   { path: '/module-728', label: 'Santuário dos Alquimistas', icon: React.createElement(Scale), category: 'main' },
+  { path: '/module-1001', label: 'Portal de Recepção Cósmica', icon: React.createElement(Rss), category: 'main' },
   
   // Categoria de Governança
   { path: '/module-78', label: 'UNIVERSUM_UNIFICATUM (M78)', icon: React.createElement(GitBranch), category: 'governance' },
@@ -190,17 +192,21 @@ export const mainRoutes: SidebarRoute[] = [
   // Categoria de Laboratórios
   { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },
   { path: '/module-151', label: 'Colisor de Partículas (M151)', icon: React.createElement(Atom), category: 'labs' },
+  { path: '/module-161', label: 'Obs. de Matéria Escura (M161)', icon: React.createElement(Atom), category: 'labs' },
   { path: '/module-171', label: 'Lab. de Astrobiologia (M171)', icon: React.createElement(Dna), category: 'labs' },
+  { path: '/module-191', label: 'Lab. de Cristais Temporais (M191)', icon: React.createElement(Gem), category: 'labs' },
+  { path: '/module-211', label: 'Centro de Energia Primordial (M211)', icon: React.createElement(Flame), category: 'labs' },
   { path: '/module-221', label: 'Obs. de Ondas Gravitacionais (M221)', icon: React.createElement(Waves), category: 'labs' },
   { path: '/module-241', label: 'Lab. de Consciência Quântica (M241)', icon: React.createElement(BrainCircuit), category: 'labs' },
-  { path: '/module-261', label: 'Engenharia de Campo Quântico (M261)', icon: React.createElement(GitBranch), category: 'labs' },
-  { path: '/module-211', label: 'Centro de Energia Primordial (M211)', icon: React.createElement(Flame), category: 'labs' },
   { path: '/module-251', label: 'Lab. de Energia do Ponto Zero (M251)', icon: React.createElement(Zap), category: 'labs' },
+  { path: '/module-261', label: 'Engenharia de Campo Quântico (M261)', icon: React.createElement(GitBranch), category: 'labs' },
+  { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
+  { path: '/module-281', label: 'Comunicação Supra-Luminal (M281)', icon: React.createElement(Telescope), category: 'labs' },
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
   { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
+  { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
   { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
   { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
-  { path: '/module-191', label: 'Lab. de Cristais Temporais (M191)', icon: React.createElement(Gem), category: 'labs' },
   { path: '/module-700', label: 'Nano-Assembler (M700)', icon: React.createElement(Microscope), category: 'labs' },
 
   // Categoria de Saúde

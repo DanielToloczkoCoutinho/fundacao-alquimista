@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -29,7 +28,7 @@ export default function Module888Page() {
                         <Globe className="text-green-400" /> Módulo 888: Guardião Planetário de Gaia
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O oráculo da Terra Viva e a interface para a anatomia vibracional do planeta.
+                        O oráculo da Terra Viva e a interface para a anatomia vibracional do planeta, incluindo a análise sísmica para detecção de estruturas subterrâneas.
                     </CardDescription>
                 </CardHeader>
             </Card>
