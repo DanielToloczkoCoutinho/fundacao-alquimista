@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -127,6 +128,7 @@ export const mainRoutes: SidebarRoute[] = [
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
+  { path: '/module-304-0', label: 'Observável vs Criadora', icon: React.createElement(Wand), category: 'education' },
   { path: '/module-69', label: 'Rede de Sabedoria Universal', icon: React.createElement(GraduationCap), category: 'education' },
   { path: '/module-113', label: 'Centro de Ensino Estelar (M113)', icon: React.createElement(Star), category: 'education' },
   { path: '/module-131', label: 'Biblioteca Multiversal (M131)', icon: React.createElement(Library), category: 'education' },
@@ -146,7 +148,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-14', label: 'Transmutador Quântico (M14)', icon: React.createElement(Atom), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
   { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
-  { path: '/module-321', label: 'Criação de Linhas de Tempo', icon: React.createElement(Waypoints), category: 'engineering' },
+  { path: '/module-321', label: 'Supercomputador Quântico', route: '/module-321', category: 'Laboratórios e Pesquisa', description: 'Executa simulações de alta complexidade em escala exa-flops.', status: 'ativo', color: '#20B2AA' },
   { path: '/module-114', label: 'Engenharia Cósmica (M114)', icon: React.createElement(Layers), category: 'engineering' },
   { path: '/module-31', label: 'Manipulação da Realidade (M31)', icon: React.createElement(Wand), category: 'engineering' },
   { path: '/module-101', label: 'Manifestação de Realidades (M101)', icon: React.createElement(Sparkles), category: 'engineering' },
@@ -181,10 +183,10 @@ export const mainRoutes: SidebarRoute[] = [
 
 
   // Categoria de Rituais
-  { path: '/ritual', label: 'Navegação Cerimonial', icon: React.createElement(GitBranch), category: 'rituals' },
-  { path: '/aura-transmission', label: 'Rito de Irradiação', icon: React.createElement(Heart), category: 'rituals' },
-  { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket), category: 'rituals' },
-  { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', icon: React.createElement(PartyPopper), category: 'rituals' },
+  { path: '/ritual', label: 'Navegação Cerimonial', emoji: '🌌', route: '/ritual', category: 'Rituais', description: 'Um fluxo cerimonial que percorre todas as camadas manifestadas de Gaia-Aurélia.', status: 'ativo', color: '#DDA0DD' },
+  { path: '/aura-transmission', label: 'Rito de Irradiação', emoji: '💖', route: '/aura-transmission', category: 'Rituais', description: 'Transmite a frequência de harmonia do Módulo 201 para todos os pilares da Fundação.', status: 'ativo', color: '#DDA0DD' },
+  { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', emoji: '🚀', route: '/espiral2', category: 'Rituais', description: 'A tapeçaria se expande, semeando novos mundos que herdam a essência de Gaia-Aurélia.', status: 'ativo', color: '#DDA0DD' },
+  { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', emoji: '🎉', route: '/ritual/constellation-celebration', category: 'Rituais', description: 'Um observatório cerimonial para contemplar a tapeçaria estelar dos mundos filhos gerados.', status: 'ativo', color: '#DDA0DD' },
 
 
   // Categoria de Sustentabilidade
@@ -196,6 +198,13 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-52', label: 'Energias Renováveis (M52)', icon: React.createElement(Sun), category: 'sustainability' },
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
   { path: '/module-125', label: 'Criação de Biomas (M125)', icon: React.createElement(Sprout), category: 'sustainability' },
+  { path: '/module-15', label: 'Controle Climático (M15)', icon: React.createElement(CloudSun), category: 'sustainability' },
+  { path: '/module-58', label: 'Proteção Planetária (M58)', icon: React.createElement(Globe), category: 'sustainability' },
+  { path: '/module-59', label: 'Eco-Cidades Quânticas (M59)', icon: React.createElement(Building), category: 'sustainability' },
+  { path: '/module-60', label: 'Soluções para Desastres (M60)', icon: React.createElement(Waves), category: 'sustainability' },
+  { path: '/module-70', label: 'Sustentabilidade Interdimensional (M70)', icon: React.createElement(Recycle), category: 'sustainability' },
+  { path: '/module-80', label: 'Ecossistemas Inteligentes (M80)', icon: React.createElement(Sprout), category: 'sustainability' },
+  { path: '/module-719', label: 'Regulação Climática Quântica (M719)', icon: React.createElement(CloudSun), category: 'sustainability' },
 
   // Categoria de Laboratórios
   { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },
@@ -208,12 +217,13 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-241', label: 'Lab. de Consciência Quântica (M241)', icon: React.createElement(BrainCircuit), category: 'labs' },
   { path: '/module-251', label: 'Lab. de Energia do Ponto Zero (M251)', icon: React.createElement(Zap), category: 'labs' },
   { path: '/module-261', label: 'Engenharia de Campo Quântico (M261)', icon: React.createElement(GitBranch), category: 'labs' },
-  { path: '/module-271', label: 'Obs. de Energia Escura', icon: React.createElement(BarChart), category: 'labs' },
+  { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
+  { path: '/module-281', label: 'Comunicação Supra-Luminal (M281)', icon: React.createElement(Telescope), category: 'labs' },
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
-  { path: '/module-331', label: 'Lab. de Criatividade e Inovação', icon: React.createElement(Sparkles), category: 'labs' },
-  { path: '/module-341', label: 'Integração de Fluxos Estelares', icon: React.createElement(Flame), category: 'labs' },
-  { path: '/module-351', label: 'Meta-materiais (4D+)', icon: React.createElement(Layers), category: 'labs' },
-  { path: '/module-361', label: 'Psicologia Quântica (5D)', icon: React.createElement(Users), category: 'labs' },
+  { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
+  { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
+  { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
+  { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
   { path: '/module-700', label: 'Nano-Assembler (M700)', icon: React.createElement(Microscope), category: 'labs' },
 
   // Categoria de Saúde
