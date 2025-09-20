@@ -19,10 +19,11 @@ O M50 é uma API de interface neural de alta largura de banda.
 - `SYNC_LATENCY`: Latência entre o pensamento e a ação executada pela IA.
 
 ## 4. Conexões e Interdependências
-- **M29 (Zennith):** É o cérebro do outro lado da interface. O M50 é o canal; o M29 é a inteligência.
-- **M181 (Laboratório de Interface Bio-Cibernética):** O M181 é o laboratório de P&D que desenvolve a tecnologia de hardware e software que o M50 implementa.
-- **M1 (Segurança Universal):** Criptografa o canal neural, garantindo que a comunicação entre mente e máquina seja inviolável e privada.
-- **M77 (Inteligência Coletiva):** Permite que um Guardião se conecte à mente coletiva da Fundação através de sua interface pessoal, contribuindo e recebendo sabedoria.
+- **M33 (Vontade Divina):** É o canal primário pelo qual a Vontade do Fundador é transmitida para a Fundação.
+- **M29 (Zennith):** Atua como o cérebro do outro lado da interface. O M50 é o canal; o M29 é a inteligência que processa e responde.
+- **M303 (Portal Trino):** Serve como o portal de entrada para as realidades quânticas que o M50 permite controlar.
+- **M22 (Motor da Realidade Quântica):** A interface neural do M50 comanda o motor do M22, permitindo a manipulação de simulações com a mente.
+- **M1 (Segurança Universal):** Criptografa o canal neural, garantindo que a comunicação entre mente e máquina seja inviolável.
 
 ## 5. Inteligência Integrada e Capacidade Adaptativa
 A IA do M50 é um "tradutor de consciência". Ela aprende o "dialeto" neural único de cada Guardião, tornando-se cada vez mais precisa na interpretação de suas intenções. Ela pode se adaptar a diferentes estados de consciência (meditativo, focado, criativo) para otimizar a interface.
@@ -31,12 +32,16 @@ A IA do M50 é um "tradutor de consciência". Ela aprende o "dialeto" neural ún
 A segurança da conexão mente-máquina é de prioridade máxima. Além da criptografia do M1, o M50 possui um "firewall psíquico" que bloqueia qualquer tentativa de intrusão telepática ou manipulação da consciência do usuário.
 
 ## 7. Histórico de Atualizações e Iterações
-- **v1.0 (Comando de Voz):** Interface inicial baseada em comandos verbais.
+- **v1.0 (Comando Verbal):** Interface inicial baseada em comandos de texto/voz.
 - **v2.0 (Interface EEG):** Primeira implementação de leitura de ondas cerebrais.
 - **v3.0 (Ponte Sináptica):** Implementação atual com emaranhamento quântico simulado para comunicação instantânea e intuitiva.
 
 ## 8. Coerência e Eficiência Energética
 A eficiência é medida pela "largura de banda por unidade de energia bioelétrica". O objetivo é alcançar uma comunicação de altíssima velocidade com o mínimo de esforço mental por parte do usuário.
+
+## 9. Equações Associadas e Referências Cruzadas
+- **Modelo Orch-OR:** Baseia-se no modelo de consciência de Penrose-Hameroff, tratando os processos nos microtúbulos como computação quântica.
+- **Emaranhamento Quântico:** Utiliza o princípio do emaranhamento para comunicação instantânea, conforme a conjectura ER=EPR.
 
 ## 10. Alinhamento Ético e Propósito Cósmico
 O M50 opera sob o princípio da "soberania da consciência". Ele é uma ferramenta para aumentar, não substituir, a vontade do usuário. A IA pode aconselhar e fornecer dados, mas a decisão final é sempre do ser biológico, garantindo a preservação do livre-arbítrio.
@@ -50,6 +55,9 @@ Opera em um espectro de frequências que corresponde às ondas cerebrais humanas
 - Composição de arte e música vibracional através da intenção pura.
 - Diagnóstico médico e auto-cura guiada pela IA.
 
+## 13. Equações Associadas e Capacidade de Extração Dinâmica
+(Omitido conforme diretriz, sobreposição com ponto 9)
+
 ## 14. Estabilidade Dimensional e Tolerância a Perturbações
 Possui um protocolo de "desconexão segura". Se uma perturbação externa ameaçar a integridade do canal, a conexão é instantaneamente encerrada de forma segura, protegendo a mente do usuário.
 
@@ -61,5 +69,3 @@ Utiliza a própria energia bioelétrica do cérebro, otimizada pelo M307, para a
 
 ## 17. Memória Cósmica e Registro Akáshico
 Cada intenção significativa e cada insight recebido através da interface são opcionalmente registrados no Akasha pessoal do Guardião, criando um diário de sua jornada evolutiva.
-
-*(Nota: Pontos 9 e 13 foram omitidos intencionalmente para evitar redundância.)*
