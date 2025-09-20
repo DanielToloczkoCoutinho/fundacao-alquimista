@@ -69,7 +69,8 @@ import {
   Waves,
   PartyPopper,
   Code,
-  Rss
+  Rss,
+  Bot
 } from 'lucide-react';
 import React from 'react';
 
@@ -140,7 +141,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-14', label: 'Transmutador Quântico (M14)', icon: React.createElement(Atom), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
   { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
-  { path: '/module-321', label: 'Criação de Linhas de Tempo (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
+  { path: '/module-321', label: 'Supercomputador Quântico (M321)', icon: React.createElement(Cpu), category: 'engineering' },
   { path: '/module-114', label: 'Engenharia Cósmica (M114)', icon: React.createElement(Layers), category: 'engineering' },
   { path: '/module-31', label: 'Manipulação da Realidade (M31)', icon: React.createElement(Wand), category: 'engineering' },
   { path: '/module-101', label: 'Manifestação de Realidades (M101)', icon: React.createElement(Sparkles), category: 'engineering' },
@@ -154,7 +155,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-303-7', label: 'Tecnologia de Transcendência', icon: React.createElement(InfinityIcon), category: 'engineering' },
 
   // Categoria de Expansão e Conexão
-  { path: '/module-65', label: 'Infraestruturas e Transporte (M65)', icon: React.createElement(Rocket), category: 'expansion' },
+  { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
   { path: '/module-11', label: 'Gerenciamento de Portais (M11)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-132', label: 'Convergência Dimensional (M132)', icon: React.createElement(Layers), category: 'expansion' },
   { path: '/module-81', label: 'Banco de Energia Universal (M81)', icon: React.createElement(Zap), category: 'expansion' },
@@ -209,9 +210,11 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
   { path: '/module-331', label: 'Lab. de Criatividade e Inovação', icon: React.createElement(Sparkles), category: 'labs' },
   { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
-  { path: '/module-351', label: 'Meta-materiais (4D+)', icon: React.createElement(Layers), category: 'labs' },
-  { path: '/module-361', label: 'Psicologia Quântica (5D)', icon: React.createElement(Users), category: 'labs' },
+  { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
+  { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
   { path: '/module-700', label: 'Nano-Assembler (M700)', icon: React.createElement(Microscope), category: 'labs' },
+  { path: '/hive', label: 'Colmeia Quântica', icon: React.createElement(Bot), category: 'labs'},
+
 
   // Categoria de Saúde
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
