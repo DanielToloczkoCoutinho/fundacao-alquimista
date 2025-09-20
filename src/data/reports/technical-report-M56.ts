@@ -15,7 +15,7 @@ export const technicalReportM56 = {
   summary: `
     Análise da arquitetura técnica do Módulo 56, detalhando sua implementação como um
     serviço de tradução multimodal em tempo real e sua integração com a LuxNet (M55)
-    e a Biblioteca de Civilizações (M-CIV).
+    e a Biblioteca das Civilizações (M-CIV).
   `,
   sections: [
     {

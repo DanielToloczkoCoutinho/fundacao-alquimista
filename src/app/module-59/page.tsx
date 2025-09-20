@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -49,7 +50,7 @@ export default function Module59Page() {
                         title="M1: Segurança"
                         description="Protege os projetos de eco-cidades contra ameaças, garantindo que os novos habitats sejam santuários seguros."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 58: Sustentabilidade Planetária"
@@ -59,7 +60,7 @@ export default function Module59Page() {
                     />
                     <ConnectionCard
                         title="Módulo 95: Consciências Coletivas"
-                        description="Consulta a consciência coletiva de uma civilização para projetar habitats que ressoem com sua cultura e valores espirituais."
+                        description="Consulta a mente coletiva de uma civilização para projetar habitats que ressoem com sua cultura e valores espirituais."
                         icon={<Users className="h-8 w-8 text-purple-400" />}
                         href="/module-95"
                     />

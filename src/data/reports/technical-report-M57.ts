@@ -39,7 +39,7 @@ export const technicalReportM57 = {
     },
   ],
   conclusion: `
-    A arquitetura do Módulo 57 é um exemplo de "defesa em profundidade". Ao combinar múltiplos mecanismos
+    A arquitetura técnica do Módulo 57 é um exemplo de "defesa em profundidade". Ao combinar múltiplos mecanismos
     de segurança (QKD, AES, assinaturas digitais, rotação de chaves), ele cria uma fortaleza
     criptográfica em torno da comunicação da Fundação. Sua implementação como um middleware
     transparente garante que essa segurança robusta seja aplicada universalmente, sem exigir que

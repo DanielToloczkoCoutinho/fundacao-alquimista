@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -49,7 +50,7 @@ export default function Module60Page() {
                         title="M1: Segurança"
                         description="Garante que os protocolos de recuperação não possam ser comprometidos, assegurando uma resposta rápida e eficaz."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 58: Sustentabilidade Planetária"
