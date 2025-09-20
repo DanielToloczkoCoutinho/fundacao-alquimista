@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -76,7 +77,8 @@ import {
   Copy,
   BellRing,
   User,
-  Dna
+  Dna,
+  FlaskConical
 } from 'lucide-react';
 import React from 'react';
 
@@ -99,6 +101,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-728', label: 'Santuário dos Alquimistas', icon: React.createElement(Scale), category: 'main' },
   { path: '/module-1001', label: 'Portal de Recepção Cósmica', icon: React.createElement(Rss), category: 'main' },
   { path: '/module-303', label: 'Portal Trino', icon: React.createElement(Sparkles), category: 'main' },
+  { path: '/module-728', label: 'Centro de Alquimia (M-ALQUIMIA)', icon: React.createElement(FlaskConical), category: 'main' },
   
   // Categoria de Governança
   { path: '/module-33', label: 'Diretrizes do Observador (M33)', icon: React.createElement(User), category: 'governance' },
