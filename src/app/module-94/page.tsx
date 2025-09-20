@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
 const mockM01 = { validate_signature: (hash: string) => ({ status: "validated", security_level: 0.99 }), register_event: (event: any) => ({ status: "registered" }), };
-const mockM03 = { predict_reprogramming_outcome: (reprogramming_data: any) => "coercao" in (reprogramming_data.purpose || "").toLowerCase() ? { predicted_success_score: Math.random() * 0.4 + 0.1, confidence: 0.8 } : { predicted_success_score: Math.random() * 0.3 + 0.7, confidence: 0.95 }, };
+const mockM03 = { predict_reprogramming_outcome: (plan: any) => "coercao" in (plan.purpose || "").toLowerCase() ? { predicted_success_score: Math.random() * 0.4 + 0.1, confidence: 0.8 } : { predicted_success_score: Math.random() * 0.3 + 0.7, confidence: 0.95 }, };
 const mockM05 = { evaluate_ethical_impact: (operation_data: any) => { const ethical_score = "coercao" in (operation_data.description || "").toLowerCase() ? Math.random() * 0.5 + 0.1 : Math.random() * 0.3 + 0.7; return { ethical_score, conformity: ethical_score >= 0.75 }; }, };
 const mockM14 = { transform_energy: (energy_type: string, quantity: number) => ({ status: "transformed", output_energy: quantity * (Math.random() * 0.2 + 0.9) }), };
 const mockM33 = { get_current_directives: () => ({ reprogramming_priority: "MAXIMIZE_EVOLUTIONARY_ALIGNMENT", ethical_alignment_strictness: "ABSOLUTE" }), };
@@ -130,10 +130,10 @@ const Module94Page = () => {
                 </CardHeader>
                  <CardContent>
                     <ConnectionCard
-                        title="Módulo 15: Jardineiro Cósmico"
-                        description="O M94 recebe solicitações do M15 para criar blueprints genéticos de espécies adaptadas para restaurar um ecossistema em desequilíbrio."
+                        title="Módulo 16: Biossíntese e Ecossistemas"
+                        description="O M94 fornece os blueprints genéticos para as formas de vida que irão habitar os ecossistemas projetados pelo M16."
                         icon={<Sprout className="h-8 w-8 text-green-400" />}
-                        href="/module-15"
+                        href="/module-16"
                     />
                 </CardContent>
             </Card>

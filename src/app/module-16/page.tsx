@@ -46,10 +46,10 @@ export default function Module16Page() {
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Biossíntese</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
-                        title="Módulo 1: Segurança Universal"
+                        title="M1: Segurança Universal"
                         description="Cada novo ecossistema é criado dentro de um campo de contenção do M1, garantindo que a vida se desenvolva em um ambiente seguro."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 94: Morfogênese Quântica"
