@@ -49,7 +49,7 @@ export default function Module51Page() {
                         title="M1: Segurança"
                         description="Cria um 'firewall' psíquico ao redor da simulação, protegendo a mente do usuário de influências externas."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 91: Simulação Multiversal"

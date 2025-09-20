@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, BrainCircuit, Users, Heart } from 'lucide-react';
+import { GraduationCap, BrainCircuit, Users, Heart, Layers } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -48,8 +47,8 @@ export default function Module113Page() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 22: Motor da Realidade"
-                        description="Fornece o ambiente de sala de aula imersiva para o treinamento em Realidade Quântica."
-                        icon={<Users className="h-8 w-8 text-blue-400" />}
+                        description="Fornece o ambiente de sala de aula imersiva para o treinamento em Realidade Quântica, renderizando os cenários de aprendizado."
+                        icon={<Layers className="h-8 w-8 text-blue-400" />}
                         href="/module-22"
                     />
                     <ConnectionCard

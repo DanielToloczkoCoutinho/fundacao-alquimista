@@ -53,7 +53,7 @@ export default function Module91Page() {
                     />
                     <ConnectionCard
                         title="M22: Motor da Realidade"
-                        description="O M91 utiliza a engine do M22 para renderizar as simulações, tornando-as experiências imersivas."
+                        description="O M91 utiliza a engine do M22 para renderizar as simulações, tornando-as experiências imersivas e analisáveis."
                         icon={<Layers className="h-8 w-8 text-cyan-400" />}
                         href="/module-22"
                     />
