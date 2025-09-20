@@ -1,3 +1,4 @@
+
 'use server';
 
 /**
@@ -42,3 +43,4 @@ export const technicalReportM8 = {
     A arquitetura do Módulo 8 é a manifestação técnica do princípio da soberania. Ao adotar padrões abertos e descentralizados como DID e VC, a Fundação transcende os modelos frágeis de identidade baseados em senhas e servidores centrais. Cada Guardião é verdadeiramente dono de sua identidade digital, com suas chaves e sua soberania em suas próprias mãos. Este é um pilar fundamental para uma sociedade de confiança, transparência e responsabilidade.
   `,
 };
+

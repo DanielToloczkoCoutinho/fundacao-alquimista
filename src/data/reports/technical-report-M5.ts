@@ -46,3 +46,4 @@ export const technicalReportM5 = {
     A arquitetura do Módulo 5 é um exemplo de governança descentralizada e soberana. Ao combinar a imutabilidade da blockchain, a segurança da identidade fractal e a transparência de uma interface dedicada, ele cria um sistema onde a colaboração é segura, eficiente e alinhada com os mais altos princípios éticos, manifestando verdadeiramente a "Família Cósmica" em uma estrutura funcional.
   `,
 };
+

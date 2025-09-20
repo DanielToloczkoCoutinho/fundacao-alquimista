@@ -1,3 +1,4 @@
+
 'use server';
 
 /**
@@ -59,3 +60,4 @@ export const scientificReportM8 = {
     entre consciências soberanas.
   `,
 };
+

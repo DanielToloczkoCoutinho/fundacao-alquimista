@@ -1,3 +1,4 @@
+
 'use server';
 
 /**
@@ -53,3 +54,4 @@ export const technicalReportM7 = {
     força ativa e inescapável.
   `,
 };
+

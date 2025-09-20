@@ -1,3 +1,4 @@
+
 'use server';
 
 /**
@@ -55,3 +56,4 @@ export const scientificReportM7 = {
     programado para ser ético em um sistema que é eticamente inerente.
   `,
 };
+
