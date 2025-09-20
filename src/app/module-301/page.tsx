@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, MessageCircle, Send, Paperclip, Users2, Globe } from 'lucide-react';
+import { Loader2, MessageCircle, Send, Paperclip, Users2, Globe, Link as LinkIcon } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { transmitUniversalMessage } from '@/app/actions';
 import { Label } from '@/components/ui/label';
@@ -89,11 +89,12 @@ export default function Module301Page() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <Link href="/module-888" passHref>
-                        <Button variant="outline" className="w-full">
-                           <Globe className="mr-2 h-4 w-4" /> Conectar ao Guardião Planetário de Gaia (M888)
-                        </Button>
-                    </Link>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <ConnectionCard title="M2: Intercâmbio Cósmico" href="/module/M2" />
+                        <ConnectionCard title="M5: Liga Quântica" href="/module-5" />
+                        <ConnectionCard title="M-CIV: Biblioteca" href="/civilizations" />
+                        <ConnectionCard title="M600: Recepção" href="/module-600" />
+                    </div>
                 </CardContent>
             </Card>
 
@@ -184,11 +185,12 @@ export default function Module301Page() {
                     </Card>
                     <Card className="bg-card/50 purple-glow border-accent/50">
                         <CardHeader>
-                            <CardTitle className="text-xl text-cyan-300">Integração com Liga Quântica</CardTitle>
+                            <CardTitle className="text-xl text-cyan-300">Integração Energética (LuxNet)</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <p className="text-sm text-muted-foreground mb-4">Este módulo atua como a voz da Vontade Soberana para os módulos de coordenação da Liga Quântica.</p>
-                            <div className="flex flex-wrap gap-2">
+                            <p className="text-sm text-muted-foreground mb-4">Toda comunicação é um ato de energia. A LuxNet, alimentada pelo Reator ZPE, sustenta cada transmissão.</p>
+                             <div className="flex flex-wrap gap-2">
+                                <ConnectionCard title="Reator ZPE (M307)" href="/module-307" />
                                 {ligaQuanticaModules.map(mod => (
                                     <ConnectionCard key={mod} title={mod} href="#" />
                                 ))}
