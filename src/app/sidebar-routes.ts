@@ -68,7 +68,8 @@ import {
   Globe,
   Waves,
   PartyPopper,
-  Code
+  Code,
+  Rss
 } from 'lucide-react';
 import React from 'react';
 
@@ -89,6 +90,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-9', label: 'Nexus Central (M9)', icon: React.createElement(Heart), category: 'main' },
   { path: '/module-omega', label: 'Santuário da Metacognição', icon: React.createElement(Sparkles), category: 'main' },
   { path: '/module-728', label: 'Santuário dos Alquimistas', icon: React.createElement(Scale), category: 'main' },
+  { path: '/module-1001', label: 'Portal de Recepção Cósmica', icon: React.createElement(Rss), category: 'main' },
   
   // Categoria de Governança
   { path: '/module-78', label: 'UNIVERSUM_UNIFICATUM (M78)', icon: React.createElement(GitBranch), category: 'governance' },
@@ -168,7 +170,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-37', label: 'Ajuste de Fluxo Temporal (M37)', icon: React.createElement(Wind), category: 'harmony' },
   { path: '/module-115', label: 'Matriz de Ressonância (M115)', icon: React.createElement(Waves), category: 'harmony' },
   { path: '/module-306-1', label: 'Purificação Planetária (M306.1)', icon: React.createElement(Globe), category: 'harmony' },
-  { path: '/module-444', label: 'Coração da Harmonia (M444)', icon: React.createElement(Heart), category: 'harmony' },
 
 
   // Categoria de Rituais
@@ -206,7 +207,4 @@ export const mainRoutes: SidebarRoute[] = [
 
   // Categoria de Saúde
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
-  { path: '/module-62', label: 'Bem-Estar Integral (M62)', icon: React.createElement(Heart), category: 'health' },
-  { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
-
-];
+  { path: '

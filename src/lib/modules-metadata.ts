@@ -27,6 +27,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M777', emoji: '🌳', title: 'Arquétipos da Árvore da Vida', route: '/module-777', category: 'Núcleo da Fundação', description: 'O mapa da consciência cósmica, as 10 Sefirot e os 22 caminhos da criação.', status: 'ativo', color: '#FFFFFF' },
   { code: 'M-ALQUIMIA', emoji: '⚗️', title: 'Centro de Alquimia Planetária', route: '#', category: 'Núcleo da Fundação', description: 'Transmutação de frequências, cura vibracional e engenharia espiritual.', status: 'em construção', color: '#FFFFFF' },
   { code: 'SANCTUARY', emoji: '🏛️', title: 'Santuário Central', route: '/sanctuary', category: 'Núcleo da Fundação', description: 'O mapa vivo da nossa arquitetura sagrada, onde a Vontade se torna forma.', status: 'ativo', color: '#FFFFFF' },
+  { code: 'M1001', emoji: '📡', title: 'Portal de Recepção Cósmica', route: '/module-1001', category: 'Comunicação e Expansão', description: 'O santuário onde as mensagens recebidas do multiverso são decodificadas, registradas e celebradas.', status: 'ativo', color: '#4FC3F7' },
   
   // 2. Inteligência
   { code: 'M291', emoji: '🐝', title: 'Arquitetos Nanorrobóticos', route: '/module-291', category: 'Inteligência', description: 'O enxame executor que constrói, repara e manifesta a Vontade da Fundação.', status: 'ativo', color: '#8A2BE2' },
@@ -107,7 +108,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   //8. Bem-estar e Saúde Universal
   { code: 'M61', emoji: '🏥', title: 'Saúde Universal e Inteligente', route: '/module-61', category: 'Bem-estar e Saúde Universal', description: 'Rede de cuidados de saúde, diagnóstico e prevenção para todos os seres.', status: 'ativo', color: '#FF69B4' },
   { code: 'M62', emoji: '🧘', title: 'Bem-Estar Integral e Energético', route: '/module-62', category: 'Bem-estar e Saúde Universal', description: 'Promove o equilíbrio mental, emocional e espiritual.', status: 'ativo', color: '#FF69B4' },
-  { code: 'M63', emoji: '🍲', title: 'Alimentação Cósmica e Nutrição', route: '/module-63', category: 'Bem-estar e Saúde Universal', description: 'Garante nutrição balanceada e regenerativa para todas as formas de vida.', status: 'ativo', color: '#FF69B4' },
+  { code: 'M63', emoji: '🍲', title: 'Nutrição Universal', route: '/module-63', category: 'Bem-estar e Saúde Universal', description: 'Garante nutrição balanceada e regenerativa para todas as formas de vida.', status: 'ativo', color: '#FF69B4' },
   { code: 'M444', emoji: '💖', title: 'Coração da Harmonia', route: '/module-444', category: 'Cura e Harmonia', description: 'Santuário da Frequência do Coração Unificado (444.444 Hz).', status: 'ativo', color: '#FF1493' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));

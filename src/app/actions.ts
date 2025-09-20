@@ -358,6 +358,4 @@ export async function getPlanetaryChronicle(input: PlanetaryChronicleInput): Pro
         return { ...result, error: null };
     } catch (e: any) {
         console.error("Erro ao gerar crônica planetária:", e);
-        return { chronicle: 'O cosmos silencia. A história deste mundo ainda não pode ser cantada.', error: e.message };
-    }
-}
+        return { chronicle: 'O cosmos silencia. A história deste mundo ainda não pode ser cant

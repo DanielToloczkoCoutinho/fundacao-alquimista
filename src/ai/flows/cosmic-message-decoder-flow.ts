@@ -72,4 +72,7 @@ export async function decodeCosmicMessage(
       translatedMessage: 'Falha na decodificação. A mensagem está corrompida ou além da compreensão atual.',
       recommendedAction: 'Aumentar a coerência do canal de comunicação (M301) e tentar novamente.',
       akashicLog: `Falha ao decodificar mensagem de ${input.source}.`,
-      error: e.message ||
+      error: e.message || 'Ocorreu um erro desconhecido.'
+    };
+  }
+}
