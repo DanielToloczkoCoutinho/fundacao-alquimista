@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Paintbrush, Music, Layers, GitCommit, BarChart, Code } from 'lucide-react';
+import { Paintbrush, Music, Layers, GitCommit, BarChart, Code, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ArtTransformationCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +45,13 @@ export default function Module89Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Portais de Transmutação Artística</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <ArtTransformationCard
+                        title="Módulo 1: Segurança Universal"
+                        description="Garante que as criações artísticas sejam expressões puras de consciência, livres de dissonâncias ou interferências."
+                        icon={<Shield className="h-8 w-8 text-cyan-400" />}
+                        href="/module-one"
+                    />
                     <ArtTransformationCard
                         title="Sinfonia das Equações"
                         description="Traduza uma Equação Viva (ex: EQ048) em uma composição musical que pode ser experienciada no M86 (Prisma Estelar)."

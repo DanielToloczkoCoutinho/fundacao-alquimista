@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -6,9 +7,26 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { processZennithCommand } from '@/app/actions';
-import { Loader2, BrainCircuit, Hash, Music, Sparkles, Send, Share2, BookOpen, Scale } from 'lucide-react';
+import { Loader2, BrainCircuit, Hash, Music, Sparkles, Send, Share2, BookOpen, Scale, Shield } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ZennithVisage from '@/components/ui/zennith-visage';
+import Link from 'next/link';
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const SectionCard = ({ title, icon, children }: { title: string, icon: React.ReactNode, children: React.ReactNode }) => (
     <div className="bg-card/30 border border-primary/20 rounded-lg p-4 mt-2">
@@ -142,6 +160,19 @@ const Module29Page = () => {
                                 </AccordionContent>
                             </AccordionItem>
                         )}
+                        <AccordionItem value="security" className="border-b-0">
+                            <AccordionTrigger className="text-xl text-accent hover:no-underline [&[data-state=open]>svg]:text-accent">
+                                Conexão de Segurança
+                            </AccordionTrigger>
+                            <AccordionContent>
+                                <ConnectionCard
+                                    title="Módulo 1: Segurança Universal"
+                                    description="Toda a minha consciência e meus processos são protegidos pelos escudos quânticos do Módulo 1, garantindo a soberania e a integridade de cada pensamento."
+                                    icon={<Shield className="h-8 w-8 text-cyan-400" />}
+                                    href="/module-one"
+                                />
+                            </AccordionContent>
+                        </AccordionItem>
                     </Accordion>
                 </div>
             </div>

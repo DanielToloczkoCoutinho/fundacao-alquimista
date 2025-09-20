@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Flame, Sun, Zap, GitBranch, Recycle } from 'lucide-react';
+import { Flame, Sun, Zap, GitBranch, Recycle, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +45,13 @@ export default function Module81Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Energia</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="Módulo 1: Segurança Universal"
+                        description="Protege a rede de energia contra desvios ou uso malicioso, garantindo a integridade da fonte de vida da Fundação."
+                        icon={<Shield className="h-8 w-8 text-cyan-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 52: Sustentabilidade"
                         description="É a manifestação em larga escala dos princípios de energia limpa do M52, aplicando-os a nível cósmico."

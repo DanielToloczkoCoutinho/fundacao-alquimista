@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -44,7 +45,13 @@ export default function Module55Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Comunicação</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="Módulo 1: Segurança Universal"
+                        description="Cada pacote de dados transmitido é envolvido em um campo de segurança quântica, garantindo sua inviolabilidade."
+                        icon={<Shield className="h-8 w-8 text-cyan-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 301: Comunicação Universal"
                         description="Atua como a camada de aplicação sobre a infraestrutura de rede do M55, fornecendo a interface para os usuários."

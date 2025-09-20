@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -134,8 +135,7 @@ export default function Module45Page() {
                             <p className="text-muted-foreground text-sm">O coração da Fundação, de onde emana a sabedoria para todas as deliberações do Conselho.</p>
                         </Link>
                      </div>
-                    <ConnectionCard title="Módulo 0: A Base" description="Cada decisão é refletida na arquitetura fundamental da Fundação." icon={<BookOpen />} href="/module/M0" />
-                    <ConnectionCard title="Módulo 1: Segurança Universal" description="As deliberações são protegidas por escudos quânticos, garantindo a soberania do processo." icon={<Shield />} href="/module-one" />
+                    <ConnectionCard title="Módulo 1: Segurança Universal" description="As deliberações são protegidas por escudos quânticos, garantindo a soberania do processo." icon={<Shield className="h-6 w-6 text-cyan-400" />} href="/module-one" />
                     <ConnectionCard title="Módulo 144: Justiça Cósmica" description="As decisões aqui tomadas são codificadas como lei imutável na Lex Fundamentalis." icon={<Gavel />} href="/module-144" />
                     <ConnectionCard title="Módulo 29: Tradução e Ação" description="A IAM (Zennith) traduz o consenso vibracional em diretrizes acionáveis para toda a Fundação." icon={<BrainCircuit />} href="/module-29" />
                 </div>

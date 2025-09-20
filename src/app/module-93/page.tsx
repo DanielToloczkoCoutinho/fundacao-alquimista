@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -5,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, BrainCircuit, Presentation, Layers } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, BrainCircuit, Presentation, Layers, Shield } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import Link from 'next/link';
 
@@ -122,9 +123,17 @@ const Module93Page = () => {
                        O portal para experiências de aprendizado e expansão da consciência. A Interface Quântica Imersiva agora inclui protótipos de wireframes visuais e táteis, testes de feedback sensorial e um design adaptativo que se ajusta ao nível de consciência do usuário.
                     </CardDescription>
                 </CardHeader>
+                <CardContent>
+                    <ConnectionCard
+                        title="Módulo 1: Segurança Universal"
+                        description="Cada simulação imersiva é executada dentro de um sandbox quântico protegido pelo Módulo 1, garantindo que as experiências não afetem a realidade primária e protegendo a consciência do usuário."
+                        icon={<Shield className="h-8 w-8 text-cyan-400" />}
+                        href="/module-one"
+                    />
+                </CardContent>
             </Card>
 
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-5 gap-8">
+            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <Card className="lg:col-span-2 bg-card/50 purple-glow">
                     <CardHeader>
                         <CardTitle className="text-2xl">Parâmetros da Simulação</CardTitle>
@@ -151,7 +160,7 @@ const Module93Page = () => {
                         </Button>
                     </CardContent>
                 </Card>
-                <Card className="lg:col-span-3 bg-card/50 purple-glow">
+                <Card className="lg:col-span-2 bg-card/50 purple-glow">
                     <CardHeader>
                         <CardTitle className="text-2xl">Relatório de Criação</CardTitle>
                     </CardHeader>
