@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -182,6 +183,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-37', label: 'Ajuste de Fluxo Temporal (M37)', icon: React.createElement(Wind), category: 'harmony' },
   { path: '/module-115', label: 'Matriz de Ressonância (M115)', icon: React.createElement(Waves), category: 'harmony' },
   { path: '/module-306-1', label: 'Purificação Planetária (M306.1)', icon: React.createElement(Globe), category: 'harmony' },
+  { path: '/module-24', label: 'Sinfonia Pessoal (M24)', icon: React.createElement(Music), category: 'harmony' },
 
 
   // Categoria de Rituais
@@ -232,4 +234,4 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
   { path: '/module-17', label: 'Matriz de Cura (M17)', icon: React.createElement(HeartPulse), category: 'health' },
 
-];
+].map(m => ({ ...m, connections: m.connections || [] }));

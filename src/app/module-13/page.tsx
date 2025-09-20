@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Waves, Atom, Eye, BrainCircuit, Shield, HeartHandshake } from 'lucide-react';
+import { Waves, Atom, Eye, BrainCircuit, Shield, HeartHandshake, Music } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -55,7 +55,7 @@ export default function Module13Page() {
                     <ConnectionCard
                         title="Módulo 24: Alinhamento Pessoal"
                         description="Diagnostica as frequências dissonantes na 'canção' de uma consciência para que o M24 possa realizar a afinação."
-                        icon={<Atom className="h-8 w-8 text-purple-400" />}
+                        icon={<Music className="h-8 w-8 text-violet-400" />}
                         href="/module-24"
                     />
                     <ConnectionCard
