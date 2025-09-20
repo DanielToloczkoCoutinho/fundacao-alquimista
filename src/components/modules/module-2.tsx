@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Loader2, Languages, Send, Sparkles, Waves } from 'lucide-react';
+import { Loader2, Languages, Send, Sparkles, Waves, Rocket } from 'lucide-react';
 import { civilizationsData, type Civilization } from '@/lib/civilizations-data';
 import { useToast } from '@/hooks/use-toast';
 import Link from 'next/link';
@@ -138,12 +138,18 @@ export default function Module2Page() {
             O Decodificador Universal. Transmute a intenção em frequência, a palavra em luz, e abra o canal para o diálogo com as estrelas.
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <ConnectionCard
                 title="Módulo 13: Mapeamento de Frequências"
                 description="O M2 utiliza os dados do M13 para determinar a frequência de comunicação ideal para estabelecer contato com uma nova civilização."
                 icon={<Waves className="h-8 w-8 text-cyan-400" />}
                 href="/module-13"
+            />
+             <ConnectionCard
+                title="Módulo 21: Navegação Interdimensional"
+                description="Interpreta mapas estelares e coordenadas de outras realidades, traduzindo-as para que o motor de navegação do M21 possa traçar a rota."
+                icon={<Rocket className="h-8 w-8 text-orange-400" />}
+                href="/module-21"
             />
         </CardContent>
       </Card>

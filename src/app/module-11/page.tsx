@@ -47,10 +47,10 @@ export default function Module11Page() {
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Infraestrutura</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
-                        title="Módulo 116: Ativação de Portais"
-                        description="O Módulo Onze gerencia a infraestrutura física e energética, enquanto o M116 ativa os portais para travessias de consciência."
-                        icon={<GitBranch className="h-8 w-8 text-purple-400" />}
-                        href="/module-116"
+                        title="Módulo 21: Navegação"
+                        description="O M11 constrói a infraestrutura de portais que o M21 utiliza para planejar e executar viagens interdimensionais."
+                        icon={<Rocket className="h-8 w-8 text-orange-400" />}
+                        href="/module-21"
                     />
                     <ConnectionCard
                         title="Módulo 1: Segurança Universal"

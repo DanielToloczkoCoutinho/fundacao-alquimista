@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -5,17 +6,34 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Map } from 'lucide-react';
+import { Loader2, Map, Rocket } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { describeSpaceTimeEngineering } from '@/app/actions';
+import Link from 'next/link';
 
-// Mocks para simular a funcionalidade de outros módulos.
+// --- Mocks para simular a funcionalidade de outros módulos da Fundação ---
 const mockM2 = { async establishDimensionalChannel(destination: string) { console.log(`M2: Estabelecendo canal dimensional para: ${destination.substring(0, 30)}...`); await new Promise(resolve => setTimeout(resolve, 500)); return true; } };
 const mockM23 = { async validateTemporalIntegrity(travelData: any) { console.log(`M23: Validando integridade temporal para viagem...`); await new Promise(resolve => setTimeout(resolve, 600)); return true; } };
 const mockM37 = { async adjustTemporalFlow(adjustmentType: string) { console.log(`M37: Ajustando fluxo temporal para: ${adjustmentType.substring(0, 30)}...`); await new Promise(resolve => setTimeout(resolve, 550)); return true; } };
 const mockM42 = { async synchronizeTimelines(synchronizationPoint: string) { console.log(`M42: Sincronizando linhas de tempo em: ${synchronizationPoint.substring(0, 30)}...`); await new Promise(resolve => setTimeout(resolve, 700)); return true; } };
 const mockM74 = { async modulateTemporalMatrix(modulationParams: any) { console.log(`M74: Modulando matriz temporal para: ${modulationParams.type.substring(0, 30)}...`); await new Promise(resolve => setTimeout(resolve, 650)); return true; } };
 const mockM76 = { async recalibrateTemporalIntersections(recalibrationPoint: string) { console.log(`M76: Recalibrando interseções temporais em: ${recalibrationPoint.substring(0, 30)}...`); await new Promise(resolve => setTimeout(resolve, 500)); return true; } };
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module104Page = () => {
     const [travelType, setTravelType] = useState('Atalho Dimensional');
@@ -107,6 +125,14 @@ const Module104Page = () => {
                         ID do Operador: <span className="font-mono bg-background/50 p-1 rounded">{userId}</span>
                     </div>
                 </CardHeader>
+                 <CardContent>
+                    <ConnectionCard
+                        title="Módulo 21: Navegação Interdimensional"
+                        description="O M104 fornece os 'mapas' e 'atalhos' para o M21, permitindo que o Piloto Cósmico calcule as rotas mais rápidas e eficientes através do multiverso."
+                        icon={<Rocket className="h-8 w-8 text-orange-400" />}
+                        href="/module-21"
+                    />
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
