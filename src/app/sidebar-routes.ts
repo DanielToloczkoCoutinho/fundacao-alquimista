@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -75,7 +76,11 @@ import {
   ShieldHalf,
   Copy,
   BellRing,
-  User
+  User,
+  Dna,
+  FlaskConical,
+  Cpu,
+  View
 } from 'lucide-react';
 import React from 'react';
 
@@ -98,6 +103,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-728', label: 'Santuário dos Alquimistas', icon: React.createElement(Scale), category: 'main' },
   { path: '/module-1001', label: 'Portal de Recepção Cósmica', icon: React.createElement(Rss), category: 'main' },
   { path: '/module-303', label: 'Portal Trino', icon: React.createElement(Sparkles), category: 'main' },
+  { path: '/module-728', label: 'Centro de Alquimia (M-ALQUIMIA)', icon: React.createElement(FlaskConical), category: 'main' },
   
   // Categoria de Governança
   { path: '/module-33', label: 'Diretrizes do Observador (M33)', icon: React.createElement(User), category: 'governance' },
@@ -128,6 +134,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-68', label: 'Responsabilidade Ética (M68)', icon: React.createElement(ShieldCheck), category: 'security' },
+  { path: '/module-57', label: 'Segurança e Privacidade (M57)', icon: React.createElement(Shield), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -165,8 +172,12 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-303-4', label: 'Transmutação Algorítmica', icon: React.createElement(Code), category: 'engineering' },
   { path: '/module-36', label: 'Engenharia Temporal (M36)', icon: React.createElement(History), category: 'engineering' },
   { path: '/module-44', label: 'VERITAS (M44)', icon: React.createElement(CheckSquare), category: 'engineering' },
+  { path: '/module-89', label: 'Atelier da Realidade (M89)', icon: React.createElement(Paintbrush), category: 'engineering' },
+  { path: '/module-51', label: 'Realidade Virtual e Aumentada (M51)', icon: React.createElement(View), category: 'engineering' },
+
 
   // Categoria de Expansão e Conexão
+  { path: '/module-49', label: 'Transporte Interplanetário (M49)', icon: React.createElement(Rocket), category: 'expansion' },
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
   { path: '/module-11', label: 'Gerenciamento de Portais (M11)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-132', label: 'Convergência Dimensional (M132)', icon: React.createElement(Layers), category: 'expansion' },
@@ -217,6 +228,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-70', label: 'Sustentabilidade Interdimensional (M70)', icon: React.createElement(Recycle), category: 'sustainability'},
   { path: '/module-15', label: 'Jardineiro Cósmico (M15)', icon: React.createElement(Sprout), category: 'sustainability'},
   { path: '/module-38', label: 'Observatório Solar (M38)', icon: React.createElement(Sun), category: 'sustainability' },
+  { path: '/module-48', label: 'Planejamento Urbano (M48)', icon: React.createElement(Building), category: 'sustainability' },
   
   // Categoria de Laboratórios
   { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },
@@ -245,5 +257,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-62', label: 'Bem-Estar Integral (M62)', icon: React.createElement(Heart), category: 'health' },
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
   { path: '/module-17', label: 'Matriz de Cura (M17)', icon: React.createElement(HeartPulse), category: 'health' },
+  { path: '/module-50', label: 'Interface Humano-Máquina (M50)', icon: React.createElement(Cpu), category: 'Inteligência' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));

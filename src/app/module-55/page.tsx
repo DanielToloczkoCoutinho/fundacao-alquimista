@@ -47,9 +47,9 @@ export default function Module55Page() {
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Comunicação</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
-                        title="Módulo 1: Segurança Universal"
-                        description="Cada pacote de dados transmitido é envolvido em um campo de segurança quântica, garantindo sua inviolabilidade."
-                        icon={<Shield className="h-8 w-8 text-cyan-400" />}
+                        title="M1: Segurança"
+                        description="Garante que a rede de comunicação não possa ser interceptada ou corrompida, protegendo a privacidade de todas as interações."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module-one"
                     />
                     <ConnectionCard
@@ -67,7 +67,7 @@ export default function Module55Page() {
                     <ConnectionCard
                         title="Módulo 57: Segurança e Privacidade"
                         description="Aplica protocolos de criptografia quântica em toda a rede, garantindo que cada comunicação seja inviolável."
-                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        icon={<Shield className="h-8 w-8 text-blue-500" />}
                         href="/module-57"
                     />
                 </div>
