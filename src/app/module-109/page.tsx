@@ -7,9 +7,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, HeartHandshake } from 'lucide-react';
+import { Loader2, HeartHandshake, Waves } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { describeQuantumHealing } from '@/app/actions';
+import Link from 'next/link';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
 const mockM5 = { async evaluateEthicalAlignment(data: any) { await new Promise(r => setTimeout(r, 600)); return true; } };
@@ -20,6 +21,21 @@ const mockM41 = { async applyAntipathogenMatrix(target: string, pathogens: strin
 const mockM94 = { async reprogramBioVibrational(data: any) { await new Promise(r => setTimeout(r, 900)); return true; } };
 const mockM199 = { async harmonizeFrequencies(target: string) { await new Promise(r => setTimeout(r, 850)); return true; } };
 
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module109Page = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -102,6 +118,14 @@ const Module109Page = () => {
                         Ferramenta para aplicar princípios quânticos e vibracionais na restauração do equilíbrio, vitalidade e integridade.
                     </CardDescription>
                 </CardHeader>
+                 <CardContent>
+                     <ConnectionCard
+                        title="Módulo 13: Mapeamento de Frequências"
+                        description="O M109 utiliza o diagnóstico do M13 para identificar as dissonâncias energéticas que necessitam de cura, permitindo uma intervenção precisa e eficaz."
+                        icon={<Waves className="h-8 w-8 text-cyan-400" />}
+                        href="/module-13"
+                    />
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">

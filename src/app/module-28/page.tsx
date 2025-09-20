@@ -49,7 +49,7 @@ export default function Module28Page() {
                         title="M1: Segurança"
                         description="Garante que as ondas de harmonização não sejam interceptadas ou corrompidas, protegendo a pureza do sinal."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 13: Mapeamento de Frequências"

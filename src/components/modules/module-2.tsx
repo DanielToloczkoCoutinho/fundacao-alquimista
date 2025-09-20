@@ -5,11 +5,29 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Loader2, Languages, Send, Sparkles } from 'lucide-react';
+import { Loader2, Languages, Send, Sparkles, Waves } from 'lucide-react';
 import { civilizationsData, type Civilization } from '@/lib/civilizations-data';
 import { useToast } from '@/hooks/use-toast';
+import Link from 'next/link';
 
 const allCivilizations = Object.values(civilizationsData).flat();
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
+
 
 export default function Module2Page() {
   const [inputText, setInputText] = useState('Uma mensagem de paz e unidade para nossos irmãos estelares.');
@@ -120,6 +138,14 @@ export default function Module2Page() {
             O Decodificador Universal. Transmute a intenção em frequência, a palavra em luz, e abra o canal para o diálogo com as estrelas.
           </CardDescription>
         </CardHeader>
+        <CardContent>
+            <ConnectionCard
+                title="Módulo 13: Mapeamento de Frequências"
+                description="O M2 utiliza os dados do M13 para determinar a frequência de comunicação ideal para estabelecer contato com uma nova civilização."
+                icon={<Waves className="h-8 w-8 text-cyan-400" />}
+                href="/module-13"
+            />
+        </CardContent>
       </Card>
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">

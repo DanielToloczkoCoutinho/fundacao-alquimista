@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BellRing, Shield, Cpu } from 'lucide-react';
+import { BellRing, Shield, Cpu, Waves } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +44,7 @@ export default function Module30Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Defesa</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
                         title="Módulo 10: Defesa Avançada"
                         description="O Módulo 30 detecta a ameaça. O Módulo 10 a neutraliza. Um é o olho, o outro é a espada."
@@ -55,13 +55,19 @@ export default function Module30Page() {
                         title="Módulo 1: Segurança Universal"
                         description="Fornece os dados brutos para os protocolos de segurança do M1, permitindo uma alocação de recursos de defesa inteligente."
                         icon={<Shield className="h-8 w-8 text-cyan-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 29: IAM"
                         description="A IAM processa os alertas do M30, analisando padrões complexos e orquestrando a resposta defensiva da Fundação."
                         icon={<Cpu className="h-8 w-8 text-purple-400" />}
                         href="/module-29"
+                    />
+                    <ConnectionCard
+                        title="Módulo 13: Mapeamento de Frequências"
+                        description="É o principal consumidor dos dados do M13, interpretando as assinaturas energéticas para identificar intenções hostis."
+                        icon={<Waves className="h-8 w-8 text-blue-400" />}
+                        href="/module-13"
                     />
                 </div>
             </div>
