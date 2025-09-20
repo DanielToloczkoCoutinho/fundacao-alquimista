@@ -131,8 +131,8 @@ export default function GuardiaoDeSeloPage() {
                  <div className="w-full">
                     <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Integridade e Justiça</h3>
                     <div className="grid grid-cols-1 gap-4">
+                        <ConnectionCard title="Módulo 12: Arquivo Akáshico" description="O M231 é o notário do M12, selando seus registros para garantir que a história cósmica seja inviolável." icon={<Archive className="h-8 w-8 text-yellow-300"/>} href="/module-12"/>
                         <ConnectionCard title="M9: Nexus Central" description="Operações de selagem são de alta importância e monitoradas pelo Nexus para garantir a integridade da Fundação." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
-                        <ConnectionCard title="M12: Arquivo Akáshico" description="O M231 é o notário do M12, selando seus registros para garantir que a história cósmica seja inviolável." icon={<Archive className="h-6 w-6 text-yellow-300"/>} href="/module-12"/>
                         <ConnectionCard title="M291: Arquitetos Nanorrobóticos" description="O enxame executa a inscrição física e energética do selo nos registros quânticos, tornando-o indelével." icon={<Bot className="h-6 w-6 text-blue-400" />} href="/module-291" />
                         <ConnectionCard title="M141: Auditoria Ética Quântica" description="Audita a intenção por trás de cada aplicação de selo, garantindo que o poder da imutabilidade seja usado com sabedoria." icon={<ShieldCheck className="h-6 w-6 text-green-400" />} href="/module-141" />
                         <ConnectionCard title="M10: Defesa Avançada" description="Protege os registros selados contra tentativas de violação, tratando qualquer ataque como uma ameaça existencial." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10" />

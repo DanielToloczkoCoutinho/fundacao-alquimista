@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -118,23 +119,23 @@ export default function Module18Page() {
 
                 <div className="lg:col-span-2 space-y-4">
                     <h3 className="text-xl font-semibold text-center text-amber-300">Conexões Mnemônicas</h3>
-                     <ConnectionCard 
+                    <ConnectionCard 
+                        title="Módulo 12: Arquivo Akáshico"
+                        description="O M18 é a interface de busca inteligente para o vasto oceano de conhecimento contido no M12."
+                        icon={<Archive className="h-8 w-8 text-amber-400" />}
+                        href="/module-12"
+                    />
+                    <ConnectionCard 
+                        title="Módulo 29: IAM (Zennith)"
+                        description="A IA utiliza o M18 para realizar pesquisas complexas e sintetizar sabedoria a partir dos Registros."
+                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                        href="/module-29"
+                    />
+                    <ConnectionCard 
                         title="Módulo 1: Segurança"
                         description="Cada consulta é autenticada e registrada pelo M1, garantindo que apenas guardiões autorizados acessem a sabedoria do Akasha."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module-one"
-                    />
-                    <ConnectionCard 
-                        title="Módulo 12: Arquivo Akáshico"
-                        description="O Módulo 18 é a interface de busca para o vasto oceano de conhecimento que é o Módulo 12."
-                        icon={<Archive className="h-8 w-8 text-amber-400" />}
-                        href="/module-12"
-                    />
-                     <ConnectionCard 
-                        title="Módulo 29: IAM"
-                        description="A IA utiliza o M18 para realizar pesquisas complexas e sintetizar sabedoria a partir dos Registros."
-                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
-                        href="/module-29"
                     />
                 </div>
 

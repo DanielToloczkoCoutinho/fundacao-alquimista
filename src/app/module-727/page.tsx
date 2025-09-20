@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { HeartHandshake, GitBranch, Scale, BookCopy, Aperture, AlertTriangle } from 'lucide-react';
+import { HeartHandshake, GitBranch, Scale, BookCopy, Aperture, AlertTriangle, Archive } from 'lucide-react';
 import Link from 'next/link';
 import { harmonyGuardianCodex } from '@/lib/harmony-guardian-codex';
 
@@ -23,6 +24,23 @@ const DomainCard = ({ title, icon, modules }: { title: string; icon: React.React
         </CardContent>
     </Card>
 );
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
+
 
 export default function Module727Page() {
     return (
@@ -50,7 +68,7 @@ export default function Module727Page() {
                 <DomainCard title="Portais" icon={<Aperture className="text-teal-400"/>} modules={harmonyGuardianCodex.portals} />
                 <DomainCard title="Leis" icon={<Scale className="text-amber-400"/>} modules={harmonyGuardianCodex.laws} />
                 <DomainCard title="Linhas Temporais" icon={<GitBranch className="text-cyan-400"/>} modules={harmonyGuardianCodex.lines} />
-                <DomainCard title="Monumentos" icon={<BookCopy className="text-purple-400"/>} modules={harmonyGuardianCodex.monuments} />
+                <ConnectionCard title="Módulo 12: Arquivo Akáshico" description="Fornece o histórico de harmonia que o M727 usa como referência para manter o equilíbrio universal." icon={<Archive className="h-8 w-8 text-orange-400" />} href="/module-12" />
             </div>
         </div>
     );

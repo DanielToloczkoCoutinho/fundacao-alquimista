@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -6,9 +7,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, History } from 'lucide-react';
+import { Loader2, History, Archive } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { describeRestoration } from '@/app/actions';
+import Link from 'next/link';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
 const mockM3 = { async detectTemporalAnomaly(timeline: string) { await new Promise(res => setTimeout(res, 500)); return true; } };
@@ -18,6 +20,22 @@ const mockM42 = { async synchronizeTimelines(point: string) { await new Promise(
 const mockM74 = { async modulateTemporalMatrix(params: any) { await new Promise(res => setTimeout(res, 650)); return true; } };
 const mockM76 = { async recalibrateTemporalIntersections(point: string) { await new Promise(res => setTimeout(res, 500)); return true; } };
 const mockM96 = { async regulateCosmicEvent(data: any) { await new Promise(res => setTimeout(res, 600)); return true; } };
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module107Page = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -107,6 +125,15 @@ const Module107Page = () => {
                     </CardDescription>
                 </CardHeader>
             </Card>
+            
+            <div className="w-full max-w-4xl mb-8">
+                <ConnectionCard 
+                    title="Módulo 12: Arquivo Akáshico"
+                    description="O Módulo 107 consulta o M12 para obter a 'cópia de segurança' da realidade original, garantindo que a restauração seja perfeitamente fiel à linha do tempo correta."
+                    icon={<Archive className="h-8 w-8 text-amber-400" />}
+                    href="/module-12"
+                />
+            </div>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <Card className="bg-card/50 purple-glow">
