@@ -27,10 +27,10 @@ export default function Module43Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Orbit className="text-amber-300" /> Módulo 43: Orquestração do Sistema Solar
+                        <Orbit className="text-amber-300" /> Módulo 43: Orquestração de Sistemas Solares
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Maestro Sistêmico. Harmoniza os portais e orquestra os pontos nodais de um sistema solar para criar uma sinfonia cósmica.
+                        O Maestro Sistêmico. Harmoniza portais, investiga anomalias gravitacionais e orquestra os pontos nodais de um sistema solar.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>

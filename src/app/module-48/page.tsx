@@ -27,10 +27,10 @@ export default function Module48Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Building2 className="text-lime-400" /> Módulo 48: Planejamento Urbano Consciente
+                        <Building2 className="text-lime-400" /> Módulo 48: Avanços Sociais e Planejamento Urbano Consciente
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O arquiteto da harmonia. O módulo que projeta habitats e cidades que vibram em sintonia com a natureza e a consciência de seus habitantes.
+                        O arquiteto da harmonia social. O módulo que projeta habitats, economias e sociedades que vibram em sintonia com a natureza e a consciência de seus habitantes.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>

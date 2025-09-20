@@ -73,10 +73,10 @@ export default function Module73_1Page() {
             <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8">
                 <CardHeader>
                     <CardTitle className="text-3xl gradient-text flex items-center gap-3">
-                        <ShieldCheck className="text-green-400" /> Módulo 73.1: Revisão por Pares
+                        <ShieldCheck className="text-green-400" /> Módulo 73.1: Revisão por Pares (Peer Review)
                     </CardTitle>
                     <CardDescription>
-                        Subsistema do SAVCE para a auditoria e validação cruzada das Equações Fundamentais da Fundação.
+                        Subsistema do SAVCE (M73) para auditoria e validação cruzada das Equações Fundamentais, incluindo análise pelo Conselho Galáctico.
                     </CardDescription>
                 </CardHeader>
                 <CardContent>

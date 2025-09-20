@@ -44,7 +44,7 @@ export default function Module127Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Transmutação</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ConnectionCard
                         title="Módulo 20: Orquestrador Elemental"
                         description="Este é o laboratório prático onde os princípios ensinados no M20 são aplicados sob supervisão."

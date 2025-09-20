@@ -27,10 +27,10 @@ export default function Module66Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Recycle className="text-green-400" /> Módulo 66: Tecnologias de Sustentabilidade Ambiental
+                        <Recycle className="text-green-400" /> Módulo 66: Tecnologias de Sustentabilidade
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O guardião ecológico. O módulo que desenvolve e implementa tecnologias para regenerar e proteger a saúde ambiental do cosmos.
+                        O guardião ecológico. O módulo que desenvolve e implementa tecnologias para regenerar e proteger a saúde ambiental do cosmos, como a tecnologia eco-amigável dos Xantheans.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>

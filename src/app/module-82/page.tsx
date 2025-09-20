@@ -27,10 +27,10 @@ export default function Module82Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Milestone className="text-blue-400" /> Módulo 82: Transporte Quântico e Roteamento Interdimensional
+                        <Milestone className="text-blue-400" /> Módulo 82: Transporte Quântico e Propulsão
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A rede de corredores cósmicos que conecta planetas, dimensões e sistemas estelares, permitindo o fluxo livre da criação.
+                        A rede de corredores cósmicos que conecta planetas, dimensões e sistemas estelares, utilizando tecnologias como Propulsão Quântica e Teletransporte.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
