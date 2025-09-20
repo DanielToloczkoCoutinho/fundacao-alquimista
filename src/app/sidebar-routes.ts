@@ -69,7 +69,9 @@ import {
   Waves,
   PartyPopper,
   Code,
-  Rss
+  Rss,
+  Cpu,
+  View
 } from 'lucide-react';
 import React from 'react';
 
@@ -96,7 +98,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-78', label: 'UNIVERSUM_UNIFICATUM (M78)', icon: React.createElement(GitBranch), category: 'governance' },
   { path: '/module-72', label: 'Governança Universal (M72)', icon: React.createElement(Scale), category: 'governance' },
   { path: '/module-726', label: 'Conselho da Nova Terra (M726)', icon: React.createElement(UserCog), category: 'governance' },
-  { path: '/module-721', label: 'Justiça Cósmica (M721)', icon: React.createElement(Scale), category: 'governance' },
   { path: '/module-144', label: 'Lex Fundamentalis (M144)', icon: React.createElement(Gavel), category: 'governance' },
   { path: '/module-5', label: 'Liga Quântica (M5)', icon: React.createElement(LinkIcon), category: 'governance' },
   { path: '/module-45', label: 'CONCILIVM (M45)', icon: React.createElement(Gavel), category: 'governance' },
@@ -116,10 +117,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
-  { path: '/module-68', label: 'Responsabilidade Ética (M68)', icon: React.createElement(ShieldCheck), category: 'security' },
-  { path: '/module-57', label: 'Segurança e Privacidade (M57)', icon: React.createElement(Lock), category: 'security' },
-  { path: '/module-10', label: 'Defesa Avançada (M10)', icon: React.createElement(Shield), category: 'security' },
-  { path: '/module-30', label: 'Detecção de Ameaças (M30)', icon: React.createElement(AlertTriangle), category: 'security' },
+  { path: '/module-68', label: 'Responsabilidade Ética', icon: React.createElement(ShieldCheck), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -165,8 +163,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-106', label: 'Ativação de Potenciais (M106)', icon: React.createElement(Crown), category: 'expansion' },
   { path: '/module-116', label: 'Portais de Transcendência (M116)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-83', label: 'Rede de Transporte de Energia (M83)', icon: React.createElement(GitBranch), category: 'expansion' },
-  { path: '/module-65', label: 'Infraestruturas e Transporte Cósmico (M65)', icon: React.createElement(Rocket), category: 'expansion' },
-  { path: '/module-75', label: 'Infraestrutura Universal para Desenvolvimento (M75)', icon: React.createElement(Layers), category: 'expansion' },
+  { path: '/module-65', label: 'Infraestrutura e Transporte (M65)', icon: React.createElement(Rocket), category: 'expansion' },
+  { path: '/module-49', label: 'Transporte Interplanetário (M49)', icon: React.createElement(Rocket), category: 'expansion' },
 
 
   // Categoria de Harmonia e Equilíbrio
@@ -201,7 +199,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-60', label: 'Soluções para Desastres (M60)', icon: React.createElement(CloudLightning), category: 'sustainability' },
   { path: '/module-64', label: 'Sistemas de Energia Limpa (M64)', icon: React.createElement(Zap), category: 'sustainability' },
   { path: '/module-70', label: 'Sustentabilidade Interdimensional (M70)', icon: React.createElement(Recycle), category: 'sustainability' },
-
+  
   // Categoria de Laboratórios
   { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },
   { path: '/module-151', label: 'Colisor de Partículas (M151)', icon: React.createElement(Atom), category: 'labs' },
@@ -228,5 +226,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
   { path: '/module-62', label: 'Bem-Estar Integral (M62)', icon: React.createElement(Heart), category: 'health' },
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
+  { path: '/module-50', label: 'Interface Humano-Máquina (M50)', icon: React.createElement(Cpu), category: 'health' },
+  { path: '/module-51', label: 'Realidade Virtual (M51)', icon: React.createElement(View), category: 'health' },
 
 ];

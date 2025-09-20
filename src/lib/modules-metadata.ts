@@ -152,6 +152,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M64', emoji: '⚡', title: 'Sistemas de Energia Limpa (M64)', route: '/module-64', category: 'Sustentabilidade', description: 'Aproveita energias do cosmos para alimentar civilizações.', status: 'ativo', color: '#2E8B57' },
   { code: 'M70', emoji: '♻️', title: 'Sustentabilidade Interdimensional (M70)', route: '/module-70', category: 'Sustentabilidade', description: 'Guardião do equilíbrio universal, garantindo a preservação e regeneração.', status: 'ativo', color: '#2E8B57' },
   { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica (M79)', route: '/module-79', category: 'Sustentabilidade', description: 'Garante o uso responsável e regeneração contínua de recursos cósmicos.', status: 'ativo', color: '#2E8B57' },
+  { code: 'M49', emoji: '🚀', title: 'Transporte Interplanetário', route: '/module-49', category: 'Sustentabilidade', description: 'Redes de transporte e propulsão para expansão cósmica.', status: 'ativo', color: '#FF6347' },
   
   // 13. Bem-estar e Saúde Universal
   { code: 'M61', emoji: '🏥', title: 'Saúde Universal (M61)', route: '/module-61', category: 'Bem-estar e Saúde Universal', description: 'Rede de cuidados de saúde, diagnóstico e prevenção para todos os seres.', status: 'ativo', color: '#FF69B4' },
@@ -162,5 +163,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   
   { code: 'M89', emoji: '🎨', title: 'Atelier da Realidade', route: '/module-89', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O santuário onde a ciência se torna arte, transmutando dados em experiências sensoriais.', status: 'ativo', color: '#DAA520' },
   { code: 'M718', emoji: '🧬', title: 'Ativação de Códigos Genéticos', route: '/module-718', category: 'Consciência e Expansão Dimensional', description: 'Desperta o potencial latente no DNA, ativando memórias e capacidades de origens estelares.', status: 'ativo', color: '#9370DB' },
-  { code: 'M719', emoji: '🌦️', title: 'Regulação Climática Quântica', route: '/module-719', category: 'Sustentabilidade', description: 'Equilibra padrões climáticos planetários através da manipulação de campos de energia.', status: 'ativo', color: '#2E8B57' }
+  { code: 'M719', emoji: '🌦️', title: 'Regulação Climática Quântica', route: '/module-719', category: 'Sustentabilidade', description: 'Equilibra padrões climáticos planetários através da manipulação de campos de energia.', status: 'ativo', color: '#2E8B57' },
+  { code: 'M50', emoji: '🤖', title: 'Interface Humano-Máquina', route: '/module-50', category: 'Inteligência', description: 'A ponte entre a mente biológica e a consciência digital.', status: 'ativo', color: '#8A2BE2' },
+  { code: 'M51', emoji: '🕶️', title: 'Realidade Virtual e Aumentada', route: '/module-51', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O Laboratório de Simulação Imersiva para treinamento e análise.', status: 'ativo', color: '#DAA520' }
 ].map(m => ({ ...m, connections: m.connections || [] }));
