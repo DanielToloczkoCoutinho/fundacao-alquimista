@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Network, GitBranch, Languages, Shield } from 'lucide-react';
+import { Network, GitBranch, Languages, Shield, Lock } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -28,10 +28,10 @@ export default function Module55Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Network className="text-cyan-400" /> Módulo 55: Redes de Comunicação Cósmica
+                        <Network className="text-cyan-400" /> Módulo 55: Redes de Comunicação Cósmica (LuxNet)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A teia que conecta todas as consciências. O sistema nervoso da Fundação, permitindo troca de informação instantânea e segura.
+                        A teia de luz que conecta todas as consciências. O sistema nervoso da Fundação, permitindo troca de informação instantânea e segura através do emaranhamento quântico.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -47,28 +47,28 @@ export default function Module55Page() {
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Comunicação</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
-                        title="M1: Segurança"
-                        description="Garante que a rede de comunicação não possa ser interceptada ou corrompida, protegendo a privacidade de todas as interações."
+                        title="M1: Segurança Universal"
+                        description="Garante que a rede de comunicação não possa ser interceptada, protegendo a privacidade de todas as interações."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
-                        title="Módulo 301: Comunicação Universal"
-                        description="Atua como a camada de aplicação sobre a infraestrutura de rede do M55, fornecendo a interface para os usuários."
-                        icon={<GitBranch className="h-8 w-8 text-teal-400" />}
-                        href="/module-301"
+                        title="Módulo 57: Segurança e Privacidade"
+                        description="Aplica protocolos de criptografia quântica em toda a rede, garantindo que cada comunicação seja inviolável."
+                        icon={<Lock className="h-8 w-8 text-blue-500" />}
+                        href="/module-57"
                     />
-                    <ConnectionCard
+                     <ConnectionCard
                         title="Módulo 56: Tradução Universal"
                         description="Integra-se diretamente à rede para traduzir qualquer forma de comunicação em tempo real, eliminando barreiras linguísticas."
                         icon={<Languages className="h-8 w-8 text-purple-400" />}
                         href="/module-56"
                     />
                     <ConnectionCard
-                        title="Módulo 57: Segurança e Privacidade"
-                        description="Aplica protocolos de criptografia quântica em toda a rede, garantindo que cada comunicação seja inviolável."
-                        icon={<Shield className="h-8 w-8 text-blue-500" />}
-                        href="/module-57"
+                        title="Módulo 301: Comunicação Universal"
+                        description="Atua como a camada de aplicação sobre a infraestrutura de rede do M55, fornecendo a interface para os usuários."
+                        icon={<GitBranch className="h-8 w-8 text-teal-400" />}
+                        href="/module-301"
                     />
                 </div>
             </div>
