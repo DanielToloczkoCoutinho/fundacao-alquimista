@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -50,7 +49,7 @@ export default function Module67Page() {
                         title="M1: Segurança"
                         description="Protege a IA contra manipulação ou corrupção, garantindo que suas análises permaneçam imparciais e soberanas."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 29: Zennith"

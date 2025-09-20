@@ -49,7 +49,7 @@ export default function Module68Page() {
                         title="M1: Segurança"
                         description="Garante que o próprio código ético não possa ser alterado ou corrompido, preservando a pureza da Fundação."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 144: Lex Fundamentalis"

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Waypoints, GitCommit, Cpu } from 'lucide-react';
+import { Waypoints, GitCommit, Cpu, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,7 +27,7 @@ export default function Module321Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Waypoints className="text-red-400" /> Módulo 321: Supercomputador Quântico
+                        <Waypoints className="text-red-400" /> Módulo 321: Criação e Manipulação de Linhas Temporais
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Motor do Multiverso. Executa simulações de cosmos, fluidos e materiais em escala exa-flops para processamento de dados massivos.
@@ -56,6 +56,12 @@ export default function Module321Page() {
                         description="A IAM utiliza este laboratório para treinar seus modelos de previsão e análise de risco em conjuntos de dados massivos."
                         icon={<Cpu className="h-8 w-8 text-purple-400" />}
                         href="/module-29"
+                    />
+                    <ConnectionCard
+                        title="Módulo 88: Gerador de Realidades"
+                        description="O M321 calcula as complexas interações físicas necessárias para que o M88 possa manifestar novas realidades estáveis."
+                        icon={<Sparkles className="h-8 w-8 text-yellow-400" />}
+                        href="/module-88"
                     />
                 </div>
             </div>
