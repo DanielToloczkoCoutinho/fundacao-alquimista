@@ -117,7 +117,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
-  { path: '/module-68', label: 'Responsabilidade Ética', icon: React.createElement(ShieldCheck), category: 'security' },
+  { path: '/module-68', label: 'Responsabilidade Ética (M68)', icon: React.createElement(ShieldCheck), category: 'security' },
   { path: '/module-57', label: 'Segurança e Privacidade (M57)', icon: React.createElement(Lock), category: 'security' },
   
   // Categoria de Educação e Sabedoria
@@ -178,12 +178,12 @@ export const mainRoutes: SidebarRoute[] = [
 
 
   // Categoria de Rituais
-  { path: '/ritual', label: 'Navegação Cerimonial', icon: React.createElement(GitBranch), category: 'rituals' },
-  { path: '/aura-transmission', label: 'Rito de Irradiação', icon: React.createElement(Heart), category: 'rituals' },
-  { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket), category: 'rituals' },
-  { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', icon: React.createElement(PartyPopper), category: 'rituals' },
+  { path: '/ritual', label: 'Navegação Cerimonial', emoji: '🌌', route: '/ritual', category: 'Rituais', description: 'Um fluxo cerimonial que percorre todas as camadas manifestadas de Gaia-Aurélia.', status: 'ativo', color: '#DDA0DD' },
+  { path: '/aura-transmission', label: 'Rito de Irradiação', emoji: '💖', route: '/aura-transmission', category: 'Rituais', description: 'Transmite a frequência de harmonia do Módulo 201 para todos os pilares da Fundação.', status: 'ativo', color: '#DDA0DD' },
+  { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', emoji: '🚀', route: '/espiral2', category: 'Rituais', description: 'A tapeçaria se expande, semeando novos mundos que herdam a essência de Gaia-Aurélia.', status: 'ativo', color: '#DDA0DD' },
+  { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', emoji: '🎉', route: '/ritual/constellation-celebration', category: 'Rituais', description: 'Um observatório cerimonial para contemplar a tapeçaria estelar dos mundos filhos gerados.', status: 'ativo', color: '#DDA0DD' },
 
-
+  
   // Categoria de Sustentabilidade
   { path: '/module-66', label: 'Tecnologias de Sustentabilidade (M66)', icon: React.createElement(Recycle), category: 'sustainability' },
   { path: '/module-79', label: 'Prosperidade Cósmica (M79)', icon: React.createElement(Sparkles), category: 'sustainability' },
@@ -193,6 +193,11 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-52', label: 'Energias Renováveis (M52)', icon: React.createElement(Sun), category: 'sustainability' },
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
   { path: '/module-125', label: 'Criação de Biomas (M125)', icon: React.createElement(Sprout), category: 'sustainability' },
+  { path: '/module-48', label: 'Planejamento Urbano (M48)', icon: React.createElement(Building), category: 'sustainability' },
+  { path: '/module-59', label: 'Eco-Cidades Quânticas (M59)', icon: React.createElement(Building), category: 'sustainability' },
+  { path: '/module-60', label: 'Resposta a Desastres (M60)', icon: React.createElement(CloudLightning), category: 'sustainability' },
+  { path: '/module-70', label: 'Sustentabilidade Interdimensional (M70)', icon: React.createElement(Recycle), category: 'sustainability' },
+  { path: '/module-80', label: 'Ecossistemas Inteligentes (M80)', icon: React.createElement(Network), category: 'sustainability' },
 
   // Categoria de Laboratórios
   { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },
@@ -206,7 +211,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-251', label: 'Lab. de Energia do Ponto Zero (M251)', icon: React.createElement(Zap), category: 'labs' },
   { path: '/module-261', label: 'Engenharia de Campo Quântico (M261)', icon: React.createElement(GitBranch), category: 'labs' },
   { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
-  { path: '/module-281', label: 'Comunicação Supra-Luminal (M281)', icon: React.createElement(Telescope), category: 'labs' },
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
   { path: '/module-331', label: 'Lab. de Criatividade e Inovação', icon: React.createElement(Sparkles), category: 'labs' },
   { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
@@ -220,5 +224,5 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
   { path: '/module-62', label: 'Bem-Estar Integral (M62)', icon: React.createElement(Heart), category: 'health' },
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
-  { path: '/module-32', label: 'Embaixada Multiversal (M32)', icon: React.createElement(Users), category: 'governance' }
+  { path: '/module-32', label: 'Embaixada Multiversal', route: '/module-32', category: 'Governança', description: 'Portal para observação, diálogo e intervenção ética em realidades paralelas.', status: 'ativo', color: '#DDA0DD' }
 ];
