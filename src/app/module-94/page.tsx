@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Dna as DnaIcon, Sprout, HeartPulse } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Dna as DnaIcon, Sprout, HeartPulse, Leaf } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import Link from 'next/link';
 
@@ -129,7 +129,7 @@ const Module94Page = () => {
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <ConnectionCard
                             title="Módulo 16: Biossíntese e Ecossistemas"
                             description="O M94 fornece os blueprints genéticos para as formas de vida que irão habitar os ecossistemas projetados pelo M16."
@@ -141,6 +141,12 @@ const Module94Page = () => {
                             description="Fornece o 'blueprint genético perfeito' que o M17 utiliza como molde para a regeneração celular holográfica."
                             icon={<HeartPulse className="h-8 w-8 text-pink-400" />}
                             href="/module-17"
+                        />
+                         <ConnectionCard
+                            title="Módulo 53: Gestão de Ecossistemas"
+                            description="Aplica os princípios da morfogênese para desenvolver estratégias de regeneração e adaptação para ecossistemas inteiros."
+                            icon={<Leaf className="h-8 w-8 text-lime-400" />}
+                            href="/module-53"
                         />
                     </div>
                 </CardContent>

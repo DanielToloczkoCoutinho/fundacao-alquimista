@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Leaf, Zap, GitBranch, Sun, Shield } from 'lucide-react';
+import { Leaf, Zap, GitBranch, Sun, Shield, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -60,7 +61,7 @@ export default function Module52Page() {
                     <ConnectionCard
                         title="Módulo 53: Gestão de Ecossistemas"
                         description="Fornece a energia limpa necessária para os sistemas de regeneração e monitoramento de ecossistemas do M53."
-                        icon={<Sun className="h-8 w-8 text-orange-400" />}
+                        icon={<Globe className="h-8 w-8 text-green-400" />}
                         href="/module-53"
                     />
                     <ConnectionCard

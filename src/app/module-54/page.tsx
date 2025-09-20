@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Wheat, Dna, Leaf, Users, Shield } from 'lucide-react';
+import { Wheat, Dna, Leaf, Users, Shield, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -45,11 +46,11 @@ export default function Module54Page() {
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Abundância</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <ConnectionCard
+                     <ConnectionCard
                         title="M1: Segurança"
                         description="Protege os bancos genéticos e as colheitas contra contaminação ou sabotagem, garantindo a pureza dos alimentos."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 94: Morfogênese Quântica"
@@ -60,7 +61,7 @@ export default function Module54Page() {
                     <ConnectionCard
                         title="Módulo 53: Gestão de Ecossistemas"
                         description="Garante que a agricultura interdimensional seja sempre regenerativa, enriquecendo o solo e a biodiversidade local."
-                        icon={<Leaf className="h-8 w-8 text-green-400" />}
+                        icon={<Globe className="h-8 w-8 text-green-400" />}
                         href="/module-53"
                     />
                     <ConnectionCard

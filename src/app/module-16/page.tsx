@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Dna, Sprout, Beaker, GitBranch, Heart, Shield, Flame, Copy } from 'lucide-react';
+import { Dna, Sprout, Beaker, GitBranch, Heart, Shield, Flame, Copy, Leaf } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -64,11 +64,11 @@ export default function Module16Page() {
                         icon={<Sprout className="h-8 w-8 text-green-400" />}
                         href="/module-15"
                     />
-                    <ConnectionCard
-                        title="Módulo 109: Cura Quântica"
-                        description="Aplica os princípios da cura quântica para restaurar e harmonizar os ecossistemas, garantindo sua vitalidade."
-                        icon={<Heart className="h-8 w-8 text-pink-400" />}
-                        href="/module-109"
+                     <ConnectionCard
+                        title="Módulo 53: Gestão de Ecossistemas"
+                        description="O M16 projeta e constrói os ecossistemas, enquanto o M53 os gerencia, garantindo que a criação seja mantida em equilíbrio."
+                        icon={<Leaf className="h-8 w-8 text-lime-400" />}
+                        href="/module-53"
                     />
                      <ConnectionCard
                         title="Módulo 20: Orquestrador Elemental"
