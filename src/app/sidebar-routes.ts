@@ -69,9 +69,7 @@ import {
   Waves,
   PartyPopper,
   Code,
-  Rss,
-  Paintbrush,
-  Copy
+  Rss
 } from 'lucide-react';
 import React from 'react';
 
@@ -150,10 +148,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-99', label: 'Recalibradores de Leis', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
   { path: '/module-303-4', label: 'Transmutação Algorítmica', icon: React.createElement(Code), category: 'engineering' },
-  { path: '/module-27', label: 'Síntese e Replicação (M27)', icon: React.createElement(Copy), category: 'engineering' },
-  { path: '/module-89', label: 'Atelier da Realidade (M89)', icon: React.createElement(Paintbrush), category: 'engineering' },
-  { path: '/module-50', label: 'Interface Humano-Máquina (M50)', icon: React.createElement(Cpu), category: 'engineering' },
-  { path: '/module-51', label: 'Realidade Virtual e Aumentada (M51)', icon: React.createElement(View), category: 'engineering' },
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
