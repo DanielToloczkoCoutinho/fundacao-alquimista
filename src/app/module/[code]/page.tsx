@@ -10,6 +10,7 @@ const moduleComponents: { [key: string]: React.ComponentType<any> } = {
   'M0': dynamic(() => import('@/components/modules/module-0'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M1': dynamic(() => import('@/components/modules/module-1'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M2': dynamic(() => import('@/components/modules/module-2'), { ssr: false, loading: () => <SuspenseFallback /> }),
+  'M3': dynamic(() => import('@/components/modules/module-3'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M-OMEGA': dynamic(() => import('@/components/modules/module-omega'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M72': dynamic(() => import('@/components/modules/module-72'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M9': dynamic(() => import('@/components/modules/module-9'), { ssr: false, loading: () => <SuspenseFallback /> }),
@@ -25,6 +26,7 @@ export default function ModulePage() {
   if (code.toLowerCase() === 'module-zero') code = 'M0';
   if (code.toLowerCase() === 'module-omega') code = 'M-OMEGA';
   if (code.toLowerCase() === 'module-9') code = 'M9';
+  if (code.toLowerCase() === 'module-3') code = 'M3';
   
   // Encontra o componente correspondente ao código
   const ModuleComponent = moduleComponents[code.toUpperCase()];
