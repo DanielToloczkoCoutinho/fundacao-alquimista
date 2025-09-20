@@ -1,9 +1,8 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Hourglass, History, GitCommit, AlertTriangle, Shield } from 'lucide-react';
+import { Hourglass, History, GitCommit, AlertTriangle, Shield, BookCopy } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -73,12 +72,12 @@ export default function Module23Page() {
                     <ConnectionCard
                         title="Módulo 42: ChronoCodex"
                         description="Consulta o registro imutável do M42 para garantir que o fluxo do tempo corresponda à 'verdade' autorizada."
-                        icon={<History className="h-8 w-8 text-purple-400" />}
+                        icon={<BookCopy className="h-8 w-8 text-purple-400" />}
                         href="/module-42"
                     />
                     <ConnectionCard
                         title="Módulo 36: Engenharia Temporal"
-                        description="Atua como a camada de segurança para o M36, garantindo que as novas linhas do tempo não criem instabilidades."
+                        description="Atua como a camada de segurança para o M36, garantindo que as novas linhas de tempo não criem instabilidades."
                         icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
                         href="/module-36"
                     />
