@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Eye, Rocket, GitBranch, Shield, Languages } from 'lucide-react';
+import { Eye, Rocket, GitBranch, Shield, Languages, Aperture } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -46,16 +46,16 @@ export default function Module26Page() {
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Supervisão</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
+                        title="M11: Gerenciamento de Portais"
+                        description="Comunica-se com o M11 para verificar a integridade estrutural dos portais de partida e chegada."
+                        icon={<Aperture className="h-8 w-8 text-teal-400" />}
+                        href="/module-11"
+                    />
+                    <ConnectionCard
                         title="M21: Navegação"
                         description="Recebe e aprova os planos de voo do M21 antes de qualquer partida, garantindo a segurança da rota."
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
                         href="/module-21"
-                    />
-                    <ConnectionCard
-                        title="M11: Portais"
-                        description="Comunica-se com o M11 para verificar a integridade estrutural dos portais de partida e chegada."
-                        icon={<GitBranch className="h-8 w-8 text-purple-400" />}
-                        href="/module-11"
                     />
                     <ConnectionCard
                         title="M1: Segurança"

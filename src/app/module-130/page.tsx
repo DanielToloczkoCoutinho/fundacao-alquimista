@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Rocket, GitBranch, Shield } from 'lucide-react';
+import { Rocket, GitBranch, Shield, Aperture } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -46,19 +46,19 @@ export default function Module130Page() {
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Navegação</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
-                        title="Módulo 21: Navegação Interdimensional"
+                        title="M11: Gerenciamento de Portais"
+                        description="Ensina os protocolos de abertura, fechamento e estabilização de portais, preparando os Guardiões para operar o M11."
+                        icon={<Aperture className="h-8 w-8 text-teal-400" />}
+                        href="/module-11"
+                    />
+                    <ConnectionCard
+                        title="M21: Navegação Interdimensional"
                         description="Este é o centro de treinamento para os pilotos que irão operar o Módulo 21, aprendendo a teoria antes da prática."
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
                         href="/module-21"
                     />
                     <ConnectionCard
-                        title="Módulo 11: Gerenciamento de Portais"
-                        description="Ensina os protocolos de abertura, fechamento e estabilização de portais, preparando os Guardiões para operar o M11."
-                        icon={<GitBranch className="h-8 w-8 text-purple-400" />}
-                        href="/module-11"
-                    />
-                    <ConnectionCard
-                        title="Módulo 26: Supervisão de Travessias"
+                        title="M26: Supervisão de Travessias"
                         description="Forma os futuros controladores de tráfego cósmico, que irão operar o M26 e garantir a segurança de todas as viagens."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module-26"
