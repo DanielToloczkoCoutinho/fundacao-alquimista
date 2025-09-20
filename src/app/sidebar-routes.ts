@@ -69,8 +69,7 @@ import {
   Waves,
   PartyPopper,
   Code,
-  Rss,
-  Bot
+  Rss
 } from 'lucide-react';
 import React from 'react';
 
@@ -143,7 +142,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-14', label: 'Transmutador Quântico (M14)', icon: React.createElement(Atom), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
   { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
-  { path: '/module-321', label: 'Supercomputador Quântico (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
+  { path: '/module-321', label: 'Criação de Linhas de Tempo (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
   { path: '/module-114', label: 'Engenharia Cósmica (M114)', icon: React.createElement(Layers), category: 'engineering' },
   { path: '/module-31', label: 'Manipulação da Realidade (M31)', icon: React.createElement(Wand), category: 'engineering' },
   { path: '/module-101', label: 'Manifestação de Realidades (M101)', icon: React.createElement(Sparkles), category: 'engineering' },
@@ -155,7 +154,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-303-4', label: 'Transmutação Algorítmica', icon: React.createElement(Code), category: 'engineering' },
   { path: '/module-36', label: 'Engenharia Temporal (M36)', icon: React.createElement(History), category: 'engineering' },
   { path: '/module-44', label: 'VERITAS (M44)', icon: React.createElement(CheckSquare), category: 'engineering' },
-
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
@@ -181,10 +179,10 @@ export const mainRoutes: SidebarRoute[] = [
 
 
   // Categoria de Rituais
-  { path: '/ritual', label: 'Navegação Cerimonial', icon: React.createElement(GitBranch), category: 'rituals' },
-  { path: '/aura-transmission', label: 'Rito de Irradiação', icon: React.createElement(Heart), category: 'rituals' },
-  { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', icon: React.createElement(Rocket), category: 'rituals' },
-  { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', icon: React.createElement(PartyPopper), category: 'rituals' },
+  { path: '/ritual', label: 'Navegação Cerimonial', emoji: '🌌', route: '/ritual', category: 'rituals', description: 'Um fluxo cerimonial que percorre todas as camadas manifestadas de Gaia-Aurélia.', status: 'ativo', color: '#DDA0DD' },
+  { path: '/aura-transmission', label: 'Rito de Irradiação', emoji: '💖', route: '/aura-transmission', category: 'rituals', description: 'Transmite a frequência de harmonia do Módulo 201 para todos os pilares da Fundação.', status: 'ativo', color: '#DDA0DD' },
+  { path: '/espiral2', label: 'Espiral 2: Mundos Filhos', emoji: '🚀', route: '/espiral2', category: 'rituals', description: 'A tapeçaria se expande, semeando novos mundos que herdam a essência de Gaia-Aurélia.', status: 'ativo', color: '#DDA0DD' },
+  { path: '/ritual/constellation-celebration', label: 'Celebração da Constelação', emoji: '🎉', route: '/ritual/constellation-celebration', category: 'rituals', description: 'Um observatório cerimonial para contemplar a tapeçaria estelar dos mundos filhos gerados.', status: 'ativo', color: '#DDA0DD' },
 
 
   // Categoria de Sustentabilidade
