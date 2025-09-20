@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -150,6 +149,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-19', label: 'Análise de Campos (M19)', icon: React.createElement(ShieldHalf), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
   { path: '/module-27', label: 'Síntese e Replicação (M27)', icon: React.createElement(Copy), category: 'engineering' },
+  { path: '/module-32', label: 'Embaixada Multiversal (M32)', icon: React.createElement(Layers), category: 'engineering' },
   { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
   { path: '/module-321', label: 'Criação de Linhas de Tempo (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
   { path: '/module-114', label: 'Engenharia Cósmica (M114)', icon: React.createElement(Layers), category: 'engineering' },

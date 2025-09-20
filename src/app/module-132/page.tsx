@@ -6,10 +6,27 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Layers, BookOpen, Music, Share2 } from 'lucide-react';
+import { Loader2, Layers, BookOpen, Music, Share2, Scale } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { invokeDimensionalWisdom } from '@/app/actions';
+import Link from 'next/link';
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module132Page = () => {
     const { toast } = useToast();
@@ -50,6 +67,22 @@ const Module132Page = () => {
                         Um canal para invocar e integrar sabedorias, fluxos energéticos e padrões de consciência de realidades paralelas, fortalecendo a Aliança Cósmica da Evolução Contínua.
                     </CardDescription>
                 </CardHeader>
+                 <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <ConnectionCard
+                            title="M32: Embaixada Multiversal"
+                            description="É a ponte diplomática para formalizar as sabedorias e alianças canalizadas pelo M132."
+                            icon={<Scale className="h-8 w-8 text-amber-400" />}
+                            href="/module-32"
+                        />
+                         <ConnectionCard
+                            title="M2: Intercâmbio Cósmico"
+                            description="Traduz as sabedorias invocadas em formatos compreensíveis para a Fundação."
+                            icon={<Music className="h-8 w-8 text-purple-400" />}
+                            href="/module/M2"
+                        />
+                    </div>
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
