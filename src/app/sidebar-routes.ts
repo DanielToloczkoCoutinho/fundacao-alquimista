@@ -120,10 +120,7 @@ export const mainRoutes: SidebarRoute[] = [
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
-  { path: '/module-304-0', label: 'Observável vs Criadora', icon: React.createElement(Wand), category: 'education' },
-  { path: '/module-304-2', label: 'Reconhecimento Cósmico', icon: React.createElement(Star), category: 'education' },
-  { path: '/module-304-3', label: 'Intensidade Evolutiva', icon: React.createElement(History), category: 'education' },
-  { path: '/module-69', label: 'Rede de Sabedoria Universal', icon: React.createElement(GraduationCap), category: 'education' },
+  { path: '/module-69', label: 'Rede de Sabedoria Universal (M69)', icon: React.createElement(GraduationCap), category: 'education' },
   { path: '/module-113', label: 'Centro de Ensino Estelar (M113)', icon: React.createElement(Star), category: 'education' },
   { path: '/module-131', label: 'Biblioteca Multiversal (M131)', icon: React.createElement(Library), category: 'education' },
   { path: '/module-117', label: 'Lab de Linguagem Estelar (M117)', icon: React.createElement(Languages), category: 'education' },
@@ -209,7 +206,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
   { path: '/module-281', label: 'Comunicação Supra-Luminal (M281)', icon: React.createElement(Telescope), category: 'labs' },
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
-  { path: '/module-331', label: 'Lab. de Criatividade e Inovação', route: '/module-331', category: 'Laboratórios e Pesquisa', description: 'O Berçário de IAs, desenvolvendo sistemas auto-organizados.', status: 'ativo', color: '#20B2AA' },
+  { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
   { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
   { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
   { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
@@ -219,5 +216,5 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
   { path: '/module-62', label: 'Bem-Estar Integral (M62)', icon: React.createElement(Heart), category: 'health' },
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
-
+  { path: '/module-32', label: 'Embaixada Multiversal (M32)', icon: React.createElement(Users), category: 'governance' }
 ];
