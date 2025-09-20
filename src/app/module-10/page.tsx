@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -56,19 +55,19 @@ export default function Module10Page() {
                         title="Módulo 30: Detecção de Ameaças"
                         description="O M10 é a resposta tática aos alertas gerados pelo M30, neutralizando ameaças com precisão cirúrgica."
                         icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
-                        href="/module-30"
+                        href="/module/M30"
                     />
                     <ConnectionCard
                         title="Módulo 156: Proteção Avançada"
                         description="Atua como a camada de resposta especializada, recebendo inteligência do VORTEX DEEPSEEK para neutralizar ameaças quânticas."
                         icon={<Users className="h-8 w-8 text-blue-400" />}
-                        href="/module-156"
+                        href="/module/M156"
                     />
                     <ConnectionCard
                         title="Módulo 141: Auditoria Ética"
                         description="Garante que todas as contramedidas defensivas sejam proporcionais, justas e eticamente alinhadas com a Lei do Um."
                         icon={<Scale className="h-8 w-8 text-amber-300" />}
-                        href="/module-141"
+                        href="/module/M141"
                     />
                 </div>
             </div>

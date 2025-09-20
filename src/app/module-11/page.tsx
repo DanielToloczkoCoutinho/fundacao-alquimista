@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Aperture, Shield, GitBranch, Map, Rocket, ShieldHalf, Eye } from 'lucide-react';
+import { Aperture, Shield, GitBranch, Rocket } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,14 +42,14 @@ export default function Module11Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-7xl">
+            <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Infraestrutura</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
                         title="Módulo 21: Navegação"
                         description="O M11 constrói a infraestrutura de portais que o M21 utiliza para planejar e executar viagens interdimensionais."
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
-                        href="/module-21"
+                        href="/module/M21"
                     />
                     <ConnectionCard
                         title="Módulo 1: Segurança Universal"
@@ -61,14 +60,14 @@ export default function Module11Page() {
                     <ConnectionCard
                         title="Módulo 26: Supervisão"
                         description="Consulta o M11 para obter o status em tempo real dos portais antes de autorizar qualquer travessia."
-                        icon={<Eye className="h-8 w-8 text-blue-400" />}
-                        href="/module-26"
+                        icon={<GitBranch className="h-8 w-8 text-purple-400" />}
+                        href="/module/M26"
                     />
                     <ConnectionCard
                         title="Módulo 130: Escola de Navegação"
                         description="Prepara os Guardiões para a utilização segura e consciente dos portais permanentes, ensinando os protocolos de travessia."
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
-                        href="/module-130"
+                        href="/module/M130"
                     />
                 </div>
             </div>

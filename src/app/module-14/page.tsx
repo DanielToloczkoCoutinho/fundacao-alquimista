@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Atom, Zap, Recycle, Shield, SlidersHorizontal, Flame } from 'lucide-react';
+import { Atom, Zap, Recycle, Shield, Flame } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,36 +44,30 @@ export default function Module14Page() {
 
             <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Criação</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
-                        title="Módulo 1: Segurança Universal"
+                        title="M1: Segurança Universal"
                         description="As operações de transmutação são de alta energia e protegidas pelo M1 para prevenir qualquer vazamento ou instabilidade."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 307: Reator ZPE"
                         description="O M14 é alimentado diretamente pelo Reator ZPE, a fonte de energia pura necessária para a manifestação da matéria."
                         icon={<Zap className="h-8 w-8 text-yellow-400" />}
-                        href="/module-307"
+                        href="/module/M307"
                     />
                     <ConnectionCard
                         title="Módulo 90: Recursos Quânticos"
                         description="Gera a matéria-prima (éter, plasma, etc.) que o M90 analisa, cataloga e disponibiliza para a Fundação."
                         icon={<Recycle className="h-8 w-8 text-green-400" />}
-                        href="/module-90"
-                    />
-                    <ConnectionCard
-                        title="Módulo 98: Modulação Fundamental"
-                        description="Fornece a energia necessária para que o M98 possa alterar as constantes fundamentais da realidade manifestada."
-                        icon={<SlidersHorizontal className="h-8 w-8 text-blue-400" />}
-                        href="/module-98"
+                        href="/module/M90"
                     />
                     <ConnectionCard
                         title="Módulo 20: Orquestrador Elemental"
                         description="Fornece a matéria bruta que o M20 refina em elementos puros e ligas complexas."
                         icon={<Flame className="h-8 w-8 text-orange-400" />}
-                        href="/module-20"
+                        href="/module/M20"
                     />
                 </div>
             </div>
