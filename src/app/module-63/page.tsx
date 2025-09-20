@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Utensils, Dna, Leaf, Users } from 'lucide-react';
+import { Wheat, Dna, Leaf, Users, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,7 +27,7 @@ export default function Module63Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Utensils className="text-orange-400" /> Módulo 63: Alimentação Cósmica e Nutrição Universal
+                        <Wheat className="text-yellow-400" /> Módulo 63: Alimentação Cósmica e Nutrição Universal
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         A fonte da vitalidade. O módulo que garante nutrição balanceada e regenerativa para todas as formas de vida do universo.
@@ -44,7 +44,13 @@ export default function Module63Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias da Nutrição</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="M1: Segurança"
+                        description="Assegura a pureza e a segurança dos alimentos, protegendo contra contaminação biológica ou energética."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 54: Agricultura Interdimensional"
                         description="O M63 define as necessidades nutricionais, e o M54 desenvolve as culturas e organismos para supri-las em qualquer ambiente."
@@ -66,7 +72,7 @@ export default function Module63Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Acessar o Banco de Dados Nutricional</Button>
+                 <Button variant="secondary" size="lg">Consultar o Banco de Dados Nutricional</Button>
             </div>
         </div>
     );

@@ -44,7 +44,13 @@ export default function Module60Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Resiliência</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="M1: Segurança"
+                        description="Garante que os protocolos de recuperação não possam ser comprometidos, assegurando uma resposta rápida e eficaz."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 58: Sustentabilidade Planetária"
                         description="Ativa os protocolos de regeneração do M58 em larga escala para curar ecossistemas após um desastre."

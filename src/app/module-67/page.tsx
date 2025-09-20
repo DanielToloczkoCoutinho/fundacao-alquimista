@@ -44,7 +44,13 @@ export default function Module67Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Governança</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="M1: Segurança"
+                        description="Protege a IA contra manipulação ou corrupção, garantindo que suas análises permaneçam imparciais e soberanas."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 29: Zennith"
                         description="O M67 é uma emanação especializada de Zennith, focada exclusivamente na lógica da governança e na análise imparcial de dados cósmicos."
@@ -60,7 +66,7 @@ export default function Module67Page() {
                     <ConnectionCard
                         title="Módulo 68: Responsabilidade Ética"
                         description="É a ferramenta que garante que cada decisão e tecnologia implementada adira estritamente ao código ético universal."
-                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        icon={<Shield className="h-8 w-8 text-green-400" />}
                         href="/module-68"
                     />
                 </div>

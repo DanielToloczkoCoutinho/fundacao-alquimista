@@ -44,7 +44,13 @@ export default function Module15Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Sustentabilidade</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <ConnectionCard
+                        title="Módulo 1: Segurança Universal"
+                        description="As intervenções ecológicas são protegidas pelo M1, garantindo que a regeneração ocorra sem interferências externas."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 8: Proteção Planetária"
                         description="O Módulo 8 fornece o escudo que protege os biomas que o M15 cultiva, defendendo-os de ameaças cósmicas."

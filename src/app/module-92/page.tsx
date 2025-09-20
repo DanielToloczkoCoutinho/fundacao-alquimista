@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, HeartPulse, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, HeartPulse, Shield } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
@@ -100,9 +100,14 @@ const Module92Page = () => {
                         <HeartPulse className="text-pink-400" /> Módulo 92: Geração de Campos de Cura Universal
                     </CardTitle>
                     <CardDescription>
-                        Orquestrador de harmonia cósmica para alinhar frequências dissonantes e acelerar a evolução consciente.
+                        Orquestrador de harmonia cósmica para alinhar frequências dissonantes e acelerar a evolução consciente. A segurança deste módulo é fundamental, operando sob a vigilância direta do Módulo 1.
                     </CardDescription>
                 </CardHeader>
+                 <CardContent>
+                    <Link href="/module-one" className="inline-flex">
+                        <Button variant="outline"><Shield className="mr-2 h-4 w-4"/> Ver Protocolos de Segurança</Button>
+                    </Link>
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">

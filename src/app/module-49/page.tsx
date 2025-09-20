@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Rocket, Zap, GitBranch, Network } from 'lucide-react';
+import { Rocket, Zap, GitBranch, Network, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,11 +43,17 @@ export default function Module49Page() {
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Transporte</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Mobilidade</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <ConnectionCard
+                        title="M1: Segurança"
+                        description="Garante que a tecnologia de propulsão não crie instabilidades ou seja usada para fins não autorizados."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 82: Transporte Quântico"
-                        description="Este módulo é a evolução do M82, aplicando a teoria em sistemas de propulsão para frotas de exploração."
+                        description="O M82 fornece a tecnologia de base (teletransporte, buracos de minhoca) que o M49 implementa em uma rede de infraestrutura universal."
                         icon={<GitBranch className="h-8 w-8 text-purple-400" />}
                         href="/module-82"
                     />

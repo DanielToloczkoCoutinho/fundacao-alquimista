@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Zap, Sun, Atom, Orbit } from 'lucide-react';
+import { Zap, Sun, Atom, Orbit, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +44,13 @@ export default function Module64Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias Energéticas</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="M1: Segurança"
+                        description="Protege a rede de energia contra ataques ou sobrecargas, garantindo um fornecimento estável e seguro."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 307: Reator ZPE"
                         description="O M64 é a aplicação prática e em escala universal da tecnologia de energia do ponto zero desenvolvida no M307."

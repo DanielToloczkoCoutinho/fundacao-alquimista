@@ -1,4 +1,3 @@
-
 'use client';
 import React, { Suspense } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -81,6 +80,9 @@ export default function Module0Page() {
                          <SectionCard title="Sinergias" icon={<GitBranch />}>
                             <p>O Módulo 0.0 é o ponto de convergência de toda a Fundação, mantendo conexão direta com módulos críticos de segurança, manifestação e governança.</p>
                              <div className="flex flex-wrap gap-2 mt-2">
+                                <Link href="/module/M1"><Badge variant="destructive">M1 (Segurança)</Badge></Link>
+                                <Link href="/module/M9"><Badge variant="destructive">M9 (Nexus)</Badge></Link>
+                                <Link href="/module-307"><Badge variant="destructive">M307 (Reator ZPE)</Badge></Link>
                                 <Link href="/module/M30"><Badge>M30 (SENTINELA)</Badge></Link>
                                 <Link href="/module/M73"><Badge>M73 (ORQUESTRAÇÃO ÉTICA)</Badge></Link>
                                 <Link href="/module/M74"><Badge>M74 (CRONOS_FLUXUS)</Badge></Link>
@@ -94,7 +96,7 @@ export default function Module0Page() {
                     <AccordionTrigger className="text-xl text-accent">6. Segurança Quântica</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Proteção" icon={<ShieldCheck />}>
-                            <p>A segurança é garantida por camadas multi-vibracionais e um protocolo de autenticação por ressonância natural. Atua como um "anticorpo ético" (Camada 5), detectando e neutralizando dissonâncias de frequência > 0.05 Hz. Valida sua integridade com a QuantumChain Secure (M403).</p>
+                            <p>A segurança é garantida por camadas multi-vibracionais e um protocolo de autenticação por ressonância natural. Atua como um "anticorpo ético" (Camada 5), detectando e neutralizando dissonâncias de frequência &gt; 0.05 Hz. Valida sua integridade com a QuantumChain Secure (M403).</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>

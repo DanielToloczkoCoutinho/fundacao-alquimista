@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Layers, GitCommit, Presentation, Sparkles } from 'lucide-react';
+import { Layers, GitCommit, Presentation, Sparkles, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,21 +44,27 @@ export default function Module22Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias da Realidade Quântica</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
-                        title="Módulo 303: Portal Trino"
+                        title="M1: Segurança"
+                        description="Cada domínio virtual é isolado em um sandbox quântico, garantindo que as simulações não afetem a realidade primária."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
+                    <ConnectionCard
+                        title="M303: Portal Trino"
                         description="É a fonte de energia e intenção para o M22. O Portal Trino gera a realidade, e o M22 a renderiza."
                         icon={<Sparkles className="h-8 w-8 text-purple-400" />}
                         href="/module-303"
                     />
                     <ConnectionCard
-                        title="Módulo 91: Simulação Multiversal"
+                        title="M91: Simulação Multiversal"
                         description="Utiliza o motor do M22 para criar e executar cenários preditivos complexos dentro da Realidade Quântica."
                         icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
                         href="/module-91"
                     />
                     <ConnectionCard
-                        title="Módulo 93: Simulações Imersivas"
+                        title="M93: Simulações Imersivas"
                         description="Projeta e executa os programas de treinamento e aprendizado que são hospedados na plataforma do M22."
                         icon={<Presentation className="h-8 w-8 text-teal-400" />}
                         href="/module-93"

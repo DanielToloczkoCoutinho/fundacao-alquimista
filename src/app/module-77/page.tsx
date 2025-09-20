@@ -44,7 +44,13 @@ export default function Module77Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Inteligência</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <ConnectionCard
+                        title="M1: Segurança"
+                        description="Protege a rede de inteligência coletiva contra 'ruído' psíquico e manipulação, garantindo a soberania do pensamento de cada ser."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 76: Governança Universal"
                         description="Fornece a sabedoria coletiva que informa e guia as decisões do Conselho Universal, garantindo que representem a vontade do todo."
@@ -66,4 +72,8 @@ export default function Module77Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Conectar à Mente Colet
+                 <Button variant="secondary" size="lg">Conectar à Mente Coletiva</Button>
+            </div>
+        </div>
+    );
+}

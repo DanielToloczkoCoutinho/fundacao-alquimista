@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { GraduationCap, BrainCircuit, Users, BookOpen, MessageCircle } from 'lucide-react';
+import { GraduationCap, BrainCircuit, Users, BookOpen, MessageCircle, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +44,13 @@ export default function Module69Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Sabedoria</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="M1: Segurança"
+                        description="Garante que a sabedoria compartilhada seja autêntica e protegida contra manipulação ou corrupção."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 44: Aprendizado Quântico"
                         description="Utiliza as tecnologias de transferência instantânea de conhecimento do M44 para disseminar sabedoria em escala universal."

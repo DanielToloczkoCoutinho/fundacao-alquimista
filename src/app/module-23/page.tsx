@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Hourglass, History, GitCommit, AlertTriangle } from 'lucide-react';
+import { Hourglass, History, GitCommit, AlertTriangle, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -56,21 +56,27 @@ export default function Module23Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Causalidade</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
-                        title="Módulo 107: Restauração Temporal"
+                        title="M1: Segurança"
+                        description="O Módulo 1 fornece os escudos de contenção que isolam as anomalias temporais, prevenindo que afetem a realidade principal."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
+                    <ConnectionCard
+                        title="M107: Restauração Temporal"
                         description="Quando a prevenção do M23 falha, o M107 é ativado para corrigir a linha do tempo danificada."
                         icon={<History className="h-8 w-8 text-cyan-400" />}
                         href="/module-107"
                     />
                     <ConnectionCard
-                        title="Módulo 42: ChronoCodex"
+                        title="M42: ChronoCodex"
                         description="Consulta o registro imutável do M42 para garantir que o fluxo do tempo corresponda à 'verdade' autorizada."
                         icon={<History className="h-8 w-8 text-purple-400" />}
                         href="/module-42"
                     />
                     <ConnectionCard
-                        title="Módulo 91: Simulação Multiversal"
+                        title="M91: Simulação Multiversal"
                         description="Calcula os riscos de paradoxo para as simulações do M91, garantindo que não afetem a realidade primária."
                         icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
                         href="/module-91"

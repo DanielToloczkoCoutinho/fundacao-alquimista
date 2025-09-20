@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckSquare, Archive, Scale, Users } from 'lucide-react';
+import { CheckSquare, Archive, Scale, Users, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +44,13 @@ export default function Module44Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias da Verdade</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <ConnectionCard
+                        title="M1: Segurança"
+                        description="VERITAS é a validação final da segurança, pois uma verdade incorruptível é a defesa mais forte."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 144: Lex Fundamentalis"
                         description="A Lei (M144) só tem poder porque é um reflexo da Verdade (M44). VERITAS é a fonte da autoridade da Lei."

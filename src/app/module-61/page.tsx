@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Hospital, Heart, BrainCircuit, Users } from 'lucide-react';
+import { Hospital, Heart, BrainCircuit, Users, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +44,13 @@ export default function Module61Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Cura</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <ConnectionCard
+                        title="M1: Segurança"
+                        description="Protege os dados de saúde e garante que os tratamentos não possam ser adulterados, assegurando a segurança dos pacientes."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 62: Bem-Estar Integral"
                         description="O M61 trata o corpo físico, enquanto o M62 cura a mente e o espírito, formando uma abordagem holística da saúde."

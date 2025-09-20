@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Building2, Sprout, Heart, Users } from 'lucide-react';
+import { Building, Sprout, Heart, Users, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -27,7 +27,7 @@ export default function Module48Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Building2 className="text-lime-400" /> Módulo 48: Avanços Sociais e Planejamento Urbano Consciente
+                        <Building className="text-lime-400" /> Módulo 48: Avanços Sociais e Planejamento Urbano Consciente
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O arquiteto da harmonia social. O módulo que projeta habitats, economias e sociedades que vibram em sintonia com a natureza e a consciência de seus habitantes.
@@ -44,7 +44,13 @@ export default function Module48Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Planejamento</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="M1: Segurança"
+                        description="Garante que os projetos urbanos sejam seguros e resilientes a ameaças físicas e energéticas."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 59: Eco-Cidades Quânticas"
                         description="O M48 fornece os blueprints e os princípios de design que o M59 implementa, criando cidades que são organismos vivos."

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Music, HeartHandshake, Waves, HeartPulse } from 'lucide-react';
+import { Music, HeartHandshake, Waves, HeartPulse, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +44,13 @@ export default function Module17Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Regeneração</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                     <ConnectionCard
+                        title="Módulo 1: Segurança Universal"
+                        description="As sessões de cura são realizadas em um ambiente vibracionalmente seguro, protegido por escudos quânticos do M1."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 109: Cura Quântica"
                         description="O M109 define o propósito da cura, e o M17 fornece a tecnologia holográfica para executá-la em nível celular."

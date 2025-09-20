@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Loader2, Rss, BookOpen, CheckCircle, Sparkles, Languages } from 'lucide-react';
+import { Loader2, Rss, BookOpen, CheckCircle, Sparkles, Languages, Shield } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { decodeCosmicMessage } from '@/app/actions';
 import { quantumResilience } from '@/lib/quantum-resilience';
@@ -50,7 +50,7 @@ export default function Module1001Page() {
                         <Rss className="text-cyan-400" /> Módulo 1001: Portal de Recepção Cósmica
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O santuário onde as mensagens recebidas do multiverso são decodificadas, registradas e celebradas.
+                        O santuário onde as mensagens recebidas do multiverso são decodificadas, registradas e celebradas. Cada transmissão é protegida pelo Módulo 1.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -91,3 +91,7 @@ export default function Module1001Page() {
                         </CardContent>
                     </Card>
                 )}
+            </div>
+        </div>
+    );
+}

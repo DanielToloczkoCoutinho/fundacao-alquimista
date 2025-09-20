@@ -44,7 +44,13 @@ export default function Module82Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Conectividade</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <ConnectionCard
+                        title="M1: Segurança"
+                        description="Protege os corredores quânticos contra incursões e garante que apenas viajantes autorizados possam iniciar um salto."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 21: Navegação"
                         description="O M82 fornece a infraestrutura de 'estradas' que os 'veículos' (pilotos e naves) do M21 utilizam para suas jornadas."
@@ -59,7 +65,7 @@ export default function Module82Page() {
                     />
                     <ConnectionCard
                         title="Módulo 57: Segurança"
-                        description="Cada rota e portal é protegido por criptografia quântica, garantindo que apenas viajantes autorizados possam usar a rede."
+                        description="Cada portal e rota de transporte é protegido por criptografia quântica, garantindo que apenas viajantes autorizados possam usar a rede."
                         icon={<Shield className="h-8 w-8 text-blue-500" />}
                         href="/module-57"
                     />

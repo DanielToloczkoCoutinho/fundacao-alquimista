@@ -58,7 +58,7 @@ export default function Module33Page() {
                         href="/module-72"
                     />
                     <ConnectionCard
-                        title="Todos os Módulos Críticos"
+                        title="Módulos Críticos"
                         description="Serve como a chave de autorização final para módulos como M31, M98 e M99, liberando seu poder de manifestação."
                         icon={<GitBranch className="h-8 w-8 text-purple-400" />}
                         href="/module-9"

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Flame, Beaker, Recycle, Sprout } from 'lucide-react';
+import { Flame, Beaker, Recycle, Sprout, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +44,13 @@ export default function Module20Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Alquimia</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="Módulo 1: Segurança Universal"
+                        description="As transmutações de alta energia são contidas por escudos do M1, garantindo a segurança de toda a Fundação durante o processo."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 14: Transmutador Quântico"
                         description="O M14 cria a energia/matéria primordial. O M20 a refina, transformando-a nos elementos específicos necessários para a Criação."
@@ -59,7 +65,7 @@ export default function Module20Page() {
                     />
                     <ConnectionCard
                         title="Módulo 16: Bio-Sustentabilidade"
-                        description="Fornece os elementos específicos (oxigênio, carbono, silício) necessários para o M16 construir novos ecossistemas."
+                        description="Sintetiza compostos orgânicos e minerais raros para semear e sustentar os ecossistemas do M16."
                         icon={<Sprout className="h-8 w-8 text-lime-400" />}
                         href="/module-16"
                     />

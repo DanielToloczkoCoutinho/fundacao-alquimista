@@ -44,7 +44,13 @@ export default function Module14Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Criação</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="Módulo 1: Segurança Universal"
+                        description="As operações de transmutação são de alta energia e protegidas pelo M1 para prevenir qualquer vazamento ou instabilidade."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 307: Reator ZPE"
                         description="O M14 fornece picos de energia para inicialização e reforço da LuxNet, enquanto o M307 mantém o fluxo constante."

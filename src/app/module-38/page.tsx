@@ -44,11 +44,17 @@ export default function Module38Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Previsão</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="M1: Segurança"
+                        description="Protege os sensores do observatório contra interferência, garantindo a precisão e a integridade dos dados."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 15: Jardineiro Cósmico"
                         description="Alerta o M15 sobre tempestades solares, permitindo o reforço dos escudos atmosféricos para proteger os biomas."
-                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        icon={<Shield className="h-8 w-8 text-green-400" />}
                         href="/module-15"
                     />
                     <ConnectionCard

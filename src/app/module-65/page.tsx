@@ -44,7 +44,13 @@ export default function Module65Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Mobilidade</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                     <ConnectionCard
+                        title="M1: Segurança"
+                        description="Aplica escudos de proteção em todas as rotas de transporte, garantindo que as viagens sejam livres de perigos."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-one"
+                    />
                     <ConnectionCard
                         title="Módulo 82: Transporte Quântico"
                         description="O M82 fornece a tecnologia de base (teletransporte, buracos de minhoca) que o M65 implementa em uma rede de infraestrutura universal."
@@ -53,8 +59,8 @@ export default function Module65Page() {
                     />
                     <ConnectionCard
                         title="Módulo 57: Segurança"
-                        description="Cada portal e rota de transporte é protegido pelos protocolos de segurança quântica do M57, garantindo viagens sem riscos."
-                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        description="Cada portal e rota de transporte é protegido por criptografia quântica, garantindo que apenas viajantes autorizados possam usar a rede."
+                        icon={<Shield className="h-8 w-8 text-blue-500" />}
                         href="/module-57"
                     />
                     <ConnectionCard

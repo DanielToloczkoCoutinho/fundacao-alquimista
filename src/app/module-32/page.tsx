@@ -48,20 +48,7 @@ export default function Module32Page() {
                      <ConnectionCard
                         title="M18: Orquestração Akáshica"
                         description="Cada diálogo interdimensional é registrado e selado no Akasha pelo M18, transformando sabedoria em registro eterno."
-                        icon={<Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
-      <Link href={href} passHref>
-        <CardHeader>
-            <div className="flex items-center gap-3">
-                {icon}
-                <CardTitle className="gradient-text">{title}</CardTitle>
-            </div>
-        </CardHeader>
-        <CardContent>
-            <p className="text-muted-foreground">{description}</p>
-        </CardContent>
-      </Link>
-    </Card>
-}
+                        icon={<Archive className="h-8 w-8 text-yellow-400"/>}
                         href="/module-18"
                     />
                     <ConnectionCard
