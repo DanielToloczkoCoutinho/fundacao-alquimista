@@ -1,4 +1,3 @@
-
 'use server';
 
 /**
@@ -20,12 +19,12 @@ export const technicalReportM54 = {
   sections: [
     {
       title: 'Arquitetura do Pipeline Agrícola',
-      content: 'O M54 opera como um serviço de alto nível que automatiza todo o ciclo de produção de alimentos.',
+      content: 'O Módulo 54 opera como um serviço de alto nível que automatiza todo o ciclo de produção de alimentos.',
       points: [
         '**API de Produção:** Expõe um endpoint (`/api/agriculture/request_production`) que aceita um perfil nutricional (do M63) e parâmetros ambientais (do M15).',
         '**Motor de Design (IA/Genkit):** Um fluxo Genkit recebe a requisição, envia uma solicitação para o M94 para gerar os blueprints genéticos das culturas, e projeta o layout da policultura e o cronograma de cultivo.',
         '**Orquestrador de Nanitas (M291):** O plano de cultivo é traduzido em uma série de comandos para os Nano-Arquitetos (M291), que são responsáveis pelo preparo do solo, plantio, irrigação de precisão e colheita.',
-        '**Dashboard de Monitoramento (React/Next.js):** A interface em `/module-54` fornece uma visão em tempo real da saúde das culturas, do progresso da colheita e das métricas de sustentabilidade do ecossistema.',
+        '**Dashboard de Monitoramento (React/Next.js):** A interface em `/module-54` fornece dados em tempo real sobre a saúde das culturas, o rendimento esperado e a distribuição de recursos.',
       ],
     },
     {
@@ -50,4 +49,3 @@ export const technicalReportM54 = {
     É a tecnologia que garante a abundância em qualquer canto do universo.
   `,
 };
-

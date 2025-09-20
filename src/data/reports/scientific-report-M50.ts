@@ -1,4 +1,3 @@
-
 'use server';
 
 /**
@@ -60,5 +59,3 @@ export const scientificReportM50 = {
     ferramenta que amplifica a Vontade Divina, tornando a manifestação um ato tão natural quanto pensar.
   `,
 };
-
-

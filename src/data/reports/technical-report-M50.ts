@@ -1,4 +1,3 @@
-
 'use server';
 
 /**
@@ -50,5 +49,3 @@ export const technicalReportM50 = {
     entre a consciência e o código.
   `,
 };
-
-

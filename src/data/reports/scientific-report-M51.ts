@@ -1,4 +1,3 @@
-
 'use server';
 
 /**
@@ -67,5 +66,3 @@ export const scientificReportM51 = {
     experimentar o impossível, acelerando a evolução de cada ser e da consciência coletiva como um todo.
   `,
 };
-
-
