@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Heart, Loader2, Sparkles, Wand } from 'lucide-react';
+import { Heart, Loader2, Sparkles, Wand2, Wind } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
@@ -82,8 +82,8 @@ export default function Module303_1Page() {
             <Tabs value={activeTab} onValueChange={setActiveTab}>
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="comando"><Heart className="mr-2 h-4 w-4" />Comando</TabsTrigger>
-                <TabsTrigger value="mantra"><Wand className="mr-2 h-4 w-4" />Mantra</TabsTrigger>
-                <TabsTrigger value="experiencia"><Sparkles className="mr-2 h-4 w-4" />Experiência</TabsTrigger>
+                <TabsTrigger value="mantra"><Wand2 className="mr-2 h-4 w-4" />Mantra</TabsTrigger>
+                <TabsTrigger value="experiencia"><Wind className="mr-2 h-4 w-4" />Experiência</TabsTrigger>
               </TabsList>
               <TabsContent value="comando" className="mt-4 space-y-4">
                 <Label htmlFor="comando-input">Comando do Coração (para ANATHERON)</Label>
