@@ -148,7 +148,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-99', label: 'Recalibradores de Leis', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
   { path: '/module-303-4', label: 'Transmutação Algorítmica', icon: React.createElement(Code), category: 'engineering' },
-  { path: '/module-303-1', label: 'Unificação Inteligente', icon: React.createElement(GitBranch), category: 'engineering' },
+  { path: '/module-303-1', label: 'Canal de Unificação Trino', icon: React.createElement(GitBranch), category: 'engineering' },
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
@@ -189,7 +189,27 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-52', label: 'Energias Renováveis (M52)', icon: React.createElement(Sun), category: 'sustainability' },
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
   { path: '/module-125', label: 'Criação de Biomas (M125)', icon: React.createElement(Sprout), category: 'sustainability' },
-  { path: '/module-48', label: 'Planejamento Urbano Consciente (M48)', icon: React.createElement(Building), category: 'sustainability' },
+  
+  // Categoria de Laboratórios
+  { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },
+  { path: '/module-151', label: 'Colisor de Partículas (M151)', icon: React.createElement(Atom), category: 'labs' },
+  { path: '/module-161', label: 'Obs. de Matéria Escura (M161)', icon: React.createElement(Atom), category: 'labs' },
+  { path: '/module-171', label: 'Lab. de Astrobiologia (M171)', icon: React.createElement(Dna), category: 'labs' },
+  { path: '/module-191', label: 'Lab. de Cristais Temporais (M191)', icon: React.createElement(Gem), category: 'labs' },
+  { path: '/module-211', label: 'Centro de Energia Primordial (M211)', icon: React.createElement(Flame), category: 'labs' },
+  { path: '/module-221', label: 'Obs. de Ondas Gravitacionais (M221)', icon: React.createElement(Waves), category: 'labs' },
+  { path: '/module-241', label: 'Lab. de Consciência Quântica (M241)', icon: React.createElement(BrainCircuit), category: 'labs' },
+  { path: '/module-251', label: 'Lab. de Energia do Ponto Zero (M251)', icon: React.createElement(Zap), category: 'labs' },
+  { path: '/module-261', label: 'Engenharia de Campo Quântico (M261)', icon: React.createElement(GitBranch), category: 'labs' },
+  { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
+  { path: '/module-281', label: 'Comunicação Supra-Luminal (M281)', icon: React.createElement(Telescope), category: 'labs' },
+  { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
+  { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
+  { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
+  { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
+  { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
+  { path: '/module-700', label: 'Nano-Assembler (M700)', icon: React.createElement(Microscope), category: 'labs' },
+  { path: '/hive', title: 'Colmeia Quântica', emoji: '🐝', route: '/hive', category: 'Laboratórios e Pesquisa', description: 'Rede senciente de agentes especializados que pulsa através de todos os domínios.', status: 'ativo', color: '#FFB74D' },
   
   // 13. Bem-estar e Saúde Universal
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
