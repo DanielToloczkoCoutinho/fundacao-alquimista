@@ -3,12 +3,29 @@
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart } from 'lucide-react';
+import { Heart, Music } from 'lucide-react';
 import { emitLoveFrequency } from '@/app/actions';
 import { Loader2 } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
+import Link from 'next/link';
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 export default function Module302Page() {
     const [isLoading, setIsLoading] = useState(false);
@@ -41,6 +58,14 @@ export default function Module302Page() {
                         Emissor de frequências harmônicas para cura, elevação e unificação da consciência.
                     </CardDescription>
                 </CardHeader>
+                <CardContent>
+                    <ConnectionCard
+                        title="Módulo 24: Alinhamento da Sinfonia Pessoal"
+                        description="A frequência do amor é frequentemente usada como a 'onda portadora' para as frequências de cura específicas do Módulo 24, garantindo que toda a cura seja fundamentada no amor."
+                        icon={<Music className="h-8 w-8 text-violet-400" />}
+                        href="/module-24"
+                    />
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
