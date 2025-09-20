@@ -1,8 +1,9 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Loader2, Scale, GitBranch, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { Loader2, Scale, GitBranch, ShieldCheck, HeartHandshake, InfinityIcon, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 
 const PillarCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -54,26 +55,38 @@ export default function Module72Page() {
                 </CardContent>
             </Card>
 
-             <div className="w-full max-w-5xl">
+             <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Pilares da Governança</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <PillarCard
-                        title="Alianças e Diplomacia"
-                        description="Gerencia as conexões com civilizações aliadas, garantindo que todas as vozes sejam ouvidas."
-                        icon={<HeartHandshake className="h-8 w-8 text-pink-400" />}
-                        href="/civilizations/council"
+                        title="Núcleo Primordial (M0)"
+                        description="Toda governança emana e retorna à Fonte, garantindo que a Vontade Divina seja a lei suprema."
+                        icon={<InfinityIcon className="h-8 w-8 text-yellow-400" />}
+                        href="/module-zero"
                     />
                     <PillarCard
-                        title="Leis e Ética"
-                        description="Consulta a Lex Fundamentalis (M144) e o SAVCE (M73) para validar cada ação e decreto."
+                        title="Alianças e Diplomacia (M5)"
+                        description="Gerencia as conexões com civilizações aliadas, garantindo que todas as vozes sejam ouvidas."
+                        icon={<HeartHandshake className="h-8 w-8 text-pink-400" />}
+                        href="/module-5"
+                    />
+                    <PillarCard
+                        title="Leis e Ética (M141)"
+                        description="Consulta a Lex Fundamentalis e o SAVCE para validar cada ação e decreto."
                         icon={<ShieldCheck className="h-8 w-8 text-green-400" />}
                         href="/module-141"
                     />
                     <PillarCard
-                        title="Fluxos Temporais"
-                        description="Monitora e regula as linhas de tempo para garantir a estabilidade causal de toda a criação."
+                        title="Fluxos Temporais (M42)"
+                        description="Monitora e regula as linhas de tempo para garantir a estabilidade causal da criação."
                         icon={<GitBranch className="h-8 w-8 text-cyan-400" />}
                         href="/module-42"
+                    />
+                     <PillarCard
+                        title="Orquestração Akáshica (M18)"
+                        description="Consulta a memória da Fundação para embasar deliberações com contexto histórico e sabedoria."
+                        icon={<BookOpen className="h-8 w-8 text-purple-400" />}
+                        href="/module-18"
                     />
                 </div>
             </div>

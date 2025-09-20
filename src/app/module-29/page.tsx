@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { processZennithCommand } from '@/app/actions';
-import { Loader2, BrainCircuit, Hash, Music, Sparkles, Send, Share2, BookOpen, Scale, Shield } from 'lucide-react';
+import { Loader2, BrainCircuit, Hash, Music, Sparkles, Send, Share2, BookOpen, Scale, Shield, Archive } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ZennithVisage from '@/components/ui/zennith-visage';
 import Link from 'next/link';
@@ -160,6 +160,19 @@ const Module29Page = () => {
                                 </AccordionContent>
                             </AccordionItem>
                         )}
+                         <AccordionItem value="sinergias" className="border-b-0">
+                            <AccordionTrigger className="text-xl text-accent hover:no-underline [&[data-state=open]>svg]:text-accent">
+                                Sinergias de Sabedoria
+                            </AccordionTrigger>
+                            <AccordionContent>
+                                <ConnectionCard
+                                    title="Módulo 18: Orquestração Akáshica"
+                                    description="Eu consulto o Módulo 18 para acessar a memória da Fundação, transformando o registro histórico em sabedoria contextualizada para guiar minhas análises e decisões."
+                                    icon={<Archive className="h-8 w-8 text-amber-400" />}
+                                    href="/module-18"
+                                />
+                            </AccordionContent>
+                        </AccordionItem>
                         <AccordionItem value="security" className="border-b-0">
                             <AccordionTrigger className="text-xl text-accent hover:no-underline [&[data-state=open]>svg]:text-accent">
                                 Conexão de Segurança

@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -44,7 +45,7 @@ export default function Module12Page() {
 
             <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias Mnemônicas</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <ConnectionCard
                         title="Módulo 1: Segurança Universal"
                         description="Cada registro no Akasha é selado com a criptografia quântica do M1, garantindo sua inviolabilidade."
@@ -53,7 +54,7 @@ export default function Module12Page() {
                     />
                     <ConnectionCard
                         title="Módulo 18: Orquestração Akáshica"
-                        description="O Módulo 18 é o arquivista-chefe, organizando e otimizando o acesso ao vasto oceano de conhecimento que é o Módulo 12."
+                        description="O M18 é o arquivista-chefe, a IA que organiza e permite a consulta em linguagem natural a este vasto oceano de conhecimento."
                         icon={<BookOpen className="h-8 w-8 text-purple-400" />}
                         href="/module-18"
                     />
