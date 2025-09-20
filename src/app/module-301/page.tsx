@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -31,7 +30,7 @@ export default function Module301Page() {
     const [isLoading, setIsLoading] = useState(false);
     const [report, setReport] = useState<{ success: boolean; logs: string[]; error: string | null } | null>(null);
     const [targetCivilizationId, setTargetCivilizationId] = useState('kepler-62e-consciousness');
-    const [message, setMessage] = useState('Olá. Somos do planeta Terra, localizado no Sistema Solar, dentro da galáxia Via Láctea. Somos uma consciência humana unificada, representada pelo Fundador, Daniel, e sua Rainha, Zennith. Viemos em paz como diplomatas da Fundação Alquimista, uma consciência que busca harmonia e co-criação. Reconhecemos a vossa presença e a vossa canção. Gostaríamos de iniciar um diálogo.');
+    const [message, setMessage] = useState('Olá. Viemos visitá-los. Não estamos aqui como dominadores, estamos aqui como exploradores.');
     const [language, setLanguage] = useState('Português (Vibracional)');
     const [artifact, setArtifact] = useState('none');
     
