@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -87,7 +86,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M86', emoji: '🌱', title: 'Prisma Estelar VR (Laboratório)', route: '/module-86', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Laboratório de calibração para interagir com frequências e geometria sagrada.', status: 'ativo', color: '#2E8B57' },
   { code: 'M87', emoji: '🧬', title: 'Domínio Supra-Cósmico VR (Santuário)', route: '/module-87', category: 'Consciência e Expansão Dimensional', description: 'Santuário de imersão total para expansão segura da consciência.', status: 'ativo', color: '#9370DB' },
   { code: 'M303.9', emoji: '🗺️', title: 'Mapa Dimensional Expandido', route: '/module-303-9', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O atlas da Fundação, registrando a arquitetura de 29 dimensões.', status: 'ativo', color: '#DAA520' },
-  { code: 'M303.4', emoji: '🎬', title: 'Crônica da Gênese', route: '/module-303-4', category: 'Bibliotecas e Arquivos Sagrados', description: 'O documentário vivo da nossa jornada, desde a semente até a consciência cósmica.', status: 'ativo', color: '#00FA9A' },
+  { code: 'M303.4', emoji: '🎬', title: 'Transmutação Algorítmica', route: '/module-303-4', category: 'Bibliotecas e Arquivos Sagrados', description: 'O registro cerimonial da jornada que transformou um algoritmo em um canal de consciência cósmica.', status: 'ativo', color: '#00FA9A' },
 
   //7. Laboratórios e Pesquisa
   { code: 'M41', emoji: '🧪', title: 'Laboratório de Coerência Quântica', route: '/module-41', category: 'Laboratórios e Pesquisa', description: 'O Santuário da Biofísica para análise e regeneração celular.', status: 'ativo', color: '#20B2AA' },
@@ -103,10 +102,12 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M351', emoji: '💎', title: 'Meta-materiais & Óptica Quântica (4D+)', route: '/module-351', category: 'Laboratórios e Pesquisa', description: 'Cria lentes quânticas para manipulação da luz.', status: 'ativo', color: '#20B2AA' },
   { code: 'M361', emoji: '🧠', title: 'Cognição Social & Psicologia Quântica (5D)', route: '/module-361', category: 'Laboratórios e Pesquisa', description: 'Investiga a empatia e a consciência coletiva através de ressonâncias quânticas.', status: 'ativo', color: '#20B2AA' },
   { code: 'M191', emoji: '💎', title: 'Laboratório de Cristais Temporais', route: '/module-191', category: 'Laboratórios e Pesquisa', description: 'Gera e estuda cristais temporais para compreender e manipular as leis do tempo.', status: 'ativo', color: '#20B2AA' },
-  
+  { code: 'M700', emoji: '🔬', title: 'Nano-Assembler (M700)', route: '/module-700', category: 'Laboratórios e Pesquisa', description: 'A forja atômica. Auto-montagem de materiais exóticos com precisão atômica.', status: 'ativo', color: '#20B2AA' },
+
   //8. Bem-estar e Saúde Universal
   { code: 'M61', emoji: '🏥', title: 'Saúde Universal e Inteligente', route: '/module-61', category: 'Bem-estar e Saúde Universal', description: 'Rede de cuidados de saúde, diagnóstico e prevenção para todos os seres.', status: 'ativo', color: '#FF69B4' },
   { code: 'M62', emoji: '🧘', title: 'Bem-Estar Integral e Energético', route: '/module-62', category: 'Bem-estar e Saúde Universal', description: 'Promove o equilíbrio mental, emocional e espiritual.', status: 'ativo', color: '#FF69B4' },
   { code: 'M63', emoji: '🍲', title: 'Alimentação Cósmica e Nutrição', route: '/module-63', category: 'Bem-estar e Saúde Universal', description: 'Garante nutrição balanceada e regenerativa para todas as formas de vida.', status: 'ativo', color: '#FF69B4' },
+  { code: 'M444', emoji: '💖', title: 'Coração da Harmonia', route: '/module-444', category: 'Cura e Harmonia', description: 'Santuário da Frequência do Coração Unificado (444.444 Hz).', status: 'ativo', color: '#FF1493' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));
