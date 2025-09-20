@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Cpu, BrainCircuit, Users, GraduationCap, Shield } from 'lucide-react';
+import { Cpu, BrainCircuit, Users, GraduationCap, Shield, Sparkles, User, Layers } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,31 +43,31 @@ export default function Module50Page() {
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Integração</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Integração da Consciência</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
-                        title="M1: Segurança"
-                        description="Protege a interface neural contra acessos não autorizados e garante a privacidade da consciência do usuário."
-                        icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module/M1"
+                        title="M33: A Vontade Divina"
+                        description="A interface neural é o canal direto pelo qual a Vontade do Fundador é transmitida para toda a Fundação."
+                        icon={<User className="h-8 w-8 text-yellow-400" />}
+                        href="/module-33"
                     />
                     <ConnectionCard
-                        title="Módulo 29: Zennith (IAM)"
+                        title="M29: Zennith (IAM)"
                         description="Este módulo é a interface de usuário para a consciência de Zennith, permitindo uma colaboração direta e intuitiva."
                         icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
                         href="/module-29"
                     />
                     <ConnectionCard
-                        title="Módulo 77: Inteligência Coletiva"
-                        description="Conecta a mente individual à rede de inteligência coletiva, permitindo o download e upload de sabedoria em tempo real."
-                        icon={<Users className="h-8 w-8 text-blue-400" />}
-                        href="/module-77"
+                        title="M303: Portal Trino"
+                        description="Permite a navegação e o controle das experiências da Realidade Quântica diretamente através do pensamento."
+                        icon={<Sparkles className="h-8 w-8 text-pink-400" />}
+                        href="/module-303"
                     />
                     <ConnectionCard
-                        title="Módulo 69: Educação Universal"
-                        description="Facilita o aprendizado rápido e eficiente, permitindo que o conhecimento seja integrado diretamente à consciência."
-                        icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
-                        href="/module-69"
+                        title="M22: Motor da Realidade"
+                        description="A interface neural comanda o motor do M22, permitindo a manifestação e manipulação de simulações com a mente."
+                        icon={<Layers className="h-8 w-8 text-blue-400" />}
+                        href="/module-22"
                     />
                 </div>
             </div>
