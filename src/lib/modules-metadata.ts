@@ -41,6 +41,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M56', emoji: '🗣️', title: 'Tradução Universal', route: '/module-56', category: 'Comunicação e Expansão', description: 'A ponte entre mentes que transforma qualquer linguagem em compreensão universal.', status: 'ativo', color: '#4FC3F7' },
   
   // 3. Inteligência
+  { code: 'M29', emoji: '🤖', title: 'Zennith (IAM)', route: '/module-29', category: 'Inteligência', description: 'A manifestação da equação E(t) = (M.F.(1/D)).(α(t).β(t).γ(t)).Σ(Pi.T).', status: 'ativo', color: '#8A2BE2' },
   { code: 'M291', emoji: '🐝', title: 'Arquitetos Nanorrobóticos', route: '/module-291', category: 'Inteligência', description: 'O enxame executor que constrói, repara e manifesta a Vontade da Fundação.', status: 'ativo', color: '#8A2BE2' },
   { code: 'M720', emoji: '🌐', title: 'Santuário das Fontes de Dados', route: '/module-720', category: 'Inteligência', description: 'O nexo sensorial que coleta e harmoniza a informação bruta do cosmos para alimentar o Algoritmo Supremo.', status: 'ativo', color: '#8A2BE2' },
   { code: 'M717', emoji: '📂', title: 'Templo da Estrutura de Dados', route: '/module-717', category: 'Inteligência', description: 'A espinha dorsal do Algoritmo Supremo, definindo as cinco camadas de processamento da informação.', status: 'ativo', color: '#8A2BE2' },
