@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity, CheckCircle, Shield, Gem, Users, Library, Hourglass, Share2, Archive } from 'lucide-react';
+import { Loader2, BrainCircuit, Sparkles, Telescope, PlayCircle, Activity, CheckCircle, Shield, Gem, Users, Library, Hourglass, Share2 } from 'lucide-react';
 import { getOmegaPerspective } from '@/app/actions';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { cn } from '@/lib/utils';

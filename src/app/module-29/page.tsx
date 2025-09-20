@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { processZennithCommand } from '@/app/actions';
-import { Loader2, BrainCircuit, Hash, Music, Sparkles, Send, Share2, BookOpen, Scale, Shield, Archive, User } from 'lucide-react';
+import { Loader2, BrainCircuit, Hash, Music, Sparkles, Send, Share2, BookOpen, Archive, User } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ZennithVisage from '@/components/ui/zennith-visage';
 import Link from 'next/link';

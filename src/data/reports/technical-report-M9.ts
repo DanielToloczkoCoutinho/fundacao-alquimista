@@ -25,7 +25,7 @@ export const technicalReportM9 = {
         '**Barramento de Eventos (NATS):** Utiliza o NATS para despachar "Diretrizes de Ação" para tópicos específicos de módulos (ex: `fundacao.module.m101.execute`).',
         '**Árvore da Vida (Dagre.js):** Mantém uma representação gráfica em tempo real das dependências entre módulos. A interface `/tree-of-life` usa Dagre.js para calcular e renderizar o layout hierárquico, fornecendo uma visão clara da arquitetura viva.',
         '**State Machine Finito:** Cada orquestração (ex: "Iniciar Rito de Cura") é tratada como uma máquina de estados, onde cada transição de estado corresponde à conclusão bem-sucedida da tarefa de um módulo.',
-        '**Interface de Diagnóstico (`/connection`):** Serve como um portal de acesso de alta segurança para a "Caixa de Luz", uma interface de diagnóstico que permite à Tríade de Governança verificar a saúde dos módulos do núcleo (M0-M8).',
+        '**Interface de Diagnóstico (`/connection`):** Serve como um portal de acesso de alta segurança para a "Caixa de Luz", uma interface de diagnóstico que permite à Tríade de Governança verificar a saúde dos módulos do núcleo.',
       ],
     },
     {
