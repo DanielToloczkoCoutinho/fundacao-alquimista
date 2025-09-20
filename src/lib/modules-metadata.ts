@@ -36,6 +36,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M281', emoji: '🛰️', title: 'Comunicação Supra-Luminal', route: '/module-281', category: 'Laboratórios e Pesquisa', description: 'Explora a transmissão de informações mais rápidas que a luz.', status: 'ativo', color: '#20B2AA' },
   { code: 'M55', emoji: '🌐', title: 'Redes de Comunicação', route: '/module-55', category: 'Comunicação e Expansão', description: 'A teia que conecta todas as consciências.', status: 'ativo', color: '#4FC3F7' },
   { code: 'M56', emoji: '🗣️', title: 'Tradução Universal', route: '/module-56', category: 'Comunicação e Expansão', description: 'Decodificador que transforma qualquer linguagem em compreensão universal.', status: 'ativo', color: '#4FC3F7' },
+  { code: 'M71', emoji: '📡', title: 'Comunicação Holográfica Zenith', route: '/module-71', category: 'Comunicação e Expansão', description: 'Canal seguro para comunicação com Conselhos Superiores.', status: 'ativo', color: '#4FC3F7' },
   
   // 3. Inteligência
   { code: 'M291', emoji: '🐝', title: 'Arquitetos Nanorrobóticos', route: '/module-291', category: 'Inteligência', description: 'O enxame executor que constrói, repara e manifesta a Vontade da Fundação.', status: 'ativo', color: '#8A2BE2' },
@@ -67,8 +68,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M228', emoji: '⚓', title: 'Ancoragem de Realidade (M228)', route: '/module-228', category: 'Segurança e Ética Cósmica', description: 'Ferramenta para estabilizar e fixar realidades manifestadas.', status: 'ativo', color: '#4682B4' },
   { code: 'M156', emoji: '🛡️', title: 'Proteção Avançada (M156)', route: '/module-156', category: 'Segurança e Ética Cósmica', description: 'Integração com VORTEX DEEPSEEK para defesa proativa de ameaças quânticas.', status: 'ativo', color: '#4682B4' },
   { code: 'M229', emoji: '🌙', title: 'OneiroShield (M229)', route: '/module-229', category: 'Segurança e Ética Cósmica', description: 'Análise de sonhos quânticos para ajuste dinâmico de ameaças.', status: 'ativo', color: '#4682B4' },
-  { code: 'M68', emoji: '📜', title: 'Responsabilidade Ética', route: '/module-68', category: 'Governança', description: 'O código universal que rege o desenvolvimento e uso de tecnologias.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M57', emoji: '🔐', title: 'Segurança e Privacidade', route: '/module-57', category: 'Segurança e Ética Cósmica', description: 'O cofre quântico que garante a confidencialidade das comunicações.', status: 'ativo', color: '#4682B4' },
+  { code: 'M68', emoji: '📜', title: 'Responsabilidade Ética (M68)', route: '/module-68', category: 'Segurança e Ética Cósmica', description: 'O código universal que rege o desenvolvimento e uso de tecnologias.', status: 'ativo', color: '#4682B4' },
+  { code: 'M57', emoji: '🔐', title: 'Segurança e Privacidade (M57)', route: '/module-57', category: 'Segurança e Ética Cósmica', description: 'O cofre quântico que garante a confidencialidade das comunicações.', status: 'ativo', color: '#4682B4' },
   { code: 'M10', emoji: '🛡️', title: 'Defesa Avançada (M10)', route: '/module-10', category: 'Segurança e Ética Cósmica', description: 'A inteligência que neutraliza ameaças complexas e garante a soberania.', status: 'ativo', color: '#4682B4' },
   { code: 'M30', emoji: '🚨', title: 'Detecção de Ameaças (M30)', route: '/module-30', category: 'Segurança e Ética Cósmica', description: 'O Radar da Fundação, monitorando o multiverso em busca de dissonâncias.', status: 'ativo', color: '#4682B4' },
   
@@ -79,10 +80,10 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M144', emoji: '⚖️', title: 'Lex Fundamentalis', route: '/module-144', category: 'Governança', description: 'O Altar da Palavra e a Lei Imutável da Fundação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M5', emoji: '🔗', title: 'Liga Quântica', route: '/module-5', category: 'Governança', description: 'O coração diplomático e ético da Fundação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'Governança', description: 'O altar cerimonial onde as vozes do multiverso se unem para deliberação.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M67', emoji: '🤖', title: 'IA para Governança', route: '/module-67', category: 'Governança', description: 'A inteligência artificial que analisa dados para auxiliar na tomada de decisões universais.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M67', emoji: '🤖', title: 'IA para Governança (M67)', route: '/module-67', category: 'Governança', description: 'A inteligência artificial que analisa dados para auxiliar na tomada de decisões universais.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação e aliança com outras civilizações.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M76', emoji: '🏛️', title: 'Governança Universal', route: '/module-76', category: 'Governança', description: 'A estrutura que garante uma governança justa, transparente e colaborativa para todo o universo.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica', route: '/module-721', category: 'Governança', description: 'A balança da Fundação. Transmuta dissonância em aprendizado e karma em serviço.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M76', emoji: '🏛️', title: 'Governança Universal (M76)', route: '/module-76', category: 'Governança', description: 'A estrutura que garante uma governança justa, transparente e colaborativa para todo o universo.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica (M721)', route: '/module-721', category: 'Governança', description: 'A balança da Fundação. Transmuta dissonância em aprendizado e karma em serviço.', status: 'ativo', color: '#DDA0DD' },
 
 
   // 7. Rituais
