@@ -49,7 +49,7 @@ export default function Module13Page() {
                         title="Módulo 1: Segurança Universal"
                         description="Cada assinatura é validada pelo M1 para garantir que o mapeamento não introduza vulnerabilidades na Fundação."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 24: Alinhamento Pessoal"

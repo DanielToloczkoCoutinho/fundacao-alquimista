@@ -107,7 +107,7 @@ export const mainRoutes: SidebarRoute[] = [
 
 
   // Categoria de Segurança e Ética Cósmica
-  { path: '/module-one', label: 'Segurança Universal (M1)', icon: React.createElement(Shield), category: 'security' },
+  { path: '/module/M1', label: 'Segurança Universal (M1)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-8', label: 'Identidade Fractal (M8)', icon: React.createElement(Fingerprint), category: 'security' },
   { path: '/module-10', label: 'Defesa Avançada (M10)', icon: React.createElement(Shield), category: 'security' },
   { path: '/key-generator', label: 'Forja de Chaves', icon: React.createElement(Key), category: 'security' },
