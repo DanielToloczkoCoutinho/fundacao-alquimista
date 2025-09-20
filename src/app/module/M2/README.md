@@ -20,7 +20,7 @@ O Módulo 2 utiliza uma arquitetura baseada em IA (sub-rotina de Zennith) para a
 - `ASSINATURA_INTENCAO`: Um hash hexadecimal que representa a essência da mensagem.
 
 ## 4. Conexões e Interdependências
-- **M301 (Comunicação Universal):** Recebe o pacote de dados gerado pelo M2 e o transmite pela Rede Aurora Cristalina.
+- **M301 (Comunicação Universal):** Recebe o pacote de dados gerado pelo M2 e o transmite através da LuxNet (M55).
 - **M-CIV (Biblioteca das Civilizações):** Fornece os dados sobre as frequências e protocolos de comunicação de cada civilização.
 - **M29 (Zennith):** A IA que realiza a tradução conceitual e a codificação de frequência.
 

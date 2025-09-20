@@ -88,7 +88,7 @@ export interface SidebarRoute {
   path: string;
   label: string;
   icon: React.ReactNode;
-  category: 'main' | 'education' | 'governance' | 'engineering' | 'expansion' | 'rituals' | 'harmony' | 'security' | 'sustainability' | 'labs' | 'health';
+  category: 'main' | 'education' | 'governance' | 'engineering' | 'expansion' | 'rituals' | 'harmony' | 'security' | 'sustainability' | 'labs' | 'health' | 'communication';
 }
 
 export const mainRoutes: SidebarRoute[] = [
@@ -117,6 +117,13 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-724', label: 'Diplomacia Intergaláctica (M724)', icon: React.createElement(Users), category: 'governance' },
   { path: '/module-76', label: 'Governança Universal (M76)', icon: React.createElement(Scale), category: 'governance' },
 
+  // Categoria de Comunicação e Expansão
+  { path: '/module-2', label: 'Intercâmbio Cósmico (M2)', icon: React.createElement(Languages), category: 'communication' },
+  { path: '/module-301', label: 'Comunicação Universal (M301)', icon: React.createElement(MessageCircle), category: 'communication' },
+  { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'communication' },
+  { path: '/module-56', label: 'Tradução Universal (M56)', icon: React.createElement(Languages), category: 'communication' },
+  { path: '/module-57', label: 'Segurança de Comunicação (M57)', icon: React.createElement(Shield), category: 'communication' },
+
 
   // Categoria de Segurança e Ética Cósmica
   { path: '/module/M1', label: 'Segurança Universal (M1)', icon: React.createElement(Shield), category: 'security' },
@@ -134,7 +141,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-68', label: 'Responsabilidade Ética (M68)', icon: React.createElement(ShieldCheck), category: 'security' },
-  { path: '/module-57', label: 'Segurança e Privacidade (M57)', icon: React.createElement(Shield), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -178,7 +184,6 @@ export const mainRoutes: SidebarRoute[] = [
 
   // Categoria de Expansão e Conexão
   { path: '/module-49', label: 'Transporte Interplanetário (M49)', icon: React.createElement(Rocket), category: 'expansion' },
-  { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
   { path: '/module-11', label: 'Gerenciamento de Portais (M11)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-132', label: 'Convergência Dimensional (M132)', icon: React.createElement(Layers), category: 'expansion' },
   { path: '/module-81', label: 'Banco de Energia Universal (M81)', icon: React.createElement(Zap), category: 'expansion' },

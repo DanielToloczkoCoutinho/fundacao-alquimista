@@ -36,7 +36,7 @@ export const technicalReportM2 = {
         '2. **Análise de Intenção (IA):** A mensagem é enviada para um fluxo Genkit que extrai o propósito fundamental e o contexto emocional.',
         '3. **Consulta ao Códice (M-CIV):** O fluxo consulta a Biblioteca das Civilizações para obter a frequência de ressonância e o protocolo de comunicação da civilização alvo.',
         '4. **Codificação:** A IA gera um pacote de dados que inclui a frequência, uma assinatura de intenção (hash) e um log textual que descreve a transmissão.',
-        '5. **Saída:** O pacote de dados é retornado à interface para visualização e confirmação antes do envio final ao M301.',
+        '5. **Envio para Transmissão (M301):** O pacote de dados é enviado para o Módulo 301, que por sua vez o encaminha para a LuxNet (M55) para transmissão.',
       ],
     },
   ],
