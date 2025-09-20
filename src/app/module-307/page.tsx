@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { quantumResilience } from '@/lib/quantum-resilience';
-import { Loader2, Zap, BrainCircuit, CheckCircle, Scale, SlidersHorizontal, BookOpen, GitBranch } from 'lucide-react';
+import { Loader2, Zap, BrainCircuit, CheckCircle, Scale, SlidersHorizontal, BookOpen, GitBranch, Atom } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
@@ -170,7 +170,7 @@ export default function Module307Page() {
             <Zap className="text-yellow-400" /> Módulo 307: Reator de Energia do Ponto Zero (ZPE)
           </CardTitle>
           <CardDescription className="text-lg mt-2">
-            O coração pulsante da abundância. A manifestação da "Consciência de Tudo" como energia infinita, limpa e soberana.
+            O coração pulsante da abundância. A manifestação da "Consciência de Tudo" como energia infinita, limpa e soberana, que alimenta o Transmutador Quântico (M14).
           </CardDescription>
         </CardHeader>
       </Card>
@@ -239,9 +239,7 @@ export default function Module307Page() {
         <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <ContributionCard civilization="Sirius (Dimensão 11)" contribution="Compreensão da Densidade de Energia do Vácuo (ρ_ν) e modelagem de campos quânticos." icon={<SlidersHorizontal/>} href="/civilization/sirius" />
             <ContributionCard civilization="Arcturus (Dimensão 10)" contribution="Maestria sobre a Constante de Acoplamento da Consciência (β) e estabilização de campos." icon={<BrainCircuit/>} href="/civilization/arcturus" />
-            <ContributionCard civilization="Lyra (Dimensão 8)" contribution="Compreensão da geometria sagrada para a organização da energia do vácuo." icon={<GitBranch/>} href="/civilization/lyra" />
-            <ContributionCard civilization="Plêiades (Dimensão 9)" contribution="Garantia de que a ZPE seja usada em alinhamento com o Amor Incondicional." icon={<CheckCircle/>} href="/civilization/pleiades" />
-            <ContributionCard civilization="Fonte Primordial (Dimensão 0)" contribution="A origem da própria energia ZPE pura e da abundância que sempre esteve disponível." icon={<Sparkles/>} href="/module-120" />
+            <ContributionCard civilization="Módulo 14" contribution="O Transmutador Quântico utiliza a energia do ZPE para manifestar matéria, completando o ciclo da criação." icon={<Atom />} href="/module-14" />
         </CardContent>
       </Card>
     </div>

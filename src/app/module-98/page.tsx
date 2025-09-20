@@ -120,7 +120,7 @@ const Module98Page = () => {
                         <Settings className="text-amber-400" /> Módulo 98: Modulação da Existência Fundamental
                     </CardTitle>
                     <CardDescription>
-                        Arquiteto Cósmico para o ajuste fino dos parâmetros que definem a própria realidade.
+                        Arquiteto Cósmico para o ajuste fino dos parâmetros que definem a própria realidade, utilizando a energia do Módulo 14.
                     </CardDescription>
                 </CardHeader>
             </Card>

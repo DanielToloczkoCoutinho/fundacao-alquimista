@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Beaker, BrainCircuit, Users, BookOpen, Shield } from 'lucide-react';
+import { Beaker, BrainCircuit, Users, BookOpen, Shield, Atom } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -64,10 +64,10 @@ export default function Module90Page() {
                         href="/module-95"
                     />
                     <ConnectionCard
-                        title="Módulo 0: Biblioteca Chave"
-                        description="Cada recurso analisado e seu potencial são catalogados na Biblioteca Chave, expandindo o conhecimento universal."
-                        icon={<BookOpen className="h-8 w-8 text-yellow-300" />}
-                        href="/module-zero"
+                        title="Módulo 14: Transmutador Quântico"
+                        description="Recebe a matéria recém-criada pelo M14 para catalogação, análise de pureza e armazenamento seguro."
+                        icon={<Atom className="h-8 w-8 text-red-400" />}
+                        href="/module-14"
                     />
                 </div>
             </div>
