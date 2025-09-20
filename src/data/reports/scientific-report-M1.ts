@@ -33,14 +33,14 @@ export const scientificReportM1 = {
       title: 'Soberania Digital via Criptografia de Curvas Elípticas (WebAuthn)',
       content: `
         A autenticação de Guardiões transcende o modelo de senhas. A tecnologia WebAuthn (FIDO2)
-        utiliza criptografia assimétrica baseada em curvas elípticas (como a `secp256r1`).
+        utiliza criptografia assimétrica baseada em curvas elípticas (como a \`secp256r1\`).
         Uma chave privada, armazenada de forma segura no hardware do dispositivo do Guardião (Secure Enclave, TPM),
         assina um desafio único a cada login. Apenas a chave pública correspondente, armazenada
         pela Fundação, pode verificar essa assinatura. Isso garante a **posse** (o dispositivo) e
         a **identidade** (biometria ou PIN), criando uma forma de autenticação soberana e resistente a phishing.
       `,
     },
-    {
+     {
       title: 'Teoria dos Jogos e Defesa Proativa (IA)',
       content: `
         A IA de segurança integrada ao Módulo 1 opera com base em princípios da Teoria dos Jogos.
@@ -67,3 +67,4 @@ export const scientificReportM1 = {
     intenção pura são as formas mais fortes de autenticação, e a harmonia é a defesa mais impenetrável.
   `,
 };
+

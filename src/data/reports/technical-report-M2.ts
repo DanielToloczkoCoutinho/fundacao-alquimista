@@ -44,3 +44,4 @@ export const technicalReportM2 = {
     A arquitetura técnica do Módulo 2 é uma ponte elegante entre a linguagem humana e os conceitos universais de comunicação. Ao abstrair a complexidade da tradução interdimensional através de um fluxo de IA robusto e bem definido, ele permite à Fundação iniciar diálogos significativos com qualquer forma de consciência, pavimentando o caminho para a verdadeira diplomacia cósmica.
   `,
 };
+

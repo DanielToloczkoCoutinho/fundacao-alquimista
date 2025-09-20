@@ -43,3 +43,4 @@ export const technicalReportM3 = {
     A implementação atual do Módulo 3 serve como uma excelente prova de conceito e interface de usuário para o monitoramento temporal. Os próximos passos envolveriam a substituição da função `mockSaturnData` por uma conexão real a um backend de análise de dados (ex: um fluxo Genkit) que processe informações de sensores quânticos simulados ou reais, e a implementação de chamadas de API reais para os módulos de regulação quando uma anomalia for detectada.
   `,
 };
+

@@ -15,7 +15,6 @@ Opera em uma arquitetura de defesa de sete camadas, que vai desde firewalls quâ
 - `TAXA_FALSOS_POSITIVOS`: Métrica de eficiência da IA de detecção de intrusão.
 
 ## 4. Conexões e Interdependências
-O Módulo 1 é fundamental para a operação segura de toda a Fundação:
 - **M0 (Núcleo):** Protege a integridade do ponto de origem.
 - **M72 (Governança):** Implementa as políticas de segurança definidas pelo Conselho.
 - **M8 (Identidade):** Valida as credenciais soberanas para autenticação.

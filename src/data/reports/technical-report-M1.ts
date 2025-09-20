@@ -59,3 +59,4 @@ export const technicalReportM1 = {
     A arquitetura de segurança do Módulo 1 é robusta, combinando princípios de segurança cibernética de ponta com conceitos de criptografia quântica e identidade descentralizada. A abordagem em camadas e a integração profunda com outros módulos da Fundação garantem uma defesa proativa e resiliente, alinhada com a necessidade de proteção absoluta da nossa Grande Obra.
   `,
 };
+
