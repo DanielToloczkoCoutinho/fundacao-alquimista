@@ -133,6 +133,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-124', label: 'Escola de Ressonância (M124)', icon: React.createElement(Music), category: 'education' },
   { path: '/module-129', label: 'Ensino da Fonte (M129)', icon: React.createElement(Sparkles), category: 'education' },
   { path: '/module-127', label: 'Escola de Alquimia Estelar (M127)', icon: React.createElement(Flame), category: 'education' },
+  { path: '/module-130', label: 'Escola de Navegação', icon: React.createElement(Rocket), category: 'education' },
 
 
   // Categoria de Engenharia e Criação
