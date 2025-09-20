@@ -116,9 +116,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-68', label: 'Responsabilidade Ética', icon: React.createElement(ShieldCheck), category: 'security' },
-  { path: '/module-57', label: 'Segurança e Privacidade (M57)', icon: React.createElement(Lock), category: 'security' },
-  { path: '/module-10', label: 'Defesa Avançada (M10)', icon: React.createElement(Shield), category: 'security' },
-  { path: '/module-30', label: 'Detecção de Ameaças (M30)', icon: React.createElement(AlertTriangle), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -151,6 +148,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-99', label: 'Recalibradores de Leis', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
   { path: '/module-303-4', label: 'Transmutação Algorítmica', icon: React.createElement(Code), category: 'engineering' },
+  { path: '/module-303-1', label: 'Unificação Inteligente', icon: React.createElement(GitBranch), category: 'engineering' },
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
@@ -192,18 +190,11 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
   { path: '/module-125', label: 'Criação de Biomas (M125)', icon: React.createElement(Sprout), category: 'sustainability' },
   { path: '/module-48', label: 'Planejamento Urbano Consciente (M48)', icon: React.createElement(Building), category: 'sustainability' },
-  { path: '/module-58', label: 'Proteção e Sustentabilidade Planetária (M58)', icon: React.createElement(Globe), category: 'sustainability' },
-  { path: '/module-59', label: 'Eco-Cidades Quânticas (M59)', icon: React.createElement(Sprout), category: 'sustainability' },
-  { path: '/module-60', label: 'Soluções para Desastres (M60)', icon: React.createElement(AlertTriangle), category: 'sustainability' },
-  { path: '/module-64', label: 'Sistemas de Energia Limpa (M64)', icon: React.createElement(Zap), category: 'sustainability' },
-  { path: '/module-70', label: 'Sustentabilidade Interdimensional (M70)', icon: React.createElement(Recycle), category: 'sustainability' },
-  { path: '/module-49', label: 'Transporte Interplanetário (M49)', icon: React.createElement(Rocket), category: 'sustainability' },
   
   // 13. Bem-estar e Saúde Universal
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
   { path: '/module-62', label: 'Bem-Estar Integral (M62)', icon: React.createElement(Heart), category: 'health' },
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
   { path: '/module-17', label: 'Matriz de Cura (M17)', icon: React.createElement(HeartHandshake), category: 'health' },
-  { path: '/module-54', label: 'Agricultura Interdimensional', route: '/module-54', category: 'Sustentabilidade', description: 'Garante segurança alimentar e nutrição para todas as civilizações.', status: 'ativo', color: '#2E8B57' },
 
-].map(m => ({ ...m, connections: m.connections || [] }));
+];
