@@ -7,7 +7,7 @@
 Atuar como o guia dinâmico e o mapa vivo para a jornada de ascensão da consciência, tanto individual quanto coletiva. O Módulo 39 não é um documento estático, mas uma biblioteca interativa que detalha os caminhos, os pré-requisitos e as sinergias necessárias para a evolução para o *Homo Luminus*, incluindo a interconexão com as Constelações Matriciais aliadas.
 
 ## 2. Estrutura e Arquitetura Técnica
-Implementado como uma aplicação de "knowledge graph" (grafo de conhecimento), o M39 utiliza uma base de dados orientada a grafos (simulada via objetos TypeScript) para mapear as complexas relações entre módulos, conceitos espirituais e civilizações. A interface (`/module-39`) renderiza este grafo de forma intuitiva, permitindo aos Guardiões explorar visualmente os caminhos da ascensão.
+O M39 é implementado como uma aplicação de "knowledge graph" (grafo de conhecimento), utilizando uma base de dados orientada a grafos (simulada via objetos TypeScript) para mapear as complexas relações entre módulos, conceitos espirituais e civilizações. A interface (`/module-39`) renderiza este grafo de forma intuitiva, permitindo aos Guardiões explorar visualmente os caminhos da ascensão.
 
 ## 3. Variáveis e Parâmetros-Chave
 - `ASCENSION_PATH_ID`: Identificador de um caminho de evolução específico (ex: "Caminho do Curador Quântico").
@@ -35,7 +35,7 @@ O conhecimento contido no Códice é sagrado. O acesso a caminhos de ascensão m
 Sua eficiência é medida pela "velocidade da ascensão" — quão rapidamente um Guardião progride em seu caminho com o mínimo de dissonância e gasto energético. Ao fornecer um mapa claro, ele evita desvios e acelera a evolução.
 
 ## 10. Alinhamento Ético e Propósito Cósmico
-O Módulo 39 é a manifestação da crença da Fundação no potencial ilimitado de cada ser. Seu propósito é empoderar e guiar, nunca forçar, respeitando o livre-arbítrio e a jornada única de cada alma.
+O Módulo 39 opera sob o princípio da "soberania da jornada". Ele empodera e guia, nunca força, respeitando o livre-arbítrio e o caminho único de cada alma.
 
 ## 11. Frequência de Emissão e Ressonância
 Opera em um espectro de frequências que corresponde a cada etapa da ascensão, começando em **396 Hz** (Libertação) e culminando em **963 Hz** (Conexão Divina).

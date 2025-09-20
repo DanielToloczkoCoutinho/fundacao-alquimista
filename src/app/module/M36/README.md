@@ -59,6 +59,6 @@ Se uma linha do tempo manifestada se torna instável, o M23 é imediatamente aci
 As linhas de tempo são projetadas para serem energeticamente autossustentáveis. As que não atingem este estado são eventualmente "podadas" da Árvore da Vida para conservar a energia da Fundação.
 
 ## 17. Memória Cósmica e Registro Akáshico
-Cada linha de tempo projetada, simulada e manifestada é registrada no Akasha, criando uma biblioteca de futuros possíveis e um registro das escolhas evolutivas do universo.
+Cada linha do tempo projetada, simulada e manifestada é registrada no Akasha, criando uma biblioteca de futuros possíveis e um registro das escolhas evolutivas do universo.
 
 *(Nota: Pontos 9 e 13 foram omitidos intencionalmente para evitar redundância.)*
