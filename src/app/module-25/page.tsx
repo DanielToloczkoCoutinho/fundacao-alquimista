@@ -49,7 +49,7 @@ export default function Module25Page() {
                         title="Módulo 1: Segurança Universal"
                         description="Envolve a consciência projetada com um escudo vibracional, protegendo-a de interferências e energias dissonantes."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 104: Engenharia do Espaço-Tempo"
