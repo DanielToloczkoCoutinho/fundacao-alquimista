@@ -78,8 +78,3 @@ export const ProcessTrinaCommandOutputSchema = z.union([
       type: z.literal('sensores'),
       response: SensoresResponseSchema,
   }),
-  z.object({
-    type: z.literal('error'),
-    response: ErrorResponseSchema,
-  }),
-]);

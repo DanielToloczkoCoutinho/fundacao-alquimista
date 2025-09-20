@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, CheckCircle, XCircle, ShieldCheck } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { livingEquationsCodex } from '@/lib/living-equations-codex';
 
-// Mocks para simular a validação por outros módulos
+// --- Mocks para simular a funcionalidade de outros módulos ---
 const mockM29 = (eq: any) => ({ approved: Math.random() > 0.1, comment: "Análise de complexidade computacional e impacto na IAM concluída." });
 const mockM72 = (eq: any) => ({ approved: Math.random() > 0.05, comment: "Verificação de alinhamento com a Governança Atlanto-Galáctica." });
 const mockM144 = (eq: any) => ({ approved: true, comment: "Conformidade com a Lex Fundamentalis confirmada." });
