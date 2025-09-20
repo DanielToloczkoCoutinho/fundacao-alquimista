@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -7,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, HeartHandshake, Waves, HeartPulse, Music } from 'lucide-react';
+import { Loader2, HeartHandshake, Waves, HeartPulse, Music, TestTube } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { describeQuantumHealing } from '@/app/actions';
 import Link from 'next/link';
@@ -119,24 +118,30 @@ const Module109Page = () => {
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         <ConnectionCard
-                            title="Módulo 13: Mapeamento de Frequências"
-                            description="O M109 utiliza o diagnóstico do M13 para identificar as dissonâncias energéticas que necessitam de cura."
+                            title="Módulo 13: Mapeamento"
+                            description="Utiliza o diagnóstico do M13 para identificar dissonâncias energéticas que necessitam de cura."
                             icon={<Waves className="h-8 w-8 text-cyan-400" />}
                             href="/module-13"
                         />
                         <ConnectionCard
                             title="Módulo 17: AURA-HEAL"
-                            description="O M109 define o propósito, e o M17 fornece a tecnologia holográfica para executar a cura em nível celular."
+                            description="Fornece a tecnologia holográfica para executar a cura em nível celular."
                             icon={<HeartPulse className="h-8 w-8 text-emerald-400" />}
                             href="/module-17"
                         />
                          <ConnectionCard
                             title="Módulo 24: Sinfonia Pessoal"
-                            description="O M109 fornece os princípios universais que o M24 aplica em escala individual para o alinhamento da alma."
+                            description="Fornece os princípios universais que o M24 aplica para o alinhamento individual."
                             icon={<Music className="h-8 w-8 text-violet-400" />}
                             href="/module-24"
+                        />
+                        <ConnectionCard
+                            title="Módulo 41: Lab de Coerência"
+                            description="Valida e testa novas frequências e protocolos de cura em um ambiente controlado antes da aplicação universal."
+                            icon={<TestTube className="h-8 w-8 text-teal-400" />}
+                            href="/module-41"
                         />
                     </div>
                 </CardContent>
