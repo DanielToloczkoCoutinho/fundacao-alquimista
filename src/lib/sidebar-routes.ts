@@ -78,7 +78,8 @@ import {
   BellRing,
   User,
   Dna,
-  FlaskConical
+  FlaskConical,
+  Cpu
 } from 'lucide-react';
 import React from 'react';
 
@@ -252,5 +253,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-62', label: 'Bem-Estar Integral (M62)', icon: React.createElement(Heart), category: 'health' },
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
   { path: '/module-17', label: 'Matriz de Cura (M17)', icon: React.createElement(HeartPulse), category: 'health' },
+  { path: '/module-50', label: 'Interface Humano-Máquina (M50)', icon: React.createElement(Cpu), category: 'Inteligência' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));

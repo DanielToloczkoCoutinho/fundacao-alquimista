@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -64,7 +65,7 @@ export default function Module50Page() {
                         href="/module-77"
                     />
                     <ConnectionCard
-                        title="Módulo 69: Educação Avançada"
+                        title="Módulo 69: Educação Universal"
                         description="Facilita o aprendizado rápido e eficiente, permitindo que o conhecimento seja integrado diretamente à consciência."
                         icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
                         href="/module-69"
