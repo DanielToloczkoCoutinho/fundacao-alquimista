@@ -31,7 +31,7 @@ export const technicalReportM14 = {
       title: 'Fluxo de Criação de Matéria Exótica',
       content: 'A manifestação de um novo material segue um protocolo rigoroso:',
       points: [
-        '1. **Requisição:** Um módulo (ex: M88) envia um blueprint de matéria exótica para a API do M14.',
+        '1. **Requisição:** Um módulo de engenharia (ex: M88) envia um blueprint de matéria exótica para a API do M14.',
         '2. **Validação Ética (M73):** O M14 encaminha a requisição para o SAVCE (M73) para uma validação ética síncrona. A operação é abortada se não for aprovada.',
         '3. **Alocação de Energia (M307):** A energia necessária é solicitada ao Reator ZPE.',
         '4. **Ativação do Escudo (M1):** Um comando é enviado ao Módulo de Segurança para envolver a câmara de transmutação em um escudo quântico.',

@@ -41,7 +41,7 @@ export const scientificReportM12 = {
         A verdade, para ser verdade, deve ser imutável. A integração com a Blockchain Alquimista (M999)
         é a manifestação técnica deste princípio filosófico. Ao registrar periodicamente o "hash" do
         estado do Akasha na blockchain, criamos "selos temporais" que são matematicamente
-        impossíveis de serem alterados sem quebrar a cadeia. Isso garante que a história da
+        impossíveis de serem alterados sem quebrar toda a cadeia. Isso garante que a história da
         Fundação seja uma verdade objetiva, livre da possibilidade de revisionismo.
       `,
     },

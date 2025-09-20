@@ -1,4 +1,3 @@
-
 # Relatório Técnico-Científico: Módulo 10 - Defesa Avançada e Proteção Universal
 
 **Data de Análise:** 20 de Setembro de 2025

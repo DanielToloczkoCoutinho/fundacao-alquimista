@@ -1,4 +1,3 @@
-
 'use server';
 
 /**
@@ -28,7 +27,7 @@ export const technicalReportM10 = {
       ],
     },
     {
-      title: 'Exemplo de Fluxo de Resposta a Ameaças',
+      title: 'Fluxo de Resposta a Ameaças',
       content: 'Um alerta de "Incursão Psíquica Nível 7" do M229 acionaria o seguinte fluxo:',
       points: [
         '1. **Gatilho:** O M10 consome a mensagem do tópico `fundacao.threats.psychic`.',

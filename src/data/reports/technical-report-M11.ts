@@ -40,6 +40,6 @@ export const technicalReportM11 = {
     },
   ],
   conclusion: `
-    A arquitetura do Módulo 11 é análoga à de um provedor de infraestrutura de rede de alta performance, mas operando no nível do tecido do espaço-tempo. Ao separar a construção da infraestrutura (M11) da sua utilização (M116, M21), a Fundação garante um sistema de transporte interdimensional que é ao mesmo tempo robusto, escalável e seguro.
+    A arquitetura do M11 é análoga à de um provedor de infraestrutura de rede de alta performance, mas operando no nível do tecido do espaço-tempo. Ao separar a construção da infraestrutura (M11) da sua utilização (M116, M21), a Fundação garante um sistema de transporte interdimensional que é ao mesmo tempo robusto, escalável e seguro.
   `,
 };
