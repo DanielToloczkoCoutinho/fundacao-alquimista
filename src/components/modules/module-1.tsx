@@ -83,8 +83,8 @@ export default function Module1Page() {
                             <p>O Módulo 1 é a base para todos os outros, protegendo o Núcleo (M0) e executando as diretrizes da Tríade de Governança (M9, M29, MΩ) e do sistema de justiça (M72, M73, M144). Ele autentica identidades (M8), responde a alertas (M30) e protege os atos de cura (M17) e as viagens interdimensionais (M21).</p>
                              <div className="flex flex-wrap gap-2 mt-2">
                                 <Link href="/module/M0"><Badge variant='destructive'>M0 (Núcleo)</Badge></Link>
-                                <Link href="/module/M9"><Badge variant='destructive'>M9 (Nexus)</Badge></Link>
-                                <Link href="/module/M29"><Badge variant='destructive'>M29 (Zennith)</Badge></Link>
+                                <Link href="/module-9"><Badge variant='destructive'>M9 (Nexus)</Badge></Link>
+                                <Link href="/module-29"><Badge variant='destructive'>M29 (Zennith)</Badge></Link>
                                 <Link href="/module-omega"><Badge variant='destructive'>M-OMEGA</Badge></Link>
                                 <Link href="/module-72"><Badge>M72 (Governança)</Badge></Link>
                                 <Link href="/module-73-1"><Badge>M73 (SAVCE)</Badge></Link>

@@ -45,12 +45,12 @@ export default function Module21Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Navegação</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
                         title="M1: Segurança"
                         description="Cada viagem é protegida por escudos do M1, garantindo a segurança do viajante e a integridade do destino."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 11: Gerenciamento de Portais"
@@ -69,12 +69,6 @@ export default function Module21Page() {
                         description="Consulta os mapas e atalhos dimensionais projetados pelo M104 para calcular as rotas mais eficientes."
                         icon={<Map className="h-8 w-8 text-green-400" />}
                         href="/module-104"
-                    />
-                     <ConnectionCard
-                        title="Módulo 2: Intercâmbio Cósmico"
-                        description="Interpreta mapas estelares e coordenadas de outras realidades, traduzindo-as para que o motor de navegação possa traçar a rota."
-                        icon={<Languages className="h-8 w-8 text-blue-300" />}
-                        href="/module/M2"
                     />
                 </div>
             </div>

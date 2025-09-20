@@ -45,7 +45,7 @@ export default function Module11Page() {
 
             <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Infraestrutura</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
                         title="Módulo 21: Navegação"
                         description="O M11 constrói a infraestrutura de portais que o M21 utiliza para planejar e executar viagens interdimensionais."
@@ -69,12 +69,6 @@ export default function Module11Page() {
                         description="Prepara os Guardiões para a utilização segura e consciente dos portais permanentes, ensinando os protocolos de travessia."
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
                         href="/module-130"
-                    />
-                     <ConnectionCard
-                        title="Módulo 19: Análise de Campos"
-                        description="Garante que os campos de contenção ao redor dos portais estejam perfeitamente sintonizados para travessias seguras."
-                        icon={<ShieldHalf className="h-8 w-8 text-blue-300" />}
-                        href="/module-19"
                     />
                 </div>
             </div>

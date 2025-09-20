@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ShieldCheck, Scale, Sparkles, BrainCircuit } from 'lucide-react';
+import { ShieldCheck, Scale, Sparkles, BrainCircuit, Eye } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -49,7 +50,7 @@ export default function Module73Page() {
                         title="M1: Segurança"
                         description="O SAVCE é uma camada de lógica sobre a proteção do M1, garantindo que as ações não sejam apenas seguras, mas também justas."
                         icon={<ShieldCheck className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 5: Auditoria Ética"
@@ -64,10 +65,10 @@ export default function Module73Page() {
                         href="/module-144"
                     />
                     <ConnectionCard
-                        title="Módulos de Manifestação (M88, M97)"
-                        description="Valida previamente todas as operações de manifestação para garantir que não haja consequências kármicas negativas."
-                        icon={<Sparkles className="h-8 w-8 text-yellow-400" />}
-                        href="/module-88"
+                        title="Módulo 26: Supervisão"
+                        description="O M26 escala as viagens de alto risco para o SAVCE, que realiza a validação ética final antes da autorização."
+                        icon={<Eye className="h-8 w-8 text-cyan-400" />}
+                        href="/module-26"
                     />
                 </div>
             </div>
