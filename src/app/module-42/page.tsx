@@ -50,7 +50,7 @@ export default function Module42Page() {
                         title="M1: Segurança"
                         description="Protege o ChronoCodex contra adulterações, garantindo que o registro da 'verdade' temporal permaneça inviolável."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 107: Restauração Temporal"

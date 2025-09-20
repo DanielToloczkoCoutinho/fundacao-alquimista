@@ -77,10 +77,10 @@ export default function Module23Page() {
                         href="/module-42"
                     />
                     <ConnectionCard
-                        title="Módulo 91: Simulação Multiversal"
-                        description="Calcula os riscos de paradoxo para as simulações do M91, garantindo que não afetem a realidade primária."
+                        title="Módulo 36: Engenharia Temporal"
+                        description="Atua como a camada de segurança para o M36, garantindo que as novas linhas do tempo não criem instabilidades."
                         icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
-                        href="/module-91"
+                        href="/module-36"
                     />
                 </div>
             </div>

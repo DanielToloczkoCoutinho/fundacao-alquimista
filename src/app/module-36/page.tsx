@@ -50,7 +50,7 @@ export default function Module36Page() {
                         title="M1: Segurança"
                         description="Toda manipulação temporal é protegida por um escudo de contenção do M1, prevenindo consequências não intencionadas."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 91: Simulação Multiversal"

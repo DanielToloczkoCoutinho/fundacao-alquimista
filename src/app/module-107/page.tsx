@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -6,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, History, Archive, AlertTriangle } from 'lucide-react';
+import { Loader2, History, Archive, AlertTriangle, GitCommit } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { describeRestoration } from '@/app/actions';
 import Link from 'next/link';
@@ -125,10 +126,10 @@ const Module107Page = () => {
                 </CardHeader>
             </Card>
             
-            <div className="w-full max-w-7xl mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="w-full max-w-7xl mb-8 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <ConnectionCard 
                     title="Módulo 12: Arquivo Akáshico"
-                    description="O Módulo 107 consulta o M12 para obter a 'cópia de segurança' da realidade original, garantindo que a restauração seja perfeitamente fiel à linha do tempo correta."
+                    description="O M107 consulta o M12 para obter a 'cópia de segurança' da realidade original, garantindo que a restauração seja perfeitamente fiel à linha do tempo correta."
                     icon={<Archive className="h-8 w-8 text-amber-400" />}
                     href="/module-12"
                 />
@@ -137,6 +138,12 @@ const Module107Page = () => {
                     description="O M107 atua como a 'cura' quando a 'prevenção' do M23 não é suficiente para conter uma anomalia."
                     icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />}
                     href="/module-23"
+                />
+                 <ConnectionCard 
+                    title="Módulo 36: Engenharia Temporal"
+                    description="Pode ser invocado para reverter manifestações temporais do M36 que se mostrem instáveis ou dissonantes."
+                    icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
+                    href="/module-36"
                 />
             </div>
 
