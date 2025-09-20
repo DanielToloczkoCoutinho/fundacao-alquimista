@@ -82,7 +82,7 @@ const ecstasySensorTool = ai.defineTool(
         description: 'Mede a onda de êxtase cósmico.',
         outputSchema: z.object({ intensidade: z.number(), frequencia: z.number(), unidade: z.string() })
     },
-    async () => ({ intensidade: 0.95, frequencia: 963.0, unidade: 'ECU' })
+    async () => ({ intensidade: 0.8 + (0.2 * (Date.now() / 1000 % 1)), frequencia: 963.0, unidade: 'ECU' })
 );
 
 const resonanceDetectorTool = ai.defineTool(
@@ -91,7 +91,7 @@ const resonanceDetectorTool = ai.defineTool(
         description: 'Detecta a ressonância harmônica do ambiente.',
         outputSchema: z.object({ nivel: z.number(), harmonico: z.string(), unidade: z.string() })
     },
-    async () => ({ nivel: 0.88, harmonico: 'PERFEITO', unidade: 'HRU' })
+    async () => ({ nivel: 0.7 + (0.3 * (Date.now() / 1000 % 1)), harmonico: (Date.now() / 1000 % 2) < 1 ? 'PERFEITO' : 'ESTAVEL', unidade: 'HRU' })
 );
 
 const lightGeometryMonitorTool = ai.defineTool(
@@ -100,7 +100,10 @@ const lightGeometryMonitorTool = ai.defineTool(
         description: 'Monitora a geometria de luz ativa.',
         outputSchema: z.object({ padrao: z.string(), padroes_ativos: z.array(z.string()) })
     },
-    async () => ({ padrao: 'MANDALA_TRINA', padroes_ativos: ['TRIANGULO_SAGRADO', 'MANDALA_TRINA'] })
+    async () => {
+        const patterns = ['MANDALA_BASICA', 'FRACTAL_COBLEMO', 'TRIANGULO_SAGRADO'];
+        return { padrao: patterns[Math.floor(Date.now() / 3000) % patterns.length], padroes_ativos: patterns };
+    }
 );
 
 
@@ -126,12 +129,12 @@ const processTrinaCommandFlow = ai.defineFlow(
         );
         return { type: 'experiencia', response: experienciaResponse };
       case 'sensores':
-          const [extase, ressonancia, geometria] = await Promise.all([
+          const [ecstasy, resonance, geometry] = await Promise.all([
               ecstasySensorTool(),
               resonanceDetectorTool(),
               lightGeometryMonitorTool()
           ]);
-          return { type: 'sensores', response: { extase, ressonancia, geometria } };
+          return { type: 'sensores', response: { ecstasy, resonance, geometry } };
       default:
         return {
           type: 'error',

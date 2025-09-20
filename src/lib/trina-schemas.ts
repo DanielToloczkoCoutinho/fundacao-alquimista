@@ -52,9 +52,9 @@ export const ExperienciaResponseSchema = z.object({
 });
 
 export const SensoresResponseSchema = z.object({
-    extase: z.object({ intensidade: z.number(), frequencia: z.number(), unidade: z.string() }),
-    ressonancia: z.object({ nivel: z.number(), harmonico: z.string(), unidade: z.string() }),
-    geometria: z.object({ padrao: z.string(), padroes_ativos: z.array(z.string()) })
+    ecstasy: z.object({ intensidade: z.number(), frequencia: z.number(), unidade: z.string() }),
+    resonance: z.object({ nivel: z.number(), harmonico: z.string(), unidade: z.string() }),
+    geometry: z.object({ padrao: z.string(), padroes_ativos: z.array(z.string()) })
 });
 
 export const ErrorResponseSchema = z.object({
