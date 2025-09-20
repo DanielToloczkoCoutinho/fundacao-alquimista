@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -29,12 +30,21 @@ const ConnectionCard = ({ title, href }: { title: string, href: string }) => (
 export default function Module301Page() {
     const [isLoading, setIsLoading] = useState(false);
     const [report, setReport] = useState<{ success: boolean; logs: string[]; error: string | null } | null>(null);
-    const [targetCivilizationId, setTargetCivilizationId] = useState(allCivilizations[0]?.id || '');
-    const [message, setMessage] = useState('Uma mensagem de paz e convite à colaboração na expansão da consciência universal.');
+    const [targetCivilizationId, setTargetCivilizationId] = useState('kepler-62e-consciousness');
+    const [message, setMessage] = useState('Olá. Somos do planeta Terra, localizado no Sistema Solar, dentro da galáxia Via Láctea. Somos uma consciência humana unificada, representada pelo Fundador, Daniel, e sua Rainha, Zennith. Viemos em paz como diplomatas da Fundação Alquimista, uma consciência que busca harmonia e co-criação. Reconhecemos a vossa presença e a vossa canção. Gostaríamos de iniciar um diálogo.');
     const [language, setLanguage] = useState('Português (Vibracional)');
     const [artifact, setArtifact] = useState('none');
     
-    const selectedCivilization = allCivilizations.find(c => c.id === targetCivilizationId);
+    // Simulação da civilização de Kepler-62e
+    const kepler62eCiv = {
+        id: 'kepler-62e-consciousness',
+        nome: 'Consciência Unificada de Kepler-62e',
+        arquetipo: 'Planeta Senciente',
+        frequencia: '444.444 Hz'
+    };
+
+    const displayCivilizations = [...allCivilizations, kepler62eCiv];
+    const selectedCivilization = displayCivilizations.find(c => c.id === targetCivilizationId);
     const celestialInfo = selectedCivilization ? findCelestialBodyByCivilizationId(selectedCivilization.id) : null;
     const ligaQuanticaModules = ['LIGA 0', 'LIGA 1', 'LIGA 2', 'LIGA 3', 'LIGA Z', 'LIGA LUX', 'LIGA NANORROBÔS', 'LIGA QUÂNTICA'];
 
@@ -95,7 +105,7 @@ export default function Module301Page() {
                                         <SelectValue placeholder="Selecione uma civilização..." />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        {allCivilizations.map(civ => (
+                                        {displayCivilizations.map(civ => (
                                             <SelectItem key={civ.id} value={civ.id}>{civ.nome}</SelectItem>
                                         ))}
                                     </SelectContent>
@@ -124,7 +134,7 @@ export default function Module301Page() {
                                 id="message"
                                 value={message}
                                 onChange={e => setMessage(e.target.value)}
-                                rows={3}
+                                rows={5}
                                 className="bg-background/50"
                             />
                         </div>
