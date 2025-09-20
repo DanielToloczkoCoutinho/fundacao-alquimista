@@ -20,6 +20,8 @@ O Módulo 16 funciona como um "compilador de biomas". Ele recebe um blueprint ge
 - **M15 (Jardineiro Cósmico):** O M16 projeta e constrói o jardim. O M15 é quem cuida dele após a manifestação, garantindo sua saúde e equilíbrio a longo prazo.
 - **M1 (Segurança Universal):** Envolve cada novo ecossistema em uma "bolha de quarentena" dimensional durante sua fase inicial, protegendo-o de contaminações externas e garantindo que ele não cause instabilidade na realidade local.
 - **M291 (Arquitetos Nanorrobóticos):** São os construtores que recebem os planos do M16 e montam o ecossistema átomo por átomo, molécula por molécula.
+- **M20 (Orquestrador Elemental):** Fornece os elementos básicos (carbono, oxigênio, nitrogênio) para a criação de ecossistemas orgânicos.
+- **M27 (Síntese e Replicação):** Replica compostos orgânicos e minerais raros, acelerando a criação de biomas.
 
 ## 5. Inteligência Integrada e Capacidade Adaptativa
 A IA do Módulo 16 é um "biólogo de sistemas". Ela utiliza algoritmos genéticos para simular a evolução de um ecossistema projetado ao longo de milhares de anos em questão de segundos, identificando potenciais pontos de falha, espécies dominantes e desequilíbrios antes mesmo da construção.

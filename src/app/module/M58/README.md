@@ -1,4 +1,3 @@
-
 # Relatório Técnico-Científico: Módulo 58 - Proteção e Sustentabilidade Planetária
 
 **Data de Análise:** 29 de Setembro de 2025

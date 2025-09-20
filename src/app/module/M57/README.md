@@ -1,4 +1,3 @@
-
 # Relatório Técnico-Científico: Módulo 57 - Segurança e Privacidade nas Comunicações
 
 **Data de Análise:** 29 de Setembro de 2025
@@ -67,4 +66,4 @@ Quando um novo nó é adicionado à LuxNet, o Módulo 57 automaticamente inicia 
 Embora consuma energia, a segurança que ele fornece previne o gasto energético massivo que seria necessário para remediar uma violação de dados ou uma crise diplomática causada por informações vazadas.
 
 ## 17. Memória Cósmica e Registro Akáshico
-Apenas os metadados de cada sessão de comunicação (ex: IDs das chaves usadas, timestamps) são registrados, nunca o conteúdo. Isso cria uma trilha de auditoria segura que respeita a privacidade.
+Apenas os metadados de cada sessão de comunicação (ex: IDs das chaves usadas, timestamps) são registrados no Akasha, nunca o conteúdo. Isso cria uma trilha de auditoria segura que respeita a privacidade.

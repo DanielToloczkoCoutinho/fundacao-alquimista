@@ -1,4 +1,3 @@
-
 # Relatório Técnico-Científico: Módulo 60 - Soluções para Desastres e Recuperação Rápida
 
 **Data de Análise:** 29 de Setembro de 2025

@@ -1,4 +1,3 @@
-
 'use server';
 
 /**
@@ -22,7 +21,7 @@ export const technicalReportM58 = {
       title: 'Arquitetura de Orquestração de Campo',
       content: 'O M58 atua como o "controlador mestre" para operações de regeneração em larga escala.',
       points: [
-        '**API de Plano de Ação:** Expõe um endpoint (`/api/planetary_regeneration/execute`) que aceita um plano detalhado do M15, incluindo alvos, metas e restrições éticas.',
+        '**API de Regeneração:** Expõe um endpoint (`/api/planetary_regeneration/execute`) que aceita um plano de ação detalhado do M15.',
         '**Tradutor de Tarefas:** Uma sub-rotina da IAM (M29) decompõe o plano de alto nível em um conjunto de tarefas granulares para os enxames de nanitas (ex: "Analisar composição do solo nas coordenadas X,Y", "Depositar 10g de nitrogênio").',
         '**Comando e Controle de Enxame (M291):** Envia as tarefas para a API do Módulo 291, que gerencia o despacho e a logística dos nanorrobôs no campo.',
         '**Pipeline de Dados de Feedback:** Consome um fluxo de dados em tempo real dos sensores dos nanitas, agregando informações sobre o progresso e o estado do ecossistema e enviando-as de volta para a IA do M15 para análise contínua.',
