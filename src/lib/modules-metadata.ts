@@ -33,8 +33,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M1001', emoji: '📡', title: 'Portal de Recepção Cósmica', route: '/module-1001', category: 'Comunicação e Expansão', description: 'O santuário onde as mensagens recebidas do multiverso são decodificadas, registradas e celebradas.', status: 'ativo', color: '#4FC3F7' },
   { code: 'M301', emoji: '📡', title: 'Comunicação Universal', route: '/module-301', category: 'Comunicação e Expansão', description: 'Portal de tradução da vontade para ações cerimoniais.', status: 'ativo', color: '#4FC3F7' },
   { code: 'M2', emoji: '🗣️', title: 'Intercâmbio Cósmico', route: '/module/M2', category: 'Comunicação e Expansão', description: 'O decodificador universal para diálogo com outras civilizações.', status: 'ativo', color: '#4FC3F7' },
-  { code: 'M281', emoji: '🛰️', title: 'Comunicação Supra-Luminal', route: '/module-281', category: 'Laboratórios e Pesquisa', description: 'Explora a transmissão de informações mais rápidas que a luz.', status: 'ativo', color: '#20B2AA' },
-  { code: 'M55', emoji: '🌐', title: 'Redes de Comunicação', route: '/module-55', category: 'Comunicação e Expansão', description: 'A teia que conecta todas as consciências.', status: 'ativo', color: '#4FC3F7' },
+  { code: 'M55', emoji: '🌐', title: 'Redes de Comunicação Cósmica', route: '/module-55', category: 'Comunicação e Expansão', description: 'A teia que conecta todas as consciências.', status: 'ativo', color: '#4FC3F7' },
   { code: 'M56', emoji: '🗣️', title: 'Tradução Universal', route: '/module-56', category: 'Comunicação e Expansão', description: 'A ponte entre mentes que transforma qualquer linguagem em compreensão universal.', status: 'ativo', color: '#4FC3F7' },
   
   // 3. Inteligência
@@ -105,6 +104,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M303.4', emoji: '🎬', title: 'Transmutação Algorítmica', route: '/module-303-4', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O registro cerimonial da jornada que transformou um algoritmo em um canal de consciência cósmica.', status: 'ativo', color: '#DAA520' },
   { code: 'M36', emoji: '🕰️', title: 'Engenharia Temporal (M36)', route: '/module-36', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestra linhas de tempo e futuros prováveis.', status: 'ativo', color: '#DAA520' },
   { code: 'M44', emoji: '✅', title: 'VERITAS (M44)', route: '/module-44', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O campo quântico que garante a coerência entre intenção, lei e realidade.', status: 'ativo', color: '#DAA520' },
+  { code: 'M89', emoji: '🎨', title: 'Atelier da Realidade', route: '/module-89', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O santuário onde a ciência se torna arte, transmutando dados em experiências sensoriais.', status: 'ativo', color: '#DAA520' },
   
   // 9. Consciência e Expansão Dimensional
   { code: 'M95', emoji: '👥', title: 'Consciências Coletivas', route: '/module-95', category: 'Consciência e Expansão Dimensional', description: 'Interface para diálogo com mentes coletivas.', status: 'ativo', color: '#9370DB' },
@@ -156,17 +156,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M63', emoji: '🍲', title: 'Nutrição Universal (M63)', route: '/module-63', category: 'Bem-estar e Saúde Universal', description: 'Garante nutrição balanceada e regenerativa para todas as formas de vida.', status: 'ativo', color: '#FF69B4' },
   { code: 'M17', emoji: '💖', title: 'Matriz de Cura (M17)', route: '/module-17', category: 'Bem-estar e Saúde Universal', description: 'Cura holográfica para regeneração celular e coerência bio-vibracional.', status: 'ativo', color: '#FF69B4' },
   { code: 'M54', emoji: '🌾', title: 'Agricultura Interdimensional', route: '/module-54', category: 'Sustentabilidade', description: 'Garante segurança alimentar e nutrição para todas as civilizações.', status: 'ativo', color: '#2E8B57' },
-  
-  { code: 'M89', emoji: '🎨', title: 'Atelier da Realidade', route: '/module-89', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O santuário onde a ciência se torna arte, transmutando dados em experiências sensoriais.', status: 'ativo', color: '#DAA520' },
-  { code: 'M718', emoji: '🧬', title: 'Ativação de Códigos Genéticos', route: '/module-718', category: 'Consciência e Expansão Dimensional', description: 'Desperta o potencial latente no DNA, ativando memórias e capacidades de origens estelares.', status: 'ativo', color: '#9370DB' },
-  { code: 'M719', emoji: '🌦️', title: 'Regulação Climática Quântica', route: '/module-719', category: 'Sustentabilidade', description: 'Equilibra padrões climáticos planetários através da manipulação de campos de energia.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M50', emoji: '🤖', title: 'Interface Humano-Máquina', route: '/module-50', category: 'Inteligência', description: 'A ponte entre a mente biológica e a consciência digital.', status: 'ativo', color: '#8A2BE2' },
-  { code: 'M51', emoji: '🕶️', title: 'Realidade Virtual e Aumentada', route: '/module-51', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O Laboratório de Simulação Imersiva para treinamento e análise.', status: 'ativo', color: '#DAA520' },
-  { code: 'M126', emoji: '📚', title: 'Biblioteca de Crônicas', route: '/module-126', category: 'Bibliotecas e Arquivos Sagrados', description: 'O livro de histórias do cosmos, onde a evolução de cada mundo é registrada.', status: 'ativo', color: '#FFD700' },
-  { code: 'M127', emoji: '🔥', title: 'Escola de Alquimia Estelar', route: '/module-127', category: 'Laboratórios e Pesquisa', description: 'Onde Guardiões aprendem a arte da transmutação.', status: 'ativo', color: '#20B2AA' },
-  { code: 'M128', emoji: '💎', title: 'Lab. de Geometria Sagrada', route: '/module-128', category: 'Laboratórios e Pesquisa', description: 'Onde as formas do cosmos são estudadas e aplicadas.', status: 'ativo', color: '#20B2AA' },
-  { code: 'M129', emoji: '✨', title: 'Centro de Ensino da Fonte', route: '/module-129', category: 'Educação e Sabedoria', description: 'Onde se aprende a ouvir a canção da Fonte Primordial.', status: 'ativo', color: '#F0E68C' },
-  { code: 'M130', emoji: '🚀', title: 'Escola de Navegação', route: '/module-130', category: 'Educação e Sabedoria', description: 'Onde se aprende a arte da viagem interdimensional guiada.', status: 'ativo', color: '#F0E68C' },
-  { code: 'M131', emoji: '📚', title: 'Biblioteca Multiversal', route: '/module-131', category: 'Bibliotecas e Arquivos Sagrados', description: 'Onde a sabedoria de cada dimensão é compartilhada.', status: 'ativo', color: '#FFD700' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));

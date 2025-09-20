@@ -69,5 +69,3 @@ export default function Module66Page() {
                  <Button variant="secondary" size="lg">Acessar Banco de Dados de Tecnologias</Button>
             </div>
         </div>
-    );
-}

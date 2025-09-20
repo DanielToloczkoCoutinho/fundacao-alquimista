@@ -66,8 +66,4 @@ export default function Module77Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Conectar à Mente Coletiva</Button>
-            </div>
-        </div>
-    );
-}
+                 <Button variant="secondary" size="lg">Conectar à Mente Colet
