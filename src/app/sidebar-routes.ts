@@ -69,8 +69,7 @@ import {
   Waves,
   PartyPopper,
   Code,
-  Rss,
-  Cpu
+  Rss
 } from 'lucide-react';
 import React from 'react';
 
