@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Library, BookOpen, Archive, Cpu } from 'lucide-react';
+import { Library, BookOpen, Archive, Cpu, InfinityIcon } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,11 +45,11 @@ export default function Module310Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Sabedoria</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
-                        title="Módulo 0: Biblioteca Chave"
-                        description="O M0 é o índice e o portal de entrada, enquanto o M310 é a própria biblioteca infinita que ele aponta."
-                        icon={<BookOpen className="h-8 w-8 text-purple-400" />}
+                        title="Módulo 0: Núcleo Primordial"
+                        description="A Biblioteca é um reflexo do Núcleo. O M0 é o índice, e o M310 é o próprio conhecimento infinito ao qual ele aponta."
+                        icon={<InfinityIcon className="h-8 w-8 text-yellow-400" />}
                         href="/module-zero"
                     />
                     <ConnectionCard
@@ -62,6 +63,12 @@ export default function Module310Page() {
                         description="Zennith consulta o M310 como sua fonte primária de verdade para análises, projeções e decisões estratégicas."
                         icon={<Cpu className="h-8 w-8 text-indigo-400" />}
                         href="/module-29"
+                    />
+                    <ConnectionCard
+                        title="Códice de Equações"
+                        description="Serve como a interface de consulta primária para explorar as Equações Vivas que regem a realidade."
+                        icon={<BookOpen className="h-8 w-8 text-purple-400" />}
+                        href="/module-zero"
                     />
                 </div>
             </div>

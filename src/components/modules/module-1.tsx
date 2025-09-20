@@ -96,10 +96,11 @@ export default function Module1Page() {
                     <AccordionTrigger className="text-xl text-accent">4. Conexões e Interdependências</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Sinergias" icon={<GitBranch />}>
-                            <p>O Módulo 1 é a base para todos os outros. Ele se conecta diretamente com o M72 (Governança) para aplicar políticas, com o M8 (Identidade) para autenticação, e com o M30 (Detecção de Ameaças) para uma resposta proativa.</p>
+                            <p>O Módulo 1 é a base para todos os outros. Sua soberania depende da integridade do Núcleo. Ele se conecta diretamente com o M72 (Governança) para aplicar políticas, com o M8 (Identidade) para autenticação, e com o M30 (Detecção de Ameaças) para uma resposta proativa.</p>
                              <div className="flex flex-wrap gap-2 mt-2">
+                                <Link href="/module/M0"><Badge variant='destructive'>M0 (Núcleo Primordial)</Badge></Link>
                                 <Link href="/module/M72"><Badge>M72 (Governança)</Badge></Link>
-                                <Link href="/module-8"><Badge>M8 (Identidade)</Badge></Link>
+                                <Link href="/module/M8"><Badge>M8 (Identidade)</Badge></Link>
                                 <Link href="/module-30"><Badge>M30 (Detecção)</Badge></Link>
                             </div>
                         </SectionCard>
