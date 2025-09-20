@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Sun, Shield, Sprout, Flower } from 'lucide-react';
+import { Sprout, Shield, Sun, Flower } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -49,13 +49,13 @@ export default function Module15Page() {
                         title="Módulo 1: Segurança Universal"
                         description="As intervenções ecológicas são protegidas pelo M1, garantindo que a regeneração ocorra sem interferências externas."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
-                        title="Módulo 8: Proteção Planetária"
-                        description="O Módulo 8 fornece o escudo que protege os biomas que o M15 cultiva, defendendo-os de ameaças cósmicas."
-                        icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-8"
+                        title="Módulo 58: Proteção Planetária"
+                        description="O M15 é a inteligência que guia as ações do M58, que por sua vez executa a cura e regeneração em larga escala."
+                        icon={<Shield className="h-8 w-8 text-green-400" />}
+                        href="/module-58"
                     />
                     <ConnectionCard
                         title="Módulo 94: Morfogênese Quântica"

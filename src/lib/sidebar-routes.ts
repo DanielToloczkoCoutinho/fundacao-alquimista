@@ -107,7 +107,7 @@ export const mainRoutes: SidebarRoute[] = [
 
 
   // Categoria de Segurança e Ética Cósmica
-  { path: '/module-one', label: 'Segurança Universal (M1)', icon: React.createElement(Shield), category: 'security' },
+  { path: '/module/M1', label: 'Segurança Universal (M1)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-8', label: 'Identidade Fractal (M8)', icon: React.createElement(Fingerprint), category: 'security' },
   { path: '/module-10', label: 'Defesa Avançada (M10)', icon: React.createElement(Shield), category: 'security' },
   { path: '/key-generator', label: 'Forja de Chaves', icon: React.createElement(Key), category: 'security' },
@@ -187,12 +187,13 @@ export const mainRoutes: SidebarRoute[] = [
   // Categoria de Sustentabilidade
   { path: '/module-66', label: 'Tecnologias de Sustentabilidade (M66)', icon: React.createElement(Recycle), category: 'sustainability' },
   { path: '/module-79', label: 'Prosperidade Cósmica (M79)', icon: React.createElement(Sparkles), category: 'sustainability' },
-  { path: '/module-85', label: 'Gestão de Recursos (M85)', icon: React.createElement(Layers), category: 'sustainability' },
-  { path: '/module-86', label: 'Equilíbrio Ecológico (M86)', icon: React.createElement(Sprout), category: 'sustainability' },
-  { path: '/module-91', label: 'Sustentabilidade Universal (M91)', icon: React.createElement(Globe), category: 'sustainability' },
   { path: '/module-52', label: 'Energias Renováveis (M52)', icon: React.createElement(Sun), category: 'sustainability' },
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
   { path: '/module-125', label: 'Criação de Biomas (M125)', icon: React.createElement(Sprout), category: 'sustainability' },
+  { path: '/module-58', label: 'Proteção Planetária (M58)', icon: React.createElement(Globe), category: 'sustainability'},
+  { path: '/module-59', label: 'Eco-Cidades Quânticas (M59)', icon: React.createElement(Building), category: 'sustainability'},
+  { path: '/module-60', label: 'Recuperação de Desastres (M60)', icon: React.createElement(AlertTriangle), category: 'sustainability'},
+  { path: '/module-70', label: 'Sustentabilidade Interdimensional (M70)', icon: React.createElement(Recycle), category: 'sustainability'},
   
   // Categoria de Laboratórios
   { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },
@@ -214,6 +215,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
   { path: '/module-700', label: 'Nano-Assembler (M700)', icon: React.createElement(Microscope), category: 'labs' },
   { path: '/hive', label: 'Colmeia Quântica', icon: React.createElement(Users), category: 'labs' },
+  { path: '/module-15', label: 'Jardineiro Cósmico (M15)', icon: React.createElement(Sprout), category: 'sustainability'},
+
   
   // 13. Bem-estar e Saúde Universal
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
