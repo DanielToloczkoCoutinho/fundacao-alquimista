@@ -177,7 +177,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-37', label: 'Ajuste de Fluxo Temporal (M37)', icon: React.createElement(Wind), category: 'harmony' },
   { path: '/module-115', label: 'Matriz de Ressonância (M115)', icon: React.createElement(Waves), category: 'harmony' },
   { path: '/module-306-1', label: 'Purificação Planetária (M306.1)', icon: React.createElement(Globe), category: 'harmony' },
-
+  { path: '/module-712', label: 'Harmonia Interespécies', icon: React.createElement(Users), category: 'harmony' },
 
   // Categoria de Rituais
   { path: '/ritual', label: 'Navegação Cerimonial', icon: React.createElement(GitBranch), category: 'rituals' },
@@ -210,7 +210,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
   { path: '/module-281', label: 'Comunicação Supra-Luminal (M281)', icon: React.createElement(Telescope), category: 'labs' },
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
-  { path: '/module-331', label: 'Lab. de Criatividade e Inovação (M331)', icon: React.createElement(Sparkles), category: 'labs' },
+  { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
   { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
   { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
   { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
@@ -223,5 +223,3 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
 
 ];
-
-    
