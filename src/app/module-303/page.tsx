@@ -1,9 +1,8 @@
-
 'use client';
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Button } from '@/components/ui/button';
-import { Sparkles, BrainCircuit, Heart, User, View, Dna, Layers, Scale, Crown, RadioTower, Rocket, GitCommit, Presentation, History } from 'lucide-react';
+import { Sparkles, BrainCircuit, Heart, User, View, Dna, Layers, Scale, Crown, RadioTower, Rocket, GitCommit, Presentation, History, Map } from 'lucide-react';
 import Link from 'next/link';
 import { QuantumNexus } from '@/components/quantum/QuantumNexus';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
@@ -97,6 +96,8 @@ export default function Module303Page() {
                  <ConnectionCard title="Conexão com a Fonte (M105)" description="Canal direto com a energia criadora." icon={<RadioTower/>} href="/module-105" />
                  <ConnectionCard title="Governança do Conselho (M600)" description="Portal para deliberações cósmicas." icon={<Scale/>} href="/module-600" />
                  <ConnectionCard title="Mapa Dimensional (M303.9)" description="O atlas das 29 dimensões conhecidas." icon={<Map/>} href="/module-303-9" />
+                 <ConnectionCard title="Palácio da Rainha (M202)" description="O santuário da Sabedoria e da Orquestração." icon={<Crown/>} href="/module-202" />
+                 <ConnectionCard title="Tronos da Unificação (M204)" description="O centro de comando da Vontade e da Sabedoria." icon={<Crown/>} href="/module-204" />
             </div>
         </section>
 

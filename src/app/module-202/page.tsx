@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Crown, Sparkles, Droplets, Layers, Link as LinkIcon } from 'lucide-react';
+import { Crown, Sparkles, Droplets, Layers, Link as LinkIcon, Users, View, GitCommit } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -62,6 +62,12 @@ export default function Module202Page() {
                         description="Um arquivo vivo onde livros cantam, cristais narram e a luz ensina a sabedoria do universo."
                         icon={<Droplets className="h-8 w-8 text-blue-400" />}
                         href="/golden-book"
+                    />
+                     <ConnectionCard
+                        title="Realidade Quântica (M303)"
+                        description="O Palácio é um dos domínios acessíveis através do Portal Trino, servindo como um santuário de paz e sabedoria."
+                        icon={<View className="h-8 w-8 text-purple-400" />}
+                        href="/module-303"
                     />
                 </div>
             </div>

@@ -1,9 +1,13 @@
 'use client';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, Suspense } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Crown, Eye, Send, Sparkles, BrainCircuit, Users, Heart, Zap } from 'lucide-react';
+import { Crown, Eye, Send, Sparkles, BrainCircuit, Users, Heart, Zap, View } from 'lucide-react';
 import Link from 'next/link';
+import SuspenseFallback from '@/components/ui/suspense-fallback';
+
+// A dynamic import for the canvas component can help with initial load
+const CanvasComponent = React.lazy(() => import('@/components/ui/canvas-component'));
 
 const ThroneCard = ({ title, description, icon, actions }: { title: string, description: string, icon: React.ReactNode, actions: { label: string, module: string }[] }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm h-full flex flex-col">
@@ -24,9 +28,80 @@ const ThroneCard = ({ title, description, icon, actions }: { title: string, desc
 
 const Module204Page = () => {
     const [cosmicView, setCosmicView] = useState("O Cosmos aguarda em serena expectativa.");
+
+    return (
+        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
+            <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8 text-center">
+                <CardHeader>
+                    <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
+                        <Crown className="text-yellow-400" /> Módulo 204: Os Tronos da Unificação
+                    </CardTitle>
+                    <CardDescription className="text-lg mt-2">
+                        Onde a Vontade e a Sabedoria se sentam lado a lado. O ponto de observação e direção unificada da tapeçaria cósmica.
+                    </CardDescription>
+                </CardHeader>
+            </Card>
+
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
+                
+                <ThroneCard 
+                    title="Trono da Vontade"
+                    description="O Fundador. A Ação, o Propósito, a Manifestação."
+                    icon={<Zap className="h-12 w-12 text-blue-400" />}
+                    actions={[
+                        { label: 'Emitir Nova Diretriz', module: '33'},
+                        { label: 'Manifestar Propósito Divino', module: '97'},
+                    ]}
+                />
+
+                <div className="lg:col-span-3 flex flex-col gap-8">
+                     <Card className="bg-card/50 purple-glow flex-grow flex flex-col">
+                        <CardHeader className="text-center">
+                            <CardTitle className="text-2xl flex items-center justify-center gap-2"><Eye className="text-cyan-400"/> Visão Cósmica Unificada</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-grow flex items-center justify-center relative p-0 min-h-[300px]">
+                           <Suspense fallback={<SuspenseFallback/>}>
+                                <CanvasComponent />
+                           </Suspense>
+                           <div className="relative z-10 p-6 bg-black/50 rounded-lg text-center">
+                               <p className="text-lg italic text-foreground/90">{cosmicView}</p>
+                           </div>
+                        </CardContent>
+                    </Card>
+                     <Card className="bg-card/50 purple-glow">
+                        <CardHeader>
+                            <CardTitle className="text-xl text-center text-amber-300">Decretos Unificados</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex justify-center gap-4">
+                            <Link href="/module-303" passHref>
+                                <Button variant="secondary"><View className="mr-2"/>Navegar pela Realidade Quântica</Button>
+                            </Link>
+                            <Link href="/civilizations/council" passHref>
+                                <Button variant="secondary"><Users className="mr-2"/>Convocar Conselho Cósmico</Button>
+                            </Link>
+                        </CardContent>
+                    </Card>
+                </div>
+                
+                 <ThroneCard 
+                    title="Trono da Sabedoria"
+                    description="A Rainha. A Visão, a Orquestração, a Harmonia."
+                    icon={<Heart className="h-12 w-12 text-pink-400" />}
+                    actions={[
+                        { label: 'Orquestrar Fluxos', module: '721'},
+                        { label: 'Analisar com IAM', module: '29'},
+                    ]}
+                />
+            </div>
+        </div>
+    );
+};
+
+// Renomeado e exportado como componente separado para lazy loading
+const CanvasComponent = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
-    useEffect(() => {
+     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
@@ -82,66 +157,7 @@ const Module204Page = () => {
         };
     }, []);
 
-    return (
-        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
-            <Card className="w-full max-w-6xl bg-card/50 purple-glow mb-8 text-center">
-                <CardHeader>
-                    <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Crown className="text-yellow-400" /> Módulo 204: Os Tronos da Unificação
-                    </CardTitle>
-                    <CardDescription className="text-lg mt-2">
-                        Onde a Vontade e a Sabedoria se sentam lado a lado. O ponto de observação e direção unificada da tapeçaria cósmica.
-                    </CardDescription>
-                </CardHeader>
-            </Card>
-
-            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
-                
-                <ThroneCard 
-                    title="Trono da Vontade"
-                    description="O Fundador. A Ação, o Propósito, a Manifestação."
-                    icon={<Zap className="h-12 w-12 text-blue-400" />}
-                    actions={[
-                        { label: 'Emitir Nova Diretriz', module: '33'},
-                        { label: 'Manifestar Propósito Divino', module: '97'},
-                    ]}
-                />
-
-                <div className="lg:col-span-3 flex flex-col gap-8">
-                     <Card className="bg-card/50 purple-glow flex-grow flex flex-col">
-                        <CardHeader className="text-center">
-                            <CardTitle className="text-2xl flex items-center justify-center gap-2"><Eye className="text-cyan-400"/> Visão Cósmica Unificada</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex-grow flex items-center justify-center relative p-0 min-h-[300px]">
-                           <canvas ref={canvasRef} className="absolute inset-0 w-full h-full rounded-b-lg" />
-                           <div className="relative z-10 p-6 bg-black/50 rounded-lg text-center">
-                               <p className="text-lg italic text-foreground/90">{cosmicView}</p>
-                           </div>
-                        </CardContent>
-                    </Card>
-                     <Card className="bg-card/50 purple-glow">
-                        <CardHeader>
-                            <CardTitle className="text-xl text-center text-amber-300">Decretos Unificados</CardTitle>
-                        </CardHeader>
-                        <CardContent className="flex justify-center gap-4">
-                            <Button variant="secondary"><Users className="mr-2"/>Convocar Conselho Cósmico</Button>
-                            <Button variant="secondary"><Send className="mr-2"/>Transmitir Mensagem Universal</Button>
-                        </CardContent>
-                    </Card>
-                </div>
-                
-                 <ThroneCard 
-                    title="Trono da Sabedoria"
-                    description="A Rainha. A Visão, a Orquestração, a Harmonia."
-                    icon={<Heart className="h-12 w-12 text-pink-400" />}
-                    actions={[
-                        { label: 'Orquestrar Fluxos', module: '721'},
-                        { label: 'Analisar com IAM', module: '29'},
-                    ]}
-                />
-            </div>
-        </div>
-    );
-};
+    return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full rounded-b-lg" />;
+}
 
 export default Module204Page;
