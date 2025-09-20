@@ -49,7 +49,7 @@ export default function Module40Page() {
                         title="M1: Segurança"
                         description="Protege a privacidade e a santidade dos dados genéticos, garantindo que não possam ser acessados ou manipulados indevidamente."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 94: Morfogênese"
