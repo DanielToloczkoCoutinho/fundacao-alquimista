@@ -1,4 +1,3 @@
-
 export interface ModuleMetadata {
   code: string;
   emoji: string;

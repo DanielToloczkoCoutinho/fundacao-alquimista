@@ -55,7 +55,7 @@ Embora monitore todas as frequências, o próprio módulo ressoa na frequência 
 Como um sistema de observação, ele é projetado para resistir a altas energias. Um pulso de uma supernova que atingisse os sensores não os danificaria, mas seria o exato evento que ele foi projetado para medir e analisar.
 
 ## 15. Integração com a Malha de Expansão
-Quando a Fundação se expande para um novo sistema estelar, o M38 é um dos primeiros módulos a ser ativado, realizando um "check-up" completo da estrela local para garantir a segurança do novo posto avançado.
+Quando a Fundação se expande para um novo sistema estelar, o Módulo 38 é um dos primeiros módulos a ser ativado, realizando um "check-up" completo da estrela local para garantir a segurança do novo posto avançado.
 
 ## 16. Ciclo de Sustentabilidade Energética
 Contribui ativamente para a sustentabilidade ao identificar oportunidades para a colheita de energia cósmica, tornando a Fundação menos dependente apenas do Reator ZPE.
