@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Dna, Sprout, Beaker, GitBranch, Heart, Shield, Flame } from 'lucide-react';
+import { Dna, Sprout, Beaker, GitBranch, Heart, Shield, Flame, Copy } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -74,6 +75,12 @@ export default function Module16Page() {
                         description="Fornece os elementos básicos (carbono, oxigênio) para iniciar a criação de ecossistemas orgânicos."
                         icon={<Flame className="h-8 w-8 text-orange-400" />}
                         href="/module-20"
+                    />
+                     <ConnectionCard
+                        title="Módulo 27: Síntese e Replicação"
+                        description="Replica compostos orgânicos e minerais raros, acelerando a criação de biomas complexos."
+                        icon={<Copy className="h-8 w-8 text-blue-300" />}
+                        href="/module-27"
                     />
                 </div>
             </div>

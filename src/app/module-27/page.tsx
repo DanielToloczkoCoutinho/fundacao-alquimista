@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -46,10 +47,10 @@ export default function Module27Page() {
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Fabricação</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
-                        title="Módulo 1: Segurança"
-                        description="Assegura que os blueprints energéticos não possam ser corrompidos ou interceptados durante a replicação."
+                        title="M1: Segurança"
+                        description="Garante que os blueprints energéticos não possam ser corrompidos ou interceptados durante a replicação."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 90: Recursos Quânticos"
@@ -64,7 +65,7 @@ export default function Module27Page() {
                         href="/module-88"
                     />
                     <ConnectionCard
-                        title="Módulo 16: Bio-Sustentabilidade"
+                        title="Módulo 16: Biossíntese"
                         description="Sintetiza compostos orgânicos e minerais raros para semear e sustentar os ecossistemas do M16."
                         icon={<Recycle className="h-8 w-8 text-lime-400" />}
                         href="/module-16"

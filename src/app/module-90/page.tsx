@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Beaker, BrainCircuit, Users, BookOpen, Shield, Atom, Flame } from 'lucide-react';
+import { Beaker, BrainCircuit, Users, BookOpen, Shield, Atom, Flame, Copy } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -49,7 +50,7 @@ export default function Module90Page() {
                         title="M1: Segurança"
                         description="Garante a integridade do catálogo de recursos, protegendo-o contra manipulação e acesso não autorizado."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 29: Zennith"
@@ -74,6 +75,12 @@ export default function Module90Page() {
                         description="Recebe os elementos purificados e ligas complexas do M20 para catalogação e distribuição."
                         icon={<Flame className="h-8 w-8 text-orange-400" />}
                         href="/module-20"
+                    />
+                     <ConnectionCard
+                        title="Módulo 27: Síntese e Replicação"
+                        description="Fornece a matéria-prima elemental e os compostos necessários para que o M27 possa replicar estruturas complexas."
+                        icon={<Copy className="h-8 w-8 text-blue-300" />}
+                        href="/module-27"
                     />
                 </div>
             </div>

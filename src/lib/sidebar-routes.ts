@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -73,6 +74,7 @@ import {
   Fingerprint,
   HeartPulse,
   ShieldHalf,
+  Copy
 } from 'lucide-react';
 import React from 'react';
 
@@ -149,6 +151,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-22', label: 'Motor da Realidade (M22)', icon: React.createElement(Layers), category: 'engineering' },
   { path: '/module-25', label: 'Projeção de Consciência (M25)', icon: React.createElement(Eye), category: 'engineering' },
   { path: '/module-26', label: 'Supervisão de Travessias (M26)', icon: React.createElement(Eye), category: 'engineering' },
+  { path: '/module-27', label: 'Síntese e Replicação (M27)', icon: React.createElement(Copy), category: 'engineering' },
   { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
   { path: '/module-321', label: 'Criação de Linhas de Tempo (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
   { path: '/module-114', label: 'Engenharia Cósmica (M114)', icon: React.createElement(Layers), category: 'engineering' },
