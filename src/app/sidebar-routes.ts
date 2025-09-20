@@ -102,7 +102,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-67', label: 'IA para Governança (M67)', icon: React.createElement(BrainCircuit), category: 'governance' },
   { path: '/module-724', label: 'Diplomacia Intergaláctica (M724)', icon: React.createElement(Users), category: 'governance' },
   { path: '/module-76', label: 'Governança Universal (M76)', icon: React.createElement(Scale), category: 'governance' },
-  { path: '/module-721', label: 'Justiça Cósmica', icon: React.createElement(Scale), category: 'governance' },
+  { path: '/module-721', label: 'Justiça Cósmica (M721)', icon: React.createElement(Scale), category: 'governance' },
 
 
   // Categoria de Segurança e Ética Cósmica
@@ -117,6 +117,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-68', label: 'Responsabilidade Ética', icon: React.createElement(ShieldCheck), category: 'security' },
+  { path: '/module-57', label: 'Segurança e Privacidade (M57)', icon: React.createElement(Lock), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -153,7 +154,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-303-7', label: 'Tecnologia de Transcendência', icon: React.createElement(InfinityIcon), category: 'engineering' },
 
   // Categoria de Expansão e Conexão
-  { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
+  { path: '/module-65', label: 'Infraestruturas e Transporte (M65)', icon: React.createElement(Rocket), category: 'expansion' },
   { path: '/module-11', label: 'Gerenciamento de Portais (M11)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-132', label: 'Convergência Dimensional (M132)', icon: React.createElement(Layers), category: 'expansion' },
   { path: '/module-81', label: 'Banco de Energia Universal (M81)', icon: React.createElement(Zap), category: 'expansion' },
@@ -206,10 +207,10 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
   { path: '/module-281', label: 'Comunicação Supra-Luminal (M281)', icon: React.createElement(Telescope), category: 'labs' },
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
-  { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
+  { path: '/module-331', label: 'Lab. de Criatividade e Inovação', icon: React.createElement(Sparkles), category: 'labs' },
   { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
-  { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
-  { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
+  { path: '/module-351', label: 'Meta-materiais (4D+)', icon: React.createElement(Layers), category: 'labs' },
+  { path: '/module-361', label: 'Psicologia Quântica (5D)', icon: React.createElement(Users), category: 'labs' },
   { path: '/module-700', label: 'Nano-Assembler (M700)', icon: React.createElement(Microscope), category: 'labs' },
 
   // Categoria de Saúde

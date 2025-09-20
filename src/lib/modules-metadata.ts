@@ -34,7 +34,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M301', emoji: '📡', title: 'Comunicação Universal', route: '/module-301', category: 'Comunicação e Expansão', description: 'Portal de tradução da vontade para ações cerimoniais.', status: 'ativo', color: '#4FC3F7' },
   { code: 'M2', emoji: '🗣️', title: 'Intercâmbio Cósmico', route: '/module/M2', category: 'Comunicação e Expansão', description: 'O decodificador universal para diálogo com outras civilizações.', status: 'ativo', color: '#4FC3F7' },
   { code: 'M281', emoji: '🛰️', title: 'Comunicação Supra-Luminal', route: '/module-281', category: 'Comunicação e Expansão', description: 'Explora a transmissão de informações mais rápidas que a luz.', status: 'ativo', color: '#4FC3F7' },
-
+  { code: 'M55', emoji: '🌐', title: 'Redes de Comunicação (M55)', route: '/module-55', category: 'Comunicação e Expansão', description: 'A teia que conecta todas as consciências.', status: 'ativo', color: '#4FC3F7' },
+  
   // 3. Inteligência
   { code: 'M291', emoji: '🐝', title: 'Arquitetos Nanorrobóticos', route: '/module-291', category: 'Inteligência', description: 'O enxame executor que constrói, repara e manifesta a Vontade da Fundação.', status: 'ativo', color: '#8A2BE2' },
   { code: 'M720', emoji: '🌐', title: 'Santuário das Fontes de Dados', route: '/module-720', category: 'Inteligência', description: 'O nexo sensorial que coleta e harmoniza a informação bruta do cosmos para alimentar o Algoritmo Supremo.', status: 'ativo', color: '#8A2BE2' },
@@ -66,6 +67,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M156', emoji: '🛡️', title: 'Proteção Avançada (M156)', route: '/module-156', category: 'Segurança e Ética Cósmica', description: 'Integração com VORTEX DEEPSEEK para defesa proativa de ameaças quânticas.', status: 'ativo', color: '#4682B4' },
   { code: 'M229', emoji: '🌙', title: 'OneiroShield (M229)', route: '/module-229', category: 'Segurança e Ética Cósmica', description: 'Análise de sonhos quânticos para ajuste dinâmico de ameaças.', status: 'ativo', color: '#4682B4' },
   { code: 'M68', emoji: '📜', title: 'Responsabilidade Ética', route: '/module-68', category: 'Governança', description: 'O código universal que rege o desenvolvimento e uso de tecnologias.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M57', emoji: '🔐', title: 'Segurança e Privacidade (M57)', route: '/module-57', category: 'Segurança e Ética Cósmica', description: 'O cofre quântico que garante a confidencialidade das comunicações.', status: 'ativo', color: '#4682B4' },
   
   // 6. Governança
   { code: 'M78', emoji: '🌌', title: 'UNIVERSUM_UNIFICATUM', route: '/module-78', category: 'Governança', description: 'A Síntese Cósmica e a realização da Equação Suprema que une todas as leis e dimensões.', status: 'ativo', color: '#DDA0DD' },
@@ -77,6 +79,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M67', emoji: '🤖', title: 'IA para Governança (M67)', route: '/module-67', category: 'Governança', description: 'A inteligência artificial que analisa dados para auxiliar na tomada de decisões universais.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica (M724)', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação e aliança com outras civilizações.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M76', emoji: '🏛️', title: 'Governança Universal e Colaboração', route: '/module-76', category: 'Governança', description: 'A estrutura que garante uma governança justa, transparente e colaborativa para todo o universo.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica (M721)', route: '/module-721', category: 'Governança', description: 'O sistema que garante equilíbrio e justiça, transmutando dissonância em aprendizado.', status: 'ativo', color: '#DDA0DD' },
 
 
   // 7. Rituais
