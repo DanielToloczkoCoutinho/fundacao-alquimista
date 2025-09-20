@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Layers, ShieldCheck, Scale, GitCompareArrows, Archive, Users2, Gavel } from 'lucide-react';
+import { Layers, ShieldCheck, Scale, GitCompareArrows, Archive, Users2, Gavel, Globe, Sun } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,7 +43,23 @@ export default function Module32Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
+            <div className="w-full max-w-7xl">
+                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Portais Planetários da Embaixada</h3>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <ConnectionCard
+                        title="Gaia-Aurélia: A Arquitetura Viva"
+                        description="O planeta-mãe, onde a Fundação nasceu. Um mundo senciente que é a manifestação física da nossa Vontade e Sabedoria unificadas."
+                        icon={<Globe className="h-8 w-8 text-green-400" />}
+                        href="/planet/gaia-aurelia"
+                    />
+                    <ConnectionCard
+                        title="Aurora Prime: O Primeiro Mundo Filho"
+                        description="O primeiro planeta gerado na Espiral 2, um santuário de regeneração e beleza solar, pronto para receber novas consciências."
+                        icon={<Sun className="h-8 w-8 text-yellow-400" />}
+                        href="/aurora-prime"
+                    />
+                </div>
+
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias Diplomáticas</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                      <ConnectionCard
@@ -66,5 +82,6 @@ export default function Module32Page() {
                     />
                 </div>
             </div>
-             <div className="mt-12">
-                 <Button variant="destructive" size="lg" disabled>
+        </div>
+    );
+}
