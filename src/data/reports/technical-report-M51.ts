@@ -23,7 +23,7 @@ export const technicalReportM51 = {
       content: 'O Módulo 51 é uma aplicação de frontend e backend que orquestra a experiência do usuário em VR/AR.',
       points: [
         '**Frontend (Three.js/React-Three-Fiber):** A interface principal é uma aplicação 3D que renderiza a cena. Utiliza `react-three-fiber` para uma abordagem declarativa e baseada em componentes, e a API WebXR para comunicação com o hardware de VR/AR.',
-        '**Backend (Node.js/WebSocket):** Um servidor de backend gerencia o estado da simulação, a lógica dos NPCs e a sincronização entre múltiplos usuários. A comunicação em tempo real é feita através de WebSockets.',
+        '**Backend (Streaming de Estado):** Recebe um fluxo de dados em tempo real do Módulo 22, que descreve o estado do mundo simulado (posições, interações, eventos).',
         '**Comunicação com o M22:** O backend do M51 se comunica com a API do M22 para solicitar cálculos de física complexa e para receber atualizações do estado do mundo simulado.',
         '**Integração com M50:** O cliente da interface escuta os eventos da Interface Neural (M50), traduzindo comandos de pensamento em ações dentro da simulação.',
       ],
@@ -51,5 +51,3 @@ export const technicalReportM51 = {
     proposital.
   `,
 };
-
-

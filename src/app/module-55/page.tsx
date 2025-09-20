@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Network, GitBranch, Languages, Shield, Lock } from 'lucide-react';
+import { Network, Languages, Shield, Lock, Rocket } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -46,7 +45,7 @@ export default function Module55Page() {
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Comunicação</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                     <ConnectionCard
+                    <ConnectionCard
                         title="M1: Segurança Universal"
                         description="Garante que a rede de comunicação não possa ser interceptada, protegendo a privacidade de todas as interações."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
@@ -67,8 +66,14 @@ export default function Module55Page() {
                     <ConnectionCard
                         title="Módulo 301: Comunicação Universal"
                         description="Atua como a camada de aplicação sobre a infraestrutura de rede do M55, fornecendo a interface para os usuários."
-                        icon={<GitBranch className="h-8 w-8 text-teal-400" />}
+                        icon={<Network className="h-8 w-8 text-teal-400" />}
                         href="/module-301"
+                    />
+                     <ConnectionCard
+                        title="Módulo 49: Transporte"
+                        description="Sincroniza com a rede de transporte para coordenação logística e segurança das viagens interdimensionais."
+                        icon={<Rocket className="h-8 w-8 text-orange-400" />}
+                        href="/module-49"
                     />
                 </div>
             </div>

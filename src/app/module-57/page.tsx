@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -56,7 +55,7 @@ export default function Module57Page() {
                         title="Módulo 1: Segurança Universal"
                         description="Atua como uma camada de aplicação especializada do M1, focada na segurança da informação e comunicação."
                         icon={<Lock className="h-8 w-8 text-purple-400" />}
-                        href="/module-one"
+                        href="/module-1"
                     />
                     <ConnectionCard
                         title="Módulo 8: Identidade Fractal"

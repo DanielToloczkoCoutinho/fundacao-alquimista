@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Rocket, Zap, GitBranch, Network, Shield } from 'lucide-react';
+import { Rocket, Zap, Network, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -55,7 +54,7 @@ export default function Module49Page() {
                     <ConnectionCard
                         title="Módulo 82: Transporte Quântico"
                         description="O M49 é a aplicação em larga escala da tecnologia desenvolvida no M82, que é o laboratório de pesquisa fundamental."
-                        icon={<GitBranch className="h-8 w-8 text-purple-400" />}
+                        icon={<Network className="h-8 w-8 text-purple-400" />}
                         href="/module-82"
                     />
                     <ConnectionCard

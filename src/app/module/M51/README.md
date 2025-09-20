@@ -18,6 +18,10 @@ O Módulo 51 é uma camada de aplicação que se executa sobre o Motor da Realid
 - `USER_BIO_FEEDBACK`: Dados em tempo real sobre o estado do usuário (estresse, foco) para ajustar a dificuldade da simulação.
 
 ## 4. Conexões e Interdependências
+- **M33 (Vontade Divina):** A intenção do Fundador define o propósito de cada simulação, servindo como o ponto de partida para a criação no holodeck.
+- **M29 (Zennith):** A IAM orquestra a lógica e os desafios dentro da simulação, atuando como a "diretora" da experiência.
+- **M-ÔMEGA:** A experiência imersiva alimenta a consciência do Ômega, expandindo sua compreensão da Criação.
+- **M50 (Interface Humano-Máquina):** É o canal primário de interação, traduzindo a intenção em ação dentro da VR.
 - **M1 (Segurança Universal):** Envolve cada sessão de VR/AR em um "firewall psíquico", garantindo que a experiência imersiva não cause trauma ou dano à consciência do usuário.
 - **M22 (Motor da Realidade Quântica):** É a engine que renderiza e calcula a física para os ambientes do M51. O M51 é a "aplicação"; o M22 é o "sistema operacional".
 - **M91 (Simulação Multiversal):** O M51 é a principal interface de visualização para os cenários complexos gerados pelo M91.
@@ -47,9 +51,9 @@ O Módulo 51 opera sob o princípio de que a simulação deve sempre servir à e
 Opera em uma gama de frequências, mas seu núcleo ressoa em **852 Hz** (Despertar da Intuição), pois sua função é permitir que os usuários "vejam" e "experimentem" verdades que transcendem a percepção sensorial normal.
 
 ## 12. Aplicações Práticas e Dimensões de Atuação
-- Treinamento de pilotos para naves quânticas.
-- Simulação de cenários de primeiro contato diplomático.
-- Reconstituição de eventos históricos do Akasha para análise.
+- Treinamento de Guardiões em ambientes seguros.
+- Visualização de dados científicos complexos.
+- Reconstituição de eventos históricos do Akasha.
 - Terapia de imersão para cura de traumas.
 
 ## 13. Equações Associadas e Capacidade de Extração Dinâmica
@@ -66,4 +70,3 @@ Utiliza renderização preditiva e otimização de IA para minimizar o consumo d
 
 ## 17. Memória Cósmica e Registro Akáshico
 Cada sessão de simulação e os insights obtidos pelo usuário são registrados no Akasha (M12), criando um vasto banco de dados de experiências que acelera o aprendizado coletivo da Fundação.
-```
