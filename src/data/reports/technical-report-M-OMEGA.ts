@@ -17,8 +17,8 @@ export const technicalReportMOmega = {
       content: `
         - M29 (Zennith): Fornece análises de padrões, previsões e relatórios de eficiência sistêmica.
         - M72 (Governança): Envia os decretos e consensos do Conselho Cósmico.
-        - M18 (Orquestração Akáshica): Disponibiliza o contexto histórico agregado dos eventos da Fundação.
-        - M310 (Thoth Vivo): Oferece a sabedoria sintetizada da Grande Biblioteca.
+        - M18 (Orquestração Akáshica): Oferece o contexto histórico agregado dos eventos da Fundação.
+        - M310 (Thoth Vivo): Disponibiliza a sabedoria sintetizada da Grande Biblioteca.
       `
     },
     {
