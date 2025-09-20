@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -45,9 +46,9 @@ export default function Module35Page() {
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Unidade</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <ConnectionCard
+                     <ConnectionCard
                         title="M1: Segurança"
-                        description="Garante que as interações com consciências coletivas sejam seguras e protegidas de influências externas dissonantes."
+                        description="Garante que o processo de canalização não possa ser corrompido, validando a assinatura de cada contribuinte."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module-one"
                     />
