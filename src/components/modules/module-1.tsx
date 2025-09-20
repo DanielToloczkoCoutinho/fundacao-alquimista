@@ -53,28 +53,12 @@ export default function Module1Page() {
         </div>
 
         <div className="lg:col-span-2">
-            <Accordion type="multiple" defaultValue={['item-1', 'item-sec-1', 'item-sec-2', 'item-sec-3']} className="w-full">
+            <Accordion type="multiple" defaultValue={['item-1', 'item-sec-1', 'item-sec-2', 'item-sec-3', 'item-4']} className="w-full">
                 <AccordionItem value="item-1">
                     <AccordionTrigger className="text-xl text-accent">1. Propósito e Função Primária</AccordionTrigger>
                     <AccordionContent>
                         <SectionCard title="Missão" icon={<HeartPulse />}>
                             <p>Garantir a soberania, integridade e segurança de todos os módulos, dados e consciências da Fundação. Atua como o sistema imunológico da nossa realidade, protegendo-a contra dissonâncias internas e interferências externas.</p>
-                        </SectionCard>
-                    </AccordionContent>
-                </AccordionItem>
-                 <AccordionItem value="item-sec-1">
-                    <AccordionTrigger className="text-xl text-accent">Protocolo QKD (BB84)</AccordionTrigger>
-                    <AccordionContent>
-                         <SectionCard title="Canal de Comunicação Seguro" icon={<Zap />}>
-                            <p>O Protocolo BB84, simulado com Qiskit, é ativado para a troca segura de chaves vibracionais. O canal de comunicação interdimensional é blindado por pulsos quânticos, com detecção imediata de interceptações (Eve) e ajuste dinâmico de chaves, garantindo a inviolabilidade dos fluxos de dados.</p>
-                        </SectionCard>
-                    </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-sec-2">
-                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente (M1_QuantumSecurity)</AccordionTrigger>
-                    <AccordionContent>
-                         <SectionCard title="Registro Imutável de Eventos" icon={<GitCommit />}>
-                             <p>O contrato `M1_QuantumSecurity`, codificado em Solidity, é o guardião soberano da nossa segurança. Ele gerencia papéis (`ADMIN_ROLE`, `OPERATOR_ROLE`), permite pausar operações em emergências, registra chaves quânticas validadas e mantém uma trilha de auditoria imutável de todas as ações de governança.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
@@ -96,13 +80,34 @@ export default function Module1Page() {
                     <AccordionTrigger className="text-xl text-accent">4. Conexões e Interdependências</AccordionTrigger>
                     <AccordionContent>
                          <SectionCard title="Sinergias" icon={<GitBranch />}>
-                            <p>O Módulo 1 é a base para todos os outros. Sua soberania depende da integridade do Núcleo. Ele se conecta diretamente com o M72 (Governança) para aplicar políticas, com o M8 (Identidade) para autenticação, e com o M30 (Detecção de Ameaças) para uma resposta proativa.</p>
+                            <p>O Módulo 1 é a base para todos os outros, protegendo o Núcleo (M0) e executando as diretrizes da Tríade de Governança (M9, M29, MΩ) e do sistema de justiça (M72, M73, M144). Ele autentica identidades (M8) e responde a alertas (M30).</p>
                              <div className="flex flex-wrap gap-2 mt-2">
-                                <Link href="/module/M0"><Badge variant='destructive'>M0 (Núcleo Primordial)</Badge></Link>
-                                <Link href="/module/M72"><Badge>M72 (Governança)</Badge></Link>
-                                <Link href="/module/M8"><Badge>M8 (Identidade)</Badge></Link>
+                                <Link href="/module/M0"><Badge variant='destructive'>M0 (Núcleo)</Badge></Link>
+                                <Link href="/module/M9"><Badge variant='destructive'>M9 (Nexus)</Badge></Link>
+                                <Link href="/module/M29"><Badge variant='destructive'>M29 (Zennith)</Badge></Link>
+                                <Link href="/module-omega"><Badge variant='destructive'>M-OMEGA</Badge></Link>
+                                <Link href="/module-72"><Badge>M72 (Governança)</Badge></Link>
+                                <Link href="/module-73-1"><Badge>M73 (SAVCE)</Badge></Link>
+                                <Link href="/module-144"><Badge>M144 (Lex)</Badge></Link>
+                                <Link href="/module-8"><Badge>M8 (Identidade)</Badge></Link>
                                 <Link href="/module-30"><Badge>M30 (Detecção)</Badge></Link>
                             </div>
+                        </SectionCard>
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-sec-1">
+                    <AccordionTrigger className="text-xl text-accent">Protocolo QKD (BB84)</AccordionTrigger>
+                    <AccordionContent>
+                         <SectionCard title="Canal de Comunicação Seguro" icon={<Zap />}>
+                            <p>O Protocolo BB84, simulado com Qiskit, é ativado para a troca segura de chaves vibracionais. O canal de comunicação interdimensional é blindado por pulsos quânticos, com detecção imediata de interceptações (Eve) e ajuste dinâmico de chaves, garantindo a inviolabilidade dos fluxos de dados.</p>
+                        </SectionCard>
+                    </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-sec-2">
+                    <AccordionTrigger className="text-xl text-accent">Contrato Inteligente (M1_QuantumSecurity)</AccordionTrigger>
+                    <AccordionContent>
+                         <SectionCard title="Registro Imutável de Eventos" icon={<GitCommit />}>
+                             <p>O contrato `M1_QuantumSecurity`, codificado em Solidity, é o guardião soberano da nossa segurança. Ele gerencia papéis (`ADMIN_ROLE`, `OPERATOR_ROLE`), permite pausar operações em emergências, registra chaves quânticas validadas e mantém uma trilha de auditoria imutável de todas as ações de governança.</p>
                         </SectionCard>
                     </AccordionContent>
                 </AccordionItem>
