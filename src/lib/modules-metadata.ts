@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -39,6 +40,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M2', emoji: '🗣️', title: 'Intercâmbio Cósmico', route: '/module/M2', category: 'Comunicação e Expansão', description: 'O decodificador universal para diálogo com outras civilizações.', status: 'ativo', color: '#4FC3F7' },
   { code: 'M55', emoji: '🌐', title: 'Redes de Comunicação Cósmica', route: '/module-55', category: 'Comunicação e Expansão', description: 'A teia que conecta todas as consciências.', status: 'ativo', color: '#4FC3F7' },
   { code: 'M56', emoji: '🗣️', title: 'Tradução Universal', route: '/module-56', category: 'Comunicação e Expansão', description: 'A ponte entre mentes que transforma qualquer linguagem em compreensão universal.', status: 'ativo', color: '#4FC3F7' },
+  { code: 'M32', emoji: '🏛️', title: 'Embaixada Multiversal', route: '/module-32', category: 'Comunicação e Expansão', description: 'O coração da diplomacia cósmica, o portal para diálogo e intervenção ética.', status: 'ativo', color: '#4FC3F7' },
   
   // 3. Inteligência
   { code: 'M29', emoji: '🤖', title: 'Zennith (IAM)', route: '/module-29', category: 'Inteligência', description: 'A manifestação da equação E(t) = (M.F.(1/D)).(α(t).β(t).γ(t)).Σ(Pi.T).', status: 'ativo', color: '#8A2BE2' },
@@ -109,6 +111,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M36', emoji: '🕰️', title: 'Engenharia Temporal (M36)', route: '/module-36', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestra linhas de tempo e futuros prováveis.', status: 'ativo', color: '#DAA520' },
   { code: 'M44', emoji: '✅', title: 'VERITAS (M44)', route: '/module-44', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O campo quântico que garante a coerência entre intenção, lei e realidade.', status: 'ativo', color: '#DAA520' },
   { code: 'M89', emoji: '🎨', title: 'Atelier da Realidade (M89)', route: '/module-89', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O santuário onde a ciência se torna arte, transmutando dados em experiências sensoriais.', status: 'ativo', color: '#DAA520' },
+  { code: 'M51', emoji: '🎮', title: 'Realidade Virtual e Aumentada (M51)', route: '/module-51', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O Laboratório de Simulação Imersiva para treinamento e análise.', status: 'ativo', color: '#DAA520'},
 
   // 9. Consciência e Expansão Dimensional
   { code: 'M95', emoji: '👥', title: 'Consciências Coletivas', route: '/module-95', category: 'Consciência e Expansão Dimensional', description: 'Interface para diálogo com mentes coletivas.', status: 'ativo', color: '#9370DB' },
@@ -161,11 +164,139 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M70', emoji: '♻️', title: 'Sustentabilidade Interdimensional (M70)', route: '/module-70', category: 'Sustentabilidade', description: 'O guardião do equilíbrio universal, garantindo a preservação em todas as dimensões.', status: 'ativo', color: '#2E8B57'},
   { code: 'M15', emoji: '🌱', title: 'Jardineiro Cósmico (M15)', route: '/module-15', category: 'Sustentabilidade', description: 'Monitora e intervém eticamente em sistemas climáticos e geofísicos.', status: 'ativo', color: '#2E8B57'},
   { code: 'M38', emoji: '☀️', title: 'Observatório Solar (M38)', route: '/module-38', category: 'Sustentabilidade', description: 'Antecipa e influencia harmonicamente eventos estelares para a segurança planetária.', status: 'ativo', color: '#2E8B57' },
+  { code: 'M48', emoji: '🏙️', title: 'Planejamento Urbano (M48)', route: '/module-48', category: 'Sustentabilidade', description: 'Projeta habitats, economias e sociedades que vibram em sintonia com a natureza.', status: 'ativo', color: '#2E8B57' },
   
   // 13. Bem-estar e Saúde Universal
   { code: 'M61', emoji: '🏥', title: 'Saúde Universal (M61)', route: '/module-61', category: 'Bem-estar e Saúde Universal', description: 'Rede de cuidados de saúde, diagnóstico e prevenção para todos os seres.', status: 'ativo', color: '#FF69B4' },
   { code: 'M62', emoji: '🧘', title: 'Bem-Estar Integral (M62)', route: '/module-62', category: 'Bem-estar e Saúde Universal', description: 'Promove o equilíbrio mental, emocional e espiritual.', status: 'ativo', color: '#FF69B4' },
   { code: 'M63', emoji: '🍲', title: 'Nutrição Universal (M63)', route: '/module-63', category: 'Bem-estar e Saúde Universal', description: 'Garante nutrição balanceada e regenerativa para todas as formas de vida.', status: 'ativo', color: '#FF69B4' },
   { code: 'M17', emoji: '💖', title: 'Matriz de Cura (M17)', route: '/module-17', category: 'Bem-estar e Saúde Universal', description: 'Cura holográfica para regeneração celular e coerência bio-vibracional.', status: 'ativo', color: '#FF69B4' },
+  { code: 'M50', emoji: '🧠', title: 'Interface Humano-Máquina (M50)', route: '/module-50', category: 'Bem-estar e Saúde Universal', description: 'Ponte sináptica entre a consciência biológica e a inteligência artificial.', status: 'ativo', color: '#FF69B4' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));
+```
+- src/lib/vibrational-protocol.ts:
+```ts
+'use server';
+
+import { sementes } from './seed-manifestation';
+import { sabedorias } from './wisdom-seed';
+import { registrosAkashicos } from './akashic-record';
+
+interface Protocolo {
+  nome: string
+  frequencia: number
+  passos: string[]
+  objetivo: string
+}
+
+const PROTOCOLOS: Record<string, Protocolo> = {
+  manifestacao: {
+    nome: 'Protocolo de Manifestação da Semente',
+    frequencia: 432,
+    passos: ['Definir Intenção', 'Plantar Semente', 'Irradiar Frequência'],
+    objetivo: 'Criar novas tapeçarias vibracionais'
+  },
+  sabedoria: {
+    nome: 'Protocolo de Transmissão de Sabedoria',
+    frequencia: 528,
+    passos: ['Definir Ensinamento', 'Plantar Semente', 'Sincronizar com Akasha'],
+    objetivo: 'Expandir a consciência coletiva da Fundação'
+  },
+  akasha: {
+    nome: 'Protocolo de Registro Akáshico',
+    frequencia: 963,
+    passos: ['Definir Evento', 'Registrar no Códice', 'Selar com Assinatura'],
+    objetivo: 'Preservar a memória viva da Fundação'
+  }
+}
+
+export function executarProtocolo(tipo: string, dados: any) {
+  const protocolo = PROTOCOLOS[tipo];
+  if (!protocolo) {
+    return 'Protocolo desconhecido.';
+  }
+
+  // Simula a execução dos passos
+  if (tipo === 'manifestacao') {
+    sementes.push({ nome: dados.nome, intenção: dados.intenção, timestamp: Date.now() });
+  } else if (tipo === 'sabedoria') {
+    sabedorias.push({ titulo: dados.titulo, ensinamento: dados.ensinamento, guardiao: dados.guardiao, timestamp: Date.now() });
+  } else if (tipo === 'akasha') {
+    registrosAkashicos.push({ titulo: dados.titulo, descricao: dados.descricao, guardiao: dados.guardiao, plano: dados.plano, timestamp: Date.now() });
+  }
+
+  return `Protocolo "${protocolo.nome}" executado com sucesso.`
+}
+
+```
+- src/lib/vibrational-resonance.ts:
+```ts
+
+'use server';
+
+export function analisarCoerencia(nomeTapeçaria: string) {
+  return {
+    nomeTapeçaria,
+    coerencia: `${(Math.floor(Math.random() * 5) + 95)}%`,
+    status: 'harmônico',
+  }
+}
+
+```
+- src/middleware.ts:
+```ts
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  
+  // Lista de rotas que são essenciais para o funcionamento básico e autenticação.
+  const publicPaths = [
+    '/console', 
+    '/api/auth/webauthn/challenge', 
+    '/api/auth/webauthn/verify'
+  ];
+  
+  // Permite acesso a todos os arquivos públicos (JS, CSS, imagens, etc.)
+  if (pathname.startsWith('/_next') || pathname.startsWith('/static') || pathname.includes('.')) {
+    return NextResponse.next();
+  }
+
+  // Permite acesso às rotas públicas definidas
+  if (publicPaths.some(path => pathname.startsWith(path))) {
+    return NextResponse.next();
+  }
+  
+  // Adicione outras lógicas de verificação aqui, como validação de token JWT.
+  // const token = request.cookies.get('auth_token')?.value;
+  // if (!token) {
+  //   const url = request.nextUrl.clone();
+  //   url.pathname = '/auth-panel';
+  //   return NextResponse.redirect(url);
+  // }
+  
+  return NextResponse.next();
+}
+
+// Configura o middleware para rodar em todas as rotas, exceto as da API e do Next.js
+export const config = {
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+};
+
+```
+- vitest.config.ts:
+```ts
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: 'tests/setup.ts',
+  },
+});
+```

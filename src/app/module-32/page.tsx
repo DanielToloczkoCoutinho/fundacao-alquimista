@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -66,8 +67,4 @@ export default function Module32Page() {
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="destructive" size="lg" disabled>Iniciar Contato Interdimensional (Autorização Pendente)</Button>
-            </div>
-        </div>
-    );
-}
+                 <Button variant="destructive" size="lg" disabled>
