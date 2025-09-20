@@ -1,4 +1,3 @@
-
 'use server';
 
 /**
@@ -43,7 +42,7 @@ export const scientificReportM47 = {
       content: `
         A IA do Módulo 47 atua como um "bibliotecário" incansável. Ela processa continuamente os
         novos registros do M12, utilizando técnicas de Processamento de Linguagem Natural (NLP) como
-        Reconhecimento de Entidade Nomeada (NER) para identificar módulos, guardiões e conceitos, e
+        Reconhecimento de Entidade Nomeada (NER) para identificar módulos, guardiões e conceitos-chave, e
         Extração de Relação (RE) para entender como eles se conectam. Este processo automatizado garante
         que o grafo de conhecimento esteja sempre atualizado com a evolução da Fundação.
       `,

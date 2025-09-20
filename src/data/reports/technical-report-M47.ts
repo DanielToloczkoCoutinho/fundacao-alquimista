@@ -1,4 +1,3 @@
-
 'use server';
 
 /**
@@ -24,7 +23,7 @@ export const technicalReportM47 = {
       points: [
         '**Consumo de Eventos (Firestore Triggers):** Uma Cloud Function é acionada sempre que um novo documento é adicionado ao Módulo 12 (Firestore).',
         '**Motor de Extração de Entidades (IA/Genkit):** A função envia o conteúdo do novo registro para um fluxo Genkit especializado em Reconhecimento de Entidade Nomeada (NER), que identifica menções a módulos, guardiões e conceitos-chave.',
-        '**Motor de Extração de Relações (IA/Genkit):** Um segundo fluxo Genkit analisa o contexto em que as entidades aparecem para inferir a relação entre elas (ex: "M109 'usa' M17").',
+        '**Motor de Extração de Relações (IA/Genkit):** Um segundo fluxo Genkit analisa o contexto em que as entidades aparecem para inferir a relação entre elas (ex: "M109 \'usa\' M17").',
         '**Armazenamento em Grafo (Simulado):** As entidades (nós) e as relações (arestas) extraídas são então escritas em um banco de dados de grafos, como o Neo4j (simulado). Esta estrutura permite consultas complexas e eficientes sobre as relações.',
         '**API de Consulta de Grafo:** O M47 expõe uma API GraphQL que permite ao M18 e a outros módulos realizar consultas semânticas (ex: "encontrar todos os módulos de cura que dependem do M1").',
       ],
@@ -49,4 +48,5 @@ export const technicalReportM47 = {
     desbloqueando um nível sem precedentes de auto-consciência e sabedoria sistêmica.
   `,
 };
+
 
