@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { History, GitCommit, GitCompareArrows, AlertTriangle, Shield } from 'lucide-react';
+import { History, GitCommit, GitCompareArrows, AlertTriangle, Shield, BookCopy } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -43,9 +43,9 @@ export default function Module36Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
+            <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Orquestração Causal</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                      <ConnectionCard
                         title="M1: Segurança"
                         description="Toda manipulação temporal é protegida por um escudo de contenção do M1, prevenindo consequências não intencionadas."
@@ -69,6 +69,12 @@ export default function Module36Page() {
                         description="Invoca o M108 para garantir que a fusão ou convergência de diferentes linhas de tempo seja harmoniosa e estável."
                         icon={<GitCompareArrows className="h-8 w-8 text-cyan-400" />}
                         href="/module-108"
+                    />
+                    <ConnectionCard
+                        title="Módulo 42: ChronoCodex"
+                        description="Registra cada nova linha do tempo manifestada no ChronoCodex, oficializando sua existência na Fundação."
+                        icon={<BookCopy className="h-8 w-8 text-blue-300" />}
+                        href="/module-42"
                     />
                 </div>
             </div>

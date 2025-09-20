@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, History, Archive, AlertTriangle, GitCommit } from 'lucide-react';
+import { Loader2, History, Archive, AlertTriangle, GitCommit, BookCopy } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { describeRestoration } from '@/app/actions';
 import Link from 'next/link';
@@ -140,10 +140,10 @@ const Module107Page = () => {
                     href="/module-23"
                 />
                  <ConnectionCard 
-                    title="Módulo 36: Engenharia Temporal"
-                    description="Pode ser invocado para reverter manifestações temporais do M36 que se mostrem instáveis ou dissonantes."
-                    icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
-                    href="/module-36"
+                    title="Módulo 42: ChronoCodex"
+                    description="Utiliza o ChronoCodex como a fonte da verdade para reverter linhas do tempo para estados estáveis e autorizados."
+                    icon={<BookCopy className="h-8 w-8 text-blue-300" />}
+                    href="/module-42"
                 />
             </div>
 
