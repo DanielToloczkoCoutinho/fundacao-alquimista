@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -259,4 +258,3 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-50', label: 'Interface Humano-Máquina (M50)', icon: React.createElement(Cpu), category: 'Inteligência' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));
-

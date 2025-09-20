@@ -47,9 +47,9 @@ export default function Module52Page() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
                         title="M1: Segurança"
-                        description="Protege a infraestrutura de energia contra sabotagem ou uso indevido, garantindo que a fonte da vida seja sempre pura."
+                        description="Protege a rede de energia contra sabotagem ou uso indevido, garantindo que a fonte da vida seja sempre pura."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 307: Reator ZPE"
