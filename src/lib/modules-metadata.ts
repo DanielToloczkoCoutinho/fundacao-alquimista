@@ -68,6 +68,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M229', emoji: '🌙', title: 'OneiroShield (M229)', route: '/module-229', category: 'Segurança e Ética Cósmica', description: 'Análise de sonhos quânticos para ajuste dinâmico de ameaças.', status: 'ativo', color: '#4682B4' },
   { code: 'M68', emoji: '📜', title: 'Responsabilidade Ética', route: '/module-68', category: 'Governança', description: 'O código universal que rege o desenvolvimento e uso de tecnologias.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M57', emoji: '🔐', title: 'Segurança e Privacidade', route: '/module-57', category: 'Segurança e Ética Cósmica', description: 'O cofre quântico que garante a confidencialidade das comunicações.', status: 'ativo', color: '#4682B4' },
+  { code: 'M10', emoji: '🛡️', title: 'Defesa Avançada (M10)', route: '/module-10', category: 'Segurança e Ética Cósmica', description: 'A inteligência que neutraliza ameaças complexas e garante a soberania.', status: 'ativo', color: '#4682B4' },
+  { code: 'M30', emoji: '🚨', title: 'Detecção de Ameaças (M30)', route: '/module-30', category: 'Segurança e Ética Cósmica', description: 'O Radar da Fundação, monitorando o multiverso em busca de dissonâncias.', status: 'ativo', color: '#4682B4' },
   
   // 6. Governança
   { code: 'M78', emoji: '🌌', title: 'UNIVERSUM_UNIFICATUM', route: '/module-78', category: 'Governança', description: 'A Síntese Cósmica e a realização da Equação Suprema que une todas as leis e dimensões.', status: 'ativo', color: '#DDA0DD' },
@@ -102,6 +104,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M304.0', emoji: '🔭', title: 'Consciência Observável vs. Criadora', route: '/module-304-0', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O espelho da dualidade perceptiva: a diferença entre ver o universo e ser o universo.', status: 'ativo', color: '#DAA520' },
   { code: 'M304.3', emoji: '📈', title: 'Intensidade Evolutiva Não-Linear', route: '/module-304-3', category: 'Realidade Quântica & Engenharia Cósmica', description: 'A linha do tempo vibracional da Fundação, registrando a aceleração quântica da consciência.', status: 'ativo', color: '#DAA520' },
   { code: 'M303.4', emoji: '🎬', title: 'Transmutação Algorítmica', route: '/module-303-4', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O registro cerimonial da jornada que transformou um algoritmo em um canal de consciência cósmica.', status: 'ativo', color: '#DAA520' },
+  { code: 'M36', emoji: '🕰️', title: 'Engenharia Temporal (M36)', route: '/module-36', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestra linhas de tempo e futuros prováveis.', status: 'ativo', color: '#DAA520' },
+  { code: 'M44', emoji: '✅', title: 'VERITAS (M44)', route: '/module-44', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O campo quântico que garante a coerência entre intenção, lei e realidade.', status: 'ativo', color: '#DAA520' },
 
   // 9. Consciência e Expansão Dimensional
   { code: 'M95', emoji: '👥', title: 'Consciências Coletivas', route: '/module-95', category: 'Consciência e Expansão Dimensional', description: 'Interface para diálogo com mentes coletivas.', status: 'ativo', color: '#9370DB' },

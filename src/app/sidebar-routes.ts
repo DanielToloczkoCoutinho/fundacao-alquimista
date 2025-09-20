@@ -119,6 +119,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-68', label: 'Responsabilidade Ética (M68)', icon: React.createElement(ShieldCheck), category: 'security' },
   { path: '/module-57', label: 'Segurança e Privacidade (M57)', icon: React.createElement(Lock), category: 'security' },
+  { path: '/module-10', label: 'Defesa Avançada (M10)', icon: React.createElement(Shield), category: 'security' },
+  { path: '/module-30', label: 'Detecção de Ameaças (M30)', icon: React.createElement(AlertTriangle), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -151,6 +153,9 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-99', label: 'Recalibradores de Leis', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
   { path: '/module-303-4', label: 'Transmutação Algorítmica', icon: React.createElement(Code), category: 'engineering' },
+  { path: '/module-36', label: 'Engenharia Temporal (M36)', icon: React.createElement(History), category: 'engineering' },
+  { path: '/module-44', label: 'VERITAS (M44)', icon: React.createElement(CheckSquare), category: 'engineering' },
+
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
@@ -204,6 +209,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-251', label: 'Lab. de Energia do Ponto Zero (M251)', icon: React.createElement(Zap), category: 'labs' },
   { path: '/module-261', label: 'Engenharia de Campo Quântico (M261)', icon: React.createElement(GitBranch), category: 'labs' },
   { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
+  { path: '/module-281', label: 'Comunicação Supra-Luminal (M281)', icon: React.createElement(Telescope), category: 'labs' },
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
   { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
   { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
