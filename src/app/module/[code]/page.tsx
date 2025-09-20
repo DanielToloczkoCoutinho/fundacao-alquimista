@@ -1,4 +1,3 @@
-
 'use client';
 import { notFound, useParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
@@ -12,6 +11,7 @@ const moduleComponents: { [key: string]: React.ComponentType<any> } = {
   'M2': dynamic(() => import('@/components/modules/module-2'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M3': dynamic(() => import('@/components/modules/module-3'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M4': dynamic(() => import('@/components/modules/module-4'), { ssr: false, loading: () => <SuspenseFallback /> }),
+  'M5': dynamic(() => import('@/app/module-5/page'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M-OMEGA': dynamic(() => import('@/components/modules/module-omega'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M72': dynamic(() => import('@/components/modules/module-72'), { ssr: false, loading: () => <SuspenseFallback /> }),
   'M9': dynamic(() => import('@/components/modules/module-9'), { ssr: false, loading: () => <SuspenseFallback /> }),
@@ -29,6 +29,7 @@ export default function ModulePage() {
   if (code.toLowerCase() === 'module-9') code = 'M9';
   if (code.toLowerCase() === 'module-3') code = 'M3';
   if (code.toLowerCase() === 'module-4') code = 'M4';
+  if (code.toLowerCase() === 'module-5') code = 'M5';
   
   // Encontra o componente correspondente ao código
   const ModuleComponent = moduleComponents[code.toUpperCase()];
