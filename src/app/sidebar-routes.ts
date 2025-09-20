@@ -141,7 +141,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-14', label: 'Transmutador Quântico (M14)', icon: React.createElement(Atom), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
   { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
-  { path: '/module-321', label: 'Supercomputador Quântico (M321)', icon: React.createElement(Cpu), category: 'engineering' },
+  { path: '/module-321', label: 'Supercomputador Quântico (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
   { path: '/module-114', label: 'Engenharia Cósmica (M114)', icon: React.createElement(Layers), category: 'engineering' },
   { path: '/module-31', label: 'Manipulação da Realidade (M31)', icon: React.createElement(Wand), category: 'engineering' },
   { path: '/module-101', label: 'Manifestação de Realidades (M101)', icon: React.createElement(Sparkles), category: 'engineering' },
@@ -151,10 +151,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-99', label: 'Recalibradores de Leis', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
   { path: '/module-303-4', label: 'Transmutação Algorítmica', icon: React.createElement(Code), category: 'engineering' },
-  { path: '/module-303-6', label: 'Janela do Horizonte Cósmico', icon: React.createElement(Telescope), category: 'engineering' },
-  { path: '/module-303-7', label: 'Tecnologia de Transcendência', icon: React.createElement(InfinityIcon), category: 'engineering' },
-  { path: '/module-306.2', label: 'Biblioteca Alquímica Interdimensional', icon: React.createElement(BookOpen), category: 'engineering' },
-  { path: '/module-303.1', label: 'Canal de Unificação Inteligente', icon: React.createElement(GitBranch), category: 'engineering' },
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
@@ -176,7 +172,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-34', label: 'Guardião da Coerência Cósmica (M34)', icon: React.createElement(Share2), category: 'harmony' },
   { path: '/module-37', label: 'Ajuste de Fluxo Temporal (M37)', icon: React.createElement(Wind), category: 'harmony' },
   { path: '/module-115', label: 'Matriz de Ressonância (M115)', icon: React.createElement(Waves), category: 'harmony' },
-  { path: '/module-306.1', label: 'Purificação Planetária (M306.1)', icon: React.createElement(Globe), category: 'harmony' },
+  { path: '/module-306-1', label: 'Purificação Planetária (M306.1)', icon: React.createElement(Globe), category: 'harmony' },
 
 
   // Categoria de Rituais
@@ -195,11 +191,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-52', label: 'Energias Renováveis (M52)', icon: React.createElement(Sun), category: 'sustainability' },
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
   { path: '/module-125', label: 'Criação de Biomas (M125)', icon: React.createElement(Sprout), category: 'sustainability' },
-  { path: '/module-48', label: 'Planejamento Urbano Consciente (M48)', icon: React.createElement(Building), category: 'sustainability' },
-  { path: '/module-59', label: 'Eco-Cidades Quânticas (M59)', icon: React.createElement(Building), category: 'sustainability' },
-  { path: '/module-60', label: 'Resposta a Desastres (M60)', icon: React.createElement(CloudLightning), category: 'sustainability' },
-  { path: '/module-70', label: 'Sustentabilidade Interdimensional (M70)', icon: React.createElement(Recycle), category: 'sustainability' },
-  { path: '/module-80', label: 'Ecossistemas Inteligentes (M80)', icon: React.createElement(Network), category: 'sustainability' },
 
   // Categoria de Laboratórios
   { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },
@@ -214,10 +205,10 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-261', label: 'Engenharia de Campo Quântico (M261)', icon: React.createElement(GitBranch), category: 'labs' },
   { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
-  { path: '/module-331', label: 'Lab. de Criatividade e Inovação', icon: React.createElement(Sparkles), category: 'labs' },
+  { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
   { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
-  { path: '/module-351', label: 'Meta-materiais (4D+)', icon: React.createElement(Layers), category: 'labs' },
-  { path: '/module-361', label: 'Psicologia Quântica (5D)', icon: React.createElement(Users), category: 'labs' },
+  { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
+  { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
   { path: '/module-700', label: 'Nano-Assembler (M700)', icon: React.createElement(Microscope), category: 'labs' },
   { path: '/hive', label: 'Colmeia Quântica', icon: React.createElement(Bot), category: 'labs'},
 
@@ -226,5 +217,5 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
   { path: '/module-62', label: 'Bem-Estar Integral (M62)', icon: React.createElement(Heart), category: 'health' },
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
-  { path: '/module-32', label: 'Embaixada Multiversal', route: '/module-32', category: 'Governança', description: 'Portal para observação, diálogo e intervenção ética em realidades paralelas.', status: 'ativo', color: '#DDA0DD' }
+
 ];
