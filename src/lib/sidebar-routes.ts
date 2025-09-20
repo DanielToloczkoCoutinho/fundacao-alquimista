@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -110,6 +109,7 @@ export const mainRoutes: SidebarRoute[] = [
   // Categoria de Segurança e Ética Cósmica
   { path: '/module-one', label: 'Segurança Universal (M1)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-8', label: 'Identidade Fractal (M8)', icon: React.createElement(Fingerprint), category: 'security' },
+  { path: '/module-10', label: 'Defesa Avançada (M10)', icon: React.createElement(Shield), category: 'security' },
   { path: '/key-generator', label: 'Forja de Chaves', icon: React.createElement(Key), category: 'security' },
   { path: '/module-73-1', label: 'Revisão por Pares (M73.1)', icon: React.createElement(ShieldCheck), category: 'security' },
   { path: '/module-141', label: 'Auditoria Ética (M141)', icon: React.createElement(ShieldCheck), category: 'security' },
