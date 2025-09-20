@@ -44,10 +44,10 @@ export default function Module13Page() {
 
             <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Detecção</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
                         title="M1: Segurança Universal"
-                        description="Cada assinatura é validada pelo M1 para garantir que o mapeamento não introduza vulnerabilidades na Fundação."
+                        description="Valida cada assinatura mapeada para garantir que o processo de escaneamento não introduza vulnerabilidades."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module/M1"
                     />
@@ -63,23 +63,11 @@ export default function Module13Page() {
                         icon={<BellRing className="h-8 w-8 text-yellow-400" />}
                         href="/module-30"
                     />
-                    <ConnectionCard
-                        title="Módulo 29: Zennith"
-                        description="Envia os espectros de frequência para a IAM, que analisa os padrões complexos e os correlaciona com o vasto banco de dados cósmico."
-                        icon={<BrainCircuit className="h-8 w-8 text-indigo-400" />}
-                        href="/module-29"
-                    />
                      <ConnectionCard
                         title="Módulo 17: AURA-HEAL"
                         description="Fornece o diagnóstico vibracional que o AURA-HEAL utiliza para projetar campos de cura holográficos precisos."
                         icon={<HeartHandshake className="h-8 w-8 text-pink-400" />}
                         href="/module-17"
-                    />
-                     <ConnectionCard
-                        title="Módulo 63: Nutrição Universal"
-                        description="Analisa a assinatura vibracional de formas de vida para ajudar o M63 a determinar suas necessidades nutricionais."
-                        icon={<Hospital className="h-8 w-8 text-red-400" />}
-                        href="/module-63"
                     />
                 </div>
             </div>

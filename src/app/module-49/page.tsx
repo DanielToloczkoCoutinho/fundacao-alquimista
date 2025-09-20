@@ -44,12 +44,12 @@ export default function Module49Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Mobilidade</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                      <ConnectionCard
                         title="M1: Segurança"
                         description="Garante que a tecnologia de propulsão não crie instabilidades ou seja usada para fins não autorizados."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 82: Transporte Quântico"
@@ -62,12 +62,6 @@ export default function Module49Page() {
                         description="Alimenta a rede de transporte com energia de ponto zero, garantindo viagens com impacto ambiental zero."
                         icon={<Zap className="h-8 w-8 text-yellow-400" />}
                         href="/module-64"
-                    />
-                    <ConnectionCard
-                        title="Módulo 55: Redes de Comunicação"
-                        description="A infraestrutura de transporte é sincronizada com a rede de comunicação para coordenação logística em tempo real."
-                        icon={<Network className="h-8 w-8 text-cyan-400" />}
-                        href="/module-55"
                     />
                 </div>
             </div>

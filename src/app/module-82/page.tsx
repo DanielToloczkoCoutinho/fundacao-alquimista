@@ -30,43 +30,43 @@ export default function Module82Page() {
                         <Milestone className="text-blue-400" /> Módulo 82: Transporte Quântico e Propulsão
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        A rede de corredores cósmicos que conecta planetas, dimensões e sistemas estelares, utilizando tecnologias como Propulsão Quântica e Teletransporte.
+                        O laboratório de P&D que descobre e aperfeiçoa as tecnologias de transporte da Fundação, como Propulsão Quântica, Teletransporte e viagem por Buracos de Minhoca.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: ROTAS ESTÁVEIS</span>
-                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Conexões Ativas: Infinitas</span>
+                        <span className="text-green-400 font-bold">Status: EM EXPERIMENTAÇÃO</span>
+                        <div className="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></div>
+                        <span className="text-cyan-400">Eficiência de Propulsão: 98.7%</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Conectividade</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Inovação</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                     <ConnectionCard
-                        title="M1: Segurança"
-                        description="Protege os corredores quânticos contra incursões e garante que apenas viajantes autorizados possam iniciar um salto."
-                        icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
-                    />
                     <ConnectionCard
-                        title="Módulo 21: Navegação"
-                        description="O M82 fornece a infraestrutura de 'estradas' que os 'veículos' (pilotos e naves) do M21 utilizam para suas jornadas."
+                        title="M49: Rede de Transporte"
+                        description="O M82 é o laboratório de pesquisa que fornece as inovações tecnológicas que o M49 e o M65 implementam em escala universal."
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
-                        href="/module-21"
+                        href="/module-49"
                     />
                     <ConnectionCard
-                        title="Módulo 49: Rede de Transporte"
-                        description="O M49 gerencia a rede de transporte em larga escala, da qual a tecnologia do M82 é a base fundamental."
+                        title="Módulo 307: Reator ZPE"
+                        description="Depende da energia massiva do Reator ZPE para conduzir experimentos de propulsão de alta energia em segurança."
                         icon={<Network className="h-8 w-8 text-purple-400" />}
-                        href="/module-49"
+                        href="/module-307"
+                    />
+                    <ConnectionCard
+                        title="Módulo 91: Simulação Multiversal"
+                        description="Utiliza o M91 como seu principal campo de testes virtuais para validar novos conceitos de propulsão de forma ética e segura."
+                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        href="/module-91"
                     />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Visualizar o Mapa de Roteamento</Button>
+                 <Button variant="secondary" size="lg">Acessar Laboratório de Propulsão</Button>
             </div>
         </div>
     );

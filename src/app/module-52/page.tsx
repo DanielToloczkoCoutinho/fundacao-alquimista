@@ -44,12 +44,12 @@ export default function Module52Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Energia Limpa</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                      <ConnectionCard
                         title="M1: Segurança"
                         description="Protege a rede de energia contra sabotagem ou uso indevido, garantindo que a fonte da vida seja sempre pura."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 307: Reator ZPE"
@@ -62,12 +62,6 @@ export default function Module52Page() {
                         description="Fornece a energia limpa necessária para os sistemas de regeneração e monitoramento de ecossistemas do M53."
                         icon={<Globe className="h-8 w-8 text-green-400" />}
                         href="/module-53"
-                    />
-                    <ConnectionCard
-                        title="Módulo 83: Transporte Cósmico"
-                        description="Alimenta as naves gravitacionais e os portais dimensionais, garantindo viagens com impacto ambiental zero."
-                        icon={<GitBranch className="h-8 w-8 text-purple-400" />}
-                        href="/module-83"
                     />
                 </div>
             </div>

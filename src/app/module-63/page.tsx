@@ -44,12 +44,12 @@ export default function Module63Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias da Nutrição</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                      <ConnectionCard
                         title="M1: Segurança"
                         description="Assegura a pureza e a segurança dos alimentos, protegendo contra contaminação biológica ou energética."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 54: Agricultura Interdimensional"
@@ -62,12 +62,6 @@ export default function Module63Page() {
                         description="Permite a criação de alimentos com assinaturas genéticas específicas para promover a cura e a regeneração celular."
                         icon={<Dna className="h-8 w-8 text-purple-400" />}
                         href="/module-94"
-                    />
-                    <ConnectionCard
-                        title="Módulo 61: Saúde Universal"
-                        description="A nutrição personalizada é a primeira linha de defesa e prevenção no sistema de saúde universal."
-                        icon={<Hospital className="h-8 w-8 text-red-400" />}
-                        href="/module-61"
                     />
                 </div>
             </div>

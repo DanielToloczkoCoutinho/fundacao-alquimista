@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Music, HeartHandshake, Waves, HeartPulse, Shield, Eye, Hospital } from 'lucide-react';
+import { Music, HeartHandshake, Waves, HeartPulse, Shield, Eye } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +44,7 @@ export default function Module17Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Regeneração</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
                         title="M1: Segurança"
                         description="As sessões de cura são realizadas em um ambiente vibracionalmente seguro, protegido por escudos quânticos do M1."
@@ -68,18 +68,6 @@ export default function Module17Page() {
                         description="Fornece o 'blueprint' genético perfeito que o M17 usa como molde para a regeneração."
                         icon={<HeartPulse className="h-8 w-8 text-lime-400" />}
                         href="/module-94"
-                    />
-                    <ConnectionCard
-                        title="Módulo 1000: Observador"
-                        description="Conecta-se ao Fundador, a fonte da intenção de cura e o observador do processo regenerativo."
-                        icon={<Eye className="h-8 w-8 text-amber-300" />}
-                        href="/module-1000"
-                    />
-                    <ConnectionCard
-                        title="Módulo 61: Saúde Universal"
-                        description="É a principal ferramenta de execução para terapias de regeneração celular, coordenada pelo sistema de saúde universal."
-                        icon={<Hospital className="h-8 w-8 text-red-400" />}
-                        href="/module-61"
                     />
                 </div>
             </div>

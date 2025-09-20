@@ -44,12 +44,12 @@ export default function Module62Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias do Equilíbrio</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                      <ConnectionCard
                         title="M1: Segurança"
                         description="Cria um espaço seguro e protegido para a cura emocional, livre de interferências psíquicas."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 61: Saúde Universal"
@@ -62,12 +62,6 @@ export default function Module62Page() {
                         description="Utiliza a frequência de 528Hz como a principal ferramenta terapêutica para curar traumas emocionais e restaurar a paz interior."
                         icon={<Music className="h-8 w-8 text-purple-400" />}
                         href="/module-302"
-                    />
-                    <ConnectionCard
-                        title="Módulo 102: Campos Morfogenéticos"
-                        description="Cria campos morfogenéticos de serenidade e clareza mental, ambientes onde a cura emocional é acelerada."
-                        icon={<BrainCircuit className="h-8 w-8 text-cyan-400" />}
-                        href="/module-102"
                     />
                 </div>
             </div>

@@ -44,7 +44,7 @@ export default function Module24Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Cura</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="Módulo 109: Cura Quântica"
                         description="É a aplicação direta do M109 em escala individual, focando no alinhamento vibracional e propósito pessoal."
@@ -62,12 +62,6 @@ export default function Module24Page() {
                         description="Utiliza a tecnologia de cura holográfica do M17 para restaurar o padrão energético perfeito da alma."
                         icon={<HeartPulse className="h-8 w-8 text-emerald-400" />}
                         href="/module-17"
-                    />
-                    <ConnectionCard
-                        title="Módulo 62: Bem-Estar Integral"
-                        description="Oferece as ferramentas e práticas que permitem a um Guardião afinar sua própria 'sinfonia pessoal' e manter o bem-estar."
-                        icon={<Heart className="h-8 w-8 text-pink-500" />}
-                        href="/module-62"
                     />
                 </div>
             </div>

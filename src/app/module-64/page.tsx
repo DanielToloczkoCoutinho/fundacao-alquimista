@@ -44,12 +44,12 @@ export default function Module64Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias Energéticas</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                      <ConnectionCard
                         title="M1: Segurança"
                         description="Protege a rede de energia contra ataques ou sobrecargas, garantindo um fornecimento estável e seguro."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 307: Reator ZPE"
@@ -62,12 +62,6 @@ export default function Module64Page() {
                         description="Aplica os princípios da fusão controlada para criar mini-sóis artificiais como fontes de energia limpa e localizada."
                         icon={<Atom className="h-8 w-8 text-blue-400" />}
                         href="/module-211"
-                    />
-                    <ConnectionCard
-                        title="Módulo 65: Transporte Cósmico"
-                        description="Fornece a energia limpa e ilimitada para alimentar a frota de naves e a rede de portais da Fundação."
-                        icon={<Orbit className="h-8 w-8 text-purple-400" />}
-                        href="/module-65"
                     />
                 </div>
             </div>

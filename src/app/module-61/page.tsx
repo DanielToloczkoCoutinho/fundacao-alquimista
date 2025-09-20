@@ -69,12 +69,6 @@ export default function Module61Page() {
                         icon={<Wheat className="h-8 w-8 text-yellow-300" />}
                         href="/module-63"
                     />
-                    <ConnectionCard
-                        title="Módulo 17: AURA-HEAL"
-                        description="É a principal ferramenta de execução para terapias de regeneração celular, coordenada pelo sistema de saúde universal."
-                        icon={<HeartPulse className="h-8 w-8 text-emerald-400" />}
-                        href="/module-17"
-                    />
                 </div>
             </div>
              <div className="mt-12">

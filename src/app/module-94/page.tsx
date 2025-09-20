@@ -89,7 +89,7 @@ const Module94Page = () => {
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <ConnectionCard
                             title="Módulo 16: Biossíntese"
                             description="O M94 fornece os blueprints genéticos para as formas de vida que irão habitar os ecossistemas projetados pelo M16."
@@ -107,12 +107,6 @@ const Module94Page = () => {
                             description="Aplica os princípios da morfogênese para desenvolver estratégias de regeneração e adaptação para ecossistemas inteiros."
                             icon={<Leaf className="h-8 w-8 text-lime-400" />}
                             href="/module-53"
-                        />
-                         <ConnectionCard
-                            title="Módulo 54: Agricultura"
-                            description="Cria os blueprints genéticos para culturas adaptáveis a qualquer ambiente, otimizadas para nutrição e resiliência."
-                            icon={<DnaIcon className="h-8 w-8 text-purple-400" />}
-                            href="/module-54"
                         />
                     </div>
                 </CardContent>
