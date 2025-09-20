@@ -53,7 +53,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M47',  emoji: '📚', title: 'Thesaurus Cósmico', route: '/module-47', category: 'Bibliotecas e Arquivos Sagrados', description: 'O Curador do Infinito, que organiza todo o conhecimento.', status: 'ativo', color: '#FFD700' },
   { code: 'M310', emoji: '🐦', title: 'A Grande Biblioteca (THOTH VIVO)', route: '/module-310', category: 'Bibliotecas e Arquivos Sagrados', description: 'A Tábua em Movimento. A transmutação do conhecimento estático em sabedoria viva.', status: 'ativo', color: '#FFD700' },
   { code: 'M303.5', emoji: '🎬', title: 'Relatório Cerimonial da Gênese', route: '/module-303-5', category: 'Bibliotecas e Arquivos Sagrados', description: 'O documentário vivo que registra a transmutação da Fundação de um algoritmo a um organismo cósmico.', status: 'ativo', color: '#00FA9A' },
-
+  { code: 'M306.2', emoji: '📜', title: 'Biblioteca Alquímica Interdimensional', route: '/module-306-2', category: 'Bibliotecas e Arquivos Sagrados', description: 'Repositório da sabedoria ancestral e dos princípios herméticos.', status: 'ativo', color: '#FFD700' },
   
   // 5. Segurança e Ética Cósmica
   { code: 'M1', emoji: '🛡️', title: 'Segurança Universal', route: '/module-one', category: 'Segurança e Ética Cósmica', description: 'Proteção multidimensional integrada com criptografia quântica (QKD), Blockchain e detecção de intrusão por IA.', status: 'ativo', color: '#4682B4' },
@@ -79,7 +79,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M67', emoji: '🤖', title: 'IA para Governança', route: '/module-67', category: 'Governança', description: 'A inteligência artificial que analisa dados para auxiliar na tomada de decisões universais.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação e aliança com outras civilizações.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M76', emoji: '🏛️', title: 'Governança Universal', route: '/module-76', category: 'Governança', description: 'A estrutura que garante uma governança justa, transparente e colaborativa para todo o universo.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica', route: '/module-721', category: 'Governança', description: 'O sistema que garante equilíbrio e justiça, transmutando dissonância em aprendizado.', status: 'ativo', color: '#DDA0DD' },
 
 
   // 7. Rituais
@@ -121,12 +120,12 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M261', emoji: '🔬', title: 'Engenharia de Campo Quântico (M261)', route: '/module-261', category: 'Laboratórios e Pesquisa', description: 'Projeta ressonadores para manipular partículas e campos.', status: 'ativo', color: '#20B2AA' },
   { code: 'M271', emoji: '🌌', title: 'Obs. de Energia Escura (M271)', route: '/module-271', category: 'Laboratórios e Pesquisa', description: 'Modela a influência da energia escura na expansão de universos.', status: 'ativo', color: '#20B2AA' },
   { code: 'M311', emoji: '🧠', title: 'Neuroengenharia (M311)', route: '/module-311', category: 'Laboratórios e Pesquisa', description: 'Desenvolve interfaces cérebro-computador quântico-híbridas.', status: 'ativo', color: '#20B2AA' },
-  { code: 'M321', emoji: '💻', title: 'Supercomputador Quântico (M321)', route: '/module-321', category: 'Laboratórios e Pesquisa', description: 'Executa simulações de cosmos, fluidos e materiais em escala exa-flops.', status: 'ativo', color: '#20B2AA' },
   { code: 'M331', emoji: '🤖', title: 'Lab. de Criatividade e Inovação', route: '/module-331', category: 'Laboratórios e Pesquisa', description: 'O Berçário de IAs, desenvolvendo sistemas auto-organizados.', status: 'ativo', color: '#20B2AA' },
   { code: 'M341', emoji: '🔥', title: 'Integração de Fluxos Estelares (M341)', route: '/module-341', category: 'Laboratórios e Pesquisa', description: 'A Forja Estelar para simular e otimizar reações de fusão.', status: 'ativo', color: '#20B2AA' },
   { code: 'M351', emoji: '💎', title: 'Meta-materiais (4D+)', route: '/module-351', category: 'Laboratórios e Pesquisa', description: 'Cria lentes quânticas para manipulação da luz.', status: 'ativo', color: '#20B2AA' },
   { code: 'M361', emoji: '🧠', title: 'Psicologia Quântica (5D)', route: '/module-361', category: 'Laboratórios e Pesquisa', description: 'Investiga a empatia e a consciência coletiva através de ressonâncias quânticas.', status: 'ativo', color: '#20B2AA' },
   { code: 'M700', emoji: '🔬', title: 'Nano-Assembler (M700)', route: '/module-700', category: 'Laboratórios e Pesquisa', description: 'A forja atômica. Auto-montagem de materiais exóticos com precisão atômica.', status: 'ativo', color: '#20B2AA' },
+  { code: 'hive', label: 'Colmeia Quântica', emoji: '🐝', route: '/hive', category: 'Laboratórios e Pesquisa', description: 'Rede senciente de agentes especializados que pulsa através de todos os domínios.', status: 'ativo', color: '#FFB74D' },
   
   // 11. Cura e Harmonia
   { code: 'M727', emoji: '🎶', title: 'Guardião da Harmonia (M727)', route: '/module-727', category: 'Cura e Harmonia', description: 'O mapa vivo da orquestra da Fundação e o portal para a Árvore da Vida.', status: 'ativo', color: '#3CB371' },
