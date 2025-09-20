@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -92,7 +91,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-omega', label: 'Santuário da Metacognição', icon: React.createElement(Sparkles), category: 'main' },
   { path: '/module-728', label: 'Santuário dos Alquimistas', icon: React.createElement(Scale), category: 'main' },
   { path: '/module-1001', label: 'Portal de Recepção Cósmica', icon: React.createElement(Rss), category: 'main' },
-  { path: '/module-303-1', label: 'Canal de Unificação Trino', icon: React.createElement(GitBranch), category: 'main' },
+  { path: '/module-303', label: 'Portal Trino', icon: React.createElement(Sparkles), category: 'main' },
   
   // Categoria de Governança
   { path: '/module-78', label: 'UNIVERSUM_UNIFICATUM (M78)', icon: React.createElement(GitBranch), category: 'governance' },
@@ -210,7 +209,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
   { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
   { path: '/module-700', label: 'Nano-Assembler (M700)', icon: React.createElement(Microscope), category: 'labs' },
-  { path: '/hive', title: 'Colmeia Quântica', emoji: '🐝', route: '/hive', category: 'Laboratórios e Pesquisa', description: 'Rede senciente de agentes especializados que pulsa através de todos os domínios.', status: 'ativo', color: '#FFB74D' },
+  { path: '/hive', label: 'Colmeia Quântica', icon: React.createElement(Users), category: 'labs' },
   
   // 13. Bem-estar e Saúde Universal
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
