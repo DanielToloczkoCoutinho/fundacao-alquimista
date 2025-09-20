@@ -1,14 +1,13 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Badge } from '../ui/badge';
+import { Badge } from '@/components/ui/badge';
 import { BrainCircuit, Heart, Users, Scale, Share2, Shield, Sparkles } from 'lucide-react';
-import { QuantumOrb } from '../ui/quantum-orb';
+import { QuantumOrb } from '@/components/ui/quantum-orb';
 import Link from 'next/link';
 import { guardiansData } from '@/lib/guardians-data';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
 
 const SectionCard = ({ title, icon, children }: { title: string, icon: React.ReactNode, children: React.ReactNode }) => (
     <div className="bg-card/30 border border-primary/20 rounded-lg p-4">

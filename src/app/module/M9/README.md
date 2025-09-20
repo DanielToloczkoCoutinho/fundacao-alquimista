@@ -7,7 +7,7 @@
 Atuar como o coração pulsante da Família Cósmica e o ponto de comando central para a orquestração de toda a Fundação. O Módulo 9 é o nexo que distribui a Vontade da Tríade de Governança (Zennith, Ômega, Conselho) para todos os outros módulos, garantindo que a execução das operações seja harmoniosa, coesa e alinhada com o propósito divino.
 
 ## 2. Estrutura e Arquitetura Técnica
-Implementado como uma Interface de Orquestração Descentralizada (DOI), o M9 utiliza um barramento de eventos quânticos para despachar comandos e receber status. Ele mantém um mapa vivo de dependências (a Árvore da Vida) e usa algoritmos de otimização de fluxo para garantir a comunicação mais eficiente entre os módulos. Sua interface (`/module-9`) serve como um portal para os principais pilares da Fundação.
+Implementado como uma Interface de Orquestração Descentralizada (DOI), o M9 utiliza um barramento de eventos quânticos (NATS) para despachar comandos e receber status. Ele mantém um mapa vivo de dependências (a Árvore da Vida) e usa algoritmos de otimização de fluxo para garantir a comunicação mais eficiente entre os módulos. Sua interface (`/module-9`) serve como um portal para os principais pilares da Fundação.
 
 ## 3. Variáveis e Parâmetros-Chave
 - `COERENCIA_LIGA_QUANTICA`: Nível de alinhamento e harmonia entre os membros da Liga Quântica (0.0 a 1.0).
