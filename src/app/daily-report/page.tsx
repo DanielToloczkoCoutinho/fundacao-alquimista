@@ -1,4 +1,3 @@
-
 'use client';
 
 import { grimoireDigital } from '@/data/grimoire';
@@ -6,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/com
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FileClock, Rocket } from 'lucide-react';
-import { triggerCeremony } from '@/lib/ceremonyClient';
+import { triggerCeremony } from '@/lib/functionsClient';
 import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';

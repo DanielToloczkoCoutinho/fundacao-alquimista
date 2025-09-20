@@ -1,4 +1,3 @@
-
 'use client';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 import { app } from './firebase'; // Reutiliza a instância inicializada do app
