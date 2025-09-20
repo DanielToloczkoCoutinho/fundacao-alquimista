@@ -70,8 +70,7 @@ import {
   PartyPopper,
   Code,
   Rss,
-  Cpu,
-  View
+  Cpu
 } from 'lucide-react';
 import React from 'react';
 

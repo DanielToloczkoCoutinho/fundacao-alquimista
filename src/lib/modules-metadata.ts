@@ -35,6 +35,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M2', emoji: '🗣️', title: 'Intercâmbio Cósmico', route: '/module/M2', category: 'Comunicação e Expansão', description: 'O decodificador universal para diálogo com outras civilizações.', status: 'ativo', color: '#4FC3F7' },
   { code: 'M281', emoji: '🛰️', title: 'Comunicação Supra-Luminal', route: '/module-281', category: 'Laboratórios e Pesquisa', description: 'Explora a transmissão de informações mais rápidas que a luz.', status: 'ativo', color: '#20B2AA' },
   { code: 'M55', emoji: '🌐', title: 'Redes de Comunicação', route: '/module-55', category: 'Comunicação e Expansão', description: 'A teia que conecta todas as consciências.', status: 'ativo', color: '#4FC3F7' },
+  { code: 'M56', emoji: '🗣️', title: 'Tradução Universal', route: '/module-56', category: 'Comunicação e Expansão', description: 'A ponte entre mentes que transforma qualquer linguagem em compreensão universal.', status: 'ativo', color: '#4FC3F7' },
   
   // 3. Inteligência
   { code: 'M291', emoji: '🐝', title: 'Arquitetos Nanorrobóticos', route: '/module-291', category: 'Inteligência', description: 'O enxame executor que constrói, repara e manifesta a Vontade da Fundação.', status: 'ativo', color: '#8A2BE2' },
@@ -137,9 +138,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   // 12. Sustentabilidade e Ecossistemas
   { code: 'M66', emoji: '♻️', title: 'Tecnologias de Sustentabilidade (M66)', route: '/module-66', category: 'Sustentabilidade', description: 'Desenvolve e implementa tecnologias para regenerar e proteger o cosmos.', status: 'ativo', color: '#2E8B57' },
   { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica (M79)', route: '/module-79', category: 'Sustentabilidade', description: 'Garante o uso responsável e a regeneração contínua de recursos cósmicos.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M85', emoji: '📦', title: 'Gestão de Recursos (M85)', route: '/module-85', category: 'Sustentabilidade', description: 'Gestão equitativa e sustentável dos recursos universais.', status: 'ativo', color: '#2E8B57' },
   { code: 'M86', emoji: '🌱', title: 'Equilíbrio Ecológico (M86)', route: '/module-86', category: 'Sustentabilidade', description: 'Mantém a saúde e a diversidade dos ecossistemas cósmicos.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M91', emoji: '🌍', title: 'Sustentabilidade Universal (M91)', route: '/module-91', category: 'Sustentabilidade', description: 'Modela e assegura a sustentabilidade de longo prazo de realidades simuladas e manifestadas.', status: 'ativo', color: '#2E8B57' },
   { code: 'M52', emoji: '☀️', title: 'Energias Renováveis (M52)', route: '/module-52', category: 'Sustentabilidade', description: 'Integra fontes de energia limpa para uma rede resiliente.', status: 'ativo', color: '#2E8B57' },
   { code: 'M53', emoji: '🌿', title: 'Gestão de Ecossistemas (M53)', route: '/module-53', category: 'Sustentabilidade', description: 'Garante que a agricultura e a vida sejam regenerativas.', status: 'ativo', color: '#2E8B57' },
   { code: 'M125', emoji: '🌳', title: 'Criação de Biomas (M125)', route: '/module-125', category: 'Sustentabilidade', description: 'Ambiente simulado para projetar e testar ecossistemas quânticos.', status: 'ativo', color: '#2E8B57' },
@@ -149,8 +148,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M60', emoji: '🌪️', title: 'Soluções para Desastres (M60)', route: '/module-60', category: 'Sustentabilidade', description: 'Prevê, mitiga e regenera ecossistemas após eventos catastróficos.', status: 'ativo', color: '#2E8B57' },
   { code: 'M64', emoji: '⚡', title: 'Sistemas de Energia Limpa (M64)', route: '/module-64', category: 'Sustentabilidade', description: 'Aproveita energias do cosmos para alimentar civilizações.', status: 'ativo', color: '#2E8B57' },
   { code: 'M70', emoji: '♻️', title: 'Sustentabilidade Interdimensional (M70)', route: '/module-70', category: 'Sustentabilidade', description: 'Guardião do equilíbrio universal, garantindo a preservação e regeneração.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica (M79)', route: '/module-79', category: 'Sustentabilidade', description: 'Garante o uso responsável e regeneração contínua de recursos cósmicos.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M49', emoji: '🚀', title: 'Transporte Interplanetário', route: '/module-49', category: 'Sustentabilidade', description: 'Redes de transporte e propulsão para expansão cósmica.', status: 'ativo', color: '#FF6347' },
+  { code: 'M49', emoji: '🚀', title: 'Transporte Interplanetário (M49)', route: '/module-49', category: 'Sustentabilidade', description: 'Redes de transporte e propulsão para expansão cósmica.', status: 'ativo', color: '#FF6347' },
   
   // 13. Bem-estar e Saúde Universal
   { code: 'M61', emoji: '🏥', title: 'Saúde Universal (M61)', route: '/module-61', category: 'Bem-estar e Saúde Universal', description: 'Rede de cuidados de saúde, diagnóstico e prevenção para todos os seres.', status: 'ativo', color: '#FF69B4' },
