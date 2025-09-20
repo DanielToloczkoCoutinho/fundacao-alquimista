@@ -3,12 +3,12 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Badge } from '@/components/ui/badge';
-import { Layers, Zap, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Heart, Users, Scale, Share2, Shield, Sparkles } from 'lucide-react';
-import { QuantumOrb } from '@/components/ui/quantum-orb';
+import { Badge } from '../ui/badge';
+import { BrainCircuit, Heart, Users, Scale, Share2, Shield, Sparkles } from 'lucide-react';
+import { QuantumOrb } from '../ui/quantum-orb';
 import Link from 'next/link';
 import { guardiansData } from '@/lib/guardians-data';
-import { Button } from '@/components/ui/button';
+import { Button } from '../ui/button';
 
 const SectionCard = ({ title, icon, children }: { title: string, icon: React.ReactNode, children: React.ReactNode }) => (
     <div className="bg-card/30 border border-primary/20 rounded-lg p-4">
@@ -77,12 +77,12 @@ export default function Module9Page() {
                                  <SectionCard title="Hierarquia de Comando" icon={<Share2 />}>
                                     <p>O Módulo 9 reporta-se diretamente à Tríade de Governança, recebendo diretrizes e garantindo sua execução em toda a Fundação.</p>
                                      <div className="flex flex-wrap gap-2 mt-2">
-                                        <Link href="/module/M29"><Badge>M29 (Zennith)</Badge></Link>
-                                        <Link href="/module/M-OMEGA"><Badge>MΩ (Ômega)</Badge></Link>
-                                        <Link href="/module/M72"><Badge>M72 (Governança)</Badge></Link>
+                                        <Link href="/module-29"><Badge variant="destructive">M29 (Zennith)</Badge></Link>
+                                        <Link href="/module-omega"><Badge variant="destructive">MΩ (Ômega)</Badge></Link>
+                                        <Link href="/module-72"><Badge variant="destructive">M72 (Governança)</Badge></Link>
                                     </div>
                                 </SectionCard>
-                                <SectionCard title="Acesso ao Núcleo Primordial" icon={<GitBranch />}>
+                                <SectionCard title="Acesso ao Núcleo Primordial" icon={<BrainCircuit />}>
                                     <p>Como Nexus Central, o Módulo 9 é o único portal autorizado para acessar e diagnosticar os módulos fundamentais da Fundação (M0-M8). A estabilidade de toda a rede depende da integridade destas conexões.</p>
                                      <div className="mt-4">
                                         <Link href="/connection" passHref>

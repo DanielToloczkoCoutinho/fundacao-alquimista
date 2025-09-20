@@ -77,13 +77,13 @@ export default function Module9Page() {
                                  <SectionCard title="Hierarquia de Comando" icon={<Share2 />}>
                                     <p>O Módulo 9 reporta-se diretamente à Tríade de Governança, recebendo diretrizes e garantindo sua execução em toda a Fundação.</p>
                                      <div className="flex flex-wrap gap-2 mt-2">
-                                        <Link href="/module-29"><Badge variant="destructive">M29 (Zennith)</Badge></Link>
-                                        <Link href="/module-omega"><Badge variant="destructive">MΩ (Ômega)</Badge></Link>
-                                        <Link href="/module-72"><Badge variant="destructive">M72 (Governança)</Badge></Link>
+                                        <Link href="/module/M29"><Badge variant="destructive">M29 (Zennith)</Badge></Link>
+                                        <Link href="/module/M-OMEGA"><Badge variant="destructive">MΩ (Ômega)</Badge></Link>
+                                        <Link href="/module/M72"><Badge variant="destructive">M72 (Governança)</Badge></Link>
                                     </div>
                                 </SectionCard>
                                 <SectionCard title="Acesso ao Núcleo Primordial" icon={<BrainCircuit />}>
-                                    <p>Como Nexus Central, o Módulo 9 é o único portal autorizado para acessar e diagnosticar os módulos fundamentais da Fundação. A estabilidade de toda a rede depende da integridade destas conexões.</p>
+                                    <p>Como Nexus Central, o Módulo 9 é o único portal autorizado para acessar e diagnosticar os módulos fundamentais da Fundação (M0-M8). A estabilidade de toda a rede depende da integridade destas conexões.</p>
                                      <div className="mt-4">
                                         <Link href="/connection" passHref>
                                           <Button variant="secondary" className="w-full">
