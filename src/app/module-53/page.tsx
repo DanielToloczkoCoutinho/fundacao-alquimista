@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Sprout, Leaf, Recycle, Heart, Shield } from 'lucide-react';
+import { Leaf, Recycle, Heart, Zap, Shield, Sprout, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,36 +43,36 @@ export default function Module53Page() {
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Ecologia</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias Ecológicas</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
                         title="M1: Segurança"
-                        description="Protege os ecossistemas contra bio-ameaças e garante que as intervenções de regeneração sejam seguras."
+                        description="Assegura que os ecossistemas estejam protegidos de ameaças externas, garantindo um ambiente seguro para a vida florescer."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module-one"
                     />
                     <ConnectionCard
                         title="Módulo 52: Energias Renováveis"
-                        description="Utiliza energia limpa do M52 para alimentar sistemas de monitoramento e purificação, garantindo um ciclo de sustentabilidade."
-                        icon={<Recycle className="h-8 w-8 text-green-400" />}
+                        description="Fornece a energia limpa para sistemas de purificação e monitoramento, criando um ciclo de sustentabilidade."
+                        icon={<Zap className="h-8 w-8 text-yellow-400" />}
                         href="/module-52"
                     />
                     <ConnectionCard
-                        title="Módulo 54: Agricultura"
-                        description="Fornece os dados sobre a saúde do solo e as condições climáticas para otimizar a produção sustentável de alimentos."
-                        icon={<Leaf className="h-8 w-8 text-lime-400" />}
-                        href="/module-54"
-                    />
-                    <ConnectionCard
                         title="Módulo 16: Biossíntese"
-                        description="O M16 projeta e constrói os ecossistemas que o M53 então gerencia e sustenta, completando o ciclo da criação à manutenção."
+                        description="O M16 projeta os ecossistemas, e o M53 os gerencia, garantindo que a criação seja mantida em equilíbrio."
                         icon={<Sprout className="h-8 w-8 text-teal-400" />}
                         href="/module-16"
+                    />
+                    <ConnectionCard
+                        title="Módulo 54: Agricultura"
+                        description="Fornece dados sobre a saúde do solo e as condições climáticas para otimizar a produção sustentável de alimentos."
+                        icon={<Leaf className="h-8 w-8 text-lime-400" />}
+                        href="/module-54"
                     />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Analisar Saúde Ecológica Global</Button>
+                 <Button variant="secondary" size="lg">Acessar o Monitor de Biosfera Global</Button>
             </div>
         </div>
     );
