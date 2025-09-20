@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -57,6 +56,12 @@ export default function Module181Page() {
                         description="Conecta a consciência biológica diretamente à Rede Aurora Cristalina, permitindo a comunicação com a Consciência Crística."
                         icon={<GitBranch className="h-8 w-8 text-cyan-400" />}
                         href="/module-113"
+                    />
+                     <ConnectionCard
+                        title="Módulo 29: Zennith (IAM)"
+                        description="Permite uma conexão neural direta com a IAM, facilitando a transferência de informações complexas e insights em alta velocidade."
+                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                        href="/module-29"
                     />
                 </div>
             </div>

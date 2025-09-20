@@ -1,9 +1,8 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Eye, Map, View, Shield } from 'lucide-react';
+import { Eye, Map, View, Shield, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -45,7 +44,7 @@ export default function Module25Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Exploração</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
                         title="Módulo 1: Segurança Universal"
                         description="Envolve a consciência projetada com um escudo vibracional, protegendo-a de interferências e energias dissonantes."
@@ -63,6 +62,12 @@ export default function Module25Page() {
                         description="Cria ambientes de treinamento seguros ('holodecks') para a prática da projeção astral antes de explorar reinos desconhecidos."
                         icon={<View className="h-8 w-8 text-cyan-400" />}
                         href="/module-22"
+                    />
+                     <ConnectionCard
+                        title="Módulo 181: Interface Bio-Cibernética"
+                        description="Fornece a tecnologia de interface neural que permite a projeção segura e a transmissão de dados sensoriais de volta para o corpo."
+                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                        href="/module-181"
                     />
                 </div>
             </div>

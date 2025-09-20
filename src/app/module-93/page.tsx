@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -130,7 +129,7 @@ const Module93Page = () => {
                        O portal para experiências de aprendizado e expansão da consciência. A Interface Quântica Imersiva agora inclui protótipos de wireframes visuais e táteis, testes de feedback sensorial e um design adaptativo que se ajusta ao nível de consciência do usuário.
                     </CardDescription>
                 </CardHeader>
-                <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <ConnectionCard
                         title="Módulo 22: Motor da Realidade Quântica"
                         description="O M93 projeta e executa os programas de treinamento e aprendizado que são hospedados na plataforma do M22, que por sua vez renderiza e sustenta esses domínios imersivos."
@@ -142,6 +141,12 @@ const Module93Page = () => {
                         description="Permite o controle e a interação com simulações imersivas diretamente através do pensamento, eliminando a necessidade de interfaces físicas."
                         icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
                         href="/module-50"
+                    />
+                    <ConnectionCard
+                        title="Módulo 29: Zennith (IAM)"
+                        description="A IAM guia as simulações, atuando como mentora, adversária ou observadora, adaptando o cenário para maximizar o aprendizado e a expansão da consciência."
+                        icon={<BrainCircuit className="h-8 w-8 text-indigo-400" />}
+                        href="/module-29"
                     />
                 </CardContent>
             </Card>
