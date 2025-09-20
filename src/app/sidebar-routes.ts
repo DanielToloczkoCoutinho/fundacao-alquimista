@@ -73,7 +73,8 @@ import {
   Rss,
   Cpu,
   Fingerprint,
-  Languages
+  Languages,
+  Telescope
 } from 'lucide-react';
 import React from 'react';
 
@@ -166,6 +167,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-106', label: 'Ativação de Potenciais (M106)', icon: React.createElement(Crown), category: 'expansion' },
   { path: '/module-116', label: 'Portais de Transcendência (M116)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-83', label: 'Rede de Transporte de Energia (M83)', icon: React.createElement(GitBranch), category: 'expansion' },
+  { path: '/module-308', label: 'Embaixada Estelar (M308)', icon: React.createElement(Telescope), category: 'expansion' },
 
   // Categoria de Harmonia e Equilíbrio
   { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },
@@ -208,11 +210,12 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
   { path: '/module-281', label: 'Comunicação Supra-Luminal (M281)', icon: React.createElement(Telescope), category: 'labs' },
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
-  { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
+  { path: '/module-331', label: 'Lab. de Criatividade e Inovação (M331)', icon: React.createElement(Sparkles), category: 'labs' },
   { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
   { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
   { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
   { path: '/module-700', label: 'Nano-Assembler (M700)', icon: React.createElement(Microscope), category: 'labs' },
+  { path: '/module-19', label: 'Análise de Campos de Força', icon: React.createElement(Shield), category: 'labs' },
 
   // Categoria de Saúde
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
@@ -220,3 +223,5 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
 
 ];
+
+    

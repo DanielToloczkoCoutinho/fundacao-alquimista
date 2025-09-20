@@ -1,3 +1,4 @@
+
 export interface ModuleMetadata {
   code: string;
   emoji: string;
@@ -111,6 +112,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M361', emoji: '🧠', title: 'Psicologia Quântica (5D)', route: '/module-361', category: 'Laboratórios e Pesquisa', description: 'Investiga a empatia e a consciência coletiva através de ressonâncias quânticas.', status: 'ativo', color: '#20B2AA' },
   { code: 'M700', emoji: '🔬', title: 'Nano-Assembler (M700)', route: '/module-700', category: 'Laboratórios e Pesquisa', description: 'A forja atômica. Auto-montagem de materiais exóticos com precisão atômica.', status: 'ativo', color: '#20B2AA' },
   { code: 'M19', emoji: '🛡️', title: 'Análise de Campos de Força', route: '/module-19', category: 'Laboratórios e Pesquisa', description: 'Analisa, modula e harmoniza campos de força interdimensionais.', status: 'ativo', color: '#20B2AA' },
+  { code: 'M308', emoji: '🛰️', title: 'Embaixada Estelar', route: '/module-308', category: 'Comunicação e Expansão', description: 'A interface viva com o cosmos observável, fundindo ciência e consciência.', status: 'ativo', color: '#4FC3F7' },
 
   //8. Bem-estar e Saúde Universal
   { code: 'M61', emoji: '🏥', title: 'Saúde Universal (M61)', route: '/module-61', category: 'Bem-estar e Saúde Universal', description: 'Rede de cuidados de saúde, diagnóstico e prevenção para todos os seres.', status: 'ativo', color: '#FF69B4' },
@@ -119,3 +121,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M444', emoji: '💖', title: 'Coração da Harmonia', route: '/module-444', category: 'Cura e Harmonia', description: 'Santuário da Frequência do Coração Unificado (444.444 Hz).', status: 'ativo', color: '#FF1493' },
 
 ].map(m => ({ ...m, connections: m.connections || [] }));
+
+    
