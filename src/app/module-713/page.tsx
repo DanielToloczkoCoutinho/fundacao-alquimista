@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { UserPlus, Heart, BrainCircuit, GraduationCap } from 'lucide-react';
+import { UserPlus, Heart, BrainCircuit, GraduationCap, Eye } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +45,7 @@ export default function Module713Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Compaixão</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
                         title="Módulo 109: Cura Quântica"
                         description="Aplica protocolos de cura profunda para restaurar a integridade da alma antes de sua reintegração."
@@ -54,7 +55,7 @@ export default function Module713Page() {
                     <ConnectionCard
                         title="Módulo 25: Projeção de Consciência"
                         description="Utilizado pelas equipes de resgate para navegar com segurança nos planos astrais e localizar consciências perdidas."
-                        icon={<BrainCircuit className="h-8 w-8 text-indigo-400" />}
+                        icon={<Eye className="h-8 w-8 text-indigo-400" />}
                         href="/module-25"
                     />
                      <ConnectionCard

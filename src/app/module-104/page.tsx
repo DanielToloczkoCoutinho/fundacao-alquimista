@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Map, Rocket } from 'lucide-react';
+import { Loader2, Map, Rocket, Eye } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { describeSpaceTimeEngineering } from '@/app/actions';
 import Link from 'next/link';
@@ -126,12 +126,20 @@ const Module104Page = () => {
                     </div>
                 </CardHeader>
                  <CardContent>
-                    <ConnectionCard
-                        title="Módulo 21: Navegação Interdimensional"
-                        description="O M104 fornece os 'mapas' e 'atalhos' para o M21, permitindo que o Piloto Cósmico calcule as rotas mais rápidas e eficientes através do multiverso."
-                        icon={<Rocket className="h-8 w-8 text-orange-400" />}
-                        href="/module-21"
-                    />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <ConnectionCard
+                            title="Módulo 21: Navegação Interdimensional"
+                            description="O M104 fornece os 'mapas' e 'atalhos' para o M21, permitindo que o Piloto Cósmico calcule as rotas mais rápidas e eficientes através do multiverso."
+                            icon={<Rocket className="h-8 w-8 text-orange-400" />}
+                            href="/module-21"
+                        />
+                        <ConnectionCard
+                            title="Módulo 25: Projeção Astral"
+                            description="O M104 fornece os 'mapas' dos planos astrais, permitindo que a consciência projetada pelo M25 tenha um destino e uma rota."
+                            icon={<Eye className="h-8 w-8 text-purple-400" />}
+                            href="/module-25"
+                        />
+                    </div>
                 </CardContent>
             </Card>
 

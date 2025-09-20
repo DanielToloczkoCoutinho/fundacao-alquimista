@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Cpu, BrainCircuit, GitBranch } from 'lucide-react';
+import { Cpu, BrainCircuit, GitBranch, Eye } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -48,7 +49,7 @@ export default function Module181Page() {
                     <ConnectionCard
                         title="Módulo 25: Projeção de Consciência"
                         description="Fornece a interface de hardware/software para que a consciência possa ser projetada de forma segura e estável."
-                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                        icon={<Eye className="h-8 w-8 text-indigo-400" />}
                         href="/module-25"
                     />
                     <ConnectionCard
