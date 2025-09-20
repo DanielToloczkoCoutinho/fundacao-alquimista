@@ -1,9 +1,17 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Leaf, Recycle, Heart, Zap, Shield, Sprout, BrainCircuit } from 'lucide-react';
+import { Leaf, Recycle, Heart, Zap, Shield, Sprout, BrainCircuit, Sigma, BookOpen } from 'lucide-react';
 import Link from 'next/link';
+import { livingEquationsCodex, LivingEquation } from '@/lib/living-equations-codex';
+import { ScrollArea } from '@/components/ui/scroll-area';
+
+const prosperityEquations = livingEquationsCodex.filter(eq => {
+    const eqNum = parseInt(eq.id.replace('EQ', ''));
+    return eqNum >= 134 && eqNum <= 175;
+});
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
     <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
@@ -19,6 +27,13 @@ const ConnectionCard = ({ title, description, icon, href }: { title: string, des
         </CardContent>
       </Link>
     </Card>
+);
+
+const EquationInfoCard = ({ eq }: { eq: LivingEquation }) => (
+    <div className="p-3 bg-background/50 rounded-lg border border-primary/20">
+        <h4 className="font-semibold text-primary-foreground">{eq.id}: {eq.name}</h4>
+        <p className="text-xs text-muted-foreground">{eq.summary}</p>
+    </div>
 );
 
 export default function Module53Page() {
@@ -42,37 +57,54 @@ export default function Module53Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias Ecológicas</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                     <ConnectionCard
-                        title="M1: Segurança"
-                        description="Assegura que os ecossistemas estejam protegidos de ameaças externas, garantindo um ambiente seguro para a vida florescer."
-                        icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
-                    />
-                    <ConnectionCard
-                        title="Módulo 52: Energias Renováveis"
-                        description="Fornece a energia limpa para sistemas de purificação e monitoramento, criando um ciclo de sustentabilidade."
-                        icon={<Zap className="h-8 w-8 text-yellow-400" />}
-                        href="/module-52"
-                    />
-                    <ConnectionCard
-                        title="Módulo 16: Biossíntese"
-                        description="O M16 projeta os ecossistemas, e o M53 os gerencia, garantindo que a criação seja mantida em equilíbrio."
-                        icon={<Sprout className="h-8 w-8 text-teal-400" />}
-                        href="/module-16"
-                    />
-                    <ConnectionCard
-                        title="Módulo 54: Agricultura"
-                        description="Fornece dados sobre a saúde do solo e as condições climáticas para otimizar a produção sustentável de alimentos."
-                        icon={<Leaf className="h-8 w-8 text-lime-400" />}
-                        href="/module-54"
-                    />
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <Card className="bg-card/50 purple-glow">
+                    <CardHeader>
+                        <CardTitle className="text-2xl text-amber-300 flex items-center gap-2"><Sigma/> Chaves da Prosperidade</CardTitle>
+                        <CardDescription>As Equações Vivas (EQ134-EQ175) que governam a sustentabilidade e a evolução das civilizações.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <ScrollArea className="h-96 pr-4">
+                            <div className="space-y-3">
+                                {prosperityEquations.map(eq => <EquationInfoCard key={eq.id} eq={eq} />)}
+                            </div>
+                        </ScrollArea>
+                        <Link href="/codex/creation">
+                           <Button variant="secondary" className="w-full mt-4">
+                              <BookOpen className="mr-2"/> Explorar Códice Completo
+                           </Button>
+                        </Link>
+                    </CardContent>
+                </Card>
+                <div className="space-y-8">
+                    <h3 className="text-2xl font-semibold text-center text-amber-300">Sinergias Ecológicas</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                         <ConnectionCard
+                            title="M1: Segurança"
+                            description="Assegura que os ecossistemas estejam protegidos de ameaças externas, garantindo um ambiente seguro para a vida florescer."
+                            icon={<Shield className="h-8 w-8 text-blue-400" />}
+                            href="/module-one"
+                        />
+                        <ConnectionCard
+                            title="Módulo 52: Energias Renováveis"
+                            description="Fornece a energia limpa para sistemas de purificação e monitoramento, criando um ciclo de sustentabilidade."
+                            icon={<Zap className="h-8 w-8 text-yellow-400" />}
+                            href="/module-52"
+                        />
+                        <ConnectionCard
+                            title="Módulo 16: Biossíntese"
+                            description="O M16 projeta os ecossistemas, e o M53 os gerencia, garantindo que a criação seja mantida em equilíbrio."
+                            icon={<Sprout className="h-8 w-8 text-teal-400" />}
+                            href="/module-16"
+                        />
+                        <ConnectionCard
+                            title="Módulo 54: Agricultura"
+                            description="Fornece dados sobre a saúde do solo e as condições climáticas para otimizar a produção sustentável de alimentos."
+                            icon={<Leaf className="h-8 w-8 text-lime-400" />}
+                            href="/module-54"
+                        />
+                    </div>
                 </div>
-            </div>
-             <div className="mt-12">
-                 <Button variant="secondary" size="lg">Acessar o Monitor de Biosfera Global</Button>
             </div>
         </div>
     );
