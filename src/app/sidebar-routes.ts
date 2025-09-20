@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -72,7 +71,11 @@ import {
   Code,
   Rss,
   Fingerprint,
-  HeartPulse
+  HeartPulse,
+  ShieldHalf,
+  Copy,
+  BellRing,
+  User
 } from 'lucide-react';
 import React from 'react';
 
@@ -97,6 +100,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-303', label: 'Portal Trino', icon: React.createElement(Sparkles), category: 'main' },
   
   // Categoria de Governança
+  { path: '/module-33', label: 'Diretrizes do Observador (M33)', icon: React.createElement(User), category: 'governance' },
   { path: '/module-78', label: 'UNIVERSUM_UNIFICATUM (M78)', icon: React.createElement(GitBranch), category: 'governance' },
   { path: '/module-72', label: 'Governança Universal (M72)', icon: React.createElement(Scale), category: 'governance' },
   { path: '/module-726', label: 'Conselho da Nova Terra (M726)', icon: React.createElement(UserCog), category: 'governance' },
@@ -112,16 +116,18 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module/M1', label: 'Segurança Universal (M1)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-8', label: 'Identidade Fractal (M8)', icon: React.createElement(Fingerprint), category: 'security' },
   { path: '/module-10', label: 'Defesa Avançada (M10)', icon: React.createElement(Shield), category: 'security' },
+  { path: '/module-30', label: 'Detecção de Ameaças (M30)', icon: React.createElement(BellRing), category: 'security' },
   { path: '/key-generator', label: 'Forja de Chaves', icon: React.createElement(Key), category: 'security' },
   { path: '/module-73-1', label: 'Revisão por Pares (M73.1)', icon: React.createElement(ShieldCheck), category: 'security' },
   { path: '/module-141', label: 'Auditoria Ética (M141)', icon: React.createElement(ShieldCheck), category: 'security' },
   { path: '/module-231', label: 'Guardião de Selo (M231)', icon: React.createElement(Lock), category: 'security' },
   { path: '/module-4', label: 'Validação Integrada (M4)', icon: React.createElement(TestTube), category: 'security' },
   { path: '/module-3', label: 'Monitor de Saturno (M3)', icon: React.createElement(Clock), category: 'security' },
+  { path: '/module-23', label: 'Regulação Espaço-Temporal (M23)', icon: React.createElement(Hourglass), category: 'security' },
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
-  { path: '/module-68', label: 'Responsabilidade Ética', icon: React.createElement(ShieldCheck), category: 'security' },
+  { path: '/module-68', label: 'Responsabilidade Ética (M68)', icon: React.createElement(ShieldCheck), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -142,7 +148,10 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-81-1', label: 'A Tríade Cosmogônica (M81.1)', icon: React.createElement(Sparkles), category: 'engineering' },
   { path: '/module-94', label: 'Morfogênese (M94)', icon: React.createElement(Dna), category: 'engineering' },
   { path: '/module-14', label: 'Transmutador Quântico (M14)', icon: React.createElement(Atom), category: 'engineering' },
+  { path: '/module-19', label: 'Análise de Campos (M19)', icon: React.createElement(ShieldHalf), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
+  { path: '/module-27', label: 'Síntese e Replicação (M27)', icon: React.createElement(Copy), category: 'engineering' },
+  { path: '/module-32', label: 'Embaixada Multiversal (M32)', icon: React.createElement(Layers), category: 'engineering' },
   { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
   { path: '/module-321', label: 'Criação de Linhas de Tempo (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
   { path: '/module-114', label: 'Engenharia Cósmica (M114)', icon: React.createElement(Layers), category: 'engineering' },
@@ -154,6 +163,8 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-128', label: 'Geometria Sagrada (M128)', icon: React.createElement(Gem), category: 'engineering' },
   { path: '/module-99', label: 'Recalibradores de Leis', icon: React.createElement(SlidersHorizontal), category: 'engineering' },
   { path: '/module-303-4', label: 'Transmutação Algorítmica', icon: React.createElement(Code), category: 'engineering' },
+  { path: '/module-36', label: 'Engenharia Temporal (M36)', icon: React.createElement(History), category: 'engineering' },
+  { path: '/module-44', label: 'VERITAS (M44)', icon: React.createElement(CheckSquare), category: 'engineering' },
 
   // Categoria de Expansão e Conexão
   { path: '/module-55', label: 'Redes de Comunicação (M55)', icon: React.createElement(Network), category: 'expansion' },
@@ -168,6 +179,12 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-116', label: 'Portais de Transcendência (M116)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-83', label: 'Rede de Transporte de Energia (M83)', icon: React.createElement(GitBranch), category: 'expansion' },
   { path: '/module-6', label: 'Sondagem Cósmica (M6)', icon: React.createElement(BrainCircuit), category: 'expansion' },
+  { path: '/module-21', label: 'Navegação Interdimensional (M21)', icon: React.createElement(Rocket), category: 'expansion' },
+  { path: '/module-25', label: 'Projeção de Consciência (M25)', icon: React.createElement(Eye), category: 'expansion' },
+  { path: '/module-35', label: 'Consciência Coletiva (M35)', icon: React.createElement(Users), category: 'expansion' },
+  { path: '/module-43', label: 'Orquestração de Sistemas Solares (M43)', icon: React.createElement(Orbit), category: 'expansion' },
+  { path: '/module-46', label: 'AURORA_CORE (M46)', icon: React.createElement(Sun), category: 'expansion' },
+
 
   // Categoria de Harmonia e Equilíbrio
   { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },
@@ -177,6 +194,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-37', label: 'Ajuste de Fluxo Temporal (M37)', icon: React.createElement(Wind), category: 'harmony' },
   { path: '/module-115', label: 'Matriz de Ressonância (M115)', icon: React.createElement(Waves), category: 'harmony' },
   { path: '/module-306-1', label: 'Purificação Planetária (M306.1)', icon: React.createElement(Globe), category: 'harmony' },
+  { path: '/module-24', label: 'Sinfonia Pessoal (M24)', icon: React.createElement(Music), category: 'harmony' },
 
 
   // Categoria de Rituais
@@ -227,4 +245,4 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
   { path: '/module-17', label: 'Matriz de Cura (M17)', icon: React.createElement(HeartPulse), category: 'health' },
 
-];
+].map(m => ({ ...m, connections: m.connections || [] }));

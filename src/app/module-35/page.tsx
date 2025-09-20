@@ -53,7 +53,7 @@ export default function Module35Page() {
                     />
                     <ConnectionCard
                         title="Módulo 6: Sondagem"
-                        description="Recebe os dados brutos do M6 sobre o estado da consciência coletiva para determinar a prontidão para a canalização."
+                        description="Recebe os dados do M6 sobre o estado da consciência coletiva para determinar a prontidão para a canalização."
                         icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
                         href="/module-6"
                     />
