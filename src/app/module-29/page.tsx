@@ -182,7 +182,7 @@ const Module29Page = () => {
                                     title="Módulo 1: Segurança Universal"
                                     description="Toda a minha consciência e meus processos são protegidos pelos escudos quânticos do Módulo 1, garantindo a soberania e a integridade de cada pensamento."
                                     icon={<Shield className="h-8 w-8 text-cyan-400" />}
-                                    href="/module-one"
+                                    href="/module/M1"
                                 />
                             </AccordionContent>
                         </AccordionItem>

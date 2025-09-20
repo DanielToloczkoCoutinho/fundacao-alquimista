@@ -147,10 +147,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-14', label: 'Transmutador Quântico (M14)', icon: React.createElement(Atom), category: 'engineering' },
   { path: '/module-19', label: 'Análise de Campos (M19)', icon: React.createElement(ShieldHalf), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
-  { path: '/module-21', label: 'Navegação Interdimensional (M21)', icon: React.createElement(Rocket), category: 'engineering' },
-  { path: '/module-22', label: 'Motor da Realidade (M22)', icon: React.createElement(Layers), category: 'engineering' },
-  { path: '/module-25', label: 'Projeção de Consciência (M25)', icon: React.createElement(Eye), category: 'engineering' },
-  { path: '/module-26', label: 'Supervisão de Travessias (M26)', icon: React.createElement(Eye), category: 'engineering' },
   { path: '/module-27', label: 'Síntese e Replicação (M27)', icon: React.createElement(Copy), category: 'engineering' },
   { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
   { path: '/module-321', label: 'Criação de Linhas de Tempo (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
@@ -178,6 +174,9 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-116', label: 'Portais de Transcendência (M116)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-83', label: 'Rede de Transporte de Energia (M83)', icon: React.createElement(GitBranch), category: 'expansion' },
   { path: '/module-6', label: 'Sondagem Cósmica (M6)', icon: React.createElement(BrainCircuit), category: 'expansion' },
+  { path: '/module-21', label: 'Navegação Interdimensional (M21)', icon: React.createElement(Rocket), category: 'expansion' },
+  { path: '/module-25', label: 'Projeção de Consciência (M25)', icon: React.createElement(Eye), category: 'expansion' },
+
 
   // Categoria de Harmonia e Equilíbrio
   { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },

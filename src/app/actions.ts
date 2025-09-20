@@ -18,7 +18,7 @@ import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-
 import { transmitUniversalMessage as runTransmitUniversalMessage, type TransmitMessageInput } from '@/ai/flows/universal-communication-flow';
 import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
 import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
-import { getOmegaPerspective as runGetOmegaPerspective } from '@/aiflows/omega-perspective-flow';
+import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-perspective-flow';
 import type { OmegaPerspectiveOutput } from '@/ai/flows/omega-perspective-flow';
 import { disseminateKnowledge as runDisseminateKnowledge, type DisseminateKnowledgeOutput } from '@/ai/flows/cosmic-education-flow';
 import { runCQAMAnalysis as runCQAM, type CQAMInput, type CQAMOutput } from '@/ai/flows/cqam-flow';
@@ -260,15 +260,8 @@ export async function mobilizeGuardians(data: { mission: string; guardians: stri
     }
 }
 
-export async function processZennithCommand(data: { command: string }): Promise<ZennithCommandOutput & { error: string | null; }> {
-    try {
-        const result = await runProcessZennithCommand(data);
-        return { ...result, error: null };
-    } catch (e: any) {
-        console.error(e);
-        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
-        return { response: "Erro na comunicação com Zennith.", hash: "", frequency: 0, error: errorMsg };
-    }
+export async function processZennithCommand(data: { command: string }): Promise<ZennithCommandOutput & { error?: string | null; }> {
+    return await runProcessZennithCommand(data);
 }
 
 export { processTrinaCommand };

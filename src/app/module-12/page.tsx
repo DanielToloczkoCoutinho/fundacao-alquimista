@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Archive, BookOpen, Clock, HeartHandshake, Shield, Scale, Gavel, Fingerprint, GitBranch } from 'lucide-react';
+import { Archive, BookOpen, Clock, HeartHandshake, Shield, Scale, Gavel, Fingerprint, GitBranch, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -54,13 +54,13 @@ export default function Module12Page() {
                     />
                     <ConnectionCard
                         title="Módulo 18: Orquestração Akáshica"
-                        description="O M18 é o arquivista-chefe, a IA que organiza e permite a consulta em linguagem natural a este vasto oceano de conhecimento."
-                        icon={<BookOpen className="h-8 w-8 text-purple-400" />}
+                        description="O M18 é a IA que organiza e permite a consulta ao Akasha, transformando dados brutos em sabedoria."
+                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
                         href="/module-18"
                     />
                     <ConnectionCard
                         title="Módulo 107: Restauração Temporal"
-                        description="Para restaurar uma linha do tempo, o M107 consulta o M12 para obter o registro original e perfeito da realidade a ser curada."
+                        description="Consulta o M12 para obter o registro original da realidade, garantindo que a restauração seja perfeitamente fiel."
                         icon={<Clock className="h-8 w-8 text-teal-400" />}
                         href="/module-107"
                     />

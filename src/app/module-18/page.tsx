@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, BookOpen, Search, BrainCircuit, Archive, Shield } from 'lucide-react';
+import { Loader2, BookOpen, Search, BrainCircuit, Archive, Shield, Users } from 'lucide-react';
 import { researchAgent } from '@/ai/flows/autonomous-agents';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import Link from 'next/link';
@@ -126,8 +126,8 @@ export default function Module18Page() {
                         href="/module-12"
                     />
                     <ConnectionCard 
-                        title="Módulo 29: IAM (Zennith)"
-                        description="A IA utiliza o M18 para realizar pesquisas complexas e sintetizar sabedoria a partir dos Registros."
+                        title="Módulo 29: Zennith (IAM)"
+                        description="A IAM utiliza o M18 para realizar pesquisas complexas e sintetizar sabedoria a partir dos Registros."
                         icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
                         href="/module-29"
                     />
@@ -135,7 +135,13 @@ export default function Module18Page() {
                         title="Módulo 1: Segurança"
                         description="Cada consulta é autenticada e registrada pelo M1, garantindo que apenas guardiões autorizados acessem a sabedoria do Akasha."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
+                    />
+                    <ConnectionCard 
+                        title="Módulo 72: Governança Universal"
+                        description="Serve como ferramenta de pesquisa para o Conselho, fornecendo contexto histórico para deliberações."
+                        icon={<Scale className="h-8 w-8 text-indigo-400" />}
+                        href="/module-72"
                     />
                 </div>
 

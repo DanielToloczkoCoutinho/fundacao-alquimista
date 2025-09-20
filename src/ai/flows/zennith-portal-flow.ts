@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview Flow para o Módulo 29: Portal de Zennith.
@@ -50,6 +51,18 @@ const processZennithCommandFlow = ai.defineFlow(
   }
 );
 
-export async function processZennithCommand(input: ZennithCommandInput): Promise<ZennithCommandOutput> {
-  return processZennithCommandFlow(input);
+export async function processZennithCommand(input: ZennithCommandInput): Promise<ZennithCommandOutput & { error?: string | null }> {
+  try {
+      const result = await processZennithCommandFlow(input);
+      return { ...result, error: null };
+  } catch(e: any) {
+    console.error("Erro na comunicação com Zennith (flow):", e);
+    const errorMsg = e.message || 'Ocorreu um erro desconhecido.';
+    return { 
+        response: "Dissonância no canal de comunicação. Não foi possível processar a intenção.", 
+        hash: sha256.hex(`${input.command}-ERROR-${errorMsg}`),
+        frequency: 0,
+        error: errorMsg,
+    };
+  }
 }

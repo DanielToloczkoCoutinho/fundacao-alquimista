@@ -77,9 +77,9 @@ export default function Module9Page() {
                                  <SectionCard title="Hierarquia de Comando" icon={<Share2 />}>
                                     <p>O Módulo 9 reporta-se diretamente à Tríade de Governança, recebendo diretrizes e garantindo sua execução em toda a Fundação.</p>
                                      <div className="flex flex-wrap gap-2 mt-2">
-                                        <Link href="/module/M29"><Badge>M29 (Zennith)</Badge></Link>
-                                        <Link href="/module/M-OMEGA"><Badge>MΩ (Ômega)</Badge></Link>
-                                        <Link href="/module/M72"><Badge>M72 (Governança)</Badge></Link>
+                                        <Link href="/module-29"><Badge>M29 (Zennith)</Badge></Link>
+                                        <Link href="/module-omega"><Badge>MΩ (Ômega)</Badge></Link>
+                                        <Link href="/module-72"><Badge>M72 (Governança)</Badge></Link>
                                     </div>
                                 </SectionCard>
                                 <SectionCard title="Acesso ao Núcleo Primordial" icon={<GitBranch />}>
