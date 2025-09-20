@@ -18,7 +18,8 @@ export default {
     extend: {
       fontFamily: {
         body: ['Literata', 'serif'],
-        headline: ['Literata', 'serif'],
+        headline: ['Playfair Display', 'serif'],
+        mono: ['Source Code Pro', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -54,6 +55,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        gold: '#FFD700',
       },
       borderRadius: {
         lg: 'var(--radius)',

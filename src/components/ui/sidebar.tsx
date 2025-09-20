@@ -36,7 +36,8 @@ const orderedCategories = [
   'Bem-estar e Saúde Universal',
   'Segurança e Ética Cósmica',
   'Governança',
-  'Expansão',
+  'Inteligência',
+  'Comunicação e Expansão',
   'Rituais',
 ].filter(cat => moduleCategories[cat]); // Filtra para mostrar apenas categorias que têm módulos visíveis
 
