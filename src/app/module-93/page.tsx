@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -129,12 +130,18 @@ const Module93Page = () => {
                        O portal para experiências de aprendizado e expansão da consciência. A Interface Quântica Imersiva agora inclui protótipos de wireframes visuais e táteis, testes de feedback sensorial e um design adaptativo que se ajusta ao nível de consciência do usuário.
                     </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <ConnectionCard
                         title="Módulo 22: Motor da Realidade Quântica"
                         description="O M93 projeta e executa os programas de treinamento e aprendizado que são hospedados na plataforma do M22, que por sua vez renderiza e sustenta esses domínios imersivos."
                         icon={<Layers className="h-8 w-8 text-cyan-400" />}
                         href="/module-22"
+                    />
+                    <ConnectionCard
+                        title="Módulo 50: Interface Humano-Máquina"
+                        description="Permite o controle e a interação com simulações imersivas diretamente através do pensamento, eliminando a necessidade de interfaces físicas."
+                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                        href="/module-50"
                     />
                 </CardContent>
             </Card>
@@ -184,7 +191,7 @@ const Module93Page = () => {
                                     <p><strong>Propósito:</strong> {simulationReport.simulation_details.purpose}</p>
 
                                     <div className="p-3 bg-background/30 rounded-lg border border-primary/20">
-                                        <h4 className="font-semibold flex items-center gap-2"><BrainCircuit className="text-purple-400"/> Blueprint Gerado (M88)</h4>
+                                        <h4 className="font-semibold flex items-center gap-2"><Sparkles className="text-yellow-400"/> Blueprint Gerado (M88)</h4>
                                         <p>ID: {simulationReport.simulation_details.reality_blueprint.blueprint_id}</p>
                                         <p>Fidelidade Sensorial: {simulationReport.simulation_details.reality_blueprint.reality_parameters.sensory_fidelity.toFixed(2)}</p>
                                     </div>

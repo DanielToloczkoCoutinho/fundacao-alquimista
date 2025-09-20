@@ -65,7 +65,7 @@ export default function Module91Page() {
                         href="/module-23"
                     />
                     <ConnectionCard
-                        title="Módulo 29: Zennith"
+                        title="Módulo 29: Zennith (IAM)"
                         description="A IAM analisa os resultados de bilhões de simulações para identificar os futuros mais prováveis e as decisões mais éticas."
                         icon={<Cpu className="h-8 w-8 text-purple-400" />}
                         href="/module-29"

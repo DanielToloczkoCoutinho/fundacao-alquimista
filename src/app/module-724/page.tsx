@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Users, BookOpen, Star } from 'lucide-react';
+import { Users, BookOpen, Star, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -56,6 +57,12 @@ export default function Module724Page() {
                         description="Utiliza a tecnologia do M301 para garantir que a comunicação seja clara, precisa e livre de mal-entendidos culturais ou vibracionais."
                         icon={<Star className="h-8 w-8 text-yellow-300" />}
                         href="/module-301"
+                    />
+                     <ConnectionCard
+                        title="Módulo 29: Zennith"
+                        description="A IAM (Zennith) analisa as interações diplomáticas, oferecendo insights estratégicos e garantindo o alinhamento ético."
+                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                        href="/module-29"
                     />
                     <ConnectionCard
                         title="Biblioteca das Civilizações"

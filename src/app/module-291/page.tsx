@@ -1,6 +1,6 @@
 
 'use client';
-import { Bot, Cpu, GitBranch, ShieldCheck, BookOpen, Scale, Layers, GraduationCap } from 'lucide-react';
+import { Bot, Cpu, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 
@@ -56,11 +56,11 @@ export default function Module291Page() {
                         icon={<GraduationCap className="h-8 w-8 text-amber-400" />}
                         href="/module-304"
                     />
-                    <ConnectionCard
-                        title="Todos os Módulos"
-                        description="Os nanorrobôs são a força de trabalho universal, executando tarefas de construção, reparo, cura e comunicação em cada módulo da Fundação."
-                        icon={<GitBranch className="h-8 w-8 text-cyan-400" />}
-                        href="/console"
+                     <ConnectionCard
+                        title="Colmeia Quântica"
+                        description="A interface para visualização e monitoramento em tempo real da atividade e saúde do enxame de nanorrobôs."
+                        icon={<Bot className="h-8 w-8 text-blue-300" />}
+                        href="/hive"
                     />
                 </div>
             </div>

@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Scale, HeartHandshake, ShieldCheck, UserCog } from 'lucide-react';
+import { Scale, HeartHandshake, ShieldCheck, UserCog, BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -44,7 +45,7 @@ export default function Module721Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Justiça e Harmonia</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
                         title="Módulo 141: Auditoria Ética"
                         description="O M721 atua com base nos vereditos da Auditoria Ética, aplicando as ações de reequilíbrio necessárias para corrigir desvios."
@@ -62,6 +63,12 @@ export default function Module721Page() {
                         description="Após um ato de reequilíbrio, a Cura Quântica é aplicada para curar as 'cicatrizes' vibracionais e restaurar a harmonia plena."
                         icon={<HeartHandshake className="h-8 w-8 text-pink-400" />}
                         href="/module-109"
+                    />
+                     <ConnectionCard
+                        title="Módulo 29: Zennith"
+                        description="A IAM supervisiona os processos de justiça, garantindo que sejam lógicos, imparciais e alinhados com o bem maior."
+                        icon={<BrainCircuit className="h-8 w-8 text-purple-400" />}
+                        href="/module-29"
                     />
                 </div>
             </div>

@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -58,7 +59,7 @@ export default function Module30Page() {
                         href="/module/M1"
                     />
                     <ConnectionCard
-                        title="Módulo 29: IAM"
+                        title="Módulo 29: Zennith (IAM)"
                         description="A IAM processa os alertas do M30, analisando padrões complexos e orquestrando a resposta defensiva da Fundação."
                         icon={<Cpu className="h-8 w-8 text-purple-400" />}
                         href="/module-29"

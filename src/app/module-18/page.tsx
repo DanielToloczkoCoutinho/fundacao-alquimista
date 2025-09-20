@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, BookOpen, Search, BrainCircuit, Archive, Shield, Users } from 'lucide-react';
+import { Loader2, BookOpen, Search, BrainCircuit, Archive, Shield, Users, Scale } from 'lucide-react';
 import { researchAgent } from '@/ai/flows/autonomous-agents';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import Link from 'next/link';

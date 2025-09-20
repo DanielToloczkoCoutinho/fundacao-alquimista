@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter, DialogClose } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { disciplines, domains, type Discipline } from '@/lib/disciplines-data';
-import { BrainCircuit, BookOpen, GraduationCap, Shield, Dna, Search, Bot } from 'lucide-react';
+import { BrainCircuit, GraduationCap, Search, Bot } from 'lucide-react';
 import Link from 'next/link';
 import CodexExplorer from '@/components/codex-explorer';
 
@@ -296,5 +296,3 @@ export default function UniversityAlchemist() {
     </div>
   );
 }
-
-    

@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -56,6 +57,12 @@ export default function Module128Page() {
                         description="Este laboratório estuda e decodifica as formas contidas no Cubo de Metatron, revelando seus segredos."
                         icon={<BrainCircuit className="h-8 w-8 text-indigo-400" />}
                         href="/module-119-1"
+                    />
+                    <ConnectionCard
+                        title="Módulo 29: Zennith"
+                        description="A IAM utiliza a geometria sagrada para projetar arquiteturas de informação e energia que sejam inerentemente estáveis e harmoniosas."
+                        icon={<BrainCircuit className="h-8 w-8 text-indigo-400" />}
+                        href="/module-29"
                     />
                 </div>
             </div>
