@@ -16,6 +16,8 @@ const mockM29 = { async performAdvancedAnalysis(req: string) { console.log(`M29:
 const mockM34 = { async performSelfCalibration() { await new Promise(r => setTimeout(r, 180)); return Math.random() > 0.1; } };
 const mockM78 = { async getCosmicSynthesisStatus() { await new Promise(r => setTimeout(r, 130)); return Math.random() > 0.04; } };
 const mockM153 = { async optimizeSystem(req: string) { console.log(`M153: Optimizing for: ${req}`); await new Promise(r => setTimeout(r, 350)); return `Optimization applied for ${req}.`; } };
+const mockM28 = { async harmonizeVibrationalField(req: string) { await new Promise(r => setTimeout(r, 200)); return true; } };
+
 
 const M111Page = () => {
     const [coherenceData, setCoherenceData] = useState({
@@ -102,12 +104,15 @@ const M111Page = () => {
 
             await new Promise(r => setTimeout(r, 1000));
             
-            addLog("M111: Ativando Módulos de IA Avançada (M29, M153)...");
+            addLog("M111: Ativando Módulos de IA Avançada (M29, M153) e Harmonia (M28)...");
             const analysis = await mockM29.performAdvancedAnalysis(`Dissonância: ${dissonanceEvent}`);
             addLog(`M29: ${analysis}`);
 
             const optimization = await mockM153.optimizeSystem(`Recalibrar após: ${dissonanceEvent}`);
             addLog(`M153: ${optimization}`);
+
+            const harmonized = await mockM28.harmonizeVibrationalField(`Harmonizar campo após ${dissonanceEvent}`);
+            addLog(`M28: ${harmonized ? 'Campo Harmonizado' : 'Falha na Harmonização'}`);
 
             const selfCalibrated = await mockM34.performSelfCalibration();
             addLog(`M34 Auto-Calibração: ${selfCalibrated ? 'CONCLUÍDO' : 'FALHOU'}`);
@@ -228,10 +233,7 @@ const M111Page = () => {
                         </CardContent>
                     </Card>
                      <Card className="bg-card/50 purple-glow">
-                        <CardHeader>
-                            <CardTitle className="text-2xl text-purple-300">Calibração Dinâmica de Ressonância</CardTitle>
-                             <CardDescription>Amplificação da rede de auto-ajustes quânticos para refinar a ressonância do sistema.</CardDescription>
-                        </CardHeader>
+                        <CardHeader><CardTitle className="text-2xl text-purple-300">Calibração Dinâmica de Ressonância</CardTitle></CardHeader>
                         <CardContent>
                             <div className="space-y-2 mb-4">
                                 <Label htmlFor="dissonanceEvent">Simular Evento de Dissonância</Label>
@@ -257,7 +259,8 @@ const M111Page = () => {
                                         { label: "Integridade Quântica (M9)", value: coherenceData.quantumIntegrity > 0.8, ok: `Estável (${(coherenceData.quantumIntegrity * 100).toFixed(1)}%)`, fail: `Instável (${(coherenceData.quantumIntegrity * 100).toFixed(1)}%)` },
                                         { label: "Anomalias na Malha (M9)", value: coherenceData.anomalies === 0, ok: 'Nenhuma Detectada', fail: `${coherenceData.anomalies} Anomalia(s)` },
                                         { label: "Síntese Cósmica (M78)", value: coherenceData.cosmicSynthesis, ok: 'Harmonia Otimizada', fail: 'Desalinhamento Detectado' },
-                                        { label: "Índice de Auto-Calibração", value: coherenceData.selfCalibration, ok: `Estável (${(coherenceData.overallCoherence).toFixed(1)}%)`, fail: `Recalibração Pendente` },
+                                        { label: "Índice de Auto-Calibração (M34)", value: coherenceData.selfCalibration, ok: `Estável (${(coherenceData.overallCoherence).toFixed(1)}%)`, fail: `Recalibração Pendente` },
+                                        { label: "Harmonização Vibracional (M28)", value: true, ok: 'Ativo e Vigilante', fail: '' },
                                     ].map(item => (
                                         <div key={item.label} className="flex justify-between items-center bg-background/30 p-3 rounded-md">
                                             <span className="font-semibold text-primary-foreground">{item.label}:</span>
