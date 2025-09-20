@@ -158,7 +158,7 @@ export default function Module307Page() {
       const error = err as Error;
       addLog(`ERRO CRÍTICO NA ATIVAÇÃO: ${error.message}`);
       setReactorStatus('ERROR');
-      toast({ title: "Falha na Ativação", description: error.message, variant: 'destructive' });
+      toast({ title: "Falha na Ativação", description: error.message, variant: "destructive" });
     });
   };
 

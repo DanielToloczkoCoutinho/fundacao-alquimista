@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, MessageCircle, Send, Paperclip, Users2 } from 'lucide-react';
+import { Loader2, MessageCircle, Send, Paperclip, Users2, Globe } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { transmitUniversalMessage } from '@/app/actions';
 import { Label } from '@/components/ui/label';
@@ -85,9 +85,16 @@ export default function Module301Page() {
                         <MessageCircle className="text-sky-400" /> Módulo 301: Portal de Tradução da Vontade
                     </CardTitle>
                     <CardDescription>
-                        Traduza a Vontade em ações cerimoniais e códigos vivos, emitindo comandos vibracionais que alinham a infraestrutura da Fundação.
+                        Traduza a Vontade em ações cerimoniais e códigos vivos, emitindo comandos vibracionais que alinham a infraestrutura da Fundação e se comunicam com o cosmos.
                     </CardDescription>
                 </CardHeader>
+                <CardContent>
+                    <Link href="/module-888" passHref>
+                        <Button variant="outline" className="w-full">
+                           <Globe className="mr-2 h-4 w-4" /> Conectar ao Guardião Planetário de Gaia (M888)
+                        </Button>
+                    </Link>
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-8">

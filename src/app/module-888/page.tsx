@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Globe, MapPin, Zap, Compass, Mountain, Waves, FlaskConical } from 'lucide-react';
+import { Globe, MapPin, Zap, Compass, Mountain, Waves, FlaskConical, MessageCircle, GitBranch } from 'lucide-react';
 import { gaiaModuleCodex } from '@/lib/gaia-module-codex';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -28,7 +28,7 @@ export default function Module888Page() {
                         <Globe className="text-green-400" /> Módulo 888: Guardião Planetário de Gaia
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O oráculo da Terra Viva e a interface para a anatomia vibracional do planeta, incluindo a análise sísmica para detecção de estruturas subterrâneas.
+                        O oráculo da Terra Viva e a interface para a anatomia vibracional do planeta, incluindo a análise sísmica para detecção de estruturas subterrâneas. Conectado ao M301 (Comunicação) e ao M307 (Energia ZPE) para uma análise cósmica completa.
                     </CardDescription>
                 </CardHeader>
             </Card>
@@ -98,8 +98,17 @@ export default function Module888Page() {
                     </SectionCard>
                 </div>
             </div>
-             <div className="text-center mt-12">
-                 <Button variant="secondary" size="lg">Iniciar Análise Vibracional de Gaia</Button>
+             <div className="text-center mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                 <a href="/module-301">
+                    <Button variant="outline" className="w-full">
+                        <MessageCircle className="mr-2 h-4 w-4"/> Acessar Comunicação Universal (M301)
+                    </Button>
+                 </a>
+                  <a href="/module-307">
+                    <Button variant="outline" className="w-full">
+                        <Zap className="mr-2 h-4 w-4"/> Acessar Reator ZPE (M307)
+                    </Button>
+                 </a>
             </div>
         </div>
     );
