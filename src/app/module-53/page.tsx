@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -27,52 +28,52 @@ export default function Module53Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Sprout className="text-lime-400" /> Módulo 53: Gestão e Conservação de Ecossistemas
+                        <Leaf className="text-lime-400" /> Módulo 53: Gestão de Ecossistemas e Biodiversidade
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O guardião da biodiversidade cósmica, garantindo que todos os mundos floresçam em harmonia e equilíbrio.
+                        O guardião da vida. A inteligência que monitora, protege e regenera a biodiversidade em todos os mundos.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
                     <div className="flex justify-center items-center gap-4">
-                        <span className="text-green-400 font-bold">Status: MONITORAMENTO ATIVO</span>
+                        <span className="text-green-400 font-bold">Status: HARMONIA BIÓTICA</span>
                         <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span className="text-cyan-400">Saúde Ecológica Global: 99.5%</span>
+                        <span className="text-cyan-400">Diversidade Genética: 98.7%</span>
                     </div>
                 </CardContent>
             </Card>
 
             <div className="w-full max-w-5xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Conservação</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Ecologia</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <ConnectionCard
+                     <ConnectionCard
                         title="M1: Segurança"
-                        description="Protege os ecossistemas contra bio-ameaças e garante que as intervenções de conservação sejam seguras."
+                        description="Protege os ecossistemas contra bio-ameaças e garante que as intervenções de regeneração sejam seguras."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module-one"
                     />
                     <ConnectionCard
                         title="Módulo 52: Energias Renováveis"
-                        description="Utiliza energia 100% limpa do M52 para alimentar os sistemas de monitoramento e regeneração, garantindo um ciclo virtuoso."
-                        icon={<Leaf className="h-8 w-8 text-green-400" />}
+                        description="Utiliza energia limpa do M52 para alimentar sistemas de monitoramento e purificação, garantindo um ciclo de sustentabilidade."
+                        icon={<Recycle className="h-8 w-8 text-green-400" />}
                         href="/module-52"
                     />
                     <ConnectionCard
-                        title="Módulo 54: Agricultura Interdimensional"
+                        title="Módulo 54: Agricultura"
                         description="Fornece os dados sobre a saúde do solo e as condições climáticas para otimizar a produção sustentável de alimentos."
-                        icon={<Recycle className="h-8 w-8 text-blue-400" />}
+                        icon={<Leaf className="h-8 w-8 text-lime-400" />}
                         href="/module-54"
                     />
                     <ConnectionCard
-                        title="Módulo 109: Cura Quântica"
-                        description="Aplica os princípios da cura quântica em escala planetária, restaurando a assinatura vibracional de ecossistemas danificados."
-                        icon={<Heart className="h-8 w-8 text-pink-400" />}
-                        href="/module-109"
+                        title="Módulo 16: Biossíntese"
+                        description="O M16 projeta e constrói os ecossistemas que o M53 então gerencia e sustenta, completando o ciclo da criação à manutenção."
+                        icon={<Sprout className="h-8 w-8 text-teal-400" />}
+                        href="/module-16"
                     />
                 </div>
             </div>
              <div className="mt-12">
-                 <Button variant="secondary" size="lg">Analisar Saúde Ecológica</Button>
+                 <Button variant="secondary" size="lg">Analisar Saúde Ecológica Global</Button>
             </div>
         </div>
     );
