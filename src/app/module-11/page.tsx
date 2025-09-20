@@ -28,7 +28,7 @@ export default function Module11Page() {
             <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Aperture className="text-teal-400" /> Módulo Onze: Portais Interdimensionais Permanentes
+                        <Aperture className="text-teal-400" /> Módulo Onze: Gerenciamento de Portais Interdimensionais
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O Abridor de Caminhos. A engenharia que constrói e sustenta as pontes permanentes entre mundos, dimensões e realidades.

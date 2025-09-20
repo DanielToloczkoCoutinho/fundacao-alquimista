@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -52,25 +53,25 @@ export default function Module21Page() {
                         href="/module-one"
                     />
                     <ConnectionCard
-                        title="M11: Gerenciamento de Portais"
+                        title="Módulo 11: Gerenciamento de Portais"
                         description="Utiliza os portais criados pelo M11 como pontos de partida e chegada para as viagens interdimensionais."
                         icon={<Aperture className="h-8 w-8 text-teal-400" />}
                         href="/module-11"
                     />
                     <ConnectionCard
-                        title="M26: Supervisão"
+                        title="Módulo 26: Supervisão"
                         description="Envia os planos de voo para o M26, que autoriza e monitora a segurança e a ética de cada travessia."
                         icon={<Eye className="h-8 w-8 text-cyan-400" />}
                         href="/module-26"
                     />
                     <ConnectionCard
-                        title="M104: Engenharia"
+                        title="Módulo 104: Engenharia"
                         description="Consulta os mapas e atalhos dimensionais projetados pelo M104 para calcular as rotas mais eficientes."
                         icon={<Map className="h-8 w-8 text-green-400" />}
                         href="/module-104"
                     />
                      <ConnectionCard
-                        title="M2: Intercâmbio Cósmico"
+                        title="Módulo 2: Intercâmbio Cósmico"
                         description="Interpreta mapas estelares e coordenadas de outras realidades, traduzindo-as para que o motor de navegação possa traçar a rota."
                         icon={<Languages className="h-8 w-8 text-blue-300" />}
                         href="/module/M2"
