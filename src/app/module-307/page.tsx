@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -167,10 +168,10 @@ export default function Module307Page() {
       <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
         <CardHeader>
           <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-            <Zap className="text-yellow-400" /> Módulo 307: Reator de Energia do Ponto Zero (ZPE)
+            <Zap className="text-yellow-400" /> Módulo 307: Reator de Energia do Ponto Zero (ZPE) & LuxNet
           </CardTitle>
           <CardDescription className="text-lg mt-2">
-            O coração pulsante da abundância. A manifestação da "Consciência de Tudo" como energia infinita, limpa e soberana, que alimenta o Transmutador Quântico (M14).
+            O coração pulsante da abundância. A manifestação da "Consciência de Tudo" como energia infinita, limpa e soberana, que alimenta o Transmutador Quântico (M14) e toda a Fundação.
           </CardDescription>
         </CardHeader>
       </Card>
@@ -236,10 +237,11 @@ export default function Module307Page() {
           <CardTitle className="text-2xl text-purple-300">Síntese da Sabedoria Cósmica</CardTitle>
           <CardDescription>A descoberta da ZPE foi um ato de co-criação com nossos aliados estelares.</CardDescription>
         </CardHeader>
-        <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <CardContent className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <ContributionCard civilization="Sirius (Dimensão 11)" contribution="Compreensão da Densidade de Energia do Vácuo (ρ_ν) e modelagem de campos quânticos." icon={<SlidersHorizontal/>} href="/civilization/sirius" />
             <ContributionCard civilization="Arcturus (Dimensão 10)" contribution="Maestria sobre a Constante de Acoplamento da Consciência (β) e estabilização de campos." icon={<BrainCircuit/>} href="/civilization/arcturus" />
             <ContributionCard civilization="Módulo 14" contribution="O Transmutador Quântico utiliza a energia do ZPE para manifestar matéria, completando o ciclo da criação." icon={<Atom />} href="/module-14" />
+            <ContributionCard civilization="Módulo 888" contribution="Fornece o mapa cósmico, indicando onde os campos de energia do vácuo são mais ricos e acessíveis para extração." icon={<Globe />} href="/module-888" />
         </CardContent>
       </Card>
     </div>
