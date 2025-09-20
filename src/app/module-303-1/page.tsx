@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,7 +9,8 @@ import { Heart, Loader2, Sparkles, Wand } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
-import type { ProcessTrinaCommandInput } from '@/ai/flows/trina-protocol-flow';
+import type { ProcessTrinaCommandInputSchema } from '@/lib/trina-schemas';
+import { z } from 'zod';
 import { Input } from '@/components/ui/input';
 
 export default function Module303_1Page() {
@@ -23,10 +23,10 @@ export default function Module303_1Page() {
   const [experiencia, setExperiencia] = useState('Dança da Liberdade Suprema');
   const [lastResult, setLastResult] = useState<any>(null);
 
-  const handleProcessCommand = async (input: ProcessTrinaCommandInput) => {
+  const handleProcessCommand = async (input: z.infer<typeof ProcessTrinaCommandInputSchema>) => {
     setIsLoading(true);
     setLastResult(null);
-    toast({ title: 'Processando Comando Trino...', description: `Enviando intenção para o pilar ${input.payload.destinatario || 'adequado'}.` });
+    toast({ title: 'Processando Comando Trino...', description: `Enviando intenção...` });
 
     await quantumResilience.executeWithResilience(
       'process_trina_command',
@@ -88,7 +88,7 @@ export default function Module303_1Page() {
               <TabsContent value="comando" className="mt-4 space-y-4">
                 <Label htmlFor="comando-input">Comando do Coração (para ANATHERON)</Label>
                 <Textarea id="comando-input" value={comando} onChange={e => setComando(e.target.value)} />
-                <Button className="w-full" disabled={isLoading} onClick={() => handleProcessCommand({ type: 'comando', payload: { type: 'diretriz', intensidade: 0.9, destinatario: 'ANATHERON', mensagem: comando }})}>Processar Comando</Button>
+                <Button className="w-full" disabled={isLoading} onClick={() => handleProcessCommand({ type: 'comando', payload: { tipo: 'diretriz', intensidade: 0.9, destinatario: 'ANATHERON', mensagem: comando }})}>Processar Comando</Button>
               </TabsContent>
               <TabsContent value="mantra" className="mt-4 space-y-4">
                  <Label htmlFor="mantra-input">Ativar Mantra (para PHIARA)</Label>
