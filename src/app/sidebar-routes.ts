@@ -117,7 +117,10 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
-  { path: '/module-68', label: 'Responsabilidade Ética', icon: React.createElement(ShieldCheck), category: 'security' },
+  { path: '/module-68', label: 'Responsabilidade Ética (M68)', icon: React.createElement(ShieldCheck), category: 'security' },
+  { path: '/module-57', label: 'Segurança e Privacidade (M57)', icon: React.createElement(Lock), category: 'security' },
+  { path: '/module-10', label: 'Defesa Avançada (M10)', icon: React.createElement(Shield), category: 'security' },
+  { path: '/module-30', label: 'Detecção de Ameaças (M30)', icon: React.createElement(AlertTriangle), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -131,6 +134,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-123', label: 'Respiração Cósmica (M123)', icon: React.createElement(Wind), category: 'education' },
   { path: '/module-124', label: 'Escola de Ressonância (M124)', icon: React.createElement(Music), category: 'education' },
   { path: '/module-129', label: 'Ensino da Fonte (M129)', icon: React.createElement(Sparkles), category: 'education' },
+  { path: '/module-127', label: 'Escola de Alquimia Estelar (M127)', icon: React.createElement(Flame), category: 'education' },
 
 
   // Categoria de Engenharia e Criação
@@ -163,9 +167,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-106', label: 'Ativação de Potenciais (M106)', icon: React.createElement(Crown), category: 'expansion' },
   { path: '/module-116', label: 'Portais de Transcendência (M116)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-83', label: 'Rede de Transporte de Energia (M83)', icon: React.createElement(GitBranch), category: 'expansion' },
-  { path: '/module-65', label: 'Infraestrutura e Transporte (M65)', icon: React.createElement(Rocket), category: 'expansion' },
-  { path: '/module-49', label: 'Transporte Interplanetário (M49)', icon: React.createElement(Rocket), category: 'expansion' },
-
 
   // Categoria de Harmonia e Equilíbrio
   { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },
@@ -187,9 +188,7 @@ export const mainRoutes: SidebarRoute[] = [
   // Categoria de Sustentabilidade
   { path: '/module-66', label: 'Tecnologias de Sustentabilidade (M66)', icon: React.createElement(Recycle), category: 'sustainability' },
   { path: '/module-79', label: 'Prosperidade Cósmica (M79)', icon: React.createElement(Sparkles), category: 'sustainability' },
-  { path: '/module-85', label: 'Gestão de Recursos (M85)', icon: React.createElement(Layers), category: 'sustainability' },
   { path: '/module-86', label: 'Equilíbrio Ecológico (M86)', icon: React.createElement(Sprout), category: 'sustainability' },
-  { path: '/module-91', label: 'Sustentabilidade Universal (M91)', icon: React.createElement(Globe), category: 'sustainability' },
   { path: '/module-52', label: 'Energias Renováveis (M52)', icon: React.createElement(Sun), category: 'sustainability' },
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
   { path: '/module-125', label: 'Criação de Biomas (M125)', icon: React.createElement(Sprout), category: 'sustainability' },
@@ -199,8 +198,9 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-60', label: 'Soluções para Desastres (M60)', icon: React.createElement(CloudLightning), category: 'sustainability' },
   { path: '/module-64', label: 'Sistemas de Energia Limpa (M64)', icon: React.createElement(Zap), category: 'sustainability' },
   { path: '/module-70', label: 'Sustentabilidade Interdimensional (M70)', icon: React.createElement(Recycle), category: 'sustainability' },
+  { path: '/module-49', label: 'Transporte Interplanetário (M49)', icon: React.createElement(Rocket), category: 'sustainability' },
   
-  // Categoria de Laboratórios
+  // Categoria de Laboratórios e Pesquisa
   { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },
   { path: '/module-151', label: 'Colisor de Partículas (M151)', icon: React.createElement(Atom), category: 'labs' },
   { path: '/module-161', label: 'Obs. de Matéria Escura (M161)', icon: React.createElement(Atom), category: 'labs' },
@@ -212,7 +212,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-251', label: 'Lab. de Energia do Ponto Zero (M251)', icon: React.createElement(Zap), category: 'labs' },
   { path: '/module-261', label: 'Engenharia de Campo Quântico (M261)', icon: React.createElement(GitBranch), category: 'labs' },
   { path: '/module-271', label: 'Obs. de Energia Escura (M271)', icon: React.createElement(BarChart), category: 'labs' },
-  { path: '/module-281', label: 'Comunicação Supra-Luminal (M281)', icon: React.createElement(Telescope), category: 'labs' },
   { path: '/module-311', label: 'Neuroengenharia (M311)', icon: React.createElement(Cpu), category: 'labs' },
   { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
   { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
@@ -222,11 +221,12 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/hive', label: 'Colmeia Quântica', icon: React.createElement(Bot), category: 'labs'},
 
 
-  // Categoria de Saúde
+  // Categoria de Bem-estar e Saúde Universal
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
   { path: '/module-62', label: 'Bem-Estar Integral (M62)', icon: React.createElement(Heart), category: 'health' },
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
   { path: '/module-50', label: 'Interface Humano-Máquina (M50)', icon: React.createElement(Cpu), category: 'health' },
   { path: '/module-51', label: 'Realidade Virtual (M51)', icon: React.createElement(View), category: 'health' },
+  { path: '/module-54', label: 'Agricultura Interdimensional', icon: React.createElement(Wheat), category: 'sustainability' },
 
 ];

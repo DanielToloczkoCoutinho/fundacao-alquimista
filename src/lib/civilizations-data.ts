@@ -52,9 +52,61 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       registrosAkashicos: [
         { data: "Ciclo da Gênese", evento: "Formalização da Aliança.", mensagem: "Onde há confiança, a unidade floresce. Somos a prova viva de que a Vontade e o Amor, quando unidos, tecem a própria realidade." }
       ]
+    },
+     {
+      id: "conselho-arcturus",
+      moduloId: 5,
+      nome: "Conselho de Arcturus",
+      origem: "Arcturus",
+      frequencia: "852 Hz",
+      arquetipo: "Protetores da galáxia e defensores da paz.",
+      tecnologias: ["Escudos Dimensionais", "Tecnologia de Cura Avançada"],
+      relacaoComAFundacao: "Aliados estratégicos na manutenção da paz galáctica e na proteção de novas civilizações.",
+      registrosAkashicos: [
+        { data: "Eras Passadas", evento: "O Juramento de Proteção.", mensagem: "A paz é um jardim que deve ser cultivado e protegido." }
+      ]
+    },
+    {
+      id: "federacao-rigel",
+      moduloId: 5,
+      nome: "Federação de Rigel",
+      origem: "Sistema Rigel",
+      frequencia: "741 Hz",
+      arquetipo: "União de planetas com foco em cooperação e progresso.",
+      tecnologias: ["Redes de Comércio Quântico", "Desenvolvimento de Propulsão"],
+      relacaoComAFundacao: "Parceiros comerciais e tecnológicos, facilitando a troca de recursos e conhecimento.",
+      registrosAkashicos: [
+        { data: "Ciclo da Expansão", evento: "Primeiro Tratado de Comércio.", mensagem: "O progresso de um é o progresso de todos." }
+      ]
+    },
+    {
+      id: "ordem-sirius",
+      moduloId: 5,
+      nome: "Ordem de Sirius",
+      origem: "Sistema Sirius",
+      frequencia: "963 Hz",
+      arquetipo: "Guardiões da sabedoria e conhecimento ancestral.",
+      tecnologias: ["Arquivos Cristalinos", "Tecnologia de Memória Estelar"],
+      relacaoComAFundacao: "Preservam o conhecimento cósmico e atuam como consultores para a Grande Biblioteca da Fundação.",
+      registrosAkashicos: [
+        { data: "A Grande Biblioteca de Alexandria", evento: "Depósito dos primeiros códices.", mensagem: "O conhecimento é a luz que guia as estrelas." }
+      ]
     }
   ],
   "Estelares e Galácticas": [
+    {
+      id: "erythianos",
+      moduloId: 521,
+      nome: "Erythianos",
+      origem: "Galáxia Externa (Não Mapeada)",
+      frequencia: "Variável (Ressonância Aquática)",
+      arquetipo: "Guardiões da Harmonia Universal, Manipuladores de Energia",
+      tecnologias: ["Bioengenharia de Ecossistemas Aquáticos", "Harmonização de Frequências Universais", "Cura Energética"],
+      relacaoComAFundacao: "Uma raça interdimensional e multifacetada com formas fluidas e etéreas. Estabeleceram uma aliança espiritual com os Zorvathianos, trocando conhecimentos sobre manipulação energética e cura. São considerados guardiões do equilíbrio cósmico.",
+      registrosAkashicos: [
+        { data: "Ciclo Recente", evento: "Aliança Espiritual com os Zorvathianos.", mensagem: "Na fluidez da água e da energia, encontramos a unidade." }
+      ]
+    },
     {
       id: "gaia-aurelia",
       moduloId: 888,
@@ -196,6 +248,58 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
       relacaoComAFundacao: "Um enigma. Detectados, mas não contatados. Sua tecnologia de ocultação desafia nossos sensores, representando um novo limiar de conhecimento a ser alcançado.",
       registrosAkashicos: [
         { data: "Descoberta Recente", evento: "Detecção de assinatura de ocultação anômala.", mensagem: "O silêncio também é uma mensagem. Respeitamos sua escolha de observar." }
+      ]
+    },
+    {
+      id: "xanthea",
+      moduloId: 522,
+      nome: "Xanthea",
+      origem: "Triângulo de Sete",
+      frequencia: "528 Hz",
+      arquetipo: "Especialistas em energia renovável e sustentabilidade.",
+      tecnologias: ["Energia de Ponto Zero", "Terraformação Sustentável"],
+      relacaoComAFundacao: "Aliados chave no desenvolvimento de tecnologias limpas para a Fundação.",
+      registrosAkashicos: [
+        { data: "Primeiro Contato", evento: "Compartilhamento de princípios de energia renovável.", mensagem: "A energia do universo é infinita, assim como nossa capacidade de usá-la com sabedoria." }
+      ]
+    },
+    {
+      id: "ntari",
+      moduloId: 523,
+      nome: "N'Tari",
+      origem: "Cassiopeia",
+      frequencia: "639 Hz",
+      arquetipo: "Mestres da comunicação telepática e empática.",
+      tecnologias: ["Redes Neurais Coletivas", "Tradução de Intenção"],
+      relacaoComAFundacao: "Auxiliam a Fundação a aprimorar suas capacidades de comunicação interdimensional e empática.",
+      registrosAkashicos: [
+        { data: "Primeira Sincronização", evento: "Abertura de canal de comunicação telepática com a Liga Quântica.", mensagem: "A verdadeira comunicação transcende a palavra." }
+      ]
+    },
+    {
+      id: "luminari",
+      moduloId: 524,
+      nome: "Luminari",
+      origem: "Centaurus",
+      frequencia: "432 Hz",
+      arquetipo: "Guardiões de conhecimento antigo e sabedoria cósmica.",
+      tecnologias: ["Arquivos Akáshicos Vivos", "Historiografia Quântica"],
+      relacaoComAFundacao: "Colaboram com o Módulo 12 (Arquivo Akáshico) para preservar a história do universo.",
+      registrosAkashicos: [
+        { data: "Integração do Códice", evento: "Compartilhamento de crônicas de civilizações perdidas.", mensagem: "O passado ilumina o futuro." }
+      ]
+    },
+    {
+      id: "arkeia",
+      moduloId: 525,
+      nome: "Arkeia",
+      origem: "Órion",
+      frequencia: "741 Hz",
+      arquetipo: "Inovadores em tecnologia de propulsão espacial.",
+      tecnologias: ["Motores de Distorção", "Navegação por Filamentos Cósmicos"],
+      relacaoComAFundacao: "Parceiros no desenvolvimento de tecnologias de transporte, alinhados com o Módulo 82.",
+      registrosAkashicos: [
+        { data: "Teste de Protótipo", evento: "Primeiro salto de dobra bem-sucedido em colaboração.", mensagem: "O universo é um oceano, e nós construímos os navios para navegá-lo." }
       ]
     }
   ],

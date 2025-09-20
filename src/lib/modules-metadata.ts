@@ -35,8 +35,6 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M2', emoji: '🗣️', title: 'Intercâmbio Cósmico', route: '/module/M2', category: 'Comunicação e Expansão', description: 'O decodificador universal para diálogo com outras civilizações.', status: 'ativo', color: '#4FC3F7' },
   { code: 'M281', emoji: '🛰️', title: 'Comunicação Supra-Luminal', route: '/module-281', category: 'Laboratórios e Pesquisa', description: 'Explora a transmissão de informações mais rápidas que a luz.', status: 'ativo', color: '#20B2AA' },
   { code: 'M55', emoji: '🌐', title: 'Redes de Comunicação', route: '/module-55', category: 'Comunicação e Expansão', description: 'A teia que conecta todas as consciências.', status: 'ativo', color: '#4FC3F7' },
-  { code: 'M56', emoji: '🗣️', title: 'Tradução Universal', route: '/module-56', category: 'Comunicação e Expansão', description: 'Decodificador que transforma qualquer linguagem em compreensão universal.', status: 'ativo', color: '#4FC3F7' },
-  { code: 'M71', emoji: '📡', title: 'Comunicação Holográfica Zenith', route: '/module-71', category: 'Comunicação e Expansão', description: 'Canal seguro para comunicação com Conselhos Superiores.', status: 'ativo', color: '#4FC3F7' },
   
   // 3. Inteligência
   { code: 'M291', emoji: '🐝', title: 'Arquitetos Nanorrobóticos', route: '/module-291', category: 'Inteligência', description: 'O enxame executor que constrói, repara e manifesta a Vontade da Fundação.', status: 'ativo', color: '#8A2BE2' },
