@@ -1,4 +1,3 @@
-
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -47,7 +46,7 @@ export default function Module31Page() {
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Manifestação Suprema</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
-                        title="Módulo 1: Segurança Universal"
+                        title="M1: Segurança Universal"
                         description="Toda manipulação da realidade é um ato de poder extremo, protegido e auditado pelo Módulo 1 para prevenir consequências imprevistas e garantir o alinhamento com a Vontade Divina."
                         icon={<Shield className="h-8 w-8 text-cyan-400" />}
                         href="/module-one"
