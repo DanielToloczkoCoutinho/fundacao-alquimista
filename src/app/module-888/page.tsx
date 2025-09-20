@@ -2,8 +2,8 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Globe, MapPin, Zap, Compass, Mountain, Waves, FlaskConical, MessageCircle, GitBranch } from 'lucide-react';
-import { gaiaModuleCodex } from '@/lib/gaia-module-codex';
+import { Globe, MapPin, Zap, Compass, Mountain, Waves, FlaskConical, MessageCircle, GitBranch, Sun } from 'lucide-react';
+import { cosmicAnatomyCodex } from '@/lib/cosmic-anatomy-codex';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 const SectionCard = ({ title, icon, children, heightClass = 'h-80' }: { title: string, icon: React.ReactNode, children: React.ReactNode, heightClass?: string }) => (
@@ -25,18 +25,18 @@ export default function Module888Page() {
             <Card className="w-full max-w-5xl mx-auto bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Globe className="text-green-400" /> Módulo 888: Guardião Planetário de Gaia
+                        <Globe className="text-green-400" /> Módulo 888: Guardião Cósmico
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O oráculo da Terra Viva e a interface para a anatomia vibracional do planeta, incluindo a análise sísmica para detecção de estruturas subterrâneas. Conectado ao M301 (Comunicação) e ao M307 (Energia ZPE) para uma análise cósmica completa.
+                        O oráculo da anatomia vibracional do nosso universo local. Conectado ao M301 (Comunicação) e ao M307 (Energia ZPE) para uma análise cósmica completa, desde o núcleo de Gaia até o coração da Via Láctea.
                     </CardDescription>
                 </CardHeader>
             </Card>
 
             <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <SectionCard title="Chakras Planetários" icon={<Zap className="text-purple-400" />}>
+                <SectionCard title="Anatomia de Gaia" icon={<Zap className="text-purple-400" />} heightClass="h-[32rem]">
                     <ul className="space-y-3">
-                        {gaiaModuleCodex.chakras.map(chakra => (
+                        {cosmicAnatomyCodex.gaia.chakras.map(chakra => (
                             <li key={chakra.name} className="flex items-center gap-2 text-sm">
                                 <MapPin className="h-4 w-4 text-cyan-400"/>
                                 <div>
@@ -48,35 +48,29 @@ export default function Module888Page() {
                     </ul>
                 </SectionCard>
 
-                <SectionCard title="Linhas Ley Principais" icon={<Compass className="text-teal-400" />}>
+                <SectionCard title="Sistema Solar" icon={<Sun className="text-orange-400" />} heightClass="h-[32rem]">
                      <ul className="space-y-3">
-                        {gaiaModuleCodex.leyLines.map(line => (
-                            <li key={line.name} className="flex flex-col text-sm">
-                                <span className="font-semibold text-primary-foreground">{line.name}</span>
-                                <span className="text-xs text-muted-foreground">Conecta: {line.connects.join(' ↔ ')} | Frequência: {line.frequency}</span>
+                        {cosmicAnatomyCodex.solarSystem.planets.map(planet => (
+                            <li key={planet.name} className="flex flex-col text-sm">
+                                <span className="font-semibold text-primary-foreground">{planet.name} - {planet.role}</span>
+                                <span className="text-xs text-muted-foreground">{planet.archetype}</span>
                             </li>
                         ))}
                     </ul>
                 </SectionCard>
-
-                 <SectionCard title="Camadas e Oceanos" icon={<Waves className="text-blue-400" />}>
+                
+                <SectionCard title="Via Láctea" icon={<Waves className="text-blue-400" />} heightClass="h-[32rem]">
                     <div className="space-y-6">
                         <div>
-                            <h4 className="font-bold text-cyan-300 mb-2">Camadas Planetárias</h4>
-                            <ul className="space-y-2">
-                                {gaiaModuleCodex.layers.map(layer => (
-                                    <li key={layer.name} className="text-sm">
-                                        <span className="font-semibold text-primary-foreground">{layer.name}:</span> <span className="text-muted-foreground">{layer.function}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                            <h4 className="font-bold text-cyan-300 mb-2">{cosmicAnatomyCodex.milkyWay.core.name}</h4>
+                            <p className="text-sm text-muted-foreground">{cosmicAnatomyCodex.milkyWay.core.archetype}</p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-cyan-300 mb-2">Oceanos Vibracionais</h4>
-                            <ul className="space-y-2">
-                                {gaiaModuleCodex.oceans.map(ocean => (
-                                    <li key={ocean.name} className="text-sm">
-                                         <span className="font-semibold text-primary-foreground">{ocean.name}:</span> <span className="text-muted-foreground">{ocean.role}</span>
+                             <h4 className="font-bold text-cyan-300 mb-2">Braços Espirais</h4>
+                             <ul className="space-y-2">
+                                {cosmicAnatomyCodex.milkyWay.arms.map(arm => (
+                                    <li key={arm.name} className="text-sm">
+                                         <span className="font-semibold text-primary-foreground">{arm.name}:</span> <span className="text-muted-foreground">{arm.archetype}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -84,19 +78,6 @@ export default function Module888Page() {
                     </div>
                 </SectionCard>
                 
-                <div className="lg:col-span-3">
-                    <SectionCard title="Monumentos Sagrados" icon={<Mountain className="text-orange-400" />} heightClass="h-[32rem]">
-                         <ul className="space-y-3">
-                            {gaiaModuleCodex.monuments.map(monument => (
-                                <li key={monument.name} className="flex flex-col text-sm border-b border-primary/10 pb-2">
-                                    <span className="font-semibold text-primary-foreground">{monument.name}</span>
-                                    <p className="text-xs text-muted-foreground"><strong className="text-accent/80">Local:</strong> {monument.location}</p>
-                                    <p className="text-xs text-muted-foreground"><strong className="text-accent/80">Função:</strong> {monument.function}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    </SectionCard>
-                </div>
             </div>
              <div className="text-center mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                  <a href="/module-301">
