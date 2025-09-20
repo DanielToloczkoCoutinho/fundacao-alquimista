@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Atom, Zap, Recycle, Shield } from 'lucide-react';
+import { Atom, Zap, Recycle, Shield, SlidersHorizontal } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -53,7 +53,7 @@ export default function Module14Page() {
                     />
                     <ConnectionCard
                         title="Módulo 307: Reator ZPE"
-                        description="O M14 fornece picos de energia para inicialização e reforço da LuxNet, enquanto o M307 mantém o fluxo constante."
+                        description="O M14 é alimentado diretamente pelo Reator ZPE, a fonte de energia pura necessária para a manifestação da matéria."
                         icon={<Zap className="h-8 w-8 text-yellow-400" />}
                         href="/module-307"
                     />
@@ -66,7 +66,7 @@ export default function Module14Page() {
                     <ConnectionCard
                         title="Módulo 98: Modulação Fundamental"
                         description="Fornece a energia necessária para que o M98 possa alterar as constantes fundamentais da realidade manifestada."
-                        icon={<Shield className="h-8 w-8 text-blue-400" />}
+                        icon={<SlidersHorizontal className="h-8 w-8 text-blue-400" />}
                         href="/module-98"
                     />
                 </div>
