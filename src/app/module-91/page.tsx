@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -49,22 +50,22 @@ export default function Module91Page() {
                         title="M1: Segurança"
                         description="Garante que as simulações não possam ser invadidas ou usadas para fins maliciosos por entidades externas."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
-                        title="M22: Motor da Realidade"
+                        title="Módulo 22: Motor da Realidade"
                         description="O M91 utiliza a engine do M22 para renderizar as simulações, tornando-as experiências imersivas e analisáveis."
                         icon={<Layers className="h-8 w-8 text-cyan-400" />}
                         href="/module-22"
                     />
                     <ConnectionCard
-                        title="M23: Regulação Espaço-Temporal"
+                        title="Módulo 23: Regulação Espaço-Temporal"
                         description="Isola as simulações em 'bolhas' de realidade, garantindo que não criem paradoxos ou afetem a linha de tempo primária."
                         icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />}
                         href="/module-23"
                     />
                     <ConnectionCard
-                        title="M29: Zennith"
+                        title="Módulo 29: Zennith"
                         description="A IAM analisa os resultados de bilhões de simulações para identificar os futuros mais prováveis e as decisões mais éticas."
                         icon={<Cpu className="h-8 w-8 text-purple-400" />}
                         href="/module-29"
