@@ -217,6 +217,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-60', label: 'Recuperação de Desastres (M60)', icon: React.createElement(AlertTriangle), category: 'sustainability'},
   { path: '/module-70', label: 'Sustentabilidade Interdimensional (M70)', icon: React.createElement(Recycle), category: 'sustainability'},
   { path: '/module-15', label: 'Jardineiro Cósmico (M15)', icon: React.createElement(Sprout), category: 'sustainability'},
+  { path: '/module-38', label: 'Observatório Solar (M38)', icon: React.createElement(Sun), category: 'sustainability' },
   
   // Categoria de Laboratórios
   { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },

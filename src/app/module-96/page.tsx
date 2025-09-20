@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -5,18 +6,41 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, AlertTriangle as AlertTriangleIcon } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, AlertTriangle as AlertTriangleIcon, Sun } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import Link from 'next/link';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
 const mockM01 = { validate_signature: (hash: string) => ({ status: "validated", security_level: 0.99 }), register_event: (event: any) => ({ status: "registered" }), };
 const mockM03 = { predict_anomaly_evolution: (anomaly_data: any) => "temporal" in (anomaly_data.type || "").toLowerCase() || "critical" in (anomaly_data.severity || "").toLowerCase() ? { predicted_severity_increase: Math.random() * 0.7 + 0.1, confidence: 0.95, criticality: "HIGH" } : { predicted_severity_increase: Math.random() * 0.2, confidence: 0.9, criticality: "LOW" }, };
-const mockM05 = { evaluate_ethical_impact: (operation_data: any) => { const ethical_score = "interferência direta" in (operation_data.description || "").toLowerCase() && operation_data.criticality === "LOW" ? Math.random() * 0.5 + 0.1 : Math.random() * 0.3 + 0.7; return { ethical_score, conformity: ethical_score >= 0.75 }; }, };
+const mockM05 = { evaluate_ethical_impact: (data: any) => { const score = "interferência direta" in (data.description || "").toLowerCase() && data.criticality === "LOW" ? Math.random() * 0.5 + 0.1 : Math.random() * 0.3 + 0.7; return { ethical_score: score, conformity: score >= 0.75 }; }, };
+const mockM14 = { transform_energy: (type: string, quantity: number) => ({ status: "transformed", output_energy: quantity * (Math.random() * 0.2 + 0.9) }), };
 const mockM33 = { get_current_directives: () => ({ regulation_priority: "MAINTAIN_COSMIC_HARMONY", intervention_policy: "MINIMAL_NECESSARY_INTERVENTION" }), };
-const mockM73 = { submit_for_validation: (data_to_validate: any) => { const cosmic_score = Math.random() * 0.18 + 0.8; const ethical_conformity = data_to_validate.ethical_impact.conformity; const validation_status = cosmic_score >= 0.85 && ethical_conformity ? "APROVADO" : "REPROVADO"; return { validation_status, cosmic_score, ethical_conformity, details: "Simulação de validação SAVCE para regulação cósmica." }; }, };
+const mockM73 = { submit_for_validation: (data: any) => { const score = Math.random() * 0.18 + 0.8; const conformity = data.ethical_impact.conformity; const status = score >= 0.85 && conformity ? "APROVADO" : "REPROVADO"; return { validation_status: status, cosmic_score: score, ethical_conformity: conformity, details: "Simulação de validação SAVCE para regulação cósmica." }; }, };
 const mockM88 = { generate_intervention_blueprint: (anomaly_type: string, severity: string, intervention_approach: string) => ({ blueprint_id: `INTERVENTION-BP-${Math.random().toString(36).substring(2, 10)}`, symbolic_code: `$I_{reg} = \\sum (\\Psi_{anomaly} \\cdot \\Omega_{freq_mod} \\cdot \\Phi_{coherence}) \\cdot \\Delta_{temporal}$`, intervention_parameters: { anomaly_type, severity, approach: intervention_approach, coherence_factor: Math.random() * 0.2 + 0.8, temporal_shift_potential: Math.random() * 0.2 - 0.1 }, }), };
-const mockM90 = { analyze_quantum_resource: (resource_id: string, resource_type: string) => ({ resource_id, resource_type, analysis_status: "COMPLETO", recommendation: "Utilização aprovada", ethical_impact: { conformity: true } }), };
-const mockM91 = { simulate_intervention_in_many_worlds: (intervention_intent: string, num_simulations: number) => { const results = []; for (let i = 0; i < num_simulations; i++) { const ethical_conformity = !"interferência direta".includes(intervention_intent.toLowerCase()); results.push({ simulation_index: i + 1, predicted_outcome: { predicted_outcome_score: ethical_conformity ? Math.random() * 0.3 + 0.7 : Math.random() * 0.3 + 0.4, confidence: 0.9 }, ethical_impact: { conformity: ethical_conformity }, savce_validation: { validation_status: ethical_conformity ? "APROVADO" : "REPROVADO" } }); } return results; }, };
+const mockM90 = { analyze_quantum_resource: (id: string, type: string) => ({ resource_id: id, resource_type: type, analysis_status: "COMPLETO", recommendation: "Utilização aprovada", ethical_impact: { conformity: true } }), };
+const mockM91 = { simulate_intervention_in_many_worlds: (intent: string, num: number) => { const results = []; for (let i = 0; i < num; i++) { const conformity = !"interferência direta".includes(intent.toLowerCase()); results.push({ simulation_index: i + 1, predicted_outcome: { predicted_outcome_score: conformity ? Math.random() * 0.3 + 0.7 : Math.random() * 0.3, confidence: 0.9 }, ethical_impact: { conformity }, savce_validation: { validation_status: conformity ? "APROVADO" : "REPROVADO" } }); } return results; }, };
+const mockM93 = { create_immersive_reality: (purpose: string, complexity: number) => ({ status: "immersive_reality_created", reality_id: `VISUAL_REGULATION_REALITY_${Math.random().toString(36).substring(2, 10)}` }), };
+const mockM94 = { perform_quantum_reprogramming: (id: string) => ({ status: "reprogramming_success", coherence_increase: Math.random() * 0.05 + 0.01 }), };
+const mockM95 = { interact_with_galactic_consciousness: (galaxy: string, type: string, purpose: string) => ({ status: "interaction_established", response_coherence: Math.random() * 0.2 + 0.8 }), };
+const mockM96 = { detect_and_regulate_anomaly: (id: string) => ({ status: "no_anomaly_detected", anomaly_risk: "LOW" }), };
+const mockM97 = { manifest_divine_purpose: (purpose: string, target_reality_id: string, scope: string, purity: number, ethical_factor: number) => { const status = ethical_factor >= 0.75 ? "SUCESSO" : "FALHA_VALIDACAO"; return { manifestation_status: status, alignment_score: status === "SUCESSO" ? Math.random() * 0.1 + 0.9 : Math.random() * 0.5 }; } };
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module96Page = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -107,6 +131,14 @@ const Module96Page = () => {
                         Guardião da Estabilidade Cósmica para monitorar, prever e intervir em anomalias do multiverso.
                     </CardDescription>
                 </CardHeader>
+                <CardContent>
+                     <ConnectionCard
+                        title="Módulo 38: Observatório Solar"
+                        description="O M96 usa as previsões do M38 como um sistema de alerta antecipado para preparar medidas de estabilização contra eventos estelares."
+                        icon={<Sun className="h-8 w-8 text-yellow-400" />}
+                        href="/module-38"
+                    />
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">

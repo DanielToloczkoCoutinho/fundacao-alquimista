@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -45,8 +46,8 @@ export default function Module15Page() {
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Sustentabilidade</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <ConnectionCard
-                        title="Módulo 1: Segurança Universal"
+                     <ConnectionCard
+                        title="M1: Segurança"
                         description="As intervenções ecológicas são protegidas pelo M1, garantindo que a regeneração ocorra sem interferências externas."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
                         href="/module/M1"
@@ -68,6 +69,12 @@ export default function Module15Page() {
                         description="Colabora com a IFE para orquestrar fenômenos naturais e manter a harmonia climática e biológica."
                         icon={<Flower className="h-8 w-8 text-pink-400" />}
                         href="/module-117"
+                    />
+                    <ConnectionCard
+                        title="Módulo 38: Observatório Solar"
+                        description="Recebe alertas sobre tempestades solares para poder acionar escudos atmosféricos de proteção para os biomas."
+                        icon={<Sun className="h-8 w-8 text-yellow-400" />}
+                        href="/module-38"
                     />
                 </div>
             </div>
