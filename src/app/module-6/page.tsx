@@ -1,9 +1,10 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, TrendingUp, ShieldAlert, HeartPulse, BrainCircuit, Users } from 'lucide-react';
+import { Loader2, TrendingUp, ShieldAlert, HeartPulse, BrainCircuit, Users, HeartHandshake, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, href, icon }: { title: string, description: string, href: string, icon: React.ReactNode }) => (
