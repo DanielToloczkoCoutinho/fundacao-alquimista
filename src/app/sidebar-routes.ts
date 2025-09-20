@@ -194,6 +194,13 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-52', label: 'Energias Renováveis (M52)', icon: React.createElement(Sun), category: 'sustainability' },
   { path: '/module-53', label: 'Gestão de Ecossistemas (M53)', icon: React.createElement(Leaf), category: 'sustainability' },
   { path: '/module-125', label: 'Criação de Biomas (M125)', icon: React.createElement(Sprout), category: 'sustainability' },
+  { path: '/module-15', label: 'Controle Climático (M15)', icon: React.createElement(CloudSun), category: 'sustainability' },
+  { path: '/module-58', label: 'Proteção Planetária (M58)', icon: React.createElement(Globe), category: 'sustainability' },
+  { path: '/module-59', label: 'Eco-Cidades Quânticas (M59)', icon: React.createElement(Building), category: 'sustainability' },
+  { path: '/module-60', label: 'Soluções para Desastres (M60)', icon: React.createElement(AlertTriangle), category: 'sustainability' },
+  { path: '/module-70', label: 'Sustentabilidade Interdimensional (M70)', icon: React.createElement(Recycle), category: 'sustainability' },
+  { path: '/module-80', label: 'Ecossistemas Inteligentes (M80)', icon: React.createElement(Sprout), category: 'sustainability' },
+  { path: '/module-719', label: 'Regulação Climática Quântica (M719)', icon: React.createElement(CloudSun), category: 'sustainability' },
 
   // Categoria de Laboratórios
   { path: '/module-41', label: 'Lab. de Coerência Quântica (M41)', icon: React.createElement(TestTube), category: 'labs' },
