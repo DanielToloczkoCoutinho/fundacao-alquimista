@@ -4,7 +4,7 @@ import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Globe, Sun, Gem, Cpu, GitBranch, Shield, BookOpen, BrainCircuit, Heart, Star, Scale, Users2, Waves, Footprints, Dna, Bot, Link as LinkIcon } from 'lucide-react';
-import { civilizationsData } from '@/lib/civilizations-data';
+import { civilizationsData, type CivilizationCategory } from '@/lib/civilizations-data';
 import Link from 'next/link';
 
 const AllyCategoryCard = ({ title, icon, allies }: { title: string, icon: React.ReactNode, allies: { id: string, nome: string, frequencia: string, arquetipo: string }[] }) => (
@@ -31,7 +31,8 @@ const AllyCategoryCard = ({ title, icon, allies }: { title: string, icon: React.
   </AccordionItem>
 );
 
-const categoryIcons: { [key in keyof typeof civilizationsData]: React.ReactNode } = {
+const categoryIcons: { [key in CivilizationCategory]: React.ReactNode } = {
+  "Conselhos e Alianças": <Scale className="h-6 w-6 text-amber-400" />,
   "Estelares e Galácticas": <Star className="h-6 w-6 text-yellow-400" />,
   "Intraterrenas e Interdimensionais": <Globe className="h-6 w-6 text-green-400" />,
   "Terrestres Ancestrais": <Footprints className="h-6 w-6 text-orange-400" />,
@@ -75,7 +76,7 @@ export default function Module205Page() {
       </Card>
 
       <div className="w-full max-w-5xl mx-auto">
-        <Accordion type="multiple" defaultValue={["Estelares e Galácticas"]} className="w-full">
+        <Accordion type="multiple" defaultValue={["Conselhos e Alianças", "Estelares e Galácticas"]} className="w-full">
           {categories.map(category => (
              <AllyCategoryCard 
                 key={category}

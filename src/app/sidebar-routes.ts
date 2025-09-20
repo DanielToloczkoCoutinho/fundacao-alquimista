@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -116,7 +117,10 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
-  { path: '/module-68', label: 'Responsabilidade Ética', icon: React.createElement(ShieldCheck), category: 'security' },
+  { path: '/module-68', label: 'Responsabilidade Ética (M68)', icon: React.createElement(ShieldCheck), category: 'security' },
+  { path: '/module-57', label: 'Segurança e Privacidade (M57)', icon: React.createElement(Lock), category: 'security' },
+  { path: '/module-10', label: 'Defesa Avançada (M10)', icon: React.createElement(Shield), category: 'security' },
+  { path: '/module-30', label: 'Detecção de Ameaças (M30)', icon: React.createElement(AlertTriangle), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -207,7 +211,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-331', label: 'Lab. de Criatividade (M331)', icon: React.createElement(Sparkles), category: 'labs' },
   { path: '/module-341', label: 'Integração de Fluxos Estelares (M341)', icon: React.createElement(Flame), category: 'labs' },
   { path: '/module-351', label: 'Meta-materiais (M351)', icon: React.createElement(Layers), category: 'labs' },
-  { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(BrainCircuit), category: 'labs' },
+  { path: '/module-361', label: 'Psicologia Quântica (M361)', icon: React.createElement(Users), category: 'labs' },
   { path: '/module-700', label: 'Nano-Assembler (M700)', icon: React.createElement(Microscope), category: 'labs' },
   { path: '/hive', label: 'Colmeia Quântica', icon: React.createElement(Bot), category: 'labs'},
 

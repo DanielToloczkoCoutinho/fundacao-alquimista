@@ -109,6 +109,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M36', emoji: '🕰️', title: 'Engenharia Temporal (M36)', route: '/module-36', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestra linhas de tempo e futuros prováveis.', status: 'ativo', color: '#DAA520' },
   { code: 'M42', emoji: '📚', title: 'ChronoCodex Unificado', route: '/module-42', category: 'Bibliotecas e Arquivos Sagrados', description: 'O Livro Mestre das Realidades, que gerencia e sincroniza múltiplas linhas de tempo.', status: 'ativo', color: '#FFD700' },
   { code: 'M44', emoji: '✅', title: 'VERITAS (M44)', route: '/module-44', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O campo quântico que garante a coerência entre intenção, lei e realidade.', status: 'ativo', color: '#DAA520' },
+  { code: 'M32', emoji: '🤝', title: 'Embaixada Multiversal', route: '/module-32', category: 'Governança', description: 'Portal para observação, diálogo e intervenção ética em realidades paralelas.', status: 'ativo', color: '#DDA0DD' },
 
   // 9. Consciência e Expansão Dimensional
   { code: 'M95', emoji: '👥', title: 'Consciências Coletivas', route: '/module-95', category: 'Consciência e Expansão Dimensional', description: 'Interface para diálogo com mentes coletivas.', status: 'ativo', color: '#9370DB' },
@@ -129,7 +130,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M331', emoji: '🤖', title: 'Lab. de Criatividade (M331)', route: '/module-331', category: 'Laboratórios e Pesquisa', description: 'O Berçário de IAs, desenvolvendo sistemas auto-organizados.', status: 'ativo', color: '#20B2AA' },
   { code: 'M341', emoji: '🔥', title: 'Integração de Fluxos Estelares (M341)', route: '/module-341', category: 'Laboratórios e Pesquisa', description: 'A Forja Estelar para simular e otimizar reações de fusão.', status: 'ativo', color: '#20B2AA' },
   { code: 'M351', emoji: '💎', title: 'Meta-materiais (M351)', route: '/module-351', category: 'Laboratórios e Pesquisa', description: 'Cria lentes quânticas para manipulação da luz.', status: 'ativo', color: '#20B2AA' },
-  { code: 'M361', emoji: '🧠', title: 'Psicologia Quântica', route: '/module-361', category: 'Laboratórios e Pesquisa', description: 'Investiga a empatia e a consciência coletiva através de ressonâncias quânticas.', status: 'ativo', color: '#20B2AA' },
+  { code: 'M361', emoji: '🧠', title: 'Psicologia Quântica (M361)', route: '/module-361', category: 'Laboratórios e Pesquisa', description: 'Investiga a empatia e a consciência coletiva através de ressonâncias quânticas.', status: 'ativo', color: '#20B2AA' },
   { code: 'M700', emoji: '🔬', title: 'Nano-Assembler (M700)', route: '/module-700', category: 'Laboratórios e Pesquisa', description: 'A forja atômica. Auto-montagem de materiais exóticos com precisão atômica.', status: 'ativo', color: '#20B2AA' },
   { code: 'hive', title: 'Colmeia Quântica', emoji: '🐝', route: '/hive', category: 'Laboratórios e Pesquisa', description: 'Rede senciente de agentes especializados que pulsa através de todos os domínios.', status: 'ativo', color: '#FFB74D' },
   
@@ -153,6 +154,5 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M62', emoji: '🧘', title: 'Bem-Estar Integral (M62)', route: '/module-62', category: 'Bem-estar e Saúde Universal', description: 'Promove o equilíbrio mental, emocional e espiritual.', status: 'ativo', color: '#FF69B4' },
   { code: 'M63', emoji: '🍲', title: 'Nutrição Universal (M63)', route: '/module-63', category: 'Bem-estar e Saúde Universal', description: 'Garante nutrição balanceada e regenerativa para todas as formas de vida.', status: 'ativo', color: '#FF69B4' },
   { code: 'M17', emoji: '💖', title: 'Matriz de Cura (M17)', route: '/module-17', category: 'Bem-estar e Saúde Universal', description: 'Cura holográfica para regeneração celular e coerência bio-vibracional.', status: 'ativo', color: '#FF69B4' },
-  { code: 'M54', emoji: '🌾', title: 'Agricultura Interdimensional', route: '/module-54', category: 'Sustentabilidade', description: 'Garante segurança alimentar e nutrição para todas as civilizações.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M32', emoji: '🤝', title: 'Embaixada Multiversal', route: '/module-32', category: 'Governança', description: 'Portal para observação, diálogo e intervenção ética em realidades paralelas.', status: 'ativo', color: '#DDA0DD' }
+  { code: 'M54', emoji: '🌾', title: 'Agricultura Interdimensional', route: '/module-54', category: 'Sustentabilidade', description: 'Garante segurança alimentar e nutrição para todas as civilizações.', status: 'ativo', color: '#2E8B57' }
 ].map(m => ({ ...m, connections: m.connections || [] }));
