@@ -119,7 +119,7 @@ const Module109Page = () => {
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         <ConnectionCard
                             title="Módulo 13: Mapeamento de Frequências"
                             description="O M109 utiliza o diagnóstico do M13 para identificar as dissonâncias energéticas que necessitam de cura."
@@ -137,12 +137,6 @@ const Module109Page = () => {
                             description="O M109 fornece os princípios universais que o M24 aplica em escala individual para o alinhamento da alma."
                             icon={<Music className="h-8 w-8 text-violet-400" />}
                             href="/module-24"
-                        />
-                         <ConnectionCard
-                            title="Módulo 28: Harmonização Vibracional"
-                            description="Prepara o 'terreno' vibracional para que o M109 possa aplicar curas mais profundas e focadas."
-                            icon={<Waves className="h-8 w-8 text-emerald-400" />}
-                            href="/module-28"
                         />
                     </div>
                 </CardContent>
