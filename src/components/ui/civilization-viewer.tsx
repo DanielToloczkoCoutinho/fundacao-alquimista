@@ -3,13 +3,13 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Star, Globe, Footprints, Dna, Bot, Waves, BookOpen, Cpu, FlaskConical, Link, Archive } from 'lucide-react';
+import { Star, Globe, Footprints, Dna, Bot, Waves, BookOpen, Cpu, FlaskConical, Link as LinkIcon, Archive, Scale, Users2 } from 'lucide-react';
 import { civilizationsData, type Civilization, type CivilizationCategory } from '@/lib/civilizations-data';
 
 const categoryIcons: { [key in CivilizationCategory]: React.ReactNode } = {
+  "Conselhos e Alianças": <Scale className="h-6 w-6 text-amber-400" />,
   "Estelares e Galácticas": <Star className="h-6 w-6 text-yellow-400" />,
   "Intraterrenas e Interdimensionais": <Globe className="h-6 w-6 text-green-400" />,
   "Terrestres Ancestrais": <Footprints className="h-6 w-6 text-orange-400" />,
@@ -87,5 +87,3 @@ export default function CivilizationViewer({ civilization }: { civilization: Civ
     </Card>
   );
 }
-
-    

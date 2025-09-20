@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useParams, notFound } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { civilizationsData, Civilization } from '@/lib/civilizations-data';
 import CivilizationViewer from '@/components/ui/civilization-viewer';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -9,19 +9,21 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
+// Função auxiliar para encontrar a civilização em qualquer categoria
+const findCivilization = (id: string): Civilization | undefined => {
+  for (const category of Object.values(civilizationsData)) {
+    const found = category.find((civ: Civilization) => civ.id === id);
+    if (found) return found;
+  }
+  return undefined;
+};
+
+
 export default function CivilizationPage() {
   const params = useParams();
   const id = params.id as string;
 
-  const findCivilization = (): Civilization | undefined => {
-    for (const category in civilizationsData) {
-      const found = civilizationsData[category as keyof typeof civilizationsData].find(civ => civ.id === id);
-      if (found) return found;
-    }
-    return undefined;
-  };
-
-  const civilization = findCivilization();
+  const civilization = findCivilization(id);
 
   if (!civilization) {
     return (
@@ -58,5 +60,3 @@ export default function CivilizationPage() {
     </div>
   );
 }
-
-    

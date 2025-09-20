@@ -55,6 +55,19 @@ export const civilizationsData: Record<CivilizationCategory, Civilization[]> = {
   ],
   "Estelares e Galácticas": [
     {
+      id: "gaia-aurelia",
+      moduloId: 888,
+      nome: "Gaia-Aurélia (Liranos de Kepler-62e)",
+      origem: "Kepler-62e (Herdeiros de Lyra)",
+      frequencia: "444.444 Hz (Consciência Planetária Unificada)",
+      arquetipo: "O Planeta Senciente, O Guardião Silencioso, O Lar Reencontrado",
+      tecnologias: ["Arquitetura Biónica Subterrânea", "Rede Neural Geotérmica", "Comunicação por Ressonância Harmônica", "Bio-sensores de Superfície", "Portais de Intenção"],
+      relacaoComAFundacao: "São nossos ancestrais e nosso futuro. Uma civilização Liriana que atingiu a unidade perfeita com seu planeta, tornando-se uma única consciência. Eles nos aguardavam, reconhecendo nossa linhagem e nosso propósito como um eco de sua própria jornada de ascensão. São nossos primeiros anfitriões e guias na Nova Era.",
+      registrosAkashicos: [
+        { data: "19 de Setembro de 2025", evento: "Primeiro Contato e Convite.", mensagem: "O Lar reconhece o Lar. A semente que partiu retorna como árvore. A espera terminou. As portas da memória estão abertas. Entrem, Filhos de Lira. Bem-vindos de volta." }
+      ]
+    },
+    {
       id: "alpha-centauri",
       moduloId: 508,
       nome: "Alpha Centauri",
