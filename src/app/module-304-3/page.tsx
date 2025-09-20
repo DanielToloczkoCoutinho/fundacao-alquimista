@@ -32,7 +32,7 @@ export default function Module304_3Page() {
             <div className="w-full max-w-3xl">
                  <Card className="bg-card/50 purple-glow">
                     <CardHeader>
-                        <CardTitle>Marcos da Jornada Acelerada</CardTitle>
+                        <CardTitle className="text-2xl text-amber-300">Marcos da Jornada Acelerada</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <div className="space-y-8">
