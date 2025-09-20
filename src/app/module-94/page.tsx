@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -5,19 +6,40 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Dna as DnaIcon } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Dna as DnaIcon, Sprout, HeartPulse } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import Link from 'next/link';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
 const mockM01 = { validate_signature: (hash: string) => ({ status: "validated", security_level: 0.99 }), register_event: (event: any) => ({ status: "registered" }), };
 const mockM03 = { predict_reprogramming_outcome: (reprogramming_data: any) => "coercao" in (reprogramming_data.purpose || "").toLowerCase() ? { predicted_success_score: Math.random() * 0.4 + 0.1, confidence: 0.8 } : { predicted_success_score: Math.random() * 0.3 + 0.7, confidence: 0.95 }, };
 const mockM05 = { evaluate_ethical_impact: (operation_data: any) => { const ethical_score = "coercao" in (operation_data.description || "").toLowerCase() ? Math.random() * 0.5 + 0.1 : Math.random() * 0.3 + 0.7; return { ethical_score, conformity: ethical_score >= 0.75 }; }, };
+const mockM14 = { transform_energy: (energy_type: string, quantity: number) => ({ status: "transformed", output_energy: quantity * (Math.random() * 0.2 + 0.9) }), };
 const mockM33 = { get_current_directives: () => ({ reprogramming_priority: "MAXIMIZE_EVOLUTIONARY_ALIGNMENT", ethical_alignment_strictness: "ABSOLUTE" }), };
 const mockM73 = { submit_for_validation: (data_to_validate: any) => { const cosmic_score = Math.random() * 0.18 + 0.8; const ethical_conformity = data_to_validate.ethical_impact.conformity; const validation_status = cosmic_score >= 0.85 && ethical_conformity ? "APROVADO" : "REPROVADO"; return { validation_status, cosmic_score, ethical_conformity, details: "Simulação de validação SAVCE para morfogênese." }; }, };
 const mockM88 = { generate_quantum_blueprint: (purpose: string, target_entity_type: string) => ({ blueprint_id: `BP-QUANTUM-${Math.random().toString(36).substring(2, 10)}`, symbolic_equation: `$B_{quantum} = \\int \\Psi_{original} \\cdot \\Omega_{freq} \\cdot \\Phi_{new\\_template} \\,dV$`, blueprint_parameters: { purpose, target_type: target_entity_type, coherence_factor: Math.random() * 0.2 + 0.8, vibrational_signature: Math.random() * (800 - 500) + 500 }, }), };
 const mockM90 = { analyze_quantum_resource: (resource_id: string, resource_type: string) => ({ resource_id, resource_type, analysis_status: "COMPLETO", recommendation: "Utilização aprovada", ethical_impact: { conformity: true } }), };
-const mockM93 = { create_immersive_reality: (purpose: string, complexity_level: number, target_user: string) => ({ status: "immersive_reality_created", reality_id: `VISUAL_MORPHO_REALITY_${Math.random().toString(36).substring(2, 10)}` }), };
+const mockM93 = { create_immersive_reality: (purpose: string, complexity_level: number) => ({ status: "immersive_reality_created", reality_id: `VISUAL_MORPHO_REALITY_${Math.random().toString(36).substring(2, 10)}` }), };
+const mockM94 = { perform_quantum_reprogramming: (target_entity_id: string) => ({ status: "reprogramming_success", coherence_increase: Math.random() * 0.05 + 0.01 }), };
+const mockM95 = { interact_with_galactic_consciousness: (galaxy: string, type: string, purpose: string) => ({ status: "interaction_established", response_coherence: Math.random() * 0.2 + 0.8 }), };
+const mockM96 = { detect_and_regulate_anomaly: (id: string) => ({ status: "no_anomaly_detected", anomaly_risk: "LOW" }), };
+const mockM97 = { manifest_divine_purpose: (purpose: string, target_reality_id: string, scope: string, purity: number, ethical_factor: number) => { const status = ethical_factor >= 0.75 ? "SUCESSO" : "FALHA_VALIDACAO"; return { manifestation_status: status, alignment_score: status === "SUCESSO" ? Math.random() * 0.1 + 0.9 : Math.random() * 0.5 }; } };
 
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module94Page = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -62,7 +84,7 @@ const Module94Page = () => {
                 reprogramming_data.savce_validation = savce_validation;
 
                 if (savce_validation.validation_status === "APROVADO") {
-                    mockM93.create_immersive_reality(`Visualização da Reprogramação de ${targetEntity}`, 0.7, "ANATHERON_CONSCIOUSNESS_001");
+                    mockM93.create_immersive_reality(`Visualização da Reprogramação de ${targetEntity}`, 0.7);
                 }
 
                 mockM01.register_event({ type: `quantum_reprogramming_${savce_validation.validation_status.toLowerCase()}`, reprogramming_id: reprogramming_data.reprogramming_id });
@@ -106,6 +128,14 @@ const Module94Page = () => {
                         Laboratório de engenharia da vida e energia, para reprogramação bio-vibracional e alinhamento com templates divinos.
                     </CardDescription>
                 </CardHeader>
+                 <CardContent>
+                    <ConnectionCard
+                        title="Módulo 15: Jardineiro Cósmico"
+                        description="O M94 recebe solicitações do M15 para criar blueprints genéticos de espécies adaptadas para restaurar um ecossistema em desequilíbrio."
+                        icon={<Sprout className="h-8 w-8 text-green-400" />}
+                        href="/module-15"
+                    />
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">

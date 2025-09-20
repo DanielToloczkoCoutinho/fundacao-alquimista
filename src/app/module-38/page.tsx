@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Sun, Shield, Zap, SlidersHorizontal } from 'lucide-react';
+import { Sun, Shield, Zap, SlidersHorizontal, Sprout } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -49,12 +50,12 @@ export default function Module38Page() {
                         title="M1: Segurança"
                         description="Protege os sensores do observatório contra interferência, garantindo a precisão e a integridade dos dados."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 15: Jardineiro Cósmico"
                         description="Alerta o M15 sobre tempestades solares, permitindo o reforço dos escudos atmosféricos para proteger os biomas."
-                        icon={<Shield className="h-8 w-8 text-green-400" />}
+                        icon={<Sprout className="h-8 w-8 text-green-400" />}
                         href="/module-15"
                     />
                     <ConnectionCard

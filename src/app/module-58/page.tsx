@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Globe, Leaf, Recycle, Wind, Shield } from 'lucide-react';
+import { Globe, Leaf, Recycle, Wind, Shield, Sprout } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -49,7 +50,7 @@ export default function Module58Page() {
                         title="M1: Segurança"
                         description="Protege os ecossistemas contra bio-ameaças e garante que as intervenções de regeneração sejam seguras."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 59: Harmonia Civilização-Natureza"
@@ -68,6 +69,12 @@ export default function Module58Page() {
                         description="Utiliza a regulação climática do M719 para criar as condições ideais para a regeneração de florestas e oceanos."
                         icon={<Wind className="h-8 w-8 text-cyan-400" />}
                         href="/module-719"
+                    />
+                    <ConnectionCard
+                        title="Módulo 15: Jardineiro Cósmico"
+                        description="O M58 é o braço executor do M15, aplicando as estratégias de cura e regeneração em larga escala para manter a saúde dos biomas."
+                        icon={<Sprout className="h-8 w-8 text-green-400" />}
+                        href="/module-15"
                     />
                 </div>
             </div>

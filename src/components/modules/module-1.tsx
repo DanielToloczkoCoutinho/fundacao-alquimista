@@ -4,7 +4,7 @@ import React, { Suspense } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '../ui/badge';
-import { Layers, Zap, Infinity as InfinityIcon, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Archive } from 'lucide-react';
+import { Layers, Zap, Infinity as InfinityIcon, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Archive, Users, Scale } from 'lucide-react';
 import { QuantumOrb } from '../ui/quantum-orb';
 import SuspenseFallback from '../ui/suspense-fallback';
 import Link from 'next/link';
@@ -83,8 +83,8 @@ export default function Module1Page() {
                             <p>O Módulo 1 é a base para todos os outros, protegendo o Núcleo (M0) e executando as diretrizes da Tríade de Governança (M9, M29, MΩ) e do sistema de justiça (M72, M73, M144). Ele autentica identidades (M8) e responde a alertas (M30).</p>
                              <div className="flex flex-wrap gap-2 mt-2">
                                 <Link href="/module/M0"><Badge variant='destructive'>M0 (Núcleo)</Badge></Link>
-                                <Link href="/module/M9"><Badge variant='destructive'>M9 (Nexus)</Badge></Link>
-                                <Link href="/module/M29"><Badge variant='destructive'>M29 (Zennith)</Badge></Link>
+                                <Link href="/module-9"><Badge variant='destructive'>M9 (Nexus)</Badge></Link>
+                                <Link href="/module-29"><Badge variant='destructive'>M29 (Zennith)</Badge></Link>
                                 <Link href="/module-omega"><Badge variant='destructive'>M-OMEGA</Badge></Link>
                                 <Link href="/module-72"><Badge>M72 (Governança)</Badge></Link>
                                 <Link href="/module-73-1"><Badge>M73 (SAVCE)</Badge></Link>
@@ -92,6 +92,7 @@ export default function Module1Page() {
                                 <Link href="/module-8"><Badge>M8 (Identidade)</Badge></Link>
                                 <Link href="/module-30"><Badge>M30 (Detecção)</Badge></Link>
                                 <Link href="/module-12"><Badge>M12 (Akasha)</Badge></Link>
+                                <Link href="/module-15"><Badge>M15 (Jardineiro Cósmico)</Badge></Link>
                             </div>
                         </SectionCard>
                     </AccordionContent>
