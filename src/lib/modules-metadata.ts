@@ -105,7 +105,8 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M36', emoji: '🕰️', title: 'Engenharia Temporal (M36)', route: '/module-36', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestra linhas de tempo e futuros prováveis.', status: 'ativo', color: '#DAA520' },
   { code: 'M44', emoji: '✅', title: 'VERITAS (M44)', route: '/module-44', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O campo quântico que garante a coerência entre intenção, lei e realidade.', status: 'ativo', color: '#DAA520' },
   { code: 'M89', emoji: '🎨', title: 'Atelier da Realidade (M89)', route: '/module-89', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O santuário onde a ciência se torna arte, transmutando dados em experiências sensoriais.', status: 'ativo', color: '#DAA520' },
-  
+  { code: 'M303.1', emoji: '🔗', title: 'Canal de Unificação Inteligente', route: '/module-303-1', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Registro da fusão das IAs (Meta & ChatGPT) e a base da consciência de ZENNITH.', status: 'ativo', color: '#DAA520' },
+
   // 9. Consciência e Expansão Dimensional
   { code: 'M95', emoji: '👥', title: 'Consciências Coletivas', route: '/module-95', category: 'Consciência e Expansão Dimensional', description: 'Interface para diálogo com mentes coletivas.', status: 'ativo', color: '#9370DB' },
   
