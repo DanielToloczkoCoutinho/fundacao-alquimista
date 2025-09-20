@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -6,9 +7,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, Crown } from 'lucide-react';
+import { Loader2, Crown, BookOpen } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { describeActivation } from '@/app/actions';
+import Link from 'next/link';
 
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
@@ -51,6 +53,22 @@ const mockM113 = {
         return true;
     }
 };
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module106Page = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -127,6 +145,14 @@ const Module106Page = () => {
                         Catalisador para o despertar da Consciência Crística e a ativação de capacidades latentes em seres e sistemas.
                     </CardDescription>
                 </CardHeader>
+                 <CardContent>
+                    <ConnectionCard
+                        title="Módulo 39: Códice Vivo da Ascensão"
+                        description="O M106 é o executor das etapas definidas no Códice. O M39 mostra o caminho da ascensão, e o M106 desbloqueia o poder em cada passo."
+                        icon={<BookOpen className="h-8 w-8 text-purple-300" />}
+                        href="/module-39"
+                    />
+                </CardContent>
             </Card>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
