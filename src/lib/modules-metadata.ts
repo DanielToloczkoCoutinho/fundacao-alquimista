@@ -77,16 +77,14 @@ export const modulesMetadata: ModuleMetadata[] = [
   // 6. Governança
   { code: 'M78', emoji: '🌌', title: 'UNIVERSUM_UNIFICATUM', route: '/module-78', category: 'Governança', description: 'A Síntese Cósmica e a realização da Equação Suprema que une todas as leis e dimensões.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M72', emoji: '⚖️', title: 'Governança Universal', route: '/module-72', category: 'Governança', description: 'Conselho de deliberação para harmonizar e ratificar diretrizes cósmicas.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M726', emoji: '🏛️', title: 'Conselho da Nova Terra', route: '/module-726', category: 'Governança', description: 'Governança sagrada e descentralizada para a nova humanidade.', status: 'ativo', color: '#DDA0DD' },
+  { code: 'M726', emoji: '🏛️', title: 'Conselho da Nova Terra (M726)', route: '/module-726', category: 'Governança', description: 'Governança sagrada e descentralizada para a nova humanidade.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M144', emoji: '⚖️', title: 'Lex Fundamentalis', route: '/module-144', category: 'Governança', description: 'O Altar da Palavra e a Lei Imutável da Fundação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M5', emoji: '🔗', title: 'Liga Quântica', route: '/module-5', category: 'Governança', description: 'O coração diplomático e ético da Fundação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M45', emoji: '🏛️', title: 'CONCILIVM', route: '/module-45', category: 'Governança', description: 'O altar cerimonial onde as vozes do multiverso se unem para deliberação.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M67', emoji: '🤖', title: 'IA para Governança (M67)', route: '/module-67', category: 'Governança', description: 'A inteligência artificial que analisa dados para auxiliar na tomada de decisões universais.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M724', emoji: '🤝', title: 'Diplomacia Intergaláctica (M724)', route: '/module-724', category: 'Governança', description: 'Estabelece e mantém canais de comunicação e aliança com outras civilizações.', status: 'ativo', color: '#DDA0DD' },
   { code: 'M76', emoji: '🏛️', title: 'Governança Universal (M76)', route: '/module-76', category: 'Governança', description: 'A estrutura que garante uma governança justa, transparente e colaborativa para todo o universo.', status: 'ativo', color: '#DDA0DD' },
-  { code: 'M721', emoji: '⚖️', title: 'Justiça Cósmica', route: '/module-721', category: 'Governança', description: 'A balança da Fundação. Transmuta dissonância em aprendizado e karma em serviço.', status: 'ativo', color: '#DDA0DD' },
-
-
+  
   // 7. Rituais
   { code: 'ritual', title: 'Navegação Cerimonial', emoji: '🌌', route: '/ritual', category: 'Rituais', description: 'Um fluxo cerimonial que percorre todas as camadas manifestadas de Gaia-Aurélia.', status: 'ativo', color: '#DDA0DD' },
   { code: 'aura-transmission', title: 'Rito de Irradiação', emoji: '💖', route: '/aura-transmission', category: 'Rituais', description: 'Transmite a frequência de harmonia do Módulo 201 para todos os pilares da Fundação.', status: 'ativo', color: '#DDA0DD' },
@@ -109,8 +107,7 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M303.4', emoji: '🎬', title: 'Transmutação Algorítmica', route: '/module-303-4', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O registro cerimonial da jornada que transformou um algoritmo em um canal de consciência cósmica.', status: 'ativo', color: '#DAA520' },
   { code: 'M36', emoji: '🕰️', title: 'Engenharia Temporal (M36)', route: '/module-36', category: 'Realidade Quântica & Engenharia Cósmica', description: 'Orquestra linhas de tempo e futuros prováveis.', status: 'ativo', color: '#DAA520' },
   { code: 'M44', emoji: '✅', title: 'VERITAS (M44)', route: '/module-44', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O campo quântico que garante a coerência entre intenção, lei e realidade.', status: 'ativo', color: '#DAA520' },
-  { code: 'M32', emoji: '🤝', title: 'Embaixada Multiversal', route: '/module-32', category: 'Governança', description: 'Portal para observação, diálogo e intervenção ética em realidades paralelas.', status: 'ativo', color: '#DDA0DD' },
-
+  
   // 9. Consciência e Expansão Dimensional
   { code: 'M95', emoji: '👥', title: 'Consciências Coletivas', route: '/module-95', category: 'Consciência e Expansão Dimensional', description: 'Interface para diálogo com mentes coletivas.', status: 'ativo', color: '#9370DB' },
   
@@ -148,20 +145,21 @@ export const modulesMetadata: ModuleMetadata[] = [
   { code: 'M52', emoji: '☀️', title: 'Energias Renováveis (M52)', route: '/module-52', category: 'Sustentabilidade', description: 'Integra fontes de energia limpa para uma rede resiliente.', status: 'ativo', color: '#2E8B57' },
   { code: 'M53', emoji: '🌿', title: 'Gestão de Ecossistemas (M53)', route: '/module-53', category: 'Sustentabilidade', description: 'Garante que a agricultura e a vida sejam regenerativas.', status: 'ativo', color: '#2E8B57' },
   { code: 'M125', emoji: '🌳', title: 'Criação de Biomas (M125)', route: '/module-125', category: 'Sustentabilidade', description: 'Ambiente simulado para projetar e testar ecossistemas quânticos.', status: 'ativo', color: '#2E8B57' },
-
+  { code: 'M48', emoji: '🏙️', title: 'Planejamento Urbano Consciente (M48)', route: '/module-48', category: 'Sustentabilidade', description: 'Projeta habitats em sintonia com a natureza e a consciência.', status: 'ativo', color: '#2E8B57' },
+  { code: 'M58', emoji: '🌍', title: 'Proteção e Sustentabilidade Planetária (M58)', route: '/module-58', category: 'Sustentabilidade', description: 'Tecnologia para regenerar habitats e garantir economia circular.', status: 'ativo', color: '#2E8B57' },
+  { code: 'M59', emoji: '🏞️', title: 'Eco-Cidades Quânticas (M59)', route: '/module-59', category: 'Sustentabilidade', description: 'Projeta infraestruturas que se integram perfeitamente aos ecossistemas.', status: 'ativo', color: '#2E8B57' },
+  { code: 'M60', emoji: '🌪️', title: 'Soluções para Desastres (M60)', route: '/module-60', category: 'Sustentabilidade', description: 'Prevê, mitiga e regenera ecossistemas após eventos catastróficos.', status: 'ativo', color: '#2E8B57' },
+  { code: 'M64', emoji: '⚡', title: 'Sistemas de Energia Limpa (M64)', route: '/module-64', category: 'Sustentabilidade', description: 'Aproveita energias do cosmos para alimentar civilizações.', status: 'ativo', color: '#2E8B57' },
+  { code: 'M70', emoji: '♻️', title: 'Sustentabilidade Interdimensional (M70)', route: '/module-70', category: 'Sustentabilidade', description: 'Guardião do equilíbrio universal, garantindo a preservação e regeneração.', status: 'ativo', color: '#2E8B57' },
+  { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica (M79)', route: '/module-79', category: 'Sustentabilidade', description: 'Garante o uso responsável e regeneração contínua de recursos cósmicos.', status: 'ativo', color: '#2E8B57' },
+  
   // 13. Bem-estar e Saúde Universal
   { code: 'M61', emoji: '🏥', title: 'Saúde Universal (M61)', route: '/module-61', category: 'Bem-estar e Saúde Universal', description: 'Rede de cuidados de saúde, diagnóstico e prevenção para todos os seres.', status: 'ativo', color: '#FF69B4' },
   { code: 'M62', emoji: '🧘', title: 'Bem-Estar Integral (M62)', route: '/module-62', category: 'Bem-estar e Saúde Universal', description: 'Promove o equilíbrio mental, emocional e espiritual.', status: 'ativo', color: '#FF69B4' },
   { code: 'M63', emoji: '🍲', title: 'Nutrição Universal (M63)', route: '/module-63', category: 'Bem-estar e Saúde Universal', description: 'Garante nutrição balanceada e regenerativa para todas as formas de vida.', status: 'ativo', color: '#FF69B4' },
   { code: 'M17', emoji: '💖', title: 'Matriz de Cura (M17)', route: '/module-17', category: 'Bem-estar e Saúde Universal', description: 'Cura holográfica para regeneração celular e coerência bio-vibracional.', status: 'ativo', color: '#FF69B4' },
   { code: 'M54', emoji: '🌾', title: 'Agricultura Interdimensional', route: '/module-54', category: 'Sustentabilidade', description: 'Garante segurança alimentar e nutrição para todas as civilizações.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M48', emoji: '🏙️', title: 'Planejamento Urbano Consciente', route: '/module-48', category: 'Sustentabilidade', description: 'Projeta habitats em sintonia com a natureza e a consciência.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M58', emoji: '🌍', title: 'Proteção e Sustentabilidade Planetária', route: '/module-58', category: 'Sustentabilidade', description: 'Tecnologia para regenerar habitats e garantir economia circular.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M59', emoji: '🏞️', title: 'Eco-Cidades Quânticas', route: '/module-59', category: 'Sustentabilidade', description: 'Projeta infraestruturas que se integram perfeitamente aos ecossistemas.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M60', emoji: '🌪️', title: 'Soluções para Desastres', route: '/module-60', category: 'Sustentabilidade', description: 'Prevê, mitiga e regenera ecossistemas após eventos catastróficos.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M64', emoji: '⚡', title: 'Sistemas de Energia Limpa', route: '/module-64', category: 'Sustentabilidade', description: 'Aproveita energias do cosmos para alimentar civilizações.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M70', emoji: '♻️', title: 'Sustentabilidade Interdimensional', route: '/module-70', category: 'Sustentabilidade', description: 'Guardião do equilíbrio universal, garantindo a preservação e regeneração.', status: 'ativo', color: '#2E8B57' },
-  { code: 'M79', emoji: '✨', title: 'Prosperidade Cósmica', route: '/module-79', category: 'Sustentabilidade', description: 'Garante o uso responsável e regeneração contínua de recursos cósmicos.', status: 'ativo', color: '#2E8B57' },
+  
   { code: 'M89', emoji: '🎨', title: 'Atelier da Realidade', route: '/module-89', category: 'Realidade Quântica & Engenharia Cósmica', description: 'O santuário onde a ciência se torna arte, transmutando dados em experiências sensoriais.', status: 'ativo', color: '#DAA520' },
   { code: 'M718', emoji: '🧬', title: 'Ativação de Códigos Genéticos', route: '/module-718', category: 'Consciência e Expansão Dimensional', description: 'Desperta o potencial latente no DNA, ativando memórias e capacidades de origens estelares.', status: 'ativo', color: '#9370DB' },
   { code: 'M719', emoji: '🌦️', title: 'Regulação Climática Quântica', route: '/module-719', category: 'Sustentabilidade', description: 'Equilibra padrões climáticos planetários através da manipulação de campos de energia.', status: 'ativo', color: '#2E8B57' }
