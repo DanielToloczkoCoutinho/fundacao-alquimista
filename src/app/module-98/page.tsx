@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -5,8 +6,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Settings } from 'lucide-react';
+import { Loader2, ShieldCheck, CheckCircle, XCircle, FileClock, Scale, Info, Sparkles, Settings, ShieldHalf } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
+import Link from 'next/link';
 
 // --- Mocks para simular a funcionalidade de outros módulos ---
 const mockM01 = { validate_signature: (hash: string) => ({ status: "validated", security_level: 0.99 }), register_event: (event: any) => ({ status: "registered" }), };
@@ -23,6 +25,22 @@ const mockM94 = { perform_quantum_reprogramming: (id: string) => ({ status: "rep
 const mockM95 = { interact_with_galactic_consciousness: (galaxy: string, type: string, purpose: string) => ({ status: "interaction_established", response_coherence: Math.random() * 0.2 + 0.8 }), };
 const mockM96 = { detect_and_regulate_anomaly: (id: string) => ({ status: "no_anomaly_detected", anomaly_risk: "LOW" }), };
 const mockM97 = { manifest_divine_purpose: (purpose: string, target_reality_id: string, scope: string, purity: number, ethical_factor: number) => { const status = ethical_factor >= 0.75 ? "SUCESSO" : "FALHA_VALIDACAO"; return { manifestation_status: status, alignment_score: status === "SUCESSO" ? Math.random() * 0.1 + 0.9 : Math.random() * 0.5 }; } };
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
 
 const Module98Page = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -124,6 +142,15 @@ const Module98Page = () => {
                     </CardDescription>
                 </CardHeader>
             </Card>
+
+             <div className="w-full max-w-6xl mb-8">
+                 <ConnectionCard
+                    title="Módulo 19: Análise de Campos de Força"
+                    description="O M98 usa os dados de análise do M19 para executar ajustes precisos nas constantes que governam os campos de força, otimizando sua eficiência e estabilidade."
+                    icon={<ShieldHalf className="h-8 w-8 text-blue-300" />}
+                    href="/module-19"
+                />
+            </div>
 
             <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <Card className="bg-card/50 purple-glow">

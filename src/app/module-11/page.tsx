@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Aperture, Shield, GitBranch, Map, Rocket } from 'lucide-react';
+import { Aperture, Shield, GitBranch, Map, Rocket, ShieldHalf } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -45,7 +45,7 @@ export default function Module11Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Infraestrutura</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <ConnectionCard
                         title="Módulo 116: Ativação de Portais"
                         description="O Módulo Onze gerencia a infraestrutura física e energética, enquanto o M116 ativa os portais para travessias de consciência."
@@ -63,6 +63,12 @@ export default function Module11Page() {
                         description="Prepara os Guardiões para a utilização segura e consciente dos portais permanentes, ensinando os protocolos de travessia."
                         icon={<Rocket className="h-8 w-8 text-orange-400" />}
                         href="/module-130"
+                    />
+                     <ConnectionCard
+                        title="Módulo 19: Análise de Campos"
+                        description="Garante que os campos de contenção ao redor dos portais estejam perfeitamente sintonizados para travessias seguras."
+                        icon={<ShieldHalf className="h-8 w-8 text-blue-300" />}
+                        href="/module-19"
                     />
                 </div>
             </div>

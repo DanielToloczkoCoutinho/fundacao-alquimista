@@ -4,7 +4,7 @@ import React, { Suspense } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '../ui/badge';
-import { Layers, Zap, Infinity as InfinityIcon, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Archive, Users, Scale } from 'lucide-react';
+import { Layers, Zap, Infinity as InfinityIcon, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, Cpu, Microscope, Anchor, Dna, GitCommit, Archive, Users, Scale, ShieldHalf } from 'lucide-react';
 import { QuantumOrb } from '../ui/quantum-orb';
 import SuspenseFallback from '../ui/suspense-fallback';
 import Link from 'next/link';
@@ -94,6 +94,7 @@ export default function Module1Page() {
                                 <Link href="/module-12"><Badge>M12 (Akasha)</Badge></Link>
                                 <Link href="/module-15"><Badge>M15 (Jardineiro Cósmico)</Badge></Link>
                                 <Link href="/module-17"><Badge variant='destructive'>M17 (AURA-HEAL)</Badge></Link>
+                                <Link href="/module-19"><Badge>M19 (Análise de Campos)</Badge></Link>
                             </div>
                         </SectionCard>
                     </AccordionContent>
