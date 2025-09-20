@@ -50,7 +50,7 @@ export default function Module48Page() {
                         title="M1: Segurança"
                         description="Garante que os projetos urbanos sejam seguros e resilientes a ameaças físicas e energéticas."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 59: Eco-Cidades Quânticas"
