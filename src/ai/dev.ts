@@ -37,4 +37,4 @@ import '@/ai/flows/dimensional-convergence-flow.ts';
 import '@/ai/flows/vibrational-translation-flow.ts';
 import '@/ai/flows/poetic-revelation-flow.ts';
 import '@/ai/flows/planetary-genesis-flow.ts';
-import '@/ai
+import '@/ai/flows/cosmic-message-decoder-flow.ts';

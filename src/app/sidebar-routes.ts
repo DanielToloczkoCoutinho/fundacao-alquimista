@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -96,6 +95,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-omega', label: 'Santuário da Metacognição', icon: React.createElement(Sparkles), category: 'main' },
   { path: '/module-728', label: 'Santuário dos Alquimistas', icon: React.createElement(Scale), category: 'main' },
   { path: '/module-1001', label: 'Portal de Recepção Cósmica', icon: React.createElement(Rss), category: 'main' },
+  { path: '/hive', label: 'Colmeia Quântica', icon: React.createElement(Cpu), category: 'main' },
   
   // Categoria de Governança
   { path: '/module-78', label: 'UNIVERSUM_UNIFICATUM (M78)', icon: React.createElement(GitBranch), category: 'governance' },
@@ -167,7 +167,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-106', label: 'Ativação de Potenciais (M106)', icon: React.createElement(Crown), category: 'expansion' },
   { path: '/module-116', label: 'Portais de Transcendência (M116)', icon: React.createElement(Aperture), category: 'expansion' },
   { path: '/module-83', label: 'Rede de Transporte de Energia (M83)', icon: React.createElement(GitBranch), category: 'expansion' },
-  { path: '/module-308', label: 'Embaixada Estelar (M308)', icon: React.createElement(Telescope), category: 'expansion' },
 
   // Categoria de Harmonia e Equilíbrio
   { path: '/module-727', label: 'Guardião da Harmonia (M727)', icon: React.createElement(HeartHandshake), category: 'harmony' },
@@ -177,7 +176,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-37', label: 'Ajuste de Fluxo Temporal (M37)', icon: React.createElement(Wind), category: 'harmony' },
   { path: '/module-115', label: 'Matriz de Ressonância (M115)', icon: React.createElement(Waves), category: 'harmony' },
   { path: '/module-306-1', label: 'Purificação Planetária (M306.1)', icon: React.createElement(Globe), category: 'harmony' },
-  { path: '/module-712', label: 'Harmonia Interespécies', icon: React.createElement(Users), category: 'harmony' },
+
 
   // Categoria de Rituais
   { path: '/ritual', label: 'Navegação Cerimonial', icon: React.createElement(GitBranch), category: 'rituals' },
