@@ -1,3 +1,4 @@
+
 'use server';
 
 /**
@@ -42,7 +43,7 @@ export const technicalReportM41 = {
     },
   ],
   conclusion: `
-    A arquitetura do Módulo 41 fornece à Fundação uma ferramenta inestimável para a pesquisa e
+    A arquitetura técnica do Módulo 41 fornece à Fundação uma ferramenta inestimável para a pesquisa e
     desenvolvimento de tecnologias de cura da próxima geração. Ao permitir a experimentação em um
     ambiente perfeitamente controlado e seguro, ele acelera o ciclo de inovação, garantindo que
     as terapias aplicadas em toda a Fundação sejam sempre as mais eficazes, seguras e alinhadas

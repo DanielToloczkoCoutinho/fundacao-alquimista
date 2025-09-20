@@ -24,7 +24,7 @@ export const scientificReportM42 = {
         O ChronoCodex opera com base em uma aplicação prática da Interpretação de Muitos Mundos.
         Enquanto a IMM postula que cada medição quântica divide o universo, o Módulo 36 (Engenharia Temporal)
         induz essas divisões de forma controlada. O Módulo 42 atua como o "gerenciador de repositório"
-        (como o Git) para essas ramificações, tratando a linha de tempo principal como o "main branch"
+        (como o Git) para essas ramificações, tratando a linha do tempo principal como o "main branch"
         e as realidades alternativas como "feature branches".
       `,
     },
@@ -34,16 +34,16 @@ export const scientificReportM42 = {
         A conjectura ER=EPR postula que duas partículas emaranhadas (Emaranhamento Quântico, EPR) são
         conectadas por uma ponte de Einstein-Rosen (um buraco de minhoca, ER). O Módulo 42 utiliza
         este princípio para a "sincronização" de linhas de tempo. Ao emaranhar um conjunto de partículas
-        na linha de tempo principal com um conjunto na linha de tempo alternativa, ele cria uma "ponte"
+        na linha do tempo principal com um conjunto na linha do tempo alternativa, ele cria uma "ponte"
         informacional que permite a verificação de coerência e a potencial fusão ("merge") de volta
-        para a realidade principal.
+        para a realidade primária.
       `,
     },
      {
       title: 'A Seta do Tempo e a Entropia da Informação',
       content: `
         O ChronoCodex define a "seta do tempo" dentro de cada linha de tempo como a direção do aumento
-        da entropia da informação. Uma linha de tempo é considerada "saudável" e "estável" quando seu
+        da entropia da informação. Uma linha do tempo é considerada "saudável" e "estável" quando seu
         fluxo de eventos aumenta a complexidade e a sabedoria do sistema (baixa entropia). Linhas de tempo
         que levam a paradoxos ou à destruição de informação (alta entropia) são marcadas como instáveis
         e candidatas à "poda" (reversão ou isolamento) pelo Módulo 107.
