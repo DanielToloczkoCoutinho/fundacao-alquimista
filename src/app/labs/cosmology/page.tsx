@@ -1,4 +1,3 @@
-
 'use client';
 import React, { lazy, Suspense } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
@@ -40,7 +39,7 @@ export default function CosmologyLab() {
             </CardHeader>
             <CardContent className="overflow-x-auto p-4">
               <Suspense fallback={<SuspenseFallback />}>
-                <EquationRenderer latex={eq.formula} />
+                <EquationRenderer latex={eq.expression} />
               </Suspense>
             </CardContent>
           </Card>

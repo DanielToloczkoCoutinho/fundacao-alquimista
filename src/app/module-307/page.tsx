@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -111,7 +110,6 @@ export default function Module307Page() {
 
       // Core pulse
       const pulse = 1 + Math.sin(Date.now() / 200) * (reactorStatus === 'ACTIVE' ? 0.1 : 0.02);
-      ctx.beginPath();
       const coreRadius = 20 * pulse;
       const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, coreRadius);
       gradient.addColorStop(0, 'rgba(255, 255, 255, 0.9)');
@@ -226,7 +224,7 @@ export default function Module307Page() {
             </CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {zpeEquations.map(eq => (
-                <EquationCard key={eq.id} id={eq.id} formula={eq.expression} description={eq.description} />
+                <EquationCard key={eq.id} id={eq.id} formula={eq.expression} description={eq.summary} />
               ))}
             </CardContent>
           </Card>
