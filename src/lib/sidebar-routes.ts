@@ -1,4 +1,3 @@
-
 'use server';
 
 import { 
@@ -72,7 +71,8 @@ import {
   Code,
   Rss,
   Fingerprint,
-  HeartPulse
+  HeartPulse,
+  ShieldHalf,
 } from 'lucide-react';
 import React from 'react';
 
@@ -142,6 +142,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-81-1', label: 'A Tríade Cosmogônica (M81.1)', icon: React.createElement(Sparkles), category: 'engineering' },
   { path: '/module-94', label: 'Morfogênese (M94)', icon: React.createElement(Dna), category: 'engineering' },
   { path: '/module-14', label: 'Transmutador Quântico (M14)', icon: React.createElement(Atom), category: 'engineering' },
+  { path: '/module-19', label: 'Análise de Campos (M19)', icon: React.createElement(ShieldHalf), category: 'engineering' },
   { path: '/module-20', label: 'Transmutação Elemental (M20)', icon: React.createElement(Flame), category: 'engineering' },
   { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
   { path: '/module-321', label: 'Criação de Linhas de Tempo (M321)', icon: React.createElement(Waypoints), category: 'engineering' },

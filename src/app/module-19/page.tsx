@@ -49,7 +49,7 @@ export default function Module19Page() {
                         title="Módulo 1: Segurança Universal"
                         description="Analisa a integridade dos escudos de segurança, otimizando sua ressonância para máxima eficácia protetora."
                         icon={<Shield className="h-8 w-8 text-cyan-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 98: Modulação Fundamental"
