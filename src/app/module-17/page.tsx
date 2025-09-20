@@ -1,8 +1,9 @@
+
 'use client';
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Music, HeartHandshake, Waves, HeartPulse, Shield } from 'lucide-react';
+import { Music, HeartHandshake, Waves, HeartPulse, Shield, Eye } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -46,10 +47,10 @@ export default function Module17Page() {
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Regeneração</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                      <ConnectionCard
-                        title="Módulo 1: Segurança Universal"
+                        title="M1: Segurança"
                         description="As sessões de cura são realizadas em um ambiente vibracionalmente seguro, protegido por escudos quânticos do M1."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 109: Cura Quântica"
@@ -58,21 +59,21 @@ export default function Module17Page() {
                         href="/module-109"
                     />
                     <ConnectionCard
-                        title="Módulo 13: Mapeamento de Frequências"
-                        description="Diagnostica as dissonâncias na 'canção' de um indivíduo antes que o M24 possa afiná-la."
+                        title="Módulo 13: Mapeamento"
+                        description="Diagnostica as dissonâncias na 'canção' de um indivíduo para que a cura possa ser precisa."
                         icon={<Waves className="h-8 w-8 text-cyan-400" />}
                         href="/module-13"
                     />
                     <ConnectionCard
-                        title="Módulo 94: Morfogênese Quântica"
+                        title="Módulo 94: Morfogênese"
                         description="Fornece o 'blueprint' genético perfeito que o M17 usa como molde para a regeneração."
                         icon={<HeartPulse className="h-8 w-8 text-lime-400" />}
                         href="/module-94"
                     />
                     <ConnectionCard
-                        title="Módulo 1000: Olho da Eternidade"
+                        title="Módulo 1000: Observador"
                         description="Conecta-se ao Fundador, a fonte da intenção de cura e o observador do processo regenerativo."
-                        icon={<HeartPulse className="h-8 w-8 text-amber-300" />}
+                        icon={<Eye className="h-8 w-8 text-amber-300" />}
                         href="/module-1000"
                     />
                 </div>

@@ -1,3 +1,4 @@
+
 'use server';
 
 import { 
@@ -70,7 +71,8 @@ import {
   PartyPopper,
   Code,
   Rss,
-  Fingerprint
+  Fingerprint,
+  HeartPulse
 } from 'lucide-react';
 import React from 'react';
 
@@ -223,6 +225,6 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-61', label: 'Saúde Universal (M61)', icon: React.createElement(Hospital), category: 'health' },
   { path: '/module-62', label: 'Bem-Estar Integral (M62)', icon: React.createElement(Heart), category: 'health' },
   { path: '/module-63', label: 'Nutrição Universal (M63)', icon: React.createElement(Wheat), category: 'health' },
-  { path: '/module-17', label: 'Matriz de Cura (M17)', icon: React.createElement(HeartHandshake), category: 'health' },
+  { path: '/module-17', label: 'Matriz de Cura (M17)', icon: React.createElement(HeartPulse), category: 'health' },
 
 ];

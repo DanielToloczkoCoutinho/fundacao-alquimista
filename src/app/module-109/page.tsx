@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Loader2, HeartHandshake, Waves } from 'lucide-react';
+import { Loader2, HeartHandshake, Waves, HeartPulse } from 'lucide-react';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { describeQuantumHealing } from '@/app/actions';
 import Link from 'next/link';
@@ -119,12 +119,20 @@ const Module109Page = () => {
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
-                     <ConnectionCard
-                        title="Módulo 13: Mapeamento de Frequências"
-                        description="O M109 utiliza o diagnóstico do M13 para identificar as dissonâncias energéticas que necessitam de cura, permitindo uma intervenção precisa e eficaz."
-                        icon={<Waves className="h-8 w-8 text-cyan-400" />}
-                        href="/module-13"
-                    />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <ConnectionCard
+                            title="Módulo 13: Mapeamento de Frequências"
+                            description="O M109 utiliza o diagnóstico do M13 para identificar as dissonâncias energéticas que necessitam de cura, permitindo uma intervenção precisa e eficaz."
+                            icon={<Waves className="h-8 w-8 text-cyan-400" />}
+                            href="/module-13"
+                        />
+                        <ConnectionCard
+                            title="Módulo 17: AURA-HEAL"
+                            description="O M109 define o propósito, e o M17 fornece a tecnologia holográfica para executar a cura em nível celular."
+                            icon={<HeartPulse className="h-8 w-8 text-emerald-400" />}
+                            href="/module-17"
+                        />
+                    </div>
                 </CardContent>
             </Card>
 
