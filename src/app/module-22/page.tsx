@@ -49,7 +49,7 @@ export default function Module22Page() {
                         title="M1: Segurança"
                         description="Cada domínio virtual é isolado em um sandbox quântico, garantindo que as simulações não afetem a realidade primária."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="M303: Portal Trino"

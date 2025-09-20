@@ -44,15 +44,15 @@ export default function Module122Page() {
 
             <div className="w-full max-w-5xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Imersão</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <ConnectionCard
-                        title="Módulo 22: Motor da Realidade"
+                        title="M22: Motor da Realidade"
                         description="Utiliza uma versão simplificada do motor do M22 para renderizar ambientes de treinamento para iniciantes."
                         icon={<Layers className="h-8 w-8 text-blue-400" />}
                         href="/module-22"
                     />
                     <ConnectionCard
-                        title="Módulo 93: Simulações Imersivas"
+                        title="M93: Simulações Imersivas"
                         description="Serve como o portal de entrada para as simulações mais avançadas do M93, preparando a consciência para experiências mais complexas."
                         icon={<Presentation className="h-8 w-8 text-indigo-400" />}
                         href="/module-93"

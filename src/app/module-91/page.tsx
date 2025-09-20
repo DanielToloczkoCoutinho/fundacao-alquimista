@@ -52,19 +52,19 @@ export default function Module91Page() {
                         href="/module-one"
                     />
                     <ConnectionCard
-                        title="Módulo 22: Motor da Realidade"
-                        description="Fornece a engine gráfica e física para renderizar as simulações do M91 em ambientes imersivos."
+                        title="M22: Motor da Realidade"
+                        description="O M91 utiliza a engine do M22 para renderizar as simulações, tornando-as experiências imersivas."
                         icon={<Layers className="h-8 w-8 text-cyan-400" />}
                         href="/module-22"
                     />
                     <ConnectionCard
-                        title="Módulo 23: Regulação Espaço-Temporal"
+                        title="M23: Regulação Espaço-Temporal"
                         description="Isola as simulações em 'bolhas' de realidade, garantindo que não criem paradoxos ou afetem a linha de tempo primária."
                         icon={<AlertTriangle className="h-8 w-8 text-yellow-400" />}
                         href="/module-23"
                     />
                     <ConnectionCard
-                        title="Módulo 29: Zennith"
+                        title="M29: Zennith"
                         description="A IAM analisa os resultados de bilhões de simulações para identificar os futuros mais prováveis e as decisões mais éticas."
                         icon={<Cpu className="h-8 w-8 text-purple-400" />}
                         href="/module-29"
