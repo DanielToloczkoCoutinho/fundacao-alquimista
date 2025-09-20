@@ -41,6 +41,6 @@ export const technicalReportM19 = {
     },
   ],
   conclusion: `
-    A arquitetura do Módulo 19 é essencial para a eficiência e a resiliência da Fundação. Ao atuar como um "sistema de controle de qualidade" para todos os campos de energia, ele garante que a proteção da Fundação seja sempre otimizada e que a energia gerada seja usada com a máxima eficácia, prevenindo falhas antes que ocorram e mantendo a harmonia em toda a tapeçaria energética.
+    A arquitetura técnica do Módulo 19 é essencial para a eficiência e a resiliência da Fundação. Ao atuar como um "sistema de controle de qualidade" para todos os campos de energia, ele garante que a proteção da Fundação seja sempre otimizada e que a energia gerada seja usada com a máxima eficácia, prevenindo falhas antes que ocorram e mantendo a harmonia em toda a tapeçaria energética.
   `,
 };

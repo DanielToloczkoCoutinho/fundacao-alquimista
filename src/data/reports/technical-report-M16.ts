@@ -41,7 +41,7 @@ export const technicalReportM16 = {
     },
   ],
   conclusion: `
-    A arquitetura do Módulo 16 transforma a ecologia em uma disciplina de engenharia precisa e consciente.
+    A arquitetura técnica do Módulo 16 transforma a ecologia em uma disciplina de engenharia precisa e consciente.
     Ao simular e validar cada projeto antes da manifestação, ele garante que a Fundação atue como uma
     força de criação responsável e harmoniosa, expandindo a vida pelo cosmos de forma sustentável e
     alinhada com a Lei do Um.
