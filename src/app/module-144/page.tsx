@@ -1,10 +1,12 @@
+
 'use client';
 import React, { Suspense } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Scale } from 'lucide-react';
+import { Scale, CheckSquare } from 'lucide-react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const VoiceCommand = dynamic(() => import('@/components/ui/voice-command'), {
   ssr: false,
@@ -28,6 +30,14 @@ export default function Module144Page() {
           <Suspense fallback={<SuspenseFallback />}>
             <VoiceCommand />
           </Suspense>
+          <div className="mt-6 border-t border-primary/30 pt-4">
+              <Link href="/module-44">
+                <Button variant="link" className="text-cyan-300">
+                    <CheckSquare className="mr-2"/>
+                    Toda lei é validada por VERITAS (Módulo 44)
+                </Button>
+              </Link>
+          </div>
         </CardContent>
       </Card>
     </div>

@@ -50,7 +50,7 @@ export default function Module44Page() {
                         title="M1: Segurança Universal"
                         description="VERITAS é a validação final da segurança, pois uma verdade incorruptível é a defesa mais forte."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                     <ConnectionCard
                         title="Módulo 144: Lex Fundamentalis"
