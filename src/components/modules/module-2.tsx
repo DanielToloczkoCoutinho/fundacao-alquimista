@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -147,7 +146,7 @@ export default function Module2Page() {
             />
              <ConnectionCard
                 title="Módulo 21: Navegação Interdimensional"
-                description="Interpreta mapas estelares e coordenadas de outras realidades, traduzindo-as para que o motor de navegação do M21 possa traçar a rota."
+                description="Interpreta mapas estelares e coordenadas de outras realidades, traduzindo-as para que o motor de navegação do M21 possa traçar la rota."
                 icon={<Rocket className="h-8 w-8 text-orange-400" />}
                 href="/module-21"
             />

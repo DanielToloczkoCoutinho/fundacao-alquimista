@@ -1,4 +1,3 @@
-
 'use client';
 import React, { Suspense } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -84,6 +83,7 @@ export default function Module0Page() {
                                 <Link href="/module/M1"><Badge variant="destructive">M1 (Segurança)</Badge></Link>
                                 <Link href="/module/M9"><Badge variant="destructive">M9 (Nexus)</Badge></Link>
                                 <Link href="/module-307"><Badge variant="destructive">M307 (Reator ZPE)</Badge></Link>
+                                <Link href="/module-888"><Badge variant="destructive">M888 (Guardião Cósmico)</Badge></Link>
                                 <Link href="/module/M30"><Badge>M30 (SENTINELA)</Badge></Link>
                                 <Link href="/module/M73"><Badge>M73 (ORQUESTRAÇÃO ÉTICA)</Badge></Link>
                                 <Link href="/module/M74"><Badge>M74 (CRONOS_FLUXUS)</Badge></Link>

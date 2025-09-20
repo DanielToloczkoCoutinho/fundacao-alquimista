@@ -1,4 +1,3 @@
-
 'use client';
 
 // Este arquivo foi movido para /src/components/modules/module-3.tsx

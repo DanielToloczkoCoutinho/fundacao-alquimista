@@ -1,4 +1,3 @@
-
 'use client';
 import React, { lazy, Suspense } from 'react';
 import SuspenseFallback from '@/components/ui/suspense-fallback';

@@ -1,4 +1,3 @@
-
 'use client';
 
 // Este arquivo foi movido para /src/app/module/M0/page.tsx

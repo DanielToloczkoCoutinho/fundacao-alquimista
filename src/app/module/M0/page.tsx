@@ -1,4 +1,3 @@
-
 'use client';
 import React, { Suspense } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -6,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Badge } from '@/components/ui/badge';
 import { Layers, Zap, Infinity as InfinityIcon, GitBranch, BrainCircuit, ShieldCheck, History, HeartPulse, Sigma, MapPin, Cpu, Microscope, Anchor, Dna, GitCommit, Globe } from 'lucide-react';
 import { QuantumOrb } from '@/components/ui/quantum-orb';
-import SuspenseFallback from '../ui/suspense-fallback';
+import SuspenseFallback from '../../ui/suspense-fallback';
 import Link from 'next/link';
 
 const SectionCard = ({ title, icon, children }: { title: string, icon: React.ReactNode, children: React.ReactNode }) => (
