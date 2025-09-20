@@ -122,7 +122,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-228', label: 'Ancoragem de Realidade (M228)', icon: React.createElement(Anchor), category: 'security' },
   { path: '/module-156', label: 'Proteção Avançada (M156)', icon: React.createElement(Shield), category: 'security' },
   { path: '/module-229', label: 'OneiroShield (M229)', icon: React.createElement(Shield), category: 'security' },
-  { path: '/module-68', label: 'Responsabilidade Ética', icon: React.createElement(ShieldCheck), category: 'security' },
+  { path: '/module-68', label: 'Responsabilidade Ética (M68)', icon: React.createElement(ShieldCheck), category: 'security' },
   
   // Categoria de Educação e Sabedoria
   { path: '/module-304', label: 'Universidade Alquimista (M304)', icon: React.createElement(GraduationCap), category: 'education' },
@@ -148,6 +148,7 @@ export const mainRoutes: SidebarRoute[] = [
   { path: '/module-21', label: 'Navegação Interdimensional (M21)', icon: React.createElement(Rocket), category: 'engineering' },
   { path: '/module-22', label: 'Motor da Realidade (M22)', icon: React.createElement(Layers), category: 'engineering' },
   { path: '/module-25', label: 'Projeção de Consciência (M25)', icon: React.createElement(Eye), category: 'engineering' },
+  { path: '/module-26', label: 'Supervisão de Travessias (M26)', icon: React.createElement(Eye), category: 'engineering' },
   { path: '/module-88', label: 'Roteamento Interdimensional (M88)', icon: React.createElement(Milestone), category: 'engineering' },
   { path: '/module-321', label: 'Criação de Linhas de Tempo (M321)', icon: React.createElement(Waypoints), category: 'engineering' },
   { path: '/module-114', label: 'Engenharia Cósmica (M114)', icon: React.createElement(Layers), category: 'engineering' },

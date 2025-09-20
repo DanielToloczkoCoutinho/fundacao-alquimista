@@ -62,7 +62,7 @@ export default function Module26Page() {
                         title="M1: Segurança"
                         description="Aplica os protocolos de segurança do M1, verificando as credenciais vibracionais de cada viajante."
                         icon={<Shield className="h-8 w-8 text-blue-400" />}
-                        href="/module-one"
+                        href="/module/M1"
                     />
                      <ConnectionCard
                         title="M2: Intercâmbio Cósmico"
