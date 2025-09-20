@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Beaker, BrainCircuit, Users, BookOpen, Shield, Atom } from 'lucide-react';
+import { Beaker, BrainCircuit, Users, BookOpen, Shield, Atom, Flame } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -42,9 +42,9 @@ export default function Module90Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
+            <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Análise</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                      <ConnectionCard
                         title="M1: Segurança"
                         description="Garante a integridade do catálogo de recursos, protegendo-o contra manipulação e acesso não autorizado."
@@ -68,6 +68,12 @@ export default function Module90Page() {
                         description="Recebe a matéria recém-criada pelo M14 para catalogação, análise de pureza e armazenamento seguro."
                         icon={<Atom className="h-8 w-8 text-red-400" />}
                         href="/module-14"
+                    />
+                    <ConnectionCard
+                        title="Módulo 20: Orquestrador Elemental"
+                        description="Recebe os elementos purificados e ligas complexas do M20 para catalogação e distribuição."
+                        icon={<Flame className="h-8 w-8 text-orange-400" />}
+                        href="/module-20"
                     />
                 </div>
             </div>

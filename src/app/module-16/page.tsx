@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Dna, Sprout, Beaker, GitBranch, Heart, Shield } from 'lucide-react';
+import { Dna, Sprout, Beaker, GitBranch, Heart, Shield, Flame } from 'lucide-react';
 import Link from 'next/link';
 
 const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
@@ -42,9 +42,9 @@ export default function Module16Page() {
                 </CardContent>
             </Card>
 
-            <div className="w-full max-w-5xl">
+            <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Biossíntese</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                      <ConnectionCard
                         title="M1: Segurança Universal"
                         description="Cada novo ecossistema é criado dentro de um campo de contenção do M1, garantindo que a vida se desenvolva em um ambiente seguro."
@@ -68,6 +68,12 @@ export default function Module16Page() {
                         description="Aplica os princípios da cura quântica para restaurar e harmonizar os ecossistemas, garantindo sua vitalidade."
                         icon={<Heart className="h-8 w-8 text-pink-400" />}
                         href="/module-109"
+                    />
+                     <ConnectionCard
+                        title="Módulo 20: Orquestrador Elemental"
+                        description="Fornece os elementos básicos (carbono, oxigênio) para iniciar a criação de ecossistemas orgânicos."
+                        icon={<Flame className="h-8 w-8 text-orange-400" />}
+                        href="/module-20"
                     />
                 </div>
             </div>
