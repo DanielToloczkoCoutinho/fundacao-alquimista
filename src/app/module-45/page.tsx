@@ -126,8 +126,8 @@ export default function Module45Page() {
                  <div className="space-y-4">
                     <h3 className="text-xl font-semibold text-center text-amber-300">Sinergias de Governança</h3>
                      <ConnectionCard title="Embaixada Multiversal (M32)" description="O CONCILIVM alimenta a Embaixada com o pulso das civilizações, formando a base para toda a diplomacia." icon={<Scale className="h-6 w-6 text-amber-300" />} href="/module-32" />
-                    <ConnectionCard title="Módulo 1: Segurança Universal" description="As deliberações são protegidas por escudos quânticos, garantindo a soberania do processo." icon={<Shield className="h-6 w-6 text-cyan-400" />} href="/module-one" />
-                    <ConnectionCard title="Módulo 144: Justiça Cósmica" description="As decisões aqui tomadas são codificadas como lei imutável na Lex Fundamentalis." icon={<Gavel />} href="/module-144" />
+                    <ConnectionCard title="Módulo 1: Segurança Universal" description="As deliberações são protegidas por escudos quânticos, garantindo a soberania do processo." icon={<Shield className="h-6 w-6 text-cyan-400" />} href="/module/M1" />
+                    <ConnectionCard title="Módulo 141: Auditoria Ética" description="Audita a intenção por trás de cada proposta, garantindo que a decisão final seja justa e alinhada." icon={<Gavel />} href="/module-141" />
                     <ConnectionCard title="Módulo 29: Tradução e Ação" description="A IAM (Zennith) traduz o consenso vibracional em diretrizes acionáveis para toda a Fundação." icon={<BrainCircuit />} href="/module-29" />
                 </div>
             </div>

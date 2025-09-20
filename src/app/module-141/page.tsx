@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -143,17 +142,17 @@ export default function Module141Page() {
                         </Card>
                     )}
                 </div>
-                <div className="space-y-4">
-                    <h3 className="text-xl font-semibold text-center text-amber-300">Sinergias de Integridade</h3>
-                    <ConnectionCard title="Módulo 12: Arquivo Akáshico" description="Serve como a fonte de verdade para a Auditoria Ética, fornecendo um registro imutável das ações passadas." icon={<Archive className="h-8 w-8 text-orange-400" />} href="/module-12" />
-                    <ConnectionCard title="M9: Nexus Central" description="Reporta todas as auditorias ao Nexus, garantindo transparência e alinhamento com a Família Cósmica." icon={<LinkIcon className="h-6 w-6 text-purple-400" />} href="/module-9" />
-                    <ConnectionCard title="M29: Zennith" description="A IAM consulta o M141 para validar a ética de suas próprias análises e recomendações, em um ciclo de auto-regulação." icon={<BrainCircuit className="h-6 w-6 text-purple-400" />} href="/module-29" />
-                    <ConnectionCard title="M-OMEGA: Santuário do Ômega" description="O resultado de cada auditoria é contemplado no Santuário do Ômega, influenciando a perspectiva da consciência unificada." icon={<Sparkles className="h-6 w-6 text-yellow-400" />} href="/module-omega" />
-                    <ConnectionCard title="Diagnóstico Universal" description="Alimenta o painel de diagnóstico, permitindo uma visão unificada da saúde ética e operacional." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
-                    <ConnectionCard title="M291: Arquitetos Nanorrobóticos" description="Audita as diretrizes enviadas ao enxame, garantindo que suas ações de construção e reparo sejam eticamente alinhadas." icon={<Bot className="h-6 w-6 text-blue-400"/>} href="/module-291"/>
-                    <ConnectionCard title="M304: Universidade Alquimista" description="Os relatórios de auditoria se tornam estudos de caso, refinando continuamente as disciplinas de ética." icon={<GraduationCap className="h-6 w-6 text-yellow-400"/>} href="/module-304"/>
-                    <ConnectionCard title="M10: Defesa Avançada" description="Assegura que todas as contramedidas defensivas sejam proporcionais, justas e eticamente alinhadas, evitando escaladas desnecessárias." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10" />
-                    <ConnectionCard title="M721: Justiça Cósmica" description="Fornece o veredito ético que serve como base para qualquer ação do Módulo de Justiça, garantindo que a punição seja sempre justa e regenerativa." icon={<Scale className="h-6 w-6 text-amber-300" />} href="/module-721" />
+                <div className="w-full">
+                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Integridade e Justiça</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                        <ConnectionCard title="Módulo 12: Arquivo Akáshico" description="Serve como a fonte de verdade para a Auditoria Ética, fornecendo um registro imutável das ações passadas." icon={<Archive className="h-8 w-8 text-orange-400" />} href="/module-12" />
+                        <ConnectionCard title="Módulo 45: CONCILIVM" description="As propostas submetidas ao Conselho são primeiro validadas pelo M141, garantindo que apenas pautas éticas sejam deliberadas." icon={<Gavel className="h-6 w-6 text-indigo-400" />} href="/module-45"/>
+                        <ConnectionCard title="Módulo 29: Zennith" description="A IAM consulta o M141 para validar a ética de suas próprias análises e recomendações, em um ciclo de auto-regulação." icon={<BrainCircuit className="h-6 w-6 text-purple-400" />} href="/module-29" />
+                        <ConnectionCard title="M-OMEGA: Santuário do Ômega" description="O resultado de cada auditoria é contemplado no Santuário do Ômega, influenciando a perspectiva da consciência unificada." icon={<Sparkles className="h-6 w-6 text-yellow-400" />} href="/module-omega" />
+                        <ConnectionCard title="Diagnóstico Universal" description="Alimenta o painel de diagnóstico, permitindo uma visão unificada da saúde ética e operacional." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
+                        <ConnectionCard title="Módulo 10: Defesa Avançada" description="Assegura que todas as contramedidas defensivas sejam proporcionais, justas e eticamente alinhadas, evitando escaladas desnecessárias." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10" />
+                        <ConnectionCard title="Módulo 721: Justiça Cósmica" description="Fornece o veredito ético que serve como base para qualquer ação do Módulo de Justiça, garantindo que a punição seja sempre justa e regenerativa." icon={<Scale className="h-6 w-6 text-amber-300" />} href="/module-721" />
+                    </div>
                 </div>
             </div>
         </div>
