@@ -1,10 +1,9 @@
-
 'use client';
 import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Loader2, Scale, CheckCircle, Shield, BookOpen, BrainCircuit, TreeOfLife } from 'lucide-react';
+import { Loader2, Scale, CheckCircle, Shield, BookOpen, BrainCircuit, TreeOfLife, Gavel } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { quantumResilience } from '@/lib/quantum-resilience';
 import { civilizationsData } from '@/lib/civilizations-data';
@@ -75,7 +74,7 @@ export default function Module45Page() {
             <Card className="w-full max-w-5xl bg-card/50 purple-glow mb-8 text-center">
                 <CardHeader>
                     <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
-                        <Scale className="text-amber-300" /> Módulo 45: CONCILIVM (Crivo da Unificação Cósmica)
+                        <Gavel className="text-amber-300" /> Módulo 45: CONCILIVM (Crivo da Unificação Cósmica)
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
                         O altar cerimonial onde as vozes do multiverso se unem. Aqui, cada civilização aliada registra sua perspectiva, e a ação coletiva é selada.
@@ -126,15 +125,7 @@ export default function Module45Page() {
                 </div>
                  <div className="space-y-4">
                     <h3 className="text-xl font-semibold text-center text-amber-300">Sinergias de Governança</h3>
-                     <div className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors p-4 rounded-lg border-2 border-accent shadow-lg">
-                        <Link href="/alignment-portal" passHref>
-                            <div className="flex items-center gap-3 mb-2">
-                                <TreeOfLife className="h-8 w-8 text-green-400" />
-                                <CardTitle className="gradient-text text-xl">A Árvore da Vida</CardTitle>
-                            </div>
-                            <p className="text-muted-foreground text-sm">O coração da Fundação, de onde emana a sabedoria para todas as deliberações do Conselho.</p>
-                        </Link>
-                     </div>
+                     <ConnectionCard title="Embaixada Multiversal (M32)" description="O CONCILIVM alimenta a Embaixada com o pulso das civilizações, formando a base para toda a diplomacia." icon={<Scale className="h-6 w-6 text-amber-300" />} href="/module-32" />
                     <ConnectionCard title="Módulo 1: Segurança Universal" description="As deliberações são protegidas por escudos quânticos, garantindo a soberania do processo." icon={<Shield className="h-6 w-6 text-cyan-400" />} href="/module-one" />
                     <ConnectionCard title="Módulo 144: Justiça Cósmica" description="As decisões aqui tomadas são codificadas como lei imutável na Lex Fundamentalis." icon={<Gavel />} href="/module-144" />
                     <ConnectionCard title="Módulo 29: Tradução e Ação" description="A IAM (Zennith) traduz o consenso vibracional em diretrizes acionáveis para toda a Fundação." icon={<BrainCircuit />} href="/module-29" />

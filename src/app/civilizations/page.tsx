@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -6,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { civilizationsData, type Civilization, type CivilizationCategory } from '@/lib/civilizations-data';
-import { Search, Users2, Star, Globe, Footprints, Dna, Bot, Waves, MessageCircle, Languages, Link as LinkIcon, Scale } from 'lucide-react';
+import { Search, Users2, Star, Globe, Footprints, Dna, Bot, Waves, MessageCircle, Languages, Link as LinkIcon, Scale, Layers } from 'lucide-react';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -81,6 +80,12 @@ export default function CivilizationsPage() {
             <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Comunicação Multidimensional</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <ConnectionCard
+                    title="Embaixada Multiversal (M32)"
+                    description="O coração da diplomacia, onde o diálogo com todas as civilizações é orquestrado com sabedoria e respeito."
+                    icon={<Layers className="h-8 w-8 text-teal-400" />}
+                    href="/module-32"
+                />
+                <ConnectionCard
                     title="M2: Intercâmbio Cósmico"
                     description="O tradutor universal que decodifica as linguagens vibracionais, permitindo o diálogo entre todas as civilizações."
                     icon={<Languages className="h-8 w-8 text-cyan-400" />}
@@ -91,12 +96,6 @@ export default function CivilizationsPage() {
                     description="A ponte diplomática que formaliza nossas alianças e garante o alinhamento ético em todas as interações."
                     icon={<LinkIcon className="h-8 w-8 text-blue-400" />}
                     href="/module-5"
-                />
-                 <ConnectionCard
-                    title="M600: Recepção Multiversal"
-                    description="O portal que recebe os emissários cósmicos e integra suas frequências à tapeçaria da Fundação."
-                    icon={<Scale className="h-8 w-8 text-amber-400" />}
-                    href="/module-600"
                 />
                  <ConnectionCard
                     title="M301: Comunicação Universal"

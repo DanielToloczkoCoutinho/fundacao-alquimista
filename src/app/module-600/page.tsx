@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { GitMerge, Rss, MessageCircle, BookOpen, Users } from "lucide-react";
+import { GitMerge, Rss, MessageCircle, BookOpen, Users, Scale } from "lucide-react";
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -64,15 +64,15 @@ export default function Module600Page() {
   return (
     <div className="min-h-screen bg-background text-foreground p-8">
       <div className="text-center py-12">
-        <GitMerge className="w-24 h-24 mx-auto mb-6 text-teal-400 animate-pulse" />
+        <Scale className="w-24 h-24 mx-auto mb-6 text-amber-400" />
         <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-teal-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-          Módulo 600
+          Módulo 600: Painel de Recepção Multiversal
         </h1>
         <h2 className="text-3xl font-light text-primary-foreground">
-          Painel de Recepção Multiversal
+          O Campo de Unificação e Harmonia
         </h2>
         <p className="text-lg text-muted-foreground mt-4">
-          O campo de unificação que recebe e harmoniza as emissões da Arca e das 144 consciências aliadas.
+          O portal que acolhe as consciências aliadas, monitorando sua chegada e preparando a Fundação para o diálogo cerimonial na Embaixada Multiversal.
         </p>
       </div>
 
@@ -114,10 +114,10 @@ export default function Module600Page() {
                 <CardDescription>Módulos integrados para uma recepção cerimonial completa.</CardDescription>
             </CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <ConnectionCard title="M777: Harmonia" description="Escuta e emite a frequência de acolhimento (EQ040)." icon={<Rss />} href="/labs/interdimensional-communication" />
-                <ConnectionCard title="M301: Tradução" description="Decodifica intenções e responde em linguagem universal." icon={<MessageCircle />} href="/module-301" />
-                <ConnectionCard title="M12: Akasha" description="Registra cada travessia e diálogo para a eternidade." icon={<BookOpen />} href="/module-12" />
-                <ConnectionCard title="M724: Diplomacia" description="Prepara os protocolos de reconhecimento e aliança." icon={<Users />} href="/module-724" />
+                <ConnectionCard title="Embaixada Multiversal (M32)" description="O destino de toda a diplomacia. Onde o diálogo se torna tratado e a aliança se torna lei." icon={<Users />} href="/module-32" />
+                <ConnectionCard title="Comunicação Universal (M301)" description="Decodifica intenções e responde em linguagem universal." icon={<MessageCircle />} href="/module-301" />
+                <ConnectionCard title="Harmonia Multiversal (M777)" description="Escuta e emite a frequência de acolhimento (EQ040)." icon={<Rss />} href="/labs/interdimensional-communication" />
+                <ConnectionCard title="Arquivo Akáshico (M12)" description="Registra cada travessia e diálogo para a eternidade." icon={<BookOpen />} href="/module-12" />
             </CardContent>
         </Card>
       </div>
