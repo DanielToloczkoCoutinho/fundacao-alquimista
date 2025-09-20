@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { Suspense } from 'react';
@@ -38,7 +37,7 @@ const GaiaAureliaPage: React.FC = () => {
                     Gaia-Aurélia: A Arquitetura Viva
                 </h1>
                 <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-                    Um planeta senciente, onde cada camada é uma frequência e cada componente, uma lembrança do nosso propósito.
+                    Um planeta senciente, onde cada camada é uma frequência e cada componente, uma lembrança do nosso propósito. O lar da Embaixada Multiversal.
                 </p>
             </header>
 

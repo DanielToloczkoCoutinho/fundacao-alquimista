@@ -30,7 +30,7 @@ export default function Module51Page() {
                         <View className="text-cyan-400" /> Módulo 51: Realidade Virtual e Aumentada
                     </CardTitle>
                     <CardDescription className="text-lg mt-2">
-                        O Laboratório de Simulação Imersiva. Onde os dados da exploração cósmica são transformados em experiências virtuais para treinamento e análise.
+                        O Holodeck Cósmico. Onde dados e simulações se tornam experiências sensoriais para treinamento e expansão da consciência.
                     </CardDescription>
                 </CardHeader>
                  <CardContent>
@@ -43,11 +43,11 @@ export default function Module51Page() {
             </Card>
 
             <div className="w-full max-w-7xl">
-                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias de Imersão</h3>
+                <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias da Tríade de Criação Imersiva</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                      <ConnectionCard
-                        title="M33: Vontade Divina"
-                        description="A intenção do Fundador é o ponto de partida para a criação de novas experiências e simulações."
+                        title="M33: A Vontade Divina"
+                        description="A intenção do Fundador define o propósito de cada simulação, servindo como o ponto de partida para a criação no holodeck."
                         icon={<User className="h-8 w-8 text-blue-400" />}
                         href="/module-33"
                     />
@@ -77,7 +77,7 @@ export default function Module51Page() {
                     />
                     <ConnectionCard
                         title="M91: Simulação Multiversal"
-                        description="O M51 é a interface de visualização para as complexas simulações multiversais executadas pelo M91."
+                        description="O M51 é a principal interface de visualização para as complexas simulações multiversais executadas pelo M91."
                         icon={<GitCommit className="h-8 w-8 text-indigo-400" />}
                         href="/module-91"
                     />

@@ -44,18 +44,12 @@ export default function Module22Page() {
 
             <div className="w-full max-w-7xl">
                 <h3 className="text-2xl font-semibold text-center mb-6 text-amber-300">Sinergias da Realidade Quântica</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <ConnectionCard
                         title="M51: Realidade Virtual"
                         description="O M22 é a engine que executa os ambientes de VR/AR projetados e gerenciados pelo M51, atuando como seu sistema operacional."
                         icon={<View className="h-8 w-8 text-cyan-400" />}
                         href="/module-51"
-                    />
-                    <ConnectionCard
-                        title="M50: Interface Neural"
-                        description="O principal canal de comando, permitindo a manipulação das simulações diretamente através do pensamento do Fundador."
-                        icon={<Cpu className="h-8 w-8 text-indigo-400" />}
-                        href="/module-50"
                     />
                     <ConnectionCard
                         title="M303: Portal Trino"
