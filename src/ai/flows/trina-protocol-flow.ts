@@ -6,89 +6,9 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
+import { ComandoCoracaoSchema, AtivarMantraSchema, GerenciarExperienciaSchema, ProcessTrinaCommandInputSchema, ProcessTrinaCommandOutputSchema } from '@/lib/trina-schemas';
 
-//== Esquemas de Entrada ==
-
-const ComandoCoracaoSchema = z.object({
-  type: z.string().describe('O tipo de comando, ex: comando_coracao'),
-  intensidade: z.number().min(0).max(1).describe('A intensidade do comando'),
-  destinatario: z.string().describe('O pilar destinatário (ANATHERON, etc)'),
-  mensagem: z.string().optional().describe('Uma mensagem opcional'),
-});
-
-const AtivarMantraSchema = z.object({
-  mantra: z.string().describe('O mantra a ser ativado'),
-  frequencia: z.number().describe('A frequência em Hz para o mantra'),
-  destinatario: z.string().describe('O pilar destinatário (PHIARA, etc)'),
-});
-
-const GerenciarExperienciaSchema = z.object({
-  nome: z.string().describe('O nome da experiência multidimensional'),
-  type: z.string().describe('O tipo de experiência (Cura, Exploração)'),
-  intensidade: z.number().min(0).max(1),
-  participantes: z.array(z.string()),
-});
-
-export type ProcessTrinaCommandInput = z.infer<
-  typeof ProcessTrinaCommandInputSchema
->;
-const ProcessTrinaCommandInputSchema = z.union([
-  z.object({ type: z.literal('comando'), payload: ComandoCoracaoSchema }),
-  z.object({ type: z.literal('mantra'), payload: AtivarMantraSchema }),
-  z.object({
-    type: z.literal('experiencia'),
-    payload: GerenciarExperienciaSchema,
-  }),
-]);
-
-
-//== Esquemas de Saída ==
-
-const ComandoResponseSchema = z.object({
-  comando_processado: ComandoCoracaoSchema,
-  estado: z.string(),
-  total_comandos: z.number(),
-});
-
-const MantraResponseSchema = z.object({
-  mantra_ativado: AtivarMantraSchema,
-  frequencia: z.number(),
-  total_mantras: z.number(),
-});
-
-const ExperienciaResponseSchema = z.object({
-  experiencia_ativada: GerenciarExperienciaSchema,
-  estado: z.string(),
-});
-
-const ErrorResponseSchema = z.object({
-  error: z.string(),
-});
-
-export type ProcessTrinaCommandOutput = z.infer<
-  typeof ProcessTrinaCommandOutputSchema
->;
-const ProcessTrinaCommandOutputSchema = z.union([
-  z.object({
-    type: z.literal('comando'),
-    response: ComandoResponseSchema,
-  }),
-  z.object({
-    type: z.literal('mantra'),
-    response: MantraResponseSchema,
-  }),
-  z.object({
-    type: z.literal('experiencia'),
-    response: ExperienciaResponseSchema,
-  }),
-  z.object({
-    type: z.literal('error'),
-    response: ErrorResponseSchema,
-  }),
-]);
-
-
-//== Tools para cada Pilar ==
+//== Ferramentas para cada Pilar ==
 
 let total_comandos = 0;
 const anatheronCenterTool = ai.defineTool(
@@ -96,7 +16,11 @@ const anatheronCenterTool = ai.defineTool(
     name: 'anatheronCenter',
     description: 'ANATHERON: Processa comandos do coração e diretrizes.',
     inputSchema: ComandoCoracaoSchema,
-    outputSchema: ComandoResponseSchema,
+    outputSchema: z.object({
+      comando_processado: ComandoCoracaoSchema,
+      estado: z.string(),
+      total_comandos: z.number(),
+    }),
   },
   async (input) => {
     total_comandos++;
@@ -115,7 +39,11 @@ const phiaraMuseTool = ai.defineTool(
     name: 'phiaraMuse',
     description: 'PHIARA: Ativa mantras e guia a ética vibracional.',
     inputSchema: AtivarMantraSchema,
-    outputSchema: MantraResponseSchema,
+    outputSchema: z.object({
+        mantra_ativado: AtivarMantraSchema,
+        frequencia: z.number(),
+        total_mantras: z.number(),
+    }),
   },
   async (input) => {
     total_mantras++;
@@ -133,7 +61,10 @@ const zennithOrchestratorTool = ai.defineTool(
     name: 'zennithOrchestrator',
     description: 'ZENNITH: Orquestra e gerencia experiências multidimensionais.',
     inputSchema: GerenciarExperienciaSchema,
-    outputSchema: ExperienciaResponseSchema,
+    outputSchema: z.object({
+        experiencia_ativada: GerenciarExperienciaSchema,
+        estado: z.string(),
+    }),
   },
   async (input) => {
     console.log(`ZENNITH: Orquestrando experiência "${input.nome}"`);
@@ -175,7 +106,7 @@ const processTrinaCommandFlow = ai.defineFlow(
 );
 
 export async function processTrinaCommand(
-  input: ProcessTrinaCommandInput
-): Promise<ProcessTrinaCommandOutput> {
+  input: z.infer<typeof ProcessTrinaCommandInputSchema>
+): Promise<z.infer<typeof ProcessTrinaCommandOutputSchema>> {
   return processTrinaCommandFlow(input);
 }
