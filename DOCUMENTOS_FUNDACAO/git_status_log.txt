@@ -95,3 +95,44 @@ Untracked files:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 
+--------------------------------------------------------------------------------
+📅 Registro de Estado em: 2025-09-26T23:31:10.239740
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   DOCUMENTOS_FUNDACAO/correlacao_modulos_artefatos.json
+	modified:   package-lock.json
+	modified:   package.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	DOCUMENTOS_FUNDACAO/hashes_artefatos.json
+	DOCUMENTOS_FUNDACAO/registro_atualizacao_modular.json
+	DOCUMENTOS_FUNDACAO/sugestoes_correlacao_modular.json
+	DOCUMENTOS_FUNDACAO/verificacao_recente.log
+	MODULO_OMEGA/
+	atualizar_modulo_zero.py
+	depurar_correlacao.py
+	executar_fases_7_8_9.py
+	exorcizar_fantasmas.py
+	gerar_hashes_artefatos.py
+	integrar_apollo_gateway.py
+	integrar_apollo_graphql.py
+	integrar_apollo_server.py
+	manifesto_fundacao.md
+	registrar_apollo_gateway.json
+	registrar_apollo_graphql.json
+	registrar_apollo_server.json
+	scanner_ressonancia.py
+	src/components/ArvoreDaVida.tsx
+	sugerir_correlacao_automatica.py
+	verificar_apollo_gateway.py
+	verificar_apollo_graphql.py
+	verificar_apollo_server.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+

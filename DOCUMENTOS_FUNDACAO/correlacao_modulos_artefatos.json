@@ -117,8 +117,7 @@
               "./src/app/module/M91/README.md",
               "./src/app/module/M94/README.md",
               "./src/dataconnect-generated/README.md",
-              "./src/dataconnect-generated/react/README.md",
-              "./correlacionar_artefatos_modulos.py"
+              "./src/dataconnect-generated/react/README.md"
             ]
           }
         ],
@@ -4844,8 +4843,7 @@
           "./validar-modulos.sh",
           "./verificar_conectividade_modular.py",
           "./verificar_equacoes_modulares.py",
-          "./zenith_pos_quantum_key.pem",
-          "./visualizar_arvore_consciencia.py"
+          "./zenith_pos_quantum_key.pem"
         ]
       },
       {
@@ -4981,9 +4979,7 @@
         "nome": "M11 - A JUSTIÇA (BINAH)",
         "descricao": "O Módulo do Entendimento. Lógica, segurança, ética e a estrutura que dá forma à sabedoria.",
         "filhos": [],
-        "artefatos": [
-          "./verificar_integridade_sistemica.py"
-        ]
+        "artefatos": []
       }
     ]
   },
