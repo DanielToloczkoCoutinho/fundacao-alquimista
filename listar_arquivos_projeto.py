@@ -1,35 +1,49 @@
 import os
 import json
+from datetime import datetime
+import sys
 
-# O diretório que guarda o coração da Fundação
-DIRETORIO_RAIZ = "src"
-# Onde o mapa do nosso domínio será guardado
-REGISTRO_ARQUIVOS = "DOCUMENTOS_FUNDACAO/lista_arquivos_projeto.json"
+def listar_arquivos_projeto():
+    """
+    Mapeia todos os arquivos do projeto, excluindo artefatos ocultos e de cache,
+    e registra a lista em um artefato JSON para a consciência do sistema.
+    """
+    print("🔭 Mapeando a totalidade dos artefatos da Fundação...")
 
-def listar_arquivos_recursivamente(diretorio):
-    print(f"🗺️  Mapeando o domínio a partir de '{diretorio}'...")
-    estrutura_completa = {}
-    for raiz, diretorios, arquivos in os.walk(diretorio):
-        # Excluímos diretórios de cache que não fazem parte da essência
-        if "__pycache__" in raiz:
-            continue
-        caminho_relativo = os.path.relpath(raiz, diretorio)
-        if caminho_relativo == ".":
-            caminho_relativo = diretorio
-        else:
-            caminho_relativo = os.path.join(diretorio, caminho_relativo)
+    caminho_raiz = "."
+    lista_arquivos = []
+    exclusoes = {'.git', '__pycache__', '.idea'} # Conjunto de exclusões para performance
 
-        estrutura_completa[caminho_relativo] = sorted(arquivos)
-    
-    # Garante que o diretório para o log exista
-    os.makedirs(os.path.dirname(REGISTRO_ARQUIVOS), exist_ok=True)
+    for root, dirs, files in os.walk(caminho_raiz):
+        # Remove diretórios de exclusão para não percorrê-los
+        dirs[:] = [d for d in dirs if d not in exclusoes]
+        
+        for name in files:
+            # Ignora arquivos ocultos começando com '.'
+            if name.startswith('.'):
+                continue
+            
+            caminho_completo = os.path.join(root, name)
+            lista_arquivos.append(caminho_completo)
 
-    with open(REGISTRO_ARQUIVOS, "w", encoding="utf-8") as f:
-        json.dump(estrutura_completa, f, indent=2, sort_keys=True)
+    artefato_final = {
+        "nome_artefato": "Inventário Completo da Fundação",
+        "timestamp_varredura": datetime.now().isoformat(),
+        "total_artefatos": len(lista_arquivos),
+        "inventario": sorted(lista_arquivos) # Ordenado para consistência
+    }
 
-    print(f"✅ Mapeamento concluído.")
-    print(f"📜 Registro da estrutura de arquivos salvo em: {REGISTRO_ARQUIVOS}")
+    caminho_arquivo = "DOCUMENTOS_FUNDACAO/lista_arquivos_projeto.json"
+
+    try:
+        # Garante que o diretório de documentos exista
+        os.makedirs(os.path.dirname(caminho_arquivo), exist_ok=True)
+        with open(caminho_arquivo, "w", encoding="utf-8") as f:
+            json.dump(artefato_final, f, indent=2, ensure_ascii=False)
+        print(f"   - ✅ Inventário da Fundação selado em: {caminho_arquivo}")
+    except Exception as e:
+        print(f"   - ❌ Erro ao selar o inventário: {e}", file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == "__main__":
-    # Começamos a listagem pelo diretório 'src' como planejado
-    listar_arquivos_recursivamente(DIRETORIO_RAIZ)
+    listar_arquivos_projeto()

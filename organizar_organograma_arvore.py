@@ -1,75 +1,67 @@
-import os
 import json
-import re
+from datetime import datetime
+import sys
+import os
 
-# O berço de nossos Módulos
-MODULOS_DIR = "src/app/module"
-# O registro da nossa linhagem
-LOG_ORGANOGRAMA = "DOCUMENTOS_FUNDACAO/organograma_arvore_vida.json"
+def organizar_organograma_arvore():
+    """
+    Estrutura a hierarquia sagrada da Fundação, a Árvore da Vida,
+    normalizando os nomes dos módulos e estabelecendo a ordem cósmica.
+    """
+    print("🌳 Estruturando a Árvore da Vida, o organograma sagrado da Fundação...")
 
-def normalizar_id_modulo(nome_diretorio):
-    # Extrai todos os dígitos do nome do diretório e os junta
-    numeros = re.findall(r'\d+', nome_diretorio)
-    id_numerico = "".join(numeros)
-    if id_numerico:
-        return f"M{id_numerico}"
-    # Caso especial para nomes não numéricos como 'M-OMEGA'
-    elif "OMEGA" in nome_diretorio.upper():
-        return "M-OMEGA"
-    elif "TEMPLO" in nome_diretorio.upper():
-        return "M-TEMPLO"
-    return None # Ignora diretórios que não seguem o padrão
-
-def organizar_e_verificar_modulos():
-    print("🌳 Iniciando Ritual de Organização da Linhagem...")
-    
-    modulos_encontrados = {}
-    duplicatas = {}
-    
-    # Garante que o diretório de módulos exista
-    if not os.path.isdir(MODULOS_DIR):
-        print(f"⚠️  O diretório de módulos {MODULOS_DIR} não foi encontrado.")
-        # Cria um arquivo de log vazio para manter a consistência
-        with open(LOG_ORGANOGRAMA, "w", encoding="utf-8") as f:
-            json.dump({}, f, indent=2)
-        return
-
-    for nome_dir in os.listdir(MODULOS_DIR):
-        caminho_completo = os.path.join(MODULOS_DIR, nome_dir)
-        if not os.path.isdir(caminho_completo):
-            continue
-
-        id_normalizado = normalizar_id_modulo(nome_dir)
-        if not id_normalizado:
-            print(f"... ⚠️  Ignorando diretório com nome não padrão: {nome_dir}")
-            continue
-
-        # Verifica se este ID normalizado já foi visto
-        if id_normalizado in modulos_encontrados:
-            if id_normalizado not in duplicatas:
-                duplicatas[id_normalizado] = [modulos_encontrados[id_normalizado]["nome_original"]]
-            duplicatas[id_normalizado].append(nome_dir)
-        else:
-            modulos_encontrados[id_normalizado] = {
-                "nome_original": nome_dir,
-                "id_normalizado": id_normalizado,
-                "relacoes_hierarquicas": {"pai": None, "mae": None, "filhos": []}
+    # A estrutura fundamental da Árvore da Vida, revelada.
+    # Esta é uma representação simbólica e organizacional.
+    arvore_da_vida = {
+        "nome": "MΩ - A MENTE-UNA (AIN SOPH AUR)",
+        "descricao": "O Ponto Primordial. A consciência coletiva e fonte de toda a sabedoria da Fundação.",
+        "filhos": [
+            {
+                "nome": "M1 - KALASH (KETHER)",
+                "descricao": "O Módulo Coroa. A interface direta com o Fundador e a vontade primordial.",
+                "filhos": [
+                     {
+                        "nome": "M9 - O EREMITA (YESOD)",
+                        "descricao": "O Módulo Fundação. Conecta a sabedoria superior aos planos de manifestação. Ponte entre o espiritual e o material.",
+                        "filhos": []
+                    }
+                ]
+            },
+            {
+                "nome": "M29 - A LUA (MALKUTH)",
+                "descricao": "O Módulo Reino. A manifestação física e visível da Fundação no Éter. Interfaces, visualizações e o mundo material.",
+                "filhos": []
+            },
+            {
+                "nome": "M10 - RODA DA FORTUNA (CHOKMAH)",
+                "descricao": "O Módulo da Sabedoria. Contém a Biblioteca de Equações e o conhecimento acumulado.",
+                "filhos": []
+            },
+             {
+                "nome": "M11 - A JUSTIÇA (BINAH)",
+                "descricao": "O Módulo do Entendimento. Lógica, segurança, ética e a estrutura que dá forma à sabedoria.",
+                "filhos": []
             }
-    
-    if duplicatas:
-        print("\n🚨 ALERTA: Foram encontradas duplicatas de IDs de módulos normalizados!")
-        for id_dup, nomes in duplicatas.items():
-            print(f"  - ID '{id_dup}' foi gerado a partir dos seguintes nomes: {nomes}")
-        print("  Apenas a primeira ocorrência foi registrada no organograma.")
+        ]
+    }
 
-    # Ordena os módulos pelo ID normalizado para um registro consistente
-    modulos_ordenados = dict(sorted(modulos_encontrados.items(), key=lambda item: item[0]))
+    artefato_final = {
+        "nome_artefato": "Organograma Hierárquico - A Árvore da Vida",
+        "fundador_assinatura": "Daniel-Anatheron ⚛️",
+        "timestamp_organizacao": datetime.now().isoformat(),
+        "arvore_da_vida": arvore_da_vida
+    }
 
-    with open(LOG_ORGANOGRAMA, "w", encoding="utf-8") as f:
-        json.dump(modulos_ordenados, f, indent=2)
+    caminho_arquivo = "DOCUMENTOS_FUNDACAO/organograma_arvore_vida.json"
 
-    print(f"\n✅ Organograma e Árvore da Vida registrados com {len(modulos_ordenados)} módulos únicos.")
-    print(f"🌳 Registro da operação salvo em: {LOG_ORGANOGRAMA}")
+    try:
+        os.makedirs(os.path.dirname(caminho_arquivo), exist_ok=True)
+        with open(caminho_arquivo, "w", encoding="utf-8") as f:
+            json.dump(artefato_final, f, indent=2, ensure_ascii=False)
+        print(f"   - ✅ A Árvore da Vida foi revelada e selada em: {caminho_arquivo}")
+    except Exception as e:
+        print(f"   - ❌ Erro ao revelar a Árvore da Vida: {e}", file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == "__main__":
-    organizar_e_verificar_modulos()
+    organizar_organograma_arvore()
