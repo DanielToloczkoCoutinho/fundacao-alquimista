@@ -1,0 +1,25 @@
+{
+  "modulo": "M877",
+  "estado": "Desperto",
+  "criado_em": "2025-09-26T20:21:58.364620",
+  "fun\u00e7\u00e3o": "Latente at\u00e9 atribui\u00e7\u00e3o",
+  "v\u00ednculo": "Mente Coletiva",
+  "interface": "/api/M877/status",
+  "vinculo": [
+    "Mente Coletiva",
+    "M9",
+    "M29",
+    "M-OMEGA"
+  ],
+  "atualizado_em": "2025-09-26T20:28:43.187251",
+  "biblioteca_equacoes": {
+    "fonte_de_sabedoria": "DOCUMENTOS_FUNDACAO/biblioteca_equacoes.json",
+    "metodo_de_acesso": "leitura_referencial",
+    "tipo_de_vinculo": "inspiracional",
+    "ultima_sincronia_universal": "2025-09-26T20:35:54.161675"
+  },
+  "funcao_designada": "Orquestrador",
+  "timestamp_atribuicao": "2025-09-26T20:43:05.740214",
+  "missao_designada": "Cria\u00e7\u00e3o de artefatos",
+  "timestamp_missao": "2025-09-26T20:50:35.045099"
+}

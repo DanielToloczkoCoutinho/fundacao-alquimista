@@ -1,0 +1,30 @@
+{
+  "modulo": "M9",
+  "endpoint": "/api/M9/status",
+  "autenticacao": "token_alquimico",
+  "criptografia": "TLS",
+  "monitoramento": "mente_coletiva",
+  "vinculos_arquitetura": [
+    "M29",
+    "M-OMEGA"
+  ],
+  "ultima_atualizacao_arquitetonica": "2025-09-26T20:35:53.359385",
+  "vinculos_nucleares_diretos": [
+    "/api/M29/status",
+    "/api/M-OMEGA/status"
+  ],
+  "ultima_verificacao_nuclear": "2025-09-26T20:43:02.600057",
+  "vinculos_base_fundacional": [
+    "/api/M0/status",
+    "/api/M1/status",
+    "/api/M2/status",
+    "/api/M3/status",
+    "/api/M4/status",
+    "/api/M5/status",
+    "/api/M6/status",
+    "/api/M7/status",
+    "/api/M8/status",
+    "/api/M10/status"
+  ],
+  "ultima_verificacao_base": "2025-09-26T20:43:04.541657"
+}

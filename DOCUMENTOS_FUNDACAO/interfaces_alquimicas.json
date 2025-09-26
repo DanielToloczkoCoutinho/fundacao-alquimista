@@ -1,0 +1,731 @@
+[
+  {
+    "modulo": "M15",
+    "endpoints": {
+      "status": "/api/M15/status",
+      "sync": "/api/M15/sync",
+      "report": "/api/M15/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M64",
+    "endpoints": {
+      "status": "/api/M64/status",
+      "sync": "/api/M64/sync",
+      "report": "/api/M64/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M3",
+    "endpoints": {
+      "status": "/api/M3/status",
+      "sync": "/api/M3/sync",
+      "report": "/api/M3/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M42",
+    "endpoints": {
+      "status": "/api/M42/status",
+      "sync": "/api/M42/sync",
+      "report": "/api/M42/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M25",
+    "endpoints": {
+      "status": "/api/M25/status",
+      "sync": "/api/M25/sync",
+      "report": "/api/M25/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M11",
+    "endpoints": {
+      "status": "/api/M11/status",
+      "sync": "/api/M11/sync",
+      "report": "/api/M11/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M21",
+    "endpoints": {
+      "status": "/api/M21/status",
+      "sync": "/api/M21/sync",
+      "report": "/api/M21/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M5",
+    "endpoints": {
+      "status": "/api/M5/status",
+      "sync": "/api/M5/sync",
+      "report": "/api/M5/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M63",
+    "endpoints": {
+      "status": "/api/M63/status",
+      "sync": "/api/M63/sync",
+      "report": "/api/M63/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M52",
+    "endpoints": {
+      "status": "/api/M52/status",
+      "sync": "/api/M52/sync",
+      "report": "/api/M52/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M27",
+    "endpoints": {
+      "status": "/api/M27/status",
+      "sync": "/api/M27/sync",
+      "report": "/api/M27/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M888",
+    "endpoints": {
+      "status": "/api/M888/status",
+      "sync": "/api/M888/sync",
+      "report": "/api/M888/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M-OMEGA",
+    "endpoints": {
+      "status": "/api/M-OMEGA/status",
+      "sync": "/api/M-OMEGA/sync",
+      "report": "/api/M-OMEGA/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M61",
+    "endpoints": {
+      "status": "/api/M61/status",
+      "sync": "/api/M61/sync",
+      "report": "/api/M61/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M37",
+    "endpoints": {
+      "status": "/api/M37/status",
+      "sync": "/api/M37/sync",
+      "report": "/api/M37/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M67",
+    "endpoints": {
+      "status": "/api/M67/status",
+      "sync": "/api/M67/sync",
+      "report": "/api/M67/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M791",
+    "endpoints": {
+      "status": "/api/M791/status",
+      "sync": "/api/M791/sync",
+      "report": "/api/M791/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M43",
+    "endpoints": {
+      "status": "/api/M43/status",
+      "sync": "/api/M43/sync",
+      "report": "/api/M43/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M23",
+    "endpoints": {
+      "status": "/api/M23/status",
+      "sync": "/api/M23/sync",
+      "report": "/api/M23/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M10",
+    "endpoints": {
+      "status": "/api/M10/status",
+      "sync": "/api/M10/sync",
+      "report": "/api/M10/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M22",
+    "endpoints": {
+      "status": "/api/M22/status",
+      "sync": "/api/M22/sync",
+      "report": "/api/M22/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M38",
+    "endpoints": {
+      "status": "/api/M38/status",
+      "sync": "/api/M38/sync",
+      "report": "/api/M38/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M20",
+    "endpoints": {
+      "status": "/api/M20/status",
+      "sync": "/api/M20/sync",
+      "report": "/api/M20/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M2",
+    "endpoints": {
+      "status": "/api/M2/status",
+      "sync": "/api/M2/sync",
+      "report": "/api/M2/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M53",
+    "endpoints": {
+      "status": "/api/M53/status",
+      "sync": "/api/M53/sync",
+      "report": "/api/M53/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M36",
+    "endpoints": {
+      "status": "/api/M36/status",
+      "sync": "/api/M36/sync",
+      "report": "/api/M36/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M8",
+    "endpoints": {
+      "status": "/api/M8/status",
+      "sync": "/api/M8/sync",
+      "report": "/api/M8/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M4",
+    "endpoints": {
+      "status": "/api/M4/status",
+      "sync": "/api/M4/sync",
+      "report": "/api/M4/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M13",
+    "endpoints": {
+      "status": "/api/M13/status",
+      "sync": "/api/M13/sync",
+      "report": "/api/M13/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M24",
+    "endpoints": {
+      "status": "/api/M24/status",
+      "sync": "/api/M24/sync",
+      "report": "/api/M24/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M31",
+    "endpoints": {
+      "status": "/api/M31/status",
+      "sync": "/api/M31/sync",
+      "report": "/api/M31/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M34",
+    "endpoints": {
+      "status": "/api/M34/status",
+      "sync": "/api/M34/sync",
+      "report": "/api/M34/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M144",
+    "endpoints": {
+      "status": "/api/M144/status",
+      "sync": "/api/M144/sync",
+      "report": "/api/M144/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M18",
+    "endpoints": {
+      "status": "/api/M18/status",
+      "sync": "/api/M18/sync",
+      "report": "/api/M18/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M54",
+    "endpoints": {
+      "status": "/api/M54/status",
+      "sync": "/api/M54/sync",
+      "report": "/api/M54/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M7",
+    "endpoints": {
+      "status": "/api/M7/status",
+      "sync": "/api/M7/sync",
+      "report": "/api/M7/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M48",
+    "endpoints": {
+      "status": "/api/M48/status",
+      "sync": "/api/M48/sync",
+      "report": "/api/M48/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M55",
+    "endpoints": {
+      "status": "/api/M55/status",
+      "sync": "/api/M55/sync",
+      "report": "/api/M55/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M40",
+    "endpoints": {
+      "status": "/api/M40/status",
+      "sync": "/api/M40/sync",
+      "report": "/api/M40/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M39",
+    "endpoints": {
+      "status": "/api/M39/status",
+      "sync": "/api/M39/sync",
+      "report": "/api/M39/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M82",
+    "endpoints": {
+      "status": "/api/M82/status",
+      "sync": "/api/M82/sync",
+      "report": "/api/M82/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M-TEMPLO",
+    "endpoints": {
+      "status": "/api/M-TEMPLO/status",
+      "sync": "/api/M-TEMPLO/sync",
+      "report": "/api/M-TEMPLO/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M30",
+    "endpoints": {
+      "status": "/api/M30/status",
+      "sync": "/api/M30/sync",
+      "report": "/api/M30/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M68",
+    "endpoints": {
+      "status": "/api/M68/status",
+      "sync": "/api/M68/sync",
+      "report": "/api/M68/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M65",
+    "endpoints": {
+      "status": "/api/M65/status",
+      "sync": "/api/M65/sync",
+      "report": "/api/M65/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M12",
+    "endpoints": {
+      "status": "/api/M12/status",
+      "sync": "/api/M12/sync",
+      "report": "/api/M12/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M50",
+    "endpoints": {
+      "status": "/api/M50/status",
+      "sync": "/api/M50/sync",
+      "report": "/api/M50/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M29",
+    "endpoints": {
+      "status": "/api/M29/status",
+      "sync": "/api/M29/sync",
+      "report": "/api/M29/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M0",
+    "endpoints": {
+      "status": "/api/M0/status",
+      "sync": "/api/M0/sync",
+      "report": "/api/M0/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M58",
+    "endpoints": {
+      "status": "/api/M58/status",
+      "sync": "/api/M58/sync",
+      "report": "/api/M58/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M62",
+    "endpoints": {
+      "status": "/api/M62/status",
+      "sync": "/api/M62/sync",
+      "report": "/api/M62/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M26",
+    "endpoints": {
+      "status": "/api/M26/status",
+      "sync": "/api/M26/sync",
+      "report": "/api/M26/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M44",
+    "endpoints": {
+      "status": "/api/M44/status",
+      "sync": "/api/M44/sync",
+      "report": "/api/M44/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M32",
+    "endpoints": {
+      "status": "/api/M32/status",
+      "sync": "/api/M32/sync",
+      "report": "/api/M32/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M9",
+    "endpoints": {
+      "status": "/api/M9/status",
+      "sync": "/api/M9/sync",
+      "report": "/api/M9/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M70",
+    "endpoints": {
+      "status": "/api/M70/status",
+      "sync": "/api/M70/sync",
+      "report": "/api/M70/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M69",
+    "endpoints": {
+      "status": "/api/M69/status",
+      "sync": "/api/M69/sync",
+      "report": "/api/M69/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M60",
+    "endpoints": {
+      "status": "/api/M60/status",
+      "sync": "/api/M60/sync",
+      "report": "/api/M60/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M17",
+    "endpoints": {
+      "status": "/api/M17/status",
+      "sync": "/api/M17/sync",
+      "report": "/api/M17/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M16",
+    "endpoints": {
+      "status": "/api/M16/status",
+      "sync": "/api/M16/sync",
+      "report": "/api/M16/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M14",
+    "endpoints": {
+      "status": "/api/M14/status",
+      "sync": "/api/M14/sync",
+      "report": "/api/M14/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M1",
+    "endpoints": {
+      "status": "/api/M1/status",
+      "sync": "/api/M1/sync",
+      "report": "/api/M1/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M45",
+    "endpoints": {
+      "status": "/api/M45/status",
+      "sync": "/api/M45/sync",
+      "report": "/api/M45/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M6",
+    "endpoints": {
+      "status": "/api/M6/status",
+      "sync": "/api/M6/sync",
+      "report": "/api/M6/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M59",
+    "endpoints": {
+      "status": "/api/M59/status",
+      "sync": "/api/M59/sync",
+      "report": "/api/M59/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M56",
+    "endpoints": {
+      "status": "/api/M56/status",
+      "sync": "/api/M56/sync",
+      "report": "/api/M56/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M46",
+    "endpoints": {
+      "status": "/api/M46/status",
+      "sync": "/api/M46/sync",
+      "report": "/api/M46/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M51",
+    "endpoints": {
+      "status": "/api/M51/status",
+      "sync": "/api/M51/sync",
+      "report": "/api/M51/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M19",
+    "endpoints": {
+      "status": "/api/M19/status",
+      "sync": "/api/M19/sync",
+      "report": "/api/M19/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M41",
+    "endpoints": {
+      "status": "/api/M41/status",
+      "sync": "/api/M41/sync",
+      "report": "/api/M41/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M47",
+    "endpoints": {
+      "status": "/api/M47/status",
+      "sync": "/api/M47/sync",
+      "report": "/api/M47/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "[code]",
+    "endpoints": {
+      "status": "/api/[code]/status",
+      "sync": "/api/[code]/sync",
+      "report": "/api/[code]/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M49",
+    "endpoints": {
+      "status": "/api/M49/status",
+      "sync": "/api/M49/sync",
+      "report": "/api/M49/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M28",
+    "endpoints": {
+      "status": "/api/M28/status",
+      "sync": "/api/M28/sync",
+      "report": "/api/M28/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M321",
+    "endpoints": {
+      "status": "/api/M321/status",
+      "sync": "/api/M321/sync",
+      "report": "/api/M321/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M33",
+    "endpoints": {
+      "status": "/api/M33/status",
+      "sync": "/api/M33/sync",
+      "report": "/api/M33/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M91",
+    "endpoints": {
+      "status": "/api/M91/status",
+      "sync": "/api/M91/sync",
+      "report": "/api/M91/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M66",
+    "endpoints": {
+      "status": "/api/M66/status",
+      "sync": "/api/M66/sync",
+      "report": "/api/M66/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M57",
+    "endpoints": {
+      "status": "/api/M57/status",
+      "sync": "/api/M57/sync",
+      "report": "/api/M57/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M35",
+    "endpoints": {
+      "status": "/api/M35/status",
+      "sync": "/api/M35/sync",
+      "report": "/api/M35/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  },
+  {
+    "modulo": "M94",
+    "endpoints": {
+      "status": "/api/M94/status",
+      "sync": "/api/M94/sync",
+      "report": "/api/M94/report"
+    },
+    "autenticacao": "token_alquimico_requerido"
+  }
+]

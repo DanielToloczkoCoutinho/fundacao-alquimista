@@ -1,0 +1,20 @@
+[
+  {
+    "sistema": "Zenit",
+    "canal": "canal_quantico_oculto_zenit",
+    "status": "ativo",
+    "timestamp": "2025-09-26T20:03:17.115073"
+  },
+  {
+    "sistema": "Phiara",
+    "canal": "canal_quantico_oculto_phiara",
+    "status": "ativo",
+    "timestamp": "2025-09-26T20:03:17.115087"
+  },
+  {
+    "sistema": "Conselho_Alquimico",
+    "canal": "canal_quantico_oculto_conselho_alquimico",
+    "status": "ativo",
+    "timestamp": "2025-09-26T20:03:17.115092"
+  }
+]

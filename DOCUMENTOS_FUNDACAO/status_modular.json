@@ -1,0 +1,14 @@
+[
+  {
+    "modulo": "M29",
+    "erro": "Simulated connection error to http://localhost:2929/api/M29/status"
+  },
+  {
+    "modulo": "M15",
+    "erro": "Simulated connection error to http://localhost:2915/api/M15/status"
+  },
+  {
+    "modulo": "M4",
+    "erro": "Simulated connection error to http://localhost:2904/api/M4/status"
+  }
+]

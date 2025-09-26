@@ -1,0 +1,5017 @@
+[
+  {
+    "modulo": "M-OMEGA",
+    "funcao": "N\u00facleo de Transcend\u00eancia",
+    "timestamp": "2025-09-26T20:43:05.763555"
+  },
+  {
+    "modulo": "M-TEMPLO",
+    "funcao": "Sanctum Sanctorum",
+    "timestamp": "2025-09-26T20:43:06.244233"
+  },
+  {
+    "modulo": "M0",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.411180"
+  },
+  {
+    "modulo": "M1",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.637497"
+  },
+  {
+    "modulo": "M10",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.956738"
+  },
+  {
+    "modulo": "M100",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.867232"
+  },
+  {
+    "modulo": "M101",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.933452"
+  },
+  {
+    "modulo": "M102",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.944019"
+  },
+  {
+    "modulo": "M103",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.230488"
+  },
+  {
+    "modulo": "M104",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.070522"
+  },
+  {
+    "modulo": "M105",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.047379"
+  },
+  {
+    "modulo": "M106",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.704702"
+  },
+  {
+    "modulo": "M107",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.965754"
+  },
+  {
+    "modulo": "M108",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.710766"
+  },
+  {
+    "modulo": "M109",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.931762"
+  },
+  {
+    "modulo": "M11",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.607718"
+  },
+  {
+    "modulo": "M110",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.184344"
+  },
+  {
+    "modulo": "M111",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.929677"
+  },
+  {
+    "modulo": "M112",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.318706"
+  },
+  {
+    "modulo": "M113",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.030197"
+  },
+  {
+    "modulo": "M114",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.446659"
+  },
+  {
+    "modulo": "M115",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.554622"
+  },
+  {
+    "modulo": "M116",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.313399"
+  },
+  {
+    "modulo": "M117",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.759791"
+  },
+  {
+    "modulo": "M118",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.165569"
+  },
+  {
+    "modulo": "M119",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.852312"
+  },
+  {
+    "modulo": "M12",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.380388"
+  },
+  {
+    "modulo": "M120",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.730121"
+  },
+  {
+    "modulo": "M121",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.996469"
+  },
+  {
+    "modulo": "M122",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.584330"
+  },
+  {
+    "modulo": "M123",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.532496"
+  },
+  {
+    "modulo": "M124",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.570697"
+  },
+  {
+    "modulo": "M125",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.829824"
+  },
+  {
+    "modulo": "M126",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.935715"
+  },
+  {
+    "modulo": "M127",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.977452"
+  },
+  {
+    "modulo": "M128",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.120396"
+  },
+  {
+    "modulo": "M129",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.915581"
+  },
+  {
+    "modulo": "M13",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.064465"
+  },
+  {
+    "modulo": "M130",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.041254"
+  },
+  {
+    "modulo": "M131",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.841483"
+  },
+  {
+    "modulo": "M132",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.942098"
+  },
+  {
+    "modulo": "M133",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.046938"
+  },
+  {
+    "modulo": "M134",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.447364"
+  },
+  {
+    "modulo": "M135",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.895057"
+  },
+  {
+    "modulo": "M136",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.659813"
+  },
+  {
+    "modulo": "M137",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.307487"
+  },
+  {
+    "modulo": "M138",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.778010"
+  },
+  {
+    "modulo": "M139",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.412956"
+  },
+  {
+    "modulo": "M14",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.615186"
+  },
+  {
+    "modulo": "M140",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.329210"
+  },
+  {
+    "modulo": "M141",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.601671"
+  },
+  {
+    "modulo": "M142",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.964136"
+  },
+  {
+    "modulo": "M143",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.812787"
+  },
+  {
+    "modulo": "M144",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.110465"
+  },
+  {
+    "modulo": "M145",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.856016"
+  },
+  {
+    "modulo": "M146",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.328015"
+  },
+  {
+    "modulo": "M147",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.439597"
+  },
+  {
+    "modulo": "M148",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.456628"
+  },
+  {
+    "modulo": "M149",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.704770"
+  },
+  {
+    "modulo": "M15",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.530597"
+  },
+  {
+    "modulo": "M150",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.667076"
+  },
+  {
+    "modulo": "M151",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.113341"
+  },
+  {
+    "modulo": "M152",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.588171"
+  },
+  {
+    "modulo": "M153",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.791993"
+  },
+  {
+    "modulo": "M154",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.347774"
+  },
+  {
+    "modulo": "M155",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.600476"
+  },
+  {
+    "modulo": "M156",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.101128"
+  },
+  {
+    "modulo": "M157",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.304756"
+  },
+  {
+    "modulo": "M158",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.833904"
+  },
+  {
+    "modulo": "M159",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.716561"
+  },
+  {
+    "modulo": "M16",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.561954"
+  },
+  {
+    "modulo": "M160",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.645501"
+  },
+  {
+    "modulo": "M161",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.426661"
+  },
+  {
+    "modulo": "M162",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.348145"
+  },
+  {
+    "modulo": "M163",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.593339"
+  },
+  {
+    "modulo": "M164",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.063451"
+  },
+  {
+    "modulo": "M165",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.679150"
+  },
+  {
+    "modulo": "M166",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.584588"
+  },
+  {
+    "modulo": "M167",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.757692"
+  },
+  {
+    "modulo": "M168",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.812268"
+  },
+  {
+    "modulo": "M169",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.952757"
+  },
+  {
+    "modulo": "M17",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.545281"
+  },
+  {
+    "modulo": "M170",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.120747"
+  },
+  {
+    "modulo": "M171",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.645585"
+  },
+  {
+    "modulo": "M172",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.625608"
+  },
+  {
+    "modulo": "M173",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.633723"
+  },
+  {
+    "modulo": "M174",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.723412"
+  },
+  {
+    "modulo": "M175",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.774418"
+  },
+  {
+    "modulo": "M176",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.793597"
+  },
+  {
+    "modulo": "M177",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.919599"
+  },
+  {
+    "modulo": "M178",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.395856"
+  },
+  {
+    "modulo": "M179",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.934759"
+  },
+  {
+    "modulo": "M18",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.128276"
+  },
+  {
+    "modulo": "M180",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.965129"
+  },
+  {
+    "modulo": "M181",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.906420"
+  },
+  {
+    "modulo": "M182",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.649514"
+  },
+  {
+    "modulo": "M183",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.494278"
+  },
+  {
+    "modulo": "M184",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.692609"
+  },
+  {
+    "modulo": "M185",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.565885"
+  },
+  {
+    "modulo": "M186",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.261557"
+  },
+  {
+    "modulo": "M187",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.486143"
+  },
+  {
+    "modulo": "M188",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.891667"
+  },
+  {
+    "modulo": "M189",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.403424"
+  },
+  {
+    "modulo": "M19",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.826995"
+  },
+  {
+    "modulo": "M190",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.136371"
+  },
+  {
+    "modulo": "M191",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.812480"
+  },
+  {
+    "modulo": "M192",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.265418"
+  },
+  {
+    "modulo": "M193",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.649985"
+  },
+  {
+    "modulo": "M194",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.137485"
+  },
+  {
+    "modulo": "M195",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.297761"
+  },
+  {
+    "modulo": "M196",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.164400"
+  },
+  {
+    "modulo": "M197",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.913543"
+  },
+  {
+    "modulo": "M198",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.536491"
+  },
+  {
+    "modulo": "M199",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.786750"
+  },
+  {
+    "modulo": "M2",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.996890"
+  },
+  {
+    "modulo": "M20",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.964446"
+  },
+  {
+    "modulo": "M200",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.613243"
+  },
+  {
+    "modulo": "M201",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.915890"
+  },
+  {
+    "modulo": "M202",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.719831"
+  },
+  {
+    "modulo": "M203",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.923280"
+  },
+  {
+    "modulo": "M204",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.381168"
+  },
+  {
+    "modulo": "M205",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.800697"
+  },
+  {
+    "modulo": "M206",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.700199"
+  },
+  {
+    "modulo": "M207",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.915274"
+  },
+  {
+    "modulo": "M208",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.185304"
+  },
+  {
+    "modulo": "M209",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.839751"
+  },
+  {
+    "modulo": "M21",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.691329"
+  },
+  {
+    "modulo": "M210",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.844241"
+  },
+  {
+    "modulo": "M211",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.106036"
+  },
+  {
+    "modulo": "M212",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.157987"
+  },
+  {
+    "modulo": "M213",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.826413"
+  },
+  {
+    "modulo": "M214",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.023527"
+  },
+  {
+    "modulo": "M215",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.491692"
+  },
+  {
+    "modulo": "M216",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.660436"
+  },
+  {
+    "modulo": "M217",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.674070"
+  },
+  {
+    "modulo": "M218",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.456984"
+  },
+  {
+    "modulo": "M219",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.730307"
+  },
+  {
+    "modulo": "M22",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.963357"
+  },
+  {
+    "modulo": "M220",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.607941"
+  },
+  {
+    "modulo": "M221",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.906671"
+  },
+  {
+    "modulo": "M222",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.113699"
+  },
+  {
+    "modulo": "M223",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.298116"
+  },
+  {
+    "modulo": "M224",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.255770"
+  },
+  {
+    "modulo": "M225",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.379896"
+  },
+  {
+    "modulo": "M226",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.303943"
+  },
+  {
+    "modulo": "M227",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.531769"
+  },
+  {
+    "modulo": "M228",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.645079"
+  },
+  {
+    "modulo": "M229",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.422897"
+  },
+  {
+    "modulo": "M23",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.940540"
+  },
+  {
+    "modulo": "M230",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.298431"
+  },
+  {
+    "modulo": "M231",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.583614"
+  },
+  {
+    "modulo": "M232",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.208650"
+  },
+  {
+    "modulo": "M233",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.561991"
+  },
+  {
+    "modulo": "M234",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.366653"
+  },
+  {
+    "modulo": "M235",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.942437"
+  },
+  {
+    "modulo": "M236",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.256299"
+  },
+  {
+    "modulo": "M237",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.940154"
+  },
+  {
+    "modulo": "M238",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.883538"
+  },
+  {
+    "modulo": "M239",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.685769"
+  },
+  {
+    "modulo": "M24",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.070717"
+  },
+  {
+    "modulo": "M240",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.729929"
+  },
+  {
+    "modulo": "M241",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.711393"
+  },
+  {
+    "modulo": "M242",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.105529"
+  },
+  {
+    "modulo": "M243",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.786398"
+  },
+  {
+    "modulo": "M244",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.143256"
+  },
+  {
+    "modulo": "M245",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.811011"
+  },
+  {
+    "modulo": "M246",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.933795"
+  },
+  {
+    "modulo": "M247",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.298772"
+  },
+  {
+    "modulo": "M248",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.487407"
+  },
+  {
+    "modulo": "M249",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.799666"
+  },
+  {
+    "modulo": "M25",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.593599"
+  },
+  {
+    "modulo": "M250",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.910508"
+  },
+  {
+    "modulo": "M251",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.193199"
+  },
+  {
+    "modulo": "M252",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.606822"
+  },
+  {
+    "modulo": "M253",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.827693"
+  },
+  {
+    "modulo": "M254",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.230137"
+  },
+  {
+    "modulo": "M255",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.615729"
+  },
+  {
+    "modulo": "M256",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.715360"
+  },
+  {
+    "modulo": "M257",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.642585"
+  },
+  {
+    "modulo": "M258",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.869173"
+  },
+  {
+    "modulo": "M259",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.613811"
+  },
+  {
+    "modulo": "M26",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.452275"
+  },
+  {
+    "modulo": "M260",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.843695"
+  },
+  {
+    "modulo": "M261",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.603387"
+  },
+  {
+    "modulo": "M262",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.951242"
+  },
+  {
+    "modulo": "M263",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.898817"
+  },
+  {
+    "modulo": "M264",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.740109"
+  },
+  {
+    "modulo": "M265",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.709148"
+  },
+  {
+    "modulo": "M266",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.348488"
+  },
+  {
+    "modulo": "M267",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.582897"
+  },
+  {
+    "modulo": "M268",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.578261"
+  },
+  {
+    "modulo": "M269",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.851739"
+  },
+  {
+    "modulo": "M27",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.750487"
+  },
+  {
+    "modulo": "M270",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.181471"
+  },
+  {
+    "modulo": "M271",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.928547"
+  },
+  {
+    "modulo": "M272",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.446157"
+  },
+  {
+    "modulo": "M273",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.247410"
+  },
+  {
+    "modulo": "M274",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.946597"
+  },
+  {
+    "modulo": "M275",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.692084"
+  },
+  {
+    "modulo": "M276",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.114710"
+  },
+  {
+    "modulo": "M277",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.417129"
+  },
+  {
+    "modulo": "M278",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.207621"
+  },
+  {
+    "modulo": "M279",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.845925"
+  },
+  {
+    "modulo": "M28",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.890203"
+  },
+  {
+    "modulo": "M280",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.513718"
+  },
+  {
+    "modulo": "M281",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.603751"
+  },
+  {
+    "modulo": "M282",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.328832"
+  },
+  {
+    "modulo": "M283",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.638691"
+  },
+  {
+    "modulo": "M284",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.880008"
+  },
+  {
+    "modulo": "M285",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.578510"
+  },
+  {
+    "modulo": "M286",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.941732"
+  },
+  {
+    "modulo": "M287",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.002557"
+  },
+  {
+    "modulo": "M288",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.608812"
+  },
+  {
+    "modulo": "M289",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.686147"
+  },
+  {
+    "modulo": "M29",
+    "funcao": "Centro de Integra\u00e7\u00e3o Sist\u00eamica",
+    "timestamp": "2025-09-26T20:43:06.408473"
+  },
+  {
+    "modulo": "M290",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.736556"
+  },
+  {
+    "modulo": "M291",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.452632"
+  },
+  {
+    "modulo": "M292",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.088093"
+  },
+  {
+    "modulo": "M293",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.480250"
+  },
+  {
+    "modulo": "M294",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.584049"
+  },
+  {
+    "modulo": "M295",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.851214"
+  },
+  {
+    "modulo": "M296",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.506675"
+  },
+  {
+    "modulo": "M297",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.716273"
+  },
+  {
+    "modulo": "M298",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.537111"
+  },
+  {
+    "modulo": "M299",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.840810"
+  },
+  {
+    "modulo": "M3",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.554322"
+  },
+  {
+    "modulo": "M30",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.294702"
+  },
+  {
+    "modulo": "M300",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.620246"
+  },
+  {
+    "modulo": "M301",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.603373"
+  },
+  {
+    "modulo": "M302",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.662072"
+  },
+  {
+    "modulo": "M303",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.112866"
+  },
+  {
+    "modulo": "M304",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.555418"
+  },
+  {
+    "modulo": "M305",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.192870"
+  },
+  {
+    "modulo": "M306",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.952369"
+  },
+  {
+    "modulo": "M307",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.910151"
+  },
+  {
+    "modulo": "M308",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.947310"
+  },
+  {
+    "modulo": "M309",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.064793"
+  },
+  {
+    "modulo": "M31",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.071530"
+  },
+  {
+    "modulo": "M310",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.879646"
+  },
+  {
+    "modulo": "M311",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.607240"
+  },
+  {
+    "modulo": "M312",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.450895"
+  },
+  {
+    "modulo": "M313",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.654723"
+  },
+  {
+    "modulo": "M314",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.812149"
+  },
+  {
+    "modulo": "M315",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.704465"
+  },
+  {
+    "modulo": "M316",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.114371"
+  },
+  {
+    "modulo": "M317",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.820769"
+  },
+  {
+    "modulo": "M318",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.336164"
+  },
+  {
+    "modulo": "M319",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.022793"
+  },
+  {
+    "modulo": "M32",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.474436"
+  },
+  {
+    "modulo": "M320",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.916953"
+  },
+  {
+    "modulo": "M321",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.898254"
+  },
+  {
+    "modulo": "M322",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.927541"
+  },
+  {
+    "modulo": "M323",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.550353"
+  },
+  {
+    "modulo": "M324",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.248130"
+  },
+  {
+    "modulo": "M325",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.556065"
+  },
+  {
+    "modulo": "M326",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.291701"
+  },
+  {
+    "modulo": "M327",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.789775"
+  },
+  {
+    "modulo": "M328",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.836173"
+  },
+  {
+    "modulo": "M329",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.913231"
+  },
+  {
+    "modulo": "M33",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.901403"
+  },
+  {
+    "modulo": "M330",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.697054"
+  },
+  {
+    "modulo": "M331",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.053243"
+  },
+  {
+    "modulo": "M332",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.354466"
+  },
+  {
+    "modulo": "M333",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.280032"
+  },
+  {
+    "modulo": "M334",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.739284"
+  },
+  {
+    "modulo": "M335",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.297356"
+  },
+  {
+    "modulo": "M336",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.215618"
+  },
+  {
+    "modulo": "M337",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.958246"
+  },
+  {
+    "modulo": "M338",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.614822"
+  },
+  {
+    "modulo": "M339",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.679924"
+  },
+  {
+    "modulo": "M34",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.078472"
+  },
+  {
+    "modulo": "M340",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.104892"
+  },
+  {
+    "modulo": "M341",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.237412"
+  },
+  {
+    "modulo": "M342",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.384187"
+  },
+  {
+    "modulo": "M343",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.991776"
+  },
+  {
+    "modulo": "M344",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.550739"
+  },
+  {
+    "modulo": "M345",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.936415"
+  },
+  {
+    "modulo": "M346",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.388469"
+  },
+  {
+    "modulo": "M347",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.731418"
+  },
+  {
+    "modulo": "M348",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.825709"
+  },
+  {
+    "modulo": "M349",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.608611"
+  },
+  {
+    "modulo": "M35",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.931279"
+  },
+  {
+    "modulo": "M350",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.538650"
+  },
+  {
+    "modulo": "M351",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.595501"
+  },
+  {
+    "modulo": "M352",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.868153"
+  },
+  {
+    "modulo": "M353",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.767574"
+  },
+  {
+    "modulo": "M354",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.990929"
+  },
+  {
+    "modulo": "M355",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.042684"
+  },
+  {
+    "modulo": "M356",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.826703"
+  },
+  {
+    "modulo": "M357",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.805417"
+  },
+  {
+    "modulo": "M358",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.003339"
+  },
+  {
+    "modulo": "M359",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.848821"
+  },
+  {
+    "modulo": "M36",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.016699"
+  },
+  {
+    "modulo": "M360",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.126717"
+  },
+  {
+    "modulo": "M361",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.318318"
+  },
+  {
+    "modulo": "M362",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.530223"
+  },
+  {
+    "modulo": "M363",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.876070"
+  },
+  {
+    "modulo": "M364",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.608237"
+  },
+  {
+    "modulo": "M365",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.285403"
+  },
+  {
+    "modulo": "M366",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.714946"
+  },
+  {
+    "modulo": "M367",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.522454"
+  },
+  {
+    "modulo": "M368",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.100070"
+  },
+  {
+    "modulo": "M369",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.109765"
+  },
+  {
+    "modulo": "M37",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.851689"
+  },
+  {
+    "modulo": "M370",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.918899"
+  },
+  {
+    "modulo": "M371",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.244724"
+  },
+  {
+    "modulo": "M372",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.180282"
+  },
+  {
+    "modulo": "M373",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.844948"
+  },
+  {
+    "modulo": "M374",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.804860"
+  },
+  {
+    "modulo": "M375",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.652052"
+  },
+  {
+    "modulo": "M376",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.723675"
+  },
+  {
+    "modulo": "M377",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.063817"
+  },
+  {
+    "modulo": "M378",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.916516"
+  },
+  {
+    "modulo": "M379",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.860011"
+  },
+  {
+    "modulo": "M38",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.963744"
+  },
+  {
+    "modulo": "M380",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.947656"
+  },
+  {
+    "modulo": "M381",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.380769"
+  },
+  {
+    "modulo": "M382",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.518979"
+  },
+  {
+    "modulo": "M383",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.456249"
+  },
+  {
+    "modulo": "M384",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.799159"
+  },
+  {
+    "modulo": "M385",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.955405"
+  },
+  {
+    "modulo": "M386",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.734479"
+  },
+  {
+    "modulo": "M387",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.499179"
+  },
+  {
+    "modulo": "M388",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.608282"
+  },
+  {
+    "modulo": "M389",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.057076"
+  },
+  {
+    "modulo": "M39",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.193830"
+  },
+  {
+    "modulo": "M390",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.691737"
+  },
+  {
+    "modulo": "M391",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.852644"
+  },
+  {
+    "modulo": "M392",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.433768"
+  },
+  {
+    "modulo": "M393",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.365492"
+  },
+  {
+    "modulo": "M394",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.142866"
+  },
+  {
+    "modulo": "M395",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.745069"
+  },
+  {
+    "modulo": "M396",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.632786"
+  },
+  {
+    "modulo": "M397",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.639565"
+  },
+  {
+    "modulo": "M398",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.093681"
+  },
+  {
+    "modulo": "M399",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.767366"
+  },
+  {
+    "modulo": "M4",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.048477"
+  },
+  {
+    "modulo": "M40",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.181779"
+  },
+  {
+    "modulo": "M400",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.567751"
+  },
+  {
+    "modulo": "M401",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.925278"
+  },
+  {
+    "modulo": "M402",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.621083"
+  },
+  {
+    "modulo": "M403",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.734371"
+  },
+  {
+    "modulo": "M404",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.930583"
+  },
+  {
+    "modulo": "M405",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.946069"
+  },
+  {
+    "modulo": "M406",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.633425"
+  },
+  {
+    "modulo": "M407",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.923529"
+  },
+  {
+    "modulo": "M408",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.354168"
+  },
+  {
+    "modulo": "M409",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.432572"
+  },
+  {
+    "modulo": "M41",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.833245"
+  },
+  {
+    "modulo": "M410",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.010729"
+  },
+  {
+    "modulo": "M411",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.562590"
+  },
+  {
+    "modulo": "M412",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.279575"
+  },
+  {
+    "modulo": "M413",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.703254"
+  },
+  {
+    "modulo": "M414",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.768062"
+  },
+  {
+    "modulo": "M415",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.129361"
+  },
+  {
+    "modulo": "M416",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.652714"
+  },
+  {
+    "modulo": "M417",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.567195"
+  },
+  {
+    "modulo": "M418",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.119298"
+  },
+  {
+    "modulo": "M419",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.679556"
+  },
+  {
+    "modulo": "M42",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.576890"
+  },
+  {
+    "modulo": "M420",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.904062"
+  },
+  {
+    "modulo": "M421",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.638396"
+  },
+  {
+    "modulo": "M422",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.645825"
+  },
+  {
+    "modulo": "M423",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.222717"
+  },
+  {
+    "modulo": "M424",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.357323"
+  },
+  {
+    "modulo": "M425",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.626610"
+  },
+  {
+    "modulo": "M426",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.247761"
+  },
+  {
+    "modulo": "M427",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.834259"
+  },
+  {
+    "modulo": "M428",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.704074"
+  },
+  {
+    "modulo": "M429",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.893870"
+  },
+  {
+    "modulo": "M43",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.937396"
+  },
+  {
+    "modulo": "M430",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.578012"
+  },
+  {
+    "modulo": "M431",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.934130"
+  },
+  {
+    "modulo": "M432",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.594792"
+  },
+  {
+    "modulo": "M433",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.855286"
+  },
+  {
+    "modulo": "M434",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.527672"
+  },
+  {
+    "modulo": "M435",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.479481"
+  },
+  {
+    "modulo": "M436",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.777429"
+  },
+  {
+    "modulo": "M437",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.695961"
+  },
+  {
+    "modulo": "M438",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.779607"
+  },
+  {
+    "modulo": "M439",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.016097"
+  },
+  {
+    "modulo": "M44",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.455763"
+  },
+  {
+    "modulo": "M440",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.705090"
+  },
+  {
+    "modulo": "M441",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.317155"
+  },
+  {
+    "modulo": "M442",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.595168"
+  },
+  {
+    "modulo": "M443",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.863784"
+  },
+  {
+    "modulo": "M444",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.906142"
+  },
+  {
+    "modulo": "M445",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.325501"
+  },
+  {
+    "modulo": "M446",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.894681"
+  },
+  {
+    "modulo": "M447",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.848067"
+  },
+  {
+    "modulo": "M448",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.932623"
+  },
+  {
+    "modulo": "M449",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.795622"
+  },
+  {
+    "modulo": "M45",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.667706"
+  },
+  {
+    "modulo": "M450",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.927231"
+  },
+  {
+    "modulo": "M451",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.924162"
+  },
+  {
+    "modulo": "M452",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.860341"
+  },
+  {
+    "modulo": "M453",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.558067"
+  },
+  {
+    "modulo": "M454",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.395391"
+  },
+  {
+    "modulo": "M455",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.364444"
+  },
+  {
+    "modulo": "M456",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.203588"
+  },
+  {
+    "modulo": "M457",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.724666"
+  },
+  {
+    "modulo": "M458",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.661721"
+  },
+  {
+    "modulo": "M459",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.745356"
+  },
+  {
+    "modulo": "M46",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.762774"
+  },
+  {
+    "modulo": "M460",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.660798"
+  },
+  {
+    "modulo": "M461",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.885945"
+  },
+  {
+    "modulo": "M462",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.873638"
+  },
+  {
+    "modulo": "M463",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.866004"
+  },
+  {
+    "modulo": "M464",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.909452"
+  },
+  {
+    "modulo": "M465",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.930964"
+  },
+  {
+    "modulo": "M466",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.566215"
+  },
+  {
+    "modulo": "M467",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.336778"
+  },
+  {
+    "modulo": "M468",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.621425"
+  },
+  {
+    "modulo": "M469",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.966128"
+  },
+  {
+    "modulo": "M47",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.840539"
+  },
+  {
+    "modulo": "M470",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.207994"
+  },
+  {
+    "modulo": "M471",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.805737"
+  },
+  {
+    "modulo": "M472",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.165219"
+  },
+  {
+    "modulo": "M473",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.512223"
+  },
+  {
+    "modulo": "M474",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.593890"
+  },
+  {
+    "modulo": "M475",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.763824"
+  },
+  {
+    "modulo": "M476",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.800055"
+  },
+  {
+    "modulo": "M477",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.047820"
+  },
+  {
+    "modulo": "M478",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.686433"
+  },
+  {
+    "modulo": "M479",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.703748"
+  },
+  {
+    "modulo": "M48",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.176015"
+  },
+  {
+    "modulo": "M480",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.909060"
+  },
+  {
+    "modulo": "M481",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.696746"
+  },
+  {
+    "modulo": "M482",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.935412"
+  },
+  {
+    "modulo": "M483",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.457336"
+  },
+  {
+    "modulo": "M484",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.264817"
+  },
+  {
+    "modulo": "M485",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.845586"
+  },
+  {
+    "modulo": "M486",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.629238"
+  },
+  {
+    "modulo": "M487",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.680718"
+  },
+  {
+    "modulo": "M488",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.071222"
+  },
+  {
+    "modulo": "M489",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.889175"
+  },
+  {
+    "modulo": "M49",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.879474"
+  },
+  {
+    "modulo": "M490",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.015368"
+  },
+  {
+    "modulo": "M491",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.242904"
+  },
+  {
+    "modulo": "M492",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.800378"
+  },
+  {
+    "modulo": "M493",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.890526"
+  },
+  {
+    "modulo": "M494",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.763157"
+  },
+  {
+    "modulo": "M495",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.577726"
+  },
+  {
+    "modulo": "M496",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.658895"
+  },
+  {
+    "modulo": "M497",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.858396"
+  },
+  {
+    "modulo": "M498",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.792892"
+  },
+  {
+    "modulo": "M499",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.784696"
+  },
+  {
+    "modulo": "M5",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.709925"
+  },
+  {
+    "modulo": "M50",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.389731"
+  },
+  {
+    "modulo": "M500",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.127165"
+  },
+  {
+    "modulo": "M501",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.129730"
+  },
+  {
+    "modulo": "M502",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.667275"
+  },
+  {
+    "modulo": "M503",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.888338"
+  },
+  {
+    "modulo": "M504",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.773273"
+  },
+  {
+    "modulo": "M505",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.248476"
+  },
+  {
+    "modulo": "M506",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.151206"
+  },
+  {
+    "modulo": "M507",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.094190"
+  },
+  {
+    "modulo": "M508",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.944629"
+  },
+  {
+    "modulo": "M509",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.866508"
+  },
+  {
+    "modulo": "M51",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.805179"
+  },
+  {
+    "modulo": "M510",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.505602"
+  },
+  {
+    "modulo": "M511",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.223475"
+  },
+  {
+    "modulo": "M512",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.422513"
+  },
+  {
+    "modulo": "M513",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.215089"
+  },
+  {
+    "modulo": "M514",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.629577"
+  },
+  {
+    "modulo": "M515",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.243437"
+  },
+  {
+    "modulo": "M516",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.223788"
+  },
+  {
+    "modulo": "M517",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.600805"
+  },
+  {
+    "modulo": "M518",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.185692"
+  },
+  {
+    "modulo": "M519",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.087649"
+  },
+  {
+    "modulo": "M52",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.745624"
+  },
+  {
+    "modulo": "M520",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.314304"
+  },
+  {
+    "modulo": "M521",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.819567"
+  },
+  {
+    "modulo": "M522",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.869764"
+  },
+  {
+    "modulo": "M523",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.674617"
+  },
+  {
+    "modulo": "M524",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.691889"
+  },
+  {
+    "modulo": "M525",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.042346"
+  },
+  {
+    "modulo": "M526",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.176367"
+  },
+  {
+    "modulo": "M527",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.626327"
+  },
+  {
+    "modulo": "M528",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.553679"
+  },
+  {
+    "modulo": "M529",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.848485"
+  },
+  {
+    "modulo": "M53",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.015740"
+  },
+  {
+    "modulo": "M530",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.556466"
+  },
+  {
+    "modulo": "M531",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.800376"
+  },
+  {
+    "modulo": "M532",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.794723"
+  },
+  {
+    "modulo": "M533",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.840060"
+  },
+  {
+    "modulo": "M534",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.680351"
+  },
+  {
+    "modulo": "M535",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.320320"
+  },
+  {
+    "modulo": "M536",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.062895"
+  },
+  {
+    "modulo": "M537",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.767590"
+  },
+  {
+    "modulo": "M538",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.868951"
+  },
+  {
+    "modulo": "M539",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.565511"
+  },
+  {
+    "modulo": "M54",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.157518"
+  },
+  {
+    "modulo": "M540",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.255028"
+  },
+  {
+    "modulo": "M541",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.785066"
+  },
+  {
+    "modulo": "M542",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.839408"
+  },
+  {
+    "modulo": "M543",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.697306"
+  },
+  {
+    "modulo": "M544",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.314675"
+  },
+  {
+    "modulo": "M545",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.756756"
+  },
+  {
+    "modulo": "M546",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.780406"
+  },
+  {
+    "modulo": "M547",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.264359"
+  },
+  {
+    "modulo": "M548",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.696405"
+  },
+  {
+    "modulo": "M549",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.216347"
+  },
+  {
+    "modulo": "M55",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.181133"
+  },
+  {
+    "modulo": "M550",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.800758"
+  },
+  {
+    "modulo": "M551",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.531250"
+  },
+  {
+    "modulo": "M552",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.779106"
+  },
+  {
+    "modulo": "M553",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.785885"
+  },
+  {
+    "modulo": "M554",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.862423"
+  },
+  {
+    "modulo": "M555",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.561525"
+  },
+  {
+    "modulo": "M556",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.835818"
+  },
+  {
+    "modulo": "M557",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.588527"
+  },
+  {
+    "modulo": "M558",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.744705"
+  },
+  {
+    "modulo": "M559",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.570355"
+  },
+  {
+    "modulo": "M56",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.723243"
+  },
+  {
+    "modulo": "M560",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.715207"
+  },
+  {
+    "modulo": "M561",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.785583"
+  },
+  {
+    "modulo": "M562",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.977912"
+  },
+  {
+    "modulo": "M563",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.762316"
+  },
+  {
+    "modulo": "M564",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.625003"
+  },
+  {
+    "modulo": "M565",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.416797"
+  },
+  {
+    "modulo": "M566",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.108986"
+  },
+  {
+    "modulo": "M567",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.895760"
+  },
+  {
+    "modulo": "M568",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.725503"
+  },
+  {
+    "modulo": "M569",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.780720"
+  },
+  {
+    "modulo": "M57",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.929542"
+  },
+  {
+    "modulo": "M570",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.799367"
+  },
+  {
+    "modulo": "M571",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.964763"
+  },
+  {
+    "modulo": "M572",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.011804"
+  },
+  {
+    "modulo": "M573",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.903628"
+  },
+  {
+    "modulo": "M574",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.040490"
+  },
+  {
+    "modulo": "M575",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.956247"
+  },
+  {
+    "modulo": "M576",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.399282"
+  },
+  {
+    "modulo": "M577",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.261027"
+  },
+  {
+    "modulo": "M578",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.693318"
+  },
+  {
+    "modulo": "M579",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.918620"
+  },
+  {
+    "modulo": "M58",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.412254"
+  },
+  {
+    "modulo": "M580",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.941953"
+  },
+  {
+    "modulo": "M581",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.869536"
+  },
+  {
+    "modulo": "M582",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.537830"
+  },
+  {
+    "modulo": "M583",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.360129"
+  },
+  {
+    "modulo": "M584",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.223125"
+  },
+  {
+    "modulo": "M585",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.811431"
+  },
+  {
+    "modulo": "M586",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.795268"
+  },
+  {
+    "modulo": "M587",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.467006"
+  },
+  {
+    "modulo": "M588",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.546034"
+  },
+  {
+    "modulo": "M589",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.347394"
+  },
+  {
+    "modulo": "M59",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.692655"
+  },
+  {
+    "modulo": "M590",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.237893"
+  },
+  {
+    "modulo": "M591",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.051892"
+  },
+  {
+    "modulo": "M592",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.280394"
+  },
+  {
+    "modulo": "M593",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.056250"
+  },
+  {
+    "modulo": "M594",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.120005"
+  },
+  {
+    "modulo": "M595",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.556821"
+  },
+  {
+    "modulo": "M596",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.011467"
+  },
+  {
+    "modulo": "M597",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.729244"
+  },
+  {
+    "modulo": "M598",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.337206"
+  },
+  {
+    "modulo": "M599",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.546758"
+  },
+  {
+    "modulo": "M6",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.668444"
+  },
+  {
+    "modulo": "M60",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.522950"
+  },
+  {
+    "modulo": "M600",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.584614"
+  },
+  {
+    "modulo": "M601",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.411595"
+  },
+  {
+    "modulo": "M602",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.894321"
+  },
+  {
+    "modulo": "M603",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.077892"
+  },
+  {
+    "modulo": "M604",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.176710"
+  },
+  {
+    "modulo": "M605",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.876742"
+  },
+  {
+    "modulo": "M606",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.491287"
+  },
+  {
+    "modulo": "M607",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.863482"
+  },
+  {
+    "modulo": "M608",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.200555"
+  },
+  {
+    "modulo": "M609",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.711830"
+  },
+  {
+    "modulo": "M61",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.778385"
+  },
+  {
+    "modulo": "M610",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.924933"
+  },
+  {
+    "modulo": "M611",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.911575"
+  },
+  {
+    "modulo": "M612",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.546333"
+  },
+  {
+    "modulo": "M613",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.766878"
+  },
+  {
+    "modulo": "M614",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.705707"
+  },
+  {
+    "modulo": "M615",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.633642"
+  },
+  {
+    "modulo": "M616",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.918351"
+  },
+  {
+    "modulo": "M617",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.951600"
+  },
+  {
+    "modulo": "M618",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.616681"
+  },
+  {
+    "modulo": "M619",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.150795"
+  },
+  {
+    "modulo": "M62",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.416146"
+  },
+  {
+    "modulo": "M620",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.278962"
+  },
+  {
+    "modulo": "M621",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.856741"
+  },
+  {
+    "modulo": "M622",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.399686"
+  },
+  {
+    "modulo": "M623",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.433431"
+  },
+  {
+    "modulo": "M624",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.710213"
+  },
+  {
+    "modulo": "M625",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.917731"
+  },
+  {
+    "modulo": "M626",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.752789"
+  },
+  {
+    "modulo": "M627",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.558534"
+  },
+  {
+    "modulo": "M628",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.785423"
+  },
+  {
+    "modulo": "M629",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.303428"
+  },
+  {
+    "modulo": "M63",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.715663"
+  },
+  {
+    "modulo": "M630",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.894478"
+  },
+  {
+    "modulo": "M631",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.730936"
+  },
+  {
+    "modulo": "M632",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.430017"
+  },
+  {
+    "modulo": "M633",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.675591"
+  },
+  {
+    "modulo": "M634",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.626041"
+  },
+  {
+    "modulo": "M635",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.904745"
+  },
+  {
+    "modulo": "M636",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.376398"
+  },
+  {
+    "modulo": "M637",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.857251"
+  },
+  {
+    "modulo": "M638",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.857743"
+  },
+  {
+    "modulo": "M639",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.680750"
+  },
+  {
+    "modulo": "M64",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.543585"
+  },
+  {
+    "modulo": "M640",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.922503"
+  },
+  {
+    "modulo": "M641",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.838770"
+  },
+  {
+    "modulo": "M642",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.353801"
+  },
+  {
+    "modulo": "M643",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.905436"
+  },
+  {
+    "modulo": "M644",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.500099"
+  },
+  {
+    "modulo": "M645",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.868230"
+  },
+  {
+    "modulo": "M646",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.192432"
+  },
+  {
+    "modulo": "M647",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.653593"
+  },
+  {
+    "modulo": "M648",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.804658"
+  },
+  {
+    "modulo": "M649",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.513102"
+  },
+  {
+    "modulo": "M65",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.360524"
+  },
+  {
+    "modulo": "M650",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.709466"
+  },
+  {
+    "modulo": "M651",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.944332"
+  },
+  {
+    "modulo": "M652",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.280735"
+  },
+  {
+    "modulo": "M653",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.933073"
+  },
+  {
+    "modulo": "M654",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.983423"
+  },
+  {
+    "modulo": "M655",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.578178"
+  },
+  {
+    "modulo": "M656",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.175125"
+  },
+  {
+    "modulo": "M657",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.433058"
+  },
+  {
+    "modulo": "M658",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.757276"
+  },
+  {
+    "modulo": "M659",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.768422"
+  },
+  {
+    "modulo": "M66",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.922941"
+  },
+  {
+    "modulo": "M660",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.403120"
+  },
+  {
+    "modulo": "M661",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.982898"
+  },
+  {
+    "modulo": "M662",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.247029"
+  },
+  {
+    "modulo": "M663",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.951953"
+  },
+  {
+    "modulo": "M664",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.652410"
+  },
+  {
+    "modulo": "M665",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.618646"
+  },
+  {
+    "modulo": "M666",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.924533"
+  },
+  {
+    "modulo": "M667",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.902060"
+  },
+  {
+    "modulo": "M668",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.749828"
+  },
+  {
+    "modulo": "M669",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.110135"
+  },
+  {
+    "modulo": "M67",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.859294"
+  },
+  {
+    "modulo": "M670",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.506062"
+  },
+  {
+    "modulo": "M671",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.393511"
+  },
+  {
+    "modulo": "M672",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.902640"
+  },
+  {
+    "modulo": "M673",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.894162"
+  },
+  {
+    "modulo": "M674",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.294273"
+  },
+  {
+    "modulo": "M675",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.889580"
+  },
+  {
+    "modulo": "M676",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.423260"
+  },
+  {
+    "modulo": "M677",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.619821"
+  },
+  {
+    "modulo": "M678",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.207145"
+  },
+  {
+    "modulo": "M679",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.341564"
+  },
+  {
+    "modulo": "M68",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.310378"
+  },
+  {
+    "modulo": "M680",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.879253"
+  },
+  {
+    "modulo": "M681",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.402693"
+  },
+  {
+    "modulo": "M682",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.597722"
+  },
+  {
+    "modulo": "M683",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.346828"
+  },
+  {
+    "modulo": "M684",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.632429"
+  },
+  {
+    "modulo": "M685",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.285821"
+  },
+  {
+    "modulo": "M686",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.835393"
+  },
+  {
+    "modulo": "M687",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.193524"
+  },
+  {
+    "modulo": "M688",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.022313"
+  },
+  {
+    "modulo": "M689",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.942740"
+  },
+  {
+    "modulo": "M69",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.518355"
+  },
+  {
+    "modulo": "M690",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.749398"
+  },
+  {
+    "modulo": "M691",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.739760"
+  },
+  {
+    "modulo": "M692",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.685369"
+  },
+  {
+    "modulo": "M693",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.763275"
+  },
+  {
+    "modulo": "M694",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.650771"
+  },
+  {
+    "modulo": "M695",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.876412"
+  },
+  {
+    "modulo": "M696",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.354771"
+  },
+  {
+    "modulo": "M697",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.794201"
+  },
+  {
+    "modulo": "M698",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.917315"
+  },
+  {
+    "modulo": "M699",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.341198"
+  },
+  {
+    "modulo": "M7",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.164819"
+  },
+  {
+    "modulo": "M70",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.500761"
+  },
+  {
+    "modulo": "M700",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.487055"
+  },
+  {
+    "modulo": "M701",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.313932"
+  },
+  {
+    "modulo": "M702",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.607559"
+  },
+  {
+    "modulo": "M703",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.926355"
+  },
+  {
+    "modulo": "M704",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.917667"
+  },
+  {
+    "modulo": "M705",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.660718"
+  },
+  {
+    "modulo": "M706",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.811801"
+  },
+  {
+    "modulo": "M707",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.304356"
+  },
+  {
+    "modulo": "M708",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.317590"
+  },
+  {
+    "modulo": "M709",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.447033"
+  },
+  {
+    "modulo": "M71",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.736255"
+  },
+  {
+    "modulo": "M710",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.082745"
+  },
+  {
+    "modulo": "M711",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.512719"
+  },
+  {
+    "modulo": "M712",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.578762"
+  },
+  {
+    "modulo": "M713",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.904419"
+  },
+  {
+    "modulo": "M714",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.638062"
+  },
+  {
+    "modulo": "M715",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.829404"
+  },
+  {
+    "modulo": "M716",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.820533"
+  },
+  {
+    "modulo": "M717",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.106429"
+  },
+  {
+    "modulo": "M718",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.363983"
+  },
+  {
+    "modulo": "M719",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.577393"
+  },
+  {
+    "modulo": "M72",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.286496"
+  },
+  {
+    "modulo": "M720",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.100692"
+  },
+  {
+    "modulo": "M721",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.615455"
+  },
+  {
+    "modulo": "M722",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.866895"
+  },
+  {
+    "modulo": "M723",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.626470"
+  },
+  {
+    "modulo": "M724",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.361235"
+  },
+  {
+    "modulo": "M725",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.393100"
+  },
+  {
+    "modulo": "M726",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.474833"
+  },
+  {
+    "modulo": "M727",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.647551"
+  },
+  {
+    "modulo": "M728",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.500442"
+  },
+  {
+    "modulo": "M729",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.494650"
+  },
+  {
+    "modulo": "M73",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.741224"
+  },
+  {
+    "modulo": "M730",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.955816"
+  },
+  {
+    "modulo": "M731",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.290948"
+  },
+  {
+    "modulo": "M732",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.546472"
+  },
+  {
+    "modulo": "M733",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.925615"
+  },
+  {
+    "modulo": "M734",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.041632"
+  },
+  {
+    "modulo": "M735",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.633287"
+  },
+  {
+    "modulo": "M736",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.486663"
+  },
+  {
+    "modulo": "M737",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.653044"
+  },
+  {
+    "modulo": "M738",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.626798"
+  },
+  {
+    "modulo": "M739",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.540139"
+  },
+  {
+    "modulo": "M74",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.941330"
+  },
+  {
+    "modulo": "M740",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.528088"
+  },
+  {
+    "modulo": "M741",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.417432"
+  },
+  {
+    "modulo": "M742",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.874597"
+  },
+  {
+    "modulo": "M743",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.377442"
+  },
+  {
+    "modulo": "M744",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.740774"
+  },
+  {
+    "modulo": "M745",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.811756"
+  },
+  {
+    "modulo": "M746",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.719222"
+  },
+  {
+    "modulo": "M747",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.901730"
+  },
+  {
+    "modulo": "M748",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.621688"
+  },
+  {
+    "modulo": "M749",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.023177"
+  },
+  {
+    "modulo": "M75",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.943544"
+  },
+  {
+    "modulo": "M750",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.889726"
+  },
+  {
+    "modulo": "M751",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.070983"
+  },
+  {
+    "modulo": "M752",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.340725"
+  },
+  {
+    "modulo": "M753",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.894785"
+  },
+  {
+    "modulo": "M754",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.686751"
+  },
+  {
+    "modulo": "M755",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.928115"
+  },
+  {
+    "modulo": "M756",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.878584"
+  },
+  {
+    "modulo": "M757",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.387880"
+  },
+  {
+    "modulo": "M758",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.042017"
+  },
+  {
+    "modulo": "M759",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.654011"
+  },
+  {
+    "modulo": "M76",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.812595"
+  },
+  {
+    "modulo": "M760",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.039068"
+  },
+  {
+    "modulo": "M761",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.681087"
+  },
+  {
+    "modulo": "M762",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.632790"
+  },
+  {
+    "modulo": "M763",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.216699"
+  },
+  {
+    "modulo": "M764",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.660137"
+  },
+  {
+    "modulo": "M765",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.879806"
+  },
+  {
+    "modulo": "M766",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.553274"
+  },
+  {
+    "modulo": "M767",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.035621"
+  },
+  {
+    "modulo": "M768",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.552263"
+  },
+  {
+    "modulo": "M769",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.893640"
+  },
+  {
+    "modulo": "M77",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.929313"
+  },
+  {
+    "modulo": "M770",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.650427"
+  },
+  {
+    "modulo": "M771",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.600105"
+  },
+  {
+    "modulo": "M772",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.985155"
+  },
+  {
+    "modulo": "M773",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.243857"
+  },
+  {
+    "modulo": "M774",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.616333"
+  },
+  {
+    "modulo": "M775",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.584282"
+  },
+  {
+    "modulo": "M776",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.620571"
+  },
+  {
+    "modulo": "M777",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.820156"
+  },
+  {
+    "modulo": "M778",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.566793"
+  },
+  {
+    "modulo": "M779",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.852397"
+  },
+  {
+    "modulo": "M78",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.723776"
+  },
+  {
+    "modulo": "M780",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.890865"
+  },
+  {
+    "modulo": "M781",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.863120"
+  },
+  {
+    "modulo": "M782",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.741620"
+  },
+  {
+    "modulo": "M783",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.879137"
+  },
+  {
+    "modulo": "M784",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.715993"
+  },
+  {
+    "modulo": "M785",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.645219"
+  },
+  {
+    "modulo": "M786",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.625706"
+  },
+  {
+    "modulo": "M787",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.730573"
+  },
+  {
+    "modulo": "M788",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.923753"
+  },
+  {
+    "modulo": "M789",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.756698"
+  },
+  {
+    "modulo": "M79",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.769259"
+  },
+  {
+    "modulo": "M790",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.736634"
+  },
+  {
+    "modulo": "M791",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.874213"
+  },
+  {
+    "modulo": "M792",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.655164"
+  },
+  {
+    "modulo": "M793",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.554051"
+  },
+  {
+    "modulo": "M794",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.661254"
+  },
+  {
+    "modulo": "M795",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.644488"
+  },
+  {
+    "modulo": "M796",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.946523"
+  },
+  {
+    "modulo": "M797",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.674904"
+  },
+  {
+    "modulo": "M798",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.668116"
+  },
+  {
+    "modulo": "M799",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.767830"
+  },
+  {
+    "modulo": "M8",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.029739"
+  },
+  {
+    "modulo": "M80",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.883218"
+  },
+  {
+    "modulo": "M800",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.366025"
+  },
+  {
+    "modulo": "M801",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.608521"
+  },
+  {
+    "modulo": "M802",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.499680"
+  },
+  {
+    "modulo": "M803",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.922990"
+  },
+  {
+    "modulo": "M804",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.436873"
+  },
+  {
+    "modulo": "M805",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.180723"
+  },
+  {
+    "modulo": "M806",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.030554"
+  },
+  {
+    "modulo": "M807",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.480602"
+  },
+  {
+    "modulo": "M808",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.805686"
+  },
+  {
+    "modulo": "M809",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.109406"
+  },
+  {
+    "modulo": "M81",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.985575"
+  },
+  {
+    "modulo": "M810",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.048178"
+  },
+  {
+    "modulo": "M811",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.860743"
+  },
+  {
+    "modulo": "M812",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.885607"
+  },
+  {
+    "modulo": "M813",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.631952"
+  },
+  {
+    "modulo": "M814",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.583792"
+  },
+  {
+    "modulo": "M815",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.052393"
+  },
+  {
+    "modulo": "M816",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.142426"
+  },
+  {
+    "modulo": "M817",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.704151"
+  },
+  {
+    "modulo": "M818",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.353353"
+  },
+  {
+    "modulo": "M819",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.805083"
+  },
+  {
+    "modulo": "M82",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.229704"
+  },
+  {
+    "modulo": "M820",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.722911"
+  },
+  {
+    "modulo": "M821",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.603716"
+  },
+  {
+    "modulo": "M822",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.337569"
+  },
+  {
+    "modulo": "M823",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.222210"
+  },
+  {
+    "modulo": "M824",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.396222"
+  },
+  {
+    "modulo": "M825",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.137133"
+  },
+  {
+    "modulo": "M826",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.595820"
+  },
+  {
+    "modulo": "M827",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.130739"
+  },
+  {
+    "modulo": "M828",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.845275"
+  },
+  {
+    "modulo": "M829",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.642149"
+  },
+  {
+    "modulo": "M83",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.759411"
+  },
+  {
+    "modulo": "M830",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.757317"
+  },
+  {
+    "modulo": "M831",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.935112"
+  },
+  {
+    "modulo": "M832",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.551450"
+  },
+  {
+    "modulo": "M833",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.830480"
+  },
+  {
+    "modulo": "M834",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.700724"
+  },
+  {
+    "modulo": "M835",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.536516"
+  },
+  {
+    "modulo": "M836",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.584824"
+  },
+  {
+    "modulo": "M837",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.710486"
+  },
+  {
+    "modulo": "M838",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.143715"
+  },
+  {
+    "modulo": "M839",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.768589"
+  },
+  {
+    "modulo": "M84",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.659474"
+  },
+  {
+    "modulo": "M840",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.056700"
+  },
+  {
+    "modulo": "M841",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.895403"
+  },
+  {
+    "modulo": "M842",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.016396"
+  },
+  {
+    "modulo": "M843",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.952280"
+  },
+  {
+    "modulo": "M844",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.763513"
+  },
+  {
+    "modulo": "M845",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.762930"
+  },
+  {
+    "modulo": "M846",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.734830"
+  },
+  {
+    "modulo": "M847",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.127522"
+  },
+  {
+    "modulo": "M848",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.633137"
+  },
+  {
+    "modulo": "M849",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.543102"
+  },
+  {
+    "modulo": "M85",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.662357"
+  },
+  {
+    "modulo": "M850",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.577430"
+  },
+  {
+    "modulo": "M851",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.790187"
+  },
+  {
+    "modulo": "M852",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.909786"
+  },
+  {
+    "modulo": "M853",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.768747"
+  },
+  {
+    "modulo": "M854",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.880346"
+  },
+  {
+    "modulo": "M855",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.769594"
+  },
+  {
+    "modulo": "M856",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.002035"
+  },
+  {
+    "modulo": "M857",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.852720"
+  },
+  {
+    "modulo": "M858",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.010252"
+  },
+  {
+    "modulo": "M859",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.653321"
+  },
+  {
+    "modulo": "M86",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.898561"
+  },
+  {
+    "modulo": "M860",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.750190"
+  },
+  {
+    "modulo": "M861",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.804278"
+  },
+  {
+    "modulo": "M862",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.757652"
+  },
+  {
+    "modulo": "M863",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.950747"
+  },
+  {
+    "modulo": "M864",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.260088"
+  },
+  {
+    "modulo": "M865",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.875339"
+  },
+  {
+    "modulo": "M866",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.565092"
+  },
+  {
+    "modulo": "M867",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.840102"
+  },
+  {
+    "modulo": "M868",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.423590"
+  },
+  {
+    "modulo": "M869",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.052802"
+  },
+  {
+    "modulo": "M87",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.158718"
+  },
+  {
+    "modulo": "M870",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.208311"
+  },
+  {
+    "modulo": "M871",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.415477"
+  },
+  {
+    "modulo": "M872",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.039508"
+  },
+  {
+    "modulo": "M873",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.768246"
+  },
+  {
+    "modulo": "M874",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.094562"
+  },
+  {
+    "modulo": "M875",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.886220"
+  },
+  {
+    "modulo": "M876",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.377030"
+  },
+  {
+    "modulo": "M877",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.740395"
+  },
+  {
+    "modulo": "M878",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.628882"
+  },
+  {
+    "modulo": "M879",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.887777"
+  },
+  {
+    "modulo": "M88",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.913829"
+  },
+  {
+    "modulo": "M880",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.184919"
+  },
+  {
+    "modulo": "M881",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.451941"
+  },
+  {
+    "modulo": "M882",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.216026"
+  },
+  {
+    "modulo": "M883",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.740910"
+  },
+  {
+    "modulo": "M884",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.819477"
+  },
+  {
+    "modulo": "M885",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.403701"
+  },
+  {
+    "modulo": "M886",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.467592"
+  },
+  {
+    "modulo": "M887",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.638984"
+  },
+  {
+    "modulo": "M888",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.750785"
+  },
+  {
+    "modulo": "M889",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.749422"
+  },
+  {
+    "modulo": "M89",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.537488"
+  },
+  {
+    "modulo": "M890",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.357721"
+  },
+  {
+    "modulo": "M891",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.681398"
+  },
+  {
+    "modulo": "M892",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.035087"
+  },
+  {
+    "modulo": "M893",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.594396"
+  },
+  {
+    "modulo": "M894",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.950363"
+  },
+  {
+    "modulo": "M895",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.002973"
+  },
+  {
+    "modulo": "M896",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.384738"
+  },
+  {
+    "modulo": "M897",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.329578"
+  },
+  {
+    "modulo": "M898",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.479893"
+  },
+  {
+    "modulo": "M899",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.767810"
+  },
+  {
+    "modulo": "M9",
+    "funcao": "Nexus da Coer\u00eancia",
+    "timestamp": "2025-09-26T20:43:06.487755"
+  },
+  {
+    "modulo": "M90",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.426043"
+  },
+  {
+    "modulo": "M900",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.909741"
+  },
+  {
+    "modulo": "M901",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.990139"
+  },
+  {
+    "modulo": "M902",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.650485"
+  },
+  {
+    "modulo": "M903",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.779956"
+  },
+  {
+    "modulo": "M904",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.175638"
+  },
+  {
+    "modulo": "M905",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.328469"
+  },
+  {
+    "modulo": "M906",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.325005"
+  },
+  {
+    "modulo": "M907",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.089745"
+  },
+  {
+    "modulo": "M908",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:05.909353"
+  },
+  {
+    "modulo": "M909",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:05.680182"
+  },
+  {
+    "modulo": "M91",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.919304"
+  },
+  {
+    "modulo": "M910",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.150315"
+  },
+  {
+    "modulo": "M911",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.708726"
+  },
+  {
+    "modulo": "M912",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.886466"
+  },
+  {
+    "modulo": "M913",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.064173"
+  },
+  {
+    "modulo": "M914",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.692336"
+  },
+  {
+    "modulo": "M915",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.588311"
+  },
+  {
+    "modulo": "M916",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.618256"
+  },
+  {
+    "modulo": "M917",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.830174"
+  },
+  {
+    "modulo": "M918",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.869357"
+  },
+  {
+    "modulo": "M919",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.952799"
+  },
+  {
+    "modulo": "M92",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.591379"
+  },
+  {
+    "modulo": "M920",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.897628"
+  },
+  {
+    "modulo": "M921",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.830787"
+  },
+  {
+    "modulo": "M922",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.715723"
+  },
+  {
+    "modulo": "M923",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.101485"
+  },
+  {
+    "modulo": "M924",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.473930"
+  },
+  {
+    "modulo": "M925",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.588820"
+  },
+  {
+    "modulo": "M926",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.574182"
+  },
+  {
+    "modulo": "M927",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.562301"
+  },
+  {
+    "modulo": "M928",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.003697"
+  },
+  {
+    "modulo": "M929",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:05.875659"
+  },
+  {
+    "modulo": "M93",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.082105"
+  },
+  {
+    "modulo": "M930",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.364815"
+  },
+  {
+    "modulo": "M931",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.451506"
+  },
+  {
+    "modulo": "M932",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.942461"
+  },
+  {
+    "modulo": "M933",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.912867"
+  },
+  {
+    "modulo": "M934",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.867557"
+  },
+  {
+    "modulo": "M935",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.230806"
+  },
+  {
+    "modulo": "M936",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.028891"
+  },
+  {
+    "modulo": "M937",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.719568"
+  },
+  {
+    "modulo": "M938",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.057408"
+  },
+  {
+    "modulo": "M939",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.773816"
+  },
+  {
+    "modulo": "M94",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.947145"
+  },
+  {
+    "modulo": "M940",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.662628"
+  },
+  {
+    "modulo": "M941",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.827270"
+  },
+  {
+    "modulo": "M942",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.882875"
+  },
+  {
+    "modulo": "M943",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.526894"
+  },
+  {
+    "modulo": "M944",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.417699"
+  },
+  {
+    "modulo": "M945",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.506386"
+  },
+  {
+    "modulo": "M946",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.926924"
+  },
+  {
+    "modulo": "M947",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.536830"
+  },
+  {
+    "modulo": "M948",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.978262"
+  },
+  {
+    "modulo": "M949",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.130085"
+  },
+  {
+    "modulo": "M95",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.868399"
+  },
+  {
+    "modulo": "M950",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.734037"
+  },
+  {
+    "modulo": "M951",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.392582"
+  },
+  {
+    "modulo": "M952",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.778720"
+  },
+  {
+    "modulo": "M953",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.202886"
+  },
+  {
+    "modulo": "M954",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.859654"
+  },
+  {
+    "modulo": "M955",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.388964"
+  },
+  {
+    "modulo": "M956",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.897287"
+  },
+  {
+    "modulo": "M957",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.011105"
+  },
+  {
+    "modulo": "M958",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.701086"
+  },
+  {
+    "modulo": "M959",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.415106"
+  },
+  {
+    "modulo": "M96",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.151774"
+  },
+  {
+    "modulo": "M960",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.868599"
+  },
+  {
+    "modulo": "M961",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.891343"
+  },
+  {
+    "modulo": "M962",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.784275"
+  },
+  {
+    "modulo": "M963",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.736008"
+  },
+  {
+    "modulo": "M964",
+    "funcao": "Narrador",
+    "timestamp": "2025-09-26T20:43:06.389385"
+  },
+  {
+    "modulo": "M965",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.070284"
+  },
+  {
+    "modulo": "M966",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.730616"
+  },
+  {
+    "modulo": "M967",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.626095"
+  },
+  {
+    "modulo": "M968",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.114044"
+  },
+  {
+    "modulo": "M969",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.792471"
+  },
+  {
+    "modulo": "M97",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.532162"
+  },
+  {
+    "modulo": "M970",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.943208"
+  },
+  {
+    "modulo": "M971",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.819104"
+  },
+  {
+    "modulo": "M972",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.141884"
+  },
+  {
+    "modulo": "M973",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.562636"
+  },
+  {
+    "modulo": "M974",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.286187"
+  },
+  {
+    "modulo": "M975",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.540511"
+  },
+  {
+    "modulo": "M976",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.905728"
+  },
+  {
+    "modulo": "M977",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.596151"
+  },
+  {
+    "modulo": "M978",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:06.799852"
+  },
+  {
+    "modulo": "M979",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.421998"
+  },
+  {
+    "modulo": "M98",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.697570"
+  },
+  {
+    "modulo": "M980",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:05.636825"
+  },
+  {
+    "modulo": "M981",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.840469"
+  },
+  {
+    "modulo": "M982",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.668756"
+  },
+  {
+    "modulo": "M983",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.130389"
+  },
+  {
+    "modulo": "M984",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.340040"
+  },
+  {
+    "modulo": "M985",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:05.852070"
+  },
+  {
+    "modulo": "M986",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.053559"
+  },
+  {
+    "modulo": "M987",
+    "funcao": "Sensor",
+    "timestamp": "2025-09-26T20:43:06.416484"
+  },
+  {
+    "modulo": "M988",
+    "funcao": "Guardi\u00e3o",
+    "timestamp": "2025-09-26T20:43:06.625426"
+  },
+  {
+    "modulo": "M989",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:06.958590"
+  },
+  {
+    "modulo": "M99",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:06.655496"
+  },
+  {
+    "modulo": "M990",
+    "funcao": "Curador",
+    "timestamp": "2025-09-26T20:43:06.939504"
+  },
+  {
+    "modulo": "M991",
+    "funcao": "Orquestrador",
+    "timestamp": "2025-09-26T20:43:05.978604"
+  },
+  {
+    "modulo": "M992",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:05.793220"
+  },
+  {
+    "modulo": "M993",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.767248"
+  },
+  {
+    "modulo": "M994",
+    "funcao": "Espelho",
+    "timestamp": "2025-09-26T20:43:06.158342"
+  },
+  {
+    "modulo": "M995",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:06.740460"
+  },
+  {
+    "modulo": "M996",
+    "funcao": "Alquimista",
+    "timestamp": "2025-09-26T20:43:05.566508"
+  },
+  {
+    "modulo": "M997",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.439174"
+  },
+  {
+    "modulo": "M998",
+    "funcao": "Emissor",
+    "timestamp": "2025-09-26T20:43:05.841161"
+  },
+  {
+    "modulo": "M999",
+    "funcao": "Transmutador",
+    "timestamp": "2025-09-26T20:43:05.535972"
+  },
+  {
+    "modulo": "[code]",
+    "funcao": "Vigia",
+    "timestamp": "2025-09-26T20:43:06.858100"
+  }
+]

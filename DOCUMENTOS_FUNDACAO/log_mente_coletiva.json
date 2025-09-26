@@ -1,0 +1,32 @@
+[
+  {
+    "modulo": "M4",
+    "evento": "simulacao_caos_em_tempo_real",
+    "timestamp": "2025-09-26T19:52:34.696443"
+  },
+  {
+    "modulo": "M15",
+    "evento": "simulacao_caos_em_tempo_real",
+    "timestamp": "2025-09-26T19:52:34.696457"
+  },
+  {
+    "modulo": "M24",
+    "evento": "simulacao_caos_em_tempo_real",
+    "timestamp": "2025-09-26T19:52:34.696461"
+  },
+  {
+    "modulo": "M29",
+    "evento": "simulacao_caos_em_tempo_real",
+    "timestamp": "2025-09-26T19:52:34.696464"
+  },
+  {
+    "modulo": "M9",
+    "evento": "simulacao_caos_em_tempo_real",
+    "timestamp": "2025-09-26T19:52:34.696467"
+  },
+  {
+    "modulo": "M-OMEGA",
+    "evento": "simulacao_caos_em_tempo_real",
+    "timestamp": "2025-09-26T19:52:34.696469"
+  }
+]

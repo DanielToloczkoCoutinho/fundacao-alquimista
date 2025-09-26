@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "studio-4265982502-21871"
-  }
+    "default": "studio-4265982502-21871",
+    "N": "alchemists-codex"
+  },
+  "targets": {},
+  "etags": {}
 }

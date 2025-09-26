@@ -1,0 +1,488 @@
+[
+  {
+    "modulo": "M15",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.295977",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M15/status"
+  },
+  {
+    "modulo": "M64",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.295995",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M64/status"
+  },
+  {
+    "modulo": "M3",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296000",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M3/status"
+  },
+  {
+    "modulo": "M42",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296003",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M42/status"
+  },
+  {
+    "modulo": "M25",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296019",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M25/status"
+  },
+  {
+    "modulo": "M11",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296024",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M11/status"
+  },
+  {
+    "modulo": "M21",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296027",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M21/status"
+  },
+  {
+    "modulo": "M5",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296034",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M5/status"
+  },
+  {
+    "modulo": "M63",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296039",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M63/status"
+  },
+  {
+    "modulo": "M52",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296043",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M52/status"
+  },
+  {
+    "modulo": "M27",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296046",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M27/status"
+  },
+  {
+    "modulo": "M888",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296054",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M888/status"
+  },
+  {
+    "modulo": "M-OMEGA",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296057",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M-OMEGA/status"
+  },
+  {
+    "modulo": "M61",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296061",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M61/status"
+  },
+  {
+    "modulo": "M37",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296064",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M37/status"
+  },
+  {
+    "modulo": "M67",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296068",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M67/status"
+  },
+  {
+    "modulo": "M791",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296071",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M791/status"
+  },
+  {
+    "modulo": "M43",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296074",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M43/status"
+  },
+  {
+    "modulo": "M23",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296076",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M23/status"
+  },
+  {
+    "modulo": "M10",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296077",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M10/status"
+  },
+  {
+    "modulo": "M22",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296079",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M22/status"
+  },
+  {
+    "modulo": "M38",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296081",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M38/status"
+  },
+  {
+    "modulo": "M20",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296084",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M20/status"
+  },
+  {
+    "modulo": "M2",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296088",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M2/status"
+  },
+  {
+    "modulo": "M53",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296091",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M53/status"
+  },
+  {
+    "modulo": "M36",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296094",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M36/status"
+  },
+  {
+    "modulo": "M8",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296097",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M8/status"
+  },
+  {
+    "modulo": "M4",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296101",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M4/status"
+  },
+  {
+    "modulo": "M13",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296120",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M13/status"
+  },
+  {
+    "modulo": "M24",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296124",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M24/status"
+  },
+  {
+    "modulo": "M31",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296127",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M31/status"
+  },
+  {
+    "modulo": "M34",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296135",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M34/status"
+  },
+  {
+    "modulo": "M144",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296138",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M144/status"
+  },
+  {
+    "modulo": "M18",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296146",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M18/status"
+  },
+  {
+    "modulo": "M54",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296149",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M54/status"
+  },
+  {
+    "modulo": "M7",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296153",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M7/status"
+  },
+  {
+    "modulo": "M48",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296160",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M48/status"
+  },
+  {
+    "modulo": "M55",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296163",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M55/status"
+  },
+  {
+    "modulo": "M40",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296165",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M40/status"
+  },
+  {
+    "modulo": "M39",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296166",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M39/status"
+  },
+  {
+    "modulo": "M82",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296168",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M82/status"
+  },
+  {
+    "modulo": "M-TEMPLO",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296170",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M-TEMPLO/status"
+  },
+  {
+    "modulo": "M30",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296173",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M30/status"
+  },
+  {
+    "modulo": "M68",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296176",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M68/status"
+  },
+  {
+    "modulo": "M65",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296179",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M65/status"
+  },
+  {
+    "modulo": "M12",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296182",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M12/status"
+  },
+  {
+    "modulo": "M50",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296185",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M50/status"
+  },
+  {
+    "modulo": "M29",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296189",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M29/status"
+  },
+  {
+    "modulo": "M0",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296192",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M0/status"
+  },
+  {
+    "modulo": "M58",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296195",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M58/status"
+  },
+  {
+    "modulo": "M62",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296199",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M62/status"
+  },
+  {
+    "modulo": "M26",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296202",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M26/status"
+  },
+  {
+    "modulo": "M44",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296206",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M44/status"
+  },
+  {
+    "modulo": "M32",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296209",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M32/status"
+  },
+  {
+    "modulo": "M9",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296213",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M9/status"
+  },
+  {
+    "modulo": "M70",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296216",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M70/status"
+  },
+  {
+    "modulo": "M69",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296220",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M69/status"
+  },
+  {
+    "modulo": "M60",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296223",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M60/status"
+  },
+  {
+    "modulo": "M17",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296227",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M17/status"
+  },
+  {
+    "modulo": "M16",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296230",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M16/status"
+  },
+  {
+    "modulo": "M14",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296233",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M14/status"
+  },
+  {
+    "modulo": "M1",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296241",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M1/status"
+  },
+  {
+    "modulo": "M45",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296244",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M45/status"
+  },
+  {
+    "modulo": "M6",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296247",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M6/status"
+  },
+  {
+    "modulo": "M59",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296251",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M59/status"
+  },
+  {
+    "modulo": "M56",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296263",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M56/status"
+  },
+  {
+    "modulo": "M46",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296266",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M46/status"
+  },
+  {
+    "modulo": "M51",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296274",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M51/status"
+  },
+  {
+    "modulo": "M19",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296277",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M19/status"
+  },
+  {
+    "modulo": "M41",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296280",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M41/status"
+  },
+  {
+    "modulo": "M47",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296283",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M47/status"
+  },
+  {
+    "modulo": "[code]",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296286",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/[code]/status"
+  },
+  {
+    "modulo": "M49",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296290",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M49/status"
+  },
+  {
+    "modulo": "M28",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296293",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M28/status"
+  },
+  {
+    "modulo": "M321",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296297",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M321/status"
+  },
+  {
+    "modulo": "M33",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296304",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M33/status"
+  },
+  {
+    "modulo": "M91",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296307",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M91/status"
+  },
+  {
+    "modulo": "M66",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296311",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M66/status"
+  },
+  {
+    "modulo": "M57",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296315",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M57/status"
+  },
+  {
+    "modulo": "M35",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296318",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M35/status"
+  },
+  {
+    "modulo": "M94",
+    "tipo": "simulacao_caos_profundo",
+    "timestamp": "2025-09-26T19:52:34.296321",
+    "sugestao": "Verificar resili\u00eancia e lat\u00eancia do endpoint /api/M94/status"
+  }
+]

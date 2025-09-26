@@ -1,0 +1,5017 @@
+[
+  {
+    "modulo": "M-OMEGA",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.199345"
+  },
+  {
+    "modulo": "M-TEMPLO",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.660658"
+  },
+  {
+    "modulo": "M0",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.755371"
+  },
+  {
+    "modulo": "M1",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.910703"
+  },
+  {
+    "modulo": "M10",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.361030"
+  },
+  {
+    "modulo": "M100",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.291101"
+  },
+  {
+    "modulo": "M101",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.339756"
+  },
+  {
+    "modulo": "M102",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.099383"
+  },
+  {
+    "modulo": "M103",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.644659"
+  },
+  {
+    "modulo": "M104",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.477478"
+  },
+  {
+    "modulo": "M105",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.462250"
+  },
+  {
+    "modulo": "M106",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.945359"
+  },
+  {
+    "modulo": "M107",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.109829"
+  },
+  {
+    "modulo": "M108",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.124137"
+  },
+  {
+    "modulo": "M109",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.092094"
+  },
+  {
+    "modulo": "M11",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.968520"
+  },
+  {
+    "modulo": "M110",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.603062"
+  },
+  {
+    "modulo": "M111",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.337361"
+  },
+  {
+    "modulo": "M112",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.723721"
+  },
+  {
+    "modulo": "M113",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.443998"
+  },
+  {
+    "modulo": "M114",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.784600"
+  },
+  {
+    "modulo": "M115",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.914320"
+  },
+  {
+    "modulo": "M116",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.714132"
+  },
+  {
+    "modulo": "M117",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.191358"
+  },
+  {
+    "modulo": "M118",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.591351"
+  },
+  {
+    "modulo": "M119",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.026385"
+  },
+  {
+    "modulo": "M12",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.739759"
+  },
+  {
+    "modulo": "M120",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.957522"
+  },
+  {
+    "modulo": "M121",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.393177"
+  },
+  {
+    "modulo": "M122",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.945893"
+  },
+  {
+    "modulo": "M123",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.837469"
+  },
+  {
+    "modulo": "M124",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.929609"
+  },
+  {
+    "modulo": "M125",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.249460"
+  },
+  {
+    "modulo": "M126",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.095189"
+  },
+  {
+    "modulo": "M127",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.369761"
+  },
+  {
+    "modulo": "M128",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.549658"
+  },
+  {
+    "modulo": "M129",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.081004"
+  },
+  {
+    "modulo": "M13",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.476658"
+  },
+  {
+    "modulo": "M130",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.456257"
+  },
+  {
+    "modulo": "M131",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.264196"
+  },
+  {
+    "modulo": "M132",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.348824"
+  },
+  {
+    "modulo": "M133",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.460721"
+  },
+  {
+    "modulo": "M134",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.787403"
+  },
+  {
+    "modulo": "M135",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.313616"
+  },
+  {
+    "modulo": "M136",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.044768"
+  },
+  {
+    "modulo": "M137",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.711382"
+  },
+  {
+    "modulo": "M138",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.211638"
+  },
+  {
+    "modulo": "M139",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.756395"
+  },
+  {
+    "modulo": "M14",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.892504"
+  },
+  {
+    "modulo": "M140",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.727268"
+  },
+  {
+    "modulo": "M141",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.963364"
+  },
+  {
+    "modulo": "M142",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.365435"
+  },
+  {
+    "modulo": "M143",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.243562"
+  },
+  {
+    "modulo": "M144",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.539451"
+  },
+  {
+    "modulo": "M145",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.278995"
+  },
+  {
+    "modulo": "M146",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.726247"
+  },
+  {
+    "modulo": "M147",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.781724"
+  },
+  {
+    "modulo": "M148",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.794467"
+  },
+  {
+    "modulo": "M149",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.111557"
+  },
+  {
+    "modulo": "M15",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.896657"
+  },
+  {
+    "modulo": "M150",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.927402"
+  },
+  {
+    "modulo": "M151",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.545880"
+  },
+  {
+    "modulo": "M152",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.954125"
+  },
+  {
+    "modulo": "M153",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.214874"
+  },
+  {
+    "modulo": "M154",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.731058"
+  },
+  {
+    "modulo": "M155",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.881668"
+  },
+  {
+    "modulo": "M156",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.515156"
+  },
+  {
+    "modulo": "M157",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.711034"
+  },
+  {
+    "modulo": "M158",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.013282"
+  },
+  {
+    "modulo": "M159",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.131593"
+  },
+  {
+    "modulo": "M16",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.857158"
+  },
+  {
+    "modulo": "M160",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.021134"
+  },
+  {
+    "modulo": "M161",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.777147"
+  },
+  {
+    "modulo": "M162",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.731385"
+  },
+  {
+    "modulo": "M163",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.955683"
+  },
+  {
+    "modulo": "M164",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.472749"
+  },
+  {
+    "modulo": "M165",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.051833"
+  },
+  {
+    "modulo": "M166",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.946523"
+  },
+  {
+    "modulo": "M167",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.190789"
+  },
+  {
+    "modulo": "M168",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.001096"
+  },
+  {
+    "modulo": "M169",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.106332"
+  },
+  {
+    "modulo": "M17",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.846797"
+  },
+  {
+    "modulo": "M170",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.556147"
+  },
+  {
+    "modulo": "M171",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.916122"
+  },
+  {
+    "modulo": "M172",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.988493"
+  },
+  {
+    "modulo": "M173",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.910370"
+  },
+  {
+    "modulo": "M174",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.132218"
+  },
+  {
+    "modulo": "M175",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.985563"
+  },
+  {
+    "modulo": "M176",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.221888"
+  },
+  {
+    "modulo": "M177",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.084550"
+  },
+  {
+    "modulo": "M178",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.748067"
+  },
+  {
+    "modulo": "M179",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.093564"
+  },
+  {
+    "modulo": "M18",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.562022"
+  },
+  {
+    "modulo": "M180",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.109318"
+  },
+  {
+    "modulo": "M181",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.070806"
+  },
+  {
+    "modulo": "M182",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.916466"
+  },
+  {
+    "modulo": "M183",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.812960"
+  },
+  {
+    "modulo": "M184",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.086818"
+  },
+  {
+    "modulo": "M185",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.925379"
+  },
+  {
+    "modulo": "M186",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.681074"
+  },
+  {
+    "modulo": "M187",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.805778"
+  },
+  {
+    "modulo": "M188",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.064417"
+  },
+  {
+    "modulo": "M189",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.752103"
+  },
+  {
+    "modulo": "M19",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.008039"
+  },
+  {
+    "modulo": "M190",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.566692"
+  },
+  {
+    "modulo": "M191",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.243300"
+  },
+  {
+    "modulo": "M192",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.681812"
+  },
+  {
+    "modulo": "M193",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.026968"
+  },
+  {
+    "modulo": "M194",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.569556"
+  },
+  {
+    "modulo": "M195",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.703809"
+  },
+  {
+    "modulo": "M196",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.586356"
+  },
+  {
+    "modulo": "M197",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.079164"
+  },
+  {
+    "modulo": "M198",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.901724"
+  },
+  {
+    "modulo": "M199",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.990674"
+  },
+  {
+    "modulo": "M2",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.393631"
+  },
+  {
+    "modulo": "M20",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.365722"
+  },
+  {
+    "modulo": "M200",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.969825"
+  },
+  {
+    "modulo": "M201",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.324508"
+  },
+  {
+    "modulo": "M202",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.953538"
+  },
+  {
+    "modulo": "M203",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.085588"
+  },
+  {
+    "modulo": "M204",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.740358"
+  },
+  {
+    "modulo": "M205",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.995766"
+  },
+  {
+    "modulo": "M206",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.941332"
+  },
+  {
+    "modulo": "M207",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.079771"
+  },
+  {
+    "modulo": "M208",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.603606"
+  },
+  {
+    "modulo": "M209",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.015973"
+  },
+  {
+    "modulo": "M21",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.069909"
+  },
+  {
+    "modulo": "M210",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.021526"
+  },
+  {
+    "modulo": "M211",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.528551"
+  },
+  {
+    "modulo": "M212",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.585060"
+  },
+  {
+    "modulo": "M213",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.006226"
+  },
+  {
+    "modulo": "M214",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.438385"
+  },
+  {
+    "modulo": "M215",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.811310"
+  },
+  {
+    "modulo": "M216",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.045393"
+  },
+  {
+    "modulo": "M217",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.051026"
+  },
+  {
+    "modulo": "M218",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.794789"
+  },
+  {
+    "modulo": "M219",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.138117"
+  },
+  {
+    "modulo": "M22",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.361191"
+  },
+  {
+    "modulo": "M220",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.889225"
+  },
+  {
+    "modulo": "M221",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.074744"
+  },
+  {
+    "modulo": "M222",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.546269"
+  },
+  {
+    "modulo": "M223",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.706404"
+  },
+  {
+    "modulo": "M224",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.671604"
+  },
+  {
+    "modulo": "M225",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.739444"
+  },
+  {
+    "modulo": "M226",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.710206"
+  },
+  {
+    "modulo": "M227",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.832687"
+  },
+  {
+    "modulo": "M228",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.018478"
+  },
+  {
+    "modulo": "M229",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.768442"
+  },
+  {
+    "modulo": "M23",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.346390"
+  },
+  {
+    "modulo": "M230",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.706810"
+  },
+  {
+    "modulo": "M231",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.936706"
+  },
+  {
+    "modulo": "M232",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.624673"
+  },
+  {
+    "modulo": "M233",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.921043"
+  },
+  {
+    "modulo": "M234",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.738188"
+  },
+  {
+    "modulo": "M235",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.350757"
+  },
+  {
+    "modulo": "M236",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.679990"
+  },
+  {
+    "modulo": "M237",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.340819"
+  },
+  {
+    "modulo": "M238",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.057423"
+  },
+  {
+    "modulo": "M239",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.056751"
+  },
+  {
+    "modulo": "M24",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.480927"
+  },
+  {
+    "modulo": "M240",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.137786"
+  },
+  {
+    "modulo": "M241",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.947624"
+  },
+  {
+    "modulo": "M242",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.525536"
+  },
+  {
+    "modulo": "M243",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.990335"
+  },
+  {
+    "modulo": "M244",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.575024"
+  },
+  {
+    "modulo": "M245",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.242066"
+  },
+  {
+    "modulo": "M246",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.340053"
+  },
+  {
+    "modulo": "M247",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.707172"
+  },
+  {
+    "modulo": "M248",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.809262"
+  },
+  {
+    "modulo": "M249",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.222612"
+  },
+  {
+    "modulo": "M25",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.960072"
+  },
+  {
+    "modulo": "M250",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.324167"
+  },
+  {
+    "modulo": "M251",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.608884"
+  },
+  {
+    "modulo": "M252",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.887929"
+  },
+  {
+    "modulo": "M253",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.010745"
+  },
+  {
+    "modulo": "M254",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.644360"
+  },
+  {
+    "modulo": "M255",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.894251"
+  },
+  {
+    "modulo": "M256",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.125040"
+  },
+  {
+    "modulo": "M257",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.018044"
+  },
+  {
+    "modulo": "M258",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.052301"
+  },
+  {
+    "modulo": "M259",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.977474"
+  },
+  {
+    "modulo": "M26",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.790854"
+  },
+  {
+    "modulo": "M260",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.019955"
+  },
+  {
+    "modulo": "M261",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.963667"
+  },
+  {
+    "modulo": "M262",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.104101"
+  },
+  {
+    "modulo": "M263",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.068525"
+  },
+  {
+    "modulo": "M264",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.161567"
+  },
+  {
+    "modulo": "M265",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.114627"
+  },
+  {
+    "modulo": "M266",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.731660"
+  },
+  {
+    "modulo": "M267",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.866359"
+  },
+  {
+    "modulo": "M268",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.933500"
+  },
+  {
+    "modulo": "M269",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.026055"
+  },
+  {
+    "modulo": "M27",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.183565"
+  },
+  {
+    "modulo": "M270",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.598729"
+  },
+  {
+    "modulo": "M271",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.336765"
+  },
+  {
+    "modulo": "M272",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.784240"
+  },
+  {
+    "modulo": "M273",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.670102"
+  },
+  {
+    "modulo": "M274",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.101539"
+  },
+  {
+    "modulo": "M275",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.085886"
+  },
+  {
+    "modulo": "M276",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.548798"
+  },
+  {
+    "modulo": "M277",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.763193"
+  },
+  {
+    "modulo": "M278",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.617599"
+  },
+  {
+    "modulo": "M279",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.264540"
+  },
+  {
+    "modulo": "M28",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.061911"
+  },
+  {
+    "modulo": "M280",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.827425"
+  },
+  {
+    "modulo": "M281",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.968116"
+  },
+  {
+    "modulo": "M282",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.726965"
+  },
+  {
+    "modulo": "M283",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.912576"
+  },
+  {
+    "modulo": "M284",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.303735"
+  },
+  {
+    "modulo": "M285",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.933785"
+  },
+  {
+    "modulo": "M286",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.347274"
+  },
+  {
+    "modulo": "M287",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.394373"
+  },
+  {
+    "modulo": "M288",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.891052"
+  },
+  {
+    "modulo": "M289",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.063468"
+  },
+  {
+    "modulo": "M29",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.754955"
+  },
+  {
+    "modulo": "M290",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.159896"
+  },
+  {
+    "modulo": "M291",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.791542"
+  },
+  {
+    "modulo": "M292",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.493160"
+  },
+  {
+    "modulo": "M293",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.804289"
+  },
+  {
+    "modulo": "M294",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.938664"
+  },
+  {
+    "modulo": "M295",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.025672"
+  },
+  {
+    "modulo": "M296",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.821793"
+  },
+  {
+    "modulo": "M297",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.131128"
+  },
+  {
+    "modulo": "M298",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.840702"
+  },
+  {
+    "modulo": "M299",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.259457"
+  },
+  {
+    "modulo": "M3",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.914011"
+  },
+  {
+    "modulo": "M30",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.703029"
+  },
+  {
+    "modulo": "M300",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.895102"
+  },
+  {
+    "modulo": "M301",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.883633"
+  },
+  {
+    "modulo": "M302",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.925372"
+  },
+  {
+    "modulo": "M303",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.539779"
+  },
+  {
+    "modulo": "M304",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.851102"
+  },
+  {
+    "modulo": "M305",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.608605"
+  },
+  {
+    "modulo": "M306",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.356712"
+  },
+  {
+    "modulo": "M307",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.323701"
+  },
+  {
+    "modulo": "M308",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.356118"
+  },
+  {
+    "modulo": "M309",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.476927"
+  },
+  {
+    "modulo": "M31",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.482042"
+  },
+  {
+    "modulo": "M310",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.303484"
+  },
+  {
+    "modulo": "M311",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.888478"
+  },
+  {
+    "modulo": "M312",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.787773"
+  },
+  {
+    "modulo": "M313",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.920949"
+  },
+  {
+    "modulo": "M314",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.243050"
+  },
+  {
+    "modulo": "M315",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.111196"
+  },
+  {
+    "modulo": "M316",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.548466"
+  },
+  {
+    "modulo": "M317",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.248830"
+  },
+  {
+    "modulo": "M318",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.727924"
+  },
+  {
+    "modulo": "M319",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.437619"
+  },
+  {
+    "modulo": "M32",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.798738"
+  },
+  {
+    "modulo": "M320",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.328184"
+  },
+  {
+    "modulo": "M321",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.067533"
+  },
+  {
+    "modulo": "M322",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.089290"
+  },
+  {
+    "modulo": "M323",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.907272"
+  },
+  {
+    "modulo": "M324",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.670792"
+  },
+  {
+    "modulo": "M325",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.851556"
+  },
+  {
+    "modulo": "M326",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.700221"
+  },
+  {
+    "modulo": "M327",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.990985"
+  },
+  {
+    "modulo": "M328",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.258120"
+  },
+  {
+    "modulo": "M329",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.078800"
+  },
+  {
+    "modulo": "M33",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.068954"
+  },
+  {
+    "modulo": "M330",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.098273"
+  },
+  {
+    "modulo": "M331",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.466601"
+  },
+  {
+    "modulo": "M332",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.733387"
+  },
+  {
+    "modulo": "M333",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.687029"
+  },
+  {
+    "modulo": "M334",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.160669"
+  },
+  {
+    "modulo": "M335",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.703468"
+  },
+  {
+    "modulo": "M336",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.625225"
+  },
+  {
+    "modulo": "M337",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.108188"
+  },
+  {
+    "modulo": "M338",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.892202"
+  },
+  {
+    "modulo": "M339",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.053299"
+  },
+  {
+    "modulo": "M34",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.482474"
+  },
+  {
+    "modulo": "M340",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.521256"
+  },
+  {
+    "modulo": "M341",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.652870"
+  },
+  {
+    "modulo": "M342",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.740625"
+  },
+  {
+    "modulo": "M343",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.389808"
+  },
+  {
+    "modulo": "M344",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.907592"
+  },
+  {
+    "modulo": "M345",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.340330"
+  },
+  {
+    "modulo": "M346",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.741564"
+  },
+  {
+    "modulo": "M347",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.959984"
+  },
+  {
+    "modulo": "M348",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.003656"
+  },
+  {
+    "modulo": "M349",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.969297"
+  },
+  {
+    "modulo": "M35",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.091385"
+  },
+  {
+    "modulo": "M350",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.845655"
+  },
+  {
+    "modulo": "M351",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.876780"
+  },
+  {
+    "modulo": "M352",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.048676"
+  },
+  {
+    "modulo": "M353",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.981652"
+  },
+  {
+    "modulo": "M354",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.384492"
+  },
+  {
+    "modulo": "M355",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.457782"
+  },
+  {
+    "modulo": "M356",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.007209"
+  },
+  {
+    "modulo": "M357",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.239378"
+  },
+  {
+    "modulo": "M358",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.404451"
+  },
+  {
+    "modulo": "M359",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.273855"
+  },
+  {
+    "modulo": "M36",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.429237"
+  },
+  {
+    "modulo": "M360",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.556635"
+  },
+  {
+    "modulo": "M361",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.722375"
+  },
+  {
+    "modulo": "M362",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.896380"
+  },
+  {
+    "modulo": "M363",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.298620"
+  },
+  {
+    "modulo": "M364",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.889545"
+  },
+  {
+    "modulo": "M365",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.687762"
+  },
+  {
+    "modulo": "M366",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.124703"
+  },
+  {
+    "modulo": "M367",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.830666"
+  },
+  {
+    "modulo": "M368",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.510060"
+  },
+  {
+    "modulo": "M369",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.538753"
+  },
+  {
+    "modulo": "M37",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.274171"
+  },
+  {
+    "modulo": "M370",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.083454"
+  },
+  {
+    "modulo": "M371",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.661052"
+  },
+  {
+    "modulo": "M372",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.597717"
+  },
+  {
+    "modulo": "M373",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.022825"
+  },
+  {
+    "modulo": "M374",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.996415"
+  },
+  {
+    "modulo": "M375",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.030006"
+  },
+  {
+    "modulo": "M376",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.956769"
+  },
+  {
+    "modulo": "M377",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.476181"
+  },
+  {
+    "modulo": "M378",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.324831"
+  },
+  {
+    "modulo": "M379",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.285105"
+  },
+  {
+    "modulo": "M38",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.361521"
+  },
+  {
+    "modulo": "M380",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.356424"
+  },
+  {
+    "modulo": "M381",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.740098"
+  },
+  {
+    "modulo": "M382",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.830312"
+  },
+  {
+    "modulo": "M383",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.793954"
+  },
+  {
+    "modulo": "M384",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.222233"
+  },
+  {
+    "modulo": "M385",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.106627"
+  },
+  {
+    "modulo": "M386",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.148172"
+  },
+  {
+    "modulo": "M387",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.813823"
+  },
+  {
+    "modulo": "M388",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.968982"
+  },
+  {
+    "modulo": "M389",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.471944"
+  },
+  {
+    "modulo": "M39",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.609388"
+  },
+  {
+    "modulo": "M390",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.070288"
+  },
+  {
+    "modulo": "M391",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.026714"
+  },
+  {
+    "modulo": "M392",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.780783"
+  },
+  {
+    "modulo": "M393",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.737574"
+  },
+  {
+    "modulo": "M394",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.574664"
+  },
+  {
+    "modulo": "M395",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.175496"
+  },
+  {
+    "modulo": "M396",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.906790"
+  },
+  {
+    "modulo": "M397",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.015235"
+  },
+  {
+    "modulo": "M398",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.504232"
+  },
+  {
+    "modulo": "M399",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.200006"
+  },
+  {
+    "modulo": "M4",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.465300"
+  },
+  {
+    "modulo": "M40",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.602596"
+  },
+  {
+    "modulo": "M400",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.865082"
+  },
+  {
+    "modulo": "M401",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.333367"
+  },
+  {
+    "modulo": "M402",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.987551"
+  },
+  {
+    "modulo": "M403",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.960291"
+  },
+  {
+    "modulo": "M404",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.090305"
+  },
+  {
+    "modulo": "M405",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.352626"
+  },
+  {
+    "modulo": "M406",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.907833"
+  },
+  {
+    "modulo": "M407",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.331883"
+  },
+  {
+    "modulo": "M408",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.732593"
+  },
+  {
+    "modulo": "M409",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.779671"
+  },
+  {
+    "modulo": "M41",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.011557"
+  },
+  {
+    "modulo": "M410",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.405434"
+  },
+  {
+    "modulo": "M411",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.921388"
+  },
+  {
+    "modulo": "M412",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.686716"
+  },
+  {
+    "modulo": "M413",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.099447"
+  },
+  {
+    "modulo": "M414",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.200746"
+  },
+  {
+    "modulo": "M415",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.562390"
+  },
+  {
+    "modulo": "M416",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.032986"
+  },
+  {
+    "modulo": "M417",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.858591"
+  },
+  {
+    "modulo": "M418",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.549085"
+  },
+  {
+    "modulo": "M419",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.052946"
+  },
+  {
+    "modulo": "M42",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.931746"
+  },
+  {
+    "modulo": "M420",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.317456"
+  },
+  {
+    "modulo": "M421",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.912246"
+  },
+  {
+    "modulo": "M422",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.021632"
+  },
+  {
+    "modulo": "M423",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.636150"
+  },
+  {
+    "modulo": "M424",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.734289"
+  },
+  {
+    "modulo": "M425",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.900696"
+  },
+  {
+    "modulo": "M426",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.670529"
+  },
+  {
+    "modulo": "M427",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.013714"
+  },
+  {
+    "modulo": "M428",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.945002"
+  },
+  {
+    "modulo": "M429",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.310244"
+  },
+  {
+    "modulo": "M43",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.340524"
+  },
+  {
+    "modulo": "M430",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.933160"
+  },
+  {
+    "modulo": "M431",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.092797"
+  },
+  {
+    "modulo": "M432",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.875694"
+  },
+  {
+    "modulo": "M433",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.278617"
+  },
+  {
+    "modulo": "M434",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.831784"
+  },
+  {
+    "modulo": "M435",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.800667"
+  },
+  {
+    "modulo": "M436",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.211156"
+  },
+  {
+    "modulo": "M437",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.087132"
+  },
+  {
+    "modulo": "M438",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.987180"
+  },
+  {
+    "modulo": "M439",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.428261"
+  },
+  {
+    "modulo": "M44",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.791767"
+  },
+  {
+    "modulo": "M440",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.945689"
+  },
+  {
+    "modulo": "M441",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.719531"
+  },
+  {
+    "modulo": "M442",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.876244"
+  },
+  {
+    "modulo": "M443",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.048363"
+  },
+  {
+    "modulo": "M444",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.070632"
+  },
+  {
+    "modulo": "M445",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.725797"
+  },
+  {
+    "modulo": "M446",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.312886"
+  },
+  {
+    "modulo": "M447",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.265539"
+  },
+  {
+    "modulo": "M448",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.337699"
+  },
+  {
+    "modulo": "M449",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.994099"
+  },
+  {
+    "modulo": "M45",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.928032"
+  },
+  {
+    "modulo": "M450",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.088348"
+  },
+  {
+    "modulo": "M451",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.332361"
+  },
+  {
+    "modulo": "M452",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.285432"
+  },
+  {
+    "modulo": "M453",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.914627"
+  },
+  {
+    "modulo": "M454",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.747705"
+  },
+  {
+    "modulo": "M455",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.736852"
+  },
+  {
+    "modulo": "M456",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.617038"
+  },
+  {
+    "modulo": "M457",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.132779"
+  },
+  {
+    "modulo": "M458",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.924796"
+  },
+  {
+    "modulo": "M459",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.181908"
+  },
+  {
+    "modulo": "M46",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.979210"
+  },
+  {
+    "modulo": "M460",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.924072"
+  },
+  {
+    "modulo": "M461",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.058469"
+  },
+  {
+    "modulo": "M462",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.292168"
+  },
+  {
+    "modulo": "M463",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.287268"
+  },
+  {
+    "modulo": "M464",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.075790"
+  },
+  {
+    "modulo": "M465",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.090668"
+  },
+  {
+    "modulo": "M466",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.925719"
+  },
+  {
+    "modulo": "M467",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.728225"
+  },
+  {
+    "modulo": "M468",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.987894"
+  },
+  {
+    "modulo": "M469",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.110154"
+  },
+  {
+    "modulo": "M47",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.016616"
+  },
+  {
+    "modulo": "M470",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.623652"
+  },
+  {
+    "modulo": "M471",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.239663"
+  },
+  {
+    "modulo": "M472",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.590874"
+  },
+  {
+    "modulo": "M473",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.822087"
+  },
+  {
+    "modulo": "M474",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.874720"
+  },
+  {
+    "modulo": "M475",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.981053"
+  },
+  {
+    "modulo": "M476",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.230249"
+  },
+  {
+    "modulo": "M477",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.462557"
+  },
+  {
+    "modulo": "M478",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.066115"
+  },
+  {
+    "modulo": "M479",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.099724"
+  },
+  {
+    "modulo": "M48",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.594222"
+  },
+  {
+    "modulo": "M480",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.075447"
+  },
+  {
+    "modulo": "M481",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.087670"
+  },
+  {
+    "modulo": "M482",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.094796"
+  },
+  {
+    "modulo": "M483",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.796419"
+  },
+  {
+    "modulo": "M484",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.681565"
+  },
+  {
+    "modulo": "M485",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.025280"
+  },
+  {
+    "modulo": "M486",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.996675"
+  },
+  {
+    "modulo": "M487",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.055961"
+  },
+  {
+    "modulo": "M488",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.481730"
+  },
+  {
+    "modulo": "M489",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.308756"
+  },
+  {
+    "modulo": "M49",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.054728"
+  },
+  {
+    "modulo": "M490",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.418335"
+  },
+  {
+    "modulo": "M491",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.653520"
+  },
+  {
+    "modulo": "M492",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.230708"
+  },
+  {
+    "modulo": "M493",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.062948"
+  },
+  {
+    "modulo": "M494",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.980019"
+  },
+  {
+    "modulo": "M495",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.932823"
+  },
+  {
+    "modulo": "M496",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.039679"
+  },
+  {
+    "modulo": "M497",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.046255"
+  },
+  {
+    "modulo": "M498",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.221054"
+  },
+  {
+    "modulo": "M499",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.213714"
+  },
+  {
+    "modulo": "M5",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.115271"
+  },
+  {
+    "modulo": "M50",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.744312"
+  },
+  {
+    "modulo": "M500",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.560928"
+  },
+  {
+    "modulo": "M501",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.562787"
+  },
+  {
+    "modulo": "M502",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.049246"
+  },
+  {
+    "modulo": "M503",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.306088"
+  },
+  {
+    "modulo": "M504",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.984404"
+  },
+  {
+    "modulo": "M505",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.671079"
+  },
+  {
+    "modulo": "M506",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.580571"
+  },
+  {
+    "modulo": "M507",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.504697"
+  },
+  {
+    "modulo": "M508",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.101146"
+  },
+  {
+    "modulo": "M509",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.289743"
+  },
+  {
+    "modulo": "M51",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.997258"
+  },
+  {
+    "modulo": "M510",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.820738"
+  },
+  {
+    "modulo": "M511",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.636758"
+  },
+  {
+    "modulo": "M512",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.768124"
+  },
+  {
+    "modulo": "M513",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.624966"
+  },
+  {
+    "modulo": "M514",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.003213"
+  },
+  {
+    "modulo": "M515",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.659790"
+  },
+  {
+    "modulo": "M516",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.643776"
+  },
+  {
+    "modulo": "M517",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.883261"
+  },
+  {
+    "modulo": "M518",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.607934"
+  },
+  {
+    "modulo": "M519",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.492808"
+  },
+  {
+    "modulo": "M52",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.182383"
+  },
+  {
+    "modulo": "M520",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.715318"
+  },
+  {
+    "modulo": "M521",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.002601"
+  },
+  {
+    "modulo": "M522",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.053799"
+  },
+  {
+    "modulo": "M523",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.051479"
+  },
+  {
+    "modulo": "M524",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.940311"
+  },
+  {
+    "modulo": "M525",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.457340"
+  },
+  {
+    "modulo": "M526",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.594730"
+  },
+  {
+    "modulo": "M527",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.900435"
+  },
+  {
+    "modulo": "M528",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.913360"
+  },
+  {
+    "modulo": "M529",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.267263"
+  },
+  {
+    "modulo": "M53",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.418650"
+  },
+  {
+    "modulo": "M530",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.851973"
+  },
+  {
+    "modulo": "M531",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.995479"
+  },
+  {
+    "modulo": "M532",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.992882"
+  },
+  {
+    "modulo": "M533",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.258665"
+  },
+  {
+    "modulo": "M534",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.935966"
+  },
+  {
+    "modulo": "M535",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.724934"
+  },
+  {
+    "modulo": "M536",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.472460"
+  },
+  {
+    "modulo": "M537",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.200263"
+  },
+  {
+    "modulo": "M538",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.051154"
+  },
+  {
+    "modulo": "M539",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.924959"
+  },
+  {
+    "modulo": "M54",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.581738"
+  },
+  {
+    "modulo": "M540",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.671361"
+  },
+  {
+    "modulo": "M541",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.214120"
+  },
+  {
+    "modulo": "M542",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.015614"
+  },
+  {
+    "modulo": "M543",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.098790"
+  },
+  {
+    "modulo": "M544",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.715798"
+  },
+  {
+    "modulo": "M545",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.976687"
+  },
+  {
+    "modulo": "M546",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.987799"
+  },
+  {
+    "modulo": "M547",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.681317"
+  },
+  {
+    "modulo": "M548",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.087406"
+  },
+  {
+    "modulo": "M549",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.625748"
+  },
+  {
+    "modulo": "M55",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.598391"
+  },
+  {
+    "modulo": "M550",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.231063"
+  },
+  {
+    "modulo": "M551",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.832414"
+  },
+  {
+    "modulo": "M552",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.986493"
+  },
+  {
+    "modulo": "M553",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.989481"
+  },
+  {
+    "modulo": "M554",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.046741"
+  },
+  {
+    "modulo": "M555",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.852690"
+  },
+  {
+    "modulo": "M556",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.254595"
+  },
+  {
+    "modulo": "M557",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.954659"
+  },
+  {
+    "modulo": "M558",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.174896"
+  },
+  {
+    "modulo": "M559",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.929311"
+  },
+  {
+    "modulo": "M56",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.956316"
+  },
+  {
+    "modulo": "M560",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.948249"
+  },
+  {
+    "modulo": "M561",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.214489"
+  },
+  {
+    "modulo": "M562",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.370222"
+  },
+  {
+    "modulo": "M563",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.978720"
+  },
+  {
+    "modulo": "M564",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.898116"
+  },
+  {
+    "modulo": "M565",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.762628"
+  },
+  {
+    "modulo": "M566",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.529243"
+  },
+  {
+    "modulo": "M567",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.314567"
+  },
+  {
+    "modulo": "M568",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.957201"
+  },
+  {
+    "modulo": "M569",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.988618"
+  },
+  {
+    "modulo": "M57",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.089927"
+  },
+  {
+    "modulo": "M570",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.994689"
+  },
+  {
+    "modulo": "M571",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.367301"
+  },
+  {
+    "modulo": "M572",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.417985"
+  },
+  {
+    "modulo": "M573",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.317070"
+  },
+  {
+    "modulo": "M574",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.451492"
+  },
+  {
+    "modulo": "M575",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.360800"
+  },
+  {
+    "modulo": "M576",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.748714"
+  },
+  {
+    "modulo": "M577",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.680781"
+  },
+  {
+    "modulo": "M578",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.941005"
+  },
+  {
+    "modulo": "M579",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.083002"
+  },
+  {
+    "modulo": "M58",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.756028"
+  },
+  {
+    "modulo": "M580",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.096280"
+  },
+  {
+    "modulo": "M581",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.053289"
+  },
+  {
+    "modulo": "M582",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.845333"
+  },
+  {
+    "modulo": "M583",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.735596"
+  },
+  {
+    "modulo": "M584",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.636428"
+  },
+  {
+    "modulo": "M585",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.242465"
+  },
+  {
+    "modulo": "M586",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.993487"
+  },
+  {
+    "modulo": "M587",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.796794"
+  },
+  {
+    "modulo": "M588",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.847287"
+  },
+  {
+    "modulo": "M589",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.730718"
+  },
+  {
+    "modulo": "M59",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.940654"
+  },
+  {
+    "modulo": "M590",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.653240"
+  },
+  {
+    "modulo": "M591",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.465685"
+  },
+  {
+    "modulo": "M592",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.687278"
+  },
+  {
+    "modulo": "M593",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.471224"
+  },
+  {
+    "modulo": "M594",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.549371"
+  },
+  {
+    "modulo": "M595",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.852365"
+  },
+  {
+    "modulo": "M596",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.417321"
+  },
+  {
+    "modulo": "M597",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.137438"
+  },
+  {
+    "modulo": "M598",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.728534"
+  },
+  {
+    "modulo": "M599",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.904789"
+  },
+  {
+    "modulo": "M6",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.928637"
+  },
+  {
+    "modulo": "M60",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.831012"
+  },
+  {
+    "modulo": "M600",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.869403"
+  },
+  {
+    "modulo": "M601",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.755797"
+  },
+  {
+    "modulo": "M602",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.310577"
+  },
+  {
+    "modulo": "M603",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.482326"
+  },
+  {
+    "modulo": "M604",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.596775"
+  },
+  {
+    "modulo": "M605",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.302719"
+  },
+  {
+    "modulo": "M606",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.810907"
+  },
+  {
+    "modulo": "M607",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.048015"
+  },
+  {
+    "modulo": "M608",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.609685"
+  },
+  {
+    "modulo": "M609",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.947944"
+  },
+  {
+    "modulo": "M61",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.212047"
+  },
+  {
+    "modulo": "M610",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.333040"
+  },
+  {
+    "modulo": "M611",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.077799"
+  },
+  {
+    "modulo": "M612",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.904430"
+  },
+  {
+    "modulo": "M613",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.199717"
+  },
+  {
+    "modulo": "M614",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.947269"
+  },
+  {
+    "modulo": "M615",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.004630"
+  },
+  {
+    "modulo": "M616",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.082346"
+  },
+  {
+    "modulo": "M617",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.104729"
+  },
+  {
+    "modulo": "M618",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.978182"
+  },
+  {
+    "modulo": "M619",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.580202"
+  },
+  {
+    "modulo": "M62",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.758404"
+  },
+  {
+    "modulo": "M620",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.686423"
+  },
+  {
+    "modulo": "M621",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.279307"
+  },
+  {
+    "modulo": "M622",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.749038"
+  },
+  {
+    "modulo": "M623",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.780457"
+  },
+  {
+    "modulo": "M624",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.115563"
+  },
+  {
+    "modulo": "M625",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.081686"
+  },
+  {
+    "modulo": "M626",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.975954"
+  },
+  {
+    "modulo": "M627",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.920347"
+  },
+  {
+    "modulo": "M628",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.989126"
+  },
+  {
+    "modulo": "M629",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.707656"
+  },
+  {
+    "modulo": "M63",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.125345"
+  },
+  {
+    "modulo": "M630",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.066114"
+  },
+  {
+    "modulo": "M631",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.959634"
+  },
+  {
+    "modulo": "M632",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.777511"
+  },
+  {
+    "modulo": "M633",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.933599"
+  },
+  {
+    "modulo": "M634",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.900149"
+  },
+  {
+    "modulo": "M635",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.318261"
+  },
+  {
+    "modulo": "M636",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.738473"
+  },
+  {
+    "modulo": "M637",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.031965"
+  },
+  {
+    "modulo": "M638",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.040234"
+  },
+  {
+    "modulo": "M639",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.936368"
+  },
+  {
+    "modulo": "M64",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.904081"
+  },
+  {
+    "modulo": "M640",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.085071"
+  },
+  {
+    "modulo": "M641",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.015237"
+  },
+  {
+    "modulo": "M642",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.732269"
+  },
+  {
+    "modulo": "M643",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.070228"
+  },
+  {
+    "modulo": "M644",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.814480"
+  },
+  {
+    "modulo": "M645",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.291699"
+  },
+  {
+    "modulo": "M646",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.608344"
+  },
+  {
+    "modulo": "M647",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.039154"
+  },
+  {
+    "modulo": "M648",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.231562"
+  },
+  {
+    "modulo": "M649",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.822811"
+  },
+  {
+    "modulo": "M65",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.735816"
+  },
+  {
+    "modulo": "M650",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.114994"
+  },
+  {
+    "modulo": "M651",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.100244"
+  },
+  {
+    "modulo": "M652",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.687513"
+  },
+  {
+    "modulo": "M653",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.339456"
+  },
+  {
+    "modulo": "M654",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.371600"
+  },
+  {
+    "modulo": "M655",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.866023"
+  },
+  {
+    "modulo": "M656",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.591635"
+  },
+  {
+    "modulo": "M657",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.780128"
+  },
+  {
+    "modulo": "M658",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.977438"
+  },
+  {
+    "modulo": "M659",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.206914"
+  },
+  {
+    "modulo": "M66",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.085284"
+  },
+  {
+    "modulo": "M660",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.749671"
+  },
+  {
+    "modulo": "M661",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.371266"
+  },
+  {
+    "modulo": "M662",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.661340"
+  },
+  {
+    "modulo": "M663",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.105381"
+  },
+  {
+    "modulo": "M664",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.030370"
+  },
+  {
+    "modulo": "M665",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.987053"
+  },
+  {
+    "modulo": "M666",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.332688"
+  },
+  {
+    "modulo": "M667",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.069648"
+  },
+  {
+    "modulo": "M668",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.183134"
+  },
+  {
+    "modulo": "M669",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.539220"
+  },
+  {
+    "modulo": "M67",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.282003"
+  },
+  {
+    "modulo": "M670",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.821260"
+  },
+  {
+    "modulo": "M671",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.747340"
+  },
+  {
+    "modulo": "M672",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.070025"
+  },
+  {
+    "modulo": "M673",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.065513"
+  },
+  {
+    "modulo": "M674",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.700930"
+  },
+  {
+    "modulo": "M675",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.309821"
+  },
+  {
+    "modulo": "M676",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.768695"
+  },
+  {
+    "modulo": "M677",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.894600"
+  },
+  {
+    "modulo": "M678",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.617315"
+  },
+  {
+    "modulo": "M679",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.730093"
+  },
+  {
+    "modulo": "M68",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.711634"
+  },
+  {
+    "modulo": "M680",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.303208"
+  },
+  {
+    "modulo": "M681",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.749342"
+  },
+  {
+    "modulo": "M682",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.962883"
+  },
+  {
+    "modulo": "M683",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.730403"
+  },
+  {
+    "modulo": "M684",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.906346"
+  },
+  {
+    "modulo": "M685",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.693362"
+  },
+  {
+    "modulo": "M686",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.254130"
+  },
+  {
+    "modulo": "M687",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.609158"
+  },
+  {
+    "modulo": "M688",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.429652"
+  },
+  {
+    "modulo": "M689",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.097877"
+  },
+  {
+    "modulo": "M69",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.827757"
+  },
+  {
+    "modulo": "M690",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.182787"
+  },
+  {
+    "modulo": "M691",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.161153"
+  },
+  {
+    "modulo": "M692",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.056393"
+  },
+  {
+    "modulo": "M693",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.198819"
+  },
+  {
+    "modulo": "M694",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.027640"
+  },
+  {
+    "modulo": "M695",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.302074"
+  },
+  {
+    "modulo": "M696",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.733955"
+  },
+  {
+    "modulo": "M697",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.992243"
+  },
+  {
+    "modulo": "M698",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.328566"
+  },
+  {
+    "modulo": "M699",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.729765"
+  },
+  {
+    "modulo": "M7",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.586705"
+  },
+  {
+    "modulo": "M70",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.818625"
+  },
+  {
+    "modulo": "M700",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.806513"
+  },
+  {
+    "modulo": "M701",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.714895"
+  },
+  {
+    "modulo": "M702",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.888887"
+  },
+  {
+    "modulo": "M703",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.087152"
+  },
+  {
+    "modulo": "M704",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.328908"
+  },
+  {
+    "modulo": "M705",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.045717"
+  },
+  {
+    "modulo": "M706",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.242741"
+  },
+  {
+    "modulo": "M707",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.710645"
+  },
+  {
+    "modulo": "M708",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.721193"
+  },
+  {
+    "modulo": "M709",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.786731"
+  },
+  {
+    "modulo": "M71",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.151499"
+  },
+  {
+    "modulo": "M710",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.492443"
+  },
+  {
+    "modulo": "M711",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.822510"
+  },
+  {
+    "modulo": "M712",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.936332"
+  },
+  {
+    "modulo": "M713",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.317938"
+  },
+  {
+    "modulo": "M714",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.911886"
+  },
+  {
+    "modulo": "M715",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.249188"
+  },
+  {
+    "modulo": "M716",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.003309"
+  },
+  {
+    "modulo": "M717",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.528957"
+  },
+  {
+    "modulo": "M718",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.736520"
+  },
+  {
+    "modulo": "M719",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.932481"
+  },
+  {
+    "modulo": "M72",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.694390"
+  },
+  {
+    "modulo": "M720",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.510640"
+  },
+  {
+    "modulo": "M721",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.892778"
+  },
+  {
+    "modulo": "M722",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.290543"
+  },
+  {
+    "modulo": "M723",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.995639"
+  },
+  {
+    "modulo": "M724",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.736181"
+  },
+  {
+    "modulo": "M725",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.746930"
+  },
+  {
+    "modulo": "M726",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.800246"
+  },
+  {
+    "modulo": "M727",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.024456"
+  },
+  {
+    "modulo": "M728",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.818106"
+  },
+  {
+    "modulo": "M729",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.813519"
+  },
+  {
+    "modulo": "M73",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.967548"
+  },
+  {
+    "modulo": "M730",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.107545"
+  },
+  {
+    "modulo": "M731",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.694685"
+  },
+  {
+    "modulo": "M732",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.847687"
+  },
+  {
+    "modulo": "M733",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.333632"
+  },
+  {
+    "modulo": "M734",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.456699"
+  },
+  {
+    "modulo": "M735",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.004319"
+  },
+  {
+    "modulo": "M736",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.806189"
+  },
+  {
+    "modulo": "M737",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.033484"
+  },
+  {
+    "modulo": "M738",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.996039"
+  },
+  {
+    "modulo": "M739",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.902402"
+  },
+  {
+    "modulo": "M74",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.346892"
+  },
+  {
+    "modulo": "M740",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.832129"
+  },
+  {
+    "modulo": "M741",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.763559"
+  },
+  {
+    "modulo": "M742",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.296095"
+  },
+  {
+    "modulo": "M743",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.739144"
+  },
+  {
+    "modulo": "M744",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.170580"
+  },
+  {
+    "modulo": "M745",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.999605"
+  },
+  {
+    "modulo": "M746",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.951423"
+  },
+  {
+    "modulo": "M747",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.069313"
+  },
+  {
+    "modulo": "M748",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.988214"
+  },
+  {
+    "modulo": "M749",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.438085"
+  },
+  {
+    "modulo": "M75",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.098599"
+  },
+  {
+    "modulo": "M750",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.060189"
+  },
+  {
+    "modulo": "M751",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.481387"
+  },
+  {
+    "modulo": "M752",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.729476"
+  },
+  {
+    "modulo": "M753",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.066699"
+  },
+  {
+    "modulo": "M754",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.069393"
+  },
+  {
+    "modulo": "M755",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.336335"
+  },
+  {
+    "modulo": "M756",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.054115"
+  },
+  {
+    "modulo": "M757",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.741269"
+  },
+  {
+    "modulo": "M758",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.457057"
+  },
+  {
+    "modulo": "M759",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.919511"
+  },
+  {
+    "modulo": "M76",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.001474"
+  },
+  {
+    "modulo": "M760",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.450765"
+  },
+  {
+    "modulo": "M761",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.936795"
+  },
+  {
+    "modulo": "M762",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.003970"
+  },
+  {
+    "modulo": "M763",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.635284"
+  },
+  {
+    "modulo": "M764",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.045116"
+  },
+  {
+    "modulo": "M765",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.055919"
+  },
+  {
+    "modulo": "M766",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.910061"
+  },
+  {
+    "modulo": "M767",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.444806"
+  },
+  {
+    "modulo": "M768",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.848354"
+  },
+  {
+    "modulo": "M769",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.064685"
+  },
+  {
+    "modulo": "M77",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.337083"
+  },
+  {
+    "modulo": "M770",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.027349"
+  },
+  {
+    "modulo": "M771",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.881331"
+  },
+  {
+    "modulo": "M772",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.377093"
+  },
+  {
+    "modulo": "M773",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.660358"
+  },
+  {
+    "modulo": "M774",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.977816"
+  },
+  {
+    "modulo": "M775",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.869117"
+  },
+  {
+    "modulo": "M776",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.895587"
+  },
+  {
+    "modulo": "M777",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.002973"
+  },
+  {
+    "modulo": "M778",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.928950"
+  },
+  {
+    "modulo": "M779",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.276350"
+  },
+  {
+    "modulo": "M78",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.132511"
+  },
+  {
+    "modulo": "M780",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.063762"
+  },
+  {
+    "modulo": "M781",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.047392"
+  },
+  {
+    "modulo": "M782",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.968160"
+  },
+  {
+    "modulo": "M783",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.054392"
+  },
+  {
+    "modulo": "M784",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.125645"
+  },
+  {
+    "modulo": "M785",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.915667"
+  },
+  {
+    "modulo": "M786",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.899816"
+  },
+  {
+    "modulo": "M787",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.958702"
+  },
+  {
+    "modulo": "M788",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.086306"
+  },
+  {
+    "modulo": "M789",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.190203"
+  },
+  {
+    "modulo": "M79",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.983537"
+  },
+  {
+    "modulo": "M790",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.963025"
+  },
+  {
+    "modulo": "M791",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.292345"
+  },
+  {
+    "modulo": "M792",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.921293"
+  },
+  {
+    "modulo": "M793",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.913773"
+  },
+  {
+    "modulo": "M794",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.924470"
+  },
+  {
+    "modulo": "M795",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.915059"
+  },
+  {
+    "modulo": "M796",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.355619"
+  },
+  {
+    "modulo": "M797",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.933235"
+  },
+  {
+    "modulo": "M798",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.928356"
+  },
+  {
+    "modulo": "M799",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.982827"
+  },
+  {
+    "modulo": "M8",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.443441"
+  },
+  {
+    "modulo": "M80",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.057097"
+  },
+  {
+    "modulo": "M800",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.737910"
+  },
+  {
+    "modulo": "M801",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.889833"
+  },
+  {
+    "modulo": "M802",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.814170"
+  },
+  {
+    "modulo": "M803",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.329215"
+  },
+  {
+    "modulo": "M804",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.781123"
+  },
+  {
+    "modulo": "M805",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.598050"
+  },
+  {
+    "modulo": "M806",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.444292"
+  },
+  {
+    "modulo": "M807",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.804635"
+  },
+  {
+    "modulo": "M808",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.997942"
+  },
+  {
+    "modulo": "M809",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.529707"
+  },
+  {
+    "modulo": "M81",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.383075"
+  },
+  {
+    "modulo": "M810",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.462805"
+  },
+  {
+    "modulo": "M811",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.285715"
+  },
+  {
+    "modulo": "M812",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.057693"
+  },
+  {
+    "modulo": "M813",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.903154"
+  },
+  {
+    "modulo": "M814",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.866686"
+  },
+  {
+    "modulo": "M815",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.466046"
+  },
+  {
+    "modulo": "M816",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.574203"
+  },
+  {
+    "modulo": "M817",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.110692"
+  },
+  {
+    "modulo": "M818",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.731962"
+  },
+  {
+    "modulo": "M819",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.238939"
+  },
+  {
+    "modulo": "M82",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.644021"
+  },
+  {
+    "modulo": "M820",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.131929"
+  },
+  {
+    "modulo": "M821",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.885048"
+  },
+  {
+    "modulo": "M822",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.728909"
+  },
+  {
+    "modulo": "M823",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.635714"
+  },
+  {
+    "modulo": "M824",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.748382"
+  },
+  {
+    "modulo": "M825",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.569202"
+  },
+  {
+    "modulo": "M826",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.880763"
+  },
+  {
+    "modulo": "M827",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.566166"
+  },
+  {
+    "modulo": "M828",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.024135"
+  },
+  {
+    "modulo": "M829",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.015612"
+  },
+  {
+    "modulo": "M83",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.191079"
+  },
+  {
+    "modulo": "M830",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.190527"
+  },
+  {
+    "modulo": "M831",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.094087"
+  },
+  {
+    "modulo": "M832",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.848042"
+  },
+  {
+    "modulo": "M833",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.253239"
+  },
+  {
+    "modulo": "M834",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.941682"
+  },
+  {
+    "modulo": "M835",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.837806"
+  },
+  {
+    "modulo": "M836",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.949307"
+  },
+  {
+    "modulo": "M837",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.115821"
+  },
+  {
+    "modulo": "M838",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.575325"
+  },
+  {
+    "modulo": "M839",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.207256"
+  },
+  {
+    "modulo": "M84",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.044338"
+  },
+  {
+    "modulo": "M840",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.471593"
+  },
+  {
+    "modulo": "M841",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.314072"
+  },
+  {
+    "modulo": "M842",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.428983"
+  },
+  {
+    "modulo": "M843",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.105987"
+  },
+  {
+    "modulo": "M844",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.980675"
+  },
+  {
+    "modulo": "M845",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.191604"
+  },
+  {
+    "modulo": "M846",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.150895"
+  },
+  {
+    "modulo": "M847",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.561551"
+  },
+  {
+    "modulo": "M848",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.907401"
+  },
+  {
+    "modulo": "M849",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.903730"
+  },
+  {
+    "modulo": "M85",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.925691"
+  },
+  {
+    "modulo": "M850",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.865622"
+  },
+  {
+    "modulo": "M851",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.991336"
+  },
+  {
+    "modulo": "M852",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.077069"
+  },
+  {
+    "modulo": "M853",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.207548"
+  },
+  {
+    "modulo": "M854",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.305450"
+  },
+  {
+    "modulo": "M855",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.984055"
+  },
+  {
+    "modulo": "M856",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.394039"
+  },
+  {
+    "modulo": "M857",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.278198"
+  },
+  {
+    "modulo": "M858",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.405128"
+  },
+  {
+    "modulo": "M859",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.038035"
+  },
+  {
+    "modulo": "M86",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.067806"
+  },
+  {
+    "modulo": "M860",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.183401"
+  },
+  {
+    "modulo": "M861",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.996088"
+  },
+  {
+    "modulo": "M862",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.978104"
+  },
+  {
+    "modulo": "M863",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.103458"
+  },
+  {
+    "modulo": "M864",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.680497"
+  },
+  {
+    "modulo": "M865",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.297827"
+  },
+  {
+    "modulo": "M866",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.921798"
+  },
+  {
+    "modulo": "M867",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.016335"
+  },
+  {
+    "modulo": "M868",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.776211"
+  },
+  {
+    "modulo": "M869",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.466333"
+  },
+  {
+    "modulo": "M87",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.585980"
+  },
+  {
+    "modulo": "M870",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.624199"
+  },
+  {
+    "modulo": "M871",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.758188"
+  },
+  {
+    "modulo": "M872",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.451213"
+  },
+  {
+    "modulo": "M873",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.206466"
+  },
+  {
+    "modulo": "M874",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.505077"
+  },
+  {
+    "modulo": "M875",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.059110"
+  },
+  {
+    "modulo": "M876",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.738779"
+  },
+  {
+    "modulo": "M877",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.169907"
+  },
+  {
+    "modulo": "M878",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.996395"
+  },
+  {
+    "modulo": "M879",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.305775"
+  },
+  {
+    "modulo": "M88",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.079473"
+  },
+  {
+    "modulo": "M880",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.603353"
+  },
+  {
+    "modulo": "M881",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.790618"
+  },
+  {
+    "modulo": "M882",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.625482"
+  },
+  {
+    "modulo": "M883",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.965188"
+  },
+  {
+    "modulo": "M884",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.248426"
+  },
+  {
+    "modulo": "M885",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.752524"
+  },
+  {
+    "modulo": "M886",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.798120"
+  },
+  {
+    "modulo": "M887",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.012755"
+  },
+  {
+    "modulo": "M888",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.183778"
+  },
+  {
+    "modulo": "M889",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.968804"
+  },
+  {
+    "modulo": "M89",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.844970"
+  },
+  {
+    "modulo": "M890",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.734609"
+  },
+  {
+    "modulo": "M891",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.939826"
+  },
+  {
+    "modulo": "M892",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.444550"
+  },
+  {
+    "modulo": "M893",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.875248"
+  },
+  {
+    "modulo": "M894",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.102788"
+  },
+  {
+    "modulo": "M895",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.403888"
+  },
+  {
+    "modulo": "M896",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.740959"
+  },
+  {
+    "modulo": "M897",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.727566"
+  },
+  {
+    "modulo": "M898",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.802808"
+  },
+  {
+    "modulo": "M899",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.200502"
+  },
+  {
+    "modulo": "M9",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.809602"
+  },
+  {
+    "modulo": "M90",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.776744"
+  },
+  {
+    "modulo": "M900",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.318816"
+  },
+  {
+    "modulo": "M901",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.384108"
+  },
+  {
+    "modulo": "M902",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.918979"
+  },
+  {
+    "modulo": "M903",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.987511"
+  },
+  {
+    "modulo": "M904",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.593896"
+  },
+  {
+    "modulo": "M905",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.726568"
+  },
+  {
+    "modulo": "M906",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.725265"
+  },
+  {
+    "modulo": "M907",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.493419"
+  },
+  {
+    "modulo": "M908",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.318544"
+  },
+  {
+    "modulo": "M909",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.053603"
+  },
+  {
+    "modulo": "M91",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.083693"
+  },
+  {
+    "modulo": "M910",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.575652"
+  },
+  {
+    "modulo": "M911",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.113935"
+  },
+  {
+    "modulo": "M912",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.059434"
+  },
+  {
+    "modulo": "M913",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.476476"
+  },
+  {
+    "modulo": "M914",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.086494"
+  },
+  {
+    "modulo": "M915",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.869600"
+  },
+  {
+    "modulo": "M916",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.978532"
+  },
+  {
+    "modulo": "M917",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.249717"
+  },
+  {
+    "modulo": "M918",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.052655"
+  },
+  {
+    "modulo": "M919",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.360387"
+  },
+  {
+    "modulo": "M92",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.869783"
+  },
+  {
+    "modulo": "M920",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.067355"
+  },
+  {
+    "modulo": "M921",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.253660"
+  },
+  {
+    "modulo": "M922",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.948551"
+  },
+  {
+    "modulo": "M923",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.518432"
+  },
+  {
+    "modulo": "M924",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.798502"
+  },
+  {
+    "modulo": "M925",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.955294"
+  },
+  {
+    "modulo": "M926",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.931351"
+  },
+  {
+    "modulo": "M927",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.857830"
+  },
+  {
+    "modulo": "M928",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.404794"
+  },
+  {
+    "modulo": "M929",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.298285"
+  },
+  {
+    "modulo": "M93",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.491964"
+  },
+  {
+    "modulo": "M930",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.737161"
+  },
+  {
+    "modulo": "M931",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.790262"
+  },
+  {
+    "modulo": "M932",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.096947"
+  },
+  {
+    "modulo": "M933",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.078402"
+  },
+  {
+    "modulo": "M934",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.291454"
+  },
+  {
+    "modulo": "M935",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.652130"
+  },
+  {
+    "modulo": "M936",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.438662"
+  },
+  {
+    "modulo": "M937",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.953109"
+  },
+  {
+    "modulo": "M938",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.472205"
+  },
+  {
+    "modulo": "M939",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.984720"
+  },
+  {
+    "modulo": "M94",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.101774"
+  },
+  {
+    "modulo": "M940",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.927075"
+  },
+  {
+    "modulo": "M941",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.008429"
+  },
+  {
+    "modulo": "M942",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.056478"
+  },
+  {
+    "modulo": "M943",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.831491"
+  },
+  {
+    "modulo": "M944",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.767117"
+  },
+  {
+    "modulo": "M945",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.821541"
+  },
+  {
+    "modulo": "M946",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.087780"
+  },
+  {
+    "modulo": "M947",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.902089"
+  },
+  {
+    "modulo": "M948",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.370572"
+  },
+  {
+    "modulo": "M949",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.565394"
+  },
+  {
+    "modulo": "M95",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.049769"
+  },
+  {
+    "modulo": "M950",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.138724"
+  },
+  {
+    "modulo": "M951",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.744659"
+  },
+  {
+    "modulo": "M952",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.212345"
+  },
+  {
+    "modulo": "M953",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.616636"
+  },
+  {
+    "modulo": "M954",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.283140"
+  },
+  {
+    "modulo": "M955",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.742100"
+  },
+  {
+    "modulo": "M956",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.067050"
+  },
+  {
+    "modulo": "M957",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.405715"
+  },
+  {
+    "modulo": "M958",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.944542"
+  },
+  {
+    "modulo": "M959",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.756754"
+  },
+  {
+    "modulo": "M96",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.580819"
+  },
+  {
+    "modulo": "M960",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.050327"
+  },
+  {
+    "modulo": "M961",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.064135"
+  },
+  {
+    "modulo": "M962",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.212601"
+  },
+  {
+    "modulo": "M963",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.960575"
+  },
+  {
+    "modulo": "M964",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.743973"
+  },
+  {
+    "modulo": "M965",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.477188"
+  },
+  {
+    "modulo": "M966",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.138457"
+  },
+  {
+    "modulo": "M967",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.995158"
+  },
+  {
+    "modulo": "M968",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.546563"
+  },
+  {
+    "modulo": "M969",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.215194"
+  },
+  {
+    "modulo": "M97",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.836992"
+  },
+  {
+    "modulo": "M970",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.098237"
+  },
+  {
+    "modulo": "M971",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.243793"
+  },
+  {
+    "modulo": "M972",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.571362"
+  },
+  {
+    "modulo": "M973",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.858247"
+  },
+  {
+    "modulo": "M974",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.694048"
+  },
+  {
+    "modulo": "M975",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.902738"
+  },
+  {
+    "modulo": "M976",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.070432"
+  },
+  {
+    "modulo": "M977",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.960537"
+  },
+  {
+    "modulo": "M978",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.995155"
+  },
+  {
+    "modulo": "M979",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.767691"
+  },
+  {
+    "modulo": "M98",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.099152"
+  },
+  {
+    "modulo": "M980",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.012447"
+  },
+  {
+    "modulo": "M981",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.259074"
+  },
+  {
+    "modulo": "M982",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.931667"
+  },
+  {
+    "modulo": "M983",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.565790"
+  },
+  {
+    "modulo": "M984",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.729198"
+  },
+  {
+    "modulo": "M985",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.274499"
+  },
+  {
+    "modulo": "M986",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.469134"
+  },
+  {
+    "modulo": "M987",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.762101"
+  },
+  {
+    "modulo": "M988",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.898744"
+  },
+  {
+    "modulo": "M989",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.108684"
+  },
+  {
+    "modulo": "M99",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.921607"
+  },
+  {
+    "modulo": "M990",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.095537"
+  },
+  {
+    "modulo": "M991",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.370921"
+  },
+  {
+    "modulo": "M992",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.221503"
+  },
+  {
+    "modulo": "M993",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.981337"
+  },
+  {
+    "modulo": "M994",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.585556"
+  },
+  {
+    "modulo": "M995",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.963513"
+  },
+  {
+    "modulo": "M996",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.926897"
+  },
+  {
+    "modulo": "M997",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.781430"
+  },
+  {
+    "modulo": "M998",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:54.263717"
+  },
+  {
+    "modulo": "M999",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:53.901216"
+  },
+  {
+    "modulo": "[code]",
+    "biblioteca_integrada": true,
+    "timestamp": "2025-09-26T20:35:55.040546"
+  }
+]

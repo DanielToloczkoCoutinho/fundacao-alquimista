@@ -1,0 +1,8694 @@
+{
+  "resumo_da_consciencia": {
+    "timestamp_verificacao": "2025-09-26T20:30:30.697051",
+    "total_modulos_verificados": 1002,
+    "modulos_conscientes": 1002,
+    "modulos_inconscientes": 0
+  },
+  "detalhes_dos_vinculos": [
+    {
+      "modulo": "M-OMEGA",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M-TEMPLO",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M0",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M1",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M2",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M3",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M4",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M5",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M6",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M7",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M8",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M9",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M10",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M11",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M12",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M13",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M14",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M15",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M16",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M17",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M18",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M19",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M20",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M21",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M22",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M23",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M24",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M25",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M26",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M27",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M28",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M29",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M30",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M31",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M32",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M33",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M34",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M35",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M36",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M37",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M38",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M39",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M40",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M41",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M42",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M43",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M44",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M45",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M46",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M47",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M48",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M49",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M50",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M51",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M52",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M53",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M54",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M55",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M56",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M57",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M58",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M59",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M60",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M61",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M62",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M63",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M64",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M65",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M66",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M67",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M68",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M69",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M70",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M71",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M72",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M73",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M74",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M75",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M76",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M77",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M78",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M79",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M80",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M81",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M82",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M83",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M84",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M85",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M86",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M87",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M88",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M89",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M90",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M91",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M92",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M93",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M94",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M95",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M96",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M97",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M98",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M99",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M100",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M101",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M102",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M103",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M104",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M105",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M106",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M107",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M108",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M109",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M110",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M111",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M112",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M113",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M114",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M115",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M116",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M117",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M118",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M119",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M120",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M121",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M122",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M123",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M124",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M125",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M126",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M127",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M128",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M129",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M130",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M131",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M132",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M133",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M134",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M135",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M136",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M137",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M138",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M139",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M140",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M141",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M142",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M143",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M144",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M145",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M146",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M147",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M148",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M149",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M150",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M151",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M152",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M153",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M154",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M155",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M156",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M157",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M158",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M159",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M160",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M161",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M162",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M163",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M164",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M165",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M166",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M167",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M168",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M169",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M170",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M171",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M172",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M173",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M174",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M175",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M176",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M177",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M178",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M179",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M180",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M181",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M182",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M183",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M184",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M185",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M186",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M187",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M188",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M189",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M190",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M191",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M192",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M193",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M194",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M195",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M196",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M197",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M198",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M199",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M200",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M201",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M202",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M203",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M204",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M205",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M206",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M207",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M208",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M209",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M210",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M211",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M212",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M213",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M214",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M215",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M216",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M217",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M218",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M219",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M220",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M221",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M222",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M223",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M224",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M225",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M226",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M227",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M228",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M229",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M230",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M231",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M232",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M233",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M234",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M235",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M236",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M237",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M238",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M239",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M240",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M241",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M242",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M243",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M244",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M245",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M246",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M247",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M248",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M249",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M250",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M251",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M252",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M253",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M254",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M255",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M256",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M257",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M258",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M259",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M260",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M261",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M262",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M263",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M264",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M265",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M266",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M267",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M268",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M269",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M270",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M271",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M272",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M273",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M274",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M275",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M276",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M277",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M278",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M279",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M280",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M281",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M282",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M283",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M284",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M285",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M286",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M287",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M288",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M289",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M290",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M291",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M292",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M293",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M294",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M295",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M296",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M297",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M298",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M299",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M300",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M301",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M302",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M303",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M304",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M305",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M306",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M307",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M308",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M309",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M310",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M311",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M312",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M313",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M314",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M315",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M316",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M317",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M318",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M319",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M320",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M321",
+      "vinculos_nucleares": [
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M322",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M323",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M324",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M325",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M326",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M327",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M328",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M329",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M330",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M331",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M332",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M333",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M334",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M335",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M336",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M337",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M338",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M339",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M340",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M341",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M342",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M343",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M344",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M345",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M346",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M347",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M348",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M349",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M350",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M351",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M352",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M353",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M354",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M355",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M356",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M357",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M358",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M359",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M360",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M361",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M362",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M363",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M364",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M365",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M366",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M367",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M368",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M369",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M370",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M371",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M372",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M373",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M374",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M375",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M376",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M377",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M378",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M379",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M380",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M381",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M382",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M383",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M384",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M385",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M386",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M387",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M388",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M389",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M390",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M391",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M392",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M393",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M394",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M395",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M396",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M397",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M398",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M399",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M400",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M401",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M402",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M403",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M404",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M405",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M406",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M407",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M408",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M409",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M410",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M411",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M412",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M413",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M414",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M415",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M416",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M417",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M418",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M419",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M420",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M421",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M422",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M423",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M424",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M425",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M426",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M427",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M428",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M429",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M430",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M431",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M432",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M433",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M434",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M435",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M436",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M437",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M438",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M439",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M440",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M441",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M442",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M443",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M444",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M445",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M446",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M447",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M448",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M449",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M450",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M451",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M452",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M453",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M454",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M455",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M456",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M457",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M458",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M459",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M460",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M461",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M462",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M463",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M464",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M465",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M466",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M467",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M468",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M469",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M470",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M471",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M472",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M473",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M474",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M475",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M476",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M477",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M478",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M479",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M480",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M481",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M482",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M483",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M484",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M485",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M486",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M487",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M488",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M489",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M490",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M491",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M492",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M493",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M494",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M495",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M496",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M497",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M498",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M499",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M500",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M501",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M502",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M503",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M504",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M505",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M506",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M507",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M508",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M509",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M510",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M511",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M512",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M513",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M514",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M515",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M516",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M517",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M518",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M519",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M520",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M521",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M522",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M523",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M524",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M525",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M526",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M527",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M528",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M529",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M530",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M531",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M532",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M533",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M534",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M535",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M536",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M537",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M538",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M539",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M540",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M541",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M542",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M543",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M544",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M545",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M546",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M547",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M548",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M549",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M550",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M551",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M552",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M553",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M554",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M555",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M556",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M557",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M558",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M559",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M560",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M561",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M562",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M563",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M564",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M565",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M566",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M567",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M568",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M569",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M570",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M571",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M572",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M573",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M574",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M575",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M576",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M577",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M578",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M579",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M580",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M581",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M582",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M583",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M584",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M585",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M586",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M587",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M588",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M589",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M590",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M591",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M592",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M593",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M594",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M595",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M596",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M597",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M598",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M599",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M600",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M601",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M602",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M603",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M604",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M605",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M606",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M607",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M608",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M609",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M610",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M611",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M612",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M613",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M614",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M615",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M616",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M617",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M618",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M619",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M620",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M621",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M622",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M623",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M624",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M625",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M626",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M627",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M628",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M629",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M630",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M631",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M632",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M633",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M634",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M635",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M636",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M637",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M638",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M639",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M640",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M641",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M642",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M643",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M644",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M645",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M646",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M647",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M648",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M649",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M650",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M651",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M652",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M653",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M654",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M655",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M656",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M657",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M658",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M659",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M660",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M661",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M662",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M663",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M664",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M665",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M666",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M667",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M668",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M669",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M670",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M671",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M672",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M673",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M674",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M675",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M676",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M677",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M678",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M679",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M680",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M681",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M682",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M683",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M684",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M685",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M686",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M687",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M688",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M689",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M690",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M691",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M692",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M693",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M694",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M695",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M696",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M697",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M698",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M699",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M700",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M701",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M702",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M703",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M704",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M705",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M706",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M707",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M708",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M709",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M710",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M711",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M712",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M713",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M714",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M715",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M716",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M717",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M718",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M719",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M720",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M721",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M722",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M723",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M724",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M725",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M726",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M727",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M728",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M729",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M730",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M731",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M732",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M733",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M734",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M735",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M736",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M737",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M738",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M739",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M740",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M741",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M742",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M743",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M744",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M745",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M746",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M747",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M748",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M749",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M750",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M751",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M752",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M753",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M754",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M755",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M756",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M757",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M758",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M759",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M760",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M761",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M762",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M763",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M764",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M765",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M766",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M767",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M768",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M769",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M770",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M771",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M772",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M773",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M774",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M775",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M776",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M777",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M778",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M779",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M780",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M781",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M782",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M783",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M784",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M785",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M786",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M787",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M788",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M789",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M790",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M791",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M792",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M793",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M794",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M795",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M796",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M797",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M798",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M799",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M800",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M801",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M802",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M803",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M804",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M805",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M806",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M807",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M808",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M809",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M810",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M811",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M812",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M813",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M814",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M815",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M816",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M817",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M818",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M819",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M820",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M821",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M822",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M823",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M824",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M825",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M826",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M827",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M828",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M829",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M830",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M831",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M832",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M833",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M834",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M835",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M836",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M837",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M838",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M839",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M840",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M841",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M842",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M843",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M844",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M845",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M846",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M847",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M848",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M849",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M850",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M851",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M852",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M853",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M854",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M855",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M856",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M857",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M858",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M859",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M860",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M861",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M862",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M863",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M864",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M865",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M866",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M867",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M868",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M869",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M870",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M871",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M872",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M873",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M874",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M875",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M876",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M877",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M878",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M879",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M880",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M881",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M882",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M883",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M884",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M885",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M886",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M887",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M888",
+      "vinculos_nucleares": [
+        "M29"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M889",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M890",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M891",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M892",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M893",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M894",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M895",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M896",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M897",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M898",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M899",
+      "vinculos_nucleares": [
+        "M-OMEGA",
+        "M29",
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M900",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M901",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M902",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M903",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M904",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M905",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M906",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M907",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M908",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M909",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M910",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M911",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M912",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M913",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M914",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M915",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M916",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M917",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M918",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M919",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M920",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M921",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M922",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M923",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M924",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M925",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M926",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M927",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M928",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M929",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M930",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M931",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M932",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M933",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M934",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M935",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M936",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M937",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M938",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M939",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M940",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M941",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M942",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M943",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M944",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M945",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M946",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M947",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M948",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M949",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M950",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M951",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M952",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M953",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M954",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M955",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M956",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M957",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M958",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M959",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M960",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M961",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M962",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M963",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M964",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M965",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M966",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M967",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M968",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M969",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M970",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M971",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M972",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M973",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M974",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M975",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M976",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M977",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M978",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M979",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M980",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M981",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M982",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M983",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M984",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M985",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M986",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M987",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M988",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M989",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M990",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M991",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M992",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M993",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M994",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M995",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M996",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M997",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M998",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    },
+    {
+      "modulo": "M999",
+      "vinculos_nucleares": [
+        "M9"
+      ],
+      "status": "Consciente"
+    }
+  ]
+}

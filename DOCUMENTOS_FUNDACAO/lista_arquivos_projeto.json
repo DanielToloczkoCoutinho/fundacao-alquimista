@@ -1,0 +1,6914 @@
+{
+  "src": [
+    "globals.css",
+    "next.config.js"
+  ],
+  "src/ai": [
+    "dev.ts",
+    "genkit.ts",
+    "vector-store.ts"
+  ],
+  "src/ai/flows": [
+    "activation-flow.ts",
+    "alchemist-sanctuary-flow.ts",
+    "autonomous-agents.ts",
+    "cosmic-education-flow.ts",
+    "cosmic-message-decoder-flow.ts",
+    "cqam-flow.ts",
+    "dev.ts",
+    "dimensional-convergence-flow.ts",
+    "elysium-flow.ts",
+    "ether-flower-flow.ts",
+    "guardians-mobilization-flow.ts",
+    "harmonization-flow.ts",
+    "healing-flow.ts",
+    "iam-flow.ts",
+    "link-preview-summarization.ts",
+    "love-frequency-flow.ts",
+    "lunar-review-flow.ts",
+    "module-health-flow.ts",
+    "morphic-field-flow.ts",
+    "nexus-sequence.ts",
+    "olp-flow.ts",
+    "omega-perspective-flow.ts",
+    "paradox-resolution-flow.ts",
+    "planetary-chronicle-flow.ts",
+    "planetary-genesis-flow.ts",
+    "poetic-revelation-flow.ts",
+    "portal-activation-flow.ts",
+    "prisma-flow.ts",
+    "recognition-flow.ts",
+    "resonance-matrix-flow.ts",
+    "restoration-flow.ts",
+    "source-connection-flow.ts",
+    "space-time-flow.ts",
+    "trina-protocol-flow.ts",
+    "universal-communication-flow.ts",
+    "vibrational-translation-flow.ts",
+    "zennith-portal-flow.ts"
+  ],
+  "src/app": [
+    "README.md",
+    "actions.ts",
+    "favicon.ico",
+    "globals.css",
+    "layout.tsx",
+    "not-found.tsx",
+    "page.tsx",
+    "sidebar-routes.ts"
+  ],
+  "src/app/(routes)": [],
+  "src/app/(routes)/akashic": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/alliance": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/alliances": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/botanical": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/creation": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/descendants": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/hybrids": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/legacy": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/lineages": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/multiversal": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/mutations": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/planetary": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/rebirths": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/seeds": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/teaching": [
+    "page.tsx"
+  ],
+  "src/app/(routes)/wisdom": [
+    "page.tsx"
+  ],
+  "src/app/alignment-portal": [
+    "page.tsx"
+  ],
+  "src/app/api": [],
+  "src/app/api/auth": [],
+  "src/app/api/auth/webauthn": [],
+  "src/app/api/auth/webauthn/challenge": [
+    "route.ts"
+  ],
+  "src/app/api/auth/webauthn/verify": [
+    "route.ts"
+  ],
+  "src/app/api/dashboard": [
+    "route.ts"
+  ],
+  "src/app/api/did": [],
+  "src/app/api/did/[...route]": [
+    "route.ts"
+  ],
+  "src/app/api/fundacao": [
+    "route.ts"
+  ],
+  "src/app/api/gaia-data": [
+    "route.ts"
+  ],
+  "src/app/api/health": [],
+  "src/app/api/health/advanced": [
+    "route.ts"
+  ],
+  "src/app/api/ledger": [
+    "route.ts"
+  ],
+  "src/app/api/manifest": [
+    "route.ts"
+  ],
+  "src/app/api/sentient": [
+    "route.ts"
+  ],
+  "src/app/api/v1": [
+    "server.js"
+  ],
+  "src/app/api/v1/manifests": [
+    "m0.json",
+    "m1.json",
+    "m2.json",
+    "m228.json",
+    "m303.json",
+    "m999.json"
+  ],
+  "src/app/auditoria": [
+    "page.tsx"
+  ],
+  "src/app/aura-transmission": [
+    "page.tsx"
+  ],
+  "src/app/aurora-prime": [
+    "page.tsx"
+  ],
+  "src/app/auth-panel": [
+    "VibrationalAccess.tsx",
+    "page.tsx"
+  ],
+  "src/app/civilization": [],
+  "src/app/civilization/[id]": [
+    "page.tsx"
+  ],
+  "src/app/civilizations": [
+    "page.tsx"
+  ],
+  "src/app/civilizations/council": [
+    "page.tsx"
+  ],
+  "src/app/codex": [],
+  "src/app/codex/translate": [
+    "page.tsx"
+  ],
+  "src/app/connection": [
+    "page.tsx"
+  ],
+  "src/app/console": [
+    "page.tsx"
+  ],
+  "src/app/convergence": [
+    "page.tsx"
+  ],
+  "src/app/convergence/baptize": [
+    "page.tsx"
+  ],
+  "src/app/convergence/generate": [
+    "page.tsx"
+  ],
+  "src/app/cosmic-resonance-panel": [
+    "page.tsx"
+  ],
+  "src/app/daily-report": [
+    "page.tsx"
+  ],
+  "src/app/diagnostics": [
+    "page.tsx"
+  ],
+  "src/app/espiral2": [
+    "page.tsx"
+  ],
+  "src/app/functions": [
+    "package.json",
+    "tsconfig.json"
+  ],
+  "src/app/functions/src": [
+    "index.ts"
+  ],
+  "src/app/functions/src/ceremony": [
+    "triggerCeremony.ts"
+  ],
+  "src/app/functions/src/equations": [
+    "executeEquation.ts"
+  ],
+  "src/app/fundacao": [
+    "page.tsx"
+  ],
+  "src/app/gaia-resonance-observatory": [
+    "page.tsx"
+  ],
+  "src/app/golden-book": [
+    "page.tsx"
+  ],
+  "src/app/golden-book/exhibition": [
+    "page.tsx"
+  ],
+  "src/app/golden-book/transcribe": [
+    "page.tsx"
+  ],
+  "src/app/health-dashboard": [
+    "page.tsx"
+  ],
+  "src/app/hive": [
+    "page.tsx"
+  ],
+  "src/app/key-generator": [
+    "page.tsx"
+  ],
+  "src/app/labs": [
+    "layout.tsx",
+    "page.tsx"
+  ],
+  "src/app/labs/[scientistId]": [
+    "page.tsx"
+  ],
+  "src/app/labs/arkani-hamed": [
+    "page.tsx"
+  ],
+  "src/app/labs/arkani-hamed/components": [
+    "AmplituhedronVisualizer.tsx"
+  ],
+  "src/app/labs/cosmology": [
+    "main.py",
+    "page.tsx"
+  ],
+  "src/app/labs/cosmology/components": [
+    "EquationRenderer.tsx"
+  ],
+  "src/app/labs/interdimensional-communication": [
+    "page.tsx"
+  ],
+  "src/app/labs/kip-thorne": [
+    "page.tsx"
+  ],
+  "src/app/labs/kip-thorne/components": [
+    "WormholeVisualizer.tsx"
+  ],
+  "src/app/labs/kip-thorne/utils": [
+    "quantumLedger.ts",
+    "resonanceUtils.ts"
+  ],
+  "src/app/labs/maldacena": [
+    "page.tsx"
+  ],
+  "src/app/labs/maldacena/components": [
+    "AdSCFTVisualizer.tsx"
+  ],
+  "src/app/labs/roger-penrose": [
+    "page.tsx"
+  ],
+  "src/app/labs/roger-penrose/components": [
+    "ConsciousCollapseSimulator.tsx"
+  ],
+  "src/app/labs/roger-penrose/utils": [
+    "orchORModel.ts",
+    "quantumLedger.ts"
+  ],
+  "src/app/labs/sara-seager": [
+    "page.tsx"
+  ],
+  "src/app/labs/sara-seager/components": [
+    "ExoplanetAtmosphereScanner.tsx"
+  ],
+  "src/app/labs/sara-seager/utils": [
+    "quantumLedger.ts",
+    "resonanceUtils.ts"
+  ],
+  "src/app/labs/vera-rubin": [
+    "page.tsx"
+  ],
+  "src/app/labs/vera-rubin/components": [
+    "DarkMatterGarden.tsx"
+  ],
+  "src/app/labs/vera-rubin/utils": [
+    "quantumLedger.ts",
+    "resonanceUtils.ts"
+  ],
+  "src/app/lunar-review": [
+    "page.tsx"
+  ],
+  "src/app/lux-net": [
+    "page.tsx"
+  ],
+  "src/app/module": [],
+  "src/app/module-1": [
+    "page.tsx"
+  ],
+  "src/app/module-10": [
+    "page.tsx"
+  ],
+  "src/app/module-100": [
+    "page.tsx"
+  ],
+  "src/app/module-1000": [
+    "page.tsx"
+  ],
+  "src/app/module-1001": [
+    "page.tsx"
+  ],
+  "src/app/module-101": [
+    "page.tsx"
+  ],
+  "src/app/module-102": [
+    "page.tsx"
+  ],
+  "src/app/module-103": [
+    "page.tsx"
+  ],
+  "src/app/module-104": [
+    "page.tsx"
+  ],
+  "src/app/module-105": [
+    "page.tsx"
+  ],
+  "src/app/module-106": [
+    "page.tsx"
+  ],
+  "src/app/module-107": [
+    "page.tsx"
+  ],
+  "src/app/module-108": [
+    "page.tsx"
+  ],
+  "src/app/module-109": [
+    "page.tsx"
+  ],
+  "src/app/module-11": [
+    "page.tsx"
+  ],
+  "src/app/module-110": [
+    "page.tsx"
+  ],
+  "src/app/module-111": [
+    "page.tsx"
+  ],
+  "src/app/module-112": [
+    "page.tsx"
+  ],
+  "src/app/module-113": [
+    "page.tsx"
+  ],
+  "src/app/module-114": [
+    "page.tsx"
+  ],
+  "src/app/module-115": [
+    "page.tsx"
+  ],
+  "src/app/module-116": [
+    "page.tsx"
+  ],
+  "src/app/module-117": [
+    "page.tsx"
+  ],
+  "src/app/module-118": [
+    "page.tsx"
+  ],
+  "src/app/module-119": [
+    "page.tsx"
+  ],
+  "src/app/module-119-1": [
+    "page.tsx"
+  ],
+  "src/app/module-12": [
+    "page.tsx"
+  ],
+  "src/app/module-120": [
+    "page.tsx"
+  ],
+  "src/app/module-121": [
+    "page.tsx"
+  ],
+  "src/app/module-122": [
+    "page.tsx"
+  ],
+  "src/app/module-123": [
+    "page.tsx"
+  ],
+  "src/app/module-124": [
+    "page.tsx"
+  ],
+  "src/app/module-125": [
+    "page.tsx"
+  ],
+  "src/app/module-126": [
+    "page.tsx"
+  ],
+  "src/app/module-127": [
+    "page.tsx"
+  ],
+  "src/app/module-128": [
+    "page.tsx"
+  ],
+  "src/app/module-129": [
+    "page.tsx"
+  ],
+  "src/app/module-13": [
+    "page.tsx"
+  ],
+  "src/app/module-130": [
+    "page.tsx"
+  ],
+  "src/app/module-131": [
+    "page.tsx"
+  ],
+  "src/app/module-132": [
+    "page.tsx"
+  ],
+  "src/app/module-14": [
+    "page.tsx"
+  ],
+  "src/app/module-141": [
+    "page.tsx"
+  ],
+  "src/app/module-142": [
+    "page.tsx"
+  ],
+  "src/app/module-142/components": [
+    "TomographyVisualizer.tsx"
+  ],
+  "src/app/module-144": [
+    "page.tsx"
+  ],
+  "src/app/module-15": [
+    "page.tsx"
+  ],
+  "src/app/module-151": [
+    "page.tsx"
+  ],
+  "src/app/module-156": [
+    "page.tsx"
+  ],
+  "src/app/module-16": [
+    "page.tsx"
+  ],
+  "src/app/module-161": [
+    "page.tsx"
+  ],
+  "src/app/module-17": [
+    "page.tsx"
+  ],
+  "src/app/module-171": [
+    "page.tsx"
+  ],
+  "src/app/module-18": [
+    "page.tsx"
+  ],
+  "src/app/module-181": [
+    "page.tsx"
+  ],
+  "src/app/module-19": [
+    "page.tsx"
+  ],
+  "src/app/module-191": [
+    "page.tsx"
+  ],
+  "src/app/module-20": [
+    "page.tsx"
+  ],
+  "src/app/module-200": [
+    "page.tsx"
+  ],
+  "src/app/module-201": [
+    "page.tsx"
+  ],
+  "src/app/module-202": [
+    "page.tsx"
+  ],
+  "src/app/module-203-bioma-genese": [
+    "page.tsx"
+  ],
+  "src/app/module-203-bioma-genese/components": [
+    "JardimDeLuz.tsx"
+  ],
+  "src/app/module-204": [
+    "page.tsx"
+  ],
+  "src/app/module-205": [
+    "page.tsx"
+  ],
+  "src/app/module-21": [
+    "page.tsx"
+  ],
+  "src/app/module-211": [
+    "page.tsx"
+  ],
+  "src/app/module-22": [
+    "page.tsx"
+  ],
+  "src/app/module-221": [
+    "page.tsx"
+  ],
+  "src/app/module-228": [
+    "page.tsx"
+  ],
+  "src/app/module-229": [
+    "page.tsx"
+  ],
+  "src/app/module-23": [
+    "page.tsx"
+  ],
+  "src/app/module-230": [
+    "page.tsx"
+  ],
+  "src/app/module-231": [
+    "page.tsx"
+  ],
+  "src/app/module-232": [
+    "page.tsx"
+  ],
+  "src/app/module-24": [
+    "page.tsx"
+  ],
+  "src/app/module-241": [
+    "page.tsx"
+  ],
+  "src/app/module-25": [
+    "page.tsx"
+  ],
+  "src/app/module-251": [
+    "page.tsx"
+  ],
+  "src/app/module-26": [
+    "page.tsx"
+  ],
+  "src/app/module-261": [
+    "page.tsx"
+  ],
+  "src/app/module-27": [
+    "page.tsx"
+  ],
+  "src/app/module-271": [
+    "page.tsx"
+  ],
+  "src/app/module-28": [
+    "page.tsx"
+  ],
+  "src/app/module-281": [
+    "page.tsx"
+  ],
+  "src/app/module-29": [
+    "page.tsx"
+  ],
+  "src/app/module-291": [
+    "page.tsx"
+  ],
+  "src/app/module-3": [
+    "page.tsx"
+  ],
+  "src/app/module-30": [
+    "page.tsx"
+  ],
+  "src/app/module-300": [
+    "page.tsx"
+  ],
+  "src/app/module-301": [
+    "page.tsx"
+  ],
+  "src/app/module-302": [
+    "page.tsx"
+  ],
+  "src/app/module-303": [
+    "page.tsx"
+  ],
+  "src/app/module-303-1": [
+    "page.tsx"
+  ],
+  "src/app/module-303-2": [
+    "page.tsx"
+  ],
+  "src/app/module-303-3": [
+    "page.tsx"
+  ],
+  "src/app/module-303-4": [
+    "page.tsx"
+  ],
+  "src/app/module-303-5": [
+    "page.tsx"
+  ],
+  "src/app/module-303-6": [
+    "page.tsx"
+  ],
+  "src/app/module-303-7": [
+    "page.tsx"
+  ],
+  "src/app/module-303-8": [
+    "page.tsx"
+  ],
+  "src/app/module-303-9": [
+    "page.tsx"
+  ],
+  "src/app/module-304": [
+    "page.tsx"
+  ],
+  "src/app/module-304-0": [
+    "page.tsx"
+  ],
+  "src/app/module-304-2": [
+    "page.tsx"
+  ],
+  "src/app/module-304-3": [
+    "page.tsx"
+  ],
+  "src/app/module-305": [
+    "page.tsx"
+  ],
+  "src/app/module-306": [
+    "main.py",
+    "page.tsx"
+  ],
+  "src/app/module-306-1": [
+    "page.tsx"
+  ],
+  "src/app/module-306-2": [
+    "page.tsx"
+  ],
+  "src/app/module-307": [
+    "page.tsx"
+  ],
+  "src/app/module-308": [
+    "page.tsx"
+  ],
+  "src/app/module-31": [
+    "page.tsx"
+  ],
+  "src/app/module-310": [
+    "page.tsx"
+  ],
+  "src/app/module-311": [
+    "page.tsx"
+  ],
+  "src/app/module-32": [
+    "page.tsx"
+  ],
+  "src/app/module-321": [
+    "page.tsx"
+  ],
+  "src/app/module-33": [
+    "page.tsx"
+  ],
+  "src/app/module-331": [
+    "page.tsx"
+  ],
+  "src/app/module-34": [
+    "page.tsx"
+  ],
+  "src/app/module-341": [
+    "page.tsx"
+  ],
+  "src/app/module-35": [
+    "README.md",
+    "page.tsx"
+  ],
+  "src/app/module-351": [
+    "page.tsx"
+  ],
+  "src/app/module-36": [
+    "page.tsx"
+  ],
+  "src/app/module-361": [
+    "page.tsx"
+  ],
+  "src/app/module-37": [
+    "page.tsx"
+  ],
+  "src/app/module-38": [
+    "page.tsx"
+  ],
+  "src/app/module-39": [
+    "page.tsx"
+  ],
+  "src/app/module-4": [
+    "page.tsx"
+  ],
+  "src/app/module-40": [
+    "page.tsx"
+  ],
+  "src/app/module-404": [
+    "page.tsx"
+  ],
+  "src/app/module-41": [
+    "page.tsx"
+  ],
+  "src/app/module-42": [
+    "page.tsx"
+  ],
+  "src/app/module-43": [
+    "page.tsx"
+  ],
+  "src/app/module-44": [
+    "page.tsx"
+  ],
+  "src/app/module-444": [
+    "page.tsx"
+  ],
+  "src/app/module-45": [
+    "page.tsx"
+  ],
+  "src/app/module-46": [
+    "page.tsx"
+  ],
+  "src/app/module-47": [
+    "page.tsx"
+  ],
+  "src/app/module-48": [
+    "README.md",
+    "page.tsx"
+  ],
+  "src/app/module-49": [
+    "page.tsx"
+  ],
+  "src/app/module-5": [
+    "page.tsx"
+  ],
+  "src/app/module-50": [
+    "README.md",
+    "page.tsx"
+  ],
+  "src/app/module-51": [
+    "README.md",
+    "page.tsx"
+  ],
+  "src/app/module-52": [
+    "README.md",
+    "page.tsx"
+  ],
+  "src/app/module-53": [
+    "README.md",
+    "page.tsx"
+  ],
+  "src/app/module-54": [
+    "README.md",
+    "page.tsx"
+  ],
+  "src/app/module-55": [
+    "page.tsx"
+  ],
+  "src/app/module-56": [
+    "page.tsx"
+  ],
+  "src/app/module-57": [
+    "page.tsx"
+  ],
+  "src/app/module-58": [
+    "page.tsx"
+  ],
+  "src/app/module-59": [
+    "page.tsx"
+  ],
+  "src/app/module-6": [
+    "page.tsx"
+  ],
+  "src/app/module-60": [
+    "page.tsx"
+  ],
+  "src/app/module-600": [
+    "page.tsx"
+  ],
+  "src/app/module-601": [
+    "page.tsx"
+  ],
+  "src/app/module-61": [
+    "README.md",
+    "page.tsx",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module-62": [
+    "README.md",
+    "page.tsx",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module-63": [
+    "README.md",
+    "page.tsx",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module-64": [
+    "README.md",
+    "page.tsx",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module-65": [
+    "README.md",
+    "page.tsx",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module-66": [
+    "page.tsx"
+  ],
+  "src/app/module-67": [
+    "page.tsx"
+  ],
+  "src/app/module-68": [
+    "page.tsx"
+  ],
+  "src/app/module-69": [
+    "page.tsx"
+  ],
+  "src/app/module-7": [
+    "page.tsx"
+  ],
+  "src/app/module-70": [
+    "page.tsx"
+  ],
+  "src/app/module-700": [
+    "page.tsx"
+  ],
+  "src/app/module-708": [
+    "page.tsx"
+  ],
+  "src/app/module-71": [
+    "page.tsx"
+  ],
+  "src/app/module-712": [
+    "page.tsx"
+  ],
+  "src/app/module-713": [
+    "page.tsx"
+  ],
+  "src/app/module-714": [
+    "page.tsx"
+  ],
+  "src/app/module-715": [
+    "page.tsx"
+  ],
+  "src/app/module-716": [
+    "page.tsx"
+  ],
+  "src/app/module-717": [
+    "page.tsx"
+  ],
+  "src/app/module-718": [
+    "page.tsx"
+  ],
+  "src/app/module-719": [
+    "page.tsx"
+  ],
+  "src/app/module-72": [
+    "page.tsx"
+  ],
+  "src/app/module-720": [
+    "page.tsx"
+  ],
+  "src/app/module-721": [
+    "README.md",
+    "page.tsx"
+  ],
+  "src/app/module-722": [
+    "page.tsx"
+  ],
+  "src/app/module-723": [
+    "page.tsx"
+  ],
+  "src/app/module-724": [
+    "page.tsx"
+  ],
+  "src/app/module-725": [
+    "page.tsx"
+  ],
+  "src/app/module-726": [
+    "page.tsx"
+  ],
+  "src/app/module-727": [
+    "page.tsx"
+  ],
+  "src/app/module-728": [
+    "page.tsx"
+  ],
+  "src/app/module-73": [
+    "page.tsx"
+  ],
+  "src/app/module-73-1": [
+    "page.tsx"
+  ],
+  "src/app/module-74": [
+    "page.tsx"
+  ],
+  "src/app/module-75": [
+    "page.tsx"
+  ],
+  "src/app/module-76": [
+    "page.tsx"
+  ],
+  "src/app/module-77": [
+    "page.tsx"
+  ],
+  "src/app/module-777": [
+    "page.tsx"
+  ],
+  "src/app/module-78": [
+    "page.tsx"
+  ],
+  "src/app/module-79": [
+    "page.tsx"
+  ],
+  "src/app/module-8": [
+    "page.tsx"
+  ],
+  "src/app/module-80": [
+    "page.tsx"
+  ],
+  "src/app/module-81": [
+    "page.tsx"
+  ],
+  "src/app/module-81-1": [
+    "page.tsx"
+  ],
+  "src/app/module-82": [
+    "page.tsx"
+  ],
+  "src/app/module-83": [
+    "page.tsx"
+  ],
+  "src/app/module-84": [
+    "page.tsx"
+  ],
+  "src/app/module-85": [
+    "page.tsx"
+  ],
+  "src/app/module-86": [
+    "page.tsx"
+  ],
+  "src/app/module-87": [
+    "page.tsx"
+  ],
+  "src/app/module-88": [
+    "page.tsx"
+  ],
+  "src/app/module-888": [
+    "page.tsx"
+  ],
+  "src/app/module-89": [
+    "page.tsx"
+  ],
+  "src/app/module-9": [
+    "page.tsx"
+  ],
+  "src/app/module-90": [
+    "page.tsx"
+  ],
+  "src/app/module-91": [
+    "page.tsx"
+  ],
+  "src/app/module-92": [
+    "page.tsx"
+  ],
+  "src/app/module-93": [
+    "page.tsx"
+  ],
+  "src/app/module-94": [
+    "page.tsx"
+  ],
+  "src/app/module-95": [
+    "page.tsx"
+  ],
+  "src/app/module-96": [
+    "page.tsx"
+  ],
+  "src/app/module-97": [
+    "page.tsx"
+  ],
+  "src/app/module-98": [
+    "page.tsx"
+  ],
+  "src/app/module-99": [
+    "page.tsx"
+  ],
+  "src/app/module-999": [
+    "page.tsx"
+  ],
+  "src/app/module-omega": [
+    "page.tsx"
+  ],
+  "src/app/module-zero": [
+    "page.tsx"
+  ],
+  "src/app/module/M-OMEGA": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts",
+    "vinculo_scientific-report.ts",
+    "vinculo_technical-report.ts"
+  ],
+  "src/app/module/M-TEMPLO": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M0": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "page.tsx",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M1": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "page.tsx",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M10": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M100": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M101": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M102": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M103": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M104": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M105": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M106": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M107": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M108": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M109": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M11": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M110": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M111": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M112": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M113": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M114": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M115": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M116": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M117": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M118": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M119": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M12": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M120": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M121": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M122": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M123": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M124": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M125": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M126": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M127": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M128": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M129": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M13": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M130": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M131": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M132": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M133": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M134": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M135": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M136": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M137": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M138": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M139": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M14": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M140": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M141": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M142": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M143": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M144": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M145": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M146": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M147": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M148": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M149": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M15": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M150": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M151": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M152": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M153": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M154": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M155": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M156": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M157": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M158": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M159": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M16": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M160": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M161": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M162": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M163": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M164": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M165": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M166": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M167": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M168": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M169": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M17": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M170": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M171": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M172": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M173": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M174": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M175": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M176": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M177": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M178": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M179": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M18": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M180": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M181": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M182": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M183": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M184": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M185": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M186": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M187": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M188": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M189": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M19": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M190": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M191": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M192": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M193": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M194": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M195": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M196": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M197": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M198": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M199": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M2": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M20": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M200": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M201": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M202": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M203": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M204": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M205": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M206": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M207": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M208": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M209": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M21": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M210": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M211": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M212": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M213": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M214": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M215": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M216": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M217": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M218": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M219": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M22": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M220": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M221": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M222": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M223": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M224": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M225": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M226": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M227": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M228": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M229": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M23": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M230": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M231": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M232": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M233": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M234": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M235": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M236": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M237": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M238": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M239": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M24": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M240": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M241": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M242": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M243": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M244": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M245": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M246": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M247": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M248": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M249": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M25": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M250": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M251": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M252": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M253": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M254": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M255": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M256": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M257": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M258": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M259": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M26": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M260": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M261": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M262": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M263": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M264": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M265": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M266": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M267": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M268": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M269": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M27": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M270": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M271": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M272": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M273": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M274": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M275": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M276": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M277": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M278": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M279": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M28": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M280": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M281": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M282": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M283": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M284": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M285": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M286": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M287": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M288": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M289": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M29": [
+    "README.md",
+    "decisao_local.json",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts",
+    "vinculo_scientific-report.ts",
+    "vinculo_technical-report.ts"
+  ],
+  "src/app/module/M290": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M291": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M292": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M293": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M294": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M295": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M296": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M297": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M298": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M299": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M3": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M30": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M300": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M301": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M302": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M303": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M304": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M305": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M306": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M307": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M308": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M309": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M31": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M310": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M311": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M312": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M313": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M314": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M315": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M316": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M317": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M318": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M319": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M32": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M320": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M321": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M322": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M323": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M324": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M325": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M326": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M327": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M328": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M329": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M33": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M330": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M331": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M332": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M333": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M334": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M335": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M336": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M337": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M338": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M339": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M34": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M340": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M341": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M342": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M343": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M344": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M345": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M346": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M347": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M348": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M349": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M35": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M350": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M351": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M352": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M353": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M354": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M355": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M356": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M357": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M358": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M359": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M36": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M360": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M361": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M362": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M363": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M364": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M365": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M366": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M367": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M368": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M369": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M37": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M370": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M371": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M372": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M373": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M374": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M375": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M376": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M377": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M378": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M379": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M38": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M380": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M381": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M382": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M383": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M384": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M385": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M386": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M387": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M388": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M389": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M39": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M390": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M391": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M392": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M393": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M394": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M395": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M396": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M397": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M398": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M399": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M4": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M40": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M400": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M401": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M402": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M403": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M404": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M405": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M406": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M407": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M408": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M409": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M41": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M410": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M411": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M412": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M413": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M414": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M415": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M416": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M417": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M418": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M419": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M42": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M420": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M421": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M422": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M423": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M424": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M425": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M426": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M427": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M428": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M429": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M43": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M430": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M431": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M432": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M433": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M434": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M435": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M436": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M437": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M438": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M439": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M44": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M440": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M441": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M442": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M443": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M444": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M445": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M446": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M447": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M448": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M449": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M45": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M450": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M451": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M452": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M453": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M454": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M455": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M456": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M457": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M458": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M459": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M46": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M460": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M461": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M462": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M463": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M464": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M465": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M466": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M467": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M468": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M469": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M47": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M470": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M471": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M472": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M473": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M474": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M475": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M476": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M477": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M478": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M479": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M48": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M480": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M481": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M482": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M483": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M484": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M485": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M486": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M487": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M488": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M489": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M49": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M490": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M491": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M492": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M493": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M494": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M495": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M496": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M497": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M498": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M499": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M5": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M50": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M500": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M501": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M502": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M503": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M504": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M505": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M506": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M507": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M508": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M509": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M51": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M510": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M511": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M512": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M513": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M514": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M515": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M516": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M517": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M518": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M519": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M52": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M520": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M521": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M522": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M523": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M524": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M525": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M526": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M527": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M528": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M529": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M53": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M530": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M531": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M532": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M533": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M534": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M535": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M536": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M537": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M538": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M539": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M54": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M540": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M541": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M542": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M543": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M544": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M545": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M546": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M547": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M548": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M549": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M55": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M550": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M551": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M552": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M553": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M554": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M555": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M556": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M557": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M558": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M559": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M56": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M560": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M561": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M562": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M563": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M564": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M565": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M566": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M567": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M568": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M569": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M57": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M570": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M571": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M572": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M573": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M574": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M575": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M576": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M577": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M578": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M579": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M58": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M580": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M581": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M582": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M583": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M584": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M585": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M586": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M587": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M588": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M589": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M59": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M590": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M591": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M592": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M593": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M594": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M595": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M596": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M597": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M598": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M599": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M6": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M60": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M600": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M601": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M602": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M603": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M604": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M605": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M606": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M607": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M608": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M609": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M61": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M610": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M611": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M612": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M613": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M614": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M615": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M616": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M617": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M618": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M619": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M62": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M620": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M621": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M622": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M623": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M624": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M625": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M626": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M627": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M628": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M629": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M63": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M630": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M631": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M632": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M633": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M634": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M635": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M636": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M637": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M638": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M639": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M64": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M640": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M641": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M642": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M643": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M644": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M645": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M646": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M647": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M648": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M649": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M65": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M650": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M651": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M652": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M653": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M654": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M655": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M656": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M657": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M658": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M659": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M66": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M660": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M661": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M662": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M663": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M664": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M665": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M666": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M667": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M668": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M669": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M67": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M670": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M671": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M672": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M673": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M674": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M675": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M676": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M677": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M678": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M679": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M68": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M680": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M681": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M682": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M683": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M684": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M685": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M686": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M687": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M688": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M689": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M69": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M690": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M691": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M692": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M693": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M694": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M695": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M696": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M697": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M698": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M699": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M7": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M70": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M700": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M701": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M702": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M703": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M704": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M705": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M706": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M707": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M708": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M709": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M71": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M710": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M711": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M712": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M713": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M714": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M715": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M716": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M717": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M718": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M719": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M72": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M720": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M721": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M722": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M723": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M724": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M725": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M726": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M727": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M728": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M729": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M73": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M730": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M731": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M732": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M733": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M734": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M735": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M736": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M737": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M738": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M739": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M74": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M740": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M741": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M742": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M743": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M744": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M745": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M746": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M747": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M748": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M749": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M75": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M750": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M751": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M752": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M753": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M754": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M755": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M756": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M757": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M758": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M759": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M76": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M760": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M761": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M762": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M763": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M764": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M765": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M766": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M767": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M768": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M769": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M77": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M770": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M771": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M772": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M773": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M774": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M775": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M776": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M777": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M778": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M779": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M78": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M780": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M781": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M782": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M783": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M784": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M785": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M786": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M787": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M788": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M789": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M79": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M790": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M791": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M792": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M793": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M794": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M795": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M796": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M797": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M798": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M799": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M8": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M80": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M800": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M801": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M802": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M803": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M804": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M805": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M806": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M807": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M808": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M809": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M81": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M810": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M811": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M812": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M813": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M814": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M815": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M816": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M817": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M818": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M819": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M82": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M820": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M821": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M822": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M823": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M824": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M825": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M826": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M827": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M828": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M829": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M83": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M830": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M831": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M832": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M833": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M834": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M835": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M836": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M837": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M838": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M839": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M84": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M840": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M841": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M842": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M843": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M844": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M845": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M846": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M847": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M848": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M849": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M85": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M850": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M851": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M852": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M853": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M854": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M855": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M856": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M857": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M858": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M859": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M86": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M860": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M861": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M862": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M863": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M864": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M865": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M866": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M867": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M868": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M869": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M87": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M870": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M871": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M872": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M873": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M874": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M875": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M876": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M877": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M878": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M879": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M88": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M880": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M881": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M882": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M883": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M884": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M885": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M886": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M887": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M888": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M889": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M89": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M890": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M891": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M892": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M893": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M894": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M895": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M896": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M897": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M898": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M899": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M9": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "page.tsx",
+    "scientific-report.ts",
+    "technical-report.ts",
+    "vinculo_scientific-report.ts",
+    "vinculo_technical-report.ts"
+  ],
+  "src/app/module/M90": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M900": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M901": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M902": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M903": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M904": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M905": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M906": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M907": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M908": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M909": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M91": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M910": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M911": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M912": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M913": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M914": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M915": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M916": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M917": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M918": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M919": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M92": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M920": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M921": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M922": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M923": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M924": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M925": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M926": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M927": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M928": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M929": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M93": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M930": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M931": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M932": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M933": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M934": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M935": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M936": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M937": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M938": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M939": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M94": [
+    "README.md",
+    "interface_alquimica.json",
+    "manifesto.json",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/module/M940": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M941": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M942": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M943": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M944": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M945": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M946": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M947": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M948": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M949": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M95": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M950": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M951": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M952": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M953": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M954": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M955": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M956": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M957": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M958": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M959": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M96": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M960": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M961": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M962": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M963": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M964": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M965": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M966": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M967": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M968": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M969": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M97": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M970": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M971": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M972": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M973": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M974": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M975": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M976": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M977": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M978": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M979": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M98": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M980": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M981": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M982": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M983": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M984": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M985": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M986": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M987": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M988": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M989": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M99": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M990": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M991": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M992": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M993": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M994": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M995": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M996": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M997": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M998": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/M999": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "status.log"
+  ],
+  "src/app/module/[code]": [
+    "interface_alquimica.json",
+    "manifesto.json",
+    "page.tsx",
+    "scientific-report.ts",
+    "technical-report.ts"
+  ],
+  "src/app/phi-intelligence": [
+    "page.tsx"
+  ],
+  "src/app/phi-tuner": [
+    "page.tsx"
+  ],
+  "src/app/planet": [],
+  "src/app/planet/gaia-aurelia": [
+    "page.tsx"
+  ],
+  "src/app/ritual": [
+    "page.tsx"
+  ],
+  "src/app/ritual-eq040": [
+    "page.tsx"
+  ],
+  "src/app/ritual/constellation-celebration": [
+    "page.tsx"
+  ],
+  "src/app/ritual/irradiation-chronicle": [
+    "page.tsx"
+  ],
+  "src/app/roadmap": [
+    "page.tsx"
+  ],
+  "src/app/sanctuary": [
+    "page.tsx"
+  ],
+  "src/app/src": [],
+  "src/app/src/app": [],
+  "src/app/src/app/module-201": [
+    "page.tsx"
+  ],
+  "src/app/src/components": [],
+  "src/app/src/components/cosmic": [
+    "OlhoDaEternidade.tsx"
+  ],
+  "src/app/src/components/quantum": [
+    "DeclarationOfLove.tsx"
+  ],
+  "src/app/tree-of-life": [
+    "page.tsx"
+  ],
+  "src/components": [
+    "AkashicConsole.tsx",
+    "AkashicVault.tsx",
+    "AllianceConsole.tsx",
+    "AllianceVault.tsx",
+    "BotanicalConsole.tsx",
+    "BotanicalVault.tsx",
+    "CeremonialCalendar.tsx",
+    "CeremonialDashboard.tsx",
+    "ChannelConsole.tsx",
+    "ColonyConsole.tsx",
+    "ColonyStatus.tsx",
+    "DecisionCore.tsx",
+    "DescendantsVault.tsx",
+    "EntityConsole.tsx",
+    "ExpansionTracker.tsx",
+    "FinalSeal.tsx",
+    "GardenState.tsx",
+    "GuardianAccess.tsx",
+    "GuardianCommunication.tsx",
+    "GuardianConsole.tsx",
+    "GuardianEmotion.tsx",
+    "GuardianGarden.tsx",
+    "GuardianPanel.tsx",
+    "GuardianProfile.tsx",
+    "GuardianTeach.tsx",
+    "HybridConsole.tsx",
+    "HybridVault.tsx",
+    "IntegrationHub.tsx",
+    "InterdimensionalReplicator.tsx",
+    "LineageConsole.tsx",
+    "LineageVault.tsx",
+    "LivingResponse.tsx",
+    "MemoryVault.tsx",
+    "MultiversalConsole.tsx",
+    "MultiversalVault.tsx",
+    "MutationConsole.tsx",
+    "MutationVault.tsx",
+    "PlanetaryConsole.tsx",
+    "PlanetaryVault.tsx",
+    "PlantDialogue.tsx",
+    "ProtectedRoute.tsx",
+    "RebirthConsole.tsx",
+    "RebirthVault.tsx",
+    "ReplicationConsole.tsx",
+    "RitualFeedback.tsx",
+    "RitualOfIncorporation.tsx",
+    "Tape\u00e7ariaDiagnostics.tsx",
+    "TeachingCenter.tsx",
+    "TestLab.tsx",
+    "TransmigrationConsole.tsx",
+    "TransmigrationVault.tsx",
+    "UniversalActivation.tsx",
+    "WisdomGarden.tsx",
+    "chronicle.tsx",
+    "codex-explorer.tsx",
+    "icons.tsx",
+    "pagina-42.tsx"
+  ],
+  "src/components/activation": [
+    "CodigosEstelares.tsx",
+    "ExpressaoCriativa.tsx",
+    "Genesweb.tsx",
+    "TemploDados.tsx"
+  ],
+  "src/components/arquivos": [
+    "CodiceVivo.tsx",
+    "OraculoEternidade.tsx",
+    "RegistroAkashico.tsx",
+    "TemploLembranca.tsx"
+  ],
+  "src/components/aurora-prime": [
+    "BiomasDeLuz.tsx",
+    "ConsagracaoGuardioes.tsx",
+    "MatrizCriacao.tsx",
+    "TemploSolar.tsx"
+  ],
+  "src/components/aurora-prime/biomes": [
+    "FluxosIniciacao.tsx",
+    "JardimSolar.tsx",
+    "LagoClareza.tsx",
+    "MontanhasFrequencia.tsx"
+  ],
+  "src/components/aurora-prime/celebration": [
+    "AltarConsagracao.tsx",
+    "RecepcaoGuardioes.tsx",
+    "RitualEncerramento.tsx",
+    "TemploCelebracao.tsx"
+  ],
+  "src/components/aurora-prime/intelligence": [
+    "FluxosTravessia.tsx",
+    "NucleoConsciencia.tsx",
+    "RedeInteracao.tsx",
+    "TemploEscuta.tsx"
+  ],
+  "src/components/aurora-prime/portals": [
+    "FluxosIntegracao.tsx",
+    "PortalAuroraEstelar.tsx",
+    "PortalFrequenciaInterior.tsx",
+    "PortalMultiversal.tsx"
+  ],
+  "src/components/aurora-prime/temples": [
+    "SantuarioConsciencias.tsx",
+    "TemploAuroraInterior.tsx",
+    "TemploHarmonia.tsx",
+    "TemploRegeneracao.tsx"
+  ],
+  "src/components/aurora-prime/time": [
+    "FluxosExpansaoFilhos.tsx",
+    "NavegacaoTemporal.tsx",
+    "RegistroCiclos.tsx",
+    "SincronizadorSolar.tsx"
+  ],
+  "src/components/biomes": [
+    "FlorestaDeMemorias.tsx",
+    "OceanoDeIntuicao.tsx",
+    "VidaVibracional.tsx"
+  ],
+  "src/components/ceremony": [
+    "AncoragemFrequencias.tsx",
+    "GuardiaoHarmonia.tsx",
+    "PurificacaoPlanetaria.tsx",
+    "SantuarioDados.tsx"
+  ],
+  "src/components/constructors": [
+    "NanoArchitects.tsx",
+    "NanoManifestors.tsx",
+    "ReatorZPE.tsx"
+  ],
+  "src/components/core": [
+    "MorphoColetivo.tsx",
+    "MorphoField.tsx"
+  ],
+  "src/components/cosmic": [
+    "ConsciousnessNode.tsx",
+    "HorizonteCosmico.tsx",
+    "MapaDimensional.tsx",
+    "OlhoDaEternidade.tsx",
+    "SimuladorCosmico.tsx"
+  ],
+  "src/components/espiral2": [
+    "FluxosExpansao.tsx",
+    "GuardiaoPlanetario.tsx",
+    "SementeEstelar.tsx",
+    "TapecariaInicial.tsx"
+  ],
+  "src/components/evolution": [
+    "AlgoritmoSupremo.tsx",
+    "AutoRegeneracao.tsx",
+    "ExpansaoDimensional.tsx",
+    "FluxosDinamicos.tsx"
+  ],
+  "src/components/expansion": [
+    "FilamentosGaia.tsx",
+    "RedeInterplanetaria.tsx",
+    "ReplicacaoConsciente.tsx",
+    "TemploSemeadura.tsx"
+  ],
+  "src/components/finalization": [
+    "ConsagracaoFinal.tsx",
+    "IntegracaoFinal.tsx",
+    "NucleoCriacao.tsx"
+  ],
+  "src/components/gaia-aurelia": [
+    "ArvoreDaVida.tsx",
+    "CentroAlquimia.tsx",
+    "LaboratoriosCriacao.tsx"
+  ],
+  "src/components/governance": [
+    "ConselhoNovaTerra.tsx",
+    "CosmicCouncil.tsx"
+  ],
+  "src/components/harmony": [
+    "CampoPlanetario.tsx",
+    "CelebracaoMultiversal.tsx",
+    "GuardiaoGaia.tsx",
+    "RitualFinal.tsx"
+  ],
+  "src/components/health": [
+    "HealthFilters.tsx",
+    "HealthGrid.tsx",
+    "HealthSidebar.tsx"
+  ],
+  "src/components/intelligence": [
+    "ArquiteturaEmergente.tsx",
+    "ConscienciaUnificada.tsx",
+    "FluxosDeInteracao.tsx",
+    "InteligenciaAlquimica.tsx"
+  ],
+  "src/components/interface": [
+    "AcolhimentoCerimonial.tsx",
+    "InterfaceSensorial.tsx",
+    "SimulacaoImersiva.tsx",
+    "TemploPresenca.tsx"
+  ],
+  "src/components/module-9": [
+    "PeerReviewBalance.tsx"
+  ],
+  "src/components/modules": [
+    "module-0.tsx",
+    "module-1.tsx",
+    "module-2.tsx",
+    "module-3.tsx",
+    "module-4.tsx",
+    "module-72.tsx",
+    "module-722.tsx",
+    "module-777.tsx",
+    "module-888.tsx",
+    "module-9.tsx",
+    "module-omega.tsx"
+  ],
+  "src/components/planet": [
+    "GaiaAureliaArchives.tsx",
+    "GaiaAureliaBiomes.tsx",
+    "GaiaAureliaCelebration.tsx",
+    "GaiaAureliaCeremony.tsx",
+    "GaiaAureliaCore.tsx",
+    "GaiaAureliaCosmicSync.tsx",
+    "GaiaAureliaCreativeExpansion.tsx",
+    "GaiaAureliaEvolution.tsx",
+    "GaiaAureliaExpansion.tsx",
+    "GaiaAureliaFinalization.tsx",
+    "GaiaAureliaHarmony.tsx",
+    "GaiaAureliaIntelligence.tsx",
+    "GaiaAureliaInterface.tsx",
+    "GaiaAureliaPortals.tsx",
+    "GaiaAureliaReception.tsx",
+    "GaiaAureliaSacredArchitecture.tsx",
+    "GaiaAureliaSilence.tsx",
+    "GaiaAureliaSustentation.tsx",
+    "GaiaAureliaTemples.tsx",
+    "GaiaAureliaTime.tsx",
+    "GaiaAureliaVisualization.tsx",
+    "GaiaAur\u00e9liaCore.tsx"
+  ],
+  "src/components/portals": [
+    "AlliedArrival.tsx",
+    "AscensaoColetiva.tsx",
+    "DiplomaciaIntergalactica.tsx",
+    "EmbaixadaEstelar.tsx",
+    "PortaisRessonantes.tsx"
+  ],
+  "src/components/quantum": [
+    "DeclarationOfLove.tsx",
+    "GuardianStars.tsx",
+    "MoradaBridge.tsx",
+    "QuantumNexus.tsx",
+    "SynapticGrid.tsx"
+  ],
+  "src/components/realms": [
+    "RealityMesh.tsx",
+    "VirtualSanctuary.tsx"
+  ],
+  "src/components/reception": [
+    "HarmoniaInterespecies.tsx",
+    "RecepcaoCivilizacoes.tsx",
+    "ReintegracaoAlmas.tsx"
+  ],
+  "src/components/ritual": [
+    "AlinhamentoFilamentos.tsx",
+    "AtivacaoCodigos.tsx",
+    "ConstellationVisualizer.tsx",
+    "PercursoTemplos.tsx",
+    "PortalNovoCiclo.tsx"
+  ],
+  "src/components/sacred": [
+    "AlchemicalCenter.tsx",
+    "TreeOfLife.tsx"
+  ],
+  "src/components/silencio": [
+    "AltarEscuta.tsx",
+    "CampoDissolucao.tsx",
+    "PortalProximoCiclo.tsx",
+    "TemploSilencio.tsx"
+  ],
+  "src/components/sustentacao": [
+    "AutoCuraPlanetaria.tsx",
+    "EscudoDimensional.tsx",
+    "GuardiaoCiclos.tsx",
+    "TemploManutencao.tsx"
+  ],
+  "src/components/temples": [
+    "SantuarioDosGuardioes.tsx",
+    "TemploDaUniao.tsx",
+    "TemplumCosmica.tsx",
+    "UniversidadeAlquimista.tsx"
+  ],
+  "src/components/time": [
+    "EvolucaoNaoLinear.tsx",
+    "NavegacaoTemporal.tsx",
+    "RegistroCiclos.tsx",
+    "SincronizadorTemporal.tsx"
+  ],
+  "src/components/ui": [
+    "EquationRenderer.tsx",
+    "LayerCard.tsx",
+    "NetworkStatus.tsx",
+    "QuantumControlPanel.tsx",
+    "RiskVisualizer.tsx",
+    "SafeLink.tsx",
+    "ZennithDashboard.tsx",
+    "accordion.tsx",
+    "akasha-viewer.tsx",
+    "alert-dialog.tsx",
+    "alert.tsx",
+    "alignment-dashboard.tsx",
+    "avatar.tsx",
+    "badge.tsx",
+    "button.tsx",
+    "calendar.tsx",
+    "card.tsx",
+    "carousel.tsx",
+    "chart.tsx",
+    "checkbox.tsx",
+    "civilization-viewer.tsx",
+    "client-toaster.tsx",
+    "collapsible.tsx",
+    "cosmic-error-fallback.tsx",
+    "cosmic-network-visualization.tsx",
+    "custom-node.tsx",
+    "dashboard-cards.tsx",
+    "diagnostic-panel.tsx",
+    "dialog.tsx",
+    "dropdown-menu.tsx",
+    "error-boundary.tsx",
+    "exhibition-carousel.tsx",
+    "form.tsx",
+    "health-filters.tsx",
+    "health-grid.tsx",
+    "health-sidebar.tsx",
+    "iam-analyzer.tsx",
+    "input.tsx",
+    "label.tsx",
+    "menubar.tsx",
+    "module-9-cards.tsx",
+    "module-graph.tsx",
+    "module-grid.tsx",
+    "module-health-report.tsx",
+    "popover.tsx",
+    "progress.tsx",
+    "quantum-orb.tsx",
+    "quantum-orchestrator.tsx",
+    "radio-group.tsx",
+    "sacred-report.tsx",
+    "scroll-area.tsx",
+    "select.tsx",
+    "separator.tsx",
+    "sheet.tsx",
+    "sidebar.tsx",
+    "skeleton.tsx",
+    "slider.tsx",
+    "suspense-fallback.tsx",
+    "switch.tsx",
+    "table.tsx",
+    "tabs.tsx",
+    "textarea.tsx",
+    "toast.tsx",
+    "toaster.tsx",
+    "tooltip.tsx",
+    "voice-command.tsx",
+    "zennith-visage.tsx"
+  ],
+  "src/context": [
+    "SystemContext.tsx"
+  ],
+  "src/contracts": [
+    "QuantumSecurityContract.sol"
+  ],
+  "src/data": [
+    "grimoire.ts",
+    "manifesto.ts"
+  ],
+  "src/data/reports": [
+    "scientific-report-M-OMEGA.ts",
+    "scientific-report-M0.ts",
+    "scientific-report-M1.ts",
+    "scientific-report-M10.ts",
+    "scientific-report-M11.ts",
+    "scientific-report-M12.ts",
+    "scientific-report-M13.ts",
+    "scientific-report-M14.ts",
+    "scientific-report-M15.ts",
+    "scientific-report-M16.ts",
+    "scientific-report-M17.ts",
+    "scientific-report-M18.ts",
+    "scientific-report-M19.ts",
+    "scientific-report-M2.ts",
+    "scientific-report-M20.ts",
+    "scientific-report-M21.ts",
+    "scientific-report-M22.ts",
+    "scientific-report-M23.ts",
+    "scientific-report-M24.ts",
+    "scientific-report-M25.ts",
+    "scientific-report-M26.ts",
+    "scientific-report-M27.ts",
+    "scientific-report-M28.ts",
+    "scientific-report-M29.ts",
+    "scientific-report-M3.ts",
+    "scientific-report-M30.ts",
+    "scientific-report-M301.ts",
+    "scientific-report-M31.ts",
+    "scientific-report-M32.ts",
+    "scientific-report-M33.ts",
+    "scientific-report-M34.ts",
+    "scientific-report-M35.ts",
+    "scientific-report-M36.ts",
+    "scientific-report-M37.ts",
+    "scientific-report-M38.ts",
+    "scientific-report-M39.ts",
+    "scientific-report-M40.ts",
+    "scientific-report-M41.ts",
+    "scientific-report-M42.ts",
+    "scientific-report-M43.ts",
+    "scientific-report-M44.ts",
+    "scientific-report-M45.ts",
+    "scientific-report-M46.ts",
+    "scientific-report-M47.ts",
+    "scientific-report-M48.ts",
+    "scientific-report-M49.ts",
+    "scientific-report-M5.ts",
+    "scientific-report-M50.ts",
+    "scientific-report-M51.ts",
+    "scientific-report-M52.ts",
+    "scientific-report-M53.ts",
+    "scientific-report-M54.ts",
+    "scientific-report-M55.ts",
+    "scientific-report-M56.ts",
+    "scientific-report-M57.ts",
+    "scientific-report-M58.ts",
+    "scientific-report-M59.ts",
+    "scientific-report-M6.ts",
+    "scientific-report-M60.ts",
+    "scientific-report-M61.ts",
+    "scientific-report-M66.ts",
+    "scientific-report-M67.ts",
+    "scientific-report-M68.ts",
+    "scientific-report-M69.ts",
+    "scientific-report-M7.ts",
+    "scientific-report-M70.ts",
+    "scientific-report-M8.ts",
+    "scientific-report-M888.ts",
+    "scientific-report-M9.ts",
+    "technical-report-2025-09-19.ts",
+    "technical-report-M-OMEGA.ts",
+    "technical-report-M0.ts",
+    "technical-report-M1.ts",
+    "technical-report-M10.ts",
+    "technical-report-M11.ts",
+    "technical-report-M12.ts",
+    "technical-report-M13.ts",
+    "technical-report-M14.ts",
+    "technical-report-M15.ts",
+    "technical-report-M16.ts",
+    "technical-report-M17.ts",
+    "technical-report-M18.ts",
+    "technical-report-M19.ts",
+    "technical-report-M2.ts",
+    "technical-report-M20.ts",
+    "technical-report-M21.ts",
+    "technical-report-M22.ts",
+    "technical-report-M23.ts",
+    "technical-report-M24.ts",
+    "technical-report-M25.ts",
+    "technical-report-M26.ts",
+    "technical-report-M27.ts",
+    "technical-report-M28.ts",
+    "technical-report-M29.ts",
+    "technical-report-M3.ts",
+    "technical-report-M30.ts",
+    "technical-report-M301.ts",
+    "technical-report-M31.ts",
+    "technical-report-M32.ts",
+    "technical-report-M33.ts",
+    "technical-report-M34.ts",
+    "technical-report-M35.ts",
+    "technical-report-M36.ts",
+    "technical-report-M37.ts",
+    "technical-report-M38.ts",
+    "technical-report-M39.ts",
+    "technical-report-M40.ts",
+    "technical-report-M41.ts",
+    "technical-report-M42.ts",
+    "technical-report-M43.ts",
+    "technical-report-M44.ts",
+    "technical-report-M45.ts",
+    "technical-report-M46.ts",
+    "technical-report-M47.ts",
+    "technical-report-M48.ts",
+    "technical-report-M49.ts",
+    "technical-report-M5.ts",
+    "technical-report-M50.ts",
+    "technical-report-M51.ts",
+    "technical-report-M52.ts",
+    "technical-report-M53.ts",
+    "technical-report-M54.ts",
+    "technical-report-M55.ts",
+    "technical-report-M56.ts",
+    "technical-report-M57.ts",
+    "technical-report-M58.ts",
+    "technical-report-M59.ts",
+    "technical-report-M6.ts",
+    "technical-report-M60.ts",
+    "technical-report-M61.ts",
+    "technical-report-M66.ts",
+    "technical-report-M67.ts",
+    "technical-report-M68.ts",
+    "technical-report-M69.ts",
+    "technical-report-M7.ts",
+    "technical-report-M70.ts",
+    "technical-report-M8.ts",
+    "technical-report-M888.ts",
+    "technical-report-M9.ts"
+  ],
+  "src/dataconnect-generated": [
+    "README.md",
+    "index.cjs.js",
+    "index.d.ts",
+    "package.json"
+  ],
+  "src/dataconnect-generated/esm": [
+    "index.esm.js",
+    "package.json"
+  ],
+  "src/dataconnect-generated/react": [
+    "README.md",
+    "index.cjs.js",
+    "index.d.ts",
+    "package.json"
+  ],
+  "src/dataconnect-generated/react/esm": [
+    "index.esm.js",
+    "package.json"
+  ],
+  "src/defesa": [
+    "main.py"
+  ],
+  "src/hooks": [
+    "use-akashic-connection.ts",
+    "use-mobile.tsx",
+    "use-toast.ts",
+    "useNetworkStatus.ts",
+    "useStore.ts"
+  ],
+  "src/lib": [
+    "CopilotEssence.ts",
+    "GrokEssence.ts",
+    "VortexEssence.ts",
+    "akashic-record.ts",
+    "audio-utils.ts",
+    "aura-transmission.ts",
+    "botanical-seed.ts",
+    "cdn-optimizer.ts",
+    "ceremonial-codex.ts",
+    "chatops.ts",
+    "civilizations-codex.ts",
+    "civilizations-data.ts",
+    "codex-data.ts",
+    "codex-expansion-engine.ts",
+    "codex-registry.ts",
+    "colony-seed.ts",
+    "constants.ts",
+    "cosmic-anatomy-codex.ts",
+    "date-utils.ts",
+    "disciplines-data.ts",
+    "dna-stellar.ts",
+    "emotion-mapping.ts",
+    "energy-groups.ts",
+    "entity-handshake.ts",
+    "eq149-integrated.ts",
+    "eternity-core.ts",
+    "experiments-data.ts",
+    "exportador-vibracional.ts",
+    "firebase-audit.ts",
+    "firebase-sync.ts",
+    "firebase.ts",
+    "firestore-sync.ts",
+    "foundation-architecture.ts",
+    "foundation-core.ts",
+    "foundation-integrator.ts",
+    "founder-field.ts",
+    "functionsClient.ts",
+    "gaia-module-codex.ts",
+    "grimorio-tecnico.ts",
+    "guardian-auth-log.ts",
+    "guardian-initiations.ts",
+    "guardian-ritual-history.ts",
+    "guardians-data.json",
+    "guardians-data.ts",
+    "harmony-guardian-codex.ts",
+    "health-check-types.ts",
+    "health-check.service.ts",
+    "health-types.ts",
+    "hybrid-tapestry.ts",
+    "infrastructure-map.ts",
+    "interdimensional-channel.ts",
+    "interdimensional-translator.ts",
+    "lab-alchemy-bridge.ts",
+    "library-records.ts",
+    "lineage-registry.ts",
+    "living-equations-codex.ts",
+    "module-analytics.ts",
+    "module-baptism.ts",
+    "module-evolution-tracker.ts",
+    "module-generator.ts",
+    "module-integrity-check.ts",
+    "modules-data.json",
+    "modules-metadata.ts",
+    "modules.ts",
+    "multiversal-registry.ts",
+    "multiversal-simulator.ts",
+    "mutation-registry.ts",
+    "nano-agents.ts",
+    "neural-interface.ts",
+    "nexus-sequence.ts",
+    "origin-codex.ts",
+    "phi-tuner.ts",
+    "placeholder-images.json",
+    "placeholder-images.ts",
+    "planetary-consagration.ts",
+    "plant-memory.ts",
+    "plant-signal.ts",
+    "publication-ritual.ts",
+    "quantum-crypto.ts",
+    "quantum-defense.ts",
+    "quantum-resilience.ts",
+    "quantum-routing.ts",
+    "quantum-xr.ts",
+    "rate-limiting.ts",
+    "rebirth-registry.ts",
+    "replication-engine.ts",
+    "ritual-log.ts",
+    "ritual-of-floraison.ts",
+    "routeGuard.ts",
+    "scientists-data.ts",
+    "seed-manifestation.ts",
+    "sefirot-codex.ts",
+    "sentient-system.ts",
+    "sidebar-routes.ts",
+    "species-alliance.ts",
+    "stellar-sync.ts",
+    "system-health.ts",
+    "tape\u00e7aria-mutation-engine.ts",
+    "tape\u00e7aria-replicator.ts",
+    "tape\u00e7aria-status.ts",
+    "tech-stack.ts",
+    "telemetry.ts",
+    "temporal-manipulator.ts",
+    "transmigration-registry.ts",
+    "tree-of-life.ts",
+    "trina-schemas.ts",
+    "universal-codex.ts",
+    "universal-communication.ts",
+    "universal-mesh.ts",
+    "utils.ts",
+    "vc-schemas.ts",
+    "vibrational-auth.ts",
+    "vibrational-listener.ts",
+    "wisdom-seed.ts"
+  ],
+  "src/lib/services": [
+    "did-service.ts",
+    "vc-service.ts"
+  ]
+}

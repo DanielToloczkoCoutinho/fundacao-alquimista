@@ -1,0 +1,5017 @@
+[
+  {
+    "modulo": "M-OMEGA",
+    "missao": "Ancorar os canais interdimensionais",
+    "timestamp": "2025-09-26T20:50:35.050477"
+  },
+  {
+    "modulo": "M-TEMPLO",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.277560"
+  },
+  {
+    "modulo": "M0",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.450644"
+  },
+  {
+    "modulo": "M1",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.714093"
+  },
+  {
+    "modulo": "M10",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.124711"
+  },
+  {
+    "modulo": "M100",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.091952"
+  },
+  {
+    "modulo": "M101",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.119324"
+  },
+  {
+    "modulo": "M102",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.905251"
+  },
+  {
+    "modulo": "M103",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.267389"
+  },
+  {
+    "modulo": "M104",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.163624"
+  },
+  {
+    "modulo": "M105",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.142989"
+  },
+  {
+    "modulo": "M106",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.758602"
+  },
+  {
+    "modulo": "M107",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.915125"
+  },
+  {
+    "modulo": "M108",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.035161"
+  },
+  {
+    "modulo": "M109",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.896230"
+  },
+  {
+    "modulo": "M11",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.006198"
+  },
+  {
+    "modulo": "M110",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.239947"
+  },
+  {
+    "modulo": "M111",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.118522"
+  },
+  {
+    "modulo": "M112",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.331139"
+  },
+  {
+    "modulo": "M113",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.138264"
+  },
+  {
+    "modulo": "M114",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.497329"
+  },
+  {
+    "modulo": "M115",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:34.967206"
+  },
+  {
+    "modulo": "M116",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.323506"
+  },
+  {
+    "modulo": "M117",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.049625"
+  },
+  {
+    "modulo": "M118",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.231589"
+  },
+  {
+    "modulo": "M119",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.843372"
+  },
+  {
+    "modulo": "M12",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.401788"
+  },
+  {
+    "modulo": "M120",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.779026"
+  },
+  {
+    "modulo": "M121",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.130341"
+  },
+  {
+    "modulo": "M122",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:34.985349"
+  },
+  {
+    "modulo": "M123",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.609001"
+  },
+  {
+    "modulo": "M124",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:34.976940"
+  },
+  {
+    "modulo": "M125",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.075503"
+  },
+  {
+    "modulo": "M126",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.900532"
+  },
+  {
+    "modulo": "M127",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.126292"
+  },
+  {
+    "modulo": "M128",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.206202"
+  },
+  {
+    "modulo": "M129",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.884689"
+  },
+  {
+    "modulo": "M13",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.162758"
+  },
+  {
+    "modulo": "M130",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.140476"
+  },
+  {
+    "modulo": "M131",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.085695"
+  },
+  {
+    "modulo": "M132",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.121708"
+  },
+  {
+    "modulo": "M133",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.142676"
+  },
+  {
+    "modulo": "M134",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.503863"
+  },
+  {
+    "modulo": "M135",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.101195"
+  },
+  {
+    "modulo": "M136",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.021435"
+  },
+  {
+    "modulo": "M137",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.320342"
+  },
+  {
+    "modulo": "M138",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.054052"
+  },
+  {
+    "modulo": "M139",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.459249"
+  },
+  {
+    "modulo": "M14",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.690934"
+  },
+  {
+    "modulo": "M140",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.341657"
+  },
+  {
+    "modulo": "M141",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.000870"
+  },
+  {
+    "modulo": "M142",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.125455"
+  },
+  {
+    "modulo": "M143",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.068049"
+  },
+  {
+    "modulo": "M144",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.195822"
+  },
+  {
+    "modulo": "M145",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.088678"
+  },
+  {
+    "modulo": "M146",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.334891"
+  },
+  {
+    "modulo": "M147",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.496647"
+  },
+  {
+    "modulo": "M148",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.514744"
+  },
+  {
+    "modulo": "M149",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.033051"
+  },
+  {
+    "modulo": "M15",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:34.952141"
+  },
+  {
+    "modulo": "M150",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.735887"
+  },
+  {
+    "modulo": "M151",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.199365"
+  },
+  {
+    "modulo": "M152",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:34.988785"
+  },
+  {
+    "modulo": "M153",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.056716"
+  },
+  {
+    "modulo": "M154",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.369253"
+  },
+  {
+    "modulo": "M155",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.681764"
+  },
+  {
+    "modulo": "M156",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.184066"
+  },
+  {
+    "modulo": "M157",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.320061"
+  },
+  {
+    "modulo": "M158",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.835721"
+  },
+  {
+    "modulo": "M159",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.038461"
+  },
+  {
+    "modulo": "M16",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.652588"
+  },
+  {
+    "modulo": "M160",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.017052"
+  },
+  {
+    "modulo": "M161",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.486025"
+  },
+  {
+    "modulo": "M162",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.372698"
+  },
+  {
+    "modulo": "M163",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:34.989744"
+  },
+  {
+    "modulo": "M164",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.160145"
+  },
+  {
+    "modulo": "M165",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.024743"
+  },
+  {
+    "modulo": "M166",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:34.985650"
+  },
+  {
+    "modulo": "M167",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.049075"
+  },
+  {
+    "modulo": "M168",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.828426"
+  },
+  {
+    "modulo": "M169",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.911710"
+  },
+  {
+    "modulo": "M17",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.618141"
+  },
+  {
+    "modulo": "M170",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.206919"
+  },
+  {
+    "modulo": "M171",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.715748"
+  },
+  {
+    "modulo": "M172",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.011962"
+  },
+  {
+    "modulo": "M173",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.709794"
+  },
+  {
+    "modulo": "M174",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.039706"
+  },
+  {
+    "modulo": "M175",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.811450"
+  },
+  {
+    "modulo": "M176",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.057904"
+  },
+  {
+    "modulo": "M177",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.887409"
+  },
+  {
+    "modulo": "M178",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.424138"
+  },
+  {
+    "modulo": "M179",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.897898"
+  },
+  {
+    "modulo": "M18",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.210411"
+  },
+  {
+    "modulo": "M180",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.914590"
+  },
+  {
+    "modulo": "M181",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.879743"
+  },
+  {
+    "modulo": "M182",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.719783"
+  },
+  {
+    "modulo": "M183",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.549681"
+  },
+  {
+    "modulo": "M184",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.029702"
+  },
+  {
+    "modulo": "M185",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:34.971831"
+  },
+  {
+    "modulo": "M186",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.293388"
+  },
+  {
+    "modulo": "M187",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.534627"
+  },
+  {
+    "modulo": "M188",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.863708"
+  },
+  {
+    "modulo": "M189",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.440136"
+  },
+  {
+    "modulo": "M19",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.833450"
+  },
+  {
+    "modulo": "M190",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.213295"
+  },
+  {
+    "modulo": "M191",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.066642"
+  },
+  {
+    "modulo": "M192",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.294595"
+  },
+  {
+    "modulo": "M193",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.018320"
+  },
+  {
+    "modulo": "M194",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.213831"
+  },
+  {
+    "modulo": "M195",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.314409"
+  },
+  {
+    "modulo": "M196",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.226801"
+  },
+  {
+    "modulo": "M197",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.883593"
+  },
+  {
+    "modulo": "M198",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:34.954199"
+  },
+  {
+    "modulo": "M199",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.816814"
+  },
+  {
+    "modulo": "M2",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.130923"
+  },
+  {
+    "modulo": "M20",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.125703"
+  },
+  {
+    "modulo": "M200",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.007725"
+  },
+  {
+    "modulo": "M201",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.111696"
+  },
+  {
+    "modulo": "M202",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.775623"
+  },
+  {
+    "modulo": "M203",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.889719"
+  },
+  {
+    "modulo": "M204",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.406110"
+  },
+  {
+    "modulo": "M205",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.824102"
+  },
+  {
+    "modulo": "M206",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.752425"
+  },
+  {
+    "modulo": "M207",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.884343"
+  },
+  {
+    "modulo": "M208",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.241180"
+  },
+  {
+    "modulo": "M209",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.837833"
+  },
+  {
+    "modulo": "M21",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.027969"
+  },
+  {
+    "modulo": "M210",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.840390"
+  },
+  {
+    "modulo": "M211",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.187758"
+  },
+  {
+    "modulo": "M212",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.225987"
+  },
+  {
+    "modulo": "M213",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.832493"
+  },
+  {
+    "modulo": "M214",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.137070"
+  },
+  {
+    "modulo": "M215",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.547538"
+  },
+  {
+    "modulo": "M216",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.022166"
+  },
+  {
+    "modulo": "M217",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.023387"
+  },
+  {
+    "modulo": "M218",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.519491"
+  },
+  {
+    "modulo": "M219",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.041587"
+  },
+  {
+    "modulo": "M22",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.124973"
+  },
+  {
+    "modulo": "M220",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.686917"
+  },
+  {
+    "modulo": "M221",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.880477"
+  },
+  {
+    "modulo": "M222",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.199686"
+  },
+  {
+    "modulo": "M223",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.314787"
+  },
+  {
+    "modulo": "M224",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.289544"
+  },
+  {
+    "modulo": "M225",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.401158"
+  },
+  {
+    "modulo": "M226",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.319374"
+  },
+  {
+    "modulo": "M227",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.603903"
+  },
+  {
+    "modulo": "M228",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.016520"
+  },
+  {
+    "modulo": "M229",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.478354"
+  },
+  {
+    "modulo": "M23",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.120868"
+  },
+  {
+    "modulo": "M230",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.315168"
+  },
+  {
+    "modulo": "M231",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:34.984742"
+  },
+  {
+    "modulo": "M232",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.254358"
+  },
+  {
+    "modulo": "M233",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:34.968513"
+  },
+  {
+    "modulo": "M234",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.394316"
+  },
+  {
+    "modulo": "M235",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.122030"
+  },
+  {
+    "modulo": "M236",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.289990"
+  },
+  {
+    "modulo": "M237",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.120545"
+  },
+  {
+    "modulo": "M238",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.858140"
+  },
+  {
+    "modulo": "M239",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.026596"
+  },
+  {
+    "modulo": "M24",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.166061"
+  },
+  {
+    "modulo": "M240",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.040952"
+  },
+  {
+    "modulo": "M241",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.763753"
+  },
+  {
+    "modulo": "M242",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.185622"
+  },
+  {
+    "modulo": "M243",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.815779"
+  },
+  {
+    "modulo": "M244",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.219272"
+  },
+  {
+    "modulo": "M245",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.061545"
+  },
+  {
+    "modulo": "M246",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.119633"
+  },
+  {
+    "modulo": "M247",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.315458"
+  },
+  {
+    "modulo": "M248",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.538905"
+  },
+  {
+    "modulo": "M249",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.058502"
+  },
+  {
+    "modulo": "M25",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:34.997005"
+  },
+  {
+    "modulo": "M250",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.111260"
+  },
+  {
+    "modulo": "M251",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.246114"
+  },
+  {
+    "modulo": "M252",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.685948"
+  },
+  {
+    "modulo": "M253",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.834536"
+  },
+  {
+    "modulo": "M254",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.266689"
+  },
+  {
+    "modulo": "M255",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.691525"
+  },
+  {
+    "modulo": "M256",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.036020"
+  },
+  {
+    "modulo": "M257",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.016176"
+  },
+  {
+    "modulo": "M258",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.852471"
+  },
+  {
+    "modulo": "M259",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.009017"
+  },
+  {
+    "modulo": "M26",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.513220"
+  },
+  {
+    "modulo": "M260",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.839919"
+  },
+  {
+    "modulo": "M261",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.001320"
+  },
+  {
+    "modulo": "M262",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.909326"
+  },
+  {
+    "modulo": "M263",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.868809"
+  },
+  {
+    "modulo": "M264",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.044769"
+  },
+  {
+    "modulo": "M265",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.033617"
+  },
+  {
+    "modulo": "M266",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.373709"
+  },
+  {
+    "modulo": "M267",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.660652"
+  },
+  {
+    "modulo": "M268",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:34.981379"
+  },
+  {
+    "modulo": "M269",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.842762"
+  },
+  {
+    "modulo": "M27",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.047625"
+  },
+  {
+    "modulo": "M270",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.238591"
+  },
+  {
+    "modulo": "M271",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.117658"
+  },
+  {
+    "modulo": "M272",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.496969"
+  },
+  {
+    "modulo": "M273",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.281647"
+  },
+  {
+    "modulo": "M274",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.907221"
+  },
+  {
+    "modulo": "M275",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.028778"
+  },
+  {
+    "modulo": "M276",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.201011"
+  },
+  {
+    "modulo": "M277",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.469505"
+  },
+  {
+    "modulo": "M278",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.252520"
+  },
+  {
+    "modulo": "M279",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.086021"
+  },
+  {
+    "modulo": "M28",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.861547"
+  },
+  {
+    "modulo": "M280",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.583600"
+  },
+  {
+    "modulo": "M281",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.001639"
+  },
+  {
+    "modulo": "M282",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.341026"
+  },
+  {
+    "modulo": "M283",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.714974"
+  },
+  {
+    "modulo": "M284",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.095762"
+  },
+  {
+    "modulo": "M285",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:34.981669"
+  },
+  {
+    "modulo": "M286",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.121451"
+  },
+  {
+    "modulo": "M287",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.131534"
+  },
+  {
+    "modulo": "M288",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.687693"
+  },
+  {
+    "modulo": "M289",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.026913"
+  },
+  {
+    "modulo": "M29",
+    "missao": "Proteger a chama da integra\u00e7\u00e3o",
+    "timestamp": "2025-09-26T20:50:35.447674"
+  },
+  {
+    "modulo": "M290",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.043904"
+  },
+  {
+    "modulo": "M291",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.513652"
+  },
+  {
+    "modulo": "M292",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.175485"
+  },
+  {
+    "modulo": "M293",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.529341"
+  },
+  {
+    "modulo": "M294",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:34.985063"
+  },
+  {
+    "modulo": "M295",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.842490"
+  },
+  {
+    "modulo": "M296",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.571961"
+  },
+  {
+    "modulo": "M297",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.037088"
+  },
+  {
+    "modulo": "M298",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.611087"
+  },
+  {
+    "modulo": "M299",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.085106"
+  },
+  {
+    "modulo": "M3",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:34.964628"
+  },
+  {
+    "modulo": "M30",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.311238"
+  },
+  {
+    "modulo": "M300",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.695559"
+  },
+  {
+    "modulo": "M301",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.682341"
+  },
+  {
+    "modulo": "M302",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.728608"
+  },
+  {
+    "modulo": "M303",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.197144"
+  },
+  {
+    "modulo": "M304",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.631427"
+  },
+  {
+    "modulo": "M305",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.243709"
+  },
+  {
+    "modulo": "M306",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.123741"
+  },
+  {
+    "modulo": "M307",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.109594"
+  },
+  {
+    "modulo": "M308",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.123160"
+  },
+  {
+    "modulo": "M309",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.163081"
+  },
+  {
+    "modulo": "M31",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.169173"
+  },
+  {
+    "modulo": "M310",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.095520"
+  },
+  {
+    "modulo": "M311",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.686345"
+  },
+  {
+    "modulo": "M312",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.504483"
+  },
+  {
+    "modulo": "M313",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.725308"
+  },
+  {
+    "modulo": "M314",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.065578"
+  },
+  {
+    "modulo": "M315",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.032746"
+  },
+  {
+    "modulo": "M316",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.200664"
+  },
+  {
+    "modulo": "M317",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.070165"
+  },
+  {
+    "modulo": "M318",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.342438"
+  },
+  {
+    "modulo": "M319",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.135958"
+  },
+  {
+    "modulo": "M32",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.527776"
+  },
+  {
+    "modulo": "M320",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.113469"
+  },
+  {
+    "modulo": "M321",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.868058"
+  },
+  {
+    "modulo": "M322",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.892623"
+  },
+  {
+    "modulo": "M323",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:34.960601"
+  },
+  {
+    "modulo": "M324",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.284665"
+  },
+  {
+    "modulo": "M325",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.634549"
+  },
+  {
+    "modulo": "M326",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.309703"
+  },
+  {
+    "modulo": "M327",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.819309"
+  },
+  {
+    "modulo": "M328",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.080783"
+  },
+  {
+    "modulo": "M329",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.882788"
+  },
+  {
+    "modulo": "M33",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.869104"
+  },
+  {
+    "modulo": "M330",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.030932"
+  },
+  {
+    "modulo": "M331",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.146423"
+  },
+  {
+    "modulo": "M332",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.381114"
+  },
+  {
+    "modulo": "M333",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.303012"
+  },
+  {
+    "modulo": "M334",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.044174"
+  },
+  {
+    "modulo": "M335",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.311701"
+  },
+  {
+    "modulo": "M336",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.254932"
+  },
+  {
+    "modulo": "M337",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.912701"
+  },
+  {
+    "modulo": "M338",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.690507"
+  },
+  {
+    "modulo": "M339",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.025386"
+  },
+  {
+    "modulo": "M34",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.169746"
+  },
+  {
+    "modulo": "M340",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.184622"
+  },
+  {
+    "modulo": "M341",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.267970"
+  },
+  {
+    "modulo": "M342",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.406445"
+  },
+  {
+    "modulo": "M343",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.129511"
+  },
+  {
+    "modulo": "M344",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:34.963279"
+  },
+  {
+    "modulo": "M345",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.119938"
+  },
+  {
+    "modulo": "M346",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.412978"
+  },
+  {
+    "modulo": "M347",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.779798"
+  },
+  {
+    "modulo": "M348",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.831608"
+  },
+  {
+    "modulo": "M349",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.007417"
+  },
+  {
+    "modulo": "M35",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.894663"
+  },
+  {
+    "modulo": "M350",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.613782"
+  },
+  {
+    "modulo": "M351",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.678561"
+  },
+  {
+    "modulo": "M352",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.850016"
+  },
+  {
+    "modulo": "M353",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.806972"
+  },
+  {
+    "modulo": "M354",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.129171"
+  },
+  {
+    "modulo": "M355",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.142376"
+  },
+  {
+    "modulo": "M356",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.833149"
+  },
+  {
+    "modulo": "M357",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.060909"
+  },
+  {
+    "modulo": "M358",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.132105"
+  },
+  {
+    "modulo": "M359",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.086940"
+  },
+  {
+    "modulo": "M36",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.135221"
+  },
+  {
+    "modulo": "M360",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.207300"
+  },
+  {
+    "modulo": "M361",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.330794"
+  },
+  {
+    "modulo": "M362",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:34.951443"
+  },
+  {
+    "modulo": "M363",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.094425"
+  },
+  {
+    "modulo": "M364",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.687180"
+  },
+  {
+    "modulo": "M365",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.304196"
+  },
+  {
+    "modulo": "M366",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.035570"
+  },
+  {
+    "modulo": "M367",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.587601"
+  },
+  {
+    "modulo": "M368",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.183422"
+  },
+  {
+    "modulo": "M369",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.192522"
+  },
+  {
+    "modulo": "M37",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.087228"
+  },
+  {
+    "modulo": "M370",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.886792"
+  },
+  {
+    "modulo": "M371",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.280707"
+  },
+  {
+    "modulo": "M372",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.233777"
+  },
+  {
+    "modulo": "M373",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.840702"
+  },
+  {
+    "modulo": "M374",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.825488"
+  },
+  {
+    "modulo": "M375",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.019185"
+  },
+  {
+    "modulo": "M376",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.778440"
+  },
+  {
+    "modulo": "M377",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.160605"
+  },
+  {
+    "modulo": "M378",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.113123"
+  },
+  {
+    "modulo": "M379",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.090167"
+  },
+  {
+    "modulo": "M38",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.125210"
+  },
+  {
+    "modulo": "M380",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.123464"
+  },
+  {
+    "modulo": "M381",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.405618"
+  },
+  {
+    "modulo": "M382",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.587272"
+  },
+  {
+    "modulo": "M383",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.514343"
+  },
+  {
+    "modulo": "M384",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.058215"
+  },
+  {
+    "modulo": "M385",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.912033"
+  },
+  {
+    "modulo": "M386",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.043059"
+  },
+  {
+    "modulo": "M387",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.550740"
+  },
+  {
+    "modulo": "M388",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.006780"
+  },
+  {
+    "modulo": "M389",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.149567"
+  },
+  {
+    "modulo": "M39",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.246716"
+  },
+  {
+    "modulo": "M390",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.028277"
+  },
+  {
+    "modulo": "M391",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.843639"
+  },
+  {
+    "modulo": "M392",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.493496"
+  },
+  {
+    "modulo": "M393",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.390312"
+  },
+  {
+    "modulo": "M394",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.217784"
+  },
+  {
+    "modulo": "M395",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.045976"
+  },
+  {
+    "modulo": "M396",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.709004"
+  },
+  {
+    "modulo": "M397",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.015394"
+  },
+  {
+    "modulo": "M398",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.178809"
+  },
+  {
+    "modulo": "M399",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.051030"
+  },
+  {
+    "modulo": "M4",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.145264"
+  },
+  {
+    "modulo": "M40",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.239326"
+  },
+  {
+    "modulo": "M400",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.659723"
+  },
+  {
+    "modulo": "M401",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.116392"
+  },
+  {
+    "modulo": "M402",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.010645"
+  },
+  {
+    "modulo": "M403",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.787192"
+  },
+  {
+    "modulo": "M404",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.893588"
+  },
+  {
+    "modulo": "M405",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.122290"
+  },
+  {
+    "modulo": "M406",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.709512"
+  },
+  {
+    "modulo": "M407",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.115088"
+  },
+  {
+    "modulo": "M408",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.380696"
+  },
+  {
+    "modulo": "M409",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.492010"
+  },
+  {
+    "modulo": "M41",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.835160"
+  },
+  {
+    "modulo": "M410",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.132915"
+  },
+  {
+    "modulo": "M411",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:34.968794"
+  },
+  {
+    "modulo": "M412",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.299609"
+  },
+  {
+    "modulo": "M413",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.031724"
+  },
+  {
+    "modulo": "M414",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.051952"
+  },
+  {
+    "modulo": "M415",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.211084"
+  },
+  {
+    "modulo": "M416",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.019750"
+  },
+  {
+    "modulo": "M417",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.659130"
+  },
+  {
+    "modulo": "M418",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.201354"
+  },
+  {
+    "modulo": "M419",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.025097"
+  },
+  {
+    "modulo": "M42",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:34.977578"
+  },
+  {
+    "modulo": "M420",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.105484"
+  },
+  {
+    "modulo": "M421",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.714692"
+  },
+  {
+    "modulo": "M422",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.017599"
+  },
+  {
+    "modulo": "M423",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.259920"
+  },
+  {
+    "modulo": "M424",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.381645"
+  },
+  {
+    "modulo": "M425",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.703803"
+  },
+  {
+    "modulo": "M426",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.284165"
+  },
+  {
+    "modulo": "M427",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.836371"
+  },
+  {
+    "modulo": "M428",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.757775"
+  },
+  {
+    "modulo": "M429",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.099541"
+  },
+  {
+    "modulo": "M43",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.120262"
+  },
+  {
+    "modulo": "M430",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:34.981051"
+  },
+  {
+    "modulo": "M431",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.896531"
+  },
+  {
+    "modulo": "M432",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.677401"
+  },
+  {
+    "modulo": "M433",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.088398"
+  },
+  {
+    "modulo": "M434",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.593471"
+  },
+  {
+    "modulo": "M435",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.528664"
+  },
+  {
+    "modulo": "M436",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.053720"
+  },
+  {
+    "modulo": "M437",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.030026"
+  },
+  {
+    "modulo": "M438",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.814152"
+  },
+  {
+    "modulo": "M439",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.134610"
+  },
+  {
+    "modulo": "M44",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.514012"
+  },
+  {
+    "modulo": "M440",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.763088"
+  },
+  {
+    "modulo": "M441",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.324701"
+  },
+  {
+    "modulo": "M442",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.678254"
+  },
+  {
+    "modulo": "M443",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.849204"
+  },
+  {
+    "modulo": "M444",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.878560"
+  },
+  {
+    "modulo": "M445",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.334484"
+  },
+  {
+    "modulo": "M446",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.100731"
+  },
+  {
+    "modulo": "M447",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.086321"
+  },
+  {
+    "modulo": "M448",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.118791"
+  },
+  {
+    "modulo": "M449",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.821496"
+  },
+  {
+    "modulo": "M45",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.736330"
+  },
+  {
+    "modulo": "M450",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.891979"
+  },
+  {
+    "modulo": "M451",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.115384"
+  },
+  {
+    "modulo": "M452",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.090461"
+  },
+  {
+    "modulo": "M453",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:34.967769"
+  },
+  {
+    "modulo": "M454",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.422173"
+  },
+  {
+    "modulo": "M455",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.389682"
+  },
+  {
+    "modulo": "M456",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.251961"
+  },
+  {
+    "modulo": "M457",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.040360"
+  },
+  {
+    "modulo": "M458",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.726658"
+  },
+  {
+    "modulo": "M459",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.046262"
+  },
+  {
+    "modulo": "M46",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.800769"
+  },
+  {
+    "modulo": "M460",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.726146"
+  },
+  {
+    "modulo": "M461",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.859304"
+  },
+  {
+    "modulo": "M462",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.092865"
+  },
+  {
+    "modulo": "M463",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.091043"
+  },
+  {
+    "modulo": "M464",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.881704"
+  },
+  {
+    "modulo": "M465",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.894107"
+  },
+  {
+    "modulo": "M466",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:34.972180"
+  },
+  {
+    "modulo": "M467",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.342750"
+  },
+  {
+    "modulo": "M468",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.010993"
+  },
+  {
+    "modulo": "M469",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.915963"
+  },
+  {
+    "modulo": "M47",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.839184"
+  },
+  {
+    "modulo": "M470",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.252777"
+  },
+  {
+    "modulo": "M471",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.061214"
+  },
+  {
+    "modulo": "M472",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.231007"
+  },
+  {
+    "modulo": "M473",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.572251"
+  },
+  {
+    "modulo": "M474",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.672480"
+  },
+  {
+    "modulo": "M475",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.801610"
+  },
+  {
+    "modulo": "M476",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.058829"
+  },
+  {
+    "modulo": "M477",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.143284"
+  },
+  {
+    "modulo": "M478",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.027202"
+  },
+  {
+    "modulo": "M479",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.032225"
+  },
+  {
+    "modulo": "M48",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.232832"
+  },
+  {
+    "modulo": "M480",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.881165"
+  },
+  {
+    "modulo": "M481",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.030634"
+  },
+  {
+    "modulo": "M482",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.898675"
+  },
+  {
+    "modulo": "M483",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.522120"
+  },
+  {
+    "modulo": "M484",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.294293"
+  },
+  {
+    "modulo": "M485",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.842180"
+  },
+  {
+    "modulo": "M486",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.013436"
+  },
+  {
+    "modulo": "M487",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.025950"
+  },
+  {
+    "modulo": "M488",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.168805"
+  },
+  {
+    "modulo": "M489",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.097392"
+  },
+  {
+    "modulo": "M49",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.856159"
+  },
+  {
+    "modulo": "M490",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.134028"
+  },
+  {
+    "modulo": "M491",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.268493"
+  },
+  {
+    "modulo": "M492",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.059167"
+  },
+  {
+    "modulo": "M493",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.861805"
+  },
+  {
+    "modulo": "M494",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.801064"
+  },
+  {
+    "modulo": "M495",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:34.980701"
+  },
+  {
+    "modulo": "M496",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.020832"
+  },
+  {
+    "modulo": "M497",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.846727"
+  },
+  {
+    "modulo": "M498",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.057312"
+  },
+  {
+    "modulo": "M499",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.055565"
+  },
+  {
+    "modulo": "M5",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.034209"
+  },
+  {
+    "modulo": "M50",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.416981"
+  },
+  {
+    "modulo": "M500",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.207664"
+  },
+  {
+    "modulo": "M501",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.211759"
+  },
+  {
+    "modulo": "M502",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.022918"
+  },
+  {
+    "modulo": "M503",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.097081"
+  },
+  {
+    "modulo": "M504",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.810858"
+  },
+  {
+    "modulo": "M505",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.285028"
+  },
+  {
+    "modulo": "M506",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.220510"
+  },
+  {
+    "modulo": "M507",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.179580"
+  },
+  {
+    "modulo": "M508",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.906602"
+  },
+  {
+    "modulo": "M509",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.091334"
+  },
+  {
+    "modulo": "M51",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.826054"
+  },
+  {
+    "modulo": "M510",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.566345"
+  },
+  {
+    "modulo": "M511",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.260511"
+  },
+  {
+    "modulo": "M512",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.478065"
+  },
+  {
+    "modulo": "M513",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.254636"
+  },
+  {
+    "modulo": "M514",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.013707"
+  },
+  {
+    "modulo": "M515",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.268760"
+  },
+  {
+    "modulo": "M516",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.260772"
+  },
+  {
+    "modulo": "M517",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.682069"
+  },
+  {
+    "modulo": "M518",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.241489"
+  },
+  {
+    "modulo": "M519",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.174616"
+  },
+  {
+    "modulo": "M52",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.046577"
+  },
+  {
+    "modulo": "M520",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.324143"
+  },
+  {
+    "modulo": "M521",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.829148"
+  },
+  {
+    "modulo": "M522",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.854246"
+  },
+  {
+    "modulo": "M523",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.024047"
+  },
+  {
+    "modulo": "M524",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.748992"
+  },
+  {
+    "modulo": "M525",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.142087"
+  },
+  {
+    "modulo": "M526",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.233136"
+  },
+  {
+    "modulo": "M527",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.703549"
+  },
+  {
+    "modulo": "M528",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:34.964100"
+  },
+  {
+    "modulo": "M529",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.086615"
+  },
+  {
+    "modulo": "M53",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.134328"
+  },
+  {
+    "modulo": "M530",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.646244"
+  },
+  {
+    "modulo": "M531",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.823386"
+  },
+  {
+    "modulo": "M532",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.820824"
+  },
+  {
+    "modulo": "M533",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.083597"
+  },
+  {
+    "modulo": "M534",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.742545"
+  },
+  {
+    "modulo": "M535",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.331483"
+  },
+  {
+    "modulo": "M536",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.159593"
+  },
+  {
+    "modulo": "M537",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.051347"
+  },
+  {
+    "modulo": "M538",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.852139"
+  },
+  {
+    "modulo": "M539",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:34.971514"
+  },
+  {
+    "modulo": "M54",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.225645"
+  },
+  {
+    "modulo": "M540",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.285762"
+  },
+  {
+    "modulo": "M541",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.055925"
+  },
+  {
+    "modulo": "M542",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.837556"
+  },
+  {
+    "modulo": "M543",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.031223"
+  },
+  {
+    "modulo": "M544",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.324435"
+  },
+  {
+    "modulo": "M545",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.795817"
+  },
+  {
+    "modulo": "M546",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.814691"
+  },
+  {
+    "modulo": "M547",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.293964"
+  },
+  {
+    "modulo": "M548",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.030330"
+  },
+  {
+    "modulo": "M549",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.255486"
+  },
+  {
+    "modulo": "M55",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.238288"
+  },
+  {
+    "modulo": "M550",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.059798"
+  },
+  {
+    "modulo": "M551",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.603539"
+  },
+  {
+    "modulo": "M552",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.813636"
+  },
+  {
+    "modulo": "M553",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.815511"
+  },
+  {
+    "modulo": "M554",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.847401"
+  },
+  {
+    "modulo": "M555",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.648581"
+  },
+  {
+    "modulo": "M556",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.080338"
+  },
+  {
+    "modulo": "M557",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:34.989166"
+  },
+  {
+    "modulo": "M558",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.045669"
+  },
+  {
+    "modulo": "M559",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:34.976512"
+  },
+  {
+    "modulo": "M56",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.777788"
+  },
+  {
+    "modulo": "M560",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.764373"
+  },
+  {
+    "modulo": "M561",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.056204"
+  },
+  {
+    "modulo": "M562",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.126576"
+  },
+  {
+    "modulo": "M563",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.800510"
+  },
+  {
+    "modulo": "M564",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.696375"
+  },
+  {
+    "modulo": "M565",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.469185"
+  },
+  {
+    "modulo": "M566",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.188474"
+  },
+  {
+    "modulo": "M567",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.103208"
+  },
+  {
+    "modulo": "M568",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.778723"
+  },
+  {
+    "modulo": "M569",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.814975"
+  },
+  {
+    "modulo": "M57",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.893272"
+  },
+  {
+    "modulo": "M570",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.821791"
+  },
+  {
+    "modulo": "M571",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.126002"
+  },
+  {
+    "modulo": "M572",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.133714"
+  },
+  {
+    "modulo": "M573",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.105034"
+  },
+  {
+    "modulo": "M574",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.140152"
+  },
+  {
+    "modulo": "M575",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.124321"
+  },
+  {
+    "modulo": "M576",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.426226"
+  },
+  {
+    "modulo": "M577",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.290620"
+  },
+  {
+    "modulo": "M578",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.749812"
+  },
+  {
+    "modulo": "M579",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.886544"
+  },
+  {
+    "modulo": "M58",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.454010"
+  },
+  {
+    "modulo": "M580",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.902029"
+  },
+  {
+    "modulo": "M581",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.853897"
+  },
+  {
+    "modulo": "M582",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.613488"
+  },
+  {
+    "modulo": "M583",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.385183"
+  },
+  {
+    "modulo": "M584",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.260211"
+  },
+  {
+    "modulo": "M585",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.062037"
+  },
+  {
+    "modulo": "M586",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.821158"
+  },
+  {
+    "modulo": "M587",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.523359"
+  },
+  {
+    "modulo": "M588",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.618590"
+  },
+  {
+    "modulo": "M589",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.365955"
+  },
+  {
+    "modulo": "M59",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.749499"
+  },
+  {
+    "modulo": "M590",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.268228"
+  },
+  {
+    "modulo": "M591",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.145533"
+  },
+  {
+    "modulo": "M592",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.303541"
+  },
+  {
+    "modulo": "M593",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.148593"
+  },
+  {
+    "modulo": "M594",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.201665"
+  },
+  {
+    "modulo": "M595",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.648046"
+  },
+  {
+    "modulo": "M596",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.133461"
+  },
+  {
+    "modulo": "M597",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.040637"
+  },
+  {
+    "modulo": "M598",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.350808"
+  },
+  {
+    "modulo": "M599",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:34.960290"
+  },
+  {
+    "modulo": "M6",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.737946"
+  },
+  {
+    "modulo": "M60",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.591882"
+  },
+  {
+    "modulo": "M600",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.671062"
+  },
+  {
+    "modulo": "M601",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.453482"
+  },
+  {
+    "modulo": "M602",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.100127"
+  },
+  {
+    "modulo": "M603",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.169456"
+  },
+  {
+    "modulo": "M604",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.233453"
+  },
+  {
+    "modulo": "M605",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.094990"
+  },
+  {
+    "modulo": "M606",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.547130"
+  },
+  {
+    "modulo": "M607",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.848631"
+  },
+  {
+    "modulo": "M608",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.251184"
+  },
+  {
+    "modulo": "M609",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.764055"
+  },
+  {
+    "modulo": "M61",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.054359"
+  },
+  {
+    "modulo": "M610",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.116065"
+  },
+  {
+    "modulo": "M611",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.882287"
+  },
+  {
+    "modulo": "M612",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:34.959614"
+  },
+  {
+    "modulo": "M613",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.050724"
+  },
+  {
+    "modulo": "M614",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.763472"
+  },
+  {
+    "modulo": "M615",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.014587"
+  },
+  {
+    "modulo": "M616",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.886053"
+  },
+  {
+    "modulo": "M617",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.910024"
+  },
+  {
+    "modulo": "M618",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.009707"
+  },
+  {
+    "modulo": "M619",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.220223"
+  },
+  {
+    "modulo": "M62",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.468414"
+  },
+  {
+    "modulo": "M620",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.299179"
+  },
+  {
+    "modulo": "M621",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.089008"
+  },
+  {
+    "modulo": "M622",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.426741"
+  },
+  {
+    "modulo": "M623",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.493136"
+  },
+  {
+    "modulo": "M624",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.034515"
+  },
+  {
+    "modulo": "M625",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.885737"
+  },
+  {
+    "modulo": "M626",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.795550"
+  },
+  {
+    "modulo": "M627",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:34.968155"
+  },
+  {
+    "modulo": "M628",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.815244"
+  },
+  {
+    "modulo": "M629",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.315749"
+  },
+  {
+    "modulo": "M63",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.036326"
+  },
+  {
+    "modulo": "M630",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.866117"
+  },
+  {
+    "modulo": "M631",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.779548"
+  },
+  {
+    "modulo": "M632",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.490281"
+  },
+  {
+    "modulo": "M633",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.741944"
+  },
+  {
+    "modulo": "M634",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.703221"
+  },
+  {
+    "modulo": "M635",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.107723"
+  },
+  {
+    "modulo": "M636",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.395048"
+  },
+  {
+    "modulo": "M637",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.844364"
+  },
+  {
+    "modulo": "M638",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.845525"
+  },
+  {
+    "modulo": "M639",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.742939"
+  },
+  {
+    "modulo": "M64",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:34.959088"
+  },
+  {
+    "modulo": "M640",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.887744"
+  },
+  {
+    "modulo": "M641",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.837138"
+  },
+  {
+    "modulo": "M642",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.377718"
+  },
+  {
+    "modulo": "M643",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.877903"
+  },
+  {
+    "modulo": "M644",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.561653"
+  },
+  {
+    "modulo": "M645",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.092559"
+  },
+  {
+    "modulo": "M646",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.241785"
+  },
+  {
+    "modulo": "M647",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.020563"
+  },
+  {
+    "modulo": "M648",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.060186"
+  },
+  {
+    "modulo": "M649",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.582910"
+  },
+  {
+    "modulo": "M65",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.385507"
+  },
+  {
+    "modulo": "M650",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.033924"
+  },
+  {
+    "modulo": "M651",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.906017"
+  },
+  {
+    "modulo": "M652",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.303874"
+  },
+  {
+    "modulo": "M653",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.119073"
+  },
+  {
+    "modulo": "M654",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.127833"
+  },
+  {
+    "modulo": "M655",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.660361"
+  },
+  {
+    "modulo": "M656",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.232175"
+  },
+  {
+    "modulo": "M657",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.492568"
+  },
+  {
+    "modulo": "M658",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.796123"
+  },
+  {
+    "modulo": "M659",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.052645"
+  },
+  {
+    "modulo": "M66",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.888974"
+  },
+  {
+    "modulo": "M660",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.439619"
+  },
+  {
+    "modulo": "M661",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.127536"
+  },
+  {
+    "modulo": "M662",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.281311"
+  },
+  {
+    "modulo": "M663",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.910353"
+  },
+  {
+    "modulo": "M664",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.019482"
+  },
+  {
+    "modulo": "M665",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.010315"
+  },
+  {
+    "modulo": "M666",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.115679"
+  },
+  {
+    "modulo": "M667",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.869669"
+  },
+  {
+    "modulo": "M668",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.047111"
+  },
+  {
+    "modulo": "M669",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.195136"
+  },
+  {
+    "modulo": "M67",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.089542"
+  },
+  {
+    "modulo": "M670",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.570127"
+  },
+  {
+    "modulo": "M671",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.421042"
+  },
+  {
+    "modulo": "M672",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.874779"
+  },
+  {
+    "modulo": "M673",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.865419"
+  },
+  {
+    "modulo": "M674",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.310685"
+  },
+  {
+    "modulo": "M675",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.097700"
+  },
+  {
+    "modulo": "M676",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.478632"
+  },
+  {
+    "modulo": "M677",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.691811"
+  },
+  {
+    "modulo": "M678",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.252238"
+  },
+  {
+    "modulo": "M679",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.365090"
+  },
+  {
+    "modulo": "M68",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.323044"
+  },
+  {
+    "modulo": "M680",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.095251"
+  },
+  {
+    "modulo": "M681",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.432238"
+  },
+  {
+    "modulo": "M682",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:34.997693"
+  },
+  {
+    "modulo": "M683",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.365622"
+  },
+  {
+    "modulo": "M684",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.708698"
+  },
+  {
+    "modulo": "M685",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.304486"
+  },
+  {
+    "modulo": "M686",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.078744"
+  },
+  {
+    "modulo": "M687",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.246449"
+  },
+  {
+    "modulo": "M688",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.135510"
+  },
+  {
+    "modulo": "M689",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.903266"
+  },
+  {
+    "modulo": "M69",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.586718"
+  },
+  {
+    "modulo": "M690",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.046827"
+  },
+  {
+    "modulo": "M691",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.044492"
+  },
+  {
+    "modulo": "M692",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.026262"
+  },
+  {
+    "modulo": "M693",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.050211"
+  },
+  {
+    "modulo": "M694",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.018896"
+  },
+  {
+    "modulo": "M695",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.094687"
+  },
+  {
+    "modulo": "M696",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.381386"
+  },
+  {
+    "modulo": "M697",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.820336"
+  },
+  {
+    "modulo": "M698",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.113741"
+  },
+  {
+    "modulo": "M699",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.362344"
+  },
+  {
+    "modulo": "M7",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.229349"
+  },
+  {
+    "modulo": "M70",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.565823"
+  },
+  {
+    "modulo": "M700",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.535393"
+  },
+  {
+    "modulo": "M701",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.323808"
+  },
+  {
+    "modulo": "M702",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.686633"
+  },
+  {
+    "modulo": "M703",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.890430"
+  },
+  {
+    "modulo": "M704",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.114293"
+  },
+  {
+    "modulo": "M705",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.022475"
+  },
+  {
+    "modulo": "M706",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.064989"
+  },
+  {
+    "modulo": "M707",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.319746"
+  },
+  {
+    "modulo": "M708",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.330341"
+  },
+  {
+    "modulo": "M709",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.497652"
+  },
+  {
+    "modulo": "M71",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.043618"
+  },
+  {
+    "modulo": "M710",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.174286"
+  },
+  {
+    "modulo": "M711",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.572547"
+  },
+  {
+    "modulo": "M712",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:34.984314"
+  },
+  {
+    "modulo": "M713",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.107147"
+  },
+  {
+    "modulo": "M714",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.714384"
+  },
+  {
+    "modulo": "M715",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.071815"
+  },
+  {
+    "modulo": "M716",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.830632"
+  },
+  {
+    "modulo": "M717",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.188157"
+  },
+  {
+    "modulo": "M718",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.389350"
+  },
+  {
+    "modulo": "M719",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:34.980330"
+  },
+  {
+    "modulo": "M72",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.308957"
+  },
+  {
+    "modulo": "M720",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.183744"
+  },
+  {
+    "modulo": "M721",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.691224"
+  },
+  {
+    "modulo": "M722",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.091633"
+  },
+  {
+    "modulo": "M723",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.012549"
+  },
+  {
+    "modulo": "M724",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.385762"
+  },
+  {
+    "modulo": "M725",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.417633"
+  },
+  {
+    "modulo": "M726",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.528304"
+  },
+  {
+    "modulo": "M727",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.018030"
+  },
+  {
+    "modulo": "M728",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.562716"
+  },
+  {
+    "modulo": "M729",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.550403"
+  },
+  {
+    "modulo": "M73",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.792667"
+  },
+  {
+    "modulo": "M730",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.912356"
+  },
+  {
+    "modulo": "M731",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.309390"
+  },
+  {
+    "modulo": "M732",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.622185"
+  },
+  {
+    "modulo": "M733",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.116727"
+  },
+  {
+    "modulo": "M734",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.140995"
+  },
+  {
+    "modulo": "M735",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.014286"
+  },
+  {
+    "modulo": "M736",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.535080"
+  },
+  {
+    "modulo": "M737",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.020049"
+  },
+  {
+    "modulo": "M738",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.012854"
+  },
+  {
+    "modulo": "M739",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:34.954998"
+  },
+  {
+    "modulo": "M74",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.121157"
+  },
+  {
+    "modulo": "M740",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.602962"
+  },
+  {
+    "modulo": "M741",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.469825"
+  },
+  {
+    "modulo": "M742",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.093402"
+  },
+  {
+    "modulo": "M743",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.395710"
+  },
+  {
+    "modulo": "M744",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.045382"
+  },
+  {
+    "modulo": "M745",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.827698"
+  },
+  {
+    "modulo": "M746",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.774931"
+  },
+  {
+    "modulo": "M747",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.869367"
+  },
+  {
+    "modulo": "M748",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.011451"
+  },
+  {
+    "modulo": "M749",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.136593"
+  },
+  {
+    "modulo": "M75",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.904580"
+  },
+  {
+    "modulo": "M750",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.860979"
+  },
+  {
+    "modulo": "M751",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.168414"
+  },
+  {
+    "modulo": "M752",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.355651"
+  },
+  {
+    "modulo": "M753",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.866406"
+  },
+  {
+    "modulo": "M754",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.027530"
+  },
+  {
+    "modulo": "M755",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.117141"
+  },
+  {
+    "modulo": "M756",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.854822"
+  },
+  {
+    "modulo": "M757",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.411863"
+  },
+  {
+    "modulo": "M758",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.141620"
+  },
+  {
+    "modulo": "M759",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.724919"
+  },
+  {
+    "modulo": "M76",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.828782"
+  },
+  {
+    "modulo": "M760",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.139410"
+  },
+  {
+    "modulo": "M761",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.743250"
+  },
+  {
+    "modulo": "M762",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.014008"
+  },
+  {
+    "modulo": "M763",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.255743"
+  },
+  {
+    "modulo": "M764",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.021714"
+  },
+  {
+    "modulo": "M765",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.856424"
+  },
+  {
+    "modulo": "M766",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:34.963773"
+  },
+  {
+    "modulo": "M767",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.139124"
+  },
+  {
+    "modulo": "M768",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.629418"
+  },
+  {
+    "modulo": "M769",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.864859"
+  },
+  {
+    "modulo": "M77",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.118070"
+  },
+  {
+    "modulo": "M770",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.018601"
+  },
+  {
+    "modulo": "M771",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.681457"
+  },
+  {
+    "modulo": "M772",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.128243"
+  },
+  {
+    "modulo": "M773",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.277041"
+  },
+  {
+    "modulo": "M774",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.009341"
+  },
+  {
+    "modulo": "M775",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.666610"
+  },
+  {
+    "modulo": "M776",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.696039"
+  },
+  {
+    "modulo": "M777",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.829942"
+  },
+  {
+    "modulo": "M778",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:34.972825"
+  },
+  {
+    "modulo": "M779",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.087785"
+  },
+  {
+    "modulo": "M78",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.040070"
+  },
+  {
+    "modulo": "M780",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.862523"
+  },
+  {
+    "modulo": "M781",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.848180"
+  },
+  {
+    "modulo": "M782",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.794902"
+  },
+  {
+    "modulo": "M783",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.855678"
+  },
+  {
+    "modulo": "M784",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.036760"
+  },
+  {
+    "modulo": "M785",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.715478"
+  },
+  {
+    "modulo": "M786",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.699636"
+  },
+  {
+    "modulo": "M787",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.779288"
+  },
+  {
+    "modulo": "M788",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.890159"
+  },
+  {
+    "modulo": "M789",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.048243"
+  },
+  {
+    "modulo": "M79",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.807620"
+  },
+  {
+    "modulo": "M790",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.791144"
+  },
+  {
+    "modulo": "M791",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.093143"
+  },
+  {
+    "modulo": "M792",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.725578"
+  },
+  {
+    "modulo": "M793",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:34.964366"
+  },
+  {
+    "modulo": "M794",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.726395"
+  },
+  {
+    "modulo": "M795",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.715227"
+  },
+  {
+    "modulo": "M796",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.122821"
+  },
+  {
+    "modulo": "M797",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.738558"
+  },
+  {
+    "modulo": "M798",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.737592"
+  },
+  {
+    "modulo": "M799",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.807343"
+  },
+  {
+    "modulo": "M8",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.137751"
+  },
+  {
+    "modulo": "M80",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.857653"
+  },
+  {
+    "modulo": "M800",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.390659"
+  },
+  {
+    "modulo": "M801",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.687432"
+  },
+  {
+    "modulo": "M802",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.555273"
+  },
+  {
+    "modulo": "M803",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.114578"
+  },
+  {
+    "modulo": "M804",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.493785"
+  },
+  {
+    "modulo": "M805",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.236975"
+  },
+  {
+    "modulo": "M806",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.138535"
+  },
+  {
+    "modulo": "M807",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.529659"
+  },
+  {
+    "modulo": "M808",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.826395"
+  },
+  {
+    "modulo": "M809",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.188729"
+  },
+  {
+    "modulo": "M81",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.128560"
+  },
+  {
+    "modulo": "M810",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.144940"
+  },
+  {
+    "modulo": "M811",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.090744"
+  },
+  {
+    "modulo": "M812",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.858967"
+  },
+  {
+    "modulo": "M813",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.708372"
+  },
+  {
+    "modulo": "M814",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.665277"
+  },
+  {
+    "modulo": "M815",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.145818"
+  },
+  {
+    "modulo": "M816",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.217183"
+  },
+  {
+    "modulo": "M817",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.032492"
+  },
+  {
+    "modulo": "M818",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.377300"
+  },
+  {
+    "modulo": "M819",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.060574"
+  },
+  {
+    "modulo": "M82",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.264120"
+  },
+  {
+    "modulo": "M820",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.038800"
+  },
+  {
+    "modulo": "M821",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.682602"
+  },
+  {
+    "modulo": "M822",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.354786"
+  },
+  {
+    "modulo": "M823",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.259515"
+  },
+  {
+    "modulo": "M824",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.425767"
+  },
+  {
+    "modulo": "M825",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.213560"
+  },
+  {
+    "modulo": "M826",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.681005"
+  },
+  {
+    "modulo": "M827",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.212990"
+  },
+  {
+    "modulo": "M828",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.841582"
+  },
+  {
+    "modulo": "M829",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.015881"
+  },
+  {
+    "modulo": "M83",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.049348"
+  },
+  {
+    "modulo": "M830",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.048582"
+  },
+  {
+    "modulo": "M831",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.898261"
+  },
+  {
+    "modulo": "M832",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.625612"
+  },
+  {
+    "modulo": "M833",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.077967"
+  },
+  {
+    "modulo": "M834",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.752718"
+  },
+  {
+    "modulo": "M835",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.609522"
+  },
+  {
+    "modulo": "M836",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:34.988300"
+  },
+  {
+    "modulo": "M837",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.034821"
+  },
+  {
+    "modulo": "M838",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.219590"
+  },
+  {
+    "modulo": "M839",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.053059"
+  },
+  {
+    "modulo": "M84",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.021149"
+  },
+  {
+    "modulo": "M840",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.149279"
+  },
+  {
+    "modulo": "M841",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.101585"
+  },
+  {
+    "modulo": "M842",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.134932"
+  },
+  {
+    "modulo": "M843",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.911278"
+  },
+  {
+    "modulo": "M844",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.801336"
+  },
+  {
+    "modulo": "M845",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.049927"
+  },
+  {
+    "modulo": "M846",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.043342"
+  },
+  {
+    "modulo": "M847",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.209541"
+  },
+  {
+    "modulo": "M848",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.709259"
+  },
+  {
+    "modulo": "M849",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:34.955610"
+  },
+  {
+    "modulo": "M85",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.733135"
+  },
+  {
+    "modulo": "M850",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.660074"
+  },
+  {
+    "modulo": "M851",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.819637"
+  },
+  {
+    "modulo": "M852",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.882022"
+  },
+  {
+    "modulo": "M853",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.053404"
+  },
+  {
+    "modulo": "M854",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.096209"
+  },
+  {
+    "modulo": "M855",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.810413"
+  },
+  {
+    "modulo": "M856",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.131234"
+  },
+  {
+    "modulo": "M857",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.088136"
+  },
+  {
+    "modulo": "M858",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.132613"
+  },
+  {
+    "modulo": "M859",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.020298"
+  },
+  {
+    "modulo": "M86",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.868537"
+  },
+  {
+    "modulo": "M860",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.047366"
+  },
+  {
+    "modulo": "M861",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.824768"
+  },
+  {
+    "modulo": "M862",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.800181"
+  },
+  {
+    "modulo": "M863",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.908636"
+  },
+  {
+    "modulo": "M864",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.290339"
+  },
+  {
+    "modulo": "M865",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.093882"
+  },
+  {
+    "modulo": "M866",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:34.971092"
+  },
+  {
+    "modulo": "M867",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.838628"
+  },
+  {
+    "modulo": "M868",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.482209"
+  },
+  {
+    "modulo": "M869",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.146133"
+  },
+  {
+    "modulo": "M87",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.226522"
+  },
+  {
+    "modulo": "M870",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.254024"
+  },
+  {
+    "modulo": "M871",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.462753"
+  },
+  {
+    "modulo": "M872",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.139705"
+  },
+  {
+    "modulo": "M873",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.052210"
+  },
+  {
+    "modulo": "M874",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.180426"
+  },
+  {
+    "modulo": "M875",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.859599"
+  },
+  {
+    "modulo": "M876",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.395408"
+  },
+  {
+    "modulo": "M877",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.045099"
+  },
+  {
+    "modulo": "M878",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.013153"
+  },
+  {
+    "modulo": "M879",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.096524"
+  },
+  {
+    "modulo": "M88",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.883969"
+  },
+  {
+    "modulo": "M880",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.240831"
+  },
+  {
+    "modulo": "M881",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.511227"
+  },
+  {
+    "modulo": "M882",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.255202"
+  },
+  {
+    "modulo": "M883",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.792404"
+  },
+  {
+    "modulo": "M884",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.068712"
+  },
+  {
+    "modulo": "M885",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.440543"
+  },
+  {
+    "modulo": "M886",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.523998"
+  },
+  {
+    "modulo": "M887",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.015134"
+  },
+  {
+    "modulo": "M888",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.047878"
+  },
+  {
+    "modulo": "M889",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.795267"
+  },
+  {
+    "modulo": "M89",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.613095"
+  },
+  {
+    "modulo": "M890",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.384643"
+  },
+  {
+    "modulo": "M891",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.743548"
+  },
+  {
+    "modulo": "M892",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.138795"
+  },
+  {
+    "modulo": "M893",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.672770"
+  },
+  {
+    "modulo": "M894",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.907776"
+  },
+  {
+    "modulo": "M895",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.131802"
+  },
+  {
+    "modulo": "M896",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.406719"
+  },
+  {
+    "modulo": "M897",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.342045"
+  },
+  {
+    "modulo": "M898",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.529000"
+  },
+  {
+    "modulo": "M899",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.051628"
+  },
+  {
+    "modulo": "M9",
+    "missao": "Vigiar coer\u00eancia sist\u00eamica",
+    "timestamp": "2025-09-26T20:50:35.541746"
+  },
+  {
+    "modulo": "M90",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.484504"
+  },
+  {
+    "modulo": "M900",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.109186"
+  },
+  {
+    "modulo": "M901",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.128889"
+  },
+  {
+    "modulo": "M902",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.722325"
+  },
+  {
+    "modulo": "M903",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.814451"
+  },
+  {
+    "modulo": "M904",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.232529"
+  },
+  {
+    "modulo": "M905",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.335367"
+  },
+  {
+    "modulo": "M906",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.331779"
+  },
+  {
+    "modulo": "M907",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.178448"
+  },
+  {
+    "modulo": "M908",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.108589"
+  },
+  {
+    "modulo": "M909",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.025660"
+  },
+  {
+    "modulo": "M91",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.887098"
+  },
+  {
+    "modulo": "M910",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.219920"
+  },
+  {
+    "modulo": "M911",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.033340"
+  },
+  {
+    "modulo": "M912",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.860328"
+  },
+  {
+    "modulo": "M913",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.162167"
+  },
+  {
+    "modulo": "M914",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.029286"
+  },
+  {
+    "modulo": "M915",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.671629"
+  },
+  {
+    "modulo": "M916",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.010036"
+  },
+  {
+    "modulo": "M917",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.075872"
+  },
+  {
+    "modulo": "M918",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.852812"
+  },
+  {
+    "modulo": "M919",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.124066"
+  },
+  {
+    "modulo": "M92",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.671977"
+  },
+  {
+    "modulo": "M920",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.867035"
+  },
+  {
+    "modulo": "M921",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.078404"
+  },
+  {
+    "modulo": "M922",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.764695"
+  },
+  {
+    "modulo": "M923",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.184343"
+  },
+  {
+    "modulo": "M924",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.524333"
+  },
+  {
+    "modulo": "M925",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:34.989487"
+  },
+  {
+    "modulo": "M926",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:34.977277"
+  },
+  {
+    "modulo": "M927",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.654215"
+  },
+  {
+    "modulo": "M928",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.132357"
+  },
+  {
+    "modulo": "M929",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.094165"
+  },
+  {
+    "modulo": "M93",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.173875"
+  },
+  {
+    "modulo": "M930",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.389985"
+  },
+  {
+    "modulo": "M931",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.508144"
+  },
+  {
+    "modulo": "M932",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.902663"
+  },
+  {
+    "modulo": "M933",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.882555"
+  },
+  {
+    "modulo": "M934",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.092237"
+  },
+  {
+    "modulo": "M935",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.267685"
+  },
+  {
+    "modulo": "M936",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.137350"
+  },
+  {
+    "modulo": "M937",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.775349"
+  },
+  {
+    "modulo": "M938",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.149825"
+  },
+  {
+    "modulo": "M939",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.811186"
+  },
+  {
+    "modulo": "M94",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.907511"
+  },
+  {
+    "modulo": "M940",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.733523"
+  },
+  {
+    "modulo": "M941",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.833714"
+  },
+  {
+    "modulo": "M942",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.856689"
+  },
+  {
+    "modulo": "M943",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.592784"
+  },
+  {
+    "modulo": "M944",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.477412"
+  },
+  {
+    "modulo": "M945",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.571590"
+  },
+  {
+    "modulo": "M946",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.891291"
+  },
+  {
+    "modulo": "M947",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:34.954631"
+  },
+  {
+    "modulo": "M948",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.126926"
+  },
+  {
+    "modulo": "M949",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.212331"
+  },
+  {
+    "modulo": "M95",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.850809"
+  },
+  {
+    "modulo": "M950",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.042574"
+  },
+  {
+    "modulo": "M951",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.417318"
+  },
+  {
+    "modulo": "M952",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.054654"
+  },
+  {
+    "modulo": "M953",
+    "missao": "Transmuta\u00e7\u00e3o de dados",
+    "timestamp": "2025-09-26T20:50:35.251653"
+  },
+  {
+    "modulo": "M954",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.089827"
+  },
+  {
+    "modulo": "M955",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.414605"
+  },
+  {
+    "modulo": "M956",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.866715"
+  },
+  {
+    "modulo": "M957",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.133185"
+  },
+  {
+    "modulo": "M958",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.755692"
+  },
+  {
+    "modulo": "M959",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.462198"
+  },
+  {
+    "modulo": "M96",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.220788"
+  },
+  {
+    "modulo": "M960",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.851650"
+  },
+  {
+    "modulo": "M961",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.862983"
+  },
+  {
+    "modulo": "M962",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.055211"
+  },
+  {
+    "modulo": "M963",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.788480"
+  },
+  {
+    "modulo": "M964",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.416611"
+  },
+  {
+    "modulo": "M965",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.163370"
+  },
+  {
+    "modulo": "M966",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.042105"
+  },
+  {
+    "modulo": "M967",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.012274"
+  },
+  {
+    "modulo": "M968",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.200371"
+  },
+  {
+    "modulo": "M969",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.057052"
+  },
+  {
+    "modulo": "M97",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.604549"
+  },
+  {
+    "modulo": "M970",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.904224"
+  },
+  {
+    "modulo": "M971",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.068394"
+  },
+  {
+    "modulo": "M972",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.216519"
+  },
+  {
+    "modulo": "M973",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.654603"
+  },
+  {
+    "modulo": "M974",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.304774"
+  },
+  {
+    "modulo": "M975",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:34.955312"
+  },
+  {
+    "modulo": "M976",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.878312"
+  },
+  {
+    "modulo": "M977",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:34.997408"
+  },
+  {
+    "modulo": "M978",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.822711"
+  },
+  {
+    "modulo": "M979",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.477765"
+  },
+  {
+    "modulo": "M98",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.031491"
+  },
+  {
+    "modulo": "M980",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.014833"
+  },
+  {
+    "modulo": "M981",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.084279"
+  },
+  {
+    "modulo": "M982",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.738246"
+  },
+  {
+    "modulo": "M983",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.212657"
+  },
+  {
+    "modulo": "M984",
+    "missao": "Prote\u00e7\u00e3o ritual\u00edstica",
+    "timestamp": "2025-09-26T20:50:35.355345"
+  },
+  {
+    "modulo": "M985",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.087485"
+  },
+  {
+    "modulo": "M986",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.148084"
+  },
+  {
+    "modulo": "M987",
+    "missao": "Curadoria de sabedoria",
+    "timestamp": "2025-09-26T20:50:35.468823"
+  },
+  {
+    "modulo": "M988",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.696671"
+  },
+  {
+    "modulo": "M989",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.913909"
+  },
+  {
+    "modulo": "M99",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:35.725882"
+  },
+  {
+    "modulo": "M990",
+    "missao": "Registro cerimonial",
+    "timestamp": "2025-09-26T20:50:35.901242"
+  },
+  {
+    "modulo": "M991",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.127232"
+  },
+  {
+    "modulo": "M992",
+    "missao": "Vigil\u00e2ncia de integridade",
+    "timestamp": "2025-09-26T20:50:35.057602"
+  },
+  {
+    "modulo": "M993",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.805490"
+  },
+  {
+    "modulo": "M994",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:35.226281"
+  },
+  {
+    "modulo": "M995",
+    "missao": "Interpreta\u00e7\u00e3o de sinais c\u00f3smicos",
+    "timestamp": "2025-09-26T20:50:35.792079"
+  },
+  {
+    "modulo": "M996",
+    "missao": "Sincroniza\u00e7\u00e3o com Mente Coletiva",
+    "timestamp": "2025-09-26T20:50:34.972561"
+  },
+  {
+    "modulo": "M997",
+    "missao": "Cria\u00e7\u00e3o de artefatos",
+    "timestamp": "2025-09-26T20:50:35.496343"
+  },
+  {
+    "modulo": "M998",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.085405"
+  },
+  {
+    "modulo": "M999",
+    "missao": "Auditoria de fluxo",
+    "timestamp": "2025-09-26T20:50:34.953679"
+  },
+  {
+    "modulo": "[code]",
+    "missao": "Expans\u00e3o interdimensional",
+    "timestamp": "2025-09-26T20:50:35.846240"
+  }
+]

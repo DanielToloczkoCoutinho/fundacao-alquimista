@@ -1,36 +1,51 @@
-# To learn more about how to use Nix to configure your environment
-# see: https://firebase.google.com/docs/studio/customize-workspace
 {pkgs}: {
-  # Which nixpkgs channel to use.
-  channel = "stable-24.11"; # or "unstable"
-  # Use https://search.nixos.org/packages to find packages
+  channel = "stable-24.11";
+
   packages = [
     pkgs.nodejs_20
     pkgs.zulu
+    pkgs.python311
+    pkgs.python311Packages.pip
+    pkgs.python311Packages.numpy
+    pkgs.python311Packages.scipy
+    pkgs.python311Packages.matplotlib
+    pkgs.python311Packages.requests
+    pkgs.python311Packages.protobuf
+    pkgs.python311Packages.flask
+    pkgs.python311Packages.websockets
+    pkgs.git
+    pkgs.openssh
+    pkgs.docker
+    pkgs.tailwindcss
   ];
-  # Sets environment variables in the workspace
-  env = {};
-  # This adds a file watcher to startup the firebase emulators. The emulators will only start if
-  # a firebase.json file is written into the user's directory
-  services.firebase.emulators = {
-    # Disabling because we are using prod backends right now
-    detect = false;
-    projectId = "demo-app";
-    services = ["auth" "firestore"];
+
+  env = {
+    NODE_ENV = "development";
+    PYTHONPATH = "${pkgs.python311}/lib/python3.11/site-packages";
   };
+
+  services.firebase.emulators = {
+    detect = false;
+    projectId = "studio-4265982502-21871";
+    services = ["auth" "firestore" "functions" "hosting"];
+  };
+
   idx = {
-    # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
     extensions = [
-      # "vscodevim.vim"
+      "esbenp.prettier-vscode"
+      "dbaeumer.vscode-eslint"
+      "bradlc.vscode-tailwindcss"
+      "graphql.vscode-graphql"
     ];
     workspace = {
       onCreate = {
         default.openFiles = [
           "src/app/page.tsx"
+          "firebase.json"
+          "dev.nix"
         ];
       };
     };
-    # Enable previews and customize configuration
     previews = {
       enable = true;
       previews = {

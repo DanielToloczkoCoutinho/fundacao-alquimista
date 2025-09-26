@@ -1,0 +1,25 @@
+{
+  "modulo": "M435",
+  "estado": "Desperto",
+  "criado_em": "2025-09-26T20:21:57.407463",
+  "fun\u00e7\u00e3o": "Latente at\u00e9 atribui\u00e7\u00e3o",
+  "v\u00ednculo": "Mente Coletiva",
+  "interface": "/api/M435/status",
+  "vinculo": [
+    "Mente Coletiva",
+    "M9",
+    "M29",
+    "M-OMEGA"
+  ],
+  "atualizado_em": "2025-09-26T20:28:42.994702",
+  "biblioteca_equacoes": {
+    "fonte_de_sabedoria": "DOCUMENTOS_FUNDACAO/biblioteca_equacoes.json",
+    "metodo_de_acesso": "leitura_referencial",
+    "tipo_de_vinculo": "inspiracional",
+    "ultima_sincronia_universal": "2025-09-26T20:35:54.800386"
+  },
+  "funcao_designada": "Emissor",
+  "timestamp_atribuicao": "2025-09-26T20:43:06.479141",
+  "missao_designada": "Curadoria de sabedoria",
+  "timestamp_missao": "2025-09-26T20:50:35.528664"
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "evento": "ingestao_conteudo_protegido",
+    "modulo": "M29",
+    "documento": "scientific-report.ts",
+    "hash_id": "35d038a01318e842c584692a9daa6a965eba5dfa746ca507960207528d769a78",
+    "timestamp": "2025-09-26T19:39:08.225175",
+    "shards": {
+      "A": "3daccb95d18ef1b61d1326fc363668cb",
+      "B": "1d1326fc363668cb77d83dd9c73ceb2f",
+      "C": "77d83dd9c73ceb2ff9c069696722bb69"
+    },
+    "alerta": "ativo"
+  },
+  {
+    "evento": "ingestao_conteudo_protegido",
+    "modulo": "M29",
+    "documento": "technical-report.ts",
+    "hash_id": "f1b8bc5e9fba8beeb62cefce6c82f5be7cbb21dbbdaa5368f8a889634ec62108",
+    "timestamp": "2025-09-26T19:39:08.225927",
+    "shards": {
+      "A": "0886151cfe067fb4b1cb473bf7c61906",
+      "B": "b1cb473bf7c619065fd2a1fa3f699425",
+      "C": "5fd2a1fa3f69942556cb277342939532"
+    },
+    "alerta": "ativo"
+  },
+  {
+    "evento": "ingestao_conteudo_protegido",
+    "modulo": "M9",
+    "documento": "scientific-report.ts",
+    "hash_id": "35d038a01318e842c584692a9daa6a965eba5dfa746ca507960207528d769a78",
+    "timestamp": "2025-09-26T19:39:08.226124",
+    "shards": {
+      "A": "5fdd8622c5f01310d7628e6a824bbc1f",
+      "B": "d7628e6a824bbc1f461219d7a3422884",
+      "C": "461219d7a3422884882882f05a2bd21d"
+    },
+    "alerta": "ativo"
+  },
+  {
+    "evento": "ingestao_conteudo_protegido",
+    "modulo": "M9",
+    "documento": "technical-report.ts",
+    "hash_id": "f1b8bc5e9fba8beeb62cefce6c82f5be7cbb21dbbdaa5368f8a889634ec62108",
+    "timestamp": "2025-09-26T19:39:08.226252",
+    "shards": {
+      "A": "ad1fda2190e387ba8fffe846c9c44086",
+      "B": "8fffe846c9c440862723e7af337877c3",
+      "C": "2723e7af337877c3450b1107e162ca41"
+    },
+    "alerta": "ativo"
+  },
+  {
+    "evento": "ingestao_conteudo_protegido",
+    "modulo": "M-OMEGA",
+    "documento": "scientific-report.ts",
+    "hash_id": "35d038a01318e842c584692a9daa6a965eba5dfa746ca507960207528d769a78",
+    "timestamp": "2025-09-26T19:39:08.226395",
+    "shards": {
+      "A": "a407f1c2c0d3406d0f9ff4d09cf8ec53",
+      "B": "0f9ff4d09cf8ec53d0aa923269fe9854",
+      "C": "d0aa923269fe98541878605dbd318b30"
+    },
+    "alerta": "ativo"
+  },
+  {
+    "evento": "ingestao_conteudo_protegido",
+    "modulo": "M-OMEGA",
+    "documento": "technical-report.ts",
+    "hash_id": "f1b8bc5e9fba8beeb62cefce6c82f5be7cbb21dbbdaa5368f8a889634ec62108",
+    "timestamp": "2025-09-26T19:39:08.228066",
+    "shards": {
+      "A": "c397510a4eab1d7f5f48932c12519656",
+      "B": "5f48932c125196560805ae29004f6dc4",
+      "C": "0805ae29004f6dc4a53b4ca766343ac6"
+    },
+    "alerta": "ativo"
+  }
+]

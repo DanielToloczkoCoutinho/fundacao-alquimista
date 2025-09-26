@@ -1,0 +1,38 @@
+[
+  {
+    "documento": "M-OMEGA_scientific-report.ts",
+    "hash_id": "35d038a01318e842c584692a9daa6a965eba5dfa746ca507960207528d769a78",
+    "assinatura": "5eaa2c003a03a2b2c2ee6ffe71b8749303659e7d726e59ed2cf85ec3058133ae",
+    "timestamp": "2025-09-26T19:42:55.354139"
+  },
+  {
+    "documento": "M29_technical-report.ts",
+    "hash_id": "f1b8bc5e9fba8beeb62cefce6c82f5be7cbb21dbbdaa5368f8a889634ec62108",
+    "assinatura": "6168c4c9e9d2600feb6907259784902dc32d66dc8e38ccc6dc48a07c8095754b",
+    "timestamp": "2025-09-26T19:42:55.354188"
+  },
+  {
+    "documento": "M9_scientific-report.ts",
+    "hash_id": "35d038a01318e842c584692a9daa6a965eba5dfa746ca507960207528d769a78",
+    "assinatura": "c33b49176ea9aff8299098661c6d62cad8bcec3fee28aff3aedc799d6a2b5556",
+    "timestamp": "2025-09-26T19:42:55.354219"
+  },
+  {
+    "documento": "M-OMEGA_technical-report.ts",
+    "hash_id": "f1b8bc5e9fba8beeb62cefce6c82f5be7cbb21dbbdaa5368f8a889634ec62108",
+    "assinatura": "a6d0206c2279038bdedd8f9c690f4bdd808ccae285b9abad1461fb68350422c1",
+    "timestamp": "2025-09-26T19:42:55.354246"
+  },
+  {
+    "documento": "M9_technical-report.ts",
+    "hash_id": "f1b8bc5e9fba8beeb62cefce6c82f5be7cbb21dbbdaa5368f8a889634ec62108",
+    "assinatura": "9ab89b781e56dae352bd2548ae2fe6c13878ae3c7278da9c5cf5aeb461ec5c02",
+    "timestamp": "2025-09-26T19:42:55.354284"
+  },
+  {
+    "documento": "M29_scientific-report.ts",
+    "hash_id": "35d038a01318e842c584692a9daa6a965eba5dfa746ca507960207528d769a78",
+    "assinatura": "e637f9581c967429221a10e88d0361f87e35e4bdc461437985ee82ec5af7347e",
+    "timestamp": "2025-09-26T19:42:55.354319"
+  }
+]
