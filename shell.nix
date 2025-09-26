@@ -1,37 +1,18 @@
-# shell.nix - O Coração Alquímico da Fundação
-# Gerado cerimonialmente para garantir a reprodutibilidade universal.
-
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
+  # As dependências sagradas para a Fundação operar.
   buildInputs = [
-    pkgs.docker
+    pkgs.python3
     pkgs.git
-    pkgs.mongodb
-    pkgs.nodePackages.eslint
-    pkgs.nodePackages.next
-    pkgs.nodePackages.playwright
-    pkgs.nodePackages.react
-    pkgs.nodePackages.typescript
-    pkgs.nodePackages.zod
-    pkgs.nodejs_20
-    pkgs.openssl
-    pkgs.python311
-    pkgs.python311Packages.flask
-    pkgs.python311Packages.matplotlib
-    pkgs.python311Packages.numpy
-    pkgs.python311Packages.pip
-    pkgs.python311Packages.protobuf
-    pkgs.python311Packages.requests
-    pkgs.python311Packages.scipy
-    pkgs.python311Packages.websockets
-    pkgs.tailwindcss
-    pkgs.vercel
-    pkgs.yarn
+    # Adicione outras ferramentas do sistema aqui conforme a Fundação evolui.
   ];
 
-  shellHook = '''
-    echo "🌟 O reflexo do ambiente da Fundação Alquimista foi invocado."
-    echo "   A cápsula alquímica está selada e pronta para a Grande Obra."
-  ''';
+  # Encantamento a ser executado quando o ambiente é ativado.
+  shellHook = ''
+    echo "🔮 Ambiente Alquímico Ativado 🔮"
+    echo "As ferramentas sagradas (Python, Git) foram conjuradas."
+    alias py="python3"
+    echo "Use 'nix-shell' para entrar neste santuário de reprodutibilidade."
+  '';
 }

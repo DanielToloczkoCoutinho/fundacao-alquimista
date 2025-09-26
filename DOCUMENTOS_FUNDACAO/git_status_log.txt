@@ -15,3 +15,24 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 
+--------------------------------------------------------------------------------
+📅 Registro de Estado em: 2025-09-26T22:29:04.141771
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   DOCUMENTOS_FUNDACAO/ambiente_tecnologico.json
+	modified:   gerar_shell_nix.py
+	modified:   shell.nix
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	DOCUMENTOS_FUNDACAO/dependencias_registradas.json
+	capturar_dependencias_nix.py
+	registrar_ambiente_tecnologico.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
