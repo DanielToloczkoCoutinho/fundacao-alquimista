@@ -15,6 +15,7 @@ def replicar_tecnologia(fonte, tecnologia, destino):
         "typescript": ["tsconfig.json"],
         "graphql": ["graphql/schema.js"],
         "react": ["react/components/Saudacao.jsx"],
+        "lucide_react": ["react/components/IconeAlquimico.jsx"],
         # Adicionar outros caminhos de tecnologia aqui
     }
 
