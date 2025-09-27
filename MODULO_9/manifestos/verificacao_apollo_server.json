@@ -1,0 +1,7 @@
+{
+  "tecnologia": "@apollo/server",
+  "verificado_em": "2025-09-27T00:41:55.232968",
+  "instalado": true,
+  "versao_detectada": "4.12.2",
+  "comentario": "Verifica a presen\u00e7a do pacote @apollo/server, essencial para rodar um servidor GraphQL independente."
+}

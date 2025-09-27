@@ -9,6 +9,7 @@ def replicar_tecnologia(fonte, tecnologia, destino):
     # Caminhos específicos da tecnologia a serem replicados
     caminhos_a_replicar = {
         "apollo_graphql": ["graphql/schema.graphql"],
+        "apollo_server": ["apollo_server/package.json", "apollo_server/index.js"],
         "express": ["server.js"],
         "kubernetes": ["kubernetes/deployment.yaml"],
         # Adicionar outros caminhos de tecnologia aqui
