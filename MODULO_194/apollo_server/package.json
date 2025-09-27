@@ -13,10 +13,10 @@
   },
   "database": {
     "type": "postgres",
-    "host": "db_194",
+    "host": "db_9",
     "port": 5432,
-    "username": "user_194",
-    "password": "pass_194",
-    "database": "db_modulo_194"
+    "username": "user_9",
+    "password": "pass_9",
+    "database": "db_modulo_9"
   }
 }

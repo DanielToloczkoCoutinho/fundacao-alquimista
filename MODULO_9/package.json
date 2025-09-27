@@ -1,15 +1,14 @@
 {
-  "name": "modulo_9",
+  "name": "modulo-9-apollo-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Servidor Apollo para o Módulo 9",
+  "main": "apollo/server.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node apollo/server.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
-  },
-  "description": ""
+    "@apollo/server": "^5.0.0",
+    "graphql": "^16.11.0"
+  }
 }
