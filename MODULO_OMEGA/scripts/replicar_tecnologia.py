@@ -25,6 +25,7 @@ def replicar_tecnologia(fonte, tecnologia, destino):
             "react/styles/globals.css",
             "react/components/EstiloDivino.jsx"
         ],
+        "react_three_fiber": ["react/components/CenaAlquimica.jsx"]
         # Adicionar outros caminhos de tecnologia aqui
     }
 
