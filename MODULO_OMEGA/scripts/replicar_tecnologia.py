@@ -18,6 +18,7 @@ def replicar_tecnologia(fonte, tecnologia, destino):
         "lucide_react": ["react/components/IconeAlquimico.jsx"],
         "shadcn_ui": ["react/components/BotaoRitual.jsx"],
         "nextjs": ["react/pages/pagina_cerimonial.js"],
+        "mongodb": ["mongodb/conexao.py"],
         # Adicionar outros caminhos de tecnologia aqui
     }
 
