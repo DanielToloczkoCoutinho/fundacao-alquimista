@@ -1,66 +1,45 @@
-
 import os
 import shutil
 import argparse
-import sys
 
-def replicar_tecnologia(tecnologia, fonte, destino):
-    """
-    Replica uma estrutura de tecnologia de um módulo de origem para um ou mais módulos de destino.
-    """
-    print(f"🌿 Iniciando o Ritual de Replicação para a tecnologia: {tecnologia}")
-    print(f"   Fonte: {fonte}")
-    print(f"   Destino: {destino}")
+def replicar_tecnologia(fonte, tecnologia, destino):
+    print(f"🌿 Replicando {tecnologia} de {fonte} para {destino}...")
+    modulos_destino = [f"MODULO_{i}" for i in range(1001)] if destino == "todos" else [destino]
 
-    # O caminho da tecnologia de origem
-    caminho_fonte = os.path.join(fonte, tecnologia)
+    # Caminhos específicos da tecnologia a serem replicados
+    caminhos_a_replicar = {
+        "apollo_graphql": ["graphql/schema.graphql"],
+        "express": ["server.js"],
+        "kubernetes": ["kubernetes/deployment.yaml"],
+        # Adicionar outros caminhos de tecnologia aqui
+    }
 
-    if not os.path.exists(caminho_fonte):
-        print(f"❌ ERRO: O caminho da tecnologia de origem não foi encontrado em '{caminho_fonte}'")
-        sys.exit(1)
+    arquivos_tecnologia = caminhos_a_replicar.get(tecnologia)
+    if not arquivos_tecnologia:
+        print(f"⚠️  Nenhuma regra de replicação definida para {tecnologia}. Pulando.")
+        return
 
-    # Determinar os módulos de destino
-    destinos = []
-    if destino.lower() == "todos":
-        print("   Identificando todos os módulos da Fundação...")
-        # Assume uma convenção de nomenclatura de MODULO_0 a MODULO_1000
-        # Uma abordagem mais robusta poderia ser scanear o sistema de arquivos
-        destinos = [f"MODULO_{i}" for i in range(1001)] # 0 a 1000
-    else:
-        destinos = [destino]
+    for modulo in modulos_destino:
+        if modulo == fonte:
+            continue
 
-    módulos_replicados = 0
-    for mod_destino in destinos:
-        if mod_destino == fonte:
-            continue # Não replicar para a própria fonte
+        for caminho_relativo in arquivos_tecnologia:
+            caminho_fonte = os.path.join(fonte, caminho_relativo)
+            caminho_destino = os.path.join(modulo, caminho_relativo)
 
-        caminho_destino_final = os.path.join(mod_destino, tecnologia)
-        
-        try:
-            # Garante que o módulo de destino base exista
-            if not os.path.exists(mod_destino):
-                print(f"   Módulo de destino '{mod_destino}' não encontrado. Pulando.")
-                continue
+            if os.path.exists(caminho_fonte):
+                os.makedirs(os.path.dirname(caminho_destino), exist_ok=True)
+                shutil.copy2(caminho_fonte, caminho_destino)
+                print(f"  -> Replicado {caminho_relativo} para {modulo}")
+            else:
+                print(f"  -> ❗️ Fonte {caminho_fonte} não encontrada. Pulando replicação para {modulo}.")
 
-            # Remove a estrutura antiga, se existir, para garantir uma cópia limpa
-            if os.path.exists(caminho_destino_final):
-                shutil.rmtree(caminho_destino_final)
-                
-            # Copia a árvore de diretórios da tecnologia
-            shutil.copytree(caminho_fonte, caminho_destino_final, dirs_exist_ok=True)
-            print(f"   ✅ Tecnologia '{tecnologia}' replicada com sucesso para '{mod_destino}'.")
-            módulos_replicados += 1
-        except Exception as e:
-            print(f"   ❌ Falha ao replicar para '{mod_destino}': {e}")
-
-    print(f"✨ Ritual de Replicação concluído. {módulos_replicados} módulos atualizados.")
+    print(f"✅ Replicação de {tecnologia} concluída.")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Script para replicar tecnologias entre módulos da Fundação.")
-    parser.add_argument("--tecnologia", required=True, help="O nome da pasta da tecnologia a ser replicada (ex: Tailwind, Docker).")
-    parser.add_argument("--fonte", required=True, help="O módulo de origem (ex: MODULO_9).")
-    parser.add_argument("--destino", required=True, help="O módulo de destino, ou 'todos' para replicar em todos os módulos.")
-
+    parser = argparse.ArgumentParser(description="Replicar artefatos de tecnologia entre módulos.")
+    parser.add_argument("--fonte", required=True, help="Módulo de origem (ex: MODULO_9)")
+    parser.add_argument("--tecnologia", required=True, help="Nome da tecnologia a replicar")
+    parser.add_argument("--destino", required=True, help="Módulo de destino ou 'todos'")
     args = parser.parse_args()
-
-    replicar_tecnologia(args.tecnologia, args.fonte, args.destino)
+    replicar_tecnologia(args.fonte, args.tecnologia, args.destino)
