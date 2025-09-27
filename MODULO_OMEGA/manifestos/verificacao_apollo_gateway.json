@@ -1,7 +1,6 @@
 {
-  "tecnologia": "@apollo/gateway",
-  "verificado_em": "2025-09-27T00:48:54.393494",
+  "tecnologia": "Apollo Gateway",
+  "verificado_em": "2025-09-27T02:12:47.321605",
   "instalado": true,
-  "versao_detectada": "2.11.2",
-  "comentario": "Verifica a presen\u00e7a do pacote @apollo/gateway, crucial para a federa\u00e7\u00e3o dos servi\u00e7os."
+  "detalhes": "nextn@0.1.0 /home/user/studio\n\u2514\u2500\u2500 @apollo/gateway@2.11.2"
 }
