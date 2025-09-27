@@ -20,6 +20,11 @@ def replicar_tecnologia(fonte, tecnologia, destino):
         "nextjs": ["react/pages/pagina_cerimonial.js"],
         "mongodb": ["mongodb/conexao.py"],
         "radix_ui": ["react/components/DicaAlquimica.jsx"],
+        "tailwind_css": [
+            "tailwind.config.js",
+            "react/styles/globals.css",
+            "react/components/EstiloDivino.jsx"
+        ],
         # Adicionar outros caminhos de tecnologia aqui
     }
 
