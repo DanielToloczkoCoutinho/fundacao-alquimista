@@ -1,0 +1,6 @@
+{
+  "tecnologia": "Kubernetes",
+  "verificado_em": "2025-09-27T00:26:49.878810",
+  "kubectl_instalado": true,
+  "versao_detectada": "v1.34.1"
+}
