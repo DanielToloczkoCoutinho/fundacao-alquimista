@@ -26,7 +26,8 @@ def replicar_tecnologia(fonte, tecnologia, destino):
             "react/components/EstiloDivino.jsx"
         ],
         "react_three_fiber": ["react/components/CenaAlquimica.jsx"],
-        "jwt": ["auth/jwt.js", "auth/jwt-secret.js"]
+        "jwt": ["auth/jwt.js", "auth/jwt-secret.js"],
+        "mongoose": ["mongodb/modelos/modelo_usuario.js"]
         # Adicionar outros caminhos de tecnologia aqui
     }
 
