@@ -12,6 +12,7 @@ def replicar_tecnologia(fonte, tecnologia, destino):
         "apollo_server": ["apollo_server/package.json", "apollo_server/index.js"],
         "express": ["server.js"],
         "kubernetes": ["kubernetes/deployment.yaml"],
+        "typescript": ["tsconfig.json"],
         # Adicionar outros caminhos de tecnologia aqui
     }
 
