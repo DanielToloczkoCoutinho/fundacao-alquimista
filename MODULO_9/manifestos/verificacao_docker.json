@@ -1,6 +1,6 @@
 {
   "tecnologia": "Docker",
-  "verificado_em": "2025-09-27T00:34:01.906941",
+  "verificado_em": "2025-09-27T03:16:02.300122",
   "instalado": true,
-  "versao_detectada": "Docker version 27.5.1, build v27.5.1"
+  "detalhes": "Docker version 27.5.1, build v27.5.1"
 }

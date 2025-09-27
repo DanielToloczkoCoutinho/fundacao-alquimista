@@ -2,10 +2,12 @@
   "name": "modulo-9-apollo-server",
   "version": "1.0.0",
   "description": "Servidor Apollo para o Módulo 9",
-  "main": "apollo/server.ts",
+  "main": "dist/server.js",
   "type": "module",
   "scripts": {
-    "start": "node apollo/server.ts"
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "dev": "tsc-watch --onSuccess \"node dist/server.js\""
   },
   "dependencies": {
     "@apollo/server": "^5.0.0",
@@ -18,5 +20,9 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "tsc-watch": "^6.2.0"
   }
 }
