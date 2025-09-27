@@ -13,6 +13,7 @@ def replicar_tecnologia(fonte, tecnologia, destino):
         "express": ["server.js"],
         "kubernetes": ["kubernetes/deployment.yaml"],
         "typescript": ["tsconfig.json"],
+        "graphql": ["graphql/schema.js"],
         # Adicionar outros caminhos de tecnologia aqui
     }
 
