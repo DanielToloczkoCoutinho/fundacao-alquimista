@@ -19,6 +19,7 @@ def replicar_tecnologia(fonte, tecnologia, destino):
         "shadcn_ui": ["react/components/BotaoRitual.jsx"],
         "nextjs": ["react/pages/pagina_cerimonial.js"],
         "mongodb": ["mongodb/conexao.py"],
+        "radix_ui": ["react/components/DicaAlquimica.jsx"],
         # Adicionar outros caminhos de tecnologia aqui
     }
 
