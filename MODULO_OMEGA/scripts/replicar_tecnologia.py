@@ -16,6 +16,7 @@ def replicar_tecnologia(fonte, tecnologia, destino):
         "graphql": ["graphql/schema.js"],
         "react": ["react/components/Saudacao.jsx"],
         "lucide_react": ["react/components/IconeAlquimico.jsx"],
+        "shadcn_ui": ["react/components/BotaoRitual.jsx"],
         # Adicionar outros caminhos de tecnologia aqui
     }
 
