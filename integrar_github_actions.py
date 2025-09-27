@@ -1,0 +1,33 @@
+import os
+
+def integrar_github_actions():
+    print("⚙️ Integrando GitHub Actions...")
+    os.makedirs(".github/workflows", exist_ok=True)
+    conteudo = """name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install --prefix MODULO_ALFA && npm install --prefix MODULO_OMEGA
+      - name: Run build
+        run: npm run compile --prefix MODULO_ALFA && npm run compile --prefix MODULO_OMEGA
+"""
+    with open(".github/workflows/ci.yml", "w", encoding="utf-8") as f:
+        f.write(conteudo)
+    print("✅ Workflow CI criado em: .github/workflows/ci.yml")
+
+if __name__ == "__main__":
+    integrar_github_actions()

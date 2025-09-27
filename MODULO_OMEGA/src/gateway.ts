@@ -1,15 +1,23 @@
+import { ApolloServer } from '@apollo/server';
+import { startStandaloneServer } from '@apollo/server/standalone';
+import { ApolloGateway, IntrospectAndCompose } from '@apollo/gateway';
 
-    // Exemplo de integração simbólica do Apollo Gateway no Módulo MΩ
-    import { ApolloServer } from '@apollo/server';
-    import { ApolloGateway } from '@apollo/gateway';
+// A lista de serviços agora inclui o Módulo Alfa.
+const gateway = new ApolloGateway({
+  supergraphSdl: new IntrospectAndCompose({
+    subgraphs: [
+      { name: 'alfa', url: 'http://localhost:4001' },
+    ],
+  }),
+});
 
-    const gateway = new ApolloGateway({
-      // Configuração para os serviços federados
-    });
+const server = new ApolloServer({ gateway });
 
-    const server = new ApolloServer({
-      gateway,
-    });
+async function startServer() {
+  const { url } = await startStandaloneServer(server, {
+    listen: { port: 4000 },
+  });
+  console.log(`🚀 Gateway da Mente Una (MΩ) pronto em: ${url}`);
+}
 
-    console.log('Módulo MΩ agora opera com Apollo Gateway.');
-    
+startServer();
