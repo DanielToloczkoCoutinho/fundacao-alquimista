@@ -1,0 +1,12 @@
+{
+  "tecnologia": "JSON Web Token (JWT)",
+  "módulo_destino": "M9 — O Eremita (YESOD)",
+  "artefatos_gerados": [
+    "auth/jwt.js",
+    "auth/jwt-secret.js"
+  ],
+  "função": "Geração e verificação de tokens de autenticação",
+  "estado": "Verificado e Integrado",
+  "timestamp": "2025-10-01T10:00:00",
+  "assinatura": "@Daniel-Anatheron"
+}

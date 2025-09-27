@@ -1,0 +1,12 @@
+{
+  "tecnologia": "JSON Web Token (JWT)",
+  "verificado_em": "2025-09-27T03:41:37.089624",
+  "instalado": {
+    "jsonwebtoken": false,
+    "@types/jsonwebtoken": false
+  },
+  "detalhes": {
+    "jsonwebtoken": "modulo-9-apollo-server@1.0.0 /home/user/studio/MODULO_9\n\u2514\u2500\u2500 (empty)",
+    "@types/jsonwebtoken": "modulo-9-apollo-server@1.0.0 /home/user/studio/MODULO_9\n\u2514\u2500\u2500 (empty)"
+  }
+}
