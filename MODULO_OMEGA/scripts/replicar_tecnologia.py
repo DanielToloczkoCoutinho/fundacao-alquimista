@@ -14,6 +14,7 @@ def replicar_tecnologia(fonte, tecnologia, destino):
         "kubernetes": ["kubernetes/deployment.yaml"],
         "typescript": ["tsconfig.json"],
         "graphql": ["graphql/schema.js"],
+        "react": ["react/components/Saudacao.jsx"],
         # Adicionar outros caminhos de tecnologia aqui
     }
 
