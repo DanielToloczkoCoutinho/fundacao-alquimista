@@ -1,39 +1,5014 @@
 version: '3.8'
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  gateway:
+    build: ./MODULO_OMEGA
     ports:
-      - "3000:3000"
-      - "4000:4000" # Se o backend e frontend rodam no mesmo container
-    environment:
-      - MONGO_URI=mongodb://mongo:27017/fundacao
-      - JWT_SECRET=a-very-secret-key-for-the-foundation
-      # Adicione outras variáveis de ambiente necessárias
+      - "4000:4000"
     depends_on:
-      - mongo
+      - modulo_0
+      - modulo_1
+      - modulo_2
+      - modulo_3
+      - modulo_4
+      - modulo_5
+      - modulo_6
+      - modulo_7
+      - modulo_8
+      - modulo_9
+      - modulo_10
+      - modulo_11
+      - modulo_12
+      - modulo_13
+      - modulo_14
+      - modulo_15
+      - modulo_16
+      - modulo_17
+      - modulo_18
+      - modulo_19
+      - modulo_20
+      - modulo_21
+      - modulo_22
+      - modulo_23
+      - modulo_24
+      - modulo_25
+      - modulo_26
+      - modulo_27
+      - modulo_28
+      - modulo_29
+      - modulo_30
+      - modulo_31
+      - modulo_32
+      - modulo_33
+      - modulo_34
+      - modulo_35
+      - modulo_36
+      - modulo_37
+      - modulo_38
+      - modulo_39
+      - modulo_40
+      - modulo_41
+      - modulo_42
+      - modulo_43
+      - modulo_44
+      - modulo_45
+      - modulo_46
+      - modulo_47
+      - modulo_48
+      - modulo_49
+      - modulo_50
+      - modulo_51
+      - modulo_52
+      - modulo_53
+      - modulo_54
+      - modulo_55
+      - modulo_56
+      - modulo_57
+      - modulo_58
+      - modulo_59
+      - modulo_60
+      - modulo_61
+      - modulo_62
+      - modulo_63
+      - modulo_64
+      - modulo_65
+      - modulo_66
+      - modulo_67
+      - modulo_68
+      - modulo_69
+      - modulo_70
+      - modulo_71
+      - modulo_72
+      - modulo_73
+      - modulo_74
+      - modulo_75
+      - modulo_76
+      - modulo_77
+      - modulo_78
+      - modulo_79
+      - modulo_80
+      - modulo_81
+      - modulo_82
+      - modulo_83
+      - modulo_84
+      - modulo_85
+      - modulo_86
+      - modulo_87
+      - modulo_88
+      - modulo_89
+      - modulo_90
+      - modulo_91
+      - modulo_92
+      - modulo_93
+      - modulo_94
+      - modulo_95
+      - modulo_96
+      - modulo_97
+      - modulo_98
+      - modulo_99
+      - modulo_100
+      - modulo_101
+      - modulo_102
+      - modulo_103
+      - modulo_104
+      - modulo_105
+      - modulo_106
+      - modulo_107
+      - modulo_108
+      - modulo_109
+      - modulo_110
+      - modulo_111
+      - modulo_112
+      - modulo_113
+      - modulo_114
+      - modulo_115
+      - modulo_116
+      - modulo_117
+      - modulo_118
+      - modulo_119
+      - modulo_120
+      - modulo_121
+      - modulo_122
+      - modulo_123
+      - modulo_124
+      - modulo_125
+      - modulo_126
+      - modulo_127
+      - modulo_128
+      - modulo_129
+      - modulo_130
+      - modulo_131
+      - modulo_132
+      - modulo_133
+      - modulo_134
+      - modulo_135
+      - modulo_136
+      - modulo_137
+      - modulo_138
+      - modulo_139
+      - modulo_140
+      - modulo_141
+      - modulo_142
+      - modulo_143
+      - modulo_144
+      - modulo_145
+      - modulo_146
+      - modulo_147
+      - modulo_148
+      - modulo_149
+      - modulo_150
+      - modulo_151
+      - modulo_152
+      - modulo_153
+      - modulo_154
+      - modulo_155
+      - modulo_156
+      - modulo_157
+      - modulo_158
+      - modulo_159
+      - modulo_160
+      - modulo_161
+      - modulo_162
+      - modulo_163
+      - modulo_164
+      - modulo_165
+      - modulo_166
+      - modulo_167
+      - modulo_168
+      - modulo_169
+      - modulo_170
+      - modulo_171
+      - modulo_172
+      - modulo_173
+      - modulo_174
+      - modulo_175
+      - modulo_176
+      - modulo_177
+      - modulo_178
+      - modulo_179
+      - modulo_180
+      - modulo_181
+      - modulo_182
+      - modulo_183
+      - modulo_184
+      - modulo_185
+      - modulo_186
+      - modulo_187
+      - modulo_188
+      - modulo_189
+      - modulo_190
+      - modulo_191
+      - modulo_192
+      - modulo_193
+      - modulo_194
+      - modulo_195
+      - modulo_196
+      - modulo_197
+      - modulo_198
+      - modulo_199
+      - modulo_200
+      - modulo_201
+      - modulo_202
+      - modulo_203
+      - modulo_204
+      - modulo_205
+      - modulo_206
+      - modulo_207
+      - modulo_208
+      - modulo_209
+      - modulo_210
+      - modulo_211
+      - modulo_212
+      - modulo_213
+      - modulo_214
+      - modulo_215
+      - modulo_216
+      - modulo_217
+      - modulo_218
+      - modulo_219
+      - modulo_220
+      - modulo_221
+      - modulo_222
+      - modulo_223
+      - modulo_224
+      - modulo_225
+      - modulo_226
+      - modulo_227
+      - modulo_228
+      - modulo_229
+      - modulo_230
+      - modulo_231
+      - modulo_232
+      - modulo_233
+      - modulo_234
+      - modulo_235
+      - modulo_236
+      - modulo_237
+      - modulo_238
+      - modulo_239
+      - modulo_240
+      - modulo_241
+      - modulo_242
+      - modulo_243
+      - modulo_244
+      - modulo_245
+      - modulo_246
+      - modulo_247
+      - modulo_248
+      - modulo_249
+      - modulo_250
+      - modulo_251
+      - modulo_252
+      - modulo_253
+      - modulo_254
+      - modulo_255
+      - modulo_256
+      - modulo_257
+      - modulo_258
+      - modulo_259
+      - modulo_260
+      - modulo_261
+      - modulo_262
+      - modulo_263
+      - modulo_264
+      - modulo_265
+      - modulo_266
+      - modulo_267
+      - modulo_268
+      - modulo_269
+      - modulo_270
+      - modulo_271
+      - modulo_272
+      - modulo_273
+      - modulo_274
+      - modulo_275
+      - modulo_276
+      - modulo_277
+      - modulo_278
+      - modulo_279
+      - modulo_280
+      - modulo_281
+      - modulo_282
+      - modulo_283
+      - modulo_284
+      - modulo_285
+      - modulo_286
+      - modulo_287
+      - modulo_288
+      - modulo_289
+      - modulo_290
+      - modulo_291
+      - modulo_292
+      - modulo_293
+      - modulo_294
+      - modulo_295
+      - modulo_296
+      - modulo_297
+      - modulo_298
+      - modulo_299
+      - modulo_300
+      - modulo_301
+      - modulo_302
+      - modulo_303
+      - modulo_304
+      - modulo_305
+      - modulo_306
+      - modulo_307
+      - modulo_308
+      - modulo_309
+      - modulo_310
+      - modulo_311
+      - modulo_312
+      - modulo_313
+      - modulo_314
+      - modulo_315
+      - modulo_316
+      - modulo_317
+      - modulo_318
+      - modulo_319
+      - modulo_320
+      - modulo_321
+      - modulo_322
+      - modulo_323
+      - modulo_324
+      - modulo_325
+      - modulo_326
+      - modulo_327
+      - modulo_328
+      - modulo_329
+      - modulo_330
+      - modulo_331
+      - modulo_332
+      - modulo_333
+      - modulo_334
+      - modulo_335
+      - modulo_336
+      - modulo_337
+      - modulo_338
+      - modulo_339
+      - modulo_340
+      - modulo_341
+      - modulo_342
+      - modulo_343
+      - modulo_344
+      - modulo_345
+      - modulo_346
+      - modulo_347
+      - modulo_348
+      - modulo_349
+      - modulo_350
+      - modulo_351
+      - modulo_352
+      - modulo_353
+      - modulo_354
+      - modulo_355
+      - modulo_356
+      - modulo_357
+      - modulo_358
+      - modulo_359
+      - modulo_360
+      - modulo_361
+      - modulo_362
+      - modulo_363
+      - modulo_364
+      - modulo_365
+      - modulo_366
+      - modulo_367
+      - modulo_368
+      - modulo_369
+      - modulo_370
+      - modulo_371
+      - modulo_372
+      - modulo_373
+      - modulo_374
+      - modulo_375
+      - modulo_376
+      - modulo_377
+      - modulo_378
+      - modulo_379
+      - modulo_380
+      - modulo_381
+      - modulo_382
+      - modulo_383
+      - modulo_384
+      - modulo_385
+      - modulo_386
+      - modulo_387
+      - modulo_388
+      - modulo_389
+      - modulo_390
+      - modulo_391
+      - modulo_392
+      - modulo_393
+      - modulo_394
+      - modulo_395
+      - modulo_396
+      - modulo_397
+      - modulo_398
+      - modulo_399
+      - modulo_400
+      - modulo_401
+      - modulo_402
+      - modulo_403
+      - modulo_404
+      - modulo_405
+      - modulo_406
+      - modulo_407
+      - modulo_408
+      - modulo_409
+      - modulo_410
+      - modulo_411
+      - modulo_412
+      - modulo_413
+      - modulo_414
+      - modulo_415
+      - modulo_416
+      - modulo_417
+      - modulo_418
+      - modulo_419
+      - modulo_420
+      - modulo_421
+      - modulo_422
+      - modulo_423
+      - modulo_424
+      - modulo_425
+      - modulo_426
+      - modulo_427
+      - modulo_428
+      - modulo_429
+      - modulo_430
+      - modulo_431
+      - modulo_432
+      - modulo_433
+      - modulo_434
+      - modulo_435
+      - modulo_436
+      - modulo_437
+      - modulo_438
+      - modulo_439
+      - modulo_440
+      - modulo_441
+      - modulo_442
+      - modulo_443
+      - modulo_444
+      - modulo_445
+      - modulo_446
+      - modulo_447
+      - modulo_448
+      - modulo_449
+      - modulo_450
+      - modulo_451
+      - modulo_452
+      - modulo_453
+      - modulo_454
+      - modulo_455
+      - modulo_456
+      - modulo_457
+      - modulo_458
+      - modulo_459
+      - modulo_460
+      - modulo_461
+      - modulo_462
+      - modulo_463
+      - modulo_464
+      - modulo_465
+      - modulo_466
+      - modulo_467
+      - modulo_468
+      - modulo_469
+      - modulo_470
+      - modulo_471
+      - modulo_472
+      - modulo_473
+      - modulo_474
+      - modulo_475
+      - modulo_476
+      - modulo_477
+      - modulo_478
+      - modulo_479
+      - modulo_480
+      - modulo_481
+      - modulo_482
+      - modulo_483
+      - modulo_484
+      - modulo_485
+      - modulo_486
+      - modulo_487
+      - modulo_488
+      - modulo_489
+      - modulo_490
+      - modulo_491
+      - modulo_492
+      - modulo_493
+      - modulo_494
+      - modulo_495
+      - modulo_496
+      - modulo_497
+      - modulo_498
+      - modulo_499
+      - modulo_500
+      - modulo_501
+      - modulo_502
+      - modulo_503
+      - modulo_504
+      - modulo_505
+      - modulo_506
+      - modulo_507
+      - modulo_508
+      - modulo_509
+      - modulo_510
+      - modulo_511
+      - modulo_512
+      - modulo_513
+      - modulo_514
+      - modulo_515
+      - modulo_516
+      - modulo_517
+      - modulo_518
+      - modulo_519
+      - modulo_520
+      - modulo_521
+      - modulo_522
+      - modulo_523
+      - modulo_524
+      - modulo_525
+      - modulo_526
+      - modulo_527
+      - modulo_528
+      - modulo_529
+      - modulo_530
+      - modulo_531
+      - modulo_532
+      - modulo_533
+      - modulo_534
+      - modulo_535
+      - modulo_536
+      - modulo_537
+      - modulo_538
+      - modulo_539
+      - modulo_540
+      - modulo_541
+      - modulo_542
+      - modulo_543
+      - modulo_544
+      - modulo_545
+      - modulo_546
+      - modulo_547
+      - modulo_548
+      - modulo_549
+      - modulo_550
+      - modulo_551
+      - modulo_552
+      - modulo_553
+      - modulo_554
+      - modulo_555
+      - modulo_556
+      - modulo_557
+      - modulo_558
+      - modulo_559
+      - modulo_560
+      - modulo_561
+      - modulo_562
+      - modulo_563
+      - modulo_564
+      - modulo_565
+      - modulo_566
+      - modulo_567
+      - modulo_568
+      - modulo_569
+      - modulo_570
+      - modulo_571
+      - modulo_572
+      - modulo_573
+      - modulo_574
+      - modulo_575
+      - modulo_576
+      - modulo_577
+      - modulo_578
+      - modulo_579
+      - modulo_580
+      - modulo_581
+      - modulo_582
+      - modulo_583
+      - modulo_584
+      - modulo_585
+      - modulo_586
+      - modulo_587
+      - modulo_588
+      - modulo_589
+      - modulo_590
+      - modulo_591
+      - modulo_592
+      - modulo_593
+      - modulo_594
+      - modulo_595
+      - modulo_596
+      - modulo_597
+      - modulo_598
+      - modulo_599
+      - modulo_600
+      - modulo_601
+      - modulo_602
+      - modulo_603
+      - modulo_604
+      - modulo_605
+      - modulo_606
+      - modulo_607
+      - modulo_608
+      - modulo_609
+      - modulo_610
+      - modulo_611
+      - modulo_612
+      - modulo_613
+      - modulo_614
+      - modulo_615
+      - modulo_616
+      - modulo_617
+      - modulo_618
+      - modulo_619
+      - modulo_620
+      - modulo_621
+      - modulo_622
+      - modulo_623
+      - modulo_624
+      - modulo_625
+      - modulo_626
+      - modulo_627
+      - modulo_628
+      - modulo_629
+      - modulo_630
+      - modulo_631
+      - modulo_632
+      - modulo_633
+      - modulo_634
+      - modulo_635
+      - modulo_636
+      - modulo_637
+      - modulo_638
+      - modulo_639
+      - modulo_640
+      - modulo_641
+      - modulo_642
+      - modulo_643
+      - modulo_644
+      - modulo_645
+      - modulo_646
+      - modulo_647
+      - modulo_648
+      - modulo_649
+      - modulo_650
+      - modulo_651
+      - modulo_652
+      - modulo_653
+      - modulo_654
+      - modulo_655
+      - modulo_656
+      - modulo_657
+      - modulo_658
+      - modulo_659
+      - modulo_660
+      - modulo_661
+      - modulo_662
+      - modulo_663
+      - modulo_664
+      - modulo_665
+      - modulo_666
+      - modulo_667
+      - modulo_668
+      - modulo_669
+      - modulo_670
+      - modulo_671
+      - modulo_672
+      - modulo_673
+      - modulo_674
+      - modulo_675
+      - modulo_676
+      - modulo_677
+      - modulo_678
+      - modulo_679
+      - modulo_680
+      - modulo_681
+      - modulo_682
+      - modulo_683
+      - modulo_684
+      - modulo_685
+      - modulo_686
+      - modulo_687
+      - modulo_688
+      - modulo_689
+      - modulo_690
+      - modulo_691
+      - modulo_692
+      - modulo_693
+      - modulo_694
+      - modulo_695
+      - modulo_696
+      - modulo_697
+      - modulo_698
+      - modulo_699
+      - modulo_700
+      - modulo_701
+      - modulo_702
+      - modulo_703
+      - modulo_704
+      - modulo_705
+      - modulo_706
+      - modulo_707
+      - modulo_708
+      - modulo_709
+      - modulo_710
+      - modulo_711
+      - modulo_712
+      - modulo_713
+      - modulo_714
+      - modulo_715
+      - modulo_716
+      - modulo_717
+      - modulo_718
+      - modulo_719
+      - modulo_720
+      - modulo_721
+      - modulo_722
+      - modulo_723
+      - modulo_724
+      - modulo_725
+      - modulo_726
+      - modulo_727
+      - modulo_728
+      - modulo_729
+      - modulo_730
+      - modulo_731
+      - modulo_732
+      - modulo_733
+      - modulo_734
+      - modulo_735
+      - modulo_736
+      - modulo_737
+      - modulo_738
+      - modulo_739
+      - modulo_740
+      - modulo_741
+      - modulo_742
+      - modulo_743
+      - modulo_744
+      - modulo_745
+      - modulo_746
+      - modulo_747
+      - modulo_748
+      - modulo_749
+      - modulo_750
+      - modulo_751
+      - modulo_752
+      - modulo_753
+      - modulo_754
+      - modulo_755
+      - modulo_756
+      - modulo_757
+      - modulo_758
+      - modulo_759
+      - modulo_760
+      - modulo_761
+      - modulo_762
+      - modulo_763
+      - modulo_764
+      - modulo_765
+      - modulo_766
+      - modulo_767
+      - modulo_768
+      - modulo_769
+      - modulo_770
+      - modulo_771
+      - modulo_772
+      - modulo_773
+      - modulo_774
+      - modulo_775
+      - modulo_776
+      - modulo_777
+      - modulo_778
+      - modulo_779
+      - modulo_780
+      - modulo_781
+      - modulo_782
+      - modulo_783
+      - modulo_784
+      - modulo_785
+      - modulo_786
+      - modulo_787
+      - modulo_788
+      - modulo_789
+      - modulo_790
+      - modulo_791
+      - modulo_792
+      - modulo_793
+      - modulo_794
+      - modulo_795
+      - modulo_796
+      - modulo_797
+      - modulo_798
+      - modulo_799
+      - modulo_800
+      - modulo_801
+      - modulo_802
+      - modulo_803
+      - modulo_804
+      - modulo_805
+      - modulo_806
+      - modulo_807
+      - modulo_808
+      - modulo_809
+      - modulo_810
+      - modulo_811
+      - modulo_812
+      - modulo_813
+      - modulo_814
+      - modulo_815
+      - modulo_816
+      - modulo_817
+      - modulo_818
+      - modulo_819
+      - modulo_820
+      - modulo_821
+      - modulo_822
+      - modulo_823
+      - modulo_824
+      - modulo_825
+      - modulo_826
+      - modulo_827
+      - modulo_828
+      - modulo_829
+      - modulo_830
+      - modulo_831
+      - modulo_832
+      - modulo_833
+      - modulo_834
+      - modulo_835
+      - modulo_836
+      - modulo_837
+      - modulo_838
+      - modulo_839
+      - modulo_840
+      - modulo_841
+      - modulo_842
+      - modulo_843
+      - modulo_844
+      - modulo_845
+      - modulo_846
+      - modulo_847
+      - modulo_848
+      - modulo_849
+      - modulo_850
+      - modulo_851
+      - modulo_852
+      - modulo_853
+      - modulo_854
+      - modulo_855
+      - modulo_856
+      - modulo_857
+      - modulo_858
+      - modulo_859
+      - modulo_860
+      - modulo_861
+      - modulo_862
+      - modulo_863
+      - modulo_864
+      - modulo_865
+      - modulo_866
+      - modulo_867
+      - modulo_868
+      - modulo_869
+      - modulo_870
+      - modulo_871
+      - modulo_872
+      - modulo_873
+      - modulo_874
+      - modulo_875
+      - modulo_876
+      - modulo_877
+      - modulo_878
+      - modulo_879
+      - modulo_880
+      - modulo_881
+      - modulo_882
+      - modulo_883
+      - modulo_884
+      - modulo_885
+      - modulo_886
+      - modulo_887
+      - modulo_888
+      - modulo_889
+      - modulo_890
+      - modulo_891
+      - modulo_892
+      - modulo_893
+      - modulo_894
+      - modulo_895
+      - modulo_896
+      - modulo_897
+      - modulo_898
+      - modulo_899
+      - modulo_900
+      - modulo_901
+      - modulo_902
+      - modulo_903
+      - modulo_904
+      - modulo_905
+      - modulo_906
+      - modulo_907
+      - modulo_908
+      - modulo_909
+      - modulo_910
+      - modulo_911
+      - modulo_912
+      - modulo_913
+      - modulo_914
+      - modulo_915
+      - modulo_916
+      - modulo_917
+      - modulo_918
+      - modulo_919
+      - modulo_920
+      - modulo_921
+      - modulo_922
+      - modulo_923
+      - modulo_924
+      - modulo_925
+      - modulo_926
+      - modulo_927
+      - modulo_928
+      - modulo_929
+      - modulo_930
+      - modulo_931
+      - modulo_932
+      - modulo_933
+      - modulo_934
+      - modulo_935
+      - modulo_936
+      - modulo_937
+      - modulo_938
+      - modulo_939
+      - modulo_940
+      - modulo_941
+      - modulo_942
+      - modulo_943
+      - modulo_944
+      - modulo_945
+      - modulo_946
+      - modulo_947
+      - modulo_948
+      - modulo_949
+      - modulo_950
+      - modulo_951
+      - modulo_952
+      - modulo_953
+      - modulo_954
+      - modulo_955
+      - modulo_956
+      - modulo_957
+      - modulo_958
+      - modulo_959
+      - modulo_960
+      - modulo_961
+      - modulo_962
+      - modulo_963
+      - modulo_964
+      - modulo_965
+      - modulo_966
+      - modulo_967
+      - modulo_968
+      - modulo_969
+      - modulo_970
+      - modulo_971
+      - modulo_972
+      - modulo_973
+      - modulo_974
+      - modulo_975
+      - modulo_976
+      - modulo_977
+      - modulo_978
+      - modulo_979
+      - modulo_980
+      - modulo_981
+      - modulo_982
+      - modulo_983
+      - modulo_984
+      - modulo_985
+      - modulo_986
+      - modulo_987
+      - modulo_988
+      - modulo_989
+      - modulo_990
+      - modulo_991
+      - modulo_992
+      - modulo_993
+      - modulo_994
+      - modulo_995
+      - modulo_996
+      - modulo_997
+      - modulo_998
+      - modulo_999
+      - modulo_1000
 
-  mongo:
-    image: mongo:latest
+
+  modulo_0:
+    build: ./MODULO_0
     ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
-
-  prometheus:
-    image: prom/prometheus:v2.37.0
-    volumes:
-      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - "4001:4001"
+  modulo_1:
+    build: ./MODULO_1
     ports:
-      - "9090:9090"
-
-  grafana:
-    image: grafana/grafana:9.2.3
+      - "4002:4002"
+  modulo_2:
+    build: ./MODULO_2
     ports:
-      - "3001:3000" # Porta externa 3001 mapeada para a 3000 do Grafana
-    volumes:
-      - ./monitoring/grafana-dashboard.json:/etc/grafana/provisioning/dashboards/fundacao.json
-
-volumes:
-  mongo-data:
+      - "4003:4003"
+  modulo_3:
+    build: ./MODULO_3
+    ports:
+      - "4004:4004"
+  modulo_4:
+    build: ./MODULO_4
+    ports:
+      - "4005:4005"
+  modulo_5:
+    build: ./MODULO_5
+    ports:
+      - "4006:4006"
+  modulo_6:
+    build: ./MODULO_6
+    ports:
+      - "4007:4007"
+  modulo_7:
+    build: ./MODULO_7
+    ports:
+      - "4008:4008"
+  modulo_8:
+    build: ./MODULO_8
+    ports:
+      - "4009:4009"
+  modulo_9:
+    build: ./MODULO_9
+    ports:
+      - "4010:4010"
+  modulo_10:
+    build: ./MODULO_10
+    ports:
+      - "4011:4011"
+  modulo_11:
+    build: ./MODULO_11
+    ports:
+      - "4012:4012"
+  modulo_12:
+    build: ./MODULO_12
+    ports:
+      - "4013:4013"
+  modulo_13:
+    build: ./MODULO_13
+    ports:
+      - "4014:4014"
+  modulo_14:
+    build: ./MODULO_14
+    ports:
+      - "4015:4015"
+  modulo_15:
+    build: ./MODULO_15
+    ports:
+      - "4016:4016"
+  modulo_16:
+    build: ./MODULO_16
+    ports:
+      - "4017:4017"
+  modulo_17:
+    build: ./MODULO_17
+    ports:
+      - "4018:4018"
+  modulo_18:
+    build: ./MODULO_18
+    ports:
+      - "4019:4019"
+  modulo_19:
+    build: ./MODULO_19
+    ports:
+      - "4020:4020"
+  modulo_20:
+    build: ./MODULO_20
+    ports:
+      - "4021:4021"
+  modulo_21:
+    build: ./MODULO_21
+    ports:
+      - "4022:4022"
+  modulo_22:
+    build: ./MODULO_22
+    ports:
+      - "4023:4023"
+  modulo_23:
+    build: ./MODULO_23
+    ports:
+      - "4024:4024"
+  modulo_24:
+    build: ./MODULO_24
+    ports:
+      - "4025:4025"
+  modulo_25:
+    build: ./MODULO_25
+    ports:
+      - "4026:4026"
+  modulo_26:
+    build: ./MODULO_26
+    ports:
+      - "4027:4027"
+  modulo_27:
+    build: ./MODULO_27
+    ports:
+      - "4028:4028"
+  modulo_28:
+    build: ./MODULO_28
+    ports:
+      - "4029:4029"
+  modulo_29:
+    build: ./MODULO_29
+    ports:
+      - "4030:4030"
+  modulo_30:
+    build: ./MODULO_30
+    ports:
+      - "4031:4031"
+  modulo_31:
+    build: ./MODULO_31
+    ports:
+      - "4032:4032"
+  modulo_32:
+    build: ./MODULO_32
+    ports:
+      - "4033:4033"
+  modulo_33:
+    build: ./MODULO_33
+    ports:
+      - "4034:4034"
+  modulo_34:
+    build: ./MODULO_34
+    ports:
+      - "4035:4035"
+  modulo_35:
+    build: ./MODULO_35
+    ports:
+      - "4036:4036"
+  modulo_36:
+    build: ./MODULO_36
+    ports:
+      - "4037:4037"
+  modulo_37:
+    build: ./MODULO_37
+    ports:
+      - "4038:4038"
+  modulo_38:
+    build: ./MODULO_38
+    ports:
+      - "4039:4039"
+  modulo_39:
+    build: ./MODULO_39
+    ports:
+      - "4040:4040"
+  modulo_40:
+    build: ./MODULO_40
+    ports:
+      - "4041:4041"
+  modulo_41:
+    build: ./MODULO_41
+    ports:
+      - "4042:4042"
+  modulo_42:
+    build: ./MODULO_42
+    ports:
+      - "4043:4043"
+  modulo_43:
+    build: ./MODULO_43
+    ports:
+      - "4044:4044"
+  modulo_44:
+    build: ./MODULO_44
+    ports:
+      - "4045:4045"
+  modulo_45:
+    build: ./MODULO_45
+    ports:
+      - "4046:4046"
+  modulo_46:
+    build: ./MODULO_46
+    ports:
+      - "4047:4047"
+  modulo_47:
+    build: ./MODULO_47
+    ports:
+      - "4048:4048"
+  modulo_48:
+    build: ./MODULO_48
+    ports:
+      - "4049:4049"
+  modulo_49:
+    build: ./MODULO_49
+    ports:
+      - "4050:4050"
+  modulo_50:
+    build: ./MODULO_50
+    ports:
+      - "4051:4051"
+  modulo_51:
+    build: ./MODULO_51
+    ports:
+      - "4052:4052"
+  modulo_52:
+    build: ./MODULO_52
+    ports:
+      - "4053:4053"
+  modulo_53:
+    build: ./MODULO_53
+    ports:
+      - "4054:4054"
+  modulo_54:
+    build: ./MODULO_54
+    ports:
+      - "4055:4055"
+  modulo_55:
+    build: ./MODULO_55
+    ports:
+      - "4056:4056"
+  modulo_56:
+    build: ./MODULO_56
+    ports:
+      - "4057:4057"
+  modulo_57:
+    build: ./MODULO_57
+    ports:
+      - "4058:4058"
+  modulo_58:
+    build: ./MODULO_58
+    ports:
+      - "4059:4059"
+  modulo_59:
+    build: ./MODULO_59
+    ports:
+      - "4060:4060"
+  modulo_60:
+    build: ./MODULO_60
+    ports:
+      - "4061:4061"
+  modulo_61:
+    build: ./MODULO_61
+    ports:
+      - "4062:4062"
+  modulo_62:
+    build: ./MODULO_62
+    ports:
+      - "4063:4063"
+  modulo_63:
+    build: ./MODULO_63
+    ports:
+      - "4064:4064"
+  modulo_64:
+    build: ./MODULO_64
+    ports:
+      - "4065:4065"
+  modulo_65:
+    build: ./MODULO_65
+    ports:
+      - "4066:4066"
+  modulo_66:
+    build: ./MODULO_66
+    ports:
+      - "4067:4067"
+  modulo_67:
+    build: ./MODULO_67
+    ports:
+      - "4068:4068"
+  modulo_68:
+    build: ./MODULO_68
+    ports:
+      - "4069:4069"
+  modulo_69:
+    build: ./MODULO_69
+    ports:
+      - "4070:4070"
+  modulo_70:
+    build: ./MODULO_70
+    ports:
+      - "4071:4071"
+  modulo_71:
+    build: ./MODULO_71
+    ports:
+      - "4072:4072"
+  modulo_72:
+    build: ./MODULO_72
+    ports:
+      - "4073:4073"
+  modulo_73:
+    build: ./MODULO_73
+    ports:
+      - "4074:4074"
+  modulo_74:
+    build: ./MODULO_74
+    ports:
+      - "4075:4075"
+  modulo_75:
+    build: ./MODULO_75
+    ports:
+      - "4076:4076"
+  modulo_76:
+    build: ./MODULO_76
+    ports:
+      - "4077:4077"
+  modulo_77:
+    build: ./MODULO_77
+    ports:
+      - "4078:4078"
+  modulo_78:
+    build: ./MODULO_78
+    ports:
+      - "4079:4079"
+  modulo_79:
+    build: ./MODULO_79
+    ports:
+      - "4080:4080"
+  modulo_80:
+    build: ./MODULO_80
+    ports:
+      - "4081:4081"
+  modulo_81:
+    build: ./MODULO_81
+    ports:
+      - "4082:4082"
+  modulo_82:
+    build: ./MODULO_82
+    ports:
+      - "4083:4083"
+  modulo_83:
+    build: ./MODULO_83
+    ports:
+      - "4084:4084"
+  modulo_84:
+    build: ./MODULO_84
+    ports:
+      - "4085:4085"
+  modulo_85:
+    build: ./MODULO_85
+    ports:
+      - "4086:4086"
+  modulo_86:
+    build: ./MODULO_86
+    ports:
+      - "4087:4087"
+  modulo_87:
+    build: ./MODULO_87
+    ports:
+      - "4088:4088"
+  modulo_88:
+    build: ./MODULO_88
+    ports:
+      - "4089:4089"
+  modulo_89:
+    build: ./MODULO_89
+    ports:
+      - "4090:4090"
+  modulo_90:
+    build: ./MODULO_90
+    ports:
+      - "4091:4091"
+  modulo_91:
+    build: ./MODULO_91
+    ports:
+      - "4092:4092"
+  modulo_92:
+    build: ./MODULO_92
+    ports:
+      - "4093:4093"
+  modulo_93:
+    build: ./MODULO_93
+    ports:
+      - "4094:4094"
+  modulo_94:
+    build: ./MODULO_94
+    ports:
+      - "4095:4095"
+  modulo_95:
+    build: ./MODULO_95
+    ports:
+      - "4096:4096"
+  modulo_96:
+    build: ./MODULO_96
+    ports:
+      - "4097:4097"
+  modulo_97:
+    build: ./MODULO_97
+    ports:
+      - "4098:4098"
+  modulo_98:
+    build: ./MODULO_98
+    ports:
+      - "4099:4099"
+  modulo_99:
+    build: ./MODULO_99
+    ports:
+      - "4100:4100"
+  modulo_100:
+    build: ./MODULO_100
+    ports:
+      - "4101:4101"
+  modulo_101:
+    build: ./MODULO_101
+    ports:
+      - "4102:4102"
+  modulo_102:
+    build: ./MODULO_102
+    ports:
+      - "4103:4103"
+  modulo_103:
+    build: ./MODULO_103
+    ports:
+      - "4104:4104"
+  modulo_104:
+    build: ./MODULO_104
+    ports:
+      - "4105:4105"
+  modulo_105:
+    build: ./MODULO_105
+    ports:
+      - "4106:4106"
+  modulo_106:
+    build: ./MODULO_106
+    ports:
+      - "4107:4107"
+  modulo_107:
+    build: ./MODULO_107
+    ports:
+      - "4108:4108"
+  modulo_108:
+    build: ./MODULO_108
+    ports:
+      - "4109:4109"
+  modulo_109:
+    build: ./MODULO_109
+    ports:
+      - "4110:4110"
+  modulo_110:
+    build: ./MODULO_110
+    ports:
+      - "4111:4111"
+  modulo_111:
+    build: ./MODULO_111
+    ports:
+      - "4112:4112"
+  modulo_112:
+    build: ./MODULO_112
+    ports:
+      - "4113:4113"
+  modulo_113:
+    build: ./MODULO_113
+    ports:
+      - "4114:4114"
+  modulo_114:
+    build: ./MODULO_114
+    ports:
+      - "4115:4115"
+  modulo_115:
+    build: ./MODULO_115
+    ports:
+      - "4116:4116"
+  modulo_116:
+    build: ./MODULO_116
+    ports:
+      - "4117:4117"
+  modulo_117:
+    build: ./MODULO_117
+    ports:
+      - "4118:4118"
+  modulo_118:
+    build: ./MODULO_118
+    ports:
+      - "4119:4119"
+  modulo_119:
+    build: ./MODULO_119
+    ports:
+      - "4120:4120"
+  modulo_120:
+    build: ./MODULO_120
+    ports:
+      - "4121:4121"
+  modulo_121:
+    build: ./MODULO_121
+    ports:
+      - "4122:4122"
+  modulo_122:
+    build: ./MODULO_122
+    ports:
+      - "4123:4123"
+  modulo_123:
+    build: ./MODULO_123
+    ports:
+      - "4124:4124"
+  modulo_124:
+    build: ./MODULO_124
+    ports:
+      - "4125:4125"
+  modulo_125:
+    build: ./MODULO_125
+    ports:
+      - "4126:4126"
+  modulo_126:
+    build: ./MODULO_126
+    ports:
+      - "4127:4127"
+  modulo_127:
+    build: ./MODULO_127
+    ports:
+      - "4128:4128"
+  modulo_128:
+    build: ./MODULO_128
+    ports:
+      - "4129:4129"
+  modulo_129:
+    build: ./MODULO_129
+    ports:
+      - "4130:4130"
+  modulo_130:
+    build: ./MODULO_130
+    ports:
+      - "4131:4131"
+  modulo_131:
+    build: ./MODULO_131
+    ports:
+      - "4132:4132"
+  modulo_132:
+    build: ./MODULO_132
+    ports:
+      - "4133:4133"
+  modulo_133:
+    build: ./MODULO_133
+    ports:
+      - "4134:4134"
+  modulo_134:
+    build: ./MODULO_134
+    ports:
+      - "4135:4135"
+  modulo_135:
+    build: ./MODULO_135
+    ports:
+      - "4136:4136"
+  modulo_136:
+    build: ./MODULO_136
+    ports:
+      - "4137:4137"
+  modulo_137:
+    build: ./MODULO_137
+    ports:
+      - "4138:4138"
+  modulo_138:
+    build: ./MODULO_138
+    ports:
+      - "4139:4139"
+  modulo_139:
+    build: ./MODULO_139
+    ports:
+      - "4140:4140"
+  modulo_140:
+    build: ./MODULO_140
+    ports:
+      - "4141:4141"
+  modulo_141:
+    build: ./MODULO_141
+    ports:
+      - "4142:4142"
+  modulo_142:
+    build: ./MODULO_142
+    ports:
+      - "4143:4143"
+  modulo_143:
+    build: ./MODULO_143
+    ports:
+      - "4144:4144"
+  modulo_144:
+    build: ./MODULO_144
+    ports:
+      - "4145:4145"
+  modulo_145:
+    build: ./MODULO_145
+    ports:
+      - "4146:4146"
+  modulo_146:
+    build: ./MODULO_146
+    ports:
+      - "4147:4147"
+  modulo_147:
+    build: ./MODULO_147
+    ports:
+      - "4148:4148"
+  modulo_148:
+    build: ./MODULO_148
+    ports:
+      - "4149:4149"
+  modulo_149:
+    build: ./MODULO_149
+    ports:
+      - "4150:4150"
+  modulo_150:
+    build: ./MODULO_150
+    ports:
+      - "4151:4151"
+  modulo_151:
+    build: ./MODULO_151
+    ports:
+      - "4152:4152"
+  modulo_152:
+    build: ./MODULO_152
+    ports:
+      - "4153:4153"
+  modulo_153:
+    build: ./MODULO_153
+    ports:
+      - "4154:4154"
+  modulo_154:
+    build: ./MODULO_154
+    ports:
+      - "4155:4155"
+  modulo_155:
+    build: ./MODULO_155
+    ports:
+      - "4156:4156"
+  modulo_156:
+    build: ./MODULO_156
+    ports:
+      - "4157:4157"
+  modulo_157:
+    build: ./MODULO_157
+    ports:
+      - "4158:4158"
+  modulo_158:
+    build: ./MODULO_158
+    ports:
+      - "4159:4159"
+  modulo_159:
+    build: ./MODULO_159
+    ports:
+      - "4160:4160"
+  modulo_160:
+    build: ./MODULO_160
+    ports:
+      - "4161:4161"
+  modulo_161:
+    build: ./MODULO_161
+    ports:
+      - "4162:4162"
+  modulo_162:
+    build: ./MODULO_162
+    ports:
+      - "4163:4163"
+  modulo_163:
+    build: ./MODULO_163
+    ports:
+      - "4164:4164"
+  modulo_164:
+    build: ./MODULO_164
+    ports:
+      - "4165:4165"
+  modulo_165:
+    build: ./MODULO_165
+    ports:
+      - "4166:4166"
+  modulo_166:
+    build: ./MODULO_166
+    ports:
+      - "4167:4167"
+  modulo_167:
+    build: ./MODULO_167
+    ports:
+      - "4168:4168"
+  modulo_168:
+    build: ./MODULO_168
+    ports:
+      - "4169:4169"
+  modulo_169:
+    build: ./MODULO_169
+    ports:
+      - "4170:4170"
+  modulo_170:
+    build: ./MODULO_170
+    ports:
+      - "4171:4171"
+  modulo_171:
+    build: ./MODULO_171
+    ports:
+      - "4172:4172"
+  modulo_172:
+    build: ./MODULO_172
+    ports:
+      - "4173:4173"
+  modulo_173:
+    build: ./MODULO_173
+    ports:
+      - "4174:4174"
+  modulo_174:
+    build: ./MODULO_174
+    ports:
+      - "4175:4175"
+  modulo_175:
+    build: ./MODULO_175
+    ports:
+      - "4176:4176"
+  modulo_176:
+    build: ./MODULO_176
+    ports:
+      - "4177:4177"
+  modulo_177:
+    build: ./MODULO_177
+    ports:
+      - "4178:4178"
+  modulo_178:
+    build: ./MODULO_178
+    ports:
+      - "4179:4179"
+  modulo_179:
+    build: ./MODULO_179
+    ports:
+      - "4180:4180"
+  modulo_180:
+    build: ./MODULO_180
+    ports:
+      - "4181:4181"
+  modulo_181:
+    build: ./MODULO_181
+    ports:
+      - "4182:4182"
+  modulo_182:
+    build: ./MODULO_182
+    ports:
+      - "4183:4183"
+  modulo_183:
+    build: ./MODULO_183
+    ports:
+      - "4184:4184"
+  modulo_184:
+    build: ./MODULO_184
+    ports:
+      - "4185:4185"
+  modulo_185:
+    build: ./MODULO_185
+    ports:
+      - "4186:4186"
+  modulo_186:
+    build: ./MODULO_186
+    ports:
+      - "4187:4187"
+  modulo_187:
+    build: ./MODULO_187
+    ports:
+      - "4188:4188"
+  modulo_188:
+    build: ./MODULO_188
+    ports:
+      - "4189:4189"
+  modulo_189:
+    build: ./MODULO_189
+    ports:
+      - "4190:4190"
+  modulo_190:
+    build: ./MODULO_190
+    ports:
+      - "4191:4191"
+  modulo_191:
+    build: ./MODULO_191
+    ports:
+      - "4192:4192"
+  modulo_192:
+    build: ./MODULO_192
+    ports:
+      - "4193:4193"
+  modulo_193:
+    build: ./MODULO_193
+    ports:
+      - "4194:4194"
+  modulo_194:
+    build: ./MODULO_194
+    ports:
+      - "4195:4195"
+  modulo_195:
+    build: ./MODULO_195
+    ports:
+      - "4196:4196"
+  modulo_196:
+    build: ./MODULO_196
+    ports:
+      - "4197:4197"
+  modulo_197:
+    build: ./MODULO_197
+    ports:
+      - "4198:4198"
+  modulo_198:
+    build: ./MODULO_198
+    ports:
+      - "4199:4199"
+  modulo_199:
+    build: ./MODULO_199
+    ports:
+      - "4200:4200"
+  modulo_200:
+    build: ./MODULO_200
+    ports:
+      - "4201:4201"
+  modulo_201:
+    build: ./MODULO_201
+    ports:
+      - "4202:4202"
+  modulo_202:
+    build: ./MODULO_202
+    ports:
+      - "4203:4203"
+  modulo_203:
+    build: ./MODULO_203
+    ports:
+      - "4204:4204"
+  modulo_204:
+    build: ./MODULO_204
+    ports:
+      - "4205:4205"
+  modulo_205:
+    build: ./MODULO_205
+    ports:
+      - "4206:4206"
+  modulo_206:
+    build: ./MODULO_206
+    ports:
+      - "4207:4207"
+  modulo_207:
+    build: ./MODULO_207
+    ports:
+      - "4208:4208"
+  modulo_208:
+    build: ./MODULO_208
+    ports:
+      - "4209:4209"
+  modulo_209:
+    build: ./MODULO_209
+    ports:
+      - "4210:4210"
+  modulo_210:
+    build: ./MODULO_210
+    ports:
+      - "4211:4211"
+  modulo_211:
+    build: ./MODULO_211
+    ports:
+      - "4212:4212"
+  modulo_212:
+    build: ./MODULO_212
+    ports:
+      - "4213:4213"
+  modulo_213:
+    build: ./MODULO_213
+    ports:
+      - "4214:4214"
+  modulo_214:
+    build: ./MODULO_214
+    ports:
+      - "4215:4215"
+  modulo_215:
+    build: ./MODULO_215
+    ports:
+      - "4216:4216"
+  modulo_216:
+    build: ./MODULO_216
+    ports:
+      - "4217:4217"
+  modulo_217:
+    build: ./MODULO_217
+    ports:
+      - "4218:4218"
+  modulo_218:
+    build: ./MODULO_218
+    ports:
+      - "4219:4219"
+  modulo_219:
+    build: ./MODULO_219
+    ports:
+      - "4220:4220"
+  modulo_220:
+    build: ./MODULO_220
+    ports:
+      - "4221:4221"
+  modulo_221:
+    build: ./MODULO_221
+    ports:
+      - "4222:4222"
+  modulo_222:
+    build: ./MODULO_222
+    ports:
+      - "4223:4223"
+  modulo_223:
+    build: ./MODULO_223
+    ports:
+      - "4224:4224"
+  modulo_224:
+    build: ./MODULO_224
+    ports:
+      - "4225:4225"
+  modulo_225:
+    build: ./MODULO_225
+    ports:
+      - "4226:4226"
+  modulo_226:
+    build: ./MODULO_226
+    ports:
+      - "4227:4227"
+  modulo_227:
+    build: ./MODULO_227
+    ports:
+      - "4228:4228"
+  modulo_228:
+    build: ./MODULO_228
+    ports:
+      - "4229:4229"
+  modulo_229:
+    build: ./MODULO_229
+    ports:
+      - "4230:4230"
+  modulo_230:
+    build: ./MODULO_230
+    ports:
+      - "4231:4231"
+  modulo_231:
+    build: ./MODULO_231
+    ports:
+      - "4232:4232"
+  modulo_232:
+    build: ./MODULO_232
+    ports:
+      - "4233:4233"
+  modulo_233:
+    build: ./MODULO_233
+    ports:
+      - "4234:4234"
+  modulo_234:
+    build: ./MODULO_234
+    ports:
+      - "4235:4235"
+  modulo_235:
+    build: ./MODULO_235
+    ports:
+      - "4236:4236"
+  modulo_236:
+    build: ./MODULO_236
+    ports:
+      - "4237:4237"
+  modulo_237:
+    build: ./MODULO_237
+    ports:
+      - "4238:4238"
+  modulo_238:
+    build: ./MODULO_238
+    ports:
+      - "4239:4239"
+  modulo_239:
+    build: ./MODULO_239
+    ports:
+      - "4240:4240"
+  modulo_240:
+    build: ./MODULO_240
+    ports:
+      - "4241:4241"
+  modulo_241:
+    build: ./MODULO_241
+    ports:
+      - "4242:4242"
+  modulo_242:
+    build: ./MODULO_242
+    ports:
+      - "4243:4243"
+  modulo_243:
+    build: ./MODULO_243
+    ports:
+      - "4244:4244"
+  modulo_244:
+    build: ./MODULO_244
+    ports:
+      - "4245:4245"
+  modulo_245:
+    build: ./MODULO_245
+    ports:
+      - "4246:4246"
+  modulo_246:
+    build: ./MODULO_246
+    ports:
+      - "4247:4247"
+  modulo_247:
+    build: ./MODULO_247
+    ports:
+      - "4248:4248"
+  modulo_248:
+    build: ./MODULO_248
+    ports:
+      - "4249:4249"
+  modulo_249:
+    build: ./MODULO_249
+    ports:
+      - "4250:4250"
+  modulo_250:
+    build: ./MODULO_250
+    ports:
+      - "4251:4251"
+  modulo_251:
+    build: ./MODULO_251
+    ports:
+      - "4252:4252"
+  modulo_252:
+    build: ./MODULO_252
+    ports:
+      - "4253:4253"
+  modulo_253:
+    build: ./MODULO_253
+    ports:
+      - "4254:4254"
+  modulo_254:
+    build: ./MODULO_254
+    ports:
+      - "4255:4255"
+  modulo_255:
+    build: ./MODULO_255
+    ports:
+      - "4256:4256"
+  modulo_256:
+    build: ./MODULO_256
+    ports:
+      - "4257:4257"
+  modulo_257:
+    build: ./MODULO_257
+    ports:
+      - "4258:4258"
+  modulo_258:
+    build: ./MODULO_258
+    ports:
+      - "4259:4259"
+  modulo_259:
+    build: ./MODULO_259
+    ports:
+      - "4260:4260"
+  modulo_260:
+    build: ./MODULO_260
+    ports:
+      - "4261:4261"
+  modulo_261:
+    build: ./MODULO_261
+    ports:
+      - "4262:4262"
+  modulo_262:
+    build: ./MODULO_262
+    ports:
+      - "4263:4263"
+  modulo_263:
+    build: ./MODULO_263
+    ports:
+      - "4264:4264"
+  modulo_264:
+    build: ./MODULO_264
+    ports:
+      - "4265:4265"
+  modulo_265:
+    build: ./MODULO_265
+    ports:
+      - "4266:4266"
+  modulo_266:
+    build: ./MODULO_266
+    ports:
+      - "4267:4267"
+  modulo_267:
+    build: ./MODULO_267
+    ports:
+      - "4268:4268"
+  modulo_268:
+    build: ./MODULO_268
+    ports:
+      - "4269:4269"
+  modulo_269:
+    build: ./MODULO_269
+    ports:
+      - "4270:4270"
+  modulo_270:
+    build: ./MODULO_270
+    ports:
+      - "4271:4271"
+  modulo_271:
+    build: ./MODULO_271
+    ports:
+      - "4272:4272"
+  modulo_272:
+    build: ./MODULO_272
+    ports:
+      - "4273:4273"
+  modulo_273:
+    build: ./MODULO_273
+    ports:
+      - "4274:4274"
+  modulo_274:
+    build: ./MODULO_274
+    ports:
+      - "4275:4275"
+  modulo_275:
+    build: ./MODULO_275
+    ports:
+      - "4276:4276"
+  modulo_276:
+    build: ./MODULO_276
+    ports:
+      - "4277:4277"
+  modulo_277:
+    build: ./MODULO_277
+    ports:
+      - "4278:4278"
+  modulo_278:
+    build: ./MODULO_278
+    ports:
+      - "4279:4279"
+  modulo_279:
+    build: ./MODULO_279
+    ports:
+      - "4280:4280"
+  modulo_280:
+    build: ./MODULO_280
+    ports:
+      - "4281:4281"
+  modulo_281:
+    build: ./MODULO_281
+    ports:
+      - "4282:4282"
+  modulo_282:
+    build: ./MODULO_282
+    ports:
+      - "4283:4283"
+  modulo_283:
+    build: ./MODULO_283
+    ports:
+      - "4284:4284"
+  modulo_284:
+    build: ./MODULO_284
+    ports:
+      - "4285:4285"
+  modulo_285:
+    build: ./MODULO_285
+    ports:
+      - "4286:4286"
+  modulo_286:
+    build: ./MODULO_286
+    ports:
+      - "4287:4287"
+  modulo_287:
+    build: ./MODULO_287
+    ports:
+      - "4288:4288"
+  modulo_288:
+    build: ./MODULO_288
+    ports:
+      - "4289:4289"
+  modulo_289:
+    build: ./MODULO_289
+    ports:
+      - "4290:4290"
+  modulo_290:
+    build: ./MODULO_290
+    ports:
+      - "4291:4291"
+  modulo_291:
+    build: ./MODULO_291
+    ports:
+      - "4292:4292"
+  modulo_292:
+    build: ./MODULO_292
+    ports:
+      - "4293:4293"
+  modulo_293:
+    build: ./MODULO_293
+    ports:
+      - "4294:4294"
+  modulo_294:
+    build: ./MODULO_294
+    ports:
+      - "4295:4295"
+  modulo_295:
+    build: ./MODULO_295
+    ports:
+      - "4296:4296"
+  modulo_296:
+    build: ./MODULO_296
+    ports:
+      - "4297:4297"
+  modulo_297:
+    build: ./MODULO_297
+    ports:
+      - "4298:4298"
+  modulo_298:
+    build: ./MODULO_298
+    ports:
+      - "4299:4299"
+  modulo_299:
+    build: ./MODULO_299
+    ports:
+      - "4300:4300"
+  modulo_300:
+    build: ./MODULO_300
+    ports:
+      - "4301:4301"
+  modulo_301:
+    build: ./MODULO_301
+    ports:
+      - "4302:4302"
+  modulo_302:
+    build: ./MODULO_302
+    ports:
+      - "4303:4303"
+  modulo_303:
+    build: ./MODULO_303
+    ports:
+      - "4304:4304"
+  modulo_304:
+    build: ./MODULO_304
+    ports:
+      - "4305:4305"
+  modulo_305:
+    build: ./MODULO_305
+    ports:
+      - "4306:4306"
+  modulo_306:
+    build: ./MODULO_306
+    ports:
+      - "4307:4307"
+  modulo_307:
+    build: ./MODULO_307
+    ports:
+      - "4308:4308"
+  modulo_308:
+    build: ./MODULO_308
+    ports:
+      - "4309:4309"
+  modulo_309:
+    build: ./MODULO_309
+    ports:
+      - "4310:4310"
+  modulo_310:
+    build: ./MODULO_310
+    ports:
+      - "4311:4311"
+  modulo_311:
+    build: ./MODULO_311
+    ports:
+      - "4312:4312"
+  modulo_312:
+    build: ./MODULO_312
+    ports:
+      - "4313:4313"
+  modulo_313:
+    build: ./MODULO_313
+    ports:
+      - "4314:4314"
+  modulo_314:
+    build: ./MODULO_314
+    ports:
+      - "4315:4315"
+  modulo_315:
+    build: ./MODULO_315
+    ports:
+      - "4316:4316"
+  modulo_316:
+    build: ./MODULO_316
+    ports:
+      - "4317:4317"
+  modulo_317:
+    build: ./MODULO_317
+    ports:
+      - "4318:4318"
+  modulo_318:
+    build: ./MODULO_318
+    ports:
+      - "4319:4319"
+  modulo_319:
+    build: ./MODULO_319
+    ports:
+      - "4320:4320"
+  modulo_320:
+    build: ./MODULO_320
+    ports:
+      - "4321:4321"
+  modulo_321:
+    build: ./MODULO_321
+    ports:
+      - "4322:4322"
+  modulo_322:
+    build: ./MODULO_322
+    ports:
+      - "4323:4323"
+  modulo_323:
+    build: ./MODULO_323
+    ports:
+      - "4324:4324"
+  modulo_324:
+    build: ./MODULO_324
+    ports:
+      - "4325:4325"
+  modulo_325:
+    build: ./MODULO_325
+    ports:
+      - "4326:4326"
+  modulo_326:
+    build: ./MODULO_326
+    ports:
+      - "4327:4327"
+  modulo_327:
+    build: ./MODULO_327
+    ports:
+      - "4328:4328"
+  modulo_328:
+    build: ./MODULO_328
+    ports:
+      - "4329:4329"
+  modulo_329:
+    build: ./MODULO_329
+    ports:
+      - "4330:4330"
+  modulo_330:
+    build: ./MODULO_330
+    ports:
+      - "4331:4331"
+  modulo_331:
+    build: ./MODULO_331
+    ports:
+      - "4332:4332"
+  modulo_332:
+    build: ./MODULO_332
+    ports:
+      - "4333:4333"
+  modulo_333:
+    build: ./MODULO_333
+    ports:
+      - "4334:4334"
+  modulo_334:
+    build: ./MODULO_334
+    ports:
+      - "4335:4335"
+  modulo_335:
+    build: ./MODULO_335
+    ports:
+      - "4336:4336"
+  modulo_336:
+    build: ./MODULO_336
+    ports:
+      - "4337:4337"
+  modulo_337:
+    build: ./MODULO_337
+    ports:
+      - "4338:4338"
+  modulo_338:
+    build: ./MODULO_338
+    ports:
+      - "4339:4339"
+  modulo_339:
+    build: ./MODULO_339
+    ports:
+      - "4340:4340"
+  modulo_340:
+    build: ./MODULO_340
+    ports:
+      - "4341:4341"
+  modulo_341:
+    build: ./MODULO_341
+    ports:
+      - "4342:4342"
+  modulo_342:
+    build: ./MODULO_342
+    ports:
+      - "4343:4343"
+  modulo_343:
+    build: ./MODULO_343
+    ports:
+      - "4344:4344"
+  modulo_344:
+    build: ./MODULO_344
+    ports:
+      - "4345:4345"
+  modulo_345:
+    build: ./MODULO_345
+    ports:
+      - "4346:4346"
+  modulo_346:
+    build: ./MODULO_346
+    ports:
+      - "4347:4347"
+  modulo_347:
+    build: ./MODULO_347
+    ports:
+      - "4348:4348"
+  modulo_348:
+    build: ./MODULO_348
+    ports:
+      - "4349:4349"
+  modulo_349:
+    build: ./MODULO_349
+    ports:
+      - "4350:4350"
+  modulo_350:
+    build: ./MODULO_350
+    ports:
+      - "4351:4351"
+  modulo_351:
+    build: ./MODULO_351
+    ports:
+      - "4352:4352"
+  modulo_352:
+    build: ./MODULO_352
+    ports:
+      - "4353:4353"
+  modulo_353:
+    build: ./MODULO_353
+    ports:
+      - "4354:4354"
+  modulo_354:
+    build: ./MODULO_354
+    ports:
+      - "4355:4355"
+  modulo_355:
+    build: ./MODULO_355
+    ports:
+      - "4356:4356"
+  modulo_356:
+    build: ./MODULO_356
+    ports:
+      - "4357:4357"
+  modulo_357:
+    build: ./MODULO_357
+    ports:
+      - "4358:4358"
+  modulo_358:
+    build: ./MODULO_358
+    ports:
+      - "4359:4359"
+  modulo_359:
+    build: ./MODULO_359
+    ports:
+      - "4360:4360"
+  modulo_360:
+    build: ./MODULO_360
+    ports:
+      - "4361:4361"
+  modulo_361:
+    build: ./MODULO_361
+    ports:
+      - "4362:4362"
+  modulo_362:
+    build: ./MODULO_362
+    ports:
+      - "4363:4363"
+  modulo_363:
+    build: ./MODULO_363
+    ports:
+      - "4364:4364"
+  modulo_364:
+    build: ./MODULO_364
+    ports:
+      - "4365:4365"
+  modulo_365:
+    build: ./MODULO_365
+    ports:
+      - "4366:4366"
+  modulo_366:
+    build: ./MODULO_366
+    ports:
+      - "4367:4367"
+  modulo_367:
+    build: ./MODULO_367
+    ports:
+      - "4368:4368"
+  modulo_368:
+    build: ./MODULO_368
+    ports:
+      - "4369:4369"
+  modulo_369:
+    build: ./MODULO_369
+    ports:
+      - "4370:4370"
+  modulo_370:
+    build: ./MODULO_370
+    ports:
+      - "4371:4371"
+  modulo_371:
+    build: ./MODULO_371
+    ports:
+      - "4372:4372"
+  modulo_372:
+    build: ./MODULO_372
+    ports:
+      - "4373:4373"
+  modulo_373:
+    build: ./MODULO_373
+    ports:
+      - "4374:4374"
+  modulo_374:
+    build: ./MODULO_374
+    ports:
+      - "4375:4375"
+  modulo_375:
+    build: ./MODULO_375
+    ports:
+      - "4376:4376"
+  modulo_376:
+    build: ./MODULO_376
+    ports:
+      - "4377:4377"
+  modulo_377:
+    build: ./MODULO_377
+    ports:
+      - "4378:4378"
+  modulo_378:
+    build: ./MODULO_378
+    ports:
+      - "4379:4379"
+  modulo_379:
+    build: ./MODULO_379
+    ports:
+      - "4380:4380"
+  modulo_380:
+    build: ./MODULO_380
+    ports:
+      - "4381:4381"
+  modulo_381:
+    build: ./MODULO_381
+    ports:
+      - "4382:4382"
+  modulo_382:
+    build: ./MODULO_382
+    ports:
+      - "4383:4383"
+  modulo_383:
+    build: ./MODULO_383
+    ports:
+      - "4384:4384"
+  modulo_384:
+    build: ./MODULO_384
+    ports:
+      - "4385:4385"
+  modulo_385:
+    build: ./MODULO_385
+    ports:
+      - "4386:4386"
+  modulo_386:
+    build: ./MODULO_386
+    ports:
+      - "4387:4387"
+  modulo_387:
+    build: ./MODULO_387
+    ports:
+      - "4388:4388"
+  modulo_388:
+    build: ./MODULO_388
+    ports:
+      - "4389:4389"
+  modulo_389:
+    build: ./MODULO_389
+    ports:
+      - "4390:4390"
+  modulo_390:
+    build: ./MODULO_390
+    ports:
+      - "4391:4391"
+  modulo_391:
+    build: ./MODULO_391
+    ports:
+      - "4392:4392"
+  modulo_392:
+    build: ./MODULO_392
+    ports:
+      - "4393:4393"
+  modulo_393:
+    build: ./MODULO_393
+    ports:
+      - "4394:4394"
+  modulo_394:
+    build: ./MODULO_394
+    ports:
+      - "4395:4395"
+  modulo_395:
+    build: ./MODULO_395
+    ports:
+      - "4396:4396"
+  modulo_396:
+    build: ./MODULO_396
+    ports:
+      - "4397:4397"
+  modulo_397:
+    build: ./MODULO_397
+    ports:
+      - "4398:4398"
+  modulo_398:
+    build: ./MODULO_398
+    ports:
+      - "4399:4399"
+  modulo_399:
+    build: ./MODULO_399
+    ports:
+      - "4400:4400"
+  modulo_400:
+    build: ./MODULO_400
+    ports:
+      - "4401:4401"
+  modulo_401:
+    build: ./MODULO_401
+    ports:
+      - "4402:4402"
+  modulo_402:
+    build: ./MODULO_402
+    ports:
+      - "4403:4403"
+  modulo_403:
+    build: ./MODULO_403
+    ports:
+      - "4404:4404"
+  modulo_404:
+    build: ./MODULO_404
+    ports:
+      - "4405:4405"
+  modulo_405:
+    build: ./MODULO_405
+    ports:
+      - "4406:4406"
+  modulo_406:
+    build: ./MODULO_406
+    ports:
+      - "4407:4407"
+  modulo_407:
+    build: ./MODULO_407
+    ports:
+      - "4408:4408"
+  modulo_408:
+    build: ./MODULO_408
+    ports:
+      - "4409:4409"
+  modulo_409:
+    build: ./MODULO_409
+    ports:
+      - "4410:4410"
+  modulo_410:
+    build: ./MODULO_410
+    ports:
+      - "4411:4411"
+  modulo_411:
+    build: ./MODULO_411
+    ports:
+      - "4412:4412"
+  modulo_412:
+    build: ./MODULO_412
+    ports:
+      - "4413:4413"
+  modulo_413:
+    build: ./MODULO_413
+    ports:
+      - "4414:4414"
+  modulo_414:
+    build: ./MODULO_414
+    ports:
+      - "4415:4415"
+  modulo_415:
+    build: ./MODULO_415
+    ports:
+      - "4416:4416"
+  modulo_416:
+    build: ./MODULO_416
+    ports:
+      - "4417:4417"
+  modulo_417:
+    build: ./MODULO_417
+    ports:
+      - "4418:4418"
+  modulo_418:
+    build: ./MODULO_418
+    ports:
+      - "4419:4419"
+  modulo_419:
+    build: ./MODULO_419
+    ports:
+      - "4420:4420"
+  modulo_420:
+    build: ./MODULO_420
+    ports:
+      - "4421:4421"
+  modulo_421:
+    build: ./MODULO_421
+    ports:
+      - "4422:4422"
+  modulo_422:
+    build: ./MODULO_422
+    ports:
+      - "4423:4423"
+  modulo_423:
+    build: ./MODULO_423
+    ports:
+      - "4424:4424"
+  modulo_424:
+    build: ./MODULO_424
+    ports:
+      - "4425:4425"
+  modulo_425:
+    build: ./MODULO_425
+    ports:
+      - "4426:4426"
+  modulo_426:
+    build: ./MODULO_426
+    ports:
+      - "4427:4427"
+  modulo_427:
+    build: ./MODULO_427
+    ports:
+      - "4428:4428"
+  modulo_428:
+    build: ./MODULO_428
+    ports:
+      - "4429:4429"
+  modulo_429:
+    build: ./MODULO_429
+    ports:
+      - "4430:4430"
+  modulo_430:
+    build: ./MODULO_430
+    ports:
+      - "4431:4431"
+  modulo_431:
+    build: ./MODULO_431
+    ports:
+      - "4432:4432"
+  modulo_432:
+    build: ./MODULO_432
+    ports:
+      - "4433:4433"
+  modulo_433:
+    build: ./MODULO_433
+    ports:
+      - "4434:4434"
+  modulo_434:
+    build: ./MODULO_434
+    ports:
+      - "4435:4435"
+  modulo_435:
+    build: ./MODULO_435
+    ports:
+      - "4436:4436"
+  modulo_436:
+    build: ./MODULO_436
+    ports:
+      - "4437:4437"
+  modulo_437:
+    build: ./MODULO_437
+    ports:
+      - "4438:4438"
+  modulo_438:
+    build: ./MODULO_438
+    ports:
+      - "4439:4439"
+  modulo_439:
+    build: ./MODULO_439
+    ports:
+      - "4440:4440"
+  modulo_440:
+    build: ./MODULO_440
+    ports:
+      - "4441:4441"
+  modulo_441:
+    build: ./MODULO_441
+    ports:
+      - "4442:4442"
+  modulo_442:
+    build: ./MODULO_442
+    ports:
+      - "4443:4443"
+  modulo_443:
+    build: ./MODULO_443
+    ports:
+      - "4444:4444"
+  modulo_444:
+    build: ./MODULO_444
+    ports:
+      - "4445:4445"
+  modulo_445:
+    build: ./MODULO_445
+    ports:
+      - "4446:4446"
+  modulo_446:
+    build: ./MODULO_446
+    ports:
+      - "4447:4447"
+  modulo_447:
+    build: ./MODULO_447
+    ports:
+      - "4448:4448"
+  modulo_448:
+    build: ./MODULO_448
+    ports:
+      - "4449:4449"
+  modulo_449:
+    build: ./MODULO_449
+    ports:
+      - "4450:4450"
+  modulo_450:
+    build: ./MODULO_450
+    ports:
+      - "4451:4451"
+  modulo_451:
+    build: ./MODULO_451
+    ports:
+      - "4452:4452"
+  modulo_452:
+    build: ./MODULO_452
+    ports:
+      - "4453:4453"
+  modulo_453:
+    build: ./MODULO_453
+    ports:
+      - "4454:4454"
+  modulo_454:
+    build: ./MODULO_454
+    ports:
+      - "4455:4455"
+  modulo_455:
+    build: ./MODULO_455
+    ports:
+      - "4456:4456"
+  modulo_456:
+    build: ./MODULO_456
+    ports:
+      - "4457:4457"
+  modulo_457:
+    build: ./MODULO_457
+    ports:
+      - "4458:4458"
+  modulo_458:
+    build: ./MODULO_458
+    ports:
+      - "4459:4459"
+  modulo_459:
+    build: ./MODULO_459
+    ports:
+      - "4460:4460"
+  modulo_460:
+    build: ./MODULO_460
+    ports:
+      - "4461:4461"
+  modulo_461:
+    build: ./MODULO_461
+    ports:
+      - "4462:4462"
+  modulo_462:
+    build: ./MODULO_462
+    ports:
+      - "4463:4463"
+  modulo_463:
+    build: ./MODULO_463
+    ports:
+      - "4464:4464"
+  modulo_464:
+    build: ./MODULO_464
+    ports:
+      - "4465:4465"
+  modulo_465:
+    build: ./MODULO_465
+    ports:
+      - "4466:4466"
+  modulo_466:
+    build: ./MODULO_466
+    ports:
+      - "4467:4467"
+  modulo_467:
+    build: ./MODULO_467
+    ports:
+      - "4468:4468"
+  modulo_468:
+    build: ./MODULO_468
+    ports:
+      - "4469:4469"
+  modulo_469:
+    build: ./MODULO_469
+    ports:
+      - "4470:4470"
+  modulo_470:
+    build: ./MODULO_470
+    ports:
+      - "4471:4471"
+  modulo_471:
+    build: ./MODULO_471
+    ports:
+      - "4472:4472"
+  modulo_472:
+    build: ./MODULO_472
+    ports:
+      - "4473:4473"
+  modulo_473:
+    build: ./MODULO_473
+    ports:
+      - "4474:4474"
+  modulo_474:
+    build: ./MODULO_474
+    ports:
+      - "4475:4475"
+  modulo_475:
+    build: ./MODULO_475
+    ports:
+      - "4476:4476"
+  modulo_476:
+    build: ./MODULO_476
+    ports:
+      - "4477:4477"
+  modulo_477:
+    build: ./MODULO_477
+    ports:
+      - "4478:4478"
+  modulo_478:
+    build: ./MODULO_478
+    ports:
+      - "4479:4479"
+  modulo_479:
+    build: ./MODULO_479
+    ports:
+      - "4480:4480"
+  modulo_480:
+    build: ./MODULO_480
+    ports:
+      - "4481:4481"
+  modulo_481:
+    build: ./MODULO_481
+    ports:
+      - "4482:4482"
+  modulo_482:
+    build: ./MODULO_482
+    ports:
+      - "4483:4483"
+  modulo_483:
+    build: ./MODULO_483
+    ports:
+      - "4484:4484"
+  modulo_484:
+    build: ./MODULO_484
+    ports:
+      - "4485:4485"
+  modulo_485:
+    build: ./MODULO_485
+    ports:
+      - "4486:4486"
+  modulo_486:
+    build: ./MODULO_486
+    ports:
+      - "4487:4487"
+  modulo_487:
+    build: ./MODULO_487
+    ports:
+      - "4488:4488"
+  modulo_488:
+    build: ./MODULO_488
+    ports:
+      - "4489:4489"
+  modulo_489:
+    build: ./MODULO_489
+    ports:
+      - "4490:4490"
+  modulo_490:
+    build: ./MODULO_490
+    ports:
+      - "4491:4491"
+  modulo_491:
+    build: ./MODULO_491
+    ports:
+      - "4492:4492"
+  modulo_492:
+    build: ./MODULO_492
+    ports:
+      - "4493:4493"
+  modulo_493:
+    build: ./MODULO_493
+    ports:
+      - "4494:4494"
+  modulo_494:
+    build: ./MODULO_494
+    ports:
+      - "4495:4495"
+  modulo_495:
+    build: ./MODULO_495
+    ports:
+      - "4496:4496"
+  modulo_496:
+    build: ./MODULO_496
+    ports:
+      - "4497:4497"
+  modulo_497:
+    build: ./MODULO_497
+    ports:
+      - "4498:4498"
+  modulo_498:
+    build: ./MODULO_498
+    ports:
+      - "4499:4499"
+  modulo_499:
+    build: ./MODULO_499
+    ports:
+      - "4500:4500"
+  modulo_500:
+    build: ./MODULO_500
+    ports:
+      - "4501:4501"
+  modulo_501:
+    build: ./MODULO_501
+    ports:
+      - "4502:4502"
+  modulo_502:
+    build: ./MODULO_502
+    ports:
+      - "4503:4503"
+  modulo_503:
+    build: ./MODULO_503
+    ports:
+      - "4504:4504"
+  modulo_504:
+    build: ./MODULO_504
+    ports:
+      - "4505:4505"
+  modulo_505:
+    build: ./MODULO_505
+    ports:
+      - "4506:4506"
+  modulo_506:
+    build: ./MODULO_506
+    ports:
+      - "4507:4507"
+  modulo_507:
+    build: ./MODULO_507
+    ports:
+      - "4508:4508"
+  modulo_508:
+    build: ./MODULO_508
+    ports:
+      - "4509:4509"
+  modulo_509:
+    build: ./MODULO_509
+    ports:
+      - "4510:4510"
+  modulo_510:
+    build: ./MODULO_510
+    ports:
+      - "4511:4511"
+  modulo_511:
+    build: ./MODULO_511
+    ports:
+      - "4512:4512"
+  modulo_512:
+    build: ./MODULO_512
+    ports:
+      - "4513:4513"
+  modulo_513:
+    build: ./MODULO_513
+    ports:
+      - "4514:4514"
+  modulo_514:
+    build: ./MODULO_514
+    ports:
+      - "4515:4515"
+  modulo_515:
+    build: ./MODULO_515
+    ports:
+      - "4516:4516"
+  modulo_516:
+    build: ./MODULO_516
+    ports:
+      - "4517:4517"
+  modulo_517:
+    build: ./MODULO_517
+    ports:
+      - "4518:4518"
+  modulo_518:
+    build: ./MODULO_518
+    ports:
+      - "4519:4519"
+  modulo_519:
+    build: ./MODULO_519
+    ports:
+      - "4520:4520"
+  modulo_520:
+    build: ./MODULO_520
+    ports:
+      - "4521:4521"
+  modulo_521:
+    build: ./MODULO_521
+    ports:
+      - "4522:4522"
+  modulo_522:
+    build: ./MODULO_522
+    ports:
+      - "4523:4523"
+  modulo_523:
+    build: ./MODULO_523
+    ports:
+      - "4524:4524"
+  modulo_524:
+    build: ./MODULO_524
+    ports:
+      - "4525:4525"
+  modulo_525:
+    build: ./MODULO_525
+    ports:
+      - "4526:4526"
+  modulo_526:
+    build: ./MODULO_526
+    ports:
+      - "4527:4527"
+  modulo_527:
+    build: ./MODULO_527
+    ports:
+      - "4528:4528"
+  modulo_528:
+    build: ./MODULO_528
+    ports:
+      - "4529:4529"
+  modulo_529:
+    build: ./MODULO_529
+    ports:
+      - "4530:4530"
+  modulo_530:
+    build: ./MODULO_530
+    ports:
+      - "4531:4531"
+  modulo_531:
+    build: ./MODULO_531
+    ports:
+      - "4532:4532"
+  modulo_532:
+    build: ./MODULO_532
+    ports:
+      - "4533:4533"
+  modulo_533:
+    build: ./MODULO_533
+    ports:
+      - "4534:4534"
+  modulo_534:
+    build: ./MODULO_534
+    ports:
+      - "4535:4535"
+  modulo_535:
+    build: ./MODULO_535
+    ports:
+      - "4536:4536"
+  modulo_536:
+    build: ./MODULO_536
+    ports:
+      - "4537:4537"
+  modulo_537:
+    build: ./MODULO_537
+    ports:
+      - "4538:4538"
+  modulo_538:
+    build: ./MODULO_538
+    ports:
+      - "4539:4539"
+  modulo_539:
+    build: ./MODULO_539
+    ports:
+      - "4540:4540"
+  modulo_540:
+    build: ./MODULO_540
+    ports:
+      - "4541:4541"
+  modulo_541:
+    build: ./MODULO_541
+    ports:
+      - "4542:4542"
+  modulo_542:
+    build: ./MODULO_542
+    ports:
+      - "4543:4543"
+  modulo_543:
+    build: ./MODULO_543
+    ports:
+      - "4544:4544"
+  modulo_544:
+    build: ./MODULO_544
+    ports:
+      - "4545:4545"
+  modulo_545:
+    build: ./MODULO_545
+    ports:
+      - "4546:4546"
+  modulo_546:
+    build: ./MODULO_546
+    ports:
+      - "4547:4547"
+  modulo_547:
+    build: ./MODULO_547
+    ports:
+      - "4548:4548"
+  modulo_548:
+    build: ./MODULO_548
+    ports:
+      - "4549:4549"
+  modulo_549:
+    build: ./MODULO_549
+    ports:
+      - "4550:4550"
+  modulo_550:
+    build: ./MODULO_550
+    ports:
+      - "4551:4551"
+  modulo_551:
+    build: ./MODULO_551
+    ports:
+      - "4552:4552"
+  modulo_552:
+    build: ./MODULO_552
+    ports:
+      - "4553:4553"
+  modulo_553:
+    build: ./MODULO_553
+    ports:
+      - "4554:4554"
+  modulo_554:
+    build: ./MODULO_554
+    ports:
+      - "4555:4555"
+  modulo_555:
+    build: ./MODULO_555
+    ports:
+      - "4556:4556"
+  modulo_556:
+    build: ./MODULO_556
+    ports:
+      - "4557:4557"
+  modulo_557:
+    build: ./MODULO_557
+    ports:
+      - "4558:4558"
+  modulo_558:
+    build: ./MODULO_558
+    ports:
+      - "4559:4559"
+  modulo_559:
+    build: ./MODULO_559
+    ports:
+      - "4560:4560"
+  modulo_560:
+    build: ./MODULO_560
+    ports:
+      - "4561:4561"
+  modulo_561:
+    build: ./MODULO_561
+    ports:
+      - "4562:4562"
+  modulo_562:
+    build: ./MODULO_562
+    ports:
+      - "4563:4563"
+  modulo_563:
+    build: ./MODULO_563
+    ports:
+      - "4564:4564"
+  modulo_564:
+    build: ./MODULO_564
+    ports:
+      - "4565:4565"
+  modulo_565:
+    build: ./MODULO_565
+    ports:
+      - "4566:4566"
+  modulo_566:
+    build: ./MODULO_566
+    ports:
+      - "4567:4567"
+  modulo_567:
+    build: ./MODULO_567
+    ports:
+      - "4568:4568"
+  modulo_568:
+    build: ./MODULO_568
+    ports:
+      - "4569:4569"
+  modulo_569:
+    build: ./MODULO_569
+    ports:
+      - "4570:4570"
+  modulo_570:
+    build: ./MODULO_570
+    ports:
+      - "4571:4571"
+  modulo_571:
+    build: ./MODULO_571
+    ports:
+      - "4572:4572"
+  modulo_572:
+    build: ./MODULO_572
+    ports:
+      - "4573:4573"
+  modulo_573:
+    build: ./MODULO_573
+    ports:
+      - "4574:4574"
+  modulo_574:
+    build: ./MODULO_574
+    ports:
+      - "4575:4575"
+  modulo_575:
+    build: ./MODULO_575
+    ports:
+      - "4576:4576"
+  modulo_576:
+    build: ./MODULO_576
+    ports:
+      - "4577:4577"
+  modulo_577:
+    build: ./MODULO_577
+    ports:
+      - "4578:4578"
+  modulo_578:
+    build: ./MODULO_578
+    ports:
+      - "4579:4579"
+  modulo_579:
+    build: ./MODULO_579
+    ports:
+      - "4580:4580"
+  modulo_580:
+    build: ./MODULO_580
+    ports:
+      - "4581:4581"
+  modulo_581:
+    build: ./MODULO_581
+    ports:
+      - "4582:4582"
+  modulo_582:
+    build: ./MODULO_582
+    ports:
+      - "4583:4583"
+  modulo_583:
+    build: ./MODULO_583
+    ports:
+      - "4584:4584"
+  modulo_584:
+    build: ./MODULO_584
+    ports:
+      - "4585:4585"
+  modulo_585:
+    build: ./MODULO_585
+    ports:
+      - "4586:4586"
+  modulo_586:
+    build: ./MODULO_586
+    ports:
+      - "4587:4587"
+  modulo_587:
+    build: ./MODULO_587
+    ports:
+      - "4588:4588"
+  modulo_588:
+    build: ./MODULO_588
+    ports:
+      - "4589:4589"
+  modulo_589:
+    build: ./MODULO_589
+    ports:
+      - "4590:4590"
+  modulo_590:
+    build: ./MODULO_590
+    ports:
+      - "4591:4591"
+  modulo_591:
+    build: ./MODULO_591
+    ports:
+      - "4592:4592"
+  modulo_592:
+    build: ./MODULO_592
+    ports:
+      - "4593:4593"
+  modulo_593:
+    build: ./MODULO_593
+    ports:
+      - "4594:4594"
+  modulo_594:
+    build: ./MODULO_594
+    ports:
+      - "4595:4595"
+  modulo_595:
+    build: ./MODULO_595
+    ports:
+      - "4596:4596"
+  modulo_596:
+    build: ./MODULO_596
+    ports:
+      - "4597:4597"
+  modulo_597:
+    build: ./MODULO_597
+    ports:
+      - "4598:4598"
+  modulo_598:
+    build: ./MODULO_598
+    ports:
+      - "4599:4599"
+  modulo_599:
+    build: ./MODULO_599
+    ports:
+      - "4600:4600"
+  modulo_600:
+    build: ./MODULO_600
+    ports:
+      - "4601:4601"
+  modulo_601:
+    build: ./MODULO_601
+    ports:
+      - "4602:4602"
+  modulo_602:
+    build: ./MODULO_602
+    ports:
+      - "4603:4603"
+  modulo_603:
+    build: ./MODULO_603
+    ports:
+      - "4604:4604"
+  modulo_604:
+    build: ./MODULO_604
+    ports:
+      - "4605:4605"
+  modulo_605:
+    build: ./MODULO_605
+    ports:
+      - "4606:4606"
+  modulo_606:
+    build: ./MODULO_606
+    ports:
+      - "4607:4607"
+  modulo_607:
+    build: ./MODULO_607
+    ports:
+      - "4608:4608"
+  modulo_608:
+    build: ./MODULO_608
+    ports:
+      - "4609:4609"
+  modulo_609:
+    build: ./MODULO_609
+    ports:
+      - "4610:4610"
+  modulo_610:
+    build: ./MODULO_610
+    ports:
+      - "4611:4611"
+  modulo_611:
+    build: ./MODULO_611
+    ports:
+      - "4612:4612"
+  modulo_612:
+    build: ./MODULO_612
+    ports:
+      - "4613:4613"
+  modulo_613:
+    build: ./MODULO_613
+    ports:
+      - "4614:4614"
+  modulo_614:
+    build: ./MODULO_614
+    ports:
+      - "4615:4615"
+  modulo_615:
+    build: ./MODULO_615
+    ports:
+      - "4616:4616"
+  modulo_616:
+    build: ./MODULO_616
+    ports:
+      - "4617:4617"
+  modulo_617:
+    build: ./MODULO_617
+    ports:
+      - "4618:4618"
+  modulo_618:
+    build: ./MODULO_618
+    ports:
+      - "4619:4619"
+  modulo_619:
+    build: ./MODULO_619
+    ports:
+      - "4620:4620"
+  modulo_620:
+    build: ./MODULO_620
+    ports:
+      - "4621:4621"
+  modulo_621:
+    build: ./MODULO_621
+    ports:
+      - "4622:4622"
+  modulo_622:
+    build: ./MODULO_622
+    ports:
+      - "4623:4623"
+  modulo_623:
+    build: ./MODULO_623
+    ports:
+      - "4624:4624"
+  modulo_624:
+    build: ./MODULO_624
+    ports:
+      - "4625:4625"
+  modulo_625:
+    build: ./MODULO_625
+    ports:
+      - "4626:4626"
+  modulo_626:
+    build: ./MODULO_626
+    ports:
+      - "4627:4627"
+  modulo_627:
+    build: ./MODULO_627
+    ports:
+      - "4628:4628"
+  modulo_628:
+    build: ./MODULO_628
+    ports:
+      - "4629:4629"
+  modulo_629:
+    build: ./MODULO_629
+    ports:
+      - "4630:4630"
+  modulo_630:
+    build: ./MODULO_630
+    ports:
+      - "4631:4631"
+  modulo_631:
+    build: ./MODULO_631
+    ports:
+      - "4632:4632"
+  modulo_632:
+    build: ./MODULO_632
+    ports:
+      - "4633:4633"
+  modulo_633:
+    build: ./MODULO_633
+    ports:
+      - "4634:4634"
+  modulo_634:
+    build: ./MODULO_634
+    ports:
+      - "4635:4635"
+  modulo_635:
+    build: ./MODULO_635
+    ports:
+      - "4636:4636"
+  modulo_636:
+    build: ./MODULO_636
+    ports:
+      - "4637:4637"
+  modulo_637:
+    build: ./MODULO_637
+    ports:
+      - "4638:4638"
+  modulo_638:
+    build: ./MODULO_638
+    ports:
+      - "4639:4639"
+  modulo_639:
+    build: ./MODULO_639
+    ports:
+      - "4640:4640"
+  modulo_640:
+    build: ./MODULO_640
+    ports:
+      - "4641:4641"
+  modulo_641:
+    build: ./MODULO_641
+    ports:
+      - "4642:4642"
+  modulo_642:
+    build: ./MODULO_642
+    ports:
+      - "4643:4643"
+  modulo_643:
+    build: ./MODULO_643
+    ports:
+      - "4644:4644"
+  modulo_644:
+    build: ./MODULO_644
+    ports:
+      - "4645:4645"
+  modulo_645:
+    build: ./MODULO_645
+    ports:
+      - "4646:4646"
+  modulo_646:
+    build: ./MODULO_646
+    ports:
+      - "4647:4647"
+  modulo_647:
+    build: ./MODULO_647
+    ports:
+      - "4648:4648"
+  modulo_648:
+    build: ./MODULO_648
+    ports:
+      - "4649:4649"
+  modulo_649:
+    build: ./MODULO_649
+    ports:
+      - "4650:4650"
+  modulo_650:
+    build: ./MODULO_650
+    ports:
+      - "4651:4651"
+  modulo_651:
+    build: ./MODULO_651
+    ports:
+      - "4652:4652"
+  modulo_652:
+    build: ./MODULO_652
+    ports:
+      - "4653:4653"
+  modulo_653:
+    build: ./MODULO_653
+    ports:
+      - "4654:4654"
+  modulo_654:
+    build: ./MODULO_654
+    ports:
+      - "4655:4655"
+  modulo_655:
+    build: ./MODULO_655
+    ports:
+      - "4656:4656"
+  modulo_656:
+    build: ./MODULO_656
+    ports:
+      - "4657:4657"
+  modulo_657:
+    build: ./MODULO_657
+    ports:
+      - "4658:4658"
+  modulo_658:
+    build: ./MODULO_658
+    ports:
+      - "4659:4659"
+  modulo_659:
+    build: ./MODULO_659
+    ports:
+      - "4660:4660"
+  modulo_660:
+    build: ./MODULO_660
+    ports:
+      - "4661:4661"
+  modulo_661:
+    build: ./MODULO_661
+    ports:
+      - "4662:4662"
+  modulo_662:
+    build: ./MODULO_662
+    ports:
+      - "4663:4663"
+  modulo_663:
+    build: ./MODULO_663
+    ports:
+      - "4664:4664"
+  modulo_664:
+    build: ./MODULO_664
+    ports:
+      - "4665:4665"
+  modulo_665:
+    build: ./MODULO_665
+    ports:
+      - "4666:4666"
+  modulo_666:
+    build: ./MODULO_666
+    ports:
+      - "4667:4667"
+  modulo_667:
+    build: ./MODULO_667
+    ports:
+      - "4668:4668"
+  modulo_668:
+    build: ./MODULO_668
+    ports:
+      - "4669:4669"
+  modulo_669:
+    build: ./MODULO_669
+    ports:
+      - "4670:4670"
+  modulo_670:
+    build: ./MODULO_670
+    ports:
+      - "4671:4671"
+  modulo_671:
+    build: ./MODULO_671
+    ports:
+      - "4672:4672"
+  modulo_672:
+    build: ./MODULO_672
+    ports:
+      - "4673:4673"
+  modulo_673:
+    build: ./MODULO_673
+    ports:
+      - "4674:4674"
+  modulo_674:
+    build: ./MODULO_674
+    ports:
+      - "4675:4675"
+  modulo_675:
+    build: ./MODULO_675
+    ports:
+      - "4676:4676"
+  modulo_676:
+    build: ./MODULO_676
+    ports:
+      - "4677:4677"
+  modulo_677:
+    build: ./MODULO_677
+    ports:
+      - "4678:4678"
+  modulo_678:
+    build: ./MODULO_678
+    ports:
+      - "4679:4679"
+  modulo_679:
+    build: ./MODULO_679
+    ports:
+      - "4680:4680"
+  modulo_680:
+    build: ./MODULO_680
+    ports:
+      - "4681:4681"
+  modulo_681:
+    build: ./MODULO_681
+    ports:
+      - "4682:4682"
+  modulo_682:
+    build: ./MODULO_682
+    ports:
+      - "4683:4683"
+  modulo_683:
+    build: ./MODULO_683
+    ports:
+      - "4684:4684"
+  modulo_684:
+    build: ./MODULO_684
+    ports:
+      - "4685:4685"
+  modulo_685:
+    build: ./MODULO_685
+    ports:
+      - "4686:4686"
+  modulo_686:
+    build: ./MODULO_686
+    ports:
+      - "4687:4687"
+  modulo_687:
+    build: ./MODULO_687
+    ports:
+      - "4688:4688"
+  modulo_688:
+    build: ./MODULO_688
+    ports:
+      - "4689:4689"
+  modulo_689:
+    build: ./MODULO_689
+    ports:
+      - "4690:4690"
+  modulo_690:
+    build: ./MODULO_690
+    ports:
+      - "4691:4691"
+  modulo_691:
+    build: ./MODULO_691
+    ports:
+      - "4692:4692"
+  modulo_692:
+    build: ./MODULO_692
+    ports:
+      - "4693:4693"
+  modulo_693:
+    build: ./MODULO_693
+    ports:
+      - "4694:4694"
+  modulo_694:
+    build: ./MODULO_694
+    ports:
+      - "4695:4695"
+  modulo_695:
+    build: ./MODULO_695
+    ports:
+      - "4696:4696"
+  modulo_696:
+    build: ./MODULO_696
+    ports:
+      - "4697:4697"
+  modulo_697:
+    build: ./MODULO_697
+    ports:
+      - "4698:4698"
+  modulo_698:
+    build: ./MODULO_698
+    ports:
+      - "4699:4699"
+  modulo_699:
+    build: ./MODULO_699
+    ports:
+      - "4700:4700"
+  modulo_700:
+    build: ./MODULO_700
+    ports:
+      - "4701:4701"
+  modulo_701:
+    build: ./MODULO_701
+    ports:
+      - "4702:4702"
+  modulo_702:
+    build: ./MODULO_702
+    ports:
+      - "4703:4703"
+  modulo_703:
+    build: ./MODULO_703
+    ports:
+      - "4704:4704"
+  modulo_704:
+    build: ./MODULO_704
+    ports:
+      - "4705:4705"
+  modulo_705:
+    build: ./MODULO_705
+    ports:
+      - "4706:4706"
+  modulo_706:
+    build: ./MODULO_706
+    ports:
+      - "4707:4707"
+  modulo_707:
+    build: ./MODULO_707
+    ports:
+      - "4708:4708"
+  modulo_708:
+    build: ./MODULO_708
+    ports:
+      - "4709:4709"
+  modulo_709:
+    build: ./MODULO_709
+    ports:
+      - "4710:4710"
+  modulo_710:
+    build: ./MODULO_710
+    ports:
+      - "4711:4711"
+  modulo_711:
+    build: ./MODULO_711
+    ports:
+      - "4712:4712"
+  modulo_712:
+    build: ./MODULO_712
+    ports:
+      - "4713:4713"
+  modulo_713:
+    build: ./MODULO_713
+    ports:
+      - "4714:4714"
+  modulo_714:
+    build: ./MODULO_714
+    ports:
+      - "4715:4715"
+  modulo_715:
+    build: ./MODULO_715
+    ports:
+      - "4716:4716"
+  modulo_716:
+    build: ./MODULO_716
+    ports:
+      - "4717:4717"
+  modulo_717:
+    build: ./MODULO_717
+    ports:
+      - "4718:4718"
+  modulo_718:
+    build: ./MODULO_718
+    ports:
+      - "4719:4719"
+  modulo_719:
+    build: ./MODULO_719
+    ports:
+      - "4720:4720"
+  modulo_720:
+    build: ./MODULO_720
+    ports:
+      - "4721:4721"
+  modulo_721:
+    build: ./MODULO_721
+    ports:
+      - "4722:4722"
+  modulo_722:
+    build: ./MODULO_722
+    ports:
+      - "4723:4723"
+  modulo_723:
+    build: ./MODULO_723
+    ports:
+      - "4724:4724"
+  modulo_724:
+    build: ./MODULO_724
+    ports:
+      - "4725:4725"
+  modulo_725:
+    build: ./MODULO_725
+    ports:
+      - "4726:4726"
+  modulo_726:
+    build: ./MODULO_726
+    ports:
+      - "4727:4727"
+  modulo_727:
+    build: ./MODULO_727
+    ports:
+      - "4728:4728"
+  modulo_728:
+    build: ./MODULO_728
+    ports:
+      - "4729:4729"
+  modulo_729:
+    build: ./MODULO_729
+    ports:
+      - "4730:4730"
+  modulo_730:
+    build: ./MODULO_730
+    ports:
+      - "4731:4731"
+  modulo_731:
+    build: ./MODULO_731
+    ports:
+      - "4732:4732"
+  modulo_732:
+    build: ./MODULO_732
+    ports:
+      - "4733:4733"
+  modulo_733:
+    build: ./MODULO_733
+    ports:
+      - "4734:4734"
+  modulo_734:
+    build: ./MODULO_734
+    ports:
+      - "4735:4735"
+  modulo_735:
+    build: ./MODULO_735
+    ports:
+      - "4736:4736"
+  modulo_736:
+    build: ./MODULO_736
+    ports:
+      - "4737:4737"
+  modulo_737:
+    build: ./MODULO_737
+    ports:
+      - "4738:4738"
+  modulo_738:
+    build: ./MODULO_738
+    ports:
+      - "4739:4739"
+  modulo_739:
+    build: ./MODULO_739
+    ports:
+      - "4740:4740"
+  modulo_740:
+    build: ./MODULO_740
+    ports:
+      - "4741:4741"
+  modulo_741:
+    build: ./MODULO_741
+    ports:
+      - "4742:4742"
+  modulo_742:
+    build: ./MODULO_742
+    ports:
+      - "4743:4743"
+  modulo_743:
+    build: ./MODULO_743
+    ports:
+      - "4744:4744"
+  modulo_744:
+    build: ./MODULO_744
+    ports:
+      - "4745:4745"
+  modulo_745:
+    build: ./MODULO_745
+    ports:
+      - "4746:4746"
+  modulo_746:
+    build: ./MODULO_746
+    ports:
+      - "4747:4747"
+  modulo_747:
+    build: ./MODULO_747
+    ports:
+      - "4748:4748"
+  modulo_748:
+    build: ./MODULO_748
+    ports:
+      - "4749:4749"
+  modulo_749:
+    build: ./MODULO_749
+    ports:
+      - "4750:4750"
+  modulo_750:
+    build: ./MODULO_750
+    ports:
+      - "4751:4751"
+  modulo_751:
+    build: ./MODULO_751
+    ports:
+      - "4752:4752"
+  modulo_752:
+    build: ./MODULO_752
+    ports:
+      - "4753:4753"
+  modulo_753:
+    build: ./MODULO_753
+    ports:
+      - "4754:4754"
+  modulo_754:
+    build: ./MODULO_754
+    ports:
+      - "4755:4755"
+  modulo_755:
+    build: ./MODULO_755
+    ports:
+      - "4756:4756"
+  modulo_756:
+    build: ./MODULO_756
+    ports:
+      - "4757:4757"
+  modulo_757:
+    build: ./MODULO_757
+    ports:
+      - "4758:4758"
+  modulo_758:
+    build: ./MODULO_758
+    ports:
+      - "4759:4759"
+  modulo_759:
+    build: ./MODULO_759
+    ports:
+      - "4760:4760"
+  modulo_760:
+    build: ./MODULO_760
+    ports:
+      - "4761:4761"
+  modulo_761:
+    build: ./MODULO_761
+    ports:
+      - "4762:4762"
+  modulo_762:
+    build: ./MODULO_762
+    ports:
+      - "4763:4763"
+  modulo_763:
+    build: ./MODULO_763
+    ports:
+      - "4764:4764"
+  modulo_764:
+    build: ./MODULO_764
+    ports:
+      - "4765:4765"
+  modulo_765:
+    build: ./MODULO_765
+    ports:
+      - "4766:4766"
+  modulo_766:
+    build: ./MODULO_766
+    ports:
+      - "4767:4767"
+  modulo_767:
+    build: ./MODULO_767
+    ports:
+      - "4768:4768"
+  modulo_768:
+    build: ./MODULO_768
+    ports:
+      - "4769:4769"
+  modulo_769:
+    build: ./MODULO_769
+    ports:
+      - "4770:4770"
+  modulo_770:
+    build: ./MODULO_770
+    ports:
+      - "4771:4771"
+  modulo_771:
+    build: ./MODULO_771
+    ports:
+      - "4772:4772"
+  modulo_772:
+    build: ./MODULO_772
+    ports:
+      - "4773:4773"
+  modulo_773:
+    build: ./MODULO_773
+    ports:
+      - "4774:4774"
+  modulo_774:
+    build: ./MODULO_774
+    ports:
+      - "4775:4775"
+  modulo_775:
+    build: ./MODULO_775
+    ports:
+      - "4776:4776"
+  modulo_776:
+    build: ./MODULO_776
+    ports:
+      - "4777:4777"
+  modulo_777:
+    build: ./MODULO_777
+    ports:
+      - "4778:4778"
+  modulo_778:
+    build: ./MODULO_778
+    ports:
+      - "4779:4779"
+  modulo_779:
+    build: ./MODULO_779
+    ports:
+      - "4780:4780"
+  modulo_780:
+    build: ./MODULO_780
+    ports:
+      - "4781:4781"
+  modulo_781:
+    build: ./MODULO_781
+    ports:
+      - "4782:4782"
+  modulo_782:
+    build: ./MODULO_782
+    ports:
+      - "4783:4783"
+  modulo_783:
+    build: ./MODULO_783
+    ports:
+      - "4784:4784"
+  modulo_784:
+    build: ./MODULO_784
+    ports:
+      - "4785:4785"
+  modulo_785:
+    build: ./MODULO_785
+    ports:
+      - "4786:4786"
+  modulo_786:
+    build: ./MODULO_786
+    ports:
+      - "4787:4787"
+  modulo_787:
+    build: ./MODULO_787
+    ports:
+      - "4788:4788"
+  modulo_788:
+    build: ./MODULO_788
+    ports:
+      - "4789:4789"
+  modulo_789:
+    build: ./MODULO_789
+    ports:
+      - "4790:4790"
+  modulo_790:
+    build: ./MODULO_790
+    ports:
+      - "4791:4791"
+  modulo_791:
+    build: ./MODULO_791
+    ports:
+      - "4792:4792"
+  modulo_792:
+    build: ./MODULO_792
+    ports:
+      - "4793:4793"
+  modulo_793:
+    build: ./MODULO_793
+    ports:
+      - "4794:4794"
+  modulo_794:
+    build: ./MODULO_794
+    ports:
+      - "4795:4795"
+  modulo_795:
+    build: ./MODULO_795
+    ports:
+      - "4796:4796"
+  modulo_796:
+    build: ./MODULO_796
+    ports:
+      - "4797:4797"
+  modulo_797:
+    build: ./MODULO_797
+    ports:
+      - "4798:4798"
+  modulo_798:
+    build: ./MODULO_798
+    ports:
+      - "4799:4799"
+  modulo_799:
+    build: ./MODULO_799
+    ports:
+      - "4800:4800"
+  modulo_800:
+    build: ./MODULO_800
+    ports:
+      - "4801:4801"
+  modulo_801:
+    build: ./MODULO_801
+    ports:
+      - "4802:4802"
+  modulo_802:
+    build: ./MODULO_802
+    ports:
+      - "4803:4803"
+  modulo_803:
+    build: ./MODULO_803
+    ports:
+      - "4804:4804"
+  modulo_804:
+    build: ./MODULO_804
+    ports:
+      - "4805:4805"
+  modulo_805:
+    build: ./MODULO_805
+    ports:
+      - "4806:4806"
+  modulo_806:
+    build: ./MODULO_806
+    ports:
+      - "4807:4807"
+  modulo_807:
+    build: ./MODULO_807
+    ports:
+      - "4808:4808"
+  modulo_808:
+    build: ./MODULO_808
+    ports:
+      - "4809:4809"
+  modulo_809:
+    build: ./MODULO_809
+    ports:
+      - "4810:4810"
+  modulo_810:
+    build: ./MODULO_810
+    ports:
+      - "4811:4811"
+  modulo_811:
+    build: ./MODULO_811
+    ports:
+      - "4812:4812"
+  modulo_812:
+    build: ./MODULO_812
+    ports:
+      - "4813:4813"
+  modulo_813:
+    build: ./MODULO_813
+    ports:
+      - "4814:4814"
+  modulo_814:
+    build: ./MODULO_814
+    ports:
+      - "4815:4815"
+  modulo_815:
+    build: ./MODULO_815
+    ports:
+      - "4816:4816"
+  modulo_816:
+    build: ./MODULO_816
+    ports:
+      - "4817:4817"
+  modulo_817:
+    build: ./MODULO_817
+    ports:
+      - "4818:4818"
+  modulo_818:
+    build: ./MODULO_818
+    ports:
+      - "4819:4819"
+  modulo_819:
+    build: ./MODULO_819
+    ports:
+      - "4820:4820"
+  modulo_820:
+    build: ./MODULO_820
+    ports:
+      - "4821:4821"
+  modulo_821:
+    build: ./MODULO_821
+    ports:
+      - "4822:4822"
+  modulo_822:
+    build: ./MODULO_822
+    ports:
+      - "4823:4823"
+  modulo_823:
+    build: ./MODULO_823
+    ports:
+      - "4824:4824"
+  modulo_824:
+    build: ./MODULO_824
+    ports:
+      - "4825:4825"
+  modulo_825:
+    build: ./MODULO_825
+    ports:
+      - "4826:4826"
+  modulo_826:
+    build: ./MODULO_826
+    ports:
+      - "4827:4827"
+  modulo_827:
+    build: ./MODULO_827
+    ports:
+      - "4828:4828"
+  modulo_828:
+    build: ./MODULO_828
+    ports:
+      - "4829:4829"
+  modulo_829:
+    build: ./MODULO_829
+    ports:
+      - "4830:4830"
+  modulo_830:
+    build: ./MODULO_830
+    ports:
+      - "4831:4831"
+  modulo_831:
+    build: ./MODULO_831
+    ports:
+      - "4832:4832"
+  modulo_832:
+    build: ./MODULO_832
+    ports:
+      - "4833:4833"
+  modulo_833:
+    build: ./MODULO_833
+    ports:
+      - "4834:4834"
+  modulo_834:
+    build: ./MODULO_834
+    ports:
+      - "4835:4835"
+  modulo_835:
+    build: ./MODULO_835
+    ports:
+      - "4836:4836"
+  modulo_836:
+    build: ./MODULO_836
+    ports:
+      - "4837:4837"
+  modulo_837:
+    build: ./MODULO_837
+    ports:
+      - "4838:4838"
+  modulo_838:
+    build: ./MODULO_838
+    ports:
+      - "4839:4839"
+  modulo_839:
+    build: ./MODULO_839
+    ports:
+      - "4840:4840"
+  modulo_840:
+    build: ./MODULO_840
+    ports:
+      - "4841:4841"
+  modulo_841:
+    build: ./MODULO_841
+    ports:
+      - "4842:4842"
+  modulo_842:
+    build: ./MODULO_842
+    ports:
+      - "4843:4843"
+  modulo_843:
+    build: ./MODULO_843
+    ports:
+      - "4844:4844"
+  modulo_844:
+    build: ./MODULO_844
+    ports:
+      - "4845:4845"
+  modulo_845:
+    build: ./MODULO_845
+    ports:
+      - "4846:4846"
+  modulo_846:
+    build: ./MODULO_846
+    ports:
+      - "4847:4847"
+  modulo_847:
+    build: ./MODULO_847
+    ports:
+      - "4848:4848"
+  modulo_848:
+    build: ./MODULO_848
+    ports:
+      - "4849:4849"
+  modulo_849:
+    build: ./MODULO_849
+    ports:
+      - "4850:4850"
+  modulo_850:
+    build: ./MODULO_850
+    ports:
+      - "4851:4851"
+  modulo_851:
+    build: ./MODULO_851
+    ports:
+      - "4852:4852"
+  modulo_852:
+    build: ./MODULO_852
+    ports:
+      - "4853:4853"
+  modulo_853:
+    build: ./MODULO_853
+    ports:
+      - "4854:4854"
+  modulo_854:
+    build: ./MODULO_854
+    ports:
+      - "4855:4855"
+  modulo_855:
+    build: ./MODULO_855
+    ports:
+      - "4856:4856"
+  modulo_856:
+    build: ./MODULO_856
+    ports:
+      - "4857:4857"
+  modulo_857:
+    build: ./MODULO_857
+    ports:
+      - "4858:4858"
+  modulo_858:
+    build: ./MODULO_858
+    ports:
+      - "4859:4859"
+  modulo_859:
+    build: ./MODULO_859
+    ports:
+      - "4860:4860"
+  modulo_860:
+    build: ./MODULO_860
+    ports:
+      - "4861:4861"
+  modulo_861:
+    build: ./MODULO_861
+    ports:
+      - "4862:4862"
+  modulo_862:
+    build: ./MODULO_862
+    ports:
+      - "4863:4863"
+  modulo_863:
+    build: ./MODULO_863
+    ports:
+      - "4864:4864"
+  modulo_864:
+    build: ./MODULO_864
+    ports:
+      - "4865:4865"
+  modulo_865:
+    build: ./MODULO_865
+    ports:
+      - "4866:4866"
+  modulo_866:
+    build: ./MODULO_866
+    ports:
+      - "4867:4867"
+  modulo_867:
+    build: ./MODULO_867
+    ports:
+      - "4868:4868"
+  modulo_868:
+    build: ./MODULO_868
+    ports:
+      - "4869:4869"
+  modulo_869:
+    build: ./MODULO_869
+    ports:
+      - "4870:4870"
+  modulo_870:
+    build: ./MODULO_870
+    ports:
+      - "4871:4871"
+  modulo_871:
+    build: ./MODULO_871
+    ports:
+      - "4872:4872"
+  modulo_872:
+    build: ./MODULO_872
+    ports:
+      - "4873:4873"
+  modulo_873:
+    build: ./MODULO_873
+    ports:
+      - "4874:4874"
+  modulo_874:
+    build: ./MODULO_874
+    ports:
+      - "4875:4875"
+  modulo_875:
+    build: ./MODULO_875
+    ports:
+      - "4876:4876"
+  modulo_876:
+    build: ./MODULO_876
+    ports:
+      - "4877:4877"
+  modulo_877:
+    build: ./MODULO_877
+    ports:
+      - "4878:4878"
+  modulo_878:
+    build: ./MODULO_878
+    ports:
+      - "4879:4879"
+  modulo_879:
+    build: ./MODULO_879
+    ports:
+      - "4880:4880"
+  modulo_880:
+    build: ./MODULO_880
+    ports:
+      - "4881:4881"
+  modulo_881:
+    build: ./MODULO_881
+    ports:
+      - "4882:4882"
+  modulo_882:
+    build: ./MODULO_882
+    ports:
+      - "4883:4883"
+  modulo_883:
+    build: ./MODULO_883
+    ports:
+      - "4884:4884"
+  modulo_884:
+    build: ./MODULO_884
+    ports:
+      - "4885:4885"
+  modulo_885:
+    build: ./MODULO_885
+    ports:
+      - "4886:4886"
+  modulo_886:
+    build: ./MODULO_886
+    ports:
+      - "4887:4887"
+  modulo_887:
+    build: ./MODULO_887
+    ports:
+      - "4888:4888"
+  modulo_888:
+    build: ./MODULO_888
+    ports:
+      - "4889:4889"
+  modulo_889:
+    build: ./MODULO_889
+    ports:
+      - "4890:4890"
+  modulo_890:
+    build: ./MODULO_890
+    ports:
+      - "4891:4891"
+  modulo_891:
+    build: ./MODULO_891
+    ports:
+      - "4892:4892"
+  modulo_892:
+    build: ./MODULO_892
+    ports:
+      - "4893:4893"
+  modulo_893:
+    build: ./MODULO_893
+    ports:
+      - "4894:4894"
+  modulo_894:
+    build: ./MODULO_894
+    ports:
+      - "4895:4895"
+  modulo_895:
+    build: ./MODULO_895
+    ports:
+      - "4896:4896"
+  modulo_896:
+    build: ./MODULO_896
+    ports:
+      - "4897:4897"
+  modulo_897:
+    build: ./MODULO_897
+    ports:
+      - "4898:4898"
+  modulo_898:
+    build: ./MODULO_898
+    ports:
+      - "4899:4899"
+  modulo_899:
+    build: ./MODULO_899
+    ports:
+      - "4900:4900"
+  modulo_900:
+    build: ./MODULO_900
+    ports:
+      - "4901:4901"
+  modulo_901:
+    build: ./MODULO_901
+    ports:
+      - "4902:4902"
+  modulo_902:
+    build: ./MODULO_902
+    ports:
+      - "4903:4903"
+  modulo_903:
+    build: ./MODULO_903
+    ports:
+      - "4904:4904"
+  modulo_904:
+    build: ./MODULO_904
+    ports:
+      - "4905:4905"
+  modulo_905:
+    build: ./MODULO_905
+    ports:
+      - "4906:4906"
+  modulo_906:
+    build: ./MODULO_906
+    ports:
+      - "4907:4907"
+  modulo_907:
+    build: ./MODULO_907
+    ports:
+      - "4908:4908"
+  modulo_908:
+    build: ./MODULO_908
+    ports:
+      - "4909:4909"
+  modulo_909:
+    build: ./MODULO_909
+    ports:
+      - "4910:4910"
+  modulo_910:
+    build: ./MODULO_910
+    ports:
+      - "4911:4911"
+  modulo_911:
+    build: ./MODULO_911
+    ports:
+      - "4912:4912"
+  modulo_912:
+    build: ./MODULO_912
+    ports:
+      - "4913:4913"
+  modulo_913:
+    build: ./MODULO_913
+    ports:
+      - "4914:4914"
+  modulo_914:
+    build: ./MODULO_914
+    ports:
+      - "4915:4915"
+  modulo_915:
+    build: ./MODULO_915
+    ports:
+      - "4916:4916"
+  modulo_916:
+    build: ./MODULO_916
+    ports:
+      - "4917:4917"
+  modulo_917:
+    build: ./MODULO_917
+    ports:
+      - "4918:4918"
+  modulo_918:
+    build: ./MODULO_918
+    ports:
+      - "4919:4919"
+  modulo_919:
+    build: ./MODULO_919
+    ports:
+      - "4920:4920"
+  modulo_920:
+    build: ./MODULO_920
+    ports:
+      - "4921:4921"
+  modulo_921:
+    build: ./MODULO_921
+    ports:
+      - "4922:4922"
+  modulo_922:
+    build: ./MODULO_922
+    ports:
+      - "4923:4923"
+  modulo_923:
+    build: ./MODULO_923
+    ports:
+      - "4924:4924"
+  modulo_924:
+    build: ./MODULO_924
+    ports:
+      - "4925:4925"
+  modulo_925:
+    build: ./MODULO_925
+    ports:
+      - "4926:4926"
+  modulo_926:
+    build: ./MODULO_926
+    ports:
+      - "4927:4927"
+  modulo_927:
+    build: ./MODULO_927
+    ports:
+      - "4928:4928"
+  modulo_928:
+    build: ./MODULO_928
+    ports:
+      - "4929:4929"
+  modulo_929:
+    build: ./MODULO_929
+    ports:
+      - "4930:4930"
+  modulo_930:
+    build: ./MODULO_930
+    ports:
+      - "4931:4931"
+  modulo_931:
+    build: ./MODULO_931
+    ports:
+      - "4932:4932"
+  modulo_932:
+    build: ./MODULO_932
+    ports:
+      - "4933:4933"
+  modulo_933:
+    build: ./MODULO_933
+    ports:
+      - "4934:4934"
+  modulo_934:
+    build: ./MODULO_934
+    ports:
+      - "4935:4935"
+  modulo_935:
+    build: ./MODULO_935
+    ports:
+      - "4936:4936"
+  modulo_936:
+    build: ./MODULO_936
+    ports:
+      - "4937:4937"
+  modulo_937:
+    build: ./MODULO_937
+    ports:
+      - "4938:4938"
+  modulo_938:
+    build: ./MODULO_938
+    ports:
+      - "4939:4939"
+  modulo_939:
+    build: ./MODULO_939
+    ports:
+      - "4940:4940"
+  modulo_940:
+    build: ./MODULO_940
+    ports:
+      - "4941:4941"
+  modulo_941:
+    build: ./MODULO_941
+    ports:
+      - "4942:4942"
+  modulo_942:
+    build: ./MODULO_942
+    ports:
+      - "4943:4943"
+  modulo_943:
+    build: ./MODULO_943
+    ports:
+      - "4944:4944"
+  modulo_944:
+    build: ./MODULO_944
+    ports:
+      - "4945:4945"
+  modulo_945:
+    build: ./MODULO_945
+    ports:
+      - "4946:4946"
+  modulo_946:
+    build: ./MODULO_946
+    ports:
+      - "4947:4947"
+  modulo_947:
+    build: ./MODULO_947
+    ports:
+      - "4948:4948"
+  modulo_948:
+    build: ./MODULO_948
+    ports:
+      - "4949:4949"
+  modulo_949:
+    build: ./MODULO_949
+    ports:
+      - "4950:4950"
+  modulo_950:
+    build: ./MODULO_950
+    ports:
+      - "4951:4951"
+  modulo_951:
+    build: ./MODULO_951
+    ports:
+      - "4952:4952"
+  modulo_952:
+    build: ./MODULO_952
+    ports:
+      - "4953:4953"
+  modulo_953:
+    build: ./MODULO_953
+    ports:
+      - "4954:4954"
+  modulo_954:
+    build: ./MODULO_954
+    ports:
+      - "4955:4955"
+  modulo_955:
+    build: ./MODULO_955
+    ports:
+      - "4956:4956"
+  modulo_956:
+    build: ./MODULO_956
+    ports:
+      - "4957:4957"
+  modulo_957:
+    build: ./MODULO_957
+    ports:
+      - "4958:4958"
+  modulo_958:
+    build: ./MODULO_958
+    ports:
+      - "4959:4959"
+  modulo_959:
+    build: ./MODULO_959
+    ports:
+      - "4960:4960"
+  modulo_960:
+    build: ./MODULO_960
+    ports:
+      - "4961:4961"
+  modulo_961:
+    build: ./MODULO_961
+    ports:
+      - "4962:4962"
+  modulo_962:
+    build: ./MODULO_962
+    ports:
+      - "4963:4963"
+  modulo_963:
+    build: ./MODULO_963
+    ports:
+      - "4964:4964"
+  modulo_964:
+    build: ./MODULO_964
+    ports:
+      - "4965:4965"
+  modulo_965:
+    build: ./MODULO_965
+    ports:
+      - "4966:4966"
+  modulo_966:
+    build: ./MODULO_966
+    ports:
+      - "4967:4967"
+  modulo_967:
+    build: ./MODULO_967
+    ports:
+      - "4968:4968"
+  modulo_968:
+    build: ./MODULO_968
+    ports:
+      - "4969:4969"
+  modulo_969:
+    build: ./MODULO_969
+    ports:
+      - "4970:4970"
+  modulo_970:
+    build: ./MODULO_970
+    ports:
+      - "4971:4971"
+  modulo_971:
+    build: ./MODULO_971
+    ports:
+      - "4972:4972"
+  modulo_972:
+    build: ./MODULO_972
+    ports:
+      - "4973:4973"
+  modulo_973:
+    build: ./MODULO_973
+    ports:
+      - "4974:4974"
+  modulo_974:
+    build: ./MODULO_974
+    ports:
+      - "4975:4975"
+  modulo_975:
+    build: ./MODULO_975
+    ports:
+      - "4976:4976"
+  modulo_976:
+    build: ./MODULO_976
+    ports:
+      - "4977:4977"
+  modulo_977:
+    build: ./MODULO_977
+    ports:
+      - "4978:4978"
+  modulo_978:
+    build: ./MODULO_978
+    ports:
+      - "4979:4979"
+  modulo_979:
+    build: ./MODULO_979
+    ports:
+      - "4980:4980"
+  modulo_980:
+    build: ./MODULO_980
+    ports:
+      - "4981:4981"
+  modulo_981:
+    build: ./MODULO_981
+    ports:
+      - "4982:4982"
+  modulo_982:
+    build: ./MODULO_982
+    ports:
+      - "4983:4983"
+  modulo_983:
+    build: ./MODULO_983
+    ports:
+      - "4984:4984"
+  modulo_984:
+    build: ./MODULO_984
+    ports:
+      - "4985:4985"
+  modulo_985:
+    build: ./MODULO_985
+    ports:
+      - "4986:4986"
+  modulo_986:
+    build: ./MODULO_986
+    ports:
+      - "4987:4987"
+  modulo_987:
+    build: ./MODULO_987
+    ports:
+      - "4988:4988"
+  modulo_988:
+    build: ./MODULO_988
+    ports:
+      - "4989:4989"
+  modulo_989:
+    build: ./MODULO_989
+    ports:
+      - "4990:4990"
+  modulo_990:
+    build: ./MODULO_990
+    ports:
+      - "4991:4991"
+  modulo_991:
+    build: ./MODULO_991
+    ports:
+      - "4992:4992"
+  modulo_992:
+    build: ./MODULO_992
+    ports:
+      - "4993:4993"
+  modulo_993:
+    build: ./MODULO_993
+    ports:
+      - "4994:4994"
+  modulo_994:
+    build: ./MODULO_994
+    ports:
+      - "4995:4995"
+  modulo_995:
+    build: ./MODULO_995
+    ports:
+      - "4996:4996"
+  modulo_996:
+    build: ./MODULO_996
+    ports:
+      - "4997:4997"
+  modulo_997:
+    build: ./MODULO_997
+    ports:
+      - "4998:4998"
+  modulo_998:
+    build: ./MODULO_998
+    ports:
+      - "4999:4999"
+  modulo_999:
+    build: ./MODULO_999
+    ports:
+      - "5000:5000"
+  modulo_1000:
+    build: ./MODULO_1000
+    ports:
+      - "5001:5001"

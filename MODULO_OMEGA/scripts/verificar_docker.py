@@ -1,25 +1,30 @@
-import subprocess, json
+import subprocess
+import json
+import os
 from datetime import datetime
 
 def verificar_docker():
-    print("🔍 Verificando Docker...")
-    # Cria o diretório de manifestos se ele não existir
-    import os
-    os.makedirs("MODULO_9/manifestos", exist_ok=True)
-
-    resultado = subprocess.run(["docker", "--version"], capture_output=True, text=True)
-    instalado = "Docker version" in resultado.stdout
+    print("🐳 Verificando Docker...")
+    try:
+        resultado = subprocess.run(["docker", "--version"], capture_output=True, text=True, check=True)
+        versao = resultado.stdout.strip()
+        instalado = True
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        versao = "não instalado"
+        instalado = False
 
     artefato = {
         "tecnologia": "Docker",
         "verificado_em": datetime.now().isoformat(),
         "instalado": instalado,
-        "versao_detectada": resultado.stdout.strip()
+        "versao_detectada": versao,
+        "comentario": "Verifica a presença e a versão do Docker, essencial para a conteinerização dos módulos."
     }
-
-    with open("MODULO_9/manifestos/verificacao_docker.json", "w", encoding="utf-8") as f:
+    
+    os.makedirs("MODULO_OMEGA/manifestos", exist_ok=True)
+    with open("MODULO_OMEGA/manifestos/verificacao_docker.json", "w", encoding="utf-8") as f:
         json.dump(artefato, f, indent=2)
-    print("✅ Verificação do Docker registrada em MODULO_9/manifestos/verificacao_docker.json")
+    print("✅ Verificação do Docker registrada.")
 
 if __name__ == "__main__":
     verificar_docker()
