@@ -1,14 +1,22 @@
 {
-      "name": "modulo-9-apollo-server",
-      "version": "1.0.0",
-      "description": "Servidor Apollo para o Módulo 9",
-      "main": "index.js",
-      "type": "module",
-      "scripts": {
-        "start": "node index.js"
-      },
-      "dependencies": {
-        "@apollo/server": "^4.10.2",
-        "graphql": "^16.8.1"
-      }
-    }
+  "name": "modulo-9-apollo-server",
+  "version": "1.0.0",
+  "description": "Servidor Apollo para o M\u00f3dulo 9",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.10.2",
+    "graphql": "^16.8.1"
+  },
+  "database": {
+    "type": "postgres",
+    "host": "db_785",
+    "port": 5432,
+    "username": "user_785",
+    "password": "pass_785",
+    "database": "db_modulo_785"
+  }
+}
