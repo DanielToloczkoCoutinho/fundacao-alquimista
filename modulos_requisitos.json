@@ -1,0 +1,7 @@
+{
+  "M001": ["Apollo GraphQL", "Docker", "JWT"],
+  "M002": ["React", "Tailwind CSS", "Zod"],
+  "M003": ["Firebase", "MongoDB", "Next.js"],
+  "M004": ["WebAuthn", "GraphQL", "Python"],
+  "M005": ["TensorFlow.js", "BrainFlow.js", "Three.js"]
+}

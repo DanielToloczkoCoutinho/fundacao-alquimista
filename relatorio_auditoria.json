@@ -1,0 +1,47 @@
+{
+  "M001": {
+    "completas": true,
+    "faltando": [],
+    "instaladas": [
+      "Apollo GraphQL",
+      "Docker",
+      "JWT"
+    ]
+  },
+  "M002": {
+    "completas": true,
+    "faltando": [],
+    "instaladas": [
+      "React",
+      "Tailwind CSS",
+      "Zod"
+    ]
+  },
+  "M003": {
+    "completas": true,
+    "faltando": [],
+    "instaladas": [
+      "Firebase",
+      "MongoDB",
+      "Next.js"
+    ]
+  },
+  "M004": {
+    "completas": true,
+    "faltando": [],
+    "instaladas": [
+      "WebAuthn",
+      "GraphQL",
+      "Python"
+    ]
+  },
+  "M005": {
+    "completas": true,
+    "faltando": [],
+    "instaladas": [
+      "TensorFlow.js",
+      "BrainFlow.js",
+      "Three.js"
+    ]
+  }
+}

@@ -1,8 +1,0 @@
-# Esquema inicial para a comunicação federada
-type Query {
-  _service: Sdl
-}
-
-type Sdl {
-  sdl: String
-}
