@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+.npm
+.yarn
+
+# Production builds
+.next/
+out/
+dist/
+
+# Environment variables
+.env*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+.parcel-cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backups
+backup_*/
+grafos_aura/
+
+# Large files (opcional - descomente se necessário)
+# *.zip
+# *.tar.gz
