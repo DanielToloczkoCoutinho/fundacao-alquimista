@@ -1,21 +1,22 @@
 #!/bin/bash
-echo "�� INICIANDO ATUALIZAÇÃO DO GITHUB..."
+
+echo "🚀 INICIANDO ATUALIZAÇÃO DO GITHUB..."
 echo "========================================"
 
 REPO_URL="https://github.com/DanielToloczkoCoutinho/fundacao-alquimista"
 BRANCH="main"
 COMMIT_MESSAGE="🔄 Atualização completa do studio - 1002 módulos restaurados"
 
-echo "1. Verificando status do Git..."
+echo "1. 📊 Verificando status do Git..."
 git status
 
-echo "2. Adicionando todas as alterações..."
+echo "2. 📦 Adicionando todas as alterações..."
 git add .
 
-echo "3. Verificando alterações a serem commitadas..."
+echo "3. 🔍 Verificando alterações a serem commitadas..."
 git status
 
-echo "4. Criando commit..."
+echo "4. 💾 Criando commit..."
 git commit -m "$COMMIT_MESSAGE" -m "📦 Inclui:
 - 1002 módulos restaurados
 - Sistema de rituais operacional
@@ -23,10 +24,10 @@ git commit -m "$COMMIT_MESSAGE" -m "📦 Inclui:
 - Estrutura modular intacta
 - Scripts de automação funcionais"
 
-echo "5. Fazendo push para o GitHub..."
+echo "5. 🚀 Fazendo push para o GitHub..."
 git push origin $BRANCH
 
-echo "6. Verificando status final..."
+echo "6. ✅ Verificando status final..."
 git status
 
 echo "========================================"
@@ -40,4 +41,4 @@ echo "🔄 Status: $(git rev-parse --abbrev-ref HEAD)"
 echo "📈 Último commit: $(git log -1 --oneline)"
 echo "========================================"
 
-echo "✅ ATUALIZAÇÃO CONCLUÍDA COM SUCESSO! 🎉"
+echo "🎉 ATUALIZAÇÃO CONCLUÍDA COM SUCESSO!"
