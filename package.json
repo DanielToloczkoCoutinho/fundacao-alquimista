@@ -13,7 +13,7 @@
     "security:check": "./scripts/SCRIPT_SEGURANCA_AURA.sh"
   },
   "dependencies": {
-    "next": "14.0.0",
+    "next": "14.2.32",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "three": "^0.158.0"
