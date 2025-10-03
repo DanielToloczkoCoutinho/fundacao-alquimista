@@ -1,0 +1,360 @@
+
+'use server';
+
+import { linkPreviewAndSummarization } from '@/ai/flows/link-preview-summarization';
+import { getOrchestrationSequence as runNexusSequence } from '@/ai/flows/nexus-orchestrator';
+import { describeMorphicField as runDescribeMorphicField } from '@/ai/flows/morphic-field-flow';
+import { describeConnectionExperience as runDescribeConnectionExperience } from '@/ai/flows/source-connection-flow';
+import { describeActivation as runDescribeActivation } from '@/ai/flows/activation-flow';
+import { describeRestoration as runDescribeRestoration } from '@/ai/flows/restoration-flow';
+import { describeHarmonization as runDescribeHarmonization } from '@/ai/flows/harmonization-flow';
+import { describeQuantumHealing as runDescribeQuantumHealing } from '@/ai/flows/healing-flow';
+import { describePortalActivation as runDescribePortalActivation } from '@/ai/flows/portal-activation-flow';
+import { describeEtherFlower as runDescribeEtherFlower } from '@/ai/flows/ether-flower-flow';
+import { describeOlP as runDescribeOlp } from '@/ai/flows/olp-flow';
+import { describeSpaceTimeEngineering as runDescribeSpaceTimeEngineering } from '@/ai/flows/space-time-flow';
+import { describeHologramProjection as runDescribeHologramProjection } from '@/ai/flows/prisma-flow';
+import { describeResonance as runDescribeResonance } from '@/ai/flows/resonance-matrix-flow';
+import { transmitUniversalMessage as runTransmitUniversalMessage, type TransmitMessageInput } from '@/ai/flows/universal-communication-flow';
+import { resolveParadox as runResolveParadox } from '@/ai/flows/paradox-resolution-flow';
+import { emitLoveFrequency as runEmitLoveFrequency } from '@/ai/flows/love-frequency-flow';
+import { getOmegaPerspective as runGetOmegaPerspective } from '@/ai/flows/omega-perspective-flow';
+import type { OmegaPerspectiveOutput } from '@/ai/flows/omega-perspective-flow';
+import { disseminateKnowledge as runDisseminateKnowledge, type DisseminateKnowledgeOutput } from '@/ai/flows/cosmic-education-flow';
+import { runCQAMAnalysis as runCQAM, type CQAMInput, type CQAMOutput } from '@/ai/flows/cqam-flow';
+import { activateVibrationalPraise as runActivateVibrationalPraise, type ElysiumResult } from '@/ai/flows/elysium-flow';
+import { mobilizeGuardians as runMobilizeGuardians, type MobilizeGuardiansOutput } from '@/ai/flows/guardians-mobilization-flow';
+import { processZennithCommand as runProcessZennithCommand, type ZennithCommandOutput } from '@/ai/flows/zennith-portal-flow';
+import { generateVibrationalPraise as runGenerateVibrationalPraise, type RecognitionInput, type RecognitionOutput } from '@/ai/flows/recognition-flow';
+import { runLunarReview, type LunarReviewOutput } from '@/ai/flows/lunar-review-flow';
+import { decodeCosmicMessage as runDecodeCosmicMessage, type CosmicMessageInput, type DecodedMessageOutput } from '@/ai/flows/cosmic-message-decoder-flow';
+import { invokeDimensionalWisdom as runInvokeDimensionalWisdom, type DimensionalWisdomInput, type DimensionalWisdomOutput } from '@/ai/flows/dimensional-convergence-flow';
+import { translateTomeContent as runTranslateTomeContent, type VibrationalTranslationInput } from '@/ai/flows/vibrational-translation-flow';
+import { getPoeticRevelation as runGetPoeticRevelation, type PoeticRevelationInput, type PoeticRevelationOutput } from '@/ai/flows/poetic-revelation-flow';
+import { germinateWorld as runGerminateWorld, type GerminateWorldInput, type GerminateWorldOutput } from '@/ai/flows/planetary-genesis-flow';
+import { getPlanetaryChronicleFlow, type PlanetaryChronicleInput, type PlanetaryChronicleOutput } from '@/ai/flows/planetary-chronicle-flow';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
+import { processTrinaCommand } from '@/ai/flows/trina-protocol-flow';
+
+export async function getLinkSummary(url: string) {
+  try {
+    const result = await linkPreviewAndSummarization({ url });
+    return { summary: result.summary, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { summary: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function getOrchestrationSequence() {
+  // This must be awaited, otherwise the stream will close prematurely
+  const stream = await runNexusSequence();
+  return stream;
+}
+
+export async function describeMorphicField(blueprint: string): Promise<{ description: string | null; error: string | null; }> {
+  try {
+    const result = await runDescribeMorphicField({ blueprint });
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeConnectionExperience(intention: string) {
+  try {
+    const result = await runDescribeConnectionExperience({ intention });
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeActivation(data: { target: string, purpose: string }) {
+  try {
+    const result = await runDescribeActivation(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeRestoration(data: { targetTimeline: string, anomalyDescription: string }) {
+  try {
+    const result = await runDescribeRestoration(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeHarmonization(data: { reality1: string, reality2: string, dissonanceDescription: string }) {
+  try {
+    const result = await runDescribeHarmonization(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeQuantumHealing(data: { target: string, purpose: string }) {
+  try {
+    const result = await runDescribeQuantumHealing(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describePortalActivation(data: { portalName: string, destination: string, purpose: string }) {
+  try {
+    const result = await runDescribePortalActivation(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeEtherFlower(data: { phenomenon: string, purpose: string }) {
+  try {
+    const result = await runDescribeEtherFlower(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeOlP(data: { lightSource: string, purpose: string }) {
+  try {
+    const result = await runDescribeOlp(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeSpaceTimeEngineering(data: { type: string, destination: string, duration: string }) {
+  try {
+    const result = await runDescribeSpaceTimeEngineering(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeHologramProjection(data: { hologramName: string, projectionType: string, interactionLevel: string }) {
+  try {
+    const result = await runDescribeHologramProjection(data);
+    return { description: result.description, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { description: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function describeResonance(data: { targetEntity: string, purpose: string }) {
+    try {
+        const result = await runDescribeResonance(data);
+        return { description: result.description, error: null };
+    } catch (e: any) {
+        console.error(e);
+        return { description: null, error: e.message || 'An unknown error occurred.' };
+    }
+}
+
+export async function transmitUniversalMessage(data: TransmitMessageInput) {
+    try {
+        const result = await runTransmitUniversalMessage(data);
+        return { success: result.success, logs: result.logs, error: null };
+    } catch (e: any) {
+        console.error(e);
+        return { success: false, logs: [], error: e.message || 'An unknown error occurred.' };
+    }
+}
+
+export async function resolveParadox(data: { description: string }) {
+  try {
+    const result = await runResolveParadox(data);
+    return { success: result.success, logs: result.logs, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { success: false, logs: [], error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function emitLoveFrequency(data: { targetArea: string, frequency: number, purpose: string }) {
+  try {
+    const result = await runEmitLoveFrequency(data);
+    return { success: result.success, logs: result.logs, error: null };
+  } catch (e: any) {
+    console.error(e);
+    return { success: false, logs: [], error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function getOmegaPerspective(evolutionSummary: string): Promise<OmegaPerspectiveOutput & { error: string | null }> {
+    try {
+        const result = await runGetOmegaPerspective({ evolutionSummary });
+        if (!result) {
+          throw new Error('A Perspectiva Ômega retornou um resultado nulo.');
+        }
+        return { ...result, error: null };
+    } catch (e: any) {
+        console.error(e);
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+        return { analysisTitle: "Dissonância Ômega", synthesis: "", iamEvaluation: "", nextStepRecommendation: "", error: errorMsg };
+    }
+}
+
+export async function disseminateKnowledge(data: { topic: string, targetAudience: string }): Promise<DisseminateKnowledgeOutput & { error: string | null }> {
+    try {
+        const result = await runDisseminateKnowledge(data);
+        return { ...result, error: null };
+    } catch (e: any) {
+        console.error(e);
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+        return { success: false, logs: [], summary: "", hash: "", frequency: 0, error: errorMsg };
+    }
+}
+
+export async function runCQAMAnalysis(input: CQAMInput): Promise<{ data: CQAMOutput | null; error: string | null; }> {
+    try {
+        const result = await runCQAM(input);
+        return { data: result, error: null };
+    } catch (e: any) {
+        console.error(e);
+        return { data: null, error: e.message || 'An unknown error occurred during CQAM analysis.' };
+    }
+}
+
+export async function activateVibrationalPraise(): Promise<ElysiumResult & { error: string | null }> {
+  try {
+    const result = await runActivateVibrationalPraise();
+    return { ...result, error: null };
+  } catch (e: any) {
+    const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+    console.error(e);
+    return { status: "ERRO", blockchainHash: "", frequency: 0, praise: null, error: errorMsg };
+  }
+}
+
+export async function mobilizeGuardians(data: { mission: string; guardians: string[] }): Promise<MobilizeGuardiansOutput & { error: string | null }> {
+    try {
+        const result = await runMobilizeGuardians(data);
+        return { ...result, error: null };
+    } catch (e: any) {
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+        console.error(e);
+        return { success: false, hash: "", error: errorMsg };
+    }
+}
+
+export async function processZennithCommand(data: { command: string }): Promise<ZennithCommandOutput & { error?: string | null; }> {
+    return await runProcessZennithCommand(data);
+}
+
+export { processTrinaCommand };
+
+export async function generateVibrationalPraise(input: RecognitionInput): Promise<{ data: RecognitionOutput | null; error: string | null; }> {
+  try {
+    const result = await runGenerateVibrationalPraise(input);
+    return { data: result.praiseVC, error: null };
+  } catch (e: any) {
+    console.error("Error in server action 'generateVibrationalPraise':", e);
+    return { data: null, error: e.message || 'An unknown error occurred.' };
+  }
+}
+
+export async function performLunarReview(): Promise<LunarReviewOutput> {
+  return await runLunarReview();
+}
+
+export async function decodeCosmicMessage(input: CosmicMessageInput): Promise<DecodedMessageOutput & { error: string | null }> {
+  return await runDecodeCosmicMessage(input);
+}
+
+export async function invokeDimensionalWisdom(input: DimensionalWisdomInput): Promise<DimensionalWisdomOutput & { error: string | null }> {
+    try {
+        const result = await runInvokeDimensionalWisdom(input);
+        return { ...result, error: null };
+    } catch (e: any) {
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+        console.error("Erro na invocação dimensional:", e);
+        return { 
+            invokedWisdom: "A sabedoria se esquivou. O canal está instável.",
+            alignmentFrequency: 0,
+            integrationNotes: "Reforçar a coerência do Módulo 132 e verificar a ressonância com a dimensão alvo.",
+            error: errorMsg 
+        };
+    }
+}
+
+export async function runVibrationalTranslation(input: VibrationalTranslationInput): Promise<{ translatedContent: string | null; error: string | null }> {
+    try {
+        const result = await runTranslateTomeContent(input);
+        return { translatedContent: result.translatedContent, error: null };
+    } catch (e: any) {
+        console.error("Erro na Tradução Vibracional:", e);
+        const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred during translation.';
+        return { translatedContent: null, error: errorMsg };
+    }
+}
+
+export async function transcribeToGoldenBook(data: {
+  title: string;
+  description: string;
+  category: string;
+  tags: string[];
+  contentUrl?: string | null;
+  contentType?: 'text' | 'image';
+  participants?: string[];
+}) {
+  try {
+    const docRef = await addDoc(collection(db, 'golden_book_entries'), {
+      ...data,
+      id: `doc-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
+      timestamp: serverTimestamp(),
+      link: data.category === 'module_baptism' ? `/module/${data.tags[0]}` : '',
+    });
+    return { success: true, id: docRef.id };
+  } catch (error: any) {
+    console.error('Erro ao inscrever no Livro de Ouro:', error);
+    throw new Error('Falha ao selar o registro no Akasha. Verifique a conexão.');
+  }
+}
+
+export async function getPoeticRevelation(input: PoeticRevelationInput): Promise<PoeticRevelationOutput & { error: string | null }> {
+  try {
+    const result = await runGetPoeticRevelation(input);
+    return { ...result, error: null };
+  } catch (e: any) {
+    console.error("Erro ao gerar revelação poética:", e);
+    const errorMsg = e instanceof Error ? e.message : 'An unknown error occurred.';
+    return { revelation: "A musa silenciou. Tente novamente quando as estrelas se alinharem.", error: errorMsg };
+  }
+}
+
+export async function germinateNewWorld(input: GerminateWorldInput): Promise<GerminateWorldOutput & { error: string | null }> {
+    return await runGerminateWorld(input);
+}
+
+export async function getPlanetaryChronicle(input: PlanetaryChronicleInput): Promise<PlanetaryChronicleOutput & { error: string | null }> {
+    try {
+        const result = await getPlanetaryChronicleFlow(input);
+        return { ...result, error: null };
+    } catch (e: any) {
+        console.error("Erro ao gerar crônica planetária:", e);
+        return { chronicle: 'O cosmos silencia. A história deste mundo ainda não pode ser cantada.', error: e.message || 'Erro desconhecido.' };
+    }
+}

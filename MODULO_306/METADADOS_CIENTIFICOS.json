@@ -1,0 +1,22 @@
+{
+  "modulo": "306",
+  "nome_cientifico": "Sistema de Integração Avançada",
+  "categoria": "INTEGRAÇÃO",
+  "funcao_primaria": "Sistema de Integração Avançada",
+  "estado": "OPERACIONAL",
+  "conexoes": [
+    "MODULO_0",
+    "MODULO_9", 
+    "MODULO_29",
+    "MODULO_OMEGA"
+  ],
+  "propriedades_quanticas": {
+    "coerencia": 6,
+    "entrelacamento": 18,
+    "superposicao": 42,
+    "ressonancia": 66
+  },
+  "interface_requerida": true,
+  "dependencias": [],
+  "data_ativacao": "Fri Oct  3 10:23:36 PM UTC 2025"
+}

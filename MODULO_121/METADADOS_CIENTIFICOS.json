@@ -1,0 +1,22 @@
+{
+  "modulo": "121",
+  "nome_cientifico": "Portal de Ativação Múltipla",
+  "categoria": "PORTAL",
+  "funcao_primaria": "Portal de Ativação Múltipla",
+  "estado": "OPERACIONAL",
+  "conexoes": [
+    "MODULO_0",
+    "MODULO_9", 
+    "MODULO_29",
+    "MODULO_OMEGA"
+  ],
+  "propriedades_quanticas": {
+    "coerencia": 21,
+    "entrelacamento": 63,
+    "superposicao": 47,
+    "ressonancia": 31
+  },
+  "interface_requerida": true,
+  "dependencias": [],
+  "data_ativacao": "Fri Oct  3 10:23:28 PM UTC 2025"
+}

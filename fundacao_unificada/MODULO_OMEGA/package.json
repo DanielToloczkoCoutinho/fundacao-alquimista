@@ -1,0 +1,27 @@
+{
+  "name": "modulo-omega",
+  "version": "1.0.0",
+  "description": "O Gateway da Mente Una (MΩ), o portal de comunicação da Fundação.",
+  "main": "dist/gateway.js",
+  "scripts": {
+    "start": "node dist/gateway.js",
+    "compile": "tsc"
+  },
+  "keywords": [
+    "fundacao",
+    "alquimista",
+    "omega",
+    "gateway"
+  ],
+  "author": "Daniel-Anatheron ⚛️",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/gateway": "^2.11.2",
+    "@apollo/server": "^4.12.2",
+    "graphql": "^16.9.0",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.12"
+  }
+}

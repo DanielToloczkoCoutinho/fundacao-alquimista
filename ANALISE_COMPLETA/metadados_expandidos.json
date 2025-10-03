@@ -1,0 +1,47 @@
+{
+  "sistema_analise": {
+    "timestamp": "$(date)",
+    "escopo": "Área de Trabalho Completa",
+    "total_diretorios": $total_diretorios,
+    "total_arquivos": $total_arquivos
+  },
+  "estrutura_principal": {
+    "fundacao_alquimista": {
+      "modulos_ativos": 518,
+      "scripts_ativacao": 564,
+      "categorias_principais": {
+        "FUNDAMENTO_COSMICO": 24,
+        "NEXO_PRINCIPAL": 9,
+        "REALIDADE_RAINHA": 1,
+        "RESSONANCIA": 34,
+        "TEMPORALIDADE": 15,
+        "PORTAL": 9,
+        "INTEGRAÇÃO": 14,
+        "ESPECIAL": 56,
+        "PROCESSAMENTO": 200,
+        "SINTONIA": 156
+      }
+    }
+  },
+  "projetos_detectados": [
+  ],
+  "analise_tipos_arquivos": {
+    "Python": 102
+,
+    "Shell": 990
+,
+    "TypeScript": 528
+,
+    "JavaScript": 130
+,
+    "CSS": 15
+,
+    "Markdown": 627
+,
+    "JSON": 3640
+,
+    "Docker": 24
+,
+    "HTML": 2
+  }
+}

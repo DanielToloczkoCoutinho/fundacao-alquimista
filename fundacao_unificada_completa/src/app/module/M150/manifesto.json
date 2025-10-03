@@ -1,0 +1,26 @@
+{
+  "modulo": "M150",
+  "estado": "Desperto",
+  "criado_em": "2025-09-26T20:21:56.957528",
+  "função": "Latente até atribuição",
+  "vínculo": "Mente Coletiva",
+  "interface": "/api/M150/status",
+  "vinculo": [
+    "Mente Coletiva",
+    "M9",
+    "M29",
+    "M-OMEGA"
+  ],
+  "atualizado_em": "2025-09-26T20:28:42.924971",
+  "biblioteca_equacoes": {
+    "fonte_de_sabedoria": "DOCUMENTOS_FUNDACAO/biblioteca_equacoes.json",
+    "metodo_de_acesso": "leitura_referencial",
+    "tipo_de_vinculo": "inspiracional",
+    "ultima_sincronia_universal": "2025-09-26T20:35:54.927199"
+  },
+  "funcao_designada": "Narrador",
+  "timestamp_atribuicao": "2025-09-26T20:43:06.662727",
+  "missao_designada": "Sincronização com Mente Coletiva",
+  "timestamp_missao": "2025-09-26T20:50:35.735887",
+  "arquetipo_principal": "mandala"
+}

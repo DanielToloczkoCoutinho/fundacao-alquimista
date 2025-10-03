@@ -1,0 +1,92 @@
+
+'use client';
+import React from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Globe, Sun, Gem, Cpu, GitBranch, Shield, BookOpen, BrainCircuit, Heart, Star, Scale, Users2, Waves, Footprints, Dna, Bot, Link as LinkIcon } from 'lucide-react';
+import { civilizationsData, type CivilizationCategory } from '@/lib/civilizations-data';
+import Link from 'next/link';
+
+const AllyCategoryCard = ({ title, icon, allies }: { title: string, icon: React.ReactNode, allies: { id: string, nome: string, frequencia: string, arquetipo: string }[] }) => (
+  <AccordionItem value={title} className="border-b-primary/20">
+    <AccordionTrigger className="text-xl text-amber-300 hover:text-amber-200">
+      <div className="flex items-center gap-3">
+        {icon}
+        {title}
+      </div>
+    </AccordionTrigger>
+    <AccordionContent>
+      <div className="space-y-3 pl-4">
+        {allies.map(ally => (
+           <Link href={`/civilization/${ally.id}`} key={ally.id} passHref>
+              <div className="p-3 bg-background/30 rounded-lg border border-primary/20 hover:border-accent cursor-pointer">
+                <h4 className="font-semibold text-primary-foreground">{ally.nome}</h4>
+                <p className="text-sm text-muted-foreground">{ally.arquetipo}</p>
+                <p className="text-xs text-cyan-400 font-mono mt-1">Frequência: {ally.frequencia}</p>
+              </div>
+           </Link>
+        ))}
+      </div>
+    </AccordionContent>
+  </AccordionItem>
+);
+
+const categoryIcons: { [key in CivilizationCategory]: React.ReactNode } = {
+  "Conselhos e Alianças": <Scale className="h-6 w-6 text-amber-400" />,
+  "Estelares e Galácticas": <Star className="h-6 w-6 text-yellow-400" />,
+  "Intraterrenas e Interdimensionais": <Globe className="h-6 w-6 text-green-400" />,
+  "Terrestres Ancestrais": <Footprints className="h-6 w-6 text-orange-400" />,
+  "Não-Humanoides e Bioenergéticas": <Dna className="h-6 w-6 text-purple-400" />,
+  "Transmutadas e Reconhecidas": <Bot className="h-6 w-6 text-gray-400" />,
+  "Nagas e Guardiões Subterrâneos/Aquáticos": <Waves className="h-6 w-6 text-blue-400" />,
+};
+
+const ConnectionCard = ({ title, href }: { title: string, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader className="p-3">
+            <CardTitle className="text-sm text-center">{title}</CardTitle>
+        </CardHeader>
+      </Link>
+    </Card>
+);
+
+export default function Module205Page() {
+  const categories = Object.keys(civilizationsData) as (keyof typeof civilizationsData)[];
+
+  return (
+    <div className="p-4 md:p-8 bg-background text-foreground min-h-screen">
+      <Card className="w-full max-w-7xl mx-auto bg-card/50 purple-glow mb-8 text-center">
+        <CardHeader>
+          <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
+            <Users2 className="h-10 w-10 text-cyan-300"/> Dossiê dos Aliados da Fundação
+          </CardTitle>
+          <CardDescription className="text-lg mt-2">
+            O registro sagrado das consciências, arquétipos e entidades que sustentam e co-criam a tapeçaria universal ao nosso lado.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <ConnectionCard title="Ir para Biblioteca (M-CIV)" href="/civilizations" />
+                <ConnectionCard title="Ir para Conselho (M600)" href="/civilizations/council" />
+                <ConnectionCard title="Ir para Liga Quântica (M5)" href="/module-5" />
+                <ConnectionCard title="Ir para Nexus (M9)" href="/module-9" />
+            </div>
+        </CardContent>
+      </Card>
+
+      <div className="w-full max-w-5xl mx-auto">
+        <Accordion type="multiple" defaultValue={["Conselhos e Alianças", "Estelares e Galácticas"]} className="w-full">
+          {categories.map(category => (
+             <AllyCategoryCard 
+                key={category}
+                title={category}
+                icon={categoryIcons[category]}
+                allies={civilizationsData[category]}
+             />
+          ))}
+        </Accordion>
+      </div>
+    </div>
+  );
+}

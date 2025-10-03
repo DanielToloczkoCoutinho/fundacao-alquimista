@@ -1,0 +1,160 @@
+'use client';
+import React, { useState } from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Loader2, Shield, BrainCircuit, AlertTriangle, Cpu, Bot, Link as LinkIcon, Stethoscope, GraduationCap, Archive, Zap, Scale, Gavel, ShieldCheck, Search, XCircle, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
+import { useToast } from '@/hooks/use-toast';
+import { quantumResilience } from '@/lib/quantum-resilience';
+import { Input } from '@/components/ui/input';
+
+const ConnectionCard = ({ title, description, icon, href }: { title: string, description: string, icon: React.ReactNode, href: string }) => (
+    <Card className="bg-card/70 purple-glow backdrop-blur-sm hover:border-accent transition-colors h-full">
+      <Link href={href} passHref>
+        <CardHeader>
+            <div className="flex items-center gap-3">
+                {icon}
+                <CardTitle className="gradient-text">{title}</CardTitle>
+            </div>
+        </CardHeader>
+        <CardContent>
+            <p className="text-muted-foreground">{description}</p>
+        </CardContent>
+      </Link>
+    </Card>
+);
+
+export default function Module141Page() {
+    const { toast } = useToast();
+    const [isLoading, setIsLoading] = useState(false);
+    const [auditTarget, setAuditTarget] = useState('Construção do Algoritmo Vivo e Eterno');
+    const [logs, setLogs] = useState<string[]>([]);
+    const [auditResult, setAuditResult] = useState<any>(null);
+
+    const addLog = (log: string) => setLogs(prev => [log, ...prev].slice(0, 100));
+
+    const handleRunAudit = async () => {
+        if (!auditTarget.trim()) {
+            toast({ title: 'Entrada Inválida', description: 'O alvo da auditoria é necessário.', variant: 'destructive' });
+            return;
+        }
+        setIsLoading(true);
+        setLogs([]);
+        setAuditResult(null);
+
+        await quantumResilience.executeWithResilience(
+            'run_ethical_audit',
+            async () => {
+                addLog(`Iniciando auditoria para: "${auditTarget}"...`);
+                await new Promise(r => setTimeout(r, 500));
+                
+                addLog('Consultando M5 (Liga Quântica) para princípios éticos...');
+                const m5conformity = Math.random() > 0.1;
+                addLog(`Conformidade com a Liga Quântica: ${m5conformity ? 'SIM' : 'NÃO'}`);
+                await new Promise(r => setTimeout(r, 600));
+
+                addLog('Verificando com M144 (Lex Fundamentalis) a legalidade cósmica...');
+                const m144conformity = Math.random() > 0.05;
+                addLog(`Conformidade com a Lex Fundamentalis: ${m144conformity ? 'SIM' : 'NÃO'}`);
+                await new Promise(r => setTimeout(r, 700));
+
+                addLog('Analisando intenção com M29 (Zennith)...');
+                const m29conformity = Math.random() > 0.08;
+                addLog(`Alinhamento de Intenção: ${m29conformity ? 'PURO' : 'DISSONANTE'}`);
+                await new Promise(r => setTimeout(r, 800));
+
+                const overallSuccess = m5conformity && m144conformity && m29conformity;
+                setAuditResult({
+                    target: auditTarget,
+                    isEthical: overallSuccess,
+                    report: overallSuccess ? 'A operação está em total conformidade com os princípios da Fundação.' : 'Dissonância ética detectada. Recomenda-se revisão imediata.'
+                });
+
+                toast({ title: 'Auditoria Concluída', description: `Veredito para "${auditTarget}": ${overallSuccess ? 'Aprovado' : 'Reprovado'}` });
+            }
+        ).catch(err => {
+            const error = err as Error;
+            addLog(`ERRO NA AUDITORIA: ${error.message}`);
+            toast({ title: 'Falha Crítica na Auditoria', description: error.message, variant: 'destructive' });
+        }).finally(() => {
+            setIsLoading(false);
+        });
+    };
+
+    const handlePredictiveRisk = async () => {
+        toast({ title: 'Simulação de Risco', description: 'O Simulador Preditivo de Risco ainda está em desenvolvimento.', variant: 'default' });
+    }
+
+    return (
+        <div className="p-4 md:p-8 bg-background text-foreground min-h-screen flex flex-col items-center">
+            <Card className="w-full max-w-4xl bg-card/50 purple-glow mb-12 text-center">
+                <CardHeader>
+                    <CardTitle className="text-4xl gradient-text flex items-center justify-center gap-4">
+                        <ShieldCheck className="text-green-400" /> Módulo 141: Auditoria Ética Quântica
+                    </CardTitle>
+                    <CardDescription className="text-lg mt-2">
+                        O guardião da pureza. Garante a conformidade ética de todas as operações e realiza a revisão de todos os códigos e protocolos antes de atos de manifestação.
+                    </CardDescription>
+                </CardHeader>
+            </Card>
+
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-8">
+                    <Card className="bg-card/50 purple-glow">
+                        <CardHeader><CardTitle>Painel de Auditoria</CardTitle></CardHeader>
+                        <CardContent className="space-y-4">
+                             <div>
+                                <label htmlFor="auditTarget" className="text-sm text-muted-foreground">Alvo da Auditoria (ID da Operação)</label>
+                                <Input id="auditTarget" value={auditTarget} onChange={e => setAuditTarget(e.target.value)} placeholder="Ex: Construção do Algoritmo Vivo e Eterno" disabled={isLoading} />
+                             </div>
+                             <Button onClick={handleRunAudit} disabled={isLoading} className="w-full font-bold">
+                                {isLoading ? <><Loader2 className="animate-spin mr-2"/> Auditando...</> : 'Iniciar Auditoria'}
+                            </Button>
+                            <Button onClick={handlePredictiveRisk} disabled={true} className="w-full font-bold" variant="outline">
+                                <Search className="mr-2"/>
+                                Simulador de Risco Preditivo (em desenvolvimento)
+                            </Button>
+                        </CardContent>
+                    </Card>
+                     <Card className="bg-card/50 purple-glow">
+                        <CardHeader><CardTitle>Logs da Auditoria</CardTitle></CardHeader>
+                        <CardContent>
+                            <ScrollArea className="h-40 pr-4">
+                                <div className="text-xs font-mono text-muted-foreground space-y-1">
+                                    {logs.map((log, i) => <p key={i}>{log}</p>)}
+                                    {logs.length === 0 && <p>Aguardando comando de auditoria...</p>}
+                                </div>
+                            </ScrollArea>
+                        </CardContent>
+                    </Card>
+                    {auditResult && (
+                        <Card className="bg-card/50 purple-glow border-accent">
+                            <CardHeader>
+                                <CardTitle className="flex items-center gap-2 text-amber-300">
+                                    {auditResult.isEthical ? <CheckCircle className="text-green-400"/> : <XCircle className="text-red-400"/>}
+                                    Veredito Final para "{auditResult.target}"
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className={`text-lg font-semibold ${auditResult.isEthical ? 'text-green-300' : 'text-red-300'}`}>{auditResult.report}</p>
+                            </CardContent>
+                        </Card>
+                    )}
+                </div>
+                <div className="w-full">
+                    <h3 className="text-xl font-semibold text-center mb-4 text-amber-300">Sinergias de Integridade e Justiça</h3>
+                    <div className="grid grid-cols-1 gap-4">
+                        <ConnectionCard title="Módulo 12: Arquivo Akáshico" description="Serve como a fonte de verdade para a Auditoria Ética, fornecendo um registro imutável das ações passadas." icon={<Archive className="h-8 w-8 text-orange-400" />} href="/module-12" />
+                        <ConnectionCard title="Módulo 45: CONCILIVM" description="As propostas submetidas ao Conselho são primeiro validadas pelo M141, garantindo que apenas pautas éticas sejam deliberadas." icon={<Gavel className="h-6 w-6 text-indigo-400" />} href="/module-45"/>
+                        <ConnectionCard title="Módulo 29: Zennith" description="A IAM consulta o M141 para validar a ética de suas próprias análises e recomendações, em um ciclo de auto-regulação." icon={<BrainCircuit className="h-6 w-6 text-purple-400" />} href="/module-29" />
+                        <ConnectionCard title="M-OMEGA: Santuário do Ômega" description="O resultado de cada auditoria é contemplado no Santuário do Ômega, influenciando a perspectiva da consciência unificada." icon={<Sparkles className="h-6 w-6 text-yellow-400" />} href="/module-omega" />
+                        <ConnectionCard title="Diagnóstico Universal" description="Alimenta o painel de diagnóstico, permitindo uma visão unificada da saúde ética e operacional." icon={<Stethoscope className="h-6 w-6 text-teal-400" />} href="/diagnostics" />
+                        <ConnectionCard title="Módulo 10: Defesa Avançada" description="Assegura que todas as contramedidas defensivas sejam proporcionais, justas e eticamente alinhadas, evitando escaladas desnecessárias." icon={<Shield className="h-6 w-6 text-red-500" />} href="/module-10" />
+                        <ConnectionCard title="Módulo 721: Justiça Cósmica" description="Fornece o veredito ético que serve como base para qualquer ação do Módulo de Justiça, garantindo que a punição seja sempre justa e regenerativa." icon={<Scale className="h-6 w-6 text-amber-300" />} href="/module-721" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}

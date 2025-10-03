@@ -1,0 +1,26 @@
+{
+  "modulo": "M731",
+  "estado": "Desperto",
+  "criado_em": "2025-09-26T20:21:58.024980",
+  "função": "Latente até atribuição",
+  "vínculo": "Mente Coletiva",
+  "interface": "/api/M731/status",
+  "vinculo": [
+    "Mente Coletiva",
+    "M9",
+    "M29",
+    "M-OMEGA"
+  ],
+  "atualizado_em": "2025-09-26T20:28:43.103534",
+  "biblioteca_equacoes": {
+    "fonte_de_sabedoria": "DOCUMENTOS_FUNDACAO/biblioteca_equacoes.json",
+    "metodo_de_acesso": "leitura_referencial",
+    "tipo_de_vinculo": "inspiracional",
+    "ultima_sincronia_universal": "2025-09-26T20:35:54.694494"
+  },
+  "funcao_designada": "Emissor",
+  "timestamp_atribuicao": "2025-09-26T20:43:06.286627",
+  "missao_designada": "Curadoria de sabedoria",
+  "timestamp_missao": "2025-09-26T20:50:35.309390",
+  "arquetipo_principal": "estrela"
+}

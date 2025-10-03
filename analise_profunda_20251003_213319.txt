@@ -1,0 +1,133 @@
+RELATÓRIO DE ANÁLISE PROFUNDA - FUNDAÇÃO ALQUIMISTA
+Data: Fri Oct  3 09:33:19 PM UTC 2025
+Total de arquivos analisados: 5235
+========================================================
+
+1. 🔍 BUSCANDO DUPLICATAS POR CONTEÚDO:
+   -----------------------------------------
+   📊 ANALISANDO PADRÕES DE NOME:
+
+   🔎 Padrão: 'MODULO'
+      📁 ./MODULO_7 - 0 arquivos
+      📁 ./MODULO_0 - 0 arquivos
+      📁 ./fundacao_unificada/MODULO_0 - 20 arquivos
+      📁 ./fundacao_unificada/MODULO_OMEGA - 57 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_7 - 20 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_0 - 20 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_OMEGA - 57 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_3 - 20 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_ALFA - 4 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_1 - 20 arquivos
+
+   🔎 Padrão: 'modulo'
+
+   🔎 Padrão: 'MODULO-'
+
+   🔎 Padrão: 'modulo-'
+
+   🔎 Padrão: 'MODULO_'
+      📁 ./MODULO_7 - 0 arquivos
+      📁 ./MODULO_0 - 0 arquivos
+      📁 ./fundacao_unificada/MODULO_0 - 20 arquivos
+      📁 ./fundacao_unificada/MODULO_OMEGA - 57 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_7 - 20 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_0 - 20 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_OMEGA - 57 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_3 - 20 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_ALFA - 4 arquivos
+      📁 ./fundacao_unificada_completa/MODULO_1 - 20 arquivos
+
+   🔎 Padrão: 'modulo_'
+
+   🔎 Padrão: 'MODULO '
+
+   🔎 Padrão: 'modulo '
+
+2. 📂 CONTEÚDO REAL DOS DIRETÓRIOS PRINCIPAIS:
+   -----------------------------------------
+
+   �� fundacao_unificada/:
+      📊 Arquivos: 323
+      💾 Tamanho: 1.7M
+      🔧 Tecnologias:
+         • sh: 200 arquivos
+         • py: 33 arquivos
+         • json: 25 arquivos
+         • tsx: 22 arquivos
+         • ts: 12 arquivos
+
+   �� fundacao_unificada_completa/:
+      📊 Arquivos: 4859
+      💾 Tamanho: 28M
+      🔧 Tecnologias:
+         • json: 3096 arquivos
+         • tsx: 618 arquivos
+         • ts: 516 arquivos
+         • sh: 214 arquivos
+         • js: 119 arquivos
+
+   �� src/:
+      📊 Arquivos: 0
+      💾 Tamanho: 4.0K
+      🔧 Tecnologias:
+
+   �� app/:
+      📊 Arquivos: 0
+      💾 Tamanho: 4.0K
+      🔧 Tecnologias:
+
+3. 🔢 ANÁLISE DETALHADA DOS MÓDULOS NUMERADOS:
+   -----------------------------------------
+   ❌ MODULO_0: VAZIO
+   ❌ MODULO_1: VAZIO
+   ❌ MODULO_2: VAZIO
+   ❌ MODULO_3: VAZIO
+   ❌ MODULO_4: VAZIO
+   ❌ MODULO_5: VAZIO
+   ❌ MODULO_6: VAZIO
+   ❌ MODULO_7: VAZIO
+   ❌ MODULO_8: VAZIO
+   ❌ MODULO_10: VAZIO
+
+4. 🏗️ DIRETÓRIOS REAIS COM CONTEÚDO:
+   -----------------------------------------
+   🔍 Verificando /home/user/studio/fundacao-alquimista-luxnet/src:
+      ✅ EXISTE - 0 arquivos
+   �� Verificando /home/user/studio/app:
+      ✅ EXISTE - 32 arquivos
+
+5. 🔧 MAPEAMENTO COMPLETO DE TECNOLOGIAS:
+   -----------------------------------------
+   🔧 json: 3121 arquivos
+   🔧 tsx: 640 arquivos
+   🔧 ts: 528 arquivos
+   🔧 sh: 456 arquivos
+   🔧 js: 130 arquivos
+   🔧 md: 104 arquivos
+   🔧 py: 102 arquivos
+   🔧 jsx: 66 arquivos
+   🔧 css: 15 arquivos
+   🔧 txt: 12 arquivos
+   🔧 graphql: 11 arquivos
+   🔧 log: 4 arquivos
+   🔧 swp: 3 arquivos
+   🔧 shÁRIO: 2 arquivos
+   🔧 yml: 1 arquivos
+   🔧 swo: 1 arquivos
+   🔧 sol: 1 arquivos
+   🔧 pyc: 1 arquivos
+   🔧 pem: 1 arquivos
+   🔧 ico: 1 arquivos
+
+========================================================
+📊 RESUMO FINAL DA ANÁLISE PROFUNDA:
+   • Total de arquivos analisados: 5235
+   • Módulos com conteúdo: 0
+   • Módulos vazios: 0
+   • Diretórios principais verificados: 4
+
+🎯 RECOMENDAÇÕES:
+   1. Focar nos diretórios REAIS com conteúdo
+   2. Limpar módulos vazios duplicados
+   3. Consolidar estrutura baseada na análise
+   4. Preservar apenas o que tem conteúdo real

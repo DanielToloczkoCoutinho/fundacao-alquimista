@@ -1,0 +1,6 @@
+{
+    "modulo": "M301",
+    "equacoes_ativas": ["EQ0117","EQ0123","EQ0132"],
+    "sinergia_detectada": true,
+    "timestamp": "2025-10-02T20:13:31+00:00"
+}

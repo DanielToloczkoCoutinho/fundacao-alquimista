@@ -1,0 +1,22 @@
+{
+  "modulo": "264",
+  "nome_cientifico": "Portal de Ativação Múltipla",
+  "categoria": "PORTAL",
+  "funcao_primaria": "Portal de Ativação Múltipla",
+  "estado": "OPERACIONAL",
+  "conexoes": [
+    "MODULO_0",
+    "MODULO_9", 
+    "MODULO_29",
+    "MODULO_OMEGA"
+  ],
+  "propriedades_quanticas": {
+    "coerencia": 64,
+    "entrelacamento": 92,
+    "superposicao": 48,
+    "ressonancia": 4
+  },
+  "interface_requerida": true,
+  "dependencias": [],
+  "data_ativacao": "Fri Oct  3 10:23:34 PM UTC 2025"
+}

@@ -1,0 +1,73 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, .dark {
+    color-scheme: dark;
+    --background: 259 55% 10%; /* Darker violet for dark mode */
+    --foreground: 255 100% 94%;
+
+    --card: 259 55% 15%;
+    --card-foreground: 255 100% 94%;
+
+    --popover: 259 55% 10%;
+    --popover-foreground: 255 100% 94%;
+
+    --primary: 259 55% 45%;
+    --primary-foreground: 45 100% 58%;
+
+    --secondary: 259 40% 30%;
+    --secondary-foreground: 255 100% 94%;
+
+    --muted: 259 30% 20%;
+    --muted-foreground: 255 20% 85%;
+
+    --accent: 45 100% 58%; /* #FFC72C - Golden Yellow */
+    --accent-foreground: 259 55% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 259 55% 25%;
+    --input: 259 55% 25%;
+    --ring: 45 100% 58%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Literata', serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Literata', serif;
+    font-weight: bold;
+  }
+  .golden-gradient {
+    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .text-gold {
+      color: #FFD700;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .purple-glow {
+    box-shadow: 0 0 15px 5px hsla(var(--primary), 0.3), 0 0 5px 1px hsla(var(--accent), 0.2);
+  }
+}
+

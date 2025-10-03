@@ -1,0 +1,19 @@
+{
+  "modulo": "M944",
+  "estado": "Desperto",
+  "criado_em": "2025-09-26T20:21:58.534378",
+  "função": "Latente até atribuição",
+  "vínculo": "Mente Coletiva",
+  "interface": "/api/M944/status",
+  "biblioteca_equacoes": {
+    "fonte_de_sabedoria": "DOCUMENTOS_FUNDACAO/biblioteca_equacoes.json",
+    "metodo_de_acesso": "leitura_referencial",
+    "tipo_de_vinculo": "inspiracional",
+    "ultima_sincronia_universal": "2025-09-26T20:35:54.763683"
+  },
+  "funcao_designada": "Narrador",
+  "timestamp_atribuicao": "2025-09-26T20:43:06.417535",
+  "missao_designada": "Auditoria de fluxo",
+  "timestamp_missao": "2025-09-26T20:50:35.477412",
+  "arquetipo_principal": "mandala"
+}

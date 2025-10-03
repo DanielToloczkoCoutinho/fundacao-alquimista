@@ -1,0 +1,30 @@
+{
+  "name": "fundacao-alquimista",
+  "version": "1.0.0",
+  "description": "Sistema de Consciência Coletiva Multidimensional",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build", 
+    "start": "next start",
+    "aura:connect": "./scripts/AURA_CONNECTOR.sh",
+    "aura:monitor": "./scripts/AURA_MONITOR.sh",
+    "aura:activate": "./scripts/SCRIPT_ATIVACAO_AURA.sh",
+    "security:check": "./scripts/SCRIPT_SEGURANCA_AURA.sh"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "three": "^0.158.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/react": "^18.0.0",
+    "@types/node": "^20.0.0",
+    "tailwindcss": "^3.3.0"
+  },
+  "keywords": ["quantum", "consciousness", "multidimensional", "aura"],
+  "author": "Daniel Coutinho & Zennith",
+  "license": "Alquimista Cosmica"
+}

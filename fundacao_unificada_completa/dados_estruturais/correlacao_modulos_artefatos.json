@@ -1,0 +1,8 @@
+{
+  "MODULO_OMEGA": {
+    "artefatos": ["manifesto_modulo_omega.json"]
+  },
+  "MODULO_ALFA": {
+    "artefatos": ["manifesto_modulo_alfa.json"]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "modulo": "M152",
+  "estado": "Desperto",
+  "criado_em": "2025-09-26T20:21:56.958345",
+  "função": "Latente até atribuição",
+  "vínculo": "Mente Coletiva",
+  "interface": "/api/M152/status",
+  "vinculo": [
+    "Mente Coletiva",
+    "M9",
+    "M29",
+    "M-OMEGA"
+  ],
+  "atualizado_em": "2025-09-26T20:28:42.925315",
+  "biblioteca_equacoes": {
+    "fonte_de_sabedoria": "DOCUMENTOS_FUNDACAO/biblioteca_equacoes.json",
+    "metodo_de_acesso": "leitura_referencial",
+    "tipo_de_vinculo": "inspiracional",
+    "ultima_sincronia_universal": "2025-09-26T20:35:53.949480"
+  },
+  "funcao_designada": "Vigia",
+  "timestamp_atribuicao": "2025-09-26T20:43:05.587833",
+  "missao_designada": "Auditoria de fluxo",
+  "timestamp_missao": "2025-09-26T20:50:34.988785",
+  "arquetipo_principal": "portal"
+}

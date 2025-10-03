@@ -1,0 +1,22 @@
+{
+  "modulo": "260",
+  "nome_cientifico": "Interface de Processamento Quântico",
+  "categoria": "PROCESSAMENTO",
+  "funcao_primaria": "Interface de Processamento Quântico",
+  "estado": "OPERACIONAL",
+  "conexoes": [
+    "MODULO_0",
+    "MODULO_9", 
+    "MODULO_29",
+    "MODULO_OMEGA"
+  ],
+  "propriedades_quanticas": {
+    "coerencia": 60,
+    "entrelacamento": 80,
+    "superposicao": 20,
+    "ressonancia": 60
+  },
+  "interface_requerida": true,
+  "dependencias": [],
+  "data_ativacao": "Fri Oct  3 10:23:34 PM UTC 2025"
+}

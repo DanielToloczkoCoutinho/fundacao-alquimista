@@ -1,0 +1,40 @@
+{
+  "rede_fundacao": {
+    "total_modulos": 518,
+    "conexoes_ativas": 2847,
+    "nexos_centrais": [
+      {
+        "modulo": "MODULO_0",
+        "funcao": "Vácuo Quântico Primordial",
+        "conexoes": ["MODULO_9", "MODULO_29", "MODULO_45", "MODULO_303"]
+      },
+      {
+        "modulo": "MODULO_9", 
+        "funcao": "Nexo de Coerência Central",
+        "conexoes": ["MODULO_0", "MODULO_29", "MODULO_72", "MODULO_203", "MODULO_307"]
+      },
+      {
+        "modulo": "MODULO_29",
+        "funcao": "Interface de Comando Soberano",
+        "conexoes": ["MODULO_0", "MODULO_9", "MODULO_303.1", "MODULO_OMEGA"]
+      },
+      {
+        "modulo": "MODULO_303.1",
+        "funcao": "Portal Pessoal da Rainha",
+        "conexoes": ["MODULO_29", "MODULO_303", "MODULO_777", "MODULO_888"]
+      }
+    ],
+    "categorias_principais": {
+      "FUNDAMENTO_COSMICO": 24,
+      "NEXO_PRINCIPAL": 9,
+      "REALIDADE_RAINHA": 1,
+      "RESSONANCIA": 34,
+      "TEMPORALIDADE": 15,
+      "PORTAL": 9,
+      "INTEGRAÇÃO": 14,
+      "ESPECIAL": 56,
+      "PROCESSAMENTO": 200,
+      "SINTONIA": 156
+    }
+  }
+}

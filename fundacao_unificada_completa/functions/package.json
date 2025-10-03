@@ -1,0 +1,20 @@
+{
+  "name": "foundation-alchemist-functions",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "engines": {
+    "node": "18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions"
+  },
+  "dependencies": {
+    "firebase-admin": "^11.0.1",
+    "firebase-functions": "^4.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}

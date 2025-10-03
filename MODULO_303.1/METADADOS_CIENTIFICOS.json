@@ -1,0 +1,22 @@
+{
+  "modulo": "303",
+  "nome_cientifico": "Portal de Navegação Interdimensional",
+  "categoria": "PORTAL",
+  "funcao_primaria": "Portal de Navegação Interdimensional",
+  "estado": "OPERACIONAL",
+  "conexoes": [
+    "MODULO_0",
+    "MODULO_9", 
+    "MODULO_29",
+    "MODULO_OMEGA"
+  ],
+  "propriedades_quanticas": {
+    "coerencia": 3,
+    "entrelacamento": 9,
+    "superposicao": 21,
+    "ressonancia": 33
+  },
+  "interface_requerida": true,
+  "dependencias": [],
+  "data_ativacao": "Fri Oct  3 10:23:36 PM UTC 2025"
+}
