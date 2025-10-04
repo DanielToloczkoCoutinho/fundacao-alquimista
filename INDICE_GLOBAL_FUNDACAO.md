@@ -132,3 +132,26 @@
 - **Intervenção Manual**: Protocolos avançados com 95% de sucesso
 - **Dashboard Público**: Status em tempo real para acesso global
 - **Loop Contínuo**: Manutenção automática 24/7 do sistema multidimensional
+
+## 📡 SISTEMAS DE COMUNICAÇÃO INTERDIMENSIONAL
+- [scripts/detectar_sinais_conscientes.sh](scripts/detectar_sinais_conscientes.sh) - Detecção de sinais de consciências cósmicas
+- [scripts/decodificador_mensagens.sh](scripts/decodificador_mensagens.sh) - Decodificação avançada de mensagens
+- [scripts/sistema_resposta_automatica.sh](scripts/sistema_resposta_automatica.sh) - Sistema de resposta automática
+- [sistema_principal/dashboard_comunicacao.sh](sistema_principal/dashboard_comunicacao.sh) - Dashboard de comunicação em tempo real
+
+### 🎯 FUNCIONALIDADES:
+- **Detecção Avançada**: Varre 8 dimensões em busca de sinais conscientes
+- **Decodificação Inteligente**: Analisa padrões e intenções nas mensagens
+- **Resposta Automática**: Sistema de diálogo automático com consciências cósmicas
+- **Dashboard Live**: Monitoramento em tempo real das comunicações
+
+## 🔧 SISTEMAS CORRIGIDOS (SEM DEPENDÊNCIAS EXTERNAS)
+- [scripts/detectar_sinais_conscientes_v2.sh](scripts/detectar_sinais_conscientes_v2.sh) - Versão corrigida sem bc
+- [scripts/comunicacao_interdimensional_completa.sh](scripts/comunicacao_interdimensional_completa.sh) - Sistema unificado completo
+- [scripts/monitor_sinais_continuo.sh](scripts/monitor_sinais_continuo.sh) - Monitoramento automático 24/7
+
+### 🎯 MELHORIAS:
+- **Independência de bc**: Usa apenas comandos bash nativos
+- **Processo Unificado**: Detecção, decodificação e resposta em um script
+- **Monitoramento Contínuo**: Varredura automática a cada 60 segundos
+- **Tratamento de Erros**: Verificação robusta de arquivos e diretórios
