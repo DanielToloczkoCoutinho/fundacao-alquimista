@@ -1,0 +1,19 @@
+{
+    "id": "M0232",
+    "nome": "Módulo Cura Entrelaçamento",
+    "categoria": "Cura",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 74,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-26.5",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [101, 65, 140],
+    "metricas": {
+        "eficiencia": 0.816,
+        "estabilidade": 0.879,
+        "coerencia": 0.835
+    },
+    "timestamp_criacao": "2025-10-04T22:53:37+00:00",
+    "ultima_atividade": "2025-10-04T22:53:37+00:00"
+}

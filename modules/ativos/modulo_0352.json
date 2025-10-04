@@ -1,0 +1,19 @@
+{
+    "id": "M0352",
+    "nome": "Módulo Estabilização Tempo-Real",
+    "categoria": "Estabilização",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 87,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.6",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [87, 79, 122],
+    "metricas": {
+        "eficiencia": 0.830,
+        "estabilidade": 0.709,
+        "coerencia": 0.836
+    },
+    "timestamp_criacao": "2025-10-04T22:53:42+00:00",
+    "ultima_atividade": "2025-10-04T22:53:42+00:00"
+}

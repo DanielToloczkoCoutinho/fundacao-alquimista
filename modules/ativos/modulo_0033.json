@@ -1,0 +1,19 @@
+{
+    "id": "M0033",
+    "nome": "Módulo Estabilização Harmonização",
+    "categoria": "Estabilização",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 36,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-31.9",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [23, 104, 161],
+    "metricas": {
+        "eficiencia": 0.880,
+        "estabilidade": 0.882,
+        "coerencia": 0.850
+    },
+    "timestamp_criacao": "2025-10-04T22:53:30+00:00",
+    "ultima_atividade": "2025-10-04T22:53:30+00:00"
+}

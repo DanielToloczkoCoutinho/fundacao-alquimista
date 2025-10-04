@@ -1,0 +1,19 @@
+{
+    "id": "M0511",
+    "nome": "Módulo Comunicação Tempo-Real",
+    "categoria": "Comunicação",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 90,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-27.9",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [98, 229, 12],
+    "metricas": {
+        "eficiencia": 0.832,
+        "estabilidade": 0.970,
+        "coerencia": 0.915
+    },
+    "timestamp_criacao": "2025-10-04T22:53:46+00:00",
+    "ultima_atividade": "2025-10-04T22:53:46+00:00"
+}

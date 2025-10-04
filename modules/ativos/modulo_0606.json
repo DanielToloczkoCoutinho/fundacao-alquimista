@@ -1,0 +1,19 @@
+{
+    "id": "M0606",
+    "nome": "Módulo Quântico Sincronização",
+    "categoria": "Quântico",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 44,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-31.6",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [144, 6, 131],
+    "metricas": {
+        "eficiencia": 0.856,
+        "estabilidade": 0.849,
+        "coerencia": 0.825
+    },
+    "timestamp_criacao": "2025-10-04T22:53:48+00:00",
+    "ultima_atividade": "2025-10-04T22:53:48+00:00"
+}

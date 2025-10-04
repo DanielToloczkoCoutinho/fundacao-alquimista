@@ -1,0 +1,19 @@
+{
+    "id": "M0649",
+    "nome": "Módulo Fractal Harmonização",
+    "categoria": "Fractal",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 86,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.7",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [71, 11, 125],
+    "metricas": {
+        "eficiencia": 0.880,
+        "estabilidade": 0.806,
+        "coerencia": 0.808
+    },
+    "timestamp_criacao": "2025-10-04T22:53:49+00:00",
+    "ultima_atividade": "2025-10-04T22:53:49+00:00"
+}

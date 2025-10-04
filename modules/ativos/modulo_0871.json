@@ -1,0 +1,19 @@
+{
+    "id": "M0871",
+    "nome": "Módulo Estabilização Multidimensional",
+    "categoria": "Estabilização",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 90,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-26.8",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [67, 14, 217],
+    "metricas": {
+        "eficiencia": 0.833,
+        "estabilidade": 0.824,
+        "coerencia": 0.781
+    },
+    "timestamp_criacao": "2025-10-04T22:53:58+00:00",
+    "ultima_atividade": "2025-10-04T22:53:58+00:00"
+}

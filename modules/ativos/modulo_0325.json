@@ -1,0 +1,19 @@
+{
+    "id": "M0325",
+    "nome": "Módulo Interface Sincronização",
+    "categoria": "Interface",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 62,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-29.5",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [75, 203, 157],
+    "metricas": {
+        "eficiencia": 0.973,
+        "estabilidade": 0.768,
+        "coerencia": 0.957
+    },
+    "timestamp_criacao": "2025-10-04T22:53:41+00:00",
+    "ultima_atividade": "2025-10-04T22:53:41+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0897",
+    "nome": "Módulo Dimensional Sincronização",
+    "categoria": "Dimensional",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 30,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-33.3",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [50, 51, 82],
+    "metricas": {
+        "eficiencia": 0.904,
+        "estabilidade": 0.782,
+        "coerencia": 0.761
+    },
+    "timestamp_criacao": "2025-10-04T22:53:58+00:00",
+    "ultima_atividade": "2025-10-04T22:53:58+00:00"
+}

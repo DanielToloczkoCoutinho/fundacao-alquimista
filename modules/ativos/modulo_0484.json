@@ -1,0 +1,19 @@
+{
+    "id": "M0484",
+    "nome": "Módulo Monitoramento Harmonização",
+    "categoria": "Monitoramento",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 44,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.7",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [132, 213, 229],
+    "metricas": {
+        "eficiencia": 0.934,
+        "estabilidade": 0.798,
+        "coerencia": 0.978
+    },
+    "timestamp_criacao": "2025-10-04T22:53:45+00:00",
+    "ultima_atividade": "2025-10-04T22:53:45+00:00"
+}

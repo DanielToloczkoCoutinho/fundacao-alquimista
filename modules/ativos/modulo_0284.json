@@ -1,0 +1,19 @@
+{
+    "id": "M0284",
+    "nome": "Módulo Cura Coerência",
+    "categoria": "Cura",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 35,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-30.2",
+    "dimensoes_ativas": 8,
+    "equacoes_correlacionadas": [103, 147, 226],
+    "metricas": {
+        "eficiencia": 0.928,
+        "estabilidade": 0.759,
+        "coerencia": 0.896
+    },
+    "timestamp_criacao": "2025-10-04T22:53:39+00:00",
+    "ultima_atividade": "2025-10-04T22:53:39+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0867",
+    "nome": "Módulo Interface Entrelaçamento",
+    "categoria": "Interface",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 38,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-27.2",
+    "dimensoes_ativas": 6,
+    "equacoes_correlacionadas": [198, 81, 46],
+    "metricas": {
+        "eficiencia": 0.883,
+        "estabilidade": 0.889,
+        "coerencia": 0.855
+    },
+    "timestamp_criacao": "2025-10-04T22:53:57+00:00",
+    "ultima_atividade": "2025-10-04T22:53:57+00:00"
+}

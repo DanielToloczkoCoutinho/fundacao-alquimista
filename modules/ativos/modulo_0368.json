@@ -1,0 +1,19 @@
+{
+    "id": "M0368",
+    "nome": "Módulo Monitoramento Sincronização",
+    "categoria": "Monitoramento",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 31,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.6",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [118, 62, 72],
+    "metricas": {
+        "eficiencia": 0.821,
+        "estabilidade": 0.812,
+        "coerencia": 0.805
+    },
+    "timestamp_criacao": "2025-10-04T22:53:42+00:00",
+    "ultima_atividade": "2025-10-04T22:53:42+00:00"
+}

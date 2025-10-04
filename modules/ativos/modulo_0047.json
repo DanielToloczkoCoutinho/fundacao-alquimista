@@ -1,0 +1,19 @@
+{
+    "id": "M0047",
+    "nome": "Módulo Cura Entrelaçamento",
+    "categoria": "Cura",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 44,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-31.2",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [149, 177, 123],
+    "metricas": {
+        "eficiencia": 0.840,
+        "estabilidade": 0.986,
+        "coerencia": 0.793
+    },
+    "timestamp_criacao": "2025-10-04T22:53:30+00:00",
+    "ultima_atividade": "2025-10-04T22:53:30+00:00"
+}

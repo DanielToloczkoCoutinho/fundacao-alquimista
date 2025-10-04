@@ -1,0 +1,19 @@
+{
+    "id": "M0388",
+    "nome": "Módulo Monitoramento Coerência",
+    "categoria": "Monitoramento",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 42,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.7",
+    "dimensoes_ativas": 2,
+    "equacoes_correlacionadas": [101, 177, 1],
+    "metricas": {
+        "eficiencia": 0.863,
+        "estabilidade": 0.986,
+        "coerencia": 0.922
+    },
+    "timestamp_criacao": "2025-10-04T22:53:42+00:00",
+    "ultima_atividade": "2025-10-04T22:53:42+00:00"
+}

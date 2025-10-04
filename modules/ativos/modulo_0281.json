@@ -1,0 +1,19 @@
+{
+    "id": "M0281",
+    "nome": "Módulo Interface Entrelaçamento",
+    "categoria": "Interface",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 60,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-27.4",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [71, 198, 81],
+    "metricas": {
+        "eficiencia": 0.865,
+        "estabilidade": 0.851,
+        "coerencia": 0.842
+    },
+    "timestamp_criacao": "2025-10-04T22:53:39+00:00",
+    "ultima_atividade": "2025-10-04T22:53:39+00:00"
+}

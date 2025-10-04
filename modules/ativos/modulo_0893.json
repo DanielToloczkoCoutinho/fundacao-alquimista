@@ -1,0 +1,19 @@
+{
+    "id": "M0893",
+    "nome": "Módulo Interface Tempo-Real",
+    "categoria": "Interface",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 45,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-32.3",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [58, 226, 45],
+    "metricas": {
+        "eficiencia": 0.899,
+        "estabilidade": 0.787,
+        "coerencia": 0.931
+    },
+    "timestamp_criacao": "2025-10-04T22:53:58+00:00",
+    "ultima_atividade": "2025-10-04T22:53:58+00:00"
+}

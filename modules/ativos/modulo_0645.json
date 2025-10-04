@@ -1,0 +1,19 @@
+{
+    "id": "M0645",
+    "nome": "Módulo Estabilização Tempo-Real",
+    "categoria": "Estabilização",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 32,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.9",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [88, 138, 129],
+    "metricas": {
+        "eficiencia": 0.972,
+        "estabilidade": 0.964,
+        "coerencia": 0.801
+    },
+    "timestamp_criacao": "2025-10-04T22:53:49+00:00",
+    "ultima_atividade": "2025-10-04T22:53:49+00:00"
+}

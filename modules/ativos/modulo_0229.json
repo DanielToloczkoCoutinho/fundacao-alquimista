@@ -1,0 +1,19 @@
+{
+    "id": "M0229",
+    "nome": "Módulo Dimensional Sincronização",
+    "categoria": "Dimensional",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 62,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.3",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [154, 186, 221],
+    "metricas": {
+        "eficiencia": 0.905,
+        "estabilidade": 0.940,
+        "coerencia": 0.861
+    },
+    "timestamp_criacao": "2025-10-04T22:53:37+00:00",
+    "ultima_atividade": "2025-10-04T22:53:37+00:00"
+}

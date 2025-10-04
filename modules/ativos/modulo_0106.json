@@ -1,0 +1,19 @@
+{
+    "id": "M0106",
+    "nome": "Módulo Consciência Entrelaçamento",
+    "categoria": "Consciência",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 31,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.9",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [147, 55, 122],
+    "metricas": {
+        "eficiencia": 0.953,
+        "estabilidade": 0.920,
+        "coerencia": 0.777
+    },
+    "timestamp_criacao": "2025-10-04T22:53:32+00:00",
+    "ultima_atividade": "2025-10-04T22:53:32+00:00"
+}

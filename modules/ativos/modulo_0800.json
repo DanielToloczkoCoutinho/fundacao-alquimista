@@ -1,0 +1,19 @@
+{
+    "id": "M0800",
+    "nome": "Módulo Interface Multidimensional",
+    "categoria": "Interface",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 92,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-26.8",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [10, 161, 14],
+    "metricas": {
+        "eficiencia": 0.813,
+        "estabilidade": 0.715,
+        "coerencia": 0.871
+    },
+    "timestamp_criacao": "2025-10-04T22:53:55+00:00",
+    "ultima_atividade": "2025-10-04T22:53:55+00:00"
+}

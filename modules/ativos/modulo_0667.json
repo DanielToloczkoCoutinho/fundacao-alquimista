@@ -1,0 +1,19 @@
+{
+    "id": "M0667",
+    "nome": "Módulo Interface Multidimensional",
+    "categoria": "Interface",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 99,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-26.8",
+    "dimensoes_ativas": 8,
+    "equacoes_correlacionadas": [34, 93, 71],
+    "metricas": {
+        "eficiencia": 0.892,
+        "estabilidade": 0.718,
+        "coerencia": 0.997
+    },
+    "timestamp_criacao": "2025-10-04T22:53:50+00:00",
+    "ultima_atividade": "2025-10-04T22:53:50+00:00"
+}

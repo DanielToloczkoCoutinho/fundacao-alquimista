@@ -1,0 +1,19 @@
+{
+    "id": "M0061",
+    "nome": "Módulo Comunicação Harmonização",
+    "categoria": "Comunicação",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 95,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-31.5",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [41, 8, 167],
+    "metricas": {
+        "eficiencia": 0.915,
+        "estabilidade": 0.759,
+        "coerencia": 0.773
+    },
+    "timestamp_criacao": "2025-10-04T22:53:30+00:00",
+    "ultima_atividade": "2025-10-04T22:53:30+00:00"
+}

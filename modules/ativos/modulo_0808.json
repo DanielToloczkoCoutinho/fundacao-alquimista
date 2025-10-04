@@ -1,0 +1,19 @@
+{
+    "id": "M0808",
+    "nome": "Módulo Estabilização Entrelaçamento",
+    "categoria": "Estabilização",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 85,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-32.2",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [134, 103, 123],
+    "metricas": {
+        "eficiencia": 0.880,
+        "estabilidade": 0.886,
+        "coerencia": 0.956
+    },
+    "timestamp_criacao": "2025-10-04T22:53:55+00:00",
+    "ultima_atividade": "2025-10-04T22:53:55+00:00"
+}

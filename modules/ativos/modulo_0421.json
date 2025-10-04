@@ -1,0 +1,19 @@
+{
+    "id": "M0421",
+    "nome": "Módulo Fractal Coerência",
+    "categoria": "Fractal",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 64,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-29.2",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [176, 159, 72],
+    "metricas": {
+        "eficiencia": 0.965,
+        "estabilidade": 0.885,
+        "coerencia": 0.990
+    },
+    "timestamp_criacao": "2025-10-04T22:53:43+00:00",
+    "ultima_atividade": "2025-10-04T22:53:43+00:00"
+}

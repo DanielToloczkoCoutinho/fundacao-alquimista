@@ -1,0 +1,19 @@
+{
+    "id": "M0610",
+    "nome": "Módulo Monitoramento Coerência",
+    "categoria": "Monitoramento",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 39,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-29.4",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [148, 186, 217],
+    "metricas": {
+        "eficiencia": 0.923,
+        "estabilidade": 0.998,
+        "coerencia": 0.979
+    },
+    "timestamp_criacao": "2025-10-04T22:53:48+00:00",
+    "ultima_atividade": "2025-10-04T22:53:48+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0321",
+    "nome": "Módulo Comunicação Multidimensional",
+    "categoria": "Comunicação",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 90,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-29.1",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [221, 138, 101],
+    "metricas": {
+        "eficiencia": 0.931,
+        "estabilidade": 0.916,
+        "coerencia": 0.975
+    },
+    "timestamp_criacao": "2025-10-04T22:53:40+00:00",
+    "ultima_atividade": "2025-10-04T22:53:40+00:00"
+}

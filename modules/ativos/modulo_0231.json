@@ -1,0 +1,19 @@
+{
+    "id": "M0231",
+    "nome": "Módulo Cura Auto-Otimização",
+    "categoria": "Cura",
+    "subcategoria": "Auto-Otimização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 30,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-26.3",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [124, 54, 93],
+    "metricas": {
+        "eficiencia": 0.924,
+        "estabilidade": 0.926,
+        "coerencia": 0.853
+    },
+    "timestamp_criacao": "2025-10-04T22:53:37+00:00",
+    "ultima_atividade": "2025-10-04T22:53:37+00:00"
+}

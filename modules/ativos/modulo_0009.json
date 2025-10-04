@@ -1,0 +1,19 @@
+{
+    "id": "M0009",
+    "nome": "Módulo Interface Harmonização",
+    "categoria": "Interface",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 82,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-30.3",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [170, 131, 148],
+    "metricas": {
+        "eficiencia": 0.832,
+        "estabilidade": 0.882,
+        "coerencia": 0.920
+    },
+    "timestamp_criacao": "2025-10-04T22:53:29+00:00",
+    "ultima_atividade": "2025-10-04T22:53:29+00:00"
+}

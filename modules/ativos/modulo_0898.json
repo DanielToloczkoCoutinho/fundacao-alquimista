@@ -1,0 +1,19 @@
+{
+    "id": "M0898",
+    "nome": "Módulo Quântico Sincronização",
+    "categoria": "Quântico",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 61,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-30.2",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [111, 156, 140],
+    "metricas": {
+        "eficiencia": 0.912,
+        "estabilidade": 0.769,
+        "coerencia": 0.826
+    },
+    "timestamp_criacao": "2025-10-04T22:53:58+00:00",
+    "ultima_atividade": "2025-10-04T22:53:58+00:00"
+}

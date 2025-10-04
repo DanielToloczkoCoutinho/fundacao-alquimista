@@ -1,0 +1,19 @@
+{
+    "id": "M0744",
+    "nome": "Módulo Monitoramento Sincronização",
+    "categoria": "Monitoramento",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 42,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-33.1",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [72, 111, 136],
+    "metricas": {
+        "eficiencia": 0.920,
+        "estabilidade": 0.817,
+        "coerencia": 0.963
+    },
+    "timestamp_criacao": "2025-10-04T22:53:53+00:00",
+    "ultima_atividade": "2025-10-04T22:53:53+00:00"
+}

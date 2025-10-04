@@ -1,0 +1,19 @@
+{
+    "id": "M0858",
+    "nome": "Módulo Interface Harmonização",
+    "categoria": "Interface",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 35,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-31.8",
+    "dimensoes_ativas": 6,
+    "equacoes_correlacionadas": [10, 87, 214],
+    "metricas": {
+        "eficiencia": 0.922,
+        "estabilidade": 0.961,
+        "coerencia": 0.891
+    },
+    "timestamp_criacao": "2025-10-04T22:53:57+00:00",
+    "ultima_atividade": "2025-10-04T22:53:57+00:00"
+}

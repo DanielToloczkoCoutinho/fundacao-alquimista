@@ -1,0 +1,19 @@
+{
+    "id": "M0424",
+    "nome": "Módulo Energia Harmonização",
+    "categoria": "Energia",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 48,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.4",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [129, 220, 204],
+    "metricas": {
+        "eficiencia": 0.966,
+        "estabilidade": 0.895,
+        "coerencia": 0.821
+    },
+    "timestamp_criacao": "2025-10-04T22:53:43+00:00",
+    "ultima_atividade": "2025-10-04T22:53:43+00:00"
+}

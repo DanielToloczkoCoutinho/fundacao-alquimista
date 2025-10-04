@@ -1,0 +1,19 @@
+{
+    "id": "M0035",
+    "nome": "Módulo Interface Tempo-Real",
+    "categoria": "Interface",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 54,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.7",
+    "dimensoes_ativas": 8,
+    "equacoes_correlacionadas": [139, 33, 23],
+    "metricas": {
+        "eficiencia": 0.915,
+        "estabilidade": 0.948,
+        "coerencia": 0.905
+    },
+    "timestamp_criacao": "2025-10-04T22:53:30+00:00",
+    "ultima_atividade": "2025-10-04T22:53:30+00:00"
+}

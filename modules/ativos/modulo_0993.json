@@ -1,0 +1,19 @@
+{
+    "id": "M0993",
+    "nome": "Módulo Estabilização Coerência",
+    "categoria": "Estabilização",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 44,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.7",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [98, 160, 176],
+    "metricas": {
+        "eficiencia": 0.955,
+        "estabilidade": 0.907,
+        "coerencia": 0.788
+    },
+    "timestamp_criacao": "2025-10-04T22:54:02+00:00",
+    "ultima_atividade": "2025-10-04T22:54:02+00:00"
+}

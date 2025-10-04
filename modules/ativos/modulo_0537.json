@@ -1,0 +1,19 @@
+{
+    "id": "M0537",
+    "nome": "Módulo Estabilização Harmonização",
+    "categoria": "Estabilização",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 45,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-32.0",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [39, 214, 107],
+    "metricas": {
+        "eficiencia": 0.980,
+        "estabilidade": 0.975,
+        "coerencia": 0.905
+    },
+    "timestamp_criacao": "2025-10-04T22:53:46+00:00",
+    "ultima_atividade": "2025-10-04T22:53:46+00:00"
+}

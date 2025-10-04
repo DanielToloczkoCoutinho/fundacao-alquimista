@@ -1,0 +1,19 @@
+{
+    "id": "M0514",
+    "nome": "Módulo Comunicação Sincronização",
+    "categoria": "Comunicação",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 93,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-29.7",
+    "dimensoes_ativas": 2,
+    "equacoes_correlacionadas": [107, 89, 114],
+    "metricas": {
+        "eficiencia": 0.944,
+        "estabilidade": 0.845,
+        "coerencia": 0.936
+    },
+    "timestamp_criacao": "2025-10-04T22:53:46+00:00",
+    "ultima_atividade": "2025-10-04T22:53:46+00:00"
+}

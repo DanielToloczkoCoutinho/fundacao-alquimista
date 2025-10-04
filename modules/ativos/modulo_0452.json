@@ -1,0 +1,19 @@
+{
+    "id": "M0452",
+    "nome": "Módulo Dimensional Entrelaçamento",
+    "categoria": "Dimensional",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 57,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-30.6",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [149, 178, 29],
+    "metricas": {
+        "eficiencia": 0.861,
+        "estabilidade": 0.772,
+        "coerencia": 0.989
+    },
+    "timestamp_criacao": "2025-10-04T22:53:44+00:00",
+    "ultima_atividade": "2025-10-04T22:53:45+00:00"
+}

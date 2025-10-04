@@ -1,0 +1,19 @@
+{
+    "id": "M0405",
+    "nome": "Módulo Fractal Harmonização",
+    "categoria": "Fractal",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 87,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-26.2",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [176, 9, 183],
+    "metricas": {
+        "eficiencia": 0.810,
+        "estabilidade": 0.868,
+        "coerencia": 0.966
+    },
+    "timestamp_criacao": "2025-10-04T22:53:43+00:00",
+    "ultima_atividade": "2025-10-04T22:53:43+00:00"
+}

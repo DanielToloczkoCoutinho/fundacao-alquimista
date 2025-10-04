@@ -1,0 +1,19 @@
+{
+    "id": "M0716",
+    "nome": "Módulo Consciência Coerência",
+    "categoria": "Consciência",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 73,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-30.8",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [93, 106, 199],
+    "metricas": {
+        "eficiencia": 0.840,
+        "estabilidade": 0.832,
+        "coerencia": 0.904
+    },
+    "timestamp_criacao": "2025-10-04T22:53:52+00:00",
+    "ultima_atividade": "2025-10-04T22:53:52+00:00"
+}

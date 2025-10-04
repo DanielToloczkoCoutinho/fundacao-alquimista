@@ -1,0 +1,19 @@
+{
+    "id": "M0378",
+    "nome": "Módulo Monitoramento Harmonização",
+    "categoria": "Monitoramento",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 67,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.5",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [175, 210, 47],
+    "metricas": {
+        "eficiencia": 0.920,
+        "estabilidade": 0.980,
+        "coerencia": 0.758
+    },
+    "timestamp_criacao": "2025-10-04T22:53:42+00:00",
+    "ultima_atividade": "2025-10-04T22:53:42+00:00"
+}

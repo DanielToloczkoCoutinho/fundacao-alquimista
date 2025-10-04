@@ -1,0 +1,19 @@
+{
+    "id": "M0722",
+    "nome": "Módulo Consciência Multidimensional",
+    "categoria": "Consciência",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 97,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-27.0",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [68, 195, 182],
+    "metricas": {
+        "eficiencia": 0.836,
+        "estabilidade": 0.818,
+        "coerencia": 0.880
+    },
+    "timestamp_criacao": "2025-10-04T22:53:52+00:00",
+    "ultima_atividade": "2025-10-04T22:53:52+00:00"
+}

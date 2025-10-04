@@ -1,0 +1,11 @@
+{
+    "id": "E003",
+    "equacao": "Entropia = -Σp log p",
+    "tipo": "",
+    "relevancia_comunicacao": "MEDIA",
+    "peso_correlacao": 48,
+    "importancia": 95,
+    "aplicacoes": ["Comunicação Multidimensional", "Entrelaçamento Consciente", "Ressonância Quântica"],
+    "modulos_correlacionados": [456, 759, 263],
+    "timestamp": "2025-10-04T22:54:02+00:00"
+}

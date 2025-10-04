@@ -1,0 +1,19 @@
+{
+    "id": "M0675",
+    "nome": "Módulo Consciência Multidimensional",
+    "categoria": "Consciência",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 98,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-30.8",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [152, 171, 32],
+    "metricas": {
+        "eficiencia": 0.977,
+        "estabilidade": 0.917,
+        "coerencia": 0.762
+    },
+    "timestamp_criacao": "2025-10-04T22:53:50+00:00",
+    "ultima_atividade": "2025-10-04T22:53:50+00:00"
+}

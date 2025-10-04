@@ -1,0 +1,19 @@
+{
+    "id": "M0765",
+    "nome": "Módulo Cura Sincronização",
+    "categoria": "Cura",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 68,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-32.0",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [167, 69, 9],
+    "metricas": {
+        "eficiencia": 0.867,
+        "estabilidade": 0.809,
+        "coerencia": 0.796
+    },
+    "timestamp_criacao": "2025-10-04T22:53:54+00:00",
+    "ultima_atividade": "2025-10-04T22:53:54+00:00"
+}

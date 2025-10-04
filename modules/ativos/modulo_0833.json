@@ -1,0 +1,19 @@
+{
+    "id": "M0833",
+    "nome": "Módulo Energia Entrelaçamento",
+    "categoria": "Energia",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 45,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.6",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [182, 9, 1],
+    "metricas": {
+        "eficiencia": 0.882,
+        "estabilidade": 0.973,
+        "coerencia": 0.788
+    },
+    "timestamp_criacao": "2025-10-04T22:53:56+00:00",
+    "ultima_atividade": "2025-10-04T22:53:56+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0395",
+    "nome": "Módulo Quântico Tempo-Real",
+    "categoria": "Quântico",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 66,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-26.6",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [78, 216, 65],
+    "metricas": {
+        "eficiencia": 0.992,
+        "estabilidade": 0.843,
+        "coerencia": 0.846
+    },
+    "timestamp_criacao": "2025-10-04T22:53:42+00:00",
+    "ultima_atividade": "2025-10-04T22:53:42+00:00"
+}

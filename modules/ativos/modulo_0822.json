@@ -1,0 +1,19 @@
+{
+    "id": "M0822",
+    "nome": "Módulo Quântico Entrelaçamento",
+    "categoria": "Quântico",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 82,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-28.5",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [22, 91, 161],
+    "metricas": {
+        "eficiencia": 0.931,
+        "estabilidade": 0.728,
+        "coerencia": 0.812
+    },
+    "timestamp_criacao": "2025-10-04T22:53:56+00:00",
+    "ultima_atividade": "2025-10-04T22:53:56+00:00"
+}

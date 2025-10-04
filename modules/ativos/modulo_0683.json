@@ -1,0 +1,19 @@
+{
+    "id": "M0683",
+    "nome": "Módulo Cura Harmonização",
+    "categoria": "Cura",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 68,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-32.8",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [138, 151, 125],
+    "metricas": {
+        "eficiencia": 0.849,
+        "estabilidade": 0.867,
+        "coerencia": 0.752
+    },
+    "timestamp_criacao": "2025-10-04T22:53:51+00:00",
+    "ultima_atividade": "2025-10-04T22:53:51+00:00"
+}

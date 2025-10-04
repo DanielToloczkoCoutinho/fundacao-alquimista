@@ -1,0 +1,19 @@
+{
+    "id": "M0392",
+    "nome": "Módulo Consciência Harmonização",
+    "categoria": "Consciência",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 53,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.2",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [166, 157, 170],
+    "metricas": {
+        "eficiencia": 0.897,
+        "estabilidade": 0.703,
+        "coerencia": 0.979
+    },
+    "timestamp_criacao": "2025-10-04T22:53:42+00:00",
+    "ultima_atividade": "2025-10-04T22:53:42+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0854",
+    "nome": "Módulo Cura Sincronização",
+    "categoria": "Cura",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 80,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-29.7",
+    "dimensoes_ativas": 8,
+    "equacoes_correlacionadas": [43, 38, 205],
+    "metricas": {
+        "eficiencia": 0.999,
+        "estabilidade": 0.949,
+        "coerencia": 0.890
+    },
+    "timestamp_criacao": "2025-10-04T22:53:57+00:00",
+    "ultima_atividade": "2025-10-04T22:53:57+00:00"
+}

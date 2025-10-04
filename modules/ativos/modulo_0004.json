@@ -1,0 +1,19 @@
+{
+    "id": "M0004",
+    "nome": "Módulo Interface Coerência",
+    "categoria": "Interface",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 49,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.6",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [17, 134, 128],
+    "metricas": {
+        "eficiencia": 0.969,
+        "estabilidade": 0.910,
+        "coerencia": 0.805
+    },
+    "timestamp_criacao": "2025-10-04T22:53:29+00:00",
+    "ultima_atividade": "2025-10-04T22:53:29+00:00"
+}

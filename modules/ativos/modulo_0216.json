@@ -1,0 +1,19 @@
+{
+    "id": "M0216",
+    "nome": "Módulo Energia Entrelaçamento",
+    "categoria": "Energia",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 42,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-28.8",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [146, 56, 124],
+    "metricas": {
+        "eficiencia": 0.968,
+        "estabilidade": 0.851,
+        "coerencia": 0.856
+    },
+    "timestamp_criacao": "2025-10-04T22:53:36+00:00",
+    "ultima_atividade": "2025-10-04T22:53:36+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0165",
+    "nome": "Módulo Consciência Coerência",
+    "categoria": "Consciência",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 33,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-27.2",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [65, 128, 144],
+    "metricas": {
+        "eficiencia": 0.964,
+        "estabilidade": 0.744,
+        "coerencia": 0.964
+    },
+    "timestamp_criacao": "2025-10-04T22:53:35+00:00",
+    "ultima_atividade": "2025-10-04T22:53:35+00:00"
+}

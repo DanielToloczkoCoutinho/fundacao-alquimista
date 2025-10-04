@@ -1,0 +1,19 @@
+{
+    "id": "M0695",
+    "nome": "Módulo Dimensional Harmonização",
+    "categoria": "Dimensional",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 72,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-33.6",
+    "dimensoes_ativas": 6,
+    "equacoes_correlacionadas": [40, 10, 69],
+    "metricas": {
+        "eficiencia": 0.914,
+        "estabilidade": 0.785,
+        "coerencia": 0.864
+    },
+    "timestamp_criacao": "2025-10-04T22:53:51+00:00",
+    "ultima_atividade": "2025-10-04T22:53:51+00:00"
+}

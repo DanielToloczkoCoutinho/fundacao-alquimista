@@ -1,0 +1,19 @@
+{
+    "id": "M0161",
+    "nome": "Módulo Dimensional Tempo-Real",
+    "categoria": "Dimensional",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 88,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-32.9",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [63, 162, 19],
+    "metricas": {
+        "eficiencia": 0.812,
+        "estabilidade": 0.786,
+        "coerencia": 0.774
+    },
+    "timestamp_criacao": "2025-10-04T22:53:34+00:00",
+    "ultima_atividade": "2025-10-04T22:53:34+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0445",
+    "nome": "Módulo Quântico Entrelaçamento",
+    "categoria": "Quântico",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 87,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-30.0",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [191, 166, 119],
+    "metricas": {
+        "eficiencia": 0.805,
+        "estabilidade": 0.888,
+        "coerencia": 0.793
+    },
+    "timestamp_criacao": "2025-10-04T22:53:44+00:00",
+    "ultima_atividade": "2025-10-04T22:53:44+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0851",
+    "nome": "Módulo Energia Harmonização",
+    "categoria": "Energia",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 72,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.9",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [193, 29, 153],
+    "metricas": {
+        "eficiencia": 0.926,
+        "estabilidade": 0.896,
+        "coerencia": 0.941
+    },
+    "timestamp_criacao": "2025-10-04T22:53:57+00:00",
+    "ultima_atividade": "2025-10-04T22:53:57+00:00"
+}

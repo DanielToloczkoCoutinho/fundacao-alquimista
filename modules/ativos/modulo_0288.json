@@ -1,0 +1,19 @@
+{
+    "id": "M0288",
+    "nome": "Módulo Dimensional Sincronização",
+    "categoria": "Dimensional",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 46,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.6",
+    "dimensoes_ativas": 2,
+    "equacoes_correlacionadas": [116, 22, 213],
+    "metricas": {
+        "eficiencia": 0.847,
+        "estabilidade": 0.799,
+        "coerencia": 0.776
+    },
+    "timestamp_criacao": "2025-10-04T22:53:39+00:00",
+    "ultima_atividade": "2025-10-04T22:53:39+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0227",
+    "nome": "Módulo Cura Harmonização",
+    "categoria": "Cura",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 76,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.3",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [168, 74, 129],
+    "metricas": {
+        "eficiencia": 0.809,
+        "estabilidade": 0.963,
+        "coerencia": 0.770
+    },
+    "timestamp_criacao": "2025-10-04T22:53:37+00:00",
+    "ultima_atividade": "2025-10-04T22:53:37+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0174",
+    "nome": "Módulo Fractal Φ-Ressonância",
+    "categoria": "Fractal",
+    "subcategoria": "Φ-Ressonância",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 78,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-32.5",
+    "dimensoes_ativas": 8,
+    "equacoes_correlacionadas": [36, 164, 43],
+    "metricas": {
+        "eficiencia": 0.847,
+        "estabilidade": 0.769,
+        "coerencia": 0.801
+    },
+    "timestamp_criacao": "2025-10-04T22:53:35+00:00",
+    "ultima_atividade": "2025-10-04T22:53:35+00:00"
+}

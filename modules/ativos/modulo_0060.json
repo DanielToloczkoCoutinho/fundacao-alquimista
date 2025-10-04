@@ -1,0 +1,19 @@
+{
+    "id": "M0060",
+    "nome": "Módulo Fractal Coerência",
+    "categoria": "Fractal",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 40,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-27.9",
+    "dimensoes_ativas": 6,
+    "equacoes_correlacionadas": [16, 101, 117],
+    "metricas": {
+        "eficiencia": 0.804,
+        "estabilidade": 0.859,
+        "coerencia": 0.836
+    },
+    "timestamp_criacao": "2025-10-04T22:53:30+00:00",
+    "ultima_atividade": "2025-10-04T22:53:30+00:00"
+}

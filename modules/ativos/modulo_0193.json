@@ -1,0 +1,19 @@
+{
+    "id": "M0193",
+    "nome": "Módulo Energia Sincronização",
+    "categoria": "Energia",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 72,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-33.2",
+    "dimensoes_ativas": 2,
+    "equacoes_correlacionadas": [82, 180, 150],
+    "metricas": {
+        "eficiencia": 0.807,
+        "estabilidade": 0.958,
+        "coerencia": 0.864
+    },
+    "timestamp_criacao": "2025-10-04T22:53:36+00:00",
+    "ultima_atividade": "2025-10-04T22:53:36+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0670",
+    "nome": "Módulo Interface Sincronização",
+    "categoria": "Interface",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 52,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-30.9",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [159, 153, 142],
+    "metricas": {
+        "eficiencia": 0.962,
+        "estabilidade": 0.976,
+        "coerencia": 0.916
+    },
+    "timestamp_criacao": "2025-10-04T22:53:50+00:00",
+    "ultima_atividade": "2025-10-04T22:53:50+00:00"
+}

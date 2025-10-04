@@ -1,0 +1,19 @@
+{
+    "id": "M0329",
+    "nome": "Módulo Monitoramento Entrelaçamento",
+    "categoria": "Monitoramento",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 39,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-27.7",
+    "dimensoes_ativas": 8,
+    "equacoes_correlacionadas": [205, 94, 6],
+    "metricas": {
+        "eficiencia": 0.836,
+        "estabilidade": 0.976,
+        "coerencia": 0.890
+    },
+    "timestamp_criacao": "2025-10-04T22:53:41+00:00",
+    "ultima_atividade": "2025-10-04T22:53:41+00:00"
+}

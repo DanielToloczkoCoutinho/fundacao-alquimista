@@ -1,0 +1,19 @@
+{
+    "id": "M0122",
+    "nome": "Módulo Cura Coerência",
+    "categoria": "Cura",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 32,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-27.7",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [137, 143, 58],
+    "metricas": {
+        "eficiencia": 0.833,
+        "estabilidade": 0.975,
+        "coerencia": 0.826
+    },
+    "timestamp_criacao": "2025-10-04T22:53:33+00:00",
+    "ultima_atividade": "2025-10-04T22:53:33+00:00"
+}

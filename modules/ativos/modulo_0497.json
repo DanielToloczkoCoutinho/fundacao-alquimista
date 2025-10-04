@@ -1,0 +1,19 @@
+{
+    "id": "M0497",
+    "nome": "Módulo Dimensional Multidimensional",
+    "categoria": "Dimensional",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 93,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.2",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [119, 138, 30],
+    "metricas": {
+        "eficiencia": 0.977,
+        "estabilidade": 0.768,
+        "coerencia": 0.986
+    },
+    "timestamp_criacao": "2025-10-04T22:53:45+00:00",
+    "ultima_atividade": "2025-10-04T22:53:45+00:00"
+}

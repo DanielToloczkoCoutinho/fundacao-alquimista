@@ -1,0 +1,19 @@
+{
+    "id": "M0460",
+    "nome": "Módulo Consciência Coerência",
+    "categoria": "Consciência",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 81,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.1",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [200, 34, 28],
+    "metricas": {
+        "eficiencia": 0.810,
+        "estabilidade": 0.857,
+        "coerencia": 0.826
+    },
+    "timestamp_criacao": "2025-10-04T22:53:45+00:00",
+    "ultima_atividade": "2025-10-04T22:53:45+00:00"
+}

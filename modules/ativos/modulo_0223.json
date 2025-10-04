@@ -1,0 +1,19 @@
+{
+    "id": "M0223",
+    "nome": "Módulo Fractal Auto-Otimização",
+    "categoria": "Fractal",
+    "subcategoria": "Auto-Otimização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 79,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-33.6",
+    "dimensoes_ativas": 2,
+    "equacoes_correlacionadas": [17, 65, 58],
+    "metricas": {
+        "eficiencia": 0.997,
+        "estabilidade": 0.886,
+        "coerencia": 0.915
+    },
+    "timestamp_criacao": "2025-10-04T22:53:37+00:00",
+    "ultima_atividade": "2025-10-04T22:53:37+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0751",
+    "nome": "Módulo Consciência Tempo-Real",
+    "categoria": "Consciência",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 78,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-33.8",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [91, 192, 85],
+    "metricas": {
+        "eficiencia": 0.897,
+        "estabilidade": 0.902,
+        "coerencia": 0.761
+    },
+    "timestamp_criacao": "2025-10-04T22:53:53+00:00",
+    "ultima_atividade": "2025-10-04T22:53:53+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0714",
+    "nome": "Módulo Fractal Tempo-Real",
+    "categoria": "Fractal",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 69,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-29.6",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [222, 7, 150],
+    "metricas": {
+        "eficiencia": 0.980,
+        "estabilidade": 0.745,
+        "coerencia": 0.818
+    },
+    "timestamp_criacao": "2025-10-04T22:53:52+00:00",
+    "ultima_atividade": "2025-10-04T22:53:52+00:00"
+}

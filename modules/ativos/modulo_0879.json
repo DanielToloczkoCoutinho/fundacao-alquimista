@@ -1,0 +1,19 @@
+{
+    "id": "M0879",
+    "nome": "Módulo Energia Coerência",
+    "categoria": "Energia",
+    "subcategoria": "Coerência",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 70,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.1",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [50, 35, 172],
+    "metricas": {
+        "eficiencia": 0.988,
+        "estabilidade": 0.889,
+        "coerencia": 0.784
+    },
+    "timestamp_criacao": "2025-10-04T22:53:58+00:00",
+    "ultima_atividade": "2025-10-04T22:53:58+00:00"
+}

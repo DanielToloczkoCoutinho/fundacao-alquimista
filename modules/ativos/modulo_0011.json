@@ -1,0 +1,19 @@
+{
+    "id": "M0011",
+    "nome": "Módulo Energia Auto-Otimização",
+    "categoria": "Energia",
+    "subcategoria": "Auto-Otimização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 85,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-32.6",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [227, 154, 40],
+    "metricas": {
+        "eficiencia": 0.968,
+        "estabilidade": 0.834,
+        "coerencia": 0.862
+    },
+    "timestamp_criacao": "2025-10-04T22:53:29+00:00",
+    "ultima_atividade": "2025-10-04T22:53:29+00:00"
+}

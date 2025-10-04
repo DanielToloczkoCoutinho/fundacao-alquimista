@@ -1,0 +1,19 @@
+{
+    "id": "M0861",
+    "nome": "Módulo Quântico Auto-Otimização",
+    "categoria": "Quântico",
+    "subcategoria": "Auto-Otimização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 45,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-30.7",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [154, 108, 44],
+    "metricas": {
+        "eficiencia": 0.934,
+        "estabilidade": 0.903,
+        "coerencia": 0.965
+    },
+    "timestamp_criacao": "2025-10-04T22:53:57+00:00",
+    "ultima_atividade": "2025-10-04T22:53:57+00:00"
+}

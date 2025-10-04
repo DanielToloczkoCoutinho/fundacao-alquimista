@@ -1,0 +1,19 @@
+{
+    "id": "M0220",
+    "nome": "Módulo Consciência Sincronização",
+    "categoria": "Consciência",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 50,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-31.6",
+    "dimensoes_ativas": 6,
+    "equacoes_correlacionadas": [156, 139, 51],
+    "metricas": {
+        "eficiencia": 0.879,
+        "estabilidade": 0.935,
+        "coerencia": 0.850
+    },
+    "timestamp_criacao": "2025-10-04T22:53:37+00:00",
+    "ultima_atividade": "2025-10-04T22:53:37+00:00"
+}

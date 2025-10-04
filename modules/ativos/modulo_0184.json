@@ -1,0 +1,19 @@
+{
+    "id": "M0184",
+    "nome": "Módulo Interface Sincronização",
+    "categoria": "Interface",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 31,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-30.3",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [98, 76, 9],
+    "metricas": {
+        "eficiencia": 0.918,
+        "estabilidade": 0.947,
+        "coerencia": 0.906
+    },
+    "timestamp_criacao": "2025-10-04T22:53:35+00:00",
+    "ultima_atividade": "2025-10-04T22:53:35+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0972",
+    "nome": "Módulo Energia Entrelaçamento",
+    "categoria": "Energia",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 82,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.4",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [23, 117, 84],
+    "metricas": {
+        "eficiencia": 0.918,
+        "estabilidade": 0.746,
+        "coerencia": 0.991
+    },
+    "timestamp_criacao": "2025-10-04T22:54:01+00:00",
+    "ultima_atividade": "2025-10-04T22:54:01+00:00"
+}

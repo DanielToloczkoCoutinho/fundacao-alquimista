@@ -1,0 +1,19 @@
+{
+    "id": "M0631",
+    "nome": "Módulo Energia Entrelaçamento",
+    "categoria": "Energia",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 50,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-31.6",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [228, 191, 187],
+    "metricas": {
+        "eficiencia": 0.819,
+        "estabilidade": 0.777,
+        "coerencia": 0.852
+    },
+    "timestamp_criacao": "2025-10-04T22:53:48+00:00",
+    "ultima_atividade": "2025-10-04T22:53:48+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0252",
+    "nome": "Módulo Interface Entrelaçamento",
+    "categoria": "Interface",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 38,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.5",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [56, 97, 37],
+    "metricas": {
+        "eficiencia": 0.921,
+        "estabilidade": 0.918,
+        "coerencia": 0.799
+    },
+    "timestamp_criacao": "2025-10-04T22:53:38+00:00",
+    "ultima_atividade": "2025-10-04T22:53:38+00:00"
+}

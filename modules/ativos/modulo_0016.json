@@ -1,0 +1,19 @@
+{
+    "id": "M0016",
+    "nome": "Módulo Energia Harmonização",
+    "categoria": "Energia",
+    "subcategoria": "Harmonização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 65,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-31.9",
+    "dimensoes_ativas": 6,
+    "equacoes_correlacionadas": [180, 28, 185],
+    "metricas": {
+        "eficiencia": 0.959,
+        "estabilidade": 0.803,
+        "coerencia": 0.795
+    },
+    "timestamp_criacao": "2025-10-04T22:53:29+00:00",
+    "ultima_atividade": "2025-10-04T22:53:29+00:00"
+}

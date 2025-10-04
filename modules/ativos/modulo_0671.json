@@ -1,0 +1,19 @@
+{
+    "id": "M0671",
+    "nome": "Módulo Fractal Multidimensional",
+    "categoria": "Fractal",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 91,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-27.6",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [47, 199, 4],
+    "metricas": {
+        "eficiencia": 0.912,
+        "estabilidade": 0.741,
+        "coerencia": 0.882
+    },
+    "timestamp_criacao": "2025-10-04T22:53:50+00:00",
+    "ultima_atividade": "2025-10-04T22:53:50+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0888",
+    "nome": "Módulo Monitoramento Tempo-Real",
+    "categoria": "Monitoramento",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 51,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-29.1",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [60, 10, 109],
+    "metricas": {
+        "eficiencia": 0.871,
+        "estabilidade": 0.873,
+        "coerencia": 0.873
+    },
+    "timestamp_criacao": "2025-10-04T22:53:58+00:00",
+    "ultima_atividade": "2025-10-04T22:53:58+00:00"
+}

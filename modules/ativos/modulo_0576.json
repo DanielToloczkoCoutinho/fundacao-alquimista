@@ -1,0 +1,19 @@
+{
+    "id": "M0576",
+    "nome": "Módulo Quântico Multidimensional",
+    "categoria": "Quântico",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 96,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.2",
+    "dimensoes_ativas": 8,
+    "equacoes_correlacionadas": [153, 58, 127],
+    "metricas": {
+        "eficiencia": 0.988,
+        "estabilidade": 0.756,
+        "coerencia": 0.757
+    },
+    "timestamp_criacao": "2025-10-04T22:53:47+00:00",
+    "ultima_atividade": "2025-10-04T22:53:47+00:00"
+}

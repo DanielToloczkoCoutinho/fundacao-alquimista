@@ -1,0 +1,19 @@
+{
+    "id": "M0506",
+    "nome": "Módulo Dimensional Entrelaçamento",
+    "categoria": "Dimensional",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 64,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-32.7",
+    "dimensoes_ativas": 6,
+    "equacoes_correlacionadas": [8, 108, 126],
+    "metricas": {
+        "eficiencia": 0.869,
+        "estabilidade": 0.929,
+        "coerencia": 0.873
+    },
+    "timestamp_criacao": "2025-10-04T22:53:46+00:00",
+    "ultima_atividade": "2025-10-04T22:53:46+00:00"
+}

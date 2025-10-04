@@ -1,0 +1,19 @@
+{
+    "id": "M0071",
+    "nome": "Módulo Estabilização Auto-Otimização",
+    "categoria": "Estabilização",
+    "subcategoria": "Auto-Otimização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 30,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.9",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [148, 88, 21],
+    "metricas": {
+        "eficiencia": 0.913,
+        "estabilidade": 0.830,
+        "coerencia": 0.825
+    },
+    "timestamp_criacao": "2025-10-04T22:53:31+00:00",
+    "ultima_atividade": "2025-10-04T22:53:31+00:00"
+}

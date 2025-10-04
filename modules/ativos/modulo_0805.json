@@ -1,0 +1,19 @@
+{
+    "id": "M0805",
+    "nome": "Módulo Dimensional Entrelaçamento",
+    "categoria": "Dimensional",
+    "subcategoria": "Entrelaçamento",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 75,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.2",
+    "dimensoes_ativas": 5,
+    "equacoes_correlacionadas": [170, 204, 218],
+    "metricas": {
+        "eficiencia": 0.903,
+        "estabilidade": 0.881,
+        "coerencia": 0.983
+    },
+    "timestamp_criacao": "2025-10-04T22:53:55+00:00",
+    "ultima_atividade": "2025-10-04T22:53:55+00:00"
+}

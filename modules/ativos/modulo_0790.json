@@ -1,0 +1,19 @@
+{
+    "id": "M0790",
+    "nome": "Módulo Estabilização Multidimensional",
+    "categoria": "Estabilização",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 97,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-26.7",
+    "dimensoes_ativas": 2,
+    "equacoes_correlacionadas": [155, 113, 181],
+    "metricas": {
+        "eficiencia": 0.849,
+        "estabilidade": 0.740,
+        "coerencia": 0.798
+    },
+    "timestamp_criacao": "2025-10-04T22:53:55+00:00",
+    "ultima_atividade": "2025-10-04T22:53:55+00:00"
+}

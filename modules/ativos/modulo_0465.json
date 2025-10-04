@@ -1,0 +1,19 @@
+{
+    "id": "M0465",
+    "nome": "Módulo Dimensional Sincronização",
+    "categoria": "Dimensional",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 63,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-29.1",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [23, 35, 196],
+    "metricas": {
+        "eficiencia": 0.813,
+        "estabilidade": 0.911,
+        "coerencia": 0.835
+    },
+    "timestamp_criacao": "2025-10-04T22:53:45+00:00",
+    "ultima_atividade": "2025-10-04T22:53:45+00:00"
+}

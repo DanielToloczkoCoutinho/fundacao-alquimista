@@ -1,0 +1,19 @@
+{
+    "id": "M0462",
+    "nome": "Módulo Cura Multidimensional",
+    "categoria": "Cura",
+    "subcategoria": "Multidimensional",
+    "tipo_comunicacao": "COMUNICACAO_COSMICA",
+    "prioridade": 99,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.2",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [146, 133, 203],
+    "metricas": {
+        "eficiencia": 0.967,
+        "estabilidade": 0.982,
+        "coerencia": 0.893
+    },
+    "timestamp_criacao": "2025-10-04T22:53:45+00:00",
+    "ultima_atividade": "2025-10-04T22:53:45+00:00"
+}

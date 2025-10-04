@@ -1,0 +1,19 @@
+{
+    "id": "M0425",
+    "nome": "Módulo Consciência Tempo-Real",
+    "categoria": "Consciência",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 41,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-31.9",
+    "dimensoes_ativas": 7,
+    "equacoes_correlacionadas": [135, 198, 145],
+    "metricas": {
+        "eficiencia": 0.830,
+        "estabilidade": 0.730,
+        "coerencia": 0.870
+    },
+    "timestamp_criacao": "2025-10-04T22:53:43+00:00",
+    "ultima_atividade": "2025-10-04T22:53:43+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0839",
+    "nome": "Módulo Consciência Sincronização",
+    "categoria": "Consciência",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 39,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-33.5",
+    "dimensoes_ativas": 8,
+    "equacoes_correlacionadas": [61, 44, 52],
+    "metricas": {
+        "eficiencia": 0.939,
+        "estabilidade": 0.864,
+        "coerencia": 0.865
+    },
+    "timestamp_criacao": "2025-10-04T22:53:56+00:00",
+    "ultima_atividade": "2025-10-04T22:53:56+00:00"
+}

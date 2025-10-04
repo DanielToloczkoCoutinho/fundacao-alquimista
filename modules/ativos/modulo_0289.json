@@ -1,0 +1,19 @@
+{
+    "id": "M0289",
+    "nome": "Módulo Dimensional Auto-Otimização",
+    "categoria": "Dimensional",
+    "subcategoria": "Auto-Otimização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 71,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.0",
+    "dimensoes_ativas": 4,
+    "equacoes_correlacionadas": [87, 27, 157],
+    "metricas": {
+        "eficiencia": 0.930,
+        "estabilidade": 0.986,
+        "coerencia": 0.815
+    },
+    "timestamp_criacao": "2025-10-04T22:53:39+00:00",
+    "ultima_atividade": "2025-10-04T22:53:39+00:00"
+}

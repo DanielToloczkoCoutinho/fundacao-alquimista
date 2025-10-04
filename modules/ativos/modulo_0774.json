@@ -1,0 +1,19 @@
+{
+    "id": "M0774",
+    "nome": "Módulo Quântico Tempo-Real",
+    "categoria": "Quântico",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 44,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-34.8",
+    "dimensoes_ativas": 8,
+    "equacoes_correlacionadas": [209, 108, 10],
+    "metricas": {
+        "eficiencia": 0.860,
+        "estabilidade": 0.769,
+        "coerencia": 0.801
+    },
+    "timestamp_criacao": "2025-10-04T22:53:54+00:00",
+    "ultima_atividade": "2025-10-04T22:53:54+00:00"
+}

@@ -1,0 +1,19 @@
+{
+    "id": "M0977",
+    "nome": "Módulo Estabilização Sincronização",
+    "categoria": "Estabilização",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 47,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-25.1",
+    "dimensoes_ativas": 3,
+    "equacoes_correlacionadas": [123, 92, 123],
+    "metricas": {
+        "eficiencia": 0.893,
+        "estabilidade": 0.774,
+        "coerencia": 0.807
+    },
+    "timestamp_criacao": "2025-10-04T22:54:01+00:00",
+    "ultima_atividade": "2025-10-04T22:54:01+00:00"
+}

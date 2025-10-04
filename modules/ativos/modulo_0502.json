@@ -1,0 +1,19 @@
+{
+    "id": "M0502",
+    "nome": "Módulo Cura Sincronização",
+    "categoria": "Cura",
+    "subcategoria": "Sincronização",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 77,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-32.1",
+    "dimensoes_ativas": 1,
+    "equacoes_correlacionadas": [61, 209, 220],
+    "metricas": {
+        "eficiencia": 0.984,
+        "estabilidade": 0.794,
+        "coerencia": 0.921
+    },
+    "timestamp_criacao": "2025-10-04T22:53:46+00:00",
+    "ultima_atividade": "2025-10-04T22:53:46+00:00"
+}

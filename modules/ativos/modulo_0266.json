@@ -1,0 +1,19 @@
+{
+    "id": "M0266",
+    "nome": "Módulo Monitoramento Tempo-Real",
+    "categoria": "Monitoramento",
+    "subcategoria": "Tempo-Real",
+    "tipo_comunicacao": "SUPORTE",
+    "prioridade": 72,
+    "status": "ATIVO",
+    "frequencia_otima": "Φ-26.1",
+    "dimensoes_ativas": 2,
+    "equacoes_correlacionadas": [190, 71, 136],
+    "metricas": {
+        "eficiencia": 0.852,
+        "estabilidade": 0.867,
+        "coerencia": 0.838
+    },
+    "timestamp_criacao": "2025-10-04T22:53:38+00:00",
+    "ultima_atividade": "2025-10-04T22:53:38+00:00"
+}
