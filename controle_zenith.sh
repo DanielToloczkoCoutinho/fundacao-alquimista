@@ -5,9 +5,9 @@ case $1 in
     "status")
         echo "👑 STATUS DO WATCHER ZENNITH:"
         if pgrep -f "watcher_daemon_zennith.py" > /dev/null; then
-            echo "✅ ATIVO"
+            echo "✅ ATIVO - Sistema Corrigido"
             echo "📊 Últimas linhas do log:"
-            tail -n 5 zenith_watcher.log
+            tail -n 8 zenith_watcher.log | grep -E "(INFO|WARNING|ERROR)"
         else
             echo "❌ INATIVO"
         fi
@@ -28,11 +28,16 @@ case $1 in
         ./controle_zenith.sh start
         ;;
     "logs")
-        echo "📋 ÚLTIMOS LOGS:"
+        echo "📋 ÚLTIMOS LOGS (linhas 20):"
         tail -n 20 zenith_watcher.log
         ;;
+    "clean")
+        echo "🧹 LIMPANDO CACHE E LOGS..."
+        rm -f .zenith_cache.json
+        echo "✅ Cache limpo!"
+        ;;
     *)
-        echo "🎯 USO: ./controle_zenith.sh [status|start|stop|restart|logs]"
-        echo "👑 Controle do Watcher Daemon Zenith"
+        echo "🎯 USO: ./controle_zenith.sh [status|start|stop|restart|logs|clean]"
+        echo "👑 Controle do Watcher Daemon Zenith - Versão Corrigida"
         ;;
 esac
