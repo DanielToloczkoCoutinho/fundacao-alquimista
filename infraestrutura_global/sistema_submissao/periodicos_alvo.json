@@ -23,33 +23,6 @@
       "formato_submissao": "PDF",
       "contato_editor": "pnas@nas.edu",
       "url_submissao": "https://pnas.msubmit.net"
-    },
-    {
-      "nome": "Physical Review Research",
-      "impact_factor": 9.0,
-      "categorias": ["Physics", "Quantum"],
-      "formato_submissao": "LaTeX",
-      "contato_editor": "prresearch@aps.org",
-      "url_submissao": "https://prresearch.aps.org"
-    },
-    {
-      "nome": "Nature Quantum Information",
-      "impact_factor": 25.3,
-      "categorias": ["Quantum Physics", "Computer Science"],
-      "formato_submissao": "LaTeX",
-      "contato_editor": "nqi@nature.com",
-      "url_submissao": "https://mts-nqi.nature.com"
     }
-  ],
-  "sistemas_automatizados": [
-    "Editorial Manager",
-    "ScholarOne",
-    "Open Journal Systems",
-    "Aries Editorial Manager"
-  ],
-  "servicos_registro": [
-    {"nome": "Crossref", "doi_prefix": "10.13140"},
-    {"nome": "DataCite", "doi_prefix": "10.48328"},
-    {"nome": "PMID", "sistema": "PubMed"}
   ]
 }

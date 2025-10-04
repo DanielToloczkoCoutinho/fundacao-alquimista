@@ -24,8 +24,14 @@ echo "🔬 DADOS:"
 check_file "research_data/experiments/daily_report.json"
 
 echo ""
-echo "🚀 SCRIPTS:"
+echo "🏗️ INFRAESTRUTURA:"
+check_file "infraestrutura_global/central_documentacao/config.json"
+check_file "infraestrutura_global/sistema_submissao/periodicos_alvo.json"
+
+echo ""
+echo "�� SCRIPTS:"
 check_file "scripts/publicar_github.sh"
+check_file "scripts/configurar_github_pages.sh"
 check_file "scripts/verificar_sistema.sh"
 
 echo ""

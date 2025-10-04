@@ -13,7 +13,7 @@
 - **Coerência Quântica:** 98.7%
 - **Arquivos Científicos:** 348
 
-## �� Categorias de Descobertas
+## 🔬 Categorias de Descobertas
 
 ### 💻 Tecnologia Quântica (3 descobertas)
 

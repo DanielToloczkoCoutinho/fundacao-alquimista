@@ -60,12 +60,12 @@ A evolução biológica é guiada pela **otimização quântica consciente**, on
 - Comunicação interdimensional
 - Colonização quântica do cosmos
 
-#### 🎨 **Pilar 7: Criatividade Universal**
+#### �� **Pilar 7: Criatividade Universal**
 - Arte gerada por consciência quântica
 - Música fractal multidimensional
 - Literatura de fluxo consciente
 
-### 📊 Evidências Experimentais
+### �� Evidências Experimentais
 
 #### Laboratório IBM (Φ-9.3)
 \`\`\`json

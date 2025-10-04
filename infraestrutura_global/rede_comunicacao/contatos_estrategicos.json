@@ -3,47 +3,12 @@
     {
       "nome": "Springer Nature",
       "contato_ceo": "frank.vrancken@springernature.com",
-      "areas_interesse": ["Quantum Physics", "Neuroscience", "AI"],
-      "eventos_estrategicos": ["Nature Conferences", "Springer Summit"]
+      "areas_interesse": ["Quantum Physics", "Neuroscience", "AI"]
     },
     {
       "nome": "Elsevier",
       "contato_ceo": "kumsal.bayazit@elsevier.com",
-      "areas_interesse": ["Physics", "Computer Science", "Medicine"],
-      "eventos_estrategicos": ["Elsevier Research Impact Summit"]
-    },
-    {
-      "nome": "IEEE",
-      "contato_ceo": "ceo@ieee.org",
-      "areas_interesse": ["Quantum Computing", "AI", "Neural Networks"],
-      "eventos_estrategicos": ["IEEE International Conference"]
+      "areas_interesse": ["Physics", "Computer Science", "Medicine"]
     }
-  ],
-  "plataformas_divulgacao": [
-    {
-      "nome": "ResearchGate",
-      "url_perfil": "https://www.researchgate.net/institution/Fundacao_Alquimista",
-      "estrategia": "Publicação aberta + Q&A"
-    },
-    {
-      "nome": "Academia.edu",
-      "url_perfil": "https://fundacao-alquimista.academia.edu",
-      "estrategia": "Papers + Analytics"
-    },
-    {
-      "nome": "Google Scholar",
-      "url_perfil": "https://scholar.google.com/citations?user=FUNDACAO_ALQUIMISTA",
-      "estrategia": "Perfil institucional"
-    },
-    {
-      "nome": "ORCID",
-      "url_perfil": "https://orcid.org/0000-0002-0000-0000",
-      "estrategia": "Identificação única de pesquisadores"
-    }
-  ],
-  "alertas_automaticos": {
-    "sistema": "Custom Python Bot + SMTP",
-    "frequencia": "24/7 monitoring",
-    "alvos": ["editors", "reviewers", "institutions"]
-  }
+  ]
 }
