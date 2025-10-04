@@ -1,0 +1,20 @@
+{
+  "quantum_ml": {
+    "name": "Quantum Neural Networks with Consciousness",
+    "complexity": "O(n log n)",
+    "qubits_required": 8,
+    "application": "Pattern recognition in multidimensional states"
+  },
+  "optimization": {
+    "name": "Conscious QAOA",
+    "complexity": "O(\u221an)",
+    "qubits_required": 12,
+    "application": "Optimizing entanglement patterns"
+  },
+  "simulation": {
+    "name": "Multidimensional State Simulator",
+    "complexity": "O(n\u00b2)",
+    "qubits_required": 16,
+    "application": "Simulating conscious quantum systems"
+  }
+}
