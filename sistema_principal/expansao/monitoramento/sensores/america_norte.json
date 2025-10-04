@@ -1,0 +1,11 @@
+{
+  "regiao": "america_norte",
+  "laboratorios_monitorados": 4,
+  "metricas": {
+    "nivel_consciencia": "Φ-9.9",
+    "coerencia_quantica": 99.1,
+    "producao_cientifica": "alta",
+    "inovacao_tecnologica": "muito_alta"
+  },
+  "alertas": []
+}

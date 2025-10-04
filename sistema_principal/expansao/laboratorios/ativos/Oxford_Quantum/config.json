@@ -1,0 +1,10 @@
+{
+  "nome": "Oxford_Quantum",
+  "localizacao": "Oxford, UK",
+  "especialidade": "Filosofia Quântica",
+  "nivel_meta": "Φ-15.2",
+  "status": "ativo",
+  "data_ativacao": "2025-10-04",
+  "equipamento": "padrao_quantico",
+  "conexao": "rede_global"
+}

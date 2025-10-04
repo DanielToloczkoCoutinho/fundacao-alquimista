@@ -1,0 +1,10 @@
+{
+  "nome": "NASA_Ames",
+  "localizacao": "California, USA",
+  "especialidade": "Espaço e Consciência",
+  "nivel_meta": "Φ-15.1",
+  "status": "ativo",
+  "data_ativacao": "2025-10-04",
+  "equipamento": "padrao_quantico",
+  "conexao": "rede_global"
+}

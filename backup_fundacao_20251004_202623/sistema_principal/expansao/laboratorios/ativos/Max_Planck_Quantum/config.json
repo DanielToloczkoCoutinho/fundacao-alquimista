@@ -1,0 +1,10 @@
+{
+  "nome": "Max_Planck_Quantum",
+  "localizacao": "Munich, Alemanha",
+  "especialidade": "Pesquisa Fundamental",
+  "nivel_meta": "Φ-15.1",
+  "status": "ativo",
+  "data_ativacao": "2025-10-04",
+  "equipamento": "padrao_quantico",
+  "conexao": "rede_global"
+}

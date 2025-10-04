@@ -1,0 +1,13 @@
+{
+  "laboratorio": "NASA_Ames",
+  "regiao": "global",
+  "data_avaliacao": "2025-10-04",
+  "metricas": {
+    "producao_cientifica": 16,
+    "inovacao_tecnologica": 93, 
+    "impacto_social": 24,
+    "nivel_consciencia": "Φ-9.6"
+  },
+  "score_total": 44,
+  "classificacao": "PRECISA_MELHORAR"
+}
