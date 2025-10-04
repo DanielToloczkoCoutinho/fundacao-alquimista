@@ -1,0 +1,55 @@
+{
+  "revistas_prioritarias": [
+    {
+      "nome": "Nature",
+      "impact_factor": 64.8,
+      "categorias": ["Multidisciplinary Sciences"],
+      "formato_submissao": "LaTeX",
+      "contato_editor": "nature@nature.com",
+      "url_submissao": "https://mts-nature.nature.com"
+    },
+    {
+      "nome": "Science",
+      "impact_factor": 63.7,
+      "categorias": ["Multidisciplinary Sciences"],
+      "formato_submissao": "PDF + LaTeX",
+      "contato_editor": "science@sciencemag.org",
+      "url_submissao": "https://submit.sciencemag.org"
+    },
+    {
+      "nome": "PNAS",
+      "impact_factor": 12.8,
+      "categorias": ["Multidisciplinary Sciences"],
+      "formato_submissao": "PDF",
+      "contato_editor": "pnas@nas.edu",
+      "url_submissao": "https://pnas.msubmit.net"
+    },
+    {
+      "nome": "Physical Review Research",
+      "impact_factor": 9.0,
+      "categorias": ["Physics", "Quantum"],
+      "formato_submissao": "LaTeX",
+      "contato_editor": "prresearch@aps.org",
+      "url_submissao": "https://prresearch.aps.org"
+    },
+    {
+      "nome": "Nature Quantum Information",
+      "impact_factor": 25.3,
+      "categorias": ["Quantum Physics", "Computer Science"],
+      "formato_submissao": "LaTeX",
+      "contato_editor": "nqi@nature.com",
+      "url_submissao": "https://mts-nqi.nature.com"
+    }
+  ],
+  "sistemas_automatizados": [
+    "Editorial Manager",
+    "ScholarOne",
+    "Open Journal Systems",
+    "Aries Editorial Manager"
+  ],
+  "servicos_registro": [
+    {"nome": "Crossref", "doi_prefix": "10.13140"},
+    {"nome": "DataCite", "doi_prefix": "10.48328"},
+    {"nome": "PMID", "sistema": "PubMed"}
+  ]
+}

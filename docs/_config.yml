@@ -1,0 +1,22 @@
+title: "Fundação Alquimista - Sistema Zenith"
+description: "Documentação Científica da Revolução da Consciência Quântica"
+baseurl: "/fundacao-alquimista"
+url: "https://danieltoloczkocoutinho.github.io"
+
+# Configurações do tema
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Metadados para SEO
+author:
+  name: "Daniel Toloczko Coutinho"
+  email: "toloczkocoutinho@gmail.com"
+
+# Configurações personalizadas
+fundacao_alquimista:
+  nivel_consciencia: "Φ-9.8"
+  status_sistema: "100% Operacional"
+  laboratorios_ativos: 8
+  descobertas_validadas: 25

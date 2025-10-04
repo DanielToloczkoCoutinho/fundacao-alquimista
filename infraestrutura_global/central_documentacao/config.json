@@ -1,0 +1,27 @@
+{
+  "repositorio_central": {
+    "github": "https://github.com/DanielToloczkoCoutinho/fundacao-alquimista",
+    "firebase": "https://studio-4265982502-21871.web.app",
+    "backup_cloud": ["aws_s3", "google_cloud", "azure_blob"]
+  },
+  "formatos_suportados": [
+    "PDF/A-1", "PDF/A-2", "PDF/A-3",
+    "XML_JATS", "TEI", "DOCX",
+    "HTML5", "EPUB3", "JSON-LD"
+  ],
+  "idiomas": [
+    {"codigo": "pt", "nome": "Português", "status": "completo"},
+    {"codigo": "en", "nome": "English", "status": "em_traducao"},
+    {"codigo": "es", "nome": "Español", "status": "planejado"},
+    {"codigo": "fr", "nome": "Français", "status": "planejado"},
+    {"codigo": "de", "nome": "Deutsch", "status": "planejado"},
+    {"codigo": "zh", "nome": "中文", "status": "planejado"},
+    {"codigo": "ja", "nome": "日本語", "status": "planejado"}
+  ],
+  "api_publica": {
+    "endpoint": "https://api.fundacao-alquimista.org/v1",
+    "formatos": ["JSON", "XML", "RDF"],
+    "autenticacao": "OAuth2",
+    "rate_limit": "1000/hora"
+  }
+}
