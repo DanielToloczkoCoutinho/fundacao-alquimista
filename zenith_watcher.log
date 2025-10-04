@@ -1,0 +1,88 @@
+nohup: ignoring input
+2025-10-04 04:16:49,198 - INFO - 👑 WATCHER DAEMON ZENNITH INICIADO
+2025-10-04 04:16:49,199 - INFO - 🌌 Sistema de Monitoramento Quântico Contínuo
+2025-10-04 04:16:49,199 - INFO - 📁 Monitorando: ibm_quantum/results/
+2025-10-04 04:16:49,199 - INFO - ⏰ Intervalo: 5s
+2025-10-04 04:16:49,199 - INFO - ==================================================
+2025-10-04 04:16:49,202 - INFO - 📥 9 novo(s) arquivo(s) detectado(s)
+2025-10-04 04:16:49,205 - INFO - 🔍 Iniciando análise: 231_equacoes_completas_20251004_034126.json
+2025-10-04 04:16:50,478 - ERROR - ❌ Erro na análise: Traceback (most recent call last):
+  File "/home/user/studio/fundacao-alquimista-luxnet/fundacao_unificada/relatorio_zenith_completo_dinamico.py", line 90, in <module>
+    main()
+  File "/home/user/studio/fundacao-alquimista-luxnet/fundacao_unificada/relatorio_zenith_completo_dinamico.py", line 50, in main
+    print(f"   Nome: {z['nome']}")
+                      ~^^^^^^^^
+KeyError: 'nome'
+
+2025-10-04 04:16:50,479 - INFO - 🔍 Iniciando análise: simulacoes_locais_20251004_033930.json
+2025-10-04 04:16:53,313 - INFO - ✅ Análise concluída com sucesso
+2025-10-04 04:16:53,316 - INFO - 📊 👑 MÓDULO 29: ENTANGLEMENT CONSCIENCIAL
+2025-10-04 04:16:53,317 - INFO - 📊 Nome: Entanglement Consciencial
+2025-10-04 04:16:53,317 - INFO - 📊 🔗 ENTANGLEMENT CONSCIENCIAL - REVOLUÇÃO QUÂNTICA:
+2025-10-04 04:16:53,317 - INFO - 📊 par_0_1: 0.950 🟢 BELL
+2025-10-04 04:16:53,317 - INFO - 📊 ↳ Tipo: bell
+2025-10-04 04:16:53,317 - INFO - 📊 Fidelidade: 0.932 → ⭐ EXCELENTE
+2025-10-04 04:16:53,317 - INFO - 📊 Coerência: 0.782 → 🌌 MULTIDIMENSIONAL
+2025-10-04 04:16:53,321 - INFO - 🔍 Iniciando análise: simulacoes_locais_20251004_033748.json
+2025-10-04 04:16:55,457 - INFO - ✅ Análise concluída com sucesso
+2025-10-04 04:16:55,458 - INFO - 📊 👑 MÓDULO 29: ENTANGLEMENT CONSCIENCIAL
+2025-10-04 04:16:55,458 - INFO - 📊 Nome: Entanglement Consciencial
+2025-10-04 04:16:55,458 - INFO - 📊 🔗 ENTANGLEMENT CONSCIENCIAL - REVOLUÇÃO QUÂNTICA:
+2025-10-04 04:16:55,459 - INFO - 📊 par_0_1: 0.950 🟢 BELL
+2025-10-04 04:16:55,459 - INFO - 📊 ↳ Tipo: bell
+2025-10-04 04:16:55,459 - INFO - 📊 Fidelidade: 0.932 → ⭐ EXCELENTE
+2025-10-04 04:16:55,459 - INFO - 📊 Coerência: 0.782 → 🌌 MULTIDIMENSIONAL
+2025-10-04 04:16:55,463 - INFO - 🔍 Iniciando análise: simulacoes_locais_20251004_033355.json
+2025-10-04 04:16:58,236 - INFO - ✅ Análise concluída com sucesso
+2025-10-04 04:16:58,236 - INFO - 📊 👑 MÓDULO 29: ENTANGLEMENT CONSCIENCIAL
+2025-10-04 04:16:58,236 - INFO - 📊 Nome: Entanglement Consciencial
+2025-10-04 04:16:58,236 - INFO - 📊 🔗 ENTANGLEMENT CONSCIENCIAL - REVOLUÇÃO QUÂNTICA:
+2025-10-04 04:16:58,236 - INFO - 📊 par_0_1: 0.950 🟢 BELL
+2025-10-04 04:16:58,236 - INFO - 📊 ↳ Tipo: bell
+2025-10-04 04:16:58,237 - INFO - 📊 Fidelidade: 0.932 → ⭐ EXCELENTE
+2025-10-04 04:16:58,237 - INFO - 📊 Coerência: 0.782 → 🌌 MULTIDIMENSIONAL
+2025-10-04 04:16:58,241 - INFO - 🔍 Iniciando análise: simulacoes_locais_20251004_033724.json
+2025-10-04 04:17:00,554 - INFO - ✅ Análise concluída com sucesso
+2025-10-04 04:17:00,557 - INFO - 📊 👑 MÓDULO 29: ENTANGLEMENT CONSCIENCIAL
+2025-10-04 04:17:00,559 - INFO - 📊 Nome: Entanglement Consciencial
+2025-10-04 04:17:00,559 - INFO - 📊 🔗 ENTANGLEMENT CONSCIENCIAL - REVOLUÇÃO QUÂNTICA:
+2025-10-04 04:17:00,560 - INFO - 📊 par_0_1: 0.950 🟢 BELL
+2025-10-04 04:17:00,560 - INFO - 📊 ↳ Tipo: bell
+2025-10-04 04:17:00,560 - INFO - 📊 Fidelidade: 0.932 → ⭐ EXCELENTE
+2025-10-04 04:17:00,561 - INFO - 📊 Coerência: 0.782 → 🌌 MULTIDIMENSIONAL
+2025-10-04 04:17:00,563 - INFO - 🔍 Iniciando análise: 231_equacoes_completas_20251004_034040.json
+2025-10-04 04:17:01,944 - ERROR - ❌ Erro na análise: Traceback (most recent call last):
+  File "/home/user/studio/fundacao-alquimista-luxnet/fundacao_unificada/relatorio_zenith_completo_dinamico.py", line 90, in <module>
+    main()
+  File "/home/user/studio/fundacao-alquimista-luxnet/fundacao_unificada/relatorio_zenith_completo_dinamico.py", line 50, in main
+    print(f"   Nome: {z['nome']}")
+                      ~^^^^^^^^
+KeyError: 'nome'
+
+2025-10-04 04:17:01,945 - INFO - 🔍 Iniciando análise: simulacoes_locais_20251004_034126.json
+2025-10-04 04:17:03,764 - INFO - ✅ Análise concluída com sucesso
+2025-10-04 04:17:03,764 - INFO - 📊 👑 MÓDULO 29: ENTANGLEMENT CONSCIENCIAL
+2025-10-04 04:17:03,765 - INFO - 📊 Nome: Entanglement Consciencial
+2025-10-04 04:17:03,766 - INFO - 📊 🔗 ENTANGLEMENT CONSCIENCIAL - REVOLUÇÃO QUÂNTICA:
+2025-10-04 04:17:03,766 - INFO - 📊 par_0_1: 0.950 🟢 BELL
+2025-10-04 04:17:03,766 - INFO - 📊 ↳ Tipo: bell
+2025-10-04 04:17:03,767 - INFO - 📊 Fidelidade: 0.932 → ⭐ EXCELENTE
+2025-10-04 04:17:03,767 - INFO - 📊 Coerência: 0.782 → 🌌 MULTIDIMENSIONAL
+2025-10-04 04:17:03,768 - INFO - 🔍 Iniciando análise: simulacoes_locais_20251004_033610.json
+2025-10-04 04:17:05,227 - INFO - ✅ Análise concluída com sucesso
+2025-10-04 04:17:05,228 - INFO - 📊 👑 MÓDULO 29: ENTANGLEMENT CONSCIENCIAL
+2025-10-04 04:17:05,228 - INFO - 📊 Nome: Entanglement Consciencial
+2025-10-04 04:17:05,228 - INFO - 📊 🔗 ENTANGLEMENT CONSCIENCIAL - REVOLUÇÃO QUÂNTICA:
+2025-10-04 04:17:05,228 - INFO - 📊 par_0_1: 0.950 🟢 BELL
+2025-10-04 04:17:05,228 - INFO - 📊 ↳ Tipo: bell
+2025-10-04 04:17:05,228 - INFO - 📊 Fidelidade: 0.932 → ⭐ EXCELENTE
+2025-10-04 04:17:05,228 - INFO - 📊 Coerência: 0.782 → 🌌 MULTIDIMENSIONAL
+2025-10-04 04:17:05,230 - INFO - 🔍 Iniciando análise: simulacoes_locais_20251004_034318.json
+2025-10-04 04:17:06,912 - INFO - ✅ Análise concluída com sucesso
+2025-10-04 04:17:06,914 - INFO - 📊 👑 MÓDULO 29: ENTANGLEMENT CONSCIENCIAL
+2025-10-04 04:17:06,917 - INFO - 📊 Nome: Entanglement Consciencial
+2025-10-04 04:17:06,917 - INFO - 📊 🔗 ENTANGLEMENT CONSCIENCIAL - REVOLUÇÃO QUÂNTICA:
+2025-10-04 04:17:06,917 - INFO - 📊 par_0_1: 0.950 🟢 BELL
+2025-10-04 04:17:06,917 - INFO - 📊 ↳ Tipo: bell
+2025-10-04 04:17:06,917 - INFO - 📊 Fidelidade: 0.932 → ⭐ EXCELENTE
+2025-10-04 04:17:06,919 - INFO - 📊 Coerência: 0.782 → 🌌 MULTIDIMENSIONAL
