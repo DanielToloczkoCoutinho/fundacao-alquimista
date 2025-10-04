@@ -1,0 +1,1855 @@
+{
+  "total_equacoes": 231,
+  "processamento_completo": true,
+  "timestamp": "2025-10-04T03:41:26.511895",
+  "resultados": {
+    "1": {
+      "equacao": 1,
+      "qubits": 3,
+      "complexidade": "media",
+      "fidelidade": 0.9799107607275908,
+      "coerencia": 0.845277990374564,
+      "timestamp": "2025-10-04T03:41:26.509405"
+    },
+    "2": {
+      "equacao": 2,
+      "qubits": 4,
+      "complexidade": "alta",
+      "fidelidade": 0.892453212373368,
+      "coerencia": 0.7504459474980542,
+      "timestamp": "2025-10-04T03:41:26.509426"
+    },
+    "3": {
+      "equacao": 3,
+      "qubits": 5,
+      "complexidade": "maxima",
+      "fidelidade": 0.8208019593486908,
+      "coerencia": 0.864123913508743,
+      "timestamp": "2025-10-04T03:41:26.509432"
+    },
+    "4": {
+      "equacao": 4,
+      "qubits": 6,
+      "complexidade": "baixa",
+      "fidelidade": 0.915026265832055,
+      "coerencia": 0.9482201873912036,
+      "timestamp": "2025-10-04T03:41:26.509439"
+    },
+    "5": {
+      "equacao": 5,
+      "qubits": 7,
+      "complexidade": "media",
+      "fidelidade": 0.9777789572134428,
+      "coerencia": 0.8266001530857893,
+      "timestamp": "2025-10-04T03:41:26.509445"
+    },
+    "6": {
+      "equacao": 6,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.87762827447558,
+      "coerencia": 0.753989698656049,
+      "timestamp": "2025-10-04T03:41:26.509450"
+    },
+    "7": {
+      "equacao": 7,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8243338328518357,
+      "coerencia": 0.8824670782559536,
+      "timestamp": "2025-10-04T03:41:26.509460"
+    },
+    "8": {
+      "equacao": 8,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9295176529162896,
+      "coerencia": 0.942944104223263,
+      "timestamp": "2025-10-04T03:41:26.509475"
+    },
+    "9": {
+      "equacao": 9,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9728785143243444,
+      "coerencia": 0.8087552626486508,
+      "timestamp": "2025-10-04T03:41:26.509483"
+    },
+    "10": {
+      "equacao": 10,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8635996861611699,
+      "coerencia": 0.7609510567121699,
+      "timestamp": "2025-10-04T03:41:26.509488"
+    },
+    "11": {
+      "equacao": 11,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8305591383219727,
+      "coerencia": 0.89965453669815,
+      "timestamp": "2025-10-04T03:41:26.509513"
+    },
+    "12": {
+      "equacao": 12,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9429583221836745,
+      "coerencia": 0.9343595592831254,
+      "timestamp": "2025-10-04T03:41:26.509519"
+    },
+    "13": {
+      "equacao": 13,
+      "qubits": 2,
+      "complexidade": "media",
+      "fidelidade": 0.9653838694611497,
+      "coerencia": 0.7923785302832012,
+      "timestamp": "2025-10-04T03:41:26.509526"
+    },
+    "14": {
+      "equacao": 14,
+      "qubits": 3,
+      "complexidade": "alta",
+      "fidelidade": 0.8508668125974496,
+      "coerencia": 0.7710822234095643,
+      "timestamp": "2025-10-04T03:41:26.509532"
+    },
+    "15": {
+      "equacao": 15,
+      "qubits": 4,
+      "complexidade": "maxima",
+      "fidelidade": 0.8392562782157144,
+      "coerencia": 0.91507447973036,
+      "timestamp": "2025-10-04T03:41:26.509540"
+    },
+    "16": {
+      "equacao": 16,
+      "qubits": 5,
+      "complexidade": "baixa",
+      "fidelidade": 0.9548698361815545,
+      "coerencia": 0.9227721301972956,
+      "timestamp": "2025-10-04T03:41:26.509545"
+    },
+    "17": {
+      "equacao": 17,
+      "qubits": 6,
+      "complexidade": "media",
+      "fidelidade": 0.9555618038923779,
+      "coerencia": 0.778052906284538,
+      "timestamp": "2025-10-04T03:41:26.509550"
+    },
+    "18": {
+      "equacao": 18,
+      "qubits": 7,
+      "complexidade": "alta",
+      "fidelidade": 0.8398828963627176,
+      "coerencia": 0.7840225671836355,
+      "timestamp": "2025-10-04T03:41:26.509555"
+    },
+    "19": {
+      "equacao": 19,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.850115666948194,
+      "coerencia": 0.9281780151718708,
+      "timestamp": "2025-10-04T03:41:26.509558"
+    },
+    "20": {
+      "equacao": 20,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9648281896538641,
+      "coerencia": 0.9085942860135834,
+      "timestamp": "2025-10-04T03:41:26.509571"
+    },
+    "21": {
+      "equacao": 21,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9437619463409036,
+      "coerencia": 0.7662883291770956,
+      "timestamp": "2025-10-04T03:41:26.509597"
+    },
+    "22": {
+      "equacao": 22,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8310389237091447,
+      "coerencia": 0.7993114602941586,
+      "timestamp": "2025-10-04T03:41:26.509604"
+    },
+    "23": {
+      "equacao": 23,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8627507509796135,
+      "coerencia": 0.9384987062707102,
+      "timestamp": "2025-10-04T03:41:26.509610"
+    },
+    "24": {
+      "equacao": 24,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9724789025391458,
+      "coerencia": 0.8923307048488632,
+      "timestamp": "2025-10-04T03:41:26.509614"
+    },
+    "25": {
+      "equacao": 25,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.930404327511769,
+      "coerencia": 0.7575035738143335,
+      "timestamp": "2025-10-04T03:41:26.509619"
+    },
+    "26": {
+      "equacao": 26,
+      "qubits": 2,
+      "complexidade": "alta",
+      "fidelidade": 0.8246497069175447,
+      "coerencia": 0.8164046754464793,
+      "timestamp": "2025-10-04T03:41:26.509648"
+    },
+    "27": {
+      "equacao": 27,
+      "qubits": 3,
+      "complexidade": "maxima",
+      "fidelidade": 0.8767117686725268,
+      "coerencia": 0.9456691751038939,
+      "timestamp": "2025-10-04T03:41:26.509656"
+    },
+    "28": {
+      "equacao": 28,
+      "qubits": 4,
+      "complexidade": "baixa",
+      "fidelidade": 0.9775496381322096,
+      "coerencia": 0.8745603092395581,
+      "timestamp": "2025-10-04T03:41:26.509661"
+    },
+    "29": {
+      "equacao": 29,
+      "qubits": 5,
+      "complexidade": "media",
+      "fidelidade": 0.9159644285732861,
+      "coerencia": 0.7520113445634485,
+      "timestamp": "2025-10-04T03:41:26.509666"
+    },
+    "30": {
+      "equacao": 30,
+      "qubits": 6,
+      "complexidade": "alta",
+      "fidelidade": 0.8209426781600375,
+      "coerencia": 0.8346937582435408,
+      "timestamp": "2025-10-04T03:41:26.509670"
+    },
+    "31": {
+      "equacao": 31,
+      "qubits": 7,
+      "complexidade": "maxima",
+      "fidelidade": 0.8915017601205041,
+      "coerencia": 0.9494341798546165,
+      "timestamp": "2025-10-04T03:41:26.509695"
+    },
+    "32": {
+      "equacao": 32,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9798598972501673,
+      "coerencia": 0.855915658669043,
+      "timestamp": "2025-10-04T03:41:26.509701"
+    },
+    "33": {
+      "equacao": 33,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9009562558094638,
+      "coerencia": 0.7500071442018632,
+      "timestamp": "2025-10-04T03:41:26.509708"
+    },
+    "34": {
+      "equacao": 34,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8200497937670994,
+      "coerencia": 0.8535276858820293,
+      "timestamp": "2025-10-04T03:41:26.509715"
+    },
+    "35": {
+      "equacao": 35,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9065942570582834,
+      "coerencia": 0.9496597004643276,
+      "timestamp": "2025-10-04T03:41:26.509723"
+    },
+    "36": {
+      "equacao": 36,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9793274433268644,
+      "coerencia": 0.8370604328207578,
+      "timestamp": "2025-10-04T03:41:26.509728"
+    },
+    "37": {
+      "equacao": 37,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8859140439227032,
+      "coerencia": 0.7515623147510595,
+      "timestamp": "2025-10-04T03:41:26.509732"
+    },
+    "38": {
+      "equacao": 38,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8220028370767449,
+      "coerencia": 0.8722360411242652,
+      "timestamp": "2025-10-04T03:41:26.509738"
+    },
+    "39": {
+      "equacao": 39,
+      "qubits": 2,
+      "complexidade": "maxima",
+      "fidelidade": 0.9214520231589033,
+      "coerencia": 0.946337709244533,
+      "timestamp": "2025-10-04T03:41:26.509742"
+    },
+    "40": {
+      "equacao": 40,
+      "qubits": 3,
+      "complexidade": "baixa",
+      "fidelidade": 0.9759712297264268,
+      "coerencia": 0.8186658070688323,
+      "timestamp": "2025-10-04T03:41:26.509745"
+    },
+    "41": {
+      "equacao": 41,
+      "qubits": 4,
+      "complexidade": "media",
+      "fidelidade": 0.8713732392806086,
+      "coerencia": 0.7566214979679919,
+      "timestamp": "2025-10-04T03:41:26.509771"
+    },
+    "42": {
+      "equacao": 42,
+      "qubits": 5,
+      "complexidade": "alta",
+      "fidelidade": 0.8267322870668135,
+      "coerencia": 0.890152876639246,
+      "timestamp": "2025-10-04T03:41:26.509777"
+    },
+    "43": {
+      "equacao": 43,
+      "qubits": 6,
+      "complexidade": "maxima",
+      "fidelidade": 0.9355461776334749,
+      "coerencia": 0.9395864566324188,
+      "timestamp": "2025-10-04T03:41:26.509781"
+    },
+    "44": {
+      "equacao": 44,
+      "qubits": 7,
+      "complexidade": "baixa",
+      "fidelidade": 0.9699107250745317,
+      "coerencia": 0.8013865611502132,
+      "timestamp": "2025-10-04T03:41:26.509788"
+    },
+    "45": {
+      "equacao": 45,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8578514400320624,
+      "coerencia": 0.7650046058910657,
+      "timestamp": "2025-10-04T03:41:26.509799"
+    },
+    "46": {
+      "equacao": 46,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8340697930428056,
+      "coerencia": 0.9066404202317887,
+      "timestamp": "2025-10-04T03:41:26.509804"
+    },
+    "47": {
+      "equacao": 47,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9483750214051146,
+      "coerencia": 0.9296462619184697,
+      "timestamp": "2025-10-04T03:41:26.509811"
+    },
+    "48": {
+      "equacao": 48,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9613616606230821,
+      "coerencia": 0.7858377714600314,
+      "timestamp": "2025-10-04T03:41:26.509818"
+    },
+    "49": {
+      "equacao": 49,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8458299715529862,
+      "coerencia": 0.7764132312966341,
+      "timestamp": "2025-10-04T03:41:26.509824"
+    },
+    "50": {
+      "equacao": 50,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8437541672916565,
+      "coerencia": 0.9211117771424089,
+      "timestamp": "2025-10-04T03:41:26.509828"
+    },
+    "51": {
+      "equacao": 51,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9594818957158029,
+      "coerencia": 0.9168709587803998,
+      "timestamp": "2025-10-04T03:41:26.509874"
+    },
+    "52": {
+      "equacao": 52,
+      "qubits": 2,
+      "complexidade": "baixa",
+      "fidelidade": 0.9506283510261597,
+      "coerencia": 0.7725729166371277,
+      "timestamp": "2025-10-04T03:41:26.509879"
+    },
+    "53": {
+      "equacao": 53,
+      "qubits": 3,
+      "complexidade": "media",
+      "fidelidade": 0.8357367530668879,
+      "coerencia": 0.7904412698777783,
+      "timestamp": "2025-10-04T03:41:26.509883"
+    },
+    "54": {
+      "equacao": 54,
+      "qubits": 4,
+      "complexidade": "alta",
+      "fidelidade": 0.8554406823854395,
+      "coerencia": 0.9330518213011905,
+      "timestamp": "2025-10-04T03:41:26.509887"
+    },
+    "55": {
+      "equacao": 55,
+      "qubits": 5,
+      "complexidade": "maxima",
+      "fidelidade": 0.9684714374666884,
+      "coerencia": 0.9017153001303378,
+      "timestamp": "2025-10-04T03:41:26.509892"
+    },
+    "56": {
+      "equacao": 56,
+      "qubits": 6,
+      "complexidade": "baixa",
+      "fidelidade": 0.938092861878858,
+      "coerencia": 0.7620641757988544,
+      "timestamp": "2025-10-04T03:41:26.509900"
+    },
+    "57": {
+      "equacao": 57,
+      "qubits": 7,
+      "complexidade": "media",
+      "fidelidade": 0.8279310653242639,
+      "coerencia": 0.8065893760356322,
+      "timestamp": "2025-10-04T03:41:26.509906"
+    },
+    "58": {
+      "equacao": 58,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8687133421858166,
+      "coerencia": 0.942035531885264,
+      "timestamp": "2025-10-04T03:41:26.509910"
+    },
+    "59": {
+      "equacao": 59,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9750236526626619,
+      "coerencia": 0.8847187706154813,
+      "timestamp": "2025-10-04T03:41:26.509915"
+    },
+    "60": {
+      "equacao": 60,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9242014096140134,
+      "coerencia": 0.7546856207341435,
+      "timestamp": "2025-10-04T03:41:26.509921"
+    },
+    "61": {
+      "equacao": 61,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8226907615544083,
+      "coerencia": 0.824282737711235,
+      "timestamp": "2025-10-04T03:41:26.509945"
+    },
+    "62": {
+      "equacao": 62,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8830996897474905,
+      "coerencia": 0.9477431224672045,
+      "timestamp": "2025-10-04T03:41:26.509954"
+    },
+    "63": {
+      "equacao": 63,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9789053069992958,
+      "coerencia": 0.8664863829865592,
+      "timestamp": "2025-10-04T03:41:26.509960"
+    },
+    "64": {
+      "equacao": 64,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9094484778695366,
+      "coerencia": 0.7506999003497724,
+      "timestamp": "2025-10-04T03:41:26.509963"
+    },
+    "65": {
+      "equacao": 65,
+      "qubits": 2,
+      "complexidade": "media",
+      "fidelidade": 0.8202023769317908,
+      "coerencia": 0.8428915375405444,
+      "timestamp": "2025-10-04T03:41:26.509974"
+    },
+    "66": {
+      "equacao": 66,
+      "qubits": 3,
+      "complexidade": "alta",
+      "fidelidade": 0.898087625014763,
+      "coerencia": 0.9499714242133396,
+      "timestamp": "2025-10-04T03:41:26.509982"
+    },
+    "67": {
+      "equacao": 67,
+      "qubits": 4,
+      "complexidade": "maxima",
+      "fidelidade": 0.9799782281299638,
+      "coerencia": 0.8476671419113773,
+      "timestamp": "2025-10-04T03:41:26.509989"
+    },
+    "68": {
+      "equacao": 68,
+      "qubits": 5,
+      "complexidade": "baixa",
+      "fidelidade": 0.8943592157241371,
+      "coerencia": 0.7502488913536454,
+      "timestamp": "2025-10-04T03:41:26.509993"
+    },
+    "69": {
+      "equacao": 69,
+      "qubits": 6,
+      "complexidade": "media",
+      "fidelidade": 0.8205544886229489,
+      "coerencia": 0.8617533719921422,
+      "timestamp": "2025-10-04T03:41:26.509998"
+    },
+    "70": {
+      "equacao": 70,
+      "qubits": 7,
+      "complexidade": "alta",
+      "fidelidade": 0.9131436336642661,
+      "coerencia": 0.9486411179327899,
+      "timestamp": "2025-10-04T03:41:26.510002"
+    },
+    "71": {
+      "equacao": 71,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9782042240835339,
+      "coerencia": 0.82893094184101,
+      "timestamp": "2025-10-04T03:41:26.510031"
+    },
+    "72": {
+      "equacao": 72,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8794707443582902,
+      "coerencia": 0.7533486479757224,
+      "timestamp": "2025-10-04T03:41:26.510037"
+    },
+    "73": {
+      "equacao": 73,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8237345627713302,
+      "coerencia": 0.8801968304503918,
+      "timestamp": "2025-10-04T03:41:26.510043"
+    },
+    "74": {
+      "equacao": 74,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9277317782153468,
+      "coerencia": 0.9437995575433895,
+      "timestamp": "2025-10-04T03:41:26.510051"
+    },
+    "75": {
+      "equacao": 75,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9736464427554035,
+      "coerencia": 0.8109447212779781,
+      "timestamp": "2025-10-04T03:41:26.510057"
+    },
+    "76": {
+      "equacao": 76,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8653130375532497,
+      "coerencia": 0.7598888304976003,
+      "timestamp": "2025-10-04T03:41:26.510062"
+    },
+    "77": {
+      "equacao": 77,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8296294006556102,
+      "coerencia": 0.897565394917014,
+      "timestamp": "2025-10-04T03:41:26.510066"
+    },
+    "78": {
+      "equacao": 78,
+      "qubits": 2,
+      "complexidade": "alta",
+      "fidelidade": 0.9413327753957882,
+      "coerencia": 0.9356190844496837,
+      "timestamp": "2025-10-04T03:41:26.510070"
+    },
+    "79": {
+      "equacao": 79,
+      "qubits": 3,
+      "complexidade": "maxima",
+      "fidelidade": 0.9664671240790921,
+      "coerencia": 0.7943487222651378,
+      "timestamp": "2025-10-04T03:41:26.510074"
+    },
+    "80": {
+      "equacao": 80,
+      "qubits": 4,
+      "complexidade": "baixa",
+      "fidelidade": 0.8523900566106817,
+      "coerencia": 0.7696366329329527,
+      "timestamp": "2025-10-04T03:41:26.510079"
+    },
+    "81": {
+      "equacao": 81,
+      "qubits": 5,
+      "complexidade": "media",
+      "fidelidade": 0.8380291681399242,
+      "coerencia": 0.9132408095913229,
+      "timestamp": "2025-10-04T03:41:26.510103"
+    },
+    "82": {
+      "equacao": 82,
+      "qubits": 6,
+      "complexidade": "alta",
+      "fidelidade": 0.9534624806801101,
+      "coerencia": 0.9243908928348346,
+      "timestamp": "2025-10-04T03:41:26.510112"
+    },
+    "83": {
+      "equacao": 83,
+      "qubits": 7,
+      "complexidade": "maxima",
+      "fidelidade": 0.9569218248926521,
+      "coerencia": 0.7797337001684589,
+      "timestamp": "2025-10-04T03:41:26.510117"
+    },
+    "84": {
+      "equacao": 84,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8411618112190813,
+      "coerencia": 0.7822450700481303,
+      "timestamp": "2025-10-04T03:41:26.510131"
+    },
+    "85": {
+      "equacao": 85,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.848634864982683,
+      "coerencia": 0.926665088459611,
+      "timestamp": "2025-10-04T03:41:26.510137"
+    },
+    "86": {
+      "equacao": 86,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9636891220201912,
+      "coerencia": 0.9105146642390453,
+      "timestamp": "2025-10-04T03:41:26.510144"
+    },
+    "87": {
+      "equacao": 87,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9453503220730199,
+      "coerencia": 0.7676198950000539,
+      "timestamp": "2025-10-04T03:41:26.510151"
+    },
+    "88": {
+      "equacao": 88,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8320279848329001,
+      "coerencia": 0.7972653287360392,
+      "timestamp": "2025-10-04T03:41:26.510155"
+    },
+    "89": {
+      "equacao": 89,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8610689681245673,
+      "coerencia": 0.9373603775059992,
+      "timestamp": "2025-10-04T03:41:26.510160"
+    },
+    "90": {
+      "equacao": 90,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9716486693119782,
+      "coerencia": 0.8944843403946614,
+      "timestamp": "2025-10-04T03:41:26.510164"
+    },
+    "91": {
+      "equacao": 91,
+      "qubits": 2,
+      "complexidade": "maxima",
+      "fidelidade": 0.9321645177526172,
+      "coerencia": 0.7584385128235063,
+      "timestamp": "2025-10-04T03:41:26.510185"
+    },
+    "92": {
+      "equacao": 92,
+      "qubits": 3,
+      "complexidade": "baixa",
+      "fidelidade": 0.8253137074395143,
+      "coerencia": 0.8141627440806724,
+      "timestamp": "2025-10-04T03:41:26.510204"
+    },
+    "93": {
+      "equacao": 93,
+      "qubits": 4,
+      "complexidade": "media",
+      "fidelidade": 0.8748888700945585,
+      "coerencia": 0.9449459645244997,
+      "timestamp": "2025-10-04T03:41:26.510209"
+    },
+    "94": {
+      "equacao": 94,
+      "qubits": 5,
+      "complexidade": "alta",
+      "fidelidade": 0.9770577925028667,
+      "coerencia": 0.8768705407517094,
+      "timestamp": "2025-10-04T03:41:26.510214"
+    },
+    "95": {
+      "equacao": 95,
+      "qubits": 6,
+      "complexidade": "maxima",
+      "fidelidade": 0.917833777147173,
+      "coerencia": 0.7525163764340952,
+      "timestamp": "2025-10-04T03:41:26.510220"
+    },
+    "96": {
+      "equacao": 96,
+      "qubits": 7,
+      "complexidade": "baixa",
+      "fidelidade": 0.8212579821501964,
+      "coerencia": 0.8323358314243031,
+      "timestamp": "2025-10-04T03:41:26.510227"
+    },
+    "97": {
+      "equacao": 97,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8896026341770862,
+      "coerencia": 0.9491518310466998,
+      "timestamp": "2025-10-04T03:41:26.510231"
+    },
+    "98": {
+      "equacao": 98,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9797239470797032,
+      "coerencia": 0.8583002505640535,
+      "timestamp": "2025-10-04T03:41:26.510236"
+    },
+    "99": {
+      "equacao": 99,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9028682209131509,
+      "coerencia": 0.7500642916921603,
+      "timestamp": "2025-10-04T03:41:26.510240"
+    },
+    "100": {
+      "equacao": 100,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8200051775851014,
+      "coerencia": 0.8511376969670325,
+      "timestamp": "2025-10-04T03:41:26.510244"
+    },
+    "101": {
+      "equacao": 101,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9046865055154139,
+      "coerencia": 0.9498282639872564,
+      "timestamp": "2025-10-04T03:41:26.510288"
+    },
+    "102": {
+      "equacao": 102,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9795522279318298,
+      "coerencia": 0.8394345025641986,
+      "timestamp": "2025-10-04T03:41:26.510295"
+    },
+    "103": {
+      "equacao": 103,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.887800566764208,
+      "coerencia": 0.7511695436245308,
+      "timestamp": "2025-10-04T03:41:26.510299"
+    },
+    "104": {
+      "equacao": 104,
+      "qubits": 2,
+      "complexidade": "baixa",
+      "fidelidade": 0.8215998888914554,
+      "coerencia": 0.8698990647616235,
+      "timestamp": "2025-10-04T03:41:26.510313"
+    },
+    "105": {
+      "equacao": 105,
+      "qubits": 3,
+      "complexidade": "media",
+      "fidelidade": 0.9196035548215888,
+      "coerencia": 0.9469511848686376,
+      "timestamp": "2025-10-04T03:41:26.510321"
+    },
+    "106": {
+      "equacao": 106,
+      "qubits": 4,
+      "complexidade": "alta",
+      "fidelidade": 0.9765487476173385,
+      "coerencia": 0.8209448466754328,
+      "timestamp": "2025-10-04T03:41:26.510326"
+    },
+    "107": {
+      "equacao": 107,
+      "qubits": 5,
+      "complexidade": "maxima",
+      "fidelidade": 0.8731671667171297,
+      "coerencia": 0.7557927894047043,
+      "timestamp": "2025-10-04T03:41:26.510330"
+    },
+    "108": {
+      "equacao": 108,
+      "qubits": 6,
+      "complexidade": "baixa",
+      "fidelidade": 0.8259853503234507,
+      "coerencia": 0.8879521004288974,
+      "timestamp": "2025-10-04T03:41:26.510334"
+    },
+    "109": {
+      "equacao": 109,
+      "qubits": 7,
+      "complexidade": "media",
+      "fidelidade": 0.9338227910467899,
+      "coerencia": 0.94062300692468,
+      "timestamp": "2025-10-04T03:41:26.510338"
+    },
+    "110": {
+      "equacao": 110,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9708204187789089,
+      "coerencia": 0.8034894453514184,
+      "timestamp": "2025-10-04T03:41:26.510341"
+    },
+    "111": {
+      "equacao": 111,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8594889149701811,
+      "coerencia": 0.7637694588100199,
+      "timestamp": "2025-10-04T03:41:26.510365"
+    },
+    "112": {
+      "equacao": 112,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8330054558900446,
+      "coerencia": 0.9046541835586954,
+      "timestamp": "2025-10-04T03:41:26.510373"
+    },
+    "113": {
+      "equacao": 113,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9468380626725958,
+      "coerencia": 0.9310689895732909,
+      "timestamp": "2025-10-04T03:41:26.510377"
+    },
+    "114": {
+      "equacao": 114,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9625711484544194,
+      "coerencia": 0.7876896454595148,
+      "timestamp": "2025-10-04T03:41:26.510383"
+    },
+    "115": {
+      "equacao": 115,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8472527060218764,
+      "coerencia": 0.7748156123047996,
+      "timestamp": "2025-10-04T03:41:26.510387"
+    },
+    "116": {
+      "equacao": 116,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8424103161431877,
+      "coerencia": 0.9194107825880687,
+      "timestamp": "2025-10-04T03:41:26.510392"
+    },
+    "117": {
+      "equacao": 117,
+      "qubits": 2,
+      "complexidade": "media",
+      "fidelidade": 0.9581860748080778,
+      "coerencia": 0.9186292200254014,
+      "timestamp": "2025-10-04T03:41:26.510397"
+    },
+    "118": {
+      "equacao": 118,
+      "qubits": 3,
+      "complexidade": "alta",
+      "fidelidade": 0.9520945797506101,
+      "coerencia": 0.7741078606610081,
+      "timestamp": "2025-10-04T03:41:26.510401"
+    },
+    "119": {
+      "equacao": 119,
+      "qubits": 4,
+      "complexidade": "maxima",
+      "fidelidade": 0.8368941030516147,
+      "coerencia": 0.7885380482236701,
+      "timestamp": "2025-10-04T03:41:26.510404"
+    },
+    "120": {
+      "equacao": 120,
+      "qubits": 5,
+      "complexidade": "baixa",
+      "fidelidade": 0.8538651533056316,
+      "coerencia": 0.9316966178967105,
+      "timestamp": "2025-10-04T03:41:26.510408"
+    },
+    "121": {
+      "equacao": 121,
+      "qubits": 6,
+      "complexidade": "media",
+      "fidelidade": 0.9674628807515624,
+      "coerencia": 0.9037465074548523,
+      "timestamp": "2025-10-04T03:41:26.510430"
+    },
+    "122": {
+      "equacao": 122,
+      "qubits": 7,
+      "complexidade": "alta",
+      "fidelidade": 0.9397636392489993,
+      "coerencia": 0.7632275515925827,
+      "timestamp": "2025-10-04T03:41:26.510435"
+    },
+    "123": {
+      "equacao": 123,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8287818335029156,
+      "coerencia": 0.8044482992771955,
+      "timestamp": "2025-10-04T03:41:26.510447"
+    },
+    "124": {
+      "equacao": 124,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8669622181051043,
+      "coerencia": 0.9410743597927789,
+      "timestamp": "2025-10-04T03:41:26.510456"
+    },
+    "125": {
+      "equacao": 125,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9743382609792999,
+      "coerencia": 0.8869506206513651,
+      "timestamp": "2025-10-04T03:41:26.510464"
+    },
+    "126": {
+      "equacao": 126,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9260172622172486,
+      "coerencia": 0.7554360164795901,
+      "timestamp": "2025-10-04T03:41:26.510468"
+    },
+    "127": {
+      "equacao": 127,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8232046637683531,
+      "coerencia": 0.8219800201566948,
+      "timestamp": "2025-10-04T03:41:26.510475"
+    },
+    "128": {
+      "equacao": 128,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8812353041202409,
+      "coerencia": 0.9472101958109024,
+      "timestamp": "2025-10-04T03:41:26.510482"
+    },
+    "129": {
+      "equacao": 129,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9785674777228985,
+      "coerencia": 0.8688394302371149,
+      "timestamp": "2025-10-04T03:41:26.510489"
+    },
+    "130": {
+      "equacao": 130,
+      "qubits": 2,
+      "complexidade": "alta",
+      "fidelidade": 0.9113447681586831,
+      "coerencia": 0.7510106047707498,
+      "timestamp": "2025-10-04T03:41:26.510495"
+    },
+    "131": {
+      "equacao": 131,
+      "qubits": 3,
+      "complexidade": "maxima",
+      "fidelidade": 0.8203611201882284,
+      "coerencia": 0.8405091473046583,
+      "timestamp": "2025-10-04T03:41:26.510738"
+    },
+    "132": {
+      "equacao": 132,
+      "qubits": 4,
+      "complexidade": "baixa",
+      "fidelidade": 0.896176342981918,
+      "coerencia": 0.9498857131848699,
+      "timestamp": "2025-10-04T03:41:26.510750"
+    },
+    "133": {
+      "equacao": 133,
+      "qubits": 5,
+      "complexidade": "media",
+      "fidelidade": 0.9799999867166466,
+      "coerencia": 0.8500576267132908,
+      "timestamp": "2025-10-04T03:41:26.510755"
+    },
+    "134": {
+      "equacao": 134,
+      "qubits": 6,
+      "complexidade": "alta",
+      "fidelidade": 0.8962684428718661,
+      "coerencia": 0.750108844537233,
+      "timestamp": "2025-10-04T03:41:26.510758"
+    },
+    "135": {
+      "equacao": 135,
+      "qubits": 7,
+      "complexidade": "maxima",
+      "fidelidade": 0.8203524222568916,
+      "coerencia": 0.8593761132385296,
+      "timestamp": "2025-10-04T03:41:26.510762"
+    },
+    "136": {
+      "equacao": 136,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9112534897030449,
+      "coerencia": 0.9490056735235368,
+      "timestamp": "2025-10-04T03:41:26.510769"
+    },
+    "137": {
+      "equacao": 137,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9785847960091577,
+      "coerencia": 0.8312737718944511,
+      "timestamp": "2025-10-04T03:41:26.510886"
+    },
+    "138": {
+      "equacao": 138,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.881324947033591,
+      "coerencia": 0.7527628350637134,
+      "timestamp": "2025-10-04T03:41:26.510891"
+    },
+    "139": {
+      "equacao": 139,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8231788795881002,
+      "coerencia": 0.8779093246811323,
+      "timestamp": "2025-10-04T03:41:26.510895"
+    },
+    "140": {
+      "equacao": 140,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9259300543668453,
+      "coerencia": 0.9446014029406116,
+      "timestamp": "2025-10-04T03:41:26.510899"
+    },
+    "141": {
+      "equacao": 141,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9743722810857333,
+      "coerencia": 0.8131565006135604,
+      "timestamp": "2025-10-04T03:41:26.510938"
+    },
+    "142": {
+      "equacao": 142,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8670462130901069,
+      "coerencia": 0.7588781042341379,
+      "timestamp": "2025-10-04T03:41:26.510943"
+    },
+    "143": {
+      "equacao": 143,
+      "qubits": 2,
+      "complexidade": "maxima",
+      "fidelidade": 0.8287398808939289,
+      "coerencia": 0.8954490687643281,
+      "timestamp": "2025-10-04T03:41:26.510955"
+    },
+    "144": {
+      "equacao": 144,
+      "qubits": 3,
+      "complexidade": "baixa",
+      "fidelidade": 0.9396836062764656,
+      "coerencia": 0.9368296769624165,
+      "timestamp": "2025-10-04T03:41:26.510962"
+    },
+    "145": {
+      "equacao": 145,
+      "qubits": 4,
+      "complexidade": "media",
+      "fidelidade": 0.9675123916898822,
+      "coerencia": 0.7963507198278729,
+      "timestamp": "2025-10-04T03:41:26.510970"
+    },
+    "146": {
+      "equacao": 146,
+      "qubits": 5,
+      "complexidade": "alta",
+      "fidelidade": 0.8539405104556171,
+      "coerencia": 0.7682369713849941,
+      "timestamp": "2025-10-04T03:41:26.510974"
+    },
+    "147": {
+      "equacao": 147,
+      "qubits": 6,
+      "complexidade": "maxima",
+      "fidelidade": 0.8368374753695431,
+      "coerencia": 0.9113709963346251,
+      "timestamp": "2025-10-04T03:41:26.510978"
+    },
+    "148": {
+      "equacao": 148,
+      "qubits": 7,
+      "complexidade": "baixa",
+      "fidelidade": 0.9520245705298188,
+      "coerencia": 0.925967139906713,
+      "timestamp": "2025-10-04T03:41:26.510986"
+    },
+    "149": {
+      "equacao": 149,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9582493141744367,
+      "coerencia": 0.7814546523482473,
+      "timestamp": "2025-10-04T03:41:26.510989"
+    },
+    "150": {
+      "equacao": 150,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8424743530260458,
+      "coerencia": 0.7805062959210962,
+      "timestamp": "2025-10-04T03:41:26.510993"
+    },
+    "151": {
+      "equacao": 151,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8471834189999712,
+      "coerencia": 0.9251083464431071,
+      "timestamp": "2025-10-04T03:41:26.511034"
+    },
+    "152": {
+      "equacao": 152,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9625136550512499,
+      "coerencia": 0.9124004573818041,
+      "timestamp": "2025-10-04T03:41:26.511042"
+    },
+    "153": {
+      "equacao": 153,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9469127793825645,
+      "coerencia": 0.7689985423491223,
+      "timestamp": "2025-10-04T03:41:26.511050"
+    },
+    "154": {
+      "equacao": 154,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8330558930327425,
+      "coerencia": 0.7952493358722301,
+      "timestamp": "2025-10-04T03:41:26.511056"
+    },
+    "155": {
+      "equacao": 155,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8594094349667465,
+      "coerencia": 0.9361721209110835,
+      "timestamp": "2025-10-04T03:41:26.511064"
+    },
+    "156": {
+      "equacao": 156,
+      "qubits": 2,
+      "complexidade": "baixa",
+      "fidelidade": 0.970777487743036,
+      "coerencia": 0.8966125524400415,
+      "timestamp": "2025-10-04T03:41:26.511069"
+    },
+    "157": {
+      "equacao": 157,
+      "qubits": 3,
+      "complexidade": "media",
+      "fidelidade": 0.933906325465517,
+      "coerencia": 0.7594257806631556,
+      "timestamp": "2025-10-04T03:41:26.511077"
+    },
+    "158": {
+      "equacao": 158,
+      "qubits": 4,
+      "complexidade": "alta",
+      "fidelidade": 0.8260203923527379,
+      "coerencia": 0.8119412942704556,
+      "timestamp": "2025-10-04T03:41:26.511084"
+    },
+    "159": {
+      "equacao": 159,
+      "qubits": 5,
+      "complexidade": "maxima",
+      "fidelidade": 0.8730803229224087,
+      "coerencia": 0.9441684908325746,
+      "timestamp": "2025-10-04T03:41:26.511097"
+    },
+    "160": {
+      "equacao": 160,
+      "qubits": 6,
+      "complexidade": "baixa",
+      "fidelidade": 0.9765219071327427,
+      "coerencia": 0.8791654153270594,
+      "timestamp": "2025-10-04T03:41:26.511105"
+    },
+    "161": {
+      "equacao": 161,
+      "qubits": 7,
+      "complexidade": "media",
+      "fidelidade": 0.9196929334368378,
+      "coerencia": 0.7530771217293399,
+      "timestamp": "2025-10-04T03:41:26.511128"
+    },
+    "162": {
+      "equacao": 162,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8216182884424212,
+      "coerencia": 0.8299879999553191,
+      "timestamp": "2025-10-04T03:41:26.511140"
+    },
+    "163": {
+      "equacao": 163,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.8877094504918216,
+      "coerencia": 0.9488128154073636,
+      "timestamp": "2025-10-04T03:41:26.511147"
+    },
+    "164": {
+      "equacao": 164,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9795424334191696,
+      "coerencia": 0.860680098735277,
+      "timestamp": "2025-10-04T03:41:26.511155"
+    },
+    "165": {
+      "equacao": 165,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.9047785467834615,
+      "coerencia": 0.7501785540120646,
+      "timestamp": "2025-10-04T03:41:26.511163"
+    },
+    "166": {
+      "equacao": 166,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8200062797026887,
+      "coerencia": 0.8487470578403207,
+      "timestamp": "2025-10-04T03:41:26.511169"
+    },
+    "167": {
+      "equacao": 167,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9027760755609084,
+      "coerencia": 0.9499397740866978,
+      "timestamp": "2025-10-04T03:41:26.511177"
+    },
+    "168": {
+      "equacao": 168,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9797315471869207,
+      "coerencia": 0.8418146106556554,
+      "timestamp": "2025-10-04T03:41:26.511184"
+    },
+    "169": {
+      "equacao": 169,
+      "qubits": 2,
+      "complexidade": "media",
+      "fidelidade": 0.8896940617737421,
+      "coerencia": 0.750833255658741,
+      "timestamp": "2025-10-04T03:41:26.511200"
+    },
+    "170": {
+      "equacao": 170,
+      "qubits": 3,
+      "complexidade": "alta",
+      "fidelidade": 0.8212417476031506,
+      "coerencia": 0.8675507157703999,
+      "timestamp": "2025-10-04T03:41:26.511205"
+    },
+    "171": {
+      "equacao": 171,
+      "qubits": 4,
+      "complexidade": "maxima",
+      "fidelidade": 0.9177438827442653,
+      "coerencia": 0.9475092513652371,
+      "timestamp": "2025-10-04T03:41:26.511227"
+    },
+    "172": {
+      "equacao": 172,
+      "qubits": 5,
+      "complexidade": "baixa",
+      "fidelidade": 0.9770825166946291,
+      "coerencia": 0.8232404917592877,
+      "timestamp": "2025-10-04T03:41:26.511236"
+    },
+    "173": {
+      "equacao": 173,
+      "qubits": 6,
+      "complexidade": "media",
+      "fidelidade": 0.8749764295400343,
+      "coerencia": 0.7550179217444554,
+      "timestamp": "2025-10-04T03:41:26.511239"
+    },
+    "174": {
+      "equacao": 174,
+      "qubits": 7,
+      "complexidade": "alta",
+      "fidelidade": 0.825280714116865,
+      "coerencia": 0.8857296339960427,
+      "timestamp": "2025-10-04T03:41:26.511243"
+    },
+    "175": {
+      "equacao": 175,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9320800742028816,
+      "coerencia": 0.9416077647426926,
+      "timestamp": "2025-10-04T03:41:26.511247"
+    },
+    "176": {
+      "equacao": 176,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9716896374997196,
+      "coerencia": 0.8056189110663604,
+      "timestamp": "2025-10-04T03:41:26.511256"
+    },
+    "177": {
+      "equacao": 177,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8611495426307657,
+      "coerencia": 0.7625835938399459,
+      "timestamp": "2025-10-04T03:41:26.511260"
+    },
+    "178": {
+      "equacao": 178,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8319794071732822,
+      "coerencia": 0.9026367111598138,
+      "timestamp": "2025-10-04T03:41:26.511264"
+    },
+    "179": {
+      "equacao": 179,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9452743352503458,
+      "coerencia": 0.9324453850250966,
+      "timestamp": "2025-10-04T03:41:26.511268"
+    },
+    "180": {
+      "equacao": 180,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9637448758899715,
+      "coerencia": 0.7895771308069621,
+      "timestamp": "2025-10-04T03:41:26.511278"
+    },
+    "181": {
+      "equacao": 181,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8487055863991585,
+      "coerencia": 0.7732609623734255,
+      "timestamp": "2025-10-04T03:41:26.511292"
+    },
+    "182": {
+      "equacao": 182,
+      "qubits": 2,
+      "complexidade": "alta",
+      "fidelidade": 0.8410993784051128,
+      "coerencia": 0.9176701186794243,
+      "timestamp": "2025-10-04T03:41:26.511300"
+    },
+    "183": {
+      "equacao": 183,
+      "qubits": 3,
+      "complexidade": "maxima",
+      "fidelidade": 0.9568569996431447,
+      "coerencia": 0.9203482585914027,
+      "timestamp": "2025-10-04T03:41:26.511304"
+    },
+    "184": {
+      "equacao": 184,
+      "qubits": 4,
+      "complexidade": "baixa",
+      "fidelidade": 0.9535310356031181,
+      "coerencia": 0.7756861782365476,
+      "timestamp": "2025-10-04T03:41:26.511309"
+    },
+    "185": {
+      "equacao": 185,
+      "qubits": 5,
+      "complexidade": "media",
+      "fidelidade": 0.8380875190493065,
+      "coerencia": 0.7866699530419948,
+      "timestamp": "2025-10-04T03:41:26.511315"
+    },
+    "186": {
+      "equacao": 186,
+      "qubits": 6,
+      "complexidade": "alta",
+      "fidelidade": 0.8523159910165569,
+      "coerencia": 0.9302947235897512,
+      "timestamp": "2025-10-04T03:41:26.511319"
+    },
+    "187": {
+      "equacao": 187,
+      "qubits": 7,
+      "complexidade": "maxima",
+      "fidelidade": 0.9664157679386793,
+      "coerencia": 0.9057469978047514,
+      "timestamp": "2025-10-04T03:41:26.511322"
+    },
+    "188": {
+      "equacao": 188,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9414116910737012,
+      "coerencia": 0.7644405192057856,
+      "timestamp": "2025-10-04T03:41:26.511326"
+    },
+    "189": {
+      "equacao": 189,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8296733039842097,
+      "coerencia": 0.8023332560323989,
+      "timestamp": "2025-10-04T03:41:26.511332"
+    },
+    "190": {
+      "equacao": 190,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8652299756365351,
+      "coerencia": 0.9400611372707803,
+      "timestamp": "2025-10-04T03:41:26.511336"
+    },
+    "191": {
+      "equacao": 191,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9736103838102085,
+      "coerencia": 0.889161352826196,
+      "timestamp": "2025-10-04T03:41:26.511349"
+    },
+    "192": {
+      "equacao": 192,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.9278182455457893,
+      "coerencia": 0.7562404570294127,
+      "timestamp": "2025-10-04T03:41:26.511353"
+    },
+    "193": {
+      "equacao": 193,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8237624557251914,
+      "coerencia": 0.8196933164614794,
+      "timestamp": "2025-10-04T03:41:26.511356"
+    },
+    "194": {
+      "equacao": 194,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.8793816428119143,
+      "coerencia": 0.9466217119982657,
+      "timestamp": "2025-10-04T03:41:26.511360"
+    },
+    "195": {
+      "equacao": 195,
+      "qubits": 2,
+      "complexidade": "maxima",
+      "fidelidade": 0.9781847458968645,
+      "coerencia": 0.8711817104568839,
+      "timestamp": "2025-10-04T03:41:26.511364"
+    },
+    "196": {
+      "equacao": 196,
+      "qubits": 3,
+      "complexidade": "baixa",
+      "fidelidade": 0.9132345747343374,
+      "coerencia": 0.7513778831885214,
+      "timestamp": "2025-10-04T03:41:26.511368"
+    },
+    "197": {
+      "equacao": 197,
+      "qubits": 4,
+      "complexidade": "media",
+      "fidelidade": 0.8205653783174537,
+      "coerencia": 0.8381321812404078,
+      "timestamp": "2025-10-04T03:41:26.511376"
+    },
+    "198": {
+      "equacao": 198,
+      "qubits": 5,
+      "complexidade": "alta",
+      "fidelidade": 0.8942672462292182,
+      "coerencia": 0.9497429158997927,
+      "timestamp": "2025-10-04T03:41:26.511383"
+    },
+    "199": {
+      "equacao": 199,
+      "qubits": 6,
+      "complexidade": "maxima",
+      "fidelidade": 0.9799760240522644,
+      "coerencia": 0.8524480785806309,
+      "timestamp": "2025-10-04T03:41:26.511390"
+    },
+    "200": {
+      "equacao": 200,
+      "qubits": 7,
+      "complexidade": "baixa",
+      "fidelidade": 0.8981798026632054,
+      "coerencia": 0.7500258870877758,
+      "timestamp": "2025-10-04T03:41:26.511396"
+    },
+    "201": {
+      "equacao": 201,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8201958757346266,
+      "coerencia": 0.8569934958886862,
+      "timestamp": "2025-10-04T03:41:26.511449"
+    },
+    "202": {
+      "equacao": 202,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9093569141954094,
+      "coerencia": 0.9493136458141873,
+      "timestamp": "2025-10-04T03:41:26.511458"
+    },
+    "203": {
+      "equacao": 203,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9789204554874718,
+      "coerencia": 0.8336273042818808,
+      "timestamp": "2025-10-04T03:41:26.511462"
+    },
+    "204": {
+      "equacao": 204,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8831898227954794,
+      "coerencia": 0.7522325947213184,
+      "timestamp": "2025-10-04T03:41:26.511466"
+    },
+    "205": {
+      "equacao": 205,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8226671008838295,
+      "coerencia": 0.8756058682937197,
+      "timestamp": "2025-10-04T03:41:26.511470"
+    },
+    "206": {
+      "equacao": 206,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9241135110843078,
+      "coerencia": 0.9453491821476704,
+      "timestamp": "2025-10-04T03:41:26.511477"
+    },
+    "207": {
+      "equacao": 207,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9750556144873075,
+      "coerencia": 0.815389336588707,
+      "timestamp": "2025-10-04T03:41:26.511482"
+    },
+    "208": {
+      "equacao": 208,
+      "qubits": 2,
+      "complexidade": "baixa",
+      "fidelidade": 0.8687982222346519,
+      "coerencia": 0.7579194555677458,
+      "timestamp": "2025-10-04T03:41:26.511487"
+    },
+    "209": {
+      "equacao": 209,
+      "qubits": 3,
+      "complexidade": "media",
+      "fidelidade": 0.827891087411466,
+      "coerencia": 0.893306767753781,
+      "timestamp": "2025-10-04T03:41:26.511493"
+    },
+    "210": {
+      "equacao": 210,
+      "qubits": 4,
+      "complexidade": "alta",
+      "fidelidade": 0.9380117573518066,
+      "coerencia": 0.937990644948655,
+      "timestamp": "2025-10-04T03:41:26.511500"
+    },
+    "211": {
+      "equacao": 211,
+      "qubits": 5,
+      "complexidade": "maxima",
+      "fidelidade": 0.9685190749066356,
+      "coerencia": 0.798383378798303,
+      "timestamp": "2025-10-04T03:41:26.511529"
+    },
+    "212": {
+      "equacao": 212,
+      "qubits": 6,
+      "complexidade": "baixa",
+      "fidelidade": 0.8555172880234927,
+      "coerencia": 0.7668840386942821,
+      "timestamp": "2025-10-04T03:41:26.511537"
+    },
+    "213": {
+      "equacao": 213,
+      "qubits": 7,
+      "complexidade": "media",
+      "fidelidade": 0.8356818809757375,
+      "coerencia": 0.9094661085879595,
+      "timestamp": "2025-10-04T03:41:26.511543"
+    },
+    "214": {
+      "equacao": 214,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9505569275189564,
+      "coerencia": 0.9274999705629278,
+      "timestamp": "2025-10-04T03:41:26.511549"
+    },
+    "215": {
+      "equacao": 215,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9595435130567237,
+      "coerencia": 0.7832147792726589,
+      "timestamp": "2025-10-04T03:41:26.511552"
+    },
+    "216": {
+      "equacao": 216,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8438197716453189,
+      "coerencia": 0.7788072385393022,
+      "timestamp": "2025-10-04T03:41:26.511557"
+    },
+    "217": {
+      "equacao": 217,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8457621585242752,
+      "coerencia": 0.9235086788249156,
+      "timestamp": "2025-10-04T03:41:26.511561"
+    },
+    "218": {
+      "equacao": 218,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.961302460544905,
+      "coerencia": 0.9142505876814122,
+      "timestamp": "2025-10-04T03:41:26.511567"
+    },
+    "219": {
+      "equacao": 219,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9484484253006035,
+      "coerencia": 0.7704234833056509,
+      "timestamp": "2025-10-04T03:41:26.511572"
+    },
+    "220": {
+      "equacao": 220,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.8341220608429625,
+      "coerencia": 0.7932646338743738,
+      "timestamp": "2025-10-04T03:41:26.511578"
+    },
+    "221": {
+      "equacao": 221,
+      "qubits": 2,
+      "complexidade": "media",
+      "fidelidade": 0.8577730999554639,
+      "coerencia": 0.9349346155933046,
+      "timestamp": "2025-10-04T03:41:26.511607"
+    },
+    "222": {
+      "equacao": 222,
+      "qubits": 3,
+      "complexidade": "alta",
+      "fidelidade": 0.9698658557262917,
+      "coerencia": 0.898714124678337,
+      "timestamp": "2025-10-04T03:41:26.511616"
+    },
+    "223": {
+      "equacao": 223,
+      "qubits": 4,
+      "complexidade": "maxima",
+      "fidelidade": 0.93562875517996,
+      "coerencia": 0.76046481309418,
+      "timestamp": "2025-10-04T03:41:26.511642"
+    },
+    "224": {
+      "equacao": 224,
+      "qubits": 5,
+      "complexidade": "baixa",
+      "fidelidade": 0.8267693577756677,
+      "coerencia": 0.8097415956093514,
+      "timestamp": "2025-10-04T03:41:26.511648"
+    },
+    "225": {
+      "equacao": 225,
+      "qubits": 6,
+      "complexidade": "media",
+      "fidelidade": 0.871287160769246,
+      "coerencia": 0.9433371983665683,
+      "timestamp": "2025-10-04T03:41:26.511652"
+    },
+    "226": {
+      "equacao": 226,
+      "qubits": 7,
+      "complexidade": "alta",
+      "fidelidade": 0.9759422882887564,
+      "coerencia": 0.881443621408687,
+      "timestamp": "2025-10-04T03:41:26.511665"
+    },
+    "227": {
+      "equacao": 227,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9215408349052125,
+      "coerencia": 0.7536932599744248,
+      "timestamp": "2025-10-04T03:41:26.511673"
+    },
+    "228": {
+      "equacao": 228,
+      "qubits": 8,
+      "complexidade": "baixa",
+      "fidelidade": 0.822023391115996,
+      "coerencia": 0.8276516056592192,
+      "timestamp": "2025-10-04T03:41:26.511679"
+    },
+    "229": {
+      "equacao": 229,
+      "qubits": 8,
+      "complexidade": "media",
+      "fidelidade": 0.8858232910489686,
+      "coerencia": 0.9484173266893792,
+      "timestamp": "2025-10-04T03:41:26.511683"
+    },
+    "230": {
+      "equacao": 230,
+      "qubits": 8,
+      "complexidade": "alta",
+      "fidelidade": 0.9793154600064791,
+      "coerencia": 0.8630538430620439,
+      "timestamp": "2025-10-04T03:41:26.511687"
+    },
+    "231": {
+      "equacao": 231,
+      "qubits": 8,
+      "complexidade": "maxima",
+      "fidelidade": 0.9066861416390989,
+      "coerencia": 0.7503498658588623,
+      "timestamp": "2025-10-04T03:41:26.511710"
+    }
+  }
+}

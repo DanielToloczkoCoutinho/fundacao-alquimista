@@ -1,0 +1,9 @@
+  python311Packages.pip
+  python311Packages.numpy
+  python311Packages.scipy
+  python311Packages.matplotlib
+  python311Packages.numpy
+  python311Packages.scipy
+  python311Packages.matplotlib
+  python311Packages.qiskit
+  python311Packages.qiskit-ibm-runtime

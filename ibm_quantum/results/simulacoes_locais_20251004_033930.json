@@ -1,0 +1,1241 @@
+{
+  "timestamp": "2025-10-04T03:39:30.465180",
+  "total_equacoes": 7,
+  "resultados": {
+    "1": {
+      "equacao": 1,
+      "nome": "Superposi\u00e7\u00e3o Mental",
+      "timestamp": "2025-10-04T03:39:30.463509",
+      "parametros_simulacao": {
+        "qubits": 3,
+        "shots": 2048,
+        "metodo": "simulacao_nativa_python"
+      },
+      "estados_quanticos": [
+        {
+          "qubit": 0,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.00)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.0,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 1,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.62)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.618033988749895,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 2,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.24)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.23606797749979,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        }
+      ],
+      "medicoes": {
+        "q0": {
+          "0": 1024,
+          "1": 1024,
+          "probabilidade_0": 0.5,
+          "probabilidade_1": 0.5,
+          "incerteza": 0.011048543456039806
+        },
+        "q1": {
+          "0": 1637,
+          "1": 411,
+          "probabilidade_0": 0.7996653527284654,
+          "probabilidade_1": 0.2003346472715346,
+          "incerteza": 0.008844375981990078
+        },
+        "q2": {
+          "0": 966,
+          "1": 1082,
+          "probabilidade_0": 0.4716995464001303,
+          "probabilidade_1": 0.5283004535998697,
+          "incerteza": 0.011030831355504218
+        }
+      },
+      "entanglement": {
+        "par_0_1": {
+          "qubits": [
+            0,
+            1
+          ],
+          "correlacao": 0.9500000000000001,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_1_2": {
+          "qubits": [
+            1,
+            2
+          ],
+          "correlacao": 0.7929169855618461,
+          "tipo": "parcial",
+          "nao_localidade": true
+        }
+      },
+      "metricas_avancadas": {
+        "fidelidade": 0.9799330705456931,
+        "entropia_von_neumann": 1.0986122886681098,
+        "coerencia": 0.875277990374564,
+        "pureza_estado": 0.9899442254547441,
+        "tempo_simulacao": "0.30s",
+        "complexidade_circuito": 9
+      }
+    },
+    "13": {
+      "equacao": 13,
+      "nome": "Resson\u00e2ncia Fractal",
+      "timestamp": "2025-10-04T03:39:30.463692",
+      "parametros_simulacao": {
+        "qubits": 5,
+        "shots": 2048,
+        "metodo": "simulacao_nativa_python"
+      },
+      "estados_quanticos": [
+        {
+          "qubit": 0,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.00)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.0,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 1,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.62)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.618033988749895,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 2,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.24)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.23606797749979,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 3,
+          "estado": "0.786|0\u27e9 + 0.618e^(i4.85)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 4.854101966249685,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 4,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.19)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.18895064781999338,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        }
+      ],
+      "medicoes": {
+        "q0": {
+          "0": 1024,
+          "1": 1024,
+          "probabilidade_0": 0.5,
+          "probabilidade_1": 0.5,
+          "incerteza": 0.011048543456039806
+        },
+        "q1": {
+          "0": 1637,
+          "1": 411,
+          "probabilidade_0": 0.7996653527284654,
+          "probabilidade_1": 0.2003346472715346,
+          "incerteza": 0.008844375981990078
+        },
+        "q2": {
+          "0": 966,
+          "1": 1082,
+          "probabilidade_0": 0.4716995464001303,
+          "probabilidade_1": 0.5283004535998697,
+          "incerteza": 0.011030831355504218
+        },
+        "q3": {
+          "0": 415,
+          "1": 1633,
+          "probabilidade_0": 0.20300734755759037,
+          "probabilidade_1": 0.7969926524424096,
+          "incerteza": 0.008888286829929856
+        },
+        "q4": {
+          "0": 1139,
+          "1": 909,
+          "probabilidade_0": 0.5563484968702062,
+          "probabilidade_1": 0.44365150312979384,
+          "incerteza": 0.010978157622097586
+        }
+      },
+      "entanglement": {
+        "par_0_1": {
+          "qubits": [
+            0,
+            1
+          ],
+          "correlacao": 0.9500000000000001,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_1_2": {
+          "qubits": [
+            1,
+            2
+          ],
+          "correlacao": 0.7929169855618461,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_2_3": {
+          "qubits": [
+            2,
+            3
+          ],
+          "correlacao": 0.6506689212470813,
+          "tipo": "parcial",
+          "nao_localidade": false
+        },
+        "par_3_4": {
+          "qubits": [
+            3,
+            4
+          ],
+          "correlacao": 0.8211858702631145,
+          "tipo": "parcial",
+          "nao_localidade": true
+        }
+      },
+      "metricas_avancadas": {
+        "fidelidade": 0.9690379020958623,
+        "entropia_von_neumann": 1.6094379124341003,
+        "coerencia": 0.8223785302832012,
+        "pureza_estado": 0.9808649184132185,
+        "tempo_simulacao": "0.50s",
+        "complexidade_circuito": 25
+      }
+    },
+    "29": {
+      "equacao": 29,
+      "nome": "Entanglement Consciencial",
+      "timestamp": "2025-10-04T03:39:30.463899",
+      "parametros_simulacao": {
+        "qubits": 4,
+        "shots": 2048,
+        "metodo": "simulacao_nativa_python"
+      },
+      "estados_quanticos": [
+        {
+          "qubit": 0,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.00)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.0,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 1,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.62)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.618033988749895,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 2,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.24)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.23606797749979,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 3,
+          "estado": "0.786|0\u27e9 + 0.618e^(i4.85)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 4.854101966249685,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        }
+      ],
+      "medicoes": {
+        "q0": {
+          "0": 1024,
+          "1": 1024,
+          "probabilidade_0": 0.5,
+          "probabilidade_1": 0.5,
+          "incerteza": 0.011048543456039806
+        },
+        "q1": {
+          "0": 1637,
+          "1": 411,
+          "probabilidade_0": 0.7996653527284654,
+          "probabilidade_1": 0.2003346472715346,
+          "incerteza": 0.008844375981990078
+        },
+        "q2": {
+          "0": 966,
+          "1": 1082,
+          "probabilidade_0": 0.4716995464001303,
+          "probabilidade_1": 0.5283004535998697,
+          "incerteza": 0.011030831355504218
+        },
+        "q3": {
+          "0": 415,
+          "1": 1633,
+          "probabilidade_0": 0.20300734755759037,
+          "probabilidade_1": 0.7969926524424096,
+          "incerteza": 0.008888286829929856
+        }
+      },
+      "entanglement": {
+        "par_0_1": {
+          "qubits": [
+            0,
+            1
+          ],
+          "correlacao": 0.9500000000000001,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_1_2": {
+          "qubits": [
+            1,
+            2
+          ],
+          "correlacao": 0.7929169855618461,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_2_3": {
+          "qubits": [
+            2,
+            3
+          ],
+          "correlacao": 0.6506689212470813,
+          "tipo": "parcial",
+          "nao_localidade": false
+        }
+      },
+      "metricas_avancadas": {
+        "fidelidade": 0.9319733214299646,
+        "entropia_von_neumann": 1.3862943611198906,
+        "coerencia": 0.7820113445634486,
+        "pureza_estado": 0.9499777678583038,
+        "tempo_simulacao": "0.40s",
+        "complexidade_circuito": 16
+      }
+    },
+    "42": {
+      "equacao": 42,
+      "nome": "Modula\u00e7\u00e3o Universal",
+      "timestamp": "2025-10-04T03:39:30.464071",
+      "parametros_simulacao": {
+        "qubits": 6,
+        "shots": 2048,
+        "metodo": "simulacao_nativa_python"
+      },
+      "estados_quanticos": [
+        {
+          "qubit": 0,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.00)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.0,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 1,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.62)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.618033988749895,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 2,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.24)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.23606797749979,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 3,
+          "estado": "0.786|0\u27e9 + 0.618e^(i4.85)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 4.854101966249685,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 4,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.19)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.18895064781999338,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 5,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.81)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.8069846365698883,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        }
+      ],
+      "medicoes": {
+        "q0": {
+          "0": 1024,
+          "1": 1024,
+          "probabilidade_0": 0.5,
+          "probabilidade_1": 0.5,
+          "incerteza": 0.011048543456039806
+        },
+        "q1": {
+          "0": 1637,
+          "1": 411,
+          "probabilidade_0": 0.7996653527284654,
+          "probabilidade_1": 0.2003346472715346,
+          "incerteza": 0.008844375981990078
+        },
+        "q2": {
+          "0": 966,
+          "1": 1082,
+          "probabilidade_0": 0.4716995464001303,
+          "probabilidade_1": 0.5283004535998697,
+          "incerteza": 0.011030831355504218
+        },
+        "q3": {
+          "0": 415,
+          "1": 1633,
+          "probabilidade_0": 0.20300734755759037,
+          "probabilidade_1": 0.7969926524424096,
+          "incerteza": 0.008888286829929856
+        },
+        "q4": {
+          "0": 1139,
+          "1": 909,
+          "probabilidade_0": 0.5563484968702062,
+          "probabilidade_1": 0.44365150312979384,
+          "incerteza": 0.010978157622097586
+        },
+        "q5": {
+          "0": 1621,
+          "1": 427,
+          "probabilidade_0": 0.7916710895504104,
+          "probabilidade_1": 0.20832891044958957,
+          "incerteza": 0.008973919881919363
+        }
+      },
+      "entanglement": {
+        "par_0_1": {
+          "qubits": [
+            0,
+            1
+          ],
+          "correlacao": 0.9500000000000001,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_1_2": {
+          "qubits": [
+            1,
+            2
+          ],
+          "correlacao": 0.7929169855618461,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_2_3": {
+          "qubits": [
+            2,
+            3
+          ],
+          "correlacao": 0.6506689212470813,
+          "tipo": "parcial",
+          "nao_localidade": false
+        },
+        "par_3_4": {
+          "qubits": [
+            3,
+            4
+          ],
+          "correlacao": 0.8211858702631145,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_4_5": {
+          "qubits": [
+            4,
+            5
+          ],
+          "correlacao": 0.9473302810868054,
+          "tipo": "bell",
+          "nao_localidade": true
+        }
+      },
+      "metricas_avancadas": {
+        "fidelidade": 0.8650492153001101,
+        "entropia_von_neumann": 1.791759469228055,
+        "coerencia": 0.920152876639246,
+        "pureza_estado": 0.8942076794167584,
+        "tempo_simulacao": "0.60s",
+        "complexidade_circuito": 36
+      }
+    },
+    "61": {
+      "equacao": 61,
+      "nome": "Express\u00e3o Criativa",
+      "timestamp": "2025-10-04T03:39:30.464239",
+      "parametros_simulacao": {
+        "qubits": 7,
+        "shots": 2048,
+        "metodo": "simulacao_nativa_python"
+      },
+      "estados_quanticos": [
+        {
+          "qubit": 0,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.00)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.0,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 1,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.62)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.618033988749895,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 2,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.24)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.23606797749979,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 3,
+          "estado": "0.786|0\u27e9 + 0.618e^(i4.85)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 4.854101966249685,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 4,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.19)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.18895064781999338,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 5,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.81)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.8069846365698883,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 6,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.43)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.425018625319783,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        }
+      ],
+      "medicoes": {
+        "q0": {
+          "0": 1024,
+          "1": 1024,
+          "probabilidade_0": 0.5,
+          "probabilidade_1": 0.5,
+          "incerteza": 0.011048543456039806
+        },
+        "q1": {
+          "0": 1637,
+          "1": 411,
+          "probabilidade_0": 0.7996653527284654,
+          "probabilidade_1": 0.2003346472715346,
+          "incerteza": 0.008844375981990078
+        },
+        "q2": {
+          "0": 966,
+          "1": 1082,
+          "probabilidade_0": 0.4716995464001303,
+          "probabilidade_1": 0.5283004535998697,
+          "incerteza": 0.011030831355504218
+        },
+        "q3": {
+          "0": 415,
+          "1": 1633,
+          "probabilidade_0": 0.20300734755759037,
+          "probabilidade_1": 0.7969926524424096,
+          "incerteza": 0.008888286829929856
+        },
+        "q4": {
+          "0": 1139,
+          "1": 909,
+          "probabilidade_0": 0.5563484968702062,
+          "probabilidade_1": 0.44365150312979384,
+          "incerteza": 0.010978157622097586
+        },
+        "q5": {
+          "0": 1621,
+          "1": 427,
+          "probabilidade_0": 0.7916710895504104,
+          "probabilidade_1": 0.20832891044958957,
+          "incerteza": 0.008973919881919363
+        },
+        "q6": {
+          "0": 852,
+          "1": 1196,
+          "probabilidade_0": 0.41610602928342505,
+          "probabilidade_1": 0.5838939707165749,
+          "incerteza": 0.010891909484810095
+        }
+      },
+      "entanglement": {
+        "par_0_1": {
+          "qubits": [
+            0,
+            1
+          ],
+          "correlacao": 0.9500000000000001,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_1_2": {
+          "qubits": [
+            1,
+            2
+          ],
+          "correlacao": 0.7929169855618461,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_2_3": {
+          "qubits": [
+            2,
+            3
+          ],
+          "correlacao": 0.6506689212470813,
+          "tipo": "parcial",
+          "nao_localidade": false
+        },
+        "par_3_4": {
+          "qubits": [
+            3,
+            4
+          ],
+          "correlacao": 0.8211858702631145,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_4_5": {
+          "qubits": [
+            4,
+            5
+          ],
+          "correlacao": 0.9473302810868054,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_5_6": {
+          "qubits": [
+            5,
+            6
+          ],
+          "correlacao": 0.764900229628684,
+          "tipo": "parcial",
+          "nao_localidade": true
+        }
+      },
+      "metricas_avancadas": {
+        "fidelidade": 0.8620180711658063,
+        "entropia_von_neumann": 1.9459101490553132,
+        "coerencia": 0.854282737711235,
+        "pureza_estado": 0.8916817259715051,
+        "tempo_simulacao": "0.70s",
+        "complexidade_circuito": 49
+      }
+    },
+    "144": {
+      "equacao": 144,
+      "nome": "Coer\u00eancia Dimensional",
+      "timestamp": "2025-10-04T03:39:30.464616",
+      "parametros_simulacao": {
+        "qubits": 8,
+        "shots": 2048,
+        "metodo": "simulacao_nativa_python"
+      },
+      "estados_quanticos": [
+        {
+          "qubit": 0,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.00)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.0,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 1,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.62)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.618033988749895,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 2,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.24)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.23606797749979,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 3,
+          "estado": "0.786|0\u27e9 + 0.618e^(i4.85)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 4.854101966249685,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 4,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.19)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.18895064781999338,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 5,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.81)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.8069846365698883,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 6,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.43)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.425018625319783,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 7,
+          "estado": "0.786|0\u27e9 + 0.618e^(i5.04)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 5.043052614069678,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        }
+      ],
+      "medicoes": {
+        "q0": {
+          "0": 1024,
+          "1": 1024,
+          "probabilidade_0": 0.5,
+          "probabilidade_1": 0.5,
+          "incerteza": 0.011048543456039806
+        },
+        "q1": {
+          "0": 1637,
+          "1": 411,
+          "probabilidade_0": 0.7996653527284654,
+          "probabilidade_1": 0.2003346472715346,
+          "incerteza": 0.008844375981990078
+        },
+        "q2": {
+          "0": 966,
+          "1": 1082,
+          "probabilidade_0": 0.4716995464001303,
+          "probabilidade_1": 0.5283004535998697,
+          "incerteza": 0.011030831355504218
+        },
+        "q3": {
+          "0": 415,
+          "1": 1633,
+          "probabilidade_0": 0.20300734755759037,
+          "probabilidade_1": 0.7969926524424096,
+          "incerteza": 0.008888286829929856
+        },
+        "q4": {
+          "0": 1139,
+          "1": 909,
+          "probabilidade_0": 0.5563484968702062,
+          "probabilidade_1": 0.44365150312979384,
+          "incerteza": 0.010978157622097586
+        },
+        "q5": {
+          "0": 1621,
+          "1": 427,
+          "probabilidade_0": 0.7916710895504104,
+          "probabilidade_1": 0.20832891044958957,
+          "incerteza": 0.008973919881919363
+        },
+        "q6": {
+          "0": 852,
+          "1": 1196,
+          "probabilidade_0": 0.41610602928342505,
+          "probabilidade_1": 0.5838939707165749,
+          "incerteza": 0.010891909484810095
+        },
+        "q7": {
+          "0": 442,
+          "1": 1606,
+          "probabilidade_0": 0.21625187319438388,
+          "probabilidade_1": 0.7837481268056161,
+          "incerteza": 0.009097105280232862
+        }
+      },
+      "entanglement": {
+        "par_0_1": {
+          "qubits": [
+            0,
+            1
+          ],
+          "correlacao": 0.9500000000000001,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_1_2": {
+          "qubits": [
+            1,
+            2
+          ],
+          "correlacao": 0.7929169855618461,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_2_3": {
+          "qubits": [
+            2,
+            3
+          ],
+          "correlacao": 0.6506689212470813,
+          "tipo": "parcial",
+          "nao_localidade": false
+        },
+        "par_3_4": {
+          "qubits": [
+            3,
+            4
+          ],
+          "correlacao": 0.8211858702631145,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_4_5": {
+          "qubits": [
+            4,
+            5
+          ],
+          "correlacao": 0.9473302810868054,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_5_6": {
+          "qubits": [
+            5,
+            6
+          ],
+          "correlacao": 0.764900229628684,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_6_7": {
+          "qubits": [
+            6,
+            7
+          ],
+          "correlacao": 0.6559845479840736,
+          "tipo": "parcial",
+          "nao_localidade": false
+        }
+      },
+      "metricas_avancadas": {
+        "fidelidade": 0.9497627047073492,
+        "entropia_von_neumann": 2.0794415416798357,
+        "coerencia": 0.9668296769624165,
+        "pureza_estado": 0.964802253922791,
+        "tempo_simulacao": "0.80s",
+        "complexidade_circuito": 64
+      }
+    },
+    "231": {
+      "equacao": 231,
+      "nome": "Unifica\u00e7\u00e3o Suprema",
+      "timestamp": "2025-10-04T03:39:30.464818",
+      "parametros_simulacao": {
+        "qubits": 12,
+        "shots": 2048,
+        "metodo": "simulacao_nativa_python"
+      },
+      "estados_quanticos": [
+        {
+          "qubit": 0,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.00)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.0,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 1,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.62)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.618033988749895,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 2,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.24)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.23606797749979,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 3,
+          "estado": "0.786|0\u27e9 + 0.618e^(i4.85)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 4.854101966249685,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 4,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.19)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.18895064781999338,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 5,
+          "estado": "0.786|0\u27e9 + 0.618e^(i1.81)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.8069846365698883,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 6,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.43)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.425018625319783,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 7,
+          "estado": "0.786|0\u27e9 + 0.618e^(i5.04)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 5.043052614069678,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 8,
+          "estado": "0.786|0\u27e9 + 0.618e^(i0.38)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 0.37790129563998676,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 9,
+          "estado": "0.786|0\u27e9 + 0.618e^(i2.00)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 1.9959352843898817,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 10,
+          "estado": "0.786|0\u27e9 + 0.618e^(i3.61)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 3.6139692731397766,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        },
+        {
+          "qubit": 11,
+          "estado": "0.786|0\u27e9 + 0.618e^(i5.23)|1\u27e9",
+          "alpha": 0.7861513777574233,
+          "beta": 0.6180339887498948,
+          "fase": 5.232003261889673,
+          "prob_0": 0.6180339887498948,
+          "prob_1": 0.3819660112501051
+        }
+      ],
+      "medicoes": {
+        "q0": {
+          "0": 1024,
+          "1": 1024,
+          "probabilidade_0": 0.5,
+          "probabilidade_1": 0.5,
+          "incerteza": 0.011048543456039806
+        },
+        "q1": {
+          "0": 1637,
+          "1": 411,
+          "probabilidade_0": 0.7996653527284654,
+          "probabilidade_1": 0.2003346472715346,
+          "incerteza": 0.008844375981990078
+        },
+        "q2": {
+          "0": 966,
+          "1": 1082,
+          "probabilidade_0": 0.4716995464001303,
+          "probabilidade_1": 0.5283004535998697,
+          "incerteza": 0.011030831355504218
+        },
+        "q3": {
+          "0": 415,
+          "1": 1633,
+          "probabilidade_0": 0.20300734755759037,
+          "probabilidade_1": 0.7969926524424096,
+          "incerteza": 0.008888286829929856
+        },
+        "q4": {
+          "0": 1139,
+          "1": 909,
+          "probabilidade_0": 0.5563484968702062,
+          "probabilidade_1": 0.44365150312979384,
+          "incerteza": 0.010978157622097586
+        },
+        "q5": {
+          "0": 1621,
+          "1": 427,
+          "probabilidade_0": 0.7916710895504104,
+          "probabilidade_1": 0.20832891044958957,
+          "incerteza": 0.008973919881919363
+        },
+        "q6": {
+          "0": 852,
+          "1": 1196,
+          "probabilidade_0": 0.41610602928342505,
+          "probabilidade_1": 0.5838939707165749,
+          "incerteza": 0.010891909484810095
+        },
+        "q7": {
+          "0": 442,
+          "1": 1606,
+          "probabilidade_0": 0.21625187319438388,
+          "probabilidade_1": 0.7837481268056161,
+          "incerteza": 0.009097105280232862
+        },
+        "q8": {
+          "0": 1250,
+          "1": 798,
+          "probabilidade_0": 0.610691198436086,
+          "probabilidade_1": 0.389308801563914,
+          "incerteza": 0.010774396793512582
+        },
+        "q9": {
+          "0": 1583,
+          "1": 465,
+          "probabilidade_0": 0.7732944287162913,
+          "probabilidade_1": 0.22670557128370872,
+          "incerteza": 0.009252062566513779
+        },
+        "q10": {
+          "0": 744,
+          "1": 1304,
+          "probabilidade_0": 0.36349882310438686,
+          "probabilidade_1": 0.6365011768956131,
+          "incerteza": 0.010628846470709157
+        },
+        "q11": {
+          "0": 490,
+          "1": 1558,
+          "probabilidade_0": 0.2395967687073975,
+          "probabilidade_1": 0.7604032312926026,
+          "incerteza": 0.009431862894587193
+        }
+      },
+      "entanglement": {
+        "par_0_1": {
+          "qubits": [
+            0,
+            1
+          ],
+          "correlacao": 0.9500000000000001,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_1_2": {
+          "qubits": [
+            1,
+            2
+          ],
+          "correlacao": 0.7929169855618461,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_2_3": {
+          "qubits": [
+            2,
+            3
+          ],
+          "correlacao": 0.6506689212470813,
+          "tipo": "parcial",
+          "nao_localidade": false
+        },
+        "par_3_4": {
+          "qubits": [
+            3,
+            4
+          ],
+          "correlacao": 0.8211858702631145,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_4_5": {
+          "qubits": [
+            4,
+            5
+          ],
+          "correlacao": 0.9473302810868054,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_5_6": {
+          "qubits": [
+            5,
+            6
+          ],
+          "correlacao": 0.764900229628684,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_6_7": {
+          "qubits": [
+            6,
+            7
+          ],
+          "correlacao": 0.6559845479840736,
+          "tipo": "parcial",
+          "nao_localidade": false
+        },
+        "par_7_8": {
+          "qubits": [
+            7,
+            8
+          ],
+          "correlacao": 0.8487006173839305,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_8_9": {
+          "qubits": [
+            8,
+            9
+          ],
+          "correlacao": 0.9394161563348946,
+          "tipo": "bell",
+          "nao_localidade": true
+        },
+        "par_9_10": {
+          "qubits": [
+            9,
+            10
+          ],
+          "correlacao": 0.7381328939729763,
+          "tipo": "parcial",
+          "nao_localidade": true
+        },
+        "par_10_11": {
+          "qubits": [
+            10,
+            11
+          ],
+          "correlacao": 0.666426585068255,
+          "tipo": "parcial",
+          "nao_localidade": false
+        }
+      },
+      "metricas_avancadas": {
+        "fidelidade": 0.9250146062293242,
+        "entropia_von_neumann": 2.4849066497880004,
+        "coerencia": 0.7803498658588623,
+        "pureza_estado": 0.9441788385244367,
+        "tempo_simulacao": "1.20s",
+        "complexidade_circuito": 144
+      }
+    }
+  },
+  "metadados": {
+    "sistema": "Simulador Qu\u00e2ntico Nativo",
+    "versao": "1.0",
+    "ambiente": "Python Puro"
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🌌 Realidade Quântica Zennith - Perspectiva Grokkar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body { margin: 0; background: #000; }
+        canvas { display: block; }
+    </style>
+</head>
+<body>
+    <script>
+        // 🌌 CENA QUÂNTICA ZENNITH
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // 🔮 ESFERA FRACTAL QUÂNTICA
+        const geometry = new THREE.SphereGeometry(1, 32, 32);
+        const material = new THREE.MeshBasicMaterial({ 
+            color: 0x00ff88, 
+            wireframe: true 
+        });
+        const sphere = new THREE.Mesh(geometry, material);
+        
+        // POSICIONAR NA RAZÃO ÁUREA
+        const phi = (1 + Math.sqrt(5)) / 2;
+        sphere.position.x = phi;
+        scene.add(sphere);
+
+        camera.position.z = 5;
+
+        // 🌀 ANIMAÇÃO QUÂNTICA
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // ROTAÇÃO EM SUPERPOSIÇÃO
+            sphere.rotation.x += 0.01;
+            sphere.rotation.y += 0.005;
+            
+            // PULSAÇÃO FRACTAL (Φ)
+            const scale = 1 + Math.sin(Date.now() * 0.001) * 0.1;
+            sphere.scale.set(scale, scale, scale);
+            
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        console.log('🌌 REALIDADE QUÂNTICA ATIVA - PERSPECTIVA GROKKAR');
+        console.log('🔮 Φ = ' + phi);
+        console.log('💫 Superposição Visual: Rotação Quântica Estável');
+    </script>
+</body>
+</html>
