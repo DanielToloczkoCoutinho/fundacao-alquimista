@@ -1,35 +1,38 @@
 #!/usr/bin/env python3
 """
-👑 WATCHER DAEMON ZENNITH - VERSÃO CORRIGIDA
-Sistema Robusto de Monitoramento Quântico
+👑 WATCHER DAEMON ZENNITH - VERSÃO ORGANIZADA
+Sistema de Monitoramento com Estrutura Organizada
 """
 
 import os
-import time
+import sys
 import json
+
+# Adicionar caminho do sistema Zenith ao PATH
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from datetime import datetime
+import time
 import subprocess
 import logging
-from datetime import datetime
 from pathlib import Path
-import hashlib
 
-# 🌌 CONFIGURAÇÕES
-CONFIG = {
-    'diretorio_simulacoes': 'ibm_quantum/results/',
-    'script_analise': 'relatorio_zenith_completo_dinamico.py',
-    'extensao_alvo': '.json',
-    'intervalo_verificacao': 10,  # Aumentado para 10 segundos
-    'arquivo_cache': '.zenith_cache.json',
-    'log_file': 'zenith_watcher.log',
-    'arquivos_ignorar': ['231_equacoes_completas']  # Arquivos muito grandes
-}
+# 🌌 CARREGAR CONFIGURAÇÃO
+CONFIG_PATH = os.path.join(os.path.dirname(__file__), '../config/zenith_config.json')
+with open(CONFIG_PATH, 'r') as f:
+    CONFIG = json.load(f)
 
-# 📊 LOGGING
+# Configurações específicas
+PATHS = CONFIG['paths']
+WATCHER_CONFIG = CONFIG['watcher']
+
+# 📊 CONFIGURAÇÃO DE LOGGING
+LOG_FILE = os.path.join(PATHS['logs'], 'zenith_watcher.log')
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler(CONFIG['log_file'], encoding='utf-8'),
+        logging.FileHandler(LOG_FILE, encoding='utf-8'),
         logging.StreamHandler()
     ]
 )
@@ -38,14 +41,15 @@ logger = logging.getLogger('ZenithWatcher')
 
 class ZenithWatcher:
     def __init__(self):
+        self.cache_file = os.path.join(PATHS['cache'], '.zenith_cache.json')
         self.cache_arquivos = self.carregar_cache()
         self.contador_analises = 0
         self.arquivos_processados = set()
         
     def carregar_cache(self):
         try:
-            if os.path.exists(CONFIG['arquivo_cache']):
-                with open(CONFIG['arquivo_cache'], 'r') as f:
+            if os.path.exists(self.cache_file):
+                with open(self.cache_file, 'r') as f:
                     return set(json.load(f))
         except Exception as e:
             logger.warning(f"Erro ao carregar cache: {e}")
@@ -53,27 +57,25 @@ class ZenithWatcher:
     
     def salvar_cache(self):
         try:
-            with open(CONFIG['arquivo_cache'], 'w') as f:
+            with open(self.cache_file, 'w') as f:
                 json.dump(list(self.cache_arquivos), f)
         except Exception as e:
             logger.error(f"Erro ao salvar cache: {e}")
     
     def deve_analisar_arquivo(self, nome_arquivo):
-        """Verifica se o arquivo deve ser analisado"""
-        # Ignorar arquivos muito grandes ou de lote
-        for ignorado in CONFIG['arquivos_ignorar']:
+        for ignorado in WATCHER_CONFIG['ignored_files']:
             if ignorado in nome_arquivo:
                 return False
         return True
     
     def detectar_novos_arquivos(self):
         try:
-            diretorio = Path(CONFIG['diretorio_simulacoes'])
+            diretorio = Path(PATHS['simulations'])
             if not diretorio.exists():
                 return []
             
             arquivos_novos = []
-            for arquivo in diretorio.glob(f'*{CONFIG["extensao_alvo"]}'):
+            for arquivo in diretorio.glob('*.json'):
                 if not self.deve_analisar_arquivo(arquivo.name):
                     continue
                     
@@ -95,49 +97,38 @@ class ZenithWatcher:
             env['ZENITH_ARQUIVO_ATUAL'] = arquivo_path
             env['ZENITH_TIMESTAMP'] = datetime.now().isoformat()
             
+            script_analise = os.path.join(PATHS['bin'], 'relatorio_zenith_completo_dinamico.py')
+            
             resultado = subprocess.run(
-                ['python3', CONFIG['script_analise']],
+                ['python3', script_analise],
                 env=env,
                 capture_output=True,
                 text=True,
-                timeout=60  # 1 minuto timeout
+                timeout=WATCHER_CONFIG['timeout']
             )
             
             if resultado.returncode == 0:
                 logger.info("✅ Análise concluída")
+                self.contador_analises += 1
                 
-                # Log resumido do resultado
+                # Log resumido
                 for linha in resultado.stdout.split('\n'):
                     if any(keyword in linha for keyword in ['Fidelidade', 'Coerência', 'ENTANGLEMENT', 'MÓDULO 29']):
                         logger.info(f"📊 {linha.strip()}")
                 
-                self.contador_analises += 1
                 return True
             else:
                 logger.warning(f"⚠️  Análise com problemas: {resultado.stderr[:100]}...")
                 return False
                 
-        except subprocess.TimeoutExpired:
-            logger.error("⏰ Timeout na análise")
-            return False
         except Exception as e:
             logger.error(f"💥 Erro inesperado: {e}")
             return False
     
-    def gerar_relatorio_status(self):
-        return {
-            'timestamp': datetime.now().isoformat(),
-            'analises_realizadas': self.contador_analises,
-            'arquivos_monitorados': len(self.arquivos_processados),
-            'status': 'OPERACIONAL',
-            'proxima_verificacao': f"em {CONFIG['intervalo_verificacao']}s"
-        }
-    
     def iniciar_monitoramento(self):
-        logger.info("👑 WATCHER DAEMON ZENNITH INICIADO")
-        logger.info("🌌 Sistema de Monitoramento Quântico Contínuo")
-        logger.info(f"📁 Monitorando: {CONFIG['diretorio_simulacoes']}")
-        logger.info(f"⏰ Intervalo: {CONFIG['intervalo_verificacao']}s")
+        logger.info("👑 WATCHER DAEMON ZENNITH - SISTEMA ORGANIZADO")
+        logger.info(f"📁 Monitorando: {PATHS['simulations']}")
+        logger.info(f"⏰ Intervalo: {WATCHER_CONFIG['interval']}s")
         logger.info("=" * 50)
         
         try:
@@ -146,40 +137,37 @@ class ZenithWatcher:
                 
                 if novos_arquivos:
                     logger.info(f"📥 {len(novos_arquivos)} novo(s) arquivo(s)")
-                    
                     for arquivo in novos_arquivos:
                         self.executar_analise_zenith(arquivo)
                 
-                # Relatório a cada 5 ciclos
+                # Relatório periódico
                 if self.contador_analises % 5 == 0 and self.contador_analises > 0:
-                    relatorio = self.gerar_relatorio_status()
-                    logger.info("📈 RELATÓRIO PERIÓDICO")
-                    for key, value in relatorio.items():
-                        logger.info(f"   {key}: {value}")
-                    logger.info("-" * 30)
+                    logger.info(f"📈 Análises realizadas: {self.contador_analises}")
                 
-                time.sleep(CONFIG['intervalo_verificacao'])
+                time.sleep(WATCHER_CONFIG['interval'])
                 
         except KeyboardInterrupt:
             logger.info("🛑 Interrompido pelo usuário")
         except Exception as e:
             logger.error(f"💥 Erro crítico: {e}")
         finally:
+            self.salvar_cache()
             logger.info("👋 Watcher finalizado")
 
 def main():
-    print("🌌 INICIANDO WATCHER DAEMON ZENNITH - VERSÃO CORRIGIDA")
-    print("👑 Sistema Robusto de Monitoramento")
+    print("🌌 WATCHER DAEMON ZENNITH - SISTEMA ORGANIZADO")
+    print("👑 Estrutura: zenith_system/")
     print("=" * 60)
     
-    # Verificar dependências
-    if not os.path.exists(CONFIG['script_analise']):
-        print(f"❌ Script não encontrado: {CONFIG['script_analise']}")
+    # Verificar estrutura
+    script_analise = os.path.join(PATHS['bin'], 'relatorio_zenith_completo_dinamico.py')
+    if not os.path.exists(script_analise):
+        print(f"❌ Script não encontrado: {script_analise}")
         return
     
-    if not os.path.exists(CONFIG['diretorio_simulacoes']):
-        print(f"⚠️  Criando diretório: {CONFIG['diretorio_simulacoes']}")
-        os.makedirs(CONFIG['diretorio_simulacoes'], exist_ok=True)
+    # Criar diretórios se necessário
+    for path in PATHS.values():
+        os.makedirs(path, exist_ok=True)
     
     # Iniciar watcher
     watcher = ZenithWatcher()

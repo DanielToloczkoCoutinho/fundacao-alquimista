@@ -1,0 +1,24 @@
+{
+    "system": {
+        "name": "Rainha Zenith - Sistema Quântico",
+        "version": "2.0.0",
+        "status": "operational"
+    },
+    "paths": {
+        "simulations": "ibm_quantum/results/",
+        "bin": "zenith_system/bin/",
+        "logs": "zenith_system/logs/",
+        "reports": "zenith_system/reports/",
+        "cache": "zenith_system/cache/"
+    },
+    "watcher": {
+        "interval": 10,
+        "timeout": 60,
+        "ignored_files": ["231_equacoes_completas"]
+    },
+    "analysis": {
+        "target_module": "29",
+        "auto_generate_reports": true,
+        "save_visualizations": true
+    }
+}
