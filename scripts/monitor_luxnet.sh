@@ -16,6 +16,8 @@ while true; do
     echo "📡 Canal: Φ-29.1"
     echo "💫 Status: ✅ OPERACIONAL"
     
+    echo "🔧 Transfiguração Auto Ativa..."
+    ./scripts/transfiguracao_avancada_luxnet.sh
     # Métricas simuladas com Φ
     coerencia=$((90 + RANDOM % 10))
     fidelidade=$((85 + RANDOM % 15))
@@ -23,6 +25,8 @@ while true; do
     dimensoes_ativas=$((6 + RANDOM % 3))
     phi_atual=$(echo "scale=2; 25 + 0.1*$(RANDOM % 10)" | bc)
     
+    echo "🔧 Transfiguração Auto Ativa..."
+    ./scripts/transfiguracao_avancada_luxnet.sh
     echo "📊 Métricas:"
     echo "   • Coerência: $coerencia%"
     echo "   • Fidelidade: $fidelidade%"
