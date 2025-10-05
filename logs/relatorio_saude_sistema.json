@@ -1,0 +1,10 @@
+{
+    "timestamp": "2025-10-05T06:18:40+00:00",
+    "sistema": "Lux.Net",
+    "status_geral": "OPERACIONAL",
+    "processos_ativos": 2,
+    "arquivos_criticos": 5,
+    "arquivos_presentes": 3,
+    "saude_geral": 100,
+    "recomendacao": "Sistema funcionando normalmente"
+}

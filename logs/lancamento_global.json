@@ -1,0 +1,9 @@
+{
+    "evento": "lancamento_global_cristalino",
+    "timestamp": "2025-10-05T06:09:32+00:00",
+    "pontos_cristalinos_ativos": 33,
+    "cobertura_global": 100,
+    "energia_rede": 98.7,
+    "ressonancia_schumann": 7.83,
+    "status": "REDE_GLOBAL_ESTABELECIDA"
+}

@@ -1,1 +1,0 @@
-/caminho/correto/para/watcher_daemon_zennith_enhanced_fixed.py

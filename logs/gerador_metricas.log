@@ -1,0 +1,21 @@
+nohup: ignoring input
+./scripts/gerar_metricas.sh: line 6: bc: command not found
+./scripts/gerar_metricas.sh: line 9: bc: command not found
+./scripts/gerar_metricas.sh: line 11: bc: command not found
+./scripts/gerar_metricas.sh: line 13: bc: command not found
+📊 [2025-10-05T06:09:22+00:00] Métricas atualizadas - Status: CRÍTICO
+./scripts/gerar_metricas.sh: line 6: bc: command not found
+./scripts/gerar_metricas.sh: line 9: bc: command not found
+./scripts/gerar_metricas.sh: line 11: bc: command not found
+./scripts/gerar_metricas.sh: line 13: bc: command not found
+📊 [2025-10-05T06:10:22+00:00] Métricas atualizadas - Status: CRÍTICO
+./scripts/gerar_metricas.sh: line 6: bc: command not found
+./scripts/gerar_metricas.sh: line 9: bc: command not found
+./scripts/gerar_metricas.sh: line 11: bc: command not found
+./scripts/gerar_metricas.sh: line 13: bc: command not found
+📊 [2025-10-05T06:11:22+00:00] Métricas atualizadas - Status: CRÍTICO
+./scripts/gerar_metricas.sh: line 6: bc: command not found
+./scripts/gerar_metricas.sh: line 9: bc: command not found
+./scripts/gerar_metricas.sh: line 11: bc: command not found
+./scripts/gerar_metricas.sh: line 13: bc: command not found
+📊 [2025-10-05T06:12:22+00:00] Métricas atualizadas - Status: CRÍTICO

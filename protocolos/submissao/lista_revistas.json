@@ -1,7 +1,0 @@
-{
-  "revistas_prioritarias": [
-    {"nome": "Nature", "impact_factor": 64.8, "contato": "nature@nature.com"},
-    {"nome": "Science", "impact_factor": 63.7, "contato": "science@sciencemag.org"},
-    {"nome": "PNAS", "impact_factor": 12.8, "contato": "pnas@nas.edu"}
-  ]
-}
