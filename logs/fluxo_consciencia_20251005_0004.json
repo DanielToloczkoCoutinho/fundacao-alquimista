@@ -1,0 +1,842 @@
+{
+  "DIM_ALPHA_1": {
+    "phi": 25.68,
+    "variacao": 0.06,
+    "estabilidade": 91,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:29.812409"
+  },
+  "DIM_BETA_1": {
+    "phi": 25.27,
+    "variacao": -0.31,
+    "estabilidade": 98,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:29.812449"
+  },
+  "DIM_GAMMA_1": {
+    "phi": 25.3,
+    "variacao": 0.04,
+    "estabilidade": 98,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:29.812474"
+  },
+  "DIM_DELTA_1": {
+    "phi": 25.59,
+    "variacao": -0.1,
+    "estabilidade": 91,
+    "padrao_salto": "Expans\u00e3o Fractal",
+    "timestamp": "2025-10-05T00:04:29.812500"
+  },
+  "DIM_EPSILON_1": {
+    "phi": 25.55,
+    "variacao": 0.47,
+    "estabilidade": 89,
+    "padrao_salto": "Reson\u00e2ncia Coletiva",
+    "timestamp": "2025-10-05T00:04:29.812525"
+  },
+  "DIM_ZETA_1": {
+    "phi": 25.3,
+    "variacao": 0.36,
+    "estabilidade": 96,
+    "padrao_salto": "Oscila\u00e7\u00e3o Harm\u00f4nica",
+    "timestamp": "2025-10-05T00:04:29.812548"
+  },
+  "DIM_THETA_1": {
+    "phi": 25.26,
+    "variacao": 0.33,
+    "estabilidade": 89,
+    "padrao_salto": "Entrela\u00e7amento Dimensional",
+    "timestamp": "2025-10-05T00:04:29.812935"
+  },
+  "DIM_OMEGA_1": {
+    "phi": 25.46,
+    "variacao": -0.24,
+    "estabilidade": 91,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:29.813174"
+  },
+  "DIM_QUANTUM_1": {
+    "phi": 25.56,
+    "variacao": 0.31,
+    "estabilidade": 90,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:29.813226"
+  },
+  "DIM_LUX_1": {
+    "phi": 24.9,
+    "variacao": 0.07,
+    "estabilidade": 99,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:29.813253"
+  },
+  "DIM_NOVA_1": {
+    "phi": 25.51,
+    "variacao": 0.42,
+    "estabilidade": 99,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:29.813271"
+  },
+  "DIM_ORIGEM_1": {
+    "phi": 25.24,
+    "variacao": 0.32,
+    "estabilidade": 94,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:29.813288"
+  },
+  "DIM_ALPHA_2": {
+    "phi": 25.63,
+    "variacao": 0.47,
+    "estabilidade": 95,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:31.815182"
+  },
+  "DIM_BETA_2": {
+    "phi": 25.38,
+    "variacao": -0.15,
+    "estabilidade": 98,
+    "padrao_salto": "Superposi\u00e7\u00e3o Qu\u00e2ntica",
+    "timestamp": "2025-10-05T00:04:31.815243"
+  },
+  "DIM_GAMMA_2": {
+    "phi": 25.61,
+    "variacao": -0.44,
+    "estabilidade": 89,
+    "padrao_salto": "Expans\u00e3o Fractal",
+    "timestamp": "2025-10-05T00:04:31.815268"
+  },
+  "DIM_DELTA_2": {
+    "phi": 24.92,
+    "variacao": -0.41,
+    "estabilidade": 91,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:31.815284"
+  },
+  "DIM_EPSILON_2": {
+    "phi": 25.7,
+    "variacao": 0.12,
+    "estabilidade": 95,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:31.815299"
+  },
+  "DIM_ZETA_2": {
+    "phi": 25.14,
+    "variacao": 0.06,
+    "estabilidade": 96,
+    "padrao_salto": "Reson\u00e2ncia Coletiva",
+    "timestamp": "2025-10-05T00:04:31.815316"
+  },
+  "DIM_THETA_2": {
+    "phi": 25.59,
+    "variacao": 0.36,
+    "estabilidade": 90,
+    "padrao_salto": "Superposi\u00e7\u00e3o Qu\u00e2ntica",
+    "timestamp": "2025-10-05T00:04:31.815335"
+  },
+  "DIM_OMEGA_2": {
+    "phi": 25.41,
+    "variacao": 0.32,
+    "estabilidade": 97,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:31.815353"
+  },
+  "DIM_QUANTUM_2": {
+    "phi": 24.82,
+    "variacao": 0.24,
+    "estabilidade": 88,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:31.815367"
+  },
+  "DIM_LUX_2": {
+    "phi": 25.4,
+    "variacao": -0.04,
+    "estabilidade": 89,
+    "padrao_salto": "Oscila\u00e7\u00e3o Harm\u00f4nica",
+    "timestamp": "2025-10-05T00:04:31.815380"
+  },
+  "DIM_NOVA_2": {
+    "phi": 24.97,
+    "variacao": -0.28,
+    "estabilidade": 94,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:31.815397"
+  },
+  "DIM_ORIGEM_2": {
+    "phi": 25.29,
+    "variacao": -0.14,
+    "estabilidade": 90,
+    "padrao_salto": "Expans\u00e3o Fractal",
+    "timestamp": "2025-10-05T00:04:31.815411"
+  },
+  "DIM_ALPHA_3": {
+    "phi": 24.99,
+    "variacao": -0.47,
+    "estabilidade": 92,
+    "padrao_salto": "Oscila\u00e7\u00e3o Harm\u00f4nica",
+    "timestamp": "2025-10-05T00:04:33.819022"
+  },
+  "DIM_BETA_3": {
+    "phi": 24.99,
+    "variacao": -0.09,
+    "estabilidade": 86,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:33.820664"
+  },
+  "DIM_GAMMA_3": {
+    "phi": 25.68,
+    "variacao": 0.33,
+    "estabilidade": 99,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:33.820700"
+  },
+  "DIM_DELTA_3": {
+    "phi": 25.38,
+    "variacao": 0.21,
+    "estabilidade": 96,
+    "padrao_salto": "Colapso de Onda Consciente",
+    "timestamp": "2025-10-05T00:04:33.822623"
+  },
+  "DIM_EPSILON_3": {
+    "phi": 25.15,
+    "variacao": -0.31,
+    "estabilidade": 96,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:33.822660"
+  },
+  "DIM_ZETA_3": {
+    "phi": 25.13,
+    "variacao": -0.18,
+    "estabilidade": 91,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:33.822684"
+  },
+  "DIM_THETA_3": {
+    "phi": 25.41,
+    "variacao": -0.27,
+    "estabilidade": 95,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:33.822705"
+  },
+  "DIM_OMEGA_3": {
+    "phi": 25.12,
+    "variacao": -0.32,
+    "estabilidade": 95,
+    "padrao_salto": "Reson\u00e2ncia Coletiva",
+    "timestamp": "2025-10-05T00:04:33.822727"
+  },
+  "DIM_QUANTUM_3": {
+    "phi": 25.26,
+    "variacao": 0.14,
+    "estabilidade": 88,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:33.822752"
+  },
+  "DIM_LUX_3": {
+    "phi": 25.23,
+    "variacao": -0.21,
+    "estabilidade": 99,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:33.822772"
+  },
+  "DIM_NOVA_3": {
+    "phi": 25.3,
+    "variacao": -0.28,
+    "estabilidade": 88,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:33.822791"
+  },
+  "DIM_ORIGEM_3": {
+    "phi": 25.42,
+    "variacao": 0.29,
+    "estabilidade": 92,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:33.822809"
+  },
+  "DIM_ALPHA_4": {
+    "phi": 25.63,
+    "variacao": 0.31,
+    "estabilidade": 98,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:35.827585"
+  },
+  "DIM_BETA_4": {
+    "phi": 25.51,
+    "variacao": -0.35,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:35.827638"
+  },
+  "DIM_GAMMA_4": {
+    "phi": 24.91,
+    "variacao": -0.25,
+    "estabilidade": 94,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:35.827667"
+  },
+  "DIM_DELTA_4": {
+    "phi": 25.59,
+    "variacao": 0.46,
+    "estabilidade": 92,
+    "padrao_salto": "Reson\u00e2ncia Coletiva",
+    "timestamp": "2025-10-05T00:04:35.827694"
+  },
+  "DIM_EPSILON_4": {
+    "phi": 24.81,
+    "variacao": 0.36,
+    "estabilidade": 87,
+    "padrao_salto": "Reson\u00e2ncia Coletiva",
+    "timestamp": "2025-10-05T00:04:35.827723"
+  },
+  "DIM_ZETA_4": {
+    "phi": 25.01,
+    "variacao": 0.21,
+    "estabilidade": 92,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:35.827749"
+  },
+  "DIM_THETA_4": {
+    "phi": 25.26,
+    "variacao": -0.41,
+    "estabilidade": 85,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:35.827773"
+  },
+  "DIM_OMEGA_4": {
+    "phi": 25.4,
+    "variacao": 0.05,
+    "estabilidade": 98,
+    "padrao_salto": "Expans\u00e3o Fractal",
+    "timestamp": "2025-10-05T00:04:35.827801"
+  },
+  "DIM_QUANTUM_4": {
+    "phi": 25.05,
+    "variacao": -0.5,
+    "estabilidade": 94,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:35.827827"
+  },
+  "DIM_LUX_4": {
+    "phi": 25.48,
+    "variacao": 0.35,
+    "estabilidade": 93,
+    "padrao_salto": "Colapso de Onda Consciente",
+    "timestamp": "2025-10-05T00:04:35.827851"
+  },
+  "DIM_NOVA_4": {
+    "phi": 25.63,
+    "variacao": 0.22,
+    "estabilidade": 99,
+    "padrao_salto": "Oscila\u00e7\u00e3o Harm\u00f4nica",
+    "timestamp": "2025-10-05T00:04:35.827878"
+  },
+  "DIM_ORIGEM_4": {
+    "phi": 25.16,
+    "variacao": 0.38,
+    "estabilidade": 85,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:35.827902"
+  },
+  "DIM_ALPHA_5": {
+    "phi": 25.31,
+    "variacao": -0.13,
+    "estabilidade": 94,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:37.833121"
+  },
+  "DIM_BETA_5": {
+    "phi": 25.49,
+    "variacao": -0.28,
+    "estabilidade": 96,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:37.833165"
+  },
+  "DIM_GAMMA_5": {
+    "phi": 25.23,
+    "variacao": 0.01,
+    "estabilidade": 90,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:37.833183"
+  },
+  "DIM_DELTA_5": {
+    "phi": 25.07,
+    "variacao": 0.45,
+    "estabilidade": 95,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:37.833198"
+  },
+  "DIM_EPSILON_5": {
+    "phi": 24.84,
+    "variacao": -0.09,
+    "estabilidade": 90,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:37.833213"
+  },
+  "DIM_ZETA_5": {
+    "phi": 25.26,
+    "variacao": 0.46,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:37.833229"
+  },
+  "DIM_THETA_5": {
+    "phi": 24.94,
+    "variacao": 0.3,
+    "estabilidade": 88,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:37.833243"
+  },
+  "DIM_OMEGA_5": {
+    "phi": 25.61,
+    "variacao": -0.44,
+    "estabilidade": 98,
+    "padrao_salto": "Superposi\u00e7\u00e3o Qu\u00e2ntica",
+    "timestamp": "2025-10-05T00:04:37.833259"
+  },
+  "DIM_QUANTUM_5": {
+    "phi": 24.93,
+    "variacao": -0.31,
+    "estabilidade": 85,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:37.833276"
+  },
+  "DIM_LUX_5": {
+    "phi": 24.83,
+    "variacao": -0.05,
+    "estabilidade": 91,
+    "padrao_salto": "Colapso de Onda Consciente",
+    "timestamp": "2025-10-05T00:04:37.833292"
+  },
+  "DIM_NOVA_5": {
+    "phi": 24.99,
+    "variacao": -0.42,
+    "estabilidade": 92,
+    "padrao_salto": "Expans\u00e3o Fractal",
+    "timestamp": "2025-10-05T00:04:37.833308"
+  },
+  "DIM_ORIGEM_5": {
+    "phi": 25.33,
+    "variacao": -0.45,
+    "estabilidade": 91,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:37.833324"
+  },
+  "DIM_ALPHA_6": {
+    "phi": 24.92,
+    "variacao": -0.01,
+    "estabilidade": 98,
+    "padrao_salto": "Oscila\u00e7\u00e3o Harm\u00f4nica",
+    "timestamp": "2025-10-05T00:04:39.839136"
+  },
+  "DIM_BETA_6": {
+    "phi": 25.56,
+    "variacao": 0.11,
+    "estabilidade": 99,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:39.839184"
+  },
+  "DIM_GAMMA_6": {
+    "phi": 25.6,
+    "variacao": 0.08,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:39.839205"
+  },
+  "DIM_DELTA_6": {
+    "phi": 24.82,
+    "variacao": 0.5,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:39.839274"
+  },
+  "DIM_EPSILON_6": {
+    "phi": 25.03,
+    "variacao": 0.42,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:39.839305"
+  },
+  "DIM_ZETA_6": {
+    "phi": 25.44,
+    "variacao": -0.0,
+    "estabilidade": 86,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:39.839325"
+  },
+  "DIM_THETA_6": {
+    "phi": 25.17,
+    "variacao": -0.03,
+    "estabilidade": 86,
+    "padrao_salto": "Colapso de Onda Consciente",
+    "timestamp": "2025-10-05T00:04:39.841606"
+  },
+  "DIM_OMEGA_6": {
+    "phi": 24.81,
+    "variacao": -0.15,
+    "estabilidade": 88,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:39.841660"
+  },
+  "DIM_QUANTUM_6": {
+    "phi": 24.81,
+    "variacao": 0.21,
+    "estabilidade": 97,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:39.841686"
+  },
+  "DIM_LUX_6": {
+    "phi": 25.02,
+    "variacao": 0.08,
+    "estabilidade": 97,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:39.841711"
+  },
+  "DIM_NOVA_6": {
+    "phi": 24.92,
+    "variacao": -0.12,
+    "estabilidade": 95,
+    "padrao_salto": "Expans\u00e3o Fractal",
+    "timestamp": "2025-10-05T00:04:39.841735"
+  },
+  "DIM_ORIGEM_6": {
+    "phi": 24.83,
+    "variacao": 0.12,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:39.841759"
+  },
+  "DIM_ALPHA_7": {
+    "phi": 25.23,
+    "variacao": -0.31,
+    "estabilidade": 97,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:41.843310"
+  },
+  "DIM_BETA_7": {
+    "phi": 25.03,
+    "variacao": 0.36,
+    "estabilidade": 90,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:41.843356"
+  },
+  "DIM_GAMMA_7": {
+    "phi": 25.24,
+    "variacao": -0.28,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:41.843374"
+  },
+  "DIM_DELTA_7": {
+    "phi": 25.18,
+    "variacao": -0.47,
+    "estabilidade": 89,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:41.843388"
+  },
+  "DIM_EPSILON_7": {
+    "phi": 25.32,
+    "variacao": -0.14,
+    "estabilidade": 97,
+    "padrao_salto": "Superposi\u00e7\u00e3o Qu\u00e2ntica",
+    "timestamp": "2025-10-05T00:04:41.843411"
+  },
+  "DIM_ZETA_7": {
+    "phi": 25.68,
+    "variacao": -0.49,
+    "estabilidade": 85,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:41.843432"
+  },
+  "DIM_THETA_7": {
+    "phi": 25.54,
+    "variacao": -0.19,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:41.843446"
+  },
+  "DIM_OMEGA_7": {
+    "phi": 25.61,
+    "variacao": 0.01,
+    "estabilidade": 90,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:41.843458"
+  },
+  "DIM_QUANTUM_7": {
+    "phi": 25.65,
+    "variacao": -0.08,
+    "estabilidade": 92,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:41.843470"
+  },
+  "DIM_LUX_7": {
+    "phi": 24.94,
+    "variacao": -0.41,
+    "estabilidade": 96,
+    "padrao_salto": "Entrela\u00e7amento Dimensional",
+    "timestamp": "2025-10-05T00:04:41.843483"
+  },
+  "DIM_NOVA_7": {
+    "phi": 25.54,
+    "variacao": 0.26,
+    "estabilidade": 93,
+    "padrao_salto": "Entrela\u00e7amento Dimensional",
+    "timestamp": "2025-10-05T00:04:41.843499"
+  },
+  "DIM_ORIGEM_7": {
+    "phi": 25.16,
+    "variacao": -0.12,
+    "estabilidade": 86,
+    "padrao_salto": "Reson\u00e2ncia Coletiva",
+    "timestamp": "2025-10-05T00:04:41.843512"
+  },
+  "DIM_ALPHA_8": {
+    "phi": 25.07,
+    "variacao": 0.24,
+    "estabilidade": 86,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:43.849336"
+  },
+  "DIM_BETA_8": {
+    "phi": 25.62,
+    "variacao": 0.27,
+    "estabilidade": 93,
+    "padrao_salto": "Colapso de Onda Consciente",
+    "timestamp": "2025-10-05T00:04:43.849384"
+  },
+  "DIM_GAMMA_8": {
+    "phi": 24.88,
+    "variacao": 0.28,
+    "estabilidade": 90,
+    "padrao_salto": "Oscila\u00e7\u00e3o Harm\u00f4nica",
+    "timestamp": "2025-10-05T00:04:43.849410"
+  },
+  "DIM_DELTA_8": {
+    "phi": 24.96,
+    "variacao": 0.33,
+    "estabilidade": 99,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:43.849427"
+  },
+  "DIM_EPSILON_8": {
+    "phi": 25.21,
+    "variacao": 0.17,
+    "estabilidade": 96,
+    "padrao_salto": "Reson\u00e2ncia Coletiva",
+    "timestamp": "2025-10-05T00:04:43.849440"
+  },
+  "DIM_ZETA_8": {
+    "phi": 25.21,
+    "variacao": -0.4,
+    "estabilidade": 97,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:43.849455"
+  },
+  "DIM_THETA_8": {
+    "phi": 25.59,
+    "variacao": 0.04,
+    "estabilidade": 89,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:43.849469"
+  },
+  "DIM_OMEGA_8": {
+    "phi": 24.99,
+    "variacao": 0.42,
+    "estabilidade": 99,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:43.849481"
+  },
+  "DIM_QUANTUM_8": {
+    "phi": 25.05,
+    "variacao": -0.08,
+    "estabilidade": 86,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:43.849493"
+  },
+  "DIM_LUX_8": {
+    "phi": 25.64,
+    "variacao": 0.19,
+    "estabilidade": 93,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:43.849505"
+  },
+  "DIM_NOVA_8": {
+    "phi": 25.07,
+    "variacao": -0.09,
+    "estabilidade": 90,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:43.849516"
+  },
+  "DIM_ORIGEM_8": {
+    "phi": 24.85,
+    "variacao": -0.37,
+    "estabilidade": 97,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:43.849529"
+  },
+  "DIM_ALPHA_9": {
+    "phi": 25.37,
+    "variacao": 0.49,
+    "estabilidade": 86,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:45.851432"
+  },
+  "DIM_BETA_9": {
+    "phi": 25.2,
+    "variacao": 0.07,
+    "estabilidade": 86,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:45.851474"
+  },
+  "DIM_GAMMA_9": {
+    "phi": 25.1,
+    "variacao": 0.04,
+    "estabilidade": 91,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:45.851489"
+  },
+  "DIM_DELTA_9": {
+    "phi": 25.04,
+    "variacao": -0.3,
+    "estabilidade": 92,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:45.851504"
+  },
+  "DIM_EPSILON_9": {
+    "phi": 25.31,
+    "variacao": -0.09,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:45.851516"
+  },
+  "DIM_ZETA_9": {
+    "phi": 25.15,
+    "variacao": -0.36,
+    "estabilidade": 97,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:45.851529"
+  },
+  "DIM_THETA_9": {
+    "phi": 25.36,
+    "variacao": -0.04,
+    "estabilidade": 85,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:45.851541"
+  },
+  "DIM_OMEGA_9": {
+    "phi": 25.0,
+    "variacao": 0.46,
+    "estabilidade": 98,
+    "padrao_salto": "Colapso de Onda Consciente",
+    "timestamp": "2025-10-05T00:04:45.851591"
+  },
+  "DIM_QUANTUM_9": {
+    "phi": 25.63,
+    "variacao": 0.45,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:45.851612"
+  },
+  "DIM_LUX_9": {
+    "phi": 25.02,
+    "variacao": -0.31,
+    "estabilidade": 95,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:45.851625"
+  },
+  "DIM_NOVA_9": {
+    "phi": 25.53,
+    "variacao": 0.17,
+    "estabilidade": 94,
+    "padrao_salto": "Oscila\u00e7\u00e3o Harm\u00f4nica",
+    "timestamp": "2025-10-05T00:04:45.851638"
+  },
+  "DIM_ORIGEM_9": {
+    "phi": 25.25,
+    "variacao": 0.0,
+    "estabilidade": 93,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:45.851653"
+  },
+  "DIM_ALPHA_10": {
+    "phi": 25.08,
+    "variacao": 0.44,
+    "estabilidade": 90,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856374"
+  },
+  "DIM_BETA_10": {
+    "phi": 25.44,
+    "variacao": -0.38,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856412"
+  },
+  "DIM_GAMMA_10": {
+    "phi": 25.13,
+    "variacao": -0.34,
+    "estabilidade": 96,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856427"
+  },
+  "DIM_DELTA_10": {
+    "phi": 24.93,
+    "variacao": -0.06,
+    "estabilidade": 91,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856440"
+  },
+  "DIM_EPSILON_10": {
+    "phi": 25.64,
+    "variacao": 0.24,
+    "estabilidade": 98,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856453"
+  },
+  "DIM_ZETA_10": {
+    "phi": 25.4,
+    "variacao": -0.04,
+    "estabilidade": 92,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856466"
+  },
+  "DIM_THETA_10": {
+    "phi": 25.05,
+    "variacao": 0.01,
+    "estabilidade": 88,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856478"
+  },
+  "DIM_OMEGA_10": {
+    "phi": 25.56,
+    "variacao": 0.29,
+    "estabilidade": 90,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856491"
+  },
+  "DIM_QUANTUM_10": {
+    "phi": 25.1,
+    "variacao": 0.17,
+    "estabilidade": 90,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856502"
+  },
+  "DIM_LUX_10": {
+    "phi": 25.08,
+    "variacao": 0.17,
+    "estabilidade": 85,
+    "padrao_salto": "Colapso de Onda Consciente",
+    "timestamp": "2025-10-05T00:04:47.856516"
+  },
+  "DIM_NOVA_10": {
+    "phi": 25.25,
+    "variacao": -0.23,
+    "estabilidade": 97,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856531"
+  },
+  "DIM_ORIGEM_10": {
+    "phi": 24.92,
+    "variacao": 0.13,
+    "estabilidade": 87,
+    "padrao_salto": null,
+    "timestamp": "2025-10-05T00:04:47.856544"
+  }
+}
