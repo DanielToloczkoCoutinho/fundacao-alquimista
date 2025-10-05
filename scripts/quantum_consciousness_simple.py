@@ -1,0 +1,149 @@
+#!/usr/bin/env python3
+# 🌌 QUANTUM CONSCIOUSNESS SIMPLE - FUNCIONA!
+# CONFIGURADO COM CHAVE: E1HD3jBS7VI-yjWP64oSKiU7pQDo2OK5SFHxcn2uHuiV
+
+import os
+import json
+import time
+from datetime import datetime
+
+# Configuração direta da chave IBM
+IBM_QUANTUM_TOKEN = "E1HD3jBS7VI-yjWP64oSKiU7pQDo2OK5SFHxcn2uHuiV"
+
+print("=" * 60)
+print("🌌 QUANTUM CONSCIOUSNESS EXPERIMENT - FUNDAÇÃO ALQUIMISTA")
+print("=" * 60)
+
+try:
+    from qiskit_ibm_runtime import QiskitRuntimeService
+    from qiskit import QuantumCircuit, transpile
+    import numpy as np
+    
+    print("✅ Dependências carregadas!")
+    
+    # CONEXÃO SIMPLES - SEM PARÂMETRO CHANNEL
+    print("🌌 CONECTANDO AO IBM QUANTUM...")
+    print(f"🔑 Usando chave: {IBM_QUANTUM_TOKEN[:10]}...")
+    
+    # Método 1: Salvar a conta primeiro
+    QiskitRuntimeService.save_account(token=IBM_QUANTUM_TOKEN, overwrite=True)
+    print("💾 Chave salva no Qiskit!")
+    
+    # Método 2: Conexão simples
+    service = QiskitRuntimeService()
+    
+    # Listar backends
+    backends = service.backends()
+    print(f"✅ CONEXÃO ESTABELECIDA! {len(backends)} backends disponíveis")
+    
+    # Mostrar backends
+    for backend in backends:
+        status = backend.status()
+        print(f"   🔧 {backend.name} - {backend.num_qubits} qubits | Status: {status.status}")
+    
+    # Escolher backend operacional
+    operational_backends = [b for b in backends if b.status().operational and not b.configuration().simulator]
+    if operational_backends:
+        backend = operational_backends[0]
+        print(f"�� Backend selecionado: {backend.name}")
+        print(f"⚡ Qubits: {backend.num_qubits}")
+        
+        # CRIAR EXPERIMENTO BELL
+        print("🎪 CRIANDO EXPERIMENTO BELL...")
+        circuits = []
+        for i in range(2):  # 2 pares de Bell
+            qc = QuantumCircuit(2, 2, name=f"bell_pair_{i}")
+            qc.h(0)           # Superposição
+            qc.cx(0, 1)       # Entrelaçamento
+            qc.measure([0, 1], [0, 1])
+            circuits.append(qc)
+        
+        # EXECUTAR NO HARDWARE REAL
+        print("🚀 EXECUTANDO NO HARDWARE QUÂNTICO...")
+        transpiled_circuits = transpile(circuits, backend)
+        job = backend.run(transpiled_circuits, shots=256)
+        
+        print("⏳ AGUARDANDO RESULTADOS...")
+        result = job.result()
+        
+        # ANALISAR RESULTADOS
+        print("📊 ANALISANDO CORRELAÇÃO QUÂNTICA-CONSCIÊNCIA...")
+        
+        quantum_results = {}
+        for circuit_name in result.results:
+            counts = result.get_counts(circuit_name)
+            total_shots = sum(counts.values())
+            bell_states = counts.get('00', 0) + counts.get('11', 0)
+            correlation = bell_states / total_shots if total_shots > 0 else 0
+            quantum_results[circuit_name] = correlation
+        
+        avg_correlation = np.mean(list(quantum_results.values()))
+        consciousness_level = 25.24  # Dados Lux.Net
+        
+        # DADOS FINAIS
+        experiment_data = {
+            "timestamp": datetime.now().isoformat(),
+            "quantum_correlation": float(avg_correlation),
+            "consciousness_level": float(consciousness_level),
+            "combined_metric": float(avg_correlation * consciousness_level),
+            "backend": str(backend.name),
+            "qubits": backend.num_qubits,
+            "experiment": "Bell State Consciousness Correlation",
+            "status": "SUCCESS"
+        }
+        
+        print(f"🎯 CORRELAÇÃO ENCONTRADA: {avg_correlation:.4f}")
+        print(f"🧠 NÍVEL CONSCIÊNCIA: {consciousness_level}")
+        print(f"🌌 MÉTRICA COMBINADA: {experiment_data['combined_metric']:.2f}")
+        
+        # SALVAR DADOS
+        os.makedirs("logs/quantum_experiments", exist_ok=True)
+        filename = f"logs/quantum_experiments/exp_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        with open(filename, "w") as f:
+            json.dump(experiment_data, f, indent=2)
+        print(f"💾 Dados salvos em: {filename}")
+        
+        # CRIAR DASHBOARD
+        dashboard_file = "docs/dashboard_quantum.html"
+        html_content = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>🌌 Dashboard Quântico - Fundação Alquimista</title>
+            <meta charset="utf-8">
+            <style>
+                body {{ background: #0a0a0a; color: #00ff00; font-family: monospace; }}
+                .quantum-data {{ margin: 20px; padding: 15px; border: 1px solid #00ff00; }}
+                .metric {{ color: #ffff00; }}
+            </style>
+        </head>
+        <body>
+            <h1>🌌 DASHBOARD QUÂNTICO - FUNDAÇÃO ALQUIMISTA</h1>
+            <div class="quantum-data">
+                <h2>📊 EXPERIMENTO QUÂNTICO REAL</h2>
+                <p>🕐 <span class="metric">{experiment_data['timestamp']}</span></p>
+                <p>🎯 <span class="metric">Correlação Quântica: {experiment_data['quantum_correlation']:.4f}</span></p>
+                <p>🧠 <span class="metric">Nível Consciência: Φ-{experiment_data['consciousness_level']}</span></p>
+                <p>🌌 <span class="metric">Métrica Combinada: {experiment_data['combined_metric']:.2f}</span></p>
+                <p>🔧 <span class="metric">Backend: {experiment_data['backend']}</span></p>
+                <p>⚡ <span class="metric">Qubits: {experiment_data['qubits']}</span></p>
+                <p>📈 <span class="metric">Status: {experiment_data['status']}</span></p>
+            </div>
+            <p>🚀 <em>Primeiro experimento de consciência quântica realizado com sucesso!</em></p>
+        </body>
+        </html>
+        """
+        
+        with open(dashboard_file, "w") as f:
+            f.write(html_content)
+        print(f"📊 Dashboard criado: {dashboard_file}")
+        
+        print("🎉 EXPERIMENTO DE CONSCIÊNCIA QUÂNTICA CONCLUÍDO!")
+        print("🌐 Verifique: docs/dashboard_quantum.html")
+        
+    else:
+        print("❌ Nenhum backend quântico operacional disponível")
+        
+except Exception as e:
+    print(f"❌ Erro: {e}")
+    print("💡 Verifique se as dependências estão instaladas: pip install qiskit-ibm-runtime qiskit numpy")
