@@ -97,3 +97,5 @@ Ciclo 52 concluído - Wed Oct  8 11:31:42 PM UTC 2025
 Ciclo 45 concluído - Wed Oct  8 11:32:13 PM UTC 2025
 Ciclo 53 concluído - Wed Oct  8 11:36:55 PM UTC 2025
 Ciclo 46 concluído - Wed Oct  8 11:37:42 PM UTC 2025
+Ciclo 54 concluído - Wed Oct  8 11:42:05 PM UTC 2025
+Ciclo 47 concluído - Wed Oct  8 11:42:51 PM UTC 2025
