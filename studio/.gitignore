@@ -1,0 +1,34 @@
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# 🔮 Nossa fundação
+backup_automatico/
+*.log
+metricas_atuais.json
+relatorio_sincronizacao_*.txt
+
+# 🚀 Next.js
+.next/
+node_modules/
+.npm
+.eslintcache
+
+# 💾 Sistema
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# 🔐 Segurança
+*.env
+*.key
+*.pem
