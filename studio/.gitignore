@@ -32,3 +32,16 @@ Thumbs.db
 *.env
 *.key
 *.pem
+
+# VIRTUAL ENVIRONMENT - ZENNITH OPTIMIZATION
+fundacao_independente/
+venv/
+.env/
+*.pyc
+__pycache__/
+.python-version
+
+# CACHES
+.cache/
+.npm/
+.npx/
