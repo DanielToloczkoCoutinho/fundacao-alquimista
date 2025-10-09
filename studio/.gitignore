@@ -45,3 +45,6 @@ __pycache__/
 .cache/
 .npm/
 .npx/
+backup-completo/
+backup_rapido_deploy/
+.vercel

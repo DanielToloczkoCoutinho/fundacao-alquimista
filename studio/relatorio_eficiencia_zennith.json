@@ -1,0 +1,60 @@
+{
+  "metricas": {
+    "tamanho_build": "200.27 MB",
+    "componentes_react": 14,
+    "total_dependencias": 14,
+    "componentes_total": 10,
+    "paginas_total": 12
+  },
+  "ineficiencias": {
+    "build_grande": {
+      "nivel": "ALTO",
+      "descricao": "Build muito grande: 200.27 MB",
+      "impacto": "Performance reduzida"
+    },
+    "sem_analise_bundle": {
+      "nivel": "BAIXO",
+      "descricao": "Sem análise de bundle otimizada",
+      "impacto": "Dificuldade na otimização"
+    },
+    "arquivos_desnecessarios": {
+      "nivel": "MEDIO",
+      "descricao": "3 arquivos desnecessários encontrados",
+      "exemplos": [
+        "./requirements_zennith.txt.backup",
+        "./sincronizador_universal.sh.backup",
+        "./SCRIPTS_CENTRALIZADOS/ibm_quantum/conectar_ibm_quantum.sh.backup"
+      ],
+      "impacto": "Deploy mais lento"
+    },
+    "dependencias_pesadas": {
+      "nivel": "MEDIO",
+      "descricao": "Dependências pesadas: three, @types/three",
+      "impacto": "Build mais lento e maior"
+    },
+    "sem_lazy_loading": {
+      "nivel": "MEDIO",
+      "descricao": "Sem implementação de lazy loading",
+      "impacto": "Carregamento inicial mais lento"
+    },
+    "configuracoes_otimizacao": {
+      "nivel": "BAIXO",
+      "descricao": "Configurações de otimização básicas",
+      "impacto": "Performance não maximizada"
+    },
+    "sem_pwa": {
+      "nivel": "BAIXO",
+      "descricao": "Sem configuração PWA",
+      "impacto": "Experiência mobile não otimizada"
+    }
+  },
+  "recomendacoes": [
+    "Implementar code splitting e lazy loading",
+    "Limpar arquivos temporários e de backup",
+    "Otimizar uso de Three.js e Qiskit",
+    "Implementar lazy loading para componentes pesados",
+    "Adicionar análise de bundle @next/bundle-analyzer",
+    "Configurar PWA para melhor experiência mobile"
+  ],
+  "status_geral": "🔴 ATENÇÃO"
+}
