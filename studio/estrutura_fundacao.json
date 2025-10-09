@@ -224,7 +224,7 @@
       "configurar_token.sh",
       "conectar_ibm_node.sh",
       "interpretacao_alquimista.py",
-      "conectar_ibm_quantum.sh.backup"
+      "backup_credenciais.secure"
     ],
     "seguranca_backup": []
   }
