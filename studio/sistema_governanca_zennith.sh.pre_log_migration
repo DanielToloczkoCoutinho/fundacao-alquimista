@@ -1,4 +1,3 @@
-source utils_zennith_log_avancado.sh
 #!/bin/bash
 
 # 👑 SISTEMA DE GOVERNANÇA ZENNITH - COMANDO DEFINITIVO
@@ -22,6 +21,13 @@ mkdir -p "$GOVERNANCA_DIR/$TIMESTAMP"
 log() {
     echo "[$(date '+%H:%M:%S')] $1"
 }
+
+# 1. 🎯 ESTADO ATUAL CONFIRMADO
+estado_atual_confirmado() {
+    log "🎯 VERIFICANDO ESTADO ATUAL CONFIRMADO..."
+    
+    ESTADO_FILE="$GOVERNANCA_DIR/$TIMESTAMP/estado_atual_confirmado.md"
+    
     cat > "$ESTADO_FILE" << ESTADO
 # 🎯 ESTADO ATUAL CONFIRMADO - FUNDAÇÃO ALQUIMISTA
 ## 👑 Governança Zennith Estabelecida
@@ -58,13 +64,13 @@ log() {
 **🏛️ ESTADO CONFIRMADO - PRONTO PARA PRÓXIMA FASE**
 ESTADO
 
-    log_zennith "✅ Estado atual confirmado: $ESTADO_FILE"
+    log "✅ Estado atual confirmado: $ESTADO_FILE"
     cat "$ESTADO_FILE"
 }
 
 # 2. 🚀 PRÓXIMA FASE - EXPANSÃO ESTRATÉGICA
 proxima_fase_estrategica() {
-    log_zennith "🚀 PLANEJANDO PRÓXIMA FASE ESTRATÉGICA..."
+    log "🚀 PLANEJANDO PRÓXIMA FASE ESTRATÉGICA..."
     
     ESTRATEGIA_FILE="$GOVERNANCA_DIR/$TIMESTAMP/proxima_fase_estrategica.md"
     
@@ -128,13 +134,13 @@ proxima_fase_estrategica() {
 **🚀 ESTRATÉGIA DEFINIDA - EXPANSÃO GOVERNADA**
 STRAT
 
-    log_zennith "✅ Próxima fase estratégica: $ESTRATEGIA_FILE"
+    log "✅ Próxima fase estratégica: $ESTRATEGIA_FILE"
     cat "$ESTRATEGIA_FILE"
 }
 
 # 3. 🔄 SISTEMA DE COMANDO DIÁRIO
 sistema_comando_diario() {
-    log_zennith "🔄 ESTABELECENDO SISTEMA DE COMANDO DIÁRIO..."
+    log "🔄 ESTABELECENDO SISTEMA DE COMANDO DIÁRIO..."
     
     COMANDO_FILE="$GOVERNANCA_DIR/$TIMESTAMP/sistema_comando_diario.md"
     
@@ -212,13 +218,13 @@ sistema_comando_diario() {
 **🔄 SISTEMA DE COMANDO ESTABELECIDO - OPERAÇÃO CONTÍNUA GARANTIDA**
 COMANDO
 
-    log_zennith "✅ Sistema de comando diário: $COMANDO_FILE"
+    log "✅ Sistema de comando diário: $COMANDO_FILE"
     cat "$COMANDO_FILE"
 }
 
 # 4. 🎉 RELATÓRIO FINAL DE GOVERNAÇA
 relatorio_final_governanca() {
-    log_zennith "🎉 GERANDO RELATÓRIO FINAL DE GOVERNAÇA..."
+    log "🎉 GERANDO RELATÓRIO FINAL DE GOVERNAÇA..."
     
     FINAL_FILE="$GOVERNANCA_DIR/$TIMESTAMP/RELATORIO_FINAL_GOVERNAÇA.md"
     
@@ -290,7 +296,7 @@ A **ANÁLISE COMPLETA DA FUNDAÇÃO ALCANISTA** foi concluída com sucesso total
 **🎉 MISSÃO CUMPRIDA - FUNDAÇÃO ALQUIMISTA ESTABELECIDA E OPERACIONAL**
 FINAL
 
-    log_zennith "✅ Relatório final de governança: $FINAL_FILE"
+    log "✅ Relatório final de governança: $FINAL_FILE"
     cat "$FINAL_FILE"
 }
 
