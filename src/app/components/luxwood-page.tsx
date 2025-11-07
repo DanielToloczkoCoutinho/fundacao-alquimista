@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { runModuleZeroSequence, type AnyLogEntry } from '@/lib/quantum/module-zero';
-import { BrainCircuit, CheckCircle, Cog, Dna, Loader, ShieldCheck, Sparkles, Zap, Telescope, Diamond } from 'lucide-react';
+import { BrainCircuit, CheckCircle, Cog, Dna, Loader, ShieldCheck, Sparkles, Zap, Telescope, Diamond, Waves, GitBranch } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function LuxwoodPage() {
@@ -36,7 +36,7 @@ export default function LuxwoodPage() {
   useEffect(() => {
     if (log.length > 0) {
       const lastEntry = log[log.length - 1];
-      if (lastEntry.source === 'M0' && lastEntry.step.startsWith('Fim')) {
+      if (lastEntry.source === 'M0' && lastEntry.step.startsWith('Fim da Sequência')) {
         setIsComplete(true);
       }
     }
@@ -66,7 +66,11 @@ export default function LuxwoodPage() {
     if (entry.source === 'M4') {
         return <Diamond className="w-5 h-5 text-teal-400" />;
     }
-    return <CheckCircle className="w-5 h-5 text-gray-500" />;
+    // Module 5 Icons
+    if (entry.source === 'M5') {
+        return <Waves className="w-5 h-5 text-cyan-400" />;
+    }
+    return <GitBranch className="w-5 h-5 text-gray-500" />;
   }
 
   return (
@@ -106,7 +110,7 @@ export default function LuxwoodPage() {
                     Sequência de Validação Concluída!
                 </h3>
                 <p className="text-sm text-primary/80 mt-1">
-                    Módulo Zero validado. O relatório foi selado com a Verdade dos Números.
+                    Módulos M0 a M5 executados. O relatório foi selado com a Verdade dos Números.
                 </p>
             </div>
           )}

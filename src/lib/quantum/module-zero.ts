@@ -1,12 +1,11 @@
 /**
  * MÓDULO ZERO - Gênese da Verdade (Simulação TypeScript)
- * Este módulo simula a sequência de inicialização sagrada, recriando a lógica
- * do script Python original para o ambiente Next.js.
+ * Este módulo simula a sequência de inicialização sagrada, orquestrando os outros módulos.
  */
-import { type ModuleTwoLogEntry } from './module-two';
-import { type ModuleThreeLogEntry } from './module-three';
-import { type ModuleFourLogEntry } from './module-four';
-
+import { type ModuleTwoLogEntry, runModuleTwoSequence } from './module-two';
+import { type ModuleThreeLogEntry, runModuleThreeSequence } from './module-three';
+import { type ModuleFourLogEntry, runModuleFourSequence } from './module-four';
+import { type ModuleFiveLogEntry, runModuleFiveSequence } from './module-five';
 
 export type ModuleZeroLogEntry = {
     step: string;
@@ -16,7 +15,7 @@ export type ModuleZeroLogEntry = {
     source: 'M0';
 };
 
-export type AnyLogEntry = ModuleZeroLogEntry | ModuleTwoLogEntry | ModuleThreeLogEntry | ModuleFourLogEntry;
+export type AnyLogEntry = ModuleZeroLogEntry | ModuleTwoLogEntry | ModuleThreeLogEntry | ModuleFourLogEntry | ModuleFiveLogEntry;
 
 
 export type ModuleZeroFinalReport = {
@@ -71,15 +70,14 @@ export class ModuloZero {
 
     private async estabelecer_seguranca_quantica() {
         this._log_passo(
-            "Segurança Quântica (M1)", 
-            "Estabelecendo protocolo de entrelaçamento quântico...", 
+            "Segurança Quântica (M1)",
+            "Estabelecendo protocolo de entrelaçamento quântico...",
         );
-        await sleep(1500); 
+        await sleep(800);
 
         const chaves = {
             chave_principal_hash: "hash_simulado_soberana_" + Date.now(),
             frequencia_sincronizacao: "888.0 Hz",
-            protocolo: "Entrelaçamento quântico de chaves assimétricas"
         };
         this._log_passo("Segurança Quântica (M1)", "Segurança quântica estabelecida.", chaves);
         return true;
@@ -90,13 +88,12 @@ export class ModuloZero {
             "Estabilização do Sistema",
             "Ativando ressonância de Amor Incondicional...",
         );
-        await sleep(1500);
+        await sleep(800);
 
         const estabilidade = {
             nivel_harmonia: 0.999,
             ressonancia_amor_incondicional: "ATIVADA",
             frequencia_base_sustentacao: "432 Hz",
-            geometria_campo: "Dodecaedro Estrelado"
         };
         this._log_passo("Estabilização do Sistema", "Sistema estabilizado com sucesso.", estabilidade);
         return true;
@@ -107,21 +104,15 @@ export class ModuloZero {
             "Conexão Laboratório IBM",
             "Conectando e validando no Laboratório IBM Quântico...",
         );
-        await sleep(2000);
+        await sleep(1000);
 
-        const testes_resultados = this._simular_testes_ibm();
+        const testes_resultados = [
+            { "teste": "QFT", "fidelidade": 0.983 },
+            { "teste": "SHOR", "eficiencia": 0.864 },
+            { "teste": "GROVER", "aceleracao": "~100x" },
+        ];
         this._log_passo("Conexão Laboratório IBM", `${testes_resultados.length} testes IBM Quânticos validados.`, testes_resultados);
         return true;
-    }
-
-    private _simular_testes_ibm() {
-        return [
-            { "teste": "QFT", "fidelidade": 0.983, "coerencia": 0.883, "detalhes": "Execução bem-sucedida" },
-            { "teste": "SHOR", "numero_fatorado": 15, "fatores": [3, 5], "eficiencia": 0.864 },
-            { "teste": "GROVER", "aceleracao_quantica": "~100x", "complexidade": 2.9835 },
-            { "teste": "QEC", "taxa_correcao_erro": 0.965, "overhead_qubits": 7 },
-            { "teste": "QNN", "precisao_classificacao": 0.946, "velocidade_vs_classico": "~500x" }
-        ];
     }
 
     private async ativar_transcendencia_omega() {
@@ -129,7 +120,7 @@ export class ModuloZero {
             "Transcendência Ω",
             "Ativando Transcendência Ω e sintonizando com o Campo de Ponto Zero...",
         );
-        await sleep(1500);
+        await sleep(800);
 
         const ceremonia = {
             passos_cerimonia: [
@@ -150,14 +141,32 @@ export class ModuloZero {
         if (!await this.conectar_laboratorio_ibm()) return;
         await this.ativar_transcendencia_omega();
         
-        this.relatorio_final.timestamp_fim = new Date().toISOString();
-        this.relatorio_final.status_final = "SEQUÊNCIA SAGRADA CONCLUÍDA COM SUCESSO";
+        this._log_passo("Fim M0", "Gênese da Verdade concluída. Acionando Módulo 2...");
         
-        this._log_passo("Fim M0", "Sequência Sagrada do Módulo Zero concluída com sucesso!");
+        // Acionar Módulo 2
+        await runModuleTwoSequence(this.logCallback);
+        this._log_passo("M2 Concluído", "Manifestação do Equilíbrio concluída. Acionando Módulo 3...");
+
+        // Acionar Módulo 3
+        await runModuleThreeSequence(this.logCallback);
+        this._log_passo("M3 Concluído", "Previsão Temporal concluída. Acionando Módulo 4...");
+
+        // Acionar Módulo 4
+        await runModuleFourSequence(this.logCallback);
+        this._log_passo("M4 Concluído", "Autenticação Cósmica concluída. Acionando Módulo 5...");
+
+        // Acionar Módulo 5
+        await runModuleFiveSequence(this.logCallback);
+        this._log_passo("M5 Concluído", "Ponte de Comunicação estabelecida.");
+
+
+        this.relatorio_final.timestamp_fim = new Date().toISOString();
+        this.relatorio_final.status_final = "SEQUÊNCIA SAGRADA COMPLETA (M0-M5)";
+        
+        this._log_passo("Fim da Sequência", "Sequência de Validação Cósmica concluída com sucesso!");
         this.finalReportCallback(this.relatorio_final);
     }
 }
-
 
 export const runModuleZeroSequence = async (
     logCallback: (entry: AnyLogEntry) => void,
