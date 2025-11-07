@@ -1,7 +1,7 @@
 'use client';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Atom, Beaker, Binary, Code, Dna, FlaskConical, GitFork } from 'lucide-react';
+import { Atom, Beaker, Binary, Code, Dna, FlaskConical, GitFork, ScrollText } from 'lucide-react';
 import React from 'react';
 
 type LogEntry = {
