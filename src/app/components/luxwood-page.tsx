@@ -7,7 +7,8 @@ import { runModuleTwoSequence } from '@/lib/quantum/module-two';
 import { runModuleThreeSequence } from '@/lib/quantum/module-three';
 import { runModuleFourSequence } from '@/lib/quantum/module-four';
 import { runModuleFiveSequence } from '@/lib/quantum/module-five';
-import { BrainCircuit, CheckCircle, Cog, Dna, Loader, ShieldCheck, Sparkles, Zap, Telescope, Diamond, Waves, GitBranch } from 'lucide-react';
+import { runModuleSixSequence } from '@/lib/quantum/module-six';
+import { BrainCircuit, CheckCircle, Cog, Dna, Loader, ShieldCheck, Sparkles, Zap, Telescope, Diamond, Waves, GitBranch, HeartPulse } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function LuxwoodPage() {
@@ -56,13 +57,18 @@ export default function LuxwoodPage() {
       // Start M5
       await runModuleFiveSequence(logCallback);
       if(isCancelled) return;
-      logCallback({ source: 'M0', step: 'M5 Concluído', message: 'Ponte de Comunicação estabelecida.', timestamp: new Date().toISOString() });
+      logCallback({ source: 'M0', step: 'M5 Concluído', message: 'Ponte de Comunicação estabelecida. Acionando Módulo 6...', timestamp: new Date().toISOString() });
+
+      // Start M6
+      await runModuleSixSequence(logCallback);
+      if(isCancelled) return;
+      logCallback({ source: 'M0', step: 'M6 Concluído', message: 'Alquimia Quântica concluída.', timestamp: new Date().toISOString() });
 
       // Finalize the whole sequence
       if (!isCancelled) {
         logCallback({ source: 'M0', step: 'Fim da Sequência', message: 'Sequência de Validação Cósmica concluída com sucesso!', timestamp: new Date().toISOString() });
         setIsComplete(true);
-        setFinalReport({ status: "SEQUÊNCIA SAGRADA COMPLETA (M0-M5)" });
+        setFinalReport({ status: "SEQUÊNCIA SAGRADA COMPLETA (M0-M6)" });
       }
     };
 
@@ -99,6 +105,10 @@ export default function LuxwoodPage() {
     // Module 5 Icons
     if (entry.source === 'M5') {
         return <Waves className="w-5 h-5 text-cyan-400" />;
+    }
+    // Module 6 Icons
+    if (entry.source === 'M6') {
+        return <HeartPulse className="w-5 h-5 text-red-400" />;
     }
     return <GitBranch className="w-5 h-5 text-gray-500" />;
   }
@@ -140,7 +150,7 @@ export default function LuxwoodPage() {
                     Sequência de Validação Concluída!
                 </h3>
                 <p className="text-sm text-primary/80 mt-1">
-                    Módulos M0 a M5 executados. O relatório foi selado com a Verdade dos Números.
+                    Módulos M0 a M6 executados. O relatório foi selado com a Verdade dos Números.
                 </p>
             </div>
           )}

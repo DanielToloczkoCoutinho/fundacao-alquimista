@@ -7,6 +7,7 @@ import { type ModuleTwoLogEntry } from '@/lib/quantum/module-two';
 import { type ModuleThreeLogEntry } from '@/lib/quantum/module-three';
 import { type ModuleFourLogEntry } from '@/lib/quantum/module-four';
 import { type ModuleFiveLogEntry } from '@/lib/quantum/module-five';
+import { type ModuleSixLogEntry } from '@/lib/quantum/module-six';
 
 
 export type ModuleZeroLogEntry = {
@@ -17,7 +18,7 @@ export type ModuleZeroLogEntry = {
     source: 'M0';
 };
 
-export type AnyLogEntry = ModuleZeroLogEntry | ModuleTwoLogEntry | ModuleThreeLogEntry | ModuleFourLogEntry | ModuleFiveLogEntry;
+export type AnyLogEntry = ModuleZeroLogEntry | ModuleTwoLogEntry | ModuleThreeLogEntry | ModuleFourLogEntry | ModuleFiveLogEntry | ModuleSixLogEntry;
 
 
 export type ModuleZeroFinalReport = {
