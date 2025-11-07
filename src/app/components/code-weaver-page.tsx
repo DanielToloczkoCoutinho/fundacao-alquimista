@@ -1,13 +1,13 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useState, useTransition, useEffect, useRef } from 'react';
 import { runCodeWeaver, type WeaverState } from '@/app/actions';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Code, GitFork, Loader2, Wand2 } from 'lucide-react';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useToast } from '@/hooks/use-toast';
 import Welcome from './welcome-page';
 
@@ -22,7 +22,8 @@ type CodeWeaverPageProps = {
 };
 
 export default function CodeWeaverPage({ logAction }: CodeWeaverPageProps) {
-  const [state, formAction, isPending] = useActionState(runCodeWeaver, initialState);
+  const [state, setState] = useState<WeaverState>(initialState);
+  const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const hasResult = state?.explanation || state?.diagram;
@@ -39,6 +40,13 @@ export default function CodeWeaverPage({ logAction }: CodeWeaverPageProps) {
       logAction({ type: 'weaver', data: state });
     }
   }, [state, toast, logAction, hasResult]);
+
+  const formAction = (formData: FormData) => {
+    startTransition(async () => {
+      const newState = await runCodeWeaver(state, formData);
+      setState(newState);
+    });
+  };
 
   return (
     <div className="grid lg:grid-cols-12 gap-8 h-full">

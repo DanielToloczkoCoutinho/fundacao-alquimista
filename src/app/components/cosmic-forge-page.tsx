@@ -1,13 +1,13 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useState, useTransition, useEffect, useRef } from 'react';
 import { runCosmicForge, type ForgeState } from '@/app/actions';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Atom, Dna, FlaskConical, Loader2, Sparkles } from 'lucide-react';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useToast } from '@/hooks/use-toast';
 import Welcome from './welcome-page';
 
@@ -23,7 +23,8 @@ type CosmicForgePageProps = {
 };
 
 export default function CosmicForgePage({ logAction }: CosmicForgePageProps) {
-  const [state, formAction, isPending] = useActionState(runCosmicForge, initialState);
+  const [state, setState] = useState<ForgeState>(initialState);
+  const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const hasResult = state?.scientificSimulation || state?.biologicalSimulation || state?.quantumSimulation;
@@ -40,6 +41,13 @@ export default function CosmicForgePage({ logAction }: CosmicForgePageProps) {
         logAction({ type: 'forge', data: state });
     }
   }, [state, toast, logAction, hasResult]);
+
+  const formAction = (formData: FormData) => {
+    startTransition(async () => {
+      const newState = await runCosmicForge(state, formData);
+      setState(newState);
+    });
+  };
 
   return (
     <div className="grid lg:grid-cols-12 gap-8 h-full">
