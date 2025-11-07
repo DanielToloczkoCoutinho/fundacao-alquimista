@@ -1,8 +1,9 @@
 
 'use client';
 import React, { useEffect, useState } from 'react';
-import { runModuleEightSequence, type Modulo8_PIRC } from '@/lib/quantum/module-eight';
+import { runModuleEightSequence } from '@/lib/quantum/module-eight';
 import { runModuleNineSequence } from '@/lib/quantum/module-nine';
+import { runModuleTenSequence } from '@/lib/quantum/module-ten';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -280,6 +281,10 @@ export default function FounderDesk() {
         runModuleNineSequence(handleLog);
     };
 
+    const handleRunModule10 = () => {
+        runModuleTenSequence(handleLog);
+    };
+
     const filteredModules = zennithView === 'ALL'
         ? Object.values(allModuleBlueprints)
         : zennithViews[zennithView as keyof typeof zennithViews].map((id: string) => allModuleBlueprints[id]).filter(Boolean);
@@ -481,7 +486,7 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
-                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9 { border-left-color: #8A2BE2; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
@@ -547,6 +552,9 @@ export default function FounderDesk() {
                             )}
                             {selectedModule.id === 'M09' && (
                                 <button onClick={handleRunModule9}>Iniciar Consolidação Global (M9)</button>
+                            )}
+                            {selectedModule.id === 'M10' && (
+                                <button onClick={handleRunModule10}>Ativar Autodefesa Quântica (M10)</button>
                             )}
                         </div>
                         
