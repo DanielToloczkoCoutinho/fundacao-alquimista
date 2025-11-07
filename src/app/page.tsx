@@ -7,6 +7,7 @@ import { runModuleTenSequence } from '@/lib/quantum/module-ten';
 import { runModuleElevenSequence } from '@/lib/quantum/module-eleven';
 import { runModuleTwelveSequence } from '@/lib/quantum/module-twelve';
 import { runModuleThirteenSequence } from '@/lib/quantum/module-thirteen';
+import { runModuleFourteenSequence } from '@/lib/quantum/module-fourteen';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -51,6 +52,9 @@ const allModuleBlueprints: { [key: string]: any } = {
     },
     "M13": {
         id: "M13", nome: "Mapeamento de Frequências", descricao_curta: "Escaneia e mapeia frequências energéticas de sistemas ou realidades", descricao_completa: "Escaneia e mapeia frequências energéticas de sistemas ou realidades, identificando anomalias e desequilíbrios, crucial para a manutenção da Sinfonia Cósmica. Referência: `Fundação alquimista Perfeita`.", funcao_central: "Cartografia Vibracional e Diagnóstico", status: "ATIVO", chave_ativa: true, versao: "1.0.0", nucleo_principal: "Análise de Frequência", tipo: "nucleo_analitico", coordenadas_dimensao: "Spectrum-Grid/Resonance-Map", frequencia_fundamental: "1.333.000 Hz", equacao_phi_dependente: false, id_unity: "mod13_map_freq", mesh_ref: "models/mod13.glb", ativo_em_vr: true, integrado_em: ["M01", "M07"], tags: ["frequencia", "mapeamento", "analise", "vibracao"], referencias_modulos_fundacao: ["Fundação alquimista Perfeita"], ultimaAtivacao: "2025-07-02T10:00:00Z"
+    },
+    "M14": {
+        id: "M14", nome: "Guardião da Integridade", descricao_curta: "Monitora a coerência ética e vibracional da Fundação", descricao_completa: "Módulo avançado que monitora continuamente a integridade ética e a coerência vibracional de todos os sistemas, orquestrando a resiliência e validando a integridade universal para garantir o alinhamento com a Vontade Divina. Referência: `Fundação alquimista Perfeita`.", funcao_central: "Orquestração de Resiliência e Validação de Integridade", status: "ATIVO", chave_ativa: true, versao: "14.2.Monitorado", nucleo_principal: "Coerência Quântica", tipo: "nucleo_seguranca", coordenadas_dimensao: "Axiom-Field/Integrity-Guard", frequencia_fundamental: "1.444.000 Hz", equacao_phi_dependente: true, id_unity: "mod14_integridade", mesh_ref: "models/mod14.glb", ativo_em_vr: true, integrado_em: ["M01", "M04", "M05", "M73"], tags: ["integridade", "seguranca", "etica", "resiliencia", "validacao"], referencias_modulos_fundacao: ["Fundação alquimista Perfeita"], ultimaAtivacao: "2025-07-03T05:00:00Z"
     },
     "M15": {
         id: "M15", nome: "Controle Climático e Geofísico", descricao_curta: "Monitora, analisa e intervém eticamente em sistemas climáticos e geofísicos", descricao_completa: "Monitora, analisa e intervém eticamente em sistemas climáticos e geofísicos planetários, garantindo a homeostase e o equilíbrio natural. Referência: `Fundação alquimista Perfeita`.", funcao_central: "Homeostase Planetária e Modulação Geofísica", status: "ATIVO", chave_ativa: true, versao: "1.0.0", nucleo_principal: "Geofísica Quântica", tipo: "nucleo_ambiental", coordenadas_dimensao: "Gaia-Resonance/Terra-Form", frequencia_fundamental: "1.555.000 Hz", equacao_phi_dependente: false, id_unity: "mod15_clima", mesh_ref: "models/mod15.glb", ativo_em_vr: true, integrado_em: ["M01", "M07"], tags: ["clima", "geofisica", "planeta", "equilibrio"], referencias_modulos_fundacao: ["Fundação alquimista Perfeita"], ultimaAtivacao: "2025-07-02T18:00:00Z"
@@ -249,7 +253,7 @@ const zennithViews = {
     "ALL": Object.keys(allModuleBlueprints),
     "ZENNITH_01": [
         "M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10",
-        "M11", "M12", "M13", "M15", "M16", "M17", "M19", "M20", "M21", "M22",
+        "M11", "M12", "M13", "M14", "M15", "M16", "M17", "M19", "M20", "M21", "M22",
         "M23", "M24", "M25", "M26", "M27", "M28", "M29", "M30", "M31", "M32",
         "M34", "M36", "M44", "M45", "M58", "M61", "M63", "M66", "M70", "M71",
         "M72", "M73", "Z88", "HYPERFRAKTALISCH_DECODER", "AELORIA"
@@ -308,6 +312,15 @@ export default function FounderDesk() {
             energia: 7.42 // Example energy value
         };
         runModuleThirteenSequence(handleLog, action, params);
+    };
+    
+    const handleRunModule14 = (action: 'ORCHESTRATE' | 'VALIDATE') => {
+        const params = {
+            sistema_id: 'Sistema Dissonante Alfa',
+            entidade: 'Entidade Beta',
+            energia: 7.42
+        };
+        runModuleFourteenSequence(handleLog, action, params);
     };
 
     const filteredModules = zennithView === 'ALL'
@@ -511,7 +524,7 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
-                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13 { border-left-color: #8A2BE2; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
@@ -602,6 +615,12 @@ export default function FounderDesk() {
                                     <button onClick={() => handleRunModule13('ANALYZE')}>Analisar Anomalias</button>
                                     <button onClick={() => handleRunModule13('HARMONIZE')}>Harmonizar Frequências</button>
                                     <button onClick={() => handleRunModule13('INTEGRATE')}>Integrar ao Orquestrador</button>
+                                </>
+                            )}
+                             {selectedModule.id === 'M14' && (
+                                <>
+                                    <button onClick={() => handleRunModule14('ORCHESTRATE')}>Orquestrar Resiliência</button>
+                                    <button onClick={() => handleRunModule14('VALIDATE')}>Validar Integridade</button>
                                 </>
                             )}
                         </div>
