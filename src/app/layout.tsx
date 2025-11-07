@@ -4,8 +4,8 @@ import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Vortex Weave',
-  description: 'Alchemical Code & Cosmic Simulation',
+  title: 'VORTEXWEAVER',
+  description: 'Alchemically transmuting code into cosmic law.',
 };
 
 export default function RootLayout({
