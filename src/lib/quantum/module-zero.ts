@@ -4,6 +4,7 @@
  * do script Python original para o ambiente Next.js.
  */
 import { runModuleTwoSequence, type ModuleTwoLogEntry } from './module-two';
+import { type ModuleThreeLogEntry } from './module-three';
 
 
 export type ModuleZeroLogEntry = {
@@ -14,7 +15,7 @@ export type ModuleZeroLogEntry = {
     source: 'M0';
 };
 
-export type AnyLogEntry = ModuleZeroLogEntry | ModuleTwoLogEntry;
+export type AnyLogEntry = ModuleZeroLogEntry | ModuleTwoLogEntry | ModuleThreeLogEntry;
 
 
 export type ModuleZeroFinalReport = {
@@ -51,7 +52,7 @@ export class ModuloZero {
         this.logCallback = logCallback;
         this.finalReportCallback = finalReportCallback;
         this.relatorio_final = {
-            modulo_info: { nome: this.nome, versao: this.versao },
+            modulo_info: { nome: this.nome, versao: self.versao },
             timestamp_inicio: new Date().toISOString(),
             passos_executados: []
         };

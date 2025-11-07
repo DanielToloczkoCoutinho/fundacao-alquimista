@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { runModuleZeroSequence, type ModuleZeroFinalReport, type AnyLogEntry } from '@/lib/quantum/module-zero';
-import { BrainCircuit, CheckCircle, Cog, Dna, Loader, ShieldCheck, Sparkles, Zap } from 'lucide-react';
+import { runModuleZeroSequence, type AnyLogEntry } from '@/lib/quantum/module-zero';
+import { BrainCircuit, CheckCircle, Cog, Dna, Loader, ShieldCheck, Sparkles, Zap, Telescope } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function LuxwoodPage() {
   const [log, setLog] = useState<AnyLogEntry[]>([]);
   const [isComplete, setIsComplete] = useState(false);
-  const [finalReport, setFinalReport] = useState<ModuleZeroFinalReport | null>(null);
+  const [finalReport, setFinalReport] = useState<any | null>(null);
 
   useEffect(() => {
     let isCancelled = false;
@@ -22,7 +22,7 @@ export default function LuxwoodPage() {
       }, (report) => {
         if (!isCancelled) {
             setFinalReport(report);
-            // Completion is now defined by the end of module 2
+            // Completion is now defined by the end of module 3
         }
       });
     };
@@ -35,10 +35,10 @@ export default function LuxwoodPage() {
   }, []);
 
   useEffect(() => {
-    // Check if the last log entry is from Module 2 and is the final one.
+    // Check if the last log entry is from Module 3 and is the final one.
     if (log.length > 0) {
       const lastEntry = log[log.length - 1];
-      if (lastEntry.source === 'M2' && lastEntry.step.startsWith('Fim')) {
+      if (lastEntry.source === 'M3' && lastEntry.step.startsWith('Fim')) {
         setIsComplete(true);
       }
     }
@@ -60,6 +60,10 @@ export default function LuxwoodPage() {
         if (entry.step.includes('Sintonia')) return <Cog className="w-5 h-5 text-orange-400" />;
         if (entry.step.includes('Colapso')) return <Sparkles className="w-5 h-5 text-pink-400" />;
     }
+    // Module 3 Icons
+    if (entry.source === 'M3') {
+        return <Telescope className="w-5 h-5 text-indigo-400" />;
+    }
     return <CheckCircle className="w-5 h-5 text-gray-500" />;
   }
 
@@ -69,9 +73,9 @@ export default function LuxwoodPage() {
         <CardHeader>
           <CardTitle className="font-headline text-2xl text-primary flex items-center gap-3">
             <BrainCircuit className="w-8 h-8" />
-            <span>Sequência de Gênese e Manifestação</span>
+            <span>Sequência de Gênese, Manifestação e Previsão</span>
           </CardTitle>
-          <p className="text-muted-foreground text-sm">Iniciando Validação Sagrada: Módulo Zero ➔ Módulo Dois...</p>
+          <p className="text-muted-foreground text-sm">Iniciando Validação Sagrada: Módulo Zero ➔ Módulo Três...</p>
         </CardHeader>
         <CardContent>
           <ScrollArea className="h-96 w-full pr-4">
@@ -97,10 +101,10 @@ export default function LuxwoodPage() {
             <div className="mt-6 p-4 bg-primary/10 rounded-lg border border-primary/20 animate-in fade-in duration-700">
                 <h3 className="font-bold text-lg text-primary font-headline flex items-center gap-2">
                     <CheckCircle className="w-6 h-6"/>
-                    Sequência de Gênese e Manifestação Concluída!
+                    Sequência Completa de Validação Concluída!
                 </h3>
                 <p className="text-sm text-primary/80 mt-1">
-                    Módulo Zero e Módulo Dois validados. O relatório foi selado com a Verdade dos Números.
+                    Módulos Zero, Dois e Três validados. O relatório foi selado com a Verdade dos Números.
                 </p>
             </div>
           )}

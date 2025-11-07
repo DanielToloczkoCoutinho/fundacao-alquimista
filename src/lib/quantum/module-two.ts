@@ -3,6 +3,8 @@
  * Este módulo simula a lógica do Nano-Manifestador, executando um processo
  * de manifestação baseado em intenção e ressonância com uma "fonte".
  */
+import type { AnyLogEntry } from './module-zero';
+import { runModuleThreeSequence } from './module-three';
 
 export type ModuleTwoLogEntry = {
     step: string;
@@ -30,9 +32,9 @@ class Modulo2_Nanomanifestador {
     private VARIACOES = {"Q": 0.2, "Y": 0.6, "A": 0.95, "¢(SO)": 10.0, "α": 0.02, "β": 0.03, "γ": 0.05, "δ": 2.0, "lambda": -0.0102};
     private calculos_executados: any[] = [];
 
-    private logCallback: (entry: ModuleTwoLogEntry) => void;
+    private logCallback: (entry: AnyLogEntry) => void;
 
-    constructor(logCallback: (entry: ModuleTwoLogEntry) => void) {
+    constructor(logCallback: (entry: AnyLogEntry) => void) {
         this.logCallback = logCallback;
     }
 
@@ -103,7 +105,7 @@ class Modulo2_Nanomanifestador {
 }
 
 export const runModuleTwoSequence = async (
-    logCallback: (entry: ModuleTwoLogEntry) => void,
+    logCallback: (entry: AnyLogEntry) => void,
 ) => {
     const nanomanifestador = new Modulo2_Nanomanifestador(logCallback);
     
@@ -115,6 +117,8 @@ export const runModuleTwoSequence = async (
 
     if (resultado.sucesso) {
         logCallback(createLogEntry("Fim M2", "Módulo 2 validado com sucesso.", resultado));
+        // Conecta com o Módulo 3
+        await runModuleThreeSequence(logCallback);
     } else {
         logCallback(createLogEntry("Fim M2", "Falha na validação do Módulo 2.", resultado));
     }
