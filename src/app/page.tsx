@@ -13,6 +13,7 @@ import { runModuleSeventeenSequence } from '@/lib/quantum/module-seventeen';
 import { runModuleEighteenSequence } from '@/lib/quantum/module-eighteen';
 import { runModuleNineteenSequence } from '@/lib/quantum/module-nineteen';
 import { runModuleTwentySequence } from '@/lib/quantum/module-twenty';
+import { runModuleTwentyOneSequence } from '@/lib/quantum/module-twenty-one';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -365,6 +366,10 @@ export default function FounderDesk() {
         runModuleTwentySequence(handleLog, action);
     };
 
+    const handleRunModule21 = (action: 'MAP' | 'STABILIZE' | 'TRAVEL') => {
+        runModuleTwentyOneSequence(handleLog, action);
+    };
+
     const filteredModules = zennithView === 'ALL'
         ? Object.values(allModuleBlueprints)
         : zennithViews[zennithView as keyof typeof zennithViews].map((id: string) => allModuleBlueprints[id]).filter(Boolean);
@@ -566,7 +571,7 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
-                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15, .log-entry.M16, .log-entry.M17, .log-entry.M18, .log-entry.M19, .log-entry.M20 { border-left-color: #8A2BE2; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15, .log-entry.M16, .log-entry.M17, .log-entry.M18, .log-entry.M19, .log-entry.M20, .log-entry.M21 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
@@ -701,6 +706,13 @@ export default function FounderDesk() {
                                     <button onClick={() => handleRunModule20('GERACAO_ENERGIA')}>Gerar Energia</button>
                                     <button onClick={() => handleRunModule20('SINTESE_ELEMENTAL')}>Sintetizar Elemento</button>
                                     <button onClick={() => handleRunModule20('PROPULSAO_ESPACIAL')}>Ativar Propulsão</button>
+                                </>
+                            )}
+                            {selectedModule.id === 'M21' && (
+                                <>
+                                    <button onClick={() => handleRunModule21('MAP')}>Mapear Rota</button>
+                                    <button onClick={() => handleRunModule21('STABILIZE')}>Estabilizar Portal</button>
+                                    <button onClick={() => handleRunModule21('TRAVEL')}>Iniciar Viagem</button>
                                 </>
                             )}
                         </div>
