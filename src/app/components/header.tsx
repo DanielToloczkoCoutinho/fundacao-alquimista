@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { Beaker, Binary, ScrollText } from 'lucide-react';
+import { Beaker, Binary, LayoutDashboard, ScrollText } from 'lucide-react';
 import React from 'react';
 
 type HeaderProps = {
@@ -22,6 +22,11 @@ const tabDetails: { [key: string]: { title: string; description: string; icon: R
     description: 'Review a log of all generated interpretations and simulations.',
     icon: <ScrollText className="h-8 w-8 text-primary" />,
   },
+  luxwood: {
+    title: 'Luxwood Dashboard',
+    description: 'A multidimensional dashboard for the Alchemist Foundation.',
+    icon: <LayoutDashboard className="h-8 w-8 text-primary" />,
+  }
 };
 
 export default function Header({ activeTab }: HeaderProps) {

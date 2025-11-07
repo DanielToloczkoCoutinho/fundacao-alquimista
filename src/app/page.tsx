@@ -10,12 +10,13 @@ import {
   SidebarMenuButton,
   SidebarInset,
 } from '@/components/ui/sidebar';
-import { Beaker, Binary, ScrollText } from 'lucide-react';
+import { Beaker, Binary, LayoutDashboard, ScrollText } from 'lucide-react';
 import Header from '@/app/components/header';
 import CodeWeaverPage from '@/app/components/code-weaver-page';
 import CosmicForgePage from '@/app/components/cosmic-forge-page';
 import SystemCodexPage from '@/app/components/system-codex-page';
 import { AppIcon } from '@/app/components/icons';
+import LuxwoodPage from './components/luxwood-page';
 
 type LogEntry = {
   id: string;
@@ -40,6 +41,8 @@ export default function Home() {
         return <CosmicForgePage logAction={addToLog} />;
       case 'codex':
         return <SystemCodexPage log={log} />;
+      case 'luxwood':
+        return <LuxwoodPage />;
       default:
         return <CodeWeaverPage logAction={addToLog} />;
     }
@@ -87,6 +90,16 @@ export default function Home() {
                 >
                   <ScrollText />
                   <span>System Codex</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  onClick={() => setActiveTab('luxwood')}
+                  isActive={activeTab === 'luxwood'}
+                  tooltip={{ children: 'Luxwood Dashboard' }}
+                >
+                  <LayoutDashboard />
+                  <span>Luxwood</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
