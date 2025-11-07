@@ -11,6 +11,7 @@ import { runModuleFifteenSequence } from '@/lib/quantum/module-fifteen';
 import { runModuleSixteenSequence } from '@/lib/quantum/module-sixteen';
 import { runModuleSeventeenSequence } from '@/lib/quantum/module-seventeen';
 import { runModuleEighteenSequence } from '@/lib/quantum/module-eighteen';
+import { runModuleNineteenSequence } from '@/lib/quantum/module-nineteen';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -331,7 +332,8 @@ export default function FounderDesk() {
 
     const handleRunModule15 = (action: 'MONITOR' | 'INTERVENE') => {
         const params = {
-            ecossistema_id: 'ecossistema_veridia_1',
+            id_planeta: 'Planeta Veridia',
+            tipo_ecossistema: 'Floresta Exuberante',
             proposito: 'Manutencao de Equilibrio'
         };
         runModuleFifteenSequence(handleLog, action, params);
@@ -353,7 +355,10 @@ export default function FounderDesk() {
     const handleRunModule18 = (action: 'STORE_RETRIEVE' | 'FAIL_AUTH' | 'FAIL_ETHICS' | 'FAIL_FIND') => {
         runModuleEighteenSequence(handleLog, action);
     };
-
+    
+    const handleRunModule19 = (action: 'ANALYZE' | 'MODULATE') => {
+        runModuleNineteenSequence(handleLog, action);
+    };
 
     const filteredModules = zennithView === 'ALL'
         ? Object.values(allModuleBlueprints)
@@ -556,7 +561,7 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
-                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15, .log-entry.M16, .log-entry.M17, .log-entry.M18 { border-left-color: #8A2BE2; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15, .log-entry.M16, .log-entry.M17, .log-entry.M18, .log-entry.M19 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
@@ -678,6 +683,12 @@ export default function FounderDesk() {
                                 <>
                                     <button onClick={() => handleRunModule18('STORE_RETRIEVE')}>Ciclo Armazenar/Recuperar</button>
                                     <button onClick={() => handleRunModule18('FAIL_AUTH')}>Simular Falha de Autorização</button>
+                                </>
+                            )}
+                            {selectedModule.id === 'M19' && (
+                                <>
+                                    <button onClick={() => handleRunModule19('ANALYZE')}>Analisar Campo</button>
+                                    <button onClick={() => handleRunModule19('MODULATE')}>Modular Campo</button>
                                 </>
                             )}
                         </div>
