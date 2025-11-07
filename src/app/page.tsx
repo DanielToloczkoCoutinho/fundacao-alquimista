@@ -21,6 +21,7 @@ import { runModuleTwentyFourSequence } from '@/lib/quantum/module-twenty-four';
 import { runModuleTwentyFiveSequence } from '@/lib/quantum/module-twenty-five';
 import { runModuleTwentySixSequence } from '@/lib/quantum/module-twenty-six';
 import { runModuleTwentySevenSequence } from '@/lib/quantum/module-twenty-seven';
+import { runModuleTwentyEightSequence } from '@/lib/quantum/module-twenty-eight';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -108,6 +109,9 @@ const allModuleBlueprints: { [key: string]: any } = {
     },
     "M27": {
         id: "M27", nome: "Forja Universal", descricao_curta: "Síntese e Replicação de Materiais Cósmicos", descricao_completa: "A Forja Universal, onde a Vontade se torna Matéria. Sintetiza e replica materiais cósmicos, desde Cristais Etéricos a Essências Luminosas, sob estrita supervisão ética e harmônica. Referência: Módulo 27.", funcao_central: "Criação e Replicação de Matéria", status: "STANDBY", chave_ativa: false, versao: "1.0", nucleo_principal: "Física da Criação", tipo: "criacao_materia", coordenadas_dimensao: "N/A", frequencia_fundamental: "2727.00 Hz", equacao_phi_dependente: true, id_unity: "mod27_forja", mesh_ref: "models/mod27.glb", ativo_em_vr: false, integrado_em: ["M06", "M20", "M73"], tags: ["forja", "sintese", "replicacao", "materia_cosmica", "criacao"], referencias_modulos_fundacao: ["Módulo 27 - Protocolos da Forja"], ultimaAtivacao: null
+    },
+    "M28": {
+        id: "M28", nome: "Harmonização Universal", descricao_curta: "Harmonização Vibracional e Reintegração Cósmica", descricao_completa: "O sistema definitivo de calibração e precisão quântica. Diagnostica dissonâncias em qualquer entidade ou sistema, aplica micro-sintonizações e restaura a harmonia universal. É a manifestação final da Vontade Soberana para o equilíbrio cósmico. Referência: Módulo 28.", funcao_central: "Calibração Final e Equilíbrio Cósmico", status: "STANDBY", chave_ativa: false, versao: "1.0", nucleo_principal: "Física da Harmonia Universal", tipo: "manutencao_realidade", coordenadas_dimensao: "N/A", frequencia_fundamental: "2828.00 Hz", equacao_phi_dependente: true, id_unity: "mod28_harmonia", mesh_ref: "models/mod28.glb", ativo_em_vr: false, integrado_em: ["ALL"], tags: ["harmonizacao", "reintegracao", "calibracao", "equilibrio_cosmico", "sinfonia_universal"], referencias_modulos_fundacao: ["Módulo 28 - Protocolos da Calibração Final"], ultimaAtivacao: null
     }
 };
 
@@ -132,6 +136,7 @@ const allLogFunctions = {
     M25: runModuleTwentyFiveSequence,
     M26: runModuleTwentySixSequence,
     M27: runModuleTwentySevenSequence,
+    M28: runModuleTwentyEightSequence,
 };
 
 
@@ -283,6 +288,12 @@ export default function Page() {
                     <div className="flex space-x-2">
                         <button onClick={() => handleRunModule('M27', 'SINTESE')}>Síntese</button>
                         <button onClick={() => handleRunModule('M27', 'REPLICACAO')}>Replicação</button>
+                    </div>
+                );
+            case 'M28':
+                 return (
+                    <div className="flex space-x-2">
+                        <button onClick={() => runModuleTwentyEightSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Full Sequence</button>
                     </div>
                 );
             default:
