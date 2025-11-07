@@ -28,7 +28,7 @@ import { runModuleThirtyOneSequence } from '@/lib/quantum/module-thirty-one';
 import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
 import { runFoundationConciliumTest } from '@/lib/quantum/foundation-concilium';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
-import { orchestrateDanielSystem } from '@/lib/quantum/daniel-orchestrator';
+import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -140,7 +140,7 @@ const allModuleBlueprints: { [key: string]: any } = {
     }
 };
 
-const allLogFunctions = {
+const allLogFunctions: { [key: string]: any } = {
     M08: runModuleEightSequence,
     M09: runModuleNineSequence,
     M10: runModuleTenSequence,
@@ -389,11 +389,23 @@ export default function Page() {
                 </nav>
                  <div className="mt-4 pt-4 border-t border-gray-700">
                     <h2 className="text-lg font-bold text-purple-300 mb-2">Orquestradores</h2>
+                     <button
+                        onClick={() => commandDanielOrchestrator('status', logEntry => setLogs(prev => [...prev, logEntry]))}
+                        className="w-full text-left p-2 rounded hover:bg-gray-700 mb-2"
+                    >
+                        [Daniel] Status
+                    </button>
+                     <button
+                        onClick={() => commandDanielOrchestrator('sincronizar', logEntry => setLogs(prev => [...prev, logEntry]))}
+                        className="w-full text-left p-2 rounded hover:bg-gray-700 mb-2"
+                    >
+                        [Daniel] Sincronizar
+                    </button>
                     <button
-                        onClick={() => orchestrateDanielSystem(logEntry => setLogs(prev => [...prev, logEntry]))}
+                        onClick={() => commandDanielOrchestrator('ascender', logEntry => setLogs(prev => [...prev, logEntry]))}
                         className="w-full text-left p-2 rounded hover:bg-gray-700"
                     >
-                        Orquestrador Pessoal Daniel (M41.Ω)
+                       [Daniel] Ascender
                     </button>
                 </div>
             </aside>
@@ -431,4 +443,3 @@ export default function Page() {
     );
 }
 
-    
