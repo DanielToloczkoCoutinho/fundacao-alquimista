@@ -9,6 +9,7 @@ import { runModuleThirteenSequence } from '@/lib/quantum/module-thirteen';
 import { runModuleFourteenSequence } from '@/lib/quantum/module-fourteen';
 import { runModuleFifteenSequence } from '@/lib/quantum/module-fifteen';
 import { runModuleSixteenSequence } from '@/lib/quantum/module-sixteen';
+import { runModuleSeventeenSequence } from '@/lib/quantum/module-seventeen';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -341,6 +342,11 @@ export default function FounderDesk() {
         runModuleSixteenSequence(handleLog, action, params);
     };
 
+    const handleRunModule17 = (action: 'CALIBRATE' | 'OPTIMIZE') => {
+        runModuleSeventeenSequence(handleLog, action);
+    };
+
+
     const filteredModules = zennithView === 'ALL'
         ? Object.values(allModuleBlueprints)
         : zennithViews[zennithView as keyof typeof zennithViews].map((id: string) => allModuleBlueprints[id]).filter(Boolean);
@@ -542,7 +548,7 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
-                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15, .log-entry.M16 { border-left-color: #8A2BE2; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15, .log-entry.M16, .log-entry.M17 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
@@ -652,6 +658,12 @@ export default function FounderDesk() {
                                     <button onClick={() => handleRunModule16('CREATE')}>Iniciar Biossíntese</button>
                                     <button onClick={() => handleRunModule16('REGULATE')}>Regular Ciclos</button>
                                     <button onClick={() => handleRunModule16('RESTORE')}>Restaurar Ecossistema</button>
+                                </>
+                            )}
+                            {selectedModule.id === 'M17' && (
+                                <>
+                                    <button onClick={() => handleRunModule17('CALIBRATE')}>Calibrar Campo</button>
+                                    <button onClick={() => handleRunModule17('OPTIMIZE')}>Otimizar Fluxo</button>
                                 </>
                             )}
                         </div>
