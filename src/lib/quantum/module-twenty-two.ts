@@ -1,3 +1,4 @@
+
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -69,7 +70,7 @@ const Modulo98_ModulacaoExistencia = (log: LogCallback) => ({
 
 // --- Equações Canônicas para RV (Visão Zennith) ---
 const EQ025_F_Coerencia_Realidade_Virtual = (complexidade: number, estabilidade: number): number => {
-    // Simulação simplificada sem numpy
+    // Simulação simplificada
     const P = [complexidade, Math.random() * 0.15 + 0.8, Math.random() * 0.15 + 0.8];
     const Q = [estabilidade, Math.random() * 0.15 + 0.8, Math.random() * 0.15 + 0.8];
     const CA = Math.random() * 0.009 + 0.001;
@@ -102,7 +103,7 @@ class ModuloRealidadesVirtuais {
     private m3;
     private m7;
     private m98;
-    private realidades_ativas: { [id: string]: any } = {};
+    public realidades_ativas: { [id: string]: any } = {};
 
     constructor(private logCallback: LogCallback) {
         this.logCallback(createLogEntry('M22', 'Inicialização', 'Módulo 22 (Arquiteto de RV) inicializado - Visão Zennith.'));
@@ -178,30 +179,35 @@ class ModuloRealidadesVirtuais {
     }
 }
 
+let module22Instance: ModuloRealidadesVirtuais | null = null;
+let lastRvId: string | null = null;
+
 export const runModuleTwentyTwoSequence = async (logCallback: LogCallback, action: 'CREATE' | 'MANAGE' | 'DEACTIVATE') => {
-    const arquiteto = new ModuloRealidadesVirtuais(logCallback);
-    // Simulação simplificada, em uma aplicação real o ID seria gerenciado
-    const demoRvId = Object.keys(arquiteto.realidades_ativas)[0] || "rv_demo_id"; 
+    if (!module22Instance) {
+        module22Instance = new ModuloRealidadesVirtuais(logCallback);
+    }
     
     switch (action) {
         case 'CREATE':
-            await arquiteto.criar_realidade_virtual("Santuário_Zennith", "Manifestação da visão cósmica", 0.9, 7);
+            await module22Instance.criar_realidade_virtual("Santuário_Zennith", "Manifestação da visão cósmica", 0.9, 7);
+            const createdIds = Object.keys(module22Instance.realidades_ativas);
+            if (createdIds.length > 0) {
+                lastRvId = createdIds[createdIds.length - 1];
+            }
             break;
         case 'MANAGE':
-            // Para demonstração, cria uma RV se nenhuma existir
-            if (!arquiteto.realidades_ativas[demoRvId]) {
-                 await arquiteto.criar_realidade_virtual("Santuário_Zennith_Temp", "Simulação temporária", 0.7, 1);
-                 const tempId = Object.keys(arquiteto.realidades_ativas)[0];
-                 if(tempId) await arquiteto.gerenciar_simulacao(tempId);
+            if (lastRvId && module22Instance.realidades_ativas[lastRvId]) {
+                 await module22Instance.gerenciar_simulacao(lastRvId);
             } else {
-                 await arquiteto.gerenciar_simulacao(demoRvId);
+                 logCallback(createLogEntry('M22', 'FALHA', 'Nenhuma RV ativa para gerenciar. Crie uma primeiro.'));
             }
             break;
         case 'DEACTIVATE':
-             if (!arquiteto.realidades_ativas[demoRvId]) {
-                 logCallback(createLogEntry('M22', 'FALHA', 'Nenhuma RV ativa para desativar.'));
+             if (lastRvId && module22Instance.realidades_ativas[lastRvId]) {
+                await module22Instance.desativar_realidade(lastRvId);
+                lastRvId = null;
              } else {
-                await arquiteto.desativar_realidade(demoRvId);
+                 logCallback(createLogEntry('M22', 'FALHA', 'Nenhuma RV ativa para desativar.'));
              }
             break;
     }

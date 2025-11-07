@@ -1,3 +1,4 @@
+
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -35,7 +36,7 @@ enum ModoOperacao {
     TREINAMENTO = "TREINAMENTO",
 }
 
-const POLITICAS_BASE: { [key in ClassePortal]: any } = {
+const POLITICAS_BASE: { [key: string]: any } = {
     [ClassePortal.OBSERVACAO]: {
         estabilidade_min: 3000,
         integridade_min: 10,
@@ -80,7 +81,7 @@ const POLITICAS_BASE: { [key in ClassePortal]: any } = {
     }
 };
 
-const POLITICAS_TESTE = Object.keys(POLITICAS_BASE).reduce((acc, key) => {
+const POLITICAS_TESTE = Object.keys(POLITICAS_BASE).reduce((acc: any, key: string) => {
     const politica = POLITICAS_BASE[key as ClassePortal];
     acc[key as ClassePortal] = {
         ...politica,
@@ -135,7 +136,7 @@ class ModuloGerenciamentoPortaisEvoluido {
         this.modulo25_alquimia_consciencia = Modulo25_AlquimiaConsciencia(this.logCallback);
     }
     
-    private _obter_politicas_ativas(): { [key in ClassePortal]: any } {
+    private _obter_politicas_ativas(): { [key: string]: any } {
         return this.modo_operacao === ModoOperacao.TESTE ? POLITICAS_TESTE : POLITICAS_BASE;
     }
 

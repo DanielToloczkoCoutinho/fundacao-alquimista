@@ -168,21 +168,21 @@ class ModuloGerenciamentoEcossistemas {
 let module15Instance: ModuloGerenciamentoEcossistemas | null = null;
 let lastEcoId: string | null = null;
 
-export const runModuleFifteenSequence = async (logCallback: LogCallback, action: 'MONITOR' | 'INTERVENE', params: any) => {
+export const runModuleFifteenSequence = async (logCallback: LogCallback, action: 'MONITOR' | 'INTERVENE') => {
     if (!module15Instance) {
         module15Instance = new ModuloGerenciamentoEcossistemas(logCallback);
     }
     
     switch (action) {
         case 'MONITOR':
-            const monitorResult = await module15Instance.monitorar_ecossistema(params?.id_planeta || 'Planeta Veridia', params?.tipo_ecossistema || 'Floresta Exuberante');
+            const monitorResult = await module15Instance.monitorar_ecossistema('Planeta Veridia', 'Floresta Exuberante');
             if (monitorResult && monitorResult.ecossistema_id) {
                 lastEcoId = monitorResult.ecossistema_id;
             }
             break;
         case 'INTERVENE':
             if (lastEcoId) {
-                await module15Instance.prever_e_intervir_climaticamente(lastEcoId, params?.proposito || 'Manutencao de Equilibrio');
+                await module15Instance.prever_e_intervir_climaticamente(lastEcoId, 'Manutencao de Equilibrio');
             } else {
                 logCallback(createLogEntry('M15', 'FALHA', 'Nenhum ecossistema monitorado para intervir. Monitore um primeiro.'));
             }

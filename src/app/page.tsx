@@ -20,6 +20,7 @@ import { runModuleTwentyThreeSequence } from '@/lib/quantum/module-twenty-three'
 import { runModuleTwentyFourSequence } from '@/lib/quantum/module-twenty-four';
 import { runModuleTwentyFiveSequence } from '@/lib/quantum/module-twenty-five';
 import { runModuleTwentySixSequence } from '@/lib/quantum/module-twenty-six';
+import { runModuleTwentySevenSequence } from '@/lib/quantum/module-twenty-seven';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -104,6 +105,9 @@ const allModuleBlueprints: { [key: string]: any } = {
     },
     "M26": {
         id: "M26", nome: "Gestão Avançada de Portais", descricao_curta: "Sistema Avançado de Proteção de Portais", descricao_completa: "O guardião final. Um sistema de segurança senciente para portais, com aprendizado adaptativo, camadas progressivas de proteção e simulação de falhas para treinar resiliência. Referência: Módulo 26.", funcao_central: "Defesa e Segurança Avançada de Portais", status: "STANDBY", chave_ativa: false, versao: "1.0", nucleo_principal: "IA de Segurança Quântica", tipo: "seguranca_avancada", coordenadas_dimensao: "N/A", frequencia_fundamental: "2626.00 Hz", equacao_phi_dependente: true, id_unity: "mod26_portais", mesh_ref: "models/mod26.glb", ativo_em_vr: false, integrado_em: ["M11", "M01", "M10"], tags: ["portais", "seguranca_avancada", "ia", "defesa_dimensional", "resiliencia"], referencias_modulos_fundacao: ["Módulo 26 - Protocolos de Defesa Evoluída"], ultimaAtivacao: null
+    },
+    "M27": {
+        id: "M27", nome: "Forja Universal", descricao_curta: "Síntese e Replicação de Materiais Cósmicos", descricao_completa: "A Forja Universal, onde a Vontade se torna Matéria. Sintetiza e replica materiais cósmicos, desde Cristais Etéricos a Essências Luminosas, sob estrita supervisão ética e harmônica. Referência: Módulo 27.", funcao_central: "Criação e Replicação de Matéria", status: "STANDBY", chave_ativa: false, versao: "1.0", nucleo_principal: "Física da Criação", tipo: "criacao_materia", coordenadas_dimensao: "N/A", frequencia_fundamental: "2727.00 Hz", equacao_phi_dependente: true, id_unity: "mod27_forja", mesh_ref: "models/mod27.glb", ativo_em_vr: false, integrado_em: ["M06", "M20", "M73"], tags: ["forja", "sintese", "replicacao", "materia_cosmica", "criacao"], referencias_modulos_fundacao: ["Módulo 27 - Protocolos da Forja"], ultimaAtivacao: null
     }
 };
 
@@ -127,6 +131,7 @@ const allLogFunctions = {
     M24: runModuleTwentyFourSequence,
     M25: runModuleTwentyFiveSequence,
     M26: runModuleTwentySixSequence,
+    M27: runModuleTwentySevenSequence,
 };
 
 
@@ -189,16 +194,16 @@ export default function Page() {
             case 'M15':
                 return (
                     <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M15', {action: 'MONITOR'})}>Monitor</button>
-                        <button onClick={() => handleRunModule('M15', {action: 'INTERVENE'})}>Intervene</button>
+                        <button onClick={() => handleRunModule('M15', 'MONITOR')}>Monitor</button>
+                        <button onClick={() => handleRunModule('M15', 'INTERVENE')}>Intervene</button>
                     </div>
                 );
             case 'M16':
                  return (
                     <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M16', {action: 'CREATE'})}>Create</button>
-                        <button onClick={() => handleRunModule('M16', {action: 'REGULATE'})}>Regulate</button>
-                        <button onClick={() => handleRunModule('M16', {action: 'RESTORE'})}>Restore</button>
+                        <button onClick={() => handleRunModule('M16', 'CREATE')}>Create</button>
+                        <button onClick={() => handleRunModule('M16', 'REGULATE')}>Regulate</button>
+                        <button onClick={() => handleRunModule('M16', 'RESTORE')}>Restore</button>
                     </div>
                 );
              case 'M17':
@@ -271,6 +276,13 @@ export default function Page() {
                  return (
                     <div className="flex space-x-2">
                         <button onClick={() => runModuleTwentySixSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Full Sequence</button>
+                    </div>
+                );
+            case 'M27':
+                 return (
+                    <div className="flex space-x-2">
+                        <button onClick={() => handleRunModule('M27', 'SINTESE')}>Síntese</button>
+                        <button onClick={() => handleRunModule('M27', 'REPLICACAO')}>Replicação</button>
                     </div>
                 );
             default:

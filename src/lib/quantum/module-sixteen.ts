@@ -75,7 +75,7 @@ class ModuloArquiteturaEcossistemas {
         this.ecossistemas_artificiais[ecossistema_id] = { nome, bioma, complexidade, energia_disponivel: energia_inicial, vitalidade_atual: vitalidade_inicial };
         
         this.modulo1.RegistrarNaCronicaDaFundacao({ evento: "BiossinteseEcossistema", ecossistema_id, nome, vitalidade_inicial });
-        this.logCallback(createLogEntry('M16', 'Sucesso', `Ecossistema '${nome}' (ID: ${ecossistema_id}) criado. Vitalidade: ${vitalidade_inicial.toFixed(4)}.`));
+        this.logCallback(createLogEntry('M16', 'Sucesso', `Ecossistema '${nome}' (ID: ${ecossistema_id}) criado com sucesso. Vitalidade inicial: ${vitalidade_inicial.toFixed(4)}.`));
         
         return { ecossistema_id };
     }
@@ -95,7 +95,7 @@ class ModuloArquiteturaEcossistemas {
         ecossistema.vitalidade_atual = this._equacao_biossintese(ecossistema.complexidade, ecossistema.energia_disponivel);
 
         this.modulo1.RegistrarNaCronicaDaFundacao({ evento: "RegulacaoCiclos", ecossistema_id, nome: ecossistema.nome, nova_vitalidade: ecossistema.vitalidade_atual });
-        this.logCallback(createLogEntry('M16', 'Sucesso', `Ciclos de '${ecossistema.nome}' regulados. Vitalidade: ${ecossistema.vitalidade_atual.toFixed(4)}.`));
+        this.logCallback(createLogEntry('M16', 'Sucesso', `Ciclos de '${ecossistema.nome}' regulados. Nova Vitalidade: ${ecossistema.vitalidade_atual.toFixed(4)}.`));
     }
 
     async restaurar_colapso(ecossistema_id: string) {
@@ -130,14 +130,14 @@ let module16Instance: ModuloArquiteturaEcossistemas | null = null;
 let lastEcoArtId: string | null = null;
 
 
-export const runModuleSixteenSequence = async (logCallback: LogCallback, action: 'CREATE' | 'REGULATE' | 'RESTORE', params?: any) => {
+export const runModuleSixteenSequence = async (logCallback: LogCallback, action: 'CREATE' | 'REGULATE' | 'RESTORE') => {
     if (!module16Instance) {
         module16Instance = new ModuloArquiteturaEcossistemas(logCallback);
     }
     
     switch (action) {
         case 'CREATE':
-            const result = await module16Instance.iniciar_biossintese(params?.nome || 'Jardim Cristalino', params?.bioma || 'Bioma Etérico', params?.complexidade || 0.75);
+            const result = await module16Instance.iniciar_biossintese('Jardim Cristalino', 'Bioma Etérico', 0.75);
             if (result.ecossistema_id) {
                 lastEcoArtId = result.ecossistema_id;
             }

@@ -108,7 +108,7 @@ class ModuloAnaliseCamposForca {
 let module19Instance: ModuloAnaliseCamposForca | null = null;
 let lastCampoId: string | null = null;
 
-export const runModuleNineteenSequence = async (logCallback: LogCallback, action: 'ANALYZE' | 'MODULATE', params?: any) => {
+export const runModuleNineteenSequence = async (logCallback: LogCallback, action: 'ANALYZE' | 'MODULATE') => {
     if (!module19Instance) {
         module19Instance = new ModuloAnaliseCamposForca(logCallback);
     }
@@ -116,9 +116,9 @@ export const runModuleNineteenSequence = async (logCallback: LogCallback, action
     switch (action) {
         case 'ANALYZE':
             const result = await module19Instance.analisar_campo_vibracional(
-                params?.id_localizacao || 'Setor Zeta-9',
-                params?.tipo_campo || 'Energia Vibracional Pura',
-                params?.frequencia_base || 432.0
+                'Setor Zeta-9',
+                'Energia Vibracional Pura',
+                432.0
             );
             if (result.campo_id) {
                 lastCampoId = result.campo_id;
@@ -126,7 +126,7 @@ export const runModuleNineteenSequence = async (logCallback: LogCallback, action
             break;
         case 'MODULATE':
             if (lastCampoId) {
-                await module19Instance.modular_campo_forca(lastCampoId, params?.intensidade_desejada || 432.0);
+                await module19Instance.modular_campo_forca(lastCampoId, 432.0);
             } else {
                 logCallback(createLogEntry('M19', 'FALHA', 'Nenhum campo analisado para modular. Analise um primeiro.'));
             }
