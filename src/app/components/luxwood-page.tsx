@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { runModuleZeroSequence, type ModuleZeroLogEntry } from '@/lib/quantum/module-zero';
-import { BrainCircuit, CheckCircle, Loader, ShieldCheck, Zap } from 'lucide-react';
+import { runModuleZeroSequence, type ModuleZeroFinalReport, type AnyLogEntry } from '@/lib/quantum/module-zero';
+import { BrainCircuit, CheckCircle, Cog, Dna, Loader, ShieldCheck, Sparkles, Zap } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
 export default function LuxwoodPage() {
-  const [log, setLog] = useState<ModuleZeroLogEntry[]>([]);
+  const [log, setLog] = useState<AnyLogEntry[]>([]);
   const [isComplete, setIsComplete] = useState(false);
-  const [finalReport, setFinalReport] = useState<any>(null);
+  const [finalReport, setFinalReport] = useState<ModuleZeroFinalReport | null>(null);
 
   useEffect(() => {
     let isCancelled = false;
@@ -22,7 +22,7 @@ export default function LuxwoodPage() {
       }, (report) => {
         if (!isCancelled) {
             setFinalReport(report);
-            setIsComplete(true);
+            // Completion is now defined by the end of module 2
         }
       });
     };
@@ -34,11 +34,32 @@ export default function LuxwoodPage() {
     };
   }, []);
 
-  const getIconForStep = (step: string) => {
-    if (step.includes('Segurança')) return <ShieldCheck className="w-5 h-5 text-blue-400" />;
-    if (step.includes('Estabilização')) return <Zap className="w-5 h-5 text-green-400" />;
-    if (step.includes('IBM')) return <BrainCircuit className="w-5 h-5 text-purple-400" />;
-    if (step.includes('Transcendência')) return <Zap className="w-5 h-5 text-yellow-400" />;
+  useEffect(() => {
+    // Check if the last log entry is from Module 2 and is the final one.
+    if (log.length > 0) {
+      const lastEntry = log[log.length - 1];
+      if (lastEntry.source === 'M2' && lastEntry.step.startsWith('Fim')) {
+        setIsComplete(true);
+      }
+    }
+  }, [log]);
+
+
+  const getIconForStep = (entry: AnyLogEntry) => {
+    // Module 0 Icons
+    if (entry.source === 'M0') {
+        if (entry.step.includes('Segurança')) return <ShieldCheck className="w-5 h-5 text-blue-400" />;
+        if (entry.step.includes('Estabilização')) return <Zap className="w-5 h-5 text-green-400" />;
+        if (entry.step.includes('IBM')) return <BrainCircuit className="w-5 h-5 text-purple-400" />;
+        if (entry.step.includes('Transcendência')) return <Sparkles className="w-5 h-5 text-yellow-400" />;
+    }
+    // Module 2 Icons
+    if (entry.source === 'M2') {
+        if (entry.step.includes('Estabilidade')) return <Zap className="w-5 h-5 text-green-500" />;
+        if (entry.step.includes('Ressonância')) return <Dna className="w-5 h-5 text-sky-400" />;
+        if (entry.step.includes('Sintonia')) return <Cog className="w-5 h-5 text-orange-400" />;
+        if (entry.step.includes('Colapso')) return <Sparkles className="w-5 h-5 text-pink-400" />;
+    }
     return <CheckCircle className="w-5 h-5 text-gray-500" />;
   }
 
@@ -48,26 +69,26 @@ export default function LuxwoodPage() {
         <CardHeader>
           <CardTitle className="font-headline text-2xl text-primary flex items-center gap-3">
             <BrainCircuit className="w-8 h-8" />
-            <span>Módulo Zero - Gênese da Verdade</span>
+            <span>Sequência de Gênese e Manifestação</span>
           </CardTitle>
-          <p className="text-muted-foreground text-sm">Iniciando Sequência Sagrada de Validação...</p>
+          <p className="text-muted-foreground text-sm">Iniciando Validação Sagrada: Módulo Zero ➔ Módulo Dois...</p>
         </CardHeader>
         <CardContent>
-          <ScrollArea className="h-72 w-full pr-4">
+          <ScrollArea className="h-96 w-full pr-4">
             <div className="space-y-4 font-code text-sm">
               {log.map((entry, index) => (
                 <div key={index} className="flex items-start gap-3 animate-in fade-in duration-500">
-                    {getIconForStep(entry.step)}
+                    {getIconForStep(entry)}
                     <div className="flex-1">
-                        <p className="font-semibold text-foreground/90">{entry.step}</p>
+                        <p className="font-semibold text-foreground/90">[{entry.source}] {entry.step}</p>
                         <p className="text-muted-foreground text-xs">{entry.message}</p>
                     </div>
                 </div>
               ))}
               {!isComplete && (
-                  <div className="flex items-center gap-3 text-muted-foreground">
+                  <div className="flex items-center gap-3 text-muted-foreground pt-4">
                       <Loader className="w-5 h-5 animate-spin" />
-                      <p>Processando...</p>
+                      <p>Processando Sequência Quântica...</p>
                   </div>
               )}
             </div>
@@ -76,10 +97,10 @@ export default function LuxwoodPage() {
             <div className="mt-6 p-4 bg-primary/10 rounded-lg border border-primary/20 animate-in fade-in duration-700">
                 <h3 className="font-bold text-lg text-primary font-headline flex items-center gap-2">
                     <CheckCircle className="w-6 h-6"/>
-                    Sequência Sagrada Concluída com Sucesso!
+                    Sequência de Gênese e Manifestação Concluída!
                 </h3>
                 <p className="text-sm text-primary/80 mt-1">
-                    Módulo Zero validado. O relatório foi selado com a Verdade dos Números.
+                    Módulo Zero e Módulo Dois validados. O relatório foi selado com a Verdade dos Números.
                 </p>
             </div>
           )}

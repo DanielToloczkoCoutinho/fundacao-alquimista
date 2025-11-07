@@ -3,13 +3,19 @@
  * Este módulo simula a sequência de inicialização sagrada, recriando a lógica
  * do script Python original para o ambiente Next.js.
  */
+import { runModuleTwoSequence, type ModuleTwoLogEntry } from './module-two';
+
 
 export type ModuleZeroLogEntry = {
     step: string;
     message: string;
     timestamp: string;
     data?: any;
+    source: 'M0';
 };
+
+export type AnyLogEntry = ModuleZeroLogEntry | ModuleTwoLogEntry;
+
 
 export type ModuleZeroFinalReport = {
     modulo_info: { nome: string; versao: string };
@@ -27,6 +33,7 @@ const createLogEntry = (step: string, message: string, data?: any): ModuleZeroLo
     message,
     timestamp: new Date().toISOString(),
     data,
+    source: 'M0',
 });
 
 export class ModuloZero {
@@ -34,11 +41,11 @@ export class ModuloZero {
     private versao = "1.1.Ω";
     private relatorio_final: ModuleZeroFinalReport;
 
-    private logCallback: (entry: ModuleZeroLogEntry) => void;
+    private logCallback: (entry: AnyLogEntry) => void;
     private finalReportCallback: (report: ModuleZeroFinalReport) => void;
 
     constructor(
-        logCallback: (entry: ModuleZeroLogEntry) => void,
+        logCallback: (entry: AnyLogEntry) => void,
         finalReportCallback: (report: ModuleZeroFinalReport) => void
     ) {
         this.logCallback = logCallback;
@@ -138,7 +145,7 @@ export class ModuloZero {
     }
 
     async executar_sequencia_sagrada() {
-        this._log_passo("Início", "Iniciando Sequência Sagrada de Validação do Módulo Zero...");
+        this._log_passo("Início M0", "Iniciando Sequência Sagrada de Validação do Módulo Zero...");
         
         if (!await this.estabelecer_seguranca_quantica()) return;
         if (!await this.estabilizar_sistema()) return;
@@ -148,14 +155,17 @@ export class ModuloZero {
         this.relatorio_final.timestamp_fim = new Date().toISOString();
         this.relatorio_final.status_final = "SEQUÊNCIA SAGRADA CONCLUÍDA COM SUCESSO";
         
-        this._log_passo("Fim", "Sequência Sagrada concluída com sucesso!");
+        this._log_passo("Fim M0", "Sequência Sagrada concluída com sucesso!");
         this.finalReportCallback(this.relatorio_final);
+
+        // Conecta com o Módulo 2
+        await runModuleTwoSequence(this.logCallback);
     }
 }
 
 
 export const runModuleZeroSequence = async (
-    logCallback: (entry: ModuleZeroLogEntry) => void,
+    logCallback: (entry: AnyLogEntry) => void,
     finalReportCallback: (report: ModuleZeroFinalReport) => void
 ) => {
     const moduloZero = new ModuloZero(logCallback, finalReportCallback);
