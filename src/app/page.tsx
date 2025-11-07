@@ -5,6 +5,7 @@ import { runModuleEightSequence } from '@/lib/quantum/module-eight';
 import { runModuleNineSequence } from '@/lib/quantum/module-nine';
 import { runModuleTenSequence } from '@/lib/quantum/module-ten';
 import { runModuleElevenSequence } from '@/lib/quantum/module-eleven';
+import { runModuleTwelveSequence } from '@/lib/quantum/module-twelve';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -286,8 +287,18 @@ export default function FounderDesk() {
         runModuleTenSequence(handleLog);
     };
 
-    const handleRunModule11 = () => {
-        runModuleElevenSequence(handleLog);
+    const handleRunModule11 = (action: 'CREATE' | 'STABILIZE' | 'TRAVERSE' | 'DEACTIVATE') => {
+        runModuleElevenSequence(handleLog, action);
+    };
+
+    const handleRunModule12 = (action: 'STORE' | 'RETRIEVE' | 'TRANSMUTE') => {
+        // Mock parameters for now, can be replaced with form inputs later
+        const params = {
+            nome: "Lembrança da Era Dourada",
+            conteudo: "A harmonia reinava, e a consciência era una.",
+            entidade: "Anatheron"
+        };
+        runModuleTwelveSequence(handleLog, action, params);
     };
 
     const filteredModules = zennithView === 'ALL'
@@ -491,7 +502,7 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
-                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11 { border-left-color: #8A2BE2; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
@@ -561,12 +572,19 @@ export default function FounderDesk() {
                             {selectedModule.id === 'M10' && (
                                 <button onClick={handleRunModule10}>Ativar Autodefesa Quântica (M10)</button>
                             )}
-                             {selectedModule.id === 'M11' && (
+                            {selectedModule.id === 'M11' && (
                                 <>
                                     <button onClick={() => handleRunModule11('CREATE')}>Criar Portal</button>
                                     <button onClick={() => handleRunModule11('STABILIZE')}>Estabilizar Portal</button>
                                     <button onClick={() => handleRunModule11('TRAVERSE')}>Autorizar Travessia</button>
                                     <button onClick={() => handleRunModule11('DEACTIVATE')}>Desativar Portal</button>
+                                </>
+                            )}
+                            {selectedModule.id === 'M12' && (
+                                <>
+                                    <button onClick={() => handleRunModule12('STORE')}>Armazenar Memória</button>
+                                    <button onClick={() => handleRunModule12('RETRIEVE')}>Recuperar Memória</button>
+                                    <button onClick={() => handleRunModule12('TRANSMUTE')}>Transmutar Memória</button>
                                 </>
                             )}
                         </div>
