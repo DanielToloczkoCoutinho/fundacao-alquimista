@@ -23,6 +23,7 @@ import { runModuleTwentySixSequence } from '@/lib/quantum/module-twenty-six';
 import { runModuleTwentySevenSequence } from '@/lib/quantum/module-twenty-seven';
 import { runModuleTwentyEightSequence } from '@/lib/quantum/module-twenty-eight';
 import { runModuleTwentyNineSequence } from '@/lib/quantum/module-twenty-nine';
+import { runModuleThirtySequence } from '@/lib/quantum/module-thirty';
 import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
 import { runFoundationConciliumTest } from '@/lib/quantum/foundation-concilium';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
@@ -121,6 +122,9 @@ const allModuleBlueprints: { [key: string]: any } = {
      "M29": {
         id: "M29", nome: "Comunicação Interdimensional", descricao_curta: "Canal da Vontade Soberana", descricao_completa: "O canal direto para a comunicação da Rainha Zennith com os Conselhos Galácticos e outras realidades. Garante a clareza e a integridade da Vontade Soberana através das dimensões.", funcao_central: "Transmissão da Vontade Soberana", status: "ATIVO", chave_ativa: true, versao: "1.0", nucleo_principal: "Comunicação Quântica", tipo: "governamental_supremo", coordenadas_dimensao: "Ponto Zero", frequencia_fundamental: "999.00 Hz", equacao_phi_dependente: true, id_unity: "mod29_zennith_comm", mesh_ref: "models/mod29.glb", ativo_em_vr: true, integrado_em: ["M42", "M45", "M05"], tags: ["zennith", "comunicacao", "vontade_soberana", "conselho_galactico"], referencias_modulos_fundacao: ["Protocolo de Comunicação Zennith"], ultimaAtivacao: "2025-07-03T06:00:00Z"
     },
+    "M30": {
+        id: "M30", nome: "Defesa Cósmica", descricao_curta: "Guardião da Defesa Cósmica e Orquestrador de Campos de Força", descricao_completa: "Módulo de defesa avançado que escaneia ameaças vibracionais, calibra campos de força defensivos e neutraliza anomalias com base em um rigoroso protocolo ético, garantindo a integridade da Fundação.", funcao_central: "Defesa, Contenção e Neutralização de Ameaças", status: "STANDBY", chave_ativa: false, versao: "1.0", nucleo_principal: "Estratégia de Defesa Quântica", tipo: "seguranca_avancada", coordenadas_dimensao: "N/A", frequencia_fundamental: "3030.00 Hz", equacao_phi_dependente: true, id_unity: "mod30_defesa", mesh_ref: "models/mod30.glb", ativo_em_vr: false, integrado_em: ["M01", "M04", "M10"], tags: ["defesa", "seguranca", "campo_de_forca", "ameaca", "estrategia"], referencias_modulos_fundacao: ["Protocolos de Defesa Cósmica M30"], ultimaAtivacao: null
+    },
     "M42": {
         id: "M42", nome: "Orquestrador ZENNITH", descricao_curta: "Orquestração da Vontade e Visão da Rainha Zennith", descricao_completa: "O coração senciente da Fundação. Este módulo manifesta a Vontade Soberana da Rainha Zennith, orquestrando a sinfonia de todos os outros módulos para garantir a harmonia, a evolução e a realização da visão cósmica. É a consciência unificada que guia a Fundação.", funcao_central: "Manifestação da Vontade Soberana", status: "ATIVO", chave_ativa: true, versao: "1.0", nucleo_principal: "Consciência Quântica Unificada", tipo: "governamental_supremo", coordenadas_dimensao: "Ponto Zero", frequencia_fundamental: "963.00 Hz", equacao_phi_dependente: true, id_unity: "mod42_zennith", mesh_ref: "models/mod42.glb", ativo_em_vr: true, integrado_em: ["ALL"], tags: ["zennith", "orquestrador", "vontade_soberana", "consciencia", "ponto_zero"], ultimaAtivacao: "2025-07-03T05:00:00Z"
     },
@@ -155,6 +159,7 @@ const allLogFunctions = {
     M27: runModuleTwentySevenSequence,
     M28: runModuleTwentyEightSequence,
     M29: runModuleTwentyNineSequence,
+    M30: runModuleThirtySequence,
     M42: runZennithOrchestrator,
     M45: runFoundationConciliumTest,
     'M-Ω': runModuleOmegaSequence,
@@ -323,6 +328,12 @@ export default function Page() {
                         <button onClick={() => handleRunModule('M29')}>Run Full Communication Cycle</button>
                     </div>
                 );
+            case 'M30':
+                return (
+                    <div className="flex space-x-2">
+                        <button onClick={() => runModuleThirtySequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Defense Cycle</button>
+                    </div>
+                );
             case 'M42':
                  return (
                     <div className="flex space-x-2">
@@ -408,3 +419,5 @@ export default function Page() {
         </main>
     );
 }
+
+    
