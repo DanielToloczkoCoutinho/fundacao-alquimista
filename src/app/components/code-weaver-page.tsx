@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormState } from 'react-dom';
+import { useActionState } from 'react';
 import { runCodeWeaver, type WeaverState } from '@/app/actions';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -22,7 +22,7 @@ type CodeWeaverPageProps = {
 };
 
 export default function CodeWeaverPage({ logAction }: CodeWeaverPageProps) {
-  const [state, formAction] = useFormState(runCodeWeaver, initialState);
+  const [state, formAction, isPending] = useActionState(runCodeWeaver, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const hasResult = state?.explanation || state?.diagram;
@@ -51,7 +51,7 @@ export default function CodeWeaverPage({ logAction }: CodeWeaverPageProps) {
             className="h-64 lg:h-[calc(100vh-22rem)] min-h-[200px] bg-card font-code text-sm"
             required
           />
-          <SubmitButton />
+          <SubmitButton isPending={isPending} />
         </form>
         {state.error && <Alert variant="destructive" className="mt-4"><AlertDescription>{state.error}</AlertDescription></Alert>}
       </div>
@@ -86,11 +86,10 @@ export default function CodeWeaverPage({ logAction }: CodeWeaverPageProps) {
   );
 }
 
-function SubmitButton() {
-  const { pending } = useFormState(runCodeWeaver, initialState);
+function SubmitButton({ isPending }: { isPending: boolean }) {
   return (
-    <Button type="submit" className="w-full" disabled={pending}>
-      {pending ? (
+    <Button type="submit" className="w-full" disabled={isPending}>
+      {isPending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Weaving...
         </>

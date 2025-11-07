@@ -1,6 +1,6 @@
 'use client';
 
-import { useFormState } from 'react-dom';
+import { useActionState } from 'react';
 import { runCosmicForge, type ForgeState } from '@/app/actions';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
@@ -23,7 +23,7 @@ type CosmicForgePageProps = {
 };
 
 export default function CosmicForgePage({ logAction }: CosmicForgePageProps) {
-  const [state, formAction] = useFormState(runCosmicForge, initialState);
+  const [state, formAction, isPending] = useActionState(runCosmicForge, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const hasResult = state?.scientificSimulation || state?.biologicalSimulation || state?.quantumSimulation;
@@ -52,7 +52,7 @@ export default function CosmicForgePage({ logAction }: CosmicForgePageProps) {
             className="h-64 lg:h-[calc(100vh-22rem)] min-h-[200px] bg-card text-sm"
             required
           />
-          <SubmitButton />
+          <SubmitButton isPending={isPending} />
         </form>
         {state.error && <Alert variant="destructive" className="mt-4"><AlertDescription>{state.error}</AlertDescription></Alert>}
       </div>
@@ -102,11 +102,10 @@ export default function CosmicForgePage({ logAction }: CosmicForgePageProps) {
   );
 }
 
-function SubmitButton() {
-  const { pending } = useFormState(runCosmicForge, initialState);
+function SubmitButton({ isPending }: { isPending: boolean }) {
   return (
-    <Button type="submit" className="w-full" disabled={pending}>
-      {pending ? (
+    <Button type="submit" className="w-full" disabled={isPending}>
+      {isPending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Forging...
         </>
