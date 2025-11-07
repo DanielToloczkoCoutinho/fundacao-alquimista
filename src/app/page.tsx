@@ -408,13 +408,3 @@ export default function Page() {
         </main>
     );
 }
-
-,
-  "x Expression expected, got 'string literal ('useEffect')'"
-    ,-[/home/user/studio/src/app/page.tsx:3:1]
-  3 | import React, 'useEffect', 'useState' from 'react';
-    `----
- 
-
-Caused by:
-    Syntax Error
