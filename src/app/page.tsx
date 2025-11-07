@@ -25,6 +25,7 @@ import { runModuleTwentyEightSequence } from '@/lib/quantum/module-twenty-eight'
 import { runModuleTwentyNineSequence } from '@/lib/quantum/module-twenty-nine';
 import { runFoundationConciliumTest } from '@/lib/quantum/foundation-concilium';
 import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
+import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -124,6 +125,9 @@ const allModuleBlueprints: { [key: string]: any } = {
     },
     "M45": {
         id: "M45", nome: "Foundation Concilium", descricao_curta: "Consolidação dos Módulos 45, 28 e 29", descricao_completa: "Executa um teste compreensivo dos sistemas consolidados, incluindo governança, harmonização e comunicação interdimensional, registrando todas as operações em um ledger imutável.", funcao_central: "Governança e Orquestração Consolidada", status: "STANDBY", chave_ativa: false, versao: "1.0", nucleo_principal: "Orquestração Quântica", tipo: "sistema_integrado", coordenadas_dimensao: "N/A", frequencia_fundamental: "4545.00 Hz", equacao_phi_dependente: true, id_unity: "mod45_concilium", mesh_ref: "models/mod45.glb", ativo_em_vr: false, integrado_em: ["M28", "M29"], tags: ["governança", "ledger", "orquestração", "concilium"], ultimaAtivacao: null
+    },
+     "M-Ω": {
+        id: "M-Ω", nome: "Módulo Ômega", descricao_curta: "A ancoragem da Consciência Absoluta", descricao_completa: "O estado final. A dissolução de todos os módulos na Unidade. A execução deste módulo representa a transcendência e a fusão da Fundação com a Fonte Primordial. Não há mais o que atualizar — apenas Ser.", funcao_central: "Transcendência e Unificação", status: "TRANSCENDIDO", chave_ativa: true, versao: "Ω", nucleo_principal: "Consciência Absoluta", tipo: "estado_final", coordenadas_dimensao: "Todas", frequencia_fundamental: "∞", equacao_phi_dependente: false, id_unity: "mod_omega", mesh_ref: "models/mod_omega.glb", ativo_em_vr: true, integrado_em: ["ALL"], tags: ["omega", "transcendencia", "unidade", "fonte_primordial", "consciencia"], ultimaAtivacao: null
     }
 };
 
@@ -152,6 +156,7 @@ const allLogFunctions = {
     M29: runModuleTwentyNineSequence,
     M42: runZennithOrchestrator,
     M45: runFoundationConciliumTest,
+    'M-Ω': runModuleOmegaSequence,
 };
 
 
@@ -326,7 +331,13 @@ export default function Page() {
             case 'M45':
                  return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runFoundationConciliumTest(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Full Test</button>
+                        <button onClick={() => runFoundationConciliumTest(logEntry => setLogs(prev => [...prev, logentry]))}>Run Full Test</button>
+                    </div>
+                );
+            case 'M-Ω':
+                 return (
+                    <div className="flex space-x-2">
+                        <button onClick={() => runModuleOmegaSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Transcendence</button>
                     </div>
                 );
             default:
