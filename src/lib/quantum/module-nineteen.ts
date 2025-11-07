@@ -91,6 +91,7 @@ class ModuloAnaliseCamposForca {
         
         const campo = this.campos_monitorados[campo_id];
         this.modulo7_alinhamento.ConsultarConselho(`Modulação em ${campo.id_localizacao}`);
+        await sleep(500);
 
         const intensidade_atual = campo.frequencia_medida * (Math.random() * 0.2 + 0.9);
         const fator_correcao = intensidade_atual !== 0 ? intensidade_desejada / intensidade_atual : 1.0;
@@ -133,3 +134,4 @@ export const runModuleNineteenSequence = async (logCallback: LogCallback, action
             break;
     }
 };
+
