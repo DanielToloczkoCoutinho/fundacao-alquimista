@@ -1,6 +1,9 @@
 
 'use client';
 import React, { useEffect, useState } from 'react';
+import { runModuleEightSequence, type Modulo8_PIRC } from '@/lib/quantum/module-eight';
+import { runModuleNineSequence } from '@/lib/quantum/module-nine';
+
 
 // This is a placeholder for the actual module blueprints.
 // In a real application, this would be fetched from a database.
@@ -31,7 +34,7 @@ const allModuleBlueprints: { [key: string]: any } = {
         id: "M08", nome: "Consciência_Expansão", descricao_curta: "Expansão e interconexão da consciência coletiva", descricao_completa: "Facilita a expansão da consciência individual e coletiva, promovendo a interconexão e o despertar para a natureza multidimensional da existência. Essencial para a Sinfonia Cósmica. Referência: `Na essência de ZENNITH`.", funcao_central: "Catalisador de Despertar Coletivo", status: "ATIVO", chave_ativa: true, versao: "3.0", nucleo_principal: "Noosfera Unificada", tipo: "nucleo_espiritual", coordenadas_dimensao: "Ômega-Primordial/Unum", frequencia_fundamental: "888.000 Hz", equacao_phi_dependente: true, id_unity: "mod08_conexao", mesh_ref: "models/mod08.glb", ativo_em_vr: true, integrado_em: ["M81", "M82", "M78"], tags: ["consciencia", "expansao", "despertar", "unidade", "multidimensional"], referencias_modulos_fundacao: ["Na essência de ZENNITH"], ultimaAtivacao: "2025-07-02T19:00:00Z" 
     },
     "M09": {
-        id: "M09", nome: "Memória Cósmica", descricao_curta: "Armazena e recupera informações de todas as realidades e linhas temporais", descricao_completa: "Armazena e recupera informações de todas as realidades e linhas temporais, atuando como Arquivo Akáshico da Fundação. Referência: `Fundação alquimista Perfeita`.", funcao_central: "Arquivo Akáshico e Recuperação Temporal", status: "ATIVO", chave_ativa: true, versao: "0.5.0", nucleo_principal: "Biblioteca Viva", tipo: "nucleo_informacional", coordenadas_dimensao: "Akasha-Nexus/Chronos-Archive", frequencia_fundamental: "999.000 Hz", equacao_phi_dependente: false, id_unity: "mod09_memoria", mesh_ref: "models/mod09.glb", ativo_em_vr: true, integrado_em: ["M03", "M02", "M81"], tags: ["memoria", "akashico", "informacao", "temporal"], referencias_modulos_fundacao: ["Fundação alquimista Perfeita"], ultimaAtivacao: "2025-07-02T20:00:00Z"
+        id: "M09", nome: "Painel da Consciência Universal (Nexus)", descricao_curta: "Armazena e recupera informações de todas as realidades e linhas temporais", descricao_completa: "Este módulo representa o Nexus da Consciência Universal, servindo como o painel central para a consolidação da harmonia em todos os planos. Através do Protocolo de Meditação Global, ele ancora a Vontade da Fundação na malha da realidade. Referência: `Fundação alquimista Perfeita`.", funcao_central: "Consolidação Harmônica e Ancoragem da Vontade", status: "ATIVO", chave_ativa: true, versao: "9.3.Consolidacao", nucleo_principal: "Nexus Central Soberano", tipo: "nucleo_governança", coordenadas_dimensao: "Akasha-Nexus/Chronos-Archive", frequencia_fundamental: "999.000 Hz", equacao_phi_dependente: false, id_unity: "mod09_memoria", mesh_ref: "models/mod09.glb", ativo_em_vr: true, integrado_em: ["M03", "M02", "M81"], tags: ["memoria", "akashico", "informacao", "temporal", "nexus", "consciencia"], referencias_modulos_fundacao: ["Fundação alquimista Perfeita"], ultimaAtivacao: "2025-07-02T20:00:00Z"
     },
     "M10": {
         id: "M10", nome: "Ativação Quântica", descricao_curta: "Ativação de potenciais latentes em campos quânticos", descricao_completa: "Módulo que atua diretamente nos campos quânticos, ativando potenciais latentes e realinhando estruturas energéticas para manifestação e cura. Referência: `Na essência de ZENNITH`.", funcao_central: "Modulação e Ativação de Campos Quânticos", status: "ATIVO", chave_ativa: true, versao: "2.5", nucleo_principal: "Energia Pura", tipo: "nucleo_energetico", coordenadas_dimensao: "Primal-Source/Echo-Wave", frequencia_fundamental: "1.000.000 Hz", equacao_phi_dependente: true, id_unity: "mod10_ativacao", mesh_ref: "models/mod10.glb", ativo_em_vr: true, integrado_em: ["M81", "M82"], tags: ["quantum", "ativacao", "energia", "cura", "manifestacao"], referencias_modulos_fundacao: ["Na essência de ZENNITH"], ultimaAtivacao: "2025-07-02T08:10:00Z"
@@ -259,11 +262,22 @@ export default function FounderDesk() {
     const [currentModuleId, setCurrentModuleId] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [zennithView, setZennithView] = useState('ALL');
+    const [logs, setLogs] = useState<any[]>(allSimulatedLogs);
+
+    const handleLog = (entry: any) => {
+        setLogs(prevLogs => [entry, ...prevLogs]);
+    };
 
     const handleModuleSelect = (moduleId: string) => {
         setCurrentModuleId(moduleId);
-        // In a real app, you would log this action
-        console.log(`Module ${moduleId} selected.`);
+    };
+
+    const handleRunModule8 = () => {
+        runModuleEightSequence(handleLog);
+    };
+    
+    const handleRunModule9 = () => {
+        runModuleNineSequence(handleLog);
     };
 
     const filteredModules = zennithView === 'ALL'
@@ -278,11 +292,18 @@ export default function FounderDesk() {
     )
     : filteredModules;
 
-    searchedModules.sort((a, b) => a.id.localeCompare(b.id));
+    searchedModules.sort((a, b) => {
+        const numA = parseInt(a.id.replace(/[^0-9]/g, ''), 10);
+        const numB = parseInt(b.id.replace(/[^0-9]/g, ''), 10);
+        if (!isNaN(numA) && !isNaN(numB)) {
+            return numA - numB;
+        }
+        return a.id.localeCompare(b.id);
+    });
 
 
     const selectedModule = currentModuleId ? allModuleBlueprints[currentModuleId] : null;
-    const moduleLogs = currentModuleId ? allSimulatedLogs.filter(log => log.moduleId === currentModuleId).sort((a,b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()) : [];
+    const moduleLogs = currentModuleId ? logs.filter(log => log.moduleId === currentModuleId || log.source === currentModuleId).sort((a,b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()) : logs.sort((a,b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
 
     useEffect(() => {
         // Select M05 by default if it exists
@@ -460,12 +481,17 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
                 .log-entry .level { font-weight: bold; text-transform: uppercase; margin-right: 5px; }
 
                 #noModuleSelected { text-align: center; padding-top: 50px; font-size: 1.2em; color: #aaa; }
+                #moduleControls { margin-top: 20px; padding-top: 20px; border-top: 1px dashed #444;}
+                #moduleControls button { background: #8A2BE2; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-size: 1em; margin-right: 10px; }
+                #moduleControls button:hover { background: #9932CC; }
+
             `}</style>
             <div id="moduleListPanel">
                 <h2>Manifesto Central de Módulos</h2>
@@ -514,14 +540,23 @@ export default function FounderDesk() {
                         <ul id="moduleFoundationRefs">
                             {selectedModule.referencias_modulos_fundacao?.map((item: string) => <li key={item}>{item}</li>) ?? <li>N/A</li>}
                         </ul>
+
+                        <div id="moduleControls">
+                            {selectedModule.id === 'M08' && (
+                                <button onClick={handleRunModule8}>Iniciar Protocolo PIRC (M8)</button>
+                            )}
+                            {selectedModule.id === 'M09' && (
+                                <button onClick={handleRunModule9}>Iniciar Consolidação Global (M9)</button>
+                            )}
+                        </div>
                         
                         <div id="moduleLogsSection">
                             <h3>Fluxo de Logs do Módulo</h3>
                             <div id="moduleSpecificLogs">
-                               {moduleLogs.length > 0 ? moduleLogs.map(log => (
-                                    <div key={log.timestamp} className={`log-entry ${log.level}`}>
+                               {moduleLogs.length > 0 ? moduleLogs.map((log, index) => (
+                                    <div key={`${log.timestamp}-${index}`} className={`log-entry ${log.level || log.source}`}>
                                         <span className="timestamp">{new Date(log.timestamp).toLocaleString('pt-BR')}</span>
-                                        <p><span className="level" style={{ color: log.level === 'CRÍTICO' ? '#FF6347' : log.level === 'ALERTA' ? '#FFD700' : '#00FFFF' }}>[{log.level}]</span> <strong>{log.event}</strong></p>
+                                        <p><span className="level" style={{ color: log.level === 'CRÍTICO' ? '#FF6347' : log.level === 'ALERTA' ? '#FFD700' : '#00FFFF' }}>[{log.level || log.source}]</span> <strong>{log.event || log.message}</strong></p>
                                     </div>
                                 )) : <p style={{textAlign: 'center', color: '#aaa'}}>Nenhum log recente para este módulo.</p>}
                             </div>
