@@ -14,6 +14,7 @@ import { runModuleEighteenSequence } from '@/lib/quantum/module-eighteen';
 import { runModuleNineteenSequence } from '@/lib/quantum/module-nineteen';
 import { runModuleTwentySequence } from '@/lib/quantum/module-twenty';
 import { runModuleTwentyOneSequence } from '@/lib/quantum/module-twenty-one';
+import { runModuleTwentyTwoSequence } from '@/lib/quantum/module-twenty-two';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -369,6 +370,10 @@ export default function FounderDesk() {
     const handleRunModule21 = (action: 'MAP' | 'STABILIZE' | 'TRAVEL') => {
         runModuleTwentyOneSequence(handleLog, action);
     };
+    
+    const handleRunModule22 = (action: 'CREATE' | 'MANAGE' | 'DEACTIVATE') => {
+        runModuleTwentyTwoSequence(handleLog, action);
+    };
 
     const filteredModules = zennithView === 'ALL'
         ? Object.values(allModuleBlueprints)
@@ -571,7 +576,7 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
-                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15, .log-entry.M16, .log-entry.M17, .log-entry.M18, .log-entry.M19, .log-entry.M20, .log-entry.M21 { border-left-color: #8A2BE2; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15, .log-entry.M16, .log-entry.M17, .log-entry.M18, .log-entry.M19, .log-entry.M20, .log-entry.M21, .log-entry.M22 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
@@ -713,6 +718,13 @@ export default function FounderDesk() {
                                     <button onClick={() => handleRunModule21('MAP')}>Mapear Rota</button>
                                     <button onClick={() => handleRunModule21('STABILIZE')}>Estabilizar Portal</button>
                                     <button onClick={() => handleRunModule21('TRAVEL')}>Iniciar Viagem</button>
+                                </>
+                            )}
+                            {selectedModule.id === 'M22' && (
+                                <>
+                                    <button onClick={() => handleRunModule22('CREATE')}>Criar Realidade Virtual</button>
+                                    <button onClick={() => handleRunModule22('MANAGE')}>Gerenciar Simulação</button>
+                                    <button onClick={() => handleRunModule22('DEACTIVATE')}>Desativar Realidade</button>
                                 </>
                             )}
                         </div>

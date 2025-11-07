@@ -43,7 +43,7 @@ class ModuloAnaliseCamposForca {
     private _equacao_analise_campo_vibracional(freq_medida: number, freq_base: number): number {
         this.logCallback(createLogEntry('M19', 'Cálculo', 'Calculando Análise de Campo Vibracional...'));
         const desvio_relativo = Math.abs(freq_medida - freq_base) / freq_base;
-        const e_uni = (freq_medida * random.uniform(0.01, 0.05) * freq_base * random.uniform(0.01, 0.05)) / CONST_TF;
+        const e_uni = (freq_medida * (Math.random() * 0.04 + 0.01) * freq_base * (Math.random() * 0.04 + 0.01)) / CONST_TF;
         let pontuacao = Math.min(100.0, desvio_relativo * e_uni * 2000);
         if (pontuacao > 0) {
             pontuacao = 100 * (1 - Math.exp(-pontuacao / 100));
@@ -62,7 +62,7 @@ class ModuloAnaliseCamposForca {
     async analisar_campo_vibracional(id_loc: string, tipo_campo: string, freq_base: number): Promise<{ status: string, campo_id?: string, status_anomalia?: string, pontuacao_anomalia?: number }> {
         this.logCallback(createLogEntry('M19', 'Análise', `Analisando campo em '${id_loc}'`));
         await sleep(500);
-        const freq_medida = freq_base * random.uniform(0.7, 1.3);
+        const freq_medida = freq_base * (Math.random() * 0.6 + 0.7); // random.uniform(0.7, 1.3)
         this.logCallback(createLogEntry('M19', 'Info', `Freq. Medida: ${freq_medida.toFixed(2)} Hz | Base: ${freq_base.toFixed(2)} Hz`));
         
         const pontuacao = this._equacao_analise_campo_vibracional(freq_medida, freq_base);
@@ -91,7 +91,7 @@ class ModuloAnaliseCamposForca {
         const campo = this.campos_monitorados[campo_id];
         this.modulo7_alinhamento.ConsultarConselho(`Modulação em ${campo.id_localizacao}`);
 
-        const intensidade_atual = campo.frequencia_medida * random.uniform(0.9, 1.1);
+        const intensidade_atual = campo.frequencia_medida * (Math.random() * 0.2 + 0.9);
         const fator_correcao = intensidade_atual !== 0 ? intensidade_desejada / intensidade_atual : 1.0;
         const nova_intensidade = this._equacao_modulacao_campo_forca(intensidade_atual, fator_correcao);
         
@@ -103,13 +103,6 @@ class ModuloAnaliseCamposForca {
         return { status: "SUCESSO", nova_intensidade };
     }
 }
-
-// Monkey-patch for random.uniform
-const random = {
-    uniform: (min: number, max: number) => {
-        return Math.random() * (max - min) + min;
-    }
-};
 
 let module19Instance: ModuloAnaliseCamposForca | null = null;
 let lastCampoId: string | null = null;
