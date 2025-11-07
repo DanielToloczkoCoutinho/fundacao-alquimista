@@ -10,6 +10,7 @@ import { runModuleFourteenSequence } from '@/lib/quantum/module-fourteen';
 import { runModuleFifteenSequence } from '@/lib/quantum/module-fifteen';
 import { runModuleSixteenSequence } from '@/lib/quantum/module-sixteen';
 import { runModuleSeventeenSequence } from '@/lib/quantum/module-seventeen';
+import { runModuleEighteenSequence } from '@/lib/quantum/module-eighteen';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -66,6 +67,9 @@ const allModuleBlueprints: { [key: string]: any } = {
     },
     "M17": {
         id: "M17", nome: "Matriz de Cura Holográfica", descricao_curta: "Focado na saúde e bem-estar de seres biológicos em níveis quânticos", descricao_completa: "Focado na saúde e bem-estar de seres biológicos em níveis quânticos e dimensionais, utilizando projeção holográfica e modulação de frequências para promover regeneração e vitalidade. Referência: `Fundação alquimista Perfeita`.", funcao_central: "Projeção Holográfica Terapêutica e Regeneração Celular Quântica", status: "ATIVO", chave_ativa: true, versao: "1.0.0", nucleo_principal: "Medicina Holográfica", tipo: "nucleo_saude", coordenadas_dimensao: "Vita-Sphere/Holo-Matrix", frequencia_fundamental: "1.777.000 Hz", equacao_phi_dependente: false, id_unity: "mod17_cura", mesh_ref: "models/mod17.glb", ativo_em_vr: true, integrado_em: ["M01", "M07", "M24"], tags: ["cura", "holografica", "saude", "bem_estar", "quantum"], referencias_modulos_fundacao: ["Fundação alquimista Perfeita"], ultimaAtivacao: "2025-07-01T23:00:00Z"
+    },
+    "M18": {
+        id: "M18", nome: "Orquestração da Memória Cósmica", descricao_curta: "Acessa e gerencia os Registros Akáshicos", descricao_completa: "Módulo sagrado que permite o acesso, armazenamento e orquestração ética de informações nos Registros Akáshicos universais, garantindo a integridade da história cósmica. Referência: `Fundação alquimista Perfeita`.", funcao_central: "Acesso e Gerenciamento do Arquivo Akáshico", status: "ATIVO", chave_ativa: true, versao: "18.Ω.PHI.ETERNAL", nucleo_principal: "Biblioteca Viva Universal", tipo: "nucleo_informacional", coordenadas_dimensao: "Akasha-Prime/Codex-Infinitum", frequencia_fundamental: "1.888.000 Hz", equacao_phi_dependente: true, id_unity: "mod18_akasha", mesh_ref: "models/mod18.glb", ativo_em_vr: true, integrado_em: ["M01", "M07", "M12", "M39"], tags: ["akasha", "memoria", "cosmica", "historia", "oraculo"], referencias_modulos_fundacao: ["Fundação alquimista Perfeita"], ultimaAtivacao: "2025-07-03T06:00:00Z"
     },
     "M19": {
         id: "M19", nome: "Análise de Campos de Força", descricao_curta: "Detecção e análise de campos de força dimensionais", descricao_completa: "Este módulo permite a detecção, mapeamento e análise em tempo real de campos de força energéticos em diferentes dimensões, identificando anomalias e padrões de ressonância. Referência: `Na essência de ZENNITH`.", funcao_central: "Mapeamento e Diagnóstico Energético", status: "ATIVO", chave_ativa: true, versao: "3.0", nucleo_principal: "Sensoriamento Interdimensional", tipo: "nucleo_diagnostico", coordenadas_dimensao: "Deep-Space/Aurora-Grid", frequencia_fundamental: "1.999.000 Hz", equacao_phi_dependente: false, id_unity: "mod19_campos", mesh_ref: "models/mod19.glb", ativo_em_vr: true, integrado_em: ["M77", "M81", "M82"], tags: ["forca", "campo_energetico", "analise", "diagnostico", "dimensional"], referencias_modulos_fundacao: ["Na essência de ZENNITH"], ultimaAtivacao: "2025-07-02T20:00:00Z"
@@ -255,7 +259,7 @@ const zennithViews = {
     "ALL": Object.keys(allModuleBlueprints),
     "ZENNITH_01": [
         "M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10",
-        "M11", "M12", "M13", "M14", "M15", "M16", "M17", "M19", "M20", "M21", "M22",
+        "M11", "M12", "M13", "M14", "M15", "M16", "M17", "M18", "M19", "M20", "M21", "M22",
         "M23", "M24", "M25", "M26", "M27", "M28", "M29", "M30", "M31", "M32",
         "M34", "M36", "M44", "M45", "M58", "M61", "M63", "M66", "M70", "M71",
         "M72", "M73", "Z88", "HYPERFRAKTALISCH_DECODER", "AELORIA"
@@ -344,6 +348,10 @@ export default function FounderDesk() {
 
     const handleRunModule17 = (action: 'CALIBRATE' | 'OPTIMIZE') => {
         runModuleSeventeenSequence(handleLog, action);
+    };
+    
+    const handleRunModule18 = (action: 'STORE_RETRIEVE' | 'FAIL_AUTH' | 'FAIL_ETHICS' | 'FAIL_FIND') => {
+        runModuleEighteenSequence(handleLog, action);
     };
 
 
@@ -548,7 +556,7 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
-                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15, .log-entry.M16, .log-entry.M17 { border-left-color: #8A2BE2; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15, .log-entry.M16, .log-entry.M17, .log-entry.M18 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
@@ -664,6 +672,12 @@ export default function FounderDesk() {
                                 <>
                                     <button onClick={() => handleRunModule17('CALIBRATE')}>Calibrar Campo</button>
                                     <button onClick={() => handleRunModule17('OPTIMIZE')}>Otimizar Fluxo</button>
+                                </>
+                            )}
+                             {selectedModule.id === 'M18' && (
+                                <>
+                                    <button onClick={() => handleRunModule18('STORE_RETRIEVE')}>Ciclo Armazenar/Recuperar</button>
+                                    <button onClick={() => handleRunModule18('FAIL_AUTH')}>Simular Falha de Autorização</button>
                                 </>
                             )}
                         </div>
