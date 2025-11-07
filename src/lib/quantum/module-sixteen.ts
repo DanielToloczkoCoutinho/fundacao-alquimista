@@ -1,3 +1,4 @@
+
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -40,7 +41,7 @@ class ModuloArquiteturaEcossistemas {
     private modulo1;
     private modulo7;
     private modulo98;
-    private ecossistemas_artificiais: { [id: string]: any } = {};
+    public ecossistemas_artificiais: { [id: string]: any } = {};
 
     constructor(private logCallback: LogCallback) {
         this.logCallback(createLogEntry('M16', 'Inicialização', 'Módulo 16 - Arquitetura de Ecossistemas Artificiais ativado.'));

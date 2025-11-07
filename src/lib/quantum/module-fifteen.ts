@@ -1,3 +1,4 @@
+
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -72,7 +73,7 @@ class ModuloGerenciamentoEcossistemas {
     private modulo98;
     private modulo102;
     private modulo109;
-    private ecossistemas_monitorados: { [id: string]: any } = {};
+    public ecossistemas_monitorados: { [id: string]: any } = {};
 
     constructor(private logCallback: LogCallback) {
         this.logCallback(createLogEntry('M15', 'Inicialização', 'Módulo 15 - Gerenciamento de Ecossistemas ativado.'));
@@ -98,7 +99,7 @@ class ModuloGerenciamentoEcossistemas {
          return dados_entrada * CONST_TF;
     }
 
-    async monitorar_ecossistema(id_planeta: string, tipo_ecossistema: string) {
+    async monitorar_ecossistema(id_planeta: string, tipo_ecossistema: string): Promise<{ecossistema_id?: string}> {
         this.logCallback(createLogEntry('M15', 'Monitoramento', `Monitorando ecossistema de '${id_planeta}' (${tipo_ecossistema}).`));
         await sleep(500);
 
@@ -118,6 +119,7 @@ class ModuloGerenciamentoEcossistemas {
 
         this.modulo1.RegistrarNaCronicaDaFundacao({ evento: "MonitoramentoEcossistema", ecossistema_id, equilibrio_planetario });
         this.logCallback(createLogEntry('M15', 'Monitoramento Concluído', `Equilíbrio Planetário: ${equilibrio_planetario.toFixed(4)}. ID: ${ecossistema_id.slice(0,20)}...`));
+        return { ecossistema_id };
     }
 
     async prever_e_intervir_climaticamente(ecossistema_id: string, proposito_intervencao: string) {
