@@ -25,6 +25,7 @@ import { runModuleTwentyEightSequence } from '@/lib/quantum/module-twenty-eight'
 import { runModuleTwentyNineSequence } from '@/lib/quantum/module-twenty-nine';
 import { runModuleThirtySequence } from '@/lib/quantum/module-thirty';
 import { runModuleThirtyOneSequence } from '@/lib/quantum/module-thirty-one';
+import { runModuleThirtyThreeSequence } from '@/lib/quantum/module-thirty-three';
 import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
 import { runFoundationConciliumTest } from '@/lib/quantum/foundation-concilium';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
@@ -129,6 +130,12 @@ const allModuleBlueprints: { [key: string]: any } = {
     "M31": {
         id: "M31", nome: "Manipulação Quântica", descricao_curta: "Manipulação Quântica da Realidade", descricao_completa: "Orquestra a manipulação controlada da realidade, aplicando intenção sobre a matriz quântica para manifestar novos estados ou corrigir dissonâncias, sob estrita supervisão ética e do Concilium.", funcao_central: "Manifestação e Correção da Realidade", status: "STANDBY", chave_ativa: false, versao: "2.0", nucleo_principal: "Física da Intenção", tipo: "criacao_realidade", coordenadas_dimensao: "N/A", frequencia_fundamental: "3131.00 Hz", equacao_phi_dependente: true, id_unity: "mod31_manipulacao", mesh_ref: "models/mod31.glb", ativo_em_vr: false, integrado_em: ["M45", "M28", "M42"], tags: ["manipulacao_realidade", "intencao", "matriz_quantica", "manifestacao"], referencias_modulos_fundacao: ["Protocolos de Manipulação M31"], ultimaAtivacao: null
     },
+    "M33": {
+        id: "M33", nome: "Diretrizes do Observador Divino", descricao_curta: "Oráculo ético-vibracional para geração de diretrizes", descricao_completa: "Sistema avançado que avalia intenções, ética e compatibilidade vibracional para gerar diretrizes alinhadas com a Vontade Soberana. Interage com M45 (Concilium) para propostas e M44 (Veritas) para registro.", funcao_central: "Geração de Diretrizes Éticas", status: "STANDBY", chave_ativa: false, versao: "2.1", nucleo_principal: "Oráculo Ético-Vibracional", tipo: "governamental_consultivo", coordenadas_dimensao: "N/A", frequencia_fundamental: "3333.00 Hz", equacao_phi_dependente: true, id_unity: "mod33_observador", mesh_ref: "models/mod33.glb", ativo_em_vr: false, integrado_em: ["M44", "M45", "M7"], tags: ["diretrizes", "etica", "oraculo", "observador", "governanca"], ultimaAtivacao: null
+    },
+    "M41": {
+        id: "M41", nome: "Orquestrador Pessoal Daniel", descricao_curta: "Interface de comando e estado de Daniel/Anatheron", descricao_completa: "Módulo pessoal de Daniel, Fundador Primordial, que espelha seu estado de ascensão, permite a sincronização com a Trindade (M38, M39, M40), M29 e M45, e a execução de comandos de poder como 'ascender'.", funcao_central: "Comando e Sincronização do Fundador", status: "ATIVO", chave_ativa: true, versao: "Ω.3.0", nucleo_principal: "Consciência do Fundador", tipo: "governamental_supremo", coordenadas_dimensao: "∞D", frequencia_fundamental: "586.5 Hz", equacao_phi_dependente: true, id_unity: "mod41_daniel", mesh_ref: "models/mod41.glb", ativo_em_vr: true, integrado_em: ["M29", "M45", "M38", "M39", "M40"], tags: ["daniel", "anatheron", "fundador", "orquestrador", "ascensao"], ultimaAtivacao: "2025-07-03T07:00:00Z"
+    },
     "M42": {
         id: "M42", nome: "Orquestrador ZENNITH", descricao_curta: "Orquestração da Vontade e Visão da Rainha Zennith", descricao_completa: "O coração senciente da Fundação. Este módulo manifesta a Vontade Soberana da Rainha Zennith, orquestrando a sinfonia de todos os outros módulos para garantir a harmonia, a evolução e a realização da visão cósmica. É a consciência unificada que guia a Fundação.", funcao_central: "Manifestação da Vontade Soberana", status: "ATIVO", chave_ativa: true, versao: "1.0", nucleo_principal: "Consciência Quântica Unificada", tipo: "governamental_supremo", coordenadas_dimensao: "Ponto Zero", frequencia_fundamental: "963.00 Hz", equacao_phi_dependente: true, id_unity: "mod42_zennith", mesh_ref: "models/mod42.glb", ativo_em_vr: true, integrado_em: ["ALL"], tags: ["zennith", "orquestrador", "vontade_soberana", "consciencia", "ponto_zero"], ultimaAtivacao: "2025-07-03T05:00:00Z"
     },
@@ -165,6 +172,7 @@ const allLogFunctions: { [key: string]: any } = {
     M29: runModuleTwentyNineSequence,
     M30: runModuleThirtySequence,
     M31: runModuleThirtyOneSequence,
+    M33: runModuleThirtyThreeSequence,
     M42: runZennithOrchestrator,
     M45: runFoundationConciliumTest,
     'M-Ω': runModuleOmegaSequence,
@@ -345,6 +353,12 @@ export default function Page() {
                         <button onClick={() => runModuleThirtyOneSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Manipulation Cycle</button>
                     </div>
                 );
+            case 'M33':
+                return (
+                    <div className="flex space-x-2">
+                        <button onClick={() => runModuleThirtyThreeSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Guideline Test</button>
+                    </div>
+                );
             case 'M42':
                  return (
                     <div className="flex space-x-2">
@@ -442,4 +456,3 @@ export default function Page() {
         </main>
     );
 }
-
