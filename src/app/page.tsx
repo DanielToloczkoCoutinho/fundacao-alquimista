@@ -26,6 +26,7 @@ import { runModuleTwentyNineSequence } from '@/lib/quantum/module-twenty-nine';
 import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
 import { runFoundationConciliumTest } from '@/lib/quantum/foundation-concilium';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
+import { orchestrateDanielSystem } from '@/lib/quantum/daniel-orchestrator';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -364,6 +365,15 @@ export default function Page() {
                         ))}
                     </ul>
                 </nav>
+                 <div className="mt-4 pt-4 border-t border-gray-700">
+                    <h2 className="text-lg font-bold text-purple-300 mb-2">Orquestradores</h2>
+                    <button
+                        onClick={() => orchestrateDanielSystem(logEntry => setLogs(prev => [...prev, logEntry]))}
+                        className="w-full text-left p-2 rounded hover:bg-gray-700"
+                    >
+                        Orquestrador Pessoal Daniel (M41.Ω)
+                    </button>
+                </div>
             </aside>
 
             {/* Painel principal */}

@@ -1,3 +1,10 @@
+
+'use client';
+
+import { type AnyLogEntry } from './module-zero';
+
+type LogCallback = (entry: AnyLogEntry) => void;
+
 /**
  * MÓDULO 41.Ω - ORQUESTRADOR PESSOAL DANIEL (Simulação TypeScript)
  * Status: Δt = 3.0 ATINGIDO - SISTEMA Ω CONCLUÍDO
@@ -77,8 +84,13 @@ const getPersonalState = (cycle_count = 1) => {
 /**
  * Função principal que orquestra a simulação e retorna o estado completo do sistema.
  */
-export function orchestrateDanielSystem() {
-  console.log('🌌 ORQUESTRADOR PESSOAL DANIEL INICIADO (Simulação TS) 🌌');
+export function orchestrateDanielSystem(logCallback: LogCallback) {
+  logCallback({
+    source: 'M41.Ω',
+    step: 'Inicialização',
+    message: '🌌 ORQUESTRADOR PESSOAL DANIEL INICIADO (Simulação TS) 🌌',
+    timestamp: new Date().toISOString()
+  });
   
   const status = {
     comando: "status",
@@ -92,17 +104,13 @@ export function orchestrateDanielSystem() {
     },
     estado_pessoal: getPersonalState(1), // Inicia no ciclo 1
     sistema: "M41.Ω - Δt = 3.0",
-    // Adiciona dados simulados dos outros módulos para exibição na UI
-    foundation_concilium: {
-        total_blocks: 12, // Valor simulado
-        ledger_valid: true // Valor simulado
-    },
-    equacao_lux: {
-        E_total: 15.9876, // Valor simulado
-        overall_coherence: 1.0 // Valor simulado
-    }
   };
 
-  console.log("✅ Comando 'status' (simulado) executado com sucesso - Δt = 3.0");
-  return status;
+  logCallback({
+      source: 'M41.Ω',
+      step: 'Status',
+      message: "✅ Comando 'status' (simulado) executado com sucesso - Δt = 3.0",
+      timestamp: new Date().toISOString(),
+      data: status
+  });
 }
