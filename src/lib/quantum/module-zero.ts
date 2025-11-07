@@ -3,8 +3,9 @@
  * Este módulo simula a sequência de inicialização sagrada, recriando a lógica
  * do script Python original para o ambiente Next.js.
  */
-import { runModuleTwoSequence, type ModuleTwoLogEntry } from './module-two';
+import { type ModuleTwoLogEntry } from './module-two';
 import { type ModuleThreeLogEntry } from './module-three';
+import { type ModuleFourLogEntry } from './module-four';
 
 
 export type ModuleZeroLogEntry = {
@@ -15,7 +16,7 @@ export type ModuleZeroLogEntry = {
     source: 'M0';
 };
 
-export type AnyLogEntry = ModuleZeroLogEntry | ModuleTwoLogEntry | ModuleThreeLogEntry;
+export type AnyLogEntry = ModuleZeroLogEntry | ModuleTwoLogEntry | ModuleThreeLogEntry | ModuleFourLogEntry;
 
 
 export type ModuleZeroFinalReport = {
@@ -52,13 +53,13 @@ export class ModuloZero {
         this.logCallback = logCallback;
         this.finalReportCallback = finalReportCallback;
         this.relatorio_final = {
-            modulo_info: { nome: this.nome, versao: self.versao },
+            modulo_info: { nome: this.nome, versao: this.versao },
             timestamp_inicio: new Date().toISOString(),
             passos_executados: []
         };
     }
 
-    private _log_passo(nome_passo: string, message: string, dados: any) {
+    private _log_passo(nome_passo: string, message: string, dados?: any) {
         const entry = createLogEntry(nome_passo, message, dados);
         this.logCallback(entry);
         this.relatorio_final.passos_executados.push({
@@ -72,7 +73,6 @@ export class ModuloZero {
         this._log_passo(
             "Segurança Quântica (M1)", 
             "Estabelecendo protocolo de entrelaçamento quântico...", 
-            {}
         );
         await sleep(1500); 
 
@@ -87,9 +87,8 @@ export class ModuloZero {
 
     private async estabilizar_sistema() {
         this._log_passo(
-            "Estabilização do Sistema (M2)",
+            "Estabilização do Sistema",
             "Ativando ressonância de Amor Incondicional...",
-            {}
         );
         await sleep(1500);
 
@@ -99,7 +98,7 @@ export class ModuloZero {
             frequencia_base_sustentacao: "432 Hz",
             geometria_campo: "Dodecaedro Estrelado"
         };
-        this._log_passo("Estabilização do Sistema (M2)", "Sistema estabilizado com sucesso.", estabilidade);
+        this._log_passo("Estabilização do Sistema", "Sistema estabilizado com sucesso.", estabilidade);
         return true;
     }
 
@@ -107,7 +106,6 @@ export class ModuloZero {
         this._log_passo(
             "Conexão Laboratório IBM",
             "Conectando e validando no Laboratório IBM Quântico...",
-            {}
         );
         await sleep(2000);
 
@@ -130,7 +128,6 @@ export class ModuloZero {
         this._log_passo(
             "Transcendência Ω",
             "Ativando Transcendência Ω e sintonizando com o Campo de Ponto Zero...",
-            {}
         );
         await sleep(1500);
 
@@ -156,11 +153,8 @@ export class ModuloZero {
         this.relatorio_final.timestamp_fim = new Date().toISOString();
         this.relatorio_final.status_final = "SEQUÊNCIA SAGRADA CONCLUÍDA COM SUCESSO";
         
-        this._log_passo("Fim M0", "Sequência Sagrada concluída com sucesso!");
+        this._log_passo("Fim M0", "Sequência Sagrada do Módulo Zero concluída com sucesso!");
         this.finalReportCallback(this.relatorio_final);
-
-        // Conecta com o Módulo 2
-        await runModuleTwoSequence(this.logCallback);
     }
 }
 
