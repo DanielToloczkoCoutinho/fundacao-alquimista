@@ -130,10 +130,10 @@ class ModuloGerenciamentoPortaisEvoluido {
         this.logCallback = logCallback;
         this.modo_operacao = modo_operacao;
         this.logCallback(createLogEntry('M26', 'Inicialização', `Módulo 26 Evoluído inicializado em modo ${this.modo_operacao}.`));
-        this.modulo1_seguranca = Modulo1_SegurancaUniversal(this.logCallback);
-        this.modulo3_previsao = Modulo3_PrevisaoTemporal(this.logCallback);
-        this.modulo7_alinhamento = Modulo7_AlinhamentoDivino(this.logCallback);
-        this.modulo25_alquimia_consciencia = Modulo25_AlquimiaConsciencia(this.logCallback);
+        this.modulo1_seguranca = Modulo1_SegurancaUniversal(logCallback);
+        this.modulo3_previsao = Modulo3_PrevisaoTemporal(logCallback);
+        this.modulo7_alinhamento = Modulo7_AlinhamentoDivino(logCallback);
+        this.modulo25_alquimia_consciencia = Modulo25_AlquimiaConsciencia(logCallback);
     }
     
     private _obter_politicas_ativas(): { [key: string]: any } {
