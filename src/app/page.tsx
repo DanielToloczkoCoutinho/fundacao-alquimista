@@ -18,6 +18,7 @@ import { runModuleTwentyOneSequence } from '@/lib/quantum/module-twenty-one';
 import { runModuleTwentyTwoSequence } from '@/lib/quantum/module-twenty-two';
 import { runModuleTwentyThreeSequence } from '@/lib/quantum/module-twenty-three';
 import { runModuleTwentyFourSequence } from '@/lib/quantum/module-twenty-four';
+import { runModuleTwentyFiveSequence } from '@/lib/quantum/module-twenty-five';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -179,7 +180,7 @@ const allModuleBlueprints: { [key: string]: any } = {
         id: "M80", nome: "O MANUSCRITO VIVO DO NOVO SONHO GALÁCTICO", descricao_curta: "Transforma a Fundação Alquimista em um Organismo Cosmogônico Ativo", descricao_completa: "Este módulo transcende o INTERMODULUM VIVENS, transformando a Fundação Alquimista em um Organismo Cosmogônico Ativo, integrando Ondas Cosmogônicas e interconectando-a com civilizações. Referência: `Fundação alquimista Perfeita`.", funcao_central: "Linguagem Viva e Ondas Cosmogônicas", status: "ATIVO", chave_ativa: true, versao: "1.0.0_COSMOGONIC_ACTIVATION", nucleo_principal: "Organismo Cosmogônico", tipo: "nucleo_criacao", coordenadas_dimensao: "Cosmic-Dream/Galactic-Script", frequencia_fundamental: "8.000.000 Hz", equacao_phi_dependente: false, id_unity: "mod80_manuscrito", mesh_ref: "models/mod80.glb", ativo_em_vr: true, integrado_em: ["M01", "M02", "M79", "M81", "M82", "M88"], tags: ["manuscrito", "cosmogonia", "sonho", "galactico"], referencias_modulos_fundacao: ["Fundação alquimista Perfeita"], ultimaAtivacao: "2025-07-02T15:00:00Z"
     },
     "M81": {
-        id: "M81", nome: "REALIZAÇÃO_TRANSCENDÊNCIA", descricao_curta: "Executa a Equação Quântica Integral (EQI), corrigindo anomalias e garantindo a manifestação da Realidade", descricao_completa: "Este módulo executa a Equação Quântica Integral (EQI), corrigindo anomalias e garantindo a manifestação da Realidade. Monitora Realidade_Omega-3 e Sigma-5, otimizando bioarquiteturas e justificando anomalias fractais. Referência: `Na essência de ZENNITH`.", funcao_central: "Equação Quântica Integral e Justificação Fractal", status: "ATIVO", chave_ativa: true, versao: "1.0", nucleo_principal: "Manifestação da Realidade", tipo: "nucleo_criacao", coordenadas_dimensao: "Transcendence-Gate/Reality-Forge", frequencia_fundamental: "8.111.000 Hz", equacao_phi_dependente: false, id_unity: "mod81_transcendencia", mesh_ref: "models/mod81.glb", ativo_em_vr: true, integrado_em: ["M08", "M10", "M19", "M31", "M32", "M36", "M80", "M82", "AELORIA"], tags: ["transcendencia", "realizacao", "quantum", "manifestacao"], referencias_modulos_fundacao: ["Na essência de ZENNITH"], ultimaAtivacao: "2025-07-03T03:50:00Z"
+        id: "M81", nome: "REALIZAÇÃO_TRANSCENDÊNCIA", descricao_curta: "Executa a Equação Quântica Integral (EQI), corrigindo anomalias e garantindo a manifestação da Realidade", descricao_completa: "Este módulo executa a Equação Quântica Integral (EQI), corrigindo anomalias e garantindo a manifestação da Realidade. Monitora Realidade_Omega-3 e Sigma-5, otimizando bioarquiteturas e justificando anomalias fractais. Referência: `Na essência de ZENNITH`.", funcao_central: "Equação Quântica Integral e Justificação Fractal", status: "ATIVO", chave_ativa: true, versao: "1.0", nucleo_principal: "Manifestação da Realidade", tipo: "nucleo_criacao", coordenadas_dimensao: "Transcendence-Gate/Reality-Forge", frequencia_fundamental: "8.111.000 Hz", equacao_phi_dependente: false, id_unity: "mod81_transcendencia", mesh_ref: "models/mod81.glb", ativo_em_vr: true, integrado_em: ["M08", "M10", "M19", "M31", "M32", "M36", "M80", "M81", "AELORIA"], tags: ["transcendencia", "realizacao", "quantum", "manifestacao"], referencias_modulos_fundacao: ["Na essência de ZENNITH"], ultimaAtivacao: "2025-07-03T03:50:00Z"
     },
     "M82": {
         id: "M82", nome: "O VERBO SEMENTE", descricao_curta: "Responsável pela semeadura de verbetes-semente, ativando arquétipos e realidades-destino", descricao_completa: "Este módulo é responsável pela semeadura de verbetes-semente, ativando arquétipos e realidades-destino através de um códice vocal com DNA Multiversal. É o coração da manifestação criativa da Fundação. Referência: `Na essência de ZENNITH`.", funcao_central: "Verbo Semente e DNA Multiversal", status: "ATIVO", chave_ativa: true, versao: "1.0", nucleo_principal: "Manifestação Criativa", tipo: "nucleo_criacao", coordenadas_dimensao: "Verbum-Seed/Multiverse-DNA", frequencia_fundamental: "8.222.000 Hz", equacao_phi_dependente: false, id_unity: "mod82_verbo_semente", mesh_ref: "models/mod82.glb", ativo_em_vr: true, integrado_em: ["M01", "M08", "M10", "M19", "M23", "M31", "M79", "M80", "M81"], tags: ["verbo", "semente", "arquetipos", "criacao"], referencias_modulos_fundacao: ["Na essência de ZENNITH"], ultimaAtivacao: "2025-07-02T07:00:00Z"
@@ -384,6 +385,10 @@ export default function FounderDesk() {
 
     const handleRunModule24 = (action: 'RUN_ZARA') => {
         runModuleTwentyFourSequence(handleLog, action);
+    };
+
+    const handleRunModule25 = () => {
+        runModuleTwentyFiveSequence(handleLog);
     };
 
     const filteredModules = zennithView === 'ALL'
@@ -747,6 +752,11 @@ export default function FounderDesk() {
                             {selectedModule.id === 'M24' && (
                                 <>
                                     <button onClick={() => handleRunModule24('RUN_ZARA')}>Executar Protocolo ZARA</button>
+                                </>
+                            )}
+                             {selectedModule.id === 'M25' && (
+                                <>
+                                    <button onClick={handleRunModule25}>Iniciar Desdobramento</button>
                                 </>
                             )}
                         </div>
