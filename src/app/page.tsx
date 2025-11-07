@@ -23,8 +23,8 @@ import { runModuleTwentySixSequence } from '@/lib/quantum/module-twenty-six';
 import { runModuleTwentySevenSequence } from '@/lib/quantum/module-twenty-seven';
 import { runModuleTwentyEightSequence } from '@/lib/quantum/module-twenty-eight';
 import { runModuleTwentyNineSequence } from '@/lib/quantum/module-twenty-nine';
-import { runFoundationConciliumTest } from '@/lib/quantum/foundation-concilium';
 import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
+import { runFoundationConciliumTest } from '@/lib/quantum/foundation-concilium';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
 
@@ -331,7 +331,7 @@ export default function Page() {
             case 'M45':
                  return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runFoundationConciliumTest(logEntry => setLogs(prev => [...prev, logentry]))}>Run Full Test</button>
+                        <button onClick={() => runFoundationConciliumTest(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Full Test</button>
                     </div>
                 );
             case 'M-Ω':
