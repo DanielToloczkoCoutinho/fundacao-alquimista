@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useEffect, useState } from 'react';
 import { runModuleEightSequence } from '@/lib/quantum/module-eight';
@@ -8,6 +7,7 @@ import { runModuleElevenSequence } from '@/lib/quantum/module-eleven';
 import { runModuleTwelveSequence } from '@/lib/quantum/module-twelve';
 import { runModuleThirteenSequence } from '@/lib/quantum/module-thirteen';
 import { runModuleFourteenSequence } from '@/lib/quantum/module-fourteen';
+import { runModuleFifteenSequence } from '@/lib/quantum/module-fifteen';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -323,6 +323,14 @@ export default function FounderDesk() {
         runModuleFourteenSequence(handleLog, action, params);
     };
 
+    const handleRunModule15 = (action: 'MONITOR' | 'INTERVENE') => {
+        const params = {
+            ecossistema_id: 'ecossistema_veridia_1',
+            proposito: 'Manutencao de Equilibrio'
+        };
+        runModuleFifteenSequence(handleLog, action, params);
+    };
+
     const filteredModules = zennithView === 'ALL'
         ? Object.values(allModuleBlueprints)
         : zennithViews[zennithView as keyof typeof zennithViews].map((id: string) => allModuleBlueprints[id]).filter(Boolean);
@@ -524,7 +532,7 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
-                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14 { border-left-color: #8A2BE2; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13, .log-entry.M14, .log-entry.M15 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
@@ -623,6 +631,12 @@ export default function FounderDesk() {
                                     <button onClick={() => handleRunModule14('VALIDATE')}>Validar Integridade</button>
                                 </>
                             )}
+                            {selectedModule.id === 'M15' && (
+                                <>
+                                    <button onClick={() => handleRunModule15('MONITOR')}>Monitorar Ecossistema</button>
+                                    <button onClick={() => handleRunModule15('INTERVENE')}>Intervir Climaticamente</button>
+                                </>
+                            )}
                         </div>
                         
                         <div id="moduleLogsSection">
@@ -648,5 +662,3 @@ export default function FounderDesk() {
         </div>
     )
 }
-
-    
