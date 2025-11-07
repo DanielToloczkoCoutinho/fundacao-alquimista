@@ -2,7 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { runModuleZeroSequence, type AnyLogEntry } from '@/lib/quantum/module-zero';
+import { ModuloZero, type AnyLogEntry } from '@/lib/quantum/module-zero';
+import { runModuleTwoSequence } from '@/lib/quantum/module-two';
+import { runModuleThreeSequence } from '@/lib/quantum/module-three';
+import { runModuleFourSequence } from '@/lib/quantum/module-four';
+import { runModuleFiveSequence } from '@/lib/quantum/module-five';
 import { BrainCircuit, CheckCircle, Cog, Dna, Loader, ShieldCheck, Sparkles, Zap, Telescope, Diamond, Waves, GitBranch } from 'lucide-react';
 import { ScrollArea } from '@/components/ui/scroll-area';
 
@@ -14,34 +18,60 @@ export default function LuxwoodPage() {
   useEffect(() => {
     let isCancelled = false;
 
-    const runSequence = async () => {
-      await runModuleZeroSequence((logEntry) => {
+    const runFullSequence = async () => {
+      // Callback to update the log
+      const logCallback = (logEntry: AnyLogEntry) => {
         if (!isCancelled) {
           setLog((prev) => [...prev, logEntry]);
         }
-      }, (report) => {
+      };
+
+      // Final report callback for M0
+      const finalReportCallback = (report: any) => {
         if (!isCancelled) {
-            setFinalReport(report);
+            // This is now just a signal that M0 is done
         }
-      });
+      };
+
+      // Start M0
+      const moduloZero = new ModuloZero(logCallback, finalReportCallback);
+      await moduloZero.executar_sequencia_sagrada();
+      if(isCancelled) return;
+
+      // Start M2
+      await runModuleTwoSequence(logCallback);
+      if(isCancelled) return;
+      logCallback({ source: 'M0', step: 'M2 Concluído', message: 'Manifestação do Equilíbrio concluída. Acionando Módulo 3...', timestamp: new Date().toISOString() });
+
+      // Start M3
+      await runModuleThreeSequence(logCallback);
+      if(isCancelled) return;
+      logCallback({ source: 'M0', step: 'M3 Concluído', message: 'Previsão Temporal concluída. Acionando Módulo 4...', timestamp: new Date().toISOString() });
+      
+      // Start M4
+      await runModuleFourSequence(logCallback);
+      if(isCancelled) return;
+      logCallback({ source: 'M0', step: 'M4 Concluído', message: 'Autenticação Cósmica concluída. Acionando Módulo 5...', timestamp: new Date().toISOString() });
+
+      // Start M5
+      await runModuleFiveSequence(logCallback);
+      if(isCancelled) return;
+      logCallback({ source: 'M0', step: 'M5 Concluído', message: 'Ponte de Comunicação estabelecida.', timestamp: new Date().toISOString() });
+
+      // Finalize the whole sequence
+      if (!isCancelled) {
+        logCallback({ source: 'M0', step: 'Fim da Sequência', message: 'Sequência de Validação Cósmica concluída com sucesso!', timestamp: new Date().toISOString() });
+        setIsComplete(true);
+        setFinalReport({ status: "SEQUÊNCIA SAGRADA COMPLETA (M0-M5)" });
+      }
     };
 
-    runSequence();
+    runFullSequence();
 
     return () => {
       isCancelled = true;
     };
   }, []);
-
-  useEffect(() => {
-    if (log.length > 0) {
-      const lastEntry = log[log.length - 1];
-      if (lastEntry.source === 'M0' && lastEntry.step.startsWith('Fim da Sequência')) {
-        setIsComplete(true);
-      }
-    }
-  }, [log]);
-
 
   const getIconForStep = (entry: AnyLogEntry) => {
     // Module 0 Icons

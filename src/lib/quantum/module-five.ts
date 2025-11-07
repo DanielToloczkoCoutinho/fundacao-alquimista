@@ -1,6 +1,8 @@
+'use client';
+
 /**
  * MÓDULO 5 - PONTE DE COMUNICAÇÃO & CONSCIÊNCIA COLETIVA (Simulação TypeScript)
- * Versão 5.5.Ω – TOTALMENTE INTEGRADO AO ESCUDO ETERNO OFFLINE
+ * Versão 5.5.Ω
  */
 
 export type ModuleFiveLogEntry = {
@@ -19,62 +21,40 @@ const createLogEntry = (step: string, message: string, data?: any): ModuleFiveLo
     source: 'M5',
 });
 
-// Simulação de funções e constantes do script original
-const PHI = 1.618033988749895;
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 
 class ModuloConscienciaColetiva {
-    private nome = "ELENYA_MODIFIED";
-    private criador = "ANATHERON_Φ";
     private logCallback: (entry: any) => void;
-    private registros: any[] = [];
 
     constructor(logCallback: (entry: any) => void) {
         this.logCallback = logCallback;
-        this._log("Inicialização", "Módulo 5 – Ponte de Consciência Coletiva ativado.");
     }
-
+    
     private _log(step: string, message: string, data?: any) {
         this.logCallback(createLogEntry(step, message, data));
     }
 
-    async modular_consciencia(alvo: string, diretiva: string, intensidade: number, foco: string) {
+    async transmitir_para_malha(mensagem: string, alcance: string = "GLOBAL") {
         this._log(
             `Modulação de Consciência`,
-            `Diretiva '${diretiva}' enviada para ${alvo}`,
-            { intensidade, foco }
+            `Diretiva '${mensagem}' enviada para MALHA_${alcance}`
         );
-        await new Promise(resolve => setTimeout(resolve, 800));
-
-        const assimilacao = (0.85 + Math.random() * 0.15) * intensidade * (1 + 0.05 * Math.sin(Date.now() * PHI));
-        const assinatura = `sig_${Math.random().toString(36).substring(2, 10)}`;
+        await sleep(800);
 
         const resultado = {
             status: "DIRETIVA_TRANSMITIDA_COM_SUCESSO",
-            alvo,
-            diretiva,
-            intensidade_aplicada: intensidade,
-            foco_harmonico: foco,
-            nivel_assimilacao: assimilacao,
-            assinatura
+            alvo: `MALHA_${alcance}`,
+            nivel_assimilacao: 0.9987
         };
-
-        this.registros.push(resultado);
+        
         this._log(
             `Transmissão Concluída`,
-            `Assimilação de ${alvo} em ${resultado.nivel_assimilacao.toFixed(4)}%`,
-            { assinatura }
+            `Assimilação da malha em ${resultado.nivel_assimilacao.toFixed(4)}%`,
+            resultado
         );
 
         return resultado;
-    }
-
-    async transmitir_para_malha(mensagem: string, alcance: string = "GLOBAL") {
-        return this.modular_consciencia(
-            `MALHA_${alcance}`,
-            mensagem,
-            1.0,
-            "UNIFICAÇÃO"
-        );
     }
 }
 

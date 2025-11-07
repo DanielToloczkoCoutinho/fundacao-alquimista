@@ -1,11 +1,13 @@
+'use client';
 /**
  * MÓDULO ZERO - Gênese da Verdade (Simulação TypeScript)
- * Este módulo simula a sequência de inicialização sagrada, orquestrando os outros módulos.
+ * Este módulo simula a sequência de inicialização sagrada.
  */
-import { type ModuleTwoLogEntry, runModuleTwoSequence } from './module-two';
-import { type ModuleThreeLogEntry, runModuleThreeSequence } from './module-three';
-import { type ModuleFourLogEntry, runModuleFourSequence } from './module-four';
-import { type ModuleFiveLogEntry, runModuleFiveSequence } from './module-five';
+import { type ModuleTwoLogEntry } from '@/lib/quantum/module-two';
+import { type ModuleThreeLogEntry } from '@/lib/quantum/module-three';
+import { type ModuleFourLogEntry } from '@/lib/quantum/module-four';
+import { type ModuleFiveLogEntry } from '@/lib/quantum/module-five';
+
 
 export type ModuleZeroLogEntry = {
     step: string;
@@ -141,37 +143,12 @@ export class ModuloZero {
         if (!await this.conectar_laboratorio_ibm()) return;
         await this.ativar_transcendencia_omega();
         
-        this._log_passo("Fim M0", "Gênese da Verdade concluída. Acionando Módulo 2...");
+        this._log_passo("Fim M0", "Gênese da Verdade concluída. Próxima etapa na orquestração central.");
         
-        // Acionar Módulo 2
-        await runModuleTwoSequence(this.logCallback);
-        this._log_passo("M2 Concluído", "Manifestação do Equilíbrio concluída. Acionando Módulo 3...");
-
-        // Acionar Módulo 3
-        await runModuleThreeSequence(this.logCallback);
-        this._log_passo("M3 Concluído", "Previsão Temporal concluída. Acionando Módulo 4...");
-
-        // Acionar Módulo 4
-        await runModuleFourSequence(this.logCallback);
-        this._log_passo("M4 Concluído", "Autenticação Cósmica concluída. Acionando Módulo 5...");
-
-        // Acionar Módulo 5
-        await runModuleFiveSequence(this.logCallback);
-        this._log_passo("M5 Concluído", "Ponte de Comunicação estabelecida.");
-
-
         this.relatorio_final.timestamp_fim = new Date().toISOString();
-        this.relatorio_final.status_final = "SEQUÊNCIA SAGRADA COMPLETA (M0-M5)";
+        this.relatorio_final.status_final = "MÓDULO ZERO CONCLUÍDO";
         
-        this._log_passo("Fim da Sequência", "Sequência de Validação Cósmica concluída com sucesso!");
+        // This callback is now used just to signal completion of M0
         this.finalReportCallback(this.relatorio_final);
     }
 }
-
-export const runModuleZeroSequence = async (
-    logCallback: (entry: AnyLogEntry) => void,
-    finalReportCallback: (report: ModuleZeroFinalReport) => void
-) => {
-    const moduloZero = new ModuloZero(logCallback, finalReportCallback);
-    await moduloZero.executar_sequencia_sagrada();
-};
