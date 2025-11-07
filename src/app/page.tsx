@@ -6,6 +6,7 @@ import { runModuleNineSequence } from '@/lib/quantum/module-nine';
 import { runModuleTenSequence } from '@/lib/quantum/module-ten';
 import { runModuleElevenSequence } from '@/lib/quantum/module-eleven';
 import { runModuleTwelveSequence } from '@/lib/quantum/module-twelve';
+import { runModuleThirteenSequence } from '@/lib/quantum/module-thirteen';
 
 
 // This is a placeholder for the actual module blueprints.
@@ -301,6 +302,14 @@ export default function FounderDesk() {
         runModuleTwelveSequence(handleLog, action, params);
     };
 
+    const handleRunModule13 = (action: 'SCAN' | 'ANALYZE' | 'HARMONIZE' | 'INTEGRATE') => {
+        // Mock parameters for now, can be replaced with form inputs later
+        const params = {
+            energia: 7.42 // Example energy value
+        };
+        runModuleThirteenSequence(handleLog, action, params);
+    };
+
     const filteredModules = zennithView === 'ALL'
         ? Object.values(allModuleBlueprints)
         : zennithViews[zennithView as keyof typeof zennithViews].map((id: string) => allModuleBlueprints[id]).filter(Boolean);
@@ -502,7 +511,7 @@ export default function FounderDesk() {
                 .log-entry.INFO { border-color: #00FFFF; }
                 .log-entry.ALERTA { border-color: #FFD700; }
                 .log-entry.CRÍTICO { border-color: #FF6347; }
-                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12 { border-left-color: #8A2BE2; }
+                .log-entry.M0, .log-entry.M1, .log-entry.M2, .log-entry.M3, .log-entry.M4, .log-entry.M5, .log-entry.M6, .log-entry.M7, .log-entry.M8, .log-entry.M9, .log-entry.M10, .log-entry.M11, .log-entry.M12, .log-entry.M13 { border-left-color: #8A2BE2; }
                 .log-entry strong { color: #99eeff; }
                 .log-entry p { margin: 3px 0; font-size: 0.85em; line-height: 1.4; }
                 .log-entry .timestamp { font-size: 0.75em; color: #a0a0a0; float: right; }
@@ -585,6 +594,14 @@ export default function FounderDesk() {
                                     <button onClick={() => handleRunModule12('STORE')}>Armazenar Memória</button>
                                     <button onClick={() => handleRunModule12('RETRIEVE')}>Recuperar Memória</button>
                                     <button onClick={() => handleRunModule12('TRANSMUTE')}>Transmutar Memória</button>
+                                </>
+                            )}
+                            {selectedModule.id === 'M13' && (
+                                <>
+                                    <button onClick={() => handleRunModule13('SCAN')}>Escanear Campo</button>
+                                    <button onClick={() => handleRunModule13('ANALYZE')}>Analisar Anomalias</button>
+                                    <button onClick={() => handleRunModule13('HARMONIZE')}>Harmonizar Frequências</button>
+                                    <button onClick={() => handleRunModule13('INTEGRATE')}>Integrar ao Orquestrador</button>
                                 </>
                             )}
                         </div>
