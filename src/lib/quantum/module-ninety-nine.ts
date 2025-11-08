@@ -44,7 +44,7 @@ class MockM01SegurancaUniversal {
 class MockM03OraculoPreditivo {
     constructor(private log: LogCallback) {}
     predict_recalibration_outcome(recalibration_plan: any) {
-        this.log(createLogEntry('M3', 'Previsão', `Prevendo resultado da recalibração: ${recalibration_plan.purpose || 'N/A'}`));
+        this.log(createLogEntry('M3', 'Previsão', `Prevendo resultado da recalibração de lei física: ${recalibration_plan.purpose || 'N/A'}`));
         if ((recalibration_plan.purpose || "").toLowerCase().includes("desequilibrio") || (recalibration_plan.purpose || "").toLowerCase().includes("caos")) {
             return { "predicted_stability_score": Math.random() * 0.25 + 0.05, "confidence": 0.9 };
         }
@@ -162,7 +162,7 @@ class MockM91SimulacaoTeoriaMuitosMundos {
 class MockM93SimulacaoRealidadesImersivas {
     constructor(private log: LogCallback) {}
     create_immersive_reality(purpose: string, complexity_level: number, target_user_consciousness_id: string, duration_simulated_time_units: number) {
-        this.log(createLogEntry('M93', 'Criação Realidade Imersiva', `Criando realidade para visualização: ${purpose}.`));
+        this.log(createLogEntry('M93', 'Criação Realidade Imersiva', `Criando realidade para visualização da recalibração: ${purpose}.`));
         return { "status": "immersive_reality_created", "reality_id": "VISUAL_RECALIBRATION_REALITY_001" };
     }
 }
@@ -178,7 +178,7 @@ class MockM94MorfogeneseQuantica {
 class MockM95InteracaoConscienciasColetivas {
     constructor(private log: LogCallback) {}
     interact_with_galactic_consciousness(target_galaxy_id: string, collective_consciousness_type: string, communication_purpose: string, ethical_oversight_level: number) {
-        this.log(createLogEntry('M95', 'Consulta Coletiva', `Consultando ${collective_consciousness_type}.`));
+        this.log(createLogEntry('M95', 'Consulta Coletiva', `Consultando consciência coletiva sobre recalibração de leis: ${target_galaxy_id}.`));
         return { "status": "interaction_established", "response_coherence": Math.random() * 0.2 + 0.8 };
     }
 }
@@ -186,7 +186,7 @@ class MockM95InteracaoConscienciasColetivas {
 class MockM96RegulacaoEventosCosmicos {
     constructor(private log: LogCallback) {}
     detect_and_regulate_anomaly(anomaly_id: string, anomaly_type: string, severity: string, location_coordinates: any, intervention_approach: string) {
-        this.log(createLogEntry('M96', 'Monitoramento', `Monitorando anomalias durante recalibração: ${anomaly_id}.`));
+        this.log(createLogEntry('M96', 'Monitoramento', `Monitorando anomalias durante recalibração de leis: ${anomaly_id}.`));
         return { "status": "no_anomaly_detected", "anomaly_risk": "LOW" };
     }
 }
@@ -271,8 +271,9 @@ class M99_RecalibradoresLeisFisicasUniversais {
         recalibration_data["recalibration_blueprint"] = recalibration_blueprint;
         this.logCallback(createLogEntry(this.module_id, 'Blueprint Gerado', `(M88): ${recalibration_blueprint.blueprint_id}.`));
 
-        const numeric_values = Object.values(desired_parameters).filter(v => typeof v === 'number');
-        const energy_signature_calc = numeric_values.length > 0 ? numeric_values.reduce((s: number, v: number) => s + v, 0) * 1000 : 1000;
+        const numeric_values = Object.values(desired_parameters).filter((v): v is number => typeof v === 'number');
+        const energy_signature_calc = numeric_values.length > 0 ? numeric_values.reduce((s, v) => s + v, 0) * 1000 : 1000;
+
 
         const resource_analysis = this.m90.analyze_quantum_resource(
             `RECURSO_RECALIB_${recalibration_data.recalibration_id}`,
@@ -346,31 +347,23 @@ class M99_RecalibradoresLeisFisicasUniversais {
 }
 
 export const runModuleNinetyNineSequence = async (logCallback: LogCallback) => {
-    const log = (message: string, data: any = {}) => logCallback(createLogEntry('M99-DEMO', 'Info', message, data));
+    const m99_instance = new M99_RecalibradoresLeisFisicasUniversais();
     
-    log("Iniciando a demonstração do Módulo 99: Recalibradores de Leis Físicas Universais.");
-   
-    const m99_instance = new M99_RecalibradoresLeisFisicasUniversais(logCallback);
-
-    log("Cenário 1: Recalibração da Constante de Planck para Otimização da Coerência Quântica");
-    const recalibration_report_1 = await m99_instance.recalibrate_universal_law(
+    logCallback(createLogEntry('M99', 'Cenário 1', '--- Recalibração da Constante de Planck para Otimização da Coerência Quântica ---'));
+    await m99_instance.recalibrate_universal_law(
         "Constante de Planck",
         "UNIVERSO_PRIMAL_001",
         "Otimização da Coerência Quântica Universal para Aceleração da Consciência",
-        { "value": 6.62607015e-34 * 1.00000000001, "unidade": "J.s" }, // Pequeno ajuste
-        1.0 // Rigor ético máximo
+        { "value": 6.62607015e-34 * 1.00000000001, "unidade": "J.s" },
+        1.0
     );
-    console.log(JSON.stringify(recalibration_report_1, null, 4));
-
-    log("Cenário 2: Recalibração da Lei da Entropia para Desestabilização (Potencial de Caos)");
-    const recalibration_report_2 = await m99_instance.recalibrate_universal_law(
+    
+    logCallback(createLogEntry('M99', 'Cenário 2', '--- Recalibração da Lei da Entropia para Desestabilização (Potencial de Caos) ---'));
+    await m99_instance.recalibrate_universal_law(
         "Lei da Entropia",
         "UNIVERSO_TESTE_CAOS_002",
-        "Desestabilização Acelerada para Estudo de Colapso (egoico)", // Propósito com potencial ético duvidoso
-        { "fator_desordem": 0.001, "unidade": "adimensional" }, // Valor que causaria desequilíbrio
-        0.1 // Baixo rigor ético para simular falha
+        "Desestabilização Acelerada para Estudo de Colapso (egoico)",
+        { "fator_desordem": 0.001, "unidade": "adimensional" },
+        0.1
     );
-    console.log(JSON.stringify(recalibration_report_2, null, 4));
-    
-    log("Demonstração do Módulo 99 concluída com êxito.");
 };
