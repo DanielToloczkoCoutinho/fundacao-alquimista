@@ -8,6 +8,7 @@ import { type ModuleThreeLogEntry } from '@/lib/quantum/module-three';
 import { type ModuleFourLogEntry } from '@/lib/quantum/module-four';
 import { type ModuleFiveLogEntry } from '@/lib/quantum/module-five';
 import { type ModuleSixLogEntry } from '@/lib/quantum/module-six';
+import { runLuxEquationValidation } from '@/lib/quantum/equation-lux';
 
 
 export type ModuleZeroLogEntry = {
@@ -102,19 +103,27 @@ class ModuloZero {
         return true;
     }
 
-    private async conectar_laboratorio_ibm() {
+    private async validar_equacao_lux() {
         this._log_passo(
-            "Conexão Laboratório IBM",
-            "Conectando e validando no Laboratório IBM Quântico...",
+            "Validação Equação LUX",
+            "Validando coerência máxima 1.00 com a Equação LUX...",
         );
         await sleep(1000);
 
-        const testes_resultados = [
-            { "teste": "QFT", "fidelidade": 0.983 },
-            { "teste": "SHOR", "eficiencia": 0.864 },
-            { "teste": "GROVER", "aceleracao": "~100x" },
-        ];
-        this._log_passo("Conexão Laboratório IBM", `${testes_resultados.length} testes IBM Quânticos validados.`, testes_resultados);
+        const lux_results = runLuxEquationValidation();
+        
+        const eq12_result = lux_results.EQ012;
+        const metrics = lux_results.metrics;
+
+        this._log_passo("Validação Equação LUX", `Validação das 12 equações canônicas concluída. Unificação Total (EQ012): ${eq12_result.toFixed(6)}`, {
+            metrics: {
+                ...metrics,
+                mean: metrics.mean.toFixed(6),
+                std: metrics.std.toFixed(6),
+                cv: metrics.cv.toFixed(6),
+                range: metrics.range.toFixed(6)
+            }
+        });
         return true;
     }
 
@@ -141,7 +150,7 @@ class ModuloZero {
         
         if (!await this.estabelecer_seguranca_quantica()) return;
         if (!await this.estabilizar_sistema()) return;
-        if (!await this.conectar_laboratorio_ibm()) return;
+        if (!await this.validar_equacao_lux()) return;
         await this.ativar_transcendencia_omega();
         
         this._log_passo("Fim M0", "Gênese da Verdade concluída. Próxima etapa na orquestração central.");
