@@ -16,7 +16,7 @@ import bibliotecaLuxNet from './biblioteca_chave_mestra_luxnet';
 import bibliotecaAvancado from './biblioteca_chave_mestra_luxnet_avancado';
 import bibliotecaVortex3 from './biblioteca_chave_mestra_vortex_v3';
 import bibliotecaVortex4 from './biblioteca_chave_mestra_vortex_v4';
-import bibliotecaCompleta from './biblioteca_chave_mestra_luxnet_completa';
+import bibliotecaCompletaData from './biblioteca_chave_mestra_luxnet_completa';
 // O Módulo 42 agora é o ChronoCodex, o 44 é o Veritas.
 // Os nomes dos arquivos foram ajustados para refletir a numeração.
 import './module-forty-one-part-one';
@@ -42,8 +42,8 @@ import './module-eighty-one';
 import './module-eighty-two';
 import './module-eighty-three';
 import './module-eighty-four';
-import './module-eighty-five';
-import './module-eighty-six';
+import { runModuleEightyFiveSequence } from './module-eighty-five';
+import { runModuleEightySixSequence } from './module-eighty-six';
 import './module-eighty-seven';
 import './module-eighty-eight';
 import './module-ninety';
@@ -87,7 +87,7 @@ import './module-three-hundred-three';
 import './module-three-hundred-four';
 import './module-three-hundred-four-point-two';
 import './module-three-hundred-five';
-import './module-three-hundred-six';
+import { runModuleThreeHundredSixSequence } from './module-three-hundred-six';
 import './module-omega';
 
 
@@ -134,7 +134,7 @@ class BibliotecaCompletaUnificada {
             bibliotecaAvancado,
             bibliotecaVortex3,
             bibliotecaVortex4,
-            bibliotecaCompleta,
+            bibliotecaCompletaData,
         ];
 
         for (const bib of bibliotecas) {

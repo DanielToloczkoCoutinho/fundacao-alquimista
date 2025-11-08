@@ -11,45 +11,20 @@ const createLogEntry = (source: string, step: string, message: string, data?: an
     source: source as any,
 });
 
-const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
-class M86_PrismaEstelar {
-    private logCallback: LogCallback;
-    private readonly MODULE_ID = "M86";
-
-    constructor(logCallback: LogCallback) {
-        this.logCallback = logCallback;
-        this.logCallback(createLogEntry(this.MODULE_ID, 'Inicialização', 'Módulo 86 (Prisma Estelar e Roda Celeste) inicializado.'));
-    }
-
-    private openVRScene() {
-        this.logCallback(createLogEntry(this.MODULE_ID, 'Navegação', 'Simulando a abertura da experiência VR (m86.html). A navegação real foi desativada para manter a estabilidade da aplicação.'));
-        // window.open('/m86.html', '_blank'); // Comentado para evitar erro 404
-    }
-
-    async startExperience() {
-        this.logCallback(createLogEntry(this.MODULE_ID, 'Início', 'Iniciando experiência de imersão no Prisma Estelar e Roda Celeste.'));
-        await sleep(500);
-
-        // Simula a ativação de vários subsistemas
-        this.logCallback(createLogEntry(this.MODULE_ID, 'Ativação', 'Sincronizando Domo Celeste e alinhando os 12 Raios Estelares...'));
-        await sleep(1000);
-        this.logCallback(createLogEntry(this.MODULE_ID, 'Ativação', 'Manifestando Roda Celeste dos 12 Raios...'));
-        await sleep(500);
-        this.logCallback(createLogEntry(this.MODULE_ID, 'Ativação', 'Ativando Prisma Estelar Total para integração universal...'));
-
-        const result = {
-            status: "EXPERIENCIA_PRONTA",
-            message: "Câmara Primordial VR com Prisma Estelar está online e pronta para interação.",
-        };
-
-        this.openVRScene();
-        this.logCallback(createLogEntry(this.MODULE_ID, 'Conclusão', result.message, result));
-        return result;
-    }
-}
-
 export const runModuleEightySixSequence = async (logCallback: LogCallback) => {
-    const m86 = new M86_PrismaEstelar(logCallback);
-    await m86.startExperience();
+    logCallback(createLogEntry('M86', 'Início', 'Iniciando Módulo 86 - Ativador da Experiência VR do Prisma Estelar.'));
+    
+    try {
+        logCallback(createLogEntry('M86', 'Abertura Portal', 'Abrindo o portal para a Realidade Virtual do Prisma Estelar em uma nova aba...'));
+        
+        // A-Frame e Tone.js são melhor executados em um arquivo HTML puro.
+        // A lógica do 'use client' no topo garante que `window` está disponível.
+        window.open('/m86.html', '_blank');
+        
+        logCallback(createLogEntry('M86', 'Sucesso', 'Portal para a experiência VR do Prisma Estelar aberto. A interação continua na nova aba.'));
+
+    } catch (error: any) {
+        logCallback(createLogEntry('M86', 'ERRO', `Falha ao abrir o portal VR: ${error.message}`));
+        console.error("Erro no Módulo 86:", error);
+    }
 };
