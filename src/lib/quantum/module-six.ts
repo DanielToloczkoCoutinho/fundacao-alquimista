@@ -3,17 +3,11 @@
  * MÓDULO 6 - Laboratório da Memória Terrestre e Alquimia Quântica (Simulação TypeScript)
  * Versão 6.2.Otimizado
  */
+import { type AnyLogEntry } from './module-zero';
 
-export type ModuleSixLogEntry = {
-    step: string;
-    message: string;
-    timestamp: string;
-    data?: any;
-    source: 'M6';
-};
 
-const createLogEntry = (step: string, message: string, data?: any): ModuleSixLogEntry => ({
-    step,
+const createLogEntry = (step: string, message: string, data?: any): AnyLogEntry => ({
+    step: `[M6] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
@@ -23,9 +17,9 @@ const createLogEntry = (step: string, message: string, data?: any): ModuleSixLog
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 class Modulo6AlquimiaQuantica {
-    private logCallback: (entry: any) => void;
+    private logCallback: (entry: AnyLogEntry) => void;
 
-    constructor(logCallback: (entry: any) => void) {
+    constructor(logCallback: (entry: AnyLogEntry) => void) {
         this.logCallback = logCallback;
     }
 
@@ -49,8 +43,9 @@ class Modulo6AlquimiaQuantica {
 }
 
 export const runModuleSixSequence = async (
-    logCallback: (entry: any) => void,
+    logCallback: (entry: AnyLogEntry) => void,
 ) => {
     const modulo6 = new Modulo6AlquimiaQuantica(logCallback);
-    await modulo6.otimizar_fusao_dna_nucleo();
+    const resultado = await modulo6.otimizar_fusao_dna_nucleo();
+    return resultado;
 };
