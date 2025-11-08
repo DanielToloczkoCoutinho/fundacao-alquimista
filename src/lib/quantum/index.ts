@@ -23,6 +23,8 @@ import bibliotecaCompleta from './biblioteca_chave_mestra_luxnet_completa';
 // O Módulo 38 já foi integrado e não possui uma "biblioteca" de equações separada.
 // O Módulo 39 já foi integrado e não possui uma "biblioteca" de equações separada.
 // O Módulo 40 já foi integrado e não possui uma "biblioteca" de equações separada.
+// O Módulo 41.1 é funcional e não possui uma "biblioteca" de equações separada.
+
 
 export interface EquacaoViva {
     id: string;

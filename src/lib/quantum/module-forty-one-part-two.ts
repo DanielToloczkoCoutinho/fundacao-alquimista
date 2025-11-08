@@ -1,3 +1,4 @@
+'use client';
 
 // This is a simplified TypeScript port of the Python module.
 // For brevity and to avoid heavy dependencies like numpy, matrix operations are abstracted

@@ -43,8 +43,8 @@ import { runModuleThirtySevenSequence } from '@/lib/quantum/module-thirty-seven'
 import { runModuleThirtyEightSequence } from '@/lib/quantum/module-thirty-eight';
 import { runModuleThirtyNineSequence } from '@/lib/quantum/module-thirty-nine';
 import { runModuleFortySequence } from '@/lib/quantum/module-forty';
-import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
 import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
+import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -502,4 +502,3 @@ export default function App() {
         </div>
     );
 }
-    
