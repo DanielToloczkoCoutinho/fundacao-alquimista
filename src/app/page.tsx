@@ -62,6 +62,7 @@ import { runModuleSeventyFourSequence } from '@/lib/quantum/module-seventy-four'
 import { runModuleSeventySevenSequence } from '@/lib/quantum/module-seventy-seven';
 import { runModuleSeventyEightSequence } from '@/lib/quantum/module-seventy-eight';
 import { runModuleSeventyNineSequence } from '@/lib/quantum/module-seventy-nine';
+import { runModuleEightySequence } from '@/lib/quantum/module-eighty';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -130,6 +131,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M77: LUMEN-CUSTOS": runModuleSeventySevenSequence,
     "M78: UNIVERSUM_UNIFICATUM": runModuleSeventyEightSequence,
     "M79: INTERMODULUM_VIVENS": runModuleSeventyNineSequence,
+    "M80: Manuscrito Vivo": runModuleEightySequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
