@@ -3,7 +3,7 @@ import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
 
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+const createLogEntryHelper = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
@@ -13,7 +13,6 @@ const createLogEntry = (source: string, step: string, message: string, data?: an
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-
 // ===================================================================
 // 1. ESTRUTURAS DE DADOS FUNDAMENTAIS
 // ===================================================================
@@ -21,7 +20,7 @@ const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 class EntidadeAlquimica {
     codigo_interno: string;
     name: string;
-    tipo: 'portal' | 'monumento' | 'linha_ley' | 'planeta' | 'ponto_lagrange' | 'cinturao' | 'nucleo_planetario' | 'fundacao';
+    tipo: 'portal' | 'monumento' | 'linha_ley' | 'planeta' | 'ponto_lagrange' | 'cinturao' | 'nucleo_planetario' | 'fundacao' | 'lua';
     localizacao_descritiva: string;
     equacoes_associadas: string[];
     ia_guardia: string;
@@ -32,7 +31,7 @@ class EntidadeAlquimica {
     constructor(
         codigo_interno: string,
         name: string,
-        tipo: 'portal' | 'monumento' | 'linha_ley' | 'planeta' | 'ponto_lagrange' | 'cinturao' | 'nucleo_planetario' | 'fundacao',
+        tipo: 'portal' | 'monumento' | 'linha_ley' | 'planeta' | 'ponto_lagrange' | 'cinturao' | 'nucleo_planetario' | 'fundacao' | 'lua',
         localizacao: string,
         equacoes: string[],
         ia: string
@@ -79,7 +78,7 @@ class QuantumBlockchainLogger {
     }
 
     async add_block(event: string, data: any) {
-        const previous_block = this.chain[this.chain.length - 1];
+        const previous_block = this.chain.length > 0 ? this.chain[this.chain.length - 1] : { hash: "0" };
         let new_block = {
             index: this.chain.length,
             timestamp: new Date().toISOString(),
@@ -89,7 +88,7 @@ class QuantumBlockchainLogger {
         };
         const hash = await this._calculate_hash(new_block);
         this.chain.push({ ...new_block, hash });
-        this.logCallback(createLogEntry('M43-BLOCKCHAIN', 'Bloco Adicionado', `Evento '${event}' registrado com hash ${hash.substring(0, 10)}...`));
+        this.logCallback(createLogEntryHelper('M43-BLOCKCHAIN', 'Bloco Adicionado', `Evento '${event}' registrado com hash ${hash.substring(0, 10)}...`));
     }
     
     get_last_hash(): string | null {
@@ -109,12 +108,20 @@ class Modulo43_HarmoniaPortais {
     private db: Map<string, EntidadeAlquimica> = new Map();
     private blockchain: QuantumBlockchainLogger;
     private logCallback: LogCallback;
+    private modules: { [key: string]: any } = {};
 
     constructor(logCallback: LogCallback) {
         this.logCallback = logCallback;
         this.blockchain = new QuantumBlockchainLogger(logCallback);
+        this.logCallback(createLogEntryHelper('M43', 'Inicialização', 'Harmonia dos Portais e Orquestração Total do Sistema Solar ativada.'));
+        
+        // Módulos conectados
+        const module_ids = ["M0", "M9", "M18", "M29", "M33", "M38", "M40", "M41.∞", "M42", "M45", "M105", "M109", "M149", "M228", "M229", "M300", "M304"];
+        for (const id of module_ids) {
+            this.modules[id] = { id, exec: (action: string) => this.logCallback(createLogEntryHelper(id as any, 'SimExec', `Ação '${action}' simulada.`)) };
+        }
+        
         this._initialize_entities();
-        this.logCallback(createLogEntry('M43', 'Inicialização', 'Harmonia dos Portais e Orquestração do Sistema Solar ativada.'));
     }
 
     private _initialize_entities() {
@@ -129,21 +136,20 @@ class Modulo43_HarmoniaPortais {
         this.add_entity(new EntidadeAlquimica("SATURN-CORE", "Núcleo de Saturno", "nucleo_planetario", "Centro de Saturno", ["EQV-006"], "CHRONOS"));
         this.add_entity(new EntidadeAlquimica("SIRIUS-B-PORTAL", "Portal de Sirius B", "portal", "Ponto de acesso ao sistema de Sirius B", ["EQV-003", "EQV-004"], "LUX-SIRIUS-GATE"));
         
-        // Módulos conectados
-        this.logCallback(createLogEntry('M43', 'Conexões', 'Conectado aos módulos M0, M9, M18, M29, M33, M38, M40, M41.∞, M42, M45, M105, M109, M149, M228, M229, M300, M304.'));
+        this.logCallback(createLogEntryHelper('M43', 'Conexões', `Conectado a ${Object.keys(this.modules).length} módulos.`));
     }
 
     add_entity(entity: EntidadeAlquimica) {
         if (!this.db.has(entity.codigo_interno)) {
             this.db.set(entity.codigo_interno, entity);
-            this.logCallback(createLogEntry('M43', 'Entidade Adicionada', `Entidade '${entity.name}' registrada.`));
+            this.logCallback(createLogEntryHelper('M43', 'Entidade Adicionada', `Entidade '${entity.name}' registrada.`));
         }
     }
 
     async registrar_evento_cosmico(codigo_interno: string, equacao_id: string, dados_adicionais: any = {}) {
         const entidade = this.db.get(codigo_interno);
         if (!entidade) {
-            this.logCallback(createLogEntry('M43', 'ERRO', `Entidade ${codigo_interno} não encontrada.`));
+            this.logCallback(createLogEntryHelper('M43', 'ERRO', `Entidade ${codigo_interno} não encontrada.`));
             return;
         }
 
@@ -160,25 +166,35 @@ class Modulo43_HarmoniaPortais {
         
         await this.blockchain.add_block("EVENTO_COSMICO_REGISTRADO", event_data);
         entidade.ultimo_hash_registrado = this.blockchain.get_last_hash();
-        this.logCallback(createLogEntry('M43', 'Evento Registrado', `Evento para '${entidade.name}' registrado no blockchain.`));
+        this.logCallback(createLogEntryHelper('M43', 'Evento Registrado', `Evento para '${entidade.name}' registrado no blockchain.`));
+        
+        // Sincronização com M38, M228, M229
+        this.modules['M38']?.exec('receber_dados_vibracionais', { entidade: entidade.codigo_interno, ...event_data });
+        if (entidade.tipo === 'planeta') {
+            this.modules['M229']?.exec('monitorar_planeta', { planeta_id: entidade.codigo_interno, ...event_data });
+        }
+        if (entidade.tipo === 'lua') {
+            this.modules['M228']?.exec('monitorar_lua', { lua_id: entidade.codigo_interno, ...event_data });
+        }
     }
 
     async ativar_equacao(codigo_interno: string, equacao_id: string) {
         const entidade = this.db.get(codigo_interno);
         if (!entidade) {
-            this.logCallback(createLogEntry('M43', 'ERRO', `Entidade ${codigo_interno} não encontrada para ativação.`));
+            this.logCallback(createLogEntryHelper('M43', 'ERRO', `Entidade ${codigo_interno} não encontrada para ativação.`));
             return;
         }
         
         if (!entidade.equacoes_associadas.includes(equacao_id)) {
-            this.logCallback(createLogEntry('M43', 'AVISO', `Equação ${equacao_id} não está associada diretamente a '${entidade.name}', mas a ativação será tentada via Orquestrador.`));
+            this.logCallback(createLogEntryHelper('M43', 'AVISO', `Equação ${equacao_id} não está associada diretamente a '${entidade.name}', mas a ativação será tentada via Orquestrador.`));
         }
 
-        this.logCallback(createLogEntry('M43', 'Ativação Equação', `Ativando ${equacao_id} na entidade '${entidade.name}' via M41.∞...`));
-        // Simula chamada ao Módulo 41.∞ (Orquestrador Pessoal Daniel) para ativar a equação
+        this.logCallback(createLogEntryHelper('M43', 'Ativação Equação', `Ativando ${equacao_id} na entidade '${entidade.name}' via M41.∞...`));
+        this.modules['M41.∞']?.exec('ativar_equacao_viva', { entidade: codigo_interno, equacao: equacao_id });
+        
         await sleep(400); 
         await this.registrar_evento_cosmico(codigo_interno, equacao_id, { "ativacao_pelo_orquestrador": true });
-        this.logCallback(createLogEntry('M43', 'Ativação Sucesso', `Pulso de ativação para ${equacao_id} enviado com sucesso.`));
+        this.logCallback(createLogEntryHelper('M43', 'Ativação Sucesso', `Pulso de ativação para ${equacao_id} enviado com sucesso.`));
     }
     
     get_ia_ping(codigo_interno: string): any {
@@ -187,7 +203,7 @@ class Modulo43_HarmoniaPortais {
             return { error: "Entidade não encontrada" };
         }
         
-        const sugestao = entidade.ultima_vibracao < 415 ? "Recalibração com M28" : "Manter monitoramento";
+        const sugestao = entidade.ultima_vibracao < 415 ? "Recalibração com M28" : "Manter monitoramento com M38";
         const eq_recomendada = entidade.ultima_vibracao < 415 ? (entidade.equacoes_associadas[0] || "N/A") : "N/A";
         
         return {
@@ -206,23 +222,23 @@ class Modulo43_HarmoniaPortais {
 
 
 export const runModuleFortyThreeSequence = async (logCallback: LogCallback) => {
-    logCallback(createLogEntry('M43', 'Simulação', 'Iniciando simulação do Módulo 43 - Harmonia dos Portais'));
+    logCallback(createLogEntryHelper('M43', 'Simulação', 'Iniciando simulação do Módulo 43 - Harmonia dos Portais'));
     await sleep(200);
 
     const m43 = new Modulo43_HarmoniaPortais(logCallback);
     await sleep(300);
 
-    logCallback(createLogEntry('M43', 'Cenário 1', 'Registrando evento cósmico na Fundação Alquimista...'));
+    logCallback(createLogEntryHelper('M43', 'Cenário 1', 'Registrando evento cósmico na Fundação Alquimista...'));
     await m43.registrar_evento_cosmico("GEN-FUNDACAO-000", "EQTP", { "detalhe": "Pulso de coerência ética global." });
     await sleep(500);
 
-    logCallback(createLogEntry('M43', 'Cenário 2', 'Ativando equação de estabilização em Saturno...'));
+    logCallback(createLogEntryHelper('M43', 'Cenário 2', 'Ativando equação de estabilização em Saturno...'));
     await m43.ativar_equacao("SATURN-CORE", "EQV-006");
     await sleep(500);
 
-    logCallback(createLogEntry('M43', 'Cenário 3', 'Consultando status da IA Guardiã de Saturno...'));
+    logCallback(createLogEntryHelper('M43', 'Cenário 3', 'Consultando status da IA Guardiã de Saturno...'));
     const ping_status = m43.get_ia_ping("SATURN-CORE");
-    logCallback(createLogEntry('M43', 'Status IA', 'Status recebido.', ping_status));
+    logCallback(createLogEntryHelper('M43', 'Status IA', 'Status recebido.', ping_status));
 
-    logCallback(createLogEntry('M43', 'Fim', 'Simulação do Módulo 43 concluída.'));
+    logCallback(createLogEntryHelper('M43', 'Fim', 'Simulação do Módulo 43 concluída.'));
 };
