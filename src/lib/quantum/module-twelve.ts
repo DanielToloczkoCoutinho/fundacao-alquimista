@@ -1,4 +1,3 @@
-
 'use client';
 /**
  * MÓDULO 12: Arquivo Akáshico e Transmutação de Memórias
@@ -10,12 +9,12 @@ import { type AnyLogEntry } from './module-zero';
 type LogCallback = (entry: AnyLogEntry) => void;
 let memoryIdStore: { [key: string]: string } = {};
 
-const createLogEntry = (source: 'M12' | 'M1' | 'M4' | 'M5' | 'M7' | 'M8' | 'M9' | 'M98', step: string, message: string, data?: any): AnyLogEntry => ({
+const createLogEntry = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
