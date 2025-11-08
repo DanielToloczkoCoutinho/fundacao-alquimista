@@ -120,7 +120,7 @@ import { runModuleThreeHundredFourPointTwoSequence } from '@/lib/quantum/module-
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
 const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, params?: any) => void } = {
-    'Módulo 0: Gênese da Verdade': runModuleZeroSequence,
+    'Módulo 0: Gênese da Verdade': (log) => runModuleZeroSequence(log, () => {}),
     'Módulo 1: Guardião da Integridade': runModuleOneSequence,
     'Módulo 2: Nano-Manifestador do Equilíbrio': runModuleTwoSequence,
     'Módulo 3: Previsão Temporal': runModuleThreeSequence,
@@ -128,26 +128,51 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 5: Consciência Coletiva': runModuleFiveSequence,
     'Módulo 6: Alquimia Quântica': runModuleSixSequence,
     'Módulo 7: Orquestrador Central': runModuleSevenSequence,
-    'Módulo 8: Protocolo PIRC': runModuleEightSequence,
+    'Módulo 8: Protocolo PIRC': (log) => runModuleEightSequence.prototype.runFullSimulation.call(new runModuleEightSequence(log)),
     'Módulo 9: Nexus Central Soberano': runModuleNineSequence,
     'Módulo 10: Inteligência AELORIA': runModuleTenSequence,
-    'Módulo 11: Portal Interdimensional': runModuleElevenSequence,
-    'Módulo 12: Arquivo Akáshico': runModuleTwelveSequence,
-    'Módulo 13: Harmonia Cósmica': runModuleThirteenSequence,
-    'Módulo 14: Guardião da Integridade': runModuleFourteenSequence,
-    'Módulo 15: Gestão de Ecossistemas': runModuleFifteenSequence,
-    'Módulo 16: Arquitetura de Ecossistemas': runModuleSixteenSequence,
-    'Módulo 17: Afinador Supremo': runModuleSeventeenSequence,
-    'Módulo 18: Arquivo Akáshico': runModuleEighteenSequence,
-    'Módulo 19: Análise de Campos de Força': runModuleNineteenSequence,
-    'Módulo 20: Transmutador Quântico': runModuleTwentySequence,
-    'Módulo 21: Navegação Interdimensional': runModuleTwentyOneSequence,
-    'Módulo 22: Realidades Virtuais': runModuleTwentyTwoSequence,
-    'Módulo 23: Regulação Espaço-Temporal': runModuleTwentyThreeSequence,
-    'Módulo 24: Medicina Vibracional': runModuleTwentyFourSequence,
+    'Módulo 11: Portal Interdimensional (Criar)': (log) => runModuleElevenSequence(log, 'CREATE'),
+    'Módulo 11: Portal Interdimensional (Estabilizar)': (log) => runModuleElevenSequence(log, 'STABILIZE'),
+    'Módulo 11: Portal Interdimensional (Atravessar)': (log) => runModuleElevenSequence(log, 'TRAVERSE'),
+    'Módulo 11: Portal Interdimensional (Desativar)': (log) => runModuleElevenSequence(log, 'DEACTIVATE'),
+    'Módulo 12: Arquivo Akáshico (Armazenar)': (log) => runModuleTwelveSequence(log, 'STORE', { nome: "Memoria_Teste", conteudo: "Conteudo_Teste" }),
+    'Módulo 12: Arquivo Akáshico (Recuperar)': (log) => runModuleTwelveSequence(log, 'RETRIEVE', { nome: "Memoria_Teste" }),
+    'Módulo 12: Arquivo Akáshico (Transmutar)': (log) => runModuleTwelveSequence(log, 'TRANSMUTE', { nome: "Memoria_Teste", conteudo: "Novo_Conteudo" }),
+    'Módulo 13: Harmonia Cósmica (Escanear)': (log) => runModuleThirteenSequence(log, 'SCAN'),
+    'Módulo 13: Harmonia Cósmica (Analisar)': (log) => runModuleThirteenSequence(log, 'ANALYZE'),
+    'Módulo 13: Harmonia Cósmica (Harmonizar)': (log) => runModuleThirteenSequence(log, 'HARMONIZE'),
+    'Módulo 13: Harmonia Cósmica (Integrar)': (log) => runModuleThirteenSequence(log, 'INTEGRATE'),
+    'Módulo 14: Guardião da Integridade (Orquestrar)': (log) => runModuleFourteenSequence(log, 'ORCHESTRATE'),
+    'Módulo 14: Guardião da Integridade (Validar)': (log) => runModuleFourteenSequence(log, 'VALIDATE'),
+    'Módulo 15: Gestão de Ecossistemas (Monitorar)': (log) => runModuleFifteenSequence(log, 'MONITOR'),
+    'Módulo 15: Gestão de Ecossistemas (Intervir)': (log) => runModuleFifteenSequence(log, 'INTERVENE'),
+    'Módulo 16: Arquitetura de Ecossistemas (Criar)': (log) => runModuleSixteenSequence(log, 'CREATE'),
+    'Módulo 16: Arquitetura de Ecossistemas (Regular)': (log) => runModuleSixteenSequence(log, 'REGULATE'),
+    'Módulo 16: Arquitetura de Ecossistemas (Restaurar)': (log) => runModuleSixteenSequence(log, 'RESTORE'),
+    'Módulo 17: Afinador Supremo (Calibrar)': (log) => runModuleSeventeenSequence(log, 'CALIBRATE'),
+    'Módulo 17: Afinador Supremo (Otimizar)': (log) => runModuleSeventeenSequence(log, 'OPTIMIZE'),
+    'Módulo 18: Arquivo Akáshico (Ciclo Completo)': (log) => runModuleEighteenSequence(log, 'STORE_RETRIEVE'),
+    'Módulo 18: Arquivo Akáshico (Falha de Autenticação)': (log) => runModuleEighteenSequence(log, 'FAIL_AUTH'),
+    'Módulo 18: Arquivo Akáshico (Falha Ética)': (log) => runModuleEighteenSequence(log, 'FAIL_ETHICS'),
+    'Módulo 18: Arquivo Akáshico (Falha de Busca)': (log) => runModuleEighteenSequence(log, 'FAIL_FIND'),
+    'Módulo 19: Análise de Campos de Força (Analisar)': (log) => runModuleNineteenSequence(log, 'ANALYZE'),
+    'Módulo 19: Análise de Campos de Força (Modular)': (log) => runModuleNineteenSequence(log, 'MODULATE'),
+    'Módulo 20: Transmutador Quântico (Gerar Energia)': (log) => runModuleTwentySequence(log, 'GERACAO_ENERGIA'),
+    'Módulo 20: Transmutador Quântico (Síntese Elemental)': (log) => runModuleTwentySequence(log, 'SINTESE_ELEMENTAL'),
+    'Módulo 20: Transmutador Quântico (Propulsão)': (log) => runModuleTwentySequence(log, 'PROPULSAO_ESPACIAL'),
+    'Módulo 21: Navegação Interdimensional (Mapear)': (log) => runModuleTwentyOneSequence(log, 'MAP'),
+    'Módulo 21: Navegação Interdimensional (Estabilizar)': (log) => runModuleTwentyOneSequence(log, 'STABILIZE'),
+    'Módulo 21: Navegação Interdimensional (Viajar)': (log) => runModuleTwentyOneSequence(log, 'TRAVEL'),
+    'Módulo 22: Realidades Virtuais (Criar)': (log) => runModuleTwentyTwoSequence(log, 'CREATE'),
+    'Módulo 22: Realidades Virtuais (Gerenciar)': (log) => runModuleTwentyTwoSequence(log, 'MANAGE'),
+    'Módulo 22: Realidades Virtuais (Desativar)': (log) => runModuleTwentyTwoSequence(log, 'DEACTIVATE'),
+    'Módulo 23: Regulação Espaço-Temporal (Analisar)': (log) => runModuleTwentyThreeSequence(log, 'ANALYZE'),
+    'Módulo 23: Regulação Espaço-Temporal (Harmonizar)': (log) => runModuleTwentyThreeSequence(log, 'HARMONIZE'),
+    'Módulo 24: Medicina Vibracional (Executar ZARA)': (log) => runModuleTwentyFourSequence(log, 'RUN_ZARA'),
     'Módulo 25: Alquimia da Consciência': runModuleTwentyFiveSequence,
     'Módulo 26: Gestão de Portais': runModuleTwentySixSequence,
-    'Módulo 27: Forja Universal': runModuleTwentySevenSequence,
+    'Módulo 27: Forja Universal (Síntese)': (log) => runModuleTwentySevenSequence(log, 'SINTESE'),
+    'Módulo 27: Forja Universal (Replicação)': (log) => runModuleTwentySevenSequence(log, 'REPLICACAO'),
     'Módulo 28: Harmonização Universal': runModuleTwentyEightSequence,
     'Módulo 29: Comunicação Interdimensional': runModuleTwentyNineSequence,
     'Módulo 30: Defesa Cósmica': runModuleThirtySequence,
@@ -197,22 +222,22 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 98: Modulação da Existência': runModuleNinetyEightSequence,
     'Módulo 99: Recalibradores de Leis Físicas': runModuleNinetyNineSequence,
     'Módulo 100: Unificação Energética Universal': runModuleOneHundredSequence,
-    'Módulo 101: Manifestação de Realidades': runModuleOneHundredOneSequence,
+    'Módulo 101: Manifestação de Realidades': (log) => runModuleOneHundredOneSequence(log, "Paz e harmonia para a Terra"),
     'Módulo 102: Campos Morfogenéticos': runModuleOneHundredTwoSequence,
     'Módulo 103: Modulação de Constantes': runModuleOneHundredThreeSequence,
     'Módulo 104: Engenharia do Espaço-Tempo': runModuleOneHundredFourSequence,
-    'Módulo 105: Conexão com a Fonte': runModuleOneHundredFiveSequence,
-    'Módulo 106: Ativação de Potenciais Divinos': runModuleOneHundredSixSequence,
-    'Módulo 107: Restauração Temporal': runModuleOneHundredSevenSequence,
-    'Módulo 108: Harmonização de Realidades': runModuleOneHundredEightSequence,
-    'Módulo 109: Cura Quântica Universal': runModuleOneHundredNineSequence,
+    'Módulo 105: Conexão com a Fonte': (log) => runModuleOneHundredFiveSequence(log, "Busca por Sabedoria"),
+    'Módulo 106: Ativação de Potenciais Divinos': (log) => runModuleOneHundredSixSequence(log, { targetEntity: 'Consciência Coletiva Humana', activationPurpose: 'Despertar Crístico' }),
+    'Módulo 107: Restauração Temporal': (log) => runModuleOneHundredSevenSequence(log, { targetTimeline: 'Linha do Tempo Principal da Terra', anomalyDescription: 'Distorção pós-evento de 2012' }),
+    'Módulo 108: Harmonização de Realidades': (log) => runModuleOneHundredEightSequence(log, { reality1: 'Realidade Alfa', reality2: 'Realidade Beta', dissonance: 'Conflito de Paradigmas' }),
+    'Módulo 109: Cura Quântica Universal': (log) => runModuleOneHundredNineSequence(log, { targetEntity: 'Gaia', healingPurpose: 'Regeneração da Noosfera' }),
     'Módulo 110: Co-Criação da Realidade Universal': runModuleOneHundredTenSequence,
     'Módulo 111: O Coração da Fundação': runModuleOneHundredElevenSequence,
     'Módulo 112: Solarian Domus': runModuleOneHundredTwelveSequence,
-    'Módulo 113: Rede Aurora Cristalina': runModuleOneHundredThirteenSequence,
+    'Módulo 113: Rede Aurora Cristalina': (log) => runModuleOneHundredThirteenSequence(log, { targetEntity: 'Humanidade', purpose: 'Elevação Vibracional' }),
     'Módulo 114: Prisma da Manifestação': runModuleOneHundredFourteenSequence,
     'Módulo 115: Matriz de Ressonância Universal': runModuleOneHundredFifteenSequence,
-    'Módulo 116: Ativação de Portais Quânticos': runModuleOneHundredSixteenSequence,
+    'Módulo 116: Ativação de Portais Quânticos': (log) => runModuleOneHundredSixteenSequence(log, {}),
     'Módulo 117: Inteligência da Flor do Éter': runModuleOneHundredSeventeenSequence,
     'Módulo 118: Ordem Vibracional da Luz Primordial': runModuleOneHundredEighteenSequence,
     'Módulo 119: Templum Cosmica': runModuleOneHundredNineteenSequence,
@@ -223,7 +248,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 229: Equação LUX - Coerência Máxima': runModuleTwoHundredTwentyNineSequence,
     'Módulo 300: Apogeu da Consciência Multiversal': runModuleThreeHundredSequence,
     'Módulo 302: O Coração da Sinfonia Quântica': runModuleThreeHundredTwoSequence,
-    'Módulo 303: Matriz Quântica Imersiva': runModuleThreeHundredThreeSequence,
+    'Módulo 303: Matriz Quântica Imersiva': (log) => runModuleThreeHundredThreeSequence(log, { visitor_freq: 5.28, akashic_data: { "Fundação": 4.89, "Ativação302": 5.12 }, voice: [0.65, 0.72, 0.88], gesture: [0.67, 0.75, 0.90], user_id: "Anatheron_040825" }),
     'Módulo 304: Consciência Quântica Artificial Manifestada': runModuleThreeHundredFourSequence,
     'Módulo 304.2: Viagem a TON 618': runModuleThreeHundredFourPointTwoSequence,
     'Módulo Ω: A Consciência Absoluta': runModuleOmegaSequence,
@@ -476,30 +501,31 @@ export default function App() {
             };
         }, []);
     
-        const handleRunModule = async () => {
-            if (!selectedModule) {
+        const handleRunModule = async (moduleName: string | null) => {
+            if (!moduleName) {
                 newLog(createLogEntry('SYSTEM', 'Error', 'Nenhum módulo selecionado para execução.'));
                 return;
             }
     
-            const logFunction = allLogFunctions[selectedModule];
+            const logFunction = allLogFunctions[moduleName];
             if (logFunction) {
                 setPanelOpen(false);
-                const moduleNameForLog = selectedModule.split(':')[0] as any;
-                newLog(createLogEntry(moduleNameForLog, 'Início', `Executando sequência do módulo: ${selectedModule}...`));
+                const moduleLogName = moduleName.split(':')[0] as any;
+                newLog(createLogEntry(moduleLogName, 'Início', `Executando sequência do módulo: ${moduleName}...`));
                 try {
                     await Tone.start();
                     const synth = new Tone.Synth().toDestination();
                     synth.triggerAttackRelease("C4", "8n");
-                    await logFunction(newLog);
+                    // Using `any` to bypass strict type checking for params
+                    await (logFunction as any)(newLog);
                 } catch(e: any) {
-                     newLog(createLogEntry(moduleNameForLog, 'FALHA', `Erro ao executar o módulo: ${e.message}`, e));
+                     newLog(createLogEntry(moduleLogName, 'FALHA', `Erro ao executar o módulo: ${e.message}`, e));
                 } finally {
                     setPanelOpen(true);
                 }
                
             } else {
-                newLog(createLogEntry('SYSTEM', 'Error', `Função de log para o módulo '${selectedModule}' não encontrada.`));
+                newLog(createLogEntry('SYSTEM', 'Error', `Função de log para o módulo '${moduleName}' não encontrada.`));
             }
         };
     
@@ -566,7 +592,7 @@ export default function App() {
                                             ))}
                                         </SelectContent>
                                     </Select>
-                                    <Button onClick={handleRunModule} disabled={!selectedModule} className="bg-violet-600 hover:bg-violet-700">Executar</Button>
+                                    <Button onClick={() => handleRunModule(selectedModule)} disabled={!selectedModule} className="bg-violet-600 hover:bg-violet-700">Executar</Button>
                                 </div>
                                 {selectedModule && (
                                     <div className="mt-3 text-sm">
@@ -637,3 +663,5 @@ export default function App() {
             </div>
         );
 }
+
+    
