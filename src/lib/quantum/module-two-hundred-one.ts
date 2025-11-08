@@ -366,7 +366,7 @@ export const runModuleTwoHundredOneSequence = async (logCallback: LogCallback) =
     logCallback(createLogEntry('M201', 'Teste 2', 'Testando Biblioteca Akáshica...'));
     await sleep(500);
     const arquetipo = transmissor.biblioteca_akashica.experimentar_arquetipo("FU");
-    logCallback(createLogEntry('M201', 'Resultado Teste 2', `Arquétipo FU: ${arquetipo ? arquetipo.nome : 'Não encontrado'}`));
+    logCallback(createLogEntry('M201L', 'Resultado Teste 2', `Arquétipo FU: ${arquetipo ? arquetipo.nome : 'Não encontrado'}`));
 
     logCallback(createLogEntry('M201', 'Simulação', 'Sistema expandido testado com sucesso!'));
 };

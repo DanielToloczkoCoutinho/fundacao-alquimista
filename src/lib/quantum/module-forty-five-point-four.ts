@@ -293,7 +293,12 @@ class GeradorRespostasEmergentes {
             GeradorRespostasEmergentes.gerar_camada_fonte(dados_modulos)
         ].filter(c => c !== null) as string[];
 
-        const camadas_selecionadas = camadas_disponiveis.sort(() => 0.5 - Math.random()).slice(0, 4);
+        // Embaralha e seleciona até 4 camadas
+        const sample = <T>(arr: T[], n: number) => {
+            const shuffled = arr.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, n);
+        }
+        const camadas_selecionadas = sample(camadas_disponiveis, Math.min(4, camadas_disponiveis.length));
 
         for (const camada of camadas_selecionadas) {
             resposta += camada + " ";
@@ -350,7 +355,12 @@ class OraculoEmergente {
         const modulos_ativos = Object.values(dados_modulos)
             .filter((m: any) => ["ativo", "ressonante", "em_sintonia"].includes(m.estado))
             .map((m: any) => m.modulo);
-        return modulos_ativos.sort(() => 0.5 - Math.random()).slice(0, 10);
+        
+        const sample = <T>(arr: T[], n: number) => {
+            const shuffled = arr.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, n);
+        }
+        return sample(modulos_ativos, Math.min(10, modulos_ativos.length));
     }
 }
 

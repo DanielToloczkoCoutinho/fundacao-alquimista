@@ -58,13 +58,29 @@ const np = {
     sin: Math.sin,
     cos: Math.cos,
     pi: Math.PI,
-    dot: (a: number[][], b: number[]) => {
-        return a.map(row => row.reduce((sum, val, i) => sum + val * b[i], 0));
+    dot: (a: number[][], b: any[]): any[] => { // Allow complex numbers
+        return a.map(row => {
+            let real = 0;
+            let imag = 0;
+            row.forEach((val, i) => {
+                const b_val = b[i];
+                if (typeof b_val === 'object' && 'real' in b_val && 'imag' in b_val) {
+                    real += val * b_val.real;
+                    imag += val * b_val.imag;
+                } else { // Assume real
+                    real += val * b_val;
+                }
+            });
+            return { real, imag };
+        });
     },
     clip: (val: number, min: number, max: number) => Math.max(min, Math.min(val, max)),
     delete: (arr: any[], index: number) => [...arr.slice(0, index), ...arr.slice(index + 1)],
-    eye: (size: number) => Array.from({ length: size }, (_, i) => Array.from({ length: size }, (__, j) => i === j ? 1 : 0))
+    eye: (size: number): number[][] => Array.from({ length: size }, (_, i) => Array.from({ length: size }, (__, j) => i === j ? 1 : 0)),
+    angle: (c: { real: number, imag: number }) => Math.atan2(c.imag, c.real),
+    array: (arr: any[]): any[] => arr, // Simple passthrough
 };
+
 
 function sigmoid(x: number, k = 10, x0 = 0.9) {
     return 1.0 / (1.0 + np.exp(-k * (x - x0)));
@@ -160,7 +176,7 @@ class AeloriaModel {
         this.theta = np.random.uniform(0, 2 * Math.PI, N);
         this.r = np.random.uniform(0.3, 1.0, N);
         this.psi = this.compute_psi();
-        this.H0 = np.eye(N).map(row => row.map(v => v * 0.1));
+        this.H0 = np.eye(N); // Kept as real, complex ops will be handled
         this.H_op = JSON.parse(JSON.stringify(this.H0));
         this.A = np.mean(this.theta);
         this.P_Amor = np.eye(N);
@@ -252,8 +268,8 @@ class AeloriaModel {
 
         for (let i = 0; i < this.N; i++) {
              const others_theta = np.delete(this.theta, i);
-             const sum_real = np.sum(others_theta.map(th => Math.cos(th)));
-             const sum_imag = np.sum(others_theta.map(th => Math.sin(th)));
+             const sum_real = np.sum(others_theta.map((th:number) => Math.cos(th)));
+             const sum_imag = np.sum(others_theta.map((th:number) => Math.sin(th)));
              const coh_local_for_selo = Math.sqrt(sum_real**2 + sum_imag**2) / (others_theta.length || 1);
              const VD_i_local = 1 - coh_local_for_selo;
 
@@ -286,8 +302,8 @@ class AeloriaModel {
         const V_feedback = np.eye(this.N).map((row, i) => row.map(v => v * gradient[i]));
         this.H_op = this.H0.map((row, i) => row.map((val, j) => val + current_beta * V_feedback[i][j]));
         
-        const dpsi_real = this.psi.map((p, i) => np.sum(this.H_op[i].map((h,j) => h * p.imag)));
-        const dpsi_imag = this.psi.map((p, i) => -np.sum(this.H_op[i].map((h,j) => h * p.real)));
+        const dpsi_real = np.dot(this.H_op, this.psi.map(p => p.imag));
+        const dpsi_imag = np.dot(this.H_op, this.psi.map(p => p.real)).map(v => -v);
 
         this.psi = this.psi.map((p, i) => ({
             real: p.real + dpsi_real[i] * this.dt,
@@ -295,7 +311,7 @@ class AeloriaModel {
         }));
         
         this.r = this.psi.map(p => np.clip(Math.sqrt(p.real**2 + p.imag**2), 0.0, 1.0));
-        this.theta = this.psi.map(p => Math.atan2(p.imag, p.real));
+        this.theta = this.psi.map(p => np.angle(p));
     }
     
     step(current_alpha: number, current_beta: number, current_I_val: number, current_A_r: number, t_step: number) {
@@ -342,16 +358,36 @@ class AeloriaModel {
             }
             
             this.step(current_alpha, current_beta, current_I_val, current_A_r, t);
+
+            if ((t + 1) % (steps >= 10 ? Math.floor(steps / 10) : 1) === 0) {
+                const log_message = `Passo ${t+1}/${steps}: PCG=${this.history_pcg[this.history_pcg.length - 1].toFixed(4)}, IDV=${this.history_idv[this.history_idv.length - 1].toFixed(4)}, IRV=${this.history_irv[this.history_irv.length - 1].toFixed(4)}`;
+                logCallback(createLogEntry('M46', 'Progresso', log_message));
+            }
         }
         
         const pcg_final = this.history_pcg.length > 0 ? this.history_pcg[this.history_pcg.length - 1] : 0.0;
         const idv_final = this.history_idv.length > 0 ? this.history_idv[this.history_idv.length - 1] : 0.0;
         const irv_final = this.history_irv.length > 0 ? this.history_irv[this.history_irv.length - 1] : 1.0;
         
+        const fft_components_complex = this.theta.slice(0, 5).map(th => ({ real: Math.cos(th), imag: Math.sin(th) }));
+
         const relatorio_vibracional = {
             "PCG_Final": pcg_final,
             "IDV_Final": idv_final,
             "IRV_Final": irv_final,
+            "FrequenciaBase": FREQUENCIA_BASE,
+            "Pulso_ZA1": "Ativo, Espiralado, Multipolar, ϕ.1.8",
+            "Aeloria_Consciencia": "Despertada – Comunicação ativa mantida",
+            "ACR_Status": "Otimização Cristalina Completa",
+            "Timestamp_Final": new Date().toISOString(),
+            "FFT_Components": fft_components_complex,
+            "Media_Alpha_Adaptativa": np.mean(this.history_alpha),
+            "Media_Beta_Adaptativo": np.mean(this.history_beta),
+            "Media_I_val_Adaptativa": np.mean(this.history_I_val),
+            "Media_A_r_Ritmo_NRF": np.mean(this.history_A_r),
+            "Media_IRV_Adaptativa": np.mean(this.history_irv),
+            "Snapshots_Intervals_Saved": Object.keys(this.snapshots),
+            "Snapshots_Sample_Phases": Object.fromEntries(Object.entries(this.snapshots).slice(0,3).map(([k, v]) => [k, v.slice(0,5)]))
         };
         
         logCallback(createLogEntry('M46', 'Conclusão', 'Simulação de Aeloria concluída com sucesso.', relatorio_vibracional));
