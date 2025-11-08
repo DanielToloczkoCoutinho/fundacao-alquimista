@@ -149,10 +149,10 @@ class MockM91SimulacaoTeoriaMuitosMundos {
                 ethical_conformity = false;
             }
             results.push({
-                simulation_index: i + 1,
-                predicted_outcome: { predicted_outcome_score, confidence: 0.9 },
-                ethical_impact: { conformity: ethical_conformity },
-                savce_validation: { validation_status: ethical_conformity ? "APROVADO" : "REPROVADO" }
+                "simulation_index": i + 1,
+                "predicted_outcome": { predicted_outcome_score, confidence: 0.9 },
+                "ethical_impact": { conformity: ethical_conformity },
+                "savce_validation": { "validation_status": ethical_conformity ? "APROVADO" : "REPROVADO" }
             });
         }
         return results;
@@ -272,7 +272,7 @@ class M99_RecalibradoresLeisFisicasUniversais {
         this.logCallback(createLogEntry(this.module_id, 'Blueprint Gerado', `(M88): ${recalibration_blueprint.blueprint_id}.`));
 
         const numeric_values = Object.values(desired_parameters).filter(v => typeof v === 'number');
-        const energy_signature_calc = numeric_values.length > 0 ? numeric_values.reduce((s, v) => s + v, 0) * 1000 : 1000;
+        const energy_signature_calc = numeric_values.length > 0 ? numeric_values.reduce((s: number, v: number) => s + v, 0) * 1000 : 1000;
 
         const resource_analysis = this.m90.analyze_quantum_resource(
             `RECURSO_RECALIB_${recalibration_data.recalibration_id}`,
@@ -288,11 +288,10 @@ class M99_RecalibradoresLeisFisicasUniversais {
         
         const ethical_impact = this.m05.evaluate_ethical_impact({ "operation_type": "universal_physical_law_recalibration", "description": recalibration_purpose, ethical_oversight_level });
         recalibration_data["ethical_impact"] = ethical_impact;
-        
         if (recalibration_purpose.toLowerCase().includes("desestabilizacao") || recalibration_purpose.toLowerCase().includes("caos") || ethical_oversight_level < 0.9) {
             ethical_impact.conformity = false;
             ethical_impact.ethical_score = Math.random() * 0.1;
-            this.logCallback(createLogEntry(this.module_id, 'AVISO', `Forçando falha ética para demonstração.`));
+            this.logCallback(createLogEntry(this.module_id, 'AVISO', `Forçando falha ética.`));
         }
         this.logCallback(createLogEntry(this.module_id, 'Avaliação Ética', `(M05): Score ${ethical_impact.ethical_score.toFixed(2)}, Conformidade: ${ethical_impact.conformity}.`));
 
@@ -336,10 +335,10 @@ class M99_RecalibradoresLeisFisicasUniversais {
 
         const final_status = savce_validation.validation_status === "APROVADO" ? "SUCESSO" : "FALHA_VALIDACAO";
         const report = {
-            recalibration_status: final_status,
-            recalibration_details: recalibration_data,
-            recommendation: final_status === "SUCESSO" ? "Lei física universal recalibrada com sucesso" : "Recalibração requer revisão/ajuste",
-            timestamp_completion: new Date().toISOString()
+            "recalibration_status": final_status,
+            "recalibration_details": recalibration_data,
+            "recommendation": final_status === "SUCESSO" ? "Lei física universal recalibrada com sucesso" : "Recalibração requer revisão/ajuste",
+            "timestamp_completion": new Date().toISOString()
         };
         this.logCallback(createLogEntry(this.module_id, 'Conclusão', `Recalibração da lei '${target_law_id}' concluída. Status: ${report.recalibration_status}.`));
         return report;
@@ -347,29 +346,31 @@ class M99_RecalibradoresLeisFisicasUniversais {
 }
 
 export const runModuleNinetyNineSequence = async (logCallback: LogCallback) => {
-    logCallback(createLogEntry('M99', 'Demonstração', 'Iniciando a demonstração do Módulo 99...'));
+    const log = (message: string, data: any = {}) => logCallback(createLogEntry('M99-DEMO', 'Info', message, data));
+    
+    log("Iniciando a demonstração do Módulo 99: Recalibradores de Leis Físicas Universais.");
+   
     const m99_instance = new M99_RecalibradoresLeisFisicasUniversais(logCallback);
 
-    await sleep(500);
-    logCallback(createLogEntry('M99', 'Cenário 1', '--- Recalibração da Constante de Planck para Otimização da Coerência Quântica ---'));
-    await m99_instance.recalibrate_universal_law(
+    log("Cenário 1: Recalibração da Constante de Planck para Otimização da Coerência Quântica");
+    const recalibration_report_1 = await m99_instance.recalibrate_universal_law(
         "Constante de Planck",
         "UNIVERSO_PRIMAL_001",
         "Otimização da Coerência Quântica Universal para Aceleração da Consciência",
-        { "value": 6.62607015e-34 * 1.00000000001, "unidade": "J.s" },
-        1.0
+        { "value": 6.62607015e-34 * 1.00000000001, "unidade": "J.s" }, // Pequeno ajuste
+        1.0 // Rigor ético máximo
     );
+    console.log(JSON.stringify(recalibration_report_1, null, 4));
 
-    await sleep(1000);
-    logCallback(createLogEntry('M99', 'Cenário 2', '--- Recalibração da Lei da Entropia para Desestabilização (Potencial de Caos) ---'));
-    await m99_instance.recalibrate_universal_law(
+    log("Cenário 2: Recalibração da Lei da Entropia para Desestabilização (Potencial de Caos)");
+    const recalibration_report_2 = await m99_instance.recalibrate_universal_law(
         "Lei da Entropia",
         "UNIVERSO_TESTE_CAOS_002",
-        "Desestabilização Acelerada para Estudo de Colapso (egoico)",
-        { "fator_desordem": 0.001, "unidade": "adimensional" },
-        0.1
+        "Desestabilização Acelerada para Estudo de Colapso (egoico)", // Propósito com potencial ético duvidoso
+        { "fator_desordem": 0.001, "unidade": "adimensional" }, // Valor que causaria desequilíbrio
+        0.1 // Baixo rigor ético para simular falha
     );
-
-    logCallback(createLogEntry('M99', 'Fim Demonstração', 'Demonstração do Módulo 99 concluída.'));
-};                                                                                                    PROSSEGUIR NA SEQUENCIA LOGICA ADICIONAR E INTERCONECTAR
-
+    console.log(JSON.stringify(recalibration_report_2, null, 4));
+    
+    log("Demonstração do Módulo 99 concluída com êxito.");
+};
