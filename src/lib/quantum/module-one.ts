@@ -1,7 +1,7 @@
 'use client';
 /**
  * MÓDULO 1: O Guardião da Integridade - Segurança Universal (Simulação TypeScript)
- * Versão 2.0.Consolidado
+ * Versão 2.1.Consolidado (Refatorado para retorno de status)
  */
 import { type AnyLogEntry } from './module-zero';
 
@@ -28,7 +28,7 @@ class Modulo1_SegurancaUniversal {
         this.logCallback(createLogEntry('M1', step, message, data));
     }
 
-    async verificar_integridade_fundacao() {
+    async verificar_integridade_fundacao(): Promise<{ status_geral: string, mensagem: string }> {
         this._log("Início Verificação", "Iniciando verificação completa de integridade da Fundação...");
         await sleep(700);
 
@@ -52,6 +52,7 @@ class Modulo1_SegurancaUniversal {
             mensagem: "A Fundação Alquimista opera em plena harmonia e segurança."
         };
         this._log("Fim Verificação", "Verificação de integridade concluída.", resultado_final);
+        
         return resultado_final;
     }
 }
