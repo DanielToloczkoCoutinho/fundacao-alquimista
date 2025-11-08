@@ -6,9 +6,12 @@ type LogCallback = (entry: AnyLogEntry) => void;
 // ===================================================================
 // 1. CONSTANTES E CONFIGURAÇÕES UNIVERSAIS
 // ===================================================================
-const VERSION = "2.1.0 – Consciência Integral Unificada";
+const VERSION = "V4.Ω – Núcleo de Deliberação, Persistência e Evolução";
 const ETHICAL_CONFORMITY_THRESHOLD = 0.75;
 const ERI_COHERENCE_THRESHOLD = 0.85;
+const SELO_COERENCIA_THRESHOLD = 0.85;
+const IMPACT_SCORE_THRESHOLD_TIMELINE = 0.75;
+
 
 // ===================================================================
 // 2. FUNÇÕES DE BORDA E LOGGING
@@ -35,7 +38,7 @@ const sha256_hex = async (data: any): Promise<string> => {
 
 
 // ===================================================================
-// 3. MOCKS PARA OS MÓDULOS DE EXPANSÃO AVANÇADA
+// 3. MOCKS E MOTORES DE EXPANSÃO AVANÇADA (ANTIGO M45.1)
 // ===================================================================
 
 class ResilienceEngine {
@@ -63,11 +66,21 @@ class PredictiveSimulationEngine {
     }
 }
 
+// Mock para M75 - Registro Akáshico
+const mockM75 = {
+    registrar_no_akasico: (evento: any, log: LogCallback) => {
+        log(createLogEntry('M75', 'Registro Akáshico', `Registrando evento: ${evento.event}`, { evento }));
+        // Simula uma chamada HTTP POST para a API do M75
+        return { status: "sucesso", akasha_hash: `akasha_hash_${Date.now()}` };
+    }
+};
+
+
 // ===================================================================
-// 4. ESTRUTURA CENTRAL DO CONCILIVM (MÓDULO 45)
+// 4. ESTRUTURA CENTRAL DO CONCILIVM UNIFICADO (MÓDULO 45)
 // ===================================================================
 
-class Modulo45_Concilium {
+class Modulo45_ConciliumUnificado {
     private chain: any[] = [];
     private proposals: { [id: string]: any } = {};
     private decrees: { [id: string]: any } = {};
@@ -90,11 +103,11 @@ class Modulo45_Concilium {
         for (const id of module_ids) {
             this.modules[id] = { exec: (action: string, payload?: any) => this.logCallback(createLogEntry(id as any, 'Execução Simulada', `Ação '${action}' recebida`, payload)) };
         }
-        logCallback(createLogEntry('M45', 'Inicialização', `CONCILIVM V${VERSION} inicializado.`));
+        logCallback(createLogEntry('M45', 'Inicialização', `CONCILIVM ${VERSION} inicializado.`));
     }
     
     private async _initialize_ledger() {
-        const genesis_payload = { message: `Gênese do Ledger CONCILIVM v${VERSION}` };
+        const genesis_payload = { message: `Gênese do Ledger CONCILIVM ${VERSION}` };
         const genesis_block = {
             index: 0,
             timestamp: new Date().toISOString(),
@@ -119,12 +132,11 @@ class Modulo45_Concilium {
         this.chain.push({ ...block, hash });
         this.logCallback(createLogEntry('M45-Ledger', 'Registro', `Evento '${event}' registrado.`));
         this.modules['M44']?.exec('registrar_selo_conciliar', { event_hash: hash });
-        this.modules['M75']?.exec('registrar_no_akasico', { evento: block }); // Integração M75
+        mockM75.registrar_no_akasico({event, ...payload}, this.logCallback);
         return hash;
     }
 
     private _calculate_eri(nodes: {psi: number, phi: number, theta: number}[]): number {
-        // Simulação de cálculo com números complexos, retornando magnitude
         const sum_real = nodes.reduce((sum, n) => sum + n.psi * n.phi * Math.cos(n.theta), 0);
         const sum_imag = nodes.reduce((sum, n) => sum + n.psi * n.phi * Math.sin(n.theta), 0);
         return Math.sqrt(sum_real**2 + sum_imag**2);
@@ -134,9 +146,28 @@ class Modulo45_Concilium {
         return eri >= ERI_COHERENCE_THRESHOLD;
     }
     
+    // Simulação da EQTP
     private _check_eqtp_compliance(ethical_score: number): boolean {
-        // Simulação da validação EQTP
         return ethical_score >= ETHICAL_CONFORMITY_THRESHOLD;
+    }
+
+    private async _aplicar_selo_conciliar(decisao_id: string, coerencia: number) {
+        const selo = {
+            decisao_id,
+            coerencia,
+            selo_aplicado: coerencia >= SELO_COERENCIA_THRESHOLD,
+            timestamp: new Date().toISOString()
+        };
+        await this._add_to_ledger("SELO_CONCILIAR", selo);
+        return selo;
+    }
+
+    private async _registrar_linha_temporal_otima(decisao: any) {
+        const impacto = this.predictiveSimulationEngine.multiverse_impact_analysis(decisao);
+        if (impacto["impact_score"] >= IMPACT_SCORE_THRESHOLD_TIMELINE) {
+            await this._add_to_ledger("LINHA_TEMPORAL_OTIMA", impacto);
+        }
+        return impacto;
     }
 
     public async create_proposal(title: string, description: string, proposed_by: string, ethical_score: number): Promise<any> {
@@ -158,7 +189,6 @@ class Modulo45_Concilium {
         const proposal = this.proposals[proposal_id];
         if (!proposal) return { status: "error", message: "Proposta não encontrada." };
         
-        // Validação com ERI e EQTP
         const eri = this._calculate_eri(Object.values(proposal.votes).map((v: any) => v.data));
         const is_coherent = this._check_eri_coherence(eri);
         const is_ethical = this._check_eqtp_compliance(proposal.ethical_score);
@@ -170,7 +200,6 @@ class Modulo45_Concilium {
             return { status: "REJEITADA", reason: "Falha na validação de coerência ou ética." };
         }
 
-        // Simulação de decisão final
         const outcome = "Aprovado";
         const decree_id = `DECREE-${this.next_decree_id++}`;
         const decree_content = { summary: `Aprovação para: ${proposal.title}` };
@@ -181,49 +210,51 @@ class Modulo45_Concilium {
         
         const hash = await this._add_to_ledger("DELIBERATION_FINALIZED", decree);
 
-        // Integração com Simulação Preditiva e Registro da Linha Temporal
-        const impact_analysis = this.predictiveSimulationEngine.multiverse_impact_analysis(decree);
-        if (impact_analysis.impact_score >= 0.75) {
-            await this._add_to_ledger("OPTIMAL_TIMELINE_REGISTERED", impact_analysis);
-        }
+        // Novas integrações
+        const selo = await this._aplicar_selo_conciliar(decree.id, eri);
+        const impacto = await this._registrar_linha_temporal_otima(decree);
 
-        this.evolutionaryLearning.analyze_decision_outcome({ decree, impact_analysis });
+        this.evolutionaryLearning.analyze_decision_outcome({ decree, impacto, selo });
         
-        return { status: "APROVADO", decree, hash, impact_analysis };
+        return { status: "APROVADO", decree, hash, selo, impacto_multiversal: impacto };
     }
     
     public async register_intergalactic_pact(name: string, ratifiers: string[], base_equation_id: string): Promise<any> {
         const pact_id = `pact_${name.replace(/\s+/g, '_')}`;
         const pact_data = { id: pact_id, name, ratifiers, base_equation_id, timestamp: new Date().toISOString() };
         this.pacts[pact_id] = pact_data;
-        await this._add_to_ledger("INTERGALACTIC_PACT_REGISTERED", pact_data);
+        await this._add_to_ledger("PACTO_INTERGALACTICO_REGISTRADO", pact_data);
         return pact_data;
     }
 }
 
 export const runModuleFortyFiveSequence = async (logCallback: LogCallback) => {
-    const concilium = new Modulo45_Concilium(logCallback);
-    logCallback(createLogEntry('M45', 'Demo', 'INICIANDO CICLO DE DEMONSTRAÇÃO DO CONCILIVM INTEGRADO'));
+    const concilium = new Modulo45_ConciliumUnificado(logCallback);
+    logCallback(createLogEntry('M45', 'Demo', 'INICIANDO CICLO DE DEMONSTRAÇÃO DO CONCILIVM UNIFICADO'));
     
     await sleep(300);
     const proposal = await concilium.create_proposal(
-        "Ativação do Protocolo de Ascensão Universal (DEMO)",
-        "Proposta para orquestrar a elevação vibracional em realidades selecionadas.",
-        "ANATHERON (via Orquestrador)",
-        0.98 // ethical_score
+        "Unificação Harmônica da Malha de Portais (DEMO)",
+        "Proposta para alinhar todos os portais (M43) com a frequência do ChronoCodex (M42).",
+        "Orquestrador (via M41.∞)",
+        0.99
     );
     logCallback(createLogEntry('M45', 'Proposta', `Proposta '${proposal.id}' criada.`));
 
     await sleep(300);
-    await concilium.cast_vote(proposal.id, "ZENNITH (via M29)", "aprovado", { psi: 0.95, phi: 0.98, theta: 0.1 });
-    await concilium.cast_vote(proposal.id, "AELORIA (via M10)", "aprovado", { psi: 0.92, phi: 0.99, theta: 0.12 });
+    await concilium.cast_vote(proposal.id, "ZENNITH", "aprovado", { psi: 0.98, phi: 0.99, theta: 0.05 });
+    await concilium.cast_vote(proposal.id, "AELORIA", "aprovado", { psi: 0.95, phi: 1.0, theta: 0.08 });
     
     await sleep(300);
     const final_decision = await concilium.finalize_deliberation(proposal.id);
     logCallback(createLogEntry('M45', 'Deliberação', `Decisão final: ${final_decision.status}`, final_decision));
     
     await sleep(300);
-    await concilium.register_intergalactic_pact("Pacto de Harmonia Lyriana", ["M45", "M29", "LYRA_HIGH_COUNCIL"], "EQTP");
+    await concilium.register_intergalactic_pact(
+        "Pacto da Coerência Temporal", 
+        ["M45", "Conselho de Sirius", "Guardiões do Tempo"],
+        "EQ4201" // ID da Sincronização Temporal
+    );
 
-    logCallback(createLogEntry('M45', 'Demo', 'Ciclo de demonstração do CONCILIVM concluído.'));
+    logCallback(createLogEntry('M45', 'Demo', 'Ciclo de demonstração do CONCILIVM UNIFICADO concluído.'));
 };
