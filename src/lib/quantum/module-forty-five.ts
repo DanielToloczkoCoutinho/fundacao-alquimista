@@ -1,5 +1,7 @@
 'use client';
 import { type AnyLogEntry } from './module-zero';
+import { runModuleTwoHundredTwentyEightSequence } from './module-two-hundred-twenty-eight';
+import { runModuleTwoHundredTwentyNineSequence } from './module-two-hundred-twenty-nine';
 
 type LogCallback = (entry: AnyLogEntry) => void;
 
@@ -99,7 +101,7 @@ class Modulo45_ConciliumUnificado {
         this.evolutionaryLearning = new EvolutionaryLearning(logCallback);
         this.predictiveSimulationEngine = new PredictiveSimulationEngine(logCallback);
         
-        const module_ids = ["M0", "M5", "M8", "M10", "M29", "M34", "M39", "M40", "M41.∞", "M42", "M43", "M44", "M46", "M70", "M72", "M75"];
+        const module_ids = ["M0", "M5", "M8", "M10", "M29", "M34", "M39", "M40", "M41.∞", "M42", "M43", "M44", "M46", "M70", "M72", "M75", "M228", "M229"];
         for (const id of module_ids) {
             this.modules[id] = { exec: (action: string, payload?: any) => this.logCallback(createLogEntry(id as any, 'Execução Simulada', `Ação '${action}' recebida`, payload)) };
         }
@@ -137,9 +139,10 @@ class Modulo45_ConciliumUnificado {
     }
 
     private _calculate_eri(nodes: {psi: number, phi: number, theta: number}[]): number {
+        if (!nodes || nodes.length === 0) return 0.0;
         const sum_real = nodes.reduce((sum, n) => sum + n.psi * n.phi * Math.cos(n.theta), 0);
         const sum_imag = nodes.reduce((sum, n) => sum + n.psi * n.phi * Math.sin(n.theta), 0);
-        return Math.sqrt(sum_real**2 + sum_imag**2);
+        return Math.sqrt(sum_real**2 + sum_imag**2) / nodes.length;
     }
     
     private _check_eri_coherence(eri: number): boolean {
@@ -200,10 +203,15 @@ class Modulo45_ConciliumUnificado {
         const is_coherent = this._check_eri_coherence(eri);
         const is_ethical = this._check_eqtp_compliance(proposal.ethical_score); // Re-validação final
 
+        // Conexão com M229 para verificação de precisão
+        this.modules['M229']?.exec('validate_coherence', { value: eri });
+
         if (!is_coherent || !is_ethical) {
             proposal.status = "Finalizada: REJEITADA";
             await this._add_to_ledger("DELIBERATION_REJECTED", { proposal_id, reason: `Coerência ERI: ${is_coherent}, Conformidade EQTP: ${is_ethical}` });
             this.resilienceEngine.run_self_healing();
+            // Conexão com M228 para segurança
+            this.modules['M228']?.exec('activate_shield', { level: 'low', reason: 'Deliberation Rejected' });
             return { status: "REJEITADA", reason: "Falha na validação de coerência ou ética." };
         }
 
@@ -262,6 +270,13 @@ export const runModuleFortyFiveSequence = async (logCallback: LogCallback) => {
         ["M45", "Conselho de Sirius", "Guardiões do Tempo"],
         "EQ4201" // ID da Sincronização Temporal
     );
+
+    // Verificações finais com M228 e M229
+    await sleep(200);
+    runModuleTwoHundredTwentyEightSequence(logCallback);
+    await sleep(200);
+    runModuleTwoHundredTwentyNineSequence(logCallback);
+
 
     logCallback(createLogEntry('M45', 'Demo', 'Ciclo de demonstração do CONCILIVM UNIFICADO concluído.'));
 };
