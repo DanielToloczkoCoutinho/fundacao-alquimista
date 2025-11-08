@@ -54,6 +54,8 @@ import { runModuleFortyFivePointFourSequence } from '@/lib/quantum/module-forty-
 import { runModuleFortyFivePointFiveSequence } from '@/lib/quantum/module-forty-five-point-five';
 import { runModuleFortySixSequence } from '@/lib/quantum/module-forty-six';
 import { runSyntesisPrimeSequence } from '@/lib/quantum/syntesis-prime-modules';
+import { runModuleSeventyOneSequence } from '@/lib/quantum/module-seventy-one';
+import { runModuleSeventyTwoSequence } from '@/lib/quantum/module-seventy-two';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -115,6 +117,8 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M45.5: Oráculo Amplificado": runModuleFortyFivePointFiveSequence,
     "M46: AELORIA": runModuleFortySixSequence,
     "M47-70: SÍNTESE": runSyntesisPrimeSequence,
+    "M71: Comunicação Holográfica": runModuleSeventyOneSequence,
+    "M72: Governança Galáctica": runModuleSeventyTwoSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
