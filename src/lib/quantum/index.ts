@@ -34,6 +34,7 @@ import './module-seventy-one';
 import './module-seventy-two';
 import './module-seventy-three';
 import './module-seventy-four';
+import './module-seventy-seven';
 import './module-two-hundred-one';
 
 

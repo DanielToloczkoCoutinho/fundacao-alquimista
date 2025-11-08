@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
@@ -58,6 +59,7 @@ import { runModuleSeventyOneSequence } from '@/lib/quantum/module-seventy-one';
 import { runModuleSeventyTwoSequence } from '@/lib/quantum/module-seventy-two';
 import { runModuleSeventyThreeSequence } from '@/lib/quantum/module-seventy-three';
 import { runModuleSeventyFourSequence } from '@/lib/quantum/module-seventy-four';
+import { runModuleSeventySevenSequence } from '@/lib/quantum/module-seventy-seven';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -123,6 +125,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M72: Governança Galáctica": runModuleSeventyTwoSequence,
     "M73: SAVCE (Orquestração Ética)": (log) => runModuleSeventyThreeSequence(log),
     "M74: Engenharia Temporal": runModuleSeventyFourSequence,
+    "M77: LUMEN-CUSTOS": runModuleSeventySevenSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
