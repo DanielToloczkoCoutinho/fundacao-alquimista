@@ -97,6 +97,7 @@ import { runModuleOneHundredElevenSequence } from '@/lib/quantum/module-one-hund
 import { runModuleOneHundredTwelveSequence } from '@/lib/quantum/module-one-hundred-twelve';
 import { runModuleOneHundredThirteenSequence } from '@/lib/quantum/module-one-hundred-thirteen';
 import { runModuleOneHundredFourteenSequence } from '@/lib/quantum/module-one-hundred-fourteen';
+import { runModuleOneHundredFifteenSequence } from '@/lib/quantum/module-one-hundred-fifteen';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
@@ -205,6 +206,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M112-SolarianDomus": runModuleOneHundredTwelveSequence,
     "M113-RedeAurora": (log) => runModuleOneHundredThirteenSequence(log, { targetEntity: 'Consciência Humana', purpose: 'Elevação Vibracional' }),
     "M114-PrismaManifestacao": runModuleOneHundredFourteenSequence,
+    "M115-MatrizRessonancia": runModuleOneHundredFifteenSequence,
     "M201-TransmissorSonhos": runModuleTwoHundredOneSequence,
     "M-Omega": runModuleOmegaSequence,
 };
