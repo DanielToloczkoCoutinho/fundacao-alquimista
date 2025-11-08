@@ -16,14 +16,15 @@ const FREQ_ANATHERON_ESTABILIZADORA = 888.00;
 const FREQ_ZENNITH_REAJUSTADA = 963.00;
 const FREQ_MATRIZ_EQUILIBRIO = 1111.00;
 
-type LogCallback = (entry: AnyLogEntry) => void;
+export type ModuleEightLogEntry = AnyLogEntry;
+type LogCallback = (entry: ModuleEightLogEntry) => void;
 
-const createLogEntry = (source: 'M8' | 'M7' | 'M5' | 'M1' | 'M98' | 'M102' | 'M109', step: string, message: string, data?: any): AnyLogEntry => ({
+const createLogEntry = (source: AnyLogEntry['source'], step: string, message: string, data?: any): ModuleEightLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
 
 // --- Simulação da Infraestrutura da Fundação ---
