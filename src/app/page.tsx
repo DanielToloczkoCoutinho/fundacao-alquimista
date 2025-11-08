@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { onAuthStateChanged, signInAnonymously, signInWithCustomToken } from 'firebase/auth';
+import { onAuthStateChanged, signInAnonymously } from 'firebase/auth';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as Tone from 'tone';
@@ -261,7 +261,7 @@ export default function App() {
               }
           });
           return () => unsubscribe();
-      }, [auth]);
+      }, []);
 
       useEffect(() => {
           if (initRef.current || !containerRef.current) return;
