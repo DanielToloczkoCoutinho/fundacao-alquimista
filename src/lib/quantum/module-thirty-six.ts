@@ -3,6 +3,22 @@ import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
 
+// Harmonização da tipagem
+export type ModuleThirtySixLogEntry = AnyLogEntry;
+
+// Definição do novo tipo de registro
+export type RegistroManifestacaoLuzPrimordial = {
+  módulo: 'M36',
+  origem: string,
+  tipo_estrutura: 'cristal' | 'ambiente' | 'ecossistema' | 'artefato' | 'campo',
+  intenção_fundadora: string,
+  energia_utilizada: number, // escala 0.0 a 1.0
+  alinhamento_etico: 'neutro' | 'harmônico' | 'divino',
+  status: 'manifestado' | 'em formação' | 'reabsorvido',
+  timestamp: number
+};
+
+
 // ───────── Constantes ─────────
 const PHI = (1 + Math.sqrt(5)) / 2;
 const CONST_TF = 1.61803398875;
@@ -12,13 +28,24 @@ const LIMIAR_RESSONANCIA_MINIMA = 0.75;
 const LIMIAR_DISSONANCIA_CRITICA = 0.20;
 
 // ───────── Utils ─────────
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void => {
+  logCallback(entry);
+};
+
+// Refinamento da função de registro
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
+
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -171,7 +198,7 @@ const coerencia_calibrada_suave_v36 = (dados: number[], dominio?: string | null)
 // Mocks
 const mockModule = (name: string, log: LogCallback) => ({
     exec: (action: string, payload?: any) => {
-        log(createLogEntry(name as any, 'Execução', `Ação '${action}' recebida`, payload));
+        createLogEntry(createLogEntryHelper(name as AnyLogEntry['source'], 'Execução', `Ação '${action}' recebida`, payload), log);
         return { status: `simulated_ok_${action}` };
     }
 });
@@ -191,7 +218,7 @@ class Modulo36_ArquitetoLuzPrimordial {
     private mttr_reajuste: number[] = [];
 
     constructor(private logCallback: LogCallback, private modulo_id: string) {
-        this.logCallback(createLogEntry('M36', 'Inicialização', `Arquiteto da Luz Primordial '${this.modulo_id}' inicializado.`));
+        createLogEntry(createLogEntryHelper('M36', 'Inicialização', `Arquiteto da Luz Primordial '${this.modulo_id}' inicializado.`), this.logCallback);
         this.modulo01 = mockModule('M1', logCallback);
         this.modulo07 = mockModule('M7', logCallback);
         this.modulo08 = mockModule('M8', logCallback);
@@ -231,8 +258,12 @@ class Modulo36_ArquitetoLuzPrimordial {
     }
 
     private analisar_consciencia_por_dominio(dados: number[], dominio: string): any {
-        const res = this.modulo35.exec("analisar_consciencia_coletiva", { dados_consciencia: dados, dominio });
-        const c = Math.random() * 0.3 + 0.65; // Mocking result
+        createLogEntry(createLogEntryHelper('M35', 'Análise', 'Analisando dados da consciência coletiva...'), this.logCallback);
+        if (!dados || dados.length === 0) {
+            return { status: "FALHA", mensagem: "Nenhum dado." };
+        }
+
+        const c = coerencia_calibrada_suave_v36(dados, dominio);
         const d = 1.0 - c;
         this.historico_dissonancia.push(d);
         if (d >= LIMIAR_DISSONANCIA_CRITICA) {
@@ -284,11 +315,11 @@ class Modulo36_ArquitetoLuzPrimordial {
     private ciclos_refino_etico: number = 0;
 
     async executar_ciclo_manifestacao(especificacao_materia: any, intencao_manifestacao: any) {
-        this.logCallback(createLogEntry('M36', 'Ciclo', `Iniciando ciclo: ${intencao_manifestacao.descricao}`));
+        createLogEntry(createLogEntryHelper('M36', 'Ciclo', `Iniciando ciclo: ${intencao_manifestacao.descricao}`), this.logCallback);
 
         const validacao = this.validar_etica_adaptativa(intencao_manifestacao);
         if (validacao.status !== "SUCESSO") {
-            this.logCallback(createLogEntry('M36', 'FALHA', `Ciclo abortado: ${validacao.mensagem}`));
+            createLogEntry(createLogEntryHelper('M36', 'FALHA', `Ciclo abortado: ${validacao.mensagem}`), this.logCallback);
             return validacao;
         }
 
@@ -296,7 +327,7 @@ class Modulo36_ArquitetoLuzPrimordial {
         const [energia_requerida, comp_adapt, p_anom] = this.calcular_energia_manifestacao(especificacao_materia.complexidade_estrutural, intencao_manifestacao.pureza, intencao_manifestacao.descricao);
         
         if (this.energia_primordial_disponivel < energia_requerida) {
-            this.logCallback(createLogEntry('M36', 'FALHA', `Energia insuficiente. Req: ${energia_requerida.toFixed(0)}, Disp: ${this.energia_primordial_disponivel.toFixed(0)}`));
+            createLogEntry(createLogEntryHelper('M36', 'FALHA', `Energia insuficiente. Req: ${energia_requerida.toFixed(0)}, Disp: ${this.energia_primordial_disponivel.toFixed(0)}`), this.logCallback);
             return { status: "FALHA_ENERGIA", mensagem: "Energia primordial insuficiente." };
         }
 
@@ -317,7 +348,7 @@ class Modulo36_ArquitetoLuzPrimordial {
         const integrador = EQ0042_ModeloIntegradoFinal(unificacao, energia_requerida, true);
         const selo_struct = EQ0096_StructuraOmega({ material_id, dominio: intencao_manifestacao.descricao, resumo, integrador });
 
-        this.logCallback(createLogEntry('M36', 'Sucesso', `Matéria manifestada com sucesso: ${material_id}`));
+        createLogEntry(createLogEntryHelper('M36', 'Sucesso', `Matéria manifestada com sucesso: ${material_id}`), this.logCallback);
         return { status: "SUCESSO", material_id, ressonancia, unificacao, integrador, selo_struct };
     }
 }
