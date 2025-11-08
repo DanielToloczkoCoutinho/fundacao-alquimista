@@ -39,6 +39,7 @@ import { runModuleThirtyThreeSequence } from '@/lib/quantum/module-thirty-three'
 import { runModuleThirtyFourSequence } from '@/lib/quantum/module-thirty-four';
 import { runModuleThirtyFiveSequence } from '@/lib/quantum/module-thirty-five';
 import { runModuleThirtySixSequence } from '@/lib/quantum/module-thirty-six';
+import { runModuleThirtySevenSequence } from '@/lib/quantum/module-thirty-seven';
 import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
 import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
@@ -86,6 +87,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M34: Guardião da Coerência": runModuleThirtyFourSequence,
     "M35: Orquestrador da Consciência": runModuleThirtyFiveSequence,
     "M36: Arquiteto da Luz Primordial": runModuleThirtySixSequence,
+    "M37: Engenharia Temporal": runModuleThirtySevenSequence,
     "M41.Ω: Orquestrador Daniel": (log) => commandDanielOrchestrator('status', log),
     "M42: Orquestrador ZENNITH": runZennithOrchestrator,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
