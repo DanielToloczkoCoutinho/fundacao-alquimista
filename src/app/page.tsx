@@ -44,7 +44,7 @@ import { runModuleThirtyEightSequence } from '@/lib/quantum/module-thirty-eight'
 import { runModuleThirtyNineSequence } from '@/lib/quantum/module-thirty-nine';
 import { runModuleFortySequence } from '@/lib/quantum/module-forty';
 import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
-import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
+import { runModuleFortyTwoSequence } from '@/lib/quantum/module-forty-two';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { runModuleFortyOnePartTwoSequence } from '@/lib/quantum/module-forty-one-part-two';
 import { Button } from '@/components/ui/button';
@@ -97,7 +97,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M40: Códice da Criação Viva": runModuleFortySequence,
     "M41.Ω: Orquestrador Daniel": (log) => commandDanielOrchestrator('status', log),
     "M41.2: Ascensão DNA": runModuleFortyOnePartTwoSequence,
-    "M42: Orquestrador ZENNITH": runZennithOrchestrator,
+    "M42: ChronoCodex Unificado": runModuleFortyTwoSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
 
@@ -137,6 +137,16 @@ export default function App() {
     const newLog = useCallback((entry: AnyLogEntry) => {
         setSystemLogs(prev => [entry, ...prev.slice(0, 199)]);
     }, []);
+
+    const getModuleStatus = (moduleName: string): { variant: "default" | "secondary" | "destructive" | "outline", text: string } => {
+        const logs = systemLogs.filter(log => log.source === moduleName);
+        if (logs.length === 0) return { variant: "secondary", text: "Inativo" };
+        const lastLog = logs[0];
+        if (lastLog.step.includes('Fim') || lastLog.step.includes('Concluído')) return { variant: "default", text: "Concluído" };
+        if (lastLog.step.includes('FALHA') || lastLog.step.includes('Erro')) return { variant: "destructive", text: "Falha" };
+        if (lastLog.step.includes('Início') || lastLog.step.includes('Executando')) return { variant: "outline", text: "Executando" };
+        return { variant: "secondary", text: "Ativo" };
+    };
 
     useEffect(() => {
         if (initRef.current || !containerRef.current) return;
@@ -368,16 +378,6 @@ export default function App() {
         return bibliotecaCompletaUnificada.listarTodas().filter(eq => eq.classificacao === classification);
     }
     
-    const getModuleStatus = (moduleName: string): { variant: "default" | "secondary" | "destructive" | "outline", text: string } => {
-        const logs = systemLogs.filter(log => log.source === moduleName);
-        if (logs.length === 0) return { variant: "secondary", text: "Inativo" };
-        const lastLog = logs[0];
-        if (lastLog.step.includes('Fim') || lastLog.step.includes('Concluído')) return { variant: "default", text: "Concluído" };
-        if (lastLog.step.includes('FALHA') || lastLog.step.includes('Erro')) return { variant: "destructive", text: "Falha" };
-        if (lastLog.step.includes('Início') || lastLog.step.includes('Executando')) return { variant: "outline", text: "Executando" };
-        return { variant: "secondary", text: "Ativo" };
-    };
-
     return (
         <div id="container-main" className="flex h-screen w-screen bg-[#0d0d1e] overflow-hidden">
             <div id="canvas-container" ref={containerRef} className="flex-grow relative" onClick={onCanvasClick}>
