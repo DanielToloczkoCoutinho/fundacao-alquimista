@@ -120,4 +120,6 @@ export const runModuleOneHundredFourSequence = async (log: LogCallback) => {
 
 
     } catch (error: any) {
-        log(createLogEntry('M10
+        log(createLogEntry('M104', 'ERRO', `Erro no processo de engenharia do espaço-tempo: ${error.message}`));
+    }
+};
