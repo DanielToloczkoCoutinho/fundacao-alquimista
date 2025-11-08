@@ -181,3 +181,4 @@ export const runModuleNinetySequence = async (logCallback: LogCallback) => {
         0.65
     );
     logCallback(createLogEntry('M90', 'Simulação Concluída', 'Demonstração do Módulo 90 concluída.'));
+};

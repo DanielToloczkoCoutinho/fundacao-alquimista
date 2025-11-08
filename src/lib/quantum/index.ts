@@ -110,4 +110,8 @@ class BibliotecaCompletaUnificada {
     }
 
     public buscarPorClassificacao(classificacao: string): EquacaoViva[] {
-        return this.listarTodas().filter(eq =>
+        return this.listarTodas().filter(eq => eq.classificacao === classificacao);
+    }
+}
+
+export const bibliotecaCompletaUnificada = new BibliotecaCompletaUnificada();
