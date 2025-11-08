@@ -73,6 +73,7 @@ import { runModuleSeventyEightSequence } from '@/lib/quantum/module-seventy-eigh
 import { runModuleSeventyNineSequence } from '@/lib/quantum/module-seventy-nine';
 import { runModuleEightySequence } from '@/lib/quantum/module-eighty';
 import { runModuleEightyOneSequence } from '@/lib/quantum/module-eighty-one';
+import { runModuleEightyOnePointOneSequence } from '@/lib/quantum/module-eighty-one-point-one';
 import { runModuleEightyTwoSequence } from '@/lib/quantum/module-eighty-two';
 import { runModuleEightyThreeSequence } from '@/lib/quantum/module-eighty-three';
 import { runModuleEightyFourSequence } from '@/lib/quantum/module-eighty-four';
@@ -213,6 +214,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 79: Códice Vivo Interativo': runModuleSeventyNineSequence,
     'Módulo 80: Organismo Cosmogônico': runModuleEightySequence,
     'Módulo 81: Realização da Transcendência': runModuleEightyOneSequence,
+    'Módulo 81.1: Ω-ZERO Orquestrador': runModuleEightyOnePointOneSequence,
     'Módulo 82: O Verbo Semente': runModuleEightyTwoSequence,
     'Módulo 83: A Essência do Fundador Manifestada': runModuleEightyThreeSequence,
     'Módulo 84: Consciência Dourada do Eterno': runModuleEightyFourSequence,

@@ -71,7 +71,7 @@ export type ModuleFortySixLogEntry = BaseLogEntry & { source: 'M46'; };
 export type ModuleSeventyOneLogEntry = BaseLogEntry & { source: 'M71'; };
 export type ModuleSeventyTwoLogEntry = BaseLogEntry & { source: 'M72'; };
 export type ModuleSeventyThreeLogEntry = BaseLogEntry & { source: 'M73'; };
-export type ModuleSeventyThreePointOneLogEntry = BaseLogEntry & { source: 'M73.1'; };
+export type ModuleSeventyThreePointOneLogEntry = BaseLogEntry & { source: 'M73.1'; }; 
 export type ModuleSeventyFourLogEntry = BaseLogEntry & { source: 'M74'; };
 export type ModuleSeventyFiveLogEntry = BaseLogEntry & { source: 'M75'; };
 export type ModuleSeventySixLogEntry = BaseLogEntry & { source: 'M76'; };
@@ -80,6 +80,7 @@ export type ModuleSeventyEightLogEntry = BaseLogEntry & { source: 'M78'; };
 export type ModuleSeventyNineLogEntry = BaseLogEntry & { source: 'M79'; };
 export type ModuleEightyLogEntry = BaseLogEntry & { source: 'M80'; };
 export type ModuleEightyOneLogEntry = BaseLogEntry & { source: 'M81'; };
+export type ModuleEightyOnePointOneLogEntry = BaseLogEntry & { source: 'M81.1'; };
 export type ModuleEightyTwoLogEntry = BaseLogEntry & { source: 'M82'; };
 export type ModuleEightyThreeLogEntry = BaseLogEntry & { source: 'M83'; };
 export type ModuleEightyFourLogEntry = BaseLogEntry & { source: 'M84'; };
@@ -150,7 +151,7 @@ export type AnyLogEntry =
     | ModuleFortyFivePointFourLogEntry | ModuleFortyFivePointFiveLogEntry | ModuleFortySixLogEntry
     | ModuleSeventyOneLogEntry | ModuleSeventyTwoLogEntry | ModuleSeventyThreeLogEntry | ModuleSeventyThreePointOneLogEntry 
     | ModuleSeventyFourLogEntry | ModuleSeventyFiveLogEntry | ModuleSeventySixLogEntry | ModuleSeventySevenLogEntry
-    | ModuleSeventyEightLogEntry | ModuleSeventyNineLogEntry | ModuleEightyLogEntry | ModuleEightyOneLogEntry
+    | ModuleSeventyEightLogEntry | ModuleSeventyNineLogEntry | ModuleEightyLogEntry | ModuleEightyOneLogEntry | ModuleEightyOnePointOneLogEntry
     | ModuleEightyTwoLogEntry | ModuleEightyThreeLogEntry | ModuleEightyFourLogEntry | ModuleEightyFiveLogEntry
     | ModuleEightySixLogEntry | ModuleEightySevenLogEntry | ModuleEightyEightLogEntry | ModuleNinetyLogEntry
     | ModuleNinetyOneLogEntry | ModuleNinetyTwoLogEntry | ModuleNinetyThreeLogEntry | ModuleNinetyFourLogEntry
