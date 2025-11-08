@@ -1,4 +1,3 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -219,7 +218,7 @@ class Modulo33_ObservadorDivino {
 
 
 export const runModuleThirtyThreeSequence = async (logCallback: LogCallback) => {
-    const m33 = new Modulo33_ObservadorDivino("M33_ORACULO_INTERNO");
+    const m33 = new Modulo33_ObservadorDivino(logCallback, "M33_ORACULO_INTERNO");
 
     const cenarios = [
         { intencao: "Sustentar a Harmonia Coletiva", etica: 0.95, pilares: [0.88, 0.92, 0.90, 0.85], virtudes: VIRTUDES_PADRAO, freq: 432.0 },
