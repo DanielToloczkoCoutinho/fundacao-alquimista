@@ -1,7 +1,26 @@
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
-type LogCallback = (entry: AnyLogEntry) => void;
+// Tipagem Universal
+export type ModuleTwentyOneLogEntry = AnyLogEntry;
+
+export type RegistroTravessiaDimensional = {
+  módulo: 'M21',
+  destino: string,
+  tipo_portal: 'estável' | 'flutuante' | 'colapsado',
+  tempo_de_travessia: number,
+  status: 'concluída' | 'interrompida' | 'pendente',
+  timestamp: number
+}
+
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void) => {
+  logCallback(entry);
+};
+
+// Refinamento da função de registro
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
 
 const CONST_TF = 1.61803398875;
 const C_LIGHT = 299792458;
@@ -10,26 +29,26 @@ let routeIdStore: string | null = null;
 let portalIdStore: string | null = null;
 let travelIdStore: string | null = null;
 
-const createLogEntry = (source: 'M21' | 'M1' | 'M2' | 'M7', step: string, message: string, data?: any): AnyLogEntry => ({
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-const Modulo1_SegurancaUniversal = (log: LogCallback) => ({
-    RegistrarNaCronicaDaFundacao: (registro: any) => log(createLogEntry('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`)),
+const Modulo1_SegurancaUniversal = (log: (entry: AnyLogEntry) => void) => ({
+    RegistrarNaCronicaDaFundacao: (registro: any) => log(createLogEntryHelper('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`)),
 });
 
-const Modulo2_InterconexaoComunicacao = (log: LogCallback) => ({
-    TransmitirDadosDimensional: (dados: any, canal: string) => log(createLogEntry('M2', 'Transmissão', `Transmitindo dados via canal ${canal}`)),
+const Modulo2_InterconexaoComunicacao = (log: (entry: AnyLogEntry) => void) => ({
+    TransmitirDadosDimensional: (dados: any, canal: string) => log(createLogEntryHelper('M2', 'Transmissão', `Transmitindo dados via canal ${canal}`)),
 });
 
-const Modulo7_AlinhamentoDivino = (log: LogCallback) => ({
-    ConsultarConselho: (query: string) => log(createLogEntry('M7', 'Consulta Conselho', `Consultando diretriz para: "${query}"`)),
+const Modulo7_AlinhamentoDivino = (log: (entry: AnyLogEntry) => void) => ({
+    ConsultarConselho: (query: string) => log(createLogEntryHelper('M7', 'Consulta Conselho', `Consultando diretriz para: "${query}"`)),
 });
 
 class SistemaNavegacaoInterdimensional {
@@ -41,8 +60,8 @@ class SistemaNavegacaoInterdimensional {
     private viagens_registradas: { [id: string]: any } = {};
     public dimensoes_conhecidas = ["Terra_Primaria", "Setor_Aurora", "Vortex_Caos", "Dimensao_Cristal", "Orion_Prime", "Plano_Akashico"];
 
-    constructor(private logCallback: LogCallback) {
-        this.logCallback(createLogEntry('M21', 'Inicialização', 'Módulo 21 - Navegação Interdimensional ativado.'));
+    constructor(private logCallback: (entry: AnyLogEntry) => void) {
+        this.logCallback(createLogEntryHelper('M21', 'Inicialização', 'Módulo 21 - Navegação Interdimensional ativado.'));
         this.modulo1 = Modulo1_SegurancaUniversal(logCallback);
         this.modulo2 = Modulo2_InterconexaoComunicacao(logCallback);
         this.modulo7 = Modulo7_AlinhamentoDivino(logCallback);
@@ -69,7 +88,7 @@ class SistemaNavegacaoInterdimensional {
     }
 
     async mapear_rota(origem: string, destino: string): Promise<string | null> {
-        this.logCallback(createLogEntry('M21', 'Mapeamento', `Mapeando rota: ${origem} -> ${destino}`));
+        this.logCallback(createLogEntryHelper('M21', 'Mapeamento', `Mapeando rota: ${origem} -> ${destino}`));
         await sleep(500);
 
         const distancia = Math.abs(this.dimensoes_conhecidas.indexOf(origem) - this.dimensoes_conhecidas.indexOf(destino)) * 100;
@@ -80,18 +99,18 @@ class SistemaNavegacaoInterdimensional {
         routeIdStore = rota_id;
 
         this.modulo1.RegistrarNaCronicaDaFundacao({ evento: "MapeamentoRota", rota_id, origem, destino });
-        this.logCallback(createLogEntry('M21', 'Rota Mapeada', `ID: ${rota_id}, Entrelaçamento: ${entrelaçamento.toFixed(4)}`));
+        this.logCallback(createLogEntryHelper('M21', 'Rota Mapeada', `ID: ${rota_id}, Entrelaçamento: ${entrelaçamento.toFixed(4)}`));
         return rota_id;
     }
 
     async estabilizar_portal(rota_id: string): Promise<string | null> {
         if (!this.rotas_mapeadas[rota_id]) {
-            this.logCallback(createLogEntry('M21', 'FALHA', 'Rota não encontrada para estabilização.'));
+            this.logCallback(createLogEntryHelper('M21', 'FALHA', 'Rota não encontrada para estabilização.'));
             return null;
         }
 
         const rota = this.rotas_mapeadas[rota_id];
-        this.logCallback(createLogEntry('M21', 'Estabilização', `Estabilizando portal para a rota ${rota.origem} -> ${rota.destino}`));
+        this.logCallback(createLogEntryHelper('M21', 'Estabilização', `Estabilizando portal para a rota ${rota.origem} -> ${rota.destino}`));
         await sleep(500);
 
         const energia = this.EQ023_F_Energia_Portal(210, 0.99) * 1.1; // Massa da tripulação e coerência
@@ -102,19 +121,19 @@ class SistemaNavegacaoInterdimensional {
         portalIdStore = portal_id;
 
         this.modulo1.RegistrarNaCronicaDaFundacao({ evento: "PortalEstabilizado", portal_id });
-        this.logCallback(createLogEntry('M21', 'Portal Estável', `ID: ${portal_id}, Estabilidade: ${estabilidade.toFixed(4)}`));
+        this.logCallback(createLogEntryHelper('M21', 'Portal Estável', `ID: ${portal_id}, Estabilidade: ${estabilidade.toFixed(4)}`));
         return portal_id;
     }
 
     async iniciar_viagem(portal_id: string): Promise<string | null> {
         if (!this.portais_ativos[portal_id]) {
-            this.logCallback(createLogEntry('M21', 'FALHA', 'Portal não ativo para iniciar a viagem.'));
+            this.logCallback(createLogEntryHelper('M21', 'FALHA', 'Portal não ativo para iniciar a viagem.'));
             return null;
         }
         
         const portal = this.portais_ativos[portal_id];
         const rota = this.rotas_mapeadas[portal.rota_id];
-        this.logCallback(createLogEntry('M21', 'Viagem', `Iniciando viagem: ${rota.origem} -> ${rota.destino}`));
+        this.logCallback(createLogEntryHelper('M21', 'Viagem', `Iniciando viagem: ${rota.origem} -> ${rota.destino}`));
         await sleep(500);
         
         const velocidade = this.EQ014_F_Velocidade_Interdimensional(210, portal.energia);
@@ -124,12 +143,12 @@ class SistemaNavegacaoInterdimensional {
         
         this.modulo2.TransmitirDadosDimensional({ viagem_id }, `canal_${portal_id}`);
         this.modulo1.RegistrarNaCronicaDaFundacao({ evento: "ViagemIniciada", viagem_id });
-        this.logCallback(createLogEntry('M21', 'Viagem em Curso', `ID da Viagem: ${viagem_id}. Velocidade: ${velocidade.toExponential(2)} m/s.`));
+        this.logCallback(createLogEntryHelper('M21', 'Viagem em Curso', `ID da Viagem: ${viagem_id}. Velocidade: ${velocidade.toExponential(2)} m/s.`));
         return viagem_id;
     }
 }
 
-export const runModuleTwentyOneSequence = async (logCallback: LogCallback, action: 'MAP' | 'STABILIZE' | 'TRAVEL') => {
+export const runModuleTwentyOneSequence = async (logCallback: (entry: AnyLogEntry) => void, action: 'MAP' | 'STABILIZE' | 'TRAVEL') => {
     const nav = new SistemaNavegacaoInterdimensional(logCallback);
 
     switch(action) {
@@ -140,14 +159,14 @@ export const runModuleTwentyOneSequence = async (logCallback: LogCallback, actio
             if (routeIdStore) {
                 await nav.estabilizar_portal(routeIdStore);
             } else {
-                logCallback(createLogEntry('M21', 'FALHA', 'Nenhuma rota mapeada para estabilizar.'));
+                logCallback(createLogEntryHelper('M21', 'FALHA', 'Nenhuma rota mapeada para estabilizar.'));
             }
             break;
         case 'TRAVEL':
             if (portalIdStore) {
                 await nav.iniciar_viagem(portalIdStore);
             } else {
-                logCallback(createLogEntry('M21', 'FALHA', 'Nenhum portal ativo para viajar.'));
+                logCallback(createLogEntryHelper('M21', 'FALHA', 'Nenhum portal ativo para viajar.'));
             }
             break;
     }
