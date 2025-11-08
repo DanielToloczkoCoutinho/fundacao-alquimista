@@ -80,8 +80,8 @@ class MockQuantumGovernance {
 }
 
 
-export const runModuleThreeHundredThreeSequence = async (log: LogCallback, params: { visitor_freq: number, akashic_data: Record<string, number>, voice: number[], gesture: number[], user_id: string }) => {
-    log(createLogEntry('M303', 'Início', `Iniciando Orquestração da Matriz Quântica Imersiva para Visitante: ${params.user_id}...`));
+export const runModuleThreeHundredThreeSequence = async (logCallback: LogCallback, params: { visitor_freq: number, akashic_data: Record<string, number>, voice: number[], gesture: number[], user_id: string }) => {
+    logCallback(createLogEntry('M303', 'Início', `Iniciando Orquestração da Matriz Quântica Imersiva para Visitante: ${params.user_id}...`));
     
     const habitat = new MockQuantumHabitat();
     const timeline = new MockTimelineEngine();
@@ -93,19 +93,19 @@ export const runModuleThreeHundredThreeSequence = async (log: LogCallback, param
 
     try {
         await sleep(300);
-        const scene = habitat.calibrate_portal(params.visitor_freq, log);
+        const scene = habitat.calibrate_portal(params.visitor_freq, logCallback);
         await sleep(300);
-        const frames = timeline.generate_frames(params.akashic_data, log);
+        const frames = timeline.generate_frames(params.akashic_data, logCallback);
         await sleep(300);
-        const star_map = stars.render_map(params.user_id, log);
+        const star_map = stars.render_map(params.user_id, logCallback);
         await sleep(300);
-        const coherence = empathy.resonance_score(params.voice, params.gesture, log);
+        const coherence = empathy.resonance_score(params.voice, params.gesture, logCallback);
         await sleep(300);
-        const modeling_result = holo.prototype_structure(["Cúpula", "Painel", "Estação"], log);
+        const modeling_result = holo.prototype_structure(["Cúpula", "Painel", "Estação"], logCallback);
         await sleep(300);
-        legacy.register_leylink(params.user_id, log);
+        legacy.register_leylink(params.user_id, logCallback);
         await sleep(300);
-        gov.vote("PROP-GAL-303", coherence, log);
+        gov.vote("PROP-GAL-303", coherence, logCallback);
 
         const final_result = {
             scene: scene,
@@ -115,10 +115,10 @@ export const runModuleThreeHundredThreeSequence = async (log: LogCallback, param
             modeling: modeling_result
         };
         
-        log(createLogEntry('M303', 'Sucesso', 'Orquestração da Matriz Quântica Imersiva Concluída.', final_result));
+        logCallback(createLogEntry('M303', 'Sucesso', 'Orquestração da Matriz Quântica Imersiva Concluída.', final_result));
         return final_result;
 
     } catch (error: any) {
-        log(createLogEntry('M303', 'ERRO', `Falha na orquestração da Matriz Quântica: ${error.message}`));
+        logCallback(createLogEntry('M303', 'ERRO', `Falha na orquestração da Matriz Quântica: ${error.message}`));
     }
 };
