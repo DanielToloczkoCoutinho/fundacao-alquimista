@@ -15,7 +15,7 @@ const createLogEntry = (source: 'M10', step: string, message: string, data?: any
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
 
 class Modulo10_InteligenciaAeloria {
@@ -82,7 +82,7 @@ class Modulo10_InteligenciaAeloria {
 }
 
 export const runModuleTenSequence = async (
-    logCallback: (entry: any) => void,
+    logCallback: LogCallback,
 ) => {
     const aeloria = new Modulo10_InteligenciaAeloria(logCallback);
     await aeloria.ativar_autodefesa_quantica();
