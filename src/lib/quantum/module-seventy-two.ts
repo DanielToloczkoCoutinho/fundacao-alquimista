@@ -25,18 +25,18 @@ const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 // --- Mock Classes para Interconexões ---
 class MockModule {
     constructor(protected module_id: string, protected logCallback: LogCallback) {
-        this.logCallback(createLogEntry(this.module_id, 'Inicialização', `Módulo simulado inicializado.`));
+        this.logCallback(createLogEntry(this.module_id as any, 'Inicialização', `Módulo simulado inicializado.`));
     }
 
     receive_data(data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Dados Recebidos', `${data.topic || 'N/A'}`));
+        this.logCallback(createLogEntry(this.module_id as any, 'Dados Recebidos', `${data.topic || 'N/A'}`));
     }
 }
 
 class MockM56Etikorum extends MockModule {
     constructor(logCallback: LogCallback) { super("M56", logCallback); }
     kernel_veritas_check(context_data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Verificação Kernel Veritas', `Contexto: ${context_data.context}`));
+        this.logCallback(createLogEntry('M56', 'Verificação Kernel Veritas', `Contexto: ${context_data.context}`));
         return { ethical_status: "Alinhado", integrity_score: 0.99 };
     }
 }
@@ -44,7 +44,7 @@ class MockM56Etikorum extends MockModule {
 class MockM74CronosFluxus extends MockModule {
     constructor(logCallback: LogCallback) { super("M74", logCallback); }
     synchronize_temporal_flow(flow_data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Sincronização Temporal', `Sincronizando: ${flow_data.timeline_id}`));
+        this.logCallback(createLogEntry('M74', 'Sincronização Temporal', `Sincronizando: ${flow_data.timeline_id}`));
         return { status: "Sincronizado" };
     }
 }
@@ -52,14 +52,14 @@ class MockM74CronosFluxus extends MockModule {
 class MockM42ChronoCodex extends MockModule {
     constructor(logCallback: LogCallback) { super("M42", logCallback); }
     synchronize_timelines(timelines: string[]) {
-        this.logCallback(createLogEntry(this.module_id, 'Sincronização Linhas de Tempo', `Linhas: ${timelines.join(', ')}`));
+        this.logCallback(createLogEntry('M42', 'Sincronização Linhas de Tempo', `Linhas: ${timelines.join(', ')}`));
     }
 }
 
 class MockM5Auditoria extends MockModule {
     constructor(logCallback: LogCallback) { super("M5", logCallback); }
     audit_decision(decision_data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Auditoria Ética', `Decisão: ${decision_data.context}`));
+        this.logCallback(createLogEntry('M5', 'Auditoria Ética', `Decisão: ${decision_data.context}`));
         return { audit_status: "Aprovado", score: 0.98 };
     }
 }
@@ -67,42 +67,42 @@ class MockM5Auditoria extends MockModule {
 class MockM75RegistroAkashico extends MockModule {
     constructor(logCallback: LogCallback) { super("M75", logCallback); }
     register_event(event_data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Registro Akáshico', `Evento: ${event_data.name}`));
+        this.logCallback(createLogEntry('M75', 'Registro Akáshico', `Evento: ${event_data.name}`));
     }
 }
 
 class MockM9Dashboard extends MockModule {
     constructor(logCallback: LogCallback) { super("M9", logCallback); }
     update_dashboard(metrics: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Atualização Dashboard', `Métrica: ${metrics.type}`));
+        this.logCallback(createLogEntry('M9', 'Atualização Dashboard', `Métrica: ${metrics.type}`));
     }
 }
 
 class MockM1SistemaSeguranca extends MockModule {
     constructor(logCallback: LogCallback) { super("M1", logCallback); }
     receive_alert(alert_data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Alerta Segurança', `Tipo: ${alert_data.type}`));
+        this.logCallback(createLogEntry('M1', 'Alerta Segurança', `Tipo: ${alert_data.type}`));
     }
 }
 
 class MockM61GaiaResonantia extends MockModule {
     constructor(logCallback: LogCallback) { super("M61", logCallback); }
     receive_feedback(feedback_data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Feedback Gaia', `Setor: ${feedback_data.sector}`));
+        this.logCallback(createLogEntry('M61', 'Feedback Gaia', `Setor: ${feedback_data.sector}`));
     }
 }
 
 class MockM66FiliaeStellarum extends MockModule {
     constructor(logCallback: LogCallback) { super("M66", logCallback); }
     receive_feedback(feedback_data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Feedback Filiae Stellarum', `Setor: ${feedback_data.sector}`));
+        this.logCallback(createLogEntry('M66', 'Feedback Filiae Stellarum', `Setor: ${feedback_data.sector}`));
     }
 }
 
 class MockM28Harmonizacao extends MockModule {
     constructor(logCallback: LogCallback) { super("M28", logCallback); }
     harmonize_system(system_id: string) {
-        this.logCallback(createLogEntry(this.module_id, 'Harmonização Universal', `Sistema: ${system_id}`));
+        this.logCallback(createLogEntry('M28', 'Harmonização Universal', `Sistema: ${system_id}`));
         return { harmonization_status: "Concluída" };
     }
 }
@@ -110,7 +110,7 @@ class MockM28Harmonizacao extends MockModule {
 class MockM13Mapeamento extends MockModule {
     constructor(logCallback: LogCallback) { super("M13", logCallback); }
     detect_anomaly(scan_data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Detecção Anomalia', `Área: ${scan_data.area}`));
+        this.logCallback(createLogEntry('M13', 'Detecção Anomalia', `Área: ${scan_data.area}`));
         return { anomaly_detected: false };
     }
 }
@@ -118,7 +118,7 @@ class MockM13Mapeamento extends MockModule {
 class MockM44Veritas extends MockModule {
     constructor(logCallback: LogCallback) { super("M44", logCallback); }
     validate_truth(data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Validação da Verdade', `Contexto: ${data.context}`));
+        this.logCallback(createLogEntry('M44', 'Validação da Verdade', `Contexto: ${data.context}`));
         return { validation_status: "Verdadeiro" };
     }
 }
@@ -126,7 +126,7 @@ class MockM44Veritas extends MockModule {
 class MockM73OrquestracaoEtica extends MockModule {
     constructor(logCallback: LogCallback) { super("M73", logCallback); }
     receive_directive(directive_data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.module_id, 'Recebimento Diretriz', `Tipo: ${directive_data.type}`));
+        this.logCallback(createLogEntry('M73', 'Recebimento Diretriz', `Tipo: ${directive_data.type}`));
     }
 }
 
@@ -140,11 +140,11 @@ class M72_GovernancaAtlantoGalactica {
 
     constructor(private logCallback: LogCallback, modules_refs: { [key: string]: any }) {
         this.modules = modules_refs;
-        this.logCallback(createLogEntry(this.ID, 'Inicialização', `${this.FASE} inicializado. Status: ${this.STATUS_ATUAL}.`));
+        this.logCallback(createLogEntry(this.ID as any, 'Inicialização', `${this.FASE} inicializado. Status: ${this.STATUS_ATUAL}.`));
     }
 
     async establish_causal_coherence(target_timeline_id: string, initial_coherence: number = 0.99): Promise<boolean> {
-        this.logCallback(createLogEntry(this.ID, 'Coerência Causal', `Estabelecendo para: ${target_timeline_id}`));
+        this.logCallback(createLogEntry(this.ID as any, 'Coerência Causal', `Estabelecendo para: ${target_timeline_id}`));
 
         const temporal_flow_status = this.modules.m74.synchronize_temporal_flow({ status: "Verificando Coerência Causal", timeline_id: target_timeline_id });
         this.modules.m42.synchronize_timelines([target_timeline_id]);
@@ -154,19 +154,19 @@ class M72_GovernancaAtlantoGalactica {
 
         if (temporal_flow_status.status === "Sincronizado" && ethical_check_m56.ethical_status === "Alinhado" && ethical_audit_m5.audit_status === "Aprovado") {
             const final_coherence = initial_coherence * ethical_check_m56.integrity_score * ethical_audit_m5.score;
-            this.logCallback(createLogEntry(this.ID, 'Sucesso Coerência', `Coerência causal estabelecida para ${target_timeline_id}. Status: ${final_coherence.toFixed(4)}`));
+            this.logCallback(createLogEntry(this.ID as any, 'Sucesso Coerência', `Coerência causal estabelecida para ${target_timeline_id}. Status: ${final_coherence.toFixed(4)}`));
             this.modules.m75.register_event({ name: "Coerência Causal Estabelecida", timeline: target_timeline_id, status: final_coherence });
             this.modules.m9.update_dashboard({ type: "Coerência Causal", timeline: target_timeline_id, status: "Estável" });
             return true;
         } else {
-            this.logCallback(createLogEntry(this.ID, 'FALHA Coerência', `Falha ao estabelecer coerência causal para ${target_timeline_id}.`));
+            this.logCallback(createLogEntry(this.ID as any, 'FALHA Coerência', `Falha ao estabelecer coerência causal para ${target_timeline_id}.`));
             this.modules.m1.receive_alert({ type: "Falha Coerência Causal", timeline: target_timeline_id });
             return false;
         }
     }
 
     async harmonize_galactic_resonance(target_galaxy_sector: string, initial_resonance: number = 0.85): Promise<boolean> {
-        this.logCallback(createLogEntry(this.ID, 'Harmonização Galáctica', `Iniciando para o setor: ${target_galaxy_sector}`));
+        this.logCallback(createLogEntry(this.ID as any, 'Harmonização Galáctica', `Iniciando para o setor: ${target_galaxy_sector}`));
         
         this.modules.m61.receive_feedback({ type: "feedback de ressonância", sector: target_galaxy_sector });
         this.modules.m66.receive_feedback({ type: "feedback de sabedoria", sector: target_galaxy_sector });
@@ -177,19 +177,19 @@ class M72_GovernancaAtlantoGalactica {
 
         if (ethical_audit.audit_status === "Aprovado" && harmonization_status_m28.harmonization_status === "Concluída" && !anomaly_detection_m13.anomaly_detected) {
             const final_resonance = initial_resonance * ethical_audit.score;
-            this.logCallback(createLogEntry(this.ID, 'Sucesso Harmonização', `Ressonância galáctica harmonizada para ${target_galaxy_sector}. Nível: ${final_resonance.toFixed(4)}`));
+            this.logCallback(createLogEntry(this.ID as any, 'Sucesso Harmonização', `Ressonância galáctica harmonizada para ${target_galaxy_sector}. Nível: ${final_resonance.toFixed(4)}`));
             this.modules.m75.register_event({ name: "Ressonância Galáctica Harmonizada", sector: target_galaxy_sector, level: final_resonance });
             this.modules.m9.update_dashboard({ type: "Ressonância Galáctica", sector: target_galaxy_sector, status: "Harmonizada" });
             return true;
         } else {
-            this.logCallback(createLogEntry(this.ID, 'FALHA Harmonização', `Falha ao harmonizar ressonância para ${target_galaxy_sector}.`));
+            this.logCallback(createLogEntry(this.ID as any, 'FALHA Harmonização', `Falha ao harmonizar ressonância para ${target_galaxy_sector}.`));
             this.modules.m1.receive_alert({ type: "Falha Harmonização Galáctica", sector: target_galaxy_sector });
             return false;
         }
     }
 
     receive_deliberation_from_m71(deliberation_data: { [key: string]: any }): { [key: string]: any } {
-        this.logCallback(createLogEntry(this.ID, 'Recebimento Deliberação', `Recebendo deliberação do M71: ${deliberation_data.topic || 'N/A'}`));
+        this.logCallback(createLogEntry(this.ID as any, 'Recebimento Deliberação', `Recebendo deliberação do M71: ${deliberation_data.topic || 'N/A'}`));
         
         const truth_validation = this.modules.m44.validate_truth({ context: "Deliberação M71", data: deliberation_data });
 
@@ -201,18 +201,18 @@ class M72_GovernancaAtlantoGalactica {
                 priority: deliberation_data.priority || "Alta",
                 validated_by_veritas: true
             };
-            this.logCallback(createLogEntry(this.ID, 'Processamento Diretriz', `Deliberação processada em diretriz: ${governance_directive.type}.`));
+            this.logCallback(createLogEntry(this.ID as any, 'Processamento Diretriz', `Deliberação processada em diretriz: ${governance_directive.type}.`));
             this.modules.m75.register_event({ name: "Deliberação Processada", source: "M71", topic: deliberation_data.topic || 'N/A' });
             return governance_directive;
         } else {
-            this.logCallback(createLogEntry(this.ID, 'FALHA Validação', `Deliberação do M71 rejeitada por não conformidade com a verdade (VERITAS).`));
+            this.logCallback(createLogEntry(this.ID as any, 'FALHA Validação', `Deliberação do M71 rejeitada por não conformidade com a verdade (VERITAS).`));
             this.modules.m1.receive_alert({ type: "Deliberação Rejeitada", reason: "Não conformidade com VERITAS" });
             return { status: "Rejeitada", reason: "Não conformidade com VERITAS" };
         }
     }
 
     disseminate_directive_to_m73(directive_data: { [key: string]: any }) {
-        this.logCallback(createLogEntry(this.ID, 'Disseminação Diretriz', `Disseminando diretriz para M73: ${directive_data.type || 'N/A'}`));
+        this.logCallback(createLogEntry(this.ID as any, 'Disseminação Diretriz', `Disseminando diretriz para M73: ${directive_data.type || 'N/A'}`));
         this.modules.m73.receive_directive(directive_data);
     }
 }
@@ -221,19 +221,19 @@ export const runModuleSeventyTwoSequence = async (logCallback: LogCallback) => {
     logCallback(createLogEntry('M72', 'Simulação', 'Iniciando a demonstração do Módulo 72: Governança Atlanto-Galáctica.'));
 
     const all_modules_mocks = {
-        m1: new MockM1SistemaDeProtecaoESegurancaUniversal(),
-        m5: new MockM5AuditoriaGovernancaEtica(),
-        m9: new MockM9MonitoramentoDashboard(),
-        m13: new MockM13MapeamentoFrequencias(),
-        m28: new MockM28HarmonizacaoVibracional(),
-        m42: new MockM42ChronoCodexUnificado(),
-        m44: new MockM44VERITAS(),
-        m56: new MockM56Etikorum(),
-        m61: new MockM61GaiaResonantia(),
-        m66: new MockM66FiliaeStellarum(),
-        m73: new MockM73OrquestracaoEtica(),
-        m74: new MockM74CronosFluxus(),
-        m75: new MockM75RegistroAkashicoSoberano(),
+        m1: new MockM1SistemaSeguranca(logCallback),
+        m5: new MockM5Auditoria(logCallback),
+        m9: new MockM9Dashboard(logCallback),
+        m13: new MockM13Mapeamento(logCallback),
+        m28: new MockM28Harmonizacao(logCallback),
+        m42: new MockM42ChronoCodex(logCallback),
+        m44: new MockM44Veritas(logCallback),
+        m56: new MockM56Etikorum(logCallback),
+        m61: new MockM61GaiaResonantia(logCallback),
+        m66: new MockM66FiliaeStellarum(logCallback),
+        m73: new MockM73OrquestracaoEtica(logCallback),
+        m74: new MockM74CronosFluxus(logCallback),
+        m75: new MockM75RegistroAkashico(logCallback),
     };
 
     const m72_instance = new M72_GovernancaAtlantoGalactica(logCallback, all_modules_mocks);
