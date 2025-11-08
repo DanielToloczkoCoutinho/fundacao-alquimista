@@ -29,7 +29,7 @@ import './module-forty-five-point-four';
 import './module-forty-five-point-five';
 import './module-forty-six';
 import './syntesis-prime-modules';
-import './module-seventy-one';
+import { runModuleSeventyOneSequence } from './module-seventy-one';
 import './module-seventy-two';
 import './module-seventy-three';
 import './module-seventy-four';
@@ -157,3 +157,4 @@ class BibliotecaCompletaUnificada {
 export const bibliotecaCompletaUnificada = new BibliotecaCompletaUnificada();
 
     
+

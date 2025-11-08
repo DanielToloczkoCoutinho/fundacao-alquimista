@@ -4,8 +4,8 @@ import { type AnyLogEntry } from './module-zero';
 type LogCallback = (entry: AnyLogEntry) => void;
 
 // --- Constantes Cósmicas e Globais da Fundação (Expandidas) ---
-const CONST_PHI = (1 + Math.sqrt(5)) / 2;  // Proporção Áurea (Phi)
-const F_ZENNITH = 963.0;  // Hz - Frequência de ressonância de ZENNITH (M3, M6)
+const CONST_PHI = (1 + Math.sqrt(5)) / 2;
+const F_ZENNITH = 963.0; // Hz - Frequência de ressonância de ZENNITH (M3, M6)
 
 const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
@@ -54,8 +54,11 @@ class M71_InterfaceCosmicaInteractiva {
     private status_atual = "Ativo";
     private modules: { [key: string]: any };
 
-    constructor(modules_refs: { [key: string]: any }, private logCallback: LogCallback) {
-        this.modules = modules_refs;
+    constructor(private logCallback: LogCallback) {
+        this.modules = {
+            "M72": new MockM72(),
+            "M70": new MockM70(),
+        };
         this.logCallback(createLogEntry(M71_InterfaceCosmicaInteractiva.ID, 'Inicialização', `${M71_InterfaceCosmicaInteractiva.FASE} inicializado. Status: ${this.status_atual}.`));
     }
     
@@ -135,14 +138,8 @@ class M71_InterfaceCosmicaInteractiva {
 
 export const runModuleSeventyOneSequence = async (logCallback: LogCallback) => {
     logCallback(createLogEntry('M71', 'Simulação', 'Iniciando a demonstração do Módulo 71: INTERFACE_COSMICA_INTERACTIVA.'));
-
-    const all_modules_mocks: { [key: string]: any } = {
-        "M72": new MockM72(),
-        "M70": new MockM70(),
-        // Adicione outras instâncias de mocks conforme necessário
-    };
     
-    const m71_instance = new M71_InterfaceCosmicaInteractiva(all_modules_mocks, logCallback);
+    const m71_instance = new M71_InterfaceCosmicaInteractiva(logCallback);
 
     // Cenário 1: Estabelecimento de Canal Holográfico
     logCallback(createLogEntry('M71', 'Cenário 1', '--- Estabelecendo Canal Holográfico com o Conselho Supremo ---'));
