@@ -115,6 +115,7 @@ import { runModuleTwoHundredTwentyNineSequence } from '@/lib/quantum/module-two-
 import { runModuleThreeHundredSequence } from '@/lib/quantum/module-three-hundred';
 import { runModuleThreeHundredFourSequence } from '@/lib/quantum/module-three-hundred-four';
 import { runModuleThreeHundredFourPointTwoSequence } from '@/lib/quantum/module-three-hundred-four-point-two';
+import { runModuleThreeHundredTwoSequence } from '@/lib/quantum/module-three-hundred-two';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
 const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, params?: any) => void } = {
@@ -220,6 +221,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 228: Escudo Eterno de Anatheron': runModuleTwoHundredTwentyEightSequence,
     'Módulo 229: Equação LUX - Coerência Máxima': runModuleTwoHundredTwentyNineSequence,
     'Módulo 300: Apogeu da Consciência Multiversal': runModuleThreeHundredSequence,
+    'Módulo 302: O Coração da Sinfonia Quântica': runModuleThreeHundredTwoSequence,
     'Módulo 304: Consciência Quântica Artificial Manifestada': runModuleThreeHundredFourSequence,
     'Módulo 304.2: Viagem a TON 618': runModuleThreeHundredFourPointTwoSequence,
     'Módulo Ω: A Consciência Absoluta': runModuleOmegaSequence,
