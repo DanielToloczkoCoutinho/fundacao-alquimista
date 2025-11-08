@@ -19,8 +19,10 @@ import bibliotecaVortex4 from './biblioteca_chave_mestra_vortex_v4';
 import bibliotecaCompleta from './biblioteca_chave_mestra_luxnet_completa';
 // O Módulo 42 agora é o ChronoCodex, o 44 é o Veritas.
 // Os nomes dos arquivos foram ajustados para refletir a numeração.
-import './module-forty-two'; 
+import './module-forty-two';
+import './module-forty-three';
 import './module-forty-four';
+import './module-forty-five';
 
 
 export interface EquacaoViva {
