@@ -51,6 +51,7 @@ import { runModuleFortyFourSequence } from '@/lib/quantum/module-forty-four';
 import { runModuleFortyFiveSequence } from '@/lib/quantum/module-forty-five';
 import { runModuleFortyFivePointTwoSequence } from '@/lib/quantum/module-forty-five-point-two';
 import { runModuleFortyFivePointFourSequence } from '@/lib/quantum/module-forty-five-point-four';
+import { runModuleFortyFivePointFiveSequence } from '@/lib/quantum/module-forty-five-point-five';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -109,6 +110,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M45: CONCILIVM": runModuleFortyFiveSequence,
     "M45.2: Continuidade": runModuleFortyFivePointTwoSequence,
     "M45.4: Oráculo Emergente": runModuleFortyFivePointFourSequence,
+    "M45.5: Oráculo Amplificado": runModuleFortyFivePointFiveSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
