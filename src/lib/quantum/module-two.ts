@@ -4,6 +4,8 @@
  * MÓDULO 2 - Nano-Manifestador do Equilíbrio (Simulação TypeScript)
  * Versão 4.2.Validado
  */
+import { type AnyLogEntry } from './module-zero';
+
 export type ModuleTwoLogEntry = {
     step: string;
     message: string;
@@ -13,7 +15,7 @@ export type ModuleTwoLogEntry = {
 };
 
 const createLogEntry = (step: string, message: string, data?: any): ModuleTwoLogEntry => ({
-    step,
+    step: `[M2] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
@@ -33,7 +35,7 @@ class Modulo2_Nanomanifestador {
         this.logCallback(createLogEntry(step, message, data));
     }
     
-    async manifestar_realidade() {
+    async manifestar_realidade(): Promise<boolean> {
         this._log("Estabilidade de Campo", "Aplicando estabilidade de campo...");
         await sleep(500);
 
@@ -48,7 +50,9 @@ class Modulo2_Nanomanifestador {
     }
 }
 
-export const runModuleTwoSequence = async (logCallback: (entry: any) => void) => {
+export const runModuleTwoSequence = async (logCallback: (entry: AnyLogEntry) => void): Promise<boolean> => {
     const nanomanifestador = new Modulo2_Nanomanifestador(logCallback);
-    await nanomanifestador.manifestar_realidade();
+    const success = await nanomanifestador.manifestar_realidade();
+    logCallback(createLogEntry("Conclusão", `Execução do Módulo 2 finalizada com status: ${success ? 'SUCESSO' : 'FALHA'}`));
+    return success;
 };
