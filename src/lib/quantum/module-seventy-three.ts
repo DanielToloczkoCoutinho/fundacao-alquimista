@@ -1,4 +1,3 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -78,14 +77,16 @@ class M73_OrquestracaoEtica {
     m5: MockM5Auditoria;
     m58: MockM58UrbisLumen;
     m61: MockM61GaiaResonantia;
+    modules: { [key: string]: any };
 
-    constructor(logCallback: (entry: AnyLogEntry) => void) {
+    constructor(logCallback: (entry: AnyLogEntry) => void, modules: { [key: string]: any }) {
         this.logCallback = logCallback;
-        this.m44 = new MockM44VERITAS(logCallback);
-        this.m29 = new MockM29IAM(logCallback);
-        this.m5 = new MockM5Auditoria(logCallback);
-        this.m58 = new MockM58UrbisLumen(logCallback);
-        this.m61 = new MockM61GaiaResonantia(logCallback);
+        this.modules = modules;
+        this.m44 = modules.m44;
+        this.m29 = modules.m29;
+        this.m5 = modules.m5;
+        this.m58 = modules.m58;
+        this.m61 = modules.m61;
         this.logCallback(createLogEntry(this.ID, 'Inicialização', `${this.FASE} inicializado.`));
     }
 
@@ -141,7 +142,15 @@ class M73_OrquestracaoEtica {
 export const runModuleSeventyThreeSequence = async (logCallback: (entry: AnyLogEntry) => void): Promise<void> => {
     logCallback(createLogEntry('M73','INFO', "Iniciando a demonstração do Módulo 73: ORQUESTRAÇÃO ÉTICA DOS NÚCLEOS REGIONAIS."));
     
-    const m73_instance = new M73_OrquestracaoEtica(logCallback);
+    const mockModules = {
+        m44: new MockM44VERITAS(logCallback),
+        m29: new MockM29IAM(logCallback),
+        m5: new MockM5Auditoria(logCallback),
+        m58: new MockM58UrbisLumen(logCallback),
+        m61: new MockM61GaiaResonantia(logCallback)
+    };
+
+    const m73_instance = new M73_OrquestracaoEtica(logCallback, mockModules);
     
     // Cenário de sucesso
     const directive_success = {
