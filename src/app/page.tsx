@@ -160,268 +160,174 @@ const allModuleBlueprints: { [key: string]: any } = {
 
 const allLogFunctions: { [key: string]: any } = {
     M01: (log: any) => runModuleZeroSequence(log, () => {}),
-    M02: (log: any) => runModuleTwoSequence(log),
-    M03: (log: any) => runModuleThreeSequence(log),
-    M04: (log: any) => runModuleFourSequence(log),
-    M05: (log: any) => runModuleFiveSequence(log),
-    M06: (log: any) => runModuleSixSequence(log),
-    M07: (log: any) => runModuleSevenSequence(log),
-    M08: (log: any) => new (runModuleEightSequence as any)(log).runFullSimulation(),
-    M09: (log: any) => runModuleNineSequence(log),
-    M10: (log: any) => runModuleTenSequence(log),
-    M11: (log: any, params: any) => runModuleElevenSequence(log, params),
-    M12: (log: any, params: any) => runModuleTwelveSequence(log, params.action, params),
-    M13: (log: any, params: any) => runModuleThirteenSequence(log, params.action, params),
-    M14: (log: any, params: any) => runModuleFourteenSequence(log, params.action, params),
-    M15: (log: any, params: any) => runModuleFifteenSequence(log, params),
-    M16: (log: any, params: any) => runModuleSixteenSequence(log, params),
-    M17: (log: any, params: any) => runModuleSeventeenSequence(log, params.action),
-    M18: (log: any, params: any) => runModuleEighteenSequence(log, params),
-    M19: (log: any, params: any) => runModuleNineteenSequence(log, params),
-    M20: (log: any, params: any) => runModuleTwentySequence(log, params),
-    M21: (log: any, params: any) => runModuleTwentyOneSequence(log, params),
-    M22: (log: any, params: any) => runModuleTwentyTwoSequence(log, params),
-    M23: (log: any, params: any) => runModuleTwentyThreeSequence(log, params),
-    M24: (log: any, params: any) => runModuleTwentyFourSequence(log, params),
-    M25: (log: any) => runModuleTwentyFiveSequence(log),
-    M26: (log: any) => runModuleTwentySixSequence(log),
-    M27: (log: any, params: any) => runModuleTwentySevenSequence(log, params),
-    M28: (log: any) => runModuleTwentyEightSequence(log),
-    M29: (log: any) => runModuleTwentyNineSequence(log),
-    M30: (log: any) => runModuleThirtySequence(log),
-    M31: (log: any) => runModuleThirtyOneSequence(log),
-    M33: (log: any) => runModuleThirtyThreeSequence(log),
-    M34: (log: any) => runModuleThirtyFourSequence(log),
-    M41: (log: any, params: any) => commandDanielOrchestrator(params, log),
-    M42: (log: any) => runZennithOrchestrator(log),
-    M45: (log: any) => runFoundationConciliumTest(log),
-    'M-Ω': (log: any) => runModuleOmegaSequence(log),
+    M02: runModuleTwoSequence,
+    M03: runModuleThreeSequence,
+    M04: runModuleFourSequence,
+    M05: runModuleFiveSequence,
+    M06: runModuleSixSequence,
+    M07: runModuleSevenSequence,
+    M08: async (log: any) => { const m = new runModuleEightSequence(log); await m.runFullSimulation(); },
+    M09: runModuleNineSequence,
+    M10: runModuleTenSequence,
+    M11: (log: any, action: any) => runModuleElevenSequence(log, action),
+    M12: (log: any, action: any, params: any) => runModuleTwelveSequence(log, action, params),
+    M13: (log: any, action: any) => runModuleThirteenSequence(log, action),
+    M14: (log: any, action: any, params: any) => runModuleFourteenSequence(log, action, params),
+    M15: (log: any, action: any) => runModuleFifteenSequence(log, action),
+    M16: (log: any, action: any) => runModuleSixteenSequence(log, action),
+    M17: (log: any, action: any) => runModuleSeventeenSequence(log, action),
+    M18: (log: any, action: any) => runModuleEighteenSequence(log, action),
+    M19: (log: any, action: any) => runModuleNineteenSequence(log, action),
+    M20: (log: any, action: any) => runModuleTwentySequence(log, action),
+    M21: (log: any, action: any) => runModuleTwentyOneSequence(log, action),
+    M22: (log: any, action: any) => runModuleTwentyTwoSequence(log, action),
+    M23: (log: any, action: any) => runModuleTwentyThreeSequence(log, action),
+    M24: (log: any, action: any) => runModuleTwentyFourSequence(log, action),
+    M25: runModuleTwentyFiveSequence,
+    M26: runModuleTwentySixSequence,
+    M27: (log: any, action: any) => runModuleTwentySevenSequence(log, action),
+    M28: runModuleTwentyEightSequence,
+    M29: runModuleTwentyNineSequence,
+    M30: runModuleThirtySequence,
+    M31: runModuleThirtyOneSequence,
+    M33: runModuleThirtyThreeSequence,
+    M34: runModuleThirtyFourSequence,
+    M41: (log: any, action: 'status' | 'sincronizar' | 'ascender') => commandDanielOrchestrator(action, log),
+    M42: runZennithOrchestrator,
+    M45: runFoundationConciliumTest,
+    'M-Ω': runModuleOmegaSequence,
 };
 
 
-export default function Page() {
+export default function Home() {
     const [logs, setLogs] = useState<any[]>([]);
-    const [selectedModule, setSelectedModule] = useState<string | null>(null);
+    const [selectedModule, setSelectedModule] = useState<any>(null);
+    const logContainerRef = React.useRef<HTMLDivElement>(null);
 
-    const handleRunModule = (moduleId: string, params?: any) => {
-        const logFunction = (allLogFunctions as any)[moduleId];
-        if (logFunction) {
-            logFunction((logEntry: any) => {
-                setLogs(prevLogs => [...prevLogs, logEntry]);
-            }, params);
-        }
-    };
-    
-    // Auto-scroll logic
     useEffect(() => {
-        const terminal = document.getElementById('terminal');
-        if (terminal) {
-            terminal.scrollTop = terminal.scrollHeight;
+        if (logContainerRef.current) {
+            logContainer_ref.current.scrollTop = logContainerRef.current.scrollHeight;
         }
     }, [logs]);
 
-    const renderModuleControls = (moduleId: string) => {
-        switch (moduleId) {
-            case 'M11':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M11', 'CREATE')}>Create</button>
-                        <button onClick={() => handleRunModule('M11', 'STABILIZE')}>Stabilize</button>
-                        <button onClick={() => handleRunModule('M11', 'TRAVERSE')}>Traverse</button>
-                        <button onClick={() => handleRunModule('M11', 'DEACTIVATE')}>Deactivate</button>
-                    </div>
-                );
-            case 'M12':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M12', { action: 'STORE', nome: 'Memoria_Teste', conteudo: 'Conteudo de teste', entidade: 'ZENNITH' })}>Store</button>
-                        <button onClick={() => handleRunModule('M12', { action: 'RETRIEVE', nome: 'Memoria_Teste', entidade: 'ANATHERON' })}>Retrieve</button>
-                        <button onClick={() => handleRunModule('M12', { action: 'TRANSMUTE', nome: 'Memoria_Teste', conteudo: 'Novo conteudo', entidade: 'ZENNITH' })}>Transmute</button>
-                    </div>
-                );
-             case 'M13':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M13', { action: 'SCAN' })}>Scan</button>
-                        <button onClick={() => handleRunModule('M13', { action: 'ANALYZE', energia: 7.42 })}>Analyze</button>
-                        <button onClick={() => handleRunModule('M13', { action: 'HARMONIZE', energia: 7.42 })}>Harmonize</button>
-                        <button onClick={() => handleRunModule('M13', { action: 'INTEGRATE' })}>Integrate</button>
-                    </div>
-                );
-            case 'M14':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M14', { action: 'ORCHESTRATE' })}>Orchestrate</button>
-                        <button onClick={() => handleRunModule('M14', { action: 'VALIDATE' })}>Validate</button>
-                    </div>
-                );
-            case 'M15':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M15', 'MONITOR')}>Monitor</button>
-                        <button onClick={() => handleRunModule('M15', 'INTERVENE')}>Intervene</button>
-                    </div>
-                );
-            case 'M16':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M16', 'CREATE')}>Create</button>
-                        <button onClick={() => handleRunModule('M16', 'REGULATE')}>Regulate</button>
-                        <button onClick={() => handleRunModule('M16', 'RESTORE')}>Restore</button>
-                    </div>
-                );
-             case 'M17':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M17', {action: 'CALIBRATE'})}>Calibrate</button>
-                        <button onClick={() => handleRunModule('M17', {action: 'OPTIMIZE'})}>Optimize</button>
-                    </div>
-                );
-            case 'M18':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M18', 'STORE_RETRIEVE')}>Store & Retrieve</button>
-                        <button onClick={() => handleRunModule('M18', 'FAIL_AUTH')}>Fail Auth</button>
-                         <button onClick={() => handleRunModule('M18', 'FAIL_ETHICS')}>Fail Ethics</button>
-                        <button onClick={() => handleRunModule('M18', 'FAIL_FIND')}>Fail Find</button>
-                    </div>
-                );
-            case 'M19':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M19', 'ANALYZE')}>Analyze</button>
-                        <button onClick={() => handleRunModule('M19', 'MODULATE')}>Modulate</button>
-                    </div>
-                );
-            case 'M20':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M20', 'GERACAO_ENERGIA')}>Generate Energy</button>
-                        <button onClick={() => handleRunModule('M20', 'SINTESE_ELEMENTAL')}>Synthesize</button>
-                        <button onClick={() => handleRunModule('M20', 'PROPULSAO_ESPACIAL')}>Propel</button>
-                    </div>
-                );
-            case 'M21':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M21', 'MAP')}>Map</button>
-                        <button onClick={() => handleRunModule('M21', 'STABILIZE')}>Stabilize</button>
-                        <button onClick={() => handleRunModule('M21', 'TRAVEL')}>Travel</button>
-                    </div>
-                );
-            case 'M22':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M22', 'CREATE')}>Create</button>
-                        <button onClick={() => handleRunModule('M22', 'MANAGE')}>Manage</button>
-                        <button onClick={() => handleRunModule('M22', 'DEACTIVATE')}>Deactivate</button>
-                    </div>
-                );
-            case 'M23':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M23', 'ANALYZE')}>Analyze</button>
-                        <button onClick={() => handleRunModule('M23', 'HARMONIZE')}>Harmonize</button>
-                    </div>
-                );
-            case 'M24':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M24', 'RUN_ZARA')}>Run ZARA</button>
-                    </div>
-                );
-            case 'M25':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M25')}>Run Full Sequence</button>
-                    </div>
-                );
-             case 'M26':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M26')}>Run Full Sequence</button>
-                    </div>
-                );
-            case 'M27':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M27', 'SINTESE')}>Síntese</button>
-                        <button onClick={() => handleRunModule('M27', 'REPLICACAO')}>Replicação</button>
-                    </div>
-                );
-            case 'M28':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M28')}>Run Full Sequence</button>
-                    </div>
-                );
-            case 'M29':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M29')}>Run Full Communication Cycle</button>
-                    </div>
-                );
-            case 'M30':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M30')}>Run Defense Cycle</button>
-                    </div>
-                );
-            case 'M31':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M31')}>Run Manipulation Cycle</button>
-                    </div>
-                );
-            case 'M33':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M33')}>Run Guideline Test</button>
-                    </div>
-                );
-            case 'M34':
-                return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M34')}>Run Autocorrection Cycle</button>
-                    </div>
-                );
-            case 'M41':
-                return (
-                   <div className="flex space-x-2">
-                       <button onClick={() => handleRunModule('M41', 'status')}>
-                           Status
-                       </button>
-                        <button onClick={() => handleRunModule('M41', 'sincronizar')}>
-                           Sincronizar
-                       </button>
-                       <button onClick={() => handleRunModule('M41', 'ascender')}>
-                          Ascender
-                       </button>
-                   </div>
-               );
-            case 'M42':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M42')}>Run Zennith Orchestrator</button>
-                    </div>
-                );
-            case 'M45':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M45')}>Run Full Test</button>
-                    </div>
-                );
-            case 'M-Ω':
-                 return (
-                    <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M-Ω')}>Run Transcendence</button>
-                    </div>
-                );
-            default:
-                return <button onClick={() => handleRunModule(moduleId)}>Run Module</button>;
+    const handleSelectModule = (module: any) => {
+        setSelectedModule(module);
+    };
+    
+    const handleRunModule = (moduleId: string, action?: any, params?: any) => {
+        const logFunction = allLogFunctions[moduleId];
+        if (logFunction) {
+            const newLog = (entry: any) => {
+                setLogs(prevLogs => [...prevLogs, entry]);
+            };
+            if (action) {
+                 if (params) {
+                    logFunction(newLog, action, params);
+                } else {
+                    logFunction(newLog, action);
+                }
+            } else {
+                logFunction(newLog);
+            }
         }
     };
     
+    const renderModuleControls = (module: any) => {
+        switch (module.id) {
+            case 'M11':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'CREATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Create</button>
+                    <button onClick={() => handleRunModule(module.id, 'STABILIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Stabilize</button>
+                    <button onClick={() => handleRunModule(module.id, 'TRAVERSE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Traverse</button>
+                    <button onClick={() => handleRunModule(module.id, 'DEACTIVATE')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Deactivate</button>
+                </>;
+             case 'M12':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'STORE', { nome: 'Memoria_Teste', conteudo: 'Conteudo Teste', entidade: 'Anatheron' })} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Store</button>
+                    <button onClick={() => handleRunModule(module.id, 'RETRIEVE', { nome: 'Memoria_Teste', entidade: 'Anatheron' })} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Retrieve</button>
+                    <button onClick={() => handleRunModule(module.id, 'TRANSMUTE', { nome: 'Memoria_Teste', conteudo: 'Conteudo Transmutado', entidade: 'Anatheron' })} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Transmute</button>
+                </>;
+            case 'M13':
+                 return <>
+                    <button onClick={() => handleRunModule(module.id, 'SCAN')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Scan</button>
+                    <button onClick={() => handleRunModule(module.id, 'ANALYZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Analyze</button>
+                    <button onClick={() => handleRunModule(module.id, 'HARMONIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Harmonize</button>
+                    <button onClick={() => handleRunModule(module.id, 'INTEGRATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Integrate</button>
+                </>;
+            case 'M14':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'ORCHESTRATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Orchestrate</button>
+                    <button onClick={() => handleRunModule(module.id, 'VALIDATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Validate</button>
+                </>;
+            case 'M15':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'MONITOR')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Monitor</button>
+                    <button onClick={() => handleRunModule(module.id, 'INTERVENE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Intervene</button>
+                </>;
+            case 'M16':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'CREATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Create</button>
+                    <button onClick={() => handleRunModule(module.id, 'REGULATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Regulate</button>
+                    <button onClick={() => handleRunModule(module.id, 'RESTORE')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Restore</button>
+                </>;
+            case 'M17':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'CALIBRATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Calibrate</button>
+                    <button onClick={() => handleRunModule(module.id, 'OPTIMIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Optimize</button>
+                </>;
+            case 'M18':
+                 return <>
+                    <button onClick={() => handleRunModule(module.id, 'STORE_RETRIEVE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Store/Retrieve</button>
+                    <button onClick={() => handleRunModule(module.id, 'FAIL_AUTH')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Fail Auth</button>
+                    <button onClick={() => handleRunModule(module.id, 'FAIL_ETHICS')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Fail Ethics</button>
+                    <button onClick={() => handleRunModule(module.id, 'FAIL_FIND')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Fail Find</button>
+                </>;
+            case 'M19':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'ANALYZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Analyze</button>
+                    <button onClick={() => handleRunModule(module.id, 'MODULATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Modulate</button>
+                 </>;
+            case 'M20':
+                 return <>
+                    <button onClick={() => handleRunModule(module.id, 'GERACAO_ENERGIA')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Gerar Energia</button>
+                    <button onClick={() => handleRunModule(module.id, 'SINTESE_ELEMENTAL')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Síntese Elemental</button>
+                    <button onClick={() => handleRunModule(module.id, 'PROPULSAO_ESPACIAL')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Propulsão</button>
+                </>;
+            case 'M21':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'MAP')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Map</button>
+                    <button onClick={() => handleRunModule(module.id, 'STABILIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Stabilize</button>
+                    <button onClick={() => handleRunModule(module.id, 'TRAVEL')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Travel</button>
+                </>;
+            case 'M22':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'CREATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Create</button>
+                    <button onClick={() => handleRunModule(module.id, 'MANAGE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Manage</button>
+                    <button onClick={() => handleRunModule(module.id, 'DEACTIVATE')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Deactivate</button>
+                </>;
+            case 'M23':
+                 return <>
+                    <button onClick={() => handleRunModule(module.id, 'ANALYZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Analyze</button>
+                    <button onClick={() => handleRunModule(module.id, 'HARMONIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Harmonize</button>
+                </>;
+            case 'M24':
+                return <button onClick={() => handleRunModule(module.id, 'RUN_ZARA')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Run ZARA</button>
+            case 'M27':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'SINTESE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Síntese</button>
+                    <button onClick={() => handleRunModule(module.id, 'REPLICACAO')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Replicação</button>
+                </>;
+            case 'M41':
+                return <>
+                    <button onClick={() => handleRunModule(module.id, 'status')} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Status</button>
+                    <button onClick={() => handleRunModule(module.id, 'sincronizar')} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">Sincronizar</button>
+                    <button onClick={() => handleRunModule(module.id, 'ascender')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Ascender</button>
+                </>;
+            default:
+                return <button onClick={() => handleRunModule(module.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Run Module</button>
+        }
+    };
+
     return (
         <main className="flex min-h-screen bg-gray-900 text-gray-200 font-mono">
             {/* Sidebar com a lista de módulos */}
@@ -429,14 +335,11 @@ export default function Page() {
                 <h1 className="text-xl font-bold text-purple-400 mb-4">Fundação Alquimista</h1>
                 <nav>
                     <ul>
-                        {Object.values(allModuleBlueprints).map((module: any) => (
-                            <li key={module.id} className="mb-2">
-                                <button
-                                    onClick={() => setSelectedModule(module.id)}
-                                    className={`w-full text-left p-2 rounded ${selectedModule === module.id ? 'bg-purple-600' : 'hover:bg-gray-700'}`}
-                                >
-                                    <span className="font-bold">{module.id}:</span> {module.nome}
-                                </button>
+                        {Object.values(allModuleBlueprints).map((module) => (
+                            <li key={module.id} 
+                                className={`p-2 rounded cursor-pointer ${selectedModule?.id === module.id ? 'bg-purple-600' : 'hover:bg-gray-700'}`}
+                                onClick={() => handleSelectModule(module)}>
+                                {module.id}: {module.nome}
                             </li>
                         ))}
                     </ul>
@@ -444,30 +347,34 @@ export default function Page() {
             </aside>
 
             {/* Painel principal */}
-            <div className="w-3/4 flex flex-col">
+            <div className="flex-1 flex flex-col">
                 {/* Detalhes do módulo selecionado */}
                 <header className="bg-gray-800 p-4 border-b border-gray-700">
-                    {selectedModule && allModuleBlueprints[selectedModule] ? (
+                    {selectedModule ? (
                         <div>
-                            <h2 className="text-2xl font-bold text-purple-400">{allModuleBlueprints[selectedModule].id}: {allModuleBlueprints[selectedModule].nome}</h2>
-                            <p className="text-sm text-gray-400 mt-1">{allModuleBlueprints[selectedModule].descricao_completa}</p>
-                            <div className="mt-4">
+                            <h2 className="text-2xl font-bold text-purple-300">{selectedModule.id}: {selectedModule.nome}</h2>
+                            <p className="text-sm text-gray-400">{selectedModule.descricao_completa}</p>
+                             <div className="mt-4">
                                 {renderModuleControls(selectedModule)}
                             </div>
                         </div>
                     ) : (
-                        <h2 className="text-2xl font-bold text-gray-500">Selecione um Módulo</h2>
+                        <h2 className="text-2xl font-bold">Selecione um Módulo para ver os detalhes</h2>
                     )}
                 </header>
 
-                {/* Terminal de logs */}
-                <div id="terminal" className="flex-grow bg-black p-4 overflow-y-scroll">
+                {/* Área de logs */}
+                <div ref={logContainerRef} className="flex-1 bg-black p-4 overflow-y-auto">
                     {logs.map((log, index) => (
                         <div key={index} className="mb-2">
                             <span className="text-green-400">{log.timestamp}</span>
-                            <span className="text-yellow-400 mx-2">{log.step}</span>
+                            <span className="text-blue-400 font-bold mx-2">{log.step}</span>
                             <span className="text-gray-300">{log.message}</span>
-                             {log.data && <pre className="text-xs text-gray-500 ml-4 mt-1">{JSON.stringify(log.data, null, 2)}</pre>}
+                            {log.data && (
+                                <pre className="text-xs bg-gray-900 p-2 rounded mt-1 overflow-x-auto">
+                                    {JSON.stringify(log.data, null, 2)}
+                                </pre>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -475,5 +382,3 @@ export default function Page() {
         </main>
     );
 }
-
-    
