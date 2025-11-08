@@ -1,18 +1,26 @@
 'use client';
-import { initializeApp, getApps, getApp, type FirebaseOptions } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { initializeApp, getApps, getApp, type FirebaseApp } from 'firebase/app';
+import { getAuth, type Auth } from 'firebase/auth';
+import { getFirestore, type Firestore } from 'firebase/firestore';
 
-const firebaseConfig: FirebaseOptions = typeof window !== 'undefined' && (window as any).__firebase_config ? JSON.parse((window as any).__firebase_config) : {};
+const firebaseConfig = typeof window !== 'undefined' && (window as any).__firebase_config 
+  ? JSON.parse((window as any).__firebase_config) 
+  : {};
 
-let app;
-if (firebaseConfig.projectId) {
-  app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+let app: FirebaseApp | undefined;
+if (firebaseConfig.projectId && !getApps().length) {
+  try {
+    app = initializeApp(firebaseConfig);
+  } catch (e) {
+    console.error("Erro ao inicializar Firebase App", e);
+  }
+} else if (getApps().length > 0) {
+  app = getApp();
 } else {
-  console.warn("Firebase config not found, Firebase services will be unavailable.");
+  console.warn("Configuração do Firebase não encontrada. Alguns recursos podem não funcionar.");
 }
 
-const auth = app ? getAuth(app) : undefined;
-const db = app ? getFirestore(app) : undefined;
+const auth: Auth | undefined = app ? getAuth(app) : undefined;
+const db: Firestore | undefined = app ? getFirestore(app) : undefined;
 
-export { auth, db };
+export { app, auth, db };
