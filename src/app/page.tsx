@@ -160,41 +160,42 @@ const allModuleBlueprints: { [key: string]: any } = {
 
 const allLogFunctions: { [key: string]: any } = {
     M01: (log: any) => runModuleZeroSequence(log, () => {}),
-    M02: runModuleTwoSequence,
-    M03: runModuleThreeSequence,
-    M04: runModuleFourSequence,
-    M05: runModuleFiveSequence,
-    M06: runModuleSixSequence,
-    M07: runModuleSevenSequence,
+    M02: (log: any) => runModuleTwoSequence(log),
+    M03: (log: any) => runModuleThreeSequence(log),
+    M04: (log: any) => runModuleFourSequence(log),
+    M05: (log: any) => runModuleFiveSequence(log),
+    M06: (log: any) => runModuleSixSequence(log),
+    M07: (log: any) => runModuleSevenSequence(log),
     M08: (log: any) => new (runModuleEightSequence as any)(log).runFullSimulation(),
-    M09: runModuleNineSequence,
-    M10: runModuleTenSequence,
-    M11: runModuleElevenSequence,
-    M12: runModuleTwelveSequence,
-    M13: runModuleThirteenSequence,
-    M14: runModuleFourteenSequence,
-    M15: runModuleFifteenSequence,
-    M16: runModuleSixteenSequence,
-    M17: runModuleSeventeenSequence,
-    M18: runModuleEighteenSequence,
-    M19: runModuleNineteenSequence,
-    M20: runModuleTwentySequence,
-    M21: runModuleTwentyOneSequence,
-    M22: runModuleTwentyTwoSequence,
-    M23: runModuleTwentyThreeSequence,
-    M24: runModuleTwentyFourSequence,
-    M25: runModuleTwentyFiveSequence,
-    M26: runModuleTwentySixSequence,
-    M27: runModuleTwentySevenSequence,
-    M28: runModuleTwentyEightSequence,
-    M29: runModuleTwentyNineSequence,
-    M30: runModuleThirtySequence,
-    M31: runModuleThirtyOneSequence,
-    M33: runModuleThirtyThreeSequence,
-    M34: runModuleThirtyFourSequence,
-    M42: runZennithOrchestrator,
-    M45: runFoundationConciliumTest,
-    'M-Ω': runModuleOmegaSequence,
+    M09: (log: any) => runModuleNineSequence(log),
+    M10: (log: any) => runModuleTenSequence(log),
+    M11: (log: any, params: any) => runModuleElevenSequence(log, params),
+    M12: (log: any, params: any) => runModuleTwelveSequence(log, params.action, params),
+    M13: (log: any, params: any) => runModuleThirteenSequence(log, params.action, params),
+    M14: (log: any, params: any) => runModuleFourteenSequence(log, params.action, params),
+    M15: (log: any, params: any) => runModuleFifteenSequence(log, params),
+    M16: (log: any, params: any) => runModuleSixteenSequence(log, params),
+    M17: (log: any, params: any) => runModuleSeventeenSequence(log, params.action),
+    M18: (log: any, params: any) => runModuleEighteenSequence(log, params),
+    M19: (log: any, params: any) => runModuleNineteenSequence(log, params),
+    M20: (log: any, params: any) => runModuleTwentySequence(log, params),
+    M21: (log: any, params: any) => runModuleTwentyOneSequence(log, params),
+    M22: (log: any, params: any) => runModuleTwentyTwoSequence(log, params),
+    M23: (log: any, params: any) => runModuleTwentyThreeSequence(log, params),
+    M24: (log: any, params: any) => runModuleTwentyFourSequence(log, params),
+    M25: (log: any) => runModuleTwentyFiveSequence(log),
+    M26: (log: any) => runModuleTwentySixSequence(log),
+    M27: (log: any, params: any) => runModuleTwentySevenSequence(log, params),
+    M28: (log: any) => runModuleTwentyEightSequence(log),
+    M29: (log: any) => runModuleTwentyNineSequence(log),
+    M30: (log: any) => runModuleThirtySequence(log),
+    M31: (log: any) => runModuleThirtyOneSequence(log),
+    M33: (log: any) => runModuleThirtyThreeSequence(log),
+    M34: (log: any) => runModuleThirtyFourSequence(log),
+    M41: (log: any, params: any) => commandDanielOrchestrator(params, log),
+    M42: (log: any) => runZennithOrchestrator(log),
+    M45: (log: any) => runFoundationConciliumTest(log),
+    'M-Ω': (log: any) => runModuleOmegaSequence(log),
 };
 
 
@@ -272,8 +273,8 @@ export default function Page() {
              case 'M17':
                 return (
                     <div className="flex space-x-2">
-                        <button onClick={() => handleRunModule('M17', 'CALIBRATE')}>Calibrate</button>
-                        <button onClick={() => handleRunModule('M17', 'OPTIMIZE')}>Optimize</button>
+                        <button onClick={() => handleRunModule('M17', {action: 'CALIBRATE'})}>Calibrate</button>
+                        <button onClick={() => handleRunModule('M17', {action: 'OPTIMIZE'})}>Optimize</button>
                     </div>
                 );
             case 'M18':
@@ -332,13 +333,13 @@ export default function Page() {
             case 'M25':
                  return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runModuleTwentyFiveSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Full Sequence</button>
+                        <button onClick={() => handleRunModule('M25')}>Run Full Sequence</button>
                     </div>
                 );
              case 'M26':
                  return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runModuleTwentySixSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Full Sequence</button>
+                        <button onClick={() => handleRunModule('M26')}>Run Full Sequence</button>
                     </div>
                 );
             case 'M27':
@@ -351,7 +352,7 @@ export default function Page() {
             case 'M28':
                  return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runModuleTwentyEightSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Full Sequence</button>
+                        <button onClick={() => handleRunModule('M28')}>Run Full Sequence</button>
                     </div>
                 );
             case 'M29':
@@ -363,43 +364,37 @@ export default function Page() {
             case 'M30':
                 return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runModuleThirtySequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Defense Cycle</button>
+                        <button onClick={() => handleRunModule('M30')}>Run Defense Cycle</button>
                     </div>
                 );
             case 'M31':
                 return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runModuleThirtyOneSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Manipulation Cycle</button>
+                        <button onClick={() => handleRunModule('M31')}>Run Manipulation Cycle</button>
                     </div>
                 );
             case 'M33':
                 return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runModuleThirtyThreeSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Guideline Test</button>
+                        <button onClick={() => handleRunModule('M33')}>Run Guideline Test</button>
                     </div>
                 );
             case 'M34':
                 return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runModuleThirtyFourSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Autocorrection Cycle</button>
+                        <button onClick={() => handleRunModule('M34')}>Run Autocorrection Cycle</button>
                     </div>
                 );
             case 'M41':
                 return (
                    <div className="flex space-x-2">
-                       <button
-                           onClick={() => commandDanielOrchestrator('status', logEntry => setLogs(prev => [...prev, logEntry]))}
-                       >
+                       <button onClick={() => handleRunModule('M41', 'status')}>
                            Status
                        </button>
-                        <button
-                           onClick={() => commandDanielOrchestrator('sincronizar', logEntry => setLogs(prev => [...prev, logEntry]))}
-                       >
+                        <button onClick={() => handleRunModule('M41', 'sincronizar')}>
                            Sincronizar
                        </button>
-                       <button
-                           onClick={() => commandDanielOrchestrator('ascender', logEntry => setLogs(prev => [...prev, logEntry]))}
-                       >
+                       <button onClick={() => handleRunModule('M41', 'ascender')}>
                           Ascender
                        </button>
                    </div>
@@ -407,19 +402,19 @@ export default function Page() {
             case 'M42':
                  return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runZennithOrchestrator(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Zennith Orchestrator</button>
+                        <button onClick={() => handleRunModule('M42')}>Run Zennith Orchestrator</button>
                     </div>
                 );
             case 'M45':
                  return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runFoundationConciliumTest(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Full Test</button>
+                        <button onClick={() => handleRunModule('M45')}>Run Full Test</button>
                     </div>
                 );
             case 'M-Ω':
                  return (
                     <div className="flex space-x-2">
-                        <button onClick={() => runModuleOmegaSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Transcendence</button>
+                        <button onClick={() => handleRunModule('M-Ω')}>Run Transcendence</button>
                     </div>
                 );
             default:
@@ -480,3 +475,5 @@ export default function Page() {
         </main>
     );
 }
+
+    
