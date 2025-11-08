@@ -1,8 +1,9 @@
 'use client';
 /**
  * MÓDULO 3: PREVISÃO TEMPORAL & MONITORAMENTO CÓSMICO (Simulação TypeScript)
- * Versão 3.3.Ω
+ * Versão 3.4.Validado
  */
+import { type AnyLogEntry } from './module-zero';
 
 export type ModuleThreeLogEntry = {
     step: string;
@@ -13,7 +14,7 @@ export type ModuleThreeLogEntry = {
 };
 
 const createLogEntry = (step: string, message: string, data?: any): ModuleThreeLogEntry => ({
-    step,
+    step: `[M3] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
@@ -23,9 +24,9 @@ const createLogEntry = (step: string, message: string, data?: any): ModuleThreeL
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 class Modulo3PrevisaoTemporalPuro {
-    private logCallback: (entry: any) => void;
+    private logCallback: (entry: AnyLogEntry) => void;
     
-    constructor(logCallback: (entry: any) => void) {
+    constructor(logCallback: (entry: AnyLogEntry) => void) {
         this.logCallback = logCallback;
     }
 
@@ -50,7 +51,8 @@ class Modulo3PrevisaoTemporalPuro {
     }
 }
 
-export const runModuleThreeSequence = async (logCallback: (entry: any) => void) => {
+export const runModuleThreeSequence = async (logCallback: (entry: AnyLogEntry) => void) => {
     const modulo3 = new Modulo3PrevisaoTemporalPuro(logCallback);
-    await modulo3.aplicar_equacao_externa();
+    const resultado = await modulo3.aplicar_equacao_externa();
+    return resultado;
 };
