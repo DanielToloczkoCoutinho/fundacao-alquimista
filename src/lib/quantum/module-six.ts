@@ -5,6 +5,15 @@
  */
 import { type AnyLogEntry } from './module-zero';
 
+export type ResultadoAlquimia = {
+    módulo: 'M6';
+    resultado: {
+        status: string;
+        frequencia_h_t_aplicada: number;
+        phi_otimizado: number;
+    };
+    timestamp: number;
+};
 
 const createLogEntry = (step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[M6] ${step}`,
@@ -44,8 +53,17 @@ class Modulo6AlquimiaQuantica {
 
 export const runModuleSixSequence = async (
     logCallback: (entry: AnyLogEntry) => void,
-) => {
+): Promise<ResultadoAlquimia> => {
     const modulo6 = new Modulo6AlquimiaQuantica(logCallback);
-    const resultado = await modulo6.otimizar_fusao_dna_nucleo();
+    const resultado_alquimia = await modulo6.otimizar_fusao_dna_nucleo();
+
+    const resultado: ResultadoAlquimia = {
+        módulo: 'M6',
+        resultado: resultado_alquimia,
+        timestamp: Date.now()
+    };
+    
+    logCallback(createLogEntry("Conclusão", "Alquimia quântica concluída.", resultado));
+
     return resultado;
 };
