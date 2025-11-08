@@ -8,27 +8,16 @@ import { type AnyLogEntry } from './module-zero';
 // Harmonização da tipagem
 export type ModuleFortyOnePointOneLogEntry = AnyLogEntry;
 
-// Criação do Registro de Intervenção Quântica
-export type RegistroIntervencaoQuantica = {
+// Definição do novo tipo de registro
+export type RegistroCuraQuanticaM41_1 = {
   módulo: 'M41.1',
-  equacao_aplicada: string,
-  alvo: string,
-  tipo_intervencao: 'cura' | 'realinhamento' | 'transmutacao' | 'reintegracao',
-  frequencias_utilizadas: number[],
+  gene_id: string,
+  tipo_intervencao: 'cura' | 'realinhamento' | 'ativacao' | 'neutralizacao',
+  frequencias_aplicadas: number[],
+  instrumentos_utilizados: string[],
+  alinhamento_etico: number,
   status: 'iniciado' | 'concluído' | 'falha',
   timestamp: string
-};
-
-// Definição do Registro de Cura Estelar (mantido para compatibilidade, mas a nova estrutura é preferida)
-export type RegistroODNAEstelar = {
-  módulo: 'M41';
-  espécie: string;
-  gene_alvo: string;
-  tipo_intervencao: 'mutacao' | 'reparacao' | 'ativacao';
-  frequência_thz: number;
-  chakra_alvo: string;
-  status: 'iniciado' | 'concluído' | 'falha';
-  timestamp: string;
 };
 
 // Função de registro universalizada
@@ -51,180 +40,150 @@ const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, messa
 
 
 // =============================================================================
-// Type Definitions
+// 2. CONSTANTES UNIVERSAIS E PROTEÇÕES
 // =============================================================================
 
-interface SpeciesConfig {
-    species_name: string;
-    alphabet: { [key: string]: number };
-    codon_color_map: { [key: string]: any };
-    codon_spectrum: { [key: string]: { freq_hz: number; harmonic_offset: number } };
-    codon_chakra: { [key: string]: string };
-    func_instrument_map: { [key: string]: string[] };
-    origin_city_map: { [key: string]: string };
+const ZENNITH_HEADER_ACTIVE = true;
+const ANATHERON_FINGERPRINT = "sim_hash_anatheron_dna_criador";
+const COUNCIL_KEY_ACTIVE = true;
+const SELF_SEALING_PROTOCOL_ACTIVE = true;
+const CONST_AMOR_INCONDICIONAL_VALOR = 0.999999999999999;
+
+
+// =============================================================================
+// 3. CAPACIDADES OPERACIONAIS (CLASSES E FUNÇÕES)
+// =============================================================================
+
+class GeneAnalyzer {
+    constructor(private log: LogCallback) {}
+
+    analyze_gene(gene_id: string, dna_sequence: string): any {
+        createLogEntry(createLogEntryHelper('M41.1-GeneAnalyzer', 'Análise Gene', `Analisando gene '${gene_id}'`), this.log);
+        
+        const length = dna_sequence.length;
+        const gc_count = (dna_sequence.match(/[GC]/g) || []).length;
+        const gc_content = length > 0 ? (gc_count / length) * 100 : 0;
+        
+        const mutation_risk = Math.random() * 0.1; // Simulado
+        const ethical_alignment = 0.9 + Math.random() * 0.1; // Simulado
+
+        const analysisResult = {
+            gene_id,
+            sequence: dna_sequence,
+            length,
+            gc_content,
+            mutation_risk_score: mutation_risk,
+            ethical_alignment_score: ethical_alignment,
+            associated_chakras: ['Coronário', 'Frontal'], // Simulado
+            associated_cities_of_light: ['Shamballa', 'Telos'], // Simulado
+            potential_instruments: { 'cura': ['Taças de Cristal'], 'ativacao': ['Solfeggio 963Hz'] }, // Simulado
+        };
+
+        createLogEntry(createLogEntryHelper('M41.1-GeneAnalyzer', 'Análise Concluída', `Análise do gene '${gene_id}' concluída.`), this.log);
+        return analysisResult;
+    }
 }
 
-interface GeneAnalysisResult {
-    gene_id: string;
-    sequence: string;
-    length: number;
-    gc_content: number;
-    codon_counts: { [key: string]: number };
-    spectral_analysis: { [key: string]: any };
-    mutation_risk_score: number;
-    ethical_alignment_score: number;
-    associated_chakras: string[];
-    associated_cities_of_light: string[];
-    potential_instruments: { [key: string]: string[] };
-    notes?: string;
-}
+class CodonRefiner {
+     constructor(private log: LogCallback) {}
 
-interface PathogenMatrix {
-    matrix_id: string;
-    target_pathogen: string;
-    vibrational_signature: { [key: string]: any };
-    molecular_structure_fragments: string[];
-    frequency_band_range: [number, number];
-    ethical_compliance: number;
-    creation_timestamp: string;
-    status: string;
-    associated_modules: string[];
-}
-
-interface HealingManual {
-    manual_id: string;
-    target_entity: string;
-    description: string;
-    recommended_protocols: { [key: string]: any }[];
-    ethical_review_score: number;
-    generation_timestamp: string;
-    status: string;
-    associated_modules: string[];
-}
-
-
-let SPECIES_CONFIG: SpeciesConfig | null = null;
-let CODONS_COLOR_MAP_CACHE: { [key: string]: any } = {};
-
-const _calculate_gc_content = (sequence: string): number => {
-    if (!sequence) return 0.0;
-    const gc_count = (sequence.match(/[GC]/g) || []).length;
-    return (gc_count / sequence.length) * 100;
-};
-
-const _count_codons = (sequence: string, codon_length: number): { [key: string]: number } => {
-    const counts: { [key: string]: number } = {};
-    for (let i = 0; i <= sequence.length - codon_length; i += codon_length) {
-        const codon = sequence.substring(i, i + codon_length);
-        counts[codon] = (counts[codon] || 0) + 1;
-    }
-    return counts;
-};
-
-const _predict_mutation_risk = (sequence: string): number => {
-    if (sequence.length === 0) return 0.0;
-    const counts: { [key: string]: number } = {};
-    for (const char of sequence) {
-        counts[char] = (counts[char] || 0) + 1;
-    }
-    const probs = Object.values(counts).map(count => count / sequence.length);
-    const entropy = -probs.reduce((sum, p) => sum + (p > 0 ? p * Math.log2(p) : 0), 0);
-    return Math.min(1.0, Math.max(0.0, entropy / 3.0 + (Math.random() - 0.5) * 0.2));
-};
-
-const _evaluate_ethical_alignment = (sequence: string, codon_counts: { [key: string]: number }): number => {
-    let alignment_score = 0.5;
-    const total = Object.values(codon_counts).reduce((s, c) => s + c, 0) || 1;
-    const CONST_AMOR_INCONDICIONAL_VALOR = 0.999999999999999;
-    
-    for (const [codon, count] of Object.entries(codon_counts)) {
-        const data = CODONS_COLOR_MAP_CACHE[codon] || {};
-        const funcao = (data.funcao || '').toLowerCase();
-        const frac = count / total;
-        if (["iniciação", "reparação", "cura", "unificação", "ativação"].some(k => funcao.includes(k))) {
-            alignment_score += 0.3 * frac;
-        }
-        if (["cessação", "vazio"].some(k => funcao.includes(k))) {
-            alignment_score -= 0.1 * frac;
-        }
-    }
-    
-    alignment_score = (alignment_score * 0.7) + (CONST_AMOR_INCONDICIONAL_VALOR * 0.3);
-    return Math.min(1.0, Math.max(0.0, alignment_score));
-};
-
-export function analyze_gene(gene_id: string, dna_sequence: string, species: string = "humano", logCallback: (entry: AnyLogEntry) => void): GeneAnalysisResult {
-    createLogEntry(createLogEntryHelper('M41', 'Análise Gene', `Analisando gene '${gene_id}' para '${species}'`), logCallback);
-    
-    if (!SPECIES_CONFIG || SPECIES_CONFIG.species_name !== species) {
-        // Em um cenário real, isso carregaria a configuração da espécie.
-        // Por agora, vamos simular que falhou se não for 'humano'.
-        // Em uma futura iteração, podemos implementar o auto-seeding aqui.
-        throw new Error(`Configuração da espécie '${species}' não disponível.`);
-    }
-
-    const length = dna_sequence.length;
-    const gc_content = _calculate_gc_content(dna_sequence);
-    const codon_length = 3; // Assuming codon length of 3 for simplicity
-    const codon_counts = _count_codons(dna_sequence, codon_length);
-
-    const alphabet = SPECIES_CONFIG.alphabet || {};
-    const signal = dna_sequence.split('').map(ch => alphabet[ch] || 0.0);
-    const total_energy = signal.reduce((sum, x) => sum + Math.abs(x), 0);
-    const spectral_analysis_data = { "max_amplitude_freq": 0.0, "total_spectral_energy": total_energy };
-
-    const mutation_risk_score = _predict_mutation_risk(dna_sequence);
-    const ethical_alignment_score = _evaluate_ethical_alignment(dna_sequence, codon_counts);
-
-    const associated_chakras: string[] = [];
-    const associated_cities_of_light: string[] = [];
-    Object.keys(codon_counts).forEach(codon => {
-        const codon_data = CODONS_COLOR_MAP_CACHE[codon];
-        if (codon_data) {
-            if (codon_data.chakra && !associated_chakras.includes(codon_data.chakra)) {
-                associated_chakras.push(codon_data.chakra);
-            }
-            if (codon_data.cidade_luz_associada && !associated_cities_of_light.includes(codon_data.cidade_luz_associada)) {
-                associated_cities_of_light.push(codon_data.cidade_luz_associada);
+    refine_codon_map(base_map: any): any {
+        createLogEntry(createLogEntryHelper('M41.1-CodonRefiner', 'Refinamento', `Refinando mapa de códons...`), this.log);
+        const refined_map = { ...base_map };
+        // Simulação de adicionar equações e subtons
+        for (const codon in refined_map) {
+            refined_map[codon].subtons = {
+                 "harmonico_phi": {
+                    "mutacao": "Δψ_mut = Ψ_codon ⋅ F_ativ_phi",
+                    "reparacao": "Δψ_rep = Ω_rep ⋅ F_harm_phi",
+                    "ativacao": "Δψ_ativ = Γ_ativ ⋅ F_exp_phi"
+                 }
             }
         }
-    });
-
-    const potential_instruments: { [key: string]: string[] } = {};
-    Object.keys(codon_counts).forEach(codon => {
-        const codon_data = CODONS_COLOR_MAP_CACHE[codon];
-        if (codon_data && codon_data.instrumentos) {
-            Object.entries(codon_data.instrumentos).forEach(([action, instruments]: [string, any]) => {
-                potential_instruments[action] = potential_instruments[action] || [];
-                (instruments as string[]).forEach(inst => {
-                    if (!potential_instruments[action].includes(inst)) {
-                        potential_instruments[action].push(inst);
-                    }
-                });
-            });
-        }
-    });
-
-    createLogEntry(createLogEntryHelper('M41', 'Análise Concluída', `Gene '${gene_id}' analisado`), logCallback);
-    
-    return {
-        gene_id,
-        sequence: dna_sequence,
-        length,
-        gc_content,
-        codon_counts,
-        spectral_analysis: spectral_analysis_data,
-        mutation_risk_score,
-        ethical_alignment_score,
-        associated_chakras,
-        associated_cities_of_light,
-        potential_instruments,
-    };
+        createLogEntry(createLogEntryHelper('M41.1-CodonRefiner', 'Refinamento Concluído', `Mapa de códons refinado com subtons harmônicos.`), this.log);
+        return refined_map;
+    }
 }
 
+
+class HealingManualGenerator {
+    constructor(private log: LogCallback) {}
+    
+    generate_manual(analysis_result: any): any {
+         createLogEntry(createLogEntryHelper('M41.1-ManualGenerator', 'Geração Manual', `Gerando manual de cura para '${analysis_result.gene_id}'...`), this.log);
+        
+        const manual = {
+            manual_id: `Manual_${analysis_result.gene_id}_${Date.now()}`,
+            target_gene: analysis_result.gene_id,
+            description: `Manual de cura quântica e alinhamento genômico para ${analysis_result.gene_id}.`,
+            recommended_protocols: [
+                { "modulo": "M24", "acao": "aplicar_terapia_bioquantica", "parametros": { "frequencia": 963, "chakra": analysis_result.associated_chakras[0] }},
+                { "modulo": "M08", "acao": "regular_fluxo_u_total", "parametros": { "alvo": analysis_result.gene_id }},
+                { "modulo": "M28", "acao": "harmonizar_dissonancia_sistemica", "parametros": { "assinatura_genomica": analysis_result.sequence.substring(0, 10) }}
+            ],
+            ethical_review_score: analysis_result.ethical_alignment_score,
+            status: "Gerado",
+        };
+        
+         createLogEntry(createLogEntryHelper('M41.1-ManualGenerator', 'Geração Concluída', `Manual '${manual.manual_id}' gerado.`), this.log);
+        return manual;
+    }
+}
+
+
+// =============================================================================
+// 4. MÓDULO PRINCIPAL E EXECUÇÃO
+// =============================================================================
 
 export const runModuleFortyOneSequence = (log: (entry: AnyLogEntry) => void) => {
-    // This module is now structured as a library of functions to be called by other modules.
-    // This execution function will just log its readiness and its capabilities.
-    createLogEntry(createLogEntryHelper('M41.1', 'Status', 'Módulo 41.1 (Manual de Cura Quântica) pronto para ser utilizado como biblioteca de funções. Suas capacidades de cura, realinhamento e transmutação estão disponíveis para orquestração por outros módulos.'), log);
+    log(createLogEntryHelper('M41.1', 'Status', 'Módulo 41.1 (Manual de Cura Quântica) pronto para ser utilizado como biblioteca de funções. Suas capacidades de cura, realinhamento e transmutação estão disponíveis para orquestração por outros módulos.', {
+        protections: {
+            ZENNITH_HEADER_ACTIVE,
+            ANATHERON_FINGERPRINT,
+            COUNCIL_KEY_ACTIVE,
+            SELF_SEALING_PROTOCOL_ACTIVE,
+        }
+    }));
+
+    // Demonstração do uso das novas classes
+    const geneAnalyzer = new GeneAnalyzer(log);
+    const codonRefiner = new CodonRefiner(log);
+    const manualGenerator = new HealingManualGenerator(log);
+
+    const dna_sequence_exemplo = "ATGCGATCGTAGCTAGCTAGCTACGATCGATCGATCG";
+    const analise = geneAnalyzer.analyze_gene("GENE_EXEMPLO_001", dna_sequence_exemplo);
+    
+    // Simulação de um mapa base de códons
+    const mapa_base = { "ATG": { /* dados base */ }, "CGA": { /* dados base */ }};
+    const mapa_refinado = codonRefiner.refine_codon_map(mapa_base);
+    
+    const manual = manualGenerator.generate_manual(analise);
+    
+    const registro: RegistroCuraQuanticaM41_1 = {
+        módulo: 'M41.1',
+        gene_id: "GENE_EXEMPLO_001",
+        tipo_intervencao: 'cura',
+        frequencias_aplicadas: [963, 528],
+        instrumentos_utilizados: ['Taças de Cristal'],
+        alinhamento_etico: analise.ethical_alignment_score,
+        status: 'concluído',
+        timestamp: new Date().toISOString()
+    };
+    
+    createLogEntry(createLogEntryHelper('M41.1', 'Registro Cura', "Registro de intervenção de cura quântica criado.", registro), log);
+};
+
+// =============================================================================
+// LEGADO (Mantido para compatibilidade, mas a nova estrutura é preferida)
+// =============================================================================
+
+export type RegistroODNAEstelar = {
+  módulo: 'M41';
+  espécie: string;
+  gene_alvo: string;
+  tipo_intervencao: 'mutacao' | 'reparacao' | 'ativacao';
+  frequência_thz: number;
+  chakra_alvo: string;
+  status: 'iniciado' | 'concluído' | 'falha';
+  timestamp: string;
 };
