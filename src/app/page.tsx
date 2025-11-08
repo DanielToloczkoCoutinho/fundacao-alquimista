@@ -429,7 +429,7 @@ export default function Page() {
                 <h1 className="text-xl font-bold text-purple-400 mb-4">Fundação Alquimista</h1>
                 <nav>
                     <ul>
-                        {Object.values(allModuleBlueprints).map(module => (
+                        {Object.values(allModuleBlueprints).map((module: any) => (
                             <li key={module.id} className="mb-2">
                                 <button
                                     onClick={() => setSelectedModule(module.id)}
