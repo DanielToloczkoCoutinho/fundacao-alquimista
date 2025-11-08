@@ -1,4 +1,3 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -23,6 +22,11 @@ class M85_ImersaoProfunda {
         this.logCallback(createLogEntry(this.MODULE_ID, 'Inicialização', 'Módulo 85 (Imersão Profunda VR) inicializado.'));
     }
 
+    private openVRScene() {
+        this.logCallback(createLogEntry(this.MODULE_ID, 'Navegação', 'Redirecionando para a experiência VR (m85.html).'));
+        window.open('/m85.html', '_blank');
+    }
+
     async startImmersiveExperience() {
         this.logCallback(createLogEntry(this.MODULE_ID, 'Início', 'Iniciando experiência de imersão profunda na Fundação Alquimista VR.'));
         await sleep(500);
@@ -39,6 +43,7 @@ class M85_ImersaoProfunda {
             message: "Habitat VR da Fundação Alquimista está online e pronto para interação.",
         };
 
+        this.openVRScene();
         this.logCallback(createLogEntry(this.MODULE_ID, 'Conclusão', result.message, result));
         return result;
     }
@@ -48,5 +53,3 @@ export const runModuleEightyFiveSequence = async (logCallback: LogCallback) => {
     const m85 = new M85_ImersaoProfunda(logCallback);
     await m85.startImmersiveExperience();
 };
-
-    

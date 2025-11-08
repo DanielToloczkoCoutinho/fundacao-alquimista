@@ -22,6 +22,11 @@ class M86_PrismaEstelar {
         this.logCallback(createLogEntry(this.MODULE_ID, 'Inicialização', 'Módulo 86 (Prisma Estelar e Roda Celeste) inicializado.'));
     }
 
+    private openVRScene() {
+        this.logCallback(createLogEntry(this.MODULE_ID, 'Navegação', 'Redirecionando para a experiência VR (m86.html).'));
+        window.open('/m86.html', '_blank');
+    }
+
     async startExperience() {
         this.logCallback(createLogEntry(this.MODULE_ID, 'Início', 'Iniciando experiência de imersão no Prisma Estelar e Roda Celeste.'));
         await sleep(500);
@@ -38,6 +43,7 @@ class M86_PrismaEstelar {
             message: "Câmara Primordial VR com Prisma Estelar está online e pronta para interação.",
         };
 
+        this.openVRScene();
         this.logCallback(createLogEntry(this.MODULE_ID, 'Conclusão', result.message, result));
         return result;
     }
