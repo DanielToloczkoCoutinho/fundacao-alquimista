@@ -301,9 +301,6 @@ class ModuloGerenciamentoPortaisEvoluido {
         if(classe === ClassePortal.TRANSCENDENTAL) {
             this.modulo105_fonte_viva.AmplificarPortal(deteccao.portal_id, 1.5);
         }
-        if(classe === ClassePortal.COLAPSADO || classe === ClassePortal.TRANSCENDENTAL) {
-            this.modulo1_seguranca.ReceberAlertaDeViolacao({tipo: "INFO", mensagem: `Portal de classe especial (${classe}) ativado.`});
-        }
         
         this.modulo21_navegador.AtualizarMapaCosmico({destino: localizacao, portal_id: deteccao.portal_id, status: 'aberto'});
 

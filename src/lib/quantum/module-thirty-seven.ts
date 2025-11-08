@@ -147,7 +147,6 @@ class AlertLimiter {
         return false;
     }
 }
-const alert_limiter = new AlertLimiter();
 
 const median = (vals: number[]): number => {
     const n = vals.length;

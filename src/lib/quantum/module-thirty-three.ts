@@ -248,10 +248,12 @@ export const runModuleThirtyThreeSequence = async (logCallback: LogCallback) => 
     ];
 
     for (const c of cenarios) {
-        createLogEntry(createLogEntryHelper("M33" as any, 'Cenário', `Iniciando: ${c.intencao}`), logCallback);
+        const logEntry = createLogEntryHelper("M33" as any, 'Cenário', `Iniciando: ${c.intencao}`);
+        createLogEntry(logEntry, logCallback);
         await sleep(500);
         const resultado = await m33.gerar_e_emitir_diretriz(c.intencao, c.etica, c.pilares, c.virtudes, 0.9, 0.85, c.freq);
-        createLogEntry(createLogEntryHelper("M33" as any, 'Resultado', `Cenário '${c.intencao}' concluído`, resultado), logCallback);
+        const resultLogEntry = createLogEntryHelper("M33" as any, 'Resultado', `Cenário '${c.intencao}' concluído`, resultado);
+        createLogEntry(resultLogEntry, logCallback);
         await sleep(1000);
     }
 };
