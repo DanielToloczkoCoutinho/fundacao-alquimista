@@ -60,7 +60,7 @@ export type ModuleThirtyEightLogEntry = BaseLogEntry & { source: 'M38'; };
 export type ModuleThirtyNineLogEntry = BaseLogEntry & { source: 'M39'; };
 export type ModuleFortyLogEntry = BaseLogEntry & { source: 'M40'; };
 export type ModuleFortyOneLogEntry = BaseLogEntry & { source: 'M41'; };
-export type ModuleFortyOnePartTwoLogEntry = BaseLogEntry & { source: 'M41.2'; };
+export type ModuleFortyOnePointTwoLogEntry = BaseLogEntry & { source: 'M41.2'; };
 export type ModuleFortyTwoLogEntry = BaseLogEntry & { source: 'M42'; };
 export type ModuleFortyThreeLogEntry = BaseLogEntry & { source: 'M43'; };
 export type ModuleFortyFourLogEntry = BaseLogEntry & { source: 'M44'; };
@@ -128,6 +128,7 @@ export type ModuleThreeHundredFourPointTwoLogEntry = BaseLogEntry & { source: 'M
 export type ModuleThreeHundredFiveLogEntry = BaseLogEntry & { source: 'M305'; };
 export type ModuleThreeHundredSixLogEntry = BaseLogEntry & { source: 'M306'; };
 export type ModuleOmegaLogEntry = BaseLogEntry & { source: 'M-Ω'; };
+export type ModuleOrchestratorLogEntry = BaseLogEntry & { source: 'M41.Ω' };
 
 
 // Tipo unificado para todas as entradas de log possíveis na Fundação
@@ -160,7 +161,8 @@ export type AnyLogEntry =
     | ModuleTwoHundredOneLogEntry | ModuleTwoHundredTwoLogEntry | ModuleTwoHundredTwentyEightLogEntry | ModuleTwoHundredTwentyNineLogEntry
     | ModuleThreeHundredLogEntry | ModuleThreeHundredTwoLogEntry | ModuleThreeHundredThreeLogEntry | ModuleThreeHundredFourLogEntry
     | ModuleThreeHundredFourPointTwoLogEntry | ModuleThreeHundredFiveLogEntry | ModuleThreeHundredSixLogEntry
-    | ModuleOmegaLogEntry;
+    | ModuleOmegaLogEntry
+    | ModuleOrchestratorLogEntry;
 
 
 export type ModuleZeroFinalReport = {
