@@ -50,6 +50,7 @@ import './module-ninety';
 import './module-ninety-one';
 import './module-ninety-two';
 import './module-ninety-three';
+import './module-ninety-four';
 import './module-two-hundred-one';
 import './module-omega';
 

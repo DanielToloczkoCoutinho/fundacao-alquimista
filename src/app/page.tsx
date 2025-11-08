@@ -75,6 +75,7 @@ import { runModuleNinetySequence } from '@/lib/quantum/module-ninety';
 import { runModuleNinetyOneSequence } from '@/lib/quantum/module-ninety-one';
 import { runModuleNinetyTwoSequence } from '@/lib/quantum/module-ninety-two';
 import { runModuleNinetyThreeSequence } from '@/lib/quantum/module-ninety-three';
+import { runModuleNinetyFourSequence } from '@/lib/quantum/module-ninety-four';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -156,6 +157,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M91: Simulação Multiversal": runModuleNinetyOneSequence,
     "M92: Campos de Cura": runModuleNinetyTwoSequence,
     "M93: Realidades Imersivas": runModuleNinetyThreeSequence,
+    "M94: Morfogênese Quântica": runModuleNinetyFourSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
