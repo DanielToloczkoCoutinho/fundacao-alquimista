@@ -66,6 +66,7 @@ import './module-one-hundred-six';
 import './module-one-hundred-seven';
 import './module-one-hundred-eight';
 import './module-one-hundred-nine';
+import './module-one-hundred-ten';
 import './module-two-hundred-one';
 import './module-omega';
 
@@ -134,4 +135,4 @@ class BibliotecaCompletaUnificada {
     }
 }
 
-export const bibliotecaCompletaUnificada = new BibliotecaCompletaUnificada();
+export
