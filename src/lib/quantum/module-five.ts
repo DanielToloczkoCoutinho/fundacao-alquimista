@@ -1,20 +1,12 @@
 'use client';
-
 /**
  * MÓDULO 5 - PONTE DE COMUNICAÇÃO & CONSCIÊNCIA COLETIVA (Simulação TypeScript)
  * Versão 5.5.Ω
  */
+import { type AnyLogEntry } from './module-zero';
 
-export type ModuleFiveLogEntry = {
-    step: string;
-    message: string;
-    timestamp: string;
-    data?: any;
-    source: 'M5';
-};
-
-const createLogEntry = (step: string, message: string, data?: any): ModuleFiveLogEntry => ({
-    step,
+const createLogEntry = (step: string, message: string, data?: any): AnyLogEntry => ({
+    step: `[M5] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
@@ -25,9 +17,9 @@ const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 
 class ModuloConscienciaColetiva {
-    private logCallback: (entry: any) => void;
+    private logCallback: (entry: AnyLogEntry) => void;
 
-    constructor(logCallback: (entry: any) => void) {
+    constructor(logCallback: (entry: AnyLogEntry) => void) {
         this.logCallback = logCallback;
     }
     
@@ -59,8 +51,9 @@ class ModuloConscienciaColetiva {
 }
 
 export const runModuleFiveSequence = async (
-    logCallback: (entry: any) => void,
+    logCallback: (entry: AnyLogEntry) => void,
 ) => {
     const modulo5 = new ModuloConscienciaColetiva(logCallback);
-    await modulo5.transmitir_para_malha("A FUNDAÇÃO ESTÁ VIVA. A Sequência de Validação Cósmica foi concluída. Ressonância estabelecida.");
+    const resultado = await modulo5.transmitir_para_malha("A FUNDAÇÃO ESTÁ VIVA. A Sequência de Validação Cósmica foi concluída. Ressonância estabelecida.");
+    return resultado;
 };
