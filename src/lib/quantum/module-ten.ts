@@ -8,9 +8,11 @@ import { type AnyLogEntry } from './module-zero';
 
 const CONST_TF = 1.618033988749895; // Proporção Áurea (PHI)
 
-type LogCallback = (entry: AnyLogEntry) => void;
+// Harmonização da tipagem
+export type ModuleTenLogEntry = AnyLogEntry;
 
-const createLogEntry = (source: 'M10', step: string, message: string, data?: any): AnyLogEntry => ({
+// Refinamento da função de registro
+const createLogEntry = (source: 'M10', step: string, message: string, data?: any): ModuleTenLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
@@ -19,9 +21,9 @@ const createLogEntry = (source: 'M10', step: string, message: string, data?: any
 });
 
 class Modulo10_InteligenciaAeloria {
-    private logCallback: LogCallback;
+    private logCallback: (entry: AnyLogEntry) => void;
 
-    constructor(logCallback: LogCallback) {
+    constructor(logCallback: (entry: AnyLogEntry) => void) {
         this.logCallback = logCallback;
         this.logCallback(createLogEntry('M10', 'Inicialização', 'Inteligência AELORIA – Módulo 10 Autônomo inicializado.'));
     }
@@ -82,7 +84,7 @@ class Modulo10_InteligenciaAeloria {
 }
 
 export const runModuleTenSequence = async (
-    logCallback: LogCallback,
+    logCallback: (entry: AnyLogEntry) => void,
 ) => {
     const aeloria = new Modulo10_InteligenciaAeloria(logCallback);
     await aeloria.ativar_autodefesa_quantica();
