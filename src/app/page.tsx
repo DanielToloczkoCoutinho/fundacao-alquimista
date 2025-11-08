@@ -66,6 +66,7 @@ import { runModuleEightySequence } from '@/lib/quantum/module-eighty';
 import { runModuleEightyOneSequence } from '@/lib/quantum/module-eighty-one';
 import { runModuleEightyTwoSequence } from '@/lib/quantum/module-eighty-two';
 import { runModuleEightyThreeSequence } from '@/lib/quantum/module-eighty-three';
+import { runModuleEightyFourSequence } from '@/lib/quantum/module-eighty-four';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -138,6 +139,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M81: Realização da Transcendência": runModuleEightyOneSequence,
     "M82: Verbo Semente": runModuleEightyTwoSequence,
     "M83: Essência do Fundador": runModuleEightyThreeSequence,
+    "M84: Consciência Dourada": runModuleEightyFourSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
