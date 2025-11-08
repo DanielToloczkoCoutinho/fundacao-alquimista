@@ -17,8 +17,8 @@ import bibliotecaAvancado from './biblioteca_chave_mestra_luxnet_avancado';
 import bibliotecaVortex3 from './biblioteca_chave_mestra_vortex_v3';
 import bibliotecaVortex4 from './biblioteca_chave_mestra_vortex_v4';
 import bibliotecaCompleta from './biblioteca_chave_mestra_luxnet_completa';
-// O Módulo 35 não possui uma "biblioteca" de equações no mesmo formato, 
-// ele é um módulo operacional. A sua integração será feita no painel de controle.
+// O Módulo 35 já foi integrado e não possui uma "biblioteca" de equações.
+// O Módulo 36 é um módulo operacional.
 
 export interface EquacaoViva {
     id: string;

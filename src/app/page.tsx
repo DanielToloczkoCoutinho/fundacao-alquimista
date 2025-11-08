@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { bibliotecaCompletaUnificada, type EquacaoViva } from '@/lib/quantum';
-import { runModuleZeroSequence, type AnyLogEntry, type ModuleZeroFinalReport } from '@/lib/quantum/module-zero';
+import { runModuleZeroSequence, type AnyLogEntry } from '@/lib/quantum/module-zero';
 import { runModuleTwoSequence } from '@/lib/quantum/module-two';
 import { runModuleThreeSequence } from '@/lib/quantum/module-three';
 import { runModuleFourSequence } from '@/lib/quantum/module-four';
@@ -38,6 +38,7 @@ import { runModuleThirtyOneSequence } from '@/lib/quantum/module-thirty-one';
 import { runModuleThirtyThreeSequence } from '@/lib/quantum/module-thirty-three';
 import { runModuleThirtyFourSequence } from '@/lib/quantum/module-thirty-four';
 import { runModuleThirtyFiveSequence } from '@/lib/quantum/module-thirty-five';
+import { runModuleThirtySixSequence } from '@/lib/quantum/module-thirty-six';
 import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
 import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
@@ -81,13 +82,22 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M29: Comunicação Interdimensional (Rainha)": runModuleTwentyNineSequence,
     "M30: Defesa Cósmica": runModuleThirtySequence,
     "M31: Manipulação Quântica": runModuleThirtyOneSequence,
-    "M33: Observador Divino": (log) => runModuleThirtyThreeSequence(log),
+    "M33: Observador Divino": runModuleThirtyThreeSequence,
     "M34: Guardião da Coerência": runModuleThirtyFourSequence,
     "M35: Orquestrador da Consciência": runModuleThirtyFiveSequence,
+    "M36: Arquiteto da Luz Primordial": runModuleThirtySixSequence,
     "M41.Ω: Orquestrador Daniel": (log) => commandDanielOrchestrator('status', log),
     "M42: Orquestrador ZENNITH": runZennithOrchestrator,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
+
+const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+    step: `[${source}] ${step}`,
+    message,
+    timestamp: new Date().toISOString(),
+    data,
+    source: source as any,
+});
 
 
 export default function App() {
@@ -417,7 +427,7 @@ export default function App() {
                                 </Select>
                                 <Button onClick={handleRunModule} disabled={!selectedModule} className="bg-violet-600 hover:bg-violet-700">Executar</Button>
                             </div>
-                             {selectedModule && (
+                            {selectedModule && (
                                 <div className="mt-3 text-sm">
                                     Status: <Badge variant={getModuleStatus(selectedModule).variant}>{getModuleStatus(selectedModule).text}</Badge>
                                 </div>
