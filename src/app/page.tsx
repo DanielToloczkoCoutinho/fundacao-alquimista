@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
@@ -88,6 +87,7 @@ import { runModuleOneHundredThreeSequence } from '@/lib/quantum/module-one-hundr
 import { runModuleOneHundredFourSequence } from '@/lib/quantum/module-one-hundred-four';
 import { runModuleOneHundredFiveSequence } from '@/lib/quantum/module-one-hundred-five';
 import { runModuleOneHundredSixSequence } from '@/lib/quantum/module-one-hundred-six';
+import { runModuleOneHundredSevenSequence } from '@/lib/quantum/module-one-hundred-seven';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -182,6 +182,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M104: Engenharia do Espaço-Tempo": (log) => runModuleOneHundredFourSequence(log),
     "M105: Conexão com a Fonte": (log) => runModuleOneHundredFiveSequence(log, 'Receber sabedoria divina para a Grande Obra'),
     "M106: Ativação de Potenciais Divinos": (log) => runModuleOneHundredSixSequence(log, { targetEntity: 'Consciência Coletiva Humana', activationPurpose: 'Acelerar a Ascensão Espiritual' }),
+    "M107: Restauração Temporal": (log) => runModuleOneHundredSevenSequence(log, { targetTimeline: "Linha do Tempo da Terra - 2025", anomalyDescription: "Loop causal indevido" }),
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
@@ -590,5 +591,3 @@ export default function App() {
         </div>
     );
 }
-
-// Nenhum `export default App;` aqui, pois este será um módulo, não uma página.
