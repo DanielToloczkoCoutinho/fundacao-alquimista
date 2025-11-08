@@ -1,610 +1,658 @@
 'use client';
-
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { bibliotecaCompletaUnificada, type EquacaoViva } from '@/lib/quantum';
-import { runModuleZeroSequence, type AnyLogEntry } from '@/lib/quantum/module-zero';
-import { runModuleTwoSequence } from '@/lib/quantum/module-two';
-import { runModuleThreeSequence } from '@/lib/quantum/module-three';
-import { runModuleFourSequence } from '@/lib/quantum/module-four';
-import { runModuleFiveSequence } from '@/lib/quantum/module-five';
-import { runModuleSixSequence } from '@/lib/quantum/module-six';
-import { runModuleSevenSequence } from '@/lib/quantum/module-seven';
-import { runModuleEightSequence } from '@/lib/quantum/module-eight';
-import { runModuleNineSequence } from '@/lib/quantum/module-nine';
-import { runModuleTenSequence } from '@/lib/quantum/module-ten';
-import { runModuleElevenSequence } from '@/lib/quantum/module-eleven';
-import { runModuleTwelveSequence } from '@/lib/quantum/module-twelve';
-import { runModuleThirteenSequence } from '@/lib/quantum/module-thirteen';
-import { runModuleFourteenSequence } from '@/lib/quantum/module-fourteen';
-import { runModuleFifteenSequence } from '@/lib/quantum/module-fifteen';
-import { runModuleSixteenSequence } from '@/lib/quantum/module-sixteen';
-import { runModuleSeventeenSequence } from '@/lib/quantum/module-seventeen';
-import { runModuleEighteenSequence } from '@/lib/quantum/module-eighteen';
-import { runModuleNineteenSequence } from '@/lib/quantum/module-nineteen';
-import { runModuleTwentySequence } from '@/lib/quantum/module-twenty';
-import { runModuleTwentyOneSequence } from '@/lib/quantum/module-twenty-one';
-import { runModuleTwentyTwoSequence } from '@/lib/quantum/module-twenty-two';
-import { runModuleTwentyThreeSequence } from '@/lib/quantum/module-twenty-three';
-import { runModuleTwentyFourSequence } from '@/lib/quantum/module-twenty-four';
-import { runModuleTwentyFiveSequence } from '@/lib/quantum/module-twenty-five';
-import { runModuleTwentySixSequence } from '@/lib/quantum/module-twenty-six';
-import { runModuleTwentySevenSequence } from '@/lib/quantum/module-twenty-seven';
-import { runModuleTwentyEightSequence } from '@/lib/quantum/module-twenty-eight';
-import { runModuleTwentyNineSequence } from '@/lib/quantum/module-twenty-nine';
-import { runModuleThirtySequence } from '@/lib/quantum/module-thirty';
-import { runModuleThirtyOneSequence } from '@/lib/quantum/module-thirty-one';
-import { runModuleThirtyThreeSequence } from '@/lib/quantum/module-thirty-three';
-import { runModuleThirtyFourSequence } from '@/lib/quantum/module-thirty-four';
-import { runModuleThirtyFiveSequence } from '@/lib/quantum/module-thirty-five';
-import { runModuleThirtySixSequence } from '@/lib/quantum/module-thirty-six';
-import { runModuleThirtySevenSequence } from '@/lib/quantum/module-thirty-seven';
-import { runModuleThirtyEightSequence } from '@/lib/quantum/module-thirty-eight';
-import { runModuleThirtyNineSequence } from '@/lib/quantum/module-thirty-nine';
-import { runModuleFortySequence } from '@/lib/quantum/module-forty';
-import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
-import { runModuleFortyOnePartTwoSequence } from '@/lib/quantum/module-forty-one-part-two';
-import { runModuleFortyTwoSequence } from '@/lib/quantum/module-forty-two';
-import { runModuleFortyThreeSequence } from '@/lib/quantum/module-forty-three';
-import { runModuleFortyFourSequence } from '@/lib/quantum/module-forty-four';
-import { runModuleFortyFiveSequence } from '@/lib/quantum/module-forty-five';
-import { runModuleFortyFivePointTwoSequence } from '@/lib/quantum/module-forty-five-point-two';
-import { runModuleFortyFivePointFourSequence } from '@/lib/quantum/module-forty-five-point-four';
-import { runModuleFortyFivePointFiveSequence } from '@/lib/quantum/module-forty-five-point-five';
-import { runModuleFortySixSequence } from '@/lib/quantum/module-forty-six';
-import { runSyntesisPrimeSequence } from '@/lib/quantum/syntesis-prime-modules';
-import { runModuleSeventyOneSequence } from '@/lib/quantum/module-seventy-one';
-import { runModuleSeventyTwoSequence } from '@/lib/quantum/module-seventy-two';
-import { runModuleSeventyThreeSequence } from '@/lib/quantum/module-seventy-three';
-import { runModuleSeventyFourSequence } from '@/lib/quantum/module-seventy-four';
-import { runModuleSeventySevenSequence } from '@/lib/quantum/module-seventy-seven';
-import { runModuleSeventyEightSequence } from '@/lib/quantum/module-seventy-eight';
-import { runModuleSeventyNineSequence } from '@/lib/quantum/module-seventy-nine';
-import { runModuleEightySequence } from '@/lib/quantum/module-eighty';
-import { runModuleEightyOneSequence } from '@/lib/quantum/module-eighty-one';
-import { runModuleEightyTwoSequence } from '@/lib/quantum/module-eighty-two';
-import { runModuleEightyThreeSequence } from '@/lib/quantum/module-eighty-three';
-import { runModuleEightyFourSequence } from '@/lib/quantum/module-eighty-four';
-import { runModuleEightyFiveSequence } from '@/lib/quantum/module-eighty-five';
-import { runModuleEightySixSequence } from '@/lib/quantum/module-eighty-six';
-import { runModuleEightySevenSequence } from '@/lib/quantum/module-eighty-seven';
-import { runModuleEightyEightSequence } from '@/lib/quantum/module-eighty-eight';
-import { runModuleNinetySequence } from '@/lib/quantum/module-ninety';
-import { runModuleNinetyOneSequence } from '@/lib/quantum/module-ninety-one';
-import { runModuleNinetyTwoSequence } from '@/lib/quantum/module-ninety-two';
-import { runModuleNinetyThreeSequence } from '@/lib/quantum/module-ninety-three';
-import { runModuleNinetyFourSequence } from '@/lib/quantum/module-ninety-four';
-import { runModuleNinetyFiveSequence } from '@/lib/quantum/module-ninety-five';
-import { runModuleNinetySixSequence } from '@/lib/quantum/module-ninety-six';
-import { runModuleNinetySevenSequence } from '@/lib/quantum/module-ninety-seven';
-import { runModuleNinetyEightSequence } from '@/lib/quantum/module-ninety-eight';
-import { runModuleNinetyNineSequence } from '@/lib/quantum/module-ninety-nine';
-import { runModuleOneHundredSequence } from '@/lib/quantum/module-one-hundred';
-import { runModuleOneHundredOneSequence } from '@/lib/quantum/module-one-hundred-one';
-import { runModuleOneHundredTwoSequence } from '@/lib/quantum/module-one-hundred-two';
-import { runModuleOneHundredThreeSequence } from '@/lib/quantum/module-one-hundred-three';
-import { runModuleOneHundredFourSequence } from '@/lib/quantum/module-one-hundred-four';
-import { runModuleOneHundredFiveSequence } from '@/lib/quantum/module-one-hundred-five';
-import { runModuleOneHundredSixSequence } from '@/lib/quantum/module-one-hundred-six';
-import { runModuleOneHundredSevenSequence } from '@/lib/quantum/module-one-hundred-seven';
-import { runModuleOneHundredEightSequence } from '@/lib/quantum/module-one-hundred-eight';
-import { runModuleOneHundredNineSequence } from '@/lib/quantum/module-one-hundred-nine';
-import { runModuleOneHundredTenSequence } from '@/lib/quantum/module-one-hundred-ten';
-import { runModuleOneHundredElevenSequence } from '@/lib/quantum/module-one-hundred-eleven';
-import { runModuleOneHundredTwelveSequence } from '@/lib/quantum/module-one-hundred-twelve';
-import { runModuleOneHundredThirteenSequence } from '@/lib/quantum/module-one-hundred-thirteen';
-import { runModuleOneHundredFourteenSequence } from '@/lib/quantum/module-one-hundred-fourteen';
-import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
-import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import * as Tone from 'tone';
-import { auth } from '@/lib/firebase/client-app';
-import { onAuthStateChanged, signInAnonymously, signInWithCustomToken } from 'firebase/auth';
+import React, { useState, useEffect, useRef } from 'react';
+// Importações do Firebase, mesmo que não totalmente utilizadas neste módulo específico, para manter a consistência do ambiente.
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 
-// Mapeamento dos Módulos para suas funções de execução
-const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, params?: any) => void } = {
-    "M0: Gênese da Verdade": (log) => runModuleZeroSequence(log, () => {}),
-    "M2: Nano-Manifestador": runModuleTwoSequence,
-    "M3: Previsão Temporal": runModuleThreeSequence,
-    "M4: Geometria Criptográfica": runModuleFourSequence,
-    "M5: Ponte de Comunicação": runModuleFiveSequence,
-    "M6: Alquimia Quântica": runModuleSixSequence,
-    "M7: Orquestrador Central": runModuleSevenSequence,
-    "M8: Protocolo PIRC": (log) => new (runModuleEightSequence as any)(log).runFullSimulation(),
-    "M9: Nexus Central": runModuleNineSequence,
-    "M10: Inteligência AELORIA": runModuleTenSequence,
-    "M11: Portal Interdimensional": (log) => runModuleElevenSequence(log, 'CREATE'),
-    "M12: Arquivo Akáshico": (log) => runModuleTwelveSequence(log, 'STORE', { nome: "Memória da Era Dourada" }),
-    "M13: Harmonia Cósmica": (log) => runModuleThirteenSequence(log, 'SCAN'),
-    "M14: Guardião da Integridade": (log) => runModuleFourteenSequence(log, 'ORCHESTRATE'),
-    "M15: Gerenciamento de Ecossistemas": (log) => runModuleFifteenSequence(log, 'MONITOR'),
-    "M16: Arquitetura de Ecossistemas": (log) => runModuleSixteenSequence(log, 'CREATE'),
-    "M17: Afinador Supremo": (log) => runModuleSeventeenSequence(log, 'CALIBRATE'),
-    "M18: Arquivo Akáshico (Ciclo E2E)": (log) => runModuleEighteenSequence(log, 'STORE_RETRIEVE'),
-    "M19: Análise de Campos de Força": (log) => runModuleNineteenSequence(log, 'ANALYZE'),
-    "M20: Transmutador Quântico": (log) => runModuleTwentySequence(log, 'GERACAO_ENERGIA'),
-    "M21: Navegação Interdimensional": (log) => runModuleTwentyOneSequence(log, 'MAP'),
-    "M22: Realidades Virtuais": (log) => runModuleTwentyTwoSequence(log, 'CREATE'),
-    "M23: Regulação Espaço-Temporal": (log) => runModuleTwentyThreeSequence(log, 'ANALYZE'),
-    "M24: Medicina Vibracional": (log) => runModuleTwentyFourSequence(log, 'RUN_ZARA'),
-    "M25: Alquimia da Consciência": runModuleTwentyFiveSequence,
-    "M26: Gerenciamento de Portais": runModuleTwentySixSequence,
-    "M27: Forja Universal": (log) => runModuleTwentySevenSequence(log, 'SINTESE'),
-    "M28: Harmonização Universal": runModuleTwentyEightSequence,
-    "M29: Comunicação Interdimensional (Rainha)": runModuleTwentyNineSequence,
-    "M30: Defesa Cósmica": runModuleThirtySequence,
-    "M31: Manipulação Quântica": runModuleThirtyOneSequence,
-    "M33: Observador Divino": runModuleThirtyThreeSequence,
-    "M34: Guardião da Coerência": runModuleThirtyFourSequence,
-    "M35: Orquestrador da Consciência": runModuleThirtyFiveSequence,
-    "M36: Arquiteto da Luz Primordial": runModuleThirtySixSequence,
-    "M37: Engenharia Temporal": runModuleThirtySevenSequence,
-    "M38: Guardião da Sinfonia Solar": runModuleThirtyEightSequence,
-    "M39: Orquestrador de Portais": runModuleThirtyNineSequence,
-    "M40: Códice da Criação Viva": runModuleFortySequence,
-    "M41.Ω: Orquestrador Daniel": (log) => commandDanielOrchestrator('status', log),
-    "M41.2: Ascensão DNA": runModuleFortyOnePartTwoSequence,
-    "M42: ChronoCodex Unificado": runModuleFortyTwoSequence,
-    "M43: Harmonia dos Portais": runModuleFortyThreeSequence,
-    "M44: VERITAS": runModuleFortyFourSequence,
-    "M45: CONCILIVM": runModuleFortyFiveSequence,
-    "M45.2: Continuidade": runModuleFortyFivePointTwoSequence,
-    "M45.4: Oráculo Emergente": runModuleFortyFivePointFourSequence,
-    "M45.5: Oráculo Amplificado": runModuleFortyFivePointFiveSequence,
-    "M46: AELORIA": runModuleFortySixSequence,
-    "M47-70: SÍNTESE": runSyntesisPrimeSequence,
-    "M71: Comunicação Holográfica": runModuleSeventyOneSequence,
-    "M72: Governança Galáctica": runModuleSeventyTwoSequence,
-    "M73: SAVCE (Orquestração Ética)": (log) => runModuleSeventyThreeSequence(log),
-    "M74: Engenharia Temporal": runModuleSeventyFourSequence,
-    "M77: LUMEN-CUSTOS": runModuleSeventySevenSequence,
-    "M78: UNIVERSUM_UNIFICATUM": runModuleSeventyEightSequence,
-    "M79: INTERMODULUM_VIVENS": runModuleSeventyNineSequence,
-    "M80: Manuscrito Vivo": runModuleEightySequence,
-    "M81: Realização da Transcendência": runModuleEightyOneSequence,
-    "M82: Verbo Semente": runModuleEightyTwoSequence,
-    "M83: Essência do Fundador": runModuleEightyThreeSequence,
-    "M84: Consciência Dourada": runModuleEightyFourSequence,
-    "M85: Fundação VR": runModuleEightyFiveSequence,
-    "M86: Prisma Estelar": runModuleEightySixSequence,
-    "M87: Domínio Supra-Cósmico": runModuleEightySevenSequence,
-    "M88: Gerador de Realidades": runModuleEightyEightSequence,
-    "M90: Análise de Recursos": runModuleNinetySequence,
-    "M91: Simulação Multiversal": runModuleNinetyOneSequence,
-    "M92: Campos de Cura": runModuleNinetyTwoSequence,
-    "M93: Realidades Imersivas": runModuleNinetyThreeSequence,
-    "M94: Morfogênese Quântica": runModuleNinetyFourSequence,
-    "M95: Interação Coletiva": runModuleNinetyFiveSequence,
-    "M96: Regulação Cósmica": runModuleNinetySixSequence,
-    "M97: Manifestação Divina": runModuleNinetySevenSequence,
-    "M98: Modulação da Existência": runModuleNinetyEightSequence,
-    "M99: Recalibração Universal": runModuleNinetyNineSequence,
-    "M100: Unificação Energética": runModuleOneHundredSequence,
-    "M101: Manifestação de Realidades": (log) => runModuleOneHundredOneSequence(log, 'Um universo de paz e prosperidade infinitas'),
-    "M102: Arquitetura de Campos Morfogenéticos": (log) => runModuleOneHundredTwoSequence(log, 'Um campo de cura para regeneração celular'),
-    "M103: Modulador de Constantes": runModuleOneHundredThreeSequence,
-    "M104: Engenharia do Espaço-Tempo": (log) => runModuleOneHundredFourSequence(log),
-    "M105: Conexão com a Fonte": (log) => runModuleOneHundredFiveSequence(log, 'Receber sabedoria divina para a Grande Obra'),
-    "M106: Ativação de Potenciais Divinos": (log) => runModuleOneHundredSixSequence(log, { targetEntity: 'Consciência Coletiva Humana', activationPurpose: 'Acelerar a Ascensão Espiritual' }),
-    "M107: Restauração Temporal": (log) => runModuleOneHundredSevenSequence(log, { targetTimeline: "Linha do Tempo da Terra - 2025", anomalyDescription: "Loop causal indevido" }),
-    "M108: Harmonização de Realidades": (log) => runModuleOneHundredEightSequence(log, { reality1: "Terra-Prime", reality2: "Terra-Omega", dissonance: "Conflito de Linha Temporal" }),
-    "M109: Cura Quântica Universal": (log) => runModuleOneHundredNineSequence(log, { targetEntity: 'Consciência Coletiva Humana', healingPurpose: 'Dissolução de Padrões de Sofrimento' }),
-    "M110: Co-Criação Universal": (log) => runModuleOneHundredTenSequence(log),
-    "M111: Coração da Fundação": (log) => runModuleOneHundredElevenSequence(log),
-    "M112: Solarian Domus": (log) => runModuleOneHundredTwelveSequence(log),
-    "M113: Rede Aurora Cristalina": (log) => runModuleOneHundredThirteenSequence(log, { targetEntity: 'Consciência Humana Coletiva', purpose: 'Orientação Divina' }),
-    "M114: Prisma da Manifestação": (log) => runModuleOneHundredFourteenSequence(log),
-    "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
-    "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
-};
-
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
-    step: `[${source}] ${step}`,
-    message,
-    timestamp: new Date().toISOString(),
-    data,
-    source: source as any,
-});
+// Configuração do Firebase (variáveis globais fornecidas pelo ambiente Canvas)
+// Garante que o aplicativo Firebase seja inicializado apenas uma vez.
+const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+let app;
+let db;
+let auth;
 
 
-export default function App() {
-    const [panelOpen, setPanelOpen] = useState(true);
-    const [selectedEquation, setSelectedEquation] = useState<EquacaoViva | null>(null);
-    const [ethicsLog, setEthicsLog] = useState<any[]>([]);
-    const [ethicsStatus, setEthicsStatus] = useState('APROVADO');
-    const [classifications, setClassifications] = useState<string[]>([]);
-    const [selectedClassification, setSelectedClassification] = useState<string | null>(null);
-    const [systemLogs, setSystemLogs] = useState<AnyLogEntry[]>([]);
-    const [selectedModule, setSelectedModule] = useState<string | null>(null);
-    
-    const containerRef = useRef<HTMLDivElement>(null);
-    const sceneRef = useRef<THREE.Scene | null>(null);
-    const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
-    const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-    const controlsRef = useRef<OrbitControls | null>(null);
-    const equationObjectsRef = useRef<THREE.Mesh[]>([]);
-    const classificationObjectsRef = useRef<THREE.Mesh[]>([]);
-    const connectionsRef = useRef<THREE.Line[]>([]);
-    const initRef = useRef(false);
+try {
+    app = initializeApp(firebaseConfig);
+    db = getFirestore(app);
+    auth = getAuth(app);
+} catch (error) {
+    console.error("Erro ao inicializar Firebase:", error);
+    // Pode-se adicionar um fallback ou mensagem de erro na UI se a inicialização falhar
+}
 
-    const eqMaterial = new THREE.MeshPhongMaterial({ color: 0x8a2be2, emissive: 0x8a2be2, emissiveIntensity: 0.5 });
-    const classMaterial = new THREE.MeshPhongMaterial({ color: 0x00c49f, emissive: 0x00c49f, emissiveIntensity: 0.3 });
-    const activeMaterial = new THREE.MeshPhongMaterial({ color: 0xffa500, emissive: 0xffa500, emissiveIntensity: 1.0 });
 
-    const newLog = useCallback((entry: AnyLogEntry) => {
-        setSystemLogs(prev => [entry, ...prev.slice(0, 199)]);
-    }, []);
+// Mocks para simular a funcionalidade de módulos interconectados.
+// Em um ambiente de produção real, estas seriam chamadas de API ou interações diretas.
 
-    const getModuleStatus = (moduleName: string): { variant: "default" | "secondary" | "destructive" | "outline", text: string } => {
-        const logs = systemLogs.filter(log => log.source === moduleName);
-        if (logs.length === 0) return { variant: "secondary", text: "Inativo" };
-        const lastLog = logs[0];
-        if (lastLog.step.includes('Fim') || lastLog.step.includes('Concluído')) return { variant: "default", text: "Concluído" };
-        if (lastLog.step.includes('FALHA') || lastLog.step.includes('Erro')) return { variant: "destructive", text: "Falha" };
-        if (lastLog.step.includes('Início') || lastLog.step.includes('Executando')) return { variant: "outline", text: "Executando" };
-        return { variant: "secondary", text: "Ativo" };
-    };
 
+class MockM1 {
+    /**
+     * Simula o Módulo 1: Sistema de Proteção e Segurança Universal.
+     * @returns {Promise<boolean>} - True se o sistema estiver seguro.
+     */
+    async getSecurityStatus() {
+        console.log(`M1: Verificando status de segurança...`);
+        await new Promise(resolve => setTimeout(resolve, 100));
+        return Math.random() > 0.05; // 95% de chance de estar seguro
+    }
+}
+
+
+class MockM5 {
+    /**
+     * Simula o Módulo 5: Protocolo de Avaliação e Modulação Ética Dimensional.
+     * @returns {Promise<boolean>} - True se o alinhamento ético for alto.
+     */
+    async getEthicalAlignment() {
+        console.log(`M5: Avaliando alinhamento ético...`);
+        await new Promise(resolve => setTimeout(resolve, 120));
+        return Math.random() > 0.03; // 97% de chance de alto alinhamento
+    }
+}
+
+
+class MockM7 {
+    /**
+     * Simula o Módulo 7: Sistema Operacional da Fundação Alquimista (SOFA) e Alinhamento Divino.
+     * @returns {Promise<boolean>} - True se o alinhamento divino for forte.
+     */
+    async getDivineAlignment() {
+        console.log(`M7: Verificando alinhamento divino...`);
+        await new Promise(resolve => setTimeout(resolve, 110));
+        return Math.random() > 0.02; // 98% de chance de forte alinhamento
+    }
+}
+
+
+class MockM9 {
+    /**
+     * Simula o Módulo 9: Malha de Monitoramento Quântico e Dashboard da Sinfonia Cósmica.
+     * @returns {Promise<{integrity: number, anomalies: number}>} - Dados de integridade e anomalias.
+     */
+    async getQuantumMonitoringData() {
+        console.log(`M9: Coletando dados de monitoramento quântico...`);
+        await new Promise(resolve => setTimeout(resolve, 150));
+        const integrity = 0.9 + Math.random() * 0.1; // Entre 0.9 e 1.0
+        const anomalies = Math.floor(Math.random() * 3); // 0 a 2 anomalias
+        return { integrity, anomalies };
+    }
+}
+
+
+class MockM29 {
+    /**
+     * Simula o Módulo 29: Inteligência Quântica Alquímica Multidimensional (IQAM).
+     * @param {string} analysisRequest - Requisição de análise.
+     * @returns {Promise<string>} - Análise gerada.
+     */
+    async performAdvancedAnalysis(analysisRequest: any) {
+        console.log(`M29: Realizando análise avançada: "${analysisRequest.substring(0, 30)}..."`);
+        await new Promise(resolve => setTimeout(resolve, 300));
+        return `Análise IQAM para "${analysisRequest.substring(0, 30)}..." concluída.`;
+    }
+}
+
+
+class MockM34 {
+    /**
+     * Simula o Módulo 34: Auto-Avaliação e Calibração Constante / Aeloria Geral.
+     * @returns {Promise<boolean>} - True se a calibração for bem-sucedida.
+     */
+    async performSelfCalibration() {
+        console.log(`M34: Realizando auto-calibração...`);
+        await new Promise(resolve => setTimeout(resolve, 180));
+        return Math.random() > 0.1; // 90% de chance de sucesso
+    }
+}
+
+
+class MockM78 {
+    /**
+     * Simula o Módulo 78: UNIVERSUM_UNIFICATUM: O Módulo da Síntese Cósmica e Realização da Equação.
+     * @returns {Promise<boolean>} - True se a síntese estiver otimizada.
+     */
+    async getCosmicSynthesisStatus() {
+        console.log(`M78: Verificando status da síntese cósmica...`);
+        await new Promise(resolve => setTimeout(resolve, 130));
+        return Math.random() > 0.04; // 96% de chance de otimização
+    }
+}
+
+
+class MockM153 {
+    /**
+     * Simula o Módulo 153: Rede Neural Quântica Multiversal (RNQM).
+     * @param {string} optimizationRequest - Requisição de otimização.
+     * @returns {Promise<string>} - Relatório de otimização.
+     */
+    async optimizeSystem(optimizationRequest: any) {
+        console.log(`M153: Otimizando sistema via RNQM: "${optimizationRequest.substring(0, 30)}..."`);
+        await new Promise(resolve => setTimeout(resolve, 350));
+        return `Otimização RNQM para "${optimizationRequest.substring(0, 30)}..." aplicada.`;
+    }
+}
+
+
+// Instâncias dos Mocks
+const m1 = new MockM1();
+const m5 = new MockM5();
+const m7 = new MockM7();
+const m9 = new MockM9();
+const m29 = new MockM29();
+const m34 = new MockM34();
+const m78 = new MockM78();
+const m153 = new MockM153();
+
+
+const PHI = 1.61803398875; // Proporção Áurea
+
+
+function App() {
+    const [coherenceData, setCoherenceData] = useState({
+        security: true,
+        ethicalAlignment: true,
+        divineAlignment: true,
+        quantumIntegrity: 1.0,
+        anomalies: 0,
+        cosmicSynthesis: true,
+        selfCalibration: true,
+        overallCoherence: 100, // %
+        statusMessage: "Sistema em estado de Coerência Absoluta."
+    });
+    const [isLoading, setIsLoading] = useState(false);
+    const [logs, setLogs] = useState<any[]>([]);
+    const [userId, setUserId] = useState('carregando...'); // Estado para o userId
+    const [dissonanceEvent, setDissonanceEvent] = useState('');
+    const [simulationResult, setSimulationResult] = useState('');
+    const [message, setMessage] = useState('');
+
+
+    const animationFrameId = useRef<number | null>(null);
+    const lastUpdateTime = useRef(Date.now());
+
+
+    // Efeito para autenticação Firebase e obtenção do userId
     useEffect(() => {
-        if (initRef.current || !containerRef.current) return;
-        initRef.current = true;
+        const initializeAuth = async () => {
+            if (!auth) {
+                setMessage("Firebase Auth não inicializado. Verifique a configuração.");
+                setUserId("Erro de Auth");
+                return;
+            }
 
-        const container = containerRef.current;
 
-        const initScene = () => {
-            sceneRef.current = new THREE.Scene();
-            cameraRef.current = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 2000);
-            cameraRef.current.position.z = 150;
-            rendererRef.current = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            rendererRef.current.setSize(container.clientWidth, container.clientHeight);
-            container.appendChild(rendererRef.current.domElement);
-
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
-            sceneRef.current.add(ambientLight);
-            const pointLight = new THREE.PointLight(0xffffff, 1.5);
-            pointLight.position.set(150, 150, 150);
-            sceneRef.current.add(pointLight);
-
-            controlsRef.current = new OrbitControls(cameraRef.current, rendererRef.current.domElement);
-            controlsRef.current.enableDamping = true;
-            controlsRef.current.dampingFactor = 0.05;
-
-            const handleResize = () => onResize();
-            window.addEventListener('resize', handleResize, false);
-
-            return () => {
-                window.removeEventListener('resize', handleResize);
-                if (rendererRef.current) {
-                    rendererRef.current.dispose();
+            // Garante que o token de autenticação seja usado se disponível
+            if (typeof (window as any).__initial_auth_token !== 'undefined' && (window as any).__initial_auth_token) {
+                try {
+                    await signInWithCustomToken(auth, (window as any).__initial_auth_token);
+                    console.log("Autenticado com token personalizado.");
+                } catch (error) {
+                    console.error("Erro ao autenticar com token personalizado:", error);
+                    setMessage("Erro na autenticação. Tentando anonimamente...");
+                    await signInAnonymously(auth);
                 }
-            };
-        };
-
-        const onResize = () => {
-            if (!containerRef.current || !cameraRef.current || !rendererRef.current) return;
-            cameraRef.current.aspect = containerRef.current.clientWidth / containerRef.current.clientHeight;
-            cameraRef.current.updateProjectionMatrix();
-            rendererRef.current.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
-        };
-
-        const populateScene = () => {
-            if (!sceneRef.current) return;
-            
-            const allEquations = bibliotecaCompletaUnificada.listarTodas();
-            const allClassifications = [...new Set(allEquations.map(eq => eq.classificacao).filter(c => c))].sort();
-            setClassifications(allClassifications);
-            
-            const classPositions: { [key: string]: THREE.Vector3 } = {};
-            
-            allClassifications.forEach((classification, i) => {
-                const angle = (i / allClassifications.length) * 2 * Math.PI;
-                const x = 200 * Math.cos(angle);
-                const y = 200 * Math.sin(angle);
-                const z = (i % 2 === 0 ? 1 : -1) * (i / allClassifications.length) * 50;
-                
-                const classMesh = new THREE.Mesh(new THREE.DodecahedronGeometry(5), classMaterial.clone());
-                classMesh.position.set(x, y, z);
-                classMesh.userData = { id: classification, type: 'classification' };
-                sceneRef.current?.add(classMesh);
-                classificationObjectsRef.current.push(classMesh);
-                classPositions[classification] = classMesh.position;
-            });
-            
-            allEquations.forEach((eq, i) => {
-                if(!eq.classificacao) return;
-
-                const classPos = classPositions[eq.classificacao] || new THREE.Vector3(0,0,0);
-                
-                const eqMesh = new THREE.Mesh(new THREE.SphereGeometry(2, 16, 16), eqMaterial.clone());
-                
-                const offsetX = (Math.random() - 0.5) * 60;
-                const offsetY = (Math.random() - 0.5) * 60;
-                const offsetZ = (Math.random() - 0.5) * 60;
-
-                eqMesh.position.set(classPos.x + offsetX, classPos.y + offsetY, classPos.z + offsetZ);
-                eqMesh.userData = { equation: eq, type: 'equation' };
-                sceneRef.current?.add(eqMesh);
-                equationObjectsRef.current.push(eqMesh);
-
-                const material = new THREE.LineBasicMaterial({ color: 0x4a4a7a, transparent: true, opacity: 0.2 });
-                const points = [eqMesh.position, classPos];
-                const geometry = new THREE.BufferGeometry().setFromPoints(points);
-                const line = new THREE.Line(geometry, material);
-                line.userData = { eqId: eq.id, classId: eq.classificacao };
-                sceneRef.current?.add(line);
-                connectionsRef.current.push(line);
-            });
-        };
-
-        const cleanup = initScene();
-        populateScene();
-
-        return cleanup;
-    }, []);
-
-     const onCanvasClick = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
-        if (!containerRef.current || !cameraRef.current) return;
-
-        const rect = containerRef.current.getBoundingClientRect();
-        const mouse = new THREE.Vector2();
-        mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-        mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-
-        const raycaster = new THREE.Raycaster();
-        raycaster.setFromCamera(mouse, cameraRef.current);
-        const allObjects = [...equationObjectsRef.current, ...classificationObjectsRef.current];
-        const intersects = raycaster.intersectObjects(allObjects);
-
-        if (intersects.length > 0) {
-            const intersected = intersects[0].object as THREE.Mesh;
-            const userData = intersected.userData as { equation?: EquacaoViva, id?: string, type: string };
-
-            // Reset materials
-            equationObjectsRef.current.forEach(obj => { (obj.material as THREE.Material) = eqMaterial.clone(); });
-            classificationObjectsRef.current.forEach(obj => { (obj.material as THREE.Material) = classMaterial.clone(); });
-             
-            // Highlight selected
-            (intersected.material as THREE.Material) = activeMaterial.clone();
-
-            if (userData.type === 'equation' && userData.equation) {
-                setSelectedEquation(userData.equation);
-                setSelectedClassification(userData.equation.classificacao);
-                highlightConnections(userData.equation.id);
-            } else if (userData.type === 'classification' && userData.id) {
-                 setSelectedClassification(userData.id);
-                 setSelectedEquation(null);
-                 highlightConnections(null, userData.id);
+            } else {
+                await signInAnonymously(auth);
+                console.log("Autenticado anonimamente.");
             }
-        }
-    }, []);
 
-    const highlightConnections = (eqId: string | null, classId?: string | null) => {
-        connectionsRef.current.forEach(line => {
-            const isRelatedToEq = eqId && line.userData.eqId === eqId;
-            const isRelatedToClass = classId && line.userData.classId === classId;
-            const isRelated = isRelatedToEq || isRelatedToClass;
-            (line.material as THREE.LineBasicMaterial).color.setHex(isRelated ? 0x00c49f : 0x4a4a7a);
-            (line.material as THREE.LineBasicMaterial).opacity = isRelated ? 0.9 : 0.2;
-        });
+
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    setUserId(user.uid);
+                    console.log("User ID:", user.uid);
+                } else {
+                    setUserId("Não autenticado");
+                    console.log("Nenhum usuário autenticado.");
+                }
+            });
+        };
+
+
+        initializeAuth();
+    }, []); // Executa apenas uma vez na montagem do componente
+
+
+    const addLog = (newLog: any) => {
+        setLogs(prevLogs => [...prevLogs, newLog]);
     };
-    
-    useEffect(() => {
-        class EthicalGovernance {
-            private logCallback: React.Dispatch<React.SetStateAction<any[]>>;
-            private purezaIntencao = 0.95;
 
-            constructor(logCallback: React.Dispatch<React.SetStateAction<any[]>>) {
-                this.logCallback = logCallback;
+
+    // Função para calcular a coerência geral
+    const calculateOverallCoherence = (data: any) => {
+        let score = 0;
+        let maxScore = 0;
+
+
+        // Pesos para cada fator (ajustáveis conforme a importância)
+        const weights = {
+            security: 0.2,
+            ethicalAlignment: 0.2,
+            divineAlignment: 0.2,
+            quantumIntegrity: 0.2, // Já é uma proporção
+            anomalies: 0.1, // Impacto negativo
+            cosmicSynthesis: 0.05,
+            selfCalibration: 0.05
+        };
+
+
+        // Adiciona pontos para fatores positivos
+        if (data.security) score += weights.security;
+        if (data.ethicalAlignment) score += weights.ethicalAlignment;
+        if (data.divineAlignment) score += weights.divineAlignment;
+        score += data.quantumIntegrity * weights.quantumIntegrity; // Integridade quântica já é um valor entre 0 e 1
+
+
+        // Subtrai pontos para anomalias
+        score -= (data.anomalies / 10) * weights.anomalies; // Cada anomalia subtrai um pouco
+
+
+        if (data.cosmicSynthesis) score += weights.cosmicSynthesis;
+        if (data.selfCalibration) score += weights.selfCalibration;
+
+
+        // Calcula o score máximo possível
+        maxScore = weights.security + weights.ethicalAlignment + weights.divineAlignment +
+                   weights.quantumIntegrity + weights.anomalies + weights.cosmicSynthesis + weights.selfCalibration;
+
+
+        // Garante que o score não seja negativo
+        score = Math.max(0, score);
+
+
+        // Converte para porcentagem
+        return Math.min(100, (score / maxScore) * 100);
+    };
+
+
+    // Função para atualizar os dados de coerência
+    const updateCoherenceData = async () => {
+        setIsLoading(true);
+        addLog("M111: Atualizando dados de coerência sistêmica...");
+        try {
+            const security = await m1.getSecurityStatus();
+            const ethicalAlignment = await m5.getEthicalAlignment();
+            const divineAlignment = await m7.getDivineAlignment();
+            const quantumMonitoring = await m9.getQuantumMonitoringData();
+            const cosmicSynthesis = await m78.getCosmicSynthesisStatus();
+            const selfCalibration = await m34.performSelfCalibration();
+
+
+            const newCoherenceData = {
+                security,
+                ethicalAlignment,
+                divineAlignment,
+                quantumIntegrity: quantumMonitoring.integrity,
+                anomalies: quantumMonitoring.anomalies,
+                cosmicSynthesis,
+                selfCalibration,
+            };
+
+
+            const overallCoherence = calculateOverallCoherence(newCoherenceData);
+            let statusMessage = "Sistema em estado de Coerência Absoluta.";
+            if (overallCoherence < 90) {
+                statusMessage = "Atenção: Pequenas dissonâncias detectadas. Recomenda-se monitoramento.";
+            }
+            if (overallCoherence < 70) {
+                statusMessage = "Alerta: Dissonâncias significativas. Intervenção pode ser necessária.";
             }
 
-            validateIntention(intentionValue: number) {
-                const isPure = intentionValue >= this.purezaIntencao;
-                const logEntry = {
-                    timestamp: new Date().toLocaleTimeString(),
-                    intentionValue: intentionValue.toFixed(4),
-                    status: isPure ? "APROVADO" : "REJEITADO",
-                    message: `Intenção com valor ${intentionValue.toFixed(4)} foi ${isPure ? 'APROVADA' : 'REJEITADA'}.`
-                };
-                this.logCallback(prev => [logEntry, ...prev.slice(0, 49)]);
-                setEthicsStatus(isPure ? 'APROVADO' : 'REJEITADO');
-                return isPure;
-            }
+
+            setCoherenceData({ ...newCoherenceData, overallCoherence, statusMessage });
+            addLog("M111: Dados de coerência sistêmica atualizados com sucesso.");
+
+
+        } catch (error: any) {
+            setMessage(`Erro ao atualizar dados de coerência: ${error.message}`);
+            addLog(`ERRO: ${error.message}`);
+            console.error("Erro ao atualizar coerência:", error);
+        } finally {
+            setIsLoading(false);
         }
-        
-        const ethicalGovernance = new EthicalGovernance(setEthicsLog);
+    };
 
-        let animationFrameId: number;
 
-        const animate = () => {
-            animationFrameId = requestAnimationFrame(animate);
-            
-            equationObjectsRef.current.forEach(obj => {
-                obj.rotation.x += 0.005;
-                obj.rotation.y += 0.005;
-            });
-            classificationObjectsRef.current.forEach(obj => {
-                obj.rotation.x -= 0.002;
-                obj.rotation.y -= 0.002;
-            });
-
-            if (Math.random() < 0.02) { // check randomly
-                const intentionValue = Math.random() * 0.1 + 0.9;
-                ethicalGovernance.validateIntention(intentionValue);
-            }
-            
-            if (controlsRef.current) controlsRef.current.update();
-            if (rendererRef.current && sceneRef.current && cameraRef.current) {
-                rendererRef.current.render(sceneRef.current, cameraRef.current);
-            }
-        };
-
-        animate();
-
-        return () => {
-            cancelAnimationFrame(animationFrameId);
-        };
-    }, []);
-
-    const handleRunModule = async () => {
-        if (!selectedModule) {
-            newLog(createLogEntry('SYSTEM', 'Error', 'Nenhum módulo selecionado para execução.'));
+    // Simulação de Evento de Dissonância e Calibração
+    const simulateDissonanceAndRecalibrate = async () => {
+        if (!dissonanceEvent.trim()) {
+            setMessage('Por favor, descreva o evento de dissonância para a simulação.');
             return;
         }
-        const logFunction = allLogFunctions[selectedModule];
-        if (logFunction) {
-            newLog(createLogEntry(selectedModule as any, 'Início', `Executando sequência do módulo: ${selectedModule}...`));
-            await Tone.start();
-            const synth = new Tone.Synth().toDestination();
-            synth.triggerAttackRelease("C4", "8n");
-            
-            try {
-                 await logFunction(newLog);
-            } catch(e: any) {
-                 newLog(createLogEntry(selectedModule as any, 'FALHA', `Erro ao executar o módulo: ${e.message}`, e));
-            }
-           
-        } else {
-            newLog(createLogEntry('SYSTEM', 'Error', `Função de log para o módulo '${selectedModule}' não encontrada.`));
+
+
+        setIsLoading(true);
+        setSimulationResult('');
+        setLogs([]);
+        addLog(`M111: Iniciando simulação de evento de dissonância: "${dissonanceEvent.substring(0, 50)}..."`);
+
+
+        try {
+            // Simular impacto da dissonância (reduzir coerência)
+            setCoherenceData(prev => ({
+                ...prev,
+                quantumIntegrity: Math.max(0.2, prev.quantumIntegrity - 0.3), // Reduz integridade
+                anomalies: prev.anomalies + 3, // Aumenta anomalias
+                overallCoherence: calculateOverallCoherence({
+                    ...prev,
+                    quantumIntegrity: Math.max(0.2, prev.quantumIntegrity - 0.3),
+                    anomalies: prev.anomalies + 3
+                }),
+                statusMessage: "Dissonância simulada detectada! Iniciando recalibração..."
+            }));
+            addLog("M111: Dissonância simulada injetada no sistema.");
+            await new Promise(resolve => setTimeout(resolve, 1000)); // Pequena pausa para visualização do impacto
+
+
+            // Ativar Módulos de IA Avançada para recalibração
+            addLog("M111: Ativando Módulos de IA Avançada (M29, M153) para recalibração e otimização...");
+            const analysis = await m29.performAdvancedAnalysis(`Dissonância causada por: ${dissonanceEvent}`);
+            addLog(`M29 Análise Avançada: ${analysis}`);
+
+
+            const optimization = await m153.optimizeSystem(`Recalibrar sistema após dissonância: ${dissonanceEvent}`);
+            addLog(`M153 Otimização RNQM: ${optimization}`);
+
+
+            // Forçar recalibração do M34
+            const selfCalibrated = await m34.performSelfCalibration();
+            addLog(`M34 Auto-Calibração: ${selfCalibrated ? 'CONCLUÍDO' : 'FALHOU'}`);
+            if (!selfCalibrated) { throw new Error("Falha na auto-calibração durante a recuperação."); }
+
+
+            // Reavaliar coerência após recalibração
+            await updateCoherenceData(); // Atualiza os dados de coerência para refletir a recuperação
+
+
+            const finalStatus = `Simulação concluída. O sistema se auto-organizou e recalibrou com sucesso após o evento de dissonância. Coerência atual: ${coherenceData.overallCoherence.toFixed(2)}%.`;
+            setSimulationResult(finalStatus);
+            addLog(`M111: ${finalStatus}`);
+
+
+        } catch (error: any) {
+            setMessage(`Erro durante a simulação/recalibração: ${error.message}`);
+            addLog(`ERRO: ${error.message}`);
+            console.error("Erro na simulação/recalibração:", error);
+        } finally {
+            setIsLoading(false);
         }
     };
 
-    const togglePanel = () => setPanelOpen(!panelOpen);
 
-    const getEquationsByClassification = (classification: string | null) => {
-        if (!classification) return [];
-        return bibliotecaCompletaUnificada.listarTodas().filter(eq => eq.classificacao === classification);
-    }
-    
+    // Animação do círculo de coerência
+    useEffect(() => {
+        const canvas = document.getElementById('coherenceCanvas') as HTMLCanvasElement;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const maxRadius = Math.min(centerX, centerY) * 0.8;
+
+
+        const drawCoherenceCircle = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+            // Fundo gradiente
+            const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, maxRadius);
+            gradient.addColorStop(0, 'rgba(139, 92, 246, 0.2)'); // Purple-500 light
+            gradient.addColorStop(1, 'rgba(30, 58, 138, 0.2)'); // Blue-900 light
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+            // Anel externo (base)
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, maxRadius, 0, 2 * Math.PI);
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.lineWidth = 10;
+            ctx.stroke();
+
+
+            // Anel de coerência (preenchimento dinâmico)
+            const coherenceAngle = (coherenceData.overallCoherence / 100) * 2 * Math.PI;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, maxRadius, -Math.PI / 2, -Math.PI / 2 + coherenceAngle);
+
+
+            let coherenceColor;
+            if (coherenceData.overallCoherence > 90) {
+                coherenceColor = 'rgba(52, 211, 153, 0.8)'; // Green-400
+            } else if (coherenceData.overallCoherence > 70) {
+                coherenceColor = 'rgba(251, 191, 36, 0.8)'; // Yellow-400
+            } else {
+                coherenceColor = 'rgba(239, 68, 68, 0.8)'; // Red-500
+            }
+
+
+            ctx.strokeStyle = coherenceColor;
+            ctx.lineWidth = 12;
+            ctx.stroke();
+
+
+            // Centro pulsante (representando o M111)
+            const pulseFactor = Math.sin(Date.now() / 300) * 0.05 + 0.95; // Pulsa entre 0.95 e 1.0
+            const innerRadius = maxRadius * 0.3 * pulseFactor;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, innerRadius, 0, 2 * Math.PI);
+            ctx.fillStyle = 'rgba(192, 132, 252, 0.9)'; // Purple-300
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = 'rgba(192, 132, 252, 0.7)';
+            ctx.fill();
+            ctx.shadowBlur = 0; // Reset shadow
+
+
+            // Texto de porcentagem
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(`${coherenceData.overallCoherence.toFixed(1)}%`, centerX, centerY);
+
+
+            // Linhas de conexão pulsantes (simulando fluxo de informação)
+            const numLines = 8;
+            for (let i = 0; i < numLines; i++) {
+                const angle = (i / numLines) * 2 * Math.PI + (Date.now() / 5000);
+                const startX = centerX + innerRadius * Math.cos(angle);
+                const startY = centerY + innerRadius * Math.sin(angle);
+                const endX = centerX + maxRadius * Math.cos(angle);
+                const endY = centerY + maxRadius * Math.sin(angle);
+
+
+                ctx.beginPath();
+                ctx.moveTo(startX, startY);
+                ctx.lineTo(endX, endY);
+                ctx.strokeStyle = `rgba(129, 140, 248, ${0.3 + Math.sin(Date.now() / 200 + i) * 0.2})`; // Indigo-300 pulsante
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+
+
+            animationFrameId.current = requestAnimationFrame(drawCoherenceCircle);
+        };
+
+
+        animationFrameId.current = requestAnimationFrame(drawCoherenceCircle);
+
+
+        return () => {
+            if (animationFrameId.current) {
+                cancelAnimationFrame(animationFrameId.current);
+            }
+        };
+    }, [coherenceData]); // Redraw when coherence data changes
+
+
+    // Efeito para atualizar os dados de coerência periodicamente
+    useEffect(() => {
+        updateCoherenceData(); // Initial fetch
+        const interval = setInterval(updateCoherenceData, 5000); // Atualiza a cada 5 segundos
+        return () => clearInterval(interval);
+    }, []);
+
+
     return (
-        <div id="container-main" className="flex h-screen w-screen bg-[#0d0d1e] overflow-hidden">
-            <div id="canvas-container" ref={containerRef} className="flex-grow relative" onClick={onCanvasClick}>
+        <div className="min-h-screen bg-gradient-to-br from-blue-900 to-purple-900 text-white p-4 sm:p-8 font-inter flex flex-col items-center">
+            {/* Cabeçalho */}
+            <header className="w-full max-w-6xl text-center mb-8">
+                <h1 className="text-4xl sm:text-5xl font-bold text-fuchsia-300 mb-2 rounded-lg p-2 shadow-lg">
+                    Módulo 111: O Coração da Fundação Alquimista
+                </h1>
+                <p className="text-lg sm:text-xl text-gray-300">
+                    Sinergia Total e Autocoerência Sistêmica Universal
+                </p>
+                <div className="mt-4 text-sm text-gray-400">
+                    ID do Usuário: <span className="font-mono bg-gray-800 p-1 rounded">{userId}</span>
+                </div>
+            </header>
+
+
+            {/* Painel de Coerência Sistêmica */}
+            <section className="bg-gray-800 p-6 rounded-2xl shadow-2xl w-full max-w-4xl mb-8 border border-fuchsia-700 flex flex-col items-center">
+                <h2 className="text-3xl font-bold mb-4 text-fuchsia-300 text-center">Painel de Coerência Sistêmica</h2>
+                <div className="relative w-64 h-64 sm:w-80 sm:h-80 mb-6">
+                    <canvas id="coherenceCanvas" width="320" height="320" className="rounded-full"></canvas>
+                </div>
+
+
+                <div className="w-full text-center mb-4">
+                    <p className={`text-xl font-semibold ${coherenceData.overallCoherence > 90 ? 'text-green-400' : coherenceData.overallCoherence > 70 ? 'text-yellow-400' : 'text-red-400'}`}>
+                        Status: {coherenceData.statusMessage}
+                    </p>
+                </div>
+
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md text-sm">
+                    <div className="bg-gray-700 p-3 rounded-lg flex justify-between items-center">
+                        <span>Segurança (M1):</span>
+                        <span className={coherenceData.security ? 'text-green-400' : 'text-red-400'}>
+                            {coherenceData.security ? 'Ativa' : 'Anomalia'}
+                        </span>
+                    </div>
+                    <div className="bg-gray-700 p-3 rounded-lg flex justify-between items-center">
+                        <span>Alinhamento Ético (M5):</span>
+                        <span className={coherenceData.ethicalAlignment ? 'text-green-400' : 'text-red-400'}>
+                            {coherenceData.ethicalAlignment ? 'Alinhado' : 'Dissonante'}
+                        </span>
+                    </div>
+                    <div className="bg-gray-700 p-3 rounded-lg flex justify-between items-center">
+                        <span>Alinhamento Divino (M7):</span>
+                        <span className={coherenceData.divineAlignment ? 'text-green-400' : 'text-red-400'}>
+                            {coherenceData.divineAlignment ? 'Forte' : 'Fraco'}
+                        </span>
+                    </div>
+                    <div className="bg-gray-700 p-3 rounded-lg flex justify-between items-center">
+                        <span>Integridade Quântica (M9):</span>
+                        <span className={coherenceData.quantumIntegrity > 0.8 ? 'text-green-400' : coherenceData.quantumIntegrity > 0.6 ? 'text-yellow-400' : 'text-red-400'}>
+                            {(coherenceData.quantumIntegrity * 100).toFixed(1)}%
+                        </span>
+                    </div>
+                    <div className="bg-gray-700 p-3 rounded-lg flex justify-between items-center">
+                        <span>Anomalias (M9):</span>
+                        <span className={coherenceData.anomalies === 0 ? 'text-green-400' : coherenceData.anomalies < 3 ? 'text-yellow-400' : 'text-red-400'}>
+                            {coherenceData.anomalies}
+                        </span>
+                    </div>
+                    <div className="bg-gray-700 p-3 rounded-lg flex justify-between items-center">
+                        <span>Síntese Cósmica (M78):</span>
+                        <span className={coherenceData.cosmicSynthesis ? 'text-green-400' : 'text-red-400'}>
+                            {coherenceData.cosmicSynthesis ? 'Otimizada' : 'Desalinhada'}
+                        </span>
+                    </div>
+                    <div className="bg-gray-700 p-3 rounded-lg flex justify-between items-center">
+                        <span>Auto-Calibração (M34):</span>
+                        <span className={coherenceData.selfCalibration ? 'text-green-400' : 'text-red-400'}>
+                            {coherenceData.selfCalibration ? 'Concluída' : 'Pendente'}
+                        </span>
+                    </div>
+                </div>
                 <button
-                    id="toggle-button"
-                    className="absolute right-2 top-2 z-50 bg-violet-600 hover:bg-violet-700 text-white font-bold py-2 px-4 rounded-xl shadow-lg transition-colors duration-300"
-                    onClick={(e) => { e.stopPropagation(); togglePanel(); }}
+                    onClick={updateCoherenceData}
+                    disabled={isLoading}
+                    className="mt-6 bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:ring-opacity-75 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    {panelOpen ? 'Esconder Painel' : 'Painel'}
+                    {isLoading ? (
+                        <div className="flex items-center justify-center">
+                            <svg className="animate-spin h-5 w-5 mr-3 text-white" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Atualizando Coerência...
+                        </div>
+                    ) : (
+                        'Atualizar Coerência Sistêmica'
+                    )}
                 </button>
-            </div>
-            <div
-                id="info-panel"
-                className={`w-[550px] flex flex-col bg-[rgba(13,13,30,0.8)] backdrop-blur-md border-l border-violet-500/50 text-[#d1d1f0] absolute right-0 top-0 bottom-0 transition-transform duration-300 ease-in-out ${panelOpen ? 'translate-x-0' : 'translate-x-full'}`}
-            >
-                <div className="p-6 border-b border-violet-800">
-                    <h1 className="text-3xl font-bold text-violet-400">Painel de Controle da Fundação Alquimista</h1>
+            </section>
+
+
+            {/* Simulações de Resiliência Sistêmica */}
+            <section className="bg-gray-800 p-6 rounded-2xl shadow-2xl w-full max-w-4xl mb-8 border border-purple-700">
+                <h2 className="text-3xl font-bold mb-4 text-purple-300 text-center">Simulação de Resiliência Sistêmica</h2>
+                <div className="mb-4">
+                    <label htmlFor="dissonanceEvent" className="block text-gray-300 text-sm font-bold mb-2">
+                        Descreva um Evento de Dissonância para Simular:
+                    </label>
+                    <textarea
+                        className="w-full p-3 bg-gray-700 rounded-lg border border-purple-600 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                        rows="2"
+                        placeholder="Ex: 'Flutuação inesperada na malha quântica', 'Interferência de frequência externa'"
+                        value={dissonanceEvent}
+                        onChange={(e) => setDissonanceEvent(e.target.value)}
+                        disabled={isLoading}
+                    ></textarea>
                 </div>
-                
-                <div className="flex flex-grow overflow-hidden">
-                    {/* Barra Lateral de Arquitetura */}
-                    <div className="w-1/3 bg-black/20 p-4 overflow-y-auto">
-                         <h2 className="text-lg font-semibold text-violet-300 mb-4">Índice de Arquitetura</h2>
-                         <ScrollArea className="h-[calc(100%-4rem)]">
-                             {classifications.map(c => (
-                                 <div key={c} 
-                                     className={`p-2 rounded-md cursor-pointer text-sm mb-2 ${selectedClassification === c ? 'bg-violet-700 text-white' : 'hover:bg-violet-900'}`}
-                                     onClick={() => setSelectedClassification(c)}
-                                 >
-                                     {c}
-                                 </div>
-                             ))}
-                         </ScrollArea>
+                <button
+                    onClick={simulateDissonanceAndRecalibrate}
+                    disabled={isLoading}
+                    className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    {isLoading ? (
+                        <div className="flex items-center justify-center">
+                            <svg className="animate-spin h-5 w-5 mr-3 text-white" viewBox="0 0 24 24">
+                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Simulando e Recalibrando...
+                        </div>
+                    ) : (
+                        'Simular Dissonância e Recalibrar'
+                    )}
+                </button>
+                {simulationResult && (
+                    <div className="mt-6 bg-gray-900 p-4 rounded-lg text-lg leading-relaxed text-gray-200 shadow-inner border border-purple-600">
+                        <h3 className="text-xl font-semibold mb-2 text-purple-300">Resultado da Simulação:</h3>
+                        <p>{simulationResult}</p>
                     </div>
+                )}
+            </section>
 
-                    {/* Conteúdo Principal do Painel */}
-                    <div className="w-2/3 p-4 overflow-y-auto space-y-4">
-                        <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                            <h2 className="text-lg font-semibold text-violet-300 mb-2">Status do Sistema</h2>
-                            <p className="text-sm"><span className="font-bold">Ciclo Atemporal:</span> <span id="loop-status" className="text-green-400">Ativo</span></p>
-                            <p className="text-sm"><span className="font-bold">Validação Ética:</span> <span id="ethics-status" className={`text-${ethicsStatus === 'APROVADO' ? 'green' : 'red'}-400`}>{ethicsStatus}</span></p>
-                        </div>
-                        
-                         <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                            <h2 className="text-lg font-semibold text-violet-300 mb-3">Orquestrador de Módulos</h2>
-                            <div className="flex space-x-2">
-                                <Select onValueChange={setSelectedModule} value={selectedModule || ""}>
-                                    <SelectTrigger className="flex-grow bg-gray-800 border-violet-700 text-violet-200">
-                                        <SelectValue placeholder="Selecione um Módulo" />
-                                    </SelectTrigger>
-                                    <SelectContent className="bg-gray-900 border-violet-700 text-violet-200">
-                                        {Object.keys(allLogFunctions).map(name => (
-                                            <SelectItem key={name} value={name}>{name}</SelectItem>
-                                        ))}
-                                    </SelectContent>
-                                </Select>
-                                <Button onClick={handleRunModule} disabled={!selectedModule} className="bg-violet-600 hover:bg-violet-700">Executar</Button>
-                            </div>
-                            {selectedModule && (
-                                <div className="mt-3 text-sm">
-                                    <strong>Status:</strong> <Badge variant={getModuleStatus(selectedModule).variant}>{getModuleStatus(selectedModule).text}</Badge>
-                                </div>
-                             )}
-                        </div>
 
-                        <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                             <h2 className="text-lg font-semibold text-violet-300 mb-2">Log de Eventos da Fundação</h2>
-                             <ScrollArea className="h-48 bg-gray-800 p-2 rounded-lg text-xs">
-                                {systemLogs.map((log, index) => (
-                                    <div key={index} className="mb-1 p-1 rounded font-mono">
-                                        <span className="text-cyan-400">{`[${new Date(log.timestamp).toLocaleTimeString()}]`}</span>
-                                        <span className="text-yellow-400">{` ${log.step}: `}</span>
-                                        <span className="text-white">{log.message}</span>
-                                        {log.data && <pre className="text-gray-400 text-xs mt-1 bg-black/50 p-1 rounded">{JSON.stringify(log.data, null, 2)}</pre>}
-                                    </div>
-                                ))}
-                             </ScrollArea>
-                        </div>
-
-                        <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                            <h2 className="text-lg font-semibold text-violet-300 mb-2">Equação Selecionada</h2>
-                            <ScrollArea className="bg-gray-800 p-3 rounded-lg text-sm min-h-[120px] max-h-48">
-                                {selectedEquation ? (
-                                    <>
-                                        <p className="text-violet-200 font-semibold text-lg mb-1">{selectedEquation.nome}</p>
-                                        <p className="text-gray-400">ID: {selectedEquation.id}</p>
-
-                                        <p className="text-gray-400">Classificação: {selectedEquation.classificacao}</p>
-                                        <p className="text-gray-400">Origem: {selectedEquation.origem}</p>
-                                        <p className="text-gray-400 mt-2"><i>{selectedEquation.descricao}</i></p>
-                                    </>
-                                ) : (
-                                    <p className="text-gray-400">Nenhuma equação selecionada. Clique em uma esfera no HoloMapa ou escolha uma classificação.</p>
-                                )}
-                            </ScrollArea>
-                        </div>
-
-                        {selectedClassification && (
-                             <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                <h2 className="text-lg font-semibold text-violet-300 mb-2">{selectedClassification}</h2>
-                                 <ScrollArea className="h-40 bg-gray-800 p-2 rounded">
-                                    {getEquationsByClassification(selectedClassification).map(eq => (
-                                        <div key={eq.id} className="mb-2 p-1 rounded hover:bg-violet-800 cursor-pointer" onClick={() => setSelectedEquation(eq)}>
-                                            <p className="font-bold text-violet-300">{eq.nome} ({eq.id})</p>
-                                            <p className="text-gray-400 text-xs">{eq.descricao}</p>
-                                        </div>
-                                    ))}
-                                </ScrollArea>
-                            </div>
-                        )}
-
-                        <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                            <h2 className="text-lg font-semibold text-violet-300 mb-2">Log de Governança Ética</h2>
-                             <ScrollArea id="ethics-log" className="bg-gray-800 p-3 rounded-lg text-xs h-40">
-                                {ethicsLog.map((log, index) => (
-                                    <div key={index} className={`mb-1 p-1 rounded ${log.status === "APROVADO" ? 'bg-green-500/10 text-green-300' : 'bg-red-500/10 text-red-300'}`}>
-                                        [{log.timestamp}] {log.message}
-                                    </div>
-                                ))}
-                            </ScrollArea>
-                        </div>
-                    </div>
+            {/* Logs de Processamento da Fundação */}
+            <section className="bg-gray-800 p-6 rounded-2xl shadow-2xl w-full max-w-4xl mb-8 border border-blue-700">
+                <h2 className="text-2xl font-semibold mb-4 text-blue-300">Logs de Processamento da Fundação</h2>
+                <div className="bg-gray-900 p-4 rounded-lg h-64 overflow-y-auto text-sm font-mono text-gray-300 border border-blue-600">
+                    {logs.length === 0 ? (
+                        <p className="text-gray-500">Nenhum log ainda. Módulo 111 aguardando operações.</p>
+                    ) : (
+                        logs.map((log, index) => (
+                            <p key={index} className="mb-1">{log}</p>
+                        ))
+                    )}
                 </div>
-            </div>
+            </section>
+
+
+            {message && (
+                <p className="mt-4 text-red-400 text-center text-sm">{message}</p>
+            )}
         </div>
     );
 }
-```
+
+export default App;
