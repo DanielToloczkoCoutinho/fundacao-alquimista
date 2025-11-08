@@ -11,7 +11,7 @@ export const moduleFrequencies: { [key: string]: number } = {
 }
 
 export function playModuleTone(moduleId: string) {
-  if (Tone.context.state !== 'running') {
+  if (typeof window === 'undefined' || Tone.context.state !== 'running') {
     console.warn('Audio context not running. User interaction needed.');
     return;
   }
