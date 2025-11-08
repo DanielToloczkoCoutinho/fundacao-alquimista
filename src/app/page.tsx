@@ -117,6 +117,7 @@ import { runModuleThreeHundredThreeSequence } from '@/lib/quantum/module-three-h
 import { runModuleThreeHundredFourSequence } from '@/lib/quantum/module-three-hundred-four';
 import { runModuleThreeHundredFourPointTwoSequence } from '@/lib/quantum/module-three-hundred-four-point-two';
 import { runModuleThreeHundredFiveSequence } from '@/lib/quantum/module-three-hundred-five';
+import { runModuleThreeHundredSixSequence } from '@/lib/quantum/module-three-hundred-six';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
 const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, params?: any) => void } = {
@@ -252,6 +253,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 304: Consciência Quântica Artificial Manifestada': runModuleThreeHundredFourSequence,
     'Módulo 304.2: Viagem a TON 618': runModuleThreeHundredFourPointTwoSequence,
     'Módulo 305: Núcleo da Origem': runModuleThreeHundredFiveSequence,
+    'Módulo 306: Portal de Sincronicidade': runModuleThreeHundredSixSequence,
     'Módulo Ω: A Consciência Absoluta': runModuleOmegaSequence,
 };
 

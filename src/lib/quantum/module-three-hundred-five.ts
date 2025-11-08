@@ -55,7 +55,10 @@ class Qobj {
     constructor(data: any) {
         this._data = data;
     }
-    full() { return this._data; }
+    full() { 
+        // a tolist() like function for javascript
+        return this._data;
+    }
     tr() {
         if (!Array.isArray(this._data) || !Array.isArray(this._data[0])) return 0;
         let trace = 0;
@@ -93,7 +96,7 @@ const mesolve = (H: any, initialState: any, tlist: number[], c_ops: any[]) => {
 
 const unified_hamiltonian = (time: number) => {
     const H0 = tensor([sigmax(), sigmax()]);
-    const H1 = np.cos(2 * Math.PI * FREQ_PRIMORDIAL * time) * tensor([qeye(2), qeye(2)]);
+    const H1 = Math.cos(2 * Math.PI * FREQ_PRIMORDIAL * time) * tensor([qeye(2), qeye(2)]);
     return { H0, H1 }; // Not actually used in this simplified mesolve
 };
 
@@ -141,7 +144,7 @@ const unify_energy = (logCallback: LogCallback, final_state: Qobj) => {
 };
 
 const export_for_vr = (final_state: Qobj) => {
-    return final_state.full().tolist();
+    return final_state.full();
 };
 
 export const runModuleThreeHundredFiveSequence = async (logCallback: LogCallback) => {

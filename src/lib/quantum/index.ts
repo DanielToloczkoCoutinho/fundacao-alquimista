@@ -87,6 +87,7 @@ import './module-three-hundred-three';
 import './module-three-hundred-four';
 import './module-three-hundred-four-point-two';
 import './module-three-hundred-five';
+import './module-three-hundred-six';
 import './module-omega';
 
 
