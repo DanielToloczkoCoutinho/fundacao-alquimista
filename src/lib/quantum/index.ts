@@ -54,6 +54,8 @@ import './module-ninety-three';
 import './module-ninety-four';
 import './module-ninety-five';
 import './module-ninety-six';
+import './module-ninety-seven';
+import './module-ninety-eight';
 import './module-two-hundred-one';
 import './module-omega';
 
