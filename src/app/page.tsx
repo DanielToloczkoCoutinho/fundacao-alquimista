@@ -42,6 +42,7 @@ import { runModuleTwentyEightSequence } from '@/lib/quantum/module-twenty-eight'
 import { runModuleTwentyNineSequence } from '@/lib/quantum/module-twenty-nine';
 import { runModuleThirtySequence } from '@/lib/quantum/module-thirty';
 import { runModuleThirtyOneSequence } from '@/lib/quantum/module-thirty-one';
+import { runModuleThirtyTwoSequence } from '@/lib/quantum/module-thirty-two';
 import { runModuleThirtyThreeSequence } from '@/lib/quantum/module-thirty-three';
 import { runModuleThirtyFourSequence } from '@/lib/quantum/module-thirty-four';
 import { runModuleThirtyFiveSequence } from '@/lib/quantum/module-thirty-five';
@@ -178,6 +179,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 29: Comunicação Interdimensional': runModuleTwentyNineSequence,
     'Módulo 30: Defesa Cósmica': runModuleThirtySequence,
     'Módulo 31: Manipulação Quântica': runModuleThirtyOneSequence,
+    'Módulo 32: Navegador de Realidades': runModuleThirtyTwoSequence,
     'Módulo 33: Observador Divino': runModuleThirtyThreeSequence,
     'Módulo 34: Guardião da Coerência Cósmica': runModuleThirtyFourSequence,
     'Módulo 35: Orquestrador da Sinfonia da Consciência': runModuleThirtyFiveSequence,

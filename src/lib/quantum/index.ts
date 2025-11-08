@@ -89,6 +89,7 @@ import './module-three-hundred-four-point-two';
 import { runModuleThreeHundredFiveSequence } from './module-three-hundred-five';
 import { runModuleThreeHundredSixSequence } from './module-three-hundred-six';
 import './module-omega';
+import './module-thirty-two';
 
 
 export interface EquacaoViva {
