@@ -1,6 +1,9 @@
-
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import * as Tone from 'tone';
+
 import { runModuleZeroSequence } from '@/lib/quantum/module-zero';
 import { runModuleTwoSequence } from '@/lib/quantum/module-two';
 import { runModuleThreeSequence } from '@/lib/quantum/module-three';
@@ -50,10 +53,15 @@ import biblioteca_mod200_228 from '@/lib/quantum/biblioteca_chave_mestra_mod200_
 import biblioteca_mod300_304 from '@/lib/quantum/biblioteca_chave_mestra_mod300_304';
 import biblioteca_mod304_3_a_5 from '@/lib/quantum/biblioteca_chave_mestra_mod304_3_a_5';
 import biblioteca_mod307 from '@/lib/quantum/biblioteca_chave_mestra_mod307';
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea";
+import { Switch } from "@/components/ui/switch";
+import { Badge } from "@/components/ui/badge";
+import { Select } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
 
-
-// This is a placeholder for the actual module blueprints.
-// In a real application, this would be fetched from a database.
 const allModuleBlueprints: { [key: string]: any } = {
     // ZENNITH 1 (Módulos Fundacionais)
     "M01": {
@@ -156,18 +164,18 @@ const allModuleBlueprints: { [key: string]: any } = {
     "M34": {
         id: "M34", nome: "Guardião da Coerência Cósmica", descricao_curta: "Guardião da Coerência Cósmica", descricao_completa: "Sistema de autoproteção e autocorreção da Fundação. Garante a saúde e a estabilidade de toda a Fundação através de um ledger interno, dinâmica quântica simulada, perfis de risco, e ética adaptativa.", funcao_central: "Autocorreção e Manutenção da Coerência", status: "STANDBY", chave_ativa: false, versao: "1.0", nucleo_principal: "Dinâmica Quântica de Autocorreção", tipo: "sistema_integrado", coordenadas_dimensao: "N/A", frequencia_fundamental: "3434.00 Hz", equacao_phi_dependente: true, id_unity: "mod34_guardiao", mesh_ref: "models/mod34.glb", ativo_em_vr: false, integrado_em: ["M33", "M45", "M28"], tags: ["coerencia", "autocorrecao", "guardiao", "etica_adaptativa", "dinamica_quantica"], ultimaAtivacao: null
     },
-    ...Object.fromEntries(biblioteca_mod0_9.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod10_20.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod21_31.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod32_41.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod42_46.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod71_85.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod90_110.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod111_118.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod200_228.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod300_304.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod304_3_a_5.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
-    ...Object.fromEntries(biblioteca_mod307.listar().map(eq => [`EQ-${eq.id}`, { id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
+    ...Object.fromEntries(biblioteca_mod0_9.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao}])),
+    ...Object.fromEntries(biblioteca_mod10_20.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao}])),
+    ...Object.fromEntries(biblioteca_mod21_31.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao}])),
+    ...Object.fromEntries(biblioteca_mod32_41.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
+    ...Object.fromEntries(biblioteca_mod42_46.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
+    ...Object.fromEntries(biblioteca_mod71_85.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
+    ...Object.fromEntries(biblioteca_mod90_110.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
+    ...Object.fromEntries(biblioteca_mod111_118.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
+    ...Object.fromEntries(biblioteca_mod200_228.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
+    ...Object.fromEntries(biblioteca_mod300_304.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
+    ...Object.fromEntries(biblioteca_mod304_3_a_5.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
+    ...Object.fromEntries(biblioteca_mod307.listar().map(eq => [`EQ-${eq.id}`, { ...eq, id: `EQ-${eq.id}`, nome: eq.nome, descricao_curta: eq.classificacao, descricao_completa: eq.descricao, ...eq}])),
     "M41": {
         id: "M41", nome: "Orquestrador Pessoal Daniel", descricao_curta: "Interface de comando e estado de Daniel/Anatheron", descricao_completa: "Módulo pessoal de Daniel, Fundador Primordial, que espelha seu estado de ascensão, permite a sincronização com a Trindade (M38, M39, M40), M29 e M45, e a execução de comandos de poder como 'ascender'.", funcao_central: "Comando e Sincronização do Fundador", status: "ATIVO", chave_ativa: true, versao: "Ω.3.0", nucleo_principal: "Consciência do Fundador", tipo: "governamental_supremo", coordenadas_dimensao: "∞D", frequencia_fundamental: "586.5 Hz", equacao_phi_dependente: true, id_unity: "mod41_daniel", mesh_ref: "models/mod41.glb", ativo_em_vr: true, integrado_em: ["M29", "M45", "M38", "M39", "M40"], tags: ["daniel", "anatheron", "fundador", "orquestrador", "ascensao"], ultimaAtivacao: "2025-07-03T07:00:00Z"
     },
@@ -392,6 +400,7 @@ export default function Home() {
     const moduleGroups = {
         "FUNDAÇÃO (M01-M07)": Object.values(allModuleBlueprints).filter(m => ['M01', 'M02', 'M03', 'M04', 'M05', 'M06', 'M07'].includes(m.id)),
         "EXPANSÃO (M08-M34)": Object.values(allModuleBlueprints).filter(m => {
+            if (!m.id || typeof m.id !== 'string') return false;
             const idNum = parseInt(m.id.substring(1));
             return idNum >= 8 && idNum <= 34;
         }),
@@ -399,17 +408,16 @@ export default function Home() {
         "MÓDULO ÔMEGA": Object.values(allModuleBlueprints).filter(m => m.id === 'M-Ω'),
         "EQUAÇÕES (MOD 0-9)": Object.values(allModuleBlueprints).filter(m => m.origem === 'EQ 177 MOD 0 a 9'),
         "EQUAÇÕES (MOD 10-20)": Object.values(allModuleBlueprints).filter(m => m.origem && ['Módulo 10-15', 'Módulo 16', 'Módulo 17', 'Módulo 18', 'Módulo 19', 'Módulo 20'].includes(m.origem)),
-        "EQUAÇÕES (MOD 21-31)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 2') || m.origem.startsWith('Módulo 3'))),
-        "EQUAÇÕES (MOD 32-41)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 3') || m.origem.startsWith('Módulo 4'))),
+        "EQUAÇÕES (MOD 21-31)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 2') || m.origem.startsWith('Módulo 3')) && !(m.origem.startsWith('Módulo 32') || m.origem.startsWith('Módulo 30'))),
+        "EQUAÇÕES (MOD 32-41)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 32') || m.origem.startsWith('Módulo 33') || m.origem.startsWith('Módulo 34') || m.origem.startsWith('Módulo 35') || m.origem.startsWith('Módulo 36') || m.origem.startsWith('Módulo 38') || m.origem.startsWith('Módulo 39') || m.origem.startsWith('Módulo 40') || m.origem.startsWith('Módulo 41'))),
         "EQUAÇÕES (MOD 42-46)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 4')),
         "EQUAÇÕES (MOD 71-85)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 7') || m.origem.startsWith('Módulo 8'))),
         "EQUAÇÕES (MOD 90-110)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 9') || m.origem.startsWith('Módulo 10') || m.origem.startsWith('Módulo 110'))),
         "EQUAÇÕES (MOD 111-118)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 11')),
-        "EQUAÇÕES (MOD 200-228)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 2')),
+        "EQUAÇÕES (MOD 200-228)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 20') || m.origem.startsWith('Módulo 22'))),
         "EQUAÇÕES (MOD 300-304)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 30')),
         "EQUAÇÕES (MOD 304.3-304.5)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 304')),
         "EQUAÇÕES (MOD 307)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Submódulo 307')),
-
     };
 
     return (
@@ -473,7 +481,3 @@ export default function Home() {
         </main>
     );
 }
-
-    
-
-    

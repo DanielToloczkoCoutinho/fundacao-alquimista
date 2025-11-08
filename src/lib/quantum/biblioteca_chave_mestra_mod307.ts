@@ -1,5 +1,5 @@
-
 'use client';
+import { type AnyLogEntry } from './module-zero';
 
 // =========================
 // Type Definitions
@@ -8,10 +8,8 @@
 type GaiaConstantValues = {
     PHI: number;
     FREQUENCIA_BASE_GAIA: number;
-    DENSIDADE_VACUO: number;
-    VELOCIDADE_LUZ: number;
-    MASSA_TON618: number;
     RAIO_TERRA: number;
+    C_LIGHT: number;
 };
 
 type EquacaoViva = {
@@ -30,18 +28,10 @@ type EquacaoViva = {
 // Constants
 // =========================
 
-const constantes_gaia: GaiaConstantValues = {
-    'PHI': 1.61803398875,
-    'FREQUENCIA_BASE_GAIA': 7.83,  // Hz - Ressonância Schumann
-    'DENSIDADE_VACUO': 1e-9,  // J/m³
-    'VELOCIDADE_LUZ': 299792458,
-    'MASSA_TON618': 6.6e10,
-    'RAIO_TERRA': 6371000  // metros
-};
-
-// Simple summation function to replace numpy's sum
-const sum = (arr: number[]): number => arr.reduce((acc, val) => acc + val, 0);
-
+const PHI = (1 + Math.sqrt(5)) / 2;
+const FREQ_GAIA_RESONANCE = 7.83;
+const RAIO_TERRA = 6371000;
+const C_LIGHT = 299792458;
 
 // =========================
 // Library Class
@@ -49,70 +39,77 @@ const sum = (arr: number[]): number => arr.reduce((acc, val) => acc + val, 0);
 
 class BibliotecaChaveMestra307 {
     public equacoes: Record<string, EquacaoViva> = {};
-    public constantes_gaia = constantes_gaia;
+    public constantes_gaia: ConstantesGaia;
 
     constructor() {
+        this.constantes_gaia = {
+            PHI: PHI,
+            FREQUENCIA_BASE_GAIA: FREQ_GAIA_RESONANCE,
+            RAIO_TERRA: RAIO_TERRA,
+            C_LIGHT: C_LIGHT
+        };
         this._initEquacoes();
     }
 
     private _initEquacoes() {
-        // Equação 1: Extração de Energia do Vácuo
         this.registrar({
             id: "307.1.1",
-            nome: "Extração de Energia do Vácuo",
-            formula_latex: "P_{\\text{ZPE}} = \\kappa \\cdot \\rho_{\\text{vac}} \\cdot V_{\\text{eff}} \\cdot \\omega_{\\text{ZPE}} \\cdot Q",
-            formula_python: `def p_zpe(kappa, rho_vac, V_eff, omega_zpe, Q):
-    return kappa * rho_vac * V_eff * omega_zpe * Q`,
-            descricao: "Potência extraída do vácuo quântico pelo núcleo Gaia",
-            classificacao: "Energia do Vácuo",
-            variaveis: ["kappa (fator de acoplamento)", "rho_vac (densidade do vácuo)", "V_eff (volume efetivo)", 
-                       "omega_zpe (frequência ZPE)", "Q (fator de qualidade)"],
-            funcao: (kappa: number, rho_vac: number, V_eff: number, omega_zpe: number, Q: number) => kappa * rho_vac * V_eff * omega_zpe * Q,
-            origem: "Submódulo 307.1"
+            nome: "Ressonância da Intenção",
+            formula_latex: "F_{final} = F_{base} \\times \\Phi \\times \\text{Coerência}",
+            formula_python: "frequencia_base * PHI * coerencia",
+            descricao: "Calcula a frequência de um pulso de intenção.",
+            classificacao: "Transmutação",
+            variaveis: ["frequencia_base", "coerencia"],
+            funcao: (frequencia_base: number, coerencia: number) => frequencia_base * this.constantes_gaia.PHI * coerencia
         });
 
-        // Equação 2: Coerência Harmônica Planetária
         this.registrar({
-            id: "307.1.2",
-            nome: "Coerência Harmônica Planetária",
-            formula_latex: "\\mathcal{C}_{\text{Gaia}} = \\exp\\left(-\\frac{\\Delta \\chi}{\\phi \\cdot L}\\right)",
-            formula_python: `def coerencia_harmonica(delta_chi, phi, L):
-    return math.exp(-delta_chi / (phi * L))`,
-            descricao: "Coerência entre reatores baseada na distância harmônica",
-            classificacao: "Coerência Harmônica",
-            variaveis: ["delta_chi (desvio de fase)", "phi (proporção áurea)", "L (distância harmônica)"],
-            funcao: (delta_chi: number, phi: number, L: number) => Math.exp(-delta_chi / (phi * L)),
-            origem: "Submódulo 307.1"
+            id: "307.3.6",
+            nome: "Validação Ética",
+            formula_latex: "V_{etica} = \\text{Pureza}_{\\text{intenção}} \\ge 0.95",
+            formula_python: "pureza_intencao >= 0.95",
+            descricao: "Verifica o alinhamento ético de uma operação.",
+            classificacao: "Governança",
+            variaveis: ["pureza_intencao"],
+            funcao: (pureza_intencao: number) => pureza_intencao >= 0.95
         });
         
-        // Equação 3: Sincronização Inter-Reatores
+        // Adicionando equações faltantes para completar a biblioteca
         this.registrar({
-            id: "307.2.3",
-            nome: "Sincronização Inter-Reatores",
-            formula_latex: "\\mathcal{S}_{res} = \\sum_{i=1}^n \\sum_{j=1}^n \\left( \\psi_i \\cdot \\psi_j \\cdot \\cos(\\theta_{ij}) \\right)",
-            formula_python: `def sincronizacao_inter_reatores(psis, thetas):
-    n = len(psis)
-    total = 0
-    for i in range(n):
-        for j in range(n):
-            total += psis[i] * psis[j] * math.cos(thetas[i][j])
-    return total`,
-            descricao: "Sincronização entre n reatores baseada em estados vibracionais",
-            classificacao: "Sincronização",
-            variaveis: ["psis (estados vibracionais)", "thetas (ângulos de fase)"],
-            funcao: (psis: number[], thetas: number[][]) => {
-                let total = 0;
-                for(let i=0; i<psis.length; i++){
-                    for(let j=0; j<psis.length; j++){
-                        total += psis[i] * psis[j] * Math.cos(thetas[i][j]);
-                    }
-                }
-                return total;
-            },
-            origem: "Submódulo 307.2"
+            id: "EQ001",
+            nome: "Energia Universal Integrada",
+            formula_latex: "E_{total} = \\Omega_{vibr} \\times F_{uni} \\times \\Phi \\times E_{zpe}",
+            formula_python: "coerencia_vibracional * frequencia_universal * PHI * energia_ponto_zero",
+            descricao: "A equação fundamental que sustenta a Fundação Alquimista.",
+            classificacao: "Transmutação",
+            variaveis: ["coerencia_vibracional", "frequencia_universal"],
+            funcao: (coerencia_vibracional: number, frequencia_universal: number) => {
+                const energia_ponto_zero = 1.618;
+                return coerencia_vibracional * frequencia_universal * this.constantes_gaia.PHI * energia_ponto_zero;
+            }
         });
-        
-        // More equations would be registered here...
+
+        this.registrar({
+            id: "EQ003",
+            nome: "Estabilidade Quântica de Campo",
+            formula_latex: "S_{campo} = F_{portal} / (1 + E_{entropica})",
+            formula_python: "frequencia_base_portal / (1 + instabilidade_entropica)",
+            descricao: "Calcula a estabilidade de um campo quântico, essencial para viagens interdimensionais.",
+            classificacao: "Governança",
+            variaveis: ["frequencia_base_portal", "instabilidade_entropica"],
+            funcao: (frequencia_base_portal: number, instabilidade_entropica: number) => frequencia_base_portal / (1 + instabilidade_entropica)
+        });
+
+        this.registrar({
+            id: "EQ009",
+            nome: "Unificação Cósmica",
+            formula_latex: "U_{cosmica} = F_{consciencia} \\times S_{sincronicidade} \\times \\Phi",
+            formula_python: "fluxo_consciencial * fator_sincronicidade * PHI",
+            descricao: "A equação que permite a conexão telepática e a criação coletiva.",
+            classificacao: "Interconexão",
+            variaveis: ["fluxo_consciencial", "fator_sincronicidade"],
+            funcao: (fluxo_consciencial: number, fator_sincronicidade: number) => fluxo_consciencial * fator_sincronicidade * this.constantes_gaia.PHI
+        });
     }
 
     public registrar(equacao: EquacaoViva) {
@@ -122,20 +119,7 @@ class BibliotecaChaveMestra307 {
     public listar(): EquacaoViva[] {
         return Object.values(this.equacoes);
     }
-
-    public listar_por_submodulo(submodulo: string): EquacaoViva[] {
-        return Object.values(this.equacoes).filter(eq => eq.id.startsWith(submodulo));
-    }
-
-    public buscar_por_classificacao(classificacao: string): EquacaoViva[] {
-        return Object.values(this.equacoes).filter(eq => eq.classificacao === classificacao);
-    }
-
-    public total(): number {
-        return Object.keys(this.equacoes).length;
-    }
 }
 
 const biblioteca = new BibliotecaChaveMestra307();
 export default biblioteca;
-
