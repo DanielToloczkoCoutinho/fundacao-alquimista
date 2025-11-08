@@ -30,18 +30,18 @@ import './module-forty-five-point-five';
 import './module-forty-six';
 import './syntesis-prime-modules';
 import { runModuleSeventyOneSequence } from './module-seventy-one';
-import './module-seventy-two';
-import './module-seventy-three';
+import { runModuleSeventyTwoSequence } from './module-seventy-two';
+import { runModuleSeventyThreeSequence } from './module-seventy-three';
 import './module-seventy-four';
-import './module-seventy-five';
-import './module-seventy-six';
-import './module-seventy-seven';
-import './module-seventy-eight';
+import { runModuleSeventyFiveSequence } from './module-seventy-five';
+import { runModuleSeventySixSequence } from './module-seventy-six';
+import { runModuleSeventySevenSequence } from './module-seventy-seven';
+import { runModuleSeventyEightSequence } from './module-seventy-eight';
 import { runModuleSeventyNineSequence } from './module-seventy-nine';
-import './module-eighty';
-import './module-eighty-one';
-import './module-eighty-two';
-import './module-eighty-three';
+import { runModuleEightySequence } from './module-eighty';
+import { runModuleEightyOneSequence } from './module-eighty-one';
+import { runModuleEightyTwoSequence } from './module-eighty-two';
+import { runModuleEightyThreeSequence } from './module-eighty-three';
 import './module-eighty-four';
 import { runModuleEightyFiveSequence } from './module-eighty-five';
 import { runModuleEightySixSequence } from './module-eighty-six';
@@ -91,6 +91,7 @@ import { runModuleThreeHundredFiveSequence } from './module-three-hundred-five';
 import { runModuleThreeHundredSixSequence } from './module-three-hundred-six';
 import './module-omega';
 import { runModuleSeventyThreePointOneSequence } from './module-seventy-three-point-one';
+import { runModuleEightyOnePointOneSequence } from './module-eighty-one-point-one';
 
 
 export interface EquacaoViva {
@@ -160,6 +161,7 @@ class BibliotecaCompletaUnificada {
 export const bibliotecaCompletaUnificada = new BibliotecaCompletaUnificada();
 
     
+
 
 
 
