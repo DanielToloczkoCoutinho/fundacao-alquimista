@@ -93,7 +93,7 @@ class MockM73SAVCE {
     submit_for_validation(data_to_validate: any) {
         this.log(createLogEntry('M73', 'Validação SAVCE', `Submetendo dados para validação SAVCE: ${data_to_validate.type || 'N/A'}`));
         const cosmic_score = Math.random() * 0.18 + 0.8;
-        const ethical_status = this.m05.evaluate_ethical_impact({"operation_type": "fundamental_modulation_validation", "description": data_to_validate.modulation_purpose || ""});
+        const ethical_status = this.m05.evaluate_ethical_impact({ "operation_type": "fundamental_modulation_validation", "description": data_to_validate.get("modulation_purpose", "") });
         const validation_status = cosmic_score >= VALIDATION_COSMIC_SCORE_THRESHOLD && ethical_status.conformity ? "APROVADO" : "REPROVADO";
         return {
             validation_status,
@@ -132,7 +132,7 @@ class MockM90AnaliseRecursosQuanticos {
             resource_type,
             analysis_status: "COMPLETO",
             recommendation: "Utilização aprovada",
-            ethical_impact: {"conformity": true}
+            ethical_impact: { "conformity": true }
         };
     }
 }
@@ -179,7 +179,7 @@ class MockM94MorfogeneseQuantica {
 class MockM95InteracaoConscienciasColetivas {
     constructor(private log: LogCallback) {}
     interact_with_galactic_consciousness(target_galaxy_id: string, collective_consciousness_type: string, communication_purpose: string, ethical_oversight_level: number) {
-        this.log(createLogEntry('M95', 'Consulta Coletiva', `Consultando consciência coletiva sobre modulação: ${target_galaxy_id}.`));
+        this.log(createLogEntry('M95', 'Consulta Coletiva', `Consultando consciência coletiva sobre modulação fundamental: ${target_galaxy_id}.`));
         return {"status": "interaction_established", "response_coherence": Math.random() * 0.2 + 0.8};
     }
 }
@@ -187,7 +187,7 @@ class MockM95InteracaoConscienciasColetivas {
 class MockM96RegulacaoEventosCosmicos {
     constructor(private log: LogCallback) {}
     detect_and_regulate_anomaly(anomaly_id: string, anomaly_type: string, severity: string, location_coordinates: any, intervention_approach: string) {
-        this.log(createLogEntry('M96', 'Monitoramento', `Monitorando anomalias durante modulação: ${anomaly_id}.`));
+        this.log(createLogEntry('M96', 'Monitoramento', `Monitorando anomalias durante modulação fundamental: ${anomaly_id}.`));
         return {"status": "no_anomaly_detected", "anomaly_risk": "LOW"};
     }
 }
@@ -259,7 +259,7 @@ class M98_ModulacaoExistenciaFundamental {
         modulation_data["modulation_blueprint"] = modulation_blueprint;
         this.logCallback(createLogEntry(this.module_id, 'Blueprint', `(M88): ${modulation_blueprint.blueprint_id}.`));
 
-        const resource_analysis = this.m90.analyze_quantum_resource(`RECURSO_MODULATION_${modulation_data.modulation_id}`, "Energia Primordial", new_value_or_pattern * 1000, 0.999);
+        const resource_analysis = this.m90.analyze_quantum_resource(`RECURSO_MODULATION_${modulation_data.modulation_id}`, "Energia Primordial de Modulação", new_value_or_pattern * 1000, 0.999);
         modulation_data["resource_analysis"] = resource_analysis;
         this.logCallback(createLogEntry(this.module_id, 'Recursos', `(M90): ${resource_analysis.recommendation}.`));
         if (resource_analysis.recommendation !== "Utilização aprovada") {

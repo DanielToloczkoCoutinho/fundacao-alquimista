@@ -58,7 +58,7 @@ class MockM05AvaliacaoEtica {
         this.log(createLogEntry('M5', 'Avaliação Ética', `Avaliando impacto: ${operation_data.operation_type || 'N/A'}`));
         let ethical_score = Math.random() * 0.29 + 0.7;
         if ((operation_data.description || "").toLowerCase().includes("alteracao_forçada") || (operation_data.description || "").toLowerCase().includes("desestabilizacao")) {
-            ethical_score = Math.random() * 0.1 + 0.01;
+            ethical_score = Math.random() * 0.01 + 0.1;
         }
         const conformity = ethical_score >= ETHICAL_CONFORMITY_THRESHOLD;
         return { ethical_score, conformity };
@@ -92,7 +92,7 @@ class MockM73SAVCE {
     submit_for_validation(data_to_validate: any) {
         this.log(createLogEntry('M73', 'Validação SAVCE', `Submetendo para validação: ${data_to_validate.type || 'N/A'}`));
         const cosmic_score = Math.random() * 0.18 + 0.8;
-        const ethical_status = this.m05.evaluate_ethical_impact({ operation_type: "physical_law_recalibration_validation", description: data_to_validate.recalibration_purpose || "" });
+        const ethical_status = this.m05.evaluate_ethical_impact({ "operation_type": "physical_law_recalibration_validation", "description": data_to_validate.recalibration_purpose || "" });
         const validation_status = cosmic_score >= VALIDATION_COSMIC_SCORE_THRESHOLD && ethical_status.conformity ? "APROVADO" : "REPROVADO";
         return {
             validation_status,
@@ -274,7 +274,6 @@ class M99_RecalibradoresLeisFisicasUniversais {
         const numeric_values = Object.values(desired_parameters).filter((v): v is number => typeof v === 'number');
         const energy_signature_calc = numeric_values.length > 0 ? numeric_values.reduce((s, v) => s + v, 0) * 1000 : 1000;
 
-
         const resource_analysis = this.m90.analyze_quantum_resource(
             `RECURSO_RECALIB_${recalibration_data.recalibration_id}`,
             "Energia de Reconfiguração Universal",
@@ -347,7 +346,7 @@ class M99_RecalibradoresLeisFisicasUniversais {
 }
 
 export const runModuleNinetyNineSequence = async (logCallback: LogCallback) => {
-    const m99_instance = new M99_RecalibradoresLeisFisicasUniversais();
+    const m99_instance = new M99_RecalibradoresLeisFisicasUniversais(logCallback);
     
     logCallback(createLogEntry('M99', 'Cenário 1', '--- Recalibração da Constante de Planck para Otimização da Coerência Quântica ---'));
     await m99_instance.recalibrate_universal_law(

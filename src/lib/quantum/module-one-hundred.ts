@@ -8,7 +8,6 @@ const CONST_PHI = (1 + Math.sqrt(5)) / 2;  // Proporção Áurea (Phi)
 const CONST_AMOR_INCONDICIONAL_VALOR = 0.999999999999999; // O princípio ético e energético supremo
 const ETHICAL_CONFORMITY_THRESHOLD = 0.75; // Limiar para conformidade ética em validações
 const VALIDATION_COSMIC_SCORE_THRESHOLD = 0.85; // Limiar para uma validação cósmica bem-sucedida
-const THRESHOLD_RESOLUCAO_EMPIRICA = 0.95; // Limiar para resolução empírica completa, sem necessidade de revisão
 
 const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
@@ -53,7 +52,7 @@ class MockM01SegurancaUniversal extends MockModule {
 class MockM03OraculoPreditivo extends MockModule {
     constructor(log: LogCallback) { super('M3', log); }
     predict_unification_outcome(unification_plan: any) {
-        this.log(createLogEntry(this.module_id as any, 'Previsão', `Prevendo resultado da unificação: ${unification_plan.purpose || 'N/A'}`));
+        this.log(createLogEntry(this.module_id as any, 'Previsão', `Prevendo resultado da unificação energética: ${unification_plan.purpose || 'N/A'}`));
         if (("desintegracao" in (unification_plan.purpose || "").toLowerCase()) || ("caos_primordial" in (unification_plan.purpose || "").toLowerCase())) {
             return { "predicted_coherence_score": Math.random() * 0.1 + 0.01, "confidence": 0.9 };
         }
@@ -67,7 +66,7 @@ class MockM05AvaliacaoEtica extends MockModule {
         this.log(createLogEntry(this.module_id as any, 'Avaliação Ética', `Avaliando impacto: ${operation_data.operation_type || 'N/A'}`));
         let ethical_score = Math.random() * 0.29 + 0.7;
         if (("desintegracao_cosmica" in (operation_data.description || "").toLowerCase()) || ("controle_absoluto" in (operation_data.description || "").toLowerCase())) {
-            ethical_score = Math.random() * 0.05 + 0.001;
+            ethical_score = Math.random() * 0.001 + 0.05;
         }
         const conformity = ethical_score >= ETHICAL_CONFORMITY_THRESHOLD;
         return { ethical_score, conformity };
@@ -149,7 +148,7 @@ class MockM91SimulacaoTeoriaMuitosMundos extends MockModule {
             let predicted_outcome_score = Math.random() * 0.099 + 0.9;
             let ethical_conformity = true;
             if (unification_intent.toLowerCase().includes("desintegracao") || unification_intent.toLowerCase().includes("caos_primordial")) {
-                predicted_outcome_score = Math.random() * 0.09 + 0.01;
+                predicted_outcome_score = Math.random() * 0.01 + 0.1;
                 ethical_conformity = false;
             }
             results.push({
@@ -306,7 +305,7 @@ class M100_UnificacaoEnergeticaUniversal {
         const anomaly_check = this.m96.detect_and_regulate_anomaly(`ANOMALY_UNIFY_${unification_data.unification_id}`, "Potencial Dissonância Primordial", "CATASTROPHIC", { "multiverse": target_multiverse_id, "purpose": unification_purpose }, "Orquestração e Reversão Imediata");
         unification_data["anomaly_check"] = anomaly_check;
 
-        const divine_purpose_alignment = this.m97.manifest_divine_purpose(`Alinhamento Cósmico para Unificação de ${target_multiverse_id}`, target_multiverse_id, "Universal", divine_will_alignment, divine_will_alignment);
+        const divine_purpose_alignment = this.m97.manifest_divine_purpose(`Alinhamento Cósmico para Unificação Energética de ${target_multiverse_id}`, target_multiverse_id, "Universal", divine_will_alignment, divine_will_alignment);
         unification_data["divine_purpose_alignment"] = divine_purpose_alignment;
         if (divine_purpose_alignment.manifestation_status === "FALHA_VALIDACAO") {
             return { "status": "FALHA", "reason": "Alinhamento de propósito divino falhou", "details": divine_purpose_alignment };

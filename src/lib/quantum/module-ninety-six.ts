@@ -1,4 +1,3 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -227,7 +226,7 @@ class M96_RegulacaoEventosCosmicos {
         anomaly_data["intervention_plan"] = intervention_plan;
         this.logCallback(createLogEntry(this.module_id, 'Blueprint', `(M88): ${intervention_blueprint.blueprint_id}.`));
 
-        const resource_analysis = this.m90.analyze_quantum_resource(`RECURSO_${anomaly_id}`, "Energia de Estabilização", 100, 0.99);
+        const resource_analysis = this.m90.analyze_quantum_resource(`RECURSO_${anomaly_id}`, "Energia de Estabilização Cósmica", 100, 0.99);
         anomaly_data["resource_analysis"] = resource_analysis;
         this.logCallback(createLogEntry(this.module_id, 'Recursos', `(M90): ${resource_analysis.recommendation}.`));
         if (resource_analysis.recommendation !== "Utilização aprovada") {

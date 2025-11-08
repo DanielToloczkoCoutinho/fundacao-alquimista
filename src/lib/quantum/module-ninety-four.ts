@@ -242,12 +242,11 @@ class M94_MorfogeneseQuantica {
         const final_status = savce_validation.validation_status === "APROVADO" ? "SUCESSO" : "FALHA_VALIDACAO";
         
         const report = {
-            reprogramming_status: final_status,
-            reprogramming_details: reprogramming_data,
-            recommendation: final_status === "SUCESSO" ? "Reprogramação pronta para manifestação" : "Reprogramação requer revisão/ajuste",
-            timestamp_completion: new Date().toISOString()
+            "reprogramming_status": final_status,
+            "reprogramming_details": reprogramming_data,
+            "recommendation": final_status === "SUCESSO" ? "Reprogramação pronta para manifestação" : "Reprogramação requer revisão/ajuste",
+            "timestamp_completion": new Date().toISOString()
         };
-        
         this.logCallback(createLogEntry(this.module_id, 'Conclusão', `Reprogramação para '${target_entity_id}' concluída. Status: ${report.reprogramming_status}.`));
         return report;
     }

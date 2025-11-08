@@ -23,8 +23,8 @@ class M86_PrismaEstelar {
     }
 
     private openVRScene() {
-        this.logCallback(createLogEntry(this.MODULE_ID, 'Navegação', 'Redirecionando para a experiência VR (m86.html).'));
-        window.open('/m86.html', '_blank');
+        this.logCallback(createLogEntry(this.MODULE_ID, 'Navegação', 'Simulando a abertura da experiência VR (m86.html). A navegação real foi desativada para manter a estabilidade da aplicação.'));
+        // window.open('/m86.html', '_blank'); // Comentado para evitar erro 404
     }
 
     async startExperience() {

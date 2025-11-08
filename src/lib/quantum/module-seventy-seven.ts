@@ -163,12 +163,6 @@ class M77_LUMEN_CUSTOS {
 export const runModuleSeventySevenSequence = async (logCallback: LogCallback) => {
     logCallback(createLogEntry('M77', 'Simulação', 'Iniciando a demonstração do Módulo 77: LUMEN-CUSTOS.'));
     
-    const m74_mock = new MockM74CronosFluxus(logCallback);
-    const m75_mock = new MockM75MemoriaAnterioris(logCallback);
-    const m76_mock = new MockM76InterlineaeTemporis(logCallback);
-    const m73_mock = new MockM73OrquestracaoEticaNucleosRegionais(logCallback);
-    const m56_mock = new MockM56Etikorum(logCallback);
-    
     const m77_instance = new M77_LUMEN_CUSTOS(logCallback);
 
     await sleep(500);

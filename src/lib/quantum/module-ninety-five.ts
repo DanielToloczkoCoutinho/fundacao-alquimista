@@ -1,4 +1,3 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -287,5 +286,3 @@ export const runModuleNinetyFiveSequence = async (logCallback: LogCallback) => {
 
     logCallback(createLogEntry('M95', 'Fim Demonstração', 'Demonstração do Módulo 95 concluída.'));
 };
-
-    

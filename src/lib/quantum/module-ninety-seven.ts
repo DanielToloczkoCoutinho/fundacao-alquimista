@@ -260,7 +260,7 @@ class M97_ManifestacaoPropositoDivino {
         if (purpose_description.toLowerCase().includes("egoico") || purpose_description.toLowerCase().includes("controle") || ethical_alignment_factor < ETHICAL_CONFORMITY_THRESHOLD) {
             ethical_impact.conformity = false;
             ethical_impact.ethical_score = Math.random() * 0.3;
-            this.logCallback(createLogEntry(this.module_id, 'AVISO', `Forçando falha ética para demonstração.`));
+            this.logCallback(createLogEntry(this.module_id, 'AVISO', `Forçando falha ética.`));
         }
         this.logCallback(createLogEntry(this.module_id, 'Avaliação Ética', `Avaliação (M05): Score ${ethical_impact.ethical_score.toFixed(2)}, Conformidade: ${ethical_impact.conformity}.`));
 
