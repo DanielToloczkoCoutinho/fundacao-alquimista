@@ -6,4 +6,8 @@ import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
 
 // Initialize Firebase
-const app = !getApps().length ? initialize
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+export { app, auth, db };
