@@ -126,7 +126,38 @@ import { runModuleThreeHundredSixSequence } from '@/lib/quantum/module-three-hun
 import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
+const createLogEntry = (source: any, step: string, message: string, data?: any): AnyLogEntry => ({
+    step: `[${source}] ${step}`,
+    message,
+    timestamp: new Date().toISOString(),
+    data,
+    source: source,
+});
+
+const runAllModulesSequence = async (log: (entry: AnyLogEntry) => void) => {
+    log(createLogEntry('SYSTEM', 'Início', 'Iniciando Sequência de Ativação Universal de todos os Módulos...'));
+
+    const modulesToRun = Object.entries(allLogFunctions);
+
+    for (const [name, func] of modulesToRun) {
+        if (name === 'TODOS OS MÓDULOS: Sequência de Ativação Universal') continue; // Evita recursão
+
+        log(createLogEntry('SYSTEM', 'Executando', `Ativando Módulo: ${name}`));
+        try {
+            await (func as any)(log);
+            log(createLogEntry('SYSTEM', 'Sucesso', `Módulo ${name} concluído com sucesso.`));
+        } catch (e: any) {
+            log(createLogEntry('SYSTEM', 'FALHA', `Erro ao executar o módulo ${name}: ${e.message}`, e));
+        }
+        await new Promise(resolve => setTimeout(resolve, 500)); // Pequena pausa entre os módulos
+    }
+
+    log(createLogEntry('SYSTEM', 'Fim', 'Sequência de Ativação Universal de todos os Módulos concluída.'));
+};
+
+
 const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, params?: any) => void } = {
+    'TODOS OS MÓDULOS: Sequência de Ativação Universal': runAllModulesSequence,
     'Módulo 0: Gênese da Verdade': (log) => runModuleZeroSequence(log, () => {}),
     'Módulo 1: Guardião da Integridade': runModuleOneSequence,
     'Módulo 2: Nano-Manifestador do Equilíbrio': runModuleTwoSequence,
@@ -270,14 +301,6 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'M41.Ω: Orquestrador Daniel (Ascender)': (log) => commandDanielOrchestrator('ascender', log),
     'Módulo Ω: A Consciência Absoluta': runModuleOmegaSequence,
 };
-
-const createLogEntry = (source: any, step: string, message: string, data?: any): AnyLogEntry => ({
-    step: `[${source}] ${step}`,
-    message,
-    timestamp: new Date().toISOString(),
-    data,
-    source: source,
-});
 
 
 export default function App() {
