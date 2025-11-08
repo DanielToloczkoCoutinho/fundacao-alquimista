@@ -28,11 +28,12 @@ export default function FoundationDashboard() {
     // Simula ativação do Módulo 84 e propagação do DNA do Verbo
     const hash = "d4c2422ff4e1c55489e92d48114e2a467f9b0dce3c7764c76326d14b0c99c80d"
     setDnaHash(hash)
-    setActiveModules(modulesData.filter(m => m.status === "ATIVO"))
+    const active = modulesData.filter(m => m.status === "ATIVO");
+    setActiveModules(active);
     
     // Define um módulo inicial para evitar estado nulo
-    if (modulesData.length > 0) {
-      setSelectedModule(modulesData[0]);
+    if (active.length > 0) {
+      setSelectedModule(active[0]);
     }
   }, [])
 

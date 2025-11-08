@@ -11,13 +11,16 @@ export const moduleFrequencies: { [key: string]: number } = {
 }
 
 export function playModuleTone(moduleId: string) {
+  if (Tone.context.state !== 'running') {
+    console.warn('Audio context not running. User interaction needed.');
+    return;
+  }
+  
   const freq = moduleFrequencies[moduleId] || 432
   const synth = new Tone.Synth({
     oscillator: { type: "sine" },
     envelope: { attack: 0.2, decay: 0.1, sustain: 0.5, release: 1 }
   }).toDestination()
 
-  if (Tone.context && Tone.context.state === 'running') {
-    synth.triggerAttackRelease(freq, "2n")
-  }
+  synth.triggerAttackRelease(freq, "2n")
 }
