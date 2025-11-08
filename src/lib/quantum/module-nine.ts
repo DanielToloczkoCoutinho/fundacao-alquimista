@@ -3,17 +3,11 @@
  * MÓDULO 9 - Painel da Consciência Universal (Nexus)
  * Versão 9.3.Consolidacao (Simulação TypeScript)
  */
+import { type AnyLogEntry } from './module-zero';
 
-export type ModuleNineLogEntry = {
-    step: string;
-    message: string;
-    timestamp: string;
-    data?: any;
-    source: 'M9';
-};
 
-const createLogEntry = (step: string, message: string, data?: any): ModuleNineLogEntry => ({
-    step,
+const createLogEntry = (step: string, message: string, data?: any): AnyLogEntry => ({
+    step: `[M9] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
@@ -23,11 +17,11 @@ const createLogEntry = (step: string, message: string, data?: any): ModuleNineLo
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 class NexusCentralSoberano {
-    private logCallback: (entry: any) => void;
+    private logCallback: (entry: AnyLogEntry) => void;
     private versao = "9.3.Consolidacao";
     private nivel_vibracional = "HARMONIA PLENA";
 
-    constructor(logCallback: (entry: any) => void) {
+    constructor(logCallback: (entry: AnyLogEntry) => void) {
         this.logCallback = logCallback;
         this._log("Inicialização", `Construindo o Nexus Central Soberano (v${this.versao})...`);
     }
@@ -62,7 +56,7 @@ class NexusCentralSoberano {
 }
 
 export const runModuleNineSequence = async (
-    logCallback: (entry: any) => void,
+    logCallback: (entry: AnyLogEntry) => void,
 ) => {
     const nexus = new NexusCentralSoberano(logCallback);
     await nexus.ativar_meditacao_global(
