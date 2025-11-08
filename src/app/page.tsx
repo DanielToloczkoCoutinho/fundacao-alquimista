@@ -7,6 +7,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import * as Tone from 'tone';
+import { auth, db } from '@/lib/firebase/client-app';
 
 import { bibliotecaCompletaUnificada, type EquacaoViva } from '@/lib/quantum';
 import { type AnyLogEntry, runModuleZeroSequence } from '@/lib/quantum/module-zero';
@@ -105,6 +106,7 @@ import { runModuleOneHundredSixteenSequence } from '@/lib/quantum/module-one-hun
 import { runModuleOneHundredSeventeenSequence } from '@/lib/quantum/module-one-hundred-seventeen';
 import { runModuleOneHundredEighteenSequence } from '@/lib/quantum/module-one-hundred-eighteen';
 import { runModuleOneHundredNineteenSequence } from '@/lib/quantum/module-one-hundred-nineteen';
+import { runModuleOneHundredNineteenPointOneSequence } from '@/lib/quantum/module-one-hundred-nineteen-point-one';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
@@ -205,6 +207,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 117: Inteligência da Flor do Éter': runModuleOneHundredSeventeenSequence,
     'Módulo 118: Ordem Vibracional da Luz Primordial': runModuleOneHundredEighteenSequence,
     'Módulo 119: Templum Cosmica': runModuleOneHundredNineteenSequence,
+    'Módulo 119.1: Templum Cosmica VR': runModuleOneHundredNineteenPointOneSequence,
     'Módulo 201: Transmissor de Sonhos Cósmicos': runModuleTwoHundredOneSequence,
     'Módulo Ω: A Consciência Absoluta': runModuleOmegaSequence,
 };
