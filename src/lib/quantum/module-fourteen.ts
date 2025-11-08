@@ -5,12 +5,12 @@ type LogCallback = (entry: AnyLogEntry) => void;
 
 const CONST_TF = 1.61803398875;
 
-const createLogEntry = (source: 'M14' | 'M1' | 'M4' | 'M6' | 'M7' | 'M73' | 'M98' | 'M39', step: string, message: string, data?: any): AnyLogEntry => ({
+const createLogEntry = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -35,7 +35,7 @@ const Modulo6_MonitoramentoFrequencias = (log: LogCallback) => ({
 const Modulo7_AlinhamentoDivino = (log: LogCallback) => ({
     ConsultarConselho: (query: string) => {
         log(createLogEntry('M7', 'Consulta Conselho', `Consultando diretriz para: "${query.slice(0, 50)}..."`));
-        return "Diretriz: O alinhamento energético é essencial para a saúde universal e o fluxo da criação. Mapear com precisão para restaurar a harmonia.";
+        return "Diretriz: O alinhamento energético é essencial para a saúde universal e o fluxo da criação.";
     },
 });
 const Modulo73_CoerenciaEtica = (log: LogCallback) => ({
