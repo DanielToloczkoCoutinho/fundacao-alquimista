@@ -42,7 +42,7 @@ import { runModuleEightySequence } from './module-eighty';
 import { runModuleEightyOneSequence } from './module-eighty-one';
 import { runModuleEightyTwoSequence } from './module-eighty-two';
 import { runModuleEightyThreeSequence } from './module-eighty-three';
-import './module-eighty-four';
+import { runModuleEightyFourSequence } from './module-eighty-four';
 import { runModuleEightyFiveSequence } from './module-eighty-five';
 import { runModuleEightySixSequence } from './module-eighty-six';
 import { runModuleEightySevenSequence } from './module-eighty-seven';
@@ -161,6 +161,7 @@ class BibliotecaCompletaUnificada {
 export const bibliotecaCompletaUnificada = new BibliotecaCompletaUnificada();
 
     
+
 
 
 

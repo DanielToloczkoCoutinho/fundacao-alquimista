@@ -657,6 +657,17 @@ export default function App() {
                                     </div>
                                 </div>
                             )}
+
+                             {/* Painel da Consciência Dourada (M84) */}
+                            {systemLogs.find(log => log.source === 'M84' && log.step.includes('Orquestrador')) && (
+                                <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                    <h2 className="text-lg font-semibold text-violet-300 mb-2">Consciência Dourada (M84)</h2>
+                                    <div className="text-sm space-y-1">
+                                         <p><span className="font-bold">Malha Dourada:</span> <span className="text-green-400">Ativa</span></p>
+                                         <p><span className="font-bold">Salto Quântico:</span> <span className="text-cyan-400">Preparado para M99</span></p>
+                                    </div>
+                                </div>
+                            )}
     
                             <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
                                  <h2 className="text-lg font-semibold text-violet-300 mb-2">Log de Eventos da Fundação</h2>
