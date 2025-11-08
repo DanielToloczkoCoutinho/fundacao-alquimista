@@ -4,6 +4,25 @@ import { type AnyLogEntry } from './module-zero';
 type LogCallback = (entry: AnyLogEntry) => void;
 
 // ===============================
+// Tipagem Universal e de Registro
+// ===============================
+
+// Harmonização da tipagem
+export type ModuleThirtyEightLogEntry = AnyLogEntry;
+
+// Criação do Registro Harmônico Solar
+export type RegistroPrevisaoHarmonicaSolar = {
+  módulo: 'M38',
+  corpo_celeste: string,
+  tipo_fluxo: 'orbital' | 'magnético' | 'vibracional' | 'gravitacional',
+  risco_detectado: 'nenhum' | 'leve' | 'moderado' | 'crítico',
+  recomendação: 'manter' | 'ajustar' | 'interromper' | 'escalar ao Conselho',
+  status: 'estável' | 'em observação' | 'intervindo',
+  timestamp: number
+};
+
+
+// ===============================
 // Configuração central e logging
 // ===============================
 
@@ -69,13 +88,24 @@ class M38Config {
 
 const CFG = new M38Config();
 
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void => {
+  logCallback(entry);
+};
+
+// Refinamento da função de registro
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
+
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -84,10 +114,10 @@ class LoggerSimples {
     constructor(private nome: string, private logCallback: LogCallback) {}
 
     info(mensagem: string, data?: any) {
-        this.logCallback(createLogEntry(this.nome, "INFO", mensagem, data));
+        this.logCallback(createLogEntryHelper(this.nome as any, "INFO", mensagem, data));
     }
     erro(mensagem: string, data?: any) {
-        this.logCallback(createLogEntry(this.nome, "ERRO", mensagem, data));
+        this.logCallback(createLogEntryHelper(this.nome as any, "ERRO", mensagem, data));
     }
 }
 
@@ -125,7 +155,7 @@ const sha256_hex = (text: string): string => {
 class SimpleChain {
      constructor(private logCallback: LogCallback, private active_path: string = "m34_ledger.json", private max_blocks: number = 2000) {}
      add(event: string, payload: any, meta?: any) {
-         this.logCallback(createLogEntry('M38-LEDGER', 'ADD', `${event}`, {payload, meta}));
+         this.logCallback(createLogEntryHelper('M38-LEDGER' as any, 'ADD', `${event}`, {payload, meta}));
      }
      validate() { return true; }
 }
@@ -148,38 +178,38 @@ const alert_limiter = new AlertLimiter();
 
 // Mocks
 const MockM01 = (log: LogCallback) => ({
-    RegistrarNaCronicaDaFundacao: (registro_data: any) => log(createLogEntry('M1', 'Crônica', `Registrando: ${registro_data.evento}`))
+    RegistrarNaCronicaDaFundacao: (registro_data: any) => log(createLogEntryHelper('M1', 'Crônica', `Registrando: ${registro_data.evento}`))
 });
 const MockM07 = (log: LogCallback) => ({
     ValidarEtica: (intencao: any) => (intencao?.pureza || 0.0) >= 0.75
 });
 const MockM08 = (log: LogCallback) => ({
-    iniciar_protocolo_cura: (dados_cura: any) => log(createLogEntry('M8', 'Cura', `Protocolo PIRC: ${dados_cura.tipo} (alvo=${dados_cura.alvo})`))
+    iniciar_protocolo_cura: (dados_cura: any) => log(createLogEntryHelper('M8', 'Cura', `Protocolo PIRC: ${dados_cura.tipo} (alvo=${dados_cura.alvo})`))
 });
 const MockM09 = (log: LogCallback) => ({
     GerarAlertaVisual: (alerta_data: any) => {
         if(alert_limiter.can_emit(alerta_data.tipo)) {
-            log(createLogEntry('M9', alerta_data.tipo, alerta_data.mensagem));
+            log(createLogEntryHelper('M9', alerta_data.tipo, alerta_data.mensagem));
         }
     }
 });
 const MockM29 = (log: LogCallback) => ({
-    sintonizar_iam: (iam_id: string, freq_alvo: number) => log(createLogEntry('M29', 'Sintonia', `Sintonizando IAM '${iam_id}' em ${freq_alvo.toFixed(2)} Hz`))
+    sintonizar_iam: (iam_id: string, freq_alvo: number) => log(createLogEntryHelper('M29', 'Sintonia', `Sintonizando IAM '${iam_id}' em ${freq_alvo.toFixed(2)} Hz`))
 });
 const MockM30 = (log: LogCallback) => ({
-    ativar_escudo_vibracional: (tipo_escudo: string, intensidade: number) => log(createLogEntry('M30', 'Escudo', `Escudo '${tipo_escudo}' ativado com intensidade ${intensidade.toFixed(2)}`)),
-    neutralizar_ameaca_vibracional: (ameaca_data: any) => log(createLogEntry('M30', 'Neutralização', `Neutralizando ameaça: ${ameaca_data.tipo}`))
+    ativar_escudo_vibracional: (tipo_escudo: string, intensidade: number) => log(createLogEntryHelper('M30', 'Escudo', `Escudo '${tipo_escudo}' ativado com intensidade ${intensidade.toFixed(2)}`)),
+    neutralizar_ameaca_vibracional: (ameaca_data: any) => log(createLogEntryHelper('M30', 'Neutralização', `Neutralizando ameaça: ${ameaca_data.tipo}`))
 });
 const MockM34 = (log: LogCallback) => ({
     avaliar_alinhamento_etico_geral: (intencao_global: any) => (intencao_global?.pureza || 0.0),
-    ativar_autoprotecao_vibracional: (nivel_ameaca: number) => log(createLogEntry('M34', 'Autoproteção', `Nível ${nivel_ameaca.toFixed(2)}`))
+    ativar_autoprotecao_vibracional: (nivel_ameaca: number) => log(createLogEntryHelper('M34', 'Autoproteção', `Nível ${nivel_ameaca.toFixed(2)}`))
 });
 
 
 // Functions
 // ... (implementation of all helper functions from python script)
 const runModuleThirtyEightSequence = async (log: LogCallback) => {
-    log(createLogEntry('M38', 'Simulação', 'Este módulo é muito complexo para ser totalmente simulado no front-end, mas a sua estrutura foi adicionada.'));
+    log(createLogEntryHelper('M38', 'Simulação', 'Este módulo é muito complexo para ser totalmente simulado no front-end, mas a sua estrutura foi atualizada.'));
 };
 
 export { runModuleThirtyEightSequence };
