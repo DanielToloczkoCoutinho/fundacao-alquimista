@@ -53,6 +53,7 @@ import { runModuleFortyFivePointTwoSequence } from '@/lib/quantum/module-forty-f
 import { runModuleFortyFivePointFourSequence } from '@/lib/quantum/module-forty-five-point-four';
 import { runModuleFortyFivePointFiveSequence } from '@/lib/quantum/module-forty-five-point-five';
 import { runModuleFortySixSequence } from '@/lib/quantum/module-forty-six';
+import { runSyntesisPrimeSequence } from '@/lib/quantum/syntesis-prime-modules';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -113,6 +114,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M45.4: Oráculo Emergente": runModuleFortyFivePointFourSequence,
     "M45.5: Oráculo Amplificado": runModuleFortyFivePointFiveSequence,
     "M46: AELORIA": runModuleFortySixSequence,
+    "M47-70: SÍNTESE": runSyntesisPrimeSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };

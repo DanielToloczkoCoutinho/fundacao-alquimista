@@ -24,6 +24,7 @@ import './module-forty-three';
 import './module-forty-four';
 import './module-forty-five';
 import './module-forty-six';
+import './syntesis-prime-modules';
 
 
 export interface EquacaoViva {
