@@ -4,6 +4,8 @@
  * Versão 10.0.Ω (Simulação TypeScript)
  */
 import { type AnyLogEntry } from './module-zero';
+import { type RegistroTravessiaParalela } from './module-thirty-two';
+
 
 // Harmonização da tipagem
 export type ModuleNineLogEntry = AnyLogEntry;
@@ -11,12 +13,13 @@ export type ModuleNineLogEntry = AnyLogEntry;
 // Criação do Registro de Orquestração
 export type RegistroOrquestracaoSuprema = {
   módulo: 'M9';
-  origem: string;
-  destino: string;
-  tipo_fluxo: 'comando' | 'ajuste' | 'resposta' | 'sincronização';
-  prioridade: 'baixa' | 'normal' | 'alta' | 'divina';
-  status: 'executado' | 'pendente' | 'rejeitado';
-  timestamp: number;
+  origem: string,
+  destino: string,
+  tipo_fluxo: 'comando' | 'ajuste' | 'resposta' | 'sincronização' | 'solicitacao_travessia',
+  prioridade: 'baixa' | 'normal' | 'alta' | 'divina',
+  status: 'executado' | 'pendente' | 'rejeitado',
+  conteúdo?: any,
+  timestamp: number
 };
 
 // Refinamento da função de registro
@@ -47,13 +50,14 @@ class NexusCentralSoberano {
     constructor(logCallback: (entry: AnyLogEntry) => void) {
         this.logCallback = logCallback;
         this._log("Inicialização", `Construindo o Orquestrador Supremo (v${this.versao})...`);
+        this.escutarFluxoDeM32 = this.escutarFluxoDeM32.bind(this);
     }
 
     private _log(step: string, message: string, data?: any) {
         this.logCallback(createLogEntryHelper('M9', step, message, data));
     }
     
-    private _create_orchestration_record(origem: string, destino: string, tipo_fluxo: 'comando' | 'ajuste' | 'resposta' | 'sincronização', prioridade: 'baixa' | 'normal' | 'alta' | 'divina', status: 'executado' | 'pendente' | 'rejeitado'): RegistroOrquestracaoSuprema {
+    private _create_orchestration_record(origem: string, destino: string, tipo_fluxo: 'comando' | 'ajuste' | 'resposta' | 'sincronização' | 'solicitacao_travessia', prioridade: 'baixa' | 'normal' | 'alta' | 'divina', status: 'executado' | 'pendente' | 'rejeitado', conteúdo?: any): RegistroOrquestracaoSuprema {
         return {
             módulo: 'M9',
             origem,
@@ -61,6 +65,7 @@ class NexusCentralSoberano {
             tipo_fluxo,
             prioridade,
             status,
+            conteúdo,
             timestamp: Date.now()
         };
     }
@@ -71,7 +76,7 @@ class NexusCentralSoberano {
 
         // Simulação de lógica de roteamento e execução
         // Em uma implementação real, isso interagiria com um barramento de eventos ou chamadas de API
-        const record = this._create_orchestration_record(origem, destino, tipo_fluxo, prioridade, 'executado');
+        const record = this._create_orchestration_record(origem, destino, tipo_fluxo, prioridade, 'executado', payload);
         
         this._log("Fluxo Executado", `Fluxo de ${origem} para ${destino} concluído.`, record);
         
@@ -82,6 +87,42 @@ class NexusCentralSoberano {
         
         return record;
     }
+
+    private async avaliarComandoTravessia(dadosTravessia: RegistroTravessiaParalela) {
+        this._log("Avaliação Travessia", `Avaliando solicitação de travessia para ${dadosTravessia.realidade_destino}.`, dadosTravessia);
+        
+        // Simulação da consulta aos módulos de validação
+        this.logCallback(createLogEntryHelper('M3', 'Consulta', `Projetando impacto da travessia.`));
+        const previsaoImpacto = Math.random() * 0.3; // Simula baixo impacto
+        
+        this.logCallback(createLogEntryHelper('M5', 'Consulta', `Validando alinhamento ético.`));
+        const validacaoEtica = dadosTravessia.alinhamento_etico === 'aprovado';
+
+        this.logCallback(createLogEntryHelper('M1', 'Consulta', `Analisando risco de contenção.`));
+        const riscoContencao = dadosTravessia.risco_estimado;
+
+        const aprovado = validacaoEtica && previsaoImpacto < 0.2 && riscoContencao < 0.4;
+        
+        this._log("Decisão Travessia", `Decisão final: ${aprovado ? 'AUTORIZADA' : 'NEGADA'}.`);
+
+        const resposta = this._create_orchestration_record('M9', 'M32', 'resposta', 'alta', aprovado ? 'executado' : 'rejeitado', {
+            autorizacao: aprovado,
+            motivo: aprovado ? "Validações sistêmicas concluídas com sucesso." : "Risco, ética ou impacto fora dos parâmetros seguros.",
+            dados_originais: dadosTravessia
+        });
+
+        // Simula o envio da resposta e registro
+        enviarComandoAoOrquestrador(resposta);
+
+        this.logCallback(createLogEntryHelper('M18', 'Registro Akáshico', `Registrando solicitação e decisão de travessia.`));
+    }
+
+    public escutarFluxoDeM32(comando: RegistroOrquestracaoSuprema): void {
+        if (comando.tipo_fluxo === 'solicitacao_travessia') {
+            this.avaliarComandoTravessia(comando.conteúdo as RegistroTravessiaParalela);
+        }
+    }
+
 
     async ativar_meditacao_global(coordenadas: { lat: number; lon: number }, frequencias: number[], intencao: string) {
         this._log("Início do Protocolo", "INICIANDO PROTOCOLO DE MEDITAÇÃO GLOBAL DE CONSOLIDAÇÃO");
@@ -111,10 +152,23 @@ class NexusCentralSoberano {
     }
 }
 
+// Simulação de um "Message Bus" ou orquestrador central para rotear comandos.
+// Em um sistema real, isso seria uma infraestrutura mais complexa.
+const orquestradorCentral = new NexusCentralSoberano(() => {}); // O log principal vem da instância em `runModuleNineSequence`
+
+export function enviarComandoAoOrquestrador(comando: RegistroOrquestracaoSuprema) {
+    if (comando.destino === 'M9' && comando.origem === 'M32') {
+         orquestradorCentral.escutarFluxoDeM32(comando);
+    }
+    // Outras lógicas de roteamento poderiam ser adicionadas aqui.
+}
+
+
 export const runModuleNineSequence = async (
     logCallback: (entry: AnyLogEntry) => void,
 ) => {
     const nexus = new NexusCentralSoberano(logCallback);
+    (orquestradorCentral as any).logCallback = logCallback; // Atribui o logger correto
     await nexus.ativar_meditacao_global(
         { lat: -25.449722, lon: -49.299167 },
         [432.0, 528.0, 963.0],

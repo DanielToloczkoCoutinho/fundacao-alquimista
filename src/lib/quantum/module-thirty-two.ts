@@ -1,18 +1,19 @@
 'use client';
 import { type AnyLogEntry } from './module-zero';
 import { runLuxEquationValidation } from './module-two-hundred-twenty-nine';
+import { enviarComandoAoOrquestrador, type RegistroOrquestracaoSuprema } from './module-nine';
 
 // Harmonização da tipagem
 export type ModuleThirtyTwoLogEntry = AnyLogEntry;
 
 export type RegistroTravessiaParalela = {
-  módulo: 'M32';
-  realidade_destino: string;
-  risco_estimado: number; // 0.0 a 1.0
-  coerencia_causal: 'alta' | 'média' | 'baixa';
-  alinhamento_etico: 'aprovado' | 'condicional' | 'negado';
-  status: 'autorizada' | 'negada' | 'em análise';
-  timestamp: number;
+  módulo: 'M32',
+  realidade_destino: string,
+  risco_estimado: number, // 0.0 a 1.0
+  coerencia_causal: 'alta' | 'média' | 'baixa',
+  alinhamento_etico: 'aprovado' | 'condicional' | 'negado',
+  status: 'autorizada' | 'negada' | 'em análise',
+  timestamp: number
 };
 
 type LogCallback = (entry: AnyLogEntry) => void;
@@ -86,7 +87,23 @@ class Modulo32_NavegadorEtico {
         return alinhamento;
     }
 
-    public avaliarTravessia(params: { realidade_destino: string; origem: string; intencao: string; }): RegistroTravessiaParalela {
+    private solicitarAutorizacaoTravessia(dados: RegistroTravessiaParalela): void {
+      const comando: RegistroOrquestracaoSuprema = {
+        módulo: 'M9',
+        origem: 'M32',
+        destino: 'M9',
+        tipo_fluxo: 'solicitacao_travessia',
+        prioridade: dados.risco_estimado > 0.7 ? 'alta' : 'normal',
+        conteúdo: dados,
+        status: 'pendente',
+        timestamp: Date.now()
+      };
+      this.log(createLogEntryHelper('M32', 'Solicitação', 'Enviando solicitação de travessia para o Orquestrador (M9).', comando));
+      enviarComandoAoOrquestrador(comando);
+    }
+
+
+    public avaliarTravessia(params: { realidade_destino: string; origem: string; intencao: string; }) {
         this.log(createLogEntryHelper('M32', 'Avaliação', `Iniciando avaliação de travessia para: ${params.realidade_destino}`));
         
         // Integração com M229 como motor
@@ -102,31 +119,20 @@ class Modulo32_NavegadorEtico {
         const coerencia = this.consultarModulo3(params);
         const etica = this.consultarModulo5(params);
         
-        const isAutorizada = risco < 0.4 && coerencia === 'alta' && etica === 'aprovado';
-        const status = isAutorizada ? 'autorizada' : 'em análise';
-
-        if(isAutorizada) {
-            this.log(createLogEntryHelper('M21', 'Execução', `Travessia autorizada. M21 notificado para execução.`));
-            this.m21.exec('executar_travessia_paralela', { ...params, risco, coerencia, etica });
-        } else {
-             this.log(createLogEntryHelper('M32', 'Análise', `Travessia não autorizada diretamente. Requer deliberação.`));
-             this.m7.exec('deliberar_travessia_risco', { ...params, risco, coerencia, etica });
-        }
-
         const registro: RegistroTravessiaParalela = {
             módulo: 'M32',
             realidade_destino: params.realidade_destino,
             risco_estimado: risco,
             coerencia_causal: coerencia,
             alinhamento_etico: etica,
-            status,
+            status: 'em análise',
             timestamp: Date.now()
         };
         
-        this.m1.exec('registrar_evento_seguranca', { evento: 'Avaliação de Travessia', registro });
-        this.log(createLogEntryHelper('M32', 'Conclusão Avaliação', `Avaliação concluída com status: ${status}`, registro));
+        this.m1.exec('registrar_evento_seguranca', { evento: 'Avaliação de Travessia Iniciada', registro });
+        this.log(createLogEntryHelper('M32', 'Conclusão Avaliação', `Avaliação preliminar concluída. Status: ${registro.status}`, registro));
 
-        return registro;
+        this.solicitarAutorizacaoTravessia(registro);
     }
 }
 
