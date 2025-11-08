@@ -156,4 +156,5 @@ class ModuloZero {
 
 export const runModuleZeroSequence = (log: (entry: AnyLogEntry) => void, onComplete: (report: any) => void) => {
     const moduloZero = new ModuloZero(log, onComplete);
-    moduloZero.executar_sequencia
+    moduloZero.executar_sequencia_sagrada();
+};

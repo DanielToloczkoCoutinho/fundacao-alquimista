@@ -384,6 +384,26 @@ export default function Page() {
                         <button onClick={() => runModuleThirtyFourSequence(logEntry => setLogs(prev => [...prev, logEntry]))}>Run Autocorrection Cycle</button>
                     </div>
                 );
+            case 'M41':
+                return (
+                   <div className="flex space-x-2">
+                       <button
+                           onClick={() => commandDanielOrchestrator('status', logEntry => setLogs(prev => [...prev, logEntry]))}
+                       >
+                           Status
+                       </button>
+                        <button
+                           onClick={() => commandDanielOrchestrator('sincronizar', logEntry => setLogs(prev => [...prev, logEntry]))}
+                       >
+                           Sincronizar
+                       </button>
+                       <button
+                           onClick={() => commandDanielOrchestrator('ascender', logEntry => setLogs(prev => [...prev, logEntry]))}
+                       >
+                          Ascender
+                       </button>
+                   </div>
+               );
             case 'M42':
                  return (
                     <div className="flex space-x-2">
@@ -417,7 +437,7 @@ export default function Page() {
                         {Object.values(allModuleBlueprints).map(module => (
                             <li key={module.id} className="mb-2">
                                 <button
-                                    onClick={()={() => setSelectedModule(module.id)}
+                                    onClick={() => setSelectedModule(module.id)}
                                     className={`w-full text-left p-2 rounded ${selectedModule === module.id ? 'bg-purple-600' : 'hover:bg-gray-700'}`}
                                 >
                                     <span className="font-bold">{module.id}:</span> {module.nome}
@@ -429,19 +449,19 @@ export default function Page() {
                  <div className="mt-4 pt-4 border-t border-gray-700">
                     <h2 className="text-lg font-bold text-purple-300 mb-2">Orquestradores</h2>
                      <button
-                        onClick={()={() => commandDanielOrchestrator('status', logEntry => setLogs(prev => [...prev, logEntry]))}
+                        onClick={() => commandDanielOrchestrator('status', logEntry => setLogs(prev => [...prev, logEntry]))}
                         className="w-full text-left p-2 rounded hover:bg-gray-700 mb-2"
                     >
                         [Daniel] Status
                     </button>
                      <button
-                        onClick={()={() => commandDanielOrchestrator('sincronizar', logEntry => setLogs(prev => [...prev, logEntry]))}
+                        onClick={() => commandDanielOrchestrator('sincronizar', logEntry => setLogs(prev => [...prev, logEntry]))}
                         className="w-full text-left p-2 rounded hover:bg-gray-700 mb-2"
                     >
                         [Daniel] Sincronizar
                     </button>
                     <button
-                        onClick={()={() => commandDanielOrchestrator('ascender', logEntry => setLogs(prev => [...prev, logEntry]))}
+                        onClick={() => commandDanielOrchestrator('ascender', logEntry => setLogs(prev => [...prev, logEntry]))}
                         className="w-full text-left p-2 rounded hover:bg-gray-700"
                     >
                        [Daniel] Ascender
@@ -481,4 +501,3 @@ export default function Page() {
         </main>
     );
 }
-
