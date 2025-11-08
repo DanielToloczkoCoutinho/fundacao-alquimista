@@ -1,4 +1,3 @@
-
 'use client';
 /**
  * MÓDULO 11: Portal de Comunicação Interdimensional (PORTALANATH-IX)
@@ -9,12 +8,12 @@ import { type AnyLogEntry } from './module-zero';
 type LogCallback = (entry: AnyLogEntry) => void;
 let portalIdStore: string | null = null;
 
-const createLogEntry = (source: 'M11' | 'M1' | 'M2' | 'M3' | 'M4' | 'M5' | 'M6' | 'M7' | 'M8' | 'M9' | 'M10' | 'M98', step: string, message: string, data?: any): AnyLogEntry => ({
+const createLogEntry = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
