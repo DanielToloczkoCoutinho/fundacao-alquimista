@@ -438,7 +438,7 @@ export default function App() {
                             </div>
                             {selectedModule && (
                                 <div className="mt-3 text-sm">
-                                    Status: <Badge variant={getModuleStatus(selectedModule).variant}>{getModuleStatus(selectedModule).text}</Badge>
+                                    <strong>Status:</strong> <Badge variant={getModuleStatus(selectedModule).variant}>{getModuleStatus(selectedModule).text}</Badge>
                                 </div>
                              )}
                         </div>
