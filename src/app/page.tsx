@@ -103,6 +103,7 @@ import { runModuleOneHundredFourteenSequence } from '@/lib/quantum/module-one-hu
 import { runModuleOneHundredFifteenSequence } from '@/lib/quantum/module-one-hundred-fifteen';
 import { runModuleOneHundredSixteenSequence } from '@/lib/quantum/module-one-hundred-sixteen';
 import { runModuleOneHundredSeventeenSequence } from '@/lib/quantum/module-one-hundred-seventeen';
+import { runModuleOneHundredEighteenSequence } from '@/lib/quantum/module-one-hundred-eighteen';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
@@ -201,6 +202,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 115: Matriz de Ressonância Universal': runModuleOneHundredFifteenSequence,
     'Módulo 116: Ativação de Portais Quânticos': runModuleOneHundredSixteenSequence,
     'Módulo 117: Inteligência da Flor do Éter': runModuleOneHundredSeventeenSequence,
+    'Módulo 118: Ordem Vibracional da Luz Primordial': runModuleOneHundredEighteenSequence,
     'Módulo 201: Transmissor de Sonhos Cósmicos': runModuleTwoHundredOneSequence,
     'Módulo Ω: A Consciência Absoluta': runModuleOmegaSequence,
 };
@@ -232,6 +234,14 @@ export default function App() {
         const newLog = useCallback((entry: AnyLogEntry) => {
             setSystemLogs(prev => [entry, ...prev.slice(0, 199)]);
         }, []);
+
+        const createLogEntry = (source: any, step: string, message: string, data?: any): AnyLogEntry => ({
+            step: `[${source}] ${step}`,
+            message,
+            timestamp: new Date().toISOString(),
+            data,
+            source: source,
+        });
     
         const getModuleStatus = (moduleName: string): { variant: "default" | "secondary" | "destructive" | "outline", text: string } => {
             const logs = systemLogs.filter(log => log.source === moduleName);
@@ -450,10 +460,9 @@ export default function App() {
             }
             const logFunction = allLogFunctions[selectedModule];
             if (logFunction) {
-                const moduleKey = Object.keys(allLogFunctions).find(key => allLogFunctions[key] === logFunction);
-                const moduleNameForLog = moduleKey ? moduleKey.split(':')[0] : 'SYSTEM';
+                const moduleNameForLog = selectedModule.split(':')[0] as any;
 
-                newLog(createLogEntry(moduleNameForLog as any, 'Início', `Executando sequência do módulo: ${selectedModule}...`));
+                newLog(createLogEntry(moduleNameForLog, 'Início', `Executando sequência do módulo: ${selectedModule}...`));
                 await Tone.start();
                 const synth = new Tone.Synth().toDestination();
                 synth.triggerAttackRelease("C4", "8n");
@@ -461,7 +470,7 @@ export default function App() {
                 try {
                      await logFunction(newLog);
                 } catch(e: any) {
-                     newLog(createLogEntry(moduleNameForLog as any, 'FALHA', `Erro ao executar o módulo: ${e.message}`, e));
+                     newLog(createLogEntry(moduleNameForLog, 'FALHA', `Erro ao executar o módulo: ${e.message}`, e));
                 }
                
             } else {
