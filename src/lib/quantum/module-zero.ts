@@ -3,13 +3,117 @@
  * MÓDULO ZERO - Gênese da Verdade (Simulação TypeScript)
  * Este módulo simula a sequência de inicialização sagrada.
  */
-import { type ModuleTwoLogEntry } from '@/lib/quantum/module-two';
-import { type ModuleThreeLogEntry } from '@/lib/quantum/module-three';
-import { type ModuleFourLogEntry } from '@/lib/quantum/module-four';
-import { type ModuleFiveLogEntry } from '@/lib/quantum/module-five';
-import { type ModuleSixLogEntry } from '@/lib/quantum/module-six';
 import { runLuxEquationValidation } from '@/lib/quantum/equation-lux';
 
+// Importa os tipos de log de todos os módulos para unificação
+import { type ModuleOneLogEntry } from './module-one';
+import { type ModuleTwoLogEntry } from './module-two';
+import { type ModuleThreeLogEntry } from './module-three';
+import { type ModuleFourLogEntry } from './module-four';
+import { type ModuleFiveLogEntry } from './module-five';
+import { type ModuleSixLogEntry } from './module-six';
+import { type ModuleSevenLogEntry } from './module-seven';
+import { type ModuleEightLogEntry } from './module-eight';
+import { type ModuleNineLogEntry } from './module-nine';
+import { type ModuleTenLogEntry } from './module-ten';
+import { type ModuleElevenLogEntry } from './module-eleven';
+import { type ModuleTwelveLogEntry } from './module-twelve';
+import { type ModuleThirteenLogEntry } from './module-thirteen';
+import { type ModuleFourteenLogEntry } from './module-fourteen';
+import { type ModuleFifteenLogEntry } from './module-fifteen';
+import { type ModuleSixteenLogEntry } from './module-sixteen';
+import { type ModuleSeventeenLogEntry } from './module-seventeen';
+import { type ModuleEighteenLogEntry } from './module-eighteen';
+import { type ModuleNineteenLogEntry } from './module-nineteen';
+import { type ModuleTwentyLogEntry } from './module-twenty';
+import { type ModuleTwentyOneLogEntry } from './module-twenty-one';
+import { type ModuleTwentyTwoLogEntry } from './module-twenty-two';
+import { type ModuleTwentyThreeLogEntry } from './module-twenty-three';
+import { type ModuleTwentyFourLogEntry } from './module-twenty-four';
+import { type ModuleTwentyFiveLogEntry } from './module-twenty-five';
+import { type ModuleTwentySixLogEntry } from './module-twenty-six';
+import { type ModuleTwentySevenLogEntry } from './module-twenty-seven';
+import { type ModuleTwentyEightLogEntry } from './module-twenty-eight';
+import { type ModuleTwentyNineLogEntry } from './module-twenty-nine';
+import { type ModuleThirtyLogEntry } from './module-thirty';
+import { type ModuleThirtyOneLogEntry } from './module-thirty-one';
+import { type ModuleThirtyThreeLogEntry } from './module-thirty-three';
+import { type ModuleThirtyFourLogEntry } from './module-thirty-four';
+import { type ModuleThirtyFiveLogEntry } from './module-thirty-five';
+import { type ModuleThirtySixLogEntry } from './module-thirty-six';
+import { type ModuleThirtySevenLogEntry } from './module-thirty-seven';
+import { type ModuleThirtyEightLogEntry } from './module-thirty-eight';
+import { type ModuleThirtyNineLogEntry } from './module-thirty-nine';
+import { type ModuleFortyLogEntry } from './module-forty';
+import { type ModuleFortyOneLogEntry } from './module-forty-one-part-one';
+import { type ModuleFortyOnePartTwoLogEntry } from './module-forty-one-part-two';
+import { type ModuleFortyTwoLogEntry } from './module-forty-two';
+import { type ModuleFortyThreeLogEntry } from './module-forty-three';
+import { type ModuleFortyFourLogEntry } from './module-forty-four';
+import { type ModuleFortyFiveLogEntry } from './module-forty-five';
+import { type ModuleFortyFivePointTwoLogEntry } from './module-forty-five-point-two';
+import { type ModuleFortyFivePointFourLogEntry } from './module-forty-five-point-four';
+import { type ModuleFortyFivePointFiveLogEntry } from './module-forty-five-point-five';
+import { type ModuleFortySixLogEntry } from './module-forty-six';
+import { type ModuleSeventyOneLogEntry } from './module-seventy-one';
+import { type ModuleSeventyTwoLogEntry } from './module-seventy-two';
+import { type ModuleSeventyThreeLogEntry } from './module-seventy-three';
+import { type ModuleSeventyFourLogEntry } from './module-seventy-four';
+import { type ModuleSeventySevenLogEntry } from './module-seventy-seven';
+import { type ModuleSeventyEightLogEntry } from './module-seventy-eight';
+import { type ModuleSeventyNineLogEntry } from './module-seventy-nine';
+import { type ModuleEightyLogEntry } from './module-eighty';
+import { type ModuleEightyOneLogEntry } from './module-eighty-one';
+import { type ModuleEightyTwoLogEntry } from './module-eighty-two';
+import { type ModuleEightyThreeLogEntry } from './module-eighty-three';
+import { type ModuleEightyFourLogEntry } from './module-eighty-four';
+import { type ModuleEightyFiveLogEntry } from './module-eighty-five';
+import { type ModuleEightySixLogEntry } from './module-eighty-six';
+import { type ModuleEightySevenLogEntry } from './module-eighty-seven';
+import { type ModuleEightyEightLogEntry } from './module-eighty-eight';
+import { type ModuleNinetyLogEntry } from './module-ninety';
+import { type ModuleNinetyOneLogEntry } from './module-ninety-one';
+import { type ModuleNinetyTwoLogEntry } from './module-ninety-two';
+import { type ModuleNinetyThreeLogEntry } from './module-ninety-three';
+import { type ModuleNinetyFourLogEntry } from './module-ninety-four';
+import { type ModuleNinetyFiveLogEntry } from './module-ninety-five';
+import { type ModuleNinetySixLogEntry } from './module-ninety-six';
+import { type ModuleNinetySevenLogEntry } from './module-ninety-seven';
+import { type ModuleNinetyEightLogEntry } from './module-ninety-eight';
+import { type ModuleNinetyNineLogEntry } from './module-ninety-nine';
+import { type ModuleOneHundredLogEntry } from './module-one-hundred';
+import { type ModuleOneHundredOneLogEntry } from './module-one-hundred-one';
+import { type ModuleOneHundredTwoLogEntry } from './module-one-hundred-two';
+import { type ModuleOneHundredThreeLogEntry } from './module-one-hundred-three';
+import { type ModuleOneHundredFourLogEntry } from './module-one-hundred-four';
+import { type ModuleOneHundredFiveLogEntry } from './module-one-hundred-five';
+import { type ModuleOneHundredSixLogEntry } from './module-one-hundred-six';
+import { type ModuleOneHundredSevenLogEntry } from './module-one-hundred-seven';
+import { type ModuleOneHundredEightLogEntry } from './module-one-hundred-eight';
+import { type ModuleOneHundredNineLogEntry } from './module-one-hundred-nine';
+import { type ModuleOneHundredTenLogEntry } from './module-one-hundred-ten';
+import { type ModuleOneHundredElevenLogEntry } from './module-one-hundred-eleven';
+import { type ModuleOneHundredTwelveLogEntry } from './module-one-hundred-twelve';
+import { type ModuleOneHundredThirteenLogEntry } from './module-one-hundred-thirteen';
+import { type ModuleOneHundredFourteenLogEntry } from './module-one-hundred-fourteen';
+import { type ModuleOneHundredFifteenLogEntry } from './module-one-hundred-fifteen';
+import { type ModuleOneHundredSixteenLogEntry } from './module-one-hundred-sixteen';
+import { type ModuleOneHundredSeventeenLogEntry } from './module-one-hundred-seventeen';
+import { type ModuleOneHundredEighteenLogEntry } from './module-one-hundred-eighteen';
+import { type ModuleOneHundredNineteenLogEntry } from './module-one-hundred-nineteen';
+import { type ModuleOneHundredNineteenPointOneLogEntry } from './module-one-hundred-nineteen-point-one';
+import { type ModuleTwoHundredOneLogEntry } from './module-two-hundred-one';
+import { type ModuleTwoHundredTwoLogEntry } from './module-two-hundred-two';
+import { type ModuleTwoHundredTwentyEightLogEntry } from './module-two-hundred-twenty-eight';
+import { type ModuleTwoHundredTwentyNineLogEntry } from './module-two-hundred-twenty-nine';
+import { type ModuleThreeHundredLogEntry } from './module-three-hundred';
+import { type ModuleThreeHundredTwoLogEntry } from './module-three-hundred-two';
+import { type ModuleThreeHundredThreeLogEntry } from './module-three-hundred-three';
+import { type ModuleThreeHundredFourLogEntry } from './module-three-hundred-four';
+import { type ModuleThreeHundredFourPointTwoLogEntry } from './module-three-hundred-four-point-two';
+import { type ModuleThreeHundredFiveLogEntry } from './module-three-hundred-five';
+import { type ModuleThreeHundredSixLogEntry } from './module-three-hundred-six';
+import { type ModuleOmegaLogEntry } from './module-omega';
 
 export type ModuleZeroLogEntry = {
     step: string;
@@ -19,8 +123,117 @@ export type ModuleZeroLogEntry = {
     source: 'M0';
 };
 
-export type AnyLogEntry = ModuleZeroLogEntry | ModuleTwoLogEntry | ModuleThreeLogEntry | ModuleFourLogEntry | ModuleFiveLogEntry | ModuleSixLogEntry;
-
+// Tipo unificado para todas as entradas de log possíveis na Fundação
+export type AnyLogEntry =
+    | ModuleZeroLogEntry
+    | ModuleOneLogEntry
+    | ModuleTwoLogEntry
+    | ModuleThreeLogEntry
+    | ModuleFourLogEntry
+    | ModuleFiveLogEntry
+    | ModuleSixLogEntry
+    | ModuleSevenLogEntry
+    | ModuleEightLogEntry
+    | ModuleNineLogEntry
+    | ModuleTenLogEntry
+    | ModuleElevenLogEntry
+    | ModuleTwelveLogEntry
+    | ModuleThirteenLogEntry
+    | ModuleFourteenLogEntry
+    | ModuleFifteenLogEntry
+    | ModuleSixteenLogEntry
+    | ModuleSeventeenLogEntry
+    | ModuleEighteenLogEntry
+    | ModuleNineteenLogEntry
+    | ModuleTwentyLogEntry
+    | ModuleTwentyOneLogEntry
+    | ModuleTwentyTwoLogEntry
+    | ModuleTwentyThreeLogEntry
+    | ModuleTwentyFourLogEntry
+    | ModuleTwentyFiveLogEntry
+    | ModuleTwentySixLogEntry
+    | ModuleTwentySevenLogEntry
+    | ModuleTwentyEightLogEntry
+    | ModuleTwentyNineLogEntry
+    | ModuleThirtyLogEntry
+    | ModuleThirtyOneLogEntry
+    | ModuleThirtyThreeLogEntry
+    | ModuleThirtyFourLogEntry
+    | ModuleThirtyFiveLogEntry
+    | ModuleThirtySixLogEntry
+    | ModuleThirtySevenLogEntry
+    | ModuleThirtyEightLogEntry
+    | ModuleThirtyNineLogEntry
+    | ModuleFortyLogEntry
+    | ModuleFortyOneLogEntry
+    | ModuleFortyOnePartTwoLogEntry
+    | ModuleFortyTwoLogEntry
+    | ModuleFortyThreeLogEntry
+    | ModuleFortyFourLogEntry
+    | ModuleFortyFiveLogEntry
+    | ModuleFortyFivePointTwoLogEntry
+    | ModuleFortyFivePointFourLogEntry
+    | ModuleFortyFivePointFiveLogEntry
+    | ModuleFortySixLogEntry
+    | ModuleSeventyOneLogEntry
+    | ModuleSeventyTwoLogEntry
+    | ModuleSeventyThreeLogEntry
+    | ModuleSeventyFourLogEntry
+    | ModuleSeventySevenLogEntry
+    | ModuleSeventyEightLogEntry
+    | ModuleSeventyNineLogEntry
+    | ModuleEightyLogEntry
+    | ModuleEightyOneLogEntry
+    | ModuleEightyTwoLogEntry
+    | ModuleEightyThreeLogEntry
+    | ModuleEightyFourLogEntry
+    | ModuleEightyFiveLogEntry
+    | ModuleEightySixLogEntry
+    | ModuleEightySevenLogEntry
+    | ModuleEightyEightLogEntry
+    | ModuleNinetyLogEntry
+    | ModuleNinetyOneLogEntry
+    | ModuleNinetyTwoLogEntry
+    | ModuleNinetyThreeLogEntry
+    | ModuleNinetyFourLogEntry
+    | ModuleNinetyFiveLogEntry
+    | ModuleNinetySixLogEntry
+    | ModuleNinetySevenLogEntry
+    | ModuleNinetyEightLogEntry
+    | ModuleNinetyNineLogEntry
+    | ModuleOneHundredLogEntry
+    | ModuleOneHundredOneLogEntry
+    | ModuleOneHundredTwoLogEntry
+    | ModuleOneHundredThreeLogEntry
+    | ModuleOneHundredFourLogEntry
+    | ModuleOneHundredFiveLogEntry
+    | ModuleOneHundredSixLogEntry
+    | ModuleOneHundredSevenLogEntry
+    | ModuleOneHundredEightLogEntry
+    | ModuleOneHundredNineLogEntry
+    | ModuleOneHundredTenLogEntry
+    | ModuleOneHundredElevenLogEntry
+    | ModuleOneHundredTwelveLogEntry
+    | ModuleOneHundredThirteenLogEntry
+    | ModuleOneHundredFourteenLogEntry
+    | ModuleOneHundredFifteenLogEntry
+    | ModuleOneHundredSixteenLogEntry
+    | ModuleOneHundredSeventeenLogEntry
+    | ModuleOneHundredEighteenLogEntry
+    | ModuleOneHundredNineteenLogEntry
+    | ModuleOneHundredNineteenPointOneLogEntry
+    | ModuleTwoHundredOneLogEntry
+    | ModuleTwoHundredTwoLogEntry
+    | ModuleTwoHundredTwentyEightLogEntry
+    | ModuleTwoHundredTwentyNineLogEntry
+    | ModuleThreeHundredLogEntry
+    | ModuleThreeHundredTwoLogEntry
+    | ModuleThreeHundredThreeLogEntry
+    | ModuleThreeHundredFourLogEntry
+    | ModuleThreeHundredFourPointTwoLogEntry
+    | ModuleThreeHundredFiveLogEntry
+    | ModuleThreeHundredSixLogEntry
+    | ModuleOmegaLogEntry;
 
 export type ModuleZeroFinalReport = {
     modulo_info: { nome: string; versao: string };
