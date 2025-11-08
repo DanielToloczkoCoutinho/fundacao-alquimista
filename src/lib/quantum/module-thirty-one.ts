@@ -153,7 +153,7 @@ class Modulo31_ManipulacaoQuantica {
 
         // A execução é simulada
         
-        let rho_after = EquationsRegistryM31.get("EQ177")({ freq_origem: calibragem.frequencia, freq_destino: random.choice(this.frequencias_alvo) });
+        let rho_after = EquationsRegistryM31.get("EQ177")({ freq_origem: calibragem.frequencia, freq_destino: this.frequencias_alvo[Math.floor(Math.random() * this.frequencias_alvo.length)] });
         this.m28.exec('post_equalize', { rho_after });
 
         if (rho_after < RHO_RECALIBRAR) {

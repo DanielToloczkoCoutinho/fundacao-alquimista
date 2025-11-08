@@ -203,3 +203,5 @@ export class Modulo8_PIRC {
         this.logCallback(createLogEntry('M8', 'Simulação Completa', '--- SIMULAÇÃO PIRC M8 CONCLUÍDA ---'));
     }
 }
+
+export const runModuleEightSequence = Modulo8_PIRC;
