@@ -40,7 +40,7 @@ const createLogEntry = (step: string, message: string, data?: any): ModuleZeroLo
     source: 'M0',
 });
 
-export class ModuloZero {
+class ModuloZero {
     private nome = "Módulo Zero - Gênese da Verdade";
     private versao = "1.1.Ω";
     private relatorio_final: ModuleZeroFinalReport;
@@ -153,3 +153,7 @@ export class ModuloZero {
         this.finalReportCallback(this.relatorio_final);
     }
 }
+
+export const runModuleZeroSequence = (log: (entry: AnyLogEntry) => void, onComplete: (report: any) => void) => {
+    const moduloZero = new ModuloZero(log, onComplete);
+    moduloZero.executar_sequencia
