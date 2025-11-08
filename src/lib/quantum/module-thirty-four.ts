@@ -1,8 +1,22 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
+
+// Harmonização da tipagem
+export type ModuleThirtyFourLogEntry = AnyLogEntry;
+
+// Criação do Registro de Coerência
+export type RegistroCoerenciaCosmica = {
+  módulo: 'M34',
+  origem: string,
+  tipo_fluxo: 'vibracional' | 'temporal' | 'dimensional' | 'ético',
+  intensidade_dissonancia: number,
+  técnica_aplicada: 'recalibração' | 'isolamento' | 'resonância' | 'purificação',
+  status: 'estabilizado' | 'em observação' | 'crítico',
+  timestamp: number
+};
+
 
 const PI = Math.PI;
 const PHI = (1 + Math.sqrt(5)) / 2;
@@ -15,49 +29,60 @@ const ASSINATURA_VIBRACIONAL_MESTRA = {
     fase_mestra: 0.0,
 };
 
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+// Refinamento da função de registro
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void => {
+  logCallback(entry);
+};
+
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
+
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 
 class MockM01Seguranca {
     constructor(private log: LogCallback) {}
-    registrar(payload: any) { this.log(createLogEntry('M1', 'CRÔNICA', `Registrando: ${payload.evento}`)); }
-    alerta(tipo: string, mensagem: string, causa?: string) { this.log(createLogEntry('M1', 'ALERTA', `${tipo}: ${mensagem}`)); }
+    registrar(payload: any) { this.log(createLogEntryHelper('M1', 'CRÔNICA', `Registrando: ${payload.evento}`, payload)); }
+    alerta(tipo: string, mensagem: string, causa?: string) { this.log(createLogEntryHelper('M1', 'ALERTA', `${tipo}: ${mensagem}`, { causa })); }
 }
 
 class MockM09Nexus {
     constructor(private log: LogCallback) {}
-    alerta_visual(tipo: string, mensagem: string, codigo: string) { this.log(createLogEntry('M9', tipo, `${mensagem} (code=${codigo})`)); }
+    alerta_visual(tipo: string, mensagem: string, codigo: string) { this.log(createLogEntryHelper('M9', tipo, `${mensagem} (code=${codigo})`)); }
 }
 
 class MockM08PIRC {
     constructor(private log: LogCallback) {}
-    cura(dados: any) { this.log(createLogEntry('M8', 'Cura', `Iniciando cura: ${dados.tipo}`)); return { status: "CURA_INICIADA" }; }
+    cura(dados: any) { this.log(createLogEntryHelper('M8', 'Cura', `Iniciando cura: ${dados.tipo}`, dados)); return { status: "CURA_INICIADA" }; }
 }
 
 class MockM28Harmonizacao {
     constructor(private log: LogCallback) {}
-    harmonizar_freq(freq: number) { this.log(createLogEntry('M28', 'Harmonização', `Frequência -> ${freq.toFixed(2)} Hz`)); return { status: "HARMONIZADO" }; }
-    realinhar_fase(offset: number) { this.log(createLogEntry('M28', 'Alinhamento', `Fase -> offset ${offset.toFixed(2)} rad`)); return { status: "FASE_ALINHADA" }; }
+    harmonizar_freq(freq: number) { this.log(createLogEntryHelper('M28', 'Harmonização', `Frequência -> ${freq.toFixed(2)} Hz`)); return { status: "HARMONIZADO" }; }
+    realinhar_fase(offset: number) { this.log(createLogEntryHelper('M28', 'Alinhamento', `Fase -> offset ${offset.toFixed(2)} rad`)); return { status: "FASE_ALINHADA" }; }
 }
 
 class MockM98Existencia {
     constructor(private log: LogCallback) {}
-    modular(params: any) { this.log(createLogEntry('M98', 'Modulação', `Modulando: ${params.tipo}`)); return { status: "MODULADO" }; }
+    modular(params: any) { this.log(createLogEntryHelper('M98', 'Modulação', `Modulando: ${params.tipo}`, params)); return { status: "MODULADO" }; }
 }
 
 class MockM33Diretrizes {
     constructor(private log: LogCallback) {}
     emitir_diretriz(intencao: any) {
         const texto = `Focar em ${intencao.tema} com pureza ${intencao.pureza.toFixed(2)}`;
-        this.log(createLogEntry('M33', 'Diretriz', texto));
+        this.log(createLogEntryHelper('M33', 'Diretriz', texto));
         return { id: `dir_${Date.now()}`, texto };
     }
 }
@@ -66,7 +91,7 @@ class MockM45Concilium {
      constructor(private log: LogCallback) {}
     deliberar(proposta: any) {
         const ok = (proposta.consenso_score || 0) >= 0.6;
-        this.log(createLogEntry('M45', 'Deliberação', `Proposta ${proposta.proposta_id} -> ${ok ? 'VALIDADA' : 'NEGADA'}`));
+        this.log(createLogEntryHelper('M45', 'Deliberação', `Proposta ${proposta.proposta_id} -> ${ok ? 'VALIDADA' : 'NEGADA'}`));
         return { status: ok ? "VALIDADA" : "NEGADA" };
     }
 }
@@ -112,7 +137,7 @@ class Modulo34GuardiaoCoerenciaCosmica {
         this.m98 = new MockM98Existencia(logCallback);
         this.m33 = new MockM33Diretrizes(logCallback);
         this.m45 = new MockM45Concilium(logCallback);
-        this.logCallback(createLogEntry('M34', 'Init', `M34 '${this.modulo_id}' inicializado.`));
+        this.logCallback(createLogEntryHelper('M34', 'Init', `M34 '${this.modulo_id}' inicializado.`));
     }
 
     private _ajustar_por_perfil(intencao: string): { omega: number, kappa: number } {
@@ -140,7 +165,7 @@ class Modulo34GuardiaoCoerenciaCosmica {
             }
             this.estado_global = psi;
         } catch (e: any) {
-            this.logCallback(createLogEntry('M34', 'FALHA', `Evolução falhou: ${e.message}`));
+            this.logCallback(createLogEntryHelper('M34', 'FALHA', `Evolução falhou: ${e.message}`));
             this.estado_global = [...this.ultimo_estado_coerente] as [number, number];
             this.m28.harmonizar_freq(ASSINATURA_VIBRACIONAL_MESTRA.frequencia_mestra);
         }
@@ -152,13 +177,13 @@ class Modulo34GuardiaoCoerenciaCosmica {
         if (diss <= Math.min(...this.historico_dissonancia)) {
             this.ultimo_estado_coerente = [...this.estado_global] as [number, number];
         }
-        this.logCallback(createLogEntry('M34', 'Evolução', `Evolução concluída. Dissonância=${diss.toFixed(6)}`));
+        this.logCallback(createLogEntryHelper('M34', 'Evolução', `Evolução concluída. Dissonância=${diss.toFixed(6)}`));
     }
     
     autocorrecao_dissonancia(limiar: number = 0.1) {
         const diss = Math.abs(this.estado_global[1]);
         if (diss > limiar) {
-            this.logCallback(createLogEntry('M34', 'Autocorreção', `Dissonância ${diss.toFixed(4)} > ${limiar}. Iniciando autocorreção.`));
+            this.logCallback(createLogEntryHelper('M34', 'Autocorreção', `Dissonância ${diss.toFixed(4)} > ${limiar}. Iniciando autocorreção.`));
             this.m08.cura({ tipo: "Cura_Sistemica_Global", dissonancia: diss });
             this.m28.harmonizar_freq(ASSINATURA_VIBRACIONAL_MESTRA.frequencia_mestra);
         }
@@ -168,13 +193,13 @@ class Modulo34GuardiaoCoerenciaCosmica {
         const limiar = ETHICAL_THRESHOLD_HIGH;
         const aprovado = pureza >= limiar;
         if (!aprovado) {
-             this.logCallback(createLogEntry('M34', 'Falha Ética', `Intenção '${intencao}' reprovada (pureza ${pureza.toFixed(2)} < ${limiar}).`));
+             this.logCallback(createLogEntryHelper('M34', 'Falha Ética', `Intenção '${intencao}' reprovada (pureza ${pureza.toFixed(2)} < ${limiar}).`));
         }
         return { status: aprovado ? "APROVADA" : "REPROVADA" };
     }
 
     async ciclo_autocorrecao(assinatura_fundador: string, dados_vibracionais: number[], intencao_operacao: string, pureza_intencao: number, forcar_falha_evolucao: boolean = false) {
-        this.logCallback(createLogEntry('M34', 'Ciclo', "Iniciando ciclo completo de autocorreção..."));
+        this.logCallback(createLogEntryHelper('M34', 'Ciclo', "Iniciando ciclo completo de autocorreção..."));
 
         await this.evoluir_estado_global(1.0, { intencao: intencao_operacao, coerencia: 0.9, risco: 0.2 }, forcar_falha_evolucao);
         
@@ -182,7 +207,7 @@ class Modulo34GuardiaoCoerenciaCosmica {
         
         const et = this.avaliar_etica(intencao_operacao, pureza_intencao);
         if (et.status !== "APROVADA") {
-            this.logCallback(createLogEntry('M34', 'FALHA', `Ciclo abortado por falha no alinhamento ético.`));
+            this.logCallback(createLogEntryHelper('M34', 'FALHA', `Ciclo abortado por falha no alinhamento ético.`));
             return;
         }
 
@@ -190,11 +215,11 @@ class Modulo34GuardiaoCoerenciaCosmica {
         const deliberacao = this.m45.deliberar({ proposta_id: diretriz.id, consenso_score: 0.8 });
 
         if (deliberacao.status !== "VALIDADA") {
-             this.logCallback(createLogEntry('M34', 'FALHA', `Ciclo abortado por falha na deliberação.`));
+             this.logCallback(createLogEntryHelper('M34', 'FALHA', `Ciclo abortado por falha na deliberação.`));
              return;
         }
 
-        this.logCallback(createLogEntry('M34', 'Sucesso', `Ciclo de autocorreção concluído com sucesso.`));
+        this.logCallback(createLogEntryHelper('M34', 'Sucesso', `Ciclo de autocorreção concluído com sucesso.`));
     }
 }
 
