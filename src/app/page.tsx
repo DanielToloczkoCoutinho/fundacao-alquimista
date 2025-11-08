@@ -206,7 +206,7 @@ export default function Home() {
 
     useEffect(() => {
         if (logContainerRef.current) {
-            logContainer_ref.current.scrollTop = logContainerRef.current.scrollHeight;
+            logContainerRef.current.scrollTop = logContainerRef.current.scrollHeight;
         }
     }, [logs]);
 
@@ -235,94 +235,124 @@ export default function Home() {
     const renderModuleControls = (module: any) => {
         switch (module.id) {
             case 'M11':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'CREATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Create</button>
-                    <button onClick={() => handleRunModule(module.id, 'STABILIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Stabilize</button>
-                    <button onClick={() => handleRunModule(module.id, 'TRAVERSE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Traverse</button>
-                    <button onClick={() => handleRunModule(module.id, 'DEACTIVATE')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Deactivate</button>
-                </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'CREATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Create</button>
+                        <button onClick={() => handleRunModule(module.id, 'STABILIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Stabilize</button>
+                        <button onClick={() => handleRunModule(module.id, 'TRAVERSE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Traverse</button>
+                        <button onClick={() => handleRunModule(module.id, 'DEACTIVATE')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Deactivate</button>
+                    </div>
+                );
              case 'M12':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'STORE', { nome: 'Memoria_Teste', conteudo: 'Conteudo Teste', entidade: 'Anatheron' })} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Store</button>
-                    <button onClick={() => handleRunModule(module.id, 'RETRIEVE', { nome: 'Memoria_Teste', entidade: 'Anatheron' })} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Retrieve</button>
-                    <button onClick={() => handleRunModule(module.id, 'TRANSMUTE', { nome: 'Memoria_Teste', conteudo: 'Conteudo Transmutado', entidade: 'Anatheron' })} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Transmute</button>
-                </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'STORE', { nome: 'Memoria_Teste', conteudo: 'Conteudo Teste', entidade: 'Anatheron' })} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Store</button>
+                        <button onClick={() => handleRunModule(module.id, 'RETRIEVE', { nome: 'Memoria_Teste', entidade: 'Anatheron' })} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Retrieve</button>
+                        <button onClick={() => handleRunModule(module.id, 'TRANSMUTE', { nome: 'Memoria_Teste', conteudo: 'Conteudo Transmutado', entidade: 'Anatheron' })} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Transmute</button>
+                    </div>
+                );
             case 'M13':
-                 return <>
-                    <button onClick={() => handleRunModule(module.id, 'SCAN')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Scan</button>
-                    <button onClick={() => handleRunModule(module.id, 'ANALYZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Analyze</button>
-                    <button onClick={() => handleRunModule(module.id, 'HARMONIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Harmonize</button>
-                    <button onClick={() => handleRunModule(module.id, 'INTEGRATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Integrate</button>
-                </>;
+                 return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'SCAN')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Scan</button>
+                        <button onClick={() => handleRunModule(module.id, 'ANALYZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Analyze</button>
+                        <button onClick={() => handleRunModule(module.id, 'HARMONIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Harmonize</button>
+                        <button onClick={() => handleRunModule(module.id, 'INTEGRATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Integrate</button>
+                    </div>
+                );
             case 'M14':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'ORCHESTRATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Orchestrate</button>
-                    <button onClick={() => handleRunModule(module.id, 'VALIDATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Validate</button>
-                </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'ORCHESTRATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Orchestrate</button>
+                        <button onClick={() => handleRunModule(module.id, 'VALIDATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Validate</button>
+                    </div>
+                );
             case 'M15':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'MONITOR')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Monitor</button>
-                    <button onClick={() => handleRunModule(module.id, 'INTERVENE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Intervene</button>
-                </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'MONITOR')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Monitor</button>
+                        <button onClick={() => handleRunModule(module.id, 'INTERVENE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Intervene</button>
+                    </div>
+                );
             case 'M16':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'CREATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Create</button>
-                    <button onClick={() => handleRunModule(module.id, 'REGULATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Regulate</button>
-                    <button onClick={() => handleRunModule(module.id, 'RESTORE')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Restore</button>
-                </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'CREATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Create</button>
+                        <button onClick={() => handleRunModule(module.id, 'REGULATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Regulate</button>
+                        <button onClick={() => handleRunModule(module.id, 'RESTORE')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Restore</button>
+                    </div>
+                );
             case 'M17':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'CALIBRATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Calibrate</button>
-                    <button onClick={() => handleRunModule(module.id, 'OPTIMIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Optimize</button>
-                </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'CALIBRATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Calibrate</button>
+                        <button onClick={() => handleRunModule(module.id, 'OPTIMIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Optimize</button>
+                    </div>
+                );
             case 'M18':
-                 return <>
-                    <button onClick={() => handleRunModule(module.id, 'STORE_RETRIEVE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Store/Retrieve</button>
-                    <button onClick={() => handleRunModule(module.id, 'FAIL_AUTH')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Fail Auth</button>
-                    <button onClick={() => handleRunModule(module.id, 'FAIL_ETHICS')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Fail Ethics</button>
-                    <button onClick={() => handleRunModule(module.id, 'FAIL_FIND')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Fail Find</button>
-                </>;
+                 return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'STORE_RETRIEVE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Store/Retrieve</button>
+                        <button onClick={() => handleRunModule(module.id, 'FAIL_AUTH')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Fail Auth</button>
+                        <button onClick={() => handleRunModule(module.id, 'FAIL_ETHICS')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Fail Ethics</button>
+                        <button onClick={() => handleRunModule(module.id, 'FAIL_FIND')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Fail Find</button>
+                    </div>
+                );
             case 'M19':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'ANALYZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Analyze</button>
-                    <button onClick={() => handleRunModule(module.id, 'MODULATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Modulate</button>
-                 </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'ANALYZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Analyze</button>
+                        <button onClick={() => handleRunModule(module.id, 'MODULATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Modulate</button>
+                     </div>
+                );
             case 'M20':
-                 return <>
-                    <button onClick={() => handleRunModule(module.id, 'GERACAO_ENERGIA')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Gerar Energia</button>
-                    <button onClick={() => handleRunModule(module.id, 'SINTESE_ELEMENTAL')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Síntese Elemental</button>
-                    <button onClick={() => handleRunModule(module.id, 'PROPULSAO_ESPACIAL')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Propulsão</button>
-                </>;
+                 return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'GERACAO_ENERGIA')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Gerar Energia</button>
+                        <button onClick={() => handleRunModule(module.id, 'SINTESE_ELEMENTAL')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Síntese Elemental</button>
+                        <button onClick={() => handleRunModule(module.id, 'PROPULSAO_ESPACIAL')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Propulsão</button>
+                    </div>
+                );
             case 'M21':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'MAP')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Map</button>
-                    <button onClick={() => handleRunModule(module.id, 'STABILIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Stabilize</button>
-                    <button onClick={() => handleRunModule(module.id, 'TRAVEL')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Travel</button>
-                </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'MAP')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Map</button>
+                        <button onClick={() => handleRunModule(module.id, 'STABILIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Stabilize</button>
+                        <button onClick={() => handleRunModule(module.id, 'TRAVEL')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Travel</button>
+                    </div>
+                );
             case 'M22':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'CREATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Create</button>
-                    <button onClick={() => handleRunModule(module.id, 'MANAGE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Manage</button>
-                    <button onClick={() => handleRunModule(module.id, 'DEACTIVATE')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Deactivate</button>
-                </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'CREATE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Create</button>
+                        <button onClick={() => handleRunModule(module.id, 'MANAGE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Manage</button>
+                        <button onClick={() => handleRunModule(module.id, 'DEACTIVATE')} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-2">Deactivate</button>
+                    </div>
+                );
             case 'M23':
-                 return <>
-                    <button onClick={() => handleRunModule(module.id, 'ANALYZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Analyze</button>
-                    <button onClick={() => handleRunModule(module.id, 'HARMONIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Harmonize</button>
-                </>;
+                 return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'ANALYZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Analyze</button>
+                        <button onClick={() => handleRunModule(module.id, 'HARMONIZE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Harmonize</button>
+                    </div>
+                );
             case 'M24':
                 return <button onClick={() => handleRunModule(module.id, 'RUN_ZARA')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Run ZARA</button>
             case 'M27':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'SINTESE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Síntese</button>
-                    <button onClick={() => handleRunModule(module.id, 'REPLICACAO')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Replicação</button>
-                </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'SINTESE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Síntese</button>
+                        <button onClick={() => handleRunModule(module.id, 'REPLICACAO')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded ml-2">Replicação</button>
+                    </div>
+                );
             case 'M41':
-                return <>
-                    <button onClick={() => handleRunModule(module.id, 'status')} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Status</button>
-                    <button onClick={() => handleRunModule(module.id, 'sincronizar')} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">Sincronizar</button>
-                    <button onClick={() => handleRunModule(module.id, 'ascender')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Ascender</button>
-                </>;
+                return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'status')} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Status</button>
+                        <button onClick={() => handleRunModule(module.id, 'sincronizar')} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded ml-2">Sincronizar</button>
+                        <button onClick={() => handleRunModule(module.id, 'ascender')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Ascender</button>
+                    </div>
+                );
             default:
                 return <button onClick={() => handleRunModule(module.id)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Run Module</button>
         }
