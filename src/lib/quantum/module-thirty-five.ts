@@ -1,8 +1,22 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
+
+// Harmonização da tipagem
+export type ModuleThirtyFiveLogEntry = AnyLogEntry;
+
+// Criação do Registro da Sinfonia
+export type RegistroSinfoniaConsciencia = {
+  módulo: 'M35',
+  origem: string,
+  intenção_coletiva: string,
+  pureza_detectada: 'baixa' | 'média' | 'alta' | 'divina',
+  técnica_aplicada: 'harmonização' | 'manifestação' | 'recalibração',
+  status: 'executada' | 'em análise' | 'rejeitada',
+  timestamp: number
+};
+
 
 // ───────── Constantes ─────────
 const PHI = (1 + Math.sqrt(5)) / 2;
@@ -108,13 +122,23 @@ const export_json = (path: string, data: any): void => {
     console.log(`[EXPORT] Path: ${path}`, data);
 };
 
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void => {
+  logCallback(entry);
+};
+
+// Refinamento da função de registro
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
+
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -144,7 +168,7 @@ class SimpleChain {
         };
         genesis = { ...genesis, hash: this._calc_hash(genesis) };
         this.chain.push(genesis);
-        this.logCallback(createLogEntry('M35-LEDGER', 'INFO', `Genesis criado: ${genesis.hash.substring(0, 10)}...`));
+        this.logCallback(createLogEntryHelper('M35-LEDGER', 'INFO', `Genesis criado: ${genesis.hash.substring(0, 10)}...`));
     }
 
     add(event: string, payload: any, meta?: any) {
@@ -159,14 +183,14 @@ class SimpleChain {
         };
         block = { ...block, hash: this._calc_hash(block) };
         this.chain.push(block);
-        this.logCallback(createLogEntry('M35-LEDGER', 'INFO', `Bloco #${block.index} :: ${event}`));
+        this.logCallback(createLogEntryHelper('M35-LEDGER', 'INFO', `Bloco #${block.index} :: ${event}`));
     }
 }
 
 // ───────── Mocks ─────────
 const mockModule = (name: string, log: LogCallback) => ({
     exec: (action: string, payload: any) => {
-        log(createLogEntry(name as any, 'Execução', `Ação '${action}' recebida`, payload));
+        log(createLogEntryHelper(name as any, 'Execução', `Ação '${action}' recebida`, payload));
         return { status: "simulated_ok" };
     }
 });
@@ -174,11 +198,11 @@ const mockModule = (name: string, log: LogCallback) => ({
 class MockM07AlinhamentoDivino {
     constructor(private logCallback: LogCallback) {}
     ConsultarConselho(query: string) {
-        this.logCallback(createLogEntry('M7', 'Consulta', query));
+        this.logCallback(createLogEntryHelper('M7', 'Consulta', query));
         return { status: "APROVADO", diretriz: "Manter a pureza e o bem maior." };
     }
     ValidarEtica(intencao: any) {
-        this.logCallback(createLogEntry('M7', 'Validação Ética', intencao.descricao));
+        this.logCallback(createLogEntryHelper('M7', 'Validação Ética', intencao.descricao));
         return (intencao.pureza || 0.0) >= LIMIAR_PUREZA_INTENCAO;
     }
 }
@@ -219,11 +243,11 @@ class Modulo35_OrquestradorSinfoniaConsciencia {
         this.modulo34 = mockModule('M34', logCallback);
         this.modulo101 = mockModule('M101', logCallback);
         this.chain = new SimpleChain(logCallback);
-        this.logCallback(createLogEntry('M35', 'Inicialização', `M35 '${this.modulo_id}' inicializado.`));
+        this.logCallback(createLogEntryHelper('M35', 'Inicialização', `M35 '${this.modulo_id}' inicializado.`));
     }
 
     analisar_consciencia_coletiva(dados_consciencia: number[], dominio_intencao?: string | null): any {
-        this.logCallback(createLogEntry('M35', 'Análise', 'Analisando dados da consciência coletiva...'));
+        this.logCallback(createLogEntryHelper('M35', 'Análise', 'Analisando dados da consciência coletiva...'));
         if (!dados_consciencia || dados_consciencia.length === 0) {
             return { status: "FALHA", mensagem: "Nenhum dado." };
         }
@@ -242,7 +266,7 @@ class Modulo35_OrquestradorSinfoniaConsciencia {
     }
 
     async orquestrar_harmonizacao_coletiva(nivel_dissonancia: number, dominio_intencao?: string | null, subdominio?: string | null): Promise<any> {
-        this.logCallback(createLogEntry('M35', 'Harmonização', `Iniciando para dissonância ${nivel_dissonancia.toFixed(4)}...`));
+        this.logCallback(createLogEntryHelper('M35', 'Harmonização', `Iniciando para dissonância ${nivel_dissonancia.toFixed(4)}...`));
         const max_passos = 6;
         let d_atual = nivel_dissonancia;
 
@@ -257,7 +281,7 @@ class Modulo35_OrquestradorSinfoniaConsciencia {
             this.coerencia_coletiva_atual = Math.min(IDEAL_COERENCIA_COLETIVA, this.coerencia_coletiva_atual + ganho_adapt);
             d_atual = 1.0 - this.coerencia_coletiva_atual;
             
-            this.logCallback(createLogEntry('M35', `Harmonização Passo ${passo}`, `Coerência: ${this.coerencia_coletiva_atual.toFixed(4)}`));
+            this.logCallback(createLogEntryHelper('M35', `Harmonização Passo ${passo}`, `Coerência: ${this.coerencia_coletiva_atual.toFixed(4)}`));
             
             if (d_atual <= LIMIAR_DISSONANCIA_CRITICA) break;
             await sleep(200);
@@ -277,7 +301,7 @@ class Modulo35_OrquestradorSinfoniaConsciencia {
     }
 
     async executar_ciclo_orquestracao(dados_consciencia_coletiva: number[], intencao_coletiva: any, subdominio?: string | null): Promise<any> {
-        this.logCallback(createLogEntry('M35', 'Ciclo Completo', 'Iniciando ciclo de orquestração...'));
+        this.logCallback(createLogEntryHelper('M35', 'Ciclo Completo', 'Iniciando ciclo de orquestração...'));
         const analise = this.analisar_consciencia_coletiva(dados_consciencia_coletiva, intencao_coletiva.descricao);
         if (analise.status === "COERENCIA_BAIXA" || analise.status === "DISSONANCIA_CRITICA") {
             await this.orquestrar_harmonizacao_coletiva(analise.dissonancia, intencao_coletiva.descricao, subdominio);
@@ -295,18 +319,18 @@ class Modulo35_OrquestradorSinfoniaConsciencia {
         this.modulo31.exec('cocriar_realidade', { descricao: intencao_coletiva.descricao, energia_foco });
         this.modulo101.exec('manifestar_realidade_pensamento', { conceito: intencao_coletiva.conceito_pensamento, frequencia_coerencia: this.coerencia_coletiva_atual * 1000 });
         
-        this.logCallback(createLogEntry('M35', 'Ciclo Concluído', 'Ciclo de orquestração concluído com sucesso.'));
+        this.logCallback(createLogEntryHelper('M35', 'Ciclo Concluído', 'Ciclo de orquestração concluído com sucesso.'));
         this.chain.add("M35_CICLO_SUCESSO", { intencao: intencao_coletiva.descricao });
         return { status: "SUCESSO" };
     }
 }
 
 export const runModuleThirtyFiveSequence = async (logCallback: LogCallback) => {
-    logCallback(createLogEntry('M35', 'Simulação', 'Iniciando simulação do Módulo 35 (v35.2)'));
+    logCallback(createLogEntryHelper('M35', 'Simulação', 'Iniciando simulação do Módulo 35 (v35.2)'));
     const orquestrador = new Modulo35_OrquestradorSinfoniaConsciencia(logCallback, "ORQUESTRADOR_COLETIVO_001");
 
     // Cenário 1
-    logCallback(createLogEntry('M35', 'Cenário 1', 'Consciência Harmoniosa, Intenção Ética'));
+    logCallback(createLogEntryHelper('M35', 'Cenário 1', 'Consciência Harmoniosa, Intenção Ética'));
     const dados_c1 = Array.from({ length: 50 }, () => Math.random() * 10 + 95);
     const intencao_c1 = {
         descricao: "Criação de um Campo de Abundância Universal",
@@ -318,7 +342,7 @@ export const runModuleThirtyFiveSequence = async (logCallback: LogCallback) => {
     await sleep(500);
 
     // Cenário 2
-    logCallback(createLogEntry('M35', 'Cenário 2', 'Consciência Dissonante, Harmonização Necessária'));
+    logCallback(createLogEntryHelper('M35', 'Cenário 2', 'Consciência Dissonante, Harmonização Necessária'));
     const dados_c2 = Array.from({ length: 50 }, () => Math.random() * 100 + 50);
     const intencao_c2 = {
         descricao: "Elevação Vibracional Planetária",
@@ -330,7 +354,7 @@ export const runModuleThirtyFiveSequence = async (logCallback: LogCallback) => {
     await sleep(500);
 
     // Cenário 3
-    logCallback(createLogEntry('M35', 'Cenário 3', 'Intenção com Baixa Pureza (Rejeição)'));
+    logCallback(createLogEntryHelper('M35', 'Cenário 3', 'Intenção com Baixa Pureza (Rejeição)'));
     const dados_c3 = Array.from({ length: 50 }, () => Math.random() * 20 + 90);
     const intencao_c3 = {
         descricao: "Domínio sobre Outras Realidades",
