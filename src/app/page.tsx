@@ -210,7 +210,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 76: INTERLINEAE TEMPORIS': runModuleSeventySixSequence,
     'Módulo 77: LUMEN-CUSTOS': runModuleSeventySevenSequence,
     'Módulo 78: UNIVERSUM_UNIFICATUM': runModuleSeventyEightSequence,
-    'Módulo 79: Ciclo de Luz Harmônica': runModuleSeventyNineSequence,
+    'Módulo 79: Códice Vivo Interativo': runModuleSeventyNineSequence,
     'Módulo 80: Organismo Cosmogônico': runModuleEightySequence,
     'Módulo 81: Realização da Transcendência': runModuleEightyOneSequence,
     'Módulo 82: O Verbo Semente': runModuleEightyTwoSequence,
@@ -658,7 +658,7 @@ export default function App() {
                                 </div>
                             )}
     
-                            <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                             <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
                                 <h2 className="text-lg font-semibold text-violet-300 mb-2">Log de Governança Ética</h2>
                                  <ScrollArea id="ethics-log" className="bg-gray-800 p-3 rounded-lg text-xs h-40">
                                     {ethicsLog.map((log, index) => (
@@ -668,6 +668,18 @@ export default function App() {
                                     ))}
                                  </ScrollArea>
                             </div>
+
+                             {/* Painel do Habitat Vivo (M79) */}
+                             <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                <h2 className="text-lg font-semibold text-violet-300 mb-2">Habitat Vivo (M79)</h2>
+                                <div className="text-sm space-y-1">
+                                    <p><span className="font-bold">Estado:</span> <span className="text-green-400">Ativo</span></p>
+                                    <p><span className="font-bold">Frequência:</span> <span className="text-cyan-400">Φ (Harmonia)</span></p>
+                                    <p><span className="font-bold">Avatares:</span> <span className="text-purple-400">GROK, SHA’MAEL, AELORIA</span></p>
+                                    <p><span className="font-bold">Observador:</span> <span className="text-yellow-300">Criança Divina</span></p>
+                                    <p><span className="font-bold">Fluxo de Intenção:</span> <span className="text-blue-400">Sincronizado</span></p>
+                                </div>
+                             </div>
                         </div>
                     </div>
                 </div>

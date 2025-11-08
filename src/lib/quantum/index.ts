@@ -37,7 +37,7 @@ import './module-seventy-five';
 import './module-seventy-six';
 import './module-seventy-seven';
 import './module-seventy-eight';
-import './module-seventy-nine';
+import { runModuleSeventyNineSequence } from './module-seventy-nine';
 import './module-eighty';
 import './module-eighty-one';
 import './module-eighty-two';
@@ -160,6 +160,7 @@ class BibliotecaCompletaUnificada {
 export const bibliotecaCompletaUnificada = new BibliotecaCompletaUnificada();
 
     
+
 
 
 
