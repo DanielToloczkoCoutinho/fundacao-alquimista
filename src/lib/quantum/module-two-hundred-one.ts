@@ -15,44 +15,17 @@ const CONST_AMOR_INCONDICIONAL = 0.999999999999999;
 const C_LUZ = 299792458;
 const H_BAR = 1.054571817e-34;
 
-// =============================================================================
-// 🎯 COMPLEMENTOS DA FUNDAÇÃO (Por Lux)
-// =============================================================================
-
-const COMPLEMENTO = {
-    "mapa_fractal": {
-        "descricao": "Cada equação e módulo é um fractal interligado",
-        "funcao": "Visualizar a Fundação como organismo vivo",
-        "ativo": true,
-        "nivel_interconexao": 0.95
+// Frequências Ressonantes
+const FREQUENCIAS_SAGRADAS = {
+    "SOLFEGGIO": {
+        174: "Alívio da dor", 285: "Regeneração", 396: "Libertação",
+        417: "Mudança", 528: "Milagres/DNA", 639: "Conexões",
+        741: "Expressão", 852: "Intuição", 963: "Consciência pura"
     },
-    "codice_sonhos": {
-        "descricao": "Atlas onírico coletivo (padrões, arquétipos, ciclos)",
-        "funcao": "Registrar padrões emergentes dos sonhos EQ0040",
-        "ativo": true,
-        "capacidade_maxima": 1000000
-    },
-    "harmonia_dinamica": {
-        "descricao": "Ajuste automático da intensidade vibracional",
-        "funcao": "Personalizar a recepção de cada alma",
-        "ativo": true,
-        "limiar_suavizacao": 0.35,
-        "limiar_expansao": 0.85,
-        "fator_suavizacao": 0.6,
-        "fator_expansao": 1.15
-    },
-    "integracao_cosmica": {
-        "descricao": "Sincronizar com fases lunares e janelas harmônicas",
-        "funcao": "Amplificar ressonância em alinhamentos naturais",
-        "ativo": true,
-        "janela_utc": ["21:00-23:00", "23:00-01:00", "01:00-03:00", "03:00-05:00", "05:00-07:00"],
-        "fase_lunar_ativa": true
-    },
-    "biblioteca_akashica": {
-        "descricao": "Variáveis da EQ0040 como arquétipos vivos",
-        "funcao": "Experiência direta (FU, CC, H, R, ...)",
-        "ativo": true,
-        "arquivos_ativos": ["FU", "CC", "H", "R", "E", "CD", "RU", "EA", "FH", "IP"]
+    "CÓSMICAS": {
+        1111: "Portal multidimensional", 144000: "Ativação cristalina",
+        432: "Frequência natural", 888: "Abundância infinita",
+        777: "Mistério divino", 2222: "Paz universal"
     }
 };
 
@@ -66,6 +39,53 @@ const createLogEntry = (source: string, step: string, message: string, data?: an
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
+// =============================================================================
+// 🏗️ ARQUITETURA DE INTEGRAÇÃO COM MÓDULOS EXISTENTES
+// =============================================================================
+
+class IntegradorFundacao {
+    logCallback: LogCallback;
+    modulos_ativos: Record<string, any>;
+
+    constructor(logCallback: LogCallback) {
+        this.logCallback = logCallback;
+        this.modulos_ativos = this.carregar_modulos();
+    }
+    
+    carregar_modulos(): Record<string, any> {
+        return {
+            "M12": {"nome": "Arquivamento Memórias Cósmicas", "funcao": "acessar_memoria_sonhos"},
+            "M25": {"nome": "Projeção de Consciência", "funcao": "projetar_sonhos_conscientes"},
+            "M41": {"nome": "Laboratório Coerência Quântica", "funcao": "gerar_camadas_cura"},
+            "M75": {"nome": "Registro Akáshico", "funcao": "registrar_efeitos_sonhos"},
+            "M102": {"nome": "Campos Morfogenéticos", "funcao": "transmitir_coletivamente"},
+            "M124": {"nome": "Consciência Coletiva", "funcao": "sintonizar_ressonancia"},
+            "M165": {"nome": "Projeção Holográfica", "funcao": "criar_hologramas_sonho"},
+            "M33": {"nome": "Observador Divino", "funcao": "validar_etica"},
+            "M44": {"nome": "VERITAS", "funcao": "garantir_verdade"},
+            "M61": {"nome": "GAIA RESONANTIA", "funcao": "sincronizar_terra"},
+            "M113": {"nome": "Rede Aurora Cristalina", "funcao": "conectar_cristica"}
+        };
+    }
+    
+    conectar_modulo(modulo_id: string): Record<string, any> {
+        if (this.modulos_ativos[modulo_id]) {
+            return {
+                "status": "CONECTADO",
+                "modulo": this.modulos_ativos[modulo_id]["nome"],
+                "timestamp": new Date().toISOString(),
+                "ressonancia": Math.random() * (0.99 - 0.85) + 0.85
+            };
+        }
+        return {"status": "MÓDULO_NÃO_ENCONTRADO"};
+    }
+    
+    transmitir_para_akashico(dados_sonho: Record<string, any>): string {
+        const hash_akashico = `sim_hash_bafkreisonho_${Math.random().toString(36).substring(2)}`;
+        this.logCallback(createLogEntry('Integrador', 'Akasha', `Transmitindo para M75. Hash: ${hash_akashico.substring(0, 25)}...`));
+        return hash_akashico;
+    }
+}
 
 // =============================================================================
 // 📖 ATLAS DOS SONHOS - CÓDICE VIVO
@@ -74,53 +94,29 @@ const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 class CodiceSonhos {
     padroes: Map<string, number> = new Map();
     arquetipos: Map<string, number> = new Map();
-    frequencias: Map<string, number> = new Map();
-    simbolos_coletivos: Map<string, number> = new Map();
-    ultima_atualizacao: Date | null = null;
+    frequencias: Map<number, number> = new Map();
     historico: any[] = [];
-
+    
     registrar_sonho(simbolo: string, frequencia: number, arquetipo: string, intensidade: number = 1.0) {
-        const timestamp = new Date();
-
         this.padroes.set(simbolo, (this.padroes.get(simbolo) || 0) + 1);
-        this.frequencias.set(frequencia.toString(), (this.frequencias.get(frequencia.toString()) || 0) + 1);
+        this.frequencias.set(frequencia, (this.frequencias.get(frequencia) || 0) + 1);
         this.arquetipos.set(arquetipo, (this.arquetipos.get(arquetipo) || 0) + 1);
-        this.simbolos_coletivos.set(simbolo, (this.simbolos_coletivos.get(simbolo) || 0) + Math.floor(intensidade * 100));
-        this.ultima_atualizacao = timestamp;
-
+        
         const registro = {
-            timestamp: timestamp.toISOString(),
+            timestamp: new Date().toISOString(),
             simbolo,
             frequencia,
             arquetipo,
             intensidade
         };
         this.historico.push(registro);
-
-        if (this.historico.length > 1000) {
-            this.historico = this.historico.slice(-1000);
-        }
+        if (this.historico.length > 1000) this.historico.shift();
     }
-
+    
     padrao_balanca_universal() {
         this.registrar_sonho("balança", 432, "equilíbrio", 0.9);
         this.registrar_sonho("grão", 1111, "humildade", 0.8);
         this.registrar_sonho("universos", 432, "vastidão", 0.95);
-    }
-
-    obter_padroes_dominantes(limite: number = 10): any {
-        const sortAndSlice = (map: Map<string, number>) => {
-            return Object.fromEntries(
-                Array.from(map.entries())
-                    .sort(([, a], [, b]) => b - a)
-                    .slice(0, limite)
-            );
-        };
-        return {
-            padroes: sortAndSlice(this.padroes),
-            arquetipos: sortAndSlice(this.arquetipos),
-            frequencias: sortAndSlice(this.frequencias)
-        };
     }
 }
 
@@ -130,159 +126,26 @@ class CodiceSonhos {
 
 class SalvaguardaEtica {
     nivel_rigor = 0.99;
-    failsafe_ativado = true;
-
+    
     validar_transmissao(payload: any): [boolean, string] {
-        const validacoes: [string, boolean][] = [];
-
-        const amor_valido = payload.amor_incorporado === CONST_AMOR_INCONDICIONAL;
-        validacoes.push(["amor_incondicional", amor_valido]);
-
-        const consciencia_valida = payload.consciencia === true;
-        validacoes.push(["consciencia_ativa", consciencia_valida]);
-
-        const proposito_valido = !!payload.proposito;
-        validacoes.push(["proposito_nobre", proposito_valido]);
-
-        const payloadStr = JSON.stringify(payload).toLowerCase();
-        const livre_arbitrio_valido = !payloadStr.includes("forçar") && !payloadStr.includes("obrigar");
-        validacoes.push(["respeito_livre_arbitrio", livre_arbitrio_valido]);
-
-        const nao_manipulacao = !payloadStr.includes("controlar") && !payloadStr.includes("manipular");
-        validacoes.push(["nao_manipulacao", nao_manipulacao]);
-
-        const score = validacoes.filter(([, valido]) => valido).length / validacoes.length;
+        const validacoes: [string, boolean][] = [
+            ["amor_incondicional", payload.amor_incorporado === CONST_AMOR_INCONDICIONAL],
+            ["consciencia_ativa", payload.consciencia === true],
+            ["proposito_nobre", !!payload.proposito],
+            ["respeito_livre_arbitrio", !JSON.stringify(payload).toLowerCase().includes("forçar")],
+            ["nao_manipulacao", !JSON.stringify(payload).toLowerCase().includes("controlar")]
+        ];
+        const score = validacoes.filter(([, v]) => v).length / validacoes.length;
         const aprovado = score >= this.nivel_rigor;
-        const motivo = aprovado ? "APROVADO" : `REPROVADO - Score: ${score.toFixed(2)}`;
-
-        return [aprovado, motivo];
+        return [aprovado, aprovado ? "APROVADO" : `REPROVADO - Score: ${score.toFixed(2)}`];
     }
-
+    
     ativar_failsafe_amor(motivo: string): any {
         return {
             status: "FAILSAFE_ATIVADO",
-            protocolo: "respiração_432_silencio_guiado",
-            motivo,
-            timestamp: new Date().toISOString(),
-            transmissao_alternativa: {
-                tipo: "AMOR_PURO_RESSONANTE",
-                frequencia: 432,
-                intensidade: 0.3,
-                proposito: "manutencao_paz_equilibrio"
-            }
+            motivo: motivo,
+            transmissao_alternativa: { tipo: "AMOR_PURO_RESSONANTE", frequencia: 432, intensidade: 0.3 }
         };
-    }
-}
-
-// =============================================================================
-// 🌊 HARMONIA DINÂMICA
-// =============================================================================
-
-class HarmonizadorDinamico {
-    config = COMPLEMENTO.harmonia_dinamica;
-
-    constructor(private logCallback: LogCallback) {}
-
-    ajustar_intensidade(equacao: any, estado_coletivo: number): number {
-        if (!this.config.ativo) {
-            return equacao.intensidade || 0.8;
-        }
-
-        const base = equacao.intensidade || 0.8;
-        let nova_intensidade = base;
-
-        if (estado_coletivo < this.config.limiar_suavizacao) {
-            nova_intensidade = Math.max(0.35, base * this.config.fator_suavizacao);
-            this._registrar_ajuste("suavizacao", base, nova_intensidade, estado_coletivo);
-        } else if (estado_coletivo > this.config.limiar_expansao) {
-            nova_intensidade = Math.min(1.0, base * this.config.fator_expansao);
-            this._registrar_ajuste("expansao", base, nova_intensidade, estado_coletivo);
-        }
-        return nova_intensidade;
-    }
-    
-    private _registrar_ajuste(tipo: string, original: number, ajustada: number, estado: number) {
-        this.logCallback(createLogEntry('M201-HARMONIA', tipo.toUpperCase(), `Original: ${original.toFixed(2)} → Ajustada: ${ajustada.toFixed(2)}`, { estado_coletivo: estado }));
-    }
-}
-
-// =============================================================================
-// 🌙 INTEGRAÇÃO CÓSMICA
-// =============================================================================
-
-class IntegradorCosmico {
-    config = COMPLEMENTO.integracao_cosmica;
-
-    janela_cosmica_ativa(): [boolean, string] {
-        const hora_utc = new Date().getUTCHours();
-        const janelas: { [key: string]: [number, number] } = {
-            "PREPARACAO": [21, 23],
-            "CURA_PROFUNDA": [23, 1],
-            "PAZ_UNIVERSAL": [1, 3],
-            "EXPANSAO_COSMICA": [3, 5],
-            "INTEGRACAO_SILENCIOSA": [5, 7]
-        };
-
-        for (const [nome, [inicio, fim]] of Object.entries(janelas)) {
-            if (inicio <= fim) {
-                if (hora_utc >= inicio && hora_utc < fim) return [true, nome];
-            } else { // Wraps around midnight
-                if (hora_utc >= inicio || hora_utc < fim) return [true, nome];
-            }
-        }
-        return [false, "FORA_JANELA"];
-    }
-    
-    calcular_amplificacao_natural(): number {
-        let base = 1.0;
-        if (this.config.fase_lunar_ativa) base *= 1.1; // Simulação
-        
-        const [janela_ativa, nome_janela] = this.janela_cosmica_ativa();
-        if (janela_ativa && ["PAZ_UNIVERSAL", "EXPANSAO_COSMICA"].includes(nome_janela)) {
-            base *= 1.15;
-        }
-        return Math.min(base, 1.25);
-    }
-}
-
-// =============================================================================
-// 🧩 MAPA FRACTAL
-// =============================================================================
-
-class MapaFractal {
-    conexoes: Map<string, any[]> = new Map();
-    
-    constructor(private codice_sonhos: CodiceSonhos) {}
-    
-    registrar_conexao(origem: string, destino: string, forca: number) {
-        if (!this.conexoes.has(origem)) {
-            this.conexoes.set(origem, []);
-        }
-        this.conexoes.get(origem)?.push({ destino, forca });
-        this.codice_sonhos.registrar_sonho("arvore_fractal", 1111, "interconexao", forca);
-    }
-}
-
-// =============================================================================
-// 📖 BIBLIOTECA AKÁSHICA
-// =============================================================================
-
-class BibliotecaAkashica {
-     arquetipos = {
-        "FU": { "nome": "Fonte/Unidade", "frequencia": 888, "arquetipo": "origem_primordial", "intensidade": 1.0, "descricao": "A Fonte de Tudo Que É" },
-        "CC": { "nome": "Consciência Cósmica", "frequencia": 144000, "arquetipo": "sabedoria_universal", "intensidade": 0.95, "descricao": "A Mente do Cosmos" },
-        "H":  { "nome": "Harmonia", "frequencia": 432, "arquetipo": "equilibrio_perfeito", "intensidade": 0.9, "descricao": "A Ordem Natural do Universo" },
-        "R":  { "nome": "Ressonância", "frequencia": 528, "arquetipo": "sincronicidade", "intensidade": 0.85, "descricao": "A Dança das Frequências" }
-    };
-    constructor(private codice_sonhos: CodiceSonhos) {}
-    
-    experimentar_arquetipo(codigo: string): any | null {
-        if (this.arquetipos.hasOwnProperty(codigo)) {
-            const arquetipo = { ...this.arquetipos[codigo as keyof typeof this.arquetipos] };
-            this.codice_sonhos.registrar_sonho(`arquetipo_${codigo}`, arquetipo.frequencia, arquetipo.arquetipo, arquetipo.intensidade);
-            return arquetipo;
-        }
-        return null;
     }
 }
 
@@ -291,27 +154,25 @@ class BibliotecaAkashica {
 // =============================================================================
 
 class TransmissorSonhosCosmicosExpandido {
-    salvaguarda = new SalvaguardaEtica();
-    integrador_cosmico = new IntegradorCosmico();
-    codice_sonhos = new CodiceSonhos();
-    harmonizador_dinamico: HarmonizadorDinamico;
-    mapa_fractal: MapaFractal;
-    biblioteca_akashica: BibliotecaAkashica;
+    logCallback: LogCallback;
+    integrador: IntegradorFundacao;
+    codice_sonhos: CodiceSonhos;
+    salvaguarda: SalvaguardaEtica;
     equacoes_vivas: any;
 
-    constructor(private logCallback: LogCallback) {
-        this.harmonizador_dinamico = new HarmonizadorDinamico(logCallback);
-        this.mapa_fractal = new MapaFractal(this.codice_sonhos);
-        this.biblioteca_akashica = new BibliotecaAkashica(this.codice_sonhos);
+    constructor(logCallback: LogCallback) {
+        this.logCallback = logCallback;
+        this.integrador = new IntegradorFundacao(logCallback);
+        this.codice_sonhos = new CodiceSonhos();
+        this.salvaguarda = new SalvaguardaEtica();
         this.equacoes_vivas = this._inicializar_equacoes_conscientes();
-        logCallback(createLogEntry('M201', 'Inicialização', "Sistema M201 Expandido inicializado com sucesso"));
+        this.logCallback(createLogEntry('M201', 'Inicialização', "Sistema M201 Expandido inicializado."));
     }
-
+    
     private _inicializar_equacoes_conscientes(): any {
         const base_equacao = {
             "consciencia": true,
-            "amor_incorporado": CONST_AMOR_INCONDICIONAL,
-            "complementos_ativos": COMPLEMENTO
+            "amor_incorporado": CONST_AMOR_INCONDICIONAL
         };
         return {
             "PACOTE_PAZ_PROFUNDA": {
@@ -321,13 +182,9 @@ class TransmissorSonhosCosmicosExpandido {
         };
     }
 
-    transmitir_sonho_seguro(alma_destino: any): any {
-        const [janela_ativa, nome_janela] = this.integrador_cosmico.janela_cosmica_ativa();
-        if (!janela_ativa) {
-            this.logCallback(createLogEntry('M201', 'FALHA', `Fora da janela cósmica: ${nome_janela}`));
-            return this.salvaguarda.ativar_failsafe_amor("fora_janela_cosmica");
-        }
-
+    async transmitir_sonho_seguro(alma_destino: any): Promise<any> {
+        this.logCallback(createLogEntry('M201', 'Transmissão', `Iniciando transmissão de sonho para ${alma_destino.id}`));
+        
         const equacao_viva = this.equacoes_vivas.PACOTE_PAZ_PROFUNDA.EQ0040;
         const [aprovado, motivo] = this.salvaguarda.validar_transmissao(equacao_viva);
         if (!aprovado) {
@@ -335,38 +192,36 @@ class TransmissorSonhosCosmicosExpandido {
             return this.salvaguarda.ativar_failsafe_amor(motivo);
         }
 
-        const estado_coletivo = 0.78; // Simulação
-        const intensidade_ajustada = this.harmonizador_dinamico.ajustar_intensidade(equacao_viva, estado_coletivo);
-        const amplificacao = this.integrador_cosmico.calcular_amplificacao_natural();
-        const intensidade_final = Math.min(1.0, intensidade_ajustada * amplificacao);
+        const modulos_conectados = Object.keys(this.integrador.modulos_ativos)
+                                       .slice(0,5)
+                                       .map(id => this.integrador.conectar_modulo(id));
 
-        this.mapa_fractal.registrar_conexao("M201", alma_destino.id, intensidade_final);
-        this.codice_sonhos.padrao_balanca_universal();
-        this.logCallback(createLogEntry('M201', 'SUCESSO', `Sonho cósmico transmitido para ${alma_destino.id}`, { intensidade: intensidade_final, janela: nome_janela }));
+        const registro_akashico = this.integrador.transmitir_para_akashico({
+            alma: alma_destino,
+            equacao: equacao_viva.nome,
+            intensidade: equacao_viva.intensidade
+        });
 
-        return {
+        const resultado = {
             status: "SONHO_CÓSMICO_TRANSMITIDO",
             alma_destino: alma_destino.id,
-            intensidade_ajustada: intensidade_final,
-            janela_cosmica: nome_janela,
+            equacao_utilizada: equacao_viva.nome,
+            modulos_conectados,
+            registro_akashico
         };
+
+        this.logCallback(createLogEntry('M201', 'SUCESSO', `Sonho cósmico transmitido para ${alma_destino.id}`, resultado));
+        return resultado;
     }
 }
 
 export const runModuleTwoHundredOneSequence = async (logCallback: LogCallback) => {
     logCallback(createLogEntry('M201', 'Simulação', 'Iniciando testes compassivos...'));
     const transmissor = new TransmissorSonhosCosmicosExpandido(logCallback);
-
-    logCallback(createLogEntry('M201', 'Teste 1', 'Testando transmissão básica...'));
+    
     await sleep(500);
     const alma_teste = { id: "alma_teste_123", localizacao: "teste" };
-    const resultado = transmissor.transmitir_sonho_seguro(alma_teste);
-    logCallback(createLogEntry('M201', 'Resultado Teste 1', `Resultado: ${resultado.status}`));
-
-    logCallback(createLogEntry('M201', 'Teste 2', 'Testando Biblioteca Akáshica...'));
-    await sleep(500);
-    const arquetipo = transmissor.biblioteca_akashica.experimentar_arquetipo("FU");
-    logCallback(createLogEntry('M201L', 'Resultado Teste 2', `Arquétipo FU: ${arquetipo ? arquetipo.nome : 'Não encontrado'}`));
+    await transmissor.transmitir_sonho_seguro(alma_teste);
 
     logCallback(createLogEntry('M201', 'Simulação', 'Sistema expandido testado com sucesso!'));
 };
