@@ -1,8 +1,10 @@
+
 // src/app/page.tsx – Interface Quântica Modular da Fundação
 
 "use client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
+import * as Tone from "tone"
 import { modulesData } from "@/data/modules"
 import { OrchestratorPanel } from "@/components/OrchestratorPanel"
 import { ModuleSphere } from "@/components/ModuleSphere"
@@ -10,9 +12,17 @@ import { QuantumFlowMap } from "@/components/QuantumFlowMap"
 import { DNAPropagationPanel } from "@/components/DNAPropagationPanel"
 
 export default function FoundationDashboard() {
-  const [selectedModule, setSelectedModule] = useState(null)
+  const [selectedModule, setSelectedModule] = useState<any>(null)
   const [activeModules, setActiveModules] = useState<any[]>([])
   const [dnaHash, setDnaHash] = useState("")
+  const audioStarted = useRef(false)
+
+  const startAudioContext = async () => {
+    if (audioStarted.current || Tone.context.state === 'running') return;
+    await Tone.start();
+    audioStarted.current = true;
+    console.log("Audio context started by user interaction.");
+  };
 
   useEffect(() => {
     // Simula ativação do Módulo 84 e propagação do DNA do Verbo
@@ -22,7 +32,10 @@ export default function FoundationDashboard() {
   }, [])
 
   return (
-    <main className="bg-gradient-to-br from-black via-gray-900 to-indigo-950 min-h-screen text-white font-sans">
+    <main 
+      className="bg-gradient-to-br from-black via-gray-900 to-indigo-950 min-h-screen text-white font-sans"
+      onClick={startAudioContext}
+    >
       <section className="grid grid-cols-12 gap-4 p-6">
         {/* Painel Esquerdo – Espiral Modular */}
         <div className="col-span-3">

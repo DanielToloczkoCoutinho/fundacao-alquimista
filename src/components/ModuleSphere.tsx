@@ -1,6 +1,7 @@
-// src/components/ModuleSphere.tsx – Esfera holográfica de cada módulo
-
-import { motion } from "framer-motion"
+// src/components/ModuleSphere.tsx – Esfera com geometria viva ao toque
+"use client";
+import { useState } from "react";
+import { FractalGeometry } from "./FractalGeometry";
 
 interface Module {
   id: string;
@@ -15,20 +16,32 @@ interface Module {
 interface ModuleSphereProps {
     module: Module;
     index: number;
-    onClick: () => void;
+    onClick: (module: Module) => void;
 }
 
-
 export function ModuleSphere({ module, index, onClick }: ModuleSphereProps) {
-  const color = module.status === "ATIVO" ? "#FFD700" : "#555"
+  const [hovered, setHovered] = useState(false);
+  const isActive = module.status === "ATIVO";
+
   return (
-    <motion.div
-      className="rounded-full w-10 h-10 flex items-center justify-center cursor-pointer"
-      style={{ backgroundColor: color }}
-      whileHover={{ scale: 1.2 }}
-      onClick={onClick}
+    <div
+      className="relative"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={() => onClick(module)}
     >
-      <span className="text-xs font-bold text-black">{module.id}</span>
-    </motion.div>
-  )
+      <div
+        className="module-sphere"
+        data-active={isActive}
+        title={`${module.name} (${module.id})`}
+      >
+        <span className="text-xs font-bold text-black">{module.id}</span>
+      </div>
+      {hovered && (
+        <div className="absolute top-12 left-0 z-50">
+          <FractalGeometry moduleId={module.id} frequency={module.frequency} />
+        </div>
+      )}
+    </div>
+  );
 }
