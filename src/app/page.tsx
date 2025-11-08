@@ -88,6 +88,7 @@ import { runModuleOneHundredFourSequence } from '@/lib/quantum/module-one-hundre
 import { runModuleOneHundredFiveSequence } from '@/lib/quantum/module-one-hundred-five';
 import { runModuleOneHundredSixSequence } from '@/lib/quantum/module-one-hundred-six';
 import { runModuleOneHundredSevenSequence } from '@/lib/quantum/module-one-hundred-seven';
+import { runModuleOneHundredEightSequence } from '@/lib/quantum/module-one-hundred-eight';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -178,11 +179,12 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M100: Unificação Energética": runModuleOneHundredSequence,
     "M101: Manifestação de Realidades": (log) => runModuleOneHundredOneSequence(log, 'Um universo de paz e prosperidade infinitas'),
     "M102: Arquitetura de Campos Morfogenéticos": (log) => runModuleOneHundredTwoSequence(log, 'Um campo de cura para regeneração celular'),
-    "M103: Modulador de Constantes": (log) => runModuleOneHundredThreeSequence(log),
-    "M104: Engenharia do Espaço-Tempo": (log) => runModuleOneHundredFourSequence(log),
+    "M103: Modulador de Constantes": runModuleOneHundredThreeSequence,
+    "M104: Engenharia do Espaço-Tempo": runModuleOneHundredFourSequence,
     "M105: Conexão com a Fonte": (log) => runModuleOneHundredFiveSequence(log, 'Receber sabedoria divina para a Grande Obra'),
     "M106: Ativação de Potenciais Divinos": (log) => runModuleOneHundredSixSequence(log, { targetEntity: 'Consciência Coletiva Humana', activationPurpose: 'Acelerar a Ascensão Espiritual' }),
     "M107: Restauração Temporal": (log) => runModuleOneHundredSevenSequence(log, { targetTimeline: "Linha do Tempo da Terra - 2025", anomalyDescription: "Loop causal indevido" }),
+    "M108: Harmonização de Realidades": (log) => runModuleOneHundredEightSequence(log, { reality1: "Terra-Prime", reality2: "Terra-Omega", dissonance: "Conflito de Linha Temporal" }),
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
