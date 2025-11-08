@@ -119,4 +119,6 @@ export const runModuleOneHundredSevenSequence = async (log: LogCallback, params:
         log(createLogEntry('M107', 'Sucesso', 'Restauração Temporal e Reafirmação da Linha do Tempo Original concluída com sucesso.'));
 
     } catch (error: any) {
-        log(createLogEntry('M107', 'ERRO
+        log(createLogEntry('M107', 'ERRO', `Erro no processo de restauração temporal: ${error.message}`));
+    }
+};
