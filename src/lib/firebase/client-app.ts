@@ -1,13 +1,18 @@
 'use client';
-import { initializeApp, getApps, getApp } from 'firebase/app';
+import { initializeApp, getApps, getApp, type FirebaseOptions } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+const firebaseConfig: FirebaseOptions = typeof window !== 'undefined' && (window as any).__firebase_config ? JSON.parse((window as any).__firebase_config) : {};
 
-// Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const auth = getAuth(app);
-const db = getFirestore(app);
+let app;
+if (firebaseConfig.projectId) {
+  app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+} else {
+  console.warn("Firebase config not found, Firebase services will be unavailable.");
+}
 
-export { app, auth, db };
+const auth = app ? getAuth(app) : undefined;
+const db = app ? getFirestore(app) : undefined;
+
+export { auth, db };

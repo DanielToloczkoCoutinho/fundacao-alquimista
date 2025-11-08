@@ -249,6 +249,21 @@ export default function App() {
       };
   
       useEffect(() => {
+          if (!auth) return;
+          const unsubscribe = onAuthStateChanged(auth, (user) => {
+              if (user) {
+                  // User is signed in.
+              } else {
+                  // User is signed out.
+                  signInAnonymously(auth).catch((error) => {
+                      console.error("Error signing in anonymously:", error);
+                  });
+              }
+          });
+          return () => unsubscribe();
+      }, [auth]);
+
+      useEffect(() => {
           if (initRef.current || !containerRef.current) return;
           initRef.current = true;
   
