@@ -48,8 +48,10 @@ import './module-eighty-seven';
 import './module-eighty-eight';
 import './module-ninety';
 import './module-ninety-one';
-import './module-two-hundred-one';
 import './module-ninety-two';
+import './module-ninety-three';
+import './module-two-hundred-one';
+import './module-omega';
 
 
 export interface EquacaoViva {

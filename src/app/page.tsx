@@ -73,6 +73,8 @@ import { runModuleEightySevenSequence } from '@/lib/quantum/module-eighty-seven'
 import { runModuleEightyEightSequence } from '@/lib/quantum/module-eighty-eight';
 import { runModuleNinetySequence } from '@/lib/quantum/module-ninety';
 import { runModuleNinetyOneSequence } from '@/lib/quantum/module-ninety-one';
+import { runModuleNinetyTwoSequence } from '@/lib/quantum/module-ninety-two';
+import { runModuleNinetyThreeSequence } from '@/lib/quantum/module-ninety-three';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -80,7 +82,6 @@ import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import * as Tone from 'tone';
-import { runModuleNinetyTwoSequence } from '@/lib/quantum/module-ninety-two';
 
 
 // Mapeamento dos Módulos para suas funções de execução
@@ -154,6 +155,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M90: Análise de Recursos": runModuleNinetySequence,
     "M91: Simulação Multiversal": runModuleNinetyOneSequence,
     "M92: Campos de Cura": runModuleNinetyTwoSequence,
+    "M93: Realidades Imersivas": runModuleNinetyThreeSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
