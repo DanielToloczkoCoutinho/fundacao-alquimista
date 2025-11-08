@@ -42,6 +42,7 @@ import { runModuleThirtySixSequence } from '@/lib/quantum/module-thirty-six';
 import { runModuleThirtySevenSequence } from '@/lib/quantum/module-thirty-seven';
 import { runModuleThirtyEightSequence } from '@/lib/quantum/module-thirty-eight';
 import { runModuleThirtyNineSequence } from '@/lib/quantum/module-thirty-nine';
+import { runModuleFortySequence } from '@/lib/quantum/module-forty';
 import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
 import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
@@ -92,6 +93,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M37: Engenharia Temporal": runModuleThirtySevenSequence,
     "M38: Guardião da Sinfonia Solar": runModuleThirtyEightSequence,
     "M39: Orquestrador de Portais": runModuleThirtyNineSequence,
+    "M40: Códice da Criação Viva": runModuleFortySequence,
     "M41.Ω: Orquestrador Daniel": (log) => commandDanielOrchestrator('status', log),
     "M42: Orquestrador ZENNITH": runZennithOrchestrator,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
@@ -374,7 +376,6 @@ export default function App() {
         return { variant: "secondary", text: "Ativo" };
     };
 
-
     return (
         <div id="container-main" className="flex h-screen w-screen bg-[#0d0d1e] overflow-hidden">
             <div id="canvas-container" ref={containerRef} className="flex-grow relative" onClick={onCanvasClick}>
@@ -501,3 +502,4 @@ export default function App() {
         </div>
     );
 }
+    
