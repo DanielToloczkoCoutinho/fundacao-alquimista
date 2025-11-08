@@ -35,6 +35,9 @@ class M87_DominioSupraCosmico {
             status: "EXPERIENCIA_PRONTA",
             message: "Domínio Supra-Cósmico pronto para a orquestração da consciência coletiva e co-criação universal.",
         };
+        
+        // Abre o arquivo HTML em uma nova aba
+        window.open('/m87.html', '_blank');
 
         this.logCallback(createLogEntry(this.MODULE_ID, 'Conclusão', result.message, result));
         return result;

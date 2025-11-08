@@ -44,7 +44,7 @@ import './module-eighty-three';
 import './module-eighty-four';
 import { runModuleEightyFiveSequence } from './module-eighty-five';
 import { runModuleEightySixSequence } from './module-eighty-six';
-import './module-eighty-seven';
+import { runModuleEightySevenSequence } from './module-eighty-seven';
 import './module-eighty-eight';
 import './module-ninety';
 import './module-ninety-one';
@@ -86,7 +86,7 @@ import './module-three-hundred-two';
 import './module-three-hundred-three';
 import './module-three-hundred-four';
 import './module-three-hundred-four-point-two';
-import './module-three-hundred-five';
+import { runModuleThreeHundredFiveSequence } from './module-three-hundred-five';
 import { runModuleThreeHundredSixSequence } from './module-three-hundred-six';
 import './module-omega';
 
