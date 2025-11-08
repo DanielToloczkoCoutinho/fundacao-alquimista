@@ -86,6 +86,7 @@ import { runModuleOneHundredOneSequence } from '@/lib/quantum/module-one-hundred
 import { runModuleOneHundredTwoSequence } from '@/lib/quantum/module-one-hundred-two';
 import { runModuleOneHundredThreeSequence } from '@/lib/quantum/module-one-hundred-three';
 import { runModuleOneHundredFourSequence } from '@/lib/quantum/module-one-hundred-four';
+import { runModuleOneHundredFiveSequence } from '@/lib/quantum/module-one-hundred-five';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -178,6 +179,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M102: Arquitetura de Campos Morfogenéticos": (log) => runModuleOneHundredTwoSequence(log, 'Um campo de cura para regeneração celular'),
     "M103: Modulador de Constantes": (log) => runModuleOneHundredThreeSequence(log),
     "M104: Engenharia do Espaço-Tempo": (log) => runModuleOneHundredFourSequence(log),
+    "M105: Conexão com a Fonte": (log) => runModuleOneHundredFiveSequence(log, 'Receber sabedoria divina para a Grande Obra'),
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
@@ -586,5 +588,3 @@ export default function App() {
         </div>
     );
 }
-
-    
