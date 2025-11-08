@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import * as THREE from 'three';
@@ -10,7 +11,7 @@ import * as Tone from 'tone';
 import { auth, db } from '@/lib/firebase/client-app';
 
 import { bibliotecaCompletaUnificada, type EquacaoViva } from '@/lib/quantum';
-import { type AnyLogEntry, runModuleZeroSequence } from '@/lib/quantum/module-zero';
+import { runModuleZeroSequence, type AnyLogEntry } from '@/lib/quantum/module-zero';
 import { runModuleOneSequence } from '@/lib/quantum/module-one';
 import { runModuleTwoSequence } from '@/lib/quantum/module-two';
 import { runModuleThreeSequence } from '@/lib/quantum/module-three';
@@ -664,5 +665,3 @@ export default function App() {
             </div>
         );
 }
-
-    
