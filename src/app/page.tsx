@@ -49,6 +49,7 @@ import { runModuleFortyTwoSequence } from '@/lib/quantum/module-forty-two';
 import { runModuleFortyThreeSequence } from '@/lib/quantum/module-forty-three';
 import { runModuleFortyFourSequence } from '@/lib/quantum/module-forty-four';
 import { runModuleFortyFiveSequence } from '@/lib/quantum/module-forty-five';
+import { runModuleFortyFivePointTwoSequence } from '@/lib/quantum/module-forty-five-point-two';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -105,6 +106,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M43: Harmonia dos Portais": runModuleFortyThreeSequence,
     "M44: VERITAS": runModuleFortyFourSequence,
     "M45: CONCILIVM": runModuleFortyFiveSequence,
+    "M45.2: Continuidade": runModuleFortyFivePointTwoSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
