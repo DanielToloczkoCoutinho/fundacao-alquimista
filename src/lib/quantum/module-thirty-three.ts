@@ -3,7 +3,19 @@ import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
 
-// --- Constants ---
+// --- Tipagem Universal e de Registro ---
+export type ModuleThirtyThreeLogEntry = AnyLogEntry;
+
+export type RegistroObservadorDivino = {
+  módulo: 'M33',
+  origem: string,
+  tipo_ato: 'criação' | 'travessia' | 'comando' | 'cura' | 'defesa',
+  alinhamento_detectado: 'neutro' | 'harmônico' | 'divino' | 'dissonante',
+  recomendação: 'permitir' | 'recalibrar' | 'bloquear' | 'escalar ao Conselho',
+  timestamp: number
+};
+
+// --- Constantes ---
 const PI = Math.PI;
 const PHI = (1 + Math.sqrt(5)) / 2;
 const CONST_TF = 1.61803398875;
@@ -24,13 +36,22 @@ const TEMAS_SISTEMICOS_CRITICOS: { [key: string]: string[] } = {
     "Portais/Temporal": ["portal", "temporal", "linhas do tempo", "travessia"]
 };
 
+// --- Funções de Borda ---
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void => {
+  logCallback(entry);
+};
 
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -86,7 +107,7 @@ EquationsRegistryM33.register("EQ134", EQ134);
 // --- Mocks ---
 const mockModule = (name: string, log: LogCallback) => ({
     exec: (action: string, payload: any) => {
-        log(createLogEntry(name, 'Execução', `Ação '${action}' recebida`, payload));
+        createLogEntry(createLogEntryHelper(name as any, 'Execução', `Ação '${action}' recebida`, payload), log);
         return { status: "simulated_ok" };
     }
 });
@@ -108,7 +129,7 @@ class Modulo33_ObservadorDivino {
         this.m9 = mockModule("M9_DASHBOARD", logCallback);
         this.m28 = mockModule("M28_HARMONIA", logCallback);
         this.m1 = mockModule("M1_CRONICA", logCallback);
-        this.logCallback(createLogEntry(this.modulo_id, 'Inicialização', "Oráculo ético-vibracional pronto"));
+        createLogEntry(createLogEntryHelper(this.modulo_id as any, 'Inicialização', "Oráculo ético-vibracional pronto"), this.logCallback);
     }
 
     private _gate_etico(etica_global: number): number {
@@ -176,7 +197,7 @@ class Modulo33_ObservadorDivino {
     }
 
     public async gerar_e_emitir_diretriz(intencao: string, etica_global: number, pilares: number[], virtudes: { [key: string]: number } | null, inteligencia_modular: number, interdependencia: number, freq_diretriz: number): Promise<any> {
-        this.logCallback(createLogEntry(this.modulo_id, 'Início', `Iniciando diretriz para: '${intencao}'`));
+        createLogEntry(createLogEntryHelper(this.modulo_id as any, 'Início', `Iniciando diretriz para: '${intencao}'`), this.logCallback);
         
         this.m7.exec("consultar", { query: `Diretriz para: ${intencao}` });
         const gate = this._gate_etico(etica_global);
@@ -211,7 +232,7 @@ class Modulo33_ObservadorDivino {
             freq_equalizada: equalizacao ? equalizacao.frequencia_ajustada : null
         };
         
-        this.logCallback(createLogEntry(this.modulo_id, 'Fim', `Diretriz concluída para: '${intencao}'`));
+        createLogEntry(createLogEntryHelper(this.modulo_id as any, 'Fim', `Diretriz concluída para: '${intencao}'`), this.logCallback);
         return relatorio_final;
     }
 }
@@ -227,10 +248,10 @@ export const runModuleThirtyThreeSequence = async (logCallback: LogCallback) => 
     ];
 
     for (const c of cenarios) {
-        logCallback(createLogEntry("M33", 'Cenário', `Iniciando: ${c.intencao}`));
+        createLogEntry(createLogEntryHelper("M33" as any, 'Cenário', `Iniciando: ${c.intencao}`), logCallback);
         await sleep(500);
         const resultado = await m33.gerar_e_emitir_diretriz(c.intencao, c.etica, c.pilares, c.virtudes, 0.9, 0.85, c.freq);
-        logCallback(createLogEntry("M33", 'Resultado', `Cenário '${c.intencao}' concluído`, resultado));
+        createLogEntry(createLogEntryHelper("M33" as any, 'Resultado', `Cenário '${c.intencao}' concluído`, resultado), logCallback);
         await sleep(1000);
     }
 };
