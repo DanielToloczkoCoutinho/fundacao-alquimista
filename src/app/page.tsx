@@ -341,7 +341,7 @@ export default function App() {
     
             const onResize = () => {
                 if (!containerRef.current || !cameraRef.current || !rendererRef.current) return;
-                cameraRef.current.aspect = containerRef.current.clientWidth / containerRef.current.clientHeight;
+                cameraRef.current.aspect = containerRef.current.clientWidth / container.clientHeight;
                 cameraRef.current.updateProjectionMatrix();
                 rendererRef.current.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
             };
@@ -577,84 +577,84 @@ export default function App() {
                         {/* Conteúdo Principal do Painel */}
                         <div className="w-2/3 p-4 overflow-y-auto space-y-4">
                             <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                <h2 className="text-lg font-semibold text-violet-300 mb-2">Status do Sistema</h2>
-                                <p className="text-sm"><span className="font-bold">Ciclo Atemporal:</span> <span id="loop-status" className="text-green-400">Ativo</span></p>
-                                <p className="text-sm"><span className="font-bold">Validação Ética:</span> <span id="ethics-status" className={`text-${ethicsStatus === 'APROVADO' ? 'green' : 'red'}-400`}>{ethicsStatus}</span></p>
+                                <h2 class="text-lg font-semibold text-violet-300 mb-2">Status do Sistema</h2>
+                                <p class="text-sm"><span class="font-bold">Ciclo Atemporal:</span> <span id="loop-status" class="text-green-400">Ativo</span></p>
+                                <p class="text-sm"><span class="font-bold">Validação Ética:</span> <span id="ethics-status" class={`text-${ethicsStatus === 'APROVADO' ? 'green' : 'red'}-400`}>{ethicsStatus}</span></p>
                             </div>
                             
-                             <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                <h2 className="text-lg font-semibold text-violet-300 mb-3">Orquestrador de Módulos</h2>
-                                <div className="flex space-x-2">
+                             <div class="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                <h2 class="text-lg font-semibold text-violet-300 mb-3">Orquestrador de Módulos</h2>
+                                <div class="flex space-x-2">
                                     <Select onValueChange={setSelectedModule} value={selectedModule || ""}>
-                                        <SelectTrigger className="flex-grow bg-gray-800 border-violet-700 text-violet-200">
+                                        <SelectTrigger class="flex-grow bg-gray-800 border-violet-700 text-violet-200">
                                             <SelectValue placeholder="Selecione um Módulo" />
                                         </SelectTrigger>
-                                        <SelectContent className="bg-gray-900 border-violet-700 text-violet-200">
+                                        <SelectContent class="bg-gray-900 border-violet-700 text-violet-200">
                                             {Object.keys(allLogFunctions).map(name => (
                                                 <SelectItem key={name} value={name}>{name}</SelectItem>
                                             ))}
                                         </SelectContent>
                                     </Select>
-                                    <Button onClick={() => handleRunModule(selectedModule)} disabled={!selectedModule} className="bg-violet-600 hover:bg-violet-700">Executar</Button>
+                                    <Button onClick={() => handleRunModule(selectedModule)} disabled={!selectedModule} class="bg-violet-600 hover:bg-violet-700">Executar</Button>
                                 </div>
                                 {selectedModule && (
-                                    <div className="mt-3 text-sm">
+                                    <div class="mt-3 text-sm">
                                         <strong>Status:</strong> <Badge variant={getModuleStatus(selectedModule).variant}>{getModuleStatus(selectedModule).text}</Badge>
                                     </div>
                                  )}
                             </div>
     
-                            <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                 <h2 className="text-lg font-semibold text-violet-300 mb-2">Log de Eventos da Fundação</h2>
-                                 <ScrollArea className="h-48 bg-gray-800 p-2 rounded-lg text-xs">
+                            <div class="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                 <h2 class="text-lg font-semibold text-violet-300 mb-2">Log de Eventos da Fundação</h2>
+                                 <ScrollArea class="h-48 bg-gray-800 p-2 rounded-lg text-xs">
                                     {systemLogs.map((log, index) => (
-                                        <div key={index} className="mb-1 p-1 rounded font-mono">
-                                            <span className="text-cyan-400">{`[${new Date(log.timestamp).toLocaleTimeString()}]`}</span>
-                                            <span className="text-yellow-400">{` ${log.step}: `}</span>
-                                            <span className="text-white">{log.message}</span>
-                                            {log.data && <pre className="text-gray-400 text-xs mt-1 bg-black/50 p-1 rounded">{JSON.stringify(log.data, null, 2)}</pre>}
+                                        <div key={index} class="mb-1 p-1 rounded font-mono">
+                                            <span class="text-cyan-400">{`[${new Date(log.timestamp).toLocaleTimeString()}]`}</span>
+                                            <span class="text-yellow-400">{` ${log.step}: `}</span>
+                                            <span class="text-white">{log.message}</span>
+                                            {log.data && <pre class="text-gray-400 text-xs mt-1 bg-black/50 p-1 rounded">{JSON.stringify(log.data, null, 2)}</pre>}
                                         </div>
                                     ))}
                                  </ScrollArea>
                             </div>
     
-                            <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                <h2 className="text-lg font-semibold text-violet-300 mb-2">Equação Selecionada</h2>
-                                <ScrollArea className="bg-gray-800 p-3 rounded-lg text-sm min-h-[120px] max-h-48">
+                            <div class="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                <h2 class="text-lg font-semibold text-violet-300 mb-2">Equação Selecionada</h2>
+                                <ScrollArea class="bg-gray-800 p-3 rounded-lg text-sm min-h-[120px] max-h-48">
                                     {selectedEquation ? (
                                         <>
-                                            <p className="text-violet-200 font-semibold text-lg mb-1">{selectedEquation.nome}</p>
-                                            <p className="text-gray-400">ID: {selectedEquation.id}</p>
+                                            <p class="text-violet-200 font-semibold text-lg mb-1">{selectedEquation.nome}</p>
+                                            <p class="text-gray-400">ID: {selectedEquation.id}</p>
     
-                                            <p className="text-gray-400">Classificação: {selectedEquation.classificacao}</p>
-                                            <p className="text-gray-400">Origem: {selectedEquation.origem}</p>
-                                            <p className="text-gray-400 mt-2"><i>{selectedEquation.descricao}</i></p>
+                                            <p class="text-gray-400">Classificação: {selectedEquation.classificacao}</p>
+                                            <p class="text-gray-400">Origem: {selectedEquation.origem}</p>
+                                            <p class="text-gray-400 mt-2"><i>{selectedEquation.descricao}</i></p>
                                         </>
                                     ) : (
-                                        <p className="text-gray-400">Nenhuma equação selecionada. Clique em uma esfera no HoloMapa ou escolha uma classificação.</p>
+                                        <p class="text-gray-400">Nenhuma equação selecionada. Clique em uma esfera no HoloMapa ou escolha uma classificação.</p>
                                     )}
                                  </ScrollArea>
                             </div>
     
                             {selectedClassification && (
-                                 <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                    <h2 className="text-lg font-semibold text-violet-300 mb-2">{selectedClassification}</h2>
-                                     <ScrollArea className="h-40 bg-gray-800 p-2 rounded">
+                                 <div class="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                    <h2 class="text-lg font-semibold text-violet-300 mb-2">{selectedClassification}</h2>
+                                     <ScrollArea class="h-40 bg-gray-800 p-2 rounded">
                                         {getEquationsByClassification(selectedClassification).map(eq => (
-                                            <div key={eq.id} className="mb-2 p-1 rounded hover:bg-violet-800 cursor-pointer" onClick={() => setSelectedEquation(eq)}>
-                                                <p className="font-bold text-violet-300">{eq.nome} ({eq.id})</p>
-                                                <p className="text-gray-400 text-xs">{eq.descricao}</p>
+                                            <div key={eq.id} class="mb-2 p-1 rounded hover:bg-violet-800 cursor-pointer" onClick={() => setSelectedEquation(eq)}>
+                                                <p class="font-bold text-violet-300">{eq.nome} ({eq.id})</p>
+                                                <p class="text-gray-400 text-xs">{eq.descricao}</p>
                                             </div>
                                         ))}
                                     </ScrollArea>
                                 </div>
                             )}
     
-                            <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                <h2 className="text-lg font-semibold text-violet-300 mb-2">Log de Governança Ética</h2>
-                                 <ScrollArea id="ethics-log" className="bg-gray-800 p-3 rounded-lg text-xs h-40">
+                            <div class="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                <h2 class="text-lg font-semibold text-violet-300 mb-2">Log de Governança Ética</h2>
+                                 <ScrollArea id="ethics-log" class="bg-gray-800 p-3 rounded-lg text-xs h-40">
                                     {ethicsLog.map((log, index) => (
-                                        <div key={index} className={`mb-1 p-1 rounded ${log.status === "APROVADO" ? 'bg-green-500/10 text-green-300' : 'bg-red-500/10 text-red-300'}`}>
+                                        <div key={index} class={`mb-1 p-1 rounded ${log.status === "APROVADO" ? 'bg-green-500/10 text-green-300' : 'bg-red-500/10 text-red-300'}`}>
                                             [{log.timestamp}] {log.message}
                                         </div>
                                     ))}
@@ -663,6 +663,11 @@ export default function App() {
                         </div>
                     </div>
                 </div>
-            </div>
-        );
-}
+    </div>
+</body>
+</html>
+A-Frame Version: 1.5.0 (Date 2023-11-14, Commit #59290b36)
+THREE Version (https://github.com/supermedium/three.js): 0.158.0
+WebVR Polyfill Version: ^0.10.12
+%c * Tone.js v15.1.22 *  background: #000; color: #fff
+Autenticado com token personalizado no Firebase.

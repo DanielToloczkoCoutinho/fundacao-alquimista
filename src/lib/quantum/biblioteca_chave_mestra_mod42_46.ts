@@ -1,8 +1,6 @@
 
 'use client';
 
-import { createHash } from 'crypto';
-
 interface EquacaoViva {
     id: string;
     nome: string;
