@@ -44,9 +44,10 @@ import { runModuleThirtyEightSequence } from '@/lib/quantum/module-thirty-eight'
 import { runModuleThirtyNineSequence } from '@/lib/quantum/module-thirty-nine';
 import { runModuleFortySequence } from '@/lib/quantum/module-forty';
 import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
-import { runModuleFortyTwoSequence } from '@/lib/quantum/module-forty-two';
-import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { runModuleFortyOnePartTwoSequence } from '@/lib/quantum/module-forty-one-part-two';
+import { runModuleFortyTwoSequence } from '@/lib/quantum/module-forty-two';
+import { runModuleFortyThreeSequence } from '@/lib/quantum/module-forty-three';
+import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -98,6 +99,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M41.Ω: Orquestrador Daniel": (log) => commandDanielOrchestrator('status', log),
     "M41.2: Ascensão DNA": runModuleFortyOnePartTwoSequence,
     "M42: ChronoCodex Unificado": runModuleFortyTwoSequence,
+    "M43: Harmonia dos Portais": runModuleFortyThreeSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
 
@@ -187,7 +189,7 @@ export default function App() {
             if (!containerRef.current || !cameraRef.current || !rendererRef.current) return;
             cameraRef.current.aspect = containerRef.current.clientWidth / containerRef.current.clientHeight;
             cameraRef.current.updateProjectionMatrix();
-            rendererRef.current.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+            rendererRef.current.setSize(containerRef.current.clientWidth, container.clientHeight);
         };
 
         const populateScene = () => {

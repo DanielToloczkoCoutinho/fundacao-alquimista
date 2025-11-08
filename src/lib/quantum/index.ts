@@ -17,14 +17,6 @@ import bibliotecaAvancado from './biblioteca_chave_mestra_luxnet_avancado';
 import bibliotecaVortex3 from './biblioteca_chave_mestra_vortex_v3';
 import bibliotecaVortex4 from './biblioteca_chave_mestra_vortex_v4';
 import bibliotecaCompleta from './biblioteca_chave_mestra_luxnet_completa';
-// Módulos funcionais (sem bibliotecas de equações estáticas)
-// Módulo 35
-// Módulo 36
-// Módulo 37
-// Módulo 38
-// Módulo 39
-// Módulo 40
-// Módulo 41 (agora tem partes)
 
 export interface EquacaoViva {
     id: string;
