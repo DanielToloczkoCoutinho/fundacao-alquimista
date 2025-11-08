@@ -1,8 +1,21 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
+
+// Harmonização da tipagem
+export type ModuleTwentyEightLogEntry = AnyLogEntry;
+
+// Definição do novo tipo de registro
+export type RegistroHarmonizacaoVibracional = {
+  módulo: 'M28',
+  campo_alvo: string,
+  tipo_dissonancia: 'frequencial' | 'polaridade' | 'coerência' | 'entropia',
+  intensidade: number,
+  técnica_aplicada: 'resonância' | 'purificação' | 'recalibração',
+  status: 'harmonizado' | 'em observação' | 'crítico',
+  timestamp: number
+};
 
 // ===================================================================
 // CONSTANTES UNIVERSAIS DA FUNDAÇÃO - CALIBRAÇÃO FINAL
@@ -62,13 +75,23 @@ const PROP_NEGATIVOS: { [key: string]: number } = {
 // --- Utils ---
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
+
+// Refinamento da função de registro
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void) => {
+  logCallback(entry);
+};
+
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
 
 
 class MatematicaAvancada {
@@ -278,7 +301,7 @@ class SistemaValidacaoEtica {
 }
 
 // --- Mocks ---
-const mockLog = (source: string, step: string, msg: string, data?: any) => createLogEntry(source, step, msg, data);
+const mockLog = (source: AnyLogEntry['source'], step: string, msg: string, data?: any) => createLogEntryHelper(source, step, msg, data);
 const Modulo1_SegurancaUniversal = (log: LogCallback) => ({
     ReceberAlertaDeViolacao: (alerta: any) => log(mockLog('M1', 'ALERTA', `${alerta.tipo}: ${alerta.mensagem}`)),
     RegistrarNaCronicaDaFundacao: (registro: any) => log(mockLog('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`)),
@@ -319,15 +342,15 @@ class Modulo28_HarmonizacaoUniversal {
 
     constructor(logCallback: LogCallback) {
         this.logCallback = logCallback;
-        this.logCallback(createLogEntry('M28', 'Inicialização', 'Harmonização Definitiva Inicializada'));
+        this.logCallback(createLogEntryHelper('M28', 'Inicialização', 'Harmonização Definitiva Inicializada'));
         this.modulo1_seguranca = Modulo1_SegurancaUniversal(this.logCallback);
         this.modulo3_previsao = Modulo3_PrevisaoTemporal(this.logCallback);
         this.modulo8_pirc = Modulo8_PIRC(this.logCallback);
 
     }
 
-    private _log(source: string, step: string, message: string, data?: any) {
-        this.logCallback(createLogEntry(source, step, message, data));
+    private _log(source: AnyLogEntry['source'], step: string, message: string, data?: any) {
+        this.logCallback(createLogEntryHelper(source, step, message, data));
     }
 
     private _classificar_severidade(score: number): string {
