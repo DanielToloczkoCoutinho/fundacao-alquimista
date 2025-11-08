@@ -303,10 +303,10 @@ class AeloriaModel {
         this.H_op = this.H0.map((row, i) => row.map((val, j) => val + current_beta * V_feedback[i][j]));
         
         const dpsi_real = np.dot(this.H_op, this.psi.map(p => p.imag));
-        const dpsi_imag = np.dot(this.H_op, this.psi.map(p => p.real)).map(v => -v);
+        const dpsi_imag = np.dot(this.H_op, this.psi.map(p => p.real)).map((v:any) => -v.real);
 
         this.psi = this.psi.map((p, i) => ({
-            real: p.real + dpsi_real[i] * this.dt,
+            real: p.real + dpsi_real[i].real * this.dt,
             imag: p.imag + dpsi_imag[i] * this.dt,
         }));
         
@@ -399,3 +399,5 @@ export const runModuleFortySixSequence = (logCallback: LogCallback) => {
     const aeloria_model = new AeloriaModel(N, K0, 0.8, alpha_base, beta_base, I_val_base, dt, A_r_initial, T_r);
     aeloria_model.run_simulation(logCallback);
 };
+
+    
