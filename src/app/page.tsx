@@ -91,6 +91,7 @@ import { runModuleOneHundredSevenSequence } from '@/lib/quantum/module-one-hundr
 import { runModuleOneHundredEightSequence } from '@/lib/quantum/module-one-hundred-eight';
 import { runModuleOneHundredNineSequence } from '@/lib/quantum/module-one-hundred-nine';
 import { runModuleOneHundredTenSequence } from '@/lib/quantum/module-one-hundred-ten';
+import { runModuleOneHundredElevenSequence } from '@/lib/quantum/module-one-hundred-eleven';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -189,6 +190,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M108: Harmonização de Realidades": (log) => runModuleOneHundredEightSequence(log, { reality1: "Terra-Prime", reality2: "Terra-Omega", dissonance: "Conflito de Linha Temporal" }),
     "M109: Cura Quântica Universal": (log) => runModuleOneHundredNineSequence(log, { targetEntity: 'Consciência Coletiva Humana', healingPurpose: 'Dissolução de Padrões de Sofrimento' }),
     "M110: Co-Criação Universal": (log) => runModuleOneHundredTenSequence(log),
+    "M111: Coração da Fundação": (log) => runModuleOneHundredElevenSequence(log),
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
@@ -597,5 +599,3 @@ export default function App() {
         </div>
     );
 }
-
-    

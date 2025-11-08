@@ -67,6 +67,7 @@ import './module-one-hundred-seven';
 import './module-one-hundred-eight';
 import './module-one-hundred-nine';
 import './module-one-hundred-ten';
+import './module-one-hundred-eleven';
 import './module-two-hundred-one';
 import './module-omega';
 
