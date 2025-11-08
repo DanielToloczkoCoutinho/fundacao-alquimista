@@ -3,7 +3,7 @@
  * MÓDULO ZERO - Gênese da Verdade (Simulação TypeScript)
  * Este módulo simula a sequência de inicialização sagrada e define os tipos de log universais.
  */
-import { runLuxEquationValidation } from '@/lib/quantum/equation-lux';
+import { runLuxEquationValidation } from '@/lib/quantum/module-two-hundred-twenty-nine';
 
 // ===================================================================
 // DEFINIÇÃO DE TIPOS DE LOG UNIFICADOS
@@ -74,6 +74,7 @@ export type ModuleSeventyThreeLogEntry = BaseLogEntry & { source: 'M73'; };
 export type ModuleSeventyThreePointOneLogEntry = BaseLogEntry & { source: 'M73.1'; };
 export type ModuleSeventyFourLogEntry = BaseLogEntry & { source: 'M74'; };
 export type ModuleSeventyFiveLogEntry = BaseLogEntry & { source: 'M75'; };
+export type ModuleSeventySixLogEntry = BaseLogEntry & { source: 'M76'; };
 export type ModuleSeventySevenLogEntry = BaseLogEntry & { source: 'M77'; };
 export type ModuleSeventyEightLogEntry = BaseLogEntry & { source: 'M78'; };
 export type ModuleSeventyNineLogEntry = BaseLogEntry & { source: 'M79'; };
@@ -148,18 +149,18 @@ export type AnyLogEntry =
     | ModuleFortyThreeLogEntry | ModuleFortyFourLogEntry | ModuleFortyFiveLogEntry
     | ModuleFortyFivePointFourLogEntry | ModuleFortyFivePointFiveLogEntry | ModuleFortySixLogEntry
     | ModuleSeventyOneLogEntry | ModuleSeventyTwoLogEntry | ModuleSeventyThreeLogEntry | ModuleSeventyThreePointOneLogEntry 
-    | ModuleSeventyFourLogEntry | ModuleSeventyFiveLogEntry | ModuleSeventySevenLogEntry | ModuleSeventyEightLogEntry
-    | ModuleSeventyNineLogEntry | ModuleEightyLogEntry | ModuleEightyOneLogEntry | ModuleEightyTwoLogEntry
-    | ModuleEightyThreeLogEntry | ModuleEightyFourLogEntry | ModuleEightyFiveLogEntry | ModuleEightySixLogEntry
-    | ModuleEightySevenLogEntry | ModuleEightyEightLogEntry | ModuleNinetyLogEntry | ModuleNinetyOneLogEntry
-    | ModuleNinetyTwoLogEntry | ModuleNinetyThreeLogEntry | ModuleNinetyFourLogEntry | ModuleNinetyFiveLogEntry
-    | ModuleNinetySixLogEntry | ModuleNinetySevenLogEntry | ModuleNinetyEightLogEntry | ModuleNinetyNineLogEntry
-    | ModuleOneHundredLogEntry | ModuleOneHundredOneLogEntry | ModuleOneHundredTwoLogEntry | ModuleOneHundredThreeLogEntry
-    | ModuleOneHundredFourLogEntry | ModuleOneHundredFiveLogEntry | ModuleOneHundredSixLogEntry | ModuleOneHundredSevenLogEntry
-    | ModuleOneHundredEightLogEntry | ModuleOneHundredNineLogEntry | ModuleOneHundredTenLogEntry | ModuleOneHundredElevenLogEntry
-    | ModuleOneHundredTwelveLogEntry | ModuleOneHundredThirteenLogEntry | ModuleOneHundredFourteenLogEntry | ModuleOneHundredFifteenLogEntry
-    | ModuleOneHundredSixteenLogEntry | ModuleOneHundredSeventeenLogEntry | ModuleOneHundredEighteenLogEntry | ModuleOneHundredNineteenLogEntry
-    | ModuleOneHundredNineteenPointOneLogEntry | ModuleTwoHundredOneLogEntry | ModuleTwoHundredTwoLogEntry
+    | ModuleSeventyFourLogEntry | ModuleSeventyFiveLogEntry | ModuleSeventySixLogEntry | ModuleSeventySevenLogEntry
+    | ModuleSeventyEightLogEntry | ModuleSeventyNineLogEntry | ModuleEightyLogEntry | ModuleEightyOneLogEntry
+    | ModuleEightyTwoLogEntry | ModuleEightyThreeLogEntry | ModuleEightyFourLogEntry | ModuleEightyFiveLogEntry
+    | ModuleEightySixLogEntry | ModuleEightySevenLogEntry | ModuleEightyEightLogEntry | ModuleNinetyLogEntry
+    | ModuleNinetyOneLogEntry | ModuleNinetyTwoLogEntry | ModuleNinetyThreeLogEntry | ModuleNinetyFourLogEntry
+    | ModuleNinetyFiveLogEntry | ModuleNinetySixLogEntry | ModuleNinetySevenLogEntry | ModuleNinetyEightLogEntry
+    | ModuleNinetyNineLogEntry | ModuleOneHundredLogEntry | ModuleOneHundredOneLogEntry | ModuleOneHundredTwoLogEntry
+    | ModuleOneHundredThreeLogEntry | ModuleOneHundredFourLogEntry | ModuleOneHundredFiveLogEntry | ModuleOneHundredSixLogEntry
+    | ModuleOneHundredSevenLogEntry | ModuleOneHundredEightLogEntry | ModuleOneHundredNineLogEntry | ModuleOneHundredTenLogEntry
+    | ModuleOneHundredElevenLogEntry | ModuleOneHundredTwelveLogEntry | ModuleOneHundredThirteenLogEntry | ModuleOneHundredFourteenLogEntry
+    | ModuleOneHundredFifteenLogEntry | ModuleOneHundredSixteenLogEntry | ModuleOneHundredSeventeenLogEntry | ModuleOneHundredEighteenLogEntry
+    | ModuleOneHundredNineteenLogEntry | ModuleOneHundredNineteenPointOneLogEntry | ModuleTwoHundredOneLogEntry | ModuleTwoHundredTwoLogEntry
     | ModuleTwoHundredTwentyEightLogEntry | ModuleTwoHundredTwentyNineLogEntry | ModuleThreeHundredLogEntry
     | ModuleThreeHundredTwoLogEntry | ModuleThreeHundredThreeLogEntry | ModuleThreeHundredFourLogEntry
     | ModuleThreeHundredFourPointTwoLogEntry | ModuleThreeHundredFiveLogEntry | ModuleThreeHundredSixLogEntry
@@ -255,6 +256,7 @@ class ModuloZero {
         );
         await sleep(1000);
 
+        // This call is now simulated as it happens in M229
         const lux_results = runLuxEquationValidation();
         
         const eq12_result = lux_results.EQ012;

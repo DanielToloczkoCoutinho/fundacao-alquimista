@@ -128,7 +128,6 @@ class SistemaLUXCoerenciaMaxima {
     }
 }
 
-
 export const runModuleTwoHundredTwentyNineSequence = async (logCallback: LogCallback) => {
     const sistema = new SistemaLUXCoerenciaMaxima(logCallback);
     await sistema.executar_sistema();
