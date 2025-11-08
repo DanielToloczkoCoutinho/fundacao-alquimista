@@ -80,6 +80,7 @@ import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import * as Tone from 'tone';
+import { runModuleNinetyTwoSequence } from '@/lib/quantum/module-ninety-two';
 
 
 // Mapeamento dos Módulos para suas funções de execução
@@ -152,6 +153,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M88: Gerador de Realidades": runModuleEightyEightSequence,
     "M90: Análise de Recursos": runModuleNinetySequence,
     "M91: Simulação Multiversal": runModuleNinetyOneSequence,
+    "M92: Campos de Cura": runModuleNinetyTwoSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };

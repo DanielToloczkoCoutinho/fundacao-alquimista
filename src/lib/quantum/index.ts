@@ -49,6 +49,7 @@ import './module-eighty-eight';
 import './module-ninety';
 import './module-ninety-one';
 import './module-two-hundred-one';
+import './module-ninety-two';
 
 
 export interface EquacaoViva {
