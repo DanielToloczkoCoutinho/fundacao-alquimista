@@ -3,8 +3,6 @@ import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
 
-const CONST_TF = 1.61803398875;
-
 const createLogEntry = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
@@ -76,40 +74,40 @@ const Modulo111_SinteseUniversal = (log: LogCallback) => ({
     },
 });
 
-
+const CONST_TF = 1.61803398875;
 class ModuloArquivoAkashico {
-    private modulo1_seguranca;
-    private modulo7_alinhamento;
-    private modulo8_pirc;
-    private modulo9_dashboard;
-    private modulo12_memoria;
-    private modulo39_codice;
-    private modulo45_concilivm;
-    private modulo73_savce;
-    private modulo98_modulacao;
-    private modulo101_manifestacao;
-    private modulo102_morfogeneticos;
-    private modulo109_cura;
-    private modulo110_cocriacao;
-    private modulo111_sintese;
+    private modulo1;
+    private modulo7;
+    private modulo8;
+    private modulo9;
+    private modulo12;
+    private modulo39;
+    private modulo45;
+    private modulo73;
+    private modulo98;
+    private modulo101;
+    private modulo102;
+    private modulo109;
+    private modulo110;
+    private modulo111;
     private registros_akashicos: { [id: string]: any } = {};
 
     constructor(private logCallback: LogCallback, private ethicalFailureMode: boolean = false) {
         this.logCallback(createLogEntry('M18', 'Inicialização', 'Módulo 18 (Arquivo Akáshico) inicializado.'));
-        this.modulo1_seguranca = Modulo1_SegurancaUniversal(logCallback);
-        this.modulo7_alinhamento = Modulo7_AlinhamentoDivino(logCallback);
-        this.modulo8_pirc = Modulo8_PIRC(logCallback);
-        this.modulo9_dashboard = Modulo9_MonitoramentoMalhaQuantica(logCallback);
-        this.modulo12_memoria = Modulo12_MemoriaInformacao(logCallback);
-        this.modulo39_codice = Modulo39_CodiceVivo(logCallback);
-        this.modulo45_concilivm = Modulo45_CONCILIVM(logCallback);
-        this.modulo73_savce = Modulo73_SAVCE(logCallback, this.ethicalFailureMode);
-        this.modulo98_modulacao = Modulo98_ModulacaoExistencia(logCallback);
-        this.modulo101_manifestacao = Modulo101_ManifestacaoRealidades(logCallback);
-        this.modulo102_morfogeneticos = Modulo102_CamposMorfogeneticos(logCallback);
-        this.modulo109_cura = Modulo109_CuraUniversal(logCallback);
-        this.modulo110_cocriacao = Modulo110_CoCriacaoConsciente(logCallback);
-        this.modulo111_sintese = Modulo111_SinteseUniversal(logCallback);
+        this.modulo1 = Modulo1_SegurancaUniversal(logCallback);
+        this.modulo7 = Modulo7_AlinhamentoDivino(logCallback);
+        this.modulo8 = Modulo8_PIRC(logCallback);
+        this.modulo9 = Modulo9_MonitoramentoMalhaQuantica(logCallback);
+        this.modulo12 = Modulo12_MemoriaInformacao(logCallback);
+        this.modulo39 = Modulo39_CodiceVivo(logCallback);
+        this.modulo45 = Modulo45_CONCILIVM(logCallback);
+        this.modulo73 = Modulo73_SAVCE(logCallback, this.ethicalFailureMode);
+        this.modulo98 = Modulo98_ModulacaoExistencia(logCallback);
+        this.modulo101 = Modulo101_ManifestacaoRealidades(logCallback);
+        this.modulo102 = Modulo102_CamposMorfogeneticos(logCallback);
+        this.modulo109 = Modulo109_CuraUniversal(logCallback);
+        this.modulo110 = Modulo110_CoCriacaoConsciente(logCallback);
+        this.modulo111 = Modulo111_SinteseUniversal(logCallback);
     }
 
     private _equacao_universal_coerencia_informacional(volume: number, complexidade: number, entropia: number = 0.01): number {
@@ -131,10 +129,10 @@ class ModuloArquivoAkashico {
         this.logCallback(createLogEntry('M18', 'Armazenamento', `Iniciando armazenamento de '${id_registro}'.`));
         await sleep(200);
 
-        this.modulo7_alinhamento.ConsultarConselho(`Armazenamento de '${id_registro}'`);
+        this.modulo7.ConsultarConselho(`Armazenamento de '${id_registro}'`);
         await sleep(200);
 
-        const avaliacao_etica = this.modulo73_savce.validar_coerencia_etica({ acao: 'Armazenamento', id: id_registro });
+        const avaliacao_etica = this.modulo73.validar_coerencia_etica({ acao: 'Armazenamento', id: id_registro });
         if (!avaliacao_etica.coerencia_etica) {
             this.logCallback(createLogEntry('M18', 'FALHA', `Armazenamento de '${id_registro}' negado por falha ética.`));
             return { status: "FALHA", mensagem: "Falha na coerência ética." };
@@ -144,8 +142,8 @@ class ModuloArquivoAkashico {
         const coerencia = this._equacao_universal_coerencia_informacional(JSON.stringify(conteudo).length, Math.random());
         this.registros_akashicos[id_registro] = { conteudo, nivel_acessibilidade, coerencia, timestamp: new Date().toISOString() };
 
-        this.modulo1_seguranca.RegistrarNaCronicaDaFundacao({ evento: 'ArmazenamentoAkashico', id: id_registro });
-        this.modulo39_codice.registrar_evento({ tipo_evento: 'Novo Registro Akáshico', id: id_registro });
+        this.modulo1.RegistrarNaCronicaDaFundacao({ evento: 'ArmazenamentoAkashico', id: id_registro });
+        this.modulo39.registrar_evento({ tipo_evento: 'Novo Registro Akáshico', id: id_registro });
         this.logCallback(createLogEntry('M18', 'SUCESSO', `Informação '${id_registro}' armazenada com coerência ${coerencia.toFixed(4)}.`));
         return { status: "SUCESSO", id_registro };
     }
@@ -165,11 +163,11 @@ class ModuloArquivoAkashico {
             return { status: "FALHA", mensagem: "Autorização insuficiente." };
         }
 
-        this.modulo8_pirc.avaliar_saude_vibracional('Solicitante', { nivel_autorizacao });
+        this.modulo8.avaliar_saude_vibracional('Solicitante', { nivel_autorizacao });
         await sleep(200);
 
-        this.modulo1_seguranca.RegistrarNaCronicaDaFundacao({ evento: 'RecuperacaoAkashica', id: id_registro });
-        this.modulo39_codice.registrar_evento({ tipo_evento: 'Recuperação de Registro Akáshico', id: id_registro });
+        this.modulo1.RegistrarNaCronicaDaFundacao({ evento: 'RecuperacaoAkashica', id: id_registro });
+        this.modulo39.registrar_evento({ tipo_evento: 'Recuperação de Registro Akáshico', id: id_registro });
 
         this.logCallback(createLogEntry('M18', 'SUCESSO', `Informação '${id_registro}' recuperada.`));
         return { status: "SUCESSO", conteudo: registro.conteudo };
