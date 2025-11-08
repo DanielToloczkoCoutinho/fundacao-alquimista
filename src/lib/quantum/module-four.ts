@@ -3,17 +3,10 @@
  * MÓDULO 4: GEOMETRIA CRIPTOGRÁFICA & AUTENTICAÇÃO CÓSMICA (Simulação TypeScript)
  * Versão 4.5.Ω
  */
+import { type AnyLogEntry } from './module-zero';
 
-export type ModuleFourLogEntry = {
-    step: string;
-    message: string;
-    timestamp: string;
-    data?: any;
-    source: 'M4';
-};
-
-const createLogEntry = (step: string, message: string, data?: any): ModuleFourLogEntry => ({
-    step,
+const createLogEntry = (step: string, message: string, data?: any): AnyLogEntry => ({
+    step: `[M4] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
@@ -23,9 +16,9 @@ const createLogEntry = (step: string, message: string, data?: any): ModuleFourLo
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 class Modulo4AutenticacaoCosmica {
-    private logCallback: (entry: any) => void;
+    private logCallback: (entry: AnyLogEntry) => void;
 
-    constructor(logCallback: (entry: any) => void) {
+    constructor(logCallback: (entry: AnyLogEntry) => void) {
         this.logCallback = logCallback;
     }
 
@@ -48,7 +41,8 @@ class Modulo4AutenticacaoCosmica {
     }
 }
 
-export const runModuleFourSequence = async (logCallback: (entry: any) => void) => {
+export const runModuleFourSequence = async (logCallback: (entry: AnyLogEntry) => void) => {
     const modulo4 = new Modulo4AutenticacaoCosmica(logCallback);
-    await modulo4.recalibrar_geometria_sagrada();
+    const resultado = await modulo4.recalibrar_geometria_sagrada();
+    return resultado;
 };
