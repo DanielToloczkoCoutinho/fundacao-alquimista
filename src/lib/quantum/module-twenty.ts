@@ -1,15 +1,14 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
 
-const createLogEntry = (source: 'M20' | 'M1' | 'M7' | 'M45' | 'M73' | 'M98' | 'M101' | 'M102' | 'M109' | 'M111', step: string, message: string, data?: any): AnyLogEntry => ({
+const createLogEntry = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
