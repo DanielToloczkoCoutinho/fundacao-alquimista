@@ -16,10 +16,7 @@ const FREQ_ANATHERON_ESTABILIZADORA = 888.00;
 const FREQ_ZENNITH_REAJUSTADA = 963.00;
 const FREQ_MATRIZ_EQUILIBRIO = 1111.00;
 
-export type ModuleEightLogEntry = AnyLogEntry;
-type LogCallback = (entry: ModuleEightLogEntry) => void;
-
-const createLogEntry = (source: AnyLogEntry['source'], step: string, message: string, data?: any): ModuleEightLogEntry => ({
+const createLogEntry = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
@@ -30,7 +27,7 @@ const createLogEntry = (source: AnyLogEntry['source'], step: string, message: st
 // --- Simulação da Infraestrutura da Fundação ---
 
 class MockMQIReal {
-    constructor(private logCallback: LogCallback, private lowScoreMode = false) {}
+    constructor(private logCallback: (entry: AnyLogEntry) => void, private lowScoreMode = false) {}
 
     ler_parametros() {
         this.logCallback(createLogEntry('M8', 'Leitura MQI', `Lendo parâmetros da Matriz Quântica (Modo: ${this.lowScoreMode ? 'Baixo Score' : 'Normal'}).`));
@@ -52,7 +49,7 @@ class MockMQIReal {
 }
 
 class MockM7Real {
-    constructor(private logCallback: LogCallback) {}
+    constructor(private logCallback: (entry: AnyLogEntry) => void) {}
 
     consultar_diretriz(query: string) {
         this.logCallback(createLogEntry('M7', 'Consulta', `Consultando diretriz: "${query}"`));
@@ -64,7 +61,7 @@ class MockM7Real {
 }
 
 class MockM5AlertaEtico {
-    constructor(private logCallback: LogCallback) {}
+    constructor(private logCallback: (entry: AnyLogEntry) => void) {}
 
     ReceberAlertaDeRiscoFuturo(alerta: { nivel: string, mensagem: string }) {
         this.logCallback(createLogEntry('M5', `Alerta Ético (${alerta.nivel})`, alerta.mensagem));
@@ -72,28 +69,28 @@ class MockM5AlertaEtico {
 }
 
 class MockM98Modulacao {
-    constructor(private logCallback: LogCallback) {}
+    constructor(private logCallback: (entry: AnyLogEntry) => void) {}
     SugerirModulacaoExistencia(params: any) {
         this.logCallback(createLogEntry('M98', 'Sugestão Modulação', `Sugerindo modulação para ${params.alvo_entidade}.`));
     }
 }
 
 class MockM102Cura {
-     constructor(private logCallback: LogCallback) {}
+     constructor(private logCallback: (entry: AnyLogEntry) => void) {}
     AplicarCuraQuantica(alvo: string, tipo: string) {
          this.logCallback(createLogEntry('M102', 'Cura Quântica', `Aplicando cura específica em '${alvo}' para '${tipo}'.`));
     }
 }
 
 class MockM109CuraUniversal {
-     constructor(private logCallback: LogCallback) {}
+     constructor(private logCallback: (entry: AnyLogEntry) => void) {}
     AplicarCuraQuanticaUniversal(alvo: string, intensidade: number) {
         this.logCallback(createLogEntry('M109', 'Cura Universal', `Aplicando cura universal em '${alvo}' com intensidade ${intensidade}.`));
     }
 }
 
 class MockM1Seguranca {
-    constructor(private logCallback: LogCallback) {}
+    constructor(private logCallback: (entry: AnyLogEntry) => void) {}
     RegistrarNaCronicaDaFundacao(registro: any) {
         this.logCallback(createLogEntry('M1', 'Crônica', `Registrando evento na Crônica: ${registro.evento}`));
     }
@@ -110,7 +107,7 @@ export class Modulo8_PIRC {
     private m109_cura_universal: MockM109CuraUniversal;
     private m1_seguranca: MockM1Seguranca;
 
-    constructor(private logCallback: LogCallback) {
+    constructor(private logCallback: (entry: AnyLogEntry) => void) {
         this.logCallback(createLogEntry('M8', 'Inicialização', 'Módulo 8 (PIRC) inicializado.'));
         this.m7_conselho = new MockM7Real(logCallback);
         this.m5_alerta_etico = new MockM5AlertaEtico(logCallback);
