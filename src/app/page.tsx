@@ -67,6 +67,7 @@ import { runModuleSeventyThreeSequence } from '@/lib/quantum/module-seventy-thre
 import { runModuleSeventyThreePointOneSequence } from '@/lib/quantum/module-seventy-three-point-one';
 import { runModuleSeventyFourSequence } from '@/lib/quantum/module-seventy-four';
 import { runModuleSeventyFiveSequence } from '@/lib/quantum/module-seventy-five';
+import { runModuleSeventySixSequence } from '@/lib/quantum/module-seventy-six';
 import { runModuleSeventySevenSequence } from '@/lib/quantum/module-seventy-seven';
 import { runModuleSeventyEightSequence } from '@/lib/quantum/module-seventy-eight';
 import { runModuleSeventyNineSequence } from '@/lib/quantum/module-seventy-nine';
@@ -206,6 +207,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 73.1: Paridade Ética Universal': runModuleSeventyThreePointOneSequence,
     'Módulo 74: CRONOS_FLUXUS': runModuleSeventyFourSequence,
     'Módulo 75: Registro Akáshico Soberano': runModuleSeventyFiveSequence,
+    'Módulo 76: INTERLINEAE TEMPORIS': runModuleSeventySixSequence,
     'Módulo 77: LUMEN-CUSTOS': runModuleSeventySevenSequence,
     'Módulo 78: UNIVERSUM_UNIFICATUM': runModuleSeventyEightSequence,
     'Módulo 79: Ciclo de Luz Harmônica': runModuleSeventyNineSequence,
