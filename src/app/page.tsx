@@ -60,6 +60,7 @@ import { runModuleFortyFiveSequence } from '@/lib/quantum/module-forty-five';
 import { runModuleFortyFivePointFourSequence } from '@/lib/quantum/module-forty-five-point-four';
 import { runModuleFortyFivePointFiveSequence } from '@/lib/quantum/module-forty-five-point-five';
 import { runModuleFortySixSequence } from '@/lib/quantum/module-forty-six';
+import { runSyntesisPrimeSequence } from '@/lib/quantum/syntesis-prime-modules';
 import { runModuleSeventyOneSequence } from '@/lib/quantum/module-seventy-one';
 import { runModuleSeventyTwoSequence } from '@/lib/quantum/module-seventy-two';
 import { runModuleSeventyThreeSequence } from '@/lib/quantum/module-seventy-three';
@@ -196,6 +197,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 45.4: Oráculo Emergente': runModuleFortyFivePointFourSequence,
     'Módulo 45.5: Oráculo Amplificado': runModuleFortyFivePointFiveSequence,
     'Módulo 46: AELORIA': runModuleFortySixSequence,
+    'Módulo 47-70: SÍNTESE PRIME': runSyntesisPrimeSequence,
     'Módulo 71: Interface Cósmica Interativa': runModuleSeventyOneSequence,
     'Módulo 72: Governança Atlanto-Galáctica': runModuleSeventyTwoSequence,
     'Módulo 73: Orquestração Ética': runModuleSeventyThreeSequence,

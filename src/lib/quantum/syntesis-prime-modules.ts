@@ -62,18 +62,18 @@ class ModuleBase {
 
     activate() {
         this.status = "ATIVO";
-        this.logCallback(createLogEntry(this.module_id, 'Ativação', 'Módulo ATIVADO.'));
+        this.logCallback(createLogEntry(this.module_id as any, 'Ativação', 'Módulo ATIVADO.'));
         this.bus.publish("status.update", { module_id: this.module_id, status: this.status });
     }
 
     deactivate() {
         this.status = "INATIVO";
-        this.logCallback(createLogEntry(this.module_id, 'Desativação', 'Módulo DESATIVADO.'));
+        this.logCallback(createLogEntry(this.module_id as any, 'Desativação', 'Módulo DESATIVADO.'));
         this.bus.publish("status.update", { module_id: this.module_id, status: this.status });
     }
 
     protected _handle_command(message: any) {
-        this.logCallback(createLogEntry(this.module_id, 'Comando Recebido', `Comando: ${message.command}`, message));
+        this.logCallback(createLogEntry(this.module_id as any, 'Comando Recebido', `Comando: ${message.command}`, message));
     }
 }
 
@@ -146,7 +146,7 @@ const moduleFactory = (id: string, bus: HarmonicBus, logCallback: LogCallback, s
     const ModuleClass = class extends ModuleBase {
         constructor(bus: HarmonicBus, logCallback: LogCallback) {
             super(id, bus, logCallback);
-             logCallback(createLogEntry(id, 'Inicialização', 'Módulo simulado inicializado.'));
+             logCallback(createLogEntry(id as any, 'Inicialização', 'Módulo simulado inicializado.'));
         }
         _handle_command(message: any) {
             handler(this, message);
