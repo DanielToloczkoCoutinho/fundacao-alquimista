@@ -17,14 +17,14 @@ import bibliotecaAvancado from './biblioteca_chave_mestra_luxnet_avancado';
 import bibliotecaVortex3 from './biblioteca_chave_mestra_vortex_v3';
 import bibliotecaVortex4 from './biblioteca_chave_mestra_vortex_v4';
 import bibliotecaCompleta from './biblioteca_chave_mestra_luxnet_completa';
-// O Módulo 35 já foi integrado e não possui uma "biblioteca" de equações separada.
-// O Módulo 36 já foi integrado e não possui uma "biblioteca" de equações separada.
-// O Módulo 37 já foi integrado e não possui uma "biblioteca" de equações separada.
-// O Módulo 38 já foi integrado e não possui uma "biblioteca" de equações separada.
-// O Módulo 39 já foi integrado e não possui uma "biblioteca" de equações separada.
-// O Módulo 40 já foi integrado e não possui uma "biblioteca" de equações separada.
-// O Módulo 41.1 é funcional e não possui uma "biblioteca" de equações separada.
-
+// Módulos funcionais (sem bibliotecas de equações estáticas)
+// Módulo 35
+// Módulo 36
+// Módulo 37
+// Módulo 38
+// Módulo 39
+// Módulo 40
+// Módulo 41 (agora tem partes)
 
 export interface EquacaoViva {
     id: string;

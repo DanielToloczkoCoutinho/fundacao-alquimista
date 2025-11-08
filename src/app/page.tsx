@@ -46,6 +46,7 @@ import { runModuleFortySequence } from '@/lib/quantum/module-forty';
 import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
 import { runZennithOrchestrator } from '@/lib/quantum/zennith-orchestrator';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
+import { runModuleFortyOnePartTwoSequence } from '@/lib/quantum/module-forty-one-part-two';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -62,7 +63,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M5: Ponte de Comunicação": runModuleFiveSequence,
     "M6: Alquimia Quântica": runModuleSixSequence,
     "M7: Orquestrador Central": runModuleSevenSequence,
-    "M8: Protocolo PIRC": (log) => new runModuleEightSequence(log).runFullSimulation(),
+    "M8: Protocolo PIRC": (log) => new (runModuleEightSequence as any)(log).runFullSimulation(),
     "M9: Nexus Central": runModuleNineSequence,
     "M10: Inteligência AELORIA": runModuleTenSequence,
     "M11: Portal Interdimensional": (log) => runModuleElevenSequence(log, 'CREATE'),
@@ -95,6 +96,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M39: Orquestrador de Portais": runModuleThirtyNineSequence,
     "M40: Códice da Criação Viva": runModuleFortySequence,
     "M41.Ω: Orquestrador Daniel": (log) => commandDanielOrchestrator('status', log),
+    "M41.2: Ascensão DNA": runModuleFortyOnePartTwoSequence,
     "M42: Orquestrador ZENNITH": runZennithOrchestrator,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
