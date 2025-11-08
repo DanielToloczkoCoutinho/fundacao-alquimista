@@ -50,7 +50,7 @@ class SimpleChain {
             payload: {},
             prev_hash: "0".repeat(64)
         };
-        genesis['hash'] = this._hash(JSON.stringify(genesis, Object.keys(genesis).sort()));
+        (genesis as any)['hash'] = this._hash(JSON.stringify(genesis, Object.keys(genesis).sort()));
         this.chain.push(genesis);
         this.logCallback(createLogEntry('M45-Chain', 'Info', `Bloco Gênesis criado. Hash: ${genesis['hash'].substring(0, 8)}...`));
     }
@@ -64,7 +64,7 @@ class SimpleChain {
             payload,
             prev_hash
         };
-        block['hash'] = this._hash(JSON.stringify(block, Object.keys(block).sort()));
+        (block as any)['hash'] = this._hash(JSON.stringify(block, Object.keys(block).sort()));
         this.chain.push(block);
     }
 }
