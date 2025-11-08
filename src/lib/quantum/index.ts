@@ -33,6 +33,7 @@ import './syntesis-prime-modules';
 import './module-seventy-one';
 import './module-seventy-two';
 import './module-seventy-three';
+import './module-seventy-four';
 import './module-two-hundred-one';
 
 
