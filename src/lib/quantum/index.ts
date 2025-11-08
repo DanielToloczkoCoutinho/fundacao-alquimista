@@ -46,6 +46,7 @@ import './module-eighty-five';
 import './module-eighty-six';
 import './module-eighty-seven';
 import './module-eighty-eight';
+import './module-ninety';
 import './module-two-hundred-one';
 
 
@@ -109,8 +110,4 @@ class BibliotecaCompletaUnificada {
     }
 
     public buscarPorClassificacao(classificacao: string): EquacaoViva[] {
-        return this.listarTodas().filter(eq => eq.classificacao === classificacao);
-    }
-}
-
-export const bibliotecaCompletaUnificada = new BibliotecaCompletaUnificada();
+        return this.listarTodas().filter(eq =>
