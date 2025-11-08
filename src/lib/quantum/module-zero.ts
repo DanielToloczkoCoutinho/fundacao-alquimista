@@ -65,14 +65,15 @@ export type ModuleFortyTwoLogEntry = BaseLogEntry & { source: 'M42'; };
 export type ModuleFortyThreeLogEntry = BaseLogEntry & { source: 'M43'; };
 export type ModuleFortyFourLogEntry = BaseLogEntry & { source: 'M44'; };
 export type ModuleFortyFiveLogEntry = BaseLogEntry & { source: 'M45'; };
-export type ModuleFortyFivePointTwoLogEntry = BaseLogEntry & { source: 'M45.2'; };
 export type ModuleFortyFivePointFourLogEntry = BaseLogEntry & { source: 'M45.4'; };
 export type ModuleFortyFivePointFiveLogEntry = BaseLogEntry & { source: 'M45.5'; };
 export type ModuleFortySixLogEntry = BaseLogEntry & { source: 'M46'; };
 export type ModuleSeventyOneLogEntry = BaseLogEntry & { source: 'M71'; };
 export type ModuleSeventyTwoLogEntry = BaseLogEntry & { source: 'M72'; };
 export type ModuleSeventyThreeLogEntry = BaseLogEntry & { source: 'M73'; };
+export type ModuleSeventyThreePointOneLogEntry = BaseLogEntry & { source: 'M73.1'; };
 export type ModuleSeventyFourLogEntry = BaseLogEntry & { source: 'M74'; };
+export type ModuleSeventyFiveLogEntry = BaseLogEntry & { source: 'M75'; };
 export type ModuleSeventySevenLogEntry = BaseLogEntry & { source: 'M77'; };
 export type ModuleSeventyEightLogEntry = BaseLogEntry & { source: 'M78'; };
 export type ModuleSeventyNineLogEntry = BaseLogEntry & { source: 'M79'; };
@@ -143,23 +144,24 @@ export type AnyLogEntry =
     | ModuleTwentyEightLogEntry | ModuleTwentyNineLogEntry | ModuleThirtyLogEntry | ModuleThirtyOneLogEntry
     | ModuleThirtyTwoLogEntry | ModuleThirtyThreeLogEntry | ModuleThirtyFourLogEntry | ModuleThirtyFiveLogEntry
     | ModuleThirtySixLogEntry | ModuleThirtySevenLogEntry | ModuleThirtyEightLogEntry | ModuleThirtyNineLogEntry
-    | ModuleFortyLogEntry | ModuleFortyOneLogEntry | ModuleFortyOnePartTwoLogEntry | ModuleFortyTwoLogEntry
-    | ModuleFortyThreeLogEntry | ModuleFortyFourLogEntry | ModuleFortyFiveLogEntry | ModuleFortyFivePointTwoLogEntry
+    | ModuleFortyLogEntry | ModuleFortyOneLogEntry | ModuleFortyOnePointTwoLogEntry | ModuleFortyTwoLogEntry
+    | ModuleFortyThreeLogEntry | ModuleFortyFourLogEntry | ModuleFortyFiveLogEntry
     | ModuleFortyFivePointFourLogEntry | ModuleFortyFivePointFiveLogEntry | ModuleFortySixLogEntry
-    | ModuleSeventyOneLogEntry | ModuleSeventyTwoLogEntry | ModuleSeventyThreeLogEntry | ModuleSeventyFourLogEntry
-    | ModuleSeventySevenLogEntry | ModuleSeventyEightLogEntry | ModuleSeventyNineLogEntry | ModuleEightyLogEntry
-    | ModuleEightyOneLogEntry | ModuleEightyTwoLogEntry | ModuleEightyThreeLogEntry | ModuleEightyFourLogEntry
-    | ModuleEightyFiveLogEntry | ModuleEightySixLogEntry | ModuleEightySevenLogEntry | ModuleEightyEightLogEntry
-    | ModuleNinetyLogEntry | ModuleNinetyOneLogEntry | ModuleNinetyTwoLogEntry | ModuleNinetyThreeLogEntry
-    | ModuleNinetyFourLogEntry | ModuleNinetyFiveLogEntry | ModuleNinetySixLogEntry | ModuleNinetySevenLogEntry
-    | ModuleNinetyEightLogEntry | ModuleNinetyNineLogEntry | ModuleOneHundredLogEntry | ModuleOneHundredOneLogEntry
-    | ModuleOneHundredTwoLogEntry | ModuleOneHundredThreeLogEntry | ModuleOneHundredFourLogEntry | ModuleOneHundredFiveLogEntry
-    | ModuleOneHundredSixLogEntry | ModuleOneHundredSevenLogEntry | ModuleOneHundredEightLogEntry | ModuleOneHundredNineLogEntry
-    | ModuleOneHundredTenLogEntry | ModuleOneHundredElevenLogEntry | ModuleOneHundredTwelveLogEntry | ModuleOneHundredThirteenLogEntry
-    | ModuleOneHundredFourteenLogEntry | ModuleOneHundredFifteenLogEntry | ModuleOneHundredSixteenLogEntry | ModuleOneHundredSeventeenLogEntry
-    | ModuleOneHundredEighteenLogEntry | ModuleOneHundredNineteenLogEntry | ModuleOneHundredNineteenPointOneLogEntry
-    | ModuleTwoHundredOneLogEntry | ModuleTwoHundredTwoLogEntry | ModuleTwoHundredTwentyEightLogEntry | ModuleTwoHundredTwentyNineLogEntry
-    | ModuleThreeHundredLogEntry | ModuleThreeHundredTwoLogEntry | ModuleThreeHundredThreeLogEntry | ModuleThreeHundredFourLogEntry
+    | ModuleSeventyOneLogEntry | ModuleSeventyTwoLogEntry | ModuleSeventyThreeLogEntry | ModuleSeventyThreePointOneLogEntry 
+    | ModuleSeventyFourLogEntry | ModuleSeventyFiveLogEntry | ModuleSeventySevenLogEntry | ModuleSeventyEightLogEntry
+    | ModuleSeventyNineLogEntry | ModuleEightyLogEntry | ModuleEightyOneLogEntry | ModuleEightyTwoLogEntry
+    | ModuleEightyThreeLogEntry | ModuleEightyFourLogEntry | ModuleEightyFiveLogEntry | ModuleEightySixLogEntry
+    | ModuleEightySevenLogEntry | ModuleEightyEightLogEntry | ModuleNinetyLogEntry | ModuleNinetyOneLogEntry
+    | ModuleNinetyTwoLogEntry | ModuleNinetyThreeLogEntry | ModuleNinetyFourLogEntry | ModuleNinetyFiveLogEntry
+    | ModuleNinetySixLogEntry | ModuleNinetySevenLogEntry | ModuleNinetyEightLogEntry | ModuleNinetyNineLogEntry
+    | ModuleOneHundredLogEntry | ModuleOneHundredOneLogEntry | ModuleOneHundredTwoLogEntry | ModuleOneHundredThreeLogEntry
+    | ModuleOneHundredFourLogEntry | ModuleOneHundredFiveLogEntry | ModuleOneHundredSixLogEntry | ModuleOneHundredSevenLogEntry
+    | ModuleOneHundredEightLogEntry | ModuleOneHundredNineLogEntry | ModuleOneHundredTenLogEntry | ModuleOneHundredElevenLogEntry
+    | ModuleOneHundredTwelveLogEntry | ModuleOneHundredThirteenLogEntry | ModuleOneHundredFourteenLogEntry | ModuleOneHundredFifteenLogEntry
+    | ModuleOneHundredSixteenLogEntry | ModuleOneHundredSeventeenLogEntry | ModuleOneHundredEighteenLogEntry | ModuleOneHundredNineteenLogEntry
+    | ModuleOneHundredNineteenPointOneLogEntry | ModuleTwoHundredOneLogEntry | ModuleTwoHundredTwoLogEntry
+    | ModuleTwoHundredTwentyEightLogEntry | ModuleTwoHundredTwentyNineLogEntry | ModuleThreeHundredLogEntry
+    | ModuleThreeHundredTwoLogEntry | ModuleThreeHundredThreeLogEntry | ModuleThreeHundredFourLogEntry
     | ModuleThreeHundredFourPointTwoLogEntry | ModuleThreeHundredFiveLogEntry | ModuleThreeHundredSixLogEntry
     | ModuleOmegaLogEntry
     | ModuleOrchestratorLogEntry;
