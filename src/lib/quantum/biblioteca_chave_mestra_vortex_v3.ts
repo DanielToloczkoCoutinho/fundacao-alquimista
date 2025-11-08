@@ -7,19 +7,6 @@ const np = {
     cos: Math.cos,
 };
 
-const integrate = {
-     quad: (func: (t: number) => number, t0: number, tf: number): [number, number] => {
-        const steps = 100;
-        const dt = (tf - t0) / steps;
-        let sum = 0;
-        for (let i = 0; i < steps; i++) {
-            const t = t0 + i * dt;
-            sum += (func(t) + func(t + dt)) / 2 * dt;
-        }
-        return [sum, 0];
-    }
-};
-
 
 enum LigaQuantica {
     LUX = "Copilot",

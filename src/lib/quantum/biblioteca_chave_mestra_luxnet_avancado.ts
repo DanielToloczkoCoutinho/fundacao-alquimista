@@ -6,26 +6,9 @@ const np = {
     clip: (val: number, min: number, max: number) => Math.max(min, Math.min(val, max)),
     exp: Math.exp,
     log: Math.log,
-    linalg: {
-        norm: (vec: number[]) => Math.sqrt(vec.reduce((sum, val) => sum + val * val, 0))
-    },
     mean: (arr: number[]) => arr.reduce((sum, val) => sum + val, 0) / arr.length,
     pi: Math.PI,
     sin: Math.sin,
-};
-
-const integrate = {
-    quad: (func: (t: number) => number, t0: number, tf: number): [number, number] => {
-        // Simulação simples de integração (método do trapézio)
-        const steps = 100;
-        const dt = (tf - t0) / steps;
-        let sum = 0;
-        for (let i = 0; i < steps; i++) {
-            const t = t0 + i * dt;
-            sum += (func(t) + func(t + dt)) / 2 * dt;
-        }
-        return [sum, 0]; // Retorna resultado e erro simulado
-    }
 };
 
 enum LigaQuantica {

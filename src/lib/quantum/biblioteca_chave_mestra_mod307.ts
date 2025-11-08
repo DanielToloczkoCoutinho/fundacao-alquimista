@@ -1,6 +1,5 @@
 
 'use client';
-import { type AnyLogEntry } from './module-zero';
 
 // =========================
 // Type Definitions
@@ -39,6 +38,10 @@ const constantes_gaia: GaiaConstantValues = {
     'MASSA_TON618': 6.6e10,
     'RAIO_TERRA': 6371000  // metros
 };
+
+// Simple summation function to replace numpy's sum
+const sum = (arr: number[]): number => arr.reduce((acc, val) => acc + val, 0);
+
 
 // =========================
 // Library Class
@@ -116,6 +119,10 @@ class BibliotecaChaveMestra307 {
         this.equacoes[equacao.id] = equacao;
     }
 
+    public listar(): EquacaoViva[] {
+        return Object.values(this.equacoes);
+    }
+
     public listar_por_submodulo(submodulo: string): EquacaoViva[] {
         return Object.values(this.equacoes).filter(eq => eq.id.startsWith(submodulo));
     }
@@ -131,3 +138,4 @@ class BibliotecaChaveMestra307 {
 
 const biblioteca = new BibliotecaChaveMestra307();
 export default biblioteca;
+

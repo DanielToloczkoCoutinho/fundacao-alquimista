@@ -1,10 +1,6 @@
 
 'use client';
 
-import { type AnyLogEntry } from './module-zero';
-
-type LogCallback = (entry: AnyLogEntry) => void;
-
 interface EquacaoViva {
     id: string;
     camada?: string;

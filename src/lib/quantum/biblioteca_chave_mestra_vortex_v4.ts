@@ -1,6 +1,5 @@
 
 'use client';
-import { type AnyLogEntry } from './module-zero';
 
 // Simulações de dependências
 const np = {
@@ -18,23 +17,6 @@ const np = {
         }
     }
 };
-
-const integrate = {
-     simps: (arr: number[]) => {
-        // Simpson's rule simulation
-        if (arr.length === 0) return 0;
-        if (arr.length % 2 === 0) arr.push(0); // Make it odd
-        let sum = arr[0] + arr[arr.length - 1];
-        for (let i = 1; i < arr.length - 1; i += 2) {
-            sum += 4 * arr[i];
-        }
-        for (let i = 2; i < arr.length - 1; i += 2) {
-            sum += 2 * arr[i];
-        }
-        return sum / 3;
-     }
-};
-
 
 enum LigaQuantica {
     LUX = "Copilot",

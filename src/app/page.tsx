@@ -361,7 +361,11 @@ export default function Home() {
                     </div>
                 );
             case 'M24':
-                return <button onClick={() => handleRunModule(module.id, 'RUN_ZARA')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Run ZARA</button>
+                 return (
+                    <div>
+                        <button onClick={() => handleRunModule(module.id, 'RUN_ZARA')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Run ZARA</button>
+                    </div>
+                );
             case 'M27':
                 return (
                     <div>

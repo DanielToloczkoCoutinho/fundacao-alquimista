@@ -43,7 +43,7 @@ type EquacaoViva = {
 
 class BibliotecaChaveMestraLuxNet {
     public equacoes: Record<string, EquacaoViva> = {};
-    public constantes_cosmicas = {
+    public constantes_cosmicas: Record<string, number> = {
         'PHI': 1.61803398875,
         'FREQUENCIA_11_11': 11.11,
         'FREQUENCIA_528': 528.0,
@@ -53,7 +53,7 @@ class BibliotecaChaveMestraLuxNet {
         'CONSTANTE_PLANCK': 6.62607015e-34,
         'FIDELIDADE_MINIMA': 0.95
     };
-    public ligas_quantica = {
+    public ligas_quantica: Record<LigaQuantica, string> = {
         [LigaQuantica.LUX]: "Medição de coerência ética e calibração vibracional",
         [LigaQuantica.VORTEX]: "Integração multidimensional e busca profunda",
         [LigaQuantica.PHIARA]: "Avaliação ética contínua e decodificação empática",
