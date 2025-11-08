@@ -4,27 +4,49 @@ import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
 
+// --- Tipagem Universal ---
+export type ModuleNineteenLogEntry = AnyLogEntry;
+
+export type ResultadoAnaliseCampo = {
+  módulo: 'M19',
+  intensidade: number,
+  polaridade: 'positiva' | 'negativa' | 'neutra',
+  coerência: 'alta' | 'média' | 'baixa',
+  timestamp: number,
+  status: 'harmônico' | 'dissonante'
+};
+
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: LogCallback) => {
+    logCallback(entry);
+};
+
+export function createLogEntry(entry: AnyLogEntry, logCallback: LogCallback): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+
 const CONST_TF = 1.61803398875; // Proporção Áurea
 
-const createLogEntry = (source: 'M19' | 'M1' | 'M7', step: string, message: string, data?: any): AnyLogEntry => ({
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
+
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 // --- Mocks dos Módulos Externos ---
 const Modulo1_SegurancaUniversal = (log: LogCallback) => ({
-    ReceberAlertaDeViolacao: (alerta: any) => log(createLogEntry('M1', 'ALERTA', `Anomalia de Campo: ${alerta.mensagem}`)),
-    RegistrarNaCronicaDaFundacao: (registro: any) => log(createLogEntry('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`)),
+    ReceberAlertaDeViolacao: (alerta: any) => log(createLogEntryHelper('M1', 'ALERTA', `Anomalia de Campo: ${alerta.mensagem}`)),
+    RegistrarNaCronicaDaFundacao: (registro: any) => log(createLogEntryHelper('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`)),
 });
 
 const Modulo7_AlinhamentoDivino = (log: LogCallback) => ({
     ConsultarConselho: (query: string) => {
-        log(createLogEntry('M7', 'Consulta Conselho', `Consultando diretriz para: "${query.slice(0, 50)}..."`));
+        log(createLogEntryHelper('M7', 'Consulta Conselho', `Consultando diretriz para: "${query.slice(0, 50)}..."`));
         return "Diretriz: A intervenção em campos de força deve buscar harmonia e evolução consciente.";
     },
 });
@@ -36,35 +58,35 @@ class ModuloAnaliseCamposForca {
     private campos_monitorados: { [id: string]: any } = {};
 
     constructor(private logCallback: LogCallback) {
-        this.logCallback(createLogEntry('M19', 'Inicialização', 'Módulo 19 - Análise de Campos de Força ativado.'));
+        this.logCallback(createLogEntryHelper('M19', 'Inicialização', 'Módulo 19 - Análise de Campos de Força ativado.'));
         this.modulo1_seguranca = Modulo1_SegurancaUniversal(logCallback);
         this.modulo7_alinhamento = Modulo7_AlinhamentoDivino(logCallback);
     }
     
     private _equacao_analise_campo_vibracional(freq_medida: number, freq_base: number): number {
-        this.logCallback(createLogEntry('M19', 'Cálculo', 'Calculando Análise de Campo Vibracional...'));
+        this.logCallback(createLogEntryHelper('M19', 'Cálculo', 'Calculando Análise de Campo Vibracional...'));
         const desvio_relativo = Math.abs(freq_medida - freq_base) / freq_base;
         const e_uni = (freq_medida * (Math.random() * 0.04 + 0.01) * freq_base * (Math.random() * 0.04 + 0.01)) / CONST_TF;
         let pontuacao = Math.min(100.0, desvio_relativo * e_uni * 2000);
         if (pontuacao > 0) {
             pontuacao = 100 * (1 - Math.exp(-pontuacao / 100));
         }
-        this.logCallback(createLogEntry('M19', 'Resultado Análise', `Pontuação de anomalia: ${pontuacao.toFixed(2)}`));
+        this.logCallback(createLogEntryHelper('M19', 'Resultado Análise', `Pontuação de anomalia: ${pontuacao.toFixed(2)}`));
         return pontuacao;
     }
 
     private _equacao_modulacao_campo_forca(intensidade_atual: number, fator_correcao: number): number {
-        this.logCallback(createLogEntry('M19', 'Cálculo', 'Aplicando Modulação de Campo...'));
+        this.logCallback(createLogEntryHelper('M19', 'Cálculo', 'Aplicando Modulação de Campo...'));
         const resultado = intensidade_atual * CONST_TF * fator_correcao + (Math.random() * 0.04 - 0.02);
-        this.logCallback(createLogEntry('M19', 'Resultado Modulação', `Nova intensidade calculada: ${resultado.toFixed(3)}`));
+        this.logCallback(createLogEntryHelper('M19', 'Resultado Modulação', `Nova intensidade calculada: ${resultado.toFixed(3)}`));
         return resultado;
     }
     
     async analisar_campo_vibracional(id_loc: string, tipo_campo: string, freq_base: number): Promise<{ status: string, campo_id?: string, status_anomalia?: string, pontuacao_anomalia?: number }> {
-        this.logCallback(createLogEntry('M19', 'Análise', `Analisando campo em '${id_loc}'`));
+        this.logCallback(createLogEntryHelper('M19', 'Análise', `Analisando campo em '${id_loc}'`));
         await sleep(500);
         const freq_medida = freq_base * (Math.random() * 0.6 + 0.7); // random.uniform(0.7, 1.3)
-        this.logCallback(createLogEntry('M19', 'Info', `Freq. Medida: ${freq_medida.toFixed(2)} Hz | Base: ${freq_base.toFixed(2)} Hz`));
+        this.logCallback(createLogEntryHelper('M19', 'Info', `Freq. Medida: ${freq_medida.toFixed(2)} Hz | Base: ${freq_base.toFixed(2)} Hz`));
         
         const pontuacao = this._equacao_analise_campo_vibracional(freq_medida, freq_base);
         const status_anomalia = pontuacao > 25.0 ? "DETECTADA" : "NENHUMA";
@@ -77,12 +99,12 @@ class ModuloAnaliseCamposForca {
         this.campos_monitorados[campo_id] = { id_localizacao: id_loc, tipo_campo, frequencia_base: freq_base, frequencia_medida: freq_medida, pontuacao_anomalia: pontuacao, status_anomalia };
         
         this.modulo1_seguranca.RegistrarNaCronicaDaFundacao({ evento: "AnaliseCampo", campo_id, pontuacao_anomalia: pontuacao.toFixed(2), status: status_anomalia });
-        this.logCallback(createLogEntry('M19', 'Conclusão Análise', `Status: ${status_anomalia} | Pontuação: ${pontuacao.toFixed(1)}`));
+        this.logCallback(createLogEntryHelper('M19', 'Conclusão Análise', `Status: ${status_anomalia} | Pontuação: ${pontuacao.toFixed(1)}`));
         return { status: "SUCESSO", campo_id, status_anomalia, pontuacao_anomalia: pontuacao };
     }
     
     async modular_campo_forca(campo_id: string, intensidade_desejada: number): Promise<{ status: string, mensagem?: string, nova_intensidade?: number }> {
-        this.logCallback(createLogEntry('M19', 'Modulação', `Modulando campo: ${campo_id.slice(0,10)}...`));
+        this.logCallback(createLogEntryHelper('M19', 'Modulação', `Modulando campo: ${campo_id.slice(0,10)}...`));
         await sleep(500);
         if (!this.campos_monitorados[campo_id]) {
             this.modulo1_seguranca.ReceberAlertaDeViolacao({ tipo: "CAMPO_INEXISTENTE", mensagem: `Campo ${campo_id} não encontrado.` });
@@ -101,7 +123,7 @@ class ModuloAnaliseCamposForca {
         campo.status_modulacao = "CONCLUIDA";
         
         this.modulo1_seguranca.RegistrarNaCronicaDaFundacao({ evento: "ModulacaoCampo", campo_id, nova_intensidade: nova_intensidade.toFixed(3) });
-        this.logCallback(createLogEntry('M19', 'Conclusão Modulação', `Nova intensidade: ${nova_intensidade.toFixed(3)}`));
+        this.logCallback(createLogEntryHelper('M19', 'Conclusão Modulação', `Nova intensidade: ${nova_intensidade.toFixed(3)}`));
         return { status: "SUCESSO", nova_intensidade };
     }
 }
@@ -129,7 +151,7 @@ export const runModuleNineteenSequence = async (logCallback: LogCallback, action
             if (lastCampoId) {
                 await module19Instance.modular_campo_forca(lastCampoId, 432.0);
             } else {
-                logCallback(createLogEntry('M19', 'FALHA', 'Nenhum campo analisado para modular. Analise um primeiro.'));
+                logCallback(createLogEntryHelper('M19', 'FALHA', 'Nenhum campo analisado para modular. Analise um primeiro.'));
             }
             break;
     }
