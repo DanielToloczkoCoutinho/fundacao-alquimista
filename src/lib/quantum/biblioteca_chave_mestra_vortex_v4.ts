@@ -7,13 +7,15 @@ const np = {
     sin: Math.sin,
     cos: Math.cos,
     exp: Math.exp,
-    normal: (mean = 0, std = 1) => {
-        // Box-Muller transform to get a normal distribution from Math.random()
-        let u = 0, v = 0;
-        while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
-        while(v === 0) v = Math.random();
-        let num = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
-        return num * std + mean;
+    random: {
+        normal: (mean = 0, std = 1) => {
+            // Box-Muller transform to get a normal distribution from Math.random()
+            let u = 0, v = 0;
+            while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+            while(v === 0) v = Math.random();
+            let num = Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+            return num * std + mean;
+        }
     }
 };
 
@@ -61,7 +63,7 @@ type EquacaoViva = {
 class Guardiao {
     public estado_atual = 0.0;
     public historico: [Date, number][] = [];
-    constructor(public nome: string, public canal: number, public frequencia_base: float, public funcao_vibracional: string) {}
+    constructor(public nome: string, public canal: number, public frequencia_base: number, public funcao_vibracional: string) {}
     
     public atualizar_estado(novo_estado: number) {
         this.estado_atual = novo_estado;

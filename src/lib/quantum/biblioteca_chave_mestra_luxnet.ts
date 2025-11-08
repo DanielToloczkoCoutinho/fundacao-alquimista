@@ -94,7 +94,7 @@ class BibliotecaChaveMestraLuxNet {
             classificacao: "Validação Ética",
             liga_responsavel: LigaQuantica.ZENNITH,
             variaveis: ["coerencia", "Q (índice amor incondicional)"],
-            funcao: (coerencia: number, Q: number) => (coerencia >= 0.95 && Q > 0.998) ? 1 : 0,
+            funcao: (coerencia: number, Q: number) => (coerencia >= this.constantes_cosmicas['FIDELIDADE_MINIMA'] && Q > this.constantes_cosmicas['AMOR_INCONDICIONAL']) ? 1 : 0,
             origem: "LUXNET 1"
         });
 

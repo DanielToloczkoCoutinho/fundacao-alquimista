@@ -4,6 +4,7 @@
 // Simulação de dependências Python
 const np = {
     mean: (arr: number[]) => arr.reduce((sum, val) => sum + val, 0) / arr.length,
+    cos: Math.cos,
 };
 
 const integrate = {
