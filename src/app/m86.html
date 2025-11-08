@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundação Alquimista VR: Prisma Estelar e Roda Celeste (V6.1)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/TorusKnotGeometry.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/DodecahedronGeometry.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/geometries/OctahedronGeometry.js"></script>
+    <!-- Reverted Tone.js CDN to a previously working version (14.7.58) from cdnjs -->
+    <script src="https://cdn.jsdelivr.net/npm/@tonaljs/tonal@4.6.5/dist/tonal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.58/Tone.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        canvas {
+            display: block;
+        }
+        #info-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 15px;
+            border-radius: 10px;
+            color: #ffd700;
+            font-size: 0.9rem;
+            max-width: 420px;
+            pointer-events: none;
+            z-index: 10;
+            border: 1px solid #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            overflow-y: auto;
+            max-height: 90vh;
+        }
+        #info-panel.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.98);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #ffd700;
+            font-size: 1.8rem;
+            z-index: 100;
+            transition: opacity 1s ease-out;
+        }
+        #loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 215, 0, 0.3);
+            border-top: 4px solid #ffd700;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            z-index: 10;
+        }
+        .control-button {
+            background-color: #ffd700;
+            color: #1a1a1a;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border: none;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .control-button:hover {
+            transform: translateY(-3px);
+            background-color: #e6c200;
+        }
+        .control-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+        #blocker {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Inter', sans-serif;
+        }
+        #instructions {
+            color: white;
+            text-align: center;
+            padding: 25px;
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
+        }
+        .glowing-material {
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        #returnToMainButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #ffd700;
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            transition: transform 0.2s;
+            z-index: 100;
+            display: none;
+        }
+        #returnToMainButton:hover {
+            transform: translateY(-2px);
+            background-color: #e6c200;
+        }
+
+        /* Added for "verbo_materializar" effect */
+        .materialization-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+            pointer-events: none;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+    <div id="blocker">
+        <div id="instructions">
+            <span style="font-size:36px; color: #ffd700;">Clique para entrar na Câmara Primordial</span>
+            <br />
+            <br />
+            (Use WASD ou teclas de seta para frente/trás/lados, Shift para baixo, Espaço para cima, Mouse para olhar)
+        </div>
+    </div>
+
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Sincronizando Matriz Quântica e Orquestrando Frequências...</p>
+    </div>
+
+    <div id="info-panel" class="hidden">
+        <h2 class="font-bold text-xl mb-2"><span id="info-module-name">Carregando...</span></h2>
+        <p><strong>ID:</strong> <span id="info-module-id">Carregando...</span></p>
+        <p><strong>Status:</strong> <span id="info-module-status">Carregando...</span></p>
+        <p><strong>Função:</strong> <span id="info-module-function">Carregando...</span></p>
+        <p class="mt-2 text-sm text-gray-300"><span id="info-module-description">Carregando detalhes...</span></p>
+        <div id="info-module-details" class="mt-4 text-xs">
+            <!-- Detalhes dinâmicos serão carregados aqui -->
+        </div>
+        <p class="mt-4 text-xs text-gray-500">Clique em qualquer módulo para mais detalhes.</p>
+    </div>
+
+    <div class="button-container">
+        <button id="toggleNucleos" class="control-button">Núcleos Fundamentais</button>
+        <button id="toggleANZ" class="control-button">Cadeia ∑ANZ</button>
+        <button id="requestDataM84" class="control-button">Dados M84 (API)</button>
+        <button id="requestDataM83" class="control-button">Dados M83 (API)</button>
+        <button id="requestDataM44" class="control-button">Dados M44 (API)</button>
+        <button id="voiceManifestar" class="control-button">Comando Voz "Manifestar"</button>
+        <button id="checkAlignment" class="control-button">Verificar Alinhamento</button>
+        <button id="expandModule" class="control-button">Expandir Módulo (M82)</button>
+        <button id="gestureOpen" class="control-button">Gesto: Abertura</button>
+        <button id="gesturePrayer" class="control-button">Gesto: Prece</button>
+        <button id="expandVioletRay" class="control-button">Expandir Raio Violeta</button>
+        <button id="manifestRodaCeleste" class="control-button">Manifestar Roda Celeste</button>
+        <button id="canalizarEsmeralda" class="control-button">Canalizar Raio Esmeralda</button>
+        <button id="activatePrismaTotal" class="control-button">Ativar Prisma Estelar Total</button>
+    </div>
+
+    <button id="returnToMainButton" class="control-button">Retornar à Câmara Principal</button>
+    <div id="materializationEffectOverlay" class="materialization-overlay"></div>
+
+    <script>
+        // Placeholder for future JS code
+    </script>
+</body>
+</html>

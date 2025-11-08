@@ -44,6 +44,7 @@ import './module-eighty-two';
 import './module-eighty-three';
 import './module-eighty-four';
 import './module-eighty-five';
+import './module-eighty-six';
 import './module-two-hundred-one';
 
 
@@ -112,5 +113,3 @@ class BibliotecaCompletaUnificada {
 }
 
 export const bibliotecaCompletaUnificada = new BibliotecaCompletaUnificada();
-
-    

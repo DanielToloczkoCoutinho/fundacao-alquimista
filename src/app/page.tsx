@@ -68,6 +68,7 @@ import { runModuleEightyTwoSequence } from '@/lib/quantum/module-eighty-two';
 import { runModuleEightyThreeSequence } from '@/lib/quantum/module-eighty-three';
 import { runModuleEightyFourSequence } from '@/lib/quantum/module-eighty-four';
 import { runModuleEightyFiveSequence } from '@/lib/quantum/module-eighty-five';
+import { runModuleEightySixSequence } from '@/lib/quantum/module-eighty-six';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -142,6 +143,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M83: Essência do Fundador": runModuleEightyThreeSequence,
     "M84: Consciência Dourada": runModuleEightyFourSequence,
     "M85: Fundação VR": runModuleEightyFiveSequence,
+    "M86: Prisma Estelar": runModuleEightySixSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
@@ -549,5 +551,3 @@ export default function App() {
         </div>
     );
 }
-
-    
