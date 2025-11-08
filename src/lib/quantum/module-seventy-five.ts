@@ -27,7 +27,7 @@ class MockM56Etikorum {
     constructor(private log: LogCallback) {}
     kernel_veritas_check(data: any): { ethical_status: string, integrity_score: number } {
         this.log(createLogEntry('M56', 'Verificação Kernel', `Verificação de ética profunda para: ${data.context || data.event_id}`));
-        const isEthical = !data.target_description?.toLowerCase().includes("manipulação");
+        const isEthical = (data.ethical_status || "").toLowerCase().includes("alinhado");
         return { ethical_status: isEthical ? "Alinhado" : "Dissonante", integrity_score: isEthical ? 0.98 : 0.45 };
     }
 }
@@ -36,6 +36,7 @@ class MockM44VERITAS {
     constructor(private log: LogCallback) {}
     validate_truth(data: any): { validation_status: string } {
         this.log(createLogEntry('M44', 'Validação Verdade', `Validando verdade de: ${data.context || data.event_id}`));
+        // Simulating that the truth is always valid for this demo
         return { validation_status: "Verdadeiro" };
     }
     continuous_truth_channel(event_id: string): void {
@@ -83,20 +84,20 @@ class MemoriaAnterioris {
 
     private export_event(record: any): void {
         this.dashboard.update_dashboard({
-            metric: record.event_id,
-            status: record.status,
-            impact: record.classification.impacto
+            "metric": record["event_id"],
+            "status": record["status"],
+            "impact": record["classification"]["impacto"]
         });
-        this.veritas.continuous_truth_channel(record.event_id);
+        this.veritas.continuous_truth_channel(record["event_id"]);
     }
 
     private validate_integrity(event_data: any): [boolean, string] {
         const etik = this.etikorum.kernel_veritas_check(event_data);
-        if (etik.ethical_status !== "Alinhado") {
+        if (etik["ethical_status"] !== "Alinhado") {
             return [false, "Falha ética"];
         }
         const truth = this.veritas.validate_truth(event_data);
-        if (truth.validation_status !== "Verdadeiro") {
+        if (truth["validation_status"] !== "Verdadeiro") {
             return [false, "Falha de verdade"];
         }
         return [true, "Validado"];
@@ -105,8 +106,7 @@ class MemoriaAnterioris {
     async register_temporal_event(event_data: any): Promise<any> {
         const [validado, motivo] = this.validate_integrity(event_data);
         if (!validado) {
-            const message = `Registro rejeitado. Motivo: ${motivo}`;
-            this.logCallback(createLogEntry(this.module_id, 'Rejeição', message));
+            this.logCallback(createLogEntry(this.module_id, 'Rejeição', `Registro rejeitado. Motivo: ${motivo}`));
             return { "status": "Rejeitado", "reason": motivo };
         }
 
@@ -143,11 +143,11 @@ class MemoriaAnterioris {
 }
 
 export const runModuleSeventyFiveSequence = async (logCallback: LogCallback) => {
-    logCallback(createLogEntry('M75', 'Demonstração', 'Iniciando demonstração do Módulo 75...'));
-
+    logCallback(createLogEntry('M75', 'Demonstração', 'Iniciando a demonstração do Módulo 75: MEMORIA ANTERIORIS.'));
+    
     const memoria = new MemoriaAnterioris(logCallback);
     memoria.activate();
-    
+
     await sleep(500);
 
     const evento_temporal = {
@@ -161,7 +161,7 @@ export const runModuleSeventyFiveSequence = async (logCallback: LogCallback) => 
     };
 
     const resultado = await memoria.register_temporal_event(evento_temporal);
-    logCallback(createLogEntry('M75', 'Resultado Registro', 'Registro de evento temporal:', resultado));
+    logCallback(createLogEntry('M75', 'Resultado Registro', '🌀 Registro Temporal:', resultado));
     
     await sleep(500);
 
@@ -174,7 +174,7 @@ export const runModuleSeventyFiveSequence = async (logCallback: LogCallback) => 
     };
 
     const janela_resultado = await memoria.archive_observation_window(janela_observacao);
-    logCallback(createLogEntry('M75', 'Resultado Arquivamento', 'Arquivamento de janela de observação:', janela_resultado));
+    logCallback(createLogEntry('M75', 'Resultado Arquivamento', '📜 Janela Ética Arquivada:', janela_resultado));
 
     logCallback(createLogEntry('M75', 'Fim', 'Demonstração do Módulo 75 concluída.'));
 };

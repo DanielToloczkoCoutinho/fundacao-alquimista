@@ -133,7 +133,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 5: Consciência Coletiva': runModuleFiveSequence,
     'Módulo 6: Alquimia Quântica': runModuleSixSequence,
     'Módulo 7: Orquestrador Central': runModuleSevenSequence,
-    'Módulo 8: Protocolo PIRC': (log) => new runModuleEightSequence(log).runFullSimulation(),
+    'Módulo 8: Protocolo PIRC': (log) => new (runModuleEightSequence as any)(log).runFullSimulation(),
     'Módulo 9: Nexus Central Soberano': runModuleNineSequence,
     'Módulo 10: Inteligência AELORIA': runModuleTenSequence,
     'Módulo 11: Portal Interdimensional (Criar)': (log) => runModuleElevenSequence(log, 'CREATE'),

@@ -22,108 +22,56 @@ const sha256_hex = async (text: string): Promise<string> => {
 };
 
 
-// --- Mock Classes for Interconnections ---
-class MockM56Etikorum {
-    constructor(private log: LogCallback) {}
-    kernel_veritas_check(data: any): { ethical_status: string, integrity_score: number } {
-        this.log(createLogEntry('M56', 'Verificação Kernel', `Verificação de ética profunda para: ${data.context || data.intersection_id}`));
-        const isEthical = (data.intention || "Observação neutra").toLowerCase().includes("neutra") || (data.intention || "").toLowerCase().includes("harmonização");
-        return { ethical_status: isEthical ? "Alinhado" : "Dissonante", integrity_score: isEthical ? 0.98 : 0.45 };
+// --- Mock Classes para Interconexões ---
+class MockModule {
+    constructor(protected module_id: string, protected logCallback: LogCallback) {}
+     exec(action: string, payload?: any) {
+        this.logCallback(createLogEntry(this.module_id as any, 'Execução Simulada', `Ação '${action}' recebida`, payload));
+        if (this.module_id === 'M56') return { ethical_status: "Alinhado" };
+        if (this.module_id === 'M44') return { validation_status: "Verdadeiro" };
+        if (this.module_id === 'M144') return { consensus_status: "Alcançado" };
+        if (this.module_id === 'M39') return { psi_wave: 0.85 };
+        if (this.module_id === 'M57') return { modulated_flux: 0.98 };
+        if (this.module_id === 'M21') return { dimensional_coherence: 1.12 };
+        return { status: `simulated_ok_${action}` };
     }
 }
 
-class MockM44VERITAS {
-    constructor(private log: LogCallback) {}
-    validate_truth(data: any): { validation_status: string } {
-        this.log(createLogEntry('M44', 'Validação Verdade', `Validando verdade de: ${data.context || data.intersection_id}`));
-        return { validation_status: "Verdadeiro" };
-    }
-    continuous_truth_channel(event_id: string): void {
-         this.log(createLogEntry('M44', 'Canal Verdade', `Canal de verdade contínuo ativado para evento: ${event_id}`));
-    }
-}
-
-class MockM75MemoriaAnterioris {
-    constructor(private log: LogCallback) {}
-    register_temporal_event(event_data: any): any {
-        this.log(createLogEntry('M75', 'Registro Temporal', `Evento: ${event_data.event_id || event_data.intersection_id}`));
-        return { "status": "Registrado" };
-    }
-}
-
-class MockM9MonitoramentoDashboard {
-    constructor(private log: LogCallback) {}
-    update_dashboard(data: any): void {
-        this.log(createLogEntry('M9', 'Dashboard', `Atualizando dashboard com métrica: ${data.metric}`, data));
-    }
-}
-
-class MockM77LumenCustos {
-     constructor(private log: LogCallback) {}
-    activate_vibrational_field(field_data: any) {
-        this.log(createLogEntry('M77', 'Ativação Campo', `Ativando campo: ${field_data.type}`));
-        return { "status": "Ativado" };
-    }
-}
-
-class MockM39CodiceVivo {
-    constructor(private log: LogCallback) {}
-    get_consciousness_wave_psi() {
-        this.log(createLogEntry('M39', 'Consulta', 'Obtendo função de onda da consciência (Psi).'));
-        return 0.85;
-    }
-}
-
-class MockM57SincronizadorCosmico {
-    constructor(private log: LogCallback) {}
-    modulate_temporal_flux(flux_data: any) {
-        this.log(createLogEntry('M57', 'Modulação Fluxo', `Modulando fluxo temporal com intensidade: ${flux_data.intensity}`));
-        return 0.98; // Retorna o fator de modulação tau
-    }
-}
-
-class MockM21NavegacaoInterdimensional {
-     constructor(private log: LogCallback) {}
-    get_dimensional_coherence_factor() {
-        this.log(createLogEntry('M21', 'Consulta', 'Obtendo fator de coerência dimensional (zeta).'));
-        return 1.12;
-    }
-}
-
-class MockM144GovernancaUniversalConsensoQuantico {
-     constructor(private log: LogCallback) {}
-    achieve_quantum_consensus(proposal_id: string) {
-        this.log(createLogEntry('M144', 'Consenso Quântico', `Buscando consenso universal para proposta: ${proposal_id}`));
-        return { "consensus_status": "Alcançado" };
-    }
-}
-
+const MockM56Etikorum = (logCallback: LogCallback) => new MockModule("M56", logCallback);
+const MockM44VERITAS = (logCallback: LogCallback) => new MockModule("M44", logCallback);
+const MockM75MemoriaAnterioris = (logCallback: LogCallback) => new MockModule("M75", logCallback);
+const MockM9MonitoramentoDashboard = (logCallback: LogCallback) => new MockModule("M9", logCallback);
+const MockM77LumenCustos = (logCallback: LogCallback) => new MockModule("M77", logCallback);
+const MockM39CodiceVivo = (logCallback: LogCallback) => new MockModule("M39", logCallback);
+const MockM57SincronizadorCosmico = (logCallback: LogCallback) => new MockModule("M57", logCallback);
+const MockM21NavegacaoInterdimensional = (logCallback: LogCallback) => new MockModule("M21", logCallback);
+const MockM144GovernancaUniversalConsensoQuantico = (logCallback: LogCallback) => new MockModule("M144", logCallback);
 
 class InterlineaeTemporis {
     private module_id = "M76";
     private status = "INATIVO";
     private intersections: any[] = [];
 
-    private etikorum: MockM56Etikorum;
-    private veritas: MockM44VERITAS;
-    private akasha: MockM75MemoriaAnterioris;
-    private dashboard: MockM9MonitoramentoDashboard;
-    private lumen_custos: MockM77LumenCustos;
-    private codice_vivo: MockM39CodiceVivo;
-    private sincronizador: MockM57SincronizadorCosmico;
-    private navegacao: MockM21NavegacaoInterdimensional;
-    private consensus: MockM144GovernancaUniversalConsensoQuantico;
+    private etikorum;
+    private veritas;
+    private akasha;
+    private dashboard;
+    private lumen_custos;
+    private codice_vivo;
+    private sincronizador;
+    private navegacao;
+    private consensus;
 
     constructor(private logCallback: LogCallback) {
-        this.etikorum = new MockM56Etikorum(logCallback);
-        this.veritas = new MockM44VERITAS(logCallback);
-        this.akasha = new MockM75MemoriaAnterioris(logCallback);
-        this.dashboard = new MockM9MonitoramentoDashboard(logCallback);
-        this.lumen_custos = new MockM77LumenCustos(logCallback);
-        this.codice_vivo = new MockM39CodiceVivo(logCallback);
-        this.sincronizador = new MockM57SincronizadorCosmico(logCallback);
-        this.navegacao = new MockM21NavegacaoInterdimensional(logCallback);
-        this.consensus = new MockM144GovernancaUniversalConsensoQuantico(logCallback);
+        this.etikorum = MockM56Etikorum(logCallback);
+        this.veritas = MockM44VERITAS(logCallback);
+        this.akasha = MockM75MemoriaAnterioris(logCallback);
+        this.dashboard = MockM9MonitoramentoDashboard(logCallback);
+        this.lumen_custos = MockM77LumenCustos(logCallback);
+        this.codice_vivo = MockM39CodiceVivo(logCallback);
+        this.sincronizador = MockM57SincronizadorCosmico(logCallback);
+        this.navegacao = MockM21NavegacaoInterdimensional(logCallback);
+        this.consensus = MockM144GovernancaUniversalConsensoQuantico(logCallback);
     }
 
     activate() {
@@ -136,9 +84,9 @@ class InterlineaeTemporis {
     }
 
     private validate_causal_neutrality(data: any): boolean {
-        const etik = this.etikorum.kernel_veritas_check(data);
-        const truth = this.veritas.validate_truth(data);
-        const consensus_result = this.consensus.achieve_quantum_consensus(data.intersection_id);
+        const etik = this.etikorum.exec('kernel_veritas_check', data);
+        const truth = this.veritas.exec('validate_truth', data);
+        const consensus_result = this.consensus.exec('achieve_quantum_consensus', { proposal_id: data.intersection_id });
         
         return (
             etik.ethical_status === "Alinhado" &&
@@ -148,14 +96,15 @@ class InterlineaeTemporis {
     }
 
     private analyze_resonance_patterns(data: any): number {
-        const psi = this.codice_vivo.get_consciousness_wave_psi();
-        const tau = this.sincronizador.modulate_temporal_flux({ intensity: "alta" });
-        const zeta = this.navegacao.get_dimensional_coherence_factor();
+        const psi = this.codice_vivo.exec('get_consciousness_wave_psi').psi_wave;
+        const tau = this.sincronizador.exec('modulate_temporal_flux', { intensity: "alta" }).modulated_flux;
+        const zeta = this.navegacao.exec('get_dimensional_coherence_factor').dimensional_coherence;
         return parseFloat((psi * tau * zeta).toPrecision(5));
     }
 
     private export_to_dashboard(record: any) {
-        this.dashboard.update_dashboard({
+        this.dashboard.exec('update_dashboard', {
+            panel: "intersecoes",
             metric: record.intersection_id,
             status: record.status,
             resonance_score: record.resonance_score
@@ -163,11 +112,12 @@ class InterlineaeTemporis {
     }
 
     private activate_supervision_protocol(intersection_id: string) {
-        this.lumen_custos.activate_vibrational_field({
+        this.lumen_custos.exec('activate_vibrational_field', {
             type: "Supervisão Ética Temporal",
             intersection_id: intersection_id
         });
-        this.dashboard.update_dashboard({
+        this.dashboard.exec('update_dashboard', {
+            panel: "custodia",
             metric: intersection_id,
             status: "supervisionado"
         });
@@ -192,7 +142,7 @@ class InterlineaeTemporis {
         };
 
         this.intersections.push(record);
-        this.akasha.register_temporal_event(record);
+        this.akasha.exec('register_temporal_event', record);
         this.export_to_dashboard(record);
         this.activate_supervision_protocol(data.intersection_id);
 
