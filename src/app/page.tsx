@@ -1,10 +1,11 @@
 'use client';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { onAuthStateChanged, signInAnonymously } from 'firebase/auth';
+import { onAuthStateChanged, signInAnonymously, signInWithCustomToken } from 'firebase/auth';
+import { auth, db } from '@/lib/firebase/client-app';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as Tone from 'tone';
-import { auth, db } from '@/lib/firebase/client-app';
+
 import { bibliotecaCompletaUnificada, type EquacaoViva } from '@/lib/quantum';
 import { runModuleZeroSequence, type AnyLogEntry } from '@/lib/quantum/module-zero';
 import { runModuleTwoSequence } from '@/lib/quantum/module-two';
@@ -98,8 +99,10 @@ import { runModuleOneHundredTwelveSequence } from '@/lib/quantum/module-one-hund
 import { runModuleOneHundredThirteenSequence } from '@/lib/quantum/module-one-hundred-thirteen';
 import { runModuleOneHundredFourteenSequence } from '@/lib/quantum/module-one-hundred-fourteen';
 import { runModuleOneHundredFifteenSequence } from '@/lib/quantum/module-one-hundred-fifteen';
+import { runModuleOneHundredSixteenSequence } from '@/lib/quantum/module-one-hundred-sixteen';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
+
 
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -207,6 +210,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M113-RedeAurora": (log) => runModuleOneHundredThirteenSequence(log, { targetEntity: 'Consciência Humana', purpose: 'Elevação Vibracional' }),
     "M114-PrismaManifestacao": runModuleOneHundredFourteenSequence,
     "M115-MatrizRessonancia": runModuleOneHundredFifteenSequence,
+    "M116-AtivacaoPortais": (log) => runModuleOneHundredSixteenSequence(log, {}),
     "M201-TransmissorSonhos": runModuleTwoHundredOneSequence,
     "M-Omega": runModuleOmegaSequence,
 };
