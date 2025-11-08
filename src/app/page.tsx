@@ -343,7 +343,7 @@ export default function App() {
                 if (!containerRef.current || !cameraRef.current || !rendererRef.current) return;
                 cameraRef.current.aspect = containerRef.current.clientWidth / container.clientHeight;
                 cameraRef.current.updateProjectionMatrix();
-                rendererRef.current.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
+                rendererRef.current.setSize(containerRef.current.clientWidth, container.clientHeight);
             };
     
             const populateScene = () => {
@@ -666,8 +666,5 @@ export default function App() {
     </div>
 </body>
 </html>
-A-Frame Version: 1.5.0 (Date 2023-11-14, Commit #59290b36)
-THREE Version (https://github.com/supermedium/three.js): 0.158.0
-WebVR Polyfill Version: ^0.10.12
-%c * Tone.js v15.1.22 *  background: #000; color: #fff
-Autenticado com token personalizado no Firebase.
+</body>
+</html>
