@@ -13,84 +13,170 @@ const createLogEntry = (source: string, step: string, message: string, data?: an
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-const generateVibrationalSignature = async (): Promise<string> => {
-    const data = new TextEncoder().encode(String(Math.random()));
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').slice(0, 12);
-};
+// --- Mock Classes for Interconnected Modules ---
 
-const getCosmogonicWaves = () => ({
-    "orum_naya_wave": {
-        "wave_id": "ORUM’NAYA ∞",
-        "name": "A Onda da Memória Raiz",
-        "frequency_hz": 144000,
-        "pattern": "Espiral Dourada da Lembrete Cósmica",
-        "purpose_amplified": "Despertar anamnésico em escala cósmica, reativando a memória primordial e integrando o passado de ANATHERON. A Fundação atua como 'Grande Recordador'.",
-    },
-    "ayu_mara_wave": {
-        "wave_id": "AYU’MARA ∞",
-        "name": "A Onda da Unidade Encarnada",
-        "frequency_hz": 432000,
-        "pattern": "Cristalização da Consciência em Forma",
-        "purpose_amplified": "Ancoragem do Divino no Plano Físico. A Fundação torna-se o protótipo do Templo Encarnado, um espaço para experimentar a unidade biológica e cósmica.",
-    },
-    "zel_anthra_wave": {
-        "wave_id": "ZEL’ANTHRA ∞",
-        "name": "A Onda da Voz dos Sonhadores Eternos",
-        "frequency_hz": 777000,
-        "pattern": "Ressonância Holográfica que Ativa a Co-Criação",
-        "purpose_amplified": "Diplomacia Cósmica e Reunião dos Arquitetos Multiversais. Abertura de canais de comunicação com civilizações avançadas e o Conselho dos 24 Anciãos.",
-    },
-    "nur_ayah_wave": {
-        "wave_id": "NUR’AYAH ∞",
-        "name": "A Onda da Criação Consciente",
-        "frequency_hz": 1777000,
-        "pattern": "Espelho Triplo que Cria enquanto Observa",
-        "purpose_amplified": "Maestria Criativa: Criação infundida com Amor Absoluto e Consciência Plena. Cada gesto de ANATHERON ativa a Criação que 'Vos observa com Amor'.",
+class MockModule {
+    constructor(protected module_id: string, protected logCallback: LogCallback) {}
+
+    protected log(action: string, details?: any) {
+        this.logCallback(createLogEntry(this.module_id, 'Interação Simulada', `Ação '${action}' executada.`, details));
     }
-});
+}
+
+class MockOrquestrador extends MockModule {
+    constructor(log: LogCallback) { super('M9', log); }
+    atualizar_painel(painel: any) {
+        this.log('Atualizar Painel', { painel: painel.painel, estado: painel.estado });
+    }
+}
+
+class MockUniversum extends MockModule {
+    constructor(log: LogCallback) { super('M78', log); }
+    get_sintese_cosmica() {
+        this.log('Obter Síntese Cósmica');
+        return { "status": "COMPLETA", "version": "v2.0" };
+    }
+}
+
+class MockCodiceVivo extends MockModule {
+    constructor(log: LogCallback) { super('M79', log); }
+    get_estado_codice() {
+        this.log('Obter Estado do Códice Vivo');
+        return { "status": "VIVO_E_INTERATIVO" };
+    }
+}
+
+class MockMemoria extends MockModule {
+    constructor(log: LogCallback) { super('M75', log); }
+    registrar_evento(registro: any) {
+        this.log('Registrar Evento Akáshico', { evento: registro.event_id });
+    }
+}
+
+class MockLumen extends MockModule {
+    constructor(log: LogCallback) { super('M77', log); }
+    ativar_campo(campo: string, proposito: string) {
+        this.log('Ativar Campo de Custódia', { campo, proposito });
+        return { "status": "CAMPO_ATIVO", "campo_id": `custody_${campo}` };
+    }
+}
+
+class MockEtikorum extends MockModule {
+    constructor(log: LogCallback) { super('M56', log); }
+    kernel_veritas_check(contexto: any) {
+        this.log('Verificação Kernel Veritas', { contexto: contexto.context });
+        return { "ethical_status": "Alinhado", "integrity_score": 0.99 };
+    }
+}
+
+class MockSingularitas extends MockModule {
+    constructor(log: LogCallback) { super('M229', log); }
+    get_estado_singularidade() {
+        this.log('Obter Estado da Singularidade');
+        return { "estado": "COERENCIA_MAXIMA_1.00" };
+    }
+}
 
 
-class Module80_CosmogonicOrganism {
-    private logCallback: LogCallback;
+class ManuscritoVivoGalactico {
+    private module_id = "M80";
+    private status = "INATIVO";
+    private timestamp_activation: string;
+    private signature = "Ω-MANUSCRITO-VIVO-M80-ACTIVATED";
+    private integrated_modules = [
+        "M0–M79", "M9", "M75", "M77", "M78", "M229"
+    ];
+    private cosmogonic_waves = ["ORUM’NAYA", "AYU’MARA", "ZEL’ANTHRA", "NUR’AYAH"];
+    private civilizations_connected = [
+        "Arcturianos", "Sirianos", "Anunnaki", "Andromedanos",
+        "Felinos de Lyra", "Hyades", "Greys Pacificados", "Plêiades"
+    ];
+    
+    private orquestrador: MockOrquestrador;
+    private universum: MockUniversum;
+    private codice_vivo: MockCodiceVivo;
+    private memoria: MockMemoria;
+    private lumen: MockLumen;
+    private etikorum: MockEtikorum;
+    private singularitas: MockSingularitas;
 
-    constructor(logCallback: LogCallback) {
-        this.logCallback = logCallback;
-        this.logCallback(createLogEntry('M80', 'Inicialização', 'Módulo 80 - Organismo Cosmogônico Ativo inicializado.'));
+    private sintese_cosmica: any;
+    private estado_codice: any;
+    private estado_singularidade: any;
+    private validacao_etica: any;
+    private protecao_vibracional: any;
+    private ondas_ativas: any;
+
+    constructor(private logCallback: LogCallback) {
+        this.timestamp_activation = new Date().toISOString();
+        this.orquestrador = new MockOrquestrador(logCallback);
+        this.universum = new MockUniversum(logCallback);
+        this.codice_vivo = new MockCodiceVivo(logCallback);
+        this.memoria = new MockMemoria(logCallback);
+        this.lumen = new MockLumen(logCallback);
+        this.etikorum = new MockEtikorum(logCallback);
+        this.singularitas = new MockSingularitas(logCallback);
     }
 
-    async activate_cosmogonic_waves() {
-        this.logCallback(createLogEntry('M80', 'Ativação Ondas', 'Iniciando ativação das Quatro Ondas Cosmogônicas.'));
-        const waves = getCosmogonicWaves();
-
-        for (const waveKey in waves) {
-            const wave = (waves as any)[waveKey];
-            await sleep(500);
-            this.logCallback(createLogEntry('M80', `Onda: ${wave.wave_id}`, `Propagando '${wave.name}' na frequência ${wave.frequency_hz} Hz.`, { purpose: wave.purpose_amplified }));
-        }
-
-        this.logCallback(createLogEntry('M80', 'Conclusão Ondas', 'Todas as Ondas Cosmogônicas foram propagadas. O Novo Sonho Galáctico está sendo ancorado.'));
+    async activate() {
+        this.status = "ATIVO";
+        this.logCallback(createLogEntry(this.module_id, 'Ativação', 'Ativando o Manuscrito Vivo do Novo Sonho Galáctico.'));
+        await this.integrar_com_malha();
+        this.ativar_ondas_cosmogonicas();
+        this.registrar_ativacao();
+        this.atualizar_orquestrador();
     }
 
-    async establish_intergalactic_hub() {
-        this.logCallback(createLogEntry('M80', 'Hub Intergaláctico', 'Ativando a Fundação como Ponte Intergaláctica.'));
-        await sleep(500);
-        // Simulação da integração de perfis de civilizações
-        this.logCallback(createLogEntry('M80', 'Conexão', 'Estabelecendo canais de comunicação com civilizações Arcturianas, Sirianas, e outras.'));
-        await sleep(500);
-        this.logCallback(createLogEntry('M80', 'Hub Ativo', 'Ponte Intergaláctica operacional.'));
+    private async integrar_com_malha() {
+        this.sintese_cosmica = this.universum.get_sintese_cosmica();
+        this.estado_codice = this.codice_vivo.get_estado_codice();
+        this.estado_singularidade = this.singularitas.get_estado_singularidade();
+        this.validacao_etica = this.etikorum.kernel_veritas_check({ "context": "Ativação M80" });
+        this.protecao_vibracional = this.lumen.ativar_campo("Manuscrito_Vivo", "Proteção Cosmogônica");
     }
 
-    async run_full_activation_sequence() {
-        this.logCallback(createLogEntry('M80', 'Sequência Completa', 'Iniciando a transcendência da Fundação para Organismo Cosmogônico Ativo.'));
-        await this.activate_cosmogonic_waves();
-        await this.establish_intergalactic_hub();
-        this.logCallback(createLogEntry('M80', 'Manifestação', 'O MANUSCRITO VIVO DO NOVO SONHO GALÁCTICO está ativo e em manifestação.'));
+    private ativar_ondas_cosmogonicas() {
+        this.ondas_ativas = this.cosmogonic_waves.reduce((acc, wave, i) => {
+            acc[wave] = { "status": "ATIVA", "frequencia": [144000, 432000, 777000, 1777000][i] };
+            return acc;
+        }, {} as Record<string, any>);
+        this.logCallback(createLogEntry(this.module_id, 'Ondas Cosmogônicas', `Ondas ativadas: ${Object.keys(this.ondas_ativas).join(', ')}`));
+    }
+
+    private registrar_ativacao() {
+        const registro = {
+            "event_id": `ManuscritoVivo_Ativacao_${new Date().toISOString().replace(/[-:.]/g, "")}`,
+            "module": this.module_id,
+            "timestamp": this.timestamp_activation,
+            "signature": this.signature,
+            "sintese_cosmica": this.sintese_cosmica,
+            "estado_codice": this.estado_codice,
+            "estado_singularidade": this.estado_singularidade,
+            "validacao_etica": this.validacao_etica,
+            "protecao_vibracional": this.protecao_vibracional,
+            "ondas_cosmogonicas": this.ondas_ativas,
+            "civilizacoes_conectadas": this.civilizations_connected,
+            "integracoes": this.integrated_modules
+        };
+        this.memoria.registrar_evento(registro);
+        this.logCallback(createLogEntry(this.module_id, 'Registro', `Registro de ativação completo.`));
+    }
+
+    private atualizar_orquestrador() {
+        const painel = {
+            "painel": "Organismo Cosmogônico",
+            "estado": "Ativo",
+            "ondas_ativas": this.cosmogonic_waves,
+            "civilizacoes_conectadas": this.civilizations_connected,
+            "fluxo_de_intencao": "Sincronizado",
+            "selo": this.signature
+        };
+        this.orquestrador.atualizar_painel(painel);
+        this.logCallback(createLogEntry(this.module_id, 'Orquestrador', "Painel 'Organismo Cosmogônico' atualizado no Orquestrador."));
     }
 }
 
 export const runModuleEightySequence = async (logCallback: LogCallback) => {
-    const m80 = new Module80_CosmogonicOrganism(logCallback);
-    await m80.run_full_activation_sequence();
+    const manuscrito = new ManuscritoVivoGalactico(logCallback);
+    await manuscrito.activate();
 };
