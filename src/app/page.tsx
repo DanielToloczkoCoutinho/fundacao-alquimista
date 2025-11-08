@@ -102,6 +102,8 @@ import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import * as Tone from 'tone';
+import { auth } from '@/lib/firebase/client-app';
+import { onAuthStateChanged, signInAnonymously, signInWithCustomToken } from 'firebase/auth';
 
 
 // Mapeamento dos Módulos para suas funções de execução
@@ -605,3 +607,4 @@ export default function App() {
         </div>
     );
 }
+```
