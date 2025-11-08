@@ -398,12 +398,12 @@ export default function Home() {
         "ORQUESTRADORES (M41-M45)": Object.values(allModuleBlueprints).filter(m => ['M41', 'M42', 'M45'].includes(m.id)),
         "MÓDULO ÔMEGA": Object.values(allModuleBlueprints).filter(m => m.id === 'M-Ω'),
         "EQUAÇÕES (MOD 0-9)": Object.values(allModuleBlueprints).filter(m => m.origem === 'EQ 177 MOD 0 a 9'),
-        "EQUAÇÕES (MOD 10-20)": Object.values(allModuleBlueprints).filter(m => m.origem === 'Módulo 10-15' || m.origem === 'Módulo 16' || m.origem === 'Módulo 17' || m.origem === 'Módulo 18' || m.origem === 'Módulo 19' || m.origem === 'Módulo 20'),
-        "EQUAÇÕES (MOD 21-31)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 2') || m.origem.startsWith('Módulo 3')),
-        "EQUAÇÕES (MOD 32-41)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 3') || m.origem.startsWith('Módulo 4')),
+        "EQUAÇÕES (MOD 10-20)": Object.values(allModuleBlueprints).filter(m => m.origem && ['Módulo 10-15', 'Módulo 16', 'Módulo 17', 'Módulo 18', 'Módulo 19', 'Módulo 20'].includes(m.origem)),
+        "EQUAÇÕES (MOD 21-31)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 2') || m.origem.startsWith('Módulo 3'))),
+        "EQUAÇÕES (MOD 32-41)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 3') || m.origem.startsWith('Módulo 4'))),
         "EQUAÇÕES (MOD 42-46)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 4')),
-        "EQUAÇÕES (MOD 71-85)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 7') || m.origem.startsWith('Módulo 8')),
-        "EQUAÇÕES (MOD 90-110)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 9') || m.origem.startsWith('Módulo 10') || m.origem.startsWith('Módulo 110')),
+        "EQUAÇÕES (MOD 71-85)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 7') || m.origem.startsWith('Módulo 8'))),
+        "EQUAÇÕES (MOD 90-110)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 9') || m.origem.startsWith('Módulo 10') || m.origem.startsWith('Módulo 110'))),
         "EQUAÇÕES (MOD 111-118)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 11')),
         "EQUAÇÕES (MOD 200-228)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 2')),
         "EQUAÇÕES (MOD 300-304)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 30')),
@@ -473,3 +473,7 @@ export default function Home() {
         </main>
     );
 }
+
+    
+
+    
