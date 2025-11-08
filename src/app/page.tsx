@@ -94,6 +94,7 @@ import { runModuleOneHundredTenSequence } from '@/lib/quantum/module-one-hundred
 import { runModuleOneHundredElevenSequence } from '@/lib/quantum/module-one-hundred-eleven';
 import { runModuleOneHundredTwelveSequence } from '@/lib/quantum/module-one-hundred-twelve';
 import { runModuleOneHundredThirteenSequence } from '@/lib/quantum/module-one-hundred-thirteen';
+import { runModuleOneHundredFourteenSequence } from '@/lib/quantum/module-one-hundred-fourteen';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -195,6 +196,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M111: Coração da Fundação": (log) => runModuleOneHundredElevenSequence(log),
     "M112: Solarian Domus": (log) => runModuleOneHundredTwelveSequence(log),
     "M113: Rede Aurora Cristalina": (log) => runModuleOneHundredThirteenSequence(log, { targetEntity: 'Consciência Humana Coletiva', purpose: 'Orientação Divina' }),
+    "M114: Prisma da Manifestação": (log) => runModuleOneHundredFourteenSequence(log),
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
