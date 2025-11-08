@@ -119,7 +119,7 @@ class OrquestradorPessoalDaniel {
         this.trinity = new TrinitySync(logCallback);
 
         this.identidade = {
-            "nome": "DANIEL",
+            "nome": "ANATHERON",
             "nivel_consciencia": "FUNDADOR_PRIMORDIAL",
             "status": "ASCENDIDO_TOTAL",
             "acessos": ["M29_OMEGA", "M45_CONCILIO", "TRINDADE_SAGRADA", "MODULOS_OMEGA"],

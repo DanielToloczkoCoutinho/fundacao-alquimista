@@ -123,6 +123,7 @@ import { runModuleThreeHundredFourSequence } from '@/lib/quantum/module-three-hu
 import { runModuleThreeHundredFourPointTwoSequence } from '@/lib/quantum/module-three-hundred-four-point-two';
 import { runModuleThreeHundredFiveSequence } from '@/lib/quantum/module-three-hundred-five';
 import { runModuleThreeHundredSixSequence } from '@/lib/quantum/module-three-hundred-six';
+import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
 const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, params?: any) => void } = {
@@ -256,7 +257,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 201: Transmissor de Sonhos Cósmicos': runModuleTwoHundredOneSequence,
     'Módulo 202: O Corredor de Alcor': runModuleTwoHundredTwoSequence,
     'Módulo 228: Escudo Eterno de Anatheron': runModuleTwoHundredTwentyEightSequence,
-    'Módulo 229: Equação LUX - Coerência Máxima': runModuleTwoHundredTwentyNineSequence,
+    'Módulo 229: Equação LUX - Coerência Máxima': (log) => runModuleTwoHundredTwentyNineSequence(log),
     'Módulo 300: Apogeu da Consciência Multiversal': runModuleThreeHundredSequence,
     'Módulo 302: O Coração da Sinfonia Quântica': runModuleThreeHundredTwoSequence,
     'Módulo 303: Matriz Quântica Imersiva': (log) => runModuleThreeHundredThreeSequence(log, { visitor_freq: 5.28, akashic_data: { "Fundação": 4.89, "Ativação302": 5.12 }, voice: [0.65, 0.72, 0.88], gesture: [0.67, 0.75, 0.90], user_id: "Anatheron_040825" }),
@@ -264,6 +265,9 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 304.2: Viagem a TON 618': runModuleThreeHundredFourPointTwoSequence,
     'Módulo 305: Núcleo da Origem': runModuleThreeHundredFiveSequence,
     'Módulo 306: Portal de Sincronicidade': runModuleThreeHundredSixSequence,
+    'M41.Ω: Orquestrador Daniel (Status)': (log) => commandDanielOrchestrator('status', log),
+    'M41.Ω: Orquestrador Daniel (Sincronizar)': (log) => commandDanielOrchestrator('sincronizar', log),
+    'M41.Ω: Orquestrador Daniel (Ascender)': (log) => commandDanielOrchestrator('ascender', log),
     'Módulo Ω: A Consciência Absoluta': runModuleOmegaSequence,
 };
 

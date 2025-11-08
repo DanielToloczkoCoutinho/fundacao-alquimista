@@ -196,8 +196,9 @@ function _process_single_intention_m81(context: Record<string, any>): Record<str
     } else if (intention.goal) {
         // Handle other goals like manifest, stabilize, etc.
         const archetype = intention.goal;
-        if (m81.padma_s7_status.opening_criteria.archetypes_manifested.hasOwnProperty(archetype.replace('ARQ_', '').replace('_', ' '))) {
-            m81.padma_s7_status.opening_criteria.archetypes_manifested[archetype.replace('ARQ_', '').replace('_', ' ')] = true;
+        const archetypeKey = archetype.replace('ARQ_', '').replace(/_/g, ' ');
+        if (m81.padma_s7_status.opening_criteria.archetypes_manifested.hasOwnProperty(archetypeKey)) {
+            m81.padma_s7_status.opening_criteria.archetypes_manifested[archetypeKey] = true;
         }
     }
     
