@@ -1,16 +1,38 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
 
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+// Harmonização da tipagem
+export type ModuleTwentySixLogEntry = AnyLogEntry;
+
+// Definição do novo tipo de registro
+export type RegistroTravessiaInterdimensional = {
+  módulo: 'M26',
+  entidade: string,
+  destino: string,
+  classe_portal: 'estável' | 'flutuante' | 'colapsado' | 'transcendental',
+  status: 'aberto' | 'em travessia' | 'concluído' | 'interrompido',
+  timestamp: number
+};
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
+
+// Refinamento da função de registro
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void) => {
+  logCallback(entry);
+};
+
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -19,6 +41,7 @@ enum ClassePortal {
     TRANSITO_LEVE = "TRANSITO_LEVE",
     TRANSITO_MISSAO = "TRANSITO_MISSAO",
     TRANSITO_CRITICO = "TRANSITO_CRITICO",
+    TRANSCENDENTAL = "TRANSCENDENTAL",
 }
 
 enum StatusOperacao {
@@ -78,6 +101,17 @@ const POLITICAS_BASE: { [key: string]: any } = {
         avaliacao_etica: true,
         eci_min: 0.95,
         pureza_min: 0.95,
+    },
+    [ClassePortal.TRANSCENDENTAL]: { // Nova política para portais transcendentais
+        estabilidade_min: 25000,
+        integridade_min: 50,
+        balanco_min: 20000,
+        seguranca_min: 0.99,
+        leituras_consistentes: 12,
+        avaliacao_psiquica: true,
+        avaliacao_etica: true,
+        eci_min: 0.98,
+        pureza_min: 0.98,
     }
 };
 
@@ -94,46 +128,57 @@ const POLITICAS_TESTE = Object.keys(POLITICAS_BASE).reduce((acc: any, key: strin
 
 // --- Mocks dos Módulos Externos ---
 const Modulo1_SegurancaUniversal = (log: LogCallback) => ({
-    ReceberAlertaDeViolacao: (alerta: any) => log(createLogEntry('M1', 'ALERTA', `Segurança Portal: ${alerta.mensagem}`)),
-    RegistrarNaCronicaDaFundacao: (registro: any) => log(createLogEntry('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`)),
+    ReceberAlertaDeViolacao: (alerta: any) => registrarEventoUniversal(createLogEntryHelper('M1', 'ALERTA', `Segurança Portal: ${alerta.mensagem}`), log),
+    RegistrarNaCronicaDaFundacao: (registro: any) => registrarEventoUniversal(createLogEntryHelper('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`), log),
 });
 
 const Modulo3_PrevisaoTemporal = (log: LogCallback) => ({
     PreverEstabilidadeEspacoTemporal: (localizacao: string, duracao: number) => {
-        log(createLogEntry('M3', 'Previsão', `Prevendo estabilidade para '${localizacao}'`));
+        registrarEventoUniversal(createLogEntryHelper('M3', 'Previsão', `Prevendo estabilidade para '${localizacao}'`), log);
         return { estavel: Math.random() < 0.85, risco_anomalia: Math.random() * 0.15 };
     }
 });
 
 const Modulo7_AlinhamentoDivino = (log: LogCallback) => ({
-    ConsultarConselho: (query: string) => log(createLogEntry('M7', 'Consulta', `Consultando para: "${query}"`)),
+    ConsultarConselho: (query: string) => registrarEventoUniversal(createLogEntryHelper('M7', 'Consulta', `Consultando para: "${query}"`), log),
+});
+
+const Modulo21_NavegadorInterdimensional = (log: LogCallback) => ({
+    AtualizarMapaCosmico: (dadosRota: any) => registrarEventoUniversal(createLogEntryHelper('M21', 'Atualização Mapa', `Rota para '${dadosRota.destino}' atualizada com status '${dadosRota.status}'.`), log),
 });
 
 const Modulo25_AlquimiaConsciencia = (log: LogCallback) => ({
     AvaliarPreparacaoProjetor: (id: string, dados: any) => {
-        log(createLogEntry('M25', 'Avaliação', `Avaliando projetor '${id}'`));
+        registrarEventoUniversal(createLogEntryHelper('M25', 'Avaliação', `Avaliando projetor '${id}'`), log);
         const apto = Math.random() > 0.1; // 90% de chance de ser apto
         return { status: apto ? 'APTO' : 'NAO_APTO', mensagem: apto ? 'Pronto' : 'Instável', eci: Math.random() * 0.4 + 0.6 };
     }
 });
 
+const Modulo105_FonteViva = (log: LogCallback) => ({
+    AmplificarPortal: (portalId: string, fator: number) => registrarEventoUniversal(createLogEntryHelper('M105', 'Amplificação', `Amplificando portal '${portalId}' com fator ${fator}.`), log),
+});
 
 class ModuloGerenciamentoPortaisEvoluido {
     private logCallback: LogCallback;
     private modulo1_seguranca: any;
     private modulo3_previsao: any;
     private modulo7_alinhamento: any;
+    private modulo21_navegador: any;
     private modulo25_alquimia_consciencia: any;
+    private modulo105_fonte_viva: any;
     private modo_operacao: ModoOperacao;
 
     constructor(logCallback: LogCallback, modo_operacao: ModoOperacao = ModoOperacao.PRODUCAO) {
         this.logCallback = logCallback;
         this.modo_operacao = modo_operacao;
-        this.logCallback(createLogEntry('M26', 'Inicialização', `Módulo 26 Evoluído inicializado em modo ${this.modo_operacao}.`));
+        registrarEventoUniversal(createLogEntryHelper('M26', 'Inicialização', `Módulo 26 Evoluído inicializado em modo ${this.modo_operacao}.`), this.logCallback);
         this.modulo1_seguranca = Modulo1_SegurancaUniversal(logCallback);
         this.modulo3_previsao = Modulo3_PrevisaoTemporal(logCallback);
         this.modulo7_alinhamento = Modulo7_AlinhamentoDivino(logCallback);
+        this.modulo21_navegador = Modulo21_NavegadorInterdimensional(logCallback);
         this.modulo25_alquimia_consciencia = Modulo25_AlquimiaConsciencia(logCallback);
+        this.modulo105_fonte_viva = Modulo105_FonteViva(logCallback);
     }
     
     private _obter_politicas_ativas(): { [key: string]: any } {
@@ -155,7 +200,7 @@ class ModuloGerenciamentoPortaisEvoluido {
     }
 
     async detectar_singularidade_segura(localizacao: string, classe: ClassePortal) {
-        this.logCallback(createLogEntry('M26', 'Detecção', `Detectando singularidade segura em '${localizacao}'`));
+        registrarEventoUniversal(createLogEntryHelper('M26', 'Detecção', `Detectando singularidade segura em '${localizacao}'`), this.logCallback);
         const politicas = this._obter_politicas_ativas();
         const politica = politicas[classe];
         
@@ -163,7 +208,7 @@ class ModuloGerenciamentoPortaisEvoluido {
         for (let i = 0; i < politica.leituras_consistentes; i++) {
              const estabilidade = this._equacao_estabilidade_portal(Math.random() * 4000 + 1000, Math.random() * 1.5 + 0.5, Math.random() * 0.2 + 0.8);
              leituras_estabilidade.push(estabilidade);
-             this.logCallback(createLogEntry('M26', `Leitura ${i + 1}`, `Estabilidade parcial: ${estabilidade.toFixed(0)}`));
+             registrarEventoUniversal(createLogEntryHelper('M26', `Leitura ${i + 1}`, `Estabilidade parcial: ${estabilidade.toFixed(0)}`), this.logCallback);
              await sleep(100);
         }
 
@@ -212,7 +257,7 @@ class ModuloGerenciamentoPortaisEvoluido {
     }
     
     async executar_operacao_portal_avancada(localizacao: string, classe: ClassePortal, entidade_id?: string) {
-        this.logCallback(createLogEntry('M26', 'Operação Avançada', `Iniciando operação em '${localizacao}' (Classe: ${classe})`));
+        registrarEventoUniversal(createLogEntryHelper('M26', 'Operação Avançada', `Iniciando operação em '${localizacao}' (Classe: ${classe})`), this.logCallback);
         const politicas = this._obter_politicas_ativas();
         const politica = politicas[classe];
 
@@ -253,7 +298,16 @@ class ModuloGerenciamentoPortaisEvoluido {
             return;
         }
 
-        this.logCallback(createLogEntry('M26', 'SUCESSO', `Operação autorizada com segurança de ${seguranca_composta.toFixed(3)}.`));
+        if(classe === ClassePortal.TRANSCENDENTAL) {
+            this.modulo105_fonte_viva.AmplificarPortal(deteccao.portal_id, 1.5);
+        }
+        if(classe === ClassePortal.COLAPSADO || classe === ClassePortal.TRANSCENDENTAL) {
+            this.modulo1_seguranca.ReceberAlertaDeViolacao({tipo: "INFO", mensagem: `Portal de classe especial (${classe}) ativado.`});
+        }
+        
+        this.modulo21_navegador.AtualizarMapaCosmico({destino: localizacao, portal_id: deteccao.portal_id, status: 'aberto'});
+
+        registrarEventoUniversal(createLogEntryHelper('M26', 'SUCESSO', `Operação autorizada com segurança de ${seguranca_composta.toFixed(3)}.`), this.logCallback);
         this.modulo1_seguranca.RegistrarNaCronicaDaFundacao({ evento: "OperacaoPortalAutorizada", localizacao, classe });
     }
 }
