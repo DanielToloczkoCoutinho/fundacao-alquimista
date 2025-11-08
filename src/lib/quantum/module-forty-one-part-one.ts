@@ -6,9 +6,20 @@ import { type AnyLogEntry } from './module-zero';
 // =============================================================================
 
 // Harmonização da tipagem
-export type ModuleFortyOneLogEntry = AnyLogEntry;
+export type ModuleFortyOnePointOneLogEntry = AnyLogEntry;
 
-// Criação do Registro de Cura Estelar
+// Criação do Registro de Intervenção Quântica
+export type RegistroIntervencaoQuantica = {
+  módulo: 'M41.1',
+  equacao_aplicada: string,
+  alvo: string,
+  tipo_intervencao: 'cura' | 'realinhamento' | 'transmutacao' | 'reintegracao',
+  frequencias_utilizadas: number[],
+  status: 'iniciado' | 'concluído' | 'falha',
+  timestamp: string
+};
+
+// Definição do Registro de Cura Estelar (mantido para compatibilidade, mas a nova estrutura é preferida)
 export type RegistroODNAEstelar = {
   módulo: 'M41';
   espécie: string;
@@ -20,11 +31,12 @@ export type RegistroODNAEstelar = {
   timestamp: string;
 };
 
-// Refinamento da função de registro
+// Função de registro universalizada
 const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void) => {
   logCallback(entry);
 };
 
+// Refinamento da função de registro
 export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
   registrarEventoUniversal(entry, logCallback);
 }
@@ -214,5 +226,5 @@ export function analyze_gene(gene_id: string, dna_sequence: string, species: str
 export const runModuleFortyOneSequence = (log: (entry: AnyLogEntry) => void) => {
     // This module is now structured as a library of functions to be called by other modules.
     // This execution function will just log its readiness and its capabilities.
-    createLogEntry(createLogEntryHelper('M41', 'Status', 'Módulo 41 (ODNA - Cura Estelar) pronto para ser utilizado como uma biblioteca de funções. Suas capacidades de análise e cura estão disponíveis para orquestração por outros módulos.'), log);
+    createLogEntry(createLogEntryHelper('M41.1', 'Status', 'Módulo 41.1 (Manual de Cura Quântica) pronto para ser utilizado como biblioteca de funções. Suas capacidades de cura, realinhamento e transmutação estão disponíveis para orquestração por outros módulos.'), log);
 };
