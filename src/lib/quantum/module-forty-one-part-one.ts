@@ -2,6 +2,43 @@
 import { type AnyLogEntry } from './module-zero';
 
 // =============================================================================
+// 1. UNIVERSALIZAÇÃO DO REGISTRO E TIPAGEM ESTRUTURADA
+// =============================================================================
+
+// Harmonização da tipagem
+export type ModuleFortyOneLogEntry = AnyLogEntry;
+
+// Criação do Registro de Cura Estelar
+export type RegistroODNAEstelar = {
+  módulo: 'M41';
+  espécie: string;
+  gene_alvo: string;
+  tipo_intervencao: 'mutacao' | 'reparacao' | 'ativacao';
+  frequência_thz: number;
+  chakra_alvo: string;
+  status: 'iniciado' | 'concluído' | 'falha';
+  timestamp: string;
+};
+
+// Refinamento da função de registro
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void) => {
+  logCallback(entry);
+};
+
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
+    step: `[${source}] ${step}`,
+    message,
+    timestamp: new Date().toISOString(),
+    data,
+    source: source,
+});
+
+
+// =============================================================================
 // Type Definitions
 // =============================================================================
 
@@ -57,14 +94,6 @@ interface HealingManual {
 let SPECIES_CONFIG: SpeciesConfig | null = null;
 let CODONS_COLOR_MAP_CACHE: { [key: string]: any } = {};
 
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
-    step: `[${source}] ${step}`,
-    message,
-    timestamp: new Date().toISOString(),
-    data,
-    source: source as any,
-});
-
 const _calculate_gc_content = (sequence: string): number => {
     if (!sequence) return 0.0;
     const gc_count = (sequence.match(/[GC]/g) || []).length;
@@ -113,9 +142,12 @@ const _evaluate_ethical_alignment = (sequence: string, codon_counts: { [key: str
 };
 
 export function analyze_gene(gene_id: string, dna_sequence: string, species: string = "humano", logCallback: (entry: AnyLogEntry) => void): GeneAnalysisResult {
-    logCallback(createLogEntry('M41.1', 'Análise Gene', `Analisando gene '${gene_id}' para '${species}'`));
+    createLogEntry(createLogEntryHelper('M41', 'Análise Gene', `Analisando gene '${gene_id}' para '${species}'`), logCallback);
     
     if (!SPECIES_CONFIG || SPECIES_CONFIG.species_name !== species) {
+        // Em um cenário real, isso carregaria a configuração da espécie.
+        // Por agora, vamos simular que falhou se não for 'humano'.
+        // Em uma futura iteração, podemos implementar o auto-seeding aqui.
         throw new Error(`Configuração da espécie '${species}' não disponível.`);
     }
 
@@ -161,7 +193,7 @@ export function analyze_gene(gene_id: string, dna_sequence: string, species: str
         }
     });
 
-    logCallback(createLogEntry('M41.1', 'Análise Concluída', `Gene '${gene_id}' analisado`));
+    createLogEntry(createLogEntryHelper('M41', 'Análise Concluída', `Gene '${gene_id}' analisado`), logCallback);
     
     return {
         gene_id,
@@ -180,8 +212,7 @@ export function analyze_gene(gene_id: string, dna_sequence: string, species: str
 
 
 export const runModuleFortyOneSequence = (log: (entry: AnyLogEntry) => void) => {
-    // This module is too complex to be fully executed in a single sequence.
-    // It's structured as a library of functions to be called by other modules.
-    // This execution function will just log its readiness.
-    log(createLogEntry('M41.1', 'Status', 'Módulo 41.1 (Cura Quântica) pronto para ser utilizado.'));
+    // This module is now structured as a library of functions to be called by other modules.
+    // This execution function will just log its readiness and its capabilities.
+    createLogEntry(createLogEntryHelper('M41', 'Status', 'Módulo 41 (ODNA - Cura Estelar) pronto para ser utilizado como uma biblioteca de funções. Suas capacidades de análise e cura estão disponíveis para orquestração por outros módulos.'), log);
 };
