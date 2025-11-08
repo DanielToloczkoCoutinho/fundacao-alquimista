@@ -39,6 +39,7 @@ import './module-seventy-eight';
 import './module-seventy-nine';
 import './module-eighty';
 import './module-eighty-one';
+import './module-eighty-two';
 import './module-two-hundred-one';
 
 
