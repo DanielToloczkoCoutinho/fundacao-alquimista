@@ -47,6 +47,7 @@ import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
 import { runModuleFortyOnePartTwoSequence } from '@/lib/quantum/module-forty-one-part-two';
 import { runModuleFortyTwoSequence } from '@/lib/quantum/module-forty-two';
 import { runModuleFortyThreeSequence } from '@/lib/quantum/module-forty-three';
+import { runModuleFortyFourSequence } from '@/lib/quantum/module-forty-four';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -100,6 +101,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M41.2: Ascensão DNA": runModuleFortyOnePartTwoSequence,
     "M42: ChronoCodex Unificado": runModuleFortyTwoSequence,
     "M43: Harmonia dos Portais": runModuleFortyThreeSequence,
+    "M44: VERITAS": runModuleFortyFourSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
 
