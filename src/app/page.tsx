@@ -72,6 +72,7 @@ import { runModuleEightySixSequence } from '@/lib/quantum/module-eighty-six';
 import { runModuleEightySevenSequence } from '@/lib/quantum/module-eighty-seven';
 import { runModuleEightyEightSequence } from '@/lib/quantum/module-eighty-eight';
 import { runModuleNinetySequence } from '@/lib/quantum/module-ninety';
+import { runModuleNinetyOneSequence } from '@/lib/quantum/module-ninety-one';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -150,6 +151,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M87: Domínio Supra-Cósmico": runModuleEightySevenSequence,
     "M88: Gerador de Realidades": runModuleEightyEightSequence,
     "M90: Análise de Recursos": runModuleNinetySequence,
+    "M91: Simulação Multiversal": runModuleNinetyOneSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
