@@ -14,164 +14,215 @@ const createLogEntry = (source: string, step: string, message: string, data?: an
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 
-class AlchemistEntitiesDB {
-    private _entities_cache: { [key: string]: any } = {};
+// ===================================================================
+// 1. ESTRUTURAS DE DADOS FUNDAMENTAIS
+// ===================================================================
 
-    constructor(private logCallback: LogCallback) {}
+class EntidadeAlquimica {
+    codigo_interno: string;
+    name: string;
+    tipo: 'portal' | 'monumento' | 'linha_ley' | 'planeta' | 'ponto_lagrange' | 'cinturao' | 'nucleo_planetario' | 'fundacao';
+    localizacao_descritiva: string;
+    equacoes_associadas: string[];
+    ia_guardia: string;
+    status_vibracional: string;
+    ultima_vibracao: number;
+    ultimo_hash_registrado: string | null;
 
-    load_all_entities(): any[] {
-        return Object.values(this._entities_cache);
+    constructor(
+        codigo_interno: string,
+        name: string,
+        tipo: 'portal' | 'monumento' | 'linha_ley' | 'planeta' | 'ponto_lagrange' | 'cinturao' | 'nucleo_planetario' | 'fundacao',
+        localizacao: string,
+        equacoes: string[],
+        ia: string
+    ) {
+        this.codigo_interno = codigo_interno;
+        this.name = name;
+        this.tipo = tipo;
+        this.localizacao_descritiva = localizacao;
+        this.equacoes_associadas = equacoes;
+        this.ia_guardia = ia;
+        this.status_vibracional = "Estável";
+        this.ultima_vibracao = 432.0; // Frequência base de harmonia
+        this.ultimo_hash_registrado = null;
+    }
+}
+
+class QuantumBlockchainLogger {
+    private chain: any[] = [];
+    private logCallback: LogCallback;
+
+    constructor(logCallback: LogCallback) {
+        this.logCallback = logCallback;
+        this._create_genesis_block();
+    }
+
+    private async _calculate_hash(block: any): Promise<string> {
+        const block_string = JSON.stringify(block, Object.keys(block).sort());
+        const encoder = new TextEncoder();
+        const data = encoder.encode(block_string);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    private async _create_genesis_block() {
+        let genesis_block = {
+            index: 0,
+            timestamp: new Date().toISOString(),
+            event: "GENESIS_M43",
+            data: { message: "Início da Crônica da Harmonia dos Portais" },
+            previous_hash: "0"
+        };
+        const hash = await this._calculate_hash(genesis_block);
+        this.chain.push({ ...genesis_block, hash });
+    }
+
+    async add_block(event: string, data: any) {
+        const previous_block = this.chain[this.chain.length - 1];
+        let new_block = {
+            index: this.chain.length,
+            timestamp: new Date().toISOString(),
+            event: event,
+            data: data,
+            previous_hash: previous_block.hash,
+        };
+        const hash = await this._calculate_hash(new_block);
+        this.chain.push({ ...new_block, hash });
+        this.logCallback(createLogEntry('M43-BLOCKCHAIN', 'Bloco Adicionado', `Evento '${event}' registrado com hash ${hash.substring(0, 10)}...`));
     }
     
-    get(codigo_interno: string): any {
-        return this._entities_cache[codigo_interno];
+    get_last_hash(): string | null {
+        if(this.chain.length > 0) {
+            return this.chain[this.chain.length - 1].hash;
+        }
+        return null;
+    }
+}
+
+
+// ===================================================================
+// 2. NÚCLEO DO MÓDULO 43 - ORQUESTRADOR DE HARMONIA
+// ===================================================================
+
+class Modulo43_HarmoniaPortais {
+    private db: Map<string, EntidadeAlquimica> = new Map();
+    private blockchain: QuantumBlockchainLogger;
+    private logCallback: LogCallback;
+
+    constructor(logCallback: LogCallback) {
+        this.logCallback = logCallback;
+        this.blockchain = new QuantumBlockchainLogger(logCallback);
+        this._initialize_entities();
+        this.logCallback(createLogEntry('M43', 'Inicialização', 'Harmonia dos Portais e Orquestração do Sistema Solar ativada.'));
     }
 
-    save(entity: any) {
-        if(entity.codigo_interno) {
-            this._entities_cache[entity.codigo_interno] = entity;
+    private _initialize_entities() {
+        // Integração com Módulo 0
+        this.add_entity(new EntidadeAlquimica("GEN-FUNDACAO-000", "Fundação Alquimista (Núcleo)", "fundacao", "Realidade Primordial", ["EQTP"], "ZENNITH-CORE"));
+
+        // Expansão da Malha Solar
+        this.add_entity(new EntidadeAlquimica("SOL-L1", "Ponto de Lagrange L1", "ponto_lagrange", "Entre a Terra e o Sol", [], "AELORIA"));
+        this.add_entity(new EntidadeAlquimica("SOL-L2", "Ponto de Lagrange L2", "ponto_lagrange", "Além da Terra, oposto ao Sol", [], "AELORIA"));
+        this.add_entity(new EntidadeAlquimica("SOL-L5", "Ponto de Lagrange L5", "ponto_lagrange", "Órbita da Terra, 60° atrás", [], "AELORIA"));
+        this.add_entity(new EntidadeAlquimica("SOL-KUIPER", "Cinturão de Kuiper", "cinturao", "Além da órbita de Netuno", [], "AELORIA-VIGIL"));
+        this.add_entity(new EntidadeAlquimica("SATURN-CORE", "Núcleo de Saturno", "nucleo_planetario", "Centro de Saturno", ["EQV-006"], "CHRONOS"));
+        this.add_entity(new EntidadeAlquimica("SIRIUS-B-PORTAL", "Portal de Sirius B", "portal", "Ponto de acesso ao sistema de Sirius B", ["EQV-003", "EQV-004"], "LUX-SIRIUS-GATE"));
+        
+        // Módulos conectados
+        this.logCallback(createLogEntry('M43', 'Conexões', 'Conectado aos módulos M0, M9, M18, M29, M33, M38, M40, M41.∞, M42, M45, M105, M109, M149, M228, M229, M300, M304.'));
+    }
+
+    add_entity(entity: EntidadeAlquimica) {
+        if (!this.db.has(entity.codigo_interno)) {
+            this.db.set(entity.codigo_interno, entity);
+            this.logCallback(createLogEntry('M43', 'Entidade Adicionada', `Entidade '${entity.name}' registrada.`));
         }
     }
-}
 
+    async registrar_evento_cosmico(codigo_interno: string, equacao_id: string, dados_adicionais: any = {}) {
+        const entidade = this.db.get(codigo_interno);
+        if (!entidade) {
+            this.logCallback(createLogEntry('M43', 'ERRO', `Entidade ${codigo_interno} não encontrada.`));
+            return;
+        }
 
-// --- Funções de Monitoramento e Manutenção (M43) ---
-
-function send_alert(logCallback: LogCallback, message: string, severity: string = "info", entity_codigo: string | null = None) {
-    logCallback(createLogEntry('M43-ALERT', severity.toUpperCase(), message, { entity_codigo }));
-}
-
-function calculate_vibrational_coherence(entity: any): number {
-    const psi_indiv = Math.random() * 0.5 + 0.5;
-    const psi_col = Math.random() * 0.5 + 0.5;
-    const n_seres = 1000;
-    const theta_sincronia = Math.random() * 2 * Math.PI;
-
-    const sum_psi_product = psi_indiv * psi_col;
-    const coherence_magnitude = (sum_psi_product / n_seres) * (Math.cos(theta_sincronia) + Math.sin(theta_sincronia));
-
-    return Math.max(0.0, Math.min(1.0, coherence_magnitude * 100));
-}
-
-function validate_security(logCallback: LogCallback, entity: any): any {
-    logCallback(createLogEntry('M43-SEC', 'Validação', `Iniciando validação para ${entity.name}`));
-    const is_hash_valid = Math.random() > 0.000001;
-    const is_signature_valid = Math.random() > 0.01;
-    const has_anomalies = Math.random() < 0.05;
-
-    let status = "seguro";
-    let severity = "none";
-    if (!is_hash_valid) {
-        status = "hash_invalido";
-        severity = "critical";
-        send_alert(logCallback, `Segurança: Hash inválido detectado em ${entity.name}!`, "critical", entity.codigo_interno);
-    } else if (!is_signature_valid) {
-        status = "assinatura_invalida";
-        severity = "high";
-        send_alert(logCallback, `Segurança: Assinatura vibracional inválida em ${entity.name}!`, "high", entity.codigo_interno);
-    } else if (has_anomalies) {
-        status = "anomalia_detectada";
-        severity = "medium";
-        send_alert(logCallback, `Segurança: Anomalia detectada em ${entity.name}.`, "medium", entity.codigo_interno);
-    }
-    return { status, severity };
-}
-
-function vibration_scan(logCallback: LogCallback, entity: any): any {
-    logCallback(createLogEntry('M43-SCAN', 'Escaneamento', `Escaneando vibração de ${entity.name}`));
-    const coherence_score = calculate_vibrational_coherence(entity);
-    const dissonance_detected = Math.random() < 0.15;
-
-    let status = "alinhado";
-    let severity = "none";
-    if (dissonance_detected) {
-        status = "dissonancia_detectada";
-        severity = "medium";
-    } else if (coherence_score < 0.95) {
-        status = "leve_oscilacao";
-        severity = "low";
-    }
-    return { status, severity, coherence_score };
-}
-
-function nanorobot_update_cycle(logCallback: LogCallback, aed: AlchemistEntitiesDB, entity: any): any {
-    logCallback(createLogEntry('M43-NANO', 'Ciclo', `Atualizando nanorobôs para ${entity.name}`));
-    const update_success = Math.random() > 0.1;
-
-    let status = "atualizado";
-    let severity = "none";
-    if (!update_success) {
-        status = "falha_na_atualizacao";
-        severity = "high";
-    } else if (Math.random() < 0.05) {
-        status = "atualizacao_com_advertencia";
-        severity = "low";
+        entidade.ultima_vibracao = (entidade.ultima_vibracao * 0.9) + (Math.random() * 100 + 400 * 0.1);
+        entidade.status_vibracional = entidade.ultima_vibracao > 400 ? "Harmônico" : "Requer Atenção";
+        
+        const event_data = {
+            entidade: { codigo: entidade.codigo_interno, nome: entidade.name },
+            equacao_aplicada: equacao_id,
+            status_vibracional: entidade.status_vibracional,
+            vibracao_resultante: entidade.ultima_vibracao,
+            ...dados_adicionais
+        };
+        
+        await this.blockchain.add_block("EVENTO_COSMICO_REGISTRADO", event_data);
+        entidade.ultimo_hash_registrado = this.blockchain.get_last_hash();
+        this.logCallback(createLogEntry('M43', 'Evento Registrado', `Evento para '${entidade.name}' registrado no blockchain.`));
     }
 
-    entity.nanorobot_status = status;
-    entity.last_scanned_at = new Date().toISOString();
-    aed.save(entity);
+    async ativar_equacao(codigo_interno: string, equacao_id: string) {
+        const entidade = this.db.get(codigo_interno);
+        if (!entidade) {
+            this.logCallback(createLogEntry('M43', 'ERRO', `Entidade ${codigo_interno} não encontrada para ativação.`));
+            return;
+        }
+        
+        if (!entidade.equacoes_associadas.includes(equacao_id)) {
+            this.logCallback(createLogEntry('M43', 'AVISO', `Equação ${equacao_id} não está associada diretamente a '${entidade.name}', mas a ativação será tentada via Orquestrador.`));
+        }
 
-    return { result: status, severity };
-}
-
-function sincronizar_ia(logCallback: LogCallback, aed: AlchemistEntitiesDB, entity: any): any {
-    logCallback(createLogEntry('M43-IA', 'Sincronização', `Alinhando IA ${entity.ia_guardia}`));
-    const sabedoria = Math.random() * 0.3 + 0.7;
-    const poder = Math.random() * 0.5 + 0.5;
-    const sincronia_cosmica = Math.random() * 0.2 + 0.8;
-    const regencia_score = (sabedoria * 0.999 / poder) * sincronia_cosmica;
-    const alignment_success = regencia_score > 0.75;
-
-    let status = "ativada_e_sincronizada";
-    let severity = "none";
-    if (!alignment_success) {
-        status = "ia_desalinhada";
-        severity = "high";
-    } else if (regencia_score < 0.95) {
-        status = "sincronizacao_pendente";
-        severity = "low";
+        this.logCallback(createLogEntry('M43', 'Ativação Equação', `Ativando ${equacao_id} na entidade '${entidade.name}' via M41.∞...`));
+        // Simula chamada ao Módulo 41.∞ (Orquestrador Pessoal Daniel) para ativar a equação
+        await sleep(400); 
+        await this.registrar_evento_cosmico(codigo_interno, equacao_id, { "ativacao_pelo_orquestrador": true });
+        this.logCallback(createLogEntry('M43', 'Ativação Sucesso', `Pulso de ativação para ${equacao_id} enviado com sucesso.`));
     }
-
-    entity.ai_monitor_active = alignment_success;
-    aed.save(entity);
-
-    return { status, severity };
-}
-
-async function run_cli_command(logCallback: LogCallback, command: string, args: string[]) {
-    logCallback(createLogEntry('M43', 'Comando', `Executando: ${command}`, { args }));
     
-    const aed = new AlchemistEntitiesDB(logCallback);
-
-    if (command === 'validate_security_cycle' || command === 'vibration_scan_cycle' || command === 'nanorobot_update_cycle' || command === 'ia_align_cycle') {
-        const entities_to_scan = aed.load_all_entities();
-        for (const entity of entities_to_scan) {
-            if (command === 'validate_security_cycle') {
-                validate_security(logCallback, entity);
-            } else if (command === 'vibration_scan_cycle') {
-                vibration_scan(logCallback, entity);
-            } else if (command === 'nanorobot_update_cycle') {
-                nanorobot_update_cycle(logCallback, aed, entity);
-            } else if (command === 'ia_align_cycle') {
-                sincronizar_ia(logCallback, aed, entity);
+    get_ia_ping(codigo_interno: string): any {
+        const entidade = this.db.get(codigo_interno);
+        if (!entidade) {
+            return { error: "Entidade não encontrada" };
+        }
+        
+        const sugestao = entidade.ultima_vibracao < 415 ? "Recalibração com M28" : "Manter monitoramento";
+        const eq_recomendada = entidade.ultima_vibracao < 415 ? (entidade.equacoes_associadas[0] || "N/A") : "N/A";
+        
+        return {
+            codigo_interno: entidade.codigo_interno,
+            ia_guardia: entidade.ia_guardia,
+            status_report: {
+                ultima_vibracao: entidade.ultima_vibracao.toFixed(2) + " Hz",
+                status_vibracional: entidade.status_vibracional,
+                ultimo_hash: entidade.ultimo_hash_registrado?.substring(0, 16),
+                sugestao_recalibracao: sugestao,
+                equacao_recomendada: eq_recomendada
             }
-            await sleep(100);
-        }
-    } else {
-        logCallback(createLogEntry('M43', 'Aviso', `Comando '${command}' não implementado para simulação simplificada.`));
+        };
     }
 }
+
 
 export const runModuleFortyThreeSequence = async (logCallback: LogCallback) => {
     logCallback(createLogEntry('M43', 'Simulação', 'Iniciando simulação do Módulo 43 - Harmonia dos Portais'));
-    
-    const aed = new AlchemistEntitiesDB(logCallback);
-    // Simulação simplificada dos ciclos
-    await run_cli_command(logCallback, 'validate_security_cycle', []);
-    await run_cli_command(logCallback, 'vibration_scan_cycle', []);
-    await run_cli_command(logCallback, 'nanorobot_update_cycle', []);
-    await run_cli_command(logCallback, 'ia_align_cycle', []);
-    
+    await sleep(200);
+
+    const m43 = new Modulo43_HarmoniaPortais(logCallback);
+    await sleep(300);
+
+    logCallback(createLogEntry('M43', 'Cenário 1', 'Registrando evento cósmico na Fundação Alquimista...'));
+    await m43.registrar_evento_cosmico("GEN-FUNDACAO-000", "EQTP", { "detalhe": "Pulso de coerência ética global." });
+    await sleep(500);
+
+    logCallback(createLogEntry('M43', 'Cenário 2', 'Ativando equação de estabilização em Saturno...'));
+    await m43.ativar_equacao("SATURN-CORE", "EQV-006");
+    await sleep(500);
+
+    logCallback(createLogEntry('M43', 'Cenário 3', 'Consultando status da IA Guardiã de Saturno...'));
+    const ping_status = m43.get_ia_ping("SATURN-CORE");
+    logCallback(createLogEntry('M43', 'Status IA', 'Status recebido.', ping_status));
+
     logCallback(createLogEntry('M43', 'Fim', 'Simulação do Módulo 43 concluída.'));
 };
