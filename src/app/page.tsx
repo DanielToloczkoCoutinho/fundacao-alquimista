@@ -547,6 +547,9 @@ export default function App() {
             return bibliotecaCompletaUnificada.listarTodas().filter(eq => eq.classificacao === classification);
         }
         
+        // Funções para os novos painéis
+        const lastM81Log = systemLogs.find(log => log.source === 'M81' && log.step.includes('Orquestração Concluída'));
+        
         return (
             <div id="container-main" className="flex h-screen w-screen bg-[#0d0d1e] overflow-hidden">
                 <div id="canvas-container" ref={containerRef} className="flex-grow relative" onClick={onCanvasClick}>
@@ -611,6 +614,20 @@ export default function App() {
                                     </div>
                                  )}
                             </div>
+
+                             {/* Painel do Executor Cosmogônico (M81) */}
+                            {lastM81Log && (
+                                <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                    <h2 className="text-lg font-semibold text-violet-300 mb-2">Executor Cosmogônico (M81)</h2>
+                                    <div className="text-sm space-y-1">
+                                        <p><span className="font-bold">Status:</span> <span className="text-green-400">{lastM81Log.data?.status_geral || 'Concluído'}</span></p>
+                                        <p><span className="font-bold">Última Ação:</span> <span className="text-cyan-400">{lastM81Log.data?.fase3_verdade?.action || 'N/A'}</span></p>
+                                        <p><span className="font-bold">Arquétipo:</span> <span className="text-purple-400">{lastM81Log.data?.fase3_verdade?.archetype || 'N/A'}</span></p>
+                                        <p><span className="font-bold">Realidade Alvo:</span> <span className="text-yellow-300">{lastM81Log.data?.fase3_verdade?.reality || 'N/A'}</span></p>
+                                        <p><span className="font-bold">Estabilidade:</span> <span className="text-blue-400">{(lastM81Log.data?.fase3_verdade?.stability_score * 100).toFixed(2) || 'N/A'}%</span></p>
+                                    </div>
+                                </div>
+                            )}
     
                             <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
                                  <h2 className="text-lg font-semibold text-violet-300 mb-2">Log de Eventos da Fundação</h2>
