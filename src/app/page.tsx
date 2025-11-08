@@ -60,6 +60,8 @@ import { runModuleSeventyTwoSequence } from '@/lib/quantum/module-seventy-two';
 import { runModuleSeventyThreeSequence } from '@/lib/quantum/module-seventy-three';
 import { runModuleSeventyFourSequence } from '@/lib/quantum/module-seventy-four';
 import { runModuleSeventySevenSequence } from '@/lib/quantum/module-seventy-seven';
+import { runModuleSeventyEightSequence } from '@/lib/quantum/module-seventy-eight';
+import { runModuleSeventyNineSequence } from '@/lib/quantum/module-seventy-nine';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -126,6 +128,8 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M73: SAVCE (Orquestração Ética)": (log) => runModuleSeventyThreeSequence(log),
     "M74: Engenharia Temporal": runModuleSeventyFourSequence,
     "M77: LUMEN-CUSTOS": runModuleSeventySevenSequence,
+    "M78: UNIVERSUM_UNIFICATUM": runModuleSeventyEightSequence,
+    "M79: INTERMODULUM_VIVENS": runModuleSeventyNineSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
