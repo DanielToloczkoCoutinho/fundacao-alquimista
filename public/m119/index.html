@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templum Cosmica Anatheronis - Realidade Virtual</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/stats.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/dat.gui.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="info">
+            <h1>Templum Cosmica Anatheronis</h1>
+            <p>Experiência de Realidade Virtual Multidimensional</p>
+            <div id="status">
+                <p>Carregando ambiente sagrado...</p>
+            </div>
+            <button id="enterVR">Entrar no Templum</button>
+            <button id="ritualButton" disabled>Iniciar Ritual</button>
+        </div>
+        <div id="vr-container"></div>
+        <div id="hud">
+            <div class="hud-item">
+                <span>Frequência: </span>
+                <span id="frequency-display">528 Hz</span>
+            </div>
+            <div class="hud-item">
+                <span>Coerência: </span>
+                <span id="coherence-display">95%</span>
+            </div>
+            <div class="hud-item">
+                <span>Portal Ativo: </span>
+                <span id="portal-display">Nenhum</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.

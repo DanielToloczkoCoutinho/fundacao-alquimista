@@ -25,6 +25,4 @@ export const runModuleOneHundredNineteenPointOneSequence = async (logCallback: L
 
     } catch (error: any) {
         logCallback(createLogEntry('M119.1', 'ERRO', `Falha ao abrir o portal VR: ${error.message}`));
-        console.error("Erro no Módulo 119.1:", error);
-    }
-};
+        console.error("Erro no Módulo 119

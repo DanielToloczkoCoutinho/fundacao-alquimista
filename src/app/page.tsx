@@ -466,8 +466,7 @@ export default function App() {
             }
             const logFunction = allLogFunctions[selectedModule];
             if (logFunction) {
-                const moduleNameForLog = selectedModule.split(':')[0] as any;
-
+                 const moduleNameForLog = selectedModule.split(':')[0] as any;
                 newLog(createLogEntry(moduleNameForLog, 'Início', `Executando sequência do módulo: ${selectedModule}...`));
                 await Tone.start();
                 const synth = new Tone.Synth().toDestination();
@@ -585,7 +584,7 @@ export default function App() {
                                     ) : (
                                         <p className="text-gray-400">Nenhuma equação selecionada. Clique em uma esfera no HoloMapa ou escolha uma classificação.</p>
                                     )}
-                                </ScrollArea>
+                                 </ScrollArea>
                             </div>
     
                             {selectedClassification && (
@@ -618,3 +617,4 @@ export default function App() {
             </div>
         );
 }
+```
