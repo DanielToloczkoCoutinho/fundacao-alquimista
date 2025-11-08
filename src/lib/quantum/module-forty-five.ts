@@ -172,6 +172,13 @@ class Modulo45_ConciliumUnificado {
 
     public async create_proposal(title: string, description: string, proposed_by: string, ethical_score: number): Promise<any> {
         const proposal_id = `prop_${Date.now()}`;
+        
+        // Validação da proposta antes da criação
+        if (!this._check_eqtp_compliance(ethical_score)) {
+            this.logCallback(createLogEntry('M45', 'FALHA_ETICA', `Proposta '${title}' rejeitada antes da votação por baixo score ético.`));
+            return { status: "REJEITADA_ETICA", message: "Score ético insuficiente para criar a proposta." };
+        }
+
         const proposal_data = { id: proposal_id, title, description, proposed_by, ethical_score, status: "Aberto", votes: {}, timestamp: new Date().toISOString() };
         this.proposals[proposal_id] = proposal_data;
         await this._add_to_ledger("PROPOSAL_CREATED", proposal_data);
@@ -191,7 +198,7 @@ class Modulo45_ConciliumUnificado {
         
         const eri = this._calculate_eri(Object.values(proposal.votes).map((v: any) => v.data));
         const is_coherent = this._check_eri_coherence(eri);
-        const is_ethical = this._check_eqtp_compliance(proposal.ethical_score);
+        const is_ethical = this._check_eqtp_compliance(proposal.ethical_score); // Re-validação final
 
         if (!is_coherent || !is_ethical) {
             proposal.status = "Finalizada: REJEITADA";

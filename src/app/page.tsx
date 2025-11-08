@@ -57,7 +57,6 @@ import { runModuleFortyTwoSequence } from '@/lib/quantum/module-forty-two';
 import { runModuleFortyThreeSequence } from '@/lib/quantum/module-forty-three';
 import { runModuleFortyFourSequence } from '@/lib/quantum/module-forty-four';
 import { runModuleFortyFiveSequence } from '@/lib/quantum/module-forty-five';
-import { runModuleFortyFivePointTwoSequence } from '@/lib/quantum/module-forty-five-point-two';
 import { runModuleFortyFivePointFourSequence } from '@/lib/quantum/module-forty-five-point-four';
 import { runModuleFortyFivePointFiveSequence } from '@/lib/quantum/module-forty-five-point-five';
 import { runModuleFortySixSequence } from '@/lib/quantum/module-forty-six';
@@ -194,7 +193,6 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 43: Harmonia dos Portais': runModuleFortyThreeSequence,
     'Módulo 44: VERITAS': runModuleFortyFourSequence,
     'Módulo 45: CONCILIVM': runModuleFortyFiveSequence,
-    'Módulo 45.2: Extensão de Persistência CONCILIVM': runModuleFortyFivePointTwoSequence,
     'Módulo 45.4: Oráculo Emergente': runModuleFortyFivePointFourSequence,
     'Módulo 45.5: Oráculo Amplificado': runModuleFortyFivePointFiveSequence,
     'Módulo 46: AELORIA': runModuleFortySixSequence,

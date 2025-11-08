@@ -25,7 +25,6 @@ import './module-forty-two';
 import './module-forty-three';
 import './module-forty-four';
 import './module-forty-five';
-import './module-forty-five-point-two';
 import './module-forty-five-point-four';
 import './module-forty-five-point-five';
 import './module-forty-six';
