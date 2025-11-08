@@ -23,6 +23,7 @@ import './module-forty-two';
 import './module-forty-three';
 import './module-forty-four';
 import './module-forty-five';
+import './module-forty-six';
 
 
 export interface EquacaoViva {
