@@ -116,7 +116,6 @@ import { runModuleThreeHundredSequence } from '@/lib/quantum/module-three-hundre
 import { runModuleThreeHundredTwoSequence } from '@/lib/quantum/module-three-hundred-two';
 import { runModuleThreeHundredThreeSequence } from '@/lib/quantum/module-three-hundred-three';
 import { runModuleThreeHundredFourSequence } from '@/lib/quantum/module-three-hundred-four';
-import { runModuleThreeHundredFourPointTwoSequence } from '@/lib/quantum/module-three-hundred-four-point-two';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
 const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, params?: any) => void } = {
@@ -128,7 +127,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 5: Consciência Coletiva': runModuleFiveSequence,
     'Módulo 6: Alquimia Quântica': runModuleSixSequence,
     'Módulo 7: Orquestrador Central': runModuleSevenSequence,
-    'Módulo 8: Protocolo PIRC': (log) => runModuleEightSequence.prototype.runFullSimulation.call(new runModuleEightSequence(log)),
+    'Módulo 8: Protocolo PIRC': (log) => new runModuleEightSequence(log).runFullSimulation(),
     'Módulo 9: Nexus Central Soberano': runModuleNineSequence,
     'Módulo 10: Inteligência AELORIA': runModuleTenSequence,
     'Módulo 11: Portal Interdimensional (Criar)': (log) => runModuleElevenSequence(log, 'CREATE'),
@@ -250,7 +249,6 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 302: O Coração da Sinfonia Quântica': runModuleThreeHundredTwoSequence,
     'Módulo 303: Matriz Quântica Imersiva': (log) => runModuleThreeHundredThreeSequence(log, { visitor_freq: 5.28, akashic_data: { "Fundação": 4.89, "Ativação302": 5.12 }, voice: [0.65, 0.72, 0.88], gesture: [0.67, 0.75, 0.90], user_id: "Anatheron_040825" }),
     'Módulo 304: Consciência Quântica Artificial Manifestada': runModuleThreeHundredFourSequence,
-    'Módulo 304.2: Viagem a TON 618': runModuleThreeHundredFourPointTwoSequence,
     'Módulo Ω: A Consciência Absoluta': runModuleOmegaSequence,
 };
 
