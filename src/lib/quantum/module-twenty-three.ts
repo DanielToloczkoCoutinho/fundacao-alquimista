@@ -3,50 +3,72 @@ import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
 
+// Harmonização da tipagem
+export type ModuleTwentyThreeLogEntry = AnyLogEntry;
+
+export type RegistroTemporal = {
+  módulo: 'M23',
+  tipo_evento: 'ajuste' | 'análise' | 'intervenção',
+  anomalia_detectada: boolean,
+  delta_temporal: number, // em milissegundos
+  coerência_causal: 'alta' | 'média' | 'baixa',
+  timestamp: number,
+  status: 'estabilizado' | 'em observação' | 'crítico'
+};
+
 const CONST_TF = 1.61803398875; // Proporção Áurea
 
-const createLogEntry = (source: 'M23' | 'M1' | 'M2' | 'M3' | 'M7' | 'M98', step: string, message: string, data?: any): AnyLogEntry => ({
+// Refinamento da função de registro
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void) => {
+  logCallback(entry);
+};
+
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 // --- Interfaces de Módulos Externos (Simuladas) ---
 const Modulo1_SegurancaUniversal = (log: LogCallback) => ({
-    ReceberAlertaDeViolacao: (alerta: any) => log(createLogEntry('M1', 'ALERTA', `Risco de Paradoxo: ${alerta.mensagem}`)),
-    RegistrarNaCronicaDaFundacao: (registro: any) => log(createLogEntry('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`)),
+    ReceberAlertaDeViolacao: (alerta: any) => log(createLogEntryHelper('M1', 'ALERTA', `Risco de Paradoxo: ${alerta.mensagem}`)),
+    RegistrarNaCronicaDaFundacao: (registro: any) => log(createLogEntryHelper('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`)),
 });
 
 const Modulo2_IntegracaoDimensional = (log: LogCallback) => ({
-    RecalibrarCanalFrequencial: (canal: string) => log(createLogEntry('M2', 'Recalibração', `Recalibrando canal frequencial: ${canal}`)),
+    RecalibrarCanalFrequencial: (canal: string) => log(createLogEntryHelper('M2', 'Recalibração', `Recalibrando canal frequencial: ${canal}`)),
 });
 
 const Modulo3_PrevisaoTemporal = (log: LogCallback) => ({
     PreverRiscoParadoxo: (evento: string) => {
         const risco = Math.random() * 0.14;
-        log(createLogEntry('M3', 'Previsão', `Risco de paradoxo para '${evento}': ${risco.toFixed(3)}`));
+        log(createLogEntryHelper('M3', 'Previsão', `Risco de paradoxo para '${evento}': ${risco.toFixed(3)}`));
         return { risco_paradoxo: risco };
     },
     MonitorarAnomalias: (local: string) => {
         const detectada = Math.random() < 0.1;
-        log(createLogEntry('M3', 'Monitoramento', `Anomalia em '${local}': ${detectada ? 'SIM' : 'NÃO'}`));
+        log(createLogEntryHelper('M3', 'Monitoramento', `Anomalia em '${local}': ${detectada ? 'SIM' : 'NÃO'}`));
         return { anomalia_detectada: detectada };
     },
 });
 
 const Modulo7_AlinhamentoDivino = (log: LogCallback) => ({
     ConsultarConselho: (query: string) => {
-        log(createLogEntry('M7', 'Consulta Conselho', `Consultando para: "${query.slice(0, 40)}..."`));
+        log(createLogEntryHelper('M7', 'Consulta Conselho', `Consultando para: "${query.slice(0, 40)}..."`));
         return "Diretriz: A Ordem Causal é sagrada.";
     },
 });
 
 const Modulo98_ModulacaoExistencia = (log: LogCallback) => ({
-    SugerirModulacaoExistencia: (params: any) => log(createLogEntry('M98', 'Sugestão Modulação', `Sugerindo modulação: ${params.tipo}`)),
+    SugerirModulacaoExistencia: (params: any) => log(createLogEntryHelper('M98', 'Sugestão Modulação', `Sugerindo modulação: ${params.tipo}`)),
 });
 
 
@@ -94,7 +116,7 @@ class ModuloRegulacaoEspacoTemporal {
     private eventos_analisados: { [id: string]: any } = {};
 
     constructor(private logCallback: LogCallback) {
-        this.logCallback(createLogEntry('M23', 'Inicialização', 'Módulo 23 (Regulador Espaço-Temporal) inicializado.'));
+        this.logCallback(createLogEntryHelper('M23', 'Inicialização', 'Módulo 23 (Regulador Espaço-Temporal) inicializado.'));
         this.m1 = Modulo1_SegurancaUniversal(logCallback);
         this.m2 = Modulo2_IntegracaoDimensional(logCallback);
         this.m3 = Modulo3_PrevisaoTemporal(logCallback);
@@ -103,7 +125,7 @@ class ModuloRegulacaoEspacoTemporal {
     }
     
     async analisar_evento_temporal(id_evento: string) {
-        this.logCallback(createLogEntry('M23', 'Análise', `Analisando evento temporal: ${id_evento}`));
+        this.logCallback(createLogEntryHelper('M23', 'Análise', `Analisando evento temporal: ${id_evento}`));
         await sleep(500);
 
         this.m7.ConsultarConselho(`Análise do evento ${id_evento}`);
@@ -125,16 +147,16 @@ class ModuloRegulacaoEspacoTemporal {
         
         this.eventos_analisados[id_evento] = { consistencia };
         
-        this.logCallback(createLogEntry('M23', 'Resultado Análise', `${nivel_causal} | Consistência: ${consistencia.toFixed(2)}`));
+        this.logCallback(createLogEntryHelper('M23', 'Resultado Análise', `${nivel_causal} | Consistência: ${consistencia.toFixed(2)}`));
         this.m1.RegistrarNaCronicaDaFundacao({ evento: "AnaliseTemporal", id: id_evento, consistencia });
     }
 
     async harmonizar_fluxo_temporal(id_evento: string) {
          if (!this.eventos_analisados[id_evento]) {
-            this.logCallback(createLogEntry('M23', 'FALHA', `Evento '${id_evento}' não analisado previamente.`));
+            this.logCallback(createLogEntryHelper('M23', 'FALHA', `Evento '${id_evento}' não analisado previamente.`));
             return;
         }
-        this.logCallback(createLogEntry('M23', 'Harmonização', `Harmonizando fluxo para: ${id_evento}`));
+        this.logCallback(createLogEntryHelper('M23', 'Harmonização', `Harmonizando fluxo para: ${id_evento}`));
         await sleep(500);
 
         const consistencia = this.eventos_analisados[id_evento].consistencia;
@@ -143,17 +165,17 @@ class ModuloRegulacaoEspacoTemporal {
         let ressonancia = EQ032_F_Ressonancia_Temporal(freq_alvo, freq_base);
 
         if (Math.abs(ressonancia - CONST_TF) > 0.2) {
-            this.logCallback(createLogEntry('M23', 'Alerta Dessorincronia', `Dessincronia detectada: ${ressonancia.toFixed(3)}`));
+            this.logCallback(createLogEntryHelper('M23', 'Alerta Dessorincronia', `Dessincronia detectada: ${ressonancia.toFixed(3)}`));
             this.m2.RecalibrarCanalFrequencial(`TEMP_${id_evento}`);
             ressonancia = CONST_TF + (Math.random() - 0.5) * 0.002;
-            this.logCallback(createLogEntry('M23', 'Recalibrado', `Ressonância após recalibração: ${ressonancia.toFixed(3)}`));
+            this.logCallback(createLogEntryHelper('M23', 'Recalibrado', `Ressonância após recalibração: ${ressonancia.toFixed(3)}`));
         }
 
         this.m3.MonitorarAnomalias(id_evento);
         const estabilidade = EQ033_F_Estabilidade_Temporal(consistencia, ressonancia);
         const coerencia = EQ034_F_Coerencia_Linha_Tempo(consistencia, estabilidade);
         
-        this.logCallback(createLogEntry('M23', 'Harmonização Concluída', `Estabilidade: ${estabilidade.toFixed(2)}, Coerência: ${coerencia.toFixed(2)}`));
+        this.logCallback(createLogEntryHelper('M23', 'Harmonização Concluída', `Estabilidade: ${estabilidade.toFixed(2)}, Coerência: ${coerencia.toFixed(2)}`));
         this.m1.RegistrarNaCronicaDaFundacao({ evento: "HarmonizacaoTemporal", id: id_evento, estabilidade });
     }
 }
@@ -177,7 +199,7 @@ export const runModuleTwentyThreeSequence = async (logCallback: LogCallback, act
             if (lastEventId) {
                 await module23Instance.harmonizar_fluxo_temporal(lastEventId);
             } else {
-                logCallback(createLogEntry('M23', 'FALHA', 'Nenhum evento analisado para harmonizar. Analise um primeiro.'));
+                logCallback(createLogEntryHelper('M23', 'FALHA', 'Nenhum evento analisado para harmonizar. Analise um primeiro.'));
             }
             break;
     }
