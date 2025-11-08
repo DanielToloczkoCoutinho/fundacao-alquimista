@@ -1,6 +1,13 @@
 
 'use client';
 import React, { useEffect, useState } from 'react';
+import { runModuleZeroSequence } from '@/lib/quantum/module-zero';
+import { runModuleTwoSequence } from '@/lib/quantum/module-two';
+import { runModuleThreeSequence } from '@/lib/quantum/module-three';
+import { runModuleFourSequence } from '@/lib/quantum/module-four';
+import { runModuleFiveSequence } from '@/lib/quantum/module-five';
+import { runModuleSixSequence } from '@/lib/quantum/module-six';
+import { runModuleSevenSequence } from '@/lib/quantum/module-seven';
 import { runModuleEightSequence } from '@/lib/quantum/module-eight';
 import { runModuleNineSequence } from '@/lib/quantum/module-nine';
 import { runModuleTenSequence } from '@/lib/quantum/module-ten';
@@ -152,7 +159,14 @@ const allModuleBlueprints: { [key: string]: any } = {
 };
 
 const allLogFunctions: { [key: string]: any } = {
-    M08: runModuleEightSequence,
+    M01: (log: any) => runModuleZeroSequence(log, () => {}),
+    M02: runModuleTwoSequence,
+    M03: runModuleThreeSequence,
+    M04: runModuleFourSequence,
+    M05: runModuleFiveSequence,
+    M06: runModuleSixSequence,
+    M07: runModuleSevenSequence,
+    M08: (log: any) => new (runModuleEightSequence as any)(log).runFullSimulation(),
     M09: runModuleNineSequence,
     M10: runModuleTenSequence,
     M11: runModuleElevenSequence,
