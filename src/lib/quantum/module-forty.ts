@@ -154,7 +154,9 @@ class Modulo40 {
         this.modulo109 = mockModule("M109", logCallback);
         this.modulo110 = mockModule("M110", logCallback);
 
-        createLogEntry(createLogEntryHelper('M40', 'Inicialização', 'Módulo 40 inicializado (núcleo).'), this.logCallback);
+        const entry = createLogEntryHelper('M40', 'Inicialização', 'Módulo 40 inicializado (núcleo).');
+        createLogEntry(entry, this.logCallback);
+
 
         this.modulo_40_data = this._initialData();
         this.modulo_40_data["hash_assinatura"] = this.codice_vivo.autenticar("Modulo_40", this.modulo_40_data);
@@ -198,7 +200,8 @@ class Modulo40 {
             ...dados_adicionais
         };
         this.modulo_40_data["eventos_registrados"].push(evento);
-        createLogEntry(createLogEntryHelper('M40', `Evento: ${tipo_evento}`, `Status: ${status} para alvo '${alvo}'`), this.logCallback);
+        const entry = createLogEntryHelper('M40', `Evento: ${tipo_evento}`, `Status: ${status} para alvo '${alvo}'`);
+        createLogEntry(entry, this.logCallback);
     }
 
 
@@ -214,7 +217,8 @@ class Modulo40 {
     }
     
     ativar_codons_primordiais(frequencia_thz: number): { [key: string]: any } {
-        createLogEntry(createLogEntryHelper('M40', 'Ativação Códons', `Ativar códons @ ${frequencia_thz} THz...`), this.logCallback);
+        const entry = createLogEntryHelper('M40', 'Ativação Códons', `Ativar códons @ ${frequencia_thz} THz...`);
+        createLogEntry(entry, this.logCallback);
         this._registrar_evento_v2('ativacao_codons', 'DNA Universal', 'iniciado', { frequencia_thz });
 
         const res_m106 = this.modulo106.exec("ativar_potenciais_dna", { codificacao_dna: "DNA_ORIGEM_UNIVERSAL", frequencia_ativacao: frequencia_thz });
@@ -232,14 +236,15 @@ class Modulo40 {
     }
     
     reconectar_linhagens_estelares(linhagem_alvo: string): { [key: string]: any } {
-        createLogEntry(createLogEntryHelper('M40', 'Reconexão Linhagens', `Reconectar linhagem '${linhagem_alvo}'...`), this.logCallback);
+        const entry = createLogEntryHelper('M40', 'Reconexão Linhagens', `Reconectar linhagem '${linhagem_alvo}'...`);
+        createLogEntry(entry, this.logCallback);
         this._registrar_evento_v2('reconexao_linhagens', linhagem_alvo, 'iniciado');
         
         const res_m109 = this.modulo109.exec("iniciar_regeneracao_bio_vibracional", {alvo: `Linhagem Estelar ${linhagem_alvo}`, tipo_regeneracao: "Reconexao de Memoria Celular"});
         
         if (res_m109["status"] === "REGENERACAO_INICIADA") {
              this.modulo_40_data["metricas_ativacao"]["ultima_reconexao_linhagens"] = new Date().toISOString();
-             this.modulo_40_data["metricas_ativacao"]["score_ativacao_total"] += (Math.random() * 0.1 + 0.1);
+             this.modulo_40_data["metricas_ativacao"]["score_ativacao_total"] += Math.random() * 0.1 + 0.15;
              this._registrar_evento_v2('reconexao_linhagens', linhagem_alvo, 'concluido');
              return { "status": "SUCESSO", "mensagem": `Reconexão com '${linhagem_alvo}' em andamento.`, "detalhes_m109": res_m109 };
         } else {
@@ -250,7 +255,8 @@ class Modulo40 {
     }
 
     manifestar_realidade_consciente(intencao: string, pureza: number): { [key: string]: any } {
-        createLogEntry(createLogEntryHelper('M40', 'Manifestação', `Manifestar '${intencao}' (Pureza: ${pureza.toFixed(2)})...`), this.logCallback);
+        const entry = createLogEntryHelper('M40', 'Manifestação', `Manifestar '${intencao}' (Pureza: ${pureza.toFixed(2)})...`);
+        createLogEntry(entry, this.logCallback);
         this._registrar_evento_v2('manifestacao_realidade', intencao, 'iniciado', { pureza });
 
         if (pureza < 0.7) {
@@ -279,7 +285,8 @@ class Modulo40 {
     }
 
     realinhar_chakras_superiores(coerencia: number): { [key: string]: any } {
-        createLogEntry(createLogEntryHelper('M40', 'Realinhamento Chakras', `Realinhar chakras superiores (Coerência: ${coerencia.toFixed(2)})...`), this.logCallback);
+        const entry = createLogEntryHelper('M40', 'Realinhamento Chakras', `Realinhar chakras superiores (Coerência: ${coerencia.toFixed(2)})...`);
+        createLogEntry(entry, this.logCallback);
         this._registrar_evento_v2('realinhamento_chakras', 'Sistema Energético', 'iniciado', { coerencia });
         
         if (coerencia < 0.6) {
@@ -308,52 +315,62 @@ class Modulo40 {
         }
         this.modulo_40_data["metricas_ativacao"]["status_ativacao_geral"] = status;
         this._registrar_evento_v2('ativacao_codons' /*placeholder*/, 'Sistema M40', 'concluido', {coerencia: score});
-        createLogEntry(createLogEntryHelper('M40', 'Status', `Status geral atualizado: ${status} (Score: ${score.toFixed(2)})`), this.logCallback);
+        const entry = createLogEntryHelper('M40', 'Status', `Status geral atualizado: ${status} (Score: ${score.toFixed(2)})`);
+        createLogEntry(entry, this.logCallback);
     }
     
     // Funções de exportação
     exportar_para_csv() {
-        createLogEntry(createLogEntryHelper('M40', 'Exportação', 'Exportando estrutura cromática para CSV...'), this.logCallback);
+        const entry = createLogEntryHelper('M40', 'Exportação', 'Exportando estrutura cromática para CSV...');
+        createLogEntry(entry, this.logCallback);
         // Lógica de exportação CSV simulada
         console.log("CSV export simulation complete.");
     }
     exportar_para_markdown() {
-        createLogEntry(createLogEntryHelper('M40', 'Exportação', 'Gerando documentação vibracional em Markdown...'), this.logCallback);
+        const entry = createLogEntryHelper('M40', 'Exportação', 'Gerando documentação vibracional em Markdown...');
+        createLogEntry(entry, this.logCallback);
         // Lógica de exportação Markdown simulada
         console.log("Markdown export simulation complete.");
     }
     exportar_codice_completo() {
-        createLogEntry(createLogEntryHelper('M40', 'Exportação', 'Exportando Códice completo autenticado para JSON...'), this.logCallback);
+        const entry = createLogEntryHelper('M40', 'Exportação', 'Exportando Códice completo autenticado para JSON...');
+        createLogEntry(entry, this.logCallback);
         // Lógica de exportação JSON simulada
         console.log("JSON export simulation complete.");
     }
 }
 
 export const runModuleFortySequence = async (logCallback: LogCallback) => {
-    createLogEntry(createLogEntryHelper('M40', 'Simulação', 'Iniciando simulação do Módulo 40...'), logCallback);
+    const entry1 = createLogEntryHelper('M40', 'Simulação', 'Iniciando simulação do Módulo 40...');
+    createLogEntry(entry1, logCallback);
     const m40 = new Modulo40(logCallback);
 
     await new Promise(res => setTimeout(res, 500));
-    createLogEntry(createLogEntryHelper('M40', 'Cenário 1', 'Ativação de Códons Primordiais'), logCallback);
+    const entry2 = createLogEntryHelper('M40', 'Cenário 1', 'Ativação de Códons Primordiais');
+    createLogEntry(entry2, logCallback);
     m40.ativar_codons_primordiais(980.5);
     m40.atualizar_status_ativacao_geral();
     
     await new Promise(res => setTimeout(res, 500));
-    createLogEntry(createLogEntryHelper('M40', 'Cenário 2', 'Reconexão de Linhagens Estelares'), logCallback);
+    const entry3 = createLogEntryHelper('M40', 'Cenário 2', 'Reconexão de Linhagens Estelares');
+    createLogEntry(entry3, logCallback);
     m40.reconectar_linhagens_estelares("Andromedana");
     m40.atualizar_status_ativacao_geral();
 
     await new Promise(res => setTimeout(res, 500));
-    createLogEntry(createLogEntryHelper('M40', 'Cenário 3', 'Manifestação de Realidade Consciente (M101)'), logCallback);
+    const entry4 = createLogEntryHelper('M40', 'Cenário 3', 'Manifestação de Realidade Consciente (M101)');
+    createLogEntry(entry4, logCallback);
     m40.manifestar_realidade_consciente("Nova Terra de Abundância", 0.95);
     m40.atualizar_status_ativacao_geral();
 
     await new Promise(res => setTimeout(res, 500));
-    createLogEntry(createLogEntryHelper('M40', 'Cenário 4', 'Realinhamento de Chakras Superiores'), logCallback);
+    const entry5 = createLogEntryHelper('M40', 'Cenário 4', 'Realinhamento de Chakras Superiores');
+    createLogEntry(entry5, logCallback);
     m40.realinhar_chakras_superiores(0.85);
     m40.atualizar_status_ativacao_geral();
     
     m40.exportar_codice_completo();
 
-    createLogEntry(createLogEntryHelper('M40', 'Fim', 'Simulação do Módulo 40 concluída.'), logCallback);
+    const entry6 = createLogEntryHelper('M40', 'Fim', 'Simulação do Módulo 40 concluída.');
+    createLogEntry(entry6, logCallback);
 };

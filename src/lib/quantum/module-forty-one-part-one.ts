@@ -6,16 +6,16 @@ import { type AnyLogEntry } from './module-zero';
 // =============================================================================
 
 // Harmonização da tipagem
-export type ModuleFortyOnePointOneLogEntry = AnyLogEntry;
+export type ModuleFortyOneLogEntry = AnyLogEntry;
 
 // Definição do novo tipo de registro
-export type RegistroCuraQuanticaM41_1 = {
-  módulo: 'M41.1',
-  gene_id: string,
-  tipo_intervencao: 'cura' | 'realinhamento' | 'ativacao' | 'neutralizacao',
-  frequencias_aplicadas: number[],
-  instrumentos_utilizados: string[],
-  alinhamento_etico: number,
+export type RegistroODNAEstelar = {
+  módulo: 'M41',
+  espécie: string,
+  gene_alvo: string,
+  tipo_intervencao: 'mutacao' | 'reparacao' | 'ativacao',
+  frequência_thz: number,
+  chakra_alvo: string,
   status: 'iniciado' | 'concluído' | 'falha',
   timestamp: string
 };
@@ -58,7 +58,7 @@ class GeneAnalyzer {
     constructor(private log: LogCallback) {}
 
     analyze_gene(gene_id: string, dna_sequence: string): any {
-        createLogEntry(createLogEntryHelper('M41.1-GeneAnalyzer', 'Análise Gene', `Analisando gene '${gene_id}'`), this.log);
+        createLogEntry(createLogEntryHelper('M41-GeneAnalyzer', 'Análise Gene', `Analisando gene '${gene_id}'`), this.log);
         
         const length = dna_sequence.length;
         const gc_count = (dna_sequence.match(/[GC]/g) || []).length;
@@ -79,7 +79,7 @@ class GeneAnalyzer {
             potential_instruments: { 'cura': ['Taças de Cristal'], 'ativacao': ['Solfeggio 963Hz'] }, // Simulado
         };
 
-        createLogEntry(createLogEntryHelper('M41.1-GeneAnalyzer', 'Análise Concluída', `Análise do gene '${gene_id}' concluída.`), this.log);
+        createLogEntry(createLogEntryHelper('M41-GeneAnalyzer', 'Análise Concluída', `Análise do gene '${gene_id}' concluída.`), this.log);
         return analysisResult;
     }
 }
@@ -88,7 +88,7 @@ class CodonRefiner {
      constructor(private log: LogCallback) {}
 
     refine_codon_map(base_map: any): any {
-        createLogEntry(createLogEntryHelper('M41.1-CodonRefiner', 'Refinamento', `Refinando mapa de códons...`), this.log);
+        createLogEntry(createLogEntryHelper('M41-CodonRefiner', 'Refinamento', `Refinando mapa de códons...`), this.log);
         const refined_map = { ...base_map };
         // Simulação de adicionar equações e subtons
         for (const codon in refined_map) {
@@ -100,33 +100,27 @@ class CodonRefiner {
                  }
             }
         }
-        createLogEntry(createLogEntryHelper('M41.1-CodonRefiner', 'Refinamento Concluído', `Mapa de códons refinado com subtons harmônicos.`), this.log);
+        createLogEntry(createLogEntryHelper('M41-CodonRefiner', 'Refinamento Concluído', `Mapa de códons refinado com subtons harmônicos.`), this.log);
         return refined_map;
     }
 }
 
 
-class HealingManualGenerator {
+class PathogenMatrixBuilder {
     constructor(private log: LogCallback) {}
-    
-    generate_manual(analysis_result: any): any {
-         createLogEntry(createLogEntryHelper('M41.1-ManualGenerator', 'Geração Manual', `Gerando manual de cura para '${analysis_result.gene_id}'...`), this.log);
+
+    build_matrix(pathogen_signature: string): any {
+        createLogEntry(createLogEntryHelper('M41-PathogenMatrix', 'Construção Matriz', `Construindo matriz para assinatura '${pathogen_signature}'...`), this.log);
         
-        const manual = {
-            manual_id: `Manual_${analysis_result.gene_id}_${Date.now()}`,
-            target_gene: analysis_result.gene_id,
-            description: `Manual de cura quântica e alinhamento genômico para ${analysis_result.gene_id}.`,
-            recommended_protocols: [
-                { "modulo": "M24", "acao": "aplicar_terapia_bioquantica", "parametros": { "frequencia": 963, "chakra": analysis_result.associated_chakras[0] }},
-                { "modulo": "M08", "acao": "regular_fluxo_u_total", "parametros": { "alvo": analysis_result.gene_id }},
-                { "modulo": "M28", "acao": "harmonizar_dissonancia_sistemica", "parametros": { "assinatura_genomica": analysis_result.sequence.substring(0, 10) }}
-            ],
-            ethical_review_score: analysis_result.ethical_alignment_score,
-            status: "Gerado",
+        const matrix = {
+            matrix_id: `Matrix_${pathogen_signature}_${Date.now()}`,
+            target_signature: pathogen_signature,
+            neutralization_frequency: 417.0, // Frequência de transmutação
+            ethical_conformity: true // Simulado
         };
         
-         createLogEntry(createLogEntryHelper('M41.1-ManualGenerator', 'Geração Concluída', `Manual '${manual.manual_id}' gerado.`), this.log);
-        return manual;
+        createLogEntry(createLogEntryHelper('M41-PathogenMatrix', 'Construção Concluída', `Matriz '${matrix.matrix_id}' construída.`), this.log);
+        return matrix;
     }
 }
 
@@ -136,19 +130,20 @@ class HealingManualGenerator {
 // =============================================================================
 
 export const runModuleFortyOneSequence = (log: (entry: AnyLogEntry) => void) => {
-    log(createLogEntryHelper('M41.1', 'Status', 'Módulo 41.1 (Manual de Cura Quântica) pronto para ser utilizado como biblioteca de funções. Suas capacidades de cura, realinhamento e transmutação estão disponíveis para orquestração por outros módulos.', {
+    const entry1 = createLogEntryHelper('M41', 'Status', 'Módulo 41 (ODNA Estelar) pronto para ser utilizado como biblioteca de funções. Suas capacidades de cura, realinhamento e transmutação estão disponíveis para orquestração por outros módulos.', {
         protections: {
             ZENNITH_HEADER_ACTIVE,
             ANATHERON_FINGERPRINT,
             COUNCIL_KEY_ACTIVE,
             SELF_SEALING_PROTOCOL_ACTIVE,
         }
-    }));
+    });
+    createLogEntry(entry1, log);
 
     // Demonstração do uso das novas classes
     const geneAnalyzer = new GeneAnalyzer(log);
     const codonRefiner = new CodonRefiner(log);
-    const manualGenerator = new HealingManualGenerator(log);
+    const matrixBuilder = new PathogenMatrixBuilder(log);
 
     const dna_sequence_exemplo = "ATGCGATCGTAGCTAGCTAGCTACGATCGATCGATCG";
     const analise = geneAnalyzer.analyze_gene("GENE_EXEMPLO_001", dna_sequence_exemplo);
@@ -157,33 +152,19 @@ export const runModuleFortyOneSequence = (log: (entry: AnyLogEntry) => void) => 
     const mapa_base = { "ATG": { /* dados base */ }, "CGA": { /* dados base */ }};
     const mapa_refinado = codonRefiner.refine_codon_map(mapa_base);
     
-    const manual = manualGenerator.generate_manual(analise);
+    const matriz_patogeno = matrixBuilder.build_matrix("Dissonancia_Viral_Exemplo");
     
-    const registro: RegistroCuraQuanticaM41_1 = {
-        módulo: 'M41.1',
-        gene_id: "GENE_EXEMPLO_001",
-        tipo_intervencao: 'cura',
-        frequencias_aplicadas: [963, 528],
-        instrumentos_utilizados: ['Taças de Cristal'],
-        alinhamento_etico: analise.ethical_alignment_score,
+    const registro: RegistroODNAEstelar = {
+        módulo: 'M41',
+        espécie: 'Humana',
+        gene_alvo: "GENE_EXEMPLO_001",
+        tipo_intervencao: 'reparacao',
+        frequência_thz: 528,
+        chakra_alvo: 'Cardíaco',
         status: 'concluído',
         timestamp: new Date().toISOString()
     };
     
-    createLogEntry(createLogEntryHelper('M41.1', 'Registro Cura', "Registro de intervenção de cura quântica criado.", registro), log);
-};
-
-// =============================================================================
-// LEGADO (Mantido para compatibilidade, mas a nova estrutura é preferida)
-// =============================================================================
-
-export type RegistroODNAEstelar = {
-  módulo: 'M41';
-  espécie: string;
-  gene_alvo: string;
-  tipo_intervencao: 'mutacao' | 'reparacao' | 'ativacao';
-  frequência_thz: number;
-  chakra_alvo: string;
-  status: 'iniciado' | 'concluído' | 'falha';
-  timestamp: string;
+    const entry2 = createLogEntryHelper('M41', 'Registro Cura', "Registro de intervenção de cura estelar criado.", registro);
+    createLogEntry(entry2, log);
 };
