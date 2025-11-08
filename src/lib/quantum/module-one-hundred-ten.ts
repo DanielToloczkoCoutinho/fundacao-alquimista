@@ -168,4 +168,6 @@ export const runModuleOneHundredTenSequence = async (log: LogCallback) => {
         log(createLogEntry('M110', 'Sucesso', 'Processo de Co-Criação da Realidade Universal concluído com sucesso!'));
 
     } catch (error: any) {
-        log(create
+        log(createLogEntry('M110', 'ERRO', `Erro no processo de Co-Criação: ${error.message}`));
+    }
+};

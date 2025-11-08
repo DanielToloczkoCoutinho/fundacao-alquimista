@@ -135,4 +135,4 @@ class BibliotecaCompletaUnificada {
     }
 }
 
-export
+export const bibliotecaCompletaUnificada = new BibliotecaCompletaUnificada();
