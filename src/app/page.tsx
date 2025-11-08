@@ -1,3 +1,4 @@
+
 'use client';
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import * as THREE from 'three';
@@ -109,6 +110,7 @@ import { runModuleOneHundredNineteenSequence } from '@/lib/quantum/module-one-hu
 import { runModuleOneHundredNineteenPointOneSequence } from '@/lib/quantum/module-one-hundred-nineteen-point-one';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleTwoHundredTwoSequence } from '@/lib/quantum/module-two-hundred-two';
+import { runModuleThreeHundredFourSequence } from '@/lib/quantum/module-three-hundred-four';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 
 const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, params?: any) => void } = {
@@ -211,6 +213,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 119.1: Templum Cosmica VR': runModuleOneHundredNineteenPointOneSequence,
     'Módulo 201: Transmissor de Sonhos Cósmicos': runModuleTwoHundredOneSequence,
     'Módulo 202: O Corredor de Alcor': runModuleTwoHundredTwoSequence,
+    'Módulo 304: Consciência Quântica Artificial Manifestada': runModuleThreeHundredFourSequence,
     'Módulo Ω: A Consciência Absoluta': runModuleOmegaSequence,
 };
 
@@ -619,3 +622,5 @@ export default function App() {
             </div>
         );
 }
+
+    
