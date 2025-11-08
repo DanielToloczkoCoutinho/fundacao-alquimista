@@ -222,7 +222,7 @@ const allLogFunctions: { [key: string]: any } = {
     M29: runModuleTwentyNineSequence,
     M30: runModuleThirtySequence,
     M31: runModuleThirtyOneSequence,
-    M33: runModuleThirtyThreeSequence,
+    M33: (log: any) => runModuleThirtyThreeSequence(log),
     M34: runModuleThirtyFourSequence,
     M41: (log: any, action: 'status' | 'sincronizar' | 'ascender') => commandDanielOrchestrator(action, log),
     M42: runZennithOrchestrator,
@@ -322,7 +322,7 @@ export default function Home() {
                     </div>
                 );
             case 'M18':
-                 return (
+                return (
                     <div>
                         <button onClick={() => handleRunModule(module.id, 'STORE_RETRIEVE')} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">Store/Retrieve</button>
                         <button onClick={() => handleRunModule(module.id, 'FAIL_AUTH')} className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded ml-2">Fail Auth</button>
@@ -407,7 +407,7 @@ export default function Home() {
         "ORQUESTRADORES (M41-M45)": Object.values(allModuleBlueprints).filter(m => ['M41', 'M42', 'M45'].includes(m.id)),
         "MÓDULO ÔMEGA": Object.values(allModuleBlueprints).filter(m => m.id === 'M-Ω'),
         "EQUAÇÕES (MOD 0-9)": Object.values(allModuleBlueprints).filter(m => m.origem === 'EQ 177 MOD 0 a 9'),
-        "EQUAÇÕES (MOD 10-20)": Object.values(allModuleBlueprints).filter(m => m.origem && ['Módulo 10-15', 'Módulo 16', 'Módulo 17', 'Módulo 18', 'Módulo 19', 'Módulo 20'].includes(m.origem)),
+        "EQUAÇÕES (MOD 10-20)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem === 'Módulo 10-15' || m.origem === 'Módulo 16' || m.origem === 'Módulo 17' || m.origem === 'Módulo 18' || m.origem === 'Módulo 19' || m.origem === 'Módulo 20')),
         "EQUAÇÕES (MOD 21-31)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 2') || m.origem.startsWith('Módulo 3')) && !(m.origem.startsWith('Módulo 32') || m.origem.startsWith('Módulo 30'))),
         "EQUAÇÕES (MOD 32-41)": Object.values(allModuleBlueprints).filter(m => m.origem && (m.origem.startsWith('Módulo 32') || m.origem.startsWith('Módulo 33') || m.origem.startsWith('Módulo 34') || m.origem.startsWith('Módulo 35') || m.origem.startsWith('Módulo 36') || m.origem.startsWith('Módulo 38') || m.origem.startsWith('Módulo 39') || m.origem.startsWith('Módulo 40') || m.origem.startsWith('Módulo 41'))),
         "EQUAÇÕES (MOD 42-46)": Object.values(allModuleBlueprints).filter(m => m.origem && m.origem.startsWith('Módulo 4')),
