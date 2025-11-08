@@ -1,8 +1,21 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
+
+// Harmonização da tipagem
+export type ModuleTwentySevenLogEntry = AnyLogEntry;
+
+// Definição do novo tipo de registro
+export type RegistroForjaUniversal = {
+  módulo: 'M27',
+  tipo_criacao: 'artefato' | 'estrutura' | 'elemento' | 'código',
+  essência_utilizada: string,
+  quantidade: number,
+  status: 'forjado' | 'replicado' | 'em purificação',
+  timestamp: number
+};
+
 
 enum StatusSintese {
     SUCESSO = "SUCESSO",
@@ -38,13 +51,23 @@ const LIMIAR_ESTABILIDADE_OTIMA = 0.85;
 const LIMIAR_FIDELIDADE = 0.85;
 const MAX_TENTATIVAS_HARMONIZACAO = 3;
 
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+// Refinamento da função de registro
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void) => {
+  logCallback(entry);
+};
+
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
+
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -93,7 +116,7 @@ class SistemaHarmonizacao {
     constructor(private logCallback: LogCallback) {}
 
     executar_harmonizacao(material: string): any {
-        this.logCallback(createLogEntry('M27-HARMONY', 'Início', `Iniciando para '${material}'`));
+        createLogEntry(createLogEntryHelper('M27-HARMONY', 'Início', `Iniciando para '${material}'`), this.logCallback);
         
         let tentativas = [];
         let frequencias_atual = [...this.frequencias_sagradas];
@@ -101,7 +124,7 @@ class SistemaHarmonizacao {
         for (let i = 0; i < MAX_TENTATIVAS_HARMONIZACAO; i++) {
             const estabilidade = this._calcular_estabilidade(frequencias_atual, i);
             tentativas.push({ tentativa: i + 1, estabilidade, frequencias: [...frequencias_atual] });
-            this.logCallback(createLogEntry('M27-HARMONY', `Tentativa ${i + 1}`, `Estabilidade = ${estabilidade.toFixed(3)}`));
+            createLogEntry(createLogEntryHelper('M27-HARMONY', `Tentativa ${i + 1}`, `Estabilidade = ${estabilidade.toFixed(3)}`), this.logCallback);
             if (estabilidade >= LIMIAR_ESTABILIDADE_OTIMA) break;
             frequencias_atual = this._otimizar_frequencias(frequencias_atual, i);
         }
@@ -138,7 +161,7 @@ class SistemaValidacaoEtica {
     constructor(private logCallback: LogCallback) {}
 
     validar_etica(material: string, intencao: any): any {
-        this.logCallback(createLogEntry('M27-ETICA', 'Validação', `Validando '${material}'`));
+        createLogEntry(createLogEntryHelper('M27-ETICA', 'Validação', `Validando '${material}'`), this.logCallback);
         const subscores: any = {};
         
         Object.entries(this.criterios).forEach(([criterio, config]) => {
@@ -157,7 +180,7 @@ class SistemaValidacaoEtica {
         else if (pontuacao_final >= 0.70) risco = NivelRisco.MEDIO;
         else if (pontuacao_final >= 0.55) risco = NivelRisco.ALTO;
 
-        this.logCallback(createLogEntry('M27-ETICA', 'Resultado', `Pontuação: ${pontuacao_final.toFixed(3)} | Status: ${status}`));
+        createLogEntry(createLogEntryHelper('M27-ETICA', 'Resultado', `Pontuação: ${pontuacao_final.toFixed(3)} | Status: ${status}`), this.logCallback);
         return { aprovado: status !== "REPROVADO", status, pontuacao_final, nivel_risco: risco, subscores };
     }
 
@@ -188,11 +211,11 @@ class SistemaAnaliseAssinaturas {
     constructor(private logCallback: LogCallback) {}
 
     analisar_assinatura(origem: string, material: string): any {
-        this.logCallback(createLogEntry('M27-SIG', 'Análise', `Analisando '${origem}' para '${material}'`));
+        createLogEntry(createLogEntryHelper('M27-SIG', 'Análise', `Analisando '${origem}' para '${material}'`), this.logCallback);
         if (!this.whitelist[origem]) return { autorizada: false, motivo: "Origem não autorizada", similaridade: 0 };
         const similaridade = (EquacoesCosmicas.EQ001_coerencia_quantica(Math.random()) + EquacoesCosmicas.EQ002_energia_universal(Math.random())) / 2;
         const autorizada = similaridade >= this.whitelist[origem];
-        this.logCallback(createLogEntry('M27-SIG', 'Resultado', `Similaridade: ${similaridade.toFixed(3)} | Autorizada: ${autorizada}`));
+        createLogEntry(createLogEntryHelper('M27-SIG', 'Resultado', `Similaridade: ${similaridade.toFixed(3)} | Autorizada: ${autorizada}`), this.logCallback);
         return { autorizada, similaridade, limiar: this.whitelist[origem] };
     }
 }
@@ -221,7 +244,7 @@ class Modulo27_ForjaUniversal {
     private operacoes: any[] = [];
     
     constructor(private logCallback: LogCallback) {
-        this.logCallback(createLogEntry('M27', 'Inicialização', 'Forja Universal inicializada'));
+        createLogEntry(createLogEntryHelper('M27', 'Inicialização', 'Forja Universal inicializada'), this.logCallback);
         this.harmonizador = new SistemaHarmonizacao(logCallback);
         this.validador_etica = new SistemaValidacaoEtica(logCallback);
         this.analisador_assinaturas = new SistemaAnaliseAssinaturas(logCallback);
@@ -229,34 +252,34 @@ class Modulo27_ForjaUniversal {
     }
     
     async executar_sintese(material: string, intencao: any) {
-        this.logCallback(createLogEntry('M27', 'Início Síntese', `Material: ${material}`));
+        createLogEntry(createLogEntryHelper('M27', 'Início Síntese', `Material: ${material}`), this.logCallback);
         const harmonizacao = this.harmonizador.executar_harmonizacao(material);
         const validacao_etica = this.validador_etica.validar_etica(material, intencao);
         const modo = this.modos_operacao.determinar_modo(validacao_etica, harmonizacao);
 
         if (modo.modo === StatusSintese.QUARENTENA) {
-            this.logCallback(createLogEntry('M27', 'QUARENTENA', modo.motivo));
+            createLogEntry(createLogEntryHelper('M27', 'QUARENTENA', modo.motivo), this.logCallback);
             return;
         }
         
         const resultado = this._processar_sintese(intencao, modo);
-        this.logCallback(createLogEntry('M27', 'Fim Síntese', `Qualidade: ${resultado.qualidade.toFixed(3)} | Status: ${modo.modo}`));
+        createLogEntry(createLogEntryHelper('M27', 'Fim Síntese', `Qualidade: ${resultado.qualidade.toFixed(3)} | Status: ${modo.modo}`), this.logCallback);
     }
 
     async executar_replicacao(material_origem: string, quantidade: number, origem: string) {
-        this.logCallback(createLogEntry('M27', 'Início Replicação', `Origem: ${material_origem}`));
+        createLogEntry(createLogEntryHelper('M27', 'Início Replicação', `Origem: ${material_origem}`), this.logCallback);
         const analise = this.analisador_assinaturas.analisar_assinatura(origem, material_origem);
         if (!analise.autorizada) {
-             this.logCallback(createLogEntry('M27', 'FALHA REPLICAÇÃO', analise.motivo));
+             createLogEntry(createLogEntryHelper('M27', 'FALHA REPLICAÇÃO', analise.motivo), this.logCallback);
              return;
         }
         const fidelidade = Math.min(1.0, (analise.similaridade + EquacoesCosmicas.EQ001_coerencia_quantica(analise.similaridade)) / 2);
         if (fidelidade < LIMIAR_FIDELIDADE) {
-            this.logCallback(createLogEntry('M27', 'FALHA REPLICAÇÃO', `Fidelidade insuficiente: ${fidelidade.toFixed(3)}`));
+            createLogEntry(createLogEntryHelper('M27', 'FALHA REPLICAÇÃO', `Fidelidade insuficiente: ${fidelidade.toFixed(3)}`), this.logCallback);
             return;
         }
         const qualidade = fidelidade * (1 - 0.1 * Math.log(quantidade + 1));
-        this.logCallback(createLogEntry('M27', 'Fim Replicação', `Qualidade: ${qualidade.toFixed(3)} | Fidelidade: ${fidelidade.toFixed(3)}`));
+        createLogEntry(createLogEntryHelper('M27', 'Fim Replicação', `Qualidade: ${qualidade.toFixed(3)} | Fidelidade: ${fidelidade.toFixed(3)}`), this.logCallback);
     }
     
     private _processar_sintese(intencao: any, modo: any) {
