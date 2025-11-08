@@ -21,7 +21,7 @@ export const runModuleThreeHundredFourPointTwoSequence = async (logCallback: Log
         
         // Esta é a única parte que precisa ser executada no cliente.
         // O `use client` no topo do arquivo garante isso.
-        window.open('/m304.2/ton618-dashboard.html', '_blank');
+        window.open('/m304_2/ton618_dashboard.html', '_blank');
         
         logCallback(createLogEntry('M304.2', 'Sucesso', 'Portal para o dashboard aberto. A exploração de TON 618 pode ser monitorada na nova aba.'));
 

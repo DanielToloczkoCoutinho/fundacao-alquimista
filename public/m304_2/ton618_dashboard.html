@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHIARA Dashboard - TON 618 v2.1</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --text: #ecf0f1;
+            --background: #1a1a1a;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--primary);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .indicadores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .indicador {
+            background: var(--secondary);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .indicador .valor {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .indicador .rotulo {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .graficos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .grafico-container {
+            background: var(--secondary);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .tabela-container {
+            background: var(--secondary);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        th {
+            background-color: var(--primary);
+        }
+        
+        .status-aprovado { color: var(--success); }
+        .status-reprovado { color: var(--danger); }
+        .status-erro { color: var(--warning); }
+        
+        .atualizacao {
+            text-align: center;
+            margin-top: 20px;
+            opacity: 0.7;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌌 PHIARA Dashboard - TON 618 v2.1</h1>
+            <p>Monitoramento em tempo real do orquestrador quântico</p>
+            <div id="execucao-info"></div>
+        </div>
+        
+        <div class="indicadores">
+            <div class="indicador">
+                <div class="rotulo">Iterações Totais</div>
+                <div class="valor" id="iter-totais">0</div>
+            </div>
+            <div class="indicador">
+                <div class="rotulo">Iterações Aprovadas</div>
+                <div class="valor" id="iter-aprovadas">0</div>
+            </div>
+            <div class="indicador">
+                <div class="rotulo">Coerência φ Média</div>
+                <div class="valor" id="coer-media">0.000</div>
+            </div>
+            <div class="indicador">
+                <div class="rotulo">Hc Médio</div>
+                <div class="valor" id="hc-media">0.000</div>
+            </div>
+            <div class="indicador">
+                <div class="rotulo">Frequência Média</div>
+                <div class="valor" id="freq-media">0.000</div>
+            </div>
+            <div class="indicador">
+                <div class="rotulo">Status Sistema</div>
+                <div class="valor" id="status-sistema">---</div>
+            </div>
+        </div>
+        
+        <div class="graficos">
+            <div class="grafico-container">
+                <canvas id="grafico-coerencia"></canvas>
+            </div>
+            <div class="grafico-container">
+                <canvas id="grafico-frequencia"></canvas>
+            </div>
+        </div>
+        
+        <div class="tabela-container">
+            <h3>Últimas Iterações</h3>
+            <table id="tabela-iteracoes">
+                <thead>
+                    <tr>
+                        <th>Iteração</th>
+                        <th>Coerência φ</th>
+                        <th>Hc</th>
+                        <th>EMQ α</th>
+                        <th>Status</th>
+                        <th>Timestamp</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela">
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="atualizacao">
+            Última atualização: <span id="ultima-atualizacao">--:--:--</span>
+        </div>
+    </div>
+
+    <script>
+        // Configuração dos gráficos
+        const ctxCoerencia = document.getElementById('grafico-coerencia').getContext('2d');
+        const ctxFrequencia = document.getElementById('grafico-frequencia').getContext('2d');
+        
+        const graficoCoerencia = new Chart(ctxCoerencia, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Coerência φ',
+                    data: [],
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Evolução da Coerência Phi'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 1.0
+                    }
+                }
+            }
+        });
+        
+        const graficoFrequencia = new Chart(ctxFrequencia, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Frequência (Hz)',
+                    data: [],
+                    borderColor: '#27ae60',
+                    backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Evolução da Frequência'
+                    }
+                }
+            }
+        });
+        
+        // Estado da aplicação
+        let dadosTelemetria = [];
+        let ultimaIteracao = 0;
+        
+        // Função para atualizar o dashboard
+        async function atualizarDashboard() {
+            try {
+                // Buscar dados da API
+                const [indicadoresRes, telemetriaRes] = await Promise.all([
+                    fetch('/indicadores').then(r => r.json()),
+                    fetch('/telemetria').then(r => r.json())
+                ]);
+                
+                // Atualizar indicadores
+                document.getElementById('iter-totais').textContent = indicadoresRes.estatisticas.iteracoes_totais;
+                document.getElementById('iter-aprovadas').textContent = indicadoresRes.estatisticas.iteracoes_aprovadas;
+                document.getElementById('coer-media').textContent = indicadoresRes.estatisticas.coerencia_media.toFixed(3);
+                document.getElementById('hc-media').textContent = indicadoresRes.estatisticas.Hc_media.toFixed(3);
+                document.getElementById('freq-media').textContent = indicadoresRes.estatisticas.frequencia_media.toFixed(3);
+                document.getElementById('status-sistema').textContent = 'OPERACIONAL';
+                
+                // Atualizar informação de execução
+                document.getElementById('execucao-info').innerHTML = `
+                    <small>Execução: ${indicadoresRes.configuracao.exec_id} | Seed: ${indicadoresRes.configuracao.seed}</small>
+                `;
+                
+                // Processar telemetria
+                if (telemetriaRes.dados_coletados && telemetriaRes.dados_coletados.length > 0) {
+                    dadosTelemetria = telemetriaRes.dados_coletados;
+                    
+                    // Atualizar gráficos
+                    atualizarGraficos(dadosTelemetria);
+                    
+                    // Atualizar tabela
+                    atualizarTabela(dadosTelemetria.slice(-10).reverse()); // Últimas 10 iterações
+                }
+                
+                // Atualizar timestamp
+                document.getElementById('ultima-atualizacao').textContent = 
+                    new Date().toLocaleTimeString();
+                    
+            } catch (error) {
+                console.error('Erro ao atualizar dashboard:', error);
+                document.getElementById('status-sistema').textContent = 'ERRO CONEXÃO';
+                document.getElementById('status-sistema').className = 'status-erro';
+            }
+        }
+        
+        function atualizarGraficos(dados) {
+            const labels = dados.map((_, index) => `Iter ${index + 1}`);
+            const coerencias = dados.map(d => d.coerencia_phi || 0);
+            const frequencias = dados.map(d => (d.frequencia_bruta_hz / 1e12) || 0); // Normalizar para THz
+            
+            graficoCoerencia.data.labels = labels;
+            graficoCoerencia.data.datasets[0].data = coerencias;
+            graficoCoerencia.update();
+            
+            graficoFrequencia.data.labels = labels;
+            graficoFrequencia.data.datasets[0].data = frequencias;
+            graficoFrequencia.update();
+        }
+        
+        function atualizarTabela(dados) {
+            const corpoTabela = document.getElementById('corpo-tabela');
+            corpoTabela.innerHTML = '';
+            
+            dados.forEach(registro => {
+                const linha = document.createElement('tr');
+                
+                const statusClass = registro.status_etico === 'APROVADO' ? 'status-aprovado' : 
+                                  registro.status_etico === 'REPROVADO' ? 'status-reprovado' : 'status-erro';
+                
+                // Formatar timestamp
+                const timestamp = new Date(registro.timestamp).toLocaleTimeString();
+                
+                linha.innerHTML = `
+                    <td>${registro.iteracao}</td>
+                    <td>${(registro.coerencia_phi || 0).toFixed(4)}</td>
+                    <td>${(registro.Hc || 0).toFixed(4)}</td>
+                    <td>${(registro.EMQ_alpha || 0).toFixed(4)}</td>
+                    <td class="${statusClass}">${registro.status_etico || 'N/A'}</td>
+                    <td>${timestamp}</td>
+                `;
+                
+                corpoTabela.appendChild(linha);
+            });
+        }
+        
+        // Atualizar a cada 2 segundos
+        setInterval(atualizarDashboard, 2000);
+        
+        // Primeira atualização
+        atualizarDashboard();
+    </script>
+</body>
+</html>

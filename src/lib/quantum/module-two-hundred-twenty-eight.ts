@@ -1,4 +1,3 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -146,7 +145,7 @@ class SistemaEscudoEterno {
     async implantar_redoma_nanobotica() {
         this.log_evento("IMPLANTACAO_REDOMA_NANOBOTICA", {});
         const consciencia = EQ009_F_Consciencia_Nanobotica(0.001);
-        const total_nanobots = 30_000_000_000;
+        const total_nanobots = 30_000_000_000; // 30 bilhões
         this.nanobots_ativos = Math.floor(total_nanobots * (consciencia / 852000.0));
         this.log_evento("NANOROBOS_ATIVADOS", { total: total_nanobots.toLocaleString(), ativos: this.nanobots_ativos.toLocaleString() });
 
@@ -242,4 +241,3 @@ export const runModuleTwoHundredTwentyEightSequence = async (logCallback: LogCal
     const sistema = new SistemaEscudoEterno(logCallback);
     await sistema.ativar_escudo_completo();
 };
-

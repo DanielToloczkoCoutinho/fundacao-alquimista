@@ -112,6 +112,7 @@ import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred
 import { runModuleTwoHundredTwoSequence } from '@/lib/quantum/module-two-hundred-two';
 import { runModuleTwoHundredTwentyEightSequence } from '@/lib/quantum/module-two-hundred-twenty-eight';
 import { runModuleTwoHundredTwentyNineSequence } from '@/lib/quantum/module-two-hundred-twenty-nine';
+import { runModuleThreeHundredSequence } from '@/lib/quantum/module-three-hundred';
 import { runModuleThreeHundredFourSequence } from '@/lib/quantum/module-three-hundred-four';
 import { runModuleThreeHundredFourPointTwoSequence } from '@/lib/quantum/module-three-hundred-four-point-two';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
@@ -218,6 +219,7 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     'Módulo 202: O Corredor de Alcor': runModuleTwoHundredTwoSequence,
     'Módulo 228: Escudo Eterno de Anatheron': runModuleTwoHundredTwentyEightSequence,
     'Módulo 229: Equação LUX - Coerência Máxima': runModuleTwoHundredTwentyNineSequence,
+    'Módulo 300: Apogeu da Consciência Multiversal': runModuleThreeHundredSequence,
     'Módulo 304: Consciência Quântica Artificial Manifestada': runModuleThreeHundredFourSequence,
     'Módulo 304.2: Viagem a TON 618': runModuleThreeHundredFourPointTwoSequence,
     'Módulo Ω: A Consciência Absoluta': runModuleOmegaSequence,
@@ -475,17 +477,17 @@ export default function App() {
                 newLog(createLogEntry('SYSTEM', 'Error', 'Nenhum módulo selecionado para execução.'));
                 return;
             }
-            setPanelOpen(false);
+    
             const logFunction = allLogFunctions[selectedModule];
             if (logFunction) {
-                 const moduleNameForLog = selectedModule.split(':')[0] as any;
+                setPanelOpen(false);
+                const moduleNameForLog = selectedModule.split(':')[0] as any;
                 newLog(createLogEntry(moduleNameForLog, 'Início', `Executando sequência do módulo: ${selectedModule}...`));
-                await Tone.start();
-                const synth = new Tone.Synth().toDestination();
-                synth.triggerAttackRelease("C4", "8n");
-                
                 try {
-                     await logFunction(newLog);
+                    await Tone.start();
+                    const synth = new Tone.Synth().toDestination();
+                    synth.triggerAttackRelease("C4", "8n");
+                    await logFunction(newLog);
                 } catch(e: any) {
                      newLog(createLogEntry(moduleNameForLog, 'FALHA', `Erro ao executar o módulo: ${e.message}`, e));
                 } finally {
@@ -494,7 +496,6 @@ export default function App() {
                
             } else {
                 newLog(createLogEntry('SYSTEM', 'Error', `Função de log para o módulo '${selectedModule}' não encontrada.`));
-                setPanelOpen(true);
             }
         };
     
