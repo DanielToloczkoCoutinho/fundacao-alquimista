@@ -8,6 +8,7 @@ const CONST_PHI = (1 + Math.sqrt(5)) / 2;  // Proporção Áurea (Phi)
 const CONST_AMOR_INCONDICIONAL_VALOR = 0.999999999999999; // O princípio ético e energético supremo
 const ETHICAL_CONFORMITY_THRESHOLD = 0.75; // Limiar para conformidade ética em validações
 const VALIDATION_COSMIC_SCORE_THRESHOLD = 0.85; // Limiar para uma validação cósmica bem-sucedida
+const THRESHOLD_RESOLUCAO_EMPIRICA = 0.95; // Limiar para resolução empírica completa, sem necessidade de revisão
 
 const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
@@ -53,7 +54,7 @@ class MockM03OraculoPreditivo extends MockModule {
     constructor(log: LogCallback) { super('M3', log); }
     predict_unification_outcome(unification_plan: any) {
         this.log(createLogEntry(this.module_id as any, 'Previsão', `Prevendo resultado da unificação: ${unification_plan.purpose || 'N/A'}`));
-        if ("desintegracao" in (unification_plan.purpose || "").toLowerCase() || "caos_primordial" in (unification_plan.purpose || "").toLowerCase()) {
+        if (("desintegracao" in (unification_plan.purpose || "").toLowerCase()) || ("caos_primordial" in (unification_plan.purpose || "").toLowerCase())) {
             return { "predicted_coherence_score": Math.random() * 0.1 + 0.01, "confidence": 0.9 };
         }
         return { "predicted_coherence_score": Math.random() * 0.099 + 0.9, "confidence": 0.99 };
@@ -65,7 +66,7 @@ class MockM05AvaliacaoEtica extends MockModule {
     evaluate_ethical_impact(operation_data: any) {
         this.log(createLogEntry(this.module_id as any, 'Avaliação Ética', `Avaliando impacto: ${operation_data.operation_type || 'N/A'}`));
         let ethical_score = Math.random() * 0.29 + 0.7;
-        if ("desintegracao_cosmica" in (operation_data.description || "").toLowerCase() || "controle_absoluto" in (operation_data.description || "").toLowerCase()) {
+        if (("desintegracao_cosmica" in (operation_data.description || "").toLowerCase()) || ("controle_absoluto" in (operation_data.description || "").toLowerCase())) {
             ethical_score = Math.random() * 0.05 + 0.001;
         }
         const conformity = ethical_score >= ETHICAL_CONFORMITY_THRESHOLD;
@@ -359,4 +360,3 @@ export const runModuleOneHundredSequence = async (logCallback: LogCallback) => {
         CONST_AMOR_INCONDICIONAL_VALOR
     );
 };
-```

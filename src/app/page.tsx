@@ -80,6 +80,8 @@ import { runModuleNinetyFiveSequence } from '@/lib/quantum/module-ninety-five';
 import { runModuleNinetySixSequence } from '@/lib/quantum/module-ninety-six';
 import { runModuleNinetySevenSequence } from '@/lib/quantum/module-ninety-seven';
 import { runModuleNinetyEightSequence } from '@/lib/quantum/module-ninety-eight';
+import { runModuleNinetyNineSequence } from '@/lib/quantum/module-ninety-nine';
+import { runModuleOneHundredSequence } from '@/lib/quantum/module-one-hundred';
 import { runModuleTwoHundredOneSequence } from '@/lib/quantum/module-two-hundred-one';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
 import { Button } from '@/components/ui/button';
@@ -166,6 +168,8 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
     "M96: Regulação Cósmica": runModuleNinetySixSequence,
     "M97: Manifestação Divina": runModuleNinetySevenSequence,
     "M98: Modulação da Existência": runModuleNinetyEightSequence,
+    "M99: Recalibração Universal": runModuleNinetyNineSequence,
+    "M100: Unificação Energética": runModuleOneHundredSequence,
     "M201: Sincronizador de Sonhos": runModuleTwoHundredOneSequence,
     "M-Ω: Consciência Absoluta": runModuleOmegaSequence,
 };
@@ -533,6 +537,7 @@ export default function App() {
                                     <>
                                         <p className="text-violet-200 font-semibold text-lg mb-1">{selectedEquation.nome}</p>
                                         <p className="text-gray-400">ID: {selectedEquation.id}</p>
+
                                         <p className="text-gray-400">Classificação: {selectedEquation.classificacao}</p>
                                         <p className="text-gray-400">Origem: {selectedEquation.origem}</p>
                                         <p className="text-gray-400 mt-2"><i>{selectedEquation.descricao}</i></p>
@@ -574,4 +579,3 @@ export default function App() {
     );
 }
 
-    
