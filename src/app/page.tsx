@@ -559,8 +559,8 @@ export default function App() {
         const startAudioContext = async () => {
             if (audioStarted.current) return;
             await Tone.start();
-            audioStarted.current = true;
             console.log("Audio context started");
+            audioStarted.current = true;
         };
 
         const handleViewModule = () => {
