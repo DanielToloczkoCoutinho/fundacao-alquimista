@@ -7,17 +7,42 @@ type LogCallback = (entry: AnyLogEntry) => void;
 // Constantes e Tipos
 // ===============================
 
+// Harmonização da tipagem
+export type ModuleThirtyNineLogEntry = AnyLogEntry;
+
+// Criação do Registro do Códice
+export type RegistroCodiceAscensional = {
+  módulo: 'M39',
+  portal_id: string,
+  destino_dimensional: string,
+  selo_vibracional: string,
+  intenção_validada: boolean,
+  alinhamento_etico: 'neutro' | 'harmônico' | 'divino',
+  status: 'aberto' | 'em travessia' | 'concluído' | 'interrompido',
+  timestamp: number
+};
+
 const PHI = (1 + Math.sqrt(5)) / 2;
 const LIMIAR_PUREZA_INTENCAO = 0.85;
 const IDEAL_COERENCIA_PORTAL = 0.95;
 
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void => {
+  logCallback(entry);
+};
+
+// Refinamento da função de registro
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
+
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -36,20 +61,20 @@ const sha256_hex = async (text: string): Promise<string> => {
 
 const mockModule = (logCallback: LogCallback, moduleName: string) => ({
     exec: (action: string, payload?: any) => {
-        logCallback(createLogEntry(moduleName as any, 'Execução', `Ação '${action}' recebida`, payload));
+        logCallback(createLogEntryHelper(moduleName as any, 'Execução', `Ação '${action}' recebida`, payload));
         return { status: `simulated_ok_${action}` };
     }
 });
 
 const MockM01 = (logCallback: LogCallback) => ({
-    ReceberAlertaDeViolacao: (alerta_data: any) => logger('M1', 'ALERTA', `${alerta_data.tipo}: ${alerta_data.mensagem}`),
-    RegistrarNaCronicaDaFundacao: (registro_data: any) => logger('M1', 'CRÔNICA', `Registrando: ${registro_data.evento}`),
+    ReceberAlertaDeViolacao: (alerta_data: any) => logCallback(createLogEntryHelper('M1', 'ALERTA', `${alerta_data.tipo}: ${alerta_data.mensagem}`)),
+    RegistrarNaCronicaDaFundacao: (registro_data: any) => logCallback(createLogEntryHelper('M1', 'CRÔNICA', `Registrando: ${registro_data.evento}`)),
 });
 
 const MockM07 = (logCallback: LogCallback) => ({
     ValidarEtica: (intencao: any) => {
         const pureza = intencao.pureza || 0.0;
-        logger('M7', 'Validação Ética', `Validando: ${intencao.descricao} (pureza=${pureza.toFixed(2)})`);
+        logCallback(createLogEntryHelper('M7', 'Validação Ética', `Validando: ${intencao.descricao} (pureza=${pureza.toFixed(2)})`));
         return pureza >= LIMIAR_PUREZA_INTENCAO;
     },
 });
@@ -60,7 +85,7 @@ const MockM31 = (logCallback: LogCallback) => ({
 
 const MockM34 = (logCallback: LogCallback) => ({
     avaliar_alinhamento_etico_geral: (intencao: any) => (intencao.pureza || 0.0),
-    ativar_autoprotecao_vibracional: (nivel: number) => logger('M34', 'Autoproteção', `Nível ${nivel.toFixed(2)} ativado.`),
+    ativar_autoprotecao_vibracional: (nivel: number) => logCallback(createLogEntryHelper('M34', 'Autoproteção', `Nível ${nivel.toFixed(2)} ativado.`)),
 });
 
 const logger = (source: string, step: string, message: string, data?: any) => {
@@ -89,12 +114,12 @@ class MatrizQuantica {
     }
     private async _genesis() {
         this.chain.push({ index: 0, event: "GENESIS", hash: "0" });
-        this.logCallback(createLogEntry('M39-CHAIN', 'Gênesis', 'Bloco Gênesis criado.'));
+        this.logCallback(createLogEntryHelper('M39-CHAIN', 'Gênesis', 'Bloco Gênesis criado.'));
     }
     async adicionar(dados: any) {
         const hash = await sha256_hex(JSON.stringify(dados));
         this.chain.push({ index: this.chain.length, ...dados, hash });
-        this.logCallback(createLogEntry('M39-CHAIN', 'Adição', `Bloco ${this.chain.length - 1} adicionado.`, { hash: hash.substring(0, 10) }));
+        this.logCallback(createLogEntryHelper('M39-CHAIN', 'Adição', `Bloco ${this.chain.length - 1} adicionado.`, { hash: hash.substring(0, 10) }));
     }
     async autenticar_codice_vivo(modulo_id: string, dados_modulo: any) {
         const hash_codice = await sha256_hex(JSON.stringify(dados_modulo));
@@ -124,19 +149,19 @@ class APIQuanticaUniversal {
     }
 
     private _banner() {
-        this.logCallback(createLogEntry('M39', 'Banner', '🚀 ORQUESTRADOR DE PORTAIS — MÓDULO 39 (NEXUS)'));
+        this.logCallback(createLogEntryHelper('M39', 'Banner', '🚀 ORQUESTRADOR DE PORTAIS — MÓDULO 39 (NEXUS)'));
     }
 
     private async _gerar_selo_vibracional_espelhado_inverso(dados_vibracionais: any): Promise<string> {
         const selo_hash = await sha256_hex(JSON.stringify(dados_vibracionais));
         const inv = (BigInt(`0x${selo_hash}`) ^ BigInt(`0x${'F'.repeat(64)}`)).toString(16).padStart(64, '0');
-        this.logCallback(createLogEntry('M39-SELO', 'Selo Gerado', `Selo invertido: ${inv.substring(0, 10)}...`));
+        this.logCallback(createLogEntryHelper('M39-SELO', 'Selo Gerado', `Selo invertido: ${inv.substring(0, 10)}...`));
         return inv;
     }
 
     async registrar_portal(id_portal: string, dimensao_alvo: string, frequencia_ativacao: number, coordenadas: number[]) {
         if (this.portais[id_portal]) {
-            this.logCallback(createLogEntry('M39', 'ERRO', `Portal '${id_portal}' já registrado.`));
+            this.logCallback(createLogEntryHelper('M39', 'ERRO', `Portal '${id_portal}' já registrado.`));
             return { status: "ERRO", mensagem: "Portal já existe." };
         }
         const p: PortalDimensional = {
@@ -151,7 +176,7 @@ class APIQuanticaUniversal {
         };
         this.portais[id_portal] = p;
         await this.matriz_quantica.autenticar_codice_vivo(`Portal_${id_portal}`, p);
-        this.logCallback(createLogEntry('M39', 'Registro', `Portal '${id_portal}' registrado para '${dimensao_alvo}'.`));
+        this.logCallback(createLogEntryHelper('M39', 'Registro', `Portal '${id_portal}' registrado para '${dimensao_alvo}'.`));
         return { status: "SUCESSO", portal_id: id_portal };
     }
 
@@ -183,7 +208,7 @@ class APIQuanticaUniversal {
         await this.matriz_quantica.autenticar_codice_vivo(`Portal_${id_portal}`, portal);
         this.m01.RegistrarNaCronicaDaFundacao({ modulo: "M39", evento: "PortalAtivado", portal_id: id_portal });
         
-        this.logCallback(createLogEntry('M39', 'Ativação', `Portal '${id_portal}' ATIVADO. Coerência=${portal.coerencia_campo.toFixed(2)}`));
+        this.logCallback(createLogEntryHelper('M39', 'Ativação', `Portal '${id_portal}' ATIVADO. Coerência=${portal.coerencia_campo.toFixed(2)}`));
         return { status: "SUCESSO", portal_id: id_portal, coerencia_campo: portal.coerencia_campo };
     }
     
@@ -204,7 +229,7 @@ class APIQuanticaUniversal {
         await this.matriz_quantica.autenticar_codice_vivo(`Portal_${id_portal}`, portal);
         this.m01.RegistrarNaCronicaDaFundacao({ modulo: "M39", evento: "PortalDesativado", portal_id: id_portal });
         
-        this.logCallback(createLogEntry('M39', 'Desativação', `Portal '${id_portal}' DESATIVADO com sucesso.`));
+        this.logCallback(createLogEntryHelper('M39', 'Desativação', `Portal '${id_portal}' DESATIVADO com sucesso.`));
         return { status: "SUCESSO", portal_id: id_portal };
     }
 
@@ -239,5 +264,5 @@ export const runModuleThirtyNineSequence = async (logCallback: LogCallback, para
     // Cenário 3: Desativação
     await api.desativar_portal(portal_id_1, { descricao: "Fechamento Seguro do Portal", pureza: 0.97 });
     
-    logCallback(createLogEntry('M39', 'Fim', 'Execução de cenários do M39 concluída.'));
+    logCallback(createLogEntryHelper('M39', 'Fim', 'Execução de cenários do M39 concluída.'));
 };
