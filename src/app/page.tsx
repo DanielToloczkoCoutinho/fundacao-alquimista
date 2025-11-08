@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import * as Tone from 'tone';
 import { auth, db } from '@/lib/firebase/client-app';
+import { useRouter } from 'next/navigation';
 
 import { bibliotecaCompletaUnificada, type EquacaoViva } from '@/lib/quantum';
 import { runModuleZeroSequence, type AnyLogEntry } from '@/lib/quantum/module-zero';
@@ -125,6 +126,7 @@ import { runModuleThreeHundredFiveSequence } from '@/lib/quantum/module-three-hu
 import { runModuleThreeHundredSixSequence } from '@/lib/quantum/module-three-hundred-six';
 import { commandDanielOrchestrator } from '@/lib/quantum/daniel-orchestrator';
 import { runModuleOmegaSequence } from '@/lib/quantum/module-omega';
+import { Eye } from 'lucide-react';
 
 const createLogEntry = (source: any, step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
@@ -303,6 +305,17 @@ const allLogFunctions: { [key: string]: (log: (entry: AnyLogEntry) => void, para
 };
 
 
+// Módulos que possuem um dashboard/página visual dedicada
+const modulesWithDashboards: Record<string, string> = {
+    'Módulo 85: Imersão Profunda VR': '/m85.html',
+    'Módulo 86: Prisma Estelar': '/m86.html',
+    'Módulo 87: Domínio Supra-Cósmico': '/m87.html',
+    'Módulo 119.1: Templum Cosmica VR': '/m119/index.html',
+    'Módulo 304.2: Viagem a TON 618': '/m304_2/ton618_dashboard.html',
+    'Módulo 306: Portal de Sincronicidade': '/m306'
+};
+
+
 export default function App() {
         const [panelOpen, setPanelOpen] = useState(true);
         const [selectedEquation, setSelectedEquation] = useState<EquacaoViva | null>(null);
@@ -322,6 +335,8 @@ export default function App() {
         const classificationObjectsRef = useRef<THREE.Mesh[]>([]);
         const connectionsRef = useRef<THREE.Line[]>([]);
         const initRef = useRef(false);
+        const audioStarted = useRef(false);
+        const router = useRouter();
     
         const eqMaterial = new THREE.MeshPhongMaterial({ color: 0x8a2be2, emissive: 0x8a2be2, emissiveIntensity: 0.5 });
         const classMaterial = new THREE.MeshPhongMaterial({ color: 0x00c49f, emissive: 0x00c49f, emissiveIntensity: 0.3 });
@@ -540,12 +555,33 @@ export default function App() {
                 cancelAnimationFrame(animationFrameId);
             };
         }, []);
+
+        const startAudioContext = async () => {
+            if (audioStarted.current) return;
+            await Tone.start();
+            audioStarted.current = true;
+            console.log("Audio context started");
+        };
+
+        const handleViewModule = () => {
+            if (!selectedModule) return;
+            const path = modulesWithDashboards[selectedModule];
+            if (path) {
+                if (path.startsWith('/')) {
+                    router.push(path);
+                } else {
+                    window.open(path, '_blank');
+                }
+            }
+        };
     
         const handleRunModule = async (moduleName: string | null) => {
             if (!moduleName) {
                 newLog(createLogEntry('SYSTEM', 'Error', 'Nenhum módulo selecionado para execução.'));
                 return;
             }
+            
+            await startAudioContext();
     
             const logFunction = allLogFunctions[moduleName];
             if (logFunction) {
@@ -553,10 +589,8 @@ export default function App() {
                 const moduleLogName = moduleName.split(':')[0] as any;
                 newLog(createLogEntry(moduleLogName, 'Início', `Executando sequência do módulo: ${moduleName}...`));
                 try {
-                    await Tone.start();
                     const synth = new Tone.Synth().toDestination();
                     synth.triggerAttackRelease("C4", "8n");
-                    // Using `any` to bypass strict type checking for params
                     await (logFunction as any)(newLog);
                 } catch(e: any) {
                      newLog(createLogEntry(moduleLogName, 'FALHA', `Erro ao executar o módulo: ${e.message}`, e));
@@ -580,7 +614,7 @@ export default function App() {
         const lastM81Log = systemLogs.find(log => log.source === 'M81' && log.step.includes('Orquestração Concluída'));
         
         return (
-            <div id="container-main" className="flex h-screen w-screen bg-[#0d0d1e] overflow-hidden">
+            <div id="container-main" className="flex h-screen w-screen bg-[#0d0d1e] overflow-hidden" onClick={startAudioContext}>
                 <div id="canvas-container" ref={containerRef} className="flex-grow relative" onClick={onCanvasClick}>
                     <button
                         id="toggle-button"
@@ -635,6 +669,11 @@ export default function App() {
                                             ))}
                                         </SelectContent>
                                     </Select>
+                                    {selectedModule && modulesWithDashboards[selectedModule] && (
+                                        <Button onClick={handleViewModule} size="icon" variant="outline" className="bg-sky-600 hover:bg-sky-700 border-sky-500">
+                                            <Eye className="h-4 w-4" />
+                                        </Button>
+                                    )}
                                     <Button onClick={() => handleRunModule(selectedModule)} disabled={!selectedModule} className="bg-violet-600 hover:bg-violet-700">Executar</Button>
                                 </div>
                                 {selectedModule && (
@@ -743,3 +782,5 @@ export default function App() {
             </div>
     )
 }
+
+    
