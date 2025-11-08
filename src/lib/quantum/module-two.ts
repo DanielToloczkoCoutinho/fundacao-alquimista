@@ -6,15 +6,13 @@
  */
 import { type AnyLogEntry } from './module-zero';
 
-export type ModuleTwoLogEntry = {
-    step: string;
-    message: string;
-    timestamp: string;
-    data?: any;
-    source: 'M2';
+export type ResultadoManifestacao = {
+    módulo: 'M2';
+    sucesso: boolean;
+    timestamp: number;
 };
 
-const createLogEntry = (step: string, message: string, data?: any): ModuleTwoLogEntry => ({
+const createLogEntry = (step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[M2] ${step}`,
     message,
     timestamp: new Date().toISOString(),
@@ -45,14 +43,22 @@ class Modulo2_Nanomanifestador {
         this._log("Sintonia Fina", "Ressonância perfeita com a fonte! Procedendo...");
         await sleep(500);
 
-        this._log("Colapso Harmônico", "Manifestação concluída com sucesso.", { sucesso: true, resultados_medicao: [0, 1, 1, 1, 0] });
+        // A manifestação simulada sempre terá sucesso neste contexto
         return true;
     }
 }
 
-export const runModuleTwoSequence = async (logCallback: (entry: AnyLogEntry) => void): Promise<boolean> => {
+export const runModuleTwoSequence = async (logCallback: (entry: AnyLogEntry) => void): Promise<ResultadoManifestacao> => {
     const nanomanifestador = new Modulo2_Nanomanifestador(logCallback);
-    const success = await nanomanifestador.manifestar_realidade();
-    logCallback(createLogEntry("Conclusão", `Execução do Módulo 2 finalizada com status: ${success ? 'SUCESSO' : 'FALHA'}`));
-    return success;
+    const sucesso = await nanomanifestador.manifestar_realidade();
+    
+    const resultado: ResultadoManifestacao = {
+        módulo: 'M2',
+        sucesso: sucesso,
+        timestamp: Date.now()
+    };
+    
+    logCallback(createLogEntry("Conclusão", `Manifestação concluída com sucesso: ${sucesso}`, resultado));
+    
+    return resultado;
 };

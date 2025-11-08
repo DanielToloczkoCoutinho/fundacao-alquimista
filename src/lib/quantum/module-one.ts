@@ -7,6 +7,14 @@ import { type AnyLogEntry } from './module-zero';
 
 type LogCallback = (entry: AnyLogEntry) => void;
 
+export type VereditoIntegridade = {
+    módulo: 'M1';
+    status_geral: 'INTEGRIDADE_CONFIRMADA' | 'FALHA_INTEGRIDADE';
+    mensagem: string;
+    timestamp: number;
+    veredito: 'coerente' | 'dissonante';
+};
+
 const createLogEntry = (source: 'M1', step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
@@ -28,7 +36,7 @@ class Modulo1_SegurancaUniversal {
         this.logCallback(createLogEntry('M1', step, message, data));
     }
 
-    async verificar_integridade_fundacao(): Promise<{ status_geral: string, mensagem: string }> {
+    async verificar_integridade_fundacao(): Promise<VereditoIntegridade> {
         this._log("Início Verificação", "Iniciando verificação completa de integridade da Fundação...");
         await sleep(700);
 
@@ -48,8 +56,11 @@ class Modulo1_SegurancaUniversal {
         await sleep(500);
 
         const resultado_final = {
-            status_geral: "INTEGRIDADE_CONFIRMADA",
-            mensagem: "A Fundação Alquimista opera em plena harmonia e segurança."
+            módulo: 'M1' as const,
+            status_geral: 'INTEGRIDADE_CONFIRMADA' as const,
+            mensagem: "A Fundação Alquimista opera em plena harmonia e segurança.",
+            timestamp: Date.now(),
+            veredito: 'coerente' as const
         };
         this._log("Fim Verificação", "Verificação de integridade concluída.", resultado_final);
         
@@ -57,7 +68,8 @@ class Modulo1_SegurancaUniversal {
     }
 }
 
-export const runModuleOneSequence = async (logCallback: LogCallback) => {
+export const runModuleOneSequence = async (logCallback: LogCallback): Promise<VereditoIntegridade> => {
     const modulo1 = new Modulo1_SegurancaUniversal(logCallback);
-    await modulo1.verificar_integridade_fundacao();
+    const veredito = await modulo1.verificar_integridade_fundacao();
+    return veredito;
 };
