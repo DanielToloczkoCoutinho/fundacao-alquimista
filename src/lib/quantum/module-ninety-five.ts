@@ -55,7 +55,7 @@ class MockM05AvaliacaoEtica {
     evaluate_ethical_impact(operation_data: any) {
         this.log(createLogEntry('M5', 'Avaliação Ética', `Avaliando impacto: ${operation_data.operation_type || 'N/A'}`));
         let ethical_score = Math.random() * 0.29 + 0.7;
-        if (operation_data.description?.toLowerCase().includes("coercao") || operation_data.description?.toLowerCase().includes("manipulacao") || operation_data.description?.toLowerCase().includes("invasao")) {
+        if ((operation_data.description || "").toLowerCase().includes("coercao") || (operation_data.description || "").toLowerCase().includes("manipulacao") || (operation_data.description || "").toLowerCase().includes("invasao")) {
             ethical_score = Math.random() * 0.5 + 0.1;
         }
         const conformity = ethical_score >= ETHICAL_CONFORMITY_THRESHOLD;
@@ -180,7 +180,7 @@ class M95_InteracaoConscienciasColetivas {
     }
 
     async interact_with_galactic_consciousness(target_galaxy_id: string, collective_consciousness_type: string, communication_purpose: string, ethical_oversight_level: number): Promise<any> {
-        this.logCallback(createLogEntry(this.module_id, 'Início Interação', `Iniciando interação com '${collective_consciousness_type}' ({target_galaxy_id}) para: '${communication_purpose}'.`));
+        this.logCallback(createLogEntry(this.module_id, 'Início Interação', `Iniciando interação com '${collective_consciousness_type}' (${target_galaxy_id}) para: '${communication_purpose}'.`));
 
         const interaction_data: any = {
             "interaction_id": `INTERACT-${await sha256_hex(target_galaxy_id + communication_purpose + Date.now())}`.substring(0, 16),

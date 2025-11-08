@@ -53,6 +53,7 @@ import './module-ninety-two';
 import './module-ninety-three';
 import './module-ninety-four';
 import './module-ninety-five';
+import './module-ninety-six';
 import './module-two-hundred-one';
 import './module-omega';
 
