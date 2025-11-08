@@ -1,4 +1,3 @@
-
 'use client';
 import { type AnyLogEntry } from './module-zero';
 
@@ -20,14 +19,41 @@ const DESTINOS_PADRAO_M29 = [
     { "civilizacao": "Lyra", "freq": 963.0 },
 ];
 
+// Harmonização da tipagem
+export type ModuleThirtyOneLogEntry = AnyLogEntry;
+
+// Criação do Registro de Manifestação Quântica
+export type RegistroManipulacaoQuantica = {
+  módulo: 'M31',
+  propósito: string,
+  tipo_manifestacao: 'realidade' | 'elemento' | 'evento' | 'entidade',
+  poder_empregado: number, // escala de 0 a 1
+  alinhamento_etico: 'neutro' | 'harmônico' | 'divino',
+  status: 'manifestado' | 'em formação' | 'reabsorvido',
+  timestamp: number
+};
+
 // --- Logger and Ledger ---
-const createLogEntry = (source: string, step: string, message: string, data?: any): AnyLogEntry => ({
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void => {
+  logCallback(entry);
+};
+
+// Refinamento da função de registro
+export function createLogEntry(entry: AnyLogEntry, logCallback: (entry: AnyLogEntry) => void): void {
+  registrarEventoUniversal(entry, logCallback);
+}
+
+
+const createLogEntryHelper = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
     step: `[${source}] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
-    source: source as any,
+    source: source,
 });
+
+
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 // --- Equation Registry (Simplified for TS) ---
 const EquationsRegistryM31 = {
@@ -53,7 +79,7 @@ const EquationsRegistryM31 = {
 // --- Mocks for External Modules ---
 const mockModule = (name: string, log: LogCallback) => ({
     exec: (action: string, payload: any) => {
-        log(createLogEntry(name, 'Execução', `Ação '${action}' recebida`, payload));
+        log(createLogEntryHelper(name as any, 'Execução', `Ação '${action}' recebida`, payload));
         return { status: "simulated_ok" };
     }
 });
@@ -71,7 +97,7 @@ class Modulo31_ManipulacaoQuantica {
         this.m28 = mockModule('M28', log);
         this.m98 = mockModule('M98', log);
         this.m1 = mockModule('M1', log);
-        log(createLogEntry('M31', 'Inicialização', 'Manipulação Quântica pronta'));
+        createLogEntry(createLogEntryHelper('M31', 'Inicialização', 'Manipulação Quântica pronta'), this.log);
     }
 
     private _gate_etico(etica_global: number): number {
@@ -127,7 +153,7 @@ class Modulo31_ManipulacaoQuantica {
 
 
     public executar_ciclo_manipulacao(localizacao: string, intencao: string, etica_global: number, pilares: number[]): any {
-        this.log(createLogEntry('M31', 'Ciclo', `Iniciando em '${localizacao}'`));
+        createLogEntry(createLogEntryHelper('M31', 'Ciclo', `Iniciando em '${localizacao}'`), this.log);
 
         const gate = this._gate_etico(etica_global);
         if (gate === 0.0) {
@@ -157,7 +183,7 @@ class Modulo31_ManipulacaoQuantica {
         this.m28.exec('post_equalize', { rho_after });
 
         if (rho_after < RHO_RECALIBRAR) {
-            this.log(createLogEntry('M31', 'Recalibração', `Rho After (${rho_after.toFixed(3)}) abaixo do limiar. Recalibrando...`));
+            createLogEntry(createLogEntryHelper('M31', 'Recalibração', `Rho After (${rho_after.toFixed(3)}) abaixo do limiar. Recalibrando...`), this.log);
             this.m98.exec('sugerir', { tipo: "Reforco_Realidade", motivo: "Rho crítico" });
             rho_after = Math.random() * (1.0 - RHO_RECALIBRAR) + RHO_RECALIBRAR;
         }
@@ -172,7 +198,7 @@ class Modulo31_ManipulacaoQuantica {
             rho_after
         };
         
-        this.log(createLogEntry('M31', 'Fim', `Ciclo concluído em '${localizacao}'`));
+        createLogEntry(createLogEntryHelper('M31', 'Fim', `Ciclo concluído em '${localizacao}'`), this.log);
         return relatorio;
     }
 }
@@ -190,9 +216,9 @@ export const runModuleThirtyOneSequence = async (logCallback: LogCallback) => {
     ];
 
     for (const c of cenarios) {
-        logCallback(createLogEntry('M31', 'Cenário', `Iniciando: ${c.local}`));
+        createLogEntry(createLogEntryHelper('M31', 'Cenário', `Iniciando: ${c.local}`), logCallback);
         const resultado = m31.executar_ciclo_manipulacao(c.local, c.intencao, c.etica, c.pilares);
-        logCallback(createLogEntry('M31', 'Resultado', `Cenário '${c.local}' concluído`, resultado));
+        createLogEntry(createLogEntryHelper('M31', 'Resultado', `Cenário '${c.local}' concluído`, resultado), logCallback);
         await new Promise(resolve => setTimeout(resolve, 500));
     }
 };
