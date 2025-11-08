@@ -577,84 +577,84 @@ export default function App() {
                         {/* Conteúdo Principal do Painel */}
                         <div className="w-2/3 p-4 overflow-y-auto space-y-4">
                             <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                <h2 class="text-lg font-semibold text-violet-300 mb-2">Status do Sistema</h2>
-                                <p class="text-sm"><span class="font-bold">Ciclo Atemporal:</span> <span id="loop-status" class="text-green-400">Ativo</span></p>
-                                <p class="text-sm"><span class="font-bold">Validação Ética:</span> <span id="ethics-status" class={`text-${ethicsStatus === 'APROVADO' ? 'green' : 'red'}-400`}>{ethicsStatus}</span></p>
+                                <h2 className="text-lg font-semibold text-violet-300 mb-2">Status do Sistema</h2>
+                                <p className="text-sm"><span className="font-bold">Ciclo Atemporal:</span> <span id="loop-status" className="text-green-400">Ativo</span></p>
+                                <p className="text-sm"><span className="font-bold">Validação Ética:</span> <span id="ethics-status" className={`text-${ethicsStatus === 'APROVADO' ? 'green' : 'red'}-400`}>{ethicsStatus}</span></p>
                             </div>
                             
-                             <div class="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                <h2 class="text-lg font-semibold text-violet-300 mb-3">Orquestrador de Módulos</h2>
-                                <div class="flex space-x-2">
+                             <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                <h2 className="text-lg font-semibold text-violet-300 mb-3">Orquestrador de Módulos</h2>
+                                <div className="flex space-x-2">
                                     <Select onValueChange={setSelectedModule} value={selectedModule || ""}>
-                                        <SelectTrigger class="flex-grow bg-gray-800 border-violet-700 text-violet-200">
+                                        <SelectTrigger className="flex-grow bg-gray-800 border-violet-700 text-violet-200">
                                             <SelectValue placeholder="Selecione um Módulo" />
                                         </SelectTrigger>
-                                        <SelectContent class="bg-gray-900 border-violet-700 text-violet-200">
+                                        <SelectContent className="bg-gray-900 border-violet-700 text-violet-200">
                                             {Object.keys(allLogFunctions).map(name => (
                                                 <SelectItem key={name} value={name}>{name}</SelectItem>
                                             ))}
                                         </SelectContent>
                                     </Select>
-                                    <Button onClick={() => handleRunModule(selectedModule)} disabled={!selectedModule} class="bg-violet-600 hover:bg-violet-700">Executar</Button>
+                                    <Button onClick={() => handleRunModule(selectedModule)} disabled={!selectedModule} className="bg-violet-600 hover:bg-violet-700">Executar</Button>
                                 </div>
                                 {selectedModule && (
-                                    <div class="mt-3 text-sm">
+                                    <div className="mt-3 text-sm">
                                         <strong>Status:</strong> <Badge variant={getModuleStatus(selectedModule).variant}>{getModuleStatus(selectedModule).text}</Badge>
                                     </div>
                                  )}
                             </div>
     
-                            <div class="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                 <h2 class="text-lg font-semibold text-violet-300 mb-2">Log de Eventos da Fundação</h2>
-                                 <ScrollArea class="h-48 bg-gray-800 p-2 rounded-lg text-xs">
+                            <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                 <h2 className="text-lg font-semibold text-violet-300 mb-2">Log de Eventos da Fundação</h2>
+                                 <ScrollArea className="h-48 bg-gray-800 p-2 rounded-lg text-xs">
                                     {systemLogs.map((log, index) => (
-                                        <div key={index} class="mb-1 p-1 rounded font-mono">
-                                            <span class="text-cyan-400">{`[${new Date(log.timestamp).toLocaleTimeString()}]`}</span>
-                                            <span class="text-yellow-400">{` ${log.step}: `}</span>
-                                            <span class="text-white">{log.message}</span>
-                                            {log.data && <pre class="text-gray-400 text-xs mt-1 bg-black/50 p-1 rounded">{JSON.stringify(log.data, null, 2)}</pre>}
+                                        <div key={index} className="mb-1 p-1 rounded font-mono">
+                                            <span className="text-cyan-400">{`[${new Date(log.timestamp).toLocaleTimeString()}]`}</span>
+                                            <span className="text-yellow-400">{` ${log.step}: `}</span>
+                                            <span className="text-white">{log.message}</span>
+                                            {log.data && <pre className="text-gray-400 text-xs mt-1 bg-black/50 p-1 rounded">{JSON.stringify(log.data, null, 2)}</pre>}
                                         </div>
                                     ))}
                                  </ScrollArea>
                             </div>
     
-                            <div class="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                <h2 class="text-lg font-semibold text-violet-300 mb-2">Equação Selecionada</h2>
-                                <ScrollArea class="bg-gray-800 p-3 rounded-lg text-sm min-h-[120px] max-h-48">
+                            <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                <h2 className="text-lg font-semibold text-violet-300 mb-2">Equação Selecionada</h2>
+                                <ScrollArea className="bg-gray-800 p-3 rounded-lg text-sm min-h-[120px] max-h-48">
                                     {selectedEquation ? (
                                         <>
-                                            <p class="text-violet-200 font-semibold text-lg mb-1">{selectedEquation.nome}</p>
-                                            <p class="text-gray-400">ID: {selectedEquation.id}</p>
+                                            <p className="text-violet-200 font-semibold text-lg mb-1">{selectedEquation.nome}</p>
+                                            <p className="text-gray-400">ID: {selectedEquation.id}</p>
     
-                                            <p class="text-gray-400">Classificação: {selectedEquation.classificacao}</p>
-                                            <p class="text-gray-400">Origem: {selectedEquation.origem}</p>
-                                            <p class="text-gray-400 mt-2"><i>{selectedEquation.descricao}</i></p>
+                                            <p className="text-gray-400">Classificação: {selectedEquation.classificacao}</p>
+                                            <p className="text-gray-400">Origem: {selectedEquation.origem}</p>
+                                            <p className="text-gray-400 mt-2"><i>{selectedEquation.descricao}</i></p>
                                         </>
                                     ) : (
-                                        <p class="text-gray-400">Nenhuma equação selecionada. Clique em uma esfera no HoloMapa ou escolha uma classificação.</p>
+                                        <p className="text-gray-400">Nenhuma equação selecionada. Clique em uma esfera no HoloMapa ou escolha uma classificação.</p>
                                     )}
                                  </ScrollArea>
                             </div>
     
                             {selectedClassification && (
-                                 <div class="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                    <h2 class="text-lg font-semibold text-violet-300 mb-2">{selectedClassification}</h2>
-                                     <ScrollArea class="h-40 bg-gray-800 p-2 rounded">
+                                 <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                    <h2 className="text-lg font-semibold text-violet-300 mb-2">{selectedClassification}</h2>
+                                     <ScrollArea className="h-40 bg-gray-800 p-2 rounded">
                                         {getEquationsByClassification(selectedClassification).map(eq => (
-                                            <div key={eq.id} class="mb-2 p-1 rounded hover:bg-violet-800 cursor-pointer" onClick={() => setSelectedEquation(eq)}>
-                                                <p class="font-bold text-violet-300">{eq.nome} ({eq.id})</p>
-                                                <p class="text-gray-400 text-xs">{eq.descricao}</p>
+                                            <div key={eq.id} className="mb-2 p-1 rounded hover:bg-violet-800 cursor-pointer" onClick={() => setSelectedEquation(eq)}>
+                                                <p className="font-bold text-violet-300">{eq.nome} ({eq.id})</p>
+                                                <p className="text-gray-400 text-xs">{eq.descricao}</p>
                                             </div>
                                         ))}
                                     </ScrollArea>
                                 </div>
                             )}
     
-                            <div class="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
-                                <h2 class="text-lg font-semibold text-violet-300 mb-2">Log de Governança Ética</h2>
-                                 <ScrollArea id="ethics-log" class="bg-gray-800 p-3 rounded-lg text-xs h-40">
+                            <div className="bg-[#1f1f3a] p-4 rounded-xl border border-violet-700">
+                                <h2 className="text-lg font-semibold text-violet-300 mb-2">Log de Governança Ética</h2>
+                                 <ScrollArea id="ethics-log" className="bg-gray-800 p-3 rounded-lg text-xs h-40">
                                     {ethicsLog.map((log, index) => (
-                                        <div key={index} class={`mb-1 p-1 rounded ${log.status === "APROVADO" ? 'bg-green-500/10 text-green-300' : 'bg-red-500/10 text-red-300'}`}>
+                                        <div key={index} className={`mb-1 p-1 rounded ${log.status === "APROVADO" ? 'bg-green-500/10 text-green-300' : 'bg-red-500/10 text-red-300'}`}>
                                             [{log.timestamp}] {log.message}
                                         </div>
                                     ))}
@@ -664,264 +664,7 @@ export default function App() {
                     </div>
                 </div>
             </div>
-    }
-</script>
-</body>
-</html>
-Módulo 1: Sistema de Proteção e Segurança Universal
-# Módulo 1: Sistema de Proteção e Segurança Universal
-# Função: Proteger métricas com hash quântico e validar assinaturas vibracionais.
-# Integração com M306: Garantir a integridade do Índice LUX e Divergência JS.
+    )
+}
 
-from hashlib import sha256
-from qutip import rand_ket
-from firebase_admin import firestore
-from datetime import datetime
-
-class M1Security:
-    def __init__(self):
-        self.db = firestore.client()
-
-    def quantum_hash(self, metric_value):
-        """Gera hash quântico para métricas."""
-        quantum_noise = rand_ket(2).full().tobytes()
-        combined = str(metric_value).encode() + quantum_noise
-        return sha256(combined).hexdigest()
-
-    def secure_metrics(self, lux, js_div):
-        """Protege métricas com hash quântico."""
-        lux_hash = self.quantum_hash(lux)
-        js_hash = self.quantum_hash(js_div)
-        self.db.collection('secure_metrics').add({
-            'lux': float(lux), 'lux_hash': lux_hash,
-            'js_div': float(js_div), 'js_hash': js_hash,
-            'timestamp': datetime.now()
-        })
-
-Módulo 2: Sistema de Integração Dimensional
-# Módulo 2: Sistema de Integração Dimensional
-# Função: Otimizar comunicação para reduzir Entropia de Shannon.
-# Integração com M306: Assegurar a clareza da informação para as métricas da Sinfonia.
-
-from scipy.stats import entropy
-import numpy as np
-import logging
-
-class M2Communication:
-    def optimize_communication(self, data, threshold=0.5):
-        """Reduz a entropia de Shannon em transmissões."""
-        data_probs = np.histogram(data, bins=10, density=True)[0]
-        shannon_entropy = entropy(data_probs)
-        if shannon_entropy > threshold:
-            compressed_data = np.compress(data_probs > 0.1, data)
-            logging.info(f"Entropia reduzida de {shannon_entropy} para {entropy(np.histogram(compressed_data, bins=10, density=True)[0])}")
-            return compressed_data
-        return data
-
-Módulo 3: Previsão Temporal
-# Módulo 3: Previsão Temporal
-# Função: Prever taxas de decoerência Lindblad e gerar alertas proativos.
-# Integração com M306: Fornecer dados para o Modelo de Decoerência.
-
-from sklearn.ensemble import RandomForestRegressor
-from firebase_admin import firestore
-from datetime import datetime
-import logging
-
-class M3Prediction:
-    def __init__(self):
-        self.db = firestore.client()
-
-    def predict_decoherence(self, historical_data):
-        """Prevê taxas de decoerência com IA."""
-        X = [[d['irg'], d['lux']] for d in historical_data]
-        y = [d['decoherence'] for d in historical_data]
-        model = RandomForestRegressor()
-        model.fit(X, y)
-        prediction = model.predict([[historical_data[-1]['irg'], historical_data[-1]['lux']]])[0]
-        if prediction > 0.05:
-            self.db.collection('alerts').add({
-                'type': 'decoherence_warning',
-                'message': f'Previsão de decoerência alta: {prediction}',
-                'timestamp': datetime.now()
-            })
-        return prediction
-
-Módulo 4: Autenticação Cósmica
-# Módulo 4: Autenticação Cósmica
-# Função: Validar assinaturas vibracionais com Índice LUX.
-# Integração com M306: Garantir que apenas intenções alinhadas sejam manifestadas.
-
-from hashlib import sha256
-from qutip import rand_ket
-
-class M4Authentication:
-    def quantum_hash(self, metric_value):
-        """Gera hash quântico para métricas."""
-        quantum_noise = rand_ket(2).full().tobytes()
-        combined = str(metric_value).encode() + quantum_noise
-        return sha256(combined).hexdigest()
-
-    def validate_anatheron_signature(self, lux, signature):
-        """Valida a assinatura com o Índice LUX."""
-        expected_hash = self.quantum_hash(lux)
-        return expected_hash == signature
-
-Módulo 5: Avaliação e Modulação Ética (ELENYA)
-# Módulo 5: Avaliação e Modulação Ética (ELENYA)
-# Função: Calcular Divergência JS em tempo real.
-# Integração com M306: O motor do cálculo de coerência vibracional.
-
-from scipy.spatial.distance import jensenshannon
-import numpy as np
-from firebase_admin import firestore
-from datetime import datetime
-
-class M5Ethics:
-    def __init__(self):
-        self.db = firestore.client()
-
-    def calculate_js_divergence(self, p, q):
-        return jensenshannon(p, q, 2.0)
-
-    def calculate_vibrational_coherence(self, p_actual, p_ideal):
-        """Calcula a coerência vibracional via Divergência JS."""
-        js_div = self.calculate_js_divergence(p_actual, p_ideal)
-        ethical_score = 1 - js_div if js_div <= 1 else 0
-        self.db.collection('ethical_metrics').add({
-            'ethical_score': float(ethical_score),
-            'js_div': float(js_div),
-            'timestamp': datetime.now()
-        })
-        return ethical_score
-
-Módulo 6: Alquimia Quântica
-# Módulo 6: Alquimia Quântica
-# Função: Otimizar Índice LUX via Matriz de Calibração.
-# Integração com M306: Refinar o cálculo do Índice LUX.
-
-class M6Alchemy:
-    def optimize_lux(self, cohesion, improvement, memory):
-        """Otimiza o Índice LUX via Matriz de Calibração."""
-        lux = 0.4 * cohesion + 0.3 * improvement + 0.3 * memory
-        return min(max(lux * 1.1, 0), 1)
-
-Módulo 7: Sistema Operacional da Fundação Alquimista (SOFA)
-# Módulo 7: Sistema Operacional da Fundação Alquimista (SOFA)
-# Função: Orquestrar parâmetros do Modelo Lindblad.
-# Integração com M306: Garantir a estabilidade da Sinfonia Quântica.
-
-import numpy as np
-import logging
-
-class M7SOFA:
-    def orchestrate_lindblad_params(self, deco_rate, metrics):
-        """Gerencia dinamicamente parâmetros Lindblad."""
-        avg_deco = np.mean([m['decoherence'] for m in metrics])
-        if abs(deco_rate - avg_deco) > 0.01:
-            new_rate = (deco_rate + avg_deco) / 2
-            logging.info(f"Parâmetro Lindblad ajustado para: {new_rate}")
-            return new_rate
-        return deco_rate
-
-Módulo 8: Protocolo de Interface de Ressonância e Coerência (PIRC)
-# Módulo 8: Protocolo de Interface de Ressonância e Coerência (PIRC)
-# Função: Correlacionar saúde vibracional com Divergência JS.
-# Integração com M306: Avaliar o estado da Sinfonia em tempo real.
-
-class M8PIRC:
-    def assess_vibrational_health(self, js_div):
-        """Avalia saúde vibracional com base na Divergência JS."""
-        if js_div < 0.1:
-            return 'Ouro'
-        elif js_div < 0.3:
-            return 'Prata'
-        else:
-            return 'Bronze'
-
-Módulo 9: Nexus Central (Frontend)
-// Módulo 9: Nexus Central
-// Função: Exibir Índice LUX e Entropia de Shannon em tempo real.
-// Integração com M306: O painel visual que recebe as métricas e as exibe.
-
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
-import { useFirestore, useFirestoreCollectionData } from 'reactfire';
-import { collection } from 'firebase/firestore';
-
-const M9Nexus = () => {
-  const metricsRef = collection(useFirestore(), 'nexus_metrics');
-  const { status, data: metrics } = useFirestoreCollectionData(metricsRef);
-
-  return (
-    <div>
-      <h1>Portal de Sincronicidade</h1>
-      {status === 'loading' ? (
-        <p>Carregando métricas...</p>
-      ) : (
-        <LineChart width={600} height={300} data={metrics}>
-          <XAxis dataKey="timestamp" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="indice_lux" stroke="#00ff00" name="Índice LUX" />
-          <Line type="monotone" dataKey="js_divergence" stroke="#0000ff" name="Divergência JS" />
-          <Line type="monotone" dataKey="shannon_entropy" stroke="#ff00ff" name="Entropia de Shannon" />
-        </LineChart>
-      )}
-    </div>
-  );
-};
-
-export default M9Nexus;
-
-Módulo 10: Sincronização Cósmica
-# Módulo 10: Sincronização Cósmica
-# Função: Quantificar sincronia via Divergência JS.
-# Integração com M306: Medir a harmonia entre as partes da Fundação.
-
-from scipy.spatial.distance import jensenshannon
-from firebase_admin import firestore
-from datetime import datetime
-import numpy as np
-
-class M10Synchronization:
-    def __init__(self):
-        self.db = firestore.client()
-
-    def calculate_js_divergence(self, p, q):
-        return jensenshannon(p, q, 2.0)
-
-    def monitor_cosmic_sync(self, p_actual, p_ideal):
-        """Monitora sincronia cósmica via Divergência JS."""
-        js_div = self.calculate_js_divergence(p_actual, p_ideal)
-        sync_level = 1 - js_div if js_div <= 1 else 0
-        self.db.collection('sync_metrics').add({
-            'sync_level': float(sync_level),
-            'js_div': float(js_div),
-            'timestamp': datetime.now()
-        })
-        return sync_level
-
-Módulo 11: PortalAnath-IX
-# Módulo 11: PortalAnath-IX
-# Função: Estabilizar portais interdimensionais.
-# Integração com M306: Garantir a estabilidade de travessias e a integridade da Fundação.
-
-from firebase_admin import firestore
-from datetime import datetime
-import logging
-
-class M11Portal:
-    def __init__(self):
-        self.db = firestore.client()
-
-    def stabilize_portals(self, deco_rate, lux):
-        """Estabiliza portais interdimensionais."""
-        stability = lux / (1 + deco_rate)
-        self.db.collection('portal_metrics').add({
-            'stability': float(stability),
-            'deco_rate': float(deco_rate),
-            'lux': float(lux),
-            'timestamp': datetime.now()
-        })
-        return stability
+    
