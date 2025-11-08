@@ -7,31 +7,35 @@ type LogCallback = (entry: AnyLogEntry) => void;
 const CONST_TF = 1.61803398875; // Proporção Áurea
 
 const createLogEntry = (source: AnyLogEntry['source'], step: string, message: string, data?: any): AnyLogEntry => ({
-    step: `[${source}] ${step}`,
+    step: `[${'['}M16] ${step}`,
     message,
     timestamp: new Date().toISOString(),
     data,
     source: source,
 });
 
+const registrarEventoUniversal = (entry: AnyLogEntry, logCallback: LogCallback) => {
+    logCallback(entry);
+}
+
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 // --- Mocks dos Módulos Externos ---
 const Modulo1_SegurancaUniversal = (log: LogCallback) => ({
-    ReceberAlertaDeViolacao: (alerta: any) => log(createLogEntry('M1', 'ALERTA', `Ecossistema Artificial: ${alerta.mensagem}`)),
-    RegistrarNaCronicaDaFundacao: (registro: any) => log(createLogEntry('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`)),
+    ReceberAlertaDeViolacao: (alerta: any) => registrarEventoUniversal(createLogEntry('M1', 'ALERTA', `Ecossistema Artificial: ${alerta.mensagem}`), log),
+    RegistrarNaCronicaDaFundacao: (registro: any) => registrarEventoUniversal(createLogEntry('M1', 'CRÔNICA', `Registrando evento: ${registro.evento}`), log),
 });
 
 const Modulo7_AlinhamentoDivino = (log: LogCallback) => ({
     ConsultarConselho: (query: string) => {
-        log(createLogEntry('M7', 'Consulta Conselho', `Consultando diretriz para: "${query.slice(0, 50)}..."`));
+        registrarEventoUniversal(createLogEntry('M7', 'Consulta Conselho', `Consultando diretriz para: "${query.slice(0, 50)}..."`), log);
         return "Diretriz: A criação de vida é um ato sagrado. Cultive a biodiversidade e a autossustentabilidade.";
     },
 });
 
 const Modulo98_ModulacaoExistencia = (log: LogCallback) => ({
     SugerirModulacaoExistencia: (params: any) => {
-        log(createLogEntry('M98', 'Sugestão Modulação', `Sugerindo modulação para ${params.tipo}.`));
+        registrarEventoUniversal(createLogEntry('M98', 'Sugestão Modulação', `Sugerindo modulação para ${params.tipo}.`), log);
         return `Modulação sugerida: bio_harmonia_${params.ecossistema}`;
     },
 });
@@ -44,25 +48,25 @@ class ModuloArquiteturaEcossistemas {
     public ecossistemas_artificiais: { [id: string]: any } = {};
 
     constructor(private logCallback: LogCallback) {
-        this.logCallback(createLogEntry('M16', 'Inicialização', 'Módulo 16 - Arquitetura de Ecossistemas Artificiais ativado.'));
+        registrarEventoUniversal(createLogEntry('M16', 'Inicialização', 'Módulo 16 - Arquitetura de Ecossistemas Artificiais ativado.'), this.logCallback);
         this.modulo1 = Modulo1_SegurancaUniversal(logCallback);
         this.modulo7 = Modulo7_AlinhamentoDivino(logCallback);
         this.modulo98 = Modulo98_ModulacaoExistencia(logCallback);
     }
     
     private _equacao_biossintese(complexidade: number, energia: number): number {
-        this.logCallback(createLogEntry('M16', 'Cálculo', 'Calculando Equação de Biossíntese e Auto-organização...'));
+        registrarEventoUniversal(createLogEntry('M16', 'Cálculo', 'Calculando Equação de Biossíntese e Auto-organização...'), this.logCallback);
         const vitalidade = (complexidade * energia * CONST_TF) * (Math.random() * 0.2 + 0.9);
         return Math.min(10.0, vitalidade);
     }
 
     private _equacao_regeneracao(dados_entrada: number): number {
-        this.logCallback(createLogEntry('M16', 'Cálculo', 'Calculando Equação de Regeneração Ecossistêmica...'));
+        registrarEventoUniversal(createLogEntry('M16', 'Cálculo', 'Calculando Equação de Regeneração Ecossistêmica...'), this.logCallback);
         return dados_entrada * CONST_TF;
     }
 
     async iniciar_biossintese(nome: string, bioma: string, complexidade: number): Promise<{ ecossistema_id?: string }> {
-        this.logCallback(createLogEntry('M16', 'Biossíntese', `Iniciando biossíntese para ecossistema '${nome}' (${bioma}).`));
+        registrarEventoUniversal(createLogEntry('M16', 'Biossíntese', `Iniciando biossíntese para ecossistema '${nome}' (${bioma}).`), this.logCallback);
         await sleep(500);
 
         this.modulo7.ConsultarConselho(`Criação de ecossistema artificial '${nome}'`);
@@ -75,13 +79,13 @@ class ModuloArquiteturaEcossistemas {
         this.ecossistemas_artificiais[ecossistema_id] = { nome, bioma, complexidade, energia_disponivel: energia_inicial, vitalidade_atual: vitalidade_inicial };
         
         this.modulo1.RegistrarNaCronicaDaFundacao({ evento: "BiossinteseEcossistema", ecossistema_id, nome, vitalidade_inicial });
-        this.logCallback(createLogEntry('M16', 'Sucesso', `Ecossistema '${nome}' (ID: ${ecossistema_id}) criado com sucesso. Vitalidade inicial: ${vitalidade_inicial.toFixed(4)}.`));
+        registrarEventoUniversal(createLogEntry('M16', 'Sucesso', `Ecossistema '${nome}' (ID: ${ecossistema_id}) criado com sucesso. Vitalidade inicial: ${vitalidade_inicial.toFixed(4)}.`), this.logCallback);
         
         return { ecossistema_id };
     }
 
     async regular_ciclos(ecossistema_id: string) {
-        this.logCallback(createLogEntry('M16', 'Regulação', `Regulando ciclos para ecossistema ID: ${ecossistema_id}.`));
+        registrarEventoUniversal(createLogEntry('M16', 'Regulação', `Regulando ciclos para ecossistema ID: ${ecossistema_id}.`), this.logCallback);
         await sleep(500);
 
         const ecossistema = this.ecossistemas_artificiais[ecossistema_id];
@@ -95,11 +99,11 @@ class ModuloArquiteturaEcossistemas {
         ecossistema.vitalidade_atual = this._equacao_biossintese(ecossistema.complexidade, ecossistema.energia_disponivel);
 
         this.modulo1.RegistrarNaCronicaDaFundacao({ evento: "RegulacaoCiclos", ecossistema_id, nome: ecossistema.nome, nova_vitalidade: ecossistema.vitalidade_atual });
-        this.logCallback(createLogEntry('M16', 'Sucesso', `Ciclos de '${ecossistema.nome}' regulados. Nova Vitalidade: ${ecossistema.vitalidade_atual.toFixed(4)}.`));
+        registrarEventoUniversal(createLogEntry('M16', 'Sucesso', `Ciclos de '${ecossistema.nome}' regulados. Nova Vitalidade: ${ecossistema.vitalidade_atual.toFixed(4)}.`), this.logCallback);
     }
 
     async restaurar_colapso(ecossistema_id: string) {
-        this.logCallback(createLogEntry('M16', 'Restauração', `Detectando e restaurando colapso para ID: ${ecossistema_id}.`));
+        registrarEventoUniversal(createLogEntry('M16', 'Restauração', `Detectando e restaurando colapso para ID: ${ecossistema_id}.`), this.logCallback);
         await sleep(500);
 
         const ecossistema = this.ecossistemas_artificiais[ecossistema_id];
@@ -110,7 +114,7 @@ class ModuloArquiteturaEcossistemas {
 
         const risco_colapso = 1.0 - ecossistema.vitalidade_atual;
         if (risco_colapso > 0.7) {
-            this.logCallback(createLogEntry('M16', 'ALERTA', `Risco de colapso crítico detectado para '${ecossistema.nome}'.`));
+            registrarEventoUniversal(createLogEntry('M16', 'ALERTA', `Risco de colapso crítico detectado para '${ecossistema.nome}'.`), this.logCallback);
             this.modulo98.SugerirModulacaoExistencia({ tipo: "Restauracao_Ecossistemica", ecossistema: ecossistema.nome });
             await sleep(500);
             
@@ -118,9 +122,9 @@ class ModuloArquiteturaEcossistemas {
             ecossistema.vitalidade_atual = Math.min(1.0, ecossistema.vitalidade_atual + fator_regeneracao * 0.2);
 
             this.modulo1.RegistrarNaCronicaDaFundacao({ evento: "RestauracaoColapso", ecossistema_id, nome: ecossistema.nome, nova_vitalidade: ecossistema.vitalidade_atual });
-            this.logCallback(createLogEntry('M16', 'Sucesso', `Ecossistema '${ecossistema.nome}' restaurado. Vitalidade: ${ecossistema.vitalidade_atual.toFixed(4)}.`));
+            registrarEventoUniversal(createLogEntry('M16', 'Sucesso', `Ecossistema '${ecossistema.nome}' restaurado. Vitalidade: ${ecossistema.vitalidade_atual.toFixed(4)}.`), this.logCallback);
         } else {
-            this.logCallback(createLogEntry('M16', 'Info', `Risco de colapso baixo para '${ecossistema.nome}'. Nenhuma ação necessária.`));
+            registrarEventoUniversal(createLogEntry('M16', 'Info', `Risco de colapso baixo para '${ecossistema.nome}'. Nenhuma ação necessária.`), this.logCallback);
         }
     }
 }
@@ -146,7 +150,7 @@ export const runModuleSixteenSequence = async (logCallback: LogCallback, action:
             if (lastEcoArtId) {
                 await module16Instance.regular_ciclos(lastEcoArtId);
             } else {
-                logCallback(createLogEntry('M16', 'FALHA', 'Nenhum ecossistema criado para regular. Crie um primeiro.'));
+                registrarEventoUniversal(createLogEntry('M16', 'FALHA', 'Nenhum ecossistema criado para regular. Crie um primeiro.'), logCallback);
             }
             break;
         case 'RESTORE':
@@ -157,7 +161,7 @@ export const runModuleSixteenSequence = async (logCallback: LogCallback, action:
                 }
                 await module16Instance.restaurar_colapso(lastEcoArtId);
             } else {
-                logCallback(createLogEntry('M16', 'FALHA', 'Nenhum ecossistema criado para restaurar. Crie um primeiro.'));
+                registrarEventoUniversal(createLogEntry('M16', 'FALHA', 'Nenhum ecossistema criado para restaurar. Crie um primeiro.'), logCallback);
             }
             break;
     }
