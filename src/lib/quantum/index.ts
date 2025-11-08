@@ -88,6 +88,7 @@ import './module-three-hundred-four-point-two';
 import { runModuleThreeHundredFiveSequence } from './module-three-hundred-five';
 import { runModuleThreeHundredSixSequence } from './module-three-hundred-six';
 import './module-omega';
+import { runModuleSeventyThreePointOneSequence } from './module-seventy-three-point-one';
 
 
 export interface EquacaoViva {
@@ -157,5 +158,6 @@ class BibliotecaCompletaUnificada {
 export const bibliotecaCompletaUnificada = new BibliotecaCompletaUnificada();
 
     
+
 
 
